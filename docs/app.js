@@ -113,7 +113,9 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
-  definitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
+  const categoryOrder = { Economic: 0, Social: 1, 'Crime & Security': 2 };
+  const orderedDefinitions = [...definitions].sort((left, right) => categoryOrder[categoryFor(left[0])] - categoryOrder[categoryFor(right[0]]));
+  orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
     if (category !== lastCategory) {
       const heading = document.createElement('h2');
@@ -143,7 +145,7 @@ async function main() {
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
-    charts.push({ chart, labels, values });
+    charts.push({ chart, labels, values: values || series.datasets[0].data, datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const filter = document.querySelector('#chart-filter');
@@ -171,14 +173,14 @@ async function main() {
   const updateRange = () => {
     const start = rangeStart.value;
     const end = rangeEnd.value;
-    charts.forEach(({ chart, labels, values }) => {
+    charts.forEach(({ chart, labels, values, datasets }) => {
       const visible = labels.reduce((result, label, index) => {
         if (label >= start && label <= end) result.push({ label, value: values[index] });
         return result;
       }, []);
       chart.data.labels = visible.map(point => point.label);
       if (chart.data.datasets.length === 1) chart.data.datasets[0].data = visible.map(point => point.value);
-      else chart.data.datasets.forEach(dataset => { dataset.data = labels.map((label, index) => label >= start && label <= end ? dataset.data[index] : null).filter((_, index) => labels[index] >= start && labels[index] <= end); });
+      else chart.data.datasets.forEach((dataset, datasetIndex) => { dataset.data = datasets[datasetIndex].data.map((value, index) => labels[index] >= start && labels[index] <= end ? value : null); });
       chart.resetZoom();
       chart.update();
     });
