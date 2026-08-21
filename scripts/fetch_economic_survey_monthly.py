@@ -37,6 +37,12 @@ EDITIONS = [
     ("https://www.indiabudget.gov.in/economicsurvey/doc/stat/", True),
 ]
 OEA_URL = "https://eaindustry.nic.in/download_data_2223.asp"
+FISCAL_EDITIONS = [
+    ("https://www.indiabudget.gov.in/budget2022-23/economicsurvey/doc/stat/tab24.xlsx", "2022-23"),
+    ("https://www.indiabudget.gov.in/budget2023-24/economicsurvey/doc/stat/tab24.xlsx", "2023-24"),
+    ("https://www.indiabudget.gov.in/budget2024-25/economicsurvey/doc/stat/tab24.xlsx", "2024-25"),
+    ("https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab2.4.xlsx", "latest"),
+]
 
 
 def download(base_url: str, name: str) -> bytes:
@@ -95,6 +101,29 @@ def fetch_wpi() -> dict:
     return {"labels": labels, "values": [values[label] for label in labels], "source": "Office of Economic Adviser WPI monthly workbook"}
 
 
+def fetch_fiscal_deficit() -> dict:
+    values = {}
+    for url, edition in FISCAL_EDITIONS:
+        request = Request(url, headers={"User-Agent": USER_AGENT})
+        with urlopen(request, timeout=60) as response:
+            workbook = openpyxl.load_workbook(io.BytesIO(response.read()), data_only=True, read_only=True)
+        rows = workbook.active.iter_rows(values_only=True)
+        next(rows)
+        years = next(rows)
+        if not any("20" in str(value) for value in years):
+            years = next(rows)
+        deficit = next((row for row in rows if "Fiscal Deficit" in str(row[1] or "")), None)
+        if not deficit:
+            continue
+        for year, value in zip(years[2:], deficit[2:]):
+            if year and isinstance(value, (int, float)):
+                values[str(year).replace("\n", "").strip()] = float(value)
+    labels = sorted(values)
+    if len(labels) < 4:
+        raise ValueError("Economic Survey fiscal table yielded too few annual observations")
+    return {"labels": labels, "values": [values[label] for label in labels], "source": "Economic Survey Statistical Appendix table 2.4; fiscal deficit as percent of GDP"}
+
+
 def extract(pdf_bytes: bytes, target: str) -> dict:
     periods: dict[int, str] = {}
     values: dict[str, float] = {}
@@ -145,6 +174,10 @@ def main() -> None:
         result["series"]["wpi"] = fetch_wpi()
     except Exception as error:
         result["series"]["wpi"] = {"error": str(error)}
+    try:
+        result["series"]["fiscal_deficit"] = fetch_fiscal_deficit()
+    except Exception as error:
+        result["series"]["fiscal_deficit"] = {"error": str(error)}
     (ROOT / "data" / "economic-survey-monthly.json").write_text(json.dumps(result, indent=2) + "\n")
 
 
