@@ -38,6 +38,9 @@ const definitions = [
   ['pew_india_global_power', 'Pew: India and global power', 'Indian views of India’s global role', 'Survey editions', '#79c0ff', ' responses', 'https://www.pewresearch.org/global/', 'Pew Research Center survey work provides public-opinion context that complements the dashboard’s official economic and social indicators. This card is reserved for India survey findings about global leadership and India’s role in the world.\n\nPew publishes findings and downloadable survey materials by study; no stable live API is currently connected, so this card remains a documented source-status entry.'],
   ['pew_india_leadership', 'Pew: views of leadership', 'Indian public opinion and leadership', 'Survey editions', '#bc8cff', ' responses', 'https://www.pewresearch.org/global/', 'This subgroup tracks Pew Research Center India findings on public views of national leadership and political confidence when comparable India observations are available.\n\nSurvey editions are not the same as annual administrative statistics. Results must retain their field dates, question wording, sample design, and uncertainty notes before being plotted.'],
   ['pew_india_reports', 'Pew India report cadence', 'Pew India reports published by year', 'Report years', '#79c0ff', ' reports', 'https://www.pewresearch.org/search/india/', 'This graph catalogs dated Pew Research Center reports returned by the public India search corpus. It shows the volume of available India-related reporting by publication year, not a survey opinion estimate.\n\nEach report remains linked to its original Pew page, preserving the date, title, and study context. Individual survey percentages are not combined across incompatible questionnaires.'],
+  ['pew_india_us_relations', 'Pew: US-India relations', 'Indian and American views of bilateral ties', 'Survey editions', '#79c0ff', ' responses', 'https://www.pewresearch.org/global/topic/india/', 'Pew tracks public attitudes toward US-India relations, including Indian views of the United States and American views of India. This bilateral dimension provides context for trade, defense, and diplomatic cooperation.\n\nSurvey results reflect opinion at a specific point in time and may shift with events. Historical trend data helps contextualize current opinion.'],
+  ['pew_india_economy_confidence', 'Pew: Economic confidence in India', 'Indian public economic outlook and prospects', 'Survey editions', '#f6c344', ' responses', 'https://www.pewresearch.org/global/topic/india/', 'This indicator captures Pew survey findings on Indian public economic confidence, optimism about job prospects, and views on business conditions. It complements official GDP and employment data with subjective sentiment.\n\nEconomic confidence is distinct from official economic performance and can move ahead of, with, or behind measured indicators.'],
+  ['pew_india_technology', 'Pew: Technology adoption in India', 'Internet and mobile device use and attitudes', 'Survey editions', '#f778ba', ' responses', 'https://www.pewresearch.org/global/topic/india/', 'Pew surveys measure technology adoption rates, internet use frequency, and public attitudes toward digital platforms in India. This survey data contextualizes official telecom and internet-user statistics.\n\nSurvey-based adoption rates may differ from administrative telecom data because they reflect actual use patterns rather than connectivity or registration counts.'],
     ['violent_incidents', 'Overall violent incidents', 'Comparable all-India incident series', 'Coverage pending', '#ff7b72', ' incidents', 'https://ncrb.gov.in/crime-in-india.html', 'No single official open series currently combines violent crime, Maoist violence, and terrorism consistently across India.\n\nThis card stays visible as a research target so the dashboard does not add incompatible NCRB, MHA, and GTD definitions into a misleading total.'],
     ['lwe_civilian_casualties', 'LWE civilian casualties', 'Civilian casualty category', '2004-present', '#ff7b72', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'MHA describes civilian and security-force casualties in LWE violence, but the current public page does not expose a stable annual category table.\n\nThe category is visible for future official extraction and is not populated with inferred shares of the aggregate.'],
     ['lwe_security_force_casualties', 'LWE security-force casualties', 'Security-force casualty category', '2004-present', '#f2cc60', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'MHA identifies security-force casualties as a distinct LWE impact category, but no stable annual machine-readable series is currently published on the public page.\n\nThis card remains pending until official category counts can be verified.'],
@@ -46,8 +49,8 @@ const definitions = [
   ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
 ];
 
-const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pew_india_global_power', 'pew_india_leadership', 'pew_india_reports'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'trade', 'forex', 'bank_credit', 'rupee', 'wpi', 'upi', 'gdp_per_capita', 'current_account', 'broad_money', 'tax_revenue', 'government_consumption', 'fdi', 'domestic_savings'].includes(key) ? 'Macroeconomics' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'crude_oil', 'fuel_consumption', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Infrastructure' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'indian_matrix'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Crime' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
+const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Social' : 'Economic';
+const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'trade', 'forex', 'bank_credit', 'rupee', 'wpi', 'upi', 'gdp_per_capita', 'current_account', 'broad_money', 'tax_revenue', 'government_consumption', 'fdi', 'domestic_savings'].includes(key) ? 'Macroeconomics' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'crude_oil', 'fuel_consumption', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Infrastructure' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'indian_matrix'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Crime' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
@@ -175,6 +178,12 @@ async function main() {
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
   const subgroupGroups = { Macroeconomics: 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Public opinion': 'Social', Crime: 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
+  const groupToSubgroups = {
+    all: ['Macroeconomics', 'Markets', 'Infrastructure', 'Public opinion', 'Crime', 'Maoism / LWE', 'Terrorism'],
+    Economic: ['Macroeconomics', 'Markets', 'Infrastructure'],
+    Social: ['Public opinion'],
+    'Crime & Security': ['Crime', 'Maoism / LWE', 'Terrorism']
+  };
   const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {
       const option = document.createElement('option');
@@ -183,6 +192,30 @@ async function main() {
       option.selected = period === selected;
       return option;
     }));
+  };
+  const updateSubgroupFilter = () => {
+    const selectedGroup = groupFilter.value;
+    const availableSubgroups = groupToSubgroups[selectedGroup] || groupToSubgroups.all;
+    const currentValue = subgroupFilter.value;
+    subgroupFilter.replaceChildren(
+      (() => {
+        const option = document.createElement('option');
+        option.value = 'all';
+        option.textContent = 'All subgroups';
+        return option;
+      })(),
+      ...availableSubgroups.map(subgroup => {
+        const option = document.createElement('option');
+        option.value = subgroup;
+        option.textContent = subgroup;
+        return option;
+      })
+    );
+    if (availableSubgroups.includes(currentValue)) {
+      subgroupFilter.value = currentValue;
+    } else {
+      subgroupFilter.value = 'all';
+    }
   };
   const updatePeriods = () => {
     const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
@@ -200,7 +233,7 @@ async function main() {
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
-  groupFilter.addEventListener('change', () => { updatePeriods(); updateCards(); });
+  groupFilter.addEventListener('change', () => { updateSubgroupFilter(); updatePeriods(); updateCards(); });
   subgroupFilter.addEventListener('change', () => { if (subgroupGroups[subgroupFilter.value]) groupFilter.value = subgroupGroups[subgroupFilter.value]; updatePeriods(); updateCards(); });
   search.addEventListener('input', updateCards);
   const updateRange = () => {
@@ -220,6 +253,7 @@ async function main() {
   };
   rangeStart.addEventListener('change', updateRange);
   rangeEnd.addEventListener('change', updateRange);
+  updateSubgroupFilter();
   updatePeriods();
   updateCards();
 }
