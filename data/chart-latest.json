@@ -1,77 +1,23 @@
 {
-  "generated_at_utc": "2026-08-21T14:38:39+00:00",
-  "cpi": {
-    "source": "World Bank API FP.CPI.TOTL.ZG",
-    "years": [
-      "2011",
-      "2012",
-      "2013",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020",
-      "2021",
-      "2022",
-      "2023",
-      "2024",
-      "2025"
-    ],
-    "values": [
-      8.9117933648336,
-      9.47899691419793,
-      10.0178784746104,
-      6.66565671867899,
-      4.90697344127249,
-      4.94821634062134,
-      3.32817337461305,
-      3.93882646691643,
-      3.72950573539123,
-      6.6234367762853,
-      5.13140747176364,
-      6.69903414079858,
-      5.64914318907925,
-      4.95303550973661,
-      2.39884954182294
-    ]
-  },
-  "substack": {
-    "feed": "https://politypolicy.substack.com/feed",
-    "weeks": [
-      "05 Jun",
-      "12 Jun",
-      "19 Jun",
-      "26 Jun",
-      "03 Jul",
-      "10 Jul",
-      "17 Jul",
-      "24 Jul",
-      "31 Jul",
-      "07 Aug",
-      "14 Aug",
-      "21 Aug"
-    ],
-    "article_counts": [
-      0,
-      4,
-      6,
-      3,
-      5,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ]
-  },
-  "world_bank": {
-    "NY.GDP.MKTP.KD.ZG": {
-      "source": "World Bank API NY.GDP.MKTP.KD.ZG",
-      "years": [
+  "generated_at_utc": "2026-08-21T14:56:26+00:00",
+  "series": {
+    "gst": {
+      "error": "Official export adapter pending"
+    },
+    "fiscal_deficit": {
+      "error": "Official export adapter pending"
+    },
+    "rupee": {
+      "error": "Official export adapter pending"
+    },
+    "wpi": {
+      "error": "Official export adapter pending"
+    },
+    "upi": {
+      "error": "Official export adapter pending"
+    },
+    "cpi": {
+      "labels": [
         "2011",
         "2012",
         "2013",
@@ -89,26 +35,26 @@
         "2025"
       ],
       "values": [
-        5.24131620024293,
-        5.45638755164772,
-        6.38610640091713,
-        7.41022760516977,
-        7.99625378567987,
-        8.25630550176662,
-        6.79538341902422,
-        6.45385134495295,
-        3.87143694070524,
-        -5.77772470687303,
-        9.68959249191741,
-        7.6093649776932,
-        7.210224629335,
-        7.09927893176518,
-        7.56666179284244
-      ]
+        8.9117933648336,
+        9.47899691419793,
+        10.0178784746104,
+        6.66565671867899,
+        4.90697344127249,
+        4.94821634062134,
+        3.32817337461305,
+        3.93882646691643,
+        3.72950573539123,
+        6.6234367762853,
+        5.13140747176364,
+        6.69903414079858,
+        5.64914318907925,
+        4.95303550973661,
+        2.39884954182294
+      ],
+      "source": "World Bank API FP.CPI.TOTL.ZG"
     },
-    "NE.TRD.GNFS.ZS": {
-      "source": "World Bank API NE.TRD.GNFS.ZS",
-      "years": [
+    "trade": {
+      "labels": [
         "2011",
         "2012",
         "2013",
@@ -141,11 +87,11 @@
         46.3229520582338,
         45.9166907678748,
         46.2682006859907
-      ]
+      ],
+      "source": "World Bank API NE.TRD.GNFS.ZS"
     },
-    "FI.RES.TOTL.CD": {
-      "source": "World Bank API FI.RES.TOTL.CD",
-      "years": [
+    "forex": {
+      "labels": [
         "2011",
         "2012",
         "2013",
@@ -178,11 +124,11 @@
         627792750126.715,
         643042560625.541,
         700073798240.701
-      ]
+      ],
+      "source": "World Bank API FI.RES.TOTL.CD"
     },
-    "FS.AST.PRVT.GD.ZS": {
-      "source": "World Bank API FS.AST.PRVT.GD.ZS",
-      "years": [
+    "bank_credit": {
+      "labels": [
         "2011",
         "2012",
         "2013",
@@ -215,11 +161,11 @@
         40.8940758962907,
         41.6079694330613,
         44.0250903358104
-      ]
+      ],
+      "source": "World Bank API FS.AST.PRVT.GD.ZS"
     },
-    "NV.IND.TOTL.KD.ZG": {
-      "source": "World Bank API NV.IND.TOTL.KD.ZG",
-      "years": [
+    "iip": {
+      "labels": [
         "2011",
         "2012",
         "2013",
@@ -252,7 +198,8 @@
         10.8647089302265,
         8.26921114310797,
         8.77781858936414
-      ]
+      ],
+      "source": "World Bank API NV.IND.TOTL.KD.ZG"
     }
   }
 }

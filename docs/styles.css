@@ -16,6 +16,11 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .chart-card { background:var(--panel); border:1px solid var(--line); padding:18px; min-height:390px; }
 .chart-card header { display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:16px; } .chart-card h2 { font-size:1.2rem; margin-bottom:4px; } .chart-card p { color:var(--muted); font-size:.88rem; margin:0; }
 .chart-card canvas { width:100% !important; height:255px !important; }
+.frequency { color:var(--muted); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; }
+.status-pill { border:1px solid #5b3b3b; color:#f0a6a6; font:700 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; padding:5px 6px; white-space:nowrap; }
+.status-pill.live { border-color:#2e6b49; color:#7dd3a7; }
+.chart-wrap { min-height:280px; position:relative; }
+.empty-state { color:var(--muted); left:10%; position:absolute; right:10%; text-align:center; top:42%; }
 .reset { border:1px solid var(--line); color:var(--ink); background:transparent; padding:7px 9px; cursor:pointer; font:700 .7rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .source-link { display:inline-block; margin-top:11px; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .sources { display:grid; grid-template-columns:2fr 1fr; gap:40px; padding:36px 0 54px; border-top:1px solid var(--line); } .sources p { color:var(--muted); } .sources ul { margin:0; padding-left:18px; }

@@ -120,19 +120,22 @@ def build_substack_chart() -> dict:
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    result = {"generated_at_utc": generated, "cpi": build_cpi_chart(), "substack": build_substack_chart(), "world_bank": {}}
+    result = {"generated_at_utc": generated, "series": {}}
     indicators = [
-        ("NY.GDP.MKTP.KD.ZG", "india-gdp-growth.svg", "India GDP Growth", "Annual real GDP growth; World Bank indicator NY.GDP.MKTP.KD.ZG", "#f6c344", "%"),
-        ("NE.TRD.GNFS.ZS", "india-trade-share-gdp.svg", "India Trade Share of GDP", "Exports plus imports as share of GDP; World Bank indicator NE.TRD.GNFS.ZS", "#2ea44f", "%"),
-        ("FI.RES.TOTL.CD", "india-foreign-reserves.svg", "India Foreign Exchange Reserves", "Total reserves including gold; World Bank indicator FI.RES.TOTL.CD", "#63b3ed", ""),
-        ("FS.AST.PRVT.GD.ZS", "india-domestic-credit.svg", "India Domestic Credit", "Domestic credit to private sector as share of GDP; World Bank indicator FS.AST.PRVT.GD.ZS", "#a371f7", "%"),
-        ("NV.IND.TOTL.KD.ZG", "india-industrial-growth.svg", "India Industrial Value Added Growth", "Annual industrial value-added growth; World Bank indicator NV.IND.TOTL.KD.ZG", "#f56c6c", "%"),
+        ("cpi", "FP.CPI.TOTL.ZG", "india-cpi-inflation.svg", "India CPI Inflation", "Annual consumer-price inflation; World Bank indicator FP.CPI.TOTL.ZG", "#63b3ed", "%"),
+        ("trade", "NE.TRD.GNFS.ZS", "india-trade-share-gdp.svg", "India Trade Share of GDP", "Exports plus imports as share of GDP; World Bank indicator NE.TRD.GNFS.ZS", "#2ea44f", "%"),
+        ("forex", "FI.RES.TOTL.CD", "india-foreign-reserves.svg", "India Foreign Exchange Reserves", "Total reserves including gold; World Bank indicator FI.RES.TOTL.CD", "#63b3ed", ""),
+        ("bank_credit", "FS.AST.PRVT.GD.ZS", "india-domestic-credit.svg", "India Domestic Credit", "Domestic credit to private sector as share of GDP; World Bank indicator FS.AST.PRVT.GD.ZS", "#a371f7", "%"),
+        ("iip", "NV.IND.TOTL.KD.ZG", "india-industrial-growth.svg", "India Industrial Value Added Growth", "Annual industrial value-added growth; World Bank indicator NV.IND.TOTL.KD.ZG", "#f56c6c", "%"),
     ]
-    for indicator, file_name, title, subtitle, color, suffix in indicators:
+    for key in ["gst", "fiscal_deficit", "rupee", "wpi", "upi"]:
+        result["series"][key] = {"error": "Official export adapter pending"}
+    for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:
-            result["world_bank"][indicator] = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+            series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+            result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
         except Exception as error:
-            result["world_bank"][indicator] = {"error": str(error)}
+            result["series"][key] = {"error": str(error)}
     (ROOT / "data" / "chart-latest.json").write_text(json.dumps(result, indent=2) + "\n")
 
 
