@@ -1,6 +1,8 @@
 name: Daily PolityPolicy Update
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule:
     - cron: '30 2 * * *'
