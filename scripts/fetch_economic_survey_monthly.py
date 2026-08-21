@@ -17,6 +17,15 @@ TARGETS = {
     "iip": ("tab92.pdf", "IIP General Index"),
     "forex": ("tab93.pdf", "Forex Reserves"),
     "rupee": ("tab94.pdf", "Exchange Rate"),
+    "power_consumption": ("tab91.pdf", "Power"),
+    "eway_bills": ("tab91.pdf", "E-way"),
+    "rail_freight": ("tab91.pdf", "Rail"),
+    "port_cargo": ("tab91.pdf", "Port"),
+    "core_industries": ("tab92.pdf", "8-Core Industries"),
+    "crude_oil": ("tab93.pdf", "Indian"),
+    "fuel_consumption": ("tab94.pdf", "Fuel Consumption"),
+    "merchandise_exports": ("tab94.pdf", "Exports"),
+    "merchandise_imports": ("tab94.pdf", "Imports"),
 }
 EDITIONS = [
     ("https://www.indiabudget.gov.in/budget2022-23/economicsurvey/doc/stat/", False),

@@ -113,6 +113,8 @@ class DashboardEndpointTests(unittest.TestCase):
         for key in ("gst", "upi", "iip", "forex", "rupee"):
             self.assertGreaterEqual(len(monthly["series"][key].get("labels", [])), 12, key)
             self.assertRegex(monthly["series"][key]["labels"][0], r"^\d{4}-\d{2}$")
+        for key in ("power_consumption", "eway_bills", "rail_freight", "port_cargo", "core_industries", "crude_oil", "fuel_consumption", "merchandise_exports", "merchandise_imports"):
+            self.assertGreaterEqual(len(monthly["series"][key].get("labels", [])), 12, key)
         self.assertIn(">🔗 References<".encode("utf-8"), body)
         self.assertIn(b"article-links", body)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/substack-latest.json")
