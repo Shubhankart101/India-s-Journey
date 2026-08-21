@@ -131,6 +131,7 @@ async function main() {
     const paragraphs = details.split('\\n\\n').map(paragraph => `<p>${paragraph}</p>`).join('');
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
+    card.dataset.category = category;
     const observationCount = series.values?.length || series.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
     card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
@@ -149,6 +150,7 @@ async function main() {
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const filter = document.querySelector('#chart-filter');
+  const groupFilter = document.querySelector('#group-filter');
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
@@ -166,9 +168,10 @@ async function main() {
   addPeriodOptions(rangeEnd, periods[periods.length - 1]);
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
-    cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (query && !card.dataset.title.includes(query)); });
+    cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
   };
   filter.addEventListener('change', updateCards);
+  groupFilter.addEventListener('change', updateCards);
   search.addEventListener('input', updateCards);
   const updateRange = () => {
     const start = rangeStart.value;
