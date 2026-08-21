@@ -53,8 +53,31 @@ const chartOptions = (suffix) => ({
 });
 
 async function main() {
-  const data = await fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json());
+  const [data, articles] = await Promise.all([
+    fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json()),
+    fetch(`data/substack-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { articles: [] }).catch(() => ({ articles: [] })),
+  ]);
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
+  const articleLinks = document.querySelector('#article-links');
+  articleLinks.replaceChildren();
+  const articleItems = (articles.articles || []).slice(0, 6);
+  if (!articleItems.length) {
+    articleLinks.innerHTML = '<p class="article-loading">No public article snapshot available yet.</p>';
+  } else {
+    articleItems.forEach(article => {
+      const link = document.createElement('a');
+      link.className = 'article-button';
+      link.href = article.link;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      const title = document.createElement('strong');
+      title.textContent = article.title || 'Untitled public article';
+      const date = document.createElement('span');
+      date.textContent = `${article.published || 'Public article'} ↗`;
+      link.append(title, date);
+      articleLinks.append(link);
+    });
+  }
   const grid = document.querySelector('#charts');
   const charts = [];
   definitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {

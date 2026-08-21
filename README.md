@@ -12,6 +12,8 @@ This independent project was created to make India’s economic, social, and inf
 
 With thanks to [PolityPolicy](https://politypolicy.com/) and [Polity and Policy](https://politypolicy.substack.com/) for inspiring a visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
 
+The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
+
 An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
 
 ## 🚀 Open Dashboard

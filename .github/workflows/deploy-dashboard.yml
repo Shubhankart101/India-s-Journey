@@ -32,6 +32,7 @@ jobs:
           mkdir -p site/data
           cp -R docs/. site/
           cp data/chart-latest.json site/data/chart-latest.json
+          if [ -f data/substack-latest.json ]; then cp data/substack-latest.json site/data/substack-latest.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
