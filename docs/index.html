@@ -27,6 +27,11 @@
       <div><span>Interaction</span><strong>Hover, zoom, pan, reset</strong></div>
     </section>
 
+    <section class="chart-controls" aria-label="Chart controls">
+      <label>Find a signal <input id="chart-search" type="search" placeholder="Search indicators"></label>
+      <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live">Live data only</option><option value="pending">Pending adapters</option></select></label>
+    </section>
+
     <section class="chart-grid" id="charts" aria-live="polite"></section>
 
     <section class="sources">

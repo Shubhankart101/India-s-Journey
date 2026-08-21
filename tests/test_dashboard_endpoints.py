@@ -49,7 +49,8 @@ class DashboardEndpointTests(unittest.TestCase):
         payload = json.loads(body)
         expected = {
             "cpi", "gst", "fiscal_deficit", "iip", "rupee", "trade",
-            "forex", "bank_credit", "wpi", "upi",
+            "forex", "bank_credit", "wpi", "upi", "gdp_per_capita",
+            "population", "unemployment", "current_account", "broad_money",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():

@@ -13,6 +13,9 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .status { display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); margin:28px 0; border:1px solid var(--line); }
 .status div { padding:16px; background:var(--panel); } .status span { display:block; color:var(--muted); font-size:.78rem; } .status strong { font-family:ui-monospace, SFMono-Regular, Consolas, monospace; font-size:.9rem; }
 .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; padding-bottom:30px; }
+.chart-controls { align-items:end; display:flex; flex-wrap:wrap; gap:14px; padding:22px 0; }
+.chart-controls label { color:var(--muted); display:grid; font:700 .72rem ui-monospace, SFMono-Regular, Consolas, monospace; gap:7px; text-transform:uppercase; }
+.chart-controls input, .chart-controls select { background:var(--panel); border:1px solid var(--line); color:var(--ink); font:16px Georgia, 'Times New Roman', serif; min-width:220px; padding:9px 10px; }
 .chart-card { background:var(--panel); border:1px solid var(--line); padding:18px; min-height:390px; }
 .chart-card header { display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:16px; } .chart-card h2 { font-size:1.2rem; margin-bottom:4px; } .chart-card p { color:var(--muted); font-size:.88rem; margin:0; }
 .chart-card canvas { width:100% !important; height:255px !important; }
@@ -21,6 +24,10 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .status-pill.live { border-color:#2e6b49; color:#7dd3a7; }
 .chart-wrap { min-height:280px; position:relative; }
 .empty-state { color:var(--muted); left:10%; position:absolute; right:10%; text-align:center; top:42%; }
+.chart-card[hidden] { display:none; }
+.insight { border-top:1px solid var(--line); color:var(--muted); margin-top:14px; padding-top:11px; }
+.insight summary { color:var(--gold); cursor:pointer; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; }
+.insight p { color:var(--muted); font-size:.9rem; line-height:1.6; margin:12px 0 0; }
 .reset { border:1px solid var(--line); color:var(--ink); background:transparent; padding:7px 9px; cursor:pointer; font:700 .7rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .source-link { display:inline-block; margin-top:11px; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .sources { display:grid; grid-template-columns:2fr 1fr; gap:40px; padding:36px 0 54px; border-top:1px solid var(--line); } .sources p { color:var(--muted); } .sources ul { margin:0; padding-left:18px; }

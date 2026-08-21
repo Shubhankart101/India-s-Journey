@@ -73,6 +73,11 @@ def main() -> None:
         ("bank_credit", "FS.AST.PRVT.GD.ZS", "india-domestic-credit.svg", "India Domestic Credit", "Domestic credit to private sector as share of GDP; World Bank indicator FS.AST.PRVT.GD.ZS", "#a371f7", "%"),
         ("iip", "NV.IND.TOTL.KD.ZG", "india-industrial-growth.svg", "India Industrial Value Added Growth", "Annual industrial value-added growth; World Bank indicator NV.IND.TOTL.KD.ZG", "#f56c6c", "%"),
         ("rupee", "PA.NUS.FCRF", "india-rupee-exchange-rate.svg", "India Official Exchange Rate", "Official exchange rate, Indian rupees per US dollar; World Bank indicator PA.NUS.FCRF", "#2ea44f", " INR"),
+        ("gdp_per_capita", "NY.GDP.PCAP.CD", "india-gdp-per-capita.svg", "India GDP Per Capita", "GDP per capita in current US dollars; World Bank indicator NY.GDP.PCAP.CD", "#d2a8ff", " USD"),
+        ("population", "SP.POP.TOTL", "india-population.svg", "India Population", "Total population; World Bank indicator SP.POP.TOTL", "#79c0ff", ""),
+        ("unemployment", "SL.UEM.TOTL.ZS", "india-unemployment.svg", "India Unemployment Rate", "Unemployment rate; World Bank indicator SL.UEM.TOTL.ZS", "#ffa657", "%"),
+        ("current_account", "BN.CAB.XOKA.GD.ZS", "india-current-account.svg", "India Current Account Balance", "Current account balance as share of GDP; World Bank indicator BN.CAB.XOKA.GD.ZS", "#56d364", "%"),
+        ("broad_money", "FM.LBL.BMNY.GD.ZS", "india-broad-money.svg", "India Broad Money", "Broad money as share of GDP; World Bank indicator FM.LBL.BMNY.GD.ZS", "#ff7b72", "%"),
     ]
     for key in ["gst", "fiscal_deficit", "wpi", "upi"]:
         result["series"][key] = {"error": "Official export adapter pending"}
