@@ -88,8 +88,9 @@ async function main() {
     fetch(`data/economic-survey-monthly.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
     fetch(`data/indian-matrix-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, articles: [] }).catch(() => ({ cadence: { labels: [], values: [] }, articles: [] })),
   ]);
-  data.series = { ...data.series, ...economicSurvey.series };
-  data.series.indian_matrix = { labels: indianMatrix.cadence.labels, values: indianMatrix.cadence.values, source: 'Indian Matrix public RSS feed' };
+  data.series = { ...(data.series || {}), ...(economicSurvey.series || {}) };
+  const matrixCadence = indianMatrix.cadence || { labels: [], values: [] };
+  data.series.indian_matrix = { labels: matrixCadence.labels, values: matrixCadence.values, source: 'Indian Matrix public RSS feed' };
   const marketKeys = ['sensex', 'nifty', 'nifty_vix'];
   const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();
   const marketDatasets = marketKeys.map(key => {
@@ -134,7 +135,7 @@ async function main() {
       grid.append(heading);
       lastCategory = category;
     }
-    const series = data.series[key];
+    const series = data.series[key] || { error: 'No generated series is available yet' };
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
     const card = document.createElement('article');
     card.className = 'chart-card';
