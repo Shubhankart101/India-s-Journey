@@ -38,6 +38,7 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .chart-wrap { min-height:385px; position:relative; }
 .empty-state { color:var(--muted); left:10%; position:absolute; right:10%; text-align:center; top:42%; }
 .chart-card[hidden] { display:none; }
+.category-heading { border-bottom:1px solid var(--line); color:var(--gold); font-size:1.8rem; grid-column:1; margin:28px 0 0; padding:0 0 10px; }
 .insight { border-top:1px solid var(--line); color:var(--muted); margin-top:14px; padding-top:11px; }
 .insight summary { color:var(--gold); cursor:pointer; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; }
 .insight p { color:var(--muted); font-size:.9rem; line-height:1.6; margin:12px 0 0; }

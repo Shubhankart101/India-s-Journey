@@ -95,6 +95,15 @@ def main() -> None:
             result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
         except Exception as error:
             result["series"][key] = {"error": str(error)}
+    market_labels = sorted({label for key in ("sensex", "nifty", "nifty_vix") for label in result["series"].get(key, {}).get("labels", [])})
+    market_datasets = []
+    for key, title, color in (("sensex", "Sensex", "#58a6ff"), ("nifty", "Nifty", "#3fb950"), ("nifty_vix", "Nifty VIX", "#f2cc60")):
+        series = result["series"].get(key, {})
+        values = dict(zip(series.get("labels", []), series.get("values", [])))
+        first = next(iter(values.values()), None)
+        if first:
+            market_datasets.append({"label": title, "values": [values.get(label, None) / first * 100 if values.get(label) is not None else None for label in market_labels], "color": color})
+    result["series"]["market_indices"] = {"labels": market_labels, "datasets": market_datasets, "source": "Economic Survey Statistical Appendix table 9.3; rebased to 100"}
     (ROOT / "data" / "chart-latest.json").write_text(json.dumps(result, indent=2) + "\n")
 
 

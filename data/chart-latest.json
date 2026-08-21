@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-21T18:12:19+00:00",
+  "generated_at_utc": "2026-08-21T18:20:38+00:00",
   "series": {
     "gst": {
       "error": "Official export adapter pending"
@@ -2299,6 +2299,11 @@
         2.81530423021647
       ],
       "source": "World Bank API VC.IHR.PSRC.P5"
+    },
+    "market_indices": {
+      "labels": [],
+      "datasets": [],
+      "source": "Economic Survey Statistical Appendix table 9.3; rebased to 100"
     }
   }
 }

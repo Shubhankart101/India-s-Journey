@@ -33,7 +33,10 @@ const definitions = [
   ['homicide_rate', 'Intentional homicide rate', 'Intentional homicides per 100,000 people', 'Annual', '#ff7b72', ' per 100k', 'https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=IN', 'The intentional homicide rate is a broad violence indicator measuring deaths caused by another person per 100,000 population. It is useful as a long-run public-safety context signal, but it does not cover every violent incident.\n\nThe World Bank series provides modern historical coverage and should be interpreted alongside NCRB crime data, whose definitions and reporting systems vary by year.'],
   ['lwe_incidents', 'Maoist / LWE violence', 'Left-Wing Extremism incident series', '2004-2025', '#f85149', ' incidents', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'The Ministry of Home Affairs identifies CPI (Maoist) as the major Left-Wing Extremist organization and reports national LWE context.\n\nThe official MHA material confirms coverage from 2004 onward, but does not currently expose a stable year-by-year machine-readable incident file for this dashboard. This card remains pending rather than inventing annual counts.'],
   ['terror_attacks', 'Terrorist attacks', 'India terrorism incident dataset', '1970-present', '#d29922', ' incidents', 'https://www.start.umd.edu/gtd/', 'The Global Terrorism Database is a reputable open research dataset covering terrorist events internationally from 1970 onward. It is not an official Government of India dataset and its event definitions differ from MHA and NCRB reporting.\n\nThis card remains pending until a permitted, reproducible India extract is available for the pipeline. It is not presented as a complete 1947-present history.'],
+  ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
 ];
+
+const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn/i.test(suffix);
@@ -78,6 +81,15 @@ async function main() {
     fetch(`data/economic-survey-monthly.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
   ]);
   data.series = { ...data.series, ...economicSurvey.series };
+  const marketKeys = ['sensex', 'nifty', 'nifty_vix'];
+  const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();
+  const marketDatasets = marketKeys.map(key => {
+    const series = data.series[key] || {};
+    const values = new Map((series.labels || []).map((label, index) => [label, series.values[index]]));
+    const first = [...values.values()].find(value => value !== null && value !== undefined);
+    return { label: key === 'sensex' ? 'Sensex' : key === 'nifty' ? 'Nifty' : 'Nifty VIX', data: marketLabels.map(label => values.has(label) ? values.get(label) / first * 100 : null), borderColor: key === 'sensex' ? '#58a6ff' : key === 'nifty' ? '#3fb950' : '#f2cc60', backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 2, tension: 0.25, spanGaps: true };
+  });
+  data.series.market_indices = { labels: marketLabels, datasets: marketDatasets };
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
   articleLinks.replaceChildren();
   const articleItems = (articles.articles || []).slice(0, 6);
@@ -100,15 +112,25 @@ async function main() {
   }
   const grid = document.querySelector('#charts');
   const charts = [];
+  let lastCategory = '';
   definitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
+    const category = categoryFor(key);
+    if (category !== lastCategory) {
+      const heading = document.createElement('h2');
+      heading.className = 'category-heading';
+      heading.textContent = category;
+      grid.append(heading);
+      lastCategory = category;
+    }
     const series = data.series[key];
-    const live = series && !series.error && series.values?.length;
+    const live = series && !series.error && (series.values?.length || series.datasets?.length);
     const card = document.createElement('article');
     card.className = 'chart-card';
     const paragraphs = details.split('\\n\\n').map(paragraph => `<p>${paragraph}</p>`).join('');
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
-    const context = live ? `This ${frequency.toLowerCase()} series contains ${series.values.length} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
+    const observationCount = series.values?.length || series.labels?.length || 0;
+    const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
     card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     if (!live) return;
@@ -116,14 +138,14 @@ async function main() {
     const values = series.values;
     const chart = new Chart(card.querySelector('canvas'), {
       type: 'line',
-      data: { labels, datasets: [{ data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
+      data: { labels, datasets: series.datasets || [{ data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
       options: chartOptions(suffix),
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
     charts.push({ chart, labels, values });
   });
-  const cards = [...grid.children];
+  const cards = [...grid.querySelectorAll('.chart-card')];
   const filter = document.querySelector('#chart-filter');
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
@@ -155,7 +177,8 @@ async function main() {
         return result;
       }, []);
       chart.data.labels = visible.map(point => point.label);
-      chart.data.datasets[0].data = visible.map(point => point.value);
+      if (chart.data.datasets.length === 1) chart.data.datasets[0].data = visible.map(point => point.value);
+      else chart.data.datasets.forEach(dataset => { dataset.data = labels.map((label, index) => label >= start && label <= end ? dataset.data[index] : null).filter((_, index) => labels[index] >= start && labels[index] <= end); });
       chart.resetZoom();
       chart.update();
     });

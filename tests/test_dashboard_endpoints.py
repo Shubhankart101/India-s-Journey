@@ -76,6 +76,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "tax_revenue", "government_consumption", "fdi", "domestic_savings",
             "electricity_access", "internet_users", "life_expectancy",
                     "homicide_rate", "lwe_incidents", "terror_attacks",
+                    "sensex", "nifty", "nifty_vix", "market_indices",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
