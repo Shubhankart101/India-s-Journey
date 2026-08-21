@@ -1,0 +1,94 @@
+name: Weekly Substack Article Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 5'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Collect public Polity and Policy articles
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import xml.etree.ElementTree as ET
+          from datetime import datetime, timezone
+          from email.utils import parsedate_to_datetime
+          from html import unescape
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+
+          FEED_URL = 'https://politypolicy.substack.com/feed'
+          request = Request(FEED_URL, headers={'User-Agent': 'PolityPolicyUpdate public RSS dashboard'})
+          with urlopen(request, timeout=30) as response:
+              feed_xml = response.read()
+          root = ET.fromstring(feed_xml)
+          channel = root.find('channel')
+          items = []
+          for item in channel.findall('item')[:12]:
+              title = (item.findtext('title') or 'Untitled article').strip()
+              link = (item.findtext('link') or '').strip()
+              published = (item.findtext('pubDate') or '').strip()
+              description = re.sub(r'\s+', ' ', unescape(item.findtext('description') or '')).strip()
+              items.append({'title': title, 'link': link, 'published': published, 'description': description})
+
+          now = datetime.now(timezone.utc).replace(microsecond=0)
+          snapshot = {
+              'generated_at_utc': now.isoformat(),
+              'feed_url': FEED_URL,
+              'feed_title': (channel.findtext('title') or '').strip(),
+              'feed_last_build_date': (channel.findtext('lastBuildDate') or '').strip(),
+              'article_count': len(items),
+              'articles': items,
+          }
+          Path('data/substack-history').mkdir(parents=True, exist_ok=True)
+          Path('data/substack-latest.json').write_text(json.dumps(snapshot, indent=2) + '\n')
+          Path(f'data/substack-history/{now.date().isoformat()}.json').write_text(json.dumps(snapshot, indent=2) + '\n')
+
+          rows = []
+          for article in items:
+              try:
+                  published = parsedate_to_datetime(article['published']).date().isoformat()
+              except (TypeError, ValueError):
+                  published = article['published'] or '-'
+              summary = article['description'][:180].replace('|', '\\|')
+              rows.append(f"| [{article['title']}]({article['link']}) | {published} | {summary} |")
+          article_rows = '\n'.join(rows) or '| No articles found | - | - |'
+          section = '\n'.join([
+              '<!-- SUBSTACK:START -->',
+              '',
+              f'> Last refreshed: **{snapshot["generated_at_utc"]}**',
+              f'> Feed build date: **{snapshot["feed_last_build_date"]}**',
+              '',
+              '| Article | Published | Summary |',
+              '| --- | --- | --- |',
+              article_rows,
+              '',
+              '[Latest article snapshot](data/substack-latest.json) and [Weekly article history](data/substack-history)',
+              '',
+              '<!-- SUBSTACK:END -->',
+          ])
+          readme = Path('README.md').read_text()
+          Path('README.md').write_text(re.sub(r'<!-- SUBSTACK:START -->.*?<!-- SUBSTACK:END -->', section, readme, flags=re.S))
+          PY
+
+      - name: Commit weekly article snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md data
+          if git diff --cached --quiet; then
+            echo "No article change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh weekly Polity and Policy articles"
+          git push
