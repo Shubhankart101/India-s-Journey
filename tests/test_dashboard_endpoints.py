@@ -109,6 +109,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"References: APIs", body)
         self.assertIn(b"chart-filter", body)
         self.assertIn(b"group-filter", body)
+        self.assertIn(b"Crime &amp; Security", body)
         self.assertIn(b"range-start", body)
         self.assertIn(b"range-end", body)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/economic-survey-monthly.json")

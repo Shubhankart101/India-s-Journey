@@ -174,7 +174,7 @@ async function main() {
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     const stateFilter = groupFilter.value !== 'all' ? 'all' : filter.value;
-    cards.forEach(card => { card.hidden = (stateFilter !== 'all' && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
+    cards.forEach(card => { const securityCard = card.dataset.category === 'Crime & Security'; card.hidden = (stateFilter !== 'all' && !securityCard && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
