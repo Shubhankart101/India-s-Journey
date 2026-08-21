@@ -94,7 +94,7 @@ async function main() {
   const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();
   const marketDatasets = marketKeys.map(key => {
     const series = data.series[key] || {};
-    const values = new Map((series.labels || []).map((label, index) => [label, series.values[index]]));
+    const values = new Map((series.labels || []).map((label, index) => [label, (series.values || [])[index]]));
     const first = [...values.values()].find(value => value !== null && value !== undefined);
     return { label: key === 'sensex' ? 'Sensex' : key === 'nifty' ? 'Nifty' : 'Nifty VIX', data: marketLabels.map(label => values.has(label) ? values.get(label) / first * 100 : null), borderColor: key === 'sensex' ? '#58a6ff' : key === 'nifty' ? '#3fb950' : '#f2cc60', backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 2, tension: 0.25, spanGaps: true };
   });
@@ -142,7 +142,7 @@ async function main() {
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
-    const observationCount = series.values?.length || series.labels?.length || 0;
+    const observationCount = series?.values?.length || series?.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
     card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
@@ -156,7 +156,7 @@ async function main() {
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
-    charts.push({ chart, labels, values: values || series.datasets[0].data, datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) });
+    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || [], datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) || [] });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
