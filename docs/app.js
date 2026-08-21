@@ -161,7 +161,7 @@ async function main() {
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
-    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || [], datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) || [] });
+    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || [], datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) || [], category, subgroup: subgroupFor(key) });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
@@ -171,8 +171,8 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
-  const periods = [...new Set(charts.flatMap(({ labels }) => labels))].sort();
-  const addPeriodOptions = (select, selected) => {
+  const subgroupGroups = { Macroeconomics: 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Public opinion': 'Social', Crime: 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
+  const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {
       const option = document.createElement('option');
       option.value = period;
@@ -181,8 +181,15 @@ async function main() {
       return option;
     }));
   };
-  addPeriodOptions(rangeStart, periods[0]);
-  addPeriodOptions(rangeEnd, periods[periods.length - 1]);
+  const updatePeriods = () => {
+    const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
+    const periods = [...new Set(scopedCharts.flatMap(({ labels }) => labels))].sort();
+    if (!periods.length) return;
+    const start = periods.includes(rangeStart.value) ? rangeStart.value : periods[0];
+    const end = periods.includes(rangeEnd.value) ? rangeEnd.value : periods[periods.length - 1];
+    addPeriodOptions(rangeStart, periods, start);
+    addPeriodOptions(rangeEnd, periods, end);
+  };
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     const stateFilter = groupFilter.value !== 'all' ? 'all' : filter.value;
@@ -190,8 +197,8 @@ async function main() {
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
-  groupFilter.addEventListener('change', updateCards);
-  subgroupFilter.addEventListener('change', updateCards);
+  groupFilter.addEventListener('change', () => { updatePeriods(); updateCards(); });
+  subgroupFilter.addEventListener('change', () => { if (subgroupGroups[subgroupFilter.value]) groupFilter.value = subgroupGroups[subgroupFilter.value]; updatePeriods(); updateCards(); });
   search.addEventListener('input', updateCards);
   const updateRange = () => {
     const start = rangeStart.value;
@@ -210,6 +217,7 @@ async function main() {
   };
   rangeStart.addEventListener('change', updateRange);
   rangeEnd.addEventListener('change', updateRange);
+  updatePeriods();
   updateCards();
 }
 
