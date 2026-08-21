@@ -120,6 +120,7 @@ async function main() {
     if (category !== lastCategory) {
       const heading = document.createElement('h2');
       heading.className = 'category-heading';
+      heading.dataset.category = category;
       heading.textContent = category;
       grid.append(heading);
       lastCategory = category;
@@ -149,6 +150,7 @@ async function main() {
     charts.push({ chart, labels, values: values || series.datasets[0].data, datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
+  const headings = [...grid.querySelectorAll('.category-heading')];
   const filter = document.querySelector('#chart-filter');
   const groupFilter = document.querySelector('#group-filter');
   const search = document.querySelector('#chart-search');
@@ -169,6 +171,7 @@ async function main() {
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
+    headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', updateCards);
