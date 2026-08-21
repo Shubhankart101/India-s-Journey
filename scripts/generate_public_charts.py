@@ -55,7 +55,7 @@ def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float],
 def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle: str, color: str, suffix: str) -> dict:
     payload = get_json(f"https://api.worldbank.org/v2/country/IND/indicator/{indicator}?format=json&per_page=100")
     rows = [row for row in payload[1] if row["value"] is not None]
-    rows = sorted(rows, key=lambda row: int(row["date"]))[-15:]
+    rows = sorted(rows, key=lambda row: int(row["date"]))
     labels = [row["date"] for row in rows]
     values = [float(row["value"]) for row in rows]
     (CHART_DIR / file_name).write_text(svg_chart(title, subtitle, labels, values, color, suffix))
