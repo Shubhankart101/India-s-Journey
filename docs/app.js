@@ -3,7 +3,7 @@ const definitions = [
   ['gst', 'GST collections', 'Gross monthly GST revenue', 'Monthly', '#f6c344', 'INR bn', 'https://www.gst.gov.in/'],
   ['fiscal_deficit', 'Fiscal deficit', 'Union fiscal deficit', 'Monthly', '#f56c6c', 'INR bn', 'https://cga.nic.in/'],
   ['iip', 'IIP growth', 'Industrial production', 'Annual', '#ff8f66', '%', 'https://www.mospi.gov.in/'],
-  ['rupee', 'Rupee exchange rate', 'INR per US dollar', 'Daily', '#2ea44f', 'INR', 'https://data.rbi.org.in/DBIE/#/dbie/home'],
+  ['rupee', 'Rupee exchange rate proxy', 'Official exchange rate, INR per US dollar', 'Annual', '#2ea44f', 'INR', 'https://data.worldbank.org/indicator/PA.NUS.FCRF?locations=IN'],
   ['trade', 'Trade share of GDP', 'Exports plus imports as share of GDP', 'Annual', '#63b3ed', '%', 'https://data.worldbank.org/indicator/NE.TRD.GNFS.ZS?locations=IN'],
   ['forex', 'Foreign exchange reserves', 'Total reserves including gold', 'Annual', '#a371f7', 'USD', 'https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=IN'],
   ['bank_credit', 'Bank credit', 'Domestic credit to private sector', 'Annual', '#f56c6c', '%', 'https://data.worldbank.org/indicator/FS.AST.PRVT.GD.ZS?locations=IN'],

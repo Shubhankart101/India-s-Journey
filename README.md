@@ -12,7 +12,6 @@ The static dashboard reads the latest generated data and supports chart tooltips
 
 - [World Bank Open Data API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392) for the currently live CPI, trade, foreign-reserve, bank-credit, and industrial series.
 - [GST portal](https://www.gst.gov.in/) for GST collections.
-- [Controller General of Accounts](https://cga.nic.in/) for the Union fiscal deficit.
 - [Ministry of Statistics and Programme Implementation](https://www.mospi.gov.in/) for IIP.
 - [Reserve Bank of India DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for the rupee and banking data.
 - [Office of Economic Adviser](https://eaindustry.nic.in/) for WPI.
