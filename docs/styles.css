@@ -20,6 +20,7 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .chart-controls { align-items:end; display:flex; flex-wrap:wrap; gap:14px; padding:22px 0; }
 .chart-controls label { color:var(--muted); display:grid; font:700 .72rem ui-monospace, SFMono-Regular, Consolas, monospace; gap:7px; text-transform:uppercase; }
 .chart-controls input, .chart-controls select { background:var(--panel); border:1px solid var(--line); color:var(--ink); font:16px Georgia, 'Times New Roman', serif; min-width:220px; padding:9px 10px; }
+.references > h2 { font-size:1.8rem; margin:0 0 14px; }
 .chart-card { background:var(--panel); border:1px solid var(--line); padding:22px; min-height:500px; }
 .chart-card header { display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:16px; } .chart-card h2 { font-size:1.2rem; margin-bottom:4px; } .chart-card p { color:var(--muted); font-size:.88rem; margin:0; }
 .chart-card canvas { width:100% !important; height:360px !important; }

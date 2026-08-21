@@ -18,7 +18,9 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 <a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
 
-The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, search, live/pending filters, frequency labels, and expandable three-paragraph indicator context. It currently contains 22 India-focused indicators, with 18 live open-data graphs and four official-source cards awaiting stable exports.
+The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, search, live/pending filters, full-history/2000/2011 window controls, frequency labels, and expandable three-paragraph indicator context. It currently contains 22 India-focused indicators, with 18 live open-data graphs and four official-source cards awaiting stable exports.
+
+The History control filters the actual observations returned by each API. The current live World Bank indicators are annual, so the dashboard does not fabricate monthly points by interpolation. Monthly drill-down will be added when stable monthly exports are available from the relevant Indian government source.
 
 World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
 

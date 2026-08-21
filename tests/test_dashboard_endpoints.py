@@ -104,6 +104,8 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertIn(b"References: APIs", body)
         self.assertIn(b"chart-filter", body)
+        self.assertIn(b"history-window", body)
+        self.assertIn(">🔗 References<".encode("utf-8"), body)
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=40677a3")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)

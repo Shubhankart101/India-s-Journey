@@ -56,6 +56,7 @@ async function main() {
   const data = await fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json());
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
   const grid = document.querySelector('#charts');
+  const charts = [];
   definitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const series = data.series[key];
     const live = series && !series.error && series.values?.length;
@@ -77,16 +78,31 @@ async function main() {
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
+    charts.push({ chart, labels, values });
   });
   const cards = [...grid.children];
   const filter = document.querySelector('#chart-filter');
   const search = document.querySelector('#chart-search');
+  const historyWindow = document.querySelector('#history-window');
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (query && !card.dataset.title.includes(query)); });
   };
   filter.addEventListener('change', updateCards);
   search.addEventListener('input', updateCards);
+  historyWindow.addEventListener('change', () => {
+    const startYear = historyWindow.value === 'all' ? null : Number(historyWindow.value);
+    charts.forEach(({ chart, labels, values }) => {
+      const visible = labels.reduce((result, label, index) => {
+        if (startYear === null || Number(label) >= startYear) result.push({ label, value: values[index] });
+        return result;
+      }, []);
+      chart.data.labels = visible.map(point => point.label);
+      chart.data.datasets[0].data = visible.map(point => point.value);
+      chart.resetZoom();
+      chart.update();
+    });
+  });
   updateCards();
 }
 
