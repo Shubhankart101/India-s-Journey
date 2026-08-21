@@ -76,6 +76,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "tax_revenue", "government_consumption", "fdi", "domestic_savings",
             "electricity_access", "internet_users", "life_expectancy",
                     "homicide_rate", "lwe_incidents", "terror_attacks",
+                    "indian_matrix",
                     "sensex", "nifty", "nifty_vix", "market_indices",
         }
         self.assertEqual(set(payload["series"]), expected)
@@ -125,6 +126,9 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/substack-latest.json")
         self.assertEqual(status, 200)
         self.assertIn(b"articles", body)
+        status, body = self.fetch(f"{DASHBOARD_URL}/data/indian-matrix-latest.json")
+        self.assertEqual(status, 200)
+        self.assertIn(b"cadence", body)
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=40677a3")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)

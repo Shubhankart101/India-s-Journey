@@ -8,6 +8,7 @@ on:
       - docs/**
       - data/chart-latest.json
       - data/economic-survey-monthly.json
+      - data/indian-matrix-latest.json
       - .github/workflows/deploy-dashboard.yml
 
 permissions:
@@ -34,6 +35,7 @@ jobs:
           cp -R docs/. site/
           cp data/chart-latest.json site/data/chart-latest.json
           if [ -f data/economic-survey-monthly.json ]; then cp data/economic-survey-monthly.json site/data/economic-survey-monthly.json; fi
+          if [ -f data/indian-matrix-latest.json ]; then cp data/indian-matrix-latest.json site/data/indian-matrix-latest.json; fi
           if [ -f data/substack-latest.json ]; then cp data/substack-latest.json site/data/substack-latest.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:

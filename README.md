@@ -12,7 +12,9 @@ This independent project was created to make India’s economic, social, and inf
 
 With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard now organizes indicators into Economic, Social, and Crime & Security groups.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard now organizes indicators into Economic, Social, and Crime & Security groups. Selecting a group shows all cards in that group, including pending security-source cards, so they are not hidden by the default live-only filter.
+
+Indian Matrix is now represented by a weekly publication-cadence graph and a right-side article rail sourced from its public RSS feed.
 
 The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
 

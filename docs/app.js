@@ -33,6 +33,7 @@ const definitions = [
   ['homicide_rate', 'Intentional homicide rate', 'Intentional homicides per 100,000 people', 'Annual', '#ff7b72', ' per 100k', 'https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=IN', 'The intentional homicide rate is a broad violence indicator measuring deaths caused by another person per 100,000 population. It is useful as a long-run public-safety context signal, but it does not cover every violent incident.\n\nThe World Bank series provides modern historical coverage and should be interpreted alongside NCRB crime data, whose definitions and reporting systems vary by year.'],
   ['lwe_incidents', 'Maoist / LWE violence', 'Left-Wing Extremism incident series', '2004-2025', '#f85149', ' incidents', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'The Ministry of Home Affairs identifies CPI (Maoist) as the major Left-Wing Extremist organization and reports national LWE context.\n\nThe official MHA material confirms coverage from 2004 onward, but does not currently expose a stable year-by-year machine-readable incident file for this dashboard. This card remains pending rather than inventing annual counts.'],
   ['terror_attacks', 'Terrorist attacks', 'India terrorism incident dataset', '1970-present', '#d29922', ' incidents', 'https://www.start.umd.edu/gtd/', 'The Global Terrorism Database is a reputable open research dataset covering terrorist events internationally from 1970 onward. It is not an official Government of India dataset and its event definitions differ from MHA and NCRB reporting.\n\nThis card remains pending until a permitted, reproducible India extract is available for the pipeline. It is not presented as a complete 1947-present history.'],
+  ['indian_matrix', 'Indian Matrix publication cadence', 'Articles published per week', 'Weekly', '#bc8cff', ' articles', 'https://substack.com/@indianmatrix', 'This graph tracks the public publication cadence of Indian Matrix articles. It adds the Substack source as a transparent, updateable public-data signal rather than treating article frequency as an economic or crime statistic.\n\nThe weekly RSS snapshot is collected by the pipeline and linked to Indian Matrix with appreciation for its visual public-data work.'],
   ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
 ];
 
@@ -75,12 +76,14 @@ async function main() {
   const articlePromise = fetch(`data/substack-latest.json?ts=${Date.now()}`, { signal: AbortSignal.timeout(8000) })
     .then(response => response.ok ? response.json() : { articles: [] })
     .catch(() => ({ articles: [] }));
-  const [data, articles, economicSurvey] = await Promise.all([
+  const [data, articles, economicSurvey, indianMatrix] = await Promise.all([
     fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json()),
     articlePromise,
     fetch(`data/economic-survey-monthly.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
+    fetch(`data/indian-matrix-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, articles: [] }).catch(() => ({ cadence: { labels: [], values: [] }, articles: [] })),
   ]);
   data.series = { ...data.series, ...economicSurvey.series };
+  data.series.indian_matrix = { labels: indianMatrix.cadence.labels, values: indianMatrix.cadence.values, source: 'Indian Matrix public RSS feed' };
   const marketKeys = ['sensex', 'nifty', 'nifty_vix'];
   const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();
   const marketDatasets = marketKeys.map(key => {
@@ -92,7 +95,7 @@ async function main() {
   data.series.market_indices = { labels: marketLabels, datasets: marketDatasets };
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
   articleLinks.replaceChildren();
-  const articleItems = (articles.articles || []).slice(0, 6);
+  const articleItems = (indianMatrix.articles || []).slice(0, 6);
   if (!articleItems.length) {
     articleLinks.innerHTML = '<p class="article-loading">No public article snapshot available yet.</p>';
   } else {
@@ -170,7 +173,8 @@ async function main() {
   addPeriodOptions(rangeEnd, periods[periods.length - 1]);
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
-    cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
+    const stateFilter = groupFilter.value !== 'all' ? 'all' : filter.value;
+    cards.forEach(card => { card.hidden = (stateFilter !== 'all' && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
