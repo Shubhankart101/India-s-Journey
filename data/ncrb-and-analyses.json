@@ -1,0 +1,116 @@
+{
+  "generated_at_utc": "2026-08-21T20:04:26+00:00",
+  "series": {
+    "ncrb_crime": {
+      "source": "National Crime Records Bureau - Crime in India",
+      "note": "NCRB publishes annual Crime in India reports. Data adapter pending integration with their public data portal.",
+      "years": [],
+      "values": [],
+      "metadata": {
+        "crimes_tracked": [
+          "Murder",
+          "Rape",
+          "Theft",
+          "Robbery",
+          "Burglary",
+          "Auto Theft",
+          "Dowry Death",
+          "Cruelty by Husband"
+        ],
+        "data_type": "aggregated_count",
+        "frequency": "Annual",
+        "latest_edition": "Crime in India 2023"
+      }
+    },
+    "violent_incidents": {
+      "source": "Multi-source aggregation (NCRB, MHA, GTD)",
+      "note": "No single official series combines violent crime, Maoist violence, and terrorism. Kept pending to avoid mixing incompatible definitions.",
+      "years": [],
+      "values": [],
+      "metadata": {
+        "combines": [
+          {
+            "source": "NCRB",
+            "category": "Violent Crime"
+          },
+          {
+            "source": "MHA",
+            "category": "LWE Incidents"
+          },
+          {
+            "source": "GTD/Our World in Data",
+            "category": "Terrorism"
+          }
+        ],
+        "status": "pending_official_harmonization",
+        "data_type": "aggregated_count",
+        "note": "Awaiting official cross-agency data standardization"
+      }
+    },
+    "lwe_civilian_casualties": {
+      "source": "Ministry of Home Affairs - Left-Wing Extremism Division",
+      "note": "MHA provides aggregate LWE deaths and occasional category reports. Annual splits require manual extraction.",
+      "years": [],
+      "values": [],
+      "metadata": {
+        "category_type": "casualty_breakdown",
+        "categories": [
+          "Civilian",
+          "Security Force",
+          "Perpetrator"
+        ],
+        "period": "2004-2025",
+        "latest_aggregate": "8,956 deaths (2004-2025)",
+        "data_type": "annual_count",
+        "frequency": "Annual reports"
+      }
+    },
+    "lwe_security_force_casualties": {
+      "source": "Ministry of Home Affairs - Left-Wing Extremism Division",
+      "note": "MHA provides aggregate LWE deaths and occasional category reports. Annual splits require manual extraction.",
+      "years": [],
+      "values": [],
+      "metadata": {
+        "category_type": "casualty_breakdown",
+        "categories": [
+          "Civilian",
+          "Security Force",
+          "Perpetrator"
+        ],
+        "period": "2004-2025",
+        "latest_aggregate": "8,956 deaths (2004-2025)",
+        "data_type": "annual_count",
+        "frequency": "Annual reports"
+      }
+    },
+    "lwe_perpetrator_casualties": {
+      "source": "Ministry of Home Affairs - Left-Wing Extremism Division",
+      "note": "MHA provides aggregate LWE deaths and occasional category reports. Annual splits require manual extraction.",
+      "years": [],
+      "values": [],
+      "metadata": {
+        "category_type": "casualty_breakdown",
+        "categories": [
+          "Civilian",
+          "Security Force",
+          "Perpetrator"
+        ],
+        "period": "2004-2025",
+        "latest_aggregate": "8,956 deaths (2004-2025)",
+        "data_type": "annual_count",
+        "frequency": "Annual reports"
+      }
+    },
+    "indian_matrix_insights": {
+      "source": "Indian Matrix - Substack publication",
+      "articles": [],
+      "key_analyses": {},
+      "metadata": {
+        "publication": "https://substack.com/@indianmatrix",
+        "data_type": "analysis_summaries",
+        "frequency": "Weekly",
+        "note": "Collates key findings from Indian Matrix articles"
+      }
+    }
+  }
+}

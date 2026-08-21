@@ -50,7 +50,7 @@ const definitions = [
 ];
 
 const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'trade', 'forex', 'bank_credit', 'rupee', 'wpi', 'upi', 'gdp_per_capita', 'current_account', 'broad_money', 'tax_revenue', 'government_consumption', 'fdi', 'domestic_savings'].includes(key) ? 'Macroeconomics' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'crude_oil', 'fuel_consumption', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Infrastructure' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'indian_matrix'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Crime' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
+const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'indian_matrix'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
@@ -69,12 +69,22 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix ? ` ${suffix}` : ''}`;
 };
 
-const chartOptions = (suffix) => ({
+const chartOptions = (suffix, hasMultipleDatasets = false) => ({
   responsive: true,
   maintainAspectRatio: false,
   interaction: { mode: 'index', intersect: false },
   plugins: {
-    legend: { display: false },
+    legend: { 
+      display: hasMultipleDatasets,
+      position: 'top',
+      labels: { 
+        color: '#e8edf2',
+        font: { size: 12, family: 'system-ui, sans-serif' },
+        padding: 12,
+        usePointStyle: true,
+        pointStyle: 'circle'
+      }
+    },
     tooltip: { backgroundColor: '#0d1117', titleColor: '#e8edf2', bodyColor: '#e8edf2', borderColor: '#2b3645', borderWidth: 1, callbacks: { label: context => ` ${formatMagnitude(context.parsed.y, suffix)}` } },
     zoom: { pan: { enabled: true, mode: 'x' }, zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } },
   },
@@ -89,14 +99,15 @@ async function main() {
   const articlePromise = fetch(`data/substack-latest.json?ts=${Date.now()}`, { signal: AbortSignal.timeout(8000) })
     .then(response => response.ok ? response.json() : { articles: [] })
     .catch(() => ({ articles: [] }));
-  const [data, articles, economicSurvey, indianMatrix, pewReports] = await Promise.all([
+  const [data, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses] = await Promise.all([
     fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json()),
     articlePromise,
     fetch(`data/economic-survey-monthly.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
     fetch(`data/indian-matrix-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, articles: [] }).catch(() => ({ cadence: { labels: [], values: [] }, articles: [] })),
     fetch(`data/pew-india-reports.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, reports: [] }).catch(() => ({ cadence: { labels: [], values: [] }, reports: [] })),
+    fetch(`data/ncrb-and-analyses.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
   ]);
-  data.series = { ...(data.series || {}), ...(economicSurvey.series || {}) };
+  data.series = { ...(data.series || {}), ...(economicSurvey.series || {}), ...(ncrbeAnalyses.series || {}) };
   const matrixCadence = indianMatrix.cadence || { labels: [], values: [] };
   data.series.indian_matrix = { labels: matrixCadence.labels, values: matrixCadence.values, source: 'Indian Matrix public RSS feed' };
   data.series.pew_india_reports = { labels: pewReports.cadence.labels, values: pewReports.cadence.values, source: 'Pew Research Center India public report catalog' };
@@ -160,10 +171,11 @@ async function main() {
     if (!live) return;
     const labels = series.labels;
     const values = series.values;
+    const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
     const chart = new Chart(card.querySelector('canvas'), {
       type: 'line',
-      data: { labels, datasets: series.datasets || [{ data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
-      options: chartOptions(suffix),
+      data: { labels, datasets: series.datasets || [{ label: title, data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
+      options: chartOptions(suffix, hasMultipleDatasets),
     });
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
@@ -179,10 +191,10 @@ async function main() {
   const rangeEnd = document.querySelector('#range-end');
   const subgroupGroups = { Macroeconomics: 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Public opinion': 'Social', Crime: 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Markets', 'Infrastructure', 'Public opinion', 'Crime', 'Maoism / LWE', 'Terrorism'],
-    Economic: ['Macroeconomics', 'Markets', 'Infrastructure'],
-    Social: ['Public opinion'],
-    'Crime & Security': ['Crime', 'Maoism / LWE', 'Terrorism']
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Public opinion', 'Demographics', 'Welfare', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities'],
+    Social: ['Public opinion', 'Demographics', 'Welfare'],
+    'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE']
   };
   const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {

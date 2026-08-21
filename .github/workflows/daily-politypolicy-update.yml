@@ -65,6 +65,9 @@ jobs:
           python -m pip install --quiet pdfplumber openpyxl
           python scripts/fetch_economic_survey_monthly.py
 
+      - name: Collect NCRB and analysis data
+        run: python scripts/collect_ncrb_and_analyses.py
+
       - name: Commit daily data and charts
         run: |
           git config user.name "github-actions[bot]"

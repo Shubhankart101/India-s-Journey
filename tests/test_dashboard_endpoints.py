@@ -136,7 +136,13 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/pew-india-reports.json")
         self.assertEqual(status, 200)
         self.assertIn(b"reports", body)
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=40677a3")
+        status, body = self.fetch(f"{DASHBOARD_URL}/data/ncrb-and-analyses.json")
+        self.assertEqual(status, 200)
+        self.assertIn(b"series", body)
+        ncrb_data = json.loads(body)
+        for key in ("ncrb_crime", "violent_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
+            self.assertIn(key, ncrb_data["series"], key)
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=legends-and-subgroups")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
