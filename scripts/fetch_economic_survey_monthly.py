@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import json
+import io
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.parse import urljoin
 
 import pdfplumber
+import openpyxl
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "PolityPolicyUpdate Economic Survey monthly extractor"
@@ -33,6 +36,7 @@ EDITIONS = [
     ("https://www.indiabudget.gov.in/budget2024-25/economicsurvey/doc/stat/", False),
     ("https://www.indiabudget.gov.in/economicsurvey/doc/stat/", True),
 ]
+OEA_URL = "https://eaindustry.nic.in/download_data_2223.asp"
 
 
 def download(base_url: str, name: str) -> bytes:
@@ -60,6 +64,35 @@ def parse_number(value: object) -> float | None:
         return float(text)
     except ValueError:
         return None
+
+
+def fetch_wpi() -> dict:
+    request = Request(OEA_URL, headers={"User-Agent": USER_AGENT})
+    with urlopen(request, timeout=60) as response:
+        page = response.read().decode("utf-8", errors="replace")
+    match = re.search(r'href=["\']([^"\']*wpi_monthly_index_\d+\.xlsx)', page, re.I)
+    if not match:
+        raise ValueError("OEA WPI monthly workbook link not found")
+    request = Request(urljoin(OEA_URL, match.group(1)), headers={"User-Agent": USER_AGENT})
+    with urlopen(request, timeout=60) as response:
+        workbook = openpyxl.load_workbook(io.BytesIO(response.read()), data_only=True, read_only=True)
+    rows = workbook.active.iter_rows(values_only=True)
+    header = next(rows)
+    all_commodities = next((row for row in rows if row[0] == "ALL"), None)
+    if not all_commodities:
+        raise ValueError("OEA WPI workbook has no All Commodities row")
+    values = {}
+    for label, value in zip(header[4:], all_commodities[4:]):
+        if value is not None:
+            try:
+                period = label.strftime("%Y-%m") if hasattr(label, "strftime") else datetime.strptime(str(label), "%b-%y").strftime("%Y-%m")
+                values[period] = float(value)
+            except (TypeError, ValueError):
+                continue
+    if len(values) < 6:
+        raise ValueError("OEA WPI workbook yielded too few observations")
+    labels = sorted(values)
+    return {"labels": labels, "values": [values[label] for label in labels], "source": "Office of Economic Adviser WPI monthly workbook"}
 
 
 def extract(pdf_bytes: bytes, target: str) -> dict:
@@ -108,6 +141,10 @@ def main() -> None:
                 "values": [merged[label] for label in labels],
                 "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition",
             }
+    try:
+        result["series"]["wpi"] = fetch_wpi()
+    except Exception as error:
+        result["series"]["wpi"] = {"error": str(error)}
     (ROOT / "data" / "economic-survey-monthly.json").write_text(json.dumps(result, indent=2) + "\n")
 
 

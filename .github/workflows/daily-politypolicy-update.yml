@@ -60,7 +60,7 @@ jobs:
 
       - name: Refresh Economic Survey monthly tables
         run: |
-          python -m pip install --quiet pdfplumber
+          python -m pip install --quiet pdfplumber openpyxl
           python scripts/fetch_economic_survey_monthly.py
 
       - name: Commit daily data and charts
