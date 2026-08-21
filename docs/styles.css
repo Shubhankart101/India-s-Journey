@@ -33,6 +33,7 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .chart-card header { display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:16px; } .chart-card h2 { font-size:1.2rem; margin-bottom:4px; } .chart-card p { color:var(--muted); font-size:.88rem; margin:0; }
 .chart-card canvas { width:100% !important; height:360px !important; }
 .frequency { color:var(--muted); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; }
+.subgroup { color:var(--gold); font:700 .68rem ui-monospace, SFMono-Regular, Consolas, monospace; margin-left:8px; text-transform:uppercase; }
 .status-pill { border:1px solid #5b3b3b; color:#f0a6a6; font:700 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; padding:5px 6px; white-space:nowrap; }
 .status-pill.live { border-color:#2e6b49; color:#7dd3a7; }
 .chart-wrap { min-height:385px; position:relative; }

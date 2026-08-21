@@ -24,7 +24,7 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 <a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
 
-The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
+The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, subgroup filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
 
 The From/To controls are populated from the actual observations returned by the APIs. Economic Survey Statistical Appendix tables 9.1–9.4 now provide collated monthly GST, UPI, IIP, forex, exchange-rate, power, e-way bill, rail freight, port cargo, core-industry, crude-oil, fuel-consumption, export, and import observations through the daily pipeline. The extractor checks the 2022-23, 2023-24, 2024-25, and latest Survey editions, merges overlapping `YYYY-MM` observations, and keeps the official Survey tables as provenance. The dashboard does not fabricate monthly points by interpolation.
 
@@ -67,6 +67,7 @@ The Crime & Security group also includes an NCRB source-status card. NCRB Crime 
 - [Intentional homicide rate API](https://api.worldbank.org/v2/country/IND/indicator/VC.IHR.PSRC.P5?format=json&per_page=100)
 - [MHA Left-Wing Extremism Division](https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division)
 - [Global Terrorism Database](https://www.start.umd.edu/gtd/)
+- [Pew Research Center Global Attitudes](https://www.pewresearch.org/global/) for India public-opinion research and survey findings.
 - [NCRB Crime in India](https://ncrb.gov.in/crime-in-india.html) for official crime statistics and year-wise table references.
 - [Economic Survey statistical appendix](https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf) for collated monthly HFI tables.
 - [Economic Survey table 9.1](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf) for monthly GST and related high-frequency indicators.

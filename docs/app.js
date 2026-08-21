@@ -35,6 +35,8 @@ const definitions = [
   ['terror_attacks', 'Terrorist attacks', 'India attacks in GTD-derived open data', '1970-2020', '#d29922', ' attacks', 'https://www.start.umd.edu/gtd/', 'The Global Terrorism Database is a reputable open research dataset covering terrorist events internationally from 1970 onward. This dashboard uses the India rows published by Our World in Data, with GTD provenance.\n\nIt is not an official Government of India dataset, and its event definitions differ from MHA and NCRB reporting. The series is not presented as a complete 1947-present history.'],
     ['terror_fatalities', 'Terrorism fatalities', 'Deaths in India GTD-derived attacks', '1970-2020', '#f85149', ' deaths', 'https://ourworldindata.org/grapher/terrorism-deaths.csv', 'This graph counts fatalities associated with India rows in the GTD-derived public series. It complements the attack-count graph by showing human cost rather than event frequency.\n\nIt is not an official Government of India dataset and does not provide a complete 1947-present history.'],
   ['ncrb_crime', 'NCRB crime indicators', 'Crime in India official tables', 'Edition-based', '#f778ba', ' records', 'https://ncrb.gov.in/crime-in-india.html', 'The National Crime Records Bureau publishes Crime in India tables covering reported offences, crime rates, and related public-safety measures.\n\nNCRB tables are edition-based and definitions change across reporting periods, so this card remains a source-status entry until a comparable machine-readable series can be collated without mixing incompatible classifications.'],
+  ['pew_india_global_power', 'Pew: India and global power', 'Indian views of India’s global role', 'Survey editions', '#79c0ff', ' responses', 'https://www.pewresearch.org/global/', 'Pew Research Center survey work provides public-opinion context that complements the dashboard’s official economic and social indicators. This card is reserved for India survey findings about global leadership and India’s role in the world.\n\nPew publishes findings and downloadable survey materials by study; no stable live API is currently connected, so this card remains a documented source-status entry.'],
+  ['pew_india_leadership', 'Pew: views of leadership', 'Indian public opinion and leadership', 'Survey editions', '#bc8cff', ' responses', 'https://www.pewresearch.org/global/', 'This subgroup tracks Pew Research Center India findings on public views of national leadership and political confidence when comparable India observations are available.\n\nSurvey editions are not the same as annual administrative statistics. Results must retain their field dates, question wording, sample design, and uncertainty notes before being plotted.'],
     ['violent_incidents', 'Overall violent incidents', 'Comparable all-India incident series', 'Coverage pending', '#ff7b72', ' incidents', 'https://ncrb.gov.in/crime-in-india.html', 'No single official open series currently combines violent crime, Maoist violence, and terrorism consistently across India.\n\nThis card stays visible as a research target so the dashboard does not add incompatible NCRB, MHA, and GTD definitions into a misleading total.'],
     ['lwe_civilian_casualties', 'LWE civilian casualties', 'Civilian casualty category', '2004-present', '#ff7b72', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'MHA describes civilian and security-force casualties in LWE violence, but the current public page does not expose a stable annual category table.\n\nThe category is visible for future official extraction and is not populated with inferred shares of the aggregate.'],
     ['lwe_security_force_casualties', 'LWE security-force casualties', 'Security-force casualty category', '2004-present', '#f2cc60', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'MHA identifies security-force casualties as a distinct LWE impact category, but no stable annual machine-readable series is currently published on the public page.\n\nThis card remains pending until official category counts can be verified.'],
@@ -43,7 +45,8 @@ const definitions = [
   ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
 ];
 
-const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'ncrb_crime'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
+const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'ncrb_crime'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pew_india_global_power', 'pew_india_leadership'].includes(key) ? 'Social' : 'Economic';
+const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'trade', 'forex', 'bank_credit', 'current_account', 'broad_money', 'tax_revenue', 'government_consumption', 'fdi', 'domestic_savings'].includes(key) ? 'Macroeconomics' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'crude_oil', 'fuel_consumption', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Infrastructure' : ['pew_india_global_power', 'pew_india_leadership', 'indian_matrix'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Crime' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Terrorism';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
@@ -143,9 +146,10 @@ async function main() {
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
+    card.dataset.subgroup = subgroupFor(key);
     const observationCount = series?.values?.length || series?.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     if (!live) return;
     const labels = series.labels;
@@ -163,6 +167,7 @@ async function main() {
   const headings = [...grid.querySelectorAll('.category-heading')];
   const filter = document.querySelector('#chart-filter');
   const groupFilter = document.querySelector('#group-filter');
+  const subgroupFilter = document.querySelector('#subgroup-filter');
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
@@ -181,11 +186,12 @@ async function main() {
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     const stateFilter = groupFilter.value !== 'all' ? 'all' : filter.value;
-    cards.forEach(card => { const securityCard = card.dataset.category === 'Crime & Security'; card.hidden = (stateFilter !== 'all' && !securityCard && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (query && !card.dataset.title.includes(query)); });
+    cards.forEach(card => { const securityCard = card.dataset.category === 'Crime & Security'; card.hidden = (stateFilter !== 'all' && !securityCard && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (subgroupFilter.value !== 'all' && card.dataset.subgroup !== subgroupFilter.value) || (query && !card.dataset.title.includes(query)); });
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', updateCards);
+  subgroupFilter.addEventListener('change', updateCards);
   search.addEventListener('input', updateCards);
   const updateRange = () => {
     const start = rangeStart.value;

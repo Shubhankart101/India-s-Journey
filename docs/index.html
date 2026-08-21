@@ -62,6 +62,7 @@
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators"></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
       <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
+      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Markets</option><option>Infrastructure</option><option>Public opinion</option><option>Crime</option><option>Maoism / LWE</option><option>Terrorism</option></select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>
@@ -98,6 +99,7 @@
               <li><a href="https://api.worldbank.org/v2/country/IND/indicator/VC.IHR.PSRC.P5?format=json&amp;per_page=100" target="_blank" rel="noreferrer">Intentional homicide rate API</a></li>
               <li><a href="https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division" target="_blank" rel="noreferrer">MHA Left-Wing Extremism Division</a></li>
               <li><a href="https://www.start.umd.edu/gtd/" target="_blank" rel="noreferrer">Global Terrorism Database</a></li>
+              <li><a href="https://www.pewresearch.org/global/" target="_blank" rel="noreferrer">Pew Research Center Global Attitudes</a></li>
               <li><a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix public feed</a></li>
               <li><a href="https://ncrb.gov.in/crime-in-india.html" target="_blank" rel="noreferrer">NCRB Crime in India</a></li>
               <li><a href="https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf" target="_blank" rel="noreferrer">Economic Survey statistical appendix</a></li>
@@ -138,6 +140,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="app.js?v=missing-series-final"></script>
+  <script src="app.js?v=pew-subgroups"></script>
 </body>
 </html>
