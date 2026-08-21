@@ -72,6 +72,7 @@ async function main() {
   };
   filter.addEventListener('change', updateCards);
   search.addEventListener('input', updateCards);
+  updateCards();
 }
 
 main().catch(error => {
