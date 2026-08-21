@@ -77,6 +77,12 @@ def build_terrorism_chart() -> dict:
     labels = sorted(values)
     return {"source": "Our World in Data; Global Terrorism Database-derived series", "years": labels, "values": [values[label] for label in labels]}
 
+def build_terrorism_fatalities_chart() -> dict:
+    rows = csv.DictReader(io.StringIO(get_text("https://ourworldindata.org/grapher/terrorism-deaths.csv")))
+    values = {row["Year"]: float(row["Fatalities"]) for row in rows if row["Entity"] == "India"}
+    labels = sorted(values)
+    return {"source": "Our World in Data; Global Terrorism Database-derived fatalities", "years": labels, "values": [values[label] for label in labels]}
+
 
 def build_lwe_aggregate() -> dict:
     text = re.sub(r"<[^>]+>", " ", get_text("https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division"))
@@ -117,6 +123,12 @@ def main() -> None:
         result["series"]["terror_attacks"] = build_terrorism_chart()
     except Exception as error:
         result["series"]["terror_attacks"] = {"error": str(error)}
+    try:
+        result["series"]["terror_fatalities"] = build_terrorism_fatalities_chart()
+    except Exception as error:
+        result["series"]["terror_fatalities"] = {"error": str(error)}
+    for key in ["lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties", "violent_incidents"]:
+        result["series"][key] = {"error": "No comparable public category series available"}
     try:
         result["series"]["lwe_incidents"] = build_lwe_aggregate()
     except Exception as error:

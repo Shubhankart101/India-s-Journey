@@ -76,6 +76,8 @@ class DashboardEndpointTests(unittest.TestCase):
             "tax_revenue", "government_consumption", "fdi", "domestic_savings",
             "electricity_access", "internet_users", "life_expectancy",
                     "homicide_rate", "lwe_incidents", "terror_attacks",
+                                "terror_fatalities", "violent_incidents", "lwe_civilian_casualties",
+                                "lwe_security_force_casualties", "lwe_perpetrator_casualties",
                     "indian_matrix",
                     "sensex", "nifty", "nifty_vix", "market_indices",
         }
