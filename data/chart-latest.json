@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-21T19:02:05+00:00",
+  "generated_at_utc": "2026-08-21T20:42:03+00:00",
   "series": {
     "gst": {
       "error": "Official export adapter pending"
@@ -15,7 +15,7 @@
     },
     "terror_attacks": {
       "source": "Our World in Data; Global Terrorism Database-derived series",
-      "years": [
+      "labels": [
         "1970",
         "1971",
         "1972",
@@ -124,7 +124,7 @@
     },
     "terror_fatalities": {
       "source": "Our World in Data; Global Terrorism Database-derived fatalities",
-      "years": [
+      "labels": [
         "1970",
         "1971",
         "1972",
@@ -245,7 +245,7 @@
     },
     "lwe_incidents": {
       "source": "Ministry of Home Affairs LWE Division",
-      "years": [
+      "labels": [
         "2004-2025"
       ],
       "values": [

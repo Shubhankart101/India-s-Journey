@@ -1,24 +1,51 @@
 {
-  "generated_at_utc": "2026-08-21T20:31:21+00:00",
+  "generated_at_utc": "2026-08-21T20:44:29+00:00",
   "series": {
     "ncrb_crime": {
-      "source": "National Crime Records Bureau - Crime in India",
-      "note": "NCRB publishes annual Crime in India reports. Data adapter pending integration with their public data portal.",
-      "years": [],
-      "values": [],
+      "source": "https://en.wikipedia.org/wiki/Crime_in_India",
+      "note": "NCRB Crime in India 2023 rates per 100,000 population by category (per 100,000 children for crimes against children), compiled from official Crime in India 2023 Volumes I-III. A single-year snapshot, not a multi-year trend, because NCRB editions are not consistently comparable across years.",
+      "labels": [
+        "Murder",
+        "Rape",
+        "Kidnapping",
+        "Dowry deaths",
+        "Grievous hurt",
+        "Sexual harassment",
+        "Human trafficking",
+        "Riots",
+        "Theft",
+        "Burglary",
+        "Extortion",
+        "Robbery & Dacoity",
+        "Forgery, cheating & fraud",
+        "Drugs use & trafficking",
+        "Illegal arms",
+        "Crimes against children",
+        "Cyber crime"
+      ],
+      "values": [
+        2.0,
+        4.4,
+        8.2,
+        0.9,
+        7.2,
+        2.6,
+        0.1,
+        2.8,
+        49.5,
+        7.7,
+        0.9,
+        2.2,
+        13.0,
+        8.6,
+        3.1,
+        17.4,
+        6.2
+      ],
       "metadata": {
-        "crimes_tracked": [
-          "Murder",
-          "Rape",
-          "Theft",
-          "Robbery",
-          "Burglary",
-          "Auto Theft",
-          "Dowry Death",
-          "Cruelty by Husband"
-        ],
-        "data_type": "aggregated_count",
-        "frequency": "Annual",
+        "unit": "per 100,000 population",
+        "data_type": "single_year_snapshot",
+        "frequency": "Annual edition (not a continuous series)",
         "latest_edition": "Crime in India 2023"
       }
     },

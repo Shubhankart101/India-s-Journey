@@ -75,14 +75,17 @@ class DashboardEndpointTests(unittest.TestCase):
             "population", "unemployment", "current_account", "broad_money",
             "tax_revenue", "government_consumption", "fdi", "domestic_savings",
             "electricity_access", "internet_users", "life_expectancy",
-                    "homicide_rate", "lwe_incidents", "terror_attacks",
-                                "terror_fatalities", "violent_incidents", "lwe_civilian_casualties",
-                                "lwe_security_force_casualties", "lwe_perpetrator_casualties",
-                    "indian_matrix",
-                    "sensex", "nifty", "nifty_vix", "market_indices",
+            "homicide_rate", "lwe_incidents", "terror_attacks",
+            "terror_fatalities", "violent_incidents", "lwe_civilian_casualties",
+            "lwe_security_force_casualties", "lwe_perpetrator_casualties",
+            "market_indices",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
+            if key == "market_indices":
+                # Built from sensex/nifty/nifty_vix merged separately in economic-survey-monthly.json.
+                self.assertIn("labels", series, key)
+                continue
             self.assertTrue(series.get("values") or series.get("error"), key)
             if series.get("values") and not series.get("error"):
                 # app.js reads series.labels; a "years" key here silently drops the x-axis.
@@ -120,6 +123,8 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"Crime &amp; Security", body)
         self.assertIn(b"range-start", body)
         self.assertIn(b"range-end", body)
+        self.assertIn(">🔗 References<".encode("utf-8"), body)
+        self.assertIn(b"article-links", body)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/economic-survey-monthly.json")
         self.assertEqual(status, 200)
         self.assertIn(b"series", body)
@@ -130,8 +135,6 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertGreaterEqual(len(monthly["series"]["fiscal_deficit"].get("labels", [])), 4)
         for key in ("power_consumption", "eway_bills", "rail_freight", "port_cargo", "core_industries", "crude_oil", "fuel_consumption", "merchandise_exports", "merchandise_imports"):
             self.assertGreaterEqual(len(monthly["series"][key].get("labels", [])), 12, key)
-        self.assertIn(">🔗 References<".encode("utf-8"), body)
-        self.assertIn(b"article-links", body)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/substack-latest.json")
         self.assertEqual(status, 200)
         self.assertIn(b"articles", body)
@@ -195,6 +198,12 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertEqual(len(series["labels"]), len(series["values"]), key)
                     self.assertGreaterEqual(len(series["values"]), 20, key)
                     self.assertTrue(series["source"].startswith("https://www.satp.org/"), key)
+                elif key == "ncrb_crime":
+                    self.assertIn("labels", series, key)
+                    self.assertIn("values", series, key)
+                    self.assertEqual(len(series["labels"]), len(series["values"]), key)
+                    self.assertGreaterEqual(len(series["values"]), 10, key)
+                    self.assertTrue(series["source"].startswith("https://en.wikipedia.org/"), key)
                 else:
                     self.assertIn("years", series, key)
                     self.assertIn("values", series, key)
