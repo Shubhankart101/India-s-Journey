@@ -10,7 +10,7 @@
 
 This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
 
-With sincere thanks to [PolityPolicy](https://politypolicy.com/) and [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/) for the inspiring work that encouraged this visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
+With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
 
 The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
 
@@ -75,7 +75,7 @@ Security context is represented separately: the live homicide-rate series uses t
 - [RBI DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for monetary, banking, and exchange-rate data.
 - [Office of the Economic Adviser](https://eaindustry.nic.in/) for WPI.
 - [NPCI UPI statistics](https://www.npci.org.in/what-we-do/upi/product-statistics) for UPI activity.
-- [PolityPolicy.com](https://politypolicy.com/) and [Polity and Policy RSS](https://politypolicy.substack.com/feed) for attribution and public publication context.
+- [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy RSS](https://politypolicy.substack.com/feed), and [Indian Matrix](https://substack.com/@indianmatrix) for attribution and public-data storytelling context.
 
 ### Runtime libraries
 
@@ -87,7 +87,7 @@ Security context is represented separately: the live homicide-rate series uses t
 
 ## 🙏 Attribution
 
-Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/) and [Polity and Policy on Substack](https://politypolicy.substack.com/). This is an independent dashboard using original charts generated from the public sources listed above.
+Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above.
 
 ## ⚙️ Automation
 
