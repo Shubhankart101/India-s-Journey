@@ -9,20 +9,25 @@ from urllib.request import Request, urlopen
 import pdfplumber
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://www.indiabudget.gov.in/economicsurvey/doc/stat/"
 USER_AGENT = "PolityPolicyUpdate Economic Survey monthly extractor"
 MONTHS = {name: number for number, name in enumerate(("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), 1)}
 TARGETS = {
-    "gst": ("tab9.1.pdf", "GST"),
-    "upi": ("tab9.2.pdf", "UPI"),
-    "iip": ("tab9.2.pdf", "IIP General Index"),
-    "forex": ("tab9.3.pdf", "Forex Reserves"),
-    "rupee": ("tab9.4.pdf", "Exchange Rate"),
+    "gst": ("tab91.pdf", "GST"),
+    "upi": ("tab92.pdf", "UPI"),
+    "iip": ("tab92.pdf", "IIP General Index"),
+    "forex": ("tab93.pdf", "Forex Reserves"),
+    "rupee": ("tab94.pdf", "Exchange Rate"),
 }
+EDITIONS = [
+    ("https://www.indiabudget.gov.in/budget2022-23/economicsurvey/doc/stat/", False),
+    ("https://www.indiabudget.gov.in/budget2023-24/economicsurvey/doc/stat/", False),
+    ("https://www.indiabudget.gov.in/budget2024-25/economicsurvey/doc/stat/", False),
+    ("https://www.indiabudget.gov.in/economicsurvey/doc/stat/", True),
+]
 
 
-def download(name: str) -> bytes:
-    request = Request(BASE_URL + name, headers={"User-Agent": USER_AGENT})
+def download(base_url: str, name: str) -> bytes:
+    request = Request(base_url + name, headers={"User-Agent": USER_AGENT})
     with urlopen(request, timeout=60) as response:
         return response.read()
 
@@ -71,16 +76,29 @@ def extract(pdf_bytes: bytes, target: str) -> dict:
     labels = sorted(values)
     if len(labels) < 6:
         raise ValueError(f"Economic Survey table did not yield enough monthly values for {target}")
-    return {"labels": labels, "values": [values[label] for label in labels], "source": f"Economic Survey Statistical Appendix table for {target}"}
+    return values
 
 
 def main() -> None:
     result = {"generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(), "series": {}}
     for key, (filename, target) in TARGETS.items():
-        try:
-            result["series"][key] = extract(download(filename), target)
-        except Exception as error:
-            result["series"][key] = {"error": str(error)}
+        merged = {}
+        errors = []
+        for edition, is_current in EDITIONS:
+            try:
+                edition_filename = filename.replace("tab9", "tab9.") if is_current else filename
+                merged.update(extract(download(edition, edition_filename), target))
+            except Exception as error:
+                errors.append(f"{edition}: {error}")
+        labels = sorted(merged)
+        if len(labels) < 6:
+            result["series"][key] = {"error": "; ".join(errors) or "No observations extracted"}
+        else:
+            result["series"][key] = {
+                "labels": labels,
+                "values": [merged[label] for label in labels],
+                "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition",
+            }
     (ROOT / "data" / "economic-survey-monthly.json").write_text(json.dumps(result, indent=2) + "\n")
 
 

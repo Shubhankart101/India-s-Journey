@@ -1,8 +1,10 @@
 {
-  "generated_at_utc": "2026-08-21T16:46:30+00:00",
+  "generated_at_utc": "2026-08-21T16:52:28+00:00",
   "series": {
     "gst": {
       "labels": [
+        "2020-04",
+        "2020-05",
         "2020-06",
         "2020-07",
         "2020-08",
@@ -72,6 +74,8 @@
         "2025-12"
       ],
       "values": [
+        0.3,
+        0.6,
         0.9,
         0.9,
         0.9,
@@ -140,7 +144,7 @@
         1.8,
         1.8
       ],
-      "source": "Economic Survey Statistical Appendix table for GST"
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
     "upi": {
       "labels": [
@@ -285,7 +289,7 @@
         2046.7,
         2163.5
       ],
-      "source": "Economic Survey Statistical Appendix table for UPI"
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
     "iip": {
       "labels": [
@@ -426,10 +430,14 @@
         153.7,
         151.1
       ],
-      "source": "Economic Survey Statistical Appendix table for IIP General Index"
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
     "forex": {
       "labels": [
+        "2020-04",
+        "2020-05",
+        "2020-06",
+        "2020-07",
         "2020-08",
         "2020-09",
         "2020-10",
@@ -497,6 +505,10 @@
         "2025-12"
       ],
       "values": [
+        479.5,
+        493.5,
+        506.8,
+        534.6,
         542.9,
         544.7,
         560.2,
@@ -563,10 +575,22 @@
         687.9,
         687.7
       ],
-      "source": "Economic Survey Statistical Appendix table for Forex Reserves"
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
     "rupee": {
       "labels": [
+        "2020-05",
+        "2020-06",
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
         "2021-05",
         "2021-06",
         "2021-07",
@@ -625,6 +649,18 @@
         "2025-12"
       ],
       "values": [
+        75.7,
+        75.7,
+        75.0,
+        74.7,
+        73.5,
+        73.5,
+        74.2,
+        73.6,
+        73.1,
+        72.8,
+        72.8,
+        74.5,
         73.3,
         73.6,
         74.5,
@@ -682,7 +718,7 @@
         88.8,
         90.1
       ],
-      "source": "Economic Survey Statistical Appendix table for Exchange Rate"
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     }
   }
 }
