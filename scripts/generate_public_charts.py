@@ -75,13 +75,13 @@ def build_terrorism_chart() -> dict:
     rows = csv.DictReader(io.StringIO(get_text("https://ourworldindata.org/grapher/terrorist-attacks.csv")))
     values = {row["Year"]: float(row["Attacks"]) for row in rows if row["Entity"] == "India"}
     labels = sorted(values)
-    return {"source": "Our World in Data; Global Terrorism Database-derived series", "years": labels, "values": [values[label] for label in labels]}
+    return {"source": "Our World in Data; Global Terrorism Database-derived series", "labels": labels, "values": [values[label] for label in labels]}
 
 def build_terrorism_fatalities_chart() -> dict:
     rows = csv.DictReader(io.StringIO(get_text("https://ourworldindata.org/grapher/terrorism-deaths.csv")))
     values = {row["Year"]: float(row["Fatalities"]) for row in rows if row["Entity"] == "India"}
     labels = sorted(values)
-    return {"source": "Our World in Data; Global Terrorism Database-derived fatalities", "years": labels, "values": [values[label] for label in labels]}
+    return {"source": "Our World in Data; Global Terrorism Database-derived fatalities", "labels": labels, "values": [values[label] for label in labels]}
 
 
 def build_lwe_aggregate() -> dict:
@@ -89,7 +89,7 @@ def build_lwe_aggregate() -> dict:
     match = re.search(r"Between 2004 to 2025.*?(\d[\d,]*) people have been killed", text, re.I | re.S)
     if not match:
         raise ValueError("MHA LWE aggregate not found")
-    return {"source": "Ministry of Home Affairs LWE Division", "years": ["2004-2025"], "values": [float(match.group(1).replace(",", ""))]}
+    return {"source": "Ministry of Home Affairs LWE Division", "labels": ["2004-2025"], "values": [float(match.group(1).replace(",", ""))]}
 
 
 def main() -> None:

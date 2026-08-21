@@ -84,6 +84,11 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             self.assertTrue(series.get("values") or series.get("error"), key)
+            if series.get("values") and not series.get("error"):
+                # app.js reads series.labels; a "years" key here silently drops the x-axis.
+                self.assertIn("labels", series, f"{key} has values but no 'labels' key (found: {list(series.keys())})")
+                self.assertNotIn("years", series, key)
+                self.assertEqual(len(series["labels"]), len(series["values"]), key)
 
     def test_official_sources_are_reachable_or_explicitly_protected(self):
         for name, url in OFFICIAL_SOURCES.items():
@@ -220,6 +225,22 @@ class DashboardEndpointTests(unittest.TestCase):
         text = body.decode("utf-8")
         self.assertIn('value="Pew Research"', text)
         self.assertIn(">Pew Research<", text)
+
+    def test_page_has_separate_polity_policy_article_rail(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        self.assertIn(b'id="pp-article-links"', body)
+        self.assertIn(b"Polity and Policy latest articles", body)
+        status, body = self.fetch(f"{DASHBOARD_URL}/data/substack-latest.json")
+        self.assertEqual(status, 200)
+        self.assertIn(b"articles", body)
+
+    def test_app_js_renders_both_article_rails_from_distinct_sources(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        self.assertIn("pp-article-links", text)
+        self.assertIn("renderArticles", text)
 
     def test_app_js_requires_group_and_subgroup_before_showing_charts(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")

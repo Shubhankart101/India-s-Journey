@@ -122,12 +122,13 @@ async function main() {
   });
   data.series.market_indices = { labels: marketLabels, datasets: marketDatasets };
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
-  articleLinks.replaceChildren();
-  const articleItems = (indianMatrix.articles || []).slice(0, 6);
-  if (!articleItems.length) {
-    articleLinks.innerHTML = '<p class="article-loading">No public article snapshot available yet.</p>';
-  } else {
-    articleItems.forEach(article => {
+  const renderArticles = (container, items, emptyMessage) => {
+    container.replaceChildren();
+    if (!items.length) {
+      container.innerHTML = `<p class="article-loading">${emptyMessage}</p>`;
+      return;
+    }
+    items.forEach(article => {
       const link = document.createElement('a');
       link.className = 'article-button';
       link.href = article.link;
@@ -138,9 +139,12 @@ async function main() {
       const date = document.createElement('span');
       date.textContent = `${article.published || 'Public article'} ↗`;
       link.append(title, date);
-      articleLinks.append(link);
+      container.append(link);
     });
-  }
+  };
+  renderArticles(articleLinks, (indianMatrix.articles || []).slice(0, 6), 'No public article snapshot available yet.');
+  const polityPolicyLinks = document.querySelector('#pp-article-links');
+  if (polityPolicyLinks) renderArticles(polityPolicyLinks, (articles.articles || []).slice(0, 6), 'No public article snapshot available yet.');
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
@@ -283,5 +287,7 @@ async function main() {
 main().catch(error => {
   const articleLinks = document.querySelector('#article-links');
   if (articleLinks) articleLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
+  const polityPolicyLinks = document.querySelector('#pp-article-links');
+  if (polityPolicyLinks) polityPolicyLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
   document.querySelector('#charts').innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });

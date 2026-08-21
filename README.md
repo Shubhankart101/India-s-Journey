@@ -20,7 +20,7 @@ Indian Matrix is now represented by a weekly publication-cadence graph and a rig
 
 Pew Research Center India has its own dedicated top-level group (subgroup: Public opinion) and is represented three ways: a dated public-report catalog and yearly report-cadence graph, and three **survey-snapshot** cards (global power, US-India relations, economic confidence) that plot individually-verified, dated percentages from a single cited Pew report as discrete labelled points rather than a fabricated continuous trend. Two Pew cards (leadership, technology adoption) remain intentionally pending because no comparable verified India percentages were found for those topics.
 
-The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
+The About panel's right-side reading rail is populated from Indian Matrix's public RSS feed. The dedicated Inspiration section further down has its own separate reading rail populated from the public Polity and Policy RSS snapshot, so the two attributions are never mixed in the same list. The weekly pipeline refreshes article titles, dates, and URLs for both feeds; the Pages deployment copies those snapshots into the dashboard so the buttons stay linked to the latest available public articles.
 
 An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
 

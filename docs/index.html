@@ -37,18 +37,24 @@
       </aside>
     </section>
 
-    <section class="sources polity-policy" aria-labelledby="polity-policy-title">
+    <section class="intro polity-policy" aria-labelledby="polity-policy-title">
       <div>
         <p class="eyebrow">🏛️ Inspiration</p>
         <h2 id="polity-policy-title">PolityPolicy and Polity and Policy</h2>
         <p>This dashboard was directly inspired by <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a>'s public-data storytelling and by <a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Tushar Gupta's Polity and Policy Substack</a>. This dashboard is an independent, separately-built project; it does not copy or mirror PolityPolicy's interactive chart rendering, and does not represent PolityPolicy or its authors.</p>
-        <p>The About panel's reading rail above is populated from the public Polity and Policy RSS snapshot, refreshed daily by this project's pipeline, so the buttons stay linked to the latest available public articles from that Substack.</p>
+        <p>The reading rail alongside is populated from the public Polity and Policy RSS snapshot, refreshed weekly by this project's pipeline, so the buttons stay linked to the latest available public articles from that Substack.</p>
+        <ul>
+          <li><a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a> — the original public-data storytelling site</li>
+          <li><a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Polity and Policy on Substack</a> — Tushar Gupta's writing and analysis</li>
+          <li><a href="https://politypolicy.substack.com/feed" target="_blank" rel="noreferrer">Polity and Policy RSS feed</a> — the public feed this project reads from</li>
+        </ul>
       </div>
-      <ul>
-        <li><a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a> — the original public-data storytelling site</li>
-        <li><a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Polity and Policy on Substack</a> — Tushar Gupta's writing and analysis</li>
-        <li><a href="https://politypolicy.substack.com/feed" target="_blank" rel="noreferrer">Polity and Policy RSS feed</a> — the public feed this project reads from</li>
-      </ul>
+      <aside class="article-rail" aria-labelledby="pp-article-rail-title">
+        <p class="eyebrow" id="pp-article-rail-title">📰 Polity and Policy latest articles</p>
+        <div id="pp-article-links" class="article-links" aria-live="polite">
+          <p class="article-loading">Loading public articles...</p>
+        </div>
+      </aside>
     </section>
 
     <section class="sources">
