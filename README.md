@@ -34,7 +34,7 @@ Fiscal deficit is now populated as an annual percentage-of-GDP series from Econo
 
 World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
 
-Security context is represented separately: the live homicide-rate series uses the World Bank indicator, MHA provides official LWE/Maoism context from 2004 onward, and the Global Terrorism Database provides research coverage from 1970 onward. These are not combined into a fabricated 1947-present incident count.
+Security context is represented separately: the live homicide-rate series uses the World Bank indicator, the MHA LWE card uses the official 2004-2025 aggregate deaths figure, and the terrorism chart uses India rows from Our World in Data with Global Terrorism Database provenance. These are not combined into a fabricated 1947-present incident count.
 
 ## 🔗 References
 

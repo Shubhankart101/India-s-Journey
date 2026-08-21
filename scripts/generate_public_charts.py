@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import json
+import csv
+import io
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -14,6 +17,12 @@ def get_json(url: str) -> object:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
     with urlopen(request, timeout=30) as response:
         return json.load(response)
+
+
+def get_text(url: str) -> str:
+    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/csv,text/html,*/*;q=0.8"})
+    with urlopen(request, timeout=30) as response:
+        return response.read().decode("utf-8", errors="replace")
 
 
 def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float], color: str, value_suffix: str) -> str:
@@ -62,6 +71,21 @@ def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle:
     return {"source": f"World Bank API {indicator}", "years": labels, "values": values}
 
 
+def build_terrorism_chart() -> dict:
+    rows = csv.DictReader(io.StringIO(get_text("https://ourworldindata.org/grapher/terrorist-attacks.csv")))
+    values = {row["Year"]: float(row["Attacks"]) for row in rows if row["Entity"] == "India"}
+    labels = sorted(values)
+    return {"source": "Our World in Data; Global Terrorism Database-derived series", "years": labels, "values": [values[label] for label in labels]}
+
+
+def build_lwe_aggregate() -> dict:
+    text = re.sub(r"<[^>]+>", " ", get_text("https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division"))
+    match = re.search(r"Between 2004 to 2025.*?(\d[\d,]*) people have been killed", text, re.I | re.S)
+    if not match:
+        raise ValueError("MHA LWE aggregate not found")
+    return {"source": "Ministry of Home Affairs LWE Division", "years": ["2004-2025"], "values": [float(match.group(1).replace(",", ""))]}
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -87,8 +111,16 @@ def main() -> None:
         ("life_expectancy", "SP.DYN.LE00.IN", "india-life-expectancy.svg", "India Life Expectancy", "Life expectancy at birth; World Bank indicator SP.DYN.LE00.IN", "#ff7b72", " years"),
         ("homicide_rate", "VC.IHR.PSRC.P5", "india-homicide-rate.svg", "India Intentional Homicide Rate", "Intentional homicides per 100,000 people; World Bank indicator VC.IHR.PSRC.P5", "#ff7b72", " per 100k"),
     ]
-    for key in ["gst", "fiscal_deficit", "wpi", "upi", "lwe_incidents", "terror_attacks"]:
+    for key in ["gst", "fiscal_deficit", "wpi", "upi"]:
         result["series"][key] = {"error": "Official export adapter pending"}
+    try:
+        result["series"]["terror_attacks"] = build_terrorism_chart()
+    except Exception as error:
+        result["series"]["terror_attacks"] = {"error": str(error)}
+    try:
+        result["series"]["lwe_incidents"] = build_lwe_aggregate()
+    except Exception as error:
+        result["series"]["lwe_incidents"] = {"error": str(error)}
     for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:
             series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
