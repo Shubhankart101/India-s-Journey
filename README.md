@@ -1,8 +1,8 @@
 # 📊 India's Journey | Public Data Dashboard
 
 <p align="center">
-	<a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
-	<a href="https://github.com/Shubhankart101/PolityPolicyUpdate/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
+	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
+	<a href="https://github.com/Shubhankart101/India-s-Journey/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
 	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
 </p>
 
@@ -20,7 +20,7 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 ## 🚀 Open Dashboard
 
-<a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
+<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
 
 The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context. It currently contains 22 India-focused indicators, with 18 live open-data graphs and four official-source cards awaiting stable exports.
 

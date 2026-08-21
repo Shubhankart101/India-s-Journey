@@ -7,7 +7,7 @@ from urllib.request import Request, urlopen
 
 DASHBOARD_URL = os.environ.get(
     "DASHBOARD_URL",
-    "https://shubhankart101.github.io/PolityPolicyUpdate/",
+    "https://shubhankart101.github.io/India-s-Journey/",
 ).rstrip("/")
 
 OFFICIAL_SOURCES = {

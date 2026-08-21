@@ -21,5 +21,5 @@ jobs:
           python-version: '3.x'
       - name: Test page, data contract, and every live API
         env:
-          DASHBOARD_URL: https://shubhankart101.github.io/PolityPolicyUpdate/
+          DASHBOARD_URL: https://shubhankart101.github.io/India-s-Journey/
         run: python -m unittest discover -s tests -p 'test_*.py' -v
