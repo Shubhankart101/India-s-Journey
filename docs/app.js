@@ -109,18 +109,32 @@ async function main() {
   const cards = [...grid.children];
   const filter = document.querySelector('#chart-filter');
   const search = document.querySelector('#chart-search');
-  const historyWindow = document.querySelector('#history-window');
+  const rangeStart = document.querySelector('#range-start');
+  const rangeEnd = document.querySelector('#range-end');
+  const periods = [...new Set(charts.flatMap(({ labels }) => labels))].sort();
+  const addPeriodOptions = (select, selected) => {
+    select.replaceChildren(...periods.map(period => {
+      const option = document.createElement('option');
+      option.value = period;
+      option.textContent = period;
+      option.selected = period === selected;
+      return option;
+    }));
+  };
+  addPeriodOptions(rangeStart, periods[0]);
+  addPeriodOptions(rangeEnd, periods[periods.length - 1]);
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     cards.forEach(card => { card.hidden = (filter.value !== 'all' && card.dataset.state !== filter.value) || (query && !card.dataset.title.includes(query)); });
   };
   filter.addEventListener('change', updateCards);
   search.addEventListener('input', updateCards);
-  historyWindow.addEventListener('change', () => {
-    const startYear = historyWindow.value === 'all' ? null : Number(historyWindow.value);
+  const updateRange = () => {
+    const start = rangeStart.value;
+    const end = rangeEnd.value;
     charts.forEach(({ chart, labels, values }) => {
       const visible = labels.reduce((result, label, index) => {
-        if (startYear === null || Number(label) >= startYear) result.push({ label, value: values[index] });
+        if (label >= start && label <= end) result.push({ label, value: values[index] });
         return result;
       }, []);
       chart.data.labels = visible.map(point => point.label);
@@ -128,7 +142,9 @@ async function main() {
       chart.resetZoom();
       chart.update();
     });
-  });
+  };
+  rangeStart.addEventListener('change', updateRange);
+  rangeEnd.addEventListener('change', updateRange);
   updateCards();
 }
 
