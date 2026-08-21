@@ -15,145 +15,55 @@ jobs:
       - name: Check out dashboard
         uses: actions/checkout@v4
 
-      - name: Collect public PolityPolicy signals
+      - name: Check PolityPolicy public endpoint
+        env:
+          PYTHONUNBUFFERED: '1'
         run: |
           python - <<'PY'
           import json
-          import re
           from datetime import datetime, timezone
-          from html import unescape
           from pathlib import Path
           from urllib.error import HTTPError, URLError
-          from urllib.parse import urljoin, urlparse
           from urllib.request import Request, urlopen
 
-          BASE_URL = 'https://politypolicy.com/'
-          HEADERS = {
-              'User-Agent': 'Mozilla/5.0 (compatible; PolityPolicyUpdate public dashboard)',
-              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-              'Accept-Language': 'en-US,en;q=0.9',
-          }
+          url = 'https://politypolicy.com/'
+          request = Request(url, headers={'User-Agent': 'PolityPolicyUpdate public monitor'})
+          status = 'error'
+          error = ''
+          try:
+              with urlopen(request, timeout=30) as response:
+                  status = response.status
+          except HTTPError as exc:
+              status = exc.code
+              error = f'HTTP {exc.code}: {exc.reason}'
+          except URLError as exc:
+              error = str(exc.reason)
 
-          def fetch(url):
-              request = Request(url, headers=HEADERS)
-              try:
-                  with urlopen(request, timeout=30) as response:
-                      return response.status, response.read().decode('utf-8', errors='replace'), ''
-              except HTTPError as error:
-                  return error.code, '', f'HTTP {error.code}: {error.reason}'
-              except URLError as error:
-                  return 'error', '', str(error.reason)
-
-          def plain_text(value):
-              value = re.sub(r'<script.*?</script>|<style.*?</style>', ' ', value, flags=re.S | re.I)
-              value = re.sub(r'<[^>]+>', ' ', value)
-              return re.sub(r'\s+', ' ', unescape(value)).strip()
-
-          def page_title(html):
-              match = re.search(r'<title[^>]*>(.*?)</title>', html, flags=re.S | re.I)
-              return plain_text(match.group(1)) if match else 'Untitled page'
-
-          def site_links(html, page_url):
-              urls = []
-              for href in re.findall(r'href=["\']([^"\']+)["\']', html, flags=re.I):
-                  absolute = urljoin(page_url, href).split('#')[0]
-                  if urlparse(absolute).netloc == 'politypolicy.com':
-                      urls.append(absolute)
-              return sorted(set(urls))
-
-          home_status, home_html, home_error = fetch(BASE_URL)
-          home_links = site_links(home_html, BASE_URL)
-          pulse_index_url = urljoin(BASE_URL, 'pulse/index.html')
-          pulse_status, pulse_html, pulse_error = fetch(pulse_index_url)
-          pulse_links = [
-              url for url in site_links(pulse_html, pulse_index_url)
-              if '/pulse/' in url and url.endswith('.html') and not url.endswith('/pulse/index.html')
-          ]
-          story_links = [
-              url for url in home_links
-              if url.endswith('.html') and '/category/' not in url and '/pulse/' not in url and '/elections/' not in url
-          ]
-          category_links = [url for url in home_links if '/category/' in url]
-          sister_links = [
-              url for url in re.findall(r'href=["\']([^"\']+)["\']', home_html, flags=re.I)
-              if 'infographics.politypolicy.com' in url or 'infrastructure.politypolicy.com' in url
-          ]
-
-          pulse_pages = []
-          for url in pulse_links:
-              try:
-                  status, html, error = fetch(url)
-                  content = plain_text(html)
-                  match = re.search(r'(?:LATEST|HEADLINE)\s*[·.-]?\s*(.{0,180})', content, flags=re.I)
-                  pulse_pages.append({
-                      'url': url,
-                      'title': page_title(html),
-                      'status': status,
-                      'headline': match.group(1).strip() if match else '',
-                      'error': error,
-                  })
-              except Exception as error:
-                  pulse_pages.append({'url': url, 'title': '', 'status': 'error', 'headline': str(error)[:180]})
-
-          now = datetime.now(timezone.utc).replace(microsecond=0)
+          now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
           snapshot = {
-              'generated_at_utc': now.isoformat(),
-              'site': BASE_URL,
-              'homepage_status': home_status,
-              'pulse_index_status': pulse_status,
-              'collection_status': 'ok' if home_status == 200 and pulse_status == 200 else 'partial_or_blocked',
-              'collection_errors': [error for error in [home_error, pulse_error] if error],
-              'pulse_tracker_count': len(pulse_pages),
-              'story_count': len(story_links),
-              'category_count': len(category_links),
-              'sister_site_count': len(set(sister_links)),
-              'pulse_pages': pulse_pages,
-              'stories': story_links,
-              'categories': category_links,
-              'sister_sites': sorted(set(sister_links)),
+              'generated_at_utc': now,
+              'site': url,
+              'homepage_status': status,
+              'collection_status': 'ok' if status == 200 else 'partial_or_blocked',
+              'collection_errors': [error] if error else [],
           }
-          today = now.date().isoformat()
-          Path('data/history').mkdir(parents=True, exist_ok=True)
+          Path('data').mkdir(exist_ok=True)
           Path('data/latest.json').write_text(json.dumps(snapshot, indent=2) + '\n')
-          Path(f'data/history/{today}.json').write_text(json.dumps(snapshot, indent=2) + '\n')
-
-          pulse_rows = '\n'.join(
-              f"| [{page['title']}]({page['url']}) | {page['status']} | {page['headline'] or 'No visible latest headline detected'} |"
-              for page in pulse_pages
-          ) or '| No trackers detected | - | - |'
-          story_rows = '\n'.join(f"| [{url.rsplit('/', 1)[-1]}]({url}) |" for url in story_links[:12]) or '| No story links detected |'
-          dashboard_lines = [
-              '<!-- METRICS:START -->', '',
-              f'> Last refreshed: **{snapshot["generated_at_utc"]}**', '',
-              f'> Collection status: **{snapshot["collection_status"]}**',
-              *([f'> Collector notes: {"; ".join(snapshot["collection_errors"])}', ''] if snapshot['collection_errors'] else []),
-              '| Public site signal | Count |', '| --- | ---: |',
-              f'| Pulse trackers | {snapshot["pulse_tracker_count"]} |',
-              f'| Interactive/latest story pages | {snapshot["story_count"]} |',
-              f'| Collections/categories | {snapshot["category_count"]} |',
-              f'| Sister sites | {snapshot["sister_site_count"]} |', '',
-              '### Pulse Tracker Headlines', '',
-              '| Tracker | HTTP status | Visible headline snippet |', '| --- | ---: | --- |', pulse_rows, '',
-              '### Latest Public Story Links', '', '| Page |', '| --- |', story_rows, '',
-              '[Latest raw snapshot](data/latest.json) and [Historical snapshots](data/history)', '',
-              '<!-- METRICS:END -->',
-          ]
-          dashboard = '\n'.join(dashboard_lines)
-          readme = Path('README.md').read_text()
-          Path('README.md').write_text(re.sub(r'<!-- METRICS:START -->.*?<!-- METRICS:END -->', dashboard, readme, flags=re.S))
+          Path('data/latest-status.json').write_text(json.dumps(snapshot, indent=2) + '\n')
+          print(json.dumps(snapshot))
           PY
 
-            - name: Refresh public-source charts
-                run: python scripts/generate_public_charts.py
+      - name: Refresh public-source charts
+        run: python scripts/generate_public_charts.py
 
-            - name: Commit dashboard snapshot and charts
-                run: |
-                    git config user.name "github-actions[bot]"
-                    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                    git add README.md data assets
-                    if git diff --cached --quiet; then
-                        echo "No site change to commit."
-                        exit 0
-                    fi
-                    git commit -m "Refresh daily PolityPolicy snapshot"
-                    git push
+      - name: Commit daily data and charts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data assets
+          if git diff --cached --quiet; then
+            echo "No data change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh daily public data"
+          git push
