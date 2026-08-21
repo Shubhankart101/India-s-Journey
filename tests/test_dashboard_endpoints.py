@@ -142,7 +142,7 @@ class DashboardEndpointTests(unittest.TestCase):
         ncrb_data = json.loads(body)
         for key in ("ncrb_crime", "violent_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
             self.assertIn(key, ncrb_data["series"], key)
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=legends-and-subgroups")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
@@ -196,19 +196,40 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"PolityPolicy and Polity and Policy", body)
         self.assertIn(b"independent, separately-built project", body)
 
-    def test_page_exposes_all_twelve_subgroups(self):
+    def test_page_exposes_all_thirteen_subgroups(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         for subgroup in (
             "Macroeconomics", "Monetary Policy", "Trade &amp; External", "Markets",
-            "Infrastructure", "Production &amp; Commodities", "Public opinion",
-            "Demographics", "Welfare", "Violence &amp; Crime", "Terrorism", "Maoism / LWE",
+            "Infrastructure", "Production &amp; Commodities", "Media &amp; Publications",
+            "Demographics", "Welfare", "Public opinion",
+            "Violence &amp; Crime", "Terrorism", "Maoism / LWE",
         ):
             self.assertIn(subgroup, text, subgroup)
 
+    def test_page_has_dedicated_pew_research_group(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        self.assertIn('value="Pew Research"', text)
+        self.assertIn(">Pew Research<", text)
+
+    def test_app_js_requires_group_and_subgroup_before_showing_charts(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        self.assertIn("groupFilter.value !== 'all' && subgroupFilter.value !== 'all'", text)
+        self.assertIn("chart-prompt", text)
+
+    def test_page_has_chart_prompt_element(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        self.assertIn(b'id="chart-prompt"', body)
+        self.assertIn(b"Select both a Group and a Subgroup", body)
+
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=legends-and-subgroups")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)

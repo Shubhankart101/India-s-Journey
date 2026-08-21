@@ -25,6 +25,8 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .article-loading { color:var(--muted); font-size:.85rem; }
 .status div { padding:16px; background:var(--panel); } .status span { display:block; color:var(--muted); font-size:.78rem; } .status strong { font-family:ui-monospace, SFMono-Regular, Consolas, monospace; font-size:.9rem; }
 .chart-grid { display:grid; grid-template-columns:minmax(0, 1fr); gap:22px; padding-bottom:30px; }
+.chart-prompt { color:var(--muted); text-align:center; padding:48px 16px; border:1px dashed var(--line); }
+.chart-prompt[hidden] { display:none; }
 .chart-controls { align-items:end; display:flex; flex-wrap:wrap; gap:14px; padding:22px 0; }
 .chart-controls label { color:var(--muted); display:grid; font:700 .72rem ui-monospace, SFMono-Regular, Consolas, monospace; gap:7px; text-transform:uppercase; }
 .chart-controls input, .chart-controls select { background:var(--panel); border:1px solid var(--line); color:var(--ink); font:16px Georgia, 'Times New Roman', serif; min-width:220px; padding:9px 10px; }

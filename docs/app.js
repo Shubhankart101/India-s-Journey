@@ -49,8 +49,8 @@ const definitions = [
   ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
 ];
 
-const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'indian_matrix'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology'].includes(key) ? 'Pew Research' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
+const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
@@ -144,7 +144,7 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, Social: 1, 'Crime & Security': 2 };
+  const categoryOrder = { Economic: 0, Social: 1, 'Pew Research': 2, 'Crime & Security': 3 };
   const orderedDefinitions = [...definitions].sort((left, right) => categoryOrder[categoryFor(left[0])] - categoryOrder[categoryFor(right[0])]);
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
@@ -190,11 +190,12 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
-  const subgroupGroups = { Macroeconomics: 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Public opinion': 'Social', Crime: 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
+  const subgroupGroups = { Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', Demographics: 'Social', Welfare: 'Social', 'Public opinion': 'Pew Research', 'Violence & Crime': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Public opinion', 'Demographics', 'Welfare', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
-    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities'],
-    Social: ['Public opinion', 'Demographics', 'Welfare'],
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
+    Social: ['Demographics', 'Welfare'],
+    'Pew Research': ['Public opinion'],
     'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE']
   };
   const addPeriodOptions = (select, periods, selected) => {
@@ -241,8 +242,16 @@ async function main() {
   };
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
-    const stateFilter = groupFilter.value !== 'all' ? 'all' : filter.value;
-    cards.forEach(card => { const securityCard = card.dataset.category === 'Crime & Security'; card.hidden = (stateFilter !== 'all' && !securityCard && card.dataset.state !== stateFilter) || (groupFilter.value !== 'all' && card.dataset.category !== groupFilter.value) || (subgroupFilter.value !== 'all' && card.dataset.subgroup !== subgroupFilter.value) || (query && !card.dataset.title.includes(query)); });
+    const scoped = groupFilter.value !== 'all' && subgroupFilter.value !== 'all';
+    const prompt = document.querySelector('#chart-prompt');
+    if (prompt) prompt.hidden = scoped;
+    if (!scoped) {
+      cards.forEach(card => { card.hidden = true; });
+      headings.forEach(heading => { heading.hidden = true; });
+      return;
+    }
+    const stateFilter = filter.value;
+    cards.forEach(card => { const alwaysShowCategory = card.dataset.category === 'Crime & Security' || card.dataset.category === 'Pew Research'; card.hidden = (stateFilter !== 'all' && !alwaysShowCategory && card.dataset.state !== stateFilter) || card.dataset.category !== groupFilter.value || card.dataset.subgroup !== subgroupFilter.value || (query && !card.dataset.title.includes(query)); });
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);

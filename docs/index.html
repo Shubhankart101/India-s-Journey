@@ -75,13 +75,15 @@
     <section class="chart-controls" aria-label="Chart controls">
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators"></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
-      <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
-      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Public opinion</option><option>Demographics</option><option>Welfare</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
+      <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Pew Research">Pew Research</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
+      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Media &amp; Publications</option><option>Demographics</option><option>Welfare</option><option>Public opinion</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>
 
-    <section class="chart-grid" id="charts" aria-live="polite"></section>
+    <section class="chart-grid" id="charts" aria-live="polite">
+      <p id="chart-prompt" class="chart-prompt">Select both a Group and a Subgroup above to see charts. The date range below then scopes to the exact indices in that selection.</p>
+    </section>
 
     <section class="references" aria-label="References">
       <h2>🔗 References</h2>
@@ -155,6 +157,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="app.js?v=legends-and-subgroups"></script>
+  <script src="app.js?v=pew-group-strict-filters"></script>
 </body>
 </html>
