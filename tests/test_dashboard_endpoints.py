@@ -51,6 +51,8 @@ class DashboardEndpointTests(unittest.TestCase):
             "cpi", "gst", "fiscal_deficit", "iip", "rupee", "trade",
             "forex", "bank_credit", "wpi", "upi", "gdp_per_capita",
             "population", "unemployment", "current_account", "broad_money",
+            "tax_revenue", "government_consumption", "fdi", "domestic_savings",
+            "electricity_access", "internet_users", "life_expectancy",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():

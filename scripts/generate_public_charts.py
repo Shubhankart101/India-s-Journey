@@ -78,6 +78,13 @@ def main() -> None:
         ("unemployment", "SL.UEM.TOTL.ZS", "india-unemployment.svg", "India Unemployment Rate", "Unemployment rate; World Bank indicator SL.UEM.TOTL.ZS", "#ffa657", "%"),
         ("current_account", "BN.CAB.XOKA.GD.ZS", "india-current-account.svg", "India Current Account Balance", "Current account balance as share of GDP; World Bank indicator BN.CAB.XOKA.GD.ZS", "#56d364", "%"),
         ("broad_money", "FM.LBL.BMNY.GD.ZS", "india-broad-money.svg", "India Broad Money", "Broad money as share of GDP; World Bank indicator FM.LBL.BMNY.GD.ZS", "#ff7b72", "%"),
+        ("tax_revenue", "GC.TAX.TOTL.GD.ZS", "india-tax-revenue.svg", "India Tax Revenue", "Tax revenue as share of GDP; World Bank indicator GC.TAX.TOTL.GD.ZS", "#e3b341", "%"),
+        ("government_consumption", "NE.CON.GOVT.ZS", "india-government-consumption.svg", "India Government Consumption", "General government final consumption; World Bank indicator NE.CON.GOVT.ZS", "#58a6ff", "% GDP"),
+        ("fdi", "BX.KLT.DINV.WD.GD.ZS", "india-fdi.svg", "India Foreign Direct Investment", "Net FDI inflows as share of GDP; World Bank indicator BX.KLT.DINV.WD.GD.ZS", "#3fb950", "%"),
+        ("domestic_savings", "NY.GDS.TOTL.ZS", "india-domestic-savings.svg", "India Domestic Savings", "Gross domestic savings as share of GDP; World Bank indicator NY.GDS.TOTL.ZS", "#bc8cff", "%"),
+        ("electricity_access", "EG.ELC.ACCS.ZS", "india-electricity-access.svg", "India Electricity Access", "Population with access to electricity; World Bank indicator EG.ELC.ACCS.ZS", "#79c0ff", "%"),
+        ("internet_users", "IT.NET.USER.ZS", "india-internet-users.svg", "India Internet Users", "Individuals using the internet; World Bank indicator IT.NET.USER.ZS", "#f778ba", "%"),
+        ("life_expectancy", "SP.DYN.LE00.IN", "india-life-expectancy.svg", "India Life Expectancy", "Life expectancy at birth; World Bank indicator SP.DYN.LE00.IN", "#ff7b72", " years"),
     ]
     for key in ["gst", "fiscal_deficit", "wpi", "upi"]:
         result["series"][key] = {"error": "Official export adapter pending"}
