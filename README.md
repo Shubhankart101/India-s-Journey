@@ -74,6 +74,26 @@ These are original SVG charts generated from public data sources cited alongside
 	<img src="assets/charts/substack-publication-cadence.svg" alt="Weekly Polity and Policy publication cadence chart" width="960">
 </p>
 
+<p align="center">
+	<img src="assets/charts/india-gdp-growth.svg" alt="India GDP growth chart from World Bank public data" width="960">
+</p>
+
+<p align="center">
+	<img src="assets/charts/india-trade-share-gdp.svg" alt="India trade share of GDP chart from World Bank public data" width="960">
+</p>
+
+<p align="center">
+	<img src="assets/charts/india-foreign-reserves.svg" alt="India foreign exchange reserves chart from World Bank public data" width="960">
+</p>
+
+<p align="center">
+	<img src="assets/charts/india-domestic-credit.svg" alt="India domestic credit chart from World Bank public data" width="960">
+</p>
+
+<p align="center">
+	<img src="assets/charts/india-industrial-growth.svg" alt="India industrial value added growth chart from World Bank public data" width="960">
+</p>
+
 Sources: [World Bank CPI indicator](https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=IN) and the [Polity and Policy public RSS feed](https://politypolicy.substack.com/feed). The weekly workflow regenerates these visualizations and records chart metadata in [data/chart-latest.json](data/chart-latest.json).
 
 ## What Is Collected
