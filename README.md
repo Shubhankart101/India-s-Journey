@@ -10,7 +10,7 @@
 
 This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
 
-With thanks to [PolityPolicy](https://politypolicy.com/) and [Polity and Policy](https://politypolicy.substack.com/) for inspiring a visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
+With sincere thanks to [PolityPolicy](https://politypolicy.com/) and [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/) for the inspiring work that encouraged this visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
 
 The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
 
@@ -24,7 +24,7 @@ The static dashboard reads the complete available history for each live series a
 
 The From/To controls are populated from the actual observations returned by the APIs. Economic Survey Statistical Appendix tables 9.1–9.4 now provide collated monthly GST, UPI, IIP, forex, exchange-rate, power, e-way bill, rail freight, port cargo, core-industry, crude-oil, fuel-consumption, export, and import observations through the daily pipeline. The extractor checks the 2022-23, 2023-24, 2024-25, and latest Survey editions, merges overlapping `YYYY-MM` observations, and keeps the official Survey tables as provenance. The dashboard does not fabricate monthly points by interpolation.
 
-The fuel graph is a **fuel consumption** activity series, not a retail fuel price index. Crude oil basket price is provided separately as the available Economic Survey price indicator.
+The fuel graph is a **fuel consumption** activity series, not a retail fuel price index. **Indian crude oil basket price** is provided separately as the available Economic Survey fuel-price indicator. A petrol/diesel retail price index is not yet connected because a stable official machine-readable release has not been identified.
 
 World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
 
