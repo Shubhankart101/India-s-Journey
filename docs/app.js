@@ -53,12 +53,15 @@ const chartOptions = (suffix) => ({
 });
 
 async function main() {
+  const articleLinks = document.querySelector('#article-links');
+  const articlePromise = fetch(`data/substack-latest.json?ts=${Date.now()}`, { signal: AbortSignal.timeout(8000) })
+    .then(response => response.ok ? response.json() : { articles: [] })
+    .catch(() => ({ articles: [] }));
   const [data, articles] = await Promise.all([
     fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json()),
-    fetch(`data/substack-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { articles: [] }).catch(() => ({ articles: [] })),
+    articlePromise,
   ]);
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
-  const articleLinks = document.querySelector('#article-links');
   articleLinks.replaceChildren();
   const articleItems = (articles.articles || []).slice(0, 6);
   if (!articleItems.length) {
@@ -130,5 +133,7 @@ async function main() {
 }
 
 main().catch(error => {
+  const articleLinks = document.querySelector('#article-links');
+  if (articleLinks) articleLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
   document.querySelector('#charts').innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });
