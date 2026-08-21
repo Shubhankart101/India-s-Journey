@@ -20,6 +20,27 @@ OFFICIAL_SOURCES = {
     "upi": "https://www.npci.org.in/what-we-do/upi/product-statistics",
 }
 
+LIVE_API_SOURCES = {
+    "cpi": "FP.CPI.TOTL.ZG",
+    "trade": "NE.TRD.GNFS.ZS",
+    "forex": "FI.RES.TOTL.CD",
+    "bank_credit": "FS.AST.PRVT.GD.ZS",
+    "iip": "NV.IND.TOTL.KD.ZG",
+    "rupee": "PA.NUS.FCRF",
+    "gdp_per_capita": "NY.GDP.PCAP.CD",
+    "population": "SP.POP.TOTL",
+    "unemployment": "SL.UEM.TOTL.ZS",
+    "current_account": "BN.CAB.XOKA.GD.ZS",
+    "broad_money": "FM.LBL.BMNY.GD.ZS",
+    "tax_revenue": "GC.TAX.TOTL.GD.ZS",
+    "government_consumption": "NE.CON.GOVT.ZS",
+    "fdi": "BX.KLT.DINV.WD.GD.ZS",
+    "domestic_savings": "NY.GDS.TOTL.ZS",
+    "electricity_access": "EG.ELC.ACCS.ZS",
+    "internet_users": "IT.NET.USER.ZS",
+    "life_expectancy": "SP.DYN.LE00.IN",
+}
+
 
 class DashboardEndpointTests(unittest.TestCase):
     def fetch(self, url):
@@ -66,6 +87,26 @@ class DashboardEndpointTests(unittest.TestCase):
                     200 <= status < 400 or status in {401, 403},
                     f"Unexpected HTTP status {status} from {url}",
                 )
+
+    def test_every_live_indicator_api_returns_observations(self):
+        for key, indicator in LIVE_API_SOURCES.items():
+            url = f"https://api.worldbank.org/v2/country/IND/indicator/{indicator}?format=json&per_page=100"
+            with self.subTest(indicator=key):
+                status, body = self.fetch(url)
+                self.assertEqual(status, 200)
+                payload = json.loads(body)
+                self.assertIsInstance(payload, list)
+                self.assertGreaterEqual(len(payload), 2)
+                self.assertTrue(any(row.get("value") is not None for row in payload[1]), key)
+
+    def test_page_references_runtime_and_data_assets(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        self.assertIn(b"References: APIs", body)
+        self.assertIn(b"chart-filter", body)
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=40677a3")
+        self.assertEqual(status, 200)
+        self.assertIn(b"updateCards", body)
 
 
 if __name__ == "__main__":
