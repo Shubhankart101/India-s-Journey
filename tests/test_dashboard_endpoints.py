@@ -62,7 +62,7 @@ class DashboardEndpointTests(unittest.TestCase):
     def test_dashboard_page_is_served(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
         self.assertEqual(status, 200)
-        self.assertIn(b"India, In Signals", body)
+        self.assertIn(b"India's Journey", body)
 
     def test_dashboard_data_has_all_indicators(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/chart-latest.json")

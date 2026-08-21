@@ -1,4 +1,4 @@
-# 📊 PolityPolicy-Inspired Public Data Dashboard
+# 📊 India's Journey | Public Data Dashboard
 
 <p align="center">
 	<a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
