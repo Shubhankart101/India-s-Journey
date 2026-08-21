@@ -47,7 +47,7 @@ Published articles from the public [Polity and Policy by Tushar Gupta](https://p
 | --- | --- | --- |
 | [India's Fiscal Nightmare: The Strait of Hormuz](https://politypolicy.substack.com/p/indias-fiscal-nightmare-the-strait) | 2026-07-15 | How the war in the Persian Gulf costs you and the country at large |
 | [What if International Crude Prices Dictated Petrol Pump Prices?](https://politypolicy.substack.com/p/what-if-international-crude-prices) | 2026-07-10 | Be careful what you wish for. |
-| [Petrol And Pizza, Crude and Capsicum](https://politypolicy.substack.com/p/petrol-and-pizza-crude-and-capsicum) | 2026-07-09 | The economics and environmentalism around ethanol bashing don’t add up. |
+| [Petrol And Pizza, Crude and Capsicum](https://politypolicy.substack.com/p/petrol-and-pizza-crude-and-capsicum) | 2026-07-09 | The economics and environmentalism around ethanol bashing donï¿½t add up. |
 | [Why Is The Prime Minister Travelling To Indonesia and Australia](https://politypolicy.substack.com/p/why-is-the-prime-minister-travelling) | 2026-07-08 | Another chapter unfolds in our pursuit of chip diplomacy |
 | [The Markets Are Sending Us A Message About Ethanol](https://politypolicy.substack.com/p/the-markets-are-sending-us-a-message) | 2026-07-07 | Beyond the social media rhetoric, what is the invisible hand of the free market hinting at? |
 | [Welcome to PolityPolicy.Com](https://politypolicy.substack.com/p/announcement-welcome-to-politypolicycom) | 2026-07-07 | A New Beginning |
@@ -61,6 +61,20 @@ Published articles from the public [Polity and Policy by Tushar Gupta](https://p
 [Latest article snapshot](data/substack-latest.json) and [Weekly article history](data/substack-history)
 
 <!-- SUBSTACK:END -->
+
+## Weekly Public-Source Graphs
+
+These are original SVG charts generated from public data sources cited alongside the PolityPolicy monitoring dashboard. They are not copies of PolityPolicy's interactive chart rendering.
+
+<p align="center">
+	<img src="assets/charts/india-cpi-inflation.svg" alt="India CPI inflation chart from World Bank public data" width="960">
+</p>
+
+<p align="center">
+	<img src="assets/charts/substack-publication-cadence.svg" alt="Weekly Polity and Policy publication cadence chart" width="960">
+</p>
+
+Sources: [World Bank CPI indicator](https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=IN) and the [Polity and Policy public RSS feed](https://politypolicy.substack.com/feed). The weekly workflow regenerates these visualizations and records chart metadata in [data/chart-latest.json](data/chart-latest.json).
 
 ## What Is Collected
 
@@ -87,6 +101,8 @@ The monitor only reads public HTML exposed by `politypolicy.com` and records a c
 ```text
 .github/workflows/daily-politypolicy-update.yml  Daily public-site collection
 .github/workflows/weekly-substack-articles.yml   Weekly Substack RSS collection
+scripts/generate_public_charts.py                Weekly public-source SVG charts
+assets/charts/*.svg                              Rendered dashboard charts
 data/latest.json                                  Most recent site snapshot
 data/history/YYYY-MM-DD.json                      Preserved dated snapshots
 ```
