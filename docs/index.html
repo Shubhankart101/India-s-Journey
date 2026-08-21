@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>India Public Data Dashboard</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div>
+      <p class="eyebrow">Public data dashboard</p>
+      <h1>India, In Signals</h1>
+      <p class="lede">A weekly view of India macroeconomic indicators and public publication activity.</p>
+    </div>
+    <div class="actions">
+      <a class="button" href="https://politypolicy.com/" target="_blank" rel="noreferrer">Explore PolityPolicy</a>
+      <a class="button secondary" href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Read Polity and Policy</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="status" aria-label="Dashboard status">
+      <div><span>Last generated</span><strong id="generated">Loading</strong></div>
+      <div><span>Coverage</span><strong>India public macro series</strong></div>
+      <div><span>Interaction</span><strong>Hover, zoom, pan, reset</strong></div>
+    </section>
+
+    <section class="chart-grid" id="charts" aria-live="polite"></section>
+
+    <section class="sources">
+      <div>
+        <p class="eyebrow">Sources</p>
+        <h2>Original public-source visualizations</h2>
+        <p>Macro series come from World Bank Open Data indicators for India. Publication activity comes from the public Polity and Policy RSS feed.</p>
+      </div>
+      <ul>
+        <li><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392" target="_blank" rel="noreferrer">World Bank Open Data API</a></li>
+        <li><a href="https://politypolicy.substack.com/feed" target="_blank" rel="noreferrer">Polity and Policy RSS feed</a></li>
+        <li><a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Inspired by PolityPolicy.com and Polity and Policy. Independent dashboard; charts are generated from the cited public sources.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
