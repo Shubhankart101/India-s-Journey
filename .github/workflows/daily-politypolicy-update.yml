@@ -68,6 +68,9 @@ jobs:
       - name: Collect NCRB and analysis data
         run: python scripts/collect_ncrb_and_analyses.py
 
+      - name: Collect Pew India survey snapshots
+        run: python scripts/collect_pew_snapshots.py
+
       - name: Commit daily data and charts
         run: |
           git config user.name "github-actions[bot]"

@@ -146,6 +146,89 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
+    def test_pew_snapshot_data_is_verifiable_and_sourced(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/data/pew-snapshots.json")
+        self.assertEqual(status, 200)
+        payload = json.loads(body)
+        expected_keys = {
+            "pew_india_economy_confidence",
+            "pew_india_us_relations",
+            "pew_india_global_power",
+        }
+        self.assertEqual(set(payload["series"]), expected_keys)
+        for key, series in payload["series"].items():
+            with self.subTest(indicator=key):
+                self.assertEqual(len(series["labels"]), len(series["values"]), key)
+                self.assertGreaterEqual(len(series["labels"]), 3, key)
+                self.assertTrue(series["source"].startswith("https://www.pewresearch.org/"), key)
+                for value in series["values"]:
+                    self.assertGreaterEqual(value, 0, key)
+                    self.assertLessEqual(value, 100, key)
+
+    def test_ncrb_and_analyses_series_are_present_and_pending_or_valid(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/data/ncrb-and-analyses.json")
+        self.assertEqual(status, 200)
+        payload = json.loads(body)
+        expected_keys = {
+            "ncrb_crime",
+            "violent_incidents",
+            "lwe_civilian_casualties",
+            "lwe_security_force_casualties",
+            "lwe_perpetrator_casualties",
+            "indian_matrix_insights",
+        }
+        self.assertEqual(set(payload["series"]), expected_keys)
+        for key, series in payload["series"].items():
+            with self.subTest(indicator=key):
+                self.assertIn("source", series, key)
+                if key == "indian_matrix_insights":
+                    self.assertIn("articles", series, key)
+                    self.assertIn("key_analyses", series, key)
+                else:
+                    self.assertIn("years", series, key)
+                    self.assertIn("values", series, key)
+                    self.assertEqual(len(series["years"]), len(series["values"]), key)
+
+    def test_page_has_dedicated_polity_policy_section(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        self.assertIn(b'id="polity-policy-title"', body)
+        self.assertIn(b"PolityPolicy and Polity and Policy", body)
+        self.assertIn(b"independent, separately-built project", body)
+
+    def test_page_exposes_all_twelve_subgroups(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        for subgroup in (
+            "Macroeconomics", "Monetary Policy", "Trade &amp; External", "Markets",
+            "Infrastructure", "Production &amp; Commodities", "Public opinion",
+            "Demographics", "Welfare", "Violence &amp; Crime", "Terrorism", "Maoism / LWE",
+        ):
+            self.assertIn(subgroup, text, subgroup)
+
+    def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=legends-and-subgroups")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        self.assertIn("hasMultipleDatasets", text)
+        self.assertIn("display: hasMultipleDatasets", text)
+
+    def test_daily_workflow_runs_all_collection_scripts(self):
+        workflow_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            ".github", "workflows", "daily-politypolicy-update.yml",
+        )
+        with open(workflow_path, "r", encoding="utf-8") as handle:
+            workflow = handle.read()
+        for script in (
+            "scripts/generate_public_charts.py",
+            "scripts/fetch_economic_survey_monthly.py",
+            "scripts/collect_ncrb_and_analyses.py",
+            "scripts/collect_pew_snapshots.py",
+        ):
+            self.assertIn(script, workflow, script)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

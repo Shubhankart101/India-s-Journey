@@ -10,13 +10,13 @@
 
 This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
 
-With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
+With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The dashboard now has a dedicated **Inspiration** section separate from the general About text, so PolityPolicy attribution is not mixed in with dashboard mechanics.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard now organizes indicators into Economic, Social, and Crime & Security groups. Selecting a group shows all cards in that group, including pending security-source cards, so they are not hidden by the default live-only filter.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard organizes indicators into Economic, Social, and Crime & Security groups, each split into contextual subgroups (12 total: Macroeconomics, Monetary Policy, Trade & External, Markets, Infrastructure, Production & Commodities, Public opinion, Demographics, Welfare, Violence & Crime, Terrorism, Maoism/LWE). Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it. Multi-dataset charts (for example, the combined market-indices view) display a legend; single-series charts do not, to reduce clutter.
 
 Indian Matrix is now represented by a weekly publication-cadence graph and a right-side article rail sourced from its public RSS feed.
 
-Pew Research Center India is represented by a dated public-report catalog and yearly report-cadence graph. This preserves discovered report links and dates without merging incompatible survey questions into a false time series.
+Pew Research Center India is represented three ways: a dated public-report catalog and yearly report-cadence graph, and three **survey-snapshot** cards (global power, US-India relations, economic confidence) that plot individually-verified, dated percentages from a single cited Pew report as discrete labelled points rather than a fabricated continuous trend. Two Pew cards (leadership, technology adoption) remain intentionally pending because no comparable verified India percentages were found for those topics.
 
 The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
 
@@ -38,7 +38,25 @@ World Bank series generally reach back to 1960, so the live charts now include d
 
 Security context is represented separately: the live homicide-rate series uses the World Bank indicator, the MHA LWE card uses the official 2004-2025 aggregate deaths figure, and the terrorism chart uses India rows from Our World in Data with Global Terrorism Database provenance. These are not combined into a fabricated 1947-present incident count.
 
-The Crime & Security group also includes an NCRB source-status card. NCRB Crime in India editions are available, but a consistent all-time machine-readable series has not been identified; definitions and classifications must be reconciled before plotting historical totals.
+The Crime & Security group also includes an NCRB source-status card. NCRB Crime in India editions are available, but a consistent all-time machine-readable series has not been identified; definitions and classifications must be reconciled before plotting historical totals. `data.gov.in`'s NCRB catalog pages were checked and did not return a stable dataset at time of writing. The LWE civilian/security-force/perpetrator casualty breakdown remains pending for the same reason: MHA's public page only publishes the 2004-2025 aggregate (8,956 killed), and the South Asia Terrorism Portal's historical breakdown tables returned inconsistently formatted data when checked, so they were not transcribed to avoid introducing transcription error into the dashboard.
+
+## 🧪 Testing
+
+[`tests/test_dashboard_endpoints.py`](tests/test_dashboard_endpoints.py) is a live-endpoint test suite (no mocks) that verifies, against the deployed `DASHBOARD_URL`:
+
+- Every data JSON file (`chart-latest`, `economic-survey-monthly`, `substack-latest`, `indian-matrix-latest`, `pew-india-reports`, `pew-snapshots`, `ncrb-and-analyses`) is served with HTTP 200 and contains its expected top-level keys.
+- Every live World Bank indicator API used by the dashboard returns at least 2 usable observations.
+- Official source portals (GST, CGA, MOSPI, RBI, OEA) are reachable or return an expected auth-gated status.
+- The HTML page includes the expected filter controls, group/subgroup options, and references section.
+- The current cache-busted `app.js` bundle is served and contains `updateCards`.
+
+Run it locally against the live site with:
+
+```bash
+python -m unittest tests/test_dashboard_endpoints.py -v
+```
+
+Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 python -m unittest tests/test_dashboard_endpoints.py -v`.
 
 ## 🔗 References
 
@@ -70,6 +88,8 @@ The Crime & Security group also includes an NCRB source-status card. NCRB Crime 
 - [MHA Left-Wing Extremism Division](https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division)
 - [Global Terrorism Database](https://www.start.umd.edu/gtd/)
 - [Pew Research Center Global Attitudes](https://www.pewresearch.org/global/) for India public-opinion research and survey findings.
+- [Pew Research Center: India, Global Optimism, Local Fears (2008)](https://www.pewresearch.org/global/2008/12/04/india/) for the cited survey-snapshot percentages used in the Pew economy-confidence, US-relations, and global-power cards.
+- [South Asia Terrorism Portal](https://www.satp.org/) checked as a secondary, non-official source for LWE casualty breakdowns; not currently used because its historical tables did not return consistently formatted data.
 - [NCRB Crime in India](https://ncrb.gov.in/crime-in-india.html) for official crime statistics and year-wise table references.
 - [Economic Survey statistical appendix](https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf) for collated monthly HFI tables.
 - [Economic Survey table 9.1](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf) for monthly GST and related high-frequency indicators.
@@ -97,11 +117,11 @@ The Crime & Security group also includes an NCRB source-status card. NCRB Crime 
 
 ## 🙏 Attribution
 
-Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above.
+Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above. The live dashboard now has a dedicated Inspiration section that separates PolityPolicy attribution from the general About text.
 
 ## ⚙️ Automation
 
-The [weekly workflow](.github/workflows/weekly-substack-articles.yml) and [daily workflow](.github/workflows/daily-politypolicy-update.yml) regenerate public-source data and dashboard assets. Each card displays its actual release frequency; source adapters that need a stable public export are shown as pending rather than populated with estimates.
+The [weekly workflow](.github/workflows/weekly-substack-articles.yml) and [daily workflow](.github/workflows/daily-politypolicy-update.yml) regenerate public-source data and dashboard assets, including `scripts/collect_ncrb_and_analyses.py` and `scripts/collect_pew_snapshots.py`. Each card displays its actual release frequency; source adapters that need a stable public export are shown as pending rather than populated with estimates.
 
 ## 🛠️ Local Preview
 

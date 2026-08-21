@@ -1,0 +1,62 @@
+{
+  "generated_from": "manual verified extraction, single cited Pew report",
+  "series": {
+    "pew_india_economy_confidence": {
+      "labels": [
+        "2007: rated national economy good",
+        "2008: rated national economy good",
+        "2008: expects national finances to improve",
+        "2008: expects national finances to worsen",
+        "2008: rated personal finances good"
+      ],
+      "values": [
+        74,
+        62,
+        55,
+        16,
+        84
+      ],
+      "source": "https://www.pewresearch.org/global/2008/12/04/india/",
+      "unit": "% of respondents",
+      "note": "Distinct survey statements from the 2007-2008 Pew Global Attitudes Project, not a continuous series."
+    },
+    "pew_india_us_relations": {
+      "labels": [
+        "2007: US spreads democracy wherever it can",
+        "2007: supports US-led counter-terrorism efforts",
+        "2007: likes American ways of doing business",
+        "2008: favorable opinion of the United States",
+        "2008: dislikes American ideas about democracy",
+        "2008: says spread of American customs is bad"
+      ],
+      "values": [
+        32,
+        50,
+        51,
+        66,
+        49,
+        62
+      ],
+      "source": "https://www.pewresearch.org/global/2008/12/04/india/",
+      "unit": "% of respondents",
+      "note": "Distinct survey statements from the 2007-2008 Pew Global Attitudes Project, not a continuous series."
+    },
+    "pew_india_global_power": {
+      "labels": [
+        "2007: cites terrorism as a very big problem",
+        "2008: unfavorable opinion of Pakistan",
+        "2008: believes Iraq democracy will succeed",
+        "2008: wants US/NATO troops out of Afghanistan soon"
+      ],
+      "values": [
+        72,
+        73,
+        56,
+        40
+      ],
+      "source": "https://www.pewresearch.org/global/2008/12/04/india/",
+      "unit": "% of respondents",
+      "note": "Distinct survey statements from the 2007-2008 Pew Global Attitudes Project, not a continuous series."
+    }
+  }
+}

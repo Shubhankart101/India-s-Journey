@@ -27,7 +27,7 @@
         <h2 id="intro-title">A readable public record of India’s changing signals</h2>
         <p>This dashboard was created to make India’s economic, social, and infrastructure data easier to explore in one place. It brings together long-run public indicators, preserves the frequency and limitations of each source, and turns the underlying observations into interactive charts rather than static claims.</p>
         <p>The project is independent and uses cited public APIs and official portals. It is designed for curiosity, comparison, and context: every graph can be inspected, zoomed, reset, searched, and traced back to its source. Pending cards are intentionally visible only when requested, so missing automated exports are never presented as invented numbers.</p>
-        <p>With sincere thanks to <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy</a>, <a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Tushar Gupta’s Polity and Policy Substack</a>, and <a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix</a> for the inspiring work that encouraged this visual approach to public information. Indian Matrix especially helped motivate the market-and-public-indicators view. This dashboard is an independent work, created with appreciation for that spirit of public-data storytelling.</p>
+        <p>With sincere thanks to <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy</a> and <a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix</a> for the inspiring work that encouraged this visual approach to public information. Indian Matrix especially helped motivate the market-and-public-indicators view. This dashboard is an independent work, created with appreciation for that spirit of public-data storytelling.</p>
       </div>
       <aside class="article-rail" aria-labelledby="article-rail-title">
         <p class="eyebrow" id="article-rail-title">📰 Indian Matrix latest articles</p>
@@ -35,6 +35,20 @@
           <p class="article-loading">Loading public articles...</p>
         </div>
       </aside>
+    </section>
+
+    <section class="sources polity-policy" aria-labelledby="polity-policy-title">
+      <div>
+        <p class="eyebrow">🏛️ Inspiration</p>
+        <h2 id="polity-policy-title">PolityPolicy and Polity and Policy</h2>
+        <p>This dashboard was directly inspired by <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a>'s public-data storytelling and by <a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Tushar Gupta's Polity and Policy Substack</a>. This dashboard is an independent, separately-built project; it does not copy or mirror PolityPolicy's interactive chart rendering, and does not represent PolityPolicy or its authors.</p>
+        <p>The About panel's reading rail above is populated from the public Polity and Policy RSS snapshot, refreshed daily by this project's pipeline, so the buttons stay linked to the latest available public articles from that Substack.</p>
+      </div>
+      <ul>
+        <li><a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy.com</a> — the original public-data storytelling site</li>
+        <li><a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Polity and Policy on Substack</a> — Tushar Gupta's writing and analysis</li>
+        <li><a href="https://politypolicy.substack.com/feed" target="_blank" rel="noreferrer">Polity and Policy RSS feed</a> — the public feed this project reads from</li>
+      </ul>
     </section>
 
     <section class="sources">
@@ -62,7 +76,7 @@
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators"></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
       <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
-      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Markets</option><option>Infrastructure</option><option>Public opinion</option><option>Crime</option><option>Maoism / LWE</option><option>Terrorism</option></select></label>
+      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Public opinion</option><option>Demographics</option><option>Welfare</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>

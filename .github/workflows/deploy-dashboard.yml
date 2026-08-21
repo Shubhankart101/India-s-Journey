@@ -10,6 +10,8 @@ on:
       - data/economic-survey-monthly.json
       - data/indian-matrix-latest.json
       - data/pew-india-reports.json
+      - data/ncrb-and-analyses.json
+      - data/pew-snapshots.json
       - .github/workflows/deploy-dashboard.yml
 
 permissions:
@@ -39,6 +41,8 @@ jobs:
           if [ -f data/indian-matrix-latest.json ]; then cp data/indian-matrix-latest.json site/data/indian-matrix-latest.json; fi
           if [ -f data/pew-india-reports.json ]; then cp data/pew-india-reports.json site/data/pew-india-reports.json; fi
           if [ -f data/substack-latest.json ]; then cp data/substack-latest.json site/data/substack-latest.json; fi
+          if [ -f data/ncrb-and-analyses.json ]; then cp data/ncrb-and-analyses.json site/data/ncrb-and-analyses.json; fi
+          if [ -f data/pew-snapshots.json ]; then cp data/pew-snapshots.json site/data/pew-snapshots.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
