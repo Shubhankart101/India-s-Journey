@@ -47,7 +47,7 @@ const definitions = [
 const categoryFor = key => ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'ncrb_crime'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
 
 const formatMagnitude = (value, suffix = '') => {
-  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn/i.test(suffix);
+  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
   const formattedValue = Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
   if (declaredUnit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
   const absolute = Math.abs(value);
@@ -74,7 +74,7 @@ const chartOptions = (suffix) => ({
   },
   scales: {
     x: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6' } },
-    y: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6', callback: value => formatMagnitude(value, suffix) } },
+    y: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6', maxTicksLimit: 6, padding: 8, callback: value => formatMagnitude(value, suffix) } },
   },
 });
 
