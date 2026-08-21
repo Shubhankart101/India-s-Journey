@@ -16,6 +16,8 @@ Special appreciation to Indian Matrix for the work that helped motivate the mark
 
 Indian Matrix is now represented by a weekly publication-cadence graph and a right-side article rail sourced from its public RSS feed.
 
+Pew Research Center India is represented by a dated public-report catalog and yearly report-cadence graph. This preserves discovered report links and dates without merging incompatible survey questions into a false time series.
+
 The About panel also includes a right-side reading rail populated from the public Polity and Policy RSS snapshot. The weekly pipeline refreshes article titles, dates, and URLs; the Pages deployment copies that snapshot into the dashboard so the buttons stay linked to the latest available public articles.
 
 An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
