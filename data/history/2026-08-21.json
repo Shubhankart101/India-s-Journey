@@ -1,0 +1,91 @@
+{
+  "generated_at_utc": "2026-08-21T14:21:24+00:00",
+  "login": "Shubhankart101",
+  "public_repositories": 28,
+  "followers": 0,
+  "following": 0,
+  "public_gists": 0,
+  "total_stars": 0,
+  "total_forks": 0,
+  "open_issues": 0,
+  "repository_size_kb": 196155,
+  "repositories_updated_30_days": 18,
+  "recent_public_events": 100,
+  "recent_push_events": 96,
+  "top_languages": [
+    [
+      "Python",
+      5
+    ],
+    [
+      "C#",
+      3
+    ],
+    [
+      "HCL",
+      2
+    ],
+    [
+      "Shell",
+      2
+    ],
+    [
+      "Go Template",
+      1
+    ],
+    [
+      "PowerShell",
+      1
+    ],
+    [
+      "CSS",
+      1
+    ],
+    [
+      "JavaScript",
+      1
+    ]
+  ],
+  "recent_repositories": [
+    {
+      "name": "TerraformRepoForNotes",
+      "updated_at": "2026-08-21T14:18:33Z",
+      "stars": 0
+    },
+    {
+      "name": "PythonScriptingForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:18:31Z",
+      "stars": 0
+    },
+    {
+      "name": "Kubernetes-DockerForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:18:30Z",
+      "stars": 0
+    },
+    {
+      "name": "PolityPolicyUpdate",
+      "updated_at": "2026-08-21T14:17:55Z",
+      "stars": 0
+    },
+    {
+      "name": "GitlabForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:17:13Z",
+      "stars": 0
+    },
+    {
+      "name": "AnsibleForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:16:48Z",
+      "stars": 0
+    },
+    {
+      "name": "PowershellScriptingForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:15:44Z",
+      "stars": 0
+    },
+    {
+      "name": "ShellScriptingForDevOpsRepoForNotes",
+      "updated_at": "2026-08-21T14:15:34Z",
+      "stars": 0
+    }
+  ]
+}

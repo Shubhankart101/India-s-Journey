@@ -1,0 +1,124 @@
+name: Daily GitHub Metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 2 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Collect public GitHub metrics
+        env:
+          GITHUB_LOGIN: Shubhankart101
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          from collections import Counter
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+
+          login = os.environ['GITHUB_LOGIN']
+          headers = {'Accept': 'application/vnd.github+json', 'User-Agent': 'PolityPolicyUpdate-dashboard'}
+
+          def get(path):
+              request = Request(f'https://api.github.com{path}', headers=headers)
+              with urlopen(request, timeout=30) as response:
+                  return json.load(response)
+
+          user = get(f'/users/{login}')
+          repos = get(f'/users/{login}/repos?per_page=100&sort=updated')
+          events = get(f'/users/{login}/events/public?per_page=100')
+          cutoff = datetime.now(timezone.utc) - timedelta(days=30)
+          languages = Counter(repo['language'] for repo in repos if repo['language'])
+          updated_recently = sum(
+              datetime.fromisoformat(repo['updated_at'].replace('Z', '+00:00')) >= cutoff
+              for repo in repos
+          )
+          metrics = {
+              'generated_at_utc': datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+              'login': login,
+              'public_repositories': user['public_repos'],
+              'followers': user['followers'],
+              'following': user['following'],
+              'public_gists': user['public_gists'],
+              'total_stars': sum(repo['stargazers_count'] for repo in repos),
+              'total_forks': sum(repo['forks_count'] for repo in repos),
+              'open_issues': sum(repo['open_issues_count'] for repo in repos),
+              'repository_size_kb': sum(repo['size'] for repo in repos),
+              'repositories_updated_30_days': updated_recently,
+              'recent_public_events': len(events),
+              'recent_push_events': sum(event['type'] == 'PushEvent' for event in events),
+              'top_languages': languages.most_common(8),
+              'recent_repositories': [
+                  {'name': repo['name'], 'updated_at': repo['updated_at'], 'stars': repo['stargazers_count']}
+                  for repo in repos[:8]
+              ],
+          }
+          today = datetime.now(timezone.utc).date().isoformat()
+          Path('data/history').mkdir(parents=True, exist_ok=True)
+          Path('data/latest.json').write_text(json.dumps(metrics, indent=2) + '\n')
+          Path(f'data/history/{today}.json').write_text(json.dumps(metrics, indent=2) + '\n')
+
+          language_line = ' | '.join(f'{name}: {count}' for name, count in metrics['top_languages']) or 'No primary languages reported'
+          recent_rows = '\n'.join(
+              f"| {repo['name']} | {repo['updated_at'][:10]} | {repo['stars']} |"
+              for repo in metrics['recent_repositories']
+          ) or '| No public repositories returned | - | - |'
+          dashboard = '\n'.join([
+              '<!-- METRICS:START -->',
+              '',
+              f"> Last refreshed: **{metrics['generated_at_utc']}**",
+              '',
+              '| Metric | Value |',
+              '| --- | ---: |',
+              f"| Public repositories | {metrics['public_repositories']} |",
+              f"| Followers | {metrics['followers']} |",
+              f"| Following | {metrics['following']} |",
+              f"| Public gists | {metrics['public_gists']} |",
+              f"| Total stars | {metrics['total_stars']} |",
+              f"| Total forks | {metrics['total_forks']} |",
+              f"| Open issues | {metrics['open_issues']} |",
+              f"| Repository size | {metrics['repository_size_kb']:,} KB |",
+              f"| Repositories updated in 30 days | {metrics['repositories_updated_30_days']} |",
+              f"| Recent public events | {metrics['recent_public_events']} |",
+              f"| Recent push events | {metrics['recent_push_events']} |",
+              '',
+              f"**Primary language mix:** {language_line}",
+              '',
+              '### Recently Updated Public Repositories',
+              '',
+              '| Repository | Last updated (UTC) | Stars |',
+              '| --- | --- | ---: |',
+              recent_rows,
+              '',
+              '[Latest raw snapshot](data/latest.json) · [Historical snapshots](data/history)',
+              '',
+              '<!-- METRICS:END -->',
+            ])
+          readme = Path('README.md').read_text()
+          updated_readme = re.sub(r'<!-- METRICS:START -->.*?<!-- METRICS:END -->', dashboard, readme, flags=re.S)
+          Path('README.md').write_text(updated_readme)
+          PY
+
+      - name: Commit dashboard snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md data
+          if git diff --cached --quiet; then
+            echo "No metrics change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh daily GitHub metrics"
+          git push
