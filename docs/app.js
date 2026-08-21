@@ -114,7 +114,7 @@ async function main() {
   const charts = [];
   let lastCategory = '';
   const categoryOrder = { Economic: 0, Social: 1, 'Crime & Security': 2 };
-  const orderedDefinitions = [...definitions].sort((left, right) => categoryOrder[categoryFor(left[0])] - categoryOrder[categoryFor(right[0]]));
+  const orderedDefinitions = [...definitions].sort((left, right) => categoryOrder[categoryFor(left[0])] - categoryOrder[categoryFor(right[0])]);
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
     if (category !== lastCategory) {
