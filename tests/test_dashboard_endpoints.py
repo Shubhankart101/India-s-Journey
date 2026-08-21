@@ -184,6 +184,12 @@ class DashboardEndpointTests(unittest.TestCase):
                 if key == "indian_matrix_insights":
                     self.assertIn("articles", series, key)
                     self.assertIn("key_analyses", series, key)
+                elif key in ("lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
+                    self.assertIn("labels", series, key)
+                    self.assertIn("values", series, key)
+                    self.assertEqual(len(series["labels"]), len(series["values"]), key)
+                    self.assertGreaterEqual(len(series["values"]), 20, key)
+                    self.assertTrue(series["source"].startswith("https://www.satp.org/"), key)
                 else:
                     self.assertIn("years", series, key)
                     self.assertIn("values", series, key)

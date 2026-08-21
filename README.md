@@ -40,7 +40,9 @@ World Bank series generally reach back to 1960, so the live charts now include d
 
 Security context is represented separately: the live homicide-rate series uses the World Bank indicator, the MHA LWE card uses the official 2004-2025 aggregate deaths figure, and the terrorism chart uses India rows from Our World in Data with Global Terrorism Database provenance. These are not combined into a fabricated 1947-present incident count.
 
-The Crime & Security group also includes an NCRB source-status card. NCRB Crime in India editions are available, but a consistent all-time machine-readable series has not been identified; definitions and classifications must be reconciled before plotting historical totals. `data.gov.in`'s NCRB catalog pages were checked and did not return a stable dataset at time of writing. The LWE civilian/security-force/perpetrator casualty breakdown remains pending for the same reason: MHA's public page only publishes the 2004-2025 aggregate (8,956 killed), and the South Asia Terrorism Portal's historical breakdown tables returned inconsistently formatted data when checked, so they were not transcribed to avoid introducing transcription error into the dashboard.
+The Crime & Security group also includes an NCRB source-status card. NCRB Crime in India editions are available, but a consistent all-time machine-readable series has not been identified; definitions and classifications must be reconciled before plotting historical totals. `data.gov.in`'s NCRB catalog pages were checked and did not return a stable dataset at time of writing.
+
+The LWE civilian/security-force/perpetrator casualty breakdown is now populated (2000-2025) from the South Asia Terrorism Portal's (SATP) "Maoist Insurgency" fatality tables, a clean, consistently-formatted, clearly-labelled secondary source. MHA's own public page only publishes the 2004-2025 aggregate (8,956 killed) without this breakdown, and SATP uses a different classification and provisional news-based tally, so the two figures are not summed or treated as the same series; the MHA aggregate card and the three SATP breakdown cards are both retained, separately sourced and labelled.
 
 ## 🧪 Testing
 
@@ -91,7 +93,7 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 - [Global Terrorism Database](https://www.start.umd.edu/gtd/)
 - [Pew Research Center Global Attitudes](https://www.pewresearch.org/global/) for India public-opinion research and survey findings.
 - [Pew Research Center: India, Global Optimism, Local Fears (2008)](https://www.pewresearch.org/global/2008/12/04/india/) for the cited survey-snapshot percentages used in the Pew economy-confidence, US-relations, and global-power cards.
-- [South Asia Terrorism Portal](https://www.satp.org/) checked as a secondary, non-official source for LWE casualty breakdowns; not currently used because its historical tables did not return consistently formatted data.
+- [South Asia Terrorism Portal - Maoist Insurgency fatalities](https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency) for the civilian/security-force/perpetrator breakdown used by the three SATP-sourced LWE casualty cards; a secondary, non-official source with its own classification, distinct from the MHA aggregate.
 - [NCRB Crime in India](https://ncrb.gov.in/crime-in-india.html) for official crime statistics and year-wise table references.
 - [Economic Survey statistical appendix](https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf) for collated monthly HFI tables.
 - [Economic Survey table 9.1](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf) for monthly GST and related high-frequency indicators.

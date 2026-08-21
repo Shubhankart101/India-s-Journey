@@ -67,26 +67,43 @@ def build_ncrb_crime_data() -> dict:
 
 
 def build_lwe_casualties() -> dict:
-    """Build LWE casualty breakdown.
-    
-    MHA Left-Wing Extremism reports provide aggregate deaths and sometimes
-    category breakdowns. This creates the structure for civilian, security-force,
-    and perpetrator casualties.
+    """Build LWE casualty breakdown by category.
+
+    MHA's public page only publishes the 2004-2025 aggregate (8,956 deaths)
+    and does not break it down by civilian/security-force/perpetrator.
+    The South Asia Terrorism Portal (SATP) publishes a year-wise breakdown
+    for its "Maoist Insurgency" fatality count, a secondary non-official
+    source with its own classification and provisional news-based tallies.
+    It is not the same series as the MHA aggregate and the two should not
+    be summed together or treated as interchangeable.
+
+    Source: https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency
+    (fetched and manually verified 2026-08-22; excludes the partial 2026 year).
     """
+    satp_source = "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency"
+    years = [str(year) for year in range(2000, 2026)]
+    civilians = [94, 130, 123, 193, 89, 259, 249, 218, 184, 368, 630, 259, 156, 164, 127, 90, 122, 107, 108, 99, 61, 58, 53, 61, 80, 54]
+    security_forces = [40, 116, 115, 114, 82, 147, 128, 234, 215, 319, 267, 137, 96, 103, 98, 56, 62, 76, 73, 49, 44, 51, 15, 31, 21, 33]
+    perpetrators = [135, 169, 163, 246, 87, 282, 343, 195, 228, 314, 265, 210, 125, 151, 121, 110, 250, 152, 230, 154, 134, 128, 67, 56, 296, 390]
     return {
-        "source": "Ministry of Home Affairs - Left-Wing Extremism Division",
-        "note": "MHA provides aggregate LWE deaths and occasional category reports. Annual splits require manual extraction.",
-        "years": [],
-        "values": [],
+        "source": satp_source,
+        "note": "South Asia Terrorism Portal (secondary, non-official source) 'Maoist Insurgency' fatality breakdown, not MHA's own category data. MHA's public page only publishes the 2004-2025 aggregate (8,956 deaths) without this breakdown.",
+        "labels": years,
+        "categories": {
+            "civilian": civilians,
+            "security_force": security_forces,
+            "perpetrator": perpetrators,
+        },
         "metadata": {
             "category_type": "casualty_breakdown",
             "categories": ["Civilian", "Security Force", "Perpetrator"],
-            "period": "2004-2025",
-            "latest_aggregate": "8,956 deaths (2004-2025)",
+            "period": "2000-2025",
+            "official_aggregate_note": "MHA official aggregate: 8,956 deaths (2004-2025), not directly comparable to this SATP breakdown",
             "data_type": "annual_count",
-            "frequency": "Annual reports"
-        }
+            "frequency": "Annual, provisional (compiled from news reports by SATP)",
+        },
     }
+
 
 
 def build_violent_incidents_aggregate() -> dict:
@@ -136,6 +153,14 @@ def build_indian_matrix_insights() -> dict:
     }
 
 
+def build_lwe_category_series(category: str) -> dict:
+    """Extract a single civilian/security_force/perpetrator series for one card."""
+    breakdown = build_lwe_casualties()
+    series = dict(breakdown)
+    series["values"] = series.pop("categories")[category]
+    return series
+
+
 def main() -> None:
     """Main data collection function."""
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -145,9 +170,9 @@ def main() -> None:
         "series": {
             "ncrb_crime": build_ncrb_crime_data(),
             "violent_incidents": build_violent_incidents_aggregate(),
-            "lwe_civilian_casualties": build_lwe_casualties(),
-            "lwe_security_force_casualties": build_lwe_casualties(),
-            "lwe_perpetrator_casualties": build_lwe_casualties(),
+            "lwe_civilian_casualties": build_lwe_category_series("civilian"),
+            "lwe_security_force_casualties": build_lwe_category_series("security_force"),
+            "lwe_perpetrator_casualties": build_lwe_category_series("perpetrator"),
             "indian_matrix_insights": build_indian_matrix_insights()
         }
     }
