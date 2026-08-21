@@ -30,6 +30,8 @@ Fiscal deficit is now populated as an annual percentage-of-GDP series from Econo
 
 World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
 
+Security context is represented separately: the live homicide-rate series uses the World Bank indicator, MHA provides official LWE/Maoism context from 2004 onward, and the Global Terrorism Database provides research coverage from 1970 onward. These are not combined into a fabricated 1947-present incident count.
+
 ## 🔗 References
 
 <details>
@@ -56,6 +58,9 @@ World Bank series generally reach back to 1960, so the live charts now include d
 - [Electricity-access API](https://api.worldbank.org/v2/country/IND/indicator/EG.ELC.ACCS.ZS?format=json&per_page=100)
 - [Internet-users API](https://api.worldbank.org/v2/country/IND/indicator/IT.NET.USER.ZS?format=json&per_page=100)
 - [Life-expectancy API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.LE00.IN?format=json&per_page=100)
+- [Intentional homicide rate API](https://api.worldbank.org/v2/country/IND/indicator/VC.IHR.PSRC.P5?format=json&per_page=100)
+- [MHA Left-Wing Extremism Division](https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division)
+- [Global Terrorism Database](https://www.start.umd.edu/gtd/)
 - [Economic Survey statistical appendix](https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf) for collated monthly HFI tables.
 - [Economic Survey table 9.1](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf) for monthly GST and related high-frequency indicators.
 - [Economic Survey table 9.2](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.2.pdf) for monthly UPI and IIP indicators.

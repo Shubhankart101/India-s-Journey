@@ -85,8 +85,9 @@ def main() -> None:
         ("electricity_access", "EG.ELC.ACCS.ZS", "india-electricity-access.svg", "India Electricity Access", "Population with access to electricity; World Bank indicator EG.ELC.ACCS.ZS", "#79c0ff", "%"),
         ("internet_users", "IT.NET.USER.ZS", "india-internet-users.svg", "India Internet Users", "Individuals using the internet; World Bank indicator IT.NET.USER.ZS", "#f778ba", "%"),
         ("life_expectancy", "SP.DYN.LE00.IN", "india-life-expectancy.svg", "India Life Expectancy", "Life expectancy at birth; World Bank indicator SP.DYN.LE00.IN", "#ff7b72", " years"),
+        ("homicide_rate", "VC.IHR.PSRC.P5", "india-homicide-rate.svg", "India Intentional Homicide Rate", "Intentional homicides per 100,000 people; World Bank indicator VC.IHR.PSRC.P5", "#ff7b72", " per 100k"),
     ]
-    for key in ["gst", "fiscal_deficit", "wpi", "upi"]:
+    for key in ["gst", "fiscal_deficit", "wpi", "upi", "lwe_incidents", "terror_attacks"]:
         result["series"][key] = {"error": "Official export adapter pending"}
     for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:

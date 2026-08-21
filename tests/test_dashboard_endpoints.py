@@ -39,6 +39,7 @@ LIVE_API_SOURCES = {
     "electricity_access": "EG.ELC.ACCS.ZS",
     "internet_users": "IT.NET.USER.ZS",
     "life_expectancy": "SP.DYN.LE00.IN",
+    "homicide_rate": "VC.IHR.PSRC.P5",
 }
 
 
@@ -74,6 +75,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "population", "unemployment", "current_account", "broad_money",
             "tax_revenue", "government_consumption", "fdi", "domestic_savings",
             "electricity_access", "internet_users", "life_expectancy",
+                    "homicide_rate", "lwe_incidents", "terror_attacks",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
