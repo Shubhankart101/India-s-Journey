@@ -1,11 +1,7 @@
 from __future__ import annotations
 
 import json
-import math
-import xml.etree.ElementTree as ET
-from collections import Counter
-from datetime import datetime, timedelta, timezone
-from email.utils import parsedate_to_datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -18,12 +14,6 @@ def get_json(url: str) -> object:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
     with urlopen(request, timeout=30) as response:
         return json.load(response)
-
-
-def get_bytes(url: str) -> bytes:
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/rss+xml,application/xml;q=0.9,*/*;q=0.8"})
-    with urlopen(request, timeout=30) as response:
-        return response.read()
 
 
 def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float], color: str, value_suffix: str) -> str:
@@ -62,24 +52,6 @@ def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float],
 </svg>'''
 
 
-def build_cpi_chart() -> dict:
-    payload = get_json("https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&per_page=100")
-    rows = [row for row in payload[1] if row["value"] is not None]
-    rows = sorted(rows, key=lambda row: int(row["date"]))[-15:]
-    labels = [row["date"] for row in rows]
-    values = [float(row["value"]) for row in rows]
-    svg = svg_chart(
-        "India CPI Inflation",
-        "Annual consumer-price inflation; World Bank indicator FP.CPI.TOTL.ZG",
-        labels,
-        values,
-        "#63b3ed",
-        "%",
-    )
-    (CHART_DIR / "india-cpi-inflation.svg").write_text(svg)
-    return {"source": "World Bank API FP.CPI.TOTL.ZG", "years": labels, "values": values}
-
-
 def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle: str, color: str, suffix: str) -> dict:
     payload = get_json(f"https://api.worldbank.org/v2/country/IND/indicator/{indicator}?format=json&per_page=100")
     rows = [row for row in payload[1] if row["value"] is not None]
@@ -88,33 +60,6 @@ def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle:
     values = [float(row["value"]) for row in rows]
     (CHART_DIR / file_name).write_text(svg_chart(title, subtitle, labels, values, color, suffix))
     return {"source": f"World Bank API {indicator}", "years": labels, "values": values}
-
-
-def build_substack_chart() -> dict:
-    feed = ET.fromstring(get_bytes("https://politypolicy.substack.com/feed"))
-    dates = []
-    for item in feed.find("channel").findall("item"):
-        value = item.findtext("pubDate")
-        if value:
-            dates.append(parsedate_to_datetime(value).astimezone(timezone.utc).date())
-    today = datetime.now(timezone.utc).date()
-    weeks = [today - timedelta(days=7 * index) for index in range(11, -1, -1)]
-    counts = []
-    labels = []
-    for week in weeks:
-        end = week + timedelta(days=6)
-        counts.append(sum(week <= published <= end for published in dates))
-        labels.append(week.strftime("%d %b"))
-    svg = svg_chart(
-        "Polity and Policy Publication Cadence",
-        "Public articles from the weekly RSS feed; rolling 12-week view",
-        labels,
-        counts,
-        "#2ea44f",
-        "",
-    )
-    (CHART_DIR / "substack-publication-cadence.svg").write_text(svg)
-    return {"feed": "https://politypolicy.substack.com/feed", "weeks": labels, "article_counts": counts}
 
 
 def main() -> None:

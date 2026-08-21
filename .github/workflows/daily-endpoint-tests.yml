@@ -1,0 +1,25 @@
+name: Daily Dashboard Endpoint Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 00:00 IST = 18:30 UTC on the previous day.
+    - cron: '30 18 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  endpoint-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Test dashboard and official endpoints
+        env:
+          DASHBOARD_URL: https://shubhankart101.github.io/PolityPolicyUpdate/
+        run: python -m unittest discover -s tests -p 'test_*.py' -v

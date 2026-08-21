@@ -143,11 +143,14 @@ jobs:
           Path('README.md').write_text(re.sub(r'<!-- METRICS:START -->.*?<!-- METRICS:END -->', dashboard, readme, flags=re.S))
           PY
 
-      - name: Commit dashboard snapshot
+            - name: Refresh public-source charts
+                run: python scripts/generate_public_charts.py
+
+            - name: Commit dashboard snapshot and charts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data
+          git add README.md data assets
           if git diff --cached --quiet; then
             echo "No site change to commit."
             exit 0
