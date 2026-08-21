@@ -1,8 +1,20 @@
-# PolityPolicy-Inspired Public Data Dashboard
+# 📊 PolityPolicy-Inspired Public Data Dashboard
+
+<p align="center">
+	<a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
+	<a href="https://github.com/Shubhankart101/PolityPolicyUpdate/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
+	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
+</p>
+
+## 🧭 About This Dashboard
+
+This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
+
+With thanks to [PolityPolicy](https://politypolicy.com/) and [Polity and Policy](https://politypolicy.substack.com/) for inspiring a visual, thoughtful approach to public information. This dashboard is independently built and uses its own charts and data pipeline.
 
 An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
 
-## Open Dashboard
+## 🚀 Open Dashboard
 
 <a href="https://shubhankart101.github.io/PolityPolicyUpdate/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
 
@@ -10,7 +22,7 @@ The static dashboard reads the complete available history for each live series a
 
 World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
 
-## References
+## 🔗 References
 
 <details>
 <summary>Open data sources, APIs, and official portals</summary>
@@ -55,15 +67,15 @@ World Bank series generally reach back to 1960, so the live charts now include d
 
 </details>
 
-## Attribution
+## 🙏 Attribution
 
 Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/) and [Polity and Policy on Substack](https://politypolicy.substack.com/). This is an independent dashboard using original charts generated from the public sources listed above.
 
-## Automation
+## ⚙️ Automation
 
 The [weekly workflow](.github/workflows/weekly-substack-articles.yml) and [daily workflow](.github/workflows/daily-politypolicy-update.yml) regenerate public-source data and dashboard assets. Each card displays its actual release frequency; source adapters that need a stable public export are shown as pending rather than populated with estimates.
 
-## Local Preview
+## 🛠️ Local Preview
 
 ```bash
 python -m http.server 8000 --directory docs
