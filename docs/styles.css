@@ -28,6 +28,13 @@ h1, h2, p { margin-top:0; } h1 { font-size:clamp(2.5rem, 7vw, 5.5rem); line-heig
 .insight { border-top:1px solid var(--line); color:var(--muted); margin-top:14px; padding-top:11px; }
 .insight summary { color:var(--gold); cursor:pointer; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; }
 .insight p { color:var(--muted); font-size:.9rem; line-height:1.6; margin:12px 0 0; }
+.references { border-top:1px solid var(--line); padding:30px 0 40px; }
+.references details { background:var(--panel); border:1px solid var(--line); padding:16px 18px; }
+.references summary { color:var(--gold); cursor:pointer; font:700 .78rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; }
+.reference-columns { display:grid; grid-template-columns:1fr 1fr; gap:32px; padding-top:18px; }
+.reference-columns h3 { color:var(--ink); font-size:1rem; margin:0 0 8px; }
+.reference-columns ul { margin:0 0 18px; padding-left:18px; }
+.reference-columns li { margin:5px 0; }
 .reset { border:1px solid var(--line); color:var(--ink); background:transparent; padding:7px 9px; cursor:pointer; font:700 .7rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .source-link { display:inline-block; margin-top:11px; font:700 .75rem ui-monospace, SFMono-Regular, Consolas, monospace; }
 .sources { display:grid; grid-template-columns:2fr 1fr; gap:40px; padding:36px 0 54px; border-top:1px solid var(--line); } .sources p { color:var(--muted); } .sources ul { margin:0; padding-left:18px; }

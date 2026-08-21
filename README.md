@@ -8,14 +8,43 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 The static dashboard reads the latest generated data and supports chart tooltips, zoom, pan, reset, search, live/pending filters, frequency labels, and expandable indicator notes.
 
-## Sources
+## References
 
-- [World Bank Open Data API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392) for the live CPI, trade, foreign-reserve, bank-credit, industrial, exchange-rate, GDP-per-capita, population, unemployment, current-account, and broad-money series. These are open international indicators populated from country and official statistical sources.
+<details>
+<summary>Open data sources, APIs, and official portals</summary>
+
+### Live data APIs
+
+- [World Bank API documentation](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392)
+- [CPI inflation API](https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&per_page=100)
+- [Trade share of GDP API](https://api.worldbank.org/v2/country/IND/indicator/NE.TRD.GNFS.ZS?format=json&per_page=100)
+- [Foreign reserves API](https://api.worldbank.org/v2/country/IND/indicator/FI.RES.TOTL.CD?format=json&per_page=100)
+- [Private-sector credit API](https://api.worldbank.org/v2/country/IND/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=100)
+- [Industrial value-added API](https://api.worldbank.org/v2/country/IND/indicator/NV.IND.TOTL.KD.ZG?format=json&per_page=100)
+- [Official exchange-rate API](https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&per_page=100)
+- [GDP per capita API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.PCAP.CD?format=json&per_page=100)
+- [Population API](https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json&per_page=100)
+- [Unemployment API](https://api.worldbank.org/v2/country/IND/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100)
+- [Current-account balance API](https://api.worldbank.org/v2/country/IND/indicator/BN.CAB.XOKA.GD.ZS?format=json&per_page=100)
+- [Broad-money API](https://api.worldbank.org/v2/country/IND/indicator/FM.LBL.BMNY.GD.ZS?format=json&per_page=100)
+
+### Indian government and public sources
+
 - [GST portal](https://www.gst.gov.in/) for GST collections.
-- [Ministry of Statistics and Programme Implementation](https://www.mospi.gov.in/) for IIP.
-- [Reserve Bank of India DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for the rupee and banking data.
-- [Office of Economic Adviser](https://eaindustry.nic.in/) for WPI.
+- [Controller General of Accounts](https://cga.nic.in/) for Union fiscal accounts.
+- [MOSPI](https://www.mospi.gov.in/) for IIP and official statistics.
+- [RBI DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for monetary, banking, and exchange-rate data.
+- [Office of the Economic Adviser](https://eaindustry.nic.in/) for WPI.
 - [NPCI UPI statistics](https://www.npci.org.in/what-we-do/upi/product-statistics) for UPI activity.
+- [PolityPolicy.com](https://politypolicy.com/) and [Polity and Policy RSS](https://politypolicy.substack.com/feed) for attribution and public publication context.
+
+### Runtime libraries
+
+- [Chart.js 4.4.4](https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js)
+- [Hammer.js 2.0.8](https://cdn.jsdelivr.net/npm/hammerjs@2.0.8)
+- [chartjs-plugin-zoom 2.0.1](https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js)
+
+</details>
 
 ## Attribution
 
