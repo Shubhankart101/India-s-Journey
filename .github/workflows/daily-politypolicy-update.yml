@@ -1,14 +1,16 @@
 name: Daily PolityPolicy Update
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
   schedule:
     - cron: '30 2 * * *'
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-public-data
+  cancel-in-progress: false
 
 jobs:
   collect:
@@ -73,4 +75,6 @@ jobs:
             exit 0
           fi
           git commit -m "Refresh daily public data"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
