@@ -27,7 +27,7 @@ const chartOptions = (suffix) => ({
 });
 
 async function main() {
-  const data = await fetch('data/chart-latest.json').then(response => response.json());
+  const data = await fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json());
   document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
   const grid = document.querySelector('#charts');
   definitions.forEach(([key, title, subtitle, frequency, color, suffix, source], index) => {
@@ -45,7 +45,8 @@ async function main() {
       data: { labels, datasets: [{ data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
       options: chartOptions(suffix),
     });
-    card.querySelector('.reset').addEventListener('click', () => chart.resetZoom());
+    const reset = card.querySelector('.reset');
+    if (reset) reset.addEventListener('click', () => chart.resetZoom());
   });
 }
 
