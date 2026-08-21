@@ -33,6 +33,9 @@ const definitions = [
 ];
 
 const formatMagnitude = (value, suffix = '') => {
+  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn/i.test(suffix);
+  const formattedValue = Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
+  if (declaredUnit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
   const absolute = Math.abs(value);
   const units = [
     [1e12, 'trillion'],
@@ -41,9 +44,9 @@ const formatMagnitude = (value, suffix = '') => {
     [1e3, 'thousand'],
   ];
   const unit = units.find(([threshold]) => absolute >= threshold);
-  if (!unit) return `${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}${suffix}`;
+  if (!unit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
   const amount = value / unit[0];
-  return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix}`;
+  return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix ? ` ${suffix}` : ''}`;
 };
 
 const chartOptions = (suffix) => ({
