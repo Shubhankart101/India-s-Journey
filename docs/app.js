@@ -23,18 +23,32 @@ const definitions = [
   ['life_expectancy', 'Life expectancy', 'Life expectancy at birth', 'Annual', '#ff7b72', ' years', 'https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IN', 'Life expectancy at birth estimates the average years a newborn would live under current mortality conditions. It is a high-level outcome indicator for population health and social development.\n\nIt is not an individual prediction and does not reveal regional, gender, or income differences. Trends should be interpreted alongside health-system and demographic data.'],
 ];
 
+const formatMagnitude = (value, suffix = '') => {
+  const absolute = Math.abs(value);
+  const units = [
+    [1e12, 'trillion'],
+    [1e9, 'billion'],
+    [1e6, 'million'],
+    [1e3, 'thousand'],
+  ];
+  const unit = units.find(([threshold]) => absolute >= threshold);
+  if (!unit) return `${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}${suffix}`;
+  const amount = value / unit[0];
+  return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix}`;
+};
+
 const chartOptions = (suffix) => ({
   responsive: true,
   maintainAspectRatio: false,
   interaction: { mode: 'index', intersect: false },
   plugins: {
     legend: { display: false },
-    tooltip: { backgroundColor: '#0d1117', titleColor: '#e8edf2', bodyColor: '#e8edf2', borderColor: '#2b3645', borderWidth: 1 },
+    tooltip: { backgroundColor: '#0d1117', titleColor: '#e8edf2', bodyColor: '#e8edf2', borderColor: '#2b3645', borderWidth: 1, callbacks: { label: context => ` ${formatMagnitude(context.parsed.y, suffix)}` } },
     zoom: { pan: { enabled: true, mode: 'x' }, zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } },
   },
   scales: {
     x: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6' } },
-    y: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6', callback: value => `${value}${suffix}` } },
+    y: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6', callback: value => formatMagnitude(value, suffix) } },
   },
 });
 
