@@ -62,10 +62,22 @@ const definitions = [
   ['economic_offences', 'Economic offences rate', 'Cheating, fraud & forgery per 100k', 'Annual (2014-2023)', '#f6c344', ' per 100k', 'https://ncrb.gov.in/crime-in-india.html', 'Economic offences measure financial crimes including criminal breach of trust, forgery, cheating, and counterfeiting per 100,000 population.\n\nData is sourced from official NCRB Crime in India annual volumes.'],
   ['pew_india_religion_tolerance', 'Pew: Religion, diversity & tolerance', 'Pew survey on religious tolerance, pluralism and freedom', 'Survey snapshots', '#3fb950', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'Landmark Pew Research Center study (Religion in India: Tolerance and Segregation) based on face-to-face interviews with 29,999 Indian adults across 26 states and UTs.\n\nIt examines religious tolerance, freedom of practice, and public views on diversity among India\'s major religious communities.'],
   ['pew_india_demographics_family', 'Pew: Religion & family demographics', 'Pew survey on religious identity, practices and marriage views', 'Survey snapshots', '#a371f7', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'This indicator tracks core demographic findings from Pew Research Center\'s Religion in India study, covering religious practice frequency, karma belief, and social norms.\n\nEach point represents a specific survey statement from the 2019-2020 national Pew study.'],
+  ['pew_india_gender_roles', 'Pew: Gender roles & equality', 'Pew survey on gender equality, leadership & family roles', 'Survey snapshots', '#f778ba', '%', 'https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/', 'Pew Research Center national study on gender roles in Indian society.\n\nIt examines attitudes toward equal rights, female political leadership, family decision-making, and employment priorities.'],
+  ['pew_india_media_news', 'Pew: Media trust & news habits', 'Pew survey on news media trust, social media & fake news concerns', 'Survey snapshots', '#79c0ff', '%', 'https://www.pewresearch.org/global/topic/media-and-technology/', 'Pew Global Attitudes Project tracking news consumption habits, media trust, and digital platform impact in India.'],
+  ['pew_india_climate_environment', 'Pew: Climate & environmental views', 'Pew survey on climate change, pollution & lifestyle willingness', 'Survey snapshots', '#3fb950', '%', 'https://www.pewresearch.org/global/topic/climate-change-energy/', 'Pew Research Center studies tracking public awareness and concern over climate change, air & water pollution, and willingness to adapt personal lifestyles in India.'],
   ['defence_budget_share', 'Defence allocation', 'Share of total Union budget expenditure', 'Annual', '#ffa657', '% Budget', 'https://www.indiabudget.gov.in/', 'Defence allocation tracks military budget spending as a percentage of overall Central Government Expenditure.\n\nData is collated from official Ministry of Finance Union Budget allocation documents.'],
   ['defence_rd_budget', 'Defence R&D expenditure', 'DRDO & defense research spending', 'Annual', '#79c0ff', 'INR Cr', 'https://www.drdo.gov.in/', 'Defence R&D expenditure measures capital and revenue allocation for indigenous weapons development, missile technology, and military research.\n\nData is sourced from DRDO and Ministry of Defence annual standing committee reports.'],
   ['defence_capital_acquisition', 'Defence modernization capital outlay', 'Capital acquisition spending for armed forces', 'Annual', '#58a6ff', 'INR Cr', 'https://www.ddpmod.gov.in/', 'Capital acquisition outlay reflects funds allocated for procuring weapons, aircraft, naval frigates, artillery, and modern military hardware.\n\nOfficial statistics are published by the Ministry of Defence.'],
   ['sipri_arms_imports', 'India arms imports trend', 'SIPRI arms import Trend Indicator Value (TIV)', 'Historical', '#ff7b72', ' SIPRI TIV', 'https://www.sipri.org/databases/armstransfers', 'SIPRI arms imports index tracks conventional weapon import volumes. The declining trend highlights India\'s structural shift from foreign import dependency toward indigenous manufacturing.'],
+  ['union_budget_expenditure', 'Union Budget total expenditure', 'Union budget total spending trajectory', 'Annual', '#58a6ff', 'INR Lakh Cr', 'https://www.indiabudget.gov.in/', 'Total central government expenditure from post-independence budgets to modern Union Budgets in ₹ Lakh Crores.\n\nSourced from official Union Budget Expenditure statements.'],
+  ['budget_yoy_growth', 'Union Budget YoY growth', 'Annual percentage increase in Union expenditure', 'Annual', '#3fb950', '% YoY', 'https://www.indiabudget.gov.in/', 'Year-on-year percentage increase in central budget allocation.\n\nReflects fiscal policy expansion across economic cycles.'],
+  ['capital_expenditure_capex', 'Union capital expenditure (Capex)', 'Central budget capital expenditure for asset creation', 'Annual', '#ff9933', 'INR Lakh Cr', 'https://www.indiabudget.gov.in/', 'Capital Expenditure (Capex) allocation for roads, railways, ports, defense, and infrastructure creation.\n\nHighlights India\'s strategic pivot toward asset building and long-term capital formation.'],
+  ['pm_jan_dhan_yojana', 'PM Jan Dhan Yojana (PMJDY)', 'Financial inclusion bank accounts opened', 'Annual / Cumulative', '#79c0ff', 'Crore accounts', 'https://pmjdy.gov.in/', 'PMJDY is the world\'s largest financial inclusion program, expanding formal banking access to unbanked households across rural and urban India.\n\nOfficial data from Department of Financial Services, Ministry of Finance.'],
+  ['pm_awas_yojana', 'PM Awas Yojana (PMAY)', 'Housing units completed for low-income households', 'Annual / Cumulative', '#56d364', 'Lakh houses', 'https://pmaymis.gov.in/', 'PMAY provides affordable pucca housing to rural (PMAY-G) and urban (PMAY-U) low-income families.\n\nSourced from Ministry of Housing & Urban Affairs and Ministry of Rural Development.'],
+  ['jal_jeevan_mission', 'Jal Jeevan Mission (JJM)', 'Rural households with tap water access', 'Annual', '#63b3ed', '% households', 'https://ejalshakti.gov.in/', 'Jal Jeevan Mission aims to provide Har Ghar Jal (functional household tap connections) to all rural households in India.\n\nSourced from Ministry of Jal Shakti open dashboard.'],
+  ['ayushman_bharat', 'Ayushman Bharat PM-JAY', 'Beneficiary health cards issued', 'Annual / Cumulative', '#f778ba', 'Crore cards', 'https://pmjay.gov.in/', 'PM-JAY provides health coverage up to ₹5 lakh per family per year for secondary and tertiary care hospitalization to poor and vulnerable families.\n\nSourced from National Health Authority.'],
+  ['social_category_literacy', 'Literacy by social group', 'Literacy rates across SC, ST, OBC and General categories', 'Survey / Census', '#bc8cff', '%', 'https://www.mospi.gov.in/', 'Literacy rate breakdown across social categories (Scheduled Castes, Scheduled Tribes, Other Backward Classes, and General category).\n\nSourced from MOSPI Periodic Labour Force Survey and Census estimates.'],
+  ['religious_demographics', 'Literacy by religious community', 'Literacy rates across major religious communities', 'Survey / Census', '#a371f7', '%', 'https://niti.gov.in/', 'Literacy rates across major religious groups in India (Hindu, Muslim, Christian, Sikh, Buddhist, Jain).\n\nSourced from Census of India and NFHS-5 socio-religious demographic studies.'],
 ];
 
 const eraData = {
@@ -137,8 +149,9 @@ const eraFor = key => {
   return 'republic';
 };
 
-const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'social_category_literacy', 'religious_demographics'].includes(key) ? 'Social' : 'Economic';
+
+const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex'].includes(key) ? 'Fiscal & Union Budget' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
@@ -278,9 +291,9 @@ async function main() {
       container.append(link);
     });
   };
-  renderArticles(articleLinks, (indianMatrix.articles || []).slice(0, 6), 'No public article snapshot available yet.');
+  renderArticles(articleLinks, ((dataPayload && dataPayload.indian_matrix_articles) || (indianMatrix && indianMatrix.articles) || []).slice(0, 6), 'No public article snapshot available yet.');
   const polityPolicyLinks = document.querySelector('#pp-article-links');
-  if (polityPolicyLinks) renderArticles(polityPolicyLinks, (articles.articles || []).slice(0, 6), 'No public article snapshot available yet.');
+  if (polityPolicyLinks) renderArticles(polityPolicyLinks, ((dataPayload && dataPayload.polity_policy_articles) || (articles && articles.articles) || []).slice(0, 6), 'No public article snapshot available yet.');
   const categoryBgMap = {
     Economic: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
     Social: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
@@ -326,7 +339,51 @@ async function main() {
     card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    
+    const labels = series?.labels || [];
+    const values = series?.values || [];
+
+    let latestValStr = 'N/A';
+    let growth5YrStr = 'N/A';
+    let peakValStr = 'N/A';
+
+    if (live) {
+      if (values && values.length > 0) {
+        const numValues = values.filter(v => v !== null && v !== undefined && !isNaN(v));
+        if (numValues.length > 0) {
+          const lastVal = numValues[numValues.length - 1];
+          latestValStr = formatMagnitude(lastVal, suffix);
+
+          const maxVal = Math.max(...numValues);
+          const maxIdx = values.indexOf(maxVal);
+          const maxYear = labels[maxIdx] || '';
+          peakValStr = `${formatMagnitude(maxVal, suffix)}${maxYear ? ` (${maxYear})` : ''}`;
+
+          if (numValues.length >= 6) {
+            const fiveYrAgo = numValues[numValues.length - 6];
+            if (fiveYrAgo && fiveYrAgo !== 0) {
+              const pct = ((lastVal - fiveYrAgo) / Math.abs(fiveYrAgo)) * 100;
+              growth5YrStr = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}% (5Y)`;
+            }
+          }
+        }
+      } else if (series?.datasets && series.datasets.length > 0) {
+        latestValStr = `${series.datasets.length} engine series`;
+        growth5YrStr = `Multi-dataset`;
+        peakValStr = `Base 100 rebased`;
+      }
+    }
+
+    const valueCruncherHtml = `
+      <div class="value-cruncher-bar">
+        <div class="vc-stat"><span class="vc-label">Latest Value</span><strong class="vc-val">${latestValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">5Y Trend</span><strong class="vc-val growth">${growth5YrStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">Historical Peak</span><strong class="vc-val">${peakValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">Observations</span><strong class="vc-val">${observationCount} ${frequency.toLowerCase()}</strong></div>
+      </div>
+    `;
+
+    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     if (!live) return;
     const labels = series.labels;
@@ -378,11 +435,14 @@ async function main() {
       }];
     }
 
-    const chart = new Chart(canvas, {
-      type: 'line',
-      data: { labels, datasets: chartDatasets },
-      options: chartOptions(suffix, hasMultipleDatasets),
-    });
+    let chart = null;
+    if (typeof Chart !== 'undefined') {
+      chart = new Chart(canvas, {
+        type: 'line',
+        data: { labels, datasets: chartDatasets },
+        options: chartOptions(suffix, hasMultipleDatasets),
+      });
+    }
 
     if (hasMultipleDatasets) {
       const chartWrap = card.querySelector('.chart-wrap');
@@ -395,6 +455,7 @@ async function main() {
         chip.innerHTML = `<span class="legend-dot" style="background-color:${dataset.borderColor}"></span> ${dataset.label}`;
         
         chip.addEventListener('mouseenter', () => {
+          if (!chart) return;
           chart.data.datasets.forEach((ds, idx) => {
             if (idx !== datasetIdx) {
               chart.getDatasetMeta(idx).hidden = true;
@@ -403,12 +464,14 @@ async function main() {
           chart.update('none');
         });
         chip.addEventListener('mouseleave', () => {
+          if (!chart) return;
           chart.data.datasets.forEach((ds, idx) => {
             chip.classList.contains('muted') ? chart.getDatasetMeta(idx).hidden = true : chart.getDatasetMeta(idx).hidden = false;
           });
           chart.update('none');
         });
         chip.addEventListener('click', () => {
+          if (!chart) return;
           const isVisible = chart.isDatasetVisible(datasetIdx);
           chart.setDatasetVisibility(datasetIdx, !isVisible);
           chip.classList.toggle('muted', isVisible);
@@ -429,7 +492,7 @@ async function main() {
     });
 
     const reset = card.querySelector('.reset');
-    if (reset) reset.addEventListener('click', () => chart.resetZoom());
+    if (reset) reset.addEventListener('click', () => { if (chart) chart.resetZoom(); });
     charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: subgroupFor(key), era: eraKey });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];

@@ -103,7 +103,12 @@ class DashboardEndpointTests(unittest.TestCase):
             "pew_india_economy_confidence", "pew_india_us_relations",
             "pew_india_global_power", "pew_india_leadership",
             "pew_india_technology", "pew_india_religion_tolerance",
-            "pew_india_demographics_family",
+            "pew_india_demographics_family", "pew_india_gender_roles",
+            "pew_india_media_news", "pew_india_climate_environment",
+            "union_budget_expenditure", "budget_yoy_growth",
+            "capital_expenditure_capex", "pm_jan_dhan_yojana",
+            "pm_awas_yojana", "jal_jeevan_mission", "ayushman_bharat",
+            "social_category_literacy", "religious_demographics",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
@@ -190,6 +195,9 @@ class DashboardEndpointTests(unittest.TestCase):
             "pew_india_technology",
             "pew_india_religion_tolerance",
             "pew_india_demographics_family",
+            "pew_india_gender_roles",
+            "pew_india_media_news",
+            "pew_india_climate_environment",
         }
         self.assertEqual(set(payload["series"]), expected_keys)
         for key, series in payload["series"].items():

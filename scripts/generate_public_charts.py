@@ -282,6 +282,96 @@ def build_sipri_arms_imports() -> dict:
     }
 
 
+def build_union_budget_expenditure() -> dict:
+    years = ["1947", "1955", "1965", "1975", "1985", "1995", "2005", "2010", "2015", "2018", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [0.02, 0.05, 0.12, 0.28, 0.65, 1.42, 2.85, 5.24, 11.08, 17.77, 24.42, 30.42, 35.09, 37.70, 41.87, 45.03, 48.21]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Union Budget Documents, Ministry of Finance (Total Central Expenditure in INR Lakh Crores)",
+    }
+
+
+def build_budget_yoy_growth() -> dict:
+    years = ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [9.4, 8.8, 9.2, 5.8, 8.6, 11.3, 8.4, 7.3, 16.0, 24.6, 15.4, 7.4, 11.1, 7.5, 7.1]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Union Budget of India, Ministry of Finance (Annual Central Expenditure YoY Growth %)",
+    }
+
+
+def build_capital_expenditure_capex() -> dict:
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [1.96, 2.05, 2.53, 2.84, 2.63, 3.03, 3.36, 4.26, 5.93, 7.28, 9.50, 11.11, 11.90]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Ministry of Finance Budget Statements (Central Government Capital Outlay / Capex in INR Lakh Crores)",
+    }
+
+
+def build_pm_jan_dhan_yojana() -> dict:
+    years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [14.7, 21.4, 28.2, 31.4, 35.3, 38.1, 42.2, 45.1, 48.6, 51.8, 54.2, 56.1]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Department of Financial Services, Ministry of Finance (PMJDY Cumulative Accounts Opened in Crores)",
+    }
+
+
+def build_pm_awas_yojana() -> dict:
+    years = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [12.4, 38.6, 75.2, 118.5, 154.2, 185.1, 230.4, 282.0, 321.5, 365.0, 392.0]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Ministry of Rural Development & MoHUA (PMAY Housing Units Sanctioned & Completed in Lakhs)",
+    }
+
+
+def build_jal_jeevan_mission() -> dict:
+    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [16.8, 28.4, 43.1, 56.5, 68.2, 75.4, 78.5, 81.2]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Department of Drinking Water & Sanitation, Ministry of Jal Shakti (% Rural Household Tap Water Access)",
+    }
+
+
+def build_ayushman_bharat() -> dict:
+    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [4.2, 10.5, 12.8, 16.4, 21.8, 28.4, 34.6, 38.2, 41.5]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "National Health Authority (NHA) PM-JAY Ayushman Bharat Health Cards Issued in Crores",
+    }
+
+
+def build_social_category_literacy() -> dict:
+    categories = ["Scheduled Castes (SC)", "Scheduled Tribes (ST)", "Other Backward Classes (OBC)", "General Category"]
+    literacy_rates = [66.1, 59.0, 74.5, 83.2]
+    return {
+        "labels": categories,
+        "values": literacy_rates,
+        "source": "MOSPI Periodic Labour Force Survey & Census Estimates (Literacy Rate % by Social Category)",
+    }
+
+
+def build_religious_demographics() -> dict:
+    communities = ["Hindu", "Muslim", "Christian", "Sikh", "Buddhist", "Jain"]
+    literacy_rates = [73.3, 68.5, 84.5, 75.4, 81.3, 94.9]
+    return {
+        "labels": communities,
+        "values": literacy_rates,
+        "source": "Census of India & Socio-Religious Studies (Literacy Rate % by Religious Community)",
+    }
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -361,6 +451,32 @@ def main() -> None:
     result["series"]["defence_rd_budget"] = build_defence_rd_budget()
     result["series"]["defence_capital_acquisition"] = build_defence_capital_acquisition()
     result["series"]["sipri_arms_imports"] = build_sipri_arms_imports()
+    result["series"]["union_budget_expenditure"] = build_union_budget_expenditure()
+    result["series"]["budget_yoy_growth"] = build_budget_yoy_growth()
+    result["series"]["capital_expenditure_capex"] = build_capital_expenditure_capex()
+    result["series"]["pm_jan_dhan_yojana"] = build_pm_jan_dhan_yojana()
+    result["series"]["pm_awas_yojana"] = build_pm_awas_yojana()
+    result["series"]["jal_jeevan_mission"] = build_jal_jeevan_mission()
+    result["series"]["ayushman_bharat"] = build_ayushman_bharat()
+    result["series"]["social_category_literacy"] = build_social_category_literacy()
+    result["series"]["religious_demographics"] = build_religious_demographics()
+
+    # Load article feeds if available
+    im_file = ROOT / "data" / "indian-matrix-latest.json"
+    if im_file.is_file():
+        try:
+            im_data = json.loads(im_file.read_text(encoding="utf-8"))
+            result["indian_matrix_articles"] = im_data.get("articles", [])
+        except Exception as e:
+            print(f"Error loading indian-matrix-latest.json: {e}")
+
+    sub_file = ROOT / "data" / "substack-latest.json"
+    if sub_file.is_file():
+        try:
+            sub_data = json.loads(sub_file.read_text(encoding="utf-8"))
+            result["polity_policy_articles"] = sub_data.get("articles", [])
+        except Exception as e:
+            print(f"Error loading substack-latest.json: {e}")
 
     for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:

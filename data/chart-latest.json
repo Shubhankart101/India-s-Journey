@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T12:49:43+00:00",
+  "generated_at_utc": "2026-09-17T14:04:19+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -3065,6 +3065,63 @@
       "unit": "% of respondents",
       "note": "Pew Research Center study on religious identity, practices and marriage views."
     },
+    "pew_india_gender_roles": {
+      "labels": [
+        "2022: men and women should have equal rights",
+        "2022: women and men make equally good political leaders",
+        "2022: wife must always obey husband",
+        "2022: men should have priority when jobs are scarce",
+        "2022: important for sons to care for parents' burial/funeral"
+      ],
+      "values": [
+        88,
+        55,
+        87,
+        80,
+        63
+      ],
+      "source": "https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center study on gender roles in families and society in India (2019-2020 national survey)."
+    },
+    "pew_india_media_news": {
+      "labels": [
+        "2018: gets news at least once a day",
+        "2018: trusts news media to report accurately",
+        "2022: social media has been good for democracy",
+        "2022: concerned about false information/fake news online",
+        "2023: uses WhatsApp regularly"
+      ],
+      "values": [
+        63,
+        67,
+        71,
+        77,
+        51
+      ],
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center Global Attitudes surveys on news media trust and digital platform usage."
+    },
+    "pew_india_climate_environment": {
+      "labels": [
+        "2015: global climate change is a very serious problem",
+        "2021: air pollution is a very big national problem",
+        "2021: water pollution is a very big national problem",
+        "2023: climate change is a major threat to India",
+        "2023: willing to make personal lifestyle changes for climate"
+      ],
+      "values": [
+        76,
+        76,
+        70,
+        73,
+        81
+      ],
+      "source": "https://www.pewresearch.org/global/topic/climate-change-energy/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center surveys on public views regarding climate change and environmental challenges in India."
+    },
     "terror_attacks": {
       "source": "Our World in Data; Global Terrorism Database-derived series",
       "labels": [
@@ -3558,6 +3615,259 @@
         2180.0
       ],
       "source": "SIPRI Arms Transfers Database (Trend Indicator Value - TIV)"
+    },
+    "union_budget_expenditure": {
+      "labels": [
+        "1947",
+        "1955",
+        "1965",
+        "1975",
+        "1985",
+        "1995",
+        "2005",
+        "2010",
+        "2015",
+        "2018",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.02,
+        0.05,
+        0.12,
+        0.28,
+        0.65,
+        1.42,
+        2.85,
+        5.24,
+        11.08,
+        17.77,
+        24.42,
+        30.42,
+        35.09,
+        37.7,
+        41.87,
+        45.03,
+        48.21
+      ],
+      "source": "Union Budget Documents, Ministry of Finance (Total Central Expenditure in INR Lakh Crores)"
+    },
+    "budget_yoy_growth": {
+      "labels": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        9.4,
+        8.8,
+        9.2,
+        5.8,
+        8.6,
+        11.3,
+        8.4,
+        7.3,
+        16.0,
+        24.6,
+        15.4,
+        7.4,
+        11.1,
+        7.5,
+        7.1
+      ],
+      "source": "Union Budget of India, Ministry of Finance (Annual Central Expenditure YoY Growth %)"
+    },
+    "capital_expenditure_capex": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        1.96,
+        2.05,
+        2.53,
+        2.84,
+        2.63,
+        3.03,
+        3.36,
+        4.26,
+        5.93,
+        7.28,
+        9.5,
+        11.11,
+        11.9
+      ],
+      "source": "Ministry of Finance Budget Statements (Central Government Capital Outlay / Capex in INR Lakh Crores)"
+    },
+    "pm_jan_dhan_yojana": {
+      "labels": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        14.7,
+        21.4,
+        28.2,
+        31.4,
+        35.3,
+        38.1,
+        42.2,
+        45.1,
+        48.6,
+        51.8,
+        54.2,
+        56.1
+      ],
+      "source": "Department of Financial Services, Ministry of Finance (PMJDY Cumulative Accounts Opened in Crores)"
+    },
+    "pm_awas_yojana": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        12.4,
+        38.6,
+        75.2,
+        118.5,
+        154.2,
+        185.1,
+        230.4,
+        282.0,
+        321.5,
+        365.0,
+        392.0
+      ],
+      "source": "Ministry of Rural Development & MoHUA (PMAY Housing Units Sanctioned & Completed in Lakhs)"
+    },
+    "jal_jeevan_mission": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        16.8,
+        28.4,
+        43.1,
+        56.5,
+        68.2,
+        75.4,
+        78.5,
+        81.2
+      ],
+      "source": "Department of Drinking Water & Sanitation, Ministry of Jal Shakti (% Rural Household Tap Water Access)"
+    },
+    "ayushman_bharat": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        4.2,
+        10.5,
+        12.8,
+        16.4,
+        21.8,
+        28.4,
+        34.6,
+        38.2,
+        41.5
+      ],
+      "source": "National Health Authority (NHA) PM-JAY Ayushman Bharat Health Cards Issued in Crores"
+    },
+    "social_category_literacy": {
+      "labels": [
+        "Scheduled Castes (SC)",
+        "Scheduled Tribes (ST)",
+        "Other Backward Classes (OBC)",
+        "General Category"
+      ],
+      "values": [
+        66.1,
+        59.0,
+        74.5,
+        83.2
+      ],
+      "source": "MOSPI Periodic Labour Force Survey & Census Estimates (Literacy Rate % by Social Category)"
+    },
+    "religious_demographics": {
+      "labels": [
+        "Hindu",
+        "Muslim",
+        "Christian",
+        "Sikh",
+        "Buddhist",
+        "Jain"
+      ],
+      "values": [
+        73.3,
+        68.5,
+        84.5,
+        75.4,
+        81.3,
+        94.9
+      ],
+      "source": "Census of India & Socio-Religious Studies (Literacy Rate % by Religious Community)"
     },
     "cpi": {
       "labels": [
@@ -6653,5 +6963,201 @@
       ],
       "source": "NSE India, BSE India; Base 100 = 2010"
     }
-  }
+  },
+  "indian_matrix_articles": [
+    {
+      "title": "How much of India's infrastructure was built after 2014?",
+      "link": "https://indianmatrix.substack.com/p/how-much-of-indias-infrastructure",
+      "published": "Fri, 07 Aug 2026 12:29:15 GMT",
+      "date": "2026-08-07"
+    },
+    {
+      "title": "The Arithmetic of Hope: How India Stopped Expecting Less",
+      "link": "https://indianmatrix.substack.com/p/the-arithmetic-of-hope-how-india",
+      "published": "Fri, 31 Jul 2026 12:45:39 GMT",
+      "date": "2026-07-31"
+    },
+    {
+      "title": "The Second Gate: How Iran Learned to Close Two Doors at Once",
+      "link": "https://indianmatrix.substack.com/p/the-second-gate-how-iran-learned",
+      "published": "Thu, 30 Jul 2026 12:04:46 GMT",
+      "date": "2026-07-30"
+    },
+    {
+      "title": "What Indira Gandhi\u2019s Bank Nationalisation Diktat Promised - And Failed to Deliver",
+      "link": "https://indianmatrix.substack.com/p/what-indira-gandhis-bank-nationalisation",
+      "published": "Sat, 18 Jul 2026 12:17:14 GMT",
+      "date": "2026-07-18"
+    },
+    {
+      "title": "The Aggressor Who Never Left",
+      "link": "https://indianmatrix.substack.com/p/the-aggressor-who-never-left",
+      "published": "Sat, 11 Jul 2026 13:08:43 GMT",
+      "date": "2026-07-11"
+    },
+    {
+      "title": "India's Economic Shield in the West Asia Crisis",
+      "link": "https://indianmatrix.substack.com/p/indias-economic-shield-in-the-west",
+      "published": "Tue, 07 Jul 2026 12:45:07 GMT",
+      "date": "2026-07-07"
+    },
+    {
+      "title": "India's Cooling Revolution",
+      "link": "https://indianmatrix.substack.com/p/indias-cooling-revolution",
+      "published": "Thu, 02 Jul 2026 13:15:18 GMT",
+      "date": "2026-07-02"
+    },
+    {
+      "title": "The Emergency Was Not Born on 25 June 1975",
+      "link": "https://indianmatrix.substack.com/p/the-emergency-was-not-born-on-25",
+      "published": "Thu, 25 Jun 2026 15:57:47 GMT",
+      "date": "2026-06-25"
+    },
+    {
+      "title": "THE INVISIBLE VETO: India's FCRA Reset and the Architecture of Sovereign Accountability",
+      "link": "https://indianmatrix.substack.com/p/the-invisible-veto-indias-fcra-reset",
+      "published": "Wed, 24 Jun 2026 12:02:00 GMT",
+      "date": "2026-06-24"
+    },
+    {
+      "title": "Last Twelve Years That Rewired India",
+      "link": "https://indianmatrix.substack.com/p/last-twelve-years-that-rewired-india",
+      "published": "Tue, 23 Jun 2026 08:44:26 GMT",
+      "date": "2026-06-23"
+    },
+    {
+      "title": "Nepal's Kalapani Illusion",
+      "link": "https://indianmatrix.substack.com/p/nepals-kalapani-illusion",
+      "published": "Sat, 06 Jun 2026 11:58:05 GMT",
+      "date": "2026-06-06"
+    },
+    {
+      "title": "End of Scarcity - How India Engineered Its Way Out of the Dark",
+      "link": "https://indianmatrix.substack.com/p/end-of-scarcity-how-india-engineered",
+      "published": "Mon, 01 Jun 2026 12:52:16 GMT",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "Strategic Significance of PM Modi\u2019s Five-Nation Visit",
+      "link": "https://indianmatrix.substack.com/p/strategic-significance-of-pm-modis",
+      "published": "Sat, 23 May 2026 11:51:17 GMT",
+      "date": "2026-05-23"
+    },
+    {
+      "title": "Bhojshala: How a Saraswati Temple in Dhar Came Back to Court - and Won",
+      "link": "https://indianmatrix.substack.com/p/bhojshala-how-a-saraswati-temple",
+      "published": "Fri, 22 May 2026 13:06:42 GMT",
+      "date": "2026-05-22"
+    },
+    {
+      "title": "The Red Eclipse: Decoding the Structural Collapse of the Left in Keralam",
+      "link": "https://indianmatrix.substack.com/p/the-red-eclipse-decoding-the-structural",
+      "published": "Fri, 15 May 2026 12:06:18 GMT",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "Reclaiming the Heartland: How State Capacity Defeated the Maoist Insurgency",
+      "link": "https://indianmatrix.substack.com/p/reclaiming-the-heartland-how-state-bef",
+      "published": "Mon, 11 May 2026 11:29:37 GMT",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "An Epochal Shift: Decoding the 2026 Bengal Mandate",
+      "link": "https://indianmatrix.substack.com/p/an-epochal-shift-decoding-the-2026",
+      "published": "Mon, 11 May 2026 05:29:23 GMT",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "After the Whistle: Reading Tamil Nadu's 2026 Verdict Without the Confetti",
+      "link": "https://indianmatrix.substack.com/p/after-the-whistle-reading-tamil-nadus",
+      "published": "Sat, 09 May 2026 07:05:05 GMT",
+      "date": "2026-05-09"
+    },
+    {
+      "title": "The Apex Revival: How India Reversed the Ecological Clock",
+      "link": "https://indianmatrix.substack.com/p/the-apex-revival-how-india-reversed",
+      "published": "Thu, 30 Apr 2026 11:32:43 GMT",
+      "date": "2026-04-30"
+    },
+    {
+      "title": "India\u2019s Energy Transition (2000\u20132026)",
+      "link": "https://indianmatrix.substack.com/p/indias-energy-transition-20002026",
+      "published": "Wed, 29 Apr 2026 08:31:19 GMT",
+      "date": "2026-04-29"
+    }
+  ],
+  "polity_policy_articles": [
+    {
+      "title": "India's Fiscal Nightmare: The Strait of Hormuz",
+      "link": "https://politypolicy.substack.com/p/indias-fiscal-nightmare-the-strait",
+      "published": "Wed, 15 Jul 2026 09:51:14 GMT",
+      "description": "How the war in the Persian Gulf costs you and the country at large"
+    },
+    {
+      "title": "What if International Crude Prices Dictated Petrol Pump Prices?",
+      "link": "https://politypolicy.substack.com/p/what-if-international-crude-prices",
+      "published": "Fri, 10 Jul 2026 11:44:35 GMT",
+      "description": "Be careful what you wish for."
+    },
+    {
+      "title": "Petrol And Pizza, Crude and Capsicum",
+      "link": "https://politypolicy.substack.com/p/petrol-and-pizza-crude-and-capsicum",
+      "published": "Thu, 09 Jul 2026 06:09:08 GMT",
+      "description": "The economics and environmentalism around ethanol bashing don\u2019t add up."
+    },
+    {
+      "title": "Why Is The Prime Minister Travelling To Indonesia and Australia",
+      "link": "https://politypolicy.substack.com/p/why-is-the-prime-minister-travelling",
+      "published": "Wed, 08 Jul 2026 14:28:03 GMT",
+      "description": "Another chapter unfolds in our pursuit of chip diplomacy"
+    },
+    {
+      "title": "The Markets Are Sending Us A Message About Ethanol",
+      "link": "https://politypolicy.substack.com/p/the-markets-are-sending-us-a-message",
+      "published": "Tue, 07 Jul 2026 07:57:35 GMT",
+      "description": "Beyond the social media rhetoric, what is the invisible hand of the free market hinting at?"
+    },
+    {
+      "title": "Welcome to PolityPolicy.Com",
+      "link": "https://politypolicy.substack.com/p/announcement-welcome-to-politypolicycom",
+      "published": "Tue, 07 Jul 2026 07:55:15 GMT",
+      "description": "A New Beginning"
+    },
+    {
+      "title": "India's Worst Balance Sheet",
+      "link": "https://politypolicy.substack.com/p/indias-worst-balance-sheet",
+      "published": "Fri, 03 Jul 2026 08:44:47 GMT",
+      "description": "When subsidies are confused for good economics, the fiscal fundamentals crumble"
+    },
+    {
+      "title": "The Monk Who Runs State Finances Like a Ferrari",
+      "link": "https://politypolicy.substack.com/p/the-monk-who-runs-state-finances",
+      "published": "Wed, 01 Jul 2026 08:52:40 GMT",
+      "description": "Chief Minister Yogi Adityanath's Fiscal Report Card After A Decade In Power"
+    },
+    {
+      "title": "The Brutal Reality About 'The Gujarat Model'",
+      "link": "https://politypolicy.substack.com/p/the-brutal-reality-about-the-gujarat",
+      "published": "Mon, 29 Jun 2026 08:00:18 GMT",
+      "description": "When we compared Gujarat's fiscal with that of every other state in India."
+    },
+    {
+      "title": "State Governments Are Borrowing, Not to Build, But to Breathe",
+      "link": "https://politypolicy.substack.com/p/state-governments-are-borrowing-not",
+      "published": "Fri, 26 Jun 2026 07:39:36 GMT",
+      "description": "Fiscally, many state governments are on a ventilator, making ends meet through borrowings"
+    },
+    {
+      "title": "Why Should Politicians and Bureaucrats Have All the Fun?",
+      "link": "https://politypolicy.substack.com/p/why-should-politicians-and-bureaucrats",
+      "published": "Thu, 25 Jun 2026 07:35:35 GMT",
+      "description": "Time for a new law for the declaration of real estate and stock market holdings?"
+    },
+    {
+      "title": "Why State Governments Have No Money For Asset Creation?",
+      "link": "https://politypolicy.substack.com/p/why-state-governments-cash-transfers",
+      "published": "Wed, 24 Jun 2026 13:51:58 GMT",
+      "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets"
+    }
+  ]
 }

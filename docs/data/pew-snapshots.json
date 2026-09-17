@@ -133,6 +133,63 @@
       "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
       "unit": "% of respondents",
       "note": "Pew Research Center study on religious identity, practices and marriage views."
+    },
+    "pew_india_gender_roles": {
+      "labels": [
+        "2022: men and women should have equal rights",
+        "2022: women and men make equally good political leaders",
+        "2022: wife must always obey husband",
+        "2022: men should have priority when jobs are scarce",
+        "2022: important for sons to care for parents' burial/funeral"
+      ],
+      "values": [
+        88,
+        55,
+        87,
+        80,
+        63
+      ],
+      "source": "https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center study on gender roles in families and society in India (2019-2020 national survey)."
+    },
+    "pew_india_media_news": {
+      "labels": [
+        "2018: gets news at least once a day",
+        "2018: trusts news media to report accurately",
+        "2022: social media has been good for democracy",
+        "2022: concerned about false information/fake news online",
+        "2023: uses WhatsApp regularly"
+      ],
+      "values": [
+        63,
+        67,
+        71,
+        77,
+        51
+      ],
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center Global Attitudes surveys on news media trust and digital platform usage."
+    },
+    "pew_india_climate_environment": {
+      "labels": [
+        "2015: global climate change is a very serious problem",
+        "2021: air pollution is a very big national problem",
+        "2021: water pollution is a very big national problem",
+        "2023: climate change is a major threat to India",
+        "2023: willing to make personal lifestyle changes for climate"
+      ],
+      "values": [
+        76,
+        76,
+        70,
+        73,
+        81
+      ],
+      "source": "https://www.pewresearch.org/global/topic/climate-change-energy/",
+      "unit": "% of respondents",
+      "note": "Pew Research Center surveys on public views regarding climate change and environmental challenges in India."
     }
   }
 }
