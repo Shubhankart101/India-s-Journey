@@ -104,7 +104,35 @@
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, Defence, Crime)..."></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
       <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Defence &amp; Strategic">Defence &amp; Strategic</option><option value="Crime &amp; Security">Crime &amp; Security</option><option value="Pew Research">Pew Research</option></select></label>
-      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Media &amp; Publications</option><option>Demographics</option><option>Welfare</option><option>Public opinion</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option><option>Defence Exports &amp; Production</option><option>Defence Budget &amp; Modernization</option><option>Strategic Stockpiles &amp; Capabilities</option></select></label>
+      <label>Subgroup <select id="subgroup-filter">
+        <option value="all" selected>All subgroups</option>
+        <optgroup label="📈 Economic">
+          <option>Macroeconomics</option>
+          <option>Monetary Policy</option>
+          <option>Trade &amp; External</option>
+          <option>Markets</option>
+          <option>Infrastructure</option>
+          <option>Production &amp; Commodities</option>
+          <option>Media &amp; Publications</option>
+        </optgroup>
+        <optgroup label="👥 Social">
+          <option>Demographics</option>
+          <option>Welfare</option>
+        </optgroup>
+        <optgroup label="🛡️ Defence &amp; Strategic">
+          <option>Defence Exports &amp; Production</option>
+          <option>Defence Budget &amp; Modernization</option>
+          <option>Strategic Stockpiles &amp; Capabilities</option>
+        </optgroup>
+        <optgroup label="⚖️ Crime &amp; Security">
+          <option>Violence &amp; Crime</option>
+          <option>Terrorism</option>
+          <option>Maoism / LWE</option>
+        </optgroup>
+        <optgroup label="📊 Pew Research">
+          <option>Public opinion</option>
+        </optgroup>
+      </select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>

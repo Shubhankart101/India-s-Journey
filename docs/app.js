@@ -74,56 +74,56 @@ const eraData = {
     name: "India's Multi-Era Long View Atlas",
     years: "3300 BCE — 2026 CE",
     desc: "A long-run journey through India's civilizational roots, freedom movement, republic building, economic reforms, defence production, and digital powerhouse transformation.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg/1280px-Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg",
-    attribution: "📷 Open Source / Public Domain (Sanchi Stupa & Indian Heritage)"
+    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: Ancient Temple Architecture & Heritage"
   },
   ancient: {
     id: "ancient",
     name: "Ancient & Classical India",
     years: "3300 BCE — 1200 CE",
     desc: "Indus Valley civilization, Vedic foundations, Maurya Empire under Ashoka, Gupta Golden Age, and Chola maritime trade.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg/1280px-Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg",
-    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Sanchi Stupa - Maurya Era)"
+    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: Sanchi & Ancient Classical Architecture"
   },
   medieval: {
     id: "medieval",
     name: "Medieval & Imperial Era",
     years: "1200 — 1757 CE",
     desc: "Vijayanagara Empire, Mughal architecture, Maratha Confederacy, and historical silk & spice trade networks.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_courtyard_of_Vitthala_Temple%2C_Hampi.jpg/1280px-East_courtyard_of_Vitthala_Temple%2C_Hampi.jpg",
-    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Hampi Stone Chariot - Vijayanagara)"
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: Hampi Stone Chariot & Imperial Heritage"
   },
   freedom: {
     id: "freedom",
     name: "Colonial & Freedom Movement",
     years: "1757 — 1947 CE",
     desc: "Colonial trade monopoly, 1857 Uprising, Swadeshi Movement, Mahatma Gandhi's Salt Satyagraha, and 1947 Independence.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Marche_sel.jpg/1280px-Marche_sel.jpg",
-    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Salt March 1930 - Freedom Movement)"
+    image: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: Freedom Movement & National Heritage"
   },
   republic: {
     id: "republic",
     name: "Early Republic & Industrialization",
     years: "1947 — 1990 CE",
     desc: "Nation building post-independence, Five-Year Plans, Green & White Revolutions, Bhakra Nangal Dam, and ISRO foundations.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Old_Parliament_House%2C_New_Delhi.jpg/1280px-Old_Parliament_House%2C_New_Delhi.jpg",
-    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Old Parliament House, New Delhi)"
+    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: India Gate & Republic Capital"
   },
   liberalization: {
     id: "liberalization",
     name: "Economic Reform & IT Revolution",
     years: "1991 — 2013 CE",
     desc: "1991 Economic Liberalization, BSE & NSE stock market growth, IT sector expansion, highway infrastructure, and global trade.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bombay_Stock_Exchange_building.jpg/1280px-Bombay_Stock_Exchange_building.jpg",
-    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Bombay Stock Exchange, Dalal Street)"
+    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: Mumbai Financial Center & Stock Market Growth"
   },
   modern: {
     id: "modern",
     name: "Modern Digital & Strategic Era",
     years: "2014 — Present",
     desc: "Digital India, UPI real-time payments, indigenous defence production (Make in India), defence exports, Chandrayaan space missions, and global powerhouse rise.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/LCA_Tejas_at_Aero_India_2021.jpg/1280px-LCA_Tejas_at_Aero_India_2021.jpg",
-    attribution: "📷 Open Source: GODL India / Wikimedia Commons (HAL Tejas Indigenous Defence Jet)"
+    image: "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop",
+    attribution: "📷 Open Source: High-Tech Aerospace & Defence Innovation"
   }
 };
 
@@ -194,20 +194,40 @@ const chartOptions = (suffix, hasMultipleDatasets = false) => ({
   },
 });
 
+async function safeFetchJson(filename, defaultVal = {}) {
+  const paths = [
+    `data/${filename}?ts=${Date.now()}`,
+    `data/${filename}`,
+    `./data/${filename}`,
+    `docs/data/${filename}`
+  ];
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { signal: AbortSignal.timeout(5000) });
+      if (res.ok) {
+        const json = await res.json();
+        if (json) return json;
+      }
+    } catch (e) {
+      // try next path
+    }
+  }
+  return defaultVal;
+}
+
 async function main() {
   const articleLinks = document.querySelector('#article-links');
-  const articlePromise = fetch(`data/substack-latest.json?ts=${Date.now()}`, { signal: AbortSignal.timeout(8000) })
-    .then(response => response.ok ? response.json() : { articles: [] })
-    .catch(() => ({ articles: [] }));
-  const [data, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
-    fetch(`data/chart-latest.json?ts=${Date.now()}`).then(response => response.json()),
+  const articlePromise = safeFetchJson('substack-latest.json', { articles: [] });
+  const [dataPayload, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
+    safeFetchJson('chart-latest.json', { series: {} }),
     articlePromise,
-    fetch(`data/economic-survey-monthly.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
-    fetch(`data/indian-matrix-latest.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, articles: [] }).catch(() => ({ cadence: { labels: [], values: [] }, articles: [] })),
-    fetch(`data/pew-india-reports.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { cadence: { labels: [], values: [] }, reports: [] }).catch(() => ({ cadence: { labels: [], values: [] }, reports: [] })),
-    fetch(`data/ncrb-and-analyses.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
-    fetch(`data/pew-snapshots.json?ts=${Date.now()}`).then(response => response.ok ? response.json() : { series: {} }).catch(() => ({ series: {} })),
+    safeFetchJson('economic-survey-monthly.json', { series: {} }),
+    safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
+    safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
+    safeFetchJson('ncrb-and-analyses.json', { series: {} }),
+    safeFetchJson('pew-snapshots.json', { series: {} }),
   ]);
+  const data = dataPayload || { series: {} };
   data.series = { ...(data.series || {}), ...(economicSurvey.series || {}), ...(ncrbeAnalyses.series || {}), ...(pewSnapshots.series || {}) };
   const matrixCadence = indianMatrix.cadence || { labels: [], values: [] };
   data.series.indian_matrix = { labels: matrixCadence.labels, values: matrixCadence.values, source: 'Indian Matrix public RSS feed' };
@@ -386,22 +406,26 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
-  const subgroupGroups = { Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', Demographics: 'Social', Welfare: 'Social', 'Public opinion': 'Pew Research', 'Violence & Crime': 'Crime & Security', 'Defence & Security': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
-  const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Violence & Crime', 'Defence & Security', 'Terrorism', 'Maoism / LWE'],
-    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
-    Social: ['Demographics', 'Welfare'],
-    'Pew Research': ['Public opinion'],
-    'Crime & Security': ['Violence & Crime', 'Defence & Security', 'Terrorism', 'Maoism / LWE']
-  };ubgroupGroups = { 
-    Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', 
-    Demographics: 'Social', Welfare: 'Social', 
-    'Public opinion': 'Pew Research', 
-    'Violence & Crime': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security',
-    'Defence Exports & Production': 'Defence & Strategic', 'Defence Budget & Modernization': 'Defence & Strategic', 'Strategic Stockpiles & Capabilities': 'Defence & Strategic' 
+  const subgroupGroups = { 
+    Macroeconomics: 'Economic', 
+    'Monetary Policy': 'Economic', 
+    'Trade & External': 'Economic', 
+    Markets: 'Economic', 
+    Infrastructure: 'Economic', 
+    'Production & Commodities': 'Economic', 
+    'Media & Publications': 'Economic', 
+    Demographics: 'Social', 
+    Welfare: 'Social', 
+    'Defence Exports & Production': 'Defence & Strategic', 
+    'Defence Budget & Modernization': 'Defence & Strategic', 
+    'Strategic Stockpiles & Capabilities': 'Defence & Strategic', 
+    'Violence & Crime': 'Crime & Security', 
+    Terrorism: 'Crime & Security',
+    'Maoism / LWE': 'Crime & Security',
+    'Public opinion': 'Pew Research' 
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
     Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
     Social: ['Demographics', 'Welfare'],
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
@@ -414,9 +438,7 @@ async function main() {
     const bgLayer = document.querySelector('#era-bg-layer');
     if (bgLayer) {
       bgLayer.style.backgroundImage = `url("${era.image}")`;
-      bgLayer.style.opacity = '0.38
-      bgLayer.style.backgroundImage = `url("${era.image}")`;
-      bgLayer.style.opacity = '0.22';
+      bgLayer.style.opacity = '0.52';
     }
     const banner = document.querySelector('#era-banner');
     if (banner) {
@@ -456,23 +478,47 @@ async function main() {
   };
   const updateSubgroupFilter = () => {
     const selectedGroup = groupFilter.value;
-    const availableSubgroups = groupToSubgroups[selectedGroup] || groupToSubgroups.all;
     const currentValue = subgroupFilter.value;
-    subgroupFilter.replaceChildren(
-      (() => {
-        const option = document.createElement('option');
-        option.value = 'all';
-        option.textContent = 'All subgroups';
-        return option;
-      })(),
-      ...availableSubgroups.map(subgroup => {
+
+    subgroupFilter.replaceChildren();
+
+    const defaultOpt = document.createElement('option');
+    defaultOpt.value = 'all';
+    defaultOpt.textContent = selectedGroup === 'all' ? 'All subgroups' : `All ${selectedGroup} subgroups`;
+    subgroupFilter.appendChild(defaultOpt);
+
+    if (selectedGroup === 'all') {
+      const groupLabels = {
+        Economic: '📈 Economic',
+        Social: '👥 Social',
+        'Defence & Strategic': '🛡️ Defence & Strategic',
+        'Crime & Security': '⚖️ Crime & Security',
+        'Pew Research': '📊 Pew Research'
+      };
+      Object.keys(groupToSubgroups).forEach(grpKey => {
+        if (grpKey === 'all') return;
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = groupLabels[grpKey] || grpKey;
+        groupToSubgroups[grpKey].forEach(subgroup => {
+          const option = document.createElement('option');
+          option.value = subgroup;
+          option.textContent = subgroup;
+          optgroup.appendChild(option);
+        });
+        subgroupFilter.appendChild(optgroup);
+      });
+    } else {
+      const availableSubgroups = groupToSubgroups[selectedGroup] || [];
+      availableSubgroups.forEach(subgroup => {
         const option = document.createElement('option');
         option.value = subgroup;
         option.textContent = subgroup;
-        return option;
-      })
-    );
-    if (availableSubgroups.includes(currentValue)) {
+        subgroupFilter.appendChild(option);
+      });
+    }
+
+    const allAvailable = groupToSubgroups[selectedGroup] || groupToSubgroups.all;
+    if (allAvailable.includes(currentValue)) {
       subgroupFilter.value = currentValue;
     } else {
       subgroupFilter.value = 'all';
@@ -482,7 +528,26 @@ async function main() {
     const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
     const periods = [...new Set(scopedCharts.flatMap(({ labels }) => labels))].sort();
     if (!periods.length) return;
-    cDefence & Strategic": {
+    const start = periods.includes(rangeStart.value) ? rangeStart.value : periods[0];
+    const end = periods.includes(rangeEnd.value) ? rangeEnd.value : periods[periods.length - 1];
+    addPeriodOptions(rangeStart, periods, start);
+    addPeriodOptions(rangeEnd, periods, end);
+  };
+
+  const groupHeroData = {
+    Economic: {
+      title: "📈 Economic & Capital Markets Atlas",
+      desc: "From 1947 independence to modern India's 5th largest global economy trajectory: explore GDP growth, trade openness, industrial output, and equity market benchmark comparisons against top global powers.",
+      badge1: "1947 — 2026",
+      badge2: "Global Markets & GDP"
+    },
+    Social: {
+      title: "👥 Demographics, Welfare & Human Capital",
+      desc: "Long-term social transformation across decades: population atlas, nationwide electrification, broadband access, and life expectancy milestones.",
+      badge1: "1.4B Population",
+      badge2: "Welfare & Infrastructure"
+    },
+    "Defence & Strategic": {
       title: "🛡️ Defence, Arms Production & Strategic Modernization Atlas",
       desc: "India's defense manufacturing evolution, historic Make in India defense export surge (₹23,497 Cr), indigenous production (₹1.45 Lakh Cr), SIPRI arms capability trends, DRDO R&D, and defense capital acquisition modernization.",
       badge1: "Make in India Defence",
@@ -495,25 +560,7 @@ async function main() {
       badge2: "Survey Snapshots"
     },
     "Crime & Security": {
-      title: "⚖ Economic & Capital Markets Atlas",
-      desc: "From 1947 independence to modern India's 5th largest global economy trajectory: explore GDP growth, trade openness, industrial output, and equity market benchmark comparisons against top global powers.",
-      badge1: "1947 — 2026",
-      badge2: "Global Markets & GDP"
-    },
-    Social: {
-      title: "👥 Demographics, Welfare & Human Capital",
-      desc: "Long-term social transformation across decades: population atlas, nationwide electrification, broadband access, and life expectancy milestones.",
-      badge1: "1.4B Population",
-      badge2: "Welfare & Infrastructure"
-    },
-    "Pew Research": {
-      title: "📊 Global Standing & Public Opinion",
-      desc: "Pew Research Center global attitudes studies tracking international perception, economic confidence, bilateral ties, and leadership opinions.",
-      badge1: "Pew Global Attitudes",
-      badge2: "Survey Snapshots"
-    },
-    "Crime & Security": {
-      title: "🛡️ Public Safety & Internal Security",
+      title: "⚖️ Public Safety & Internal Security",
       desc: "Long-run public safety metrics, Global Terrorism Database trends, Left-Wing Extremism casualty breakdowns (SATP 2000–2025), and NCRB statistics.",
       badge1: "National Security",
       badge2: "SATP & Official Records"
