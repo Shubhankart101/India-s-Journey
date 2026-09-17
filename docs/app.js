@@ -624,6 +624,7 @@ async function main() {
       pill.addEventListener('click', () => {
         syncGroupPills(pill.dataset.group);
         groupFilter.value = pill.dataset.group;
+        subgroupFilter.value = 'all';
         if (groupEraMap[pill.dataset.group]) setEraBackground(groupEraMap[pill.dataset.group]);
         updateSubgroupFilter();
         updateGroupHero();
@@ -680,6 +681,7 @@ async function main() {
     const grp = groupFilter.value;
     syncGroupPills(grp);
     if (groupEraMap[grp]) setEraBackground(groupEraMap[grp]);
+    subgroupFilter.value = 'all';
     updateSubgroupFilter(); 
     updateGroupHero();
     updatePeriods(); 
@@ -719,7 +721,7 @@ async function main() {
   if (groupFilter) groupFilter.value = 'all';
   if (subgroupFilter) subgroupFilter.value = 'all';
   if (search) search.value = '';
-  if (filter) filter.value = 'live';
+  if (filter) filter.value = 'all';
   syncGroupPills('all');
   updateSubgroupFilter();
   updatePeriods();

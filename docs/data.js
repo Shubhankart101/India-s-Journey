@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-09-17T10:26:59+00:00",
+  "generated_at_utc": "2026-09-17T10:46:20+00:00",
   "series": {
     "gst": {
       "labels": [
