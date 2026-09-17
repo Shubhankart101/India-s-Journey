@@ -234,7 +234,6 @@ async function safeFetchJson(filename, defaultVal = {}) {
 
 async function main() {
   const articleLinks = document.querySelector('#article-links');
-  const articlePromise = safeFetchJson('substack-latest.json', { articles: [] });
   
   let dataPayload = window.INDIA_DASHBOARD_DATA;
   let articles = { articles: [] };
@@ -244,12 +243,10 @@ async function main() {
   let ncrbeAnalyses = { series: {} };
   let pewSnapshots = { series: {} };
 
-  if (dataPayload && dataPayload.series && Object.keys(dataPayload.series).length > 0) {
-    articles = await articlePromise;
-  } else {
+  if (!dataPayload || !dataPayload.series || Object.keys(dataPayload.series).length === 0) {
     [dataPayload, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
       safeFetchJson('chart-latest.json', { series: {} }),
-      articlePromise,
+      safeFetchJson('substack-latest.json', { articles: [] }),
       safeFetchJson('economic-survey-monthly.json', { series: {} }),
       safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
       safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
@@ -277,7 +274,7 @@ async function main() {
   if (genEl) genEl.textContent = data.generated_at_utc ? new Date(data.generated_at_utc).toLocaleString() : new Date().toLocaleString();
   const renderArticles = (container, items, emptyMessage) => {
     container.replaceChildren();
-    if (!items.length) {
+    if (!items || !items.length) {
       container.innerHTML = `<p class="article-loading">${emptyMessage}</p>`;
       return;
     }
@@ -295,9 +292,11 @@ async function main() {
       container.append(link);
     });
   };
-  renderArticles(articleLinks, ((dataPayload && dataPayload.indian_matrix_articles) || (indianMatrix && indianMatrix.articles) || []).slice(0, 6), 'No public article snapshot available yet.');
+  const imArticles = (dataPayload && dataPayload.indian_matrix_articles) || (indianMatrix && indianMatrix.articles) || [];
+  const ppArticles = (dataPayload && dataPayload.polity_policy_articles) || (articles && articles.articles) || [];
+  renderArticles(articleLinks, imArticles.slice(0, 6), 'No public article snapshot available yet.');
   const polityPolicyLinks = document.querySelector('#pp-article-links');
-  if (polityPolicyLinks) renderArticles(polityPolicyLinks, ((dataPayload && dataPayload.polity_policy_articles) || (articles && articles.articles) || []).slice(0, 6), 'No public article snapshot available yet.');
+  if (polityPolicyLinks) renderArticles(polityPolicyLinks, ppArticles.slice(0, 6), 'No public article snapshot available yet.');
   const categoryBgMap = {
     Economic: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
     Social: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
