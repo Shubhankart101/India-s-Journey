@@ -62,6 +62,10 @@ const definitions = [
   ['economic_offences', 'Economic offences rate', 'Cheating, fraud & forgery per 100k', 'Annual (2014-2023)', '#f6c344', ' per 100k', 'https://ncrb.gov.in/crime-in-india.html', 'Economic offences measure financial crimes including criminal breach of trust, forgery, cheating, and counterfeiting per 100,000 population.\n\nData is sourced from official NCRB Crime in India annual volumes.'],
   ['pew_india_religion_tolerance', 'Pew: Religion, diversity & tolerance', 'Pew survey on religious tolerance, pluralism and freedom', 'Survey snapshots', '#3fb950', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'Landmark Pew Research Center study (Religion in India: Tolerance and Segregation) based on face-to-face interviews with 29,999 Indian adults across 26 states and UTs.\n\nIt examines religious tolerance, freedom of practice, and public views on diversity among India\'s major religious communities.'],
   ['pew_india_demographics_family', 'Pew: Religion & family demographics', 'Pew survey on religious identity, practices and marriage views', 'Survey snapshots', '#a371f7', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'This indicator tracks core demographic findings from Pew Research Center\'s Religion in India study, covering religious practice frequency, karma belief, and social norms.\n\nEach point represents a specific survey statement from the 2019-2020 national Pew study.'],
+  ['defence_budget_share', 'Defence allocation', 'Share of total Union budget expenditure', 'Annual', '#ffa657', '% Budget', 'https://www.indiabudget.gov.in/', 'Defence allocation tracks military budget spending as a percentage of overall Central Government Expenditure.\n\nData is collated from official Ministry of Finance Union Budget allocation documents.'],
+  ['defence_rd_budget', 'Defence R&D expenditure', 'DRDO & defense research spending', 'Annual', '#79c0ff', 'INR Cr', 'https://www.drdo.gov.in/', 'Defence R&D expenditure measures capital and revenue allocation for indigenous weapons development, missile technology, and military research.\n\nData is sourced from DRDO and Ministry of Defence annual standing committee reports.'],
+  ['defence_capital_acquisition', 'Defence modernization capital outlay', 'Capital acquisition spending for armed forces', 'Annual', '#58a6ff', 'INR Cr', 'https://www.ddpmod.gov.in/', 'Capital acquisition outlay reflects funds allocated for procuring weapons, aircraft, naval frigates, artillery, and modern military hardware.\n\nOfficial statistics are published by the Ministry of Defence.'],
+  ['sipri_arms_imports', 'India arms imports trend', 'SIPRI arms import Trend Indicator Value (TIV)', 'Historical', '#ff7b72', ' SIPRI TIV', 'https://www.sipri.org/databases/armstransfers', 'SIPRI arms imports index tracks conventional weapon import volumes. The declining trend highlights India\'s structural shift from foreign import dependency toward indigenous manufacturing.'],
 ];
 
 const eraData = {
@@ -124,7 +128,7 @@ const eraData = {
 };
 
 const eraFor = key => {
-  if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'upi', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
+  if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports', 'upi', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
   if (['market_indices', 'global_equity_indices', 'gdp_world_comparison', 'fdi', 'trade', 'eway_bills', 'gst', 'crimes_against_women', 'economic_offences'].includes(key)) return 'liberalization';
   if (['gdp_per_capita', 'population', 'electricity_access', 'iip', 'power_consumption', 'rail_freight', 'port_cargo', 'broad_money', 'bank_credit', 'tax_revenue', 'ncrb_ipc_crime_rate'].includes(key)) return 'republic';
   if (['rupee', 'cpi', 'wpi', 'homicide_rate', 'terror_attacks', 'terror_fatalities'].includes(key)) return 'freedom';
@@ -133,8 +137,8 @@ const eraFor = key => {
   return 'republic';
 };
 
-const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Pew Research' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties', 'defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports'].includes(key) ? 'Defence & Security' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
+const subgroupFor = key => ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
@@ -244,8 +248,8 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, Social: 1, 'Pew Research': 2, 'Crime & Security': 3 };
-  const orderedDefinitions = [...definitions].sort((left, right) => categoryOrder[categoryFor(left[0])] - categoryOrder[categoryFor(right[0])]);
+  const categoryOrder = { Economic: 0, Social: 1, 'Defence & Strategic': 2, 'Crime & Security': 3, 'Pew Research': 4 };
+  const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[categoryFor(left[0])] ?? 99) - (categoryOrder[categoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
     if (category !== lastCategory) {
@@ -265,9 +269,11 @@ async function main() {
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
     card.dataset.subgroup = subgroupFor(key);
+    const eraKey = eraFor(key);
+    card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<div class="card-era-badge">📜 ${eraData[eraKey]?.name || 'India Journey'}</div><header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     if (!live) return;
     const labels = series.labels;
@@ -387,12 +393,28 @@ async function main() {
     Social: ['Demographics', 'Welfare'],
     'Pew Research': ['Public opinion'],
     'Crime & Security': ['Violence & Crime', 'Defence & Security', 'Terrorism', 'Maoism / LWE']
+  };ubgroupGroups = { 
+    Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', 
+    Demographics: 'Social', Welfare: 'Social', 
+    'Public opinion': 'Pew Research', 
+    'Violence & Crime': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security',
+    'Defence Exports & Production': 'Defence & Strategic', 'Defence Budget & Modernization': 'Defence & Strategic', 'Strategic Stockpiles & Capabilities': 'Defence & Strategic' 
+  };
+  const groupToSubgroups = {
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
+    Social: ['Demographics', 'Welfare'],
+    'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
+    'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    'Pew Research': ['Public opinion']
   };
 
   const setEraBackground = (eraId) => {
     const era = eraData[eraId] || eraData.all;
     const bgLayer = document.querySelector('#era-bg-layer');
     if (bgLayer) {
+      bgLayer.style.backgroundImage = `url("${era.image}")`;
+      bgLayer.style.opacity = '0.38
       bgLayer.style.backgroundImage = `url("${era.image}")`;
       bgLayer.style.opacity = '0.22';
     }
@@ -460,14 +482,20 @@ async function main() {
     const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
     const periods = [...new Set(scopedCharts.flatMap(({ labels }) => labels))].sort();
     if (!periods.length) return;
-    const start = periods.includes(rangeStart.value) ? rangeStart.value : periods[0];
-    const end = periods.includes(rangeEnd.value) ? rangeEnd.value : periods[periods.length - 1];
-    addPeriodOptions(rangeStart, periods, start);
-    addPeriodOptions(rangeEnd, periods, end);
-  };
-  const groupHeroData = {
-    Economic: {
-      title: "📈 Economic & Capital Markets Atlas",
+    cDefence & Strategic": {
+      title: "🛡️ Defence, Arms Production & Strategic Modernization Atlas",
+      desc: "India's defense manufacturing evolution, historic Make in India defense export surge (₹23,497 Cr), indigenous production (₹1.45 Lakh Cr), SIPRI arms capability trends, DRDO R&D, and defense capital acquisition modernization.",
+      badge1: "Make in India Defence",
+      badge2: "Export Surge & Modernization"
+    },
+    "Pew Research": {
+      title: "📊 Global Standing & Public Opinion",
+      desc: "Pew Research Center global attitudes studies tracking international perception, economic confidence, bilateral ties, and leadership opinions.",
+      badge1: "Pew Global Attitudes",
+      badge2: "Survey Snapshots"
+    },
+    "Crime & Security": {
+      title: "⚖ Economic & Capital Markets Atlas",
       desc: "From 1947 independence to modern India's 5th largest global economy trajectory: explore GDP growth, trade openness, industrial output, and equity market benchmark comparisons against top global powers.",
       badge1: "1947 — 2026",
       badge2: "Global Markets & GDP"

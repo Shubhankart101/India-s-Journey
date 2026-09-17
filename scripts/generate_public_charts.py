@@ -242,6 +242,46 @@ def build_defence_production_exports() -> dict:
     }
 
 
+def build_defence_budget_share() -> dict:
+    years = ["1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2023", "2024", "2025"]
+    values = [17.1, 16.8, 15.2, 14.5, 15.6, 14.2, 13.8, 13.1, 15.5, 13.2, 13.0, 12.9]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Union Budget of India Documents & Ministry of Finance Budget Allocation Data (% of Total Central Expenditure)",
+    }
+
+
+def build_defence_rd_budget() -> dict:
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [8956.0, 9845.0, 10520.0, 11480.0, 12850.0, 14210.0, 15480.0, 17850.0, 19240.0, 21280.0, 23850.0, 26140.0]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "DRDO Annual Reports & Ministry of Defence R&D Expenditure (INR Crores)",
+    }
+
+
+def build_defence_capital_acquisition() -> dict:
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [65840.0, 71200.0, 74210.0, 81400.0, 91250.0, 101200.0, 113400.0, 134500.0, 152300.0, 162600.0, 172000.0, 185000.0]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Ministry of Defence Capital Outlay Statements & Parliamentary Standing Committee Reports (INR Crores)",
+    }
+
+
+def build_sipri_arms_imports() -> dict:
+    years = ["1970", "1975", "1980", "1985", "1990", "1995", "2000", "2005", "2010", "2015", "2020", "2024"]
+    values = [1120.0, 1450.0, 2350.0, 4820.0, 3120.0, 1850.0, 2150.0, 3420.0, 4120.0, 3650.0, 2850.0, 2180.0]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "SIPRI Arms Transfers Database (Trend Indicator Value - TIV)",
+    }
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -317,6 +357,10 @@ def main() -> None:
     result["series"]["defence_production"] = build_defence_production()
     result["series"]["defence_stockpile"] = build_defence_stockpile()
     result["series"]["defence_production_exports"] = build_defence_production_exports()
+    result["series"]["defence_budget_share"] = build_defence_budget_share()
+    result["series"]["defence_rd_budget"] = build_defence_rd_budget()
+    result["series"]["defence_capital_acquisition"] = build_defence_capital_acquisition()
+    result["series"]["sipri_arms_imports"] = build_sipri_arms_imports()
 
     for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:

@@ -93,6 +93,8 @@ class DashboardEndpointTests(unittest.TestCase):
             "global_equity_indices", "sectoral_market_indices",
             "defence_expenditure", "defence_exports", "defence_production",
             "defence_stockpile", "defence_production_exports",
+            "defence_budget_share", "defence_rd_budget",
+            "defence_capital_acquisition", "sipri_arms_imports",
             "ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women",
             "cyber_crime", "economic_offences", "sensex", "nifty", "nifty_vix",
             "power_consumption", "eway_bills", "rail_freight", "port_cargo",
@@ -253,7 +255,9 @@ class DashboardEndpointTests(unittest.TestCase):
             "Macroeconomics", "Monetary Policy", "Trade &amp; External", "Markets",
             "Infrastructure", "Production &amp; Commodities", "Media &amp; Publications",
             "Demographics", "Welfare", "Public opinion",
-            "Violence &amp; Crime", "Defence &amp; Security", "Terrorism", "Maoism / LWE",
+            "Violence &amp; Crime", "Terrorism", "Maoism / LWE",
+            "Defence Exports &amp; Production", "Defence Budget &amp; Modernization",
+            "Strategic Stockpiles &amp; Capabilities",
         ):
             self.assertIn(subgroup, text, subgroup)
 
