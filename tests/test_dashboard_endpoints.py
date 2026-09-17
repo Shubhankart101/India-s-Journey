@@ -193,7 +193,7 @@ class DashboardEndpointTests(unittest.TestCase):
         ncrb_data = json.loads(body)
         for key in ("ncrb_crime", "violent_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
             self.assertIn(key, ncrb_data["series"], key)
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
@@ -300,14 +300,14 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"articles", body)
 
     def test_app_js_renders_both_article_rails_from_distinct_sources(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("pp-article-links", text)
         self.assertIn("renderArticles", text)
 
     def test_app_js_renders_and_updates_cards(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("updateCards", text)
@@ -319,7 +319,7 @@ class DashboardEndpointTests(unittest.TestCase):
         
 
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)
