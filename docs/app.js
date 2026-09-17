@@ -47,10 +47,14 @@ const definitions = [
     ['lwe_perpetrator_casualties', 'LWE perpetrator casualties', 'Maoist/LWE cadre killed in insurgency violence', '2000-2025', '#d29922', ' deaths', 'https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency', 'The public MHA material does not provide a comparable annual perpetrator-casualty series.\n\nThis series is sourced from the South Asia Terrorism Portal (SATP), a secondary, non-official source reporting Maoist/CPI(Maoist) cadre killed under its own Maoist Insurgency classification, distinct from MHA\'s official aggregate.'],
   ['indian_matrix', 'Indian Matrix publication cadence', 'Articles published per week', 'Weekly', '#bc8cff', ' articles', 'https://substack.com/@indianmatrix', 'This graph tracks the public publication cadence of Indian Matrix articles. It adds the Substack source as a transparent, updateable public-data signal rather than treating article frequency as an economic or crime statistic.\n\nThe weekly RSS snapshot is collected by the pipeline and linked to Indian Matrix with appreciation for its visual public-data work.'],
   ['market_indices', 'Indian market indices', 'Sensex, Nifty, and Nifty VIX; rebased to 100', 'Monthly', '#58a6ff', ' index', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf', 'This combined graph compares India\'s major equity-market indices and volatility using one normalized base-100 view. It makes direction and relative movement readable despite the different scales of the Sensex, Nifty, and VIX.\n\nThe monthly observations are collated from Economic Survey table 9.3. This is a market-context dashboard, not investment advice, and rebasing means the plotted values are relative rather than index levels.'],
+  ['global_equity_indices', 'Global equity market comparison', 'BSE Sensex vs S&P 500, FTSE 100, Nikkei 225, and Shanghai Composite; rebased to 100', 'Annual / Monthly', '#ff9933', ' index', 'https://www.bseindia.com/', 'This graph compares India\'s primary equity benchmark (BSE Sensex) against leading global market indices (S&P 500, FTSE 100, Nikkei 225, Shanghai Composite) rebased to 100.\n\nIt illustrates the long-run compounding and relative performance of Indian capital markets alongside the world\'s major financial hubs.'],
+  ['gdp_world_comparison', 'World top economies GDP comparison', 'GDP trajectories of India, US, China, Germany, Japan, and UK', 'Annual', '#ff9933', ' USD trillion', 'https://data.worldbank.org/indicator/NY.GDP.MKTP.CD', 'This chart plots the gross domestic product of India alongside the world\'s largest economies (United States, China, Germany, Japan, and United Kingdom) in current US dollars.\n\nIt contextualizes India\'s rise from an emerging developing economy following independence to one of the world\'s top 5 economic powerhouses.'],
+  ['sectoral_market_indices', 'India sectoral market engines', 'Nifty IT, Nifty Bank, Nifty Auto, Nifty Energy, and Sensex; rebased to 100', 'Monthly / Annual', '#3fb950', ' index', 'https://www.nseindia.com/', 'This series tracks key sectoral engines of India\'s stock market expansion—Technology, Banking & Financials, Automotive, and Energy—rebased to 100 alongside the benchmark Sensex.\n\nIt reveals how different industry pillars have spearheaded growth across economic cycles.'],
+  ['global_inflation_comparison', 'Global inflation benchmark comparison', 'Consumer price inflation in India, US, and Euro Area', 'Annual', '#ffa657', '%', 'https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG', 'This indicator compares consumer price inflation rate trends across India, the United States, and the Euro Area.\n\nReading India\'s inflation alongside major global central bank economies highlights how global commodity shocks, monetary policy, and exchange rates impact domestic price stability.'],
 ];
 
 const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology'].includes(key) ? 'Pew Research' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
@@ -72,25 +76,37 @@ const formatMagnitude = (value, suffix = '') => {
 const chartOptions = (suffix, hasMultipleDatasets = false) => ({
   responsive: true,
   maintainAspectRatio: false,
+  animation: { duration: 600, easing: 'easeOutQuart' },
   interaction: { mode: 'index', intersect: false },
   plugins: {
-    legend: { 
-      display: hasMultipleDatasets,
-      position: 'top',
-      labels: { 
-        color: '#e8edf2',
-        font: { size: 12, family: 'system-ui, sans-serif' },
-        padding: 12,
-        usePointStyle: true,
-        pointStyle: 'circle'
-      }
+    legend: { display: false },
+    tooltip: { 
+      backgroundColor: 'rgba(11, 15, 25, 0.95)', 
+      titleColor: '#ff9933', 
+      bodyColor: '#e8edf2', 
+      borderColor: 'rgba(255, 153, 51, 0.35)', 
+      borderWidth: 1, 
+      padding: 12,
+      boxPadding: 6,
+      usePointStyle: true,
+      callbacks: { 
+        label: context => ` ${context.dataset.label || 'Value'}: ${formatMagnitude(context.parsed.y, suffix)}` 
+      } 
     },
-    tooltip: { backgroundColor: '#0d1117', titleColor: '#e8edf2', bodyColor: '#e8edf2', borderColor: '#2b3645', borderWidth: 1, callbacks: { label: context => ` ${formatMagnitude(context.parsed.y, suffix)}` } },
-    zoom: { pan: { enabled: true, mode: 'x' }, zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } },
+    zoom: { 
+      pan: { enabled: true, mode: 'x' }, 
+      zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } 
+    },
   },
   scales: {
-    x: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6' } },
-    y: { grid: { color: '#263241' }, ticks: { color: '#9aa8b6', maxTicksLimit: 6, padding: 8, callback: value => formatMagnitude(value, suffix) } },
+    x: { 
+      grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
+      ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } } 
+    },
+    y: { 
+      grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
+      ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) } 
+    },
   },
 });
 
@@ -177,14 +193,96 @@ async function main() {
     const labels = series.labels;
     const values = series.values;
     const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
-    const chart = new Chart(card.querySelector('canvas'), {
+
+    const canvas = card.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    const createGradientFill = (colorHex) => {
+      const g = ctx.createLinearGradient(0, 0, 0, 320);
+      const c = colorHex && colorHex.startsWith('#') ? colorHex : '#58a6ff';
+      g.addColorStop(0, c + '40');
+      g.addColorStop(0.7, c + '08');
+      g.addColorStop(1, c + '00');
+      return g;
+    };
+
+    let chartDatasets = [];
+    if (series.datasets && series.datasets.length > 0) {
+      chartDatasets = series.datasets.map((dataset, i) => {
+        const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
+        return {
+          label: dataset.label,
+          data: dataset.values || dataset.data,
+          borderColor: dsColor,
+          backgroundColor: createGradientFill(dsColor.slice(0, 7)),
+          fill: true,
+          borderWidth: 2.8,
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: dsColor,
+          tension: 0.32,
+          spanGaps: true
+        };
+      });
+    } else {
+      const singleColor = color || '#58a6ff';
+      chartDatasets = [{
+        label: title,
+        data: values,
+        borderColor: singleColor,
+        backgroundColor: createGradientFill(singleColor.slice(0, 7)),
+        fill: true,
+        borderWidth: 2.8,
+        pointRadius: 3,
+        pointHoverRadius: 6,
+        pointHoverBackgroundColor: singleColor,
+        tension: 0.32
+      }];
+    }
+
+    const chart = new Chart(canvas, {
       type: 'line',
-      data: { labels, datasets: series.datasets || [{ label: title, data: values, borderColor: color, backgroundColor: `${color}25`, fill: true, borderWidth: 2.5, pointRadius: 3, pointHoverRadius: 5, tension: 0.28 }] },
+      data: { labels, datasets: chartDatasets },
       options: chartOptions(suffix, hasMultipleDatasets),
     });
+
+    if (hasMultipleDatasets) {
+      const chartWrap = card.querySelector('.chart-wrap');
+      const legendBar = document.createElement('div');
+      legendBar.className = 'custom-legend';
+      chartDatasets.forEach((dataset, datasetIdx) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'legend-chip';
+        chip.innerHTML = `<span class="legend-dot" style="background-color:${dataset.borderColor}"></span> ${dataset.label}`;
+        
+        chip.addEventListener('mouseenter', () => {
+          chart.data.datasets.forEach((ds, idx) => {
+            if (idx !== datasetIdx) {
+              chart.getDatasetMeta(idx).hidden = true;
+            }
+          });
+          chart.update('none');
+        });
+        chip.addEventListener('mouseleave', () => {
+          chart.data.datasets.forEach((ds, idx) => {
+            chip.classList.contains('muted') ? chart.getDatasetMeta(idx).hidden = true : chart.getDatasetMeta(idx).hidden = false;
+          });
+          chart.update('none');
+        });
+        chip.addEventListener('click', () => {
+          const isVisible = chart.isDatasetVisible(datasetIdx);
+          chart.setDatasetVisibility(datasetIdx, !isVisible);
+          chip.classList.toggle('muted', isVisible);
+          chart.update();
+        });
+        legendBar.appendChild(chip);
+      });
+      chartWrap.insertBefore(legendBar, canvas);
+    }
+
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
-    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || [], datasets: series.datasets?.map(dataset => ({ data: [...dataset.data] })) || [], category, subgroup: subgroupFor(key) });
+    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: subgroupFor(key) });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
@@ -244,11 +342,72 @@ async function main() {
     addPeriodOptions(rangeStart, periods, start);
     addPeriodOptions(rangeEnd, periods, end);
   };
+  const groupHeroData = {
+    Economic: {
+      title: "📈 Economic & Capital Markets Atlas",
+      desc: "From 1947 independence to modern India's 5th largest global economy trajectory: explore GDP growth, trade openness, industrial output, and equity market benchmark comparisons against top global powers.",
+      badge1: "1947 — 2026",
+      badge2: "Global Markets & GDP"
+    },
+    Social: {
+      title: "👥 Demographics, Welfare & Human Capital",
+      desc: "Long-term social transformation across decades: population atlas, nationwide electrification, broadband access, and life expectancy milestones.",
+      badge1: "1.4B Population",
+      badge2: "Welfare & Infrastructure"
+    },
+    "Pew Research": {
+      title: "📊 Global Standing & Public Opinion",
+      desc: "Pew Research Center global attitudes studies tracking international perception, economic confidence, bilateral ties, and leadership opinions.",
+      badge1: "Pew Global Attitudes",
+      badge2: "Survey Snapshots"
+    },
+    "Crime & Security": {
+      title: "🛡️ Public Safety & Internal Security",
+      desc: "Long-run public safety metrics, Global Terrorism Database trends, Left-Wing Extremism casualty breakdowns (SATP 2000–2025), and NCRB statistics.",
+      badge1: "National Security",
+      badge2: "SATP & Official Records"
+    }
+  };
+
+  const updateGroupHero = () => {
+    const hero = document.querySelector('#group-hero');
+    if (!hero) return;
+    const grp = groupFilter.value;
+    if (grp === 'all' || !groupHeroData[grp]) {
+      hero.hidden = true;
+      return;
+    }
+    const heroInfo = groupHeroData[grp];
+    const heroTitle = document.querySelector('#group-hero-title');
+    const heroDesc = document.querySelector('#group-hero-desc');
+    const heroBadges = document.querySelector('#group-hero-badges');
+    if (heroTitle) heroTitle.textContent = heroInfo.title;
+    if (heroDesc) heroDesc.textContent = heroInfo.desc;
+    if (heroBadges) heroBadges.innerHTML = `<span class="hero-badge saffron">${heroInfo.badge1}</span><span class="hero-badge green">${heroInfo.badge2}</span>`;
+    hero.hidden = false;
+  };
+
+  const groupPills = document.querySelectorAll('.group-pill');
+  if (groupPills.length > 0) {
+    groupPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        groupPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        groupFilter.value = pill.dataset.group;
+        updateSubgroupFilter();
+        updateGroupHero();
+        updatePeriods();
+        updateCards();
+      });
+    });
+  }
+
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     const scoped = groupFilter.value !== 'all' && subgroupFilter.value !== 'all';
     const prompt = document.querySelector('#chart-prompt');
     if (prompt) prompt.hidden = scoped;
+    updateGroupHero();
     if (!scoped) {
       cards.forEach(card => { card.hidden = true; });
       headings.forEach(heading => { heading.hidden = true; });
@@ -259,8 +418,17 @@ async function main() {
     headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
   };
   filter.addEventListener('change', updateCards);
-  groupFilter.addEventListener('change', () => { updateSubgroupFilter(); updatePeriods(); updateCards(); });
-  subgroupFilter.addEventListener('change', () => { if (subgroupGroups[subgroupFilter.value]) groupFilter.value = subgroupGroups[subgroupFilter.value]; updatePeriods(); updateCards(); });
+  groupFilter.addEventListener('change', () => { 
+    const grp = groupFilter.value;
+    if (groupPills.length > 0) {
+      groupPills.forEach(p => p.classList.toggle('active', p.dataset.group === grp));
+    }
+    updateSubgroupFilter(); 
+    updateGroupHero();
+    updatePeriods(); 
+    updateCards(); 
+  });
+  subgroupFilter.addEventListener('change', () => { if (subgroupGroups[subgroupFilter.value]) groupFilter.value = subgroupGroups[subgroupFilter.value]; updateSubgroupFilter(); updateGroupHero(); updatePeriods(); updateCards(); });
   search.addEventListener('input', updateCards);
   const updateRange = () => {
     const start = rangeStart.value;

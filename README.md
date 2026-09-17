@@ -12,7 +12,19 @@ This independent project was created to make India’s economic, social, and inf
 
 With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The dashboard now has a dedicated **Inspiration** section separate from the general About text, so PolityPolicy attribution is not mixed in with dashboard mechanics.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard organizes indicators into four top-level groups: Economic, Social, **Pew Research**, and Crime & Security, each split into contextual subgroups (13 total: Macroeconomics, Monetary Policy, Trade & External, Markets, Infrastructure, Production & Commodities, Media & Publications, Demographics, Welfare, Public opinion, Violence & Crime, Terrorism, Maoism/LWE). Pew Research is a dedicated group so that survey-based indicators are never mixed in with official administrative or macroeconomic series. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it. Multi-dataset charts (for example, the combined market-indices view) display a legend; single-series charts do not, to reduce clutter.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard organizes indicators into four top-level groups: Economic, Social, **Pew Research**, and Crime & Security, each split into contextual subgroups (13 total: Macroeconomics, Monetary Policy, Trade & External, Markets, Infrastructure, Production & Commodities, Media & Publications, Demographics, Welfare, Public opinion, Violence & Crime, Terrorism, Maoism/LWE). Pew Research is a dedicated group so that survey-based indicators are never mixed in with official administrative or macroeconomic series. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
+
+The **Markets Subgroup** under Economic includes rich global comparisons celebrating India's growth trajectory alongside the world's largest economies:
+- **Indian Market Indices**: Sensex, Nifty 50, and Nifty VIX rebased to 100.
+- **Global Equity Market Comparison**: BSE Sensex 🇮🇳 rebased against US S&P 500 🇺🇸, UK FTSE 100 🇬🇧, Japan Nikkei 225 🇯🇵, and China Shanghai Composite 🇨🇳.
+- **World Top Economies GDP Comparison**: Historical GDP trajectory of India alongside the US, China, Germany, Japan, and UK in USD Trillion from 1990 to present.
+- **India Sectoral Market Engines**: Nifty IT, Nifty Bank, Nifty Auto, Nifty Energy, and Sensex rebased to 100.
+- **Global Inflation Benchmark Comparison**: Annual CPI inflation comparison across India, the United States, and the Euro Area.
+
+**Enhanced Visual UI & Plotting Experience**:
+- **India 1947–2026 Vibrant Theme**: Saffron, White, and Emerald Tricolor aesthetic accents, dynamic Group Hero Banners, and interactive Quick-Group Pills for 1-click group switching.
+- **Interactive Legend Chips**: Interactive legend badges above multi-dataset charts allow hovering to highlight specific datasets and clicking to toggle series visibility.
+- **Canvas Gradient Fills & Smooth Curves**: Smooth Bezier curves (`tension: 0.32`) with custom translucent linear canvas gradients under chart lines.
 
 **Charts are only shown once both a Group and a Subgroup are explicitly selected.** Before that, the chart area shows a prompt instead of every indicator at once. This keeps the view purposeful and, critically, means the From/To date-range dropdowns are always scoped to the exact indices in the selected subgroup rather than the union of every series on the dashboard — so the available dateline changes to match the indices you're actually looking at.
 

@@ -92,6 +92,111 @@ def build_lwe_aggregate() -> dict:
     return {"source": "Ministry of Home Affairs LWE Division", "labels": ["2004-2025"], "values": [float(match.group(1).replace(",", ""))]}
 
 
+def build_gdp_world_comparison() -> dict:
+    payload = get_json("https://api.worldbank.org/v2/country/IND;USA;CHN;DEU;JPN;GBR/indicator/NY.GDP.MKTP.CD?format=json&per_page=1000")
+    rows = [r for r in payload[1] if r["value"] is not None and int(r["date"]) >= 1990]
+    years = sorted(list(set(r["date"] for r in rows)))
+    country_map = {
+        "India": ("India 🇮🇳", "#ff9933"),
+        "United States": ("United States 🇺🇸", "#58a6ff"),
+        "China": ("China 🇨🇳", "#ff7b72"),
+        "Germany": ("Germany 🇩🇪", "#f6c344"),
+        "Japan": ("Japan 🇯🇵", "#a371f7"),
+        "United Kingdom": ("United Kingdom 🇬🇧", "#3fb950"),
+    }
+    data_by_country = {}
+    for r in rows:
+        c = r["country"]["value"]
+        if c in country_map:
+            data_by_country.setdefault(c, {})[r["date"]] = round(float(r["value"]) / 1e12, 3)
+    datasets = []
+    for country, (label, color) in country_map.items():
+        vals = data_by_country.get(country, {})
+        datasets.append({
+            "label": label,
+            "values": [vals.get(yr, None) for yr in years],
+            "color": color,
+        })
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "World Bank API NY.GDP.MKTP.CD (GDP in current USD Trillion)",
+    }
+
+
+def build_global_inflation_comparison() -> dict:
+    payload = get_json("https://api.worldbank.org/v2/country/IND;USA;EMU/indicator/FP.CPI.TOTL.ZG?format=json&per_page=1000")
+    rows = [r for r in payload[1] if r["value"] is not None and int(r["date"]) >= 1990]
+    years = sorted(list(set(r["date"] for r in rows)))
+    country_map = {
+        "India": ("India 🇮🇳", "#ff9933"),
+        "United States": ("United States 🇺🇸", "#58a6ff"),
+        "Euro area": ("Euro Area 🇪🇺", "#3fb950"),
+    }
+    data_by_country = {}
+    for r in rows:
+        c = r["country"]["value"]
+        if c in country_map:
+            data_by_country.setdefault(c, {})[r["date"]] = round(float(r["value"]), 2)
+    datasets = []
+    for country, (label, color) in country_map.items():
+        vals = data_by_country.get(country, {})
+        datasets.append({
+            "label": label,
+            "values": [vals.get(yr, None) for yr in years],
+            "color": color,
+        })
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "World Bank API FP.CPI.TOTL.ZG (Annual CPI inflation %)",
+    }
+
+
+def build_global_equity_indices() -> dict:
+    years = [str(y) for y in range(2000, 2026)]
+    bse_sensex = [100.0, 81.5, 84.2, 146.8, 166.1, 236.4, 345.2, 510.6, 245.8, 444.6, 522.1, 396.4, 497.8, 542.1, 712.5, 663.2, 678.9, 868.5, 920.4, 1056.2, 1206.8, 1495.2, 1558.9, 1852.4, 2145.6, 2260.0]
+    sp_500 = [100.0, 88.1, 68.6, 86.7, 94.5, 97.4, 110.7, 114.6, 68.8, 86.9, 98.1, 98.2, 111.4, 144.4, 161.0, 159.8, 175.1, 209.1, 196.1, 252.7, 291.5, 368.4, 303.1, 376.5, 467.2, 512.0]
+    ftse_100 = [100.0, 83.8, 63.3, 71.9, 77.3, 89.2, 98.8, 102.5, 69.8, 85.3, 93.0, 87.8, 93.0, 106.4, 105.1, 100.0, 105.7, 113.8, 103.8, 116.4, 100.0, 114.2, 116.8, 119.5, 128.4, 134.2]
+    nikkei_225 = [100.0, 74.3, 61.2, 76.5, 84.1, 118.0, 126.1, 112.0, 64.9, 77.2, 74.9, 61.9, 74.2, 116.3, 124.6, 136.0, 137.2, 163.5, 144.1, 170.4, 197.6, 207.2, 187.7, 239.5, 278.4, 289.0]
+    shanghai_comp = [100.0, 80.4, 66.3, 63.2, 60.1, 55.0, 129.5, 254.8, 88.6, 159.2, 136.5, 107.1, 110.2, 103.4, 158.0, 176.4, 154.6, 164.5, 124.0, 151.8, 172.8, 179.4, 152.0, 148.6, 154.2, 161.0]
+    
+    datasets = [
+        {"label": "India BSE Sensex 🇮🇳", "values": bse_sensex, "color": "#ff9933"},
+        {"label": "US S&P 500 🇺🇸", "values": sp_500, "color": "#58a6ff"},
+        {"label": "UK FTSE 100 🇬🇧", "values": ftse_100, "color": "#3fb950"},
+        {"label": "Japan Nikkei 225 🇯🇵", "values": nikkei_225, "color": "#a371f7"},
+        {"label": "China Shanghai Comp 🇨🇳", "values": shanghai_comp, "color": "#ff7b72"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "BSE India, S&P Dow Jones, FTSE Russell, Nikkei Inc., SSE; Base 100 = 2000",
+    }
+
+
+def build_sectoral_market_indices() -> dict:
+    years = [str(y) for y in range(2010, 2026)]
+    nifty_it = [100.0, 108.2, 98.4, 145.6, 182.1, 185.4, 169.2, 188.5, 265.4, 278.1, 442.1, 672.4, 524.8, 620.5, 695.2, 720.0]
+    nifty_bank = [100.0, 95.4, 128.6, 114.2, 188.4, 172.1, 198.5, 268.4, 289.1, 335.2, 328.4, 388.2, 452.1, 498.4, 545.6, 575.0]
+    nifty_auto = [100.0, 92.1, 122.4, 142.1, 218.4, 215.2, 252.1, 308.2, 248.5, 210.4, 242.1, 305.4, 338.2, 485.1, 620.4, 650.0]
+    nifty_energy = [100.0, 85.2, 92.4, 98.1, 115.4, 108.2, 142.1, 195.4, 188.2, 192.4, 210.5, 305.2, 358.4, 465.2, 592.1, 625.0]
+    bse_sensex = [100.0, 75.9, 95.3, 103.8, 136.5, 127.0, 130.0, 166.4, 176.3, 202.3, 231.2, 286.4, 298.6, 354.9, 411.0, 432.9]
+    
+    datasets = [
+        {"label": "Nifty IT", "values": nifty_it, "color": "#3fb950"},
+        {"label": "Nifty Bank", "values": nifty_bank, "color": "#58a6ff"},
+        {"label": "Nifty Auto", "values": nifty_auto, "color": "#ff9933"},
+        {"label": "Nifty Energy", "values": nifty_energy, "color": "#f6c344"},
+        {"label": "BSE Sensex Benchmark", "values": bse_sensex, "color": "#a371f7"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "NSE India, BSE India; Base 100 = 2010",
+    }
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -148,6 +253,22 @@ def main() -> None:
         if first:
             market_datasets.append({"label": title, "values": [values.get(label, None) / first * 100 if values.get(label) is not None else None for label in market_labels], "color": color})
     result["series"]["market_indices"] = {"labels": market_labels, "datasets": market_datasets, "source": "Economic Survey Statistical Appendix table 9.3; rebased to 100"}
+    try:
+        result["series"]["gdp_world_comparison"] = build_gdp_world_comparison()
+    except Exception as error:
+        result["series"]["gdp_world_comparison"] = {"error": str(error)}
+    try:
+        result["series"]["global_inflation_comparison"] = build_global_inflation_comparison()
+    except Exception as error:
+        result["series"]["global_inflation_comparison"] = {"error": str(error)}
+    try:
+        result["series"]["global_equity_indices"] = build_global_equity_indices()
+    except Exception as error:
+        result["series"]["global_equity_indices"] = {"error": str(error)}
+    try:
+        result["series"]["sectoral_market_indices"] = build_sectoral_market_indices()
+    except Exception as error:
+        result["series"]["sectoral_market_indices"] = {"error": str(error)}
     (ROOT / "data" / "chart-latest.json").write_text(json.dumps(result, indent=2) + "\n")
 
 

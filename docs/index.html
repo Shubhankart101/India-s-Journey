@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="tricolor-bar"></div>
   <header class="masthead">
     <div>
-      <p class="eyebrow">Public data dashboard</p>
+      <p class="eyebrow">🇮🇳 1947 — TODAY: INDEPENDENCE TO GLOBAL POWERHOUSE</p>
       <h1>India's Journey</h1>
-      <p class="lede">A long-view atlas of India’s economy, society, and public life, traced through open data.</p>
+      <p class="lede">A long-view atlas of India’s economy, society, and public life, traced through open data and global comparisons.</p>
     </div>
     <div class="actions">
-      <a class="button" href="https://politypolicy.com/" target="_blank" rel="noreferrer">Explore PolityPolicy</a>
-      <a class="button secondary" href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Read Polity and Policy</a>
+      <a class="button" href="https://politypolicy.com/" target="_blank" rel="noreferrer">Explore PolityPolicy ↗</a>
+      <a class="button secondary" href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Read Polity and Policy ↗</a>
     </div>
   </header>
 
@@ -79,13 +80,31 @@
     </section>
 
     <section class="chart-controls" aria-label="Chart controls">
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators"></label>
+      <div class="group-pills-bar" id="group-pills">
+        <button type="button" class="group-pill active" data-group="all">🇮🇳 All Groups</button>
+        <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
+        <button type="button" class="group-pill" data-group="Social">👥 Social</button>
+        <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
+        <button type="button" class="group-pill" data-group="Crime &amp; Security">🛡️ Crime &amp; Security</button>
+      </div>
+      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, CPI)..."></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
       <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Pew Research">Pew Research</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
       <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Media &amp; Publications</option><option>Demographics</option><option>Welfare</option><option>Public opinion</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>
+
+    <div id="group-hero" class="group-hero" hidden>
+      <div class="group-hero-content">
+        <h2 id="group-hero-title">Group Title</h2>
+        <p id="group-hero-desc">Group Description</p>
+      </div>
+      <div class="group-hero-badges" id="group-hero-badges">
+        <span class="hero-badge saffron">1947 — 2026</span>
+        <span class="hero-badge green">Global Comparison</span>
+      </div>
+    </div>
 
     <section class="chart-grid" id="charts" aria-live="polite">
       <p id="chart-prompt" class="chart-prompt">Select both a Group and a Subgroup above to see charts. The date range below then scopes to the exact indices in that selection.</p>
@@ -163,6 +182,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="app.js?v=pew-group-strict-filters"></script>
+  <script src="app.js?v=vibrant-markets-pro"></script>
 </body>
 </html>

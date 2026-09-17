@@ -78,12 +78,12 @@ class DashboardEndpointTests(unittest.TestCase):
             "homicide_rate", "lwe_incidents", "terror_attacks",
             "terror_fatalities", "violent_incidents", "lwe_civilian_casualties",
             "lwe_security_force_casualties", "lwe_perpetrator_casualties",
-            "market_indices",
+            "market_indices", "gdp_world_comparison", "global_inflation_comparison",
+            "global_equity_indices", "sectoral_market_indices",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
-            if key == "market_indices":
-                # Built from sensex/nifty/nifty_vix merged separately in economic-survey-monthly.json.
+            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices"):
                 self.assertIn("labels", series, key)
                 continue
             self.assertTrue(series.get("values") or series.get("error"), key)
@@ -150,7 +150,7 @@ class DashboardEndpointTests(unittest.TestCase):
         ncrb_data = json.loads(body)
         for key in ("ncrb_crime", "violent_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
             self.assertIn(key, ncrb_data["series"], key)
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
@@ -245,14 +245,14 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"articles", body)
 
     def test_app_js_renders_both_article_rails_from_distinct_sources(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("pp-article-links", text)
         self.assertIn("renderArticles", text)
 
     def test_app_js_requires_group_and_subgroup_before_showing_charts(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("groupFilter.value !== 'all' && subgroupFilter.value !== 'all'", text)
@@ -265,11 +265,11 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"Select both a Group and a Subgroup", body)
 
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=pew-group-strict-filters")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)
-        self.assertIn("display: hasMultipleDatasets", text)
+        self.assertIn("custom-legend", text)
 
     def test_daily_workflow_runs_all_collection_scripts(self):
         workflow_path = os.path.join(
