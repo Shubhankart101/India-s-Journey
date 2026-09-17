@@ -790,10 +790,7 @@ def main() -> None:
         result["series"]["terror_fatalities"] = build_terrorism_fatalities_chart()
     except Exception as error:
         result["series"]["terror_fatalities"] = {"error": str(error)}
-    try:
-        result["series"]["lwe_incidents"] = build_lwe_aggregate()
-    except Exception as error:
-        result["series"]["lwe_incidents"] = {"error": str(error)}
+
     
     result["series"]["defence_exports"] = build_defence_exports()
     result["series"]["defence_production"] = build_defence_production()

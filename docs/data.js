@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-09-17T17:11:00+00:00",
+  "generated_at_utc": "2026-09-17T17:28:28+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -2827,12 +2827,55 @@ window.INDIA_DASHBOARD_DATA = {
       }
     },
     "lwe_incidents": {
-      "source": "Ministry of Home Affairs LWE Division",
+      "source": "Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+      "note": "Annual total fatalities (civilians, security personnel, and perpetrators) in Left-Wing Extremist violence across affected states.",
       "labels": [
-        "2004-2025"
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
       ],
       "values": [
-        8956.0
+        566.0,
+        669.0,
+        678.0,
+        696.0,
+        721.0,
+        1005.0,
+        1005.0,
+        611.0,
+        415.0,
+        397.0,
+        309.0,
+        226.0,
+        513.0,
+        295.0,
+        412.0,
+        202.0,
+        183.0,
+        147.0,
+        98.0,
+        150.0,
+        285.0,
+        168.0
       ]
     },
     "lwe_civilian_casualties": {
