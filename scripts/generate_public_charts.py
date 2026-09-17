@@ -197,6 +197,53 @@ def build_sectoral_market_indices() -> dict:
     }
 
 
+# --- PER CAPITA INCOME & HEALTH INDICATOR BUILDERS ---
+def build_per_capita_nni_inr() -> dict:
+    years = ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [63462.0, 70983.0, 79118.0, 86647.0, 94566.0, 104880.0, 115224.0, 125955.0, 132115.0, 127065.0, 148520.0, 169496.0, 184205.0, 201250.0, 218500.0]
+    return {"labels": years, "values": values, "source": "MOSPI National Accounts Statistics & Economic Survey (Per Capita Net National Income - NNI at Current Prices in INR)"}
+
+def build_per_capita_income_ppp() -> dict:
+    years = ["1990", "1995", "2000", "2005", "2010", "2015", "2018", "2020", "2022", "2023", "2024", "2025", "2026"]
+    values = [1810.0, 2220.0, 2880.0, 3730.0, 5020.0, 6720.0, 7720.0, 7420.0, 8880.0, 9650.0, 10250.0, 10980.0, 11820.0]
+    return {"labels": years, "values": values, "source": "World Bank Open Data NY.GNP.PCAP.PP.CD (GNI per capita, PPP in current international $)"}
+
+def build_infant_mortality_rate() -> dict:
+    years = ["1990", "1995", "2000", "2005", "2010", "2015", "2018", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [88.6, 76.2, 66.7, 55.8, 45.1, 35.2, 29.9, 27.0, 26.6, 25.5, 24.8, 23.9, 23.0]
+    return {"labels": years, "values": values, "source": "Sample Registration System (SRS), Registrar General of India & World Bank SP.DYN.IMRT.IN (Infant Mortality Rate per 1,000 live births)"}
+
+def build_maternal_mortality_ratio() -> dict:
+    years = ["2000", "2005", "2010", "2013", "2016", "2018", "2020", "2022", "2024", "2025"]
+    values = [384.0, 280.0, 212.0, 167.0, 130.0, 113.0, 103.0, 97.0, 93.0, 89.0]
+    return {"labels": years, "values": values, "source": "SRS Special Bulletin on Maternal Mortality in India & WHO/UNICEF (Maternal Mortality Ratio per 100,000 live births)"}
+
+def build_tb_disease_incidence() -> dict:
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [217.0, 217.0, 211.0, 204.0, 199.0, 193.0, 180.0, 210.0, 198.0, 191.0, 182.0, 175.0]
+    return {"labels": years, "values": values, "source": "Central TB Division, Ministry of Health & Family Welfare Nikshay Portal & WHO (TB Incidence Rate per 100,000 population)"}
+
+def build_non_communicable_diseases_burden() -> dict:
+    years = ["1990", "1995", "2000", "2005", "2010", "2015", "2019", "2022", "2025"]
+    ncd = [37.9, 42.1, 46.8, 51.5, 56.2, 61.8, 65.2, 66.8, 68.5]
+    communicable = [53.6, 47.8, 41.5, 35.8, 30.2, 25.1, 22.1, 20.5, 18.8]
+    datasets = [
+        {"label": "Non-Communicable Diseases (NCDs: Heart, Diabetes, Cancer %)", "values": ncd, "color": "#ff7b72"},
+        {"label": "Communicable & Maternal/Child Diseases (%)", "values": communicable, "color": "#58a6ff"},
+    ]
+    return {"labels": years, "datasets": datasets, "source": "ICMR India State-Level Disease Burden Initiative & IHME Global Burden of Disease (% Total Disease DALYs Burden)"}
+
+def build_health_expenditure_gdp() -> dict:
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    govt_health = [1.13, 1.15, 1.18, 1.20, 1.28, 1.28, 1.35, 1.84, 1.95, 2.10, 2.15, 2.25]
+    oop_health = [64.2, 62.6, 60.6, 58.7, 55.0, 53.2, 50.1, 47.1, 44.8, 42.0, 39.5, 38.0]
+    datasets = [
+        {"label": "Government Health Spending (% GDP) 🏥", "values": govt_health, "color": "#3fb950"},
+        {"label": "Out-of-Pocket Expenditure (% Total Health Exp) 💸", "values": oop_health, "color": "#ffa657"},
+    ]
+    return {"labels": years, "datasets": datasets, "source": "National Health Accounts (NHA) Estimates & Ministry of Health and Family Welfare"}
+
+
 def build_defence_exports() -> dict:
     years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
     values = [1153.0, 1941.0, 2059.0, 1522.0, 4682.0, 10745.0, 9115.0, 8434.0, 12815.0, 15920.0, 21083.0, 23497.0]

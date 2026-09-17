@@ -195,9 +195,9 @@ const eraFor = key => {
   return 'republic';
 };
 
-const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mining & Natural Resources' : ['upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index'].includes(key) ? 'Payments & Digital Banking' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Industry Trends & Performance' : ['state_gsdp_comparison', 'state_fdi_inflows', 'state_debt_to_gsdp', 'state_operating_factories', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Performance & Regional Health' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'social_category_literacy', 'religious_demographics', 'sc_st_post_matric_scholarships', 'pm_mudra_social_breakdown', 'pm_svanidhi_street_vendors'].includes(key) ? 'Social' : 'Economic';
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mining & Natural Resources' : ['upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index'].includes(key) ? 'Payments & Digital Banking' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Industry Trends & Performance' : ['state_gsdp_comparison', 'state_fdi_inflows', 'state_debt_to_gsdp', 'state_operating_factories', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Performance & Regional Health' : ['infant_mortality_rate', 'maternal_mortality_ratio', 'tb_disease_incidence', 'non_communicable_diseases_burden', 'health_expenditure_gdp'].includes(key) ? 'Public Health & Epidemiology' : ['homicide_rate', 'lwe_incidents', 'northeast_insurgency_fatalities', 'northeast_insurgency_incidents', 'kashmir_insurgency_fatalities', 'kashmir_terror_incidents', 'khalistan_insurgency_historical', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'social_category_literacy', 'religious_demographics', 'sc_st_post_matric_scholarships', 'pm_mudra_social_breakdown', 'pm_svanidhi_street_vendors'].includes(key) ? 'Social' : 'Economic';
 
-const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'sc_st_post_matric_scholarships', 'pm_svanidhi_street_vendors'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['state_gsdp_comparison', 'state_debt_to_gsdp'].includes(key) ? 'State Financial Health & GSDP' : ['state_fdi_inflows', 'state_operating_factories'].includes(key) ? 'State Industrial & Manufacturing Hubs' : ['state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Welfare & Scheme Coverage' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['per_capita_nni_inr', 'per_capita_income_ppp'].includes(key) ? 'Per Capita Income & Wealth' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'sc_st_post_matric_scholarships', 'pm_svanidhi_street_vendors'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['infant_mortality_rate', 'maternal_mortality_ratio'].includes(key) ? 'Mortality & Lifespan Milestones' : ['tb_disease_incidence', 'non_communicable_diseases_burden'].includes(key) ? 'Disease Burden & Epidemiology' : ['health_expenditure_gdp'].includes(key) ? 'Health Infrastructure & Spending' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['state_gsdp_comparison', 'state_debt_to_gsdp'].includes(key) ? 'State Financial Health & GSDP' : ['state_fdi_inflows', 'state_operating_factories'].includes(key) ? 'State Industrial & Manufacturing Hubs' : ['state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Welfare & Scheme Coverage' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['kashmir_insurgency_fatalities', 'kashmir_terror_incidents'].includes(key) ? 'Jammu & Kashmir Insurgency' : ['northeast_insurgency_fatalities', 'northeast_insurgency_incidents'].includes(key) ? 'North East Insurgency' : ['khalistan_insurgency_historical'].includes(key) ? 'Punjab Militancy & Security' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
@@ -347,14 +347,15 @@ async function main() {
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) renderArticles(polityPolicyLinks, ppArticles.slice(0, 6), 'No public article snapshot available yet.');
   const categoryBgMap = {
-    Economic: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
-    'Industry Trends & Performance': "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
-    'Mining & Natural Resources': "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=1600&auto=format&fit=crop",
-    'Payments & Digital Banking': "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1600&auto=format&fit=crop",
-    'State Performance & Regional Health': "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1600&auto=format&fit=crop",
-    Social: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
-    'Defence & Strategic': "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop",
-    'Crime & Security': "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop",
+    Economic: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop", // Classical Architecture & Ancient Heritage
+    'Industry Trends & Performance': "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop", // Industrial & Engineering Output
+    'Mining & Natural Resources': "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=1600&auto=format&fit=crop", // Mineral Quarrying & Earth Mining
+    'Payments & Digital Banking': "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1600&auto=format&fit=crop", // Digital Technology
+    'State Performance & Regional Health': "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1600&auto=format&fit=crop", // South Indian Temple Gopuram & Architecture
+    'Public Health & Epidemiology': "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop", // Healthcare & Medical Research
+    Social: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1600&auto=format&fit=crop", // Hampi Stone Chariot Civilisational Heritage
+    'Defence & Strategic': "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop", // Aerospace & Defence Innovation
+    'Crime & Security': "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop", // Law & Justice Monument
     'Pew Research': "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1600&auto=format&fit=crop"
   };
 
@@ -362,7 +363,7 @@ async function main() {
     const bgLayer = document.querySelector('#era-bg-layer');
     if (bgLayer && imgUrl) {
       bgLayer.style.backgroundImage = `url("${imgUrl}")`;
-      bgLayer.style.opacity = '0.65';
+      bgLayer.style.opacity = '0.55';
     }
   };
   setEraBackground(categoryBgMap.Economic);
@@ -370,7 +371,7 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, Social: 5, 'Defence & Strategic': 6, 'Crime & Security': 7, 'Pew Research': 8 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9 };
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[categoryFor(left[0])] ?? 99) - (categoryOrder[categoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
@@ -566,6 +567,7 @@ async function main() {
   const rangeEnd = document.querySelector('#range-end');
   const subgroupGroups = { 
     Macroeconomics: 'Economic', 
+    'Per Capita Income & Wealth': 'Economic',
     'Monetary Policy': 'Economic', 
     'Trade & External': 'Economic', 
     Markets: 'Economic', 
@@ -584,28 +586,34 @@ async function main() {
     'State Financial Health & GSDP': 'State Performance & Regional Health',
     'State Industrial & Manufacturing Hubs': 'State Performance & Regional Health',
     'State Welfare & Scheme Coverage': 'State Performance & Regional Health',
-    'State Socio-Demographic Milestones': 'State Performance & Regional Health',
+    'Mortality & Lifespan Milestones': 'Public Health & Epidemiology',
+    'Disease Burden & Epidemiology': 'Public Health & Epidemiology',
+    'Health Infrastructure & Spending': 'Public Health & Epidemiology',
     Demographics: 'Social', 
     Welfare: 'Social', 
     'Government Schemes': 'Social',
     'Defence Exports & Production': 'Defence & Strategic', 
     'Defence Budget & Modernization': 'Defence & Strategic', 
     'Strategic Stockpiles & Capabilities': 'Defence & Strategic', 
+    'Maoism / LWE': 'Crime & Security',
+    'Jammu & Kashmir Insurgency': 'Crime & Security',
+    'North East Insurgency': 'Crime & Security',
+    'Punjab Militancy & Security': 'Crime & Security',
     'Violence & Crime': 'Crime & Security', 
     Terrorism: 'Crime & Security',
-    'Maoism / LWE': 'Crime & Security',
     'Public opinion': 'Pew Research' 
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'State Socio-Demographic Milestones', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
-    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications'],
+    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion'],
+    Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
     'Payments & Digital Banking': ['UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index'],
-    'State Performance & Regional Health': ['State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'State Socio-Demographic Milestones'],
+    'State Performance & Regional Health': ['State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage'],
+    'Public Health & Epidemiology': ['Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending'],
     Social: ['Demographics', 'Welfare', 'Government Schemes'],
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
-    'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
     'Pew Research': ['Public opinion']
   };
 
@@ -678,10 +686,10 @@ async function main() {
 
   const groupHeroData = {
     Economic: {
-      title: "📈 Economic & Capital Markets Atlas",
-      desc: "Macroeconomic balance sheet, monetary policy, GDP growth trajectory, trade openness, Union Budget fiscal balance, and global equity market benchmark comparisons against top world powers.",
+      title: "📈 Economic, Per Capita Wealth & Capital Markets Atlas",
+      desc: "Macroeconomic balance sheet, per capita Net National Income (₹2.18 Lakh), purchasing power parity (PPP), monetary policy, GDP growth trajectory, trade openness, Union Budget fiscal balance, and global equity market comparisons.",
       badge1: "1947 — 2026",
-      badge2: "GDP, Markets & Fiscal"
+      badge2: "GDP, Wealth & Fiscal"
     },
     "Industry Trends & Performance": {
       title: "🏭 Industry Trends, Performance & Industrial Stability Atlas",
@@ -707,6 +715,12 @@ async function main() {
       badge1: "RBI State Finances",
       badge2: "MOSPI & NITI Aayog"
     },
+    "Public Health & Epidemiology": {
+      title: "🩺 Public Health, Lifespan Milestones & Epidemiology Atlas",
+      desc: "National health indicators: Infant Mortality Rate (IMR) reduction, Maternal Mortality Ratio (MMR) milestone, Tuberculosis (TB) incidence trajectory, Non-Communicable Diseases (NCD) vs communicable disease burden, Government Health Spending (% GDP), and Out-of-Pocket Expenditure reduction.",
+      badge1: "ICMR & MoHFW",
+      badge2: "WHO & NHA Data"
+    },
     Social: {
       title: "👥 Demographics, Welfare & Human Capital",
       desc: "Long-term social transformation across decades: 1.4B population dynamics, nationwide electrification, high-speed broadband access, flagship welfare schemes, and life expectancy milestones.",
@@ -726,10 +740,10 @@ async function main() {
       badge2: "Survey Snapshots"
     },
     "Crime & Security": {
-      title: "⚖️ Public Safety & Internal Security",
-      desc: "Long-run public safety metrics, Global Terrorism Database trends, Left-Wing Extremism casualty breakdowns (SATP 2000–2025), NDPS drug offences, child protection/POCSO cases, road accident fatalities, and police strength.",
+      title: "⚖️ Public Safety, Internal Security & Anti-Insurgency Atlas",
+      desc: "Comprehensive national security atlas: Left-Wing Extremism (LWE / Maoism) 22-year fatality decline, Jammu & Kashmir terrorism reduction (2000-2025), North East insurgency pacification (2000-2025), historical Punjab militancy archive (1981-1995), NDPS drug offences, child protection/POCSO cases, road accident fatalities, and police strength.",
       badge1: "National Security",
-      badge2: "SATP & Official Records"
+      badge2: "MHA & SATP Databases"
     }
   };
 
@@ -739,6 +753,12 @@ async function main() {
       desc: "Core macroeconomic balance sheet: GDP per capita, CPI inflation, Union fiscal deficit, current account balance, tax-to-GDP ratio, and gross domestic savings.",
       badge1: "Macro Balances",
       badge2: "World Bank & RBI"
+    },
+    "Per Capita Income & Wealth": {
+      title: "💰 Per Capita Income & National Wealth Trajectory",
+      desc: "India's per capita Net National Income (NNI) growth in Indian Rupees (₹2.18 Lakh) alongside GNI per capita in Purchasing Power Parity (PPP current international $).",
+      badge1: "MOSPI & World Bank",
+      badge2: "Per Capita Wealth"
     },
     "Monetary Policy": {
       title: "🏛️ Monetary Policy & Banking Credit",
@@ -811,6 +831,48 @@ async function main() {
       desc: "State-level delivery of national welfare infrastructure: PMAY pucca housing units built, Jal Jeevan Mission Har Ghar Jal tap water access %, and PM MUDRA micro-credit loan disbursements.",
       badge1: "Welfare Schemes",
       badge2: "PMAY, JJM & MUDRA"
+    },
+    "Mortality & Lifespan Milestones": {
+      title: "👶 Infant & Maternal Mortality Milestones",
+      desc: "Steep decline in Infant Mortality Rate (IMR per 1k) and Maternal Mortality Ratio (MMR per 100k) alongside expanding life expectancy at birth (70+ years).",
+      badge1: "SRS & MoHFW",
+      badge2: "Lifespan & Mortality"
+    },
+    "Disease Burden & Epidemiology": {
+      title: "🔬 Disease Burden & Epidemiological Transition",
+      desc: "Shifting epidemiology: Tuberculosis (TB) incidence trajectory reduction alongside Non-Communicable Diseases (NCDs: cardiovascular, diabetes, cancer) vs communicable disease burden %.",
+      badge1: "ICMR & WHO Nikshay",
+      badge2: "Disease Burden"
+    },
+    "Health Infrastructure & Spending": {
+      title: "🏥 Government Health Spending & Out-of-Pocket Expenditure",
+      desc: "Health financing transition: Government health expenditure increase (% GDP) alongside significant reduction in Out-of-Pocket Expenditure (OOP % of total health spend).",
+      badge1: "National Health Accounts",
+      badge2: "Health Spending"
+    },
+    "Maoism / LWE": {
+      title: "⛰️ Left-Wing Extremism (LWE) & Maoist Insurgency",
+      desc: "Ministry of Home Affairs official LWE aggregate fatalities (8,956 killed 2004-2025) alongside annual LWE deaths trajectory (2004-2025) and South Asia Terrorism Portal (SATP 2000-2025) annual casualty breakdown across Civilians, Security Forces, and Perpetrators.",
+      badge1: "MHA LWE Division",
+      badge2: "SATP Casualty Breakdown"
+    },
+    "Jammu & Kashmir Insurgency": {
+      title: "🏔️ Jammu & Kashmir Counter-Terrorism & Insurgency",
+      desc: "Annual counter-terrorism fatalities and terrorist incident volume in J&K showing a steep structural decline in violence levels.",
+      badge1: "MHA J&K Division",
+      badge2: "SATP J&K Casualty Data"
+    },
+    "North East Insurgency": {
+      title: "🌲 North East Insurgency Pacification",
+      desc: "Decadal decline in insurgent fatalities and registered incidents across North Eastern states following peace accords and border security operations.",
+      badge1: "MHA North East Division",
+      badge2: "NE Peace Accords"
+    },
+    "Punjab Militancy & Security": {
+      title: "🌾 Historical Punjab Militancy & Security Archive",
+      desc: "Historical fatality archive tracking the Punjab militancy period (1981-1995) prior to the restoration of full peace and democratic stability.",
+      badge1: "MHA Historical Archive",
+      badge2: "SATP Punjab Database"
     },
     "Fiscal & Union Budget": {
       title: "📜 Union Budget & Fiscal Expansion",
@@ -895,12 +957,6 @@ async function main() {
       desc: "Global Terrorism Database (GTD) open series tracking terrorist attack counts and human fatalities in India (1970-2020).",
       badge1: "GTD & OWID Data",
       badge2: "Terrorism Statistics"
-    },
-    "Maoism / LWE": {
-      title: "⛰️ Left-Wing Extremism (LWE) & Internal Security",
-      desc: "Ministry of Home Affairs official LWE aggregate fatalities (8,956 killed 2004-2025) alongside annual LWE deaths trajectory (2004-2025) and South Asia Terrorism Portal (SATP 2000-2025) annual casualty breakdown across Civilians, Security Forces, and Perpetrators.",
-      badge1: "MHA LWE Division",
-      badge2: "SATP Casualty Breakdown"
     },
     "Public opinion": {
       title: "📊 Pew Research Public Opinion & Global Attitudes",

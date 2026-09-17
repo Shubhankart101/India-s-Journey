@@ -82,19 +82,93 @@
     </section>
 
     <section class="chart-controls" aria-label="Chart controls">
-            <div class="group-pills-bar" id="group-pills">
+                  <div class="group-pills-bar" id="group-pills">
         <button type="button" class="group-pill active" data-group="all">🇮🇳 All Groups</button>
         <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
         <button type="button" class="group-pill" data-group="Industry Trends &amp; Performance">🏭 Industry Trends</button>
         <button type="button" class="group-pill" data-group="Mining &amp; Natural Resources">⛏️ Mined Resources</button>
         <button type="button" class="group-pill" data-group="Payments &amp; Digital Banking">💳 Payments &amp; Banking</button>
+        <button type="button" class="group-pill" data-group="State Performance &amp; Regional Health">🏛️ State Performance</button>
+        <button type="button" class="group-pill" data-group="Public Health &amp; Epidemiology">🩺 Public Health</button>
         <button type="button" class="group-pill" data-group="Social">👥 Social</button>
         <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
       </div>
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, Defence, Crime)..."></label>
-      <label>Show <select id="chart-filter"><option value="all" selected>All indicators</option><option value="live">Live data only</option><option value="pending">Pending adapters</option></select></label>
+            <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. Per Capita Income, Health, Mining, Kashmir, Crime)..."></label>
+      <select id="chart-filter" style="display:none;"><option value="all" selected>All indicators</option></select>
+      <label>Group <select id="group-filter">
+        <option value="all" selected>All groups</option>
+        <option value="Economic">Economic</option>
+        <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
+        <option value="Mining &amp; Natural Resources">Mining &amp; Natural Resources</option>
+        <option value="Payments &amp; Digital Banking">Payments &amp; Digital Banking</option>
+        <option value="State Performance &amp; Regional Health">State Performance &amp; Regional Health</option>
+        <option value="Public Health &amp; Epidemiology">Public Health &amp; Epidemiology</option>
+        <option value="Social">Social</option>
+        <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
+        <option value="Crime &amp; Security">Crime &amp; Security</option>
+        <option value="Pew Research">Pew Research</option>
+      </select></label>
+      <label>Subgroup <select id="subgroup-filter">
+        <option value="all" selected>All subgroups</option>
+        <optgroup label="📈 Economic">
+          <option>Macroeconomics</option>
+          <option>Per Capita Income &amp; Wealth</option>
+          <option>Monetary Policy</option>
+          <option>Trade &amp; External</option>
+          <option>Markets</option>
+          <option>Fiscal &amp; Union Budget</option>
+          <option>Media &amp; Publications</option>
+        </optgroup>
+        <optgroup label="🏭 Industry Trends &amp; Performance">
+          <option>Manufacturing &amp; Industrial Growth</option>
+          <option>Infrastructure Development</option>
+          <option>Production &amp; Commodities</option>
+        </optgroup>
+        <optgroup label="⛏️ Mining &amp; Natural Resources">
+          <option>Metallic Minerals &amp; Ores</option>
+          <option>Energy Minerals &amp; Fuel</option>
+          <option>Non-Metallic &amp; Industrial Minerals</option>
+          <option>Mineral Exports &amp; Trade</option>
+        </optgroup>
+        <optgroup label="💳 Payments &amp; Digital Banking">
+          <option>UPI &amp; Digital Payments</option>
+          <option>Card Spends &amp; Ecosystem</option>
+          <option>Digital Financial Index</option>
+        </optgroup>
+        <optgroup label="🏛️ State Performance &amp; Regional Health">
+          <option>State Financial Health &amp; GSDP</option>
+          <option>State Industrial &amp; Manufacturing Hubs</option>
+          <option>State Welfare &amp; Scheme Coverage</option>
+        </optgroup>
+        <optgroup label="🩺 Public Health &amp; Epidemiology">
+          <option>Mortality &amp; Lifespan Milestones</option>
+          <option>Disease Burden &amp; Epidemiology</option>
+          <option>Health Infrastructure &amp; Spending</option>
+        </optgroup>
+        <optgroup label="👥 Social">
+          <option>Demographics</option>
+          <option>Welfare</option>
+          <option>Government Schemes</option>
+        </optgroup>
+        <optgroup label="🛡️ Defence &amp; Strategic">
+          <option>Defence Exports &amp; Production</option>
+          <option>Defence Budget &amp; Modernization</option>
+          <option>Strategic Stockpiles &amp; Capabilities</option>
+        </optgroup>
+        <optgroup label="⚖️ Crime &amp; Security">
+          <option>Maoism / LWE</option>
+          <option>Jammu &amp; Kashmir Insurgency</option>
+          <option>North East Insurgency</option>
+          <option>Punjab Militancy &amp; Security</option>
+          <option>Violence &amp; Crime</option>
+          <option>Terrorism</option>
+        </optgroup>
+        <optgroup label="📊 Pew Research">
+          <option>Public opinion</option>
+        </optgroup>
+      </select></label>
       <label>Group <select id="group-filter">
         <option value="all" selected>All groups</option>
         <option value="Economic">Economic</option>

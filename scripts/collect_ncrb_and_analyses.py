@@ -169,6 +169,66 @@ def build_lwe_annual_fatalities() -> dict:
     }
 
 
+def build_northeast_insurgency_fatalities() -> dict:
+    """Build annual insurgency fatalities trajectory in North East India (2000-2025)."""
+    years = [str(y) for y in range(2000, 2026)]
+    values = [1021, 915, 824, 762, 532, 612, 624, 1058, 1051, 854, 321, 314, 316, 252, 212, 273, 164, 112, 72, 34, 42, 21, 25, 114, 82, 45]
+    return {
+        "source": "MHA North East Division & SATP North East Insurgency Database",
+        "note": "Annual total fatalities in insurgent violence across North Eastern states (Assam, Nagaland, Manipur, Meghalaya, Tripura, Arunachal Pradesh).",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_northeast_insurgency_incidents() -> dict:
+    """Build annual insurgency incidents volume in North East India (2014-2025)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [824, 574, 484, 308, 252, 223, 162, 209, 241, 212, 185, 142]
+    return {
+        "source": "Ministry of Home Affairs Annual Reports (North East Division)",
+        "note": "Annual count of registered insurgent incidents in NE region, showing an 80%+ decline in security incidents.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_kashmir_insurgency_fatalities() -> dict:
+    """Build annual terrorism & insurgency fatalities in Jammu & Kashmir (2000-2025)."""
+    years = [str(y) for y in range(2000, 2026)]
+    values = [3288, 4507, 3022, 2542, 1810, 1229, 1116, 777, 541, 377, 375, 183, 117, 181, 193, 174, 267, 358, 451, 283, 321, 274, 253, 134, 112, 85]
+    return {
+        "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
+        "note": "Annual total fatalities (civilians, security forces, and terrorists) in J&K counter-terror operations and insurgency violence.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_kashmir_terror_incidents() -> dict:
+    """Build annual terrorist incidents in Jammu & Kashmir (2014-2025)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    values = [222, 208, 322, 342, 614, 255, 244, 229, 125, 46, 41, 32]
+    return {
+        "source": "Ministry of Home Affairs J&K Division Performance Reports",
+        "note": "Annual registered terrorist incidents in Jammu & Kashmir showing a sharp decline post-2019.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_khalistan_insurgency_historical() -> dict:
+    """Build historical fatalities in Punjab militancy (1981-1995)."""
+    years = ["1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995"]
+    values = [13, 13, 75, 1222, 63, 620, 1238, 2429, 2038, 3787, 5265, 3883, 843, 76, 172]
+    return {
+        "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
+        "note": "Annual total fatalities during the Punjab militancy period prior to full restoration of peace.",
+        "labels": years,
+        "values": values
+    }
+
+
 def build_lwe_casualties() -> dict:
     """Build LWE casualty breakdown by category.
 
