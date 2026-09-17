@@ -109,6 +109,8 @@ class DashboardEndpointTests(unittest.TestCase):
             "capital_expenditure_capex", "pm_jan_dhan_yojana",
             "pm_awas_yojana", "jal_jeevan_mission", "ayushman_bharat",
             "social_category_literacy", "religious_demographics",
+            "sc_st_post_matric_scholarships", "pm_svanidhi_street_vendors",
+            "gross_tax_yoy_growth", "pm_mudra_social_breakdown",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():

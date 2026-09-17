@@ -1,9 +1,39 @@
 {
-  "generated_at_utc": "2026-08-21T20:47:32+00:00",
+  "generated_at_utc": "2026-09-17T14:28:37+00:00",
   "feed_url": "https://indianmatrix.substack.com/feed",
   "feed_title": "The Indian Matrix\u2019s Substack",
   "article_count": 20,
   "articles": [
+    {
+      "title": "How Zudio\u2019s 1000th Store Maps India\u2019s Changing Household Budgets",
+      "link": "https://indianmatrix.substack.com/p/how-zudios-1000th-store-maps-indias",
+      "published": "Tue, 15 Sep 2026 13:03:00 GMT",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "The Invisible Friction: Why India\u2019s NGO-to-Startup Ratio is a Red Flag for Growth",
+      "link": "https://indianmatrix.substack.com/p/the-invisible-friction-why-indias",
+      "published": "Sat, 05 Sep 2026 12:22:51 GMT",
+      "date": "2026-09-05"
+    },
+    {
+      "title": "Open More. Build More. Grow More.",
+      "link": "https://indianmatrix.substack.com/p/open-more-build-more-grow-more",
+      "published": "Fri, 28 Aug 2026 05:33:53 GMT",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "How UPI Transformed India: The Second and Third Order Effects Nobody Predicted",
+      "link": "https://indianmatrix.substack.com/p/how-upi-transformed-india-the-second",
+      "published": "Tue, 25 Aug 2026 15:46:41 GMT",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "Punjab vs. Haryana: The Great Economic Divergence",
+      "link": "https://indianmatrix.substack.com/p/punjab-vs-haryana-the-great-economic",
+      "published": "Sun, 23 Aug 2026 08:52:09 GMT",
+      "date": "2026-08-23"
+    },
     {
       "title": "How much of India's infrastructure was built after 2014?",
       "link": "https://indianmatrix.substack.com/p/how-much-of-indias-infrastructure",
@@ -93,42 +123,10 @@
       "link": "https://indianmatrix.substack.com/p/the-red-eclipse-decoding-the-structural",
       "published": "Fri, 15 May 2026 12:06:18 GMT",
       "date": "2026-05-15"
-    },
-    {
-      "title": "Reclaiming the Heartland: How State Capacity Defeated the Maoist Insurgency",
-      "link": "https://indianmatrix.substack.com/p/reclaiming-the-heartland-how-state-bef",
-      "published": "Mon, 11 May 2026 11:29:37 GMT",
-      "date": "2026-05-11"
-    },
-    {
-      "title": "An Epochal Shift: Decoding the 2026 Bengal Mandate",
-      "link": "https://indianmatrix.substack.com/p/an-epochal-shift-decoding-the-2026",
-      "published": "Mon, 11 May 2026 05:29:23 GMT",
-      "date": "2026-05-11"
-    },
-    {
-      "title": "After the Whistle: Reading Tamil Nadu's 2026 Verdict Without the Confetti",
-      "link": "https://indianmatrix.substack.com/p/after-the-whistle-reading-tamil-nadus",
-      "published": "Sat, 09 May 2026 07:05:05 GMT",
-      "date": "2026-05-09"
-    },
-    {
-      "title": "The Apex Revival: How India Reversed the Ecological Clock",
-      "link": "https://indianmatrix.substack.com/p/the-apex-revival-how-india-reversed",
-      "published": "Thu, 30 Apr 2026 11:32:43 GMT",
-      "date": "2026-04-30"
-    },
-    {
-      "title": "India\u2019s Energy Transition (2000\u20132026)",
-      "link": "https://indianmatrix.substack.com/p/indias-energy-transition-20002026",
-      "published": "Wed, 29 Apr 2026 08:31:19 GMT",
-      "date": "2026-04-29"
     }
   ],
   "cadence": {
     "labels": [
-      "2026-W18",
-      "2026-W19",
       "2026-W20",
       "2026-W21",
       "2026-W23",
@@ -137,12 +135,14 @@
       "2026-W28",
       "2026-W29",
       "2026-W31",
-      "2026-W32"
+      "2026-W32",
+      "2026-W34",
+      "2026-W35",
+      "2026-W36",
+      "2026-W38"
     ],
     "values": [
-      2,
       1,
-      3,
       2,
       2,
       3,
@@ -150,6 +150,10 @@
       2,
       1,
       2,
+      1,
+      1,
+      2,
+      1,
       1
     ]
   }

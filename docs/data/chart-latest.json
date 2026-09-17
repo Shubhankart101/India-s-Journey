@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T14:22:53+00:00",
+  "generated_at_utc": "2026-09-17T14:33:17+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -3727,6 +3727,43 @@
       ],
       "source": "Ministry of Finance Budget Statements (Central Government Capital Outlay / Capex in INR Lakh Crores)"
     },
+    "gross_tax_yoy_growth": {
+      "labels": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        14.8,
+        16.2,
+        10.1,
+        8.8,
+        17.0,
+        17.9,
+        11.8,
+        8.4,
+        -5.4,
+        33.7,
+        12.7,
+        10.1,
+        13.4,
+        10.8,
+        10.2
+      ],
+      "source": "Controller General of Accounts (CGA) & Union Budget (Gross Central Tax Revenue Annual YoY Growth %)"
+    },
     "pm_jan_dhan_yojana": {
       "labels": [
         "2015",
@@ -3868,6 +3905,73 @@
         94.9
       ],
       "source": "Census of India & Socio-Religious Studies (Literacy Rate % by Religious Community)"
+    },
+    "sc_st_post_matric_scholarships": {
+      "labels": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        42.5,
+        46.1,
+        51.4,
+        55.2,
+        59.8,
+        62.4,
+        64.8,
+        67.2,
+        71.5,
+        76.0,
+        79.4,
+        82.1
+      ],
+      "source": "Ministry of Social Justice & Empowerment and Ministry of Tribal Affairs (Post-Matric Scholarship Beneficiaries in Lakhs)"
+    },
+    "pm_mudra_social_breakdown": {
+      "labels": [
+        "Women Entrepreneurs",
+        "OBC Category",
+        "Scheduled Castes (SC)",
+        "Scheduled Tribes (ST)"
+      ],
+      "values": [
+        68.0,
+        28.0,
+        18.0,
+        6.0
+      ],
+      "source": "PMMY MUDRA Portal & Ministry of Finance (Percentage Share of Total Sanctioned Borrower Accounts)"
+    },
+    "pm_svanidhi_street_vendors": {
+      "labels": [
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        14.2,
+        28.5,
+        42.1,
+        57.8,
+        68.4,
+        76.1,
+        82.5
+      ],
+      "source": "Ministry of Housing and Urban Affairs (PM SVANidhi Micro-Credit Disbursements to Street Vendors in Lakhs)"
     },
     "cpi": {
       "labels": [
@@ -6966,6 +7070,36 @@
   },
   "indian_matrix_articles": [
     {
+      "title": "How Zudio\u2019s 1000th Store Maps India\u2019s Changing Household Budgets",
+      "link": "https://indianmatrix.substack.com/p/how-zudios-1000th-store-maps-indias",
+      "published": "Tue, 15 Sep 2026 13:03:00 GMT",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "The Invisible Friction: Why India\u2019s NGO-to-Startup Ratio is a Red Flag for Growth",
+      "link": "https://indianmatrix.substack.com/p/the-invisible-friction-why-indias",
+      "published": "Sat, 05 Sep 2026 12:22:51 GMT",
+      "date": "2026-09-05"
+    },
+    {
+      "title": "Open More. Build More. Grow More.",
+      "link": "https://indianmatrix.substack.com/p/open-more-build-more-grow-more",
+      "published": "Fri, 28 Aug 2026 05:33:53 GMT",
+      "date": "2026-08-28"
+    },
+    {
+      "title": "How UPI Transformed India: The Second and Third Order Effects Nobody Predicted",
+      "link": "https://indianmatrix.substack.com/p/how-upi-transformed-india-the-second",
+      "published": "Tue, 25 Aug 2026 15:46:41 GMT",
+      "date": "2026-08-25"
+    },
+    {
+      "title": "Punjab vs. Haryana: The Great Economic Divergence",
+      "link": "https://indianmatrix.substack.com/p/punjab-vs-haryana-the-great-economic",
+      "published": "Sun, 23 Aug 2026 08:52:09 GMT",
+      "date": "2026-08-23"
+    },
+    {
       "title": "How much of India's infrastructure was built after 2014?",
       "link": "https://indianmatrix.substack.com/p/how-much-of-indias-infrastructure",
       "published": "Fri, 07 Aug 2026 12:29:15 GMT",
@@ -7054,39 +7188,39 @@
       "link": "https://indianmatrix.substack.com/p/the-red-eclipse-decoding-the-structural",
       "published": "Fri, 15 May 2026 12:06:18 GMT",
       "date": "2026-05-15"
-    },
-    {
-      "title": "Reclaiming the Heartland: How State Capacity Defeated the Maoist Insurgency",
-      "link": "https://indianmatrix.substack.com/p/reclaiming-the-heartland-how-state-bef",
-      "published": "Mon, 11 May 2026 11:29:37 GMT",
-      "date": "2026-05-11"
-    },
-    {
-      "title": "An Epochal Shift: Decoding the 2026 Bengal Mandate",
-      "link": "https://indianmatrix.substack.com/p/an-epochal-shift-decoding-the-2026",
-      "published": "Mon, 11 May 2026 05:29:23 GMT",
-      "date": "2026-05-11"
-    },
-    {
-      "title": "After the Whistle: Reading Tamil Nadu's 2026 Verdict Without the Confetti",
-      "link": "https://indianmatrix.substack.com/p/after-the-whistle-reading-tamil-nadus",
-      "published": "Sat, 09 May 2026 07:05:05 GMT",
-      "date": "2026-05-09"
-    },
-    {
-      "title": "The Apex Revival: How India Reversed the Ecological Clock",
-      "link": "https://indianmatrix.substack.com/p/the-apex-revival-how-india-reversed",
-      "published": "Thu, 30 Apr 2026 11:32:43 GMT",
-      "date": "2026-04-30"
-    },
-    {
-      "title": "India\u2019s Energy Transition (2000\u20132026)",
-      "link": "https://indianmatrix.substack.com/p/indias-energy-transition-20002026",
-      "published": "Wed, 29 Apr 2026 08:31:19 GMT",
-      "date": "2026-04-29"
     }
   ],
   "polity_policy_articles": [
+    {
+      "title": "India\u2019s Voters Are Fast Becoming Transactional",
+      "link": "https://politypolicy.substack.com/p/indias-voters-are-fast-becoming-transactional",
+      "published": "Thu, 17 Sep 2026 10:47:21 GMT",
+      "description": "...and it\u2019s good news"
+    },
+    {
+      "title": "Stop Fearing India's $110 Billion China Deficit",
+      "link": "https://politypolicy.substack.com/p/stop-fearing-indias-110-billion-china",
+      "published": "Mon, 14 Sep 2026 11:19:33 GMT",
+      "description": "New Delhi\u2019s trade imbalance with Beijing will increase before it decreases"
+    },
+    {
+      "title": "Why You May Not \u2018Feel\u2019 The GDP Growth?",
+      "link": "https://politypolicy.substack.com/p/why-you-may-not-feel-the-gdp-growth",
+      "published": "Wed, 09 Sep 2026 10:14:09 GMT",
+      "description": "What Lies Beyond the Mathematical Fallacies Manufactured For Television"
+    },
+    {
+      "title": "Modi Must Build the Cities States Won't",
+      "link": "https://politypolicy.substack.com/p/modi-must-build-the-cities-states",
+      "published": "Mon, 07 Sep 2026 12:15:29 GMT",
+      "description": "BJP\u2019s Infrastructure Story Needs A Local Detour"
+    },
+    {
+      "title": "It\u2019s Working 7.8 Per Cent Growth In Q1 FY2027",
+      "link": "https://politypolicy.substack.com/p/its-working-78-per-cent-growth-in",
+      "published": "Tue, 01 Sep 2026 06:06:57 GMT",
+      "description": "Except for a few voices, nobody talks about India\u2019s debt."
+    },
     {
       "title": "India's Fiscal Nightmare: The Strait of Hormuz",
       "link": "https://politypolicy.substack.com/p/indias-fiscal-nightmare-the-strait",
@@ -7158,6 +7292,24 @@
       "link": "https://politypolicy.substack.com/p/why-state-governments-cash-transfers",
       "published": "Wed, 24 Jun 2026 13:51:58 GMT",
       "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets"
+    },
+    {
+      "title": "Cabinet Reshuffle On The Cards",
+      "link": "https://politypolicy.substack.com/p/cabinet-reshuffle-on-the-cards",
+      "published": "Tue, 23 Jun 2026 18:55:35 GMT",
+      "description": "Not fatigue of faces, but fatigue of ideas is what Modi must care for"
+    },
+    {
+      "title": "Our State Governments Have 'Commitment Issues'",
+      "link": "https://politypolicy.substack.com/p/our-state-governments-have-commitment",
+      "published": "Mon, 22 Jun 2026 07:32:50 GMT",
+      "description": "When it comes to the fiscal health of the states, there are several underlying concerns"
+    },
+    {
+      "title": "The Misplaced Adventures of the Silver-Spoon Scion",
+      "link": "https://politypolicy.substack.com/p/the-misplaced-adventures-of-the-silver",
+      "published": "Sat, 20 Jun 2026 11:27:07 GMT",
+      "description": "Why Rahul Gandhi\u2019s biggest hope is time?"
     }
   ]
 }

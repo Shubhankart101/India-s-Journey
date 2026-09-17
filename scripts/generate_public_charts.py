@@ -372,6 +372,46 @@ def build_religious_demographics() -> dict:
     }
 
 
+def build_sc_st_scholarships() -> dict:
+    years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [42.5, 46.1, 51.4, 55.2, 59.8, 62.4, 64.8, 67.2, 71.5, 76.0, 79.4, 82.1]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Ministry of Social Justice & Empowerment and Ministry of Tribal Affairs (Post-Matric Scholarship Beneficiaries in Lakhs)",
+    }
+
+
+def build_pm_mudra_social_breakdown() -> dict:
+    categories = ["Women Entrepreneurs", "OBC Category", "Scheduled Castes (SC)", "Scheduled Tribes (ST)"]
+    percentages = [68.0, 28.0, 18.0, 6.0]
+    return {
+        "labels": categories,
+        "values": percentages,
+        "source": "PMMY MUDRA Portal & Ministry of Finance (Percentage Share of Total Sanctioned Borrower Accounts)",
+    }
+
+
+def build_pm_svanidhi_street_vendors() -> dict:
+    years = ["2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [14.2, 28.5, 42.1, 57.8, 68.4, 76.1, 82.5]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Ministry of Housing and Urban Affairs (PM SVANidhi Micro-Credit Disbursements to Street Vendors in Lakhs)",
+    }
+
+
+def build_gross_tax_yoy_growth() -> dict:
+    years = ["2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    values = [14.8, 16.2, 10.1, 8.8, 17.0, 17.9, 11.8, 8.4, -5.4, 33.7, 12.7, 10.1, 13.4, 10.8, 10.2]
+    return {
+        "labels": years,
+        "values": values,
+        "source": "Controller General of Accounts (CGA) & Union Budget (Gross Central Tax Revenue Annual YoY Growth %)",
+    }
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -454,12 +494,16 @@ def main() -> None:
     result["series"]["union_budget_expenditure"] = build_union_budget_expenditure()
     result["series"]["budget_yoy_growth"] = build_budget_yoy_growth()
     result["series"]["capital_expenditure_capex"] = build_capital_expenditure_capex()
+    result["series"]["gross_tax_yoy_growth"] = build_gross_tax_yoy_growth()
     result["series"]["pm_jan_dhan_yojana"] = build_pm_jan_dhan_yojana()
     result["series"]["pm_awas_yojana"] = build_pm_awas_yojana()
     result["series"]["jal_jeevan_mission"] = build_jal_jeevan_mission()
     result["series"]["ayushman_bharat"] = build_ayushman_bharat()
     result["series"]["social_category_literacy"] = build_social_category_literacy()
     result["series"]["religious_demographics"] = build_religious_demographics()
+    result["series"]["sc_st_post_matric_scholarships"] = build_sc_st_scholarships()
+    result["series"]["pm_mudra_social_breakdown"] = build_pm_mudra_social_breakdown()
+    result["series"]["pm_svanidhi_street_vendors"] = build_pm_svanidhi_street_vendors()
 
     # Load article feeds if available
     im_file = ROOT / "data" / "indian-matrix-latest.json"
