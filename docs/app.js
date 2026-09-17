@@ -281,6 +281,23 @@ async function main() {
   renderArticles(articleLinks, (indianMatrix.articles || []).slice(0, 6), 'No public article snapshot available yet.');
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) renderArticles(polityPolicyLinks, (articles.articles || []).slice(0, 6), 'No public article snapshot available yet.');
+  const categoryBgMap = {
+    Economic: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
+    Social: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
+    'Defence & Strategic': "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop",
+    'Crime & Security': "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop",
+    'Pew Research': "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1600&auto=format&fit=crop"
+  };
+
+  const setEraBackground = (imgUrl) => {
+    const bgLayer = document.querySelector('#era-bg-layer');
+    if (bgLayer && imgUrl) {
+      bgLayer.style.backgroundImage = `url("${imgUrl}")`;
+      bgLayer.style.opacity = '0.65';
+    }
+  };
+  setEraBackground(categoryBgMap.Economic);
+
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
@@ -309,7 +326,7 @@ async function main() {
     card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
     const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
-    card.innerHTML = `<div class="card-era-badge">📜 ${eraData[eraKey]?.name || 'India Journey'}</div><header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header><div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     if (!live) return;
     const labels = series.labels;
@@ -402,15 +419,13 @@ async function main() {
       chartWrap.insertBefore(legendBar, canvas);
     }
 
-    const eraKey = eraFor(key);
-    card.dataset.era = eraKey;
     card.addEventListener('click', () => {
       document.querySelectorAll('.chart-card').forEach(c => c.classList.remove('selected-card'));
       card.classList.add('selected-card');
-      setEraBackground(eraKey);
+      if (categoryBgMap[category]) setEraBackground(categoryBgMap[category]);
     });
     card.addEventListener('mouseenter', () => {
-      setEraBackground(eraKey);
+      if (categoryBgMap[category]) setEraBackground(categoryBgMap[category]);
     });
 
     const reset = card.querySelector('.reset');
@@ -452,40 +467,6 @@ async function main() {
     'Pew Research': ['Public opinion']
   };
 
-  const setEraBackground = (eraId) => {
-    const era = eraData[eraId] || eraData.all;
-    const bgLayer = document.querySelector('#era-bg-layer');
-    if (bgLayer) {
-      bgLayer.style.backgroundImage = `url("${era.image}")`;
-      bgLayer.style.opacity = '0.52';
-    }
-    const banner = document.querySelector('#era-banner');
-    if (banner) {
-      const bannerTitle = document.querySelector('#era-banner-title');
-      const bannerDesc = document.querySelector('#era-banner-desc');
-      const bannerYears = document.querySelector('#era-banner-years');
-      const bannerAttr = document.querySelector('#era-banner-attribution');
-      if (bannerTitle) bannerTitle.textContent = era.name;
-      if (bannerDesc) bannerDesc.textContent = era.desc;
-      if (bannerYears) bannerYears.textContent = era.years;
-      if (bannerAttr) bannerAttr.textContent = era.attribution;
-      banner.hidden = (eraId === 'all');
-    }
-  };
-  setEraBackground('all');
-
-  const eraPills = document.querySelectorAll('.era-pill');
-  if (eraPills.length > 0) {
-    eraPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        eraPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        const selectedEra = pill.dataset.era;
-        setEraBackground(selectedEra);
-        updateCards();
-      });
-    });
-  }
   const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {
       const option = document.createElement('option');
@@ -625,7 +606,7 @@ async function main() {
         syncGroupPills(pill.dataset.group);
         groupFilter.value = pill.dataset.group;
         subgroupFilter.value = 'all';
-        if (groupEraMap[pill.dataset.group]) setEraBackground(groupEraMap[pill.dataset.group]);
+        if (categoryBgMap[pill.dataset.group]) setEraBackground(categoryBgMap[pill.dataset.group]);
         updateSubgroupFilter();
         updateGroupHero();
         updatePeriods();
@@ -638,8 +619,6 @@ async function main() {
     const query = search.value.trim().toLowerCase();
     updateGroupHero();
     const stateFilter = filter.value;
-    const activePill = document.querySelector('.era-pill.active');
-    const selectedEra = activePill ? activePill.dataset.era : 'all';
 
     let visibleCount = 0;
     cards.forEach(card => {
@@ -647,15 +626,13 @@ async function main() {
       const cardSubgroup = card.dataset.subgroup;
       const cardState = card.dataset.state;
       const cardTitle = card.dataset.title;
-      const cardEra = card.dataset.era;
 
       const matchesGroup = (groupFilter.value === 'all' || cardCategory === groupFilter.value);
       const matchesSubgroup = (subgroupFilter.value === 'all' || cardSubgroup === subgroupFilter.value);
       const matchesState = (stateFilter === 'all' || cardState === stateFilter);
       const matchesSearch = (!query || cardTitle.includes(query));
-      const matchesEra = (selectedEra === 'all' || cardEra === selectedEra);
 
-      const isMatch = (matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesEra);
+      const isMatch = (matchesGroup && matchesSubgroup && matchesState && matchesSearch);
       card.hidden = !isMatch;
       if (isMatch) visibleCount++;
     });
@@ -680,7 +657,7 @@ async function main() {
   groupFilter.addEventListener('change', () => { 
     const grp = groupFilter.value;
     syncGroupPills(grp);
-    if (groupEraMap[grp]) setEraBackground(groupEraMap[grp]);
+    if (categoryBgMap[grp]) setEraBackground(categoryBgMap[grp]);
     subgroupFilter.value = 'all';
     updateSubgroupFilter(); 
     updateGroupHero();
@@ -691,7 +668,7 @@ async function main() {
     if (subgroupGroups[subgroupFilter.value]) {
       groupFilter.value = subgroupGroups[subgroupFilter.value]; 
       syncGroupPills(groupFilter.value);
-      if (groupEraMap[groupFilter.value]) setEraBackground(groupEraMap[groupFilter.value]);
+      if (categoryBgMap[groupFilter.value]) setEraBackground(categoryBgMap[groupFilter.value]);
     }
     updateSubgroupFilter(); 
     updateGroupHero(); 
