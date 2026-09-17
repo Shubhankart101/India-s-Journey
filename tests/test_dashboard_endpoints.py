@@ -289,7 +289,6 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("updateCards", text)
-        self.assertIn("chart-prompt", text)
 
     def test_page_has_chart_prompt_element(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
