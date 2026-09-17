@@ -112,6 +112,17 @@ class DashboardEndpointTests(unittest.TestCase):
             "sc_st_post_matric_scholarships", "pm_svanidhi_street_vendors",
             "gross_tax_yoy_growth", "pm_mudra_social_breakdown",
             "indian_matrix", "pew_india_reports",
+            "iron_ore_production", "bauxite_aluminium_output", "copper_production",
+            "manganese_chromite_production", "coal_production", "lignite_production",
+            "crude_petroleum_domestic", "natural_gas_production", "limestone_production",
+            "rare_earths_critical_minerals", "rock_phosphate_gypsum", "mineral_metal_exports",
+            "iron_ore_exports", "refined_petroleum_exports", "critical_mineral_import_dependency",
+            "upi_transaction_value", "credit_card_spends", "debit_card_spends",
+            "credit_card_in_circulation", "debit_card_in_circulation", "rbi_digital_payments_index",
+            "national_highways_built", "railway_electrification", "renewable_energy_capacity",
+            "civil_aviation_passengers", "telecom_broadband_subscribers", "auto_production_volume",
+            "crude_steel_production", "electronics_manufacturing", "pharma_exports_trajectory",
+            "textiles_apparel_exports",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
