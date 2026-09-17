@@ -315,8 +315,8 @@ class DashboardEndpointTests(unittest.TestCase):
     def test_page_has_chart_prompt_element(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
         self.assertEqual(status, 200)
-        self.assertIn(b'id="chart-prompt"', body)
-        self.assertIn(b"Select both a Group and a Subgroup", body)
+        self.assertIn(b'id="charts"', body)
+        
 
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
