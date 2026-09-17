@@ -218,20 +218,35 @@ async function safeFetchJson(filename, defaultVal = {}) {
 async function main() {
   const articleLinks = document.querySelector('#article-links');
   const articlePromise = safeFetchJson('substack-latest.json', { articles: [] });
-  const [dataPayload, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
-    safeFetchJson('chart-latest.json', { series: {} }),
-    articlePromise,
-    safeFetchJson('economic-survey-monthly.json', { series: {} }),
-    safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
-    safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
-    safeFetchJson('ncrb-and-analyses.json', { series: {} }),
-    safeFetchJson('pew-snapshots.json', { series: {} }),
-  ]);
+  
+  let dataPayload = window.INDIA_DASHBOARD_DATA;
+  let articles = { articles: [] };
+  let economicSurvey = { series: {} };
+  let indianMatrix = { cadence: { labels: [], values: [] }, articles: [] };
+  let pewReports = { cadence: { labels: [], values: [] }, reports: [] };
+  let ncrbeAnalyses = { series: {} };
+  let pewSnapshots = { series: {} };
+
+  if (dataPayload && dataPayload.series && Object.keys(dataPayload.series).length > 0) {
+    articles = await articlePromise;
+  } else {
+    [dataPayload, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
+      safeFetchJson('chart-latest.json', { series: {} }),
+      articlePromise,
+      safeFetchJson('economic-survey-monthly.json', { series: {} }),
+      safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
+      safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
+      safeFetchJson('ncrb-and-analyses.json', { series: {} }),
+      safeFetchJson('pew-snapshots.json', { series: {} }),
+    ]);
+  }
+
   const data = dataPayload || { series: {} };
-  data.series = { ...(data.series || {}), ...(economicSurvey.series || {}), ...(ncrbeAnalyses.series || {}), ...(pewSnapshots.series || {}) };
-  const matrixCadence = indianMatrix.cadence || { labels: [], values: [] };
-  data.series.indian_matrix = { labels: matrixCadence.labels, values: matrixCadence.values, source: 'Indian Matrix public RSS feed' };
-  data.series.pew_india_reports = { labels: pewReports.cadence.labels, values: pewReports.cadence.values, source: 'Pew Research Center India public report catalog' };
+  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}) };
+  const matrixCadence = indianMatrix?.cadence || { labels: [], values: [] };
+  data.series.indian_matrix = { labels: matrixCadence.labels || [], values: matrixCadence.values || [], source: 'Indian Matrix public RSS feed' };
+  const pewCadence = pewReports?.cadence || { labels: [], values: [] };
+  data.series.pew_india_reports = { labels: pewCadence.labels || [], values: pewCadence.values || [], source: 'Pew Research Center India public report catalog' };
   const marketKeys = ['sensex', 'nifty', 'nifty_vix'];
   const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();
   const marketDatasets = marketKeys.map(key => {
@@ -241,7 +256,8 @@ async function main() {
     return { label: key === 'sensex' ? 'Sensex' : key === 'nifty' ? 'Nifty' : 'Nifty VIX', data: marketLabels.map(label => values.has(label) ? values.get(label) / first * 100 : null), borderColor: key === 'sensex' ? '#58a6ff' : key === 'nifty' ? '#3fb950' : '#f2cc60', backgroundColor: 'transparent', borderWidth: 2.5, pointRadius: 2, tension: 0.25, spanGaps: true };
   });
   data.series.market_indices = { labels: marketLabels, datasets: marketDatasets };
-  document.querySelector('#generated').textContent = new Date(data.generated_at_utc).toLocaleString();
+  const genEl = document.querySelector('#generated');
+  if (genEl) genEl.textContent = data.generated_at_utc ? new Date(data.generated_at_utc).toLocaleString() : new Date().toLocaleString();
   const renderArticles = (container, items, emptyMessage) => {
     container.replaceChildren();
     if (!items.length) {

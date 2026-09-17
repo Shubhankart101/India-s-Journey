@@ -1,4 +1,4 @@
-{
+window.INDIA_DASHBOARD_DATA = {
   "generated_at_utc": "2026-09-17T10:26:59+00:00",
   "series": {
     "gst": {
@@ -6654,4 +6654,4 @@
       "source": "NSE India, BSE India; Base 100 = 2010"
     }
   }
-}
+};

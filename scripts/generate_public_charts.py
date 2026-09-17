@@ -397,6 +397,9 @@ def main() -> None:
     chart_json = json.dumps(result, indent=2) + "\n"
     (ROOT / "data" / "chart-latest.json").write_text(chart_json)
     (ROOT / "docs" / "data" / "chart-latest.json").write_text(chart_json)
+    
+    chart_js = f"window.INDIA_DASHBOARD_DATA = {json.dumps(result, indent=2)};\n"
+    (ROOT / "docs" / "data.js").write_text(chart_js, encoding="utf-8")
 
 
 if __name__ == "__main__":
