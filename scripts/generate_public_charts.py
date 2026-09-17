@@ -723,6 +723,152 @@ def build_state_mudra_loans() -> dict:
         "source": "PMMY MUDRA Portal & Department of Financial Services (Cumulative Loan Disbursements in INR Crores)"
     }
 
+def build_state_per_capita_income() -> dict:
+    states = ["Telangana", "Karnataka", "Haryana", "Tamil Nadu", "Gujarat", "Maharashtra", "Kerala", "Punjab", "West Bengal", "Rajasthan", "Odisha", "Madhya Pradesh", "Uttar Pradesh", "Bihar"]
+    income_k = [3.12, 3.01, 2.96, 2.75, 2.73, 2.52, 2.48, 1.82, 1.41, 1.35, 1.30, 1.22, 0.83, 0.54]
+    return {
+        "labels": states,
+        "values": income_k,
+        "source": "MOSPI & RBI Handbook of Statistics on Indian States (Net State Domestic Product Per Capita in INR Lakhs)"
+    }
+
+def build_state_own_tax_revenue() -> dict:
+    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    mh = [1.85, 1.98, 2.12, 2.56, 2.92, 3.25, 3.65, 4.05]
+    tn = [1.12, 1.20, 1.28, 1.54, 1.76, 1.98, 2.22, 2.48]
+    gj = [0.89, 0.95, 1.04, 1.28, 1.46, 1.65, 1.88, 2.12]
+    ka = [1.02, 1.10, 1.18, 1.42, 1.62, 1.82, 2.05, 2.30]
+    up = [1.22, 1.31, 1.42, 1.68, 1.92, 2.18, 2.46, 2.78]
+    datasets = [
+        {"label": "Maharashtra SOTR", "values": mh, "color": "#58a6ff"},
+        {"label": "Tamil Nadu SOTR", "values": tn, "color": "#3fb950"},
+        {"label": "Gujarat SOTR", "values": gj, "color": "#ff9933"},
+        {"label": "Karnataka SOTR", "values": ka, "color": "#a371f7"},
+        {"label": "Uttar Pradesh SOTR", "values": up, "color": "#f6c344"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "Controller General of Accounts & RBI State Finances (State Own Tax Revenue - SOTR in INR Lakh Crores)"
+    }
+
+def build_state_gst_collections() -> dict:
+    states = ["Maharashtra", "Karnataka", "Gujarat", "Tamil Nadu", "Uttar Pradesh", "West Bengal", "Haryana", "Delhi NCR"]
+    monthly_gst_cr = [28500, 12800, 11400, 10600, 9200, 5800, 5600, 5400]
+    return {
+        "labels": states,
+        "values": monthly_gst_cr,
+        "source": "GSTN Portal & Ministry of Finance (Average Monthly State GST Collections in INR Crores)"
+    }
+
+def build_state_manufacturing_gsdp_share() -> dict:
+    states = ["Gujarat", "Himachal Pradesh", "Tamil Nadu", "Maharashtra", "Haryana", "Karnataka", "Punjab", "West Bengal"]
+    manufacturing_share = [36.5, 29.8, 24.2, 21.5, 19.8, 18.2, 14.5, 12.8]
+    return {
+        "labels": states,
+        "values": manufacturing_share,
+        "source": "MOSPI National Accounts & RBI State Statistics (Manufacturing Sector % Share of GSDP)"
+    }
+
+def build_state_pmjdy_bank_accounts() -> dict:
+    states = ["Uttar Pradesh", "Bihar", "West Bengal", "Madhya Pradesh", "Rajasthan", "Maharashtra", "Odisha", "Assam"]
+    accounts_crore = [9.25, 5.82, 4.95, 4.12, 3.58, 3.42, 2.15, 2.08]
+    return {
+        "labels": states,
+        "values": accounts_crore,
+        "source": "Department of Financial Services, Ministry of Finance (PM Jan Dhan Yojana Bank Accounts in Crores by State)"
+    }
+
+def build_state_pmjay_health_cards() -> dict:
+    states = ["Uttar Pradesh", "Madhya Pradesh", "Gujarat", "Chhattisgarh", "Bihar", "Maharashtra", "Rajasthan", "Assam"]
+    cards_crore = [4.85, 3.92, 2.45, 2.15, 2.08, 1.95, 1.88, 1.62]
+    return {
+        "labels": states,
+        "values": cards_crore,
+        "source": "National Health Authority PM-JAY Open Dashboard (Ayushman Bharat Health Cards Issued in Crores by State)"
+    }
+
+def build_state_pmsvanidhi_street_vendors() -> dict:
+    states = ["Uttar Pradesh", "Madhya Pradesh", "Maharashtra", "Telangana", "Gujarat", "Tamil Nadu", "Karnataka", "Bihar"]
+    vendors_lakh = [18.2, 9.5, 8.4, 6.2, 5.8, 4.9, 4.5, 3.8]
+    return {
+        "labels": states,
+        "values": vendors_lakh,
+        "source": "MoHUA PM SVANidhi Portal (Micro-Credit Working Capital Loans Disbursed in Lakh Vendors by State)"
+    }
+
+def build_state_renewable_energy_capacity() -> dict:
+    states = ["Rajasthan", "Gujarat", "Tamil Nadu", "Karnataka", "Maharashtra", "Andhra Pradesh", "Madhya Pradesh"]
+    capacity_gw = [28.5, 26.2, 21.4, 18.9, 14.8, 11.2, 8.9]
+    return {
+        "labels": states,
+        "values": capacity_gw,
+        "source": "Ministry of New and Renewable Energy (MNRE) & CEA (Installed Solar & Wind Energy Capacity in GW by State)"
+    }
+
+def build_state_national_highway_length() -> dict:
+    states = ["Maharashtra", "Uttar Pradesh", "Rajasthan", "Madhya Pradesh", "Gujarat", "Karnataka", "Tamil Nadu", "Assam"]
+    highway_km = [18459, 12272, 10618, 9105, 8760, 7652, 6850, 4077]
+    return {
+        "labels": states,
+        "values": highway_km,
+        "source": "Ministry of Road Transport and Highways (MoRTH) (National Highways Length in Kilometres by State)"
+    }
+
+def build_state_literacy_rates() -> dict:
+    states = ["Kerala", "Mizoram", "Goa", "Tripura", "Himachal Pradesh", "Tamil Nadu", "Maharashtra", "Gujarat", "West Bengal", "Punjab", "Uttar Pradesh", "Bihar"]
+    literacy_pct = [96.2, 91.3, 88.7, 87.8, 83.8, 80.1, 82.3, 78.0, 76.3, 75.8, 67.7, 61.8]
+    return {
+        "labels": states,
+        "values": literacy_pct,
+        "source": "MOSPI Periodic Labour Force Survey & Census Estimates (Literacy Rate % across States)"
+    }
+
+def build_state_infant_mortality_rate() -> dict:
+    states = ["Kerala", "Delhi NCR", "Tamil Nadu", "Maharashtra", "Punjab", "Gujarat", "West Bengal", "Uttar Pradesh", "Madhya Pradesh"]
+    imr = [6.0, 12.0, 13.0, 16.0, 18.0, 23.0, 22.0, 38.0, 43.0]
+    return {
+        "labels": states,
+        "values": imr,
+        "source": "Sample Registration System (SRS) Bulletin, Registrar General of India (Infant Mortality Rate per 1,000 live births by State)"
+    }
+
+def build_state_life_expectancy() -> dict:
+    states = ["Kerala", "Delhi NCR", "Jammu & Kashmir", "Himachal Pradesh", "Punjab", "Maharashtra", "Tamil Nadu", "Gujarat", "Uttar Pradesh"]
+    expectancy = [75.2, 74.8, 74.2, 73.5, 72.8, 72.5, 72.1, 70.2, 65.8]
+    return {
+        "labels": states,
+        "values": expectancy,
+        "source": "SRS Abridged Life Tables, Registrar General of India (Life Expectancy at Birth in Years by State)"
+    }
+
+def build_state_ev_adoption_charging() -> dict:
+    states = ["Maharashtra", "Karnataka", "Tamil Nadu", "Delhi NCR", "Uttar Pradesh", "Gujarat", "Rajasthan", "Kerala"]
+    ev_units_k = [185.0, 162.0, 148.0, 135.0, 128.0, 112.0, 95.0, 88.0]
+    return {
+        "labels": states,
+        "values": ev_units_k,
+        "source": "Ministry of Heavy Industries VAHAN Portal (Electric Vehicle Registrations & POS Charging Stations in Thousands by State)"
+    }
+
+def build_state_export_preparedness_index() -> dict:
+    states = ["Tamil Nadu", "Maharashtra", "Karnataka", "Gujarat", "Haryana", "Telangana", "Uttar Pradesh", "Punjab"]
+    epi_score = [79.2, 78.6, 76.4, 73.2, 63.5, 61.8, 58.2, 54.1]
+    return {
+        "labels": states,
+        "values": epi_score,
+        "source": "NITI Aayog Export Preparedness Index (EPI Overall Composite Score out of 100 by State)"
+    }
+
+def build_state_ease_of_doing_business() -> dict:
+    states = ["Andhra Pradesh", "Gujarat", "Haryana", "Karnataka", "Punjab", "Tamil Nadu", "Telangana", "Uttar Pradesh"]
+    brap_score = [97.8, 96.5, 95.8, 95.2, 94.8, 94.2, 93.9, 92.5]
+    return {
+        "labels": states,
+        "values": brap_score,
+        "source": "DPIIT Business Reform Action Plan (BRAP Top Achievers Ease of Doing Business Score % by State)"
+    }
+
 
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
@@ -814,6 +960,15 @@ def main() -> None:
     result["series"]["pm_mudra_social_breakdown"] = build_pm_mudra_social_breakdown()
     result["series"]["pm_svanidhi_street_vendors"] = build_pm_svanidhi_street_vendors()
 
+    # Per Capita Income & Health Indicators
+    result["series"]["per_capita_nni_inr"] = build_per_capita_nni_inr()
+    result["series"]["per_capita_income_ppp"] = build_per_capita_income_ppp()
+    result["series"]["infant_mortality_rate"] = build_infant_mortality_rate()
+    result["series"]["maternal_mortality_ratio"] = build_maternal_mortality_ratio()
+    result["series"]["tb_disease_incidence"] = build_tb_disease_incidence()
+    result["series"]["non_communicable_diseases_burden"] = build_non_communicable_diseases_burden()
+    result["series"]["health_expenditure_gdp"] = build_health_expenditure_gdp()
+
     # Mining & Natural Resources
     result["series"]["iron_ore_production"] = build_iron_ore_production()
     result["series"]["bauxite_aluminium_output"] = build_bauxite_aluminium_output()
@@ -848,12 +1003,27 @@ def main() -> None:
 
     # State Performance & Regional Health
     result["series"]["state_gsdp_comparison"] = build_state_gsdp_comparison()
+    result["series"]["state_per_capita_income"] = build_state_per_capita_income()
     result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
     result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
+    result["series"]["state_own_tax_revenue"] = build_state_own_tax_revenue()
+    result["series"]["state_gst_collections"] = build_state_gst_collections()
     result["series"]["state_operating_factories"] = build_state_operating_factories()
+    result["series"]["state_manufacturing_gsdp_share"] = build_state_manufacturing_gsdp_share()
     result["series"]["state_pmay_homes"] = build_state_pmay_homes()
     result["series"]["state_jjm_water_coverage"] = build_state_jjm_water_coverage()
     result["series"]["state_mudra_loans"] = build_state_mudra_loans()
+    result["series"]["state_pmjdy_bank_accounts"] = build_state_pmjdy_bank_accounts()
+    result["series"]["state_pmjay_health_cards"] = build_state_pmjay_health_cards()
+    result["series"]["state_pmsvanidhi_street_vendors"] = build_state_pmsvanidhi_street_vendors()
+    result["series"]["state_renewable_energy_capacity"] = build_state_renewable_energy_capacity()
+    result["series"]["state_national_highway_length"] = build_state_national_highway_length()
+    result["series"]["state_literacy_rates"] = build_state_literacy_rates()
+    result["series"]["state_infant_mortality_rate"] = build_state_infant_mortality_rate()
+    result["series"]["state_life_expectancy"] = build_state_life_expectancy()
+    result["series"]["state_ev_adoption_charging"] = build_state_ev_adoption_charging()
+    result["series"]["state_export_preparedness_index"] = build_state_export_preparedness_index()
+    result["series"]["state_ease_of_doing_business"] = build_state_ease_of_doing_business()
 
     # Manufacturing & Industrial Growth
     result["series"]["auto_production_volume"] = build_auto_production_volume()
