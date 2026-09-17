@@ -57,25 +57,32 @@ jobs:
           print(json.dumps(snapshot))
           PY
 
-      - name: Refresh public-source charts
-        run: python scripts/generate_public_charts.py
-
       - name: Refresh Economic Survey monthly tables
         run: |
           python -m pip install --quiet pdfplumber openpyxl
           python scripts/fetch_economic_survey_monthly.py
 
+      - name: Collect Substack and Matrix articles
+        run: |
+          python scripts/collect_substack.py
+          python scripts/collect_indian_matrix.py
+
       - name: Collect NCRB and analysis data
         run: python scripts/collect_ncrb_and_analyses.py
 
-      - name: Collect Pew India survey snapshots
-        run: python scripts/collect_pew_snapshots.py
+      - name: Collect Pew India survey snapshots & report catalog
+        run: |
+          python scripts/collect_pew_snapshots.py
+          python scripts/collect_pew_india_reports.py
+
+      - name: Refresh public-source charts & JS bundle
+        run: python scripts/generate_public_charts.py
 
       - name: Commit daily data and charts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data assets
+          git add data docs assets
           if git diff --cached --quiet; then
             echo "No data change to commit."
             exit 0

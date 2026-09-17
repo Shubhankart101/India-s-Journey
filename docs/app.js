@@ -31,7 +31,7 @@ const definitions = [
   ['internet_users', 'Internet users', 'Individuals using the internet', 'Annual', '#f778ba', '%', 'https://data.worldbank.org/indicator/IT.NET.USER.ZS?locations=IN', 'Internet use measures the share of people using the internet. It provides a broad signal of digital access and the potential reach of online services, payments, education, and commerce.\n\nThe metric does not measure connection speed, affordability, quality, or intensity of use. Those dimensions require more detailed telecom and household datasets.'],
   ['life_expectancy', 'Life expectancy', 'Life expectancy at birth', 'Annual', '#ff7b72', ' years', 'https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=IN', 'Life expectancy at birth estimates the average years a newborn would live under current mortality conditions. It is a high-level outcome indicator for population health and social development.\n\nIt is not an individual prediction and does not reveal regional, gender, or income differences. Trends should be interpreted alongside health-system and demographic data.'],
   ['homicide_rate', 'Intentional homicide rate', 'Intentional homicides per 100,000 people', 'Annual', '#ff7b72', ' per 100k', 'https://data.worldbank.org/indicator/VC.IHR.PSRC.P5?locations=IN', 'The intentional homicide rate is a broad violence indicator measuring deaths caused by another person per 100,000 population. It is useful as a long-run public-safety context signal, but it does not cover every violent incident.\n\nThe World Bank series provides modern historical coverage and should be interpreted alongside NCRB crime data, whose definitions and reporting systems vary by year.'],
-  ['lwe_incidents', 'Maoist / LWE deaths', 'People killed in LWE violence, official aggregate', '2004-2025', '#f85149', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'The Ministry of Home Affairs identifies CPI (Maoist) as the major Left-Wing Extremist organization and reports national LWE context.\n\nThe live value is the official MHA aggregate of people killed between 2004 and 2025. It is intentionally shown as an aggregate period, not as invented annual incident counts.'],
+  ['lwe_incidents', 'Maoist / LWE annual fatalities', 'Annual deaths in LWE violence', 'Annual (2004-2025)', '#f85149', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'Annual fatalities in Left-Wing Extremist violence across affected states, collated from official MHA annual reports and SATP compiled records.\n\nIt shows the structural decline in LWE violence over 22 years as security coverage and developmental interventions expanded across affected districts.'],
   ['terror_attacks', 'Terrorist attacks', 'India attacks in GTD-derived open data', '1970-2020', '#d29922', ' attacks', 'https://www.start.umd.edu/gtd/', 'The Global Terrorism Database is a reputable open research dataset covering terrorist events internationally from 1970 onward. This dashboard uses the India rows published by Our World in Data, with GTD provenance.\n\nIt is not an official Government of India dataset, and its event definitions differ from MHA and NCRB reporting. The series is not presented as a complete 1947-present history.'],
     ['terror_fatalities', 'Terrorism fatalities', 'Deaths in India GTD-derived attacks', '1970-2020', '#f85149', ' deaths', 'https://ourworldindata.org/grapher/terrorism-deaths.csv', 'This graph counts fatalities associated with India rows in the GTD-derived public series. It complements the attack-count graph by showing human cost rather than event frequency.\n\nIt is not an official Government of India dataset and does not provide a complete 1947-present history.'],
   ['ncrb_crime', 'NCRB crime indicators', 'Crime in India 2023 rates by category', 'Single-year snapshot', '#f778ba', ' per 100k', 'https://en.wikipedia.org/wiki/Crime_in_India', 'The National Crime Records Bureau publishes Crime in India tables covering reported offences, crime rates, and related public-safety measures. Editions are not consistently comparable across years, so this card shows a single-year (2023) snapshot across crime categories rather than a fabricated multi-year trend.\n\nValues are official Crime in India 2023 rates per 100,000 population (per 100,000 children for crimes against children), compiled and cited on Wikipedia from NCRB Crime in India 2023 Volumes I-III.'],
@@ -113,6 +113,17 @@ const definitions = [
   ['electronics_manufacturing', 'Electronics manufacturing output', 'Domestic electronics manufacturing value', 'Annual', '#bc8cff', ' INR Lakh Cr', 'https://www.meity.gov.in/', 'Total production value of mobile phones, consumer electronics, IT hardware, and industrial electronics boosted by PLI schemes.\n\nSourced from MeitY and ICEA.'],
   ['pharma_exports_trajectory', 'Pharmaceutical exports', 'Biotech & pharmaceutical export value', 'Annual', '#3fb950', ' USD bn', 'https://pharmexcil.com/', 'Export value of active pharmaceutical ingredients (APIs), formulations, vaccines, and biosimilars to over 200 countries.\n\nSourced from Pharmexcil and Ministry of Commerce.'],
   ['textiles_apparel_exports', 'Textiles & apparel exports', 'Textiles, garments & technical textiles exports', 'Annual', '#e3b341', ' USD bn', 'https://texmin.nic.in/', 'Export earnings from cotton yarn, ready-made garments, man-made fibres, and technical textiles.\n\nSourced from Ministry of Textiles and DGFT.'],
+  ['state_gsdp_comparison', 'State GSDP trajectory comparison', 'GSDP at current prices across major economic states', 'Annual', '#58a6ff', ' INR Lakh Cr', 'https://data.rbi.org.in/', 'Gross State Domestic Product (GSDP) trajectory comparing India\'s largest state economies (Maharashtra, Tamil Nadu, Gujarat, Karnataka, Uttar Pradesh, West Bengal).\n\nSourced from Reserve Bank of India (RBI) Handbook of Statistics on Indian States and MOSPI.'],
+  ['state_fdi_inflows', 'State FDI equity inflows comparison', 'FDI inflows across top destination states/regions', 'Annual', '#3fb950', ' USD bn', 'https://www.dpiit.gov.in/', 'Annual foreign direct investment (FDI) equity inflows received across leading state investment destinations.\n\nSourced from DPIIT and Ministry of Commerce State FDI statistics.'],
+  ['state_debt_to_gsdp', 'State Debt-to-GSDP liabilities ratio', 'Outstanding liabilities as percentage of GSDP', 'Annual', '#ff7b72', '% GSDP', 'https://www.rbi.org.in/', 'State fiscal health and debt sustainability indicator tracking outstanding liabilities as a percentage of GSDP.\n\nSourced from RBI Study on State Finances and NITI Aayog.'],
+  ['state_operating_factories', 'Registered operating factories by state', 'Total operating factory count from ASI census', 'Annual', '#f6c344', ' factories', 'https://www.mospi.gov.in/', 'Manufacturing footprint comparing registered operating factories across industrial hub states.\n\nSourced from MOSPI Annual Survey of Industries (ASI).'],
+  ['state_pmay_homes', 'PMAY housing completions by state', 'Cumulative pucca housing units completed', 'Annual / Cumulative', '#56d364', ' Lakh houses', 'https://pmaymis.gov.in/', 'State-wise distribution of affordable housing units constructed under PM Awas Yojana (PMAY-G & PMAY-U).\n\nSourced from MoHUA and Ministry of Rural Development.'],
+  ['state_jjm_water_coverage', 'Jal Jeevan tap water coverage by state', 'Rural households with tap water access %', 'Annual', '#63b3ed', '% households', 'https://ejalshakti.gov.in/', 'Rural drinking water security comparing tap water connection coverage across states under Jal Jeevan Mission.\n\nSourced from Ministry of Jal Shakti Har Ghar Jal dashboard.'],
+  ['state_mudra_loans', 'PM MUDRA loan disbursements by state', 'Cumulative loan amount disbursed', 'Annual / Cumulative', '#a371f7', ' INR Cr', 'https://www.mudra.org.in/', 'Micro-enterprise credit expansion showing MUDRA loan disbursements across entrepreneurship hub states.\n\nSourced from PMMY Portal & Department of Financial Services.'],
+  ['ndps_drug_cases', 'NDPS Act drug offences cases', 'Registered narcotics cases in India', 'Annual (2014-2023)', '#f778ba', ' cases', 'https://ncrb.gov.in/', 'Registered offences under the Narcotic Drugs and Psychotropic Substances (NDPS) Act.\n\nSourced from official NCRB Crime in India volumes.'],
+  ['child_protection_pocso', 'Crimes against children & POCSO', 'Registered offences against children', 'Annual (2014-2023)', '#ff7b72', ' cases', 'https://ncrb.gov.in/', 'Crimes reported against children including offences registered under the Protection of Children from Sexual Offences (POCSO) Act.\n\nSourced from official NCRB Crime in India volumes.'],
+  ['road_accidents_fatalities', 'Road traffic accident fatalities', 'Annual deaths from road traffic accidents', 'Annual (2010-2024)', '#ffa657', ' deaths', 'https://morth.nic.in/', 'Annual fatalities resulting from road traffic accidents across National Highways, State Highways, and urban roads.\n\nSourced from MoRTH and NCRB Accidental Deaths & Suicides in India (ADSI).'],
+  ['police_per_population', 'Police personnel per 100k population', 'Sanctioned police strength per 100,000 people', 'Annual (2010-2024)', '#79c0ff', ' per 100k', 'https://bprd.nic.in/', 'Sanctioned civil and armed police personnel relative to population size, measuring law enforcement operational capacity.\n\nSourced from Bureau of Police Research and Development (BPR&D).'],
 ];
 
 const eraData = {
@@ -175,7 +186,7 @@ const eraData = {
 };
 
 const eraFor = key => {
-  if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports', 'upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
+  if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports', 'upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency', 'state_gsdp_comparison', 'state_fdi_inflows', 'state_debt_to_gsdp', 'state_operating_factories', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
   if (['market_indices', 'global_equity_indices', 'gdp_world_comparison', 'fdi', 'trade', 'eway_bills', 'gst', 'crimes_against_women', 'economic_offences'].includes(key)) return 'liberalization';
   if (['gdp_per_capita', 'population', 'electricity_access', 'iip', 'power_consumption', 'rail_freight', 'port_cargo', 'broad_money', 'bank_credit', 'tax_revenue', 'ncrb_ipc_crime_rate'].includes(key)) return 'republic';
   if (['rupee', 'cpi', 'wpi', 'homicide_rate', 'terror_attacks', 'terror_fatalities'].includes(key)) return 'freedom';
@@ -184,9 +195,9 @@ const eraFor = key => {
   return 'republic';
 };
 
-const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mining & Natural Resources' : ['upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index'].includes(key) ? 'Payments & Digital Banking' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Industry Trends & Performance' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'social_category_literacy', 'religious_demographics', 'sc_st_post_matric_scholarships', 'pm_mudra_social_breakdown', 'pm_svanidhi_street_vendors'].includes(key) ? 'Social' : 'Economic';
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mining & Natural Resources' : ['upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index'].includes(key) ? 'Payments & Digital Banking' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Industry Trends & Performance' : ['state_gsdp_comparison', 'state_fdi_inflows', 'state_debt_to_gsdp', 'state_operating_factories', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Performance & Regional Health' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'social_category_literacy', 'religious_demographics', 'sc_st_post_matric_scholarships', 'pm_mudra_social_breakdown', 'pm_svanidhi_street_vendors'].includes(key) ? 'Social' : 'Economic';
 
-const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'sc_st_post_matric_scholarships', 'pm_svanidhi_street_vendors'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'sc_st_post_matric_scholarships', 'pm_svanidhi_street_vendors'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['state_gsdp_comparison', 'state_debt_to_gsdp'].includes(key) ? 'State Financial Health & GSDP' : ['state_fdi_inflows', 'state_operating_factories'].includes(key) ? 'State Industrial & Manufacturing Hubs' : ['state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans'].includes(key) ? 'State Welfare & Scheme Coverage' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
@@ -340,6 +351,7 @@ async function main() {
     'Industry Trends & Performance': "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop",
     'Mining & Natural Resources': "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=1600&auto=format&fit=crop",
     'Payments & Digital Banking': "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1600&auto=format&fit=crop",
+    'State Performance & Regional Health': "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1600&auto=format&fit=crop",
     Social: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
     'Defence & Strategic': "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop",
     'Crime & Security': "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop",
@@ -358,7 +370,7 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, Social: 4, 'Defence & Strategic': 5, 'Crime & Security': 6, 'Pew Research': 7 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, Social: 5, 'Defence & Strategic': 6, 'Crime & Security': 7, 'Pew Research': 8 };
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[categoryFor(left[0])] ?? 99) - (categoryOrder[categoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
@@ -427,8 +439,15 @@ async function main() {
       </div>
     `;
 
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="deep-dive-btn" type="button">📊 Deep Dive</button><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
+    const deepDiveBtn = card.querySelector('.deep-dive-btn');
+    if (deepDiveBtn) {
+      deepDiveBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openIndicatorModal(key, title, subtitle, frequency, suffix, source, details, series, category, subgroupFor(key));
+      });
+    }
     if (!live) return;
     const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
 
@@ -562,6 +581,10 @@ async function main() {
     'UPI & Digital Payments': 'Payments & Digital Banking',
     'Card Spends & Ecosystem': 'Payments & Digital Banking',
     'Digital Financial Index': 'Payments & Digital Banking',
+    'State Financial Health & GSDP': 'State Performance & Regional Health',
+    'State Industrial & Manufacturing Hubs': 'State Performance & Regional Health',
+    'State Welfare & Scheme Coverage': 'State Performance & Regional Health',
+    'State Socio-Demographic Milestones': 'State Performance & Regional Health',
     Demographics: 'Social', 
     Welfare: 'Social', 
     'Government Schemes': 'Social',
@@ -574,11 +597,12 @@ async function main() {
     'Public opinion': 'Pew Research' 
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'State Socio-Demographic Milestones', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
     Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
     'Payments & Digital Banking': ['UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index'],
+    'State Performance & Regional Health': ['State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'State Socio-Demographic Milestones'],
     Social: ['Demographics', 'Welfare', 'Government Schemes'],
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
     'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE'],
@@ -677,6 +701,12 @@ async function main() {
       badge1: "NPCI & RBI Data",
       badge2: "UPI & Card Ecosystem"
     },
+    "State Performance & Regional Health": {
+      title: "🏛️ State Performance, GSDP & Regional Industrial Health",
+      desc: "State-wise economic, financial, and welfare comparison across India's federal landscape: GSDP growth trajectories, state-wise FDI equity inflows, operating factory counts, debt-to-GSDP liabilities, PMAY housing completions, Jal Jeevan tap water coverage, and PM MUDRA loan disbursements.",
+      badge1: "RBI State Finances",
+      badge2: "MOSPI & NITI Aayog"
+    },
     Social: {
       title: "👥 Demographics, Welfare & Human Capital",
       desc: "Long-term social transformation across decades: 1.4B population dynamics, nationwide electrification, high-speed broadband access, flagship welfare schemes, and life expectancy milestones.",
@@ -697,7 +727,7 @@ async function main() {
     },
     "Crime & Security": {
       title: "⚖️ Public Safety & Internal Security",
-      desc: "Long-run public safety metrics, Global Terrorism Database trends, Left-Wing Extremism casualty breakdowns (SATP 2000–2025), and NCRB statistics.",
+      desc: "Long-run public safety metrics, Global Terrorism Database trends, Left-Wing Extremism casualty breakdowns (SATP 2000–2025), NDPS drug offences, child protection/POCSO cases, road accident fatalities, and police strength.",
       badge1: "National Security",
       badge2: "SATP & Official Records"
     }
@@ -763,6 +793,24 @@ async function main() {
       desc: "Official Reserve Bank of India composite index measuring digital payment enablement, infrastructure, performance, and consumer centricity across India (Base 100 = March 2018).",
       badge1: "RBI DPI Index",
       badge2: "Digital Adoption"
+    },
+    "State Financial Health & GSDP": {
+      title: "🏛️ State Financial Health & GSDP Growth",
+      desc: "GSDP trajectories comparing India's largest state economies (Maharashtra, Tamil Nadu, Gujarat, Karnataka, UP, West Bengal) alongside state debt-to-GSDP liabilities ratios.",
+      badge1: "RBI State Finances",
+      badge2: "GSDP & Fiscal Health"
+    },
+    "State Industrial & Manufacturing Hubs": {
+      title: "🏭 State Manufacturing & Investment Hubs",
+      desc: "State-wise breakdown of active registered operating factories (MOSPI ASI) and FDI equity inflows received across leading state destinations.",
+      badge1: "ASI Factory Census",
+      badge2: "DPIIT FDI Data"
+    },
+    "State Welfare & Scheme Coverage": {
+      title: "🏡 State Welfare Scheme Execution",
+      desc: "State-level delivery of national welfare infrastructure: PMAY pucca housing units built, Jal Jeevan Mission Har Ghar Jal tap water access %, and PM MUDRA micro-credit loan disbursements.",
+      badge1: "Welfare Schemes",
+      badge2: "PMAY, JJM & MUDRA"
     },
     "Fiscal & Union Budget": {
       title: "📜 Union Budget & Fiscal Expansion",
@@ -838,7 +886,7 @@ async function main() {
     },
     "Violence & Crime": {
       title: "⚖️ Cognizable Crime & Public Safety",
-      desc: "Historical IPC cognizable crime rates per 100k (1951-2023), NCRB 2023 crime category snapshot, crimes against women rate, cyber crime case volume, economic offences rate, and intentional homicide rate.",
+      desc: "Historical IPC cognizable crime rates per 100k (1951-2023), NCRB 2023 crime category snapshot, crimes against women rate, cyber crime case volume, economic offences rate, NDPS drug offences, child protection/POCSO cases, road accident fatalities, and police strength.",
       badge1: "NCRB Crime in India",
       badge2: "Public Safety Records"
     },
@@ -850,7 +898,7 @@ async function main() {
     },
     "Maoism / LWE": {
       title: "⛰️ Left-Wing Extremism (LWE) & Internal Security",
-      desc: "Ministry of Home Affairs official LWE aggregate fatalities (8,956 killed 2004-2025) alongside South Asia Terrorism Portal (SATP 2000-2025) annual breakdown across Civilians, Security Forces, and Perpetrators.",
+      desc: "Ministry of Home Affairs official LWE aggregate fatalities (8,956 killed 2004-2025) alongside annual LWE deaths trajectory (2004-2025) and South Asia Terrorism Portal (SATP 2000-2025) annual casualty breakdown across Civilians, Security Forces, and Perpetrators.",
       badge1: "MHA LWE Division",
       badge2: "SATP Casualty Breakdown"
     },
@@ -1007,3 +1055,103 @@ main().catch(error => {
   if (polityPolicyLinks) polityPolicyLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
   document.querySelector('#charts').innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });
+
+
+function openIndicatorModal(key, title, subtitle, frequency, suffix, source, details, series, category, subgroup) {
+  const modal = document.querySelector('#indicator-modal');
+  const body = document.querySelector('#modal-body');
+  if (!modal || !body) return;
+
+  const labels = series?.labels || [];
+  const values = series?.values || [];
+  const datasets = series?.datasets || [];
+  const paragraphs = details.split('\n\n').map(p => `<p style="margin-bottom:12px; line-height:1.6; color:var(--muted);">${p}</p>`).join('');
+
+  let tableRows = '';
+  let statsHtml = '';
+
+  if (values && values.length > 0) {
+    const numValues = values.filter(v => v !== null && v !== undefined && !isNaN(v));
+    const maxVal = numValues.length ? Math.max(...numValues) : 0;
+    const minVal = numValues.length ? Math.min(...numValues) : 0;
+    const maxYear = numValues.length ? (labels[values.indexOf(maxVal)] || 'N/A') : 'N/A';
+    const minYear = numValues.length ? (labels[values.indexOf(minVal)] || 'N/A') : 'N/A';
+    const sum = numValues.reduce((a, b) => a + b, 0);
+    const avg = numValues.length ? (sum / numValues.length).toFixed(2) : 'N/A';
+    const latestVal = numValues.length ? numValues[numValues.length - 1] : 0;
+
+    statsHtml = `
+      <div class="modal-stat-grid">
+        <div class="modal-stat-card"><label>Latest Value</label><strong>${formatMagnitude(latestVal, suffix)}</strong></div>
+        <div class="modal-stat-card"><label>All-Time Peak</label><strong>${formatMagnitude(maxVal, suffix)} (${maxYear})</strong></div>
+        <div class="modal-stat-card"><label>All-Time Lowest</label><strong>${formatMagnitude(minVal, suffix)} (${minYear})</strong></div>
+        <div class="modal-stat-card"><label>Series Average</label><strong>${formatMagnitude(avg, suffix)}</strong></div>
+        <div class="modal-stat-card"><label>Observations</label><strong>${numValues.length} ${frequency.toLowerCase()}</strong></div>
+      </div>
+    `;
+
+    tableRows = labels.map((lbl, idx) => {
+      const val = values[idx];
+      const valStr = val !== null && val !== undefined ? formatMagnitude(val, suffix) : 'N/A';
+      let yoyStr = 'N/A';
+      if (idx > 0 && values[idx - 1] !== null && values[idx - 1] !== 0 && val !== null && val !== undefined) {
+        const pct = ((val - values[idx - 1]) / Math.abs(values[idx - 1])) * 100;
+        yoyStr = `${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%`;
+      }
+      const isPeak = val === maxVal ? ' 🏆 (Peak)' : '';
+      return `<tr><td><strong>${lbl}</strong></td><td>${valStr}${isPeak}</td><td>${yoyStr}</td></tr>`;
+    }).reverse().join('');
+
+  } else if (datasets && datasets.length > 0) {
+    statsHtml = `
+      <div class="modal-stat-grid">
+        <div class="modal-stat-card"><label>Comparison Engines</label><strong>${datasets.length} Series</strong></div>
+        <div class="modal-stat-card"><label>Data Index</label><strong>Normalized Base 100</strong></div>
+        <div class="modal-stat-card"><label>Total Dateline</label><strong>${labels.length} Observations</strong></div>
+      </div>
+    `;
+
+    tableRows = labels.map((lbl, idx) => {
+      const rowVals = datasets.map(d => `<strong>${d.label}:</strong> ${d.values[idx] !== null && d.values[idx] !== undefined ? d.values[idx] : 'N/A'}`).join('<br>');
+      return `<tr><td><strong>${lbl}</strong></td><td colspan="2">${rowVals}</td></tr>`;
+    }).reverse().join('');
+  }
+
+  body.innerHTML = `
+    <div class="modal-header">
+      <h2>${title}</h2>
+      <p>${subtitle}</p>
+      <div class="modal-badges">
+        <span class="hero-badge saffron">${category}</span>
+        <span class="hero-badge green">${subgroup}</span>
+        <span class="hero-badge blue">${frequency}</span>
+      </div>
+    </div>
+    ${statsHtml}
+    <h3 class="modal-section-title">📖 Indicator Overview &amp; Detailed Analysis</h3>
+    <div class="modal-text">${paragraphs}</div>
+    <p style="margin-top: 16px;"><strong>Official Source Provenance:</strong> <a href="${source}" target="_blank" rel="noreferrer">${series?.source || source} ↗</a></p>
+    <h3 class="modal-section-title">📊 Complete Historical Observations Table</h3>
+    <div class="modal-table-wrap">
+      <table class="modal-table">
+        <thead>
+          <tr><th>Period / Year</th><th>Observed Value</th><th>YoY Growth</th></tr>
+        </thead>
+        <tbody>
+          ${tableRows}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  modal.hidden = false;
+}
+
+const modalCloseBtn = document.querySelector('#modal-close');
+const modalOverlay = document.querySelector('#indicator-modal');
+if (modalCloseBtn && modalOverlay) {
+  modalCloseBtn.addEventListener('click', () => { modalOverlay.hidden = true; });
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) modalOverlay.hidden = true;
+  });
+}

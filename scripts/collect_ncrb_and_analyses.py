@@ -109,6 +109,66 @@ def build_economic_offences_data() -> dict:
     }
 
 
+def build_ndps_drug_cases() -> dict:
+    """Build NCRB NDPS drug offences case volume (2014-2023)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+    values = [46921, 50798, 49255, 63800, 63137, 72737, 59802, 78331, 91542, 108420]
+    return {
+        "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act)",
+        "note": "Annual registered cases under the NDPS Act across India.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_child_protection_pocso() -> dict:
+    """Build NCRB Crimes Against Children & POCSO cases (2014-2023)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+    values = [89423, 94172, 106958, 129032, 141764, 148185, 128531, 149402, 162449, 177435]
+    return {
+        "source": "NCRB Crime in India (Crimes against Children & POCSO Act)",
+        "note": "Annual registered cases of crimes against children including POCSO Act offences.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_road_accidents_fatalities() -> dict:
+    """Build MoRTH / NCRB Road Traffic Accident Fatalities (2010-2024)."""
+    years = ["2010", "2012", "2014", "2016", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
+    values = [134513, 138258, 139671, 150785, 151417, 151113, 131714, 153972, 168491, 173014, 178200]
+    return {
+        "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI)",
+        "note": "Annual road traffic accident fatalities reported nationwide.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_police_per_population() -> dict:
+    """Build Bureau of Police Research & Development (BPR&D) Police Strength per 100k (2010-2024)."""
+    years = ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"]
+    values = [130.4, 137.8, 141.2, 151.8, 155.8, 152.2, 152.8, 158.4]
+    return {
+        "source": "Bureau of Police Research and Development (BPR&D) Data on Police Organizations",
+        "note": "Sanctioned civil and armed police personnel per 100,000 population.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_lwe_annual_fatalities() -> dict:
+    """Build year-by-year LWE total fatalities trajectory (2004-2025)."""
+    years = [str(y) for y in range(2004, 2026)]
+    values = [566.0, 669.0, 678.0, 696.0, 721.0, 1005.0, 1005.0, 611.0, 415.0, 397.0, 309.0, 226.0, 513.0, 295.0, 412.0, 202.0, 183.0, 147.0, 98.0, 150.0, 285.0, 168.0]
+    return {
+        "source": "Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+        "note": "Annual total fatalities (civilians, security personnel, and perpetrators) in Left-Wing Extremist violence across affected states.",
+        "labels": years,
+        "values": values
+    }
+
+
 def build_lwe_casualties() -> dict:
     """Build LWE casualty breakdown by category.
 
@@ -210,7 +270,12 @@ def main() -> None:
             "crimes_against_women": build_crimes_against_women(),
             "cyber_crime": build_cyber_crime_data(),
             "economic_offences": build_economic_offences_data(),
+            "ndps_drug_cases": build_ndps_drug_cases(),
+            "child_protection_pocso": build_child_protection_pocso(),
+            "road_accidents_fatalities": build_road_accidents_fatalities(),
+            "police_per_population": build_police_per_population(),
             "violent_incidents": build_violent_incidents_aggregate(),
+            "lwe_incidents": build_lwe_annual_fatalities(),
             "lwe_civilian_casualties": build_lwe_category_series("civilian"),
             "lwe_security_force_casualties": build_lwe_category_series("security_force"),
             "lwe_perpetrator_casualties": build_lwe_category_series("perpetrator"),

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T16:17:40+00:00",
+  "generated_at_utc": "2026-09-17T16:48:44+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -2682,6 +2682,116 @@
         14.1
       ]
     },
+    "ndps_drug_cases": {
+      "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act)",
+      "note": "Annual registered cases under the NDPS Act across India.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        46921,
+        50798,
+        49255,
+        63800,
+        63137,
+        72737,
+        59802,
+        78331,
+        91542,
+        108420
+      ]
+    },
+    "child_protection_pocso": {
+      "source": "NCRB Crime in India (Crimes against Children & POCSO Act)",
+      "note": "Annual registered cases of crimes against children including POCSO Act offences.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        89423,
+        94172,
+        106958,
+        129032,
+        141764,
+        148185,
+        128531,
+        149402,
+        162449,
+        177435
+      ]
+    },
+    "road_accidents_fatalities": {
+      "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI)",
+      "note": "Annual road traffic accident fatalities reported nationwide.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        134513,
+        138258,
+        139671,
+        150785,
+        151417,
+        151113,
+        131714,
+        153972,
+        168491,
+        173014,
+        178200
+      ]
+    },
+    "police_per_population": {
+      "source": "Bureau of Police Research and Development (BPR&D) Data on Police Organizations",
+      "note": "Sanctioned civil and armed police personnel per 100,000 population.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2020",
+        "2022",
+        "2024"
+      ],
+      "values": [
+        130.4,
+        137.8,
+        141.2,
+        151.8,
+        155.8,
+        152.2,
+        152.8,
+        158.4
+      ]
+    },
     "violent_incidents": {
       "source": "https://ncrb.gov.in/crime-in-india.html",
       "note": "Total reported IPC cognizable violent crime cases across India (murder, attempt to murder, rape, kidnapping, dacoity, robbery, rioting).",
@@ -2715,6 +2825,15 @@
         "period": "2014-2023",
         "frequency": "Annual edition"
       }
+    },
+    "lwe_incidents": {
+      "source": "Ministry of Home Affairs LWE Division",
+      "labels": [
+        "2004-2025"
+      ],
+      "values": [
+        8956.0
+      ]
     },
     "lwe_civilian_casualties": {
       "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
@@ -3338,15 +3457,6 @@
         310.0,
         212.0,
         135.0
-      ]
-    },
-    "lwe_incidents": {
-      "source": "Ministry of Home Affairs LWE Division",
-      "labels": [
-        "2004-2025"
-      ],
-      "values": [
-        8956.0
       ]
     },
     "defence_exports": {
@@ -4814,6 +4924,383 @@
         1010.0
       ],
       "source": "Telecom Regulatory Authority of India (TRAI) (High-Speed Broadband Subscribers Base in Million Subscribers)"
+    },
+    "state_gsdp_comparison": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra \ud83c\udfc1",
+          "values": [
+            24.1,
+            26.3,
+            27.1,
+            31.0,
+            35.2,
+            38.8,
+            42.5,
+            46.2,
+            50.1
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Tamil Nadu \ud83c\udfed",
+          "values": [
+            15.1,
+            16.6,
+            17.4,
+            19.8,
+            22.5,
+            24.8,
+            27.2,
+            29.8,
+            32.5
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Gujarat \u2699\ufe0f",
+          "values": [
+            14.2,
+            16.0,
+            16.5,
+            19.4,
+            22.0,
+            24.2,
+            26.8,
+            29.5,
+            32.2
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka \ud83d\udcbb",
+          "values": [
+            14.0,
+            15.6,
+            16.2,
+            18.9,
+            21.4,
+            23.6,
+            26.0,
+            28.5,
+            31.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Uttar Pradesh \ud83c\udf3e",
+          "values": [
+            14.5,
+            15.8,
+            16.4,
+            19.1,
+            21.8,
+            24.0,
+            26.5,
+            29.0,
+            31.8
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "West Bengal \u2693",
+          "values": [
+            10.2,
+            11.4,
+            11.8,
+            13.5,
+            15.3,
+            16.8,
+            18.5,
+            20.2,
+            22.0
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "Reserve Bank of India (RBI) Handbook of Statistics on Indian States & MOSPI (GSDP at Current Prices in INR Lakh Crores)"
+    },
+    "state_fdi_inflows": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra",
+          "values": [
+            14.8,
+            16.2,
+            14.5,
+            15.4,
+            14.8,
+            15.6,
+            17.2,
+            18.8
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Karnataka",
+          "values": [
+            7.5,
+            8.6,
+            18.4,
+            10.3,
+            4.8,
+            5.5,
+            6.2,
+            7.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Gujarat",
+          "values": [
+            4.3,
+            21.9,
+            2.7,
+            4.7,
+            4.9,
+            7.3,
+            8.5,
+            9.6
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Delhi NCR",
+          "values": [
+            7.6,
+            5.6,
+            8.2,
+            8.1,
+            6.5,
+            6.8,
+            7.2,
+            7.8
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Tamil Nadu",
+          "values": [
+            2.4,
+            2.3,
+            3.0,
+            2.8,
+            2.2,
+            2.9,
+            3.4,
+            4.0
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "DPIIT & Ministry of Commerce State-wise FDI Equity Inflows (USD Billion)"
+    },
+    "state_debt_to_gsdp": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra (17.5%)",
+          "values": [
+            17.8,
+            17.6,
+            20.2,
+            19.8,
+            18.5,
+            18.2,
+            18.0,
+            17.8,
+            17.5
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Gujarat (17.1%)",
+          "values": [
+            18.5,
+            18.2,
+            21.0,
+            19.4,
+            18.2,
+            17.9,
+            17.6,
+            17.4,
+            17.1
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka (23.0%)",
+          "values": [
+            18.2,
+            18.5,
+            23.2,
+            23.8,
+            22.6,
+            22.1,
+            22.5,
+            22.8,
+            23.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Tamil Nadu (25.8%)",
+          "values": [
+            22.4,
+            23.1,
+            27.5,
+            27.8,
+            27.2,
+            26.8,
+            26.5,
+            26.2,
+            25.8
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Uttar Pradesh (28.5%)",
+          "values": [
+            28.6,
+            29.2,
+            34.2,
+            33.5,
+            32.1,
+            30.5,
+            29.8,
+            29.2,
+            28.5
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "West Bengal (35.0%)",
+          "values": [
+            34.5,
+            35.2,
+            38.6,
+            37.8,
+            37.1,
+            36.5,
+            36.0,
+            35.5,
+            35.0
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "RBI Study on State Finances & NITI Aayog (% Total Debt / Outstanding Liabilities to GSDP Ratio)"
+    },
+    "state_operating_factories": {
+      "labels": [
+        "Tamil Nadu",
+        "Gujarat",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Karnataka",
+        "Andhra Pradesh"
+      ],
+      "values": [
+        38837,
+        28479,
+        25610,
+        16184,
+        15820,
+        14205
+      ],
+      "source": "MOSPI Annual Survey of Industries (ASI) (Total Operating Registered Factories Count by State)"
+    },
+    "state_pmay_homes": {
+      "labels": [
+        "Uttar Pradesh",
+        "Madhya Pradesh",
+        "Bihar",
+        "West Bengal",
+        "Rajasthan",
+        "Maharashtra"
+      ],
+      "values": [
+        34.5,
+        31.2,
+        28.6,
+        26.4,
+        18.9,
+        16.5
+      ],
+      "source": "Ministry of Rural Development & MoHUA (PMAY Cumulative Pucca Housing Units Completed in Lakhs)"
+    },
+    "state_jjm_water_coverage": {
+      "labels": [
+        "Goa",
+        "Haryana",
+        "Gujarat",
+        "Punjab",
+        "Himachal",
+        "Bihar",
+        "Uttar Pradesh",
+        "West Bengal"
+      ],
+      "values": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        96.4,
+        84.2,
+        52.8
+      ],
+      "source": "Ministry of Jal Shakti Har Ghar Jal Open Dashboard (% Rural Households with Tap Water Connections)"
+    },
+    "state_mudra_loans": {
+      "labels": [
+        "Tamil Nadu",
+        "West Bengal",
+        "Karnataka",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Bihar"
+      ],
+      "values": [
+        285400.0,
+        242100.0,
+        238500.0,
+        226800.0,
+        215400.0,
+        185200.0
+      ],
+      "source": "PMMY MUDRA Portal & Department of Financial Services (Cumulative Loan Disbursements in INR Crores)"
     },
     "auto_production_volume": {
       "labels": [

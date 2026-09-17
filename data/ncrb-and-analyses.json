@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-17T15:11:01+00:00",
+  "generated_at_utc": "2026-09-17T16:48:44+00:00",
   "series": {
     "ncrb_crime": {
       "source": "https://en.wikipedia.org/wiki/Crime_in_India",
@@ -169,6 +169,116 @@
         14.1
       ]
     },
+    "ndps_drug_cases": {
+      "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act)",
+      "note": "Annual registered cases under the NDPS Act across India.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        46921,
+        50798,
+        49255,
+        63800,
+        63137,
+        72737,
+        59802,
+        78331,
+        91542,
+        108420
+      ]
+    },
+    "child_protection_pocso": {
+      "source": "NCRB Crime in India (Crimes against Children & POCSO Act)",
+      "note": "Annual registered cases of crimes against children including POCSO Act offences.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        89423,
+        94172,
+        106958,
+        129032,
+        141764,
+        148185,
+        128531,
+        149402,
+        162449,
+        177435
+      ]
+    },
+    "road_accidents_fatalities": {
+      "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI)",
+      "note": "Annual road traffic accident fatalities reported nationwide.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        134513,
+        138258,
+        139671,
+        150785,
+        151417,
+        151113,
+        131714,
+        153972,
+        168491,
+        173014,
+        178200
+      ]
+    },
+    "police_per_population": {
+      "source": "Bureau of Police Research and Development (BPR&D) Data on Police Organizations",
+      "note": "Sanctioned civil and armed police personnel per 100,000 population.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2020",
+        "2022",
+        "2024"
+      ],
+      "values": [
+        130.4,
+        137.8,
+        141.2,
+        151.8,
+        155.8,
+        152.2,
+        152.8,
+        158.4
+      ]
+    },
     "violent_incidents": {
       "source": "https://ncrb.gov.in/crime-in-india.html",
       "note": "Total reported IPC cognizable violent crime cases across India (murder, attempt to murder, rape, kidnapping, dacoity, robbery, rioting).",
@@ -202,6 +312,58 @@
         "period": "2014-2023",
         "frequency": "Annual edition"
       }
+    },
+    "lwe_incidents": {
+      "source": "Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+      "note": "Annual total fatalities (civilians, security personnel, and perpetrators) in Left-Wing Extremist violence across affected states.",
+      "labels": [
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        566.0,
+        669.0,
+        678.0,
+        696.0,
+        721.0,
+        1005.0,
+        1005.0,
+        611.0,
+        415.0,
+        397.0,
+        309.0,
+        226.0,
+        513.0,
+        295.0,
+        412.0,
+        202.0,
+        183.0,
+        147.0,
+        98.0,
+        150.0,
+        285.0,
+        168.0
+      ]
     },
     "lwe_civilian_casualties": {
       "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",

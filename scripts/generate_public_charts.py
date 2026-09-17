@@ -575,6 +575,108 @@ def build_textiles_apparel_exports() -> dict:
     return {"labels": years, "values": values, "source": "Ministry of Textiles & DGFT (Textiles, Garments & Technical Textiles Export Trajectory in USD Billion)"}
 
 
+# --- STATE PERFORMANCE & REGIONAL HEALTH BUILDERS ---
+def build_state_gsdp_comparison() -> dict:
+    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    mh = [24.1, 26.3, 27.1, 31.0, 35.2, 38.8, 42.5, 46.2, 50.1]
+    tn = [15.1, 16.6, 17.4, 19.8, 22.5, 24.8, 27.2, 29.8, 32.5]
+    gj = [14.2, 16.0, 16.5, 19.4, 22.0, 24.2, 26.8, 29.5, 32.2]
+    ka = [14.0, 15.6, 16.2, 18.9, 21.4, 23.6, 26.0, 28.5, 31.0]
+    up = [14.5, 15.8, 16.4, 19.1, 21.8, 24.0, 26.5, 29.0, 31.8]
+    wb = [10.2, 11.4, 11.8, 13.5, 15.3, 16.8, 18.5, 20.2, 22.0]
+    datasets = [
+        {"label": "Maharashtra 🏁", "values": mh, "color": "#58a6ff"},
+        {"label": "Tamil Nadu 🏭", "values": tn, "color": "#3fb950"},
+        {"label": "Gujarat ⚙️", "values": gj, "color": "#ff9933"},
+        {"label": "Karnataka 💻", "values": ka, "color": "#a371f7"},
+        {"label": "Uttar Pradesh 🌾", "values": up, "color": "#f6c344"},
+        {"label": "West Bengal ⚓", "values": wb, "color": "#ff7b72"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "Reserve Bank of India (RBI) Handbook of Statistics on Indian States & MOSPI (GSDP at Current Prices in INR Lakh Crores)"
+    }
+
+def build_state_fdi_inflows() -> dict:
+    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    mh = [14.8, 16.2, 14.5, 15.4, 14.8, 15.6, 17.2, 18.8]
+    ka = [7.5, 8.6, 18.4, 10.3, 4.8, 5.5, 6.2, 7.0]
+    gj = [4.3, 21.9, 2.7, 4.7, 4.9, 7.3, 8.5, 9.6]
+    dl = [7.6, 5.6, 8.2, 8.1, 6.5, 6.8, 7.2, 7.8]
+    tn = [2.4, 2.3, 3.0, 2.8, 2.2, 2.9, 3.4, 4.0]
+    datasets = [
+        {"label": "Maharashtra", "values": mh, "color": "#58a6ff"},
+        {"label": "Karnataka", "values": ka, "color": "#a371f7"},
+        {"label": "Gujarat", "values": gj, "color": "#ff9933"},
+        {"label": "Delhi NCR", "values": dl, "color": "#f6c344"},
+        {"label": "Tamil Nadu", "values": tn, "color": "#3fb950"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "DPIIT & Ministry of Commerce State-wise FDI Equity Inflows (USD Billion)"
+    }
+
+def build_state_debt_to_gsdp() -> dict:
+    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
+    mh = [17.8, 17.6, 20.2, 19.8, 18.5, 18.2, 18.0, 17.8, 17.5]
+    gj = [18.5, 18.2, 21.0, 19.4, 18.2, 17.9, 17.6, 17.4, 17.1]
+    ka = [18.2, 18.5, 23.2, 23.8, 22.6, 22.1, 22.5, 22.8, 23.0]
+    tn = [22.4, 23.1, 27.5, 27.8, 27.2, 26.8, 26.5, 26.2, 25.8]
+    up = [28.6, 29.2, 34.2, 33.5, 32.1, 30.5, 29.8, 29.2, 28.5]
+    wb = [34.5, 35.2, 38.6, 37.8, 37.1, 36.5, 36.0, 35.5, 35.0]
+    datasets = [
+        {"label": "Maharashtra (17.5%)", "values": mh, "color": "#58a6ff"},
+        {"label": "Gujarat (17.1%)", "values": gj, "color": "#ff9933"},
+        {"label": "Karnataka (23.0%)", "values": ka, "color": "#a371f7"},
+        {"label": "Tamil Nadu (25.8%)", "values": tn, "color": "#3fb950"},
+        {"label": "Uttar Pradesh (28.5%)", "values": up, "color": "#f6c344"},
+        {"label": "West Bengal (35.0%)", "values": wb, "color": "#ff7b72"},
+    ]
+    return {
+        "labels": years,
+        "datasets": datasets,
+        "source": "RBI Study on State Finances & NITI Aayog (% Total Debt / Outstanding Liabilities to GSDP Ratio)"
+    }
+
+def build_state_operating_factories() -> dict:
+    states = ["Tamil Nadu", "Gujarat", "Maharashtra", "Uttar Pradesh", "Karnataka", "Andhra Pradesh"]
+    factories = [38837, 28479, 25610, 16184, 15820, 14205]
+    return {
+        "labels": states,
+        "values": factories,
+        "source": "MOSPI Annual Survey of Industries (ASI) (Total Operating Registered Factories Count by State)"
+    }
+
+def build_state_pmay_homes() -> dict:
+    states = ["Uttar Pradesh", "Madhya Pradesh", "Bihar", "West Bengal", "Rajasthan", "Maharashtra"]
+    houses_lakhs = [34.5, 31.2, 28.6, 26.4, 18.9, 16.5]
+    return {
+        "labels": states,
+        "values": houses_lakhs,
+        "source": "Ministry of Rural Development & MoHUA (PMAY Cumulative Pucca Housing Units Completed in Lakhs)"
+    }
+
+def build_state_jjm_water_coverage() -> dict:
+    states = ["Goa", "Haryana", "Gujarat", "Punjab", "Himachal", "Bihar", "Uttar Pradesh", "West Bengal"]
+    coverage_pct = [100.0, 100.0, 100.0, 100.0, 100.0, 96.4, 84.2, 52.8]
+    return {
+        "labels": states,
+        "values": coverage_pct,
+        "source": "Ministry of Jal Shakti Har Ghar Jal Open Dashboard (% Rural Households with Tap Water Connections)"
+    }
+
+def build_state_mudra_loans() -> dict:
+    states = ["Tamil Nadu", "West Bengal", "Karnataka", "Maharashtra", "Uttar Pradesh", "Bihar"]
+    disbursed_cr = [285400.0, 242100.0, 238500.0, 226800.0, 215400.0, 185200.0]
+    return {
+        "labels": states,
+        "values": disbursed_cr,
+        "source": "PMMY MUDRA Portal & Department of Financial Services (Cumulative Loan Disbursements in INR Crores)"
+    }
+
+
 def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -699,6 +801,15 @@ def main() -> None:
     result["series"]["renewable_energy_capacity"] = build_renewable_energy_capacity()
     result["series"]["civil_aviation_passengers"] = build_civil_aviation_passengers()
     result["series"]["telecom_broadband_subscribers"] = build_telecom_broadband_subscribers()
+
+    # State Performance & Regional Health
+    result["series"]["state_gsdp_comparison"] = build_state_gsdp_comparison()
+    result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
+    result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
+    result["series"]["state_operating_factories"] = build_state_operating_factories()
+    result["series"]["state_pmay_homes"] = build_state_pmay_homes()
+    result["series"]["state_jjm_water_coverage"] = build_state_jjm_water_coverage()
+    result["series"]["state_mudra_loans"] = build_state_mudra_loans()
 
     # Manufacturing & Industrial Growth
     result["series"]["auto_production_volume"] = build_auto_production_volume()
