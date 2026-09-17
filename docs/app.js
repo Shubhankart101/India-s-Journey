@@ -174,12 +174,8 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix ? ` ${suffix}` : ''}`;
 };
 
-const chartOptions = (suffix, hasMultipleDatasets = false) => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  animation: { duration: 600, easing: 'easeOutQuart' },
-  interaction: { mode: 'index', intersect: false },
-  plugins: {
+const chartOptions = (suffix, hasMultipleDatasets = false) => {
+  const pluginsConfig = {
     legend: { display: false },
     tooltip: { 
       backgroundColor: 'rgba(11, 15, 25, 0.95)', 
@@ -193,23 +189,34 @@ const chartOptions = (suffix, hasMultipleDatasets = false) => ({
       callbacks: { 
         label: context => ` ${context.dataset.label || 'Value'}: ${formatMagnitude(context.parsed.y, suffix)}` 
       } 
-    },
-    zoom: { 
+    }
+  };
+
+  if (typeof Chart !== 'undefined' && Chart.registry && Chart.registry.plugins && Chart.registry.plugins.get('zoom')) {
+    pluginsConfig.zoom = { 
       pan: { enabled: true, mode: 'x' }, 
       zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } 
+    };
+  }
+
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 600, easing: 'easeOutQuart' },
+    interaction: { mode: 'index', intersect: false },
+    plugins: pluginsConfig,
+    scales: {
+      x: { 
+        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } } 
+      },
+      y: { 
+        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) } 
+      },
     },
-  },
-  scales: {
-    x: { 
-      grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
-      ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } } 
-    },
-    y: { 
-      grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
-      ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) } 
-    },
-  },
-});
+  };
+};
 
 async function safeFetchJson(filename, defaultVal = {}) {
   const paths = [
