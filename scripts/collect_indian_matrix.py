@@ -43,7 +43,9 @@ def main() -> None:
         "articles": articles,
         "cadence": {"labels": sorted(weekly), "values": [weekly[label] for label in sorted(weekly)]},
     }
-    (ROOT / "data" / "indian-matrix-latest.json").write_text(json.dumps(snapshot, indent=2) + "\n")
+    snapshot_text = json.dumps(snapshot, indent=2) + "\n"
+    (ROOT / "data" / "indian-matrix-latest.json").write_text(snapshot_text)
+    (ROOT / "docs" / "data" / "indian-matrix-latest.json").write_text(snapshot_text)
 
 
 if __name__ == "__main__":

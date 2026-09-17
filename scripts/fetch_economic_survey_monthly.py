@@ -181,7 +181,9 @@ def main() -> None:
         result["series"]["fiscal_deficit"] = fetch_fiscal_deficit()
     except Exception as error:
         result["series"]["fiscal_deficit"] = {"error": str(error)}
-    (ROOT / "data" / "economic-survey-monthly.json").write_text(json.dumps(result, indent=2) + "\n")
+    result_text = json.dumps(result, indent=2) + "\n"
+    (ROOT / "data" / "economic-survey-monthly.json").write_text(result_text)
+    (ROOT / "docs" / "data" / "economic-survey-monthly.json").write_text(result_text)
 
 
 if __name__ == "__main__":

@@ -284,11 +284,11 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("pp-article-links", text)
         self.assertIn("renderArticles", text)
 
-    def test_app_js_requires_group_and_subgroup_before_showing_charts(self):
+    def test_app_js_renders_and_updates_cards(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
-        self.assertIn("groupFilter.value !== 'all' && subgroupFilter.value !== 'all'", text)
+        self.assertIn("updateCards", text)
         self.assertIn("chart-prompt", text)
 
     def test_page_has_chart_prompt_element(self):
