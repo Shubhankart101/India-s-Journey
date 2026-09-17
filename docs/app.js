@@ -511,8 +511,10 @@ async function main() {
     Infrastructure: 'Economic', 
     'Production & Commodities': 'Economic', 
     'Media & Publications': 'Economic', 
+    'Fiscal & Union Budget': 'Economic',
     Demographics: 'Social', 
     Welfare: 'Social', 
+    'Government Schemes': 'Social',
     'Defence Exports & Production': 'Defence & Strategic', 
     'Defence Budget & Modernization': 'Defence & Strategic', 
     'Strategic Stockpiles & Capabilities': 'Defence & Strategic', 
@@ -522,9 +524,9 @@ async function main() {
     'Public opinion': 'Pew Research' 
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
-    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
-    Social: ['Demographics', 'Welfare'],
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Fiscal & Union Budget', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Violence & Crime', 'Terrorism', 'Maoism / LWE', 'Public opinion'],
+    Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Fiscal & Union Budget'],
+    Social: ['Demographics', 'Welfare', 'Government Schemes'],
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
     'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE'],
     'Pew Research': ['Public opinion']
