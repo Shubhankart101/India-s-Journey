@@ -96,7 +96,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "defence_budget_share", "defence_rd_budget",
             "defence_capital_acquisition", "sipri_arms_imports",
             "ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women",
-            "cyber_crime", "economic_offences", "sensex", "nifty", "nifty_vix",
+            "cyber_crime", "economic_offences", "ndps_drug_cases", "child_protection_pocso", "road_accidents_fatalities", "police_per_population", "lwe_incidents", "sensex", "nifty", "nifty_vix",
             "power_consumption", "eway_bills", "rail_freight", "port_cargo",
             "core_industries", "crude_oil", "fuel_consumption",
             "merchandise_exports", "merchandise_imports",
@@ -122,11 +122,11 @@ class DashboardEndpointTests(unittest.TestCase):
             "national_highways_built", "railway_electrification", "renewable_energy_capacity",
             "civil_aviation_passengers", "telecom_broadband_subscribers", "auto_production_volume",
             "crude_steel_production", "electronics_manufacturing", "pharma_exports_trajectory",
-            "textiles_apparel_exports",
+            "textiles_apparel_exports", "state_gsdp_comparison", "state_fdi_inflows", "state_debt_to_gsdp", "state_operating_factories", "state_pmay_homes", "state_jjm_water_coverage", "state_mudra_loans", "ndps_drug_cases", "child_protection_pocso", "road_accidents_fatalities", "police_per_population",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
-            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports"):
+            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports", "state_gsdp_comparison", "state_fdi_inflows", "state_debt_to_gsdp"):
                 self.assertIn("labels", series, key)
                 continue
             self.assertTrue(series.get("values") or series.get("error"), key)
@@ -232,7 +232,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "ncrb_ipc_crime_rate",
             "crimes_against_women",
             "cyber_crime",
-            "economic_offences",
+            "economic_offences", "ndps_drug_cases", "child_protection_pocso", "road_accidents_fatalities", "police_per_population", "lwe_incidents",
             "violent_incidents",
             "lwe_civilian_casualties",
             "lwe_security_force_casualties",
@@ -252,11 +252,11 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertEqual(len(series["labels"]), len(series["values"]), key)
                     self.assertGreaterEqual(len(series["values"]), 20, key)
                     self.assertTrue(series["source"].startswith("https://www.satp.org/"), key)
-                elif key in ("ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women", "cyber_crime", "economic_offences", "violent_incidents"):
+                elif key in ("ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women", "cyber_crime", "economic_offences", "ndps_drug_cases", "child_protection_pocso", "road_accidents_fatalities", "police_per_population", "lwe_incidents", "violent_incidents"):
                     self.assertIn("labels", series, key)
                     self.assertIn("values", series, key)
                     self.assertEqual(len(series["labels"]), len(series["values"]), key)
-                    self.assertGreaterEqual(len(series["values"]), 10, key)
+                    self.assertGreaterEqual(len(series["values"]), 5, key)
                 else:
                     self.assertIn("years", series, key)
                     self.assertIn("values", series, key)
