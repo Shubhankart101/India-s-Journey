@@ -203,7 +203,7 @@ async function safeFetchJson(filename, defaultVal = {}) {
   ];
   for (const path of paths) {
     try {
-      const res = await fetch(path, { signal: AbortSignal.timeout(5000) });
+      const res = await fetch(path);
       if (res.ok) {
         const json = await res.json();
         if (json) return json;
@@ -698,6 +698,13 @@ async function main() {
   };
   rangeStart.addEventListener('change', updateRange);
   rangeEnd.addEventListener('change', updateRange);
+
+  // Force form controls to default state on startup so browser autocomplete desync is avoided
+  if (groupFilter) groupFilter.value = 'all';
+  if (subgroupFilter) subgroupFilter.value = 'all';
+  if (search) search.value = '';
+  if (filter) filter.value = 'live';
+  syncGroupPills('all');
   updateSubgroupFilter();
   updatePeriods();
   updateCards();

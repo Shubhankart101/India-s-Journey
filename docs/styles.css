@@ -115,25 +115,23 @@ h2 { font-size:1.8rem; font-weight:700; }
 /* Era Pills Bar */
 .era-pills-bar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  overflow-x: auto;
   padding: 10px 0 14px;
   margin-bottom: 12px;
   border-bottom: 1px dashed rgba(255, 153, 51, 0.25);
   width: 100%;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-.era-pills-bar::-webkit-scrollbar,
-.group-pills-bar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-  width: 0;
-  height: 0;
 }
 .group-pills-bar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  width: 100%;
 }
 .era-pill-title {
   color: var(--saffron);
