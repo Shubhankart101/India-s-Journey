@@ -257,9 +257,9 @@ async function main() {
 
   const data = dataPayload || { series: {} };
   data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}) };
-  const matrixCadence = indianMatrix?.cadence || { labels: [], values: [] };
+  const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
   data.series.indian_matrix = { labels: matrixCadence.labels || [], values: matrixCadence.values || [], source: 'Indian Matrix public RSS feed' };
-  const pewCadence = pewReports?.cadence || { labels: [], values: [] };
+  const pewCadence = (data.series.pew_india_reports && data.series.pew_india_reports.values && data.series.pew_india_reports.values.length) ? data.series.pew_india_reports : (pewReports?.cadence || { labels: [], values: [] });
   data.series.pew_india_reports = { labels: pewCadence.labels || [], values: pewCadence.values || [], source: 'Pew Research Center India public report catalog' };
   const marketKeys = ['sensex', 'nifty', 'nifty_vix'];
   const marketLabels = [...new Set(marketKeys.flatMap(key => data.series[key]?.labels || []))].sort();

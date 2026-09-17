@@ -505,14 +505,34 @@ def main() -> None:
     result["series"]["pm_mudra_social_breakdown"] = build_pm_mudra_social_breakdown()
     result["series"]["pm_svanidhi_street_vendors"] = build_pm_svanidhi_street_vendors()
 
-    # Load article feeds if available
+    # Load article feeds and reports if available
     im_file = ROOT / "data" / "indian-matrix-latest.json"
     if im_file.is_file():
         try:
             im_data = json.loads(im_file.read_text(encoding="utf-8"))
             result["indian_matrix_articles"] = im_data.get("articles", [])
+            cadence = im_data.get("cadence", {})
+            result["series"]["indian_matrix"] = {
+                "labels": cadence.get("labels", []),
+                "values": cadence.get("values", []),
+                "source": "Indian Matrix public RSS feed"
+            }
         except Exception as e:
             print(f"Error loading indian-matrix-latest.json: {e}")
+
+    pew_rep_file = ROOT / "data" / "pew-india-reports.json"
+    if pew_rep_file.is_file():
+        try:
+            pew_rep_data = json.loads(pew_rep_file.read_text(encoding="utf-8"))
+            result["pew_reports"] = pew_rep_data.get("reports", [])
+            cadence = pew_rep_data.get("cadence", {})
+            result["series"]["pew_india_reports"] = {
+                "labels": cadence.get("labels", []),
+                "values": cadence.get("values", []),
+                "source": "Pew Research Center India public report catalog"
+            }
+        except Exception as e:
+            print(f"Error loading pew-india-reports.json: {e}")
 
     sub_file = ROOT / "data" / "substack-latest.json"
     if sub_file.is_file():

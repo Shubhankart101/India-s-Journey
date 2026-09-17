@@ -111,6 +111,7 @@ class DashboardEndpointTests(unittest.TestCase):
             "social_category_literacy", "religious_demographics",
             "sc_st_post_matric_scholarships", "pm_svanidhi_street_vendors",
             "gross_tax_yoy_growth", "pm_mudra_social_breakdown",
+            "indian_matrix", "pew_india_reports",
         }
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
