@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="era-bg-layer" class="era-bg-layer"></div>
+  <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
   <header class="masthead">
     <div>
@@ -80,6 +82,17 @@
     </section>
 
     <section class="chart-controls" aria-label="Chart controls">
+      <div class="era-pills-bar" id="era-pills">
+        <span class="era-pill-title">📜 Historical Eras:</span>
+        <button type="button" class="era-pill active" data-era="all">🇮🇳 All Eras</button>
+        <button type="button" class="era-pill" data-era="ancient">🏛️ Ancient &amp; Classical</button>
+        <button type="button" class="era-pill" data-era="medieval">🏰 Medieval Empires</button>
+        <button type="button" class="era-pill" data-era="freedom">🕊️ Freedom Struggle</button>
+        <button type="button" class="era-pill" data-era="republic">🏛️ Early Republic</button>
+        <button type="button" class="era-pill" data-era="liberalization">📈 Economic Reform</button>
+        <button type="button" class="era-pill" data-era="modern">🚀 Digital &amp; Strategic</button>
+      </div>
+
       <div class="group-pills-bar" id="group-pills">
         <button type="button" class="group-pill active" data-group="all">🇮🇳 All Groups</button>
         <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
@@ -87,13 +100,24 @@
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
         <button type="button" class="group-pill" data-group="Crime &amp; Security">🛡️ Crime &amp; Security</button>
       </div>
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, CPI)..."></label>
+      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, Defence, Crime)..."></label>
       <label>Show <select id="chart-filter"><option value="all">All indicators</option><option value="live" selected>Live data only</option><option value="pending">Pending adapters</option></select></label>
       <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Pew Research">Pew Research</option><option value="Crime &amp; Security">Crime &amp; Security</option></select></label>
-      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Media &amp; Publications</option><option>Demographics</option><option>Welfare</option><option>Public opinion</option><option>Violence &amp; Crime</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
+      <label>Subgroup <select id="subgroup-filter"><option value="all" selected>All subgroups</option><option>Macroeconomics</option><option>Monetary Policy</option><option>Trade &amp; External</option><option>Markets</option><option>Infrastructure</option><option>Production &amp; Commodities</option><option>Media &amp; Publications</option><option>Demographics</option><option>Welfare</option><option>Public opinion</option><option>Violence &amp; Crime</option><option>Defence &amp; Security</option><option>Terrorism</option><option>Maoism / LWE</option></select></label>
       <label>From <select id="range-start" aria-label="Start period"><option>Loading periods...</option></select></label>
       <label>To <select id="range-end" aria-label="End period"><option>Loading periods...</option></select></label>
     </section>
+
+    <div id="era-banner" class="era-banner" hidden>
+      <div class="era-banner-content">
+        <h3 id="era-banner-title">Historical Era Title</h3>
+        <p id="era-banner-desc">Era Description</p>
+      </div>
+      <div class="era-banner-badge">
+        <span class="era-badge-tag" id="era-banner-years">3300 BCE — Present</span>
+        <span class="era-attribution" id="era-banner-attribution">📷 Open Source / Public Domain</span>
+      </div>
+    </div>
 
     <div id="group-hero" class="group-hero" hidden>
       <div class="group-hero-content">
@@ -143,7 +167,9 @@
               <li><a href="https://www.pewresearch.org/global/" target="_blank" rel="noreferrer">Pew Research Center Global Attitudes</a></li>
               <li><a href="https://www.pewresearch.org/search/india/" target="_blank" rel="noreferrer">Pew India dated report catalog</a></li>
               <li><a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix public feed</a></li>
-              <li><a href="https://ncrb.gov.in/crime-in-india.html" target="_blank" rel="noreferrer">NCRB Crime in India</a></li>
+              <li><a href="https://www.ddpmod.gov.in/" target="_blank" rel="noreferrer">Department of Defence Production (DDP) - Ministry of Defence</a></li>
+              <li><a href="https://www.sipri.org/databases/armstransfers" target="_blank" rel="noreferrer">SIPRI Arms Transfers &amp; Military Expenditure Database</a></li>
+              <li><a href="https://ncrb.gov.in/crime-in-india.html" target="_blank" rel="noreferrer">NCRB Crime in India (IPC, Cyber Crime, Women)</a></li>
               <li><a href="https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf" target="_blank" rel="noreferrer">Economic Survey statistical appendix</a></li>
               <li><a href="https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf" target="_blank" rel="noreferrer">Economic Survey table 9.1: GST</a></li>
               <li><a href="https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.2.pdf" target="_blank" rel="noreferrer">Economic Survey table 9.2: UPI and IIP</a></li>

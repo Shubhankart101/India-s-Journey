@@ -51,13 +51,93 @@ const definitions = [
   ['gdp_world_comparison', 'World top economies GDP comparison', 'GDP trajectories of India, US, China, Germany, Japan, and UK', 'Annual', '#ff9933', ' USD trillion', 'https://data.worldbank.org/indicator/NY.GDP.MKTP.CD', 'This chart plots the gross domestic product of India alongside the world\'s largest economies (United States, China, Germany, Japan, and United Kingdom) in current US dollars.\n\nIt contextualizes India\'s rise from an emerging developing economy following independence to one of the world\'s top 5 economic powerhouses.'],
   ['sectoral_market_indices', 'India sectoral market engines', 'Nifty IT, Nifty Bank, Nifty Auto, Nifty Energy, and Sensex; rebased to 100', 'Monthly / Annual', '#3fb950', ' index', 'https://www.nseindia.com/', 'This series tracks key sectoral engines of India\'s stock market expansion—Technology, Banking & Financials, Automotive, and Energy—rebased to 100 alongside the benchmark Sensex.\n\nIt reveals how different industry pillars have spearheaded growth across economic cycles.'],
   ['global_inflation_comparison', 'Global inflation benchmark comparison', 'Consumer price inflation in India, US, and Euro Area', 'Annual', '#ffa657', '%', 'https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG', 'This indicator compares consumer price inflation rate trends across India, the United States, and the Euro Area.\n\nReading India\'s inflation alongside major global central bank economies highlights how global commodity shocks, monetary policy, and exchange rates impact domestic price stability.'],
+  ['defence_expenditure', 'Defence expenditure', 'Military expenditure as share of GDP', 'Annual', '#ff7b72', '% GDP', 'https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=IN', 'Military expenditure tracks defence spending relative to the size of the national economy. It measures military resource allocation across peacetime and security challenges.\n\nData comes through the World Bank open API and SIPRI military expenditure database.'],
+  ['defence_exports', 'India defence exports', 'Annual defence exports from India', 'Annual', '#3fb950', 'INR Cr', 'https://www.ddpmod.gov.in/', 'India\'s defence exports have expanded significantly as part of indigenous manufacturing and Make in India defence initiatives.\n\nData is collated from official Ministry of Defence Department of Defence Production (DDP) statistics.'],
+  ['defence_production', 'Value of defence production', 'Total value of indigenous defence production', 'Annual', '#58a6ff', 'INR Cr', 'https://www.ddpmod.gov.in/', 'Total value of defence production captures manufacturing output across Defence Public Sector Undertakings (DPSUs), ordnance factories, and private sector defence enterprises.\n\nOfficial data is published by the Department of Defence Production, Ministry of Defence.'],
+  ['defence_stockpile', 'Defence stockpile index', 'SIPRI arms inventory & capability index', 'Historical', '#a371f7', ' SIPRI TIV', 'https://www.sipri.org/databases/armstransfers', 'SIPRI Trend Indicator Value (TIV) measures the volume of conventional military capability and major weapons stockpiles transferred and maintained.\n\nIt provides a long-run comparative measure of military equipment inventory.'],
+  ['defence_production_exports', 'Defence production & exports engine', 'Defence production vs exports trajectory', 'Annual', '#58a6ff', 'INR Cr', 'https://www.ddpmod.gov.in/', 'This combined graph compares total indigenous defence production alongside defence export growth in INR Crores.\n\nIt illustrates the structural transition of India\'s defence industrial base toward export competitiveness.'],
+  ['ncrb_ipc_crime_rate', 'NCRB IPC crime rate', 'Total cognizable IPC crime rate per 100k', 'Historical (1951-2023)', '#ff7b72', ' per 100k', 'https://ncrb.gov.in/crime-in-india.html', 'The IPC cognizable crime rate tracks total reported Indian Penal Code offences per 100,000 population across 7 decades of post-independence Crime in India reports.\n\nNote that changes in reporting, police registration, and population censuses affect long-term comparability.'],
+  ['crimes_against_women', 'Crimes against women rate', 'Reported crimes per 100k female population', 'Annual (2005-2023)', '#f778ba', ' per 100k females', 'https://ncrb.gov.in/crime-in-india.html', 'This indicator tracks reported offences against women per 100,000 female population, including cruelty by husband/relatives, assault, kidnapping, and sexual offences.\n\nIncreased reporting can reflect greater public awareness and filing under revised legal definitions as well as baseline changes.'],
+  ['cyber_crime', 'Cyber crime case volume', 'Registered cyber crime cases in India', 'Annual (2014-2023)', '#79c0ff', ' cases', 'https://ncrb.gov.in/crime-in-india.html', 'Cyber crime cases track registered offences under the Information Technology Act and cyber-enabled IPC crimes.\n\nThe rapid increase reflects nationwide digital adoption, online financial services, and expanded cyber police reporting.'],
+  ['economic_offences', 'Economic offences rate', 'Cheating, fraud & forgery per 100k', 'Annual (2014-2023)', '#f6c344', ' per 100k', 'https://ncrb.gov.in/crime-in-india.html', 'Economic offences measure financial crimes including criminal breach of trust, forgery, cheating, and counterfeiting per 100,000 population.\n\nData is sourced from official NCRB Crime in India annual volumes.'],
+  ['pew_india_religion_tolerance', 'Pew: Religion, diversity & tolerance', 'Pew survey on religious tolerance, pluralism and freedom', 'Survey snapshots', '#3fb950', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'Landmark Pew Research Center study (Religion in India: Tolerance and Segregation) based on face-to-face interviews with 29,999 Indian adults across 26 states and UTs.\n\nIt examines religious tolerance, freedom of practice, and public views on diversity among India\'s major religious communities.'],
+  ['pew_india_demographics_family', 'Pew: Religion & family demographics', 'Pew survey on religious identity, practices and marriage views', 'Survey snapshots', '#a371f7', '%', 'https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/', 'This indicator tracks core demographic findings from Pew Research Center\'s Religion in India study, covering religious practice frequency, karma belief, and social norms.\n\nEach point represents a specific survey statement from the 2019-2020 national Pew study.'],
 ];
 
-const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology'].includes(key) ? 'Pew Research' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
-const subgroupFor = key => ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
+const eraData = {
+  all: {
+    id: "all",
+    name: "India's Multi-Era Long View Atlas",
+    years: "3300 BCE — 2026 CE",
+    desc: "A long-run journey through India's civilizational roots, freedom movement, republic building, economic reforms, defence production, and digital powerhouse transformation.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg/1280px-Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg",
+    attribution: "📷 Open Source / Public Domain (Sanchi Stupa & Indian Heritage)"
+  },
+  ancient: {
+    id: "ancient",
+    name: "Ancient & Classical India",
+    years: "3300 BCE — 1200 CE",
+    desc: "Indus Valley civilization, Vedic foundations, Maurya Empire under Ashoka, Gupta Golden Age, and Chola maritime trade.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg/1280px-Sanchi_Stupa_from_Eastern_Gate%2C_Madhya_Pradesh.jpg",
+    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Sanchi Stupa - Maurya Era)"
+  },
+  medieval: {
+    id: "medieval",
+    name: "Medieval & Imperial Era",
+    years: "1200 — 1757 CE",
+    desc: "Vijayanagara Empire, Mughal architecture, Maratha Confederacy, and historical silk & spice trade networks.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_courtyard_of_Vitthala_Temple%2C_Hampi.jpg/1280px-East_courtyard_of_Vitthala_Temple%2C_Hampi.jpg",
+    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Hampi Stone Chariot - Vijayanagara)"
+  },
+  freedom: {
+    id: "freedom",
+    name: "Colonial & Freedom Movement",
+    years: "1757 — 1947 CE",
+    desc: "Colonial trade monopoly, 1857 Uprising, Swadeshi Movement, Mahatma Gandhi's Salt Satyagraha, and 1947 Independence.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Marche_sel.jpg/1280px-Marche_sel.jpg",
+    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Salt March 1930 - Freedom Movement)"
+  },
+  republic: {
+    id: "republic",
+    name: "Early Republic & Industrialization",
+    years: "1947 — 1990 CE",
+    desc: "Nation building post-independence, Five-Year Plans, Green & White Revolutions, Bhakra Nangal Dam, and ISRO foundations.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Old_Parliament_House%2C_New_Delhi.jpg/1280px-Old_Parliament_House%2C_New_Delhi.jpg",
+    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Old Parliament House, New Delhi)"
+  },
+  liberalization: {
+    id: "liberalization",
+    name: "Economic Reform & IT Revolution",
+    years: "1991 — 2013 CE",
+    desc: "1991 Economic Liberalization, BSE & NSE stock market growth, IT sector expansion, highway infrastructure, and global trade.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bombay_Stock_Exchange_building.jpg/1280px-Bombay_Stock_Exchange_building.jpg",
+    attribution: "📷 Open Source: Public Domain / Wikimedia Commons (Bombay Stock Exchange, Dalal Street)"
+  },
+  modern: {
+    id: "modern",
+    name: "Modern Digital & Strategic Era",
+    years: "2014 — Present",
+    desc: "Digital India, UPI real-time payments, indigenous defence production (Make in India), defence exports, Chandrayaan space missions, and global powerhouse rise.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/LCA_Tejas_at_Aero_India_2021.jpg/1280px-LCA_Tejas_at_Aero_India_2021.jpg",
+    attribution: "📷 Open Source: GODL India / Wikimedia Commons (HAL Tejas Indigenous Defence Jet)"
+  }
+};
+
+const eraFor = key => {
+  if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'upi', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
+  if (['market_indices', 'global_equity_indices', 'gdp_world_comparison', 'fdi', 'trade', 'eway_bills', 'gst', 'crimes_against_women', 'economic_offences'].includes(key)) return 'liberalization';
+  if (['gdp_per_capita', 'population', 'electricity_access', 'iip', 'power_consumption', 'rail_freight', 'port_cargo', 'broad_money', 'bank_credit', 'tax_revenue', 'ncrb_ipc_crime_rate'].includes(key)) return 'republic';
+  if (['rupee', 'cpi', 'wpi', 'homicide_rate', 'terror_attacks', 'terror_fatalities'].includes(key)) return 'freedom';
+  if (['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties', 'ncrb_crime', 'life_expectancy'].includes(key)) return 'republic';
+  if (['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key)) return 'modern';
+  return 'republic';
+};
+
+const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Pew Research' : ['homicide_rate', 'lwe_incidents', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties', 'defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Social' : 'Economic';
+const subgroupFor = key => ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports'].includes(key) ? 'Defence & Security' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries'].includes(key) ? 'Infrastructure' : ['crude_oil', 'fuel_consumption', 'wpi', 'upi'].includes(key) ? 'Production & Commodities' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family'].includes(key) ? 'Public opinion' : ['population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : 'Macroeconomics';
 
 const formatMagnitude = (value, suffix = '') => {
-  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|incidents|attacks|deaths/i.test(suffix);
+  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
   const formattedValue = Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
   if (declaredUnit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
   const absolute = Math.abs(value);
@@ -280,9 +360,17 @@ async function main() {
       chartWrap.insertBefore(legendBar, canvas);
     }
 
+    const eraKey = eraFor(key);
+    card.dataset.era = eraKey;
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.chart-card').forEach(c => c.classList.remove('selected-card'));
+      card.classList.add('selected-card');
+      setEraBackground(eraKey);
+    });
+
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
-    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: subgroupFor(key) });
+    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: subgroupFor(key), era: eraKey });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
@@ -292,14 +380,49 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const rangeStart = document.querySelector('#range-start');
   const rangeEnd = document.querySelector('#range-end');
-  const subgroupGroups = { Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', Demographics: 'Social', Welfare: 'Social', 'Public opinion': 'Pew Research', 'Violence & Crime': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
+  const subgroupGroups = { Macroeconomics: 'Economic', 'Monetary Policy': 'Economic', 'Trade & External': 'Economic', Markets: 'Economic', Infrastructure: 'Economic', 'Production & Commodities': 'Economic', 'Media & Publications': 'Economic', Demographics: 'Social', Welfare: 'Social', 'Public opinion': 'Pew Research', 'Violence & Crime': 'Crime & Security', 'Defence & Security': 'Crime & Security', 'Maoism / LWE': 'Crime & Security', Terrorism: 'Crime & Security' };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Violence & Crime', 'Terrorism', 'Maoism / LWE'],
+    all: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications', 'Demographics', 'Welfare', 'Public opinion', 'Violence & Crime', 'Defence & Security', 'Terrorism', 'Maoism / LWE'],
     Economic: ['Macroeconomics', 'Monetary Policy', 'Trade & External', 'Markets', 'Infrastructure', 'Production & Commodities', 'Media & Publications'],
     Social: ['Demographics', 'Welfare'],
     'Pew Research': ['Public opinion'],
-    'Crime & Security': ['Violence & Crime', 'Terrorism', 'Maoism / LWE']
+    'Crime & Security': ['Violence & Crime', 'Defence & Security', 'Terrorism', 'Maoism / LWE']
   };
+
+  const setEraBackground = (eraId) => {
+    const era = eraData[eraId] || eraData.all;
+    const bgLayer = document.querySelector('#era-bg-layer');
+    if (bgLayer) {
+      bgLayer.style.backgroundImage = `url("${era.image}")`;
+      bgLayer.style.opacity = '0.22';
+    }
+    const banner = document.querySelector('#era-banner');
+    if (banner) {
+      const bannerTitle = document.querySelector('#era-banner-title');
+      const bannerDesc = document.querySelector('#era-banner-desc');
+      const bannerYears = document.querySelector('#era-banner-years');
+      const bannerAttr = document.querySelector('#era-banner-attribution');
+      if (bannerTitle) bannerTitle.textContent = era.name;
+      if (bannerDesc) bannerDesc.textContent = era.desc;
+      if (bannerYears) bannerYears.textContent = era.years;
+      if (bannerAttr) bannerAttr.textContent = era.attribution;
+      banner.hidden = (eraId === 'all');
+    }
+  };
+  setEraBackground('all');
+
+  const eraPills = document.querySelectorAll('.era-pill');
+  if (eraPills.length > 0) {
+    eraPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        eraPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const selectedEra = pill.dataset.era;
+        setEraBackground(selectedEra);
+        updateCards();
+      });
+    });
+  }
   const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {
       const option = document.createElement('option');
@@ -404,18 +527,31 @@ async function main() {
 
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
-    const scoped = groupFilter.value !== 'all' && subgroupFilter.value !== 'all';
     const prompt = document.querySelector('#chart-prompt');
-    if (prompt) prompt.hidden = scoped;
+    if (prompt) prompt.hidden = true;
     updateGroupHero();
-    if (!scoped) {
-      cards.forEach(card => { card.hidden = true; });
-      headings.forEach(heading => { heading.hidden = true; });
-      return;
-    }
     const stateFilter = filter.value;
-    cards.forEach(card => { const alwaysShowCategory = card.dataset.category === 'Crime & Security' || card.dataset.category === 'Pew Research'; card.hidden = (stateFilter !== 'all' && !alwaysShowCategory && card.dataset.state !== stateFilter) || card.dataset.category !== groupFilter.value || card.dataset.subgroup !== subgroupFilter.value || (query && !card.dataset.title.includes(query)); });
-    headings.forEach(heading => { heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category); });
+    const activePill = document.querySelector('.era-pill.active');
+    const selectedEra = activePill ? activePill.dataset.era : 'all';
+
+    cards.forEach(card => {
+      const cardCategory = card.dataset.category;
+      const cardSubgroup = card.dataset.subgroup;
+      const cardState = card.dataset.state;
+      const cardTitle = card.dataset.title;
+      const cardEra = card.dataset.era;
+
+      const matchesGroup = (groupFilter.value === 'all' || cardCategory === groupFilter.value);
+      const matchesSubgroup = (subgroupFilter.value === 'all' || cardSubgroup === subgroupFilter.value);
+      const matchesState = (stateFilter === 'all' || cardState === stateFilter);
+      const matchesSearch = (!query || cardTitle.includes(query));
+      const matchesEra = (selectedEra === 'all' || cardEra === selectedEra);
+
+      card.hidden = !(matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesEra);
+    });
+    headings.forEach(heading => {
+      heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category);
+    });
   };
   filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', () => { 

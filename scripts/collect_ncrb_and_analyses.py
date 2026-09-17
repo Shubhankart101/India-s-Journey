@@ -61,6 +61,54 @@ def build_ncrb_crime_data() -> dict:
     }
 
 
+def build_ncrb_ipc_crime_rate() -> dict:
+    """Build long-run NCRB IPC Cognizable Crime Rate (1951-2023)."""
+    years = ["1951", "1961", "1971", "1981", "1991", "2001", "2011", "2015", "2019", "2020", "2021", "2022", "2023"]
+    values = [153.9, 142.0, 173.1, 200.7, 200.0, 172.3, 192.2, 234.2, 241.0, 314.3, 302.2, 258.1, 256.4]
+    return {
+        "source": "NCRB Crime in India historical volumes & Ministry of Home Affairs reports",
+        "note": "Total reported cognizable IPC crime rate per 100,000 population across official Crime in India annual reports.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_crimes_against_women() -> dict:
+    """Build NCRB Crimes Against Women rate per 100,000 females (2005-2023)."""
+    years = ["2005", "2008", "2010", "2012", "2014", "2016", "2018", "2020", "2021", "2022", "2023"]
+    values = [30.2, 34.3, 41.7, 41.7, 56.3, 55.2, 58.8, 56.5, 64.5, 66.4, 65.7]
+    return {
+        "source": "NCRB Crime in India annual reports (Crimes against Women section)",
+        "note": "Crime rate against women per 100,000 female population in India.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_cyber_crime_data() -> dict:
+    """Build NCRB Cyber Crime volume series (2014-2023)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+    values = [9622, 11592, 12317, 21796, 27248, 44735, 50035, 52974, 65893, 85803]
+    return {
+        "source": "NCRB Cyber Crime statistics (IT Act & IPC cyber offences)",
+        "note": "Annual registered cyber crime cases across India.",
+        "labels": years,
+        "values": values
+    }
+
+
+def build_economic_offences_data() -> dict:
+    """Build NCRB Economic Offences rate series (2014-2023)."""
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+    values = [11.2, 11.5, 11.0, 11.4, 11.8, 12.0, 10.8, 12.7, 13.9, 14.1]
+    return {
+        "source": "NCRB Crime in India Economic Offences chapters",
+        "note": "Economic offences (forgery, cheating, fraud, breach of trust) rate per 100,000 population.",
+        "labels": years,
+        "values": values
+    }
+
+
 def build_lwe_casualties() -> dict:
     """Build LWE casualty breakdown by category.
 
@@ -104,27 +152,21 @@ def build_lwe_casualties() -> dict:
 def build_violent_incidents_aggregate() -> dict:
     """Build comparable all-India violent incidents.
     
-    This indicator aims to create a unified violent crime count combining:
-    - NCRB violent crimes (murder, rape, robbery, etc.)
-    - Maoist/LWE incidents
-    - Terrorism-related violence
-    
-    Currently kept pending because definitions differ across sources.
+    NCRB Crime in India IPC cognizable violent crimes total registered cases
+    including murder, attempt to murder, rape, kidnapping, dacoity, robbery, rioting.
     """
+    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
+    values = [316382, 321600, 327464, 332684, 341810, 345624, 371503, 420257, 430584, 439055]
     return {
-        "source": "Multi-source aggregation (NCRB, MHA, GTD)",
-        "note": "No single official series combines violent crime, Maoist violence, and terrorism. Kept pending to avoid mixing incompatible definitions.",
-        "years": [],
-        "values": [],
+        "source": "https://ncrb.gov.in/crime-in-india.html",
+        "note": "Total reported IPC cognizable violent crime cases across India (murder, attempt to murder, rape, kidnapping, dacoity, robbery, rioting).",
+        "labels": years,
+        "values": values,
         "metadata": {
-            "combines": [
-                {"source": "NCRB", "category": "Violent Crime"},
-                {"source": "MHA", "category": "LWE Incidents"},
-                {"source": "GTD/Our World in Data", "category": "Terrorism"}
-            ],
-            "status": "pending_official_harmonization",
-            "data_type": "aggregated_count",
-            "note": "Awaiting official cross-agency data standardization"
+            "source_agency": "National Crime Records Bureau",
+            "category": "IPC Violent Crimes Total",
+            "period": "2014-2023",
+            "frequency": "Annual edition"
         }
     }
 
@@ -164,6 +206,10 @@ def main() -> None:
         "generated_at_utc": generated,
         "series": {
             "ncrb_crime": build_ncrb_crime_data(),
+            "ncrb_ipc_crime_rate": build_ncrb_ipc_crime_rate(),
+            "crimes_against_women": build_crimes_against_women(),
+            "cyber_crime": build_cyber_crime_data(),
+            "economic_offences": build_economic_offences_data(),
             "violent_incidents": build_violent_incidents_aggregate(),
             "lwe_civilian_casualties": build_lwe_category_series("civilian"),
             "lwe_security_force_casualties": build_lwe_category_series("security_force"),
@@ -174,8 +220,12 @@ def main() -> None:
     
     output_file = ROOT / "data" / "ncrb-and-analyses.json"
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    output_file.write_text(json.dumps(result, indent=2) + "\n")
-    print(f"Generated: {output_file}")
+    docs_output_file = ROOT / "docs" / "data" / "ncrb-and-analyses.json"
+    docs_output_file.parent.mkdir(parents=True, exist_ok=True)
+    content = json.dumps(result, indent=2) + "\n"
+    output_file.write_text(content)
+    docs_output_file.write_text(content)
+    print(f"Generated: {output_file} & {docs_output_file}")
     print(f"Indicators: {list(result['series'].keys())}")
 
 
