@@ -82,9 +82,12 @@
     </section>
 
     <section class="chart-controls" aria-label="Chart controls">
-      <div class="group-pills-bar" id="group-pills">
+            <div class="group-pills-bar" id="group-pills">
         <button type="button" class="group-pill active" data-group="all">🇮🇳 All Groups</button>
         <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
+        <button type="button" class="group-pill" data-group="Industry Trends &amp; Performance">🏭 Industry Trends</button>
+        <button type="button" class="group-pill" data-group="Mining &amp; Natural Resources">⛏️ Mined Resources</button>
+        <button type="button" class="group-pill" data-group="Payments &amp; Digital Banking">💳 Payments &amp; Banking</button>
         <button type="button" class="group-pill" data-group="Social">👥 Social</button>
         <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
@@ -92,7 +95,17 @@
       </div>
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, Defence, Crime)..."></label>
       <label>Show <select id="chart-filter"><option value="all" selected>All indicators</option><option value="live">Live data only</option><option value="pending">Pending adapters</option></select></label>
-      <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Defence &amp; Strategic">Defence &amp; Strategic</option><option value="Crime &amp; Security">Crime &amp; Security</option><option value="Pew Research">Pew Research</option></select></label>
+      <label>Group <select id="group-filter">
+        <option value="all" selected>All groups</option>
+        <option value="Economic">Economic</option>
+        <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
+        <option value="Mining &amp; Natural Resources">Mining &amp; Natural Resources</option>
+        <option value="Payments &amp; Digital Banking">Payments &amp; Digital Banking</option>
+        <option value="Social">Social</option>
+        <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
+        <option value="Crime &amp; Security">Crime &amp; Security</option>
+        <option value="Pew Research">Pew Research</option>
+      </select></label>
       <label>Subgroup <select id="subgroup-filter">
         <option value="all" selected>All subgroups</option>
         <optgroup label="📈 Economic">
@@ -100,10 +113,24 @@
           <option>Monetary Policy</option>
           <option>Trade &amp; External</option>
           <option>Markets</option>
-          <option>Infrastructure</option>
-          <option>Production &amp; Commodities</option>
-          <option>Media &amp; Publications</option>
           <option>Fiscal &amp; Union Budget</option>
+          <option>Media &amp; Publications</option>
+        </optgroup>
+        <optgroup label="🏭 Industry Trends &amp; Performance">
+          <option>Manufacturing &amp; Industrial Growth</option>
+          <option>Infrastructure Development</option>
+          <option>Production &amp; Commodities</option>
+        </optgroup>
+        <optgroup label="⛏️ Mining &amp; Natural Resources">
+          <option>Metallic Minerals &amp; Ores</option>
+          <option>Energy Minerals &amp; Fuel</option>
+          <option>Non-Metallic &amp; Industrial Minerals</option>
+          <option>Mineral Exports &amp; Trade</option>
+        </optgroup>
+        <optgroup label="💳 Payments &amp; Digital Banking">
+          <option>UPI &amp; Digital Payments</option>
+          <option>Card Spends &amp; Ecosystem</option>
+          <option>Digital Financial Index</option>
         </optgroup>
         <optgroup label="👥 Social">
           <option>Demographics</option>
@@ -140,7 +167,6 @@
     </div>
 
     <section class="chart-grid" id="charts" aria-live="polite">
-      <p id="chart-prompt" class="chart-prompt" hidden>Select both a Group and a Subgroup above to see charts. The date range below then scopes to the exact indices in that selection.</p>
     </section>
 
     <section class="references" aria-label="References">
