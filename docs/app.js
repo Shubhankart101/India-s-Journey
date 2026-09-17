@@ -393,6 +393,9 @@ async function main() {
       card.classList.add('selected-card');
       setEraBackground(eraKey);
     });
+    card.addEventListener('mouseenter', () => {
+      setEraBackground(eraKey);
+    });
 
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => chart.resetZoom());
@@ -585,13 +588,27 @@ async function main() {
     hero.hidden = false;
   };
 
+  const syncGroupPills = (grpVal) => {
+    if (groupPills.length > 0) {
+      groupPills.forEach(p => p.classList.toggle('active', p.dataset.group === grpVal));
+    }
+  };
+
+  const groupEraMap = {
+    Economic: 'liberalization',
+    Social: 'republic',
+    'Defence & Strategic': 'modern',
+    'Crime & Security': 'republic',
+    'Pew Research': 'modern'
+  };
+
   const groupPills = document.querySelectorAll('.group-pill');
   if (groupPills.length > 0) {
     groupPills.forEach(pill => {
       pill.addEventListener('click', () => {
-        groupPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
+        syncGroupPills(pill.dataset.group);
         groupFilter.value = pill.dataset.group;
+        if (groupEraMap[pill.dataset.group]) setEraBackground(groupEraMap[pill.dataset.group]);
         updateSubgroupFilter();
         updateGroupHero();
         updatePeriods();
@@ -602,13 +619,12 @@ async function main() {
 
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
-    const prompt = document.querySelector('#chart-prompt');
-    if (prompt) prompt.hidden = true;
     updateGroupHero();
     const stateFilter = filter.value;
     const activePill = document.querySelector('.era-pill.active');
     const selectedEra = activePill ? activePill.dataset.era : 'all';
 
+    let visibleCount = 0;
     cards.forEach(card => {
       const cardCategory = card.dataset.category;
       const cardSubgroup = card.dataset.subgroup;
@@ -622,24 +638,48 @@ async function main() {
       const matchesSearch = (!query || cardTitle.includes(query));
       const matchesEra = (selectedEra === 'all' || cardEra === selectedEra);
 
-      card.hidden = !(matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesEra);
+      const isMatch = (matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesEra);
+      card.hidden = !isMatch;
+      if (isMatch) visibleCount++;
     });
     headings.forEach(heading => {
       heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category);
     });
+
+    let emptyMsg = grid.querySelector('.no-charts-message');
+    if (visibleCount === 0) {
+      if (!emptyMsg) {
+        emptyMsg = document.createElement('div');
+        emptyMsg.className = 'no-charts-message';
+        grid.appendChild(emptyMsg);
+      }
+      emptyMsg.innerHTML = `<p style="color:var(--muted); text-align:center; padding:40px; font-size:1.05rem;">No indicators match your current filter selection. Try selecting "All Groups" or "All Subgroups".</p>`;
+      emptyMsg.hidden = false;
+    } else if (emptyMsg) {
+      emptyMsg.hidden = true;
+    }
   };
   filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', () => { 
     const grp = groupFilter.value;
-    if (groupPills.length > 0) {
-      groupPills.forEach(p => p.classList.toggle('active', p.dataset.group === grp));
-    }
+    syncGroupPills(grp);
+    if (groupEraMap[grp]) setEraBackground(groupEraMap[grp]);
     updateSubgroupFilter(); 
     updateGroupHero();
     updatePeriods(); 
     updateCards(); 
   });
-  subgroupFilter.addEventListener('change', () => { if (subgroupGroups[subgroupFilter.value]) groupFilter.value = subgroupGroups[subgroupFilter.value]; updateSubgroupFilter(); updateGroupHero(); updatePeriods(); updateCards(); });
+  subgroupFilter.addEventListener('change', () => { 
+    if (subgroupGroups[subgroupFilter.value]) {
+      groupFilter.value = subgroupGroups[subgroupFilter.value]; 
+      syncGroupPills(groupFilter.value);
+      if (groupEraMap[groupFilter.value]) setEraBackground(groupEraMap[groupFilter.value]);
+    }
+    updateSubgroupFilter(); 
+    updateGroupHero(); 
+    updatePeriods(); 
+    updateCards(); 
+  });
   search.addEventListener('input', updateCards);
   const updateRange = () => {
     const start = rangeStart.value;

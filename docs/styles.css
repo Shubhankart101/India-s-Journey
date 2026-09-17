@@ -122,6 +122,22 @@ h2 { font-size:1.8rem; font-weight:700; }
   margin-bottom: 12px;
   border-bottom: 1px dashed rgba(255, 153, 51, 0.25);
   width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 153, 51, 0.4) transparent;
+}
+.era-pills-bar::-webkit-scrollbar,
+.group-pills-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.era-pills-bar::-webkit-scrollbar-track,
+.group-pills-bar::-webkit-scrollbar-track {
+  background: rgba(13, 18, 25, 0.4);
+  border-radius: 4px;
+}
+.era-pills-bar::-webkit-scrollbar-thumb,
+.group-pills-bar::-webkit-scrollbar-thumb {
+  background: rgba(255, 153, 51, 0.4);
+  border-radius: 4px;
 }
 .era-pill-title {
   color: var(--saffron);
