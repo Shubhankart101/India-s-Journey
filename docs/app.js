@@ -317,10 +317,29 @@ async function main() {
   const grid = document.querySelector('#charts');
   const charts = [];
   let lastCategory = '';
+  let lastSubgroup = '';
   const categoryOrder = { Economic: 0, Social: 1, 'Defence & Strategic': 2, 'Crime & Security': 3, 'Pew Research': 4 };
-  const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[categoryFor(left[0])] ?? 99) - (categoryOrder[categoryFor(right[0])] ?? 99));
+  const subgroupOrder = {
+    Macroeconomics: 0, 'Monetary Policy': 1, 'Trade & External': 2, Markets: 3, Infrastructure: 4, 'Production & Commodities': 5, 'Fiscal & Union Budget': 6, 'Media & Publications': 7,
+    Demographics: 0, Welfare: 1, 'Government Schemes': 2,
+    'Defence Exports & Production': 0, 'Defence Budget & Modernization': 1, 'Strategic Stockpiles & Capabilities': 2,
+    'Violence & Crime': 0, Terrorism: 1, 'Maoism / LWE': 2,
+    'Public opinion': 0
+  };
+  const orderedDefinitions = [...definitions].sort((left, right) => {
+    const catL = categoryFor(left[0]);
+    const catR = categoryFor(right[0]);
+    const catDiff = (categoryOrder[catL] ?? 99) - (categoryOrder[catR] ?? 99);
+    if (catDiff !== 0) return catDiff;
+    const subL = subgroupFor(left[0]);
+    const subR = subgroupFor(right[0]);
+    return (subgroupOrder[subL] ?? 99) - (subgroupOrder[subR] ?? 99);
+  });
+
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = categoryFor(key);
+    const subgroup = subgroupFor(key);
+
     if (category !== lastCategory) {
       const heading = document.createElement('h2');
       heading.className = 'category-heading';
@@ -328,6 +347,17 @@ async function main() {
       heading.textContent = category;
       grid.append(heading);
       lastCategory = category;
+      lastSubgroup = '';
+    }
+
+    if (subgroup !== lastSubgroup) {
+      const subHeading = document.createElement('h3');
+      subHeading.className = 'subgroup-heading';
+      subHeading.dataset.category = category;
+      subHeading.dataset.subgroup = subgroup;
+      subHeading.innerHTML = `<span class="subgroup-badge">${category}</span> ${subgroup}`;
+      grid.append(subHeading);
+      lastSubgroup = subgroup;
     }
     const series = data.series[key] || { error: 'No generated series is available yet' };
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
@@ -498,6 +528,7 @@ async function main() {
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
+  const subHeadings = [...grid.querySelectorAll('.subgroup-heading')];
   const filter = document.querySelector('#chart-filter');
   const groupFilter = document.querySelector('#group-filter');
   const subgroupFilter = document.querySelector('#subgroup-filter');
@@ -710,6 +741,9 @@ async function main() {
     });
     headings.forEach(heading => {
       heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category);
+    });
+    subHeadings.forEach(subHeading => {
+      subHeading.hidden = !cards.some(card => !card.hidden && card.dataset.subgroup === subHeading.dataset.subgroup);
     });
 
     let emptyMsg = grid.querySelector('.no-charts-message');
