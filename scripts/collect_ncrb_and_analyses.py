@@ -109,126 +109,6 @@ def build_economic_offences_data() -> dict:
     }
 
 
-def build_ndps_drug_cases() -> dict:
-    """Build NCRB NDPS drug offences case volume (2014-2023)."""
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
-    values = [46921, 50798, 49255, 63800, 63137, 72737, 59802, 78331, 91542, 108420]
-    return {
-        "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act)",
-        "note": "Annual registered cases under the NDPS Act across India.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_child_protection_pocso() -> dict:
-    """Build NCRB Crimes Against Children & POCSO cases (2014-2023)."""
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"]
-    values = [89423, 94172, 106958, 129032, 141764, 148185, 128531, 149402, 162449, 177435]
-    return {
-        "source": "NCRB Crime in India (Crimes against Children & POCSO Act)",
-        "note": "Annual registered cases of crimes against children including POCSO Act offences.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_road_accidents_fatalities() -> dict:
-    """Build MoRTH / NCRB Road Traffic Accident Fatalities (2010-2024)."""
-    years = ["2010", "2012", "2014", "2016", "2018", "2019", "2020", "2021", "2022", "2023", "2024"]
-    values = [134513, 138258, 139671, 150785, 151417, 151113, 131714, 153972, 168491, 173014, 178200]
-    return {
-        "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI)",
-        "note": "Annual road traffic accident fatalities reported nationwide.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_police_per_population() -> dict:
-    """Build Bureau of Police Research & Development (BPR&D) Police Strength per 100k (2010-2024)."""
-    years = ["2010", "2012", "2014", "2016", "2018", "2020", "2022", "2024"]
-    values = [130.4, 137.8, 141.2, 151.8, 155.8, 152.2, 152.8, 158.4]
-    return {
-        "source": "Bureau of Police Research and Development (BPR&D) Data on Police Organizations",
-        "note": "Sanctioned civil and armed police personnel per 100,000 population.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_lwe_annual_fatalities() -> dict:
-    """Build year-by-year LWE total fatalities trajectory (2004-2025)."""
-    years = [str(y) for y in range(2004, 2026)]
-    values = [566.0, 669.0, 678.0, 696.0, 721.0, 1005.0, 1005.0, 611.0, 415.0, 397.0, 309.0, 226.0, 513.0, 295.0, 412.0, 202.0, 183.0, 147.0, 98.0, 150.0, 285.0, 168.0]
-    return {
-        "source": "Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
-        "note": "Annual total fatalities (civilians, security personnel, and perpetrators) in Left-Wing Extremist violence across affected states.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_northeast_insurgency_fatalities() -> dict:
-    """Build annual insurgency fatalities trajectory in North East India (2000-2025)."""
-    years = [str(y) for y in range(2000, 2026)]
-    values = [1021, 915, 824, 762, 532, 612, 624, 1058, 1051, 854, 321, 314, 316, 252, 212, 273, 164, 112, 72, 34, 42, 21, 25, 114, 82, 45]
-    return {
-        "source": "MHA North East Division & SATP North East Insurgency Database",
-        "note": "Annual total fatalities in insurgent violence across North Eastern states (Assam, Nagaland, Manipur, Meghalaya, Tripura, Arunachal Pradesh).",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_northeast_insurgency_incidents() -> dict:
-    """Build annual insurgency incidents volume in North East India (2014-2025)."""
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
-    values = [824, 574, 484, 308, 252, 223, 162, 209, 241, 212, 185, 142]
-    return {
-        "source": "Ministry of Home Affairs Annual Reports (North East Division)",
-        "note": "Annual count of registered insurgent incidents in NE region, showing an 80%+ decline in security incidents.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_kashmir_insurgency_fatalities() -> dict:
-    """Build annual terrorism & insurgency fatalities in Jammu & Kashmir (2000-2025)."""
-    years = [str(y) for y in range(2000, 2026)]
-    values = [3288, 4507, 3022, 2542, 1810, 1229, 1116, 777, 541, 377, 375, 183, 117, 181, 193, 174, 267, 358, 451, 283, 321, 274, 253, 134, 112, 85]
-    return {
-        "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
-        "note": "Annual total fatalities (civilians, security forces, and terrorists) in J&K counter-terror operations and insurgency violence.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_kashmir_terror_incidents() -> dict:
-    """Build annual terrorist incidents in Jammu & Kashmir (2014-2025)."""
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
-    values = [222, 208, 322, 342, 614, 255, 244, 229, 125, 46, 41, 32]
-    return {
-        "source": "Ministry of Home Affairs J&K Division Performance Reports",
-        "note": "Annual registered terrorist incidents in Jammu & Kashmir showing a sharp decline post-2019.",
-        "labels": years,
-        "values": values
-    }
-
-
-def build_khalistan_insurgency_historical() -> dict:
-    """Build historical fatalities in Punjab militancy (1981-1995)."""
-    years = ["1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995"]
-    values = [13, 13, 75, 1222, 63, 620, 1238, 2429, 2038, 3787, 5265, 3883, 843, 76, 172]
-    return {
-        "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
-        "note": "Annual total fatalities during the Punjab militancy period prior to full restoration of peace.",
-        "labels": years,
-        "values": values
-    }
-
-
 def build_lwe_casualties() -> dict:
     """Build LWE casualty breakdown by category.
 
@@ -330,17 +210,7 @@ def main() -> None:
             "crimes_against_women": build_crimes_against_women(),
             "cyber_crime": build_cyber_crime_data(),
             "economic_offences": build_economic_offences_data(),
-            "ndps_drug_cases": build_ndps_drug_cases(),
-            "child_protection_pocso": build_child_protection_pocso(),
-            "road_accidents_fatalities": build_road_accidents_fatalities(),
-            "police_per_population": build_police_per_population(),
             "violent_incidents": build_violent_incidents_aggregate(),
-            "lwe_incidents": build_lwe_annual_fatalities(),
-            "northeast_insurgency_fatalities": build_northeast_insurgency_fatalities(),
-            "northeast_insurgency_incidents": build_northeast_insurgency_incidents(),
-            "kashmir_insurgency_fatalities": build_kashmir_insurgency_fatalities(),
-            "kashmir_terror_incidents": build_kashmir_terror_incidents(),
-            "khalistan_insurgency_historical": build_khalistan_insurgency_historical(),
             "lwe_civilian_casualties": build_lwe_category_series("civilian"),
             "lwe_security_force_casualties": build_lwe_category_series("security_force"),
             "lwe_perpetrator_casualties": build_lwe_category_series("perpetrator"),
