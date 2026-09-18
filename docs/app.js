@@ -1051,7 +1051,7 @@ async function main() {
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     updateGroupHero();
-    const stateFilter = filter.value;
+    const stateFilter = filter ? filter.value : 'all';
 
     let visibleCount = 0;
     cards.forEach(card => {
@@ -1089,7 +1089,7 @@ async function main() {
       emptyMsg.hidden = true;
     }
   };
-  filter.addEventListener('change', updateCards);
+  if (filter) filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', () => { 
     const grp = groupFilter.value;
     syncGroupPills(grp);
