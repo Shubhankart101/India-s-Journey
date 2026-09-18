@@ -592,7 +592,13 @@ async function main() {
   };
   const updatePeriods = () => {
     const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
-    const periods = [...new Set(scopedCharts.flatMap(({ labels }) => labels))].sort();
+    const rawYears = scopedCharts.flatMap(({ labels }) => 
+      (labels || []).map(l => {
+        const m = String(l).match(/^\d{4}/);
+        return m ? m[0] : null;
+      }).filter(Boolean)
+    );
+    const periods = [...new Set(rawYears)].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     if (!periods.length) return;
     const start = periods[0];
     const end = periods[periods.length - 1];
@@ -743,17 +749,44 @@ async function main() {
   });
   search.addEventListener('input', updateCards);
   const updateRange = () => {
-    const start = rangeStart.value;
-    const end = rangeEnd.value;
+    const startYear = parseInt(rangeStart.value, 10);
+    const endYear = parseInt(rangeEnd.value, 10);
+
     charts.forEach(({ chart, labels, values, datasets }) => {
-      const visible = labels.reduce((result, label, index) => {
-        if (label >= start && label <= end) result.push({ label, value: values[index] });
-        return result;
-      }, []);
+      if (!chart || !chart.data || !labels) return;
+      const isTimeSeries = labels.some(l => /^\d{4}/.test(String(l)));
+      let visible = [];
+
+      if (isTimeSeries && !isNaN(startYear) && !isNaN(endYear)) {
+        visible = labels.reduce((result, label, index) => {
+          const m = String(label).match(/^\d{4}/);
+          const y = m ? parseInt(m[0], 10) : null;
+          if (y !== null && y >= startYear && y <= endYear) {
+            result.push({ label, value: values[index] });
+          }
+          return result;
+        }, []);
+      } else {
+        visible = labels.map((label, index) => ({ label, value: values[index] }));
+      }
+
       chart.data.labels = visible.map(point => point.label);
-      if (chart.data.datasets.length === 1) chart.data.datasets[0].data = visible.map(point => point.value);
-      else chart.data.datasets.forEach((dataset, datasetIndex) => { dataset.data = datasets[datasetIndex].data.map((value, index) => labels[index] >= start && labels[index] <= end ? value : null); });
-      chart.resetZoom();
+      if (chart.data.datasets.length === 1) {
+        chart.data.datasets[0].data = visible.map(point => point.value);
+      } else {
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+          if (isTimeSeries && !isNaN(startYear) && !isNaN(endYear)) {
+            dataset.data = datasets[datasetIndex].data.map((value, index) => {
+              const m = String(labels[index]).match(/^\d{4}/);
+              const y = m ? parseInt(m[0], 10) : null;
+              return (y !== null && y >= startYear && y <= endYear) ? value : null;
+            });
+          } else {
+            dataset.data = datasets[datasetIndex].data;
+          }
+        });
+      }
+      if (typeof chart.resetZoom === 'function') chart.resetZoom();
       chart.update();
     });
   };
