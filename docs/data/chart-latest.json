@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-18T04:53:11+00:00",
+  "generated_at_utc": "2026-09-18T08:56:29+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -2682,6 +2682,116 @@
         14.1
       ]
     },
+    "ndps_drug_cases": {
+      "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act)",
+      "note": "Annual registered cases under the NDPS Act across India.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        46921,
+        50798,
+        49255,
+        63800,
+        63137,
+        72737,
+        59802,
+        78331,
+        91542,
+        108420
+      ]
+    },
+    "child_protection_pocso": {
+      "source": "NCRB Crime in India (Crimes against Children & POCSO Act)",
+      "note": "Annual registered cases of crimes against children including POCSO Act offences.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        89423,
+        94172,
+        106958,
+        129032,
+        141764,
+        148185,
+        128531,
+        149402,
+        162449,
+        177435
+      ]
+    },
+    "road_accidents_fatalities": {
+      "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI)",
+      "note": "Annual road traffic accident fatalities reported nationwide.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        134513,
+        138258,
+        139671,
+        150785,
+        151417,
+        151113,
+        131714,
+        153972,
+        168491,
+        173014,
+        178200
+      ]
+    },
+    "police_per_population": {
+      "source": "Bureau of Police Research and Development (BPR&D) Data on Police Organizations",
+      "note": "Sanctioned civil and armed police personnel per 100,000 population.",
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2020",
+        "2022",
+        "2024"
+      ],
+      "values": [
+        130.4,
+        137.8,
+        141.2,
+        151.8,
+        155.8,
+        152.2,
+        152.8,
+        158.4
+      ]
+    },
     "violent_incidents": {
       "source": "https://ncrb.gov.in/crime-in-india.html",
       "note": "Total reported IPC cognizable violent crime cases across India (murder, attempt to murder, rape, kidnapping, dacoity, robbery, rioting).",
@@ -2715,6 +2825,280 @@
         "period": "2014-2023",
         "frequency": "Annual edition"
       }
+    },
+    "lwe_incidents": {
+      "source": "Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+      "note": "Annual total fatalities (civilians, security personnel, and perpetrators) in Left-Wing Extremist violence across affected states.",
+      "labels": [
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        566.0,
+        669.0,
+        678.0,
+        696.0,
+        721.0,
+        1005.0,
+        1005.0,
+        611.0,
+        415.0,
+        397.0,
+        309.0,
+        226.0,
+        513.0,
+        295.0,
+        412.0,
+        202.0,
+        183.0,
+        147.0,
+        98.0,
+        150.0,
+        285.0,
+        168.0
+      ]
+    },
+    "northeast_insurgency_fatalities": {
+      "source": "MHA North East Division & SATP North East Insurgency Database",
+      "note": "Annual total fatalities in insurgent violence across North Eastern states (Assam, Nagaland, Manipur, Meghalaya, Tripura, Arunachal Pradesh).",
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        1021,
+        915,
+        824,
+        762,
+        532,
+        612,
+        624,
+        1058,
+        1051,
+        854,
+        321,
+        314,
+        316,
+        252,
+        212,
+        273,
+        164,
+        112,
+        72,
+        34,
+        42,
+        21,
+        25,
+        114,
+        82,
+        45
+      ]
+    },
+    "northeast_insurgency_incidents": {
+      "source": "Ministry of Home Affairs Annual Reports (North East Division)",
+      "note": "Annual count of registered insurgent incidents in NE region, showing an 80%+ decline in security incidents.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        824,
+        574,
+        484,
+        308,
+        252,
+        223,
+        162,
+        209,
+        241,
+        212,
+        185,
+        142
+      ]
+    },
+    "kashmir_insurgency_fatalities": {
+      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
+      "note": "Annual total fatalities (civilians, security forces, and terrorists) in J&K counter-terror operations and insurgency violence.",
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        3288,
+        4507,
+        3022,
+        2542,
+        1810,
+        1229,
+        1116,
+        777,
+        541,
+        377,
+        375,
+        183,
+        117,
+        181,
+        193,
+        174,
+        267,
+        358,
+        451,
+        283,
+        321,
+        274,
+        253,
+        134,
+        112,
+        85
+      ]
+    },
+    "kashmir_terror_incidents": {
+      "source": "Ministry of Home Affairs J&K Division Performance Reports",
+      "note": "Annual registered terrorist incidents in Jammu & Kashmir showing a sharp decline post-2019.",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        222,
+        208,
+        322,
+        342,
+        614,
+        255,
+        244,
+        229,
+        125,
+        46,
+        41,
+        32
+      ]
+    },
+    "khalistan_insurgency_historical": {
+      "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
+      "note": "Annual total fatalities during the Punjab militancy period prior to full restoration of peace.",
+      "labels": [
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995"
+      ],
+      "values": [
+        13,
+        13,
+        75,
+        1222,
+        63,
+        620,
+        1238,
+        2429,
+        2038,
+        3787,
+        5265,
+        3883,
+        843,
+        76,
+        172
+      ]
     },
     "lwe_civilian_casualties": {
       "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
@@ -3340,15 +3724,6 @@
         135.0
       ]
     },
-    "lwe_incidents": {
-      "source": "Ministry of Home Affairs LWE Division",
-      "labels": [
-        "2004-2025"
-      ],
-      "values": [
-        8956.0
-      ]
-    },
     "defence_exports": {
       "labels": [
         "2014",
@@ -3972,6 +4347,2079 @@
         82.5
       ],
       "source": "Ministry of Housing and Urban Affairs (PM SVANidhi Micro-Credit Disbursements to Street Vendors in Lakhs)"
+    },
+    "per_capita_nni_inr": {
+      "labels": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        63462.0,
+        70983.0,
+        79118.0,
+        86647.0,
+        94566.0,
+        104880.0,
+        115224.0,
+        125955.0,
+        132115.0,
+        127065.0,
+        148520.0,
+        169496.0,
+        184205.0,
+        201250.0,
+        218500.0
+      ],
+      "source": "MOSPI National Accounts Statistics & Economic Survey (Per Capita Net National Income - NNI at Current Prices in INR)"
+    },
+    "per_capita_income_ppp": {
+      "labels": [
+        "1990",
+        "1995",
+        "2000",
+        "2005",
+        "2010",
+        "2015",
+        "2018",
+        "2020",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        1810.0,
+        2220.0,
+        2880.0,
+        3730.0,
+        5020.0,
+        6720.0,
+        7720.0,
+        7420.0,
+        8880.0,
+        9650.0,
+        10250.0,
+        10980.0,
+        11820.0
+      ],
+      "source": "World Bank Open Data NY.GNP.PCAP.PP.CD (GNI per capita, PPP in current international $)"
+    },
+    "infant_mortality_rate": {
+      "labels": [
+        "1990",
+        "1995",
+        "2000",
+        "2005",
+        "2010",
+        "2015",
+        "2018",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        88.6,
+        76.2,
+        66.7,
+        55.8,
+        45.1,
+        35.2,
+        29.9,
+        27.0,
+        26.6,
+        25.5,
+        24.8,
+        23.9,
+        23.0
+      ],
+      "source": "Sample Registration System (SRS), Registrar General of India & World Bank SP.DYN.IMRT.IN (Infant Mortality Rate per 1,000 live births)"
+    },
+    "maternal_mortality_ratio": {
+      "labels": [
+        "2000",
+        "2005",
+        "2010",
+        "2013",
+        "2016",
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        384.0,
+        280.0,
+        212.0,
+        167.0,
+        130.0,
+        113.0,
+        103.0,
+        97.0,
+        93.0,
+        89.0
+      ],
+      "source": "SRS Special Bulletin on Maternal Mortality in India & WHO/UNICEF (Maternal Mortality Ratio per 100,000 live births)"
+    },
+    "tb_disease_incidence": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        217.0,
+        217.0,
+        211.0,
+        204.0,
+        199.0,
+        193.0,
+        180.0,
+        210.0,
+        198.0,
+        191.0,
+        182.0,
+        175.0
+      ],
+      "source": "Central TB Division, Ministry of Health & Family Welfare Nikshay Portal & WHO (TB Incidence Rate per 100,000 population)"
+    },
+    "non_communicable_diseases_burden": {
+      "labels": [
+        "1990",
+        "1995",
+        "2000",
+        "2005",
+        "2010",
+        "2015",
+        "2019",
+        "2022",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "Non-Communicable Diseases (NCDs: Heart, Diabetes, Cancer %)",
+          "values": [
+            37.9,
+            42.1,
+            46.8,
+            51.5,
+            56.2,
+            61.8,
+            65.2,
+            66.8,
+            68.5
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Communicable & Maternal/Child Diseases (%)",
+          "values": [
+            53.6,
+            47.8,
+            41.5,
+            35.8,
+            30.2,
+            25.1,
+            22.1,
+            20.5,
+            18.8
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "ICMR India State-Level Disease Burden Initiative & IHME Global Burden of Disease (% Total Disease DALYs Burden)"
+    },
+    "health_expenditure_gdp": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "Government Health Spending (% GDP) \ud83c\udfe5",
+          "values": [
+            1.13,
+            1.15,
+            1.18,
+            1.2,
+            1.28,
+            1.28,
+            1.35,
+            1.84,
+            1.95,
+            2.1,
+            2.15,
+            2.25
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Out-of-Pocket Expenditure (% Total Health Exp) \ud83d\udcb8",
+          "values": [
+            64.2,
+            62.6,
+            60.6,
+            58.7,
+            55.0,
+            53.2,
+            50.1,
+            47.1,
+            44.8,
+            42.0,
+            39.5,
+            38.0
+          ],
+          "color": "#ffa657"
+        }
+      ],
+      "source": "National Health Accounts (NHA) Estimates & Ministry of Health and Family Welfare"
+    },
+    "iron_ore_production": {
+      "labels": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        136.6,
+        152.4,
+        129.3,
+        155.8,
+        192.8,
+        200.9,
+        206.7,
+        244.1,
+        204.7,
+        253.9,
+        258.0,
+        277.0,
+        288.0,
+        302.0,
+        315.0
+      ],
+      "source": "Indian Bureau of Mines (IBM) & Ministry of Mines (Iron Ore Production Output in Million Tonnes)"
+    },
+    "bauxite_aluminium_output": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        22.5,
+        28.1,
+        24.7,
+        22.8,
+        23.7,
+        20.4,
+        20.3,
+        22.5,
+        23.8,
+        24.2,
+        25.1,
+        26.4,
+        27.8
+      ],
+      "source": "IBM & Aluminium Association of India (Bauxite Production Output in Million Tonnes)"
+    },
+    "copper_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        384.0,
+        386.0,
+        388.0,
+        395.0,
+        842.0,
+        410.0,
+        364.0,
+        355.0,
+        485.0,
+        510.0,
+        545.0,
+        580.0,
+        615.0
+      ],
+      "source": "Ministry of Mines & Hindustan Copper (Refined Copper Production Output in Thousand Tonnes)"
+    },
+    "manganese_chromite_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        23.8,
+        21.5,
+        23.9,
+        25.9,
+        28.2,
+        29.0,
+        23.7,
+        26.9,
+        27.5,
+        31.0,
+        33.5,
+        36.0,
+        38.2
+      ],
+      "source": "Indian Bureau of Mines Annual Mineral Statistics (Manganese Ore Production Output in Lakh Tonnes)"
+    },
+    "coal_production": {
+      "labels": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        532.0,
+        540.0,
+        556.0,
+        565.0,
+        566.0,
+        609.0,
+        639.0,
+        657.0,
+        675.0,
+        730.0,
+        716.0,
+        778.0,
+        893.0,
+        997.0,
+        1040.0,
+        1090.0,
+        1140.0
+      ],
+      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes)"
+    },
+    "lignite_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        48.3,
+        43.8,
+        45.2,
+        46.7,
+        44.3,
+        42.1,
+        37.8,
+        47.5,
+        46.2,
+        48.0,
+        50.2,
+        52.5,
+        54.8
+      ],
+      "source": "NLC India & Ministry of Coal (Lignite Production Output in Million Tonnes)"
+    },
+    "crude_petroleum_domestic": {
+      "labels": [
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        38.1,
+        37.9,
+        37.8,
+        37.5,
+        36.9,
+        36.0,
+        35.7,
+        32.2,
+        30.5,
+        29.7,
+        29.2,
+        29.4,
+        29.8,
+        30.2,
+        30.8
+      ],
+      "source": "Ministry of Petroleum & Natural Gas / PPAC (Domestic Crude Oil Production in Million Metric Tonnes)"
+    },
+    "natural_gas_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        35.4,
+        32.7,
+        32.2,
+        31.9,
+        32.9,
+        31.1,
+        28.7,
+        34.0,
+        34.5,
+        36.4,
+        38.2,
+        40.1,
+        42.0
+      ],
+      "source": "Directorate General of Hydrocarbons (DGH) & MoPNG (Domestic Natural Gas Production in Billion Cubic Metres - BCM)"
+    },
+    "limestone_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        293.0,
+        307.0,
+        313.0,
+        338.0,
+        379.0,
+        359.0,
+        349.0,
+        392.0,
+        408.0,
+        435.0,
+        458.0,
+        482.0,
+        505.0
+      ],
+      "source": "Indian Bureau of Mines & Cement Manufacturers Association (Limestone Production in Million Tonnes)"
+    },
+    "rare_earths_critical_minerals": {
+      "labels": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        100.0,
+        108.5,
+        115.2,
+        128.4,
+        142.1,
+        138.5,
+        156.2,
+        182.4,
+        215.0,
+        248.0,
+        285.0,
+        320.0
+      ],
+      "source": "IREL (India) Limited & Ministry of Mines Critical Mineral Security Index (Base 100 = 2015)"
+    },
+    "rock_phosphate_gypsum": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        16.2,
+        15.8,
+        14.9,
+        16.5,
+        15.1,
+        14.2,
+        13.5,
+        14.8,
+        15.6,
+        16.8,
+        17.5,
+        18.4,
+        19.2
+      ],
+      "source": "Indian Bureau of Mines (Mineral Fertilizer Raw Material Output - Phosphate & Gypsum in Lakh Tonnes)"
+    },
+    "mineral_metal_exports": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        15.8,
+        14.2,
+        16.5,
+        19.8,
+        22.4,
+        21.0,
+        19.5,
+        25.8,
+        24.2,
+        28.5,
+        32.1,
+        35.8,
+        38.5
+      ],
+      "source": "Directorate General of Foreign Trade (DGFT) & Ministry of Mines (Mineral & Ore Exports Value in USD Billion)"
+    },
+    "iron_ore_exports": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        12.4,
+        6.8,
+        20.4,
+        28.6,
+        16.2,
+        36.5,
+        52.8,
+        26.4,
+        21.2,
+        38.0,
+        42.5,
+        46.0,
+        49.5
+      ],
+      "source": "DGFT & MMTC (Iron Ore Export Volume in Million Tonnes)"
+    },
+    "refined_petroleum_exports": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        63.9,
+        60.5,
+        60.5,
+        65.5,
+        61.1,
+        65.7,
+        56.8,
+        62.8,
+        61.0,
+        62.2,
+        65.4,
+        68.2,
+        71.5
+      ],
+      "source": "Petroleum Planning & Analysis Cell (PPAC), MoPNG (Refined Petroleum Product Exports in Million Metric Tonnes)"
+    },
+    "critical_mineral_import_dependency": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        100.0,
+        99.5,
+        98.8,
+        98.2,
+        97.5,
+        96.8,
+        95.2,
+        92.4,
+        88.5,
+        84.2,
+        79.5,
+        74.0,
+        68.5
+      ],
+      "source": "CEEW & Ministry of Mines Critical Minerals Strategic Import Dependency Index (% Import Reliance for 24 Critical Minerals)"
+    },
+    "upi_transaction_value": {
+      "labels": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.57,
+        1.0,
+        8.77,
+        21.32,
+        41.04,
+        75.61,
+        125.95,
+        182.84,
+        230.5,
+        265.0
+      ],
+      "source": "NPCI & Reserve Bank of India (UPI Annual Transaction Value in INR Lakh Crores)"
+    },
+    "credit_card_spends": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        2.7,
+        3.8,
+        4.6,
+        6.0,
+        7.1,
+        6.3,
+        10.5,
+        14.3,
+        18.3,
+        22.1,
+        25.8
+      ],
+      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores)"
+    },
+    "debit_card_spends": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        2.3,
+        3.3,
+        5.9,
+        6.7,
+        6.6,
+        6.4,
+        7.2,
+        7.4,
+        7.1,
+        7.0,
+        6.8
+      ],
+      "source": "Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)"
+    },
+    "credit_card_in_circulation": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        2.5,
+        3.0,
+        3.7,
+        4.7,
+        5.8,
+        6.2,
+        7.4,
+        8.5,
+        10.2,
+        11.5,
+        12.8
+      ],
+      "source": "Reserve Bank of India Payment System Statistics (Active Credit Cards in Circulation in Crore Cards)"
+    },
+    "debit_card_in_circulation": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        66.2,
+        85.5,
+        86.1,
+        92.0,
+        88.6,
+        89.8,
+        92.1,
+        96.0,
+        97.8,
+        99.2,
+        101.5
+      ],
+      "source": "Reserve Bank of India Payment System Statistics (Active Debit Cards in Circulation in Crore Cards)"
+    },
+    "rbi_digital_payments_index": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        100.0,
+        153.5,
+        207.8,
+        270.6,
+        349.3,
+        395.6,
+        445.5,
+        485.0,
+        525.0
+      ],
+      "source": "Reserve Bank of India DPI Index (RBI Digital Payments Index; Base 100 = March 2018)"
+    },
+    "national_highways_built": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        4410.0,
+        6061.0,
+        8231.0,
+        9829.0,
+        10855.0,
+        10237.0,
+        13327.0,
+        10457.0,
+        10331.0,
+        12349.0,
+        13500.0,
+        14200.0,
+        15000.0
+      ],
+      "source": "Ministry of Road Transport and Highways (MoRTH) (National Highways Construction Cadence in Kilometres/Year)"
+    },
+    "railway_electrification": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        35.8,
+        38.2,
+        41.5,
+        46.2,
+        52.8,
+        60.4,
+        71.2,
+        80.5,
+        88.4,
+        94.8,
+        97.5,
+        99.2,
+        100.0
+      ],
+      "source": "Indian Railways & Ministry of Railways (% of Broad Gauge Rail Network Electrified)"
+    },
+    "renewable_energy_capacity": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        35.5,
+        38.9,
+        46.3,
+        57.2,
+        69.0,
+        78.3,
+        87.2,
+        95.6,
+        114.1,
+        125.2,
+        143.6,
+        175.0,
+        202.0
+      ],
+      "source": "Ministry of New and Renewable Energy (MNRE) & CEA (Total Installed Renewable Energy Capacity in Gigawatts - GW)"
+    },
+    "civil_aviation_passengers": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        103.8,
+        115.8,
+        134.9,
+        158.4,
+        183.9,
+        204.4,
+        115.2,
+        132.8,
+        178.5,
+        222.0,
+        245.8,
+        268.0,
+        290.0
+      ],
+      "source": "DGCA & Ministry of Civil Aviation (Domestic & International Air Passenger Volume in Million Passengers)"
+    },
+    "telecom_broadband_subscribers": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        93.3,
+        112.0,
+        149.7,
+        276.5,
+        412.6,
+        563.3,
+        687.4,
+        747.4,
+        824.9,
+        878.0,
+        924.0,
+        965.0,
+        1010.0
+      ],
+      "source": "Telecom Regulatory Authority of India (TRAI) (High-Speed Broadband Subscribers Base in Million Subscribers)"
+    },
+    "state_gsdp_comparison": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra \ud83c\udfc1",
+          "values": [
+            24.1,
+            26.3,
+            27.1,
+            31.0,
+            35.2,
+            38.8,
+            42.5,
+            46.2,
+            50.1
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Tamil Nadu \ud83c\udfed",
+          "values": [
+            15.1,
+            16.6,
+            17.4,
+            19.8,
+            22.5,
+            24.8,
+            27.2,
+            29.8,
+            32.5
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Gujarat \u2699\ufe0f",
+          "values": [
+            14.2,
+            16.0,
+            16.5,
+            19.4,
+            22.0,
+            24.2,
+            26.8,
+            29.5,
+            32.2
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka \ud83d\udcbb",
+          "values": [
+            14.0,
+            15.6,
+            16.2,
+            18.9,
+            21.4,
+            23.6,
+            26.0,
+            28.5,
+            31.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Uttar Pradesh \ud83c\udf3e",
+          "values": [
+            14.5,
+            15.8,
+            16.4,
+            19.1,
+            21.8,
+            24.0,
+            26.5,
+            29.0,
+            31.8
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "West Bengal \u2693",
+          "values": [
+            10.2,
+            11.4,
+            11.8,
+            13.5,
+            15.3,
+            16.8,
+            18.5,
+            20.2,
+            22.0
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "Reserve Bank of India (RBI) Handbook of Statistics on Indian States & MOSPI (GSDP at Current Prices in INR Lakh Crores)"
+    },
+    "state_per_capita_income": {
+      "labels": [
+        "Telangana",
+        "Karnataka",
+        "Haryana",
+        "Tamil Nadu",
+        "Gujarat",
+        "Maharashtra",
+        "Kerala",
+        "Punjab",
+        "West Bengal",
+        "Rajasthan",
+        "Odisha",
+        "Madhya Pradesh",
+        "Uttar Pradesh",
+        "Bihar"
+      ],
+      "values": [
+        3.12,
+        3.01,
+        2.96,
+        2.75,
+        2.73,
+        2.52,
+        2.48,
+        1.82,
+        1.41,
+        1.35,
+        1.3,
+        1.22,
+        0.83,
+        0.54
+      ],
+      "source": "MOSPI & RBI Handbook of Statistics on Indian States (Net State Domestic Product Per Capita in INR Lakhs)"
+    },
+    "state_fdi_inflows": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra",
+          "values": [
+            14.8,
+            16.2,
+            14.5,
+            15.4,
+            14.8,
+            15.6,
+            17.2,
+            18.8
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Karnataka",
+          "values": [
+            7.5,
+            8.6,
+            18.4,
+            10.3,
+            4.8,
+            5.5,
+            6.2,
+            7.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Gujarat",
+          "values": [
+            4.3,
+            21.9,
+            2.7,
+            4.7,
+            4.9,
+            7.3,
+            8.5,
+            9.6
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Delhi NCR",
+          "values": [
+            7.6,
+            5.6,
+            8.2,
+            8.1,
+            6.5,
+            6.8,
+            7.2,
+            7.8
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Tamil Nadu",
+          "values": [
+            2.4,
+            2.3,
+            3.0,
+            2.8,
+            2.2,
+            2.9,
+            3.4,
+            4.0
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "DPIIT & Ministry of Commerce State-wise FDI Equity Inflows (USD Billion)"
+    },
+    "state_debt_to_gsdp": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra (17.5%)",
+          "values": [
+            17.8,
+            17.6,
+            20.2,
+            19.8,
+            18.5,
+            18.2,
+            18.0,
+            17.8,
+            17.5
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Gujarat (17.1%)",
+          "values": [
+            18.5,
+            18.2,
+            21.0,
+            19.4,
+            18.2,
+            17.9,
+            17.6,
+            17.4,
+            17.1
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka (23.0%)",
+          "values": [
+            18.2,
+            18.5,
+            23.2,
+            23.8,
+            22.6,
+            22.1,
+            22.5,
+            22.8,
+            23.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Tamil Nadu (25.8%)",
+          "values": [
+            22.4,
+            23.1,
+            27.5,
+            27.8,
+            27.2,
+            26.8,
+            26.5,
+            26.2,
+            25.8
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Uttar Pradesh (28.5%)",
+          "values": [
+            28.6,
+            29.2,
+            34.2,
+            33.5,
+            32.1,
+            30.5,
+            29.8,
+            29.2,
+            28.5
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "West Bengal (35.0%)",
+          "values": [
+            34.5,
+            35.2,
+            38.6,
+            37.8,
+            37.1,
+            36.5,
+            36.0,
+            35.5,
+            35.0
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "RBI Study on State Finances & NITI Aayog (% Total Debt / Outstanding Liabilities to GSDP Ratio)"
+    },
+    "state_own_tax_revenue": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "datasets": [
+        {
+          "label": "Maharashtra SOTR",
+          "values": [
+            1.85,
+            1.98,
+            2.12,
+            2.56,
+            2.92,
+            3.25,
+            3.65,
+            4.05
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Tamil Nadu SOTR",
+          "values": [
+            1.12,
+            1.2,
+            1.28,
+            1.54,
+            1.76,
+            1.98,
+            2.22,
+            2.48
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Gujarat SOTR",
+          "values": [
+            0.89,
+            0.95,
+            1.04,
+            1.28,
+            1.46,
+            1.65,
+            1.88,
+            2.12
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka SOTR",
+          "values": [
+            1.02,
+            1.1,
+            1.18,
+            1.42,
+            1.62,
+            1.82,
+            2.05,
+            2.3
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "Uttar Pradesh SOTR",
+          "values": [
+            1.22,
+            1.31,
+            1.42,
+            1.68,
+            1.92,
+            2.18,
+            2.46,
+            2.78
+          ],
+          "color": "#f6c344"
+        }
+      ],
+      "source": "Controller General of Accounts & RBI State Finances (State Own Tax Revenue - SOTR in INR Lakh Crores)"
+    },
+    "state_gst_collections": {
+      "labels": [
+        "Maharashtra",
+        "Karnataka",
+        "Gujarat",
+        "Tamil Nadu",
+        "Uttar Pradesh",
+        "West Bengal",
+        "Haryana",
+        "Delhi NCR"
+      ],
+      "values": [
+        28500,
+        12800,
+        11400,
+        10600,
+        9200,
+        5800,
+        5600,
+        5400
+      ],
+      "source": "GSTN Portal & Ministry of Finance (Average Monthly State GST Collections in INR Crores)"
+    },
+    "state_operating_factories": {
+      "labels": [
+        "Tamil Nadu",
+        "Gujarat",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Karnataka",
+        "Andhra Pradesh"
+      ],
+      "values": [
+        38837,
+        28479,
+        25610,
+        16184,
+        15820,
+        14205
+      ],
+      "source": "MOSPI Annual Survey of Industries (ASI) (Total Operating Registered Factories Count by State)"
+    },
+    "state_manufacturing_gsdp_share": {
+      "labels": [
+        "Gujarat",
+        "Himachal Pradesh",
+        "Tamil Nadu",
+        "Maharashtra",
+        "Haryana",
+        "Karnataka",
+        "Punjab",
+        "West Bengal"
+      ],
+      "values": [
+        36.5,
+        29.8,
+        24.2,
+        21.5,
+        19.8,
+        18.2,
+        14.5,
+        12.8
+      ],
+      "source": "MOSPI National Accounts & RBI State Statistics (Manufacturing Sector % Share of GSDP)"
+    },
+    "state_pmay_homes": {
+      "labels": [
+        "Uttar Pradesh",
+        "Madhya Pradesh",
+        "Bihar",
+        "West Bengal",
+        "Rajasthan",
+        "Maharashtra"
+      ],
+      "values": [
+        34.5,
+        31.2,
+        28.6,
+        26.4,
+        18.9,
+        16.5
+      ],
+      "source": "Ministry of Rural Development & MoHUA (PMAY Cumulative Pucca Housing Units Completed in Lakhs)"
+    },
+    "state_jjm_water_coverage": {
+      "labels": [
+        "Goa",
+        "Haryana",
+        "Gujarat",
+        "Punjab",
+        "Himachal",
+        "Bihar",
+        "Uttar Pradesh",
+        "West Bengal"
+      ],
+      "values": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        96.4,
+        84.2,
+        52.8
+      ],
+      "source": "Ministry of Jal Shakti Har Ghar Jal Open Dashboard (% Rural Households with Tap Water Connections)"
+    },
+    "state_mudra_loans": {
+      "labels": [
+        "Tamil Nadu",
+        "West Bengal",
+        "Karnataka",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Bihar"
+      ],
+      "values": [
+        285400.0,
+        242100.0,
+        238500.0,
+        226800.0,
+        215400.0,
+        185200.0
+      ],
+      "source": "PMMY MUDRA Portal & Department of Financial Services (Cumulative Loan Disbursements in INR Crores)"
+    },
+    "state_pmjdy_bank_accounts": {
+      "labels": [
+        "Uttar Pradesh",
+        "Bihar",
+        "West Bengal",
+        "Madhya Pradesh",
+        "Rajasthan",
+        "Maharashtra",
+        "Odisha",
+        "Assam"
+      ],
+      "values": [
+        9.25,
+        5.82,
+        4.95,
+        4.12,
+        3.58,
+        3.42,
+        2.15,
+        2.08
+      ],
+      "source": "Department of Financial Services, Ministry of Finance (PM Jan Dhan Yojana Bank Accounts in Crores by State)"
+    },
+    "state_pmjay_health_cards": {
+      "labels": [
+        "Uttar Pradesh",
+        "Madhya Pradesh",
+        "Gujarat",
+        "Chhattisgarh",
+        "Bihar",
+        "Maharashtra",
+        "Rajasthan",
+        "Assam"
+      ],
+      "values": [
+        4.85,
+        3.92,
+        2.45,
+        2.15,
+        2.08,
+        1.95,
+        1.88,
+        1.62
+      ],
+      "source": "National Health Authority PM-JAY Open Dashboard (Ayushman Bharat Health Cards Issued in Crores by State)"
+    },
+    "state_pmsvanidhi_street_vendors": {
+      "labels": [
+        "Uttar Pradesh",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Telangana",
+        "Gujarat",
+        "Tamil Nadu",
+        "Karnataka",
+        "Bihar"
+      ],
+      "values": [
+        18.2,
+        9.5,
+        8.4,
+        6.2,
+        5.8,
+        4.9,
+        4.5,
+        3.8
+      ],
+      "source": "MoHUA PM SVANidhi Portal (Micro-Credit Working Capital Loans Disbursed in Lakh Vendors by State)"
+    },
+    "state_renewable_energy_capacity": {
+      "labels": [
+        "Rajasthan",
+        "Gujarat",
+        "Tamil Nadu",
+        "Karnataka",
+        "Maharashtra",
+        "Andhra Pradesh",
+        "Madhya Pradesh"
+      ],
+      "values": [
+        28.5,
+        26.2,
+        21.4,
+        18.9,
+        14.8,
+        11.2,
+        8.9
+      ],
+      "source": "Ministry of New and Renewable Energy (MNRE) & CEA (Installed Solar & Wind Energy Capacity in GW by State)"
+    },
+    "state_national_highway_length": {
+      "labels": [
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Rajasthan",
+        "Madhya Pradesh",
+        "Gujarat",
+        "Karnataka",
+        "Tamil Nadu",
+        "Assam"
+      ],
+      "values": [
+        18459,
+        12272,
+        10618,
+        9105,
+        8760,
+        7652,
+        6850,
+        4077
+      ],
+      "source": "Ministry of Road Transport and Highways (MoRTH) (National Highways Length in Kilometres by State)"
+    },
+    "state_literacy_rates": {
+      "labels": [
+        "Kerala",
+        "Mizoram",
+        "Goa",
+        "Tripura",
+        "Himachal Pradesh",
+        "Tamil Nadu",
+        "Maharashtra",
+        "Gujarat",
+        "West Bengal",
+        "Punjab",
+        "Uttar Pradesh",
+        "Bihar"
+      ],
+      "values": [
+        96.2,
+        91.3,
+        88.7,
+        87.8,
+        83.8,
+        80.1,
+        82.3,
+        78.0,
+        76.3,
+        75.8,
+        67.7,
+        61.8
+      ],
+      "source": "MOSPI Periodic Labour Force Survey & Census Estimates (Literacy Rate % across States)"
+    },
+    "state_infant_mortality_rate": {
+      "labels": [
+        "Kerala",
+        "Delhi NCR",
+        "Tamil Nadu",
+        "Maharashtra",
+        "Punjab",
+        "Gujarat",
+        "West Bengal",
+        "Uttar Pradesh",
+        "Madhya Pradesh"
+      ],
+      "values": [
+        6.0,
+        12.0,
+        13.0,
+        16.0,
+        18.0,
+        23.0,
+        22.0,
+        38.0,
+        43.0
+      ],
+      "source": "Sample Registration System (SRS) Bulletin, Registrar General of India (Infant Mortality Rate per 1,000 live births by State)"
+    },
+    "state_life_expectancy": {
+      "labels": [
+        "Kerala",
+        "Delhi NCR",
+        "Jammu & Kashmir",
+        "Himachal Pradesh",
+        "Punjab",
+        "Maharashtra",
+        "Tamil Nadu",
+        "Gujarat",
+        "Uttar Pradesh"
+      ],
+      "values": [
+        75.2,
+        74.8,
+        74.2,
+        73.5,
+        72.8,
+        72.5,
+        72.1,
+        70.2,
+        65.8
+      ],
+      "source": "SRS Abridged Life Tables, Registrar General of India (Life Expectancy at Birth in Years by State)"
+    },
+    "state_ev_adoption_charging": {
+      "labels": [
+        "Maharashtra",
+        "Karnataka",
+        "Tamil Nadu",
+        "Delhi NCR",
+        "Uttar Pradesh",
+        "Gujarat",
+        "Rajasthan",
+        "Kerala"
+      ],
+      "values": [
+        185.0,
+        162.0,
+        148.0,
+        135.0,
+        128.0,
+        112.0,
+        95.0,
+        88.0
+      ],
+      "source": "Ministry of Heavy Industries VAHAN Portal (Electric Vehicle Registrations & POS Charging Stations in Thousands by State)"
+    },
+    "state_export_preparedness_index": {
+      "labels": [
+        "Tamil Nadu",
+        "Maharashtra",
+        "Karnataka",
+        "Gujarat",
+        "Haryana",
+        "Telangana",
+        "Uttar Pradesh",
+        "Punjab"
+      ],
+      "values": [
+        79.2,
+        78.6,
+        76.4,
+        73.2,
+        63.5,
+        61.8,
+        58.2,
+        54.1
+      ],
+      "source": "NITI Aayog Export Preparedness Index (EPI Overall Composite Score out of 100 by State)"
+    },
+    "state_ease_of_doing_business": {
+      "labels": [
+        "Andhra Pradesh",
+        "Gujarat",
+        "Haryana",
+        "Karnataka",
+        "Punjab",
+        "Tamil Nadu",
+        "Telangana",
+        "Uttar Pradesh"
+      ],
+      "values": [
+        97.8,
+        96.5,
+        95.8,
+        95.2,
+        94.8,
+        94.2,
+        93.9,
+        92.5
+      ],
+      "source": "DPIIT Business Reform Action Plan (BRAP Top Achievers Ease of Doing Business Score % by State)"
+    },
+    "auto_production_volume": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        23.4,
+        24.0,
+        25.8,
+        29.1,
+        30.9,
+        26.4,
+        22.7,
+        23.0,
+        25.9,
+        28.4,
+        30.1,
+        32.5,
+        34.8
+      ],
+      "source": "Society of Indian Automobile Manufacturers (SIAM) (Total Automobile Production Output in Million Units)"
+    },
+    "crude_steel_production": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        88.9,
+        89.8,
+        97.4,
+        101.5,
+        109.3,
+        109.1,
+        103.5,
+        120.3,
+        125.3,
+        140.2,
+        144.8,
+        152.0,
+        160.0
+      ],
+      "source": "Ministry of Steel & Joint Plant Committee (JPC) (Crude Steel Production Output in Million Tonnes)"
+    },
+    "electronics_manufacturing": {
+      "labels": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        1.9,
+        2.4,
+        3.2,
+        4.5,
+        5.3,
+        5.5,
+        6.2,
+        8.2,
+        10.1,
+        11.5,
+        13.2,
+        15.0
+      ],
+      "source": "Ministry of Electronics and Information Technology (MeitY) & ICEA (Electronics & Mobile Manufacturing Output in INR Lakh Crores)"
+    },
+    "pharma_exports_trajectory": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        15.4,
+        16.9,
+        16.8,
+        17.3,
+        19.1,
+        20.7,
+        24.4,
+        24.6,
+        25.4,
+        27.9,
+        30.2,
+        32.8,
+        35.5
+      ],
+      "source": "Pharmexcil & Ministry of Commerce (Pharmaceutical & Biotech Exports Trajectory in USD Billion)"
+    },
+    "textiles_apparel_exports": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        36.2,
+        35.6,
+        36.8,
+        37.1,
+        36.5,
+        33.7,
+        30.4,
+        44.4,
+        35.8,
+        37.2,
+        39.5,
+        41.8,
+        44.2
+      ],
+      "source": "Ministry of Textiles & DGFT (Textiles, Garments & Technical Textiles Export Trajectory in USD Billion)"
     },
     "indian_matrix": {
       "labels": [

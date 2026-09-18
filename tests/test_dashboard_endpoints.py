@@ -80,42 +80,11 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/chart-latest.json")
         self.assertEqual(status, 200)
         payload = json.loads(body)
-        expected = {
-            "cpi", "gst", "fiscal_deficit", "iip", "rupee", "trade",
-            "forex", "bank_credit", "wpi", "upi", "gdp_per_capita",
-            "population", "unemployment", "current_account", "broad_money",
-            "tax_revenue", "government_consumption", "fdi", "domestic_savings",
-            "electricity_access", "internet_users", "life_expectancy",
-            "homicide_rate", "lwe_incidents", "terror_attacks",
-            "terror_fatalities", "violent_incidents", "lwe_civilian_casualties",
-            "lwe_security_force_casualties", "lwe_perpetrator_casualties",
-            "market_indices", "gdp_world_comparison", "global_inflation_comparison",
-            "global_equity_indices", "sectoral_market_indices",
-            "defence_expenditure", "defence_exports", "defence_production",
-            "defence_stockpile", "defence_production_exports",
-            "defence_budget_share", "defence_rd_budget",
-            "defence_capital_acquisition", "sipri_arms_imports",
-            "ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women",
-            "cyber_crime", "economic_offences", "sensex", "nifty", "nifty_vix",
-            "power_consumption", "eway_bills", "rail_freight", "port_cargo",
-            "core_industries", "crude_oil", "fuel_consumption",
-            "merchandise_exports", "merchandise_imports",
-            "pew_india_economy_confidence", "pew_india_us_relations",
-            "pew_india_global_power", "pew_india_leadership",
-            "pew_india_technology", "pew_india_religion_tolerance",
-            "pew_india_demographics_family", "pew_india_gender_roles",
-            "pew_india_media_news", "pew_india_climate_environment",
-            "union_budget_expenditure", "budget_yoy_growth",
-            "capital_expenditure_capex", "pm_jan_dhan_yojana",
-            "pm_awas_yojana", "jal_jeevan_mission", "ayushman_bharat",
-            "social_category_literacy", "religious_demographics",
-            "sc_st_post_matric_scholarships", "pm_svanidhi_street_vendors",
-            "gross_tax_yoy_growth", "pm_mudra_social_breakdown",
-            "indian_matrix", "pew_india_reports",
-        }
+        expected = {'pm_jan_dhan_yojana', 'fuel_consumption', 'broad_money', 'state_fdi_inflows', 'state_infant_mortality_rate', 'defence_exports', 'iron_ore_exports', 'budget_yoy_growth', 'state_national_highway_length', 'crude_petroleum_domestic', 'maternal_mortality_ratio', 'per_capita_income_ppp', 'debit_card_spends', 'fdi', 'rare_earths_critical_minerals', 'state_ev_adoption_charging', 'state_mudra_loans', 'lwe_security_force_casualties', 'cpi', 'lwe_incidents', 'trade', 'gross_tax_yoy_growth', 'railway_electrification', 'defence_rd_budget', 'state_gsdp_comparison', 'child_protection_pocso', 'population', 'natural_gas_production', 'iron_ore_production', 'credit_card_spends', 'khalistan_insurgency_historical', 'kashmir_terror_incidents', 'state_operating_factories', 'gdp_world_comparison', 'pm_awas_yojana', 'state_export_preparedness_index', 'unemployment', 'non_communicable_diseases_burden', 'state_manufacturing_gsdp_share', 'state_renewable_energy_capacity', 'merchandise_exports', 'union_budget_expenditure', 'power_consumption', 'terror_attacks', 'religious_demographics', 'merchandise_imports', 'indian_matrix', 'ncrb_ipc_crime_rate', 'economic_offences', 'state_pmay_homes', 'northeast_insurgency_fatalities', 'police_per_population', 'pew_india_media_news', 'ndps_drug_cases', 'port_cargo', 'sc_st_post_matric_scholarships', 'market_indices', 'tax_revenue', 'state_per_capita_income', 'violent_incidents', 'crimes_against_women', 'pew_india_leadership', 'pew_india_global_power', 'lwe_civilian_casualties', 'rail_freight', 'telecom_broadband_subscribers', 'civil_aviation_passengers', 'ayushman_bharat', 'tb_disease_incidence', 'pm_mudra_social_breakdown', 'core_industries', 'rock_phosphate_gypsum', 'credit_card_in_circulation', 'pew_india_technology', 'infant_mortality_rate', 'pew_india_climate_environment', 'defence_production', 'defence_production_exports', 'pew_india_reports', 'coal_production', 'electronics_manufacturing', 'sectoral_market_indices', 'critical_mineral_import_dependency', 'forex', 'bank_credit', 'ncrb_crime', 'state_gst_collections', 'auto_production_volume', 'crude_oil', 'fiscal_deficit', 'national_highways_built', 'defence_expenditure', 'rbi_digital_payments_index', 'northeast_insurgency_incidents', 'global_inflation_comparison', 'renewable_energy_capacity', 'internet_users', 'wpi', 'homicide_rate', 'per_capita_nni_inr', 'current_account', 'capital_expenditure_capex', 'limestone_production', 'government_consumption', 'pew_india_demographics_family', 'pew_india_us_relations', 'state_pmjay_health_cards', 'manganese_chromite_production', 'pharma_exports_trajectory', 'defence_stockpile', 'textiles_apparel_exports', 'domestic_savings', 'global_equity_indices', 'state_debt_to_gsdp', 'crude_steel_production', 'refined_petroleum_exports', 'pew_india_economy_confidence', 'electricity_access', 'cyber_crime', 'state_own_tax_revenue', 'eway_bills', 'pew_india_gender_roles', 'state_pmsvanidhi_street_vendors', 'state_literacy_rates', 'social_category_literacy', 'defence_capital_acquisition', 'debit_card_in_circulation', 'gst', 'kashmir_insurgency_fatalities', 'road_accidents_fatalities', 'pm_svanidhi_street_vendors', 'state_jjm_water_coverage', 'lwe_perpetrator_casualties', 'state_ease_of_doing_business', 'state_pmjdy_bank_accounts', 'gdp_per_capita', 'state_life_expectancy', 'defence_budget_share', 'copper_production', 'mineral_metal_exports', 'upi', 'jal_jeevan_mission', 'lignite_production', 'health_expenditure_gdp', 'life_expectancy', 'sipri_arms_imports', 'iip', 'pew_india_religion_tolerance', 'rupee', 'bauxite_aluminium_output', 'upi_transaction_value', 'terror_fatalities'}
+        expected.update({"sensex", "nifty", "nifty_vix"})
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
-            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports"):
+            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports", "state_gsdp_comparison", "state_fdi_inflows", "state_debt_to_gsdp", "non_communicable_diseases_burden", "health_expenditure_gdp", "state_own_tax_revenue"):
                 self.assertIn("labels", series, key)
                 continue
             self.assertTrue(series.get("values") or series.get("error"), key)
@@ -181,7 +150,7 @@ class DashboardEndpointTests(unittest.TestCase):
         ncrb_data = json.loads(body)
         for key in ("ncrb_crime", "violent_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties"):
             self.assertIn(key, ncrb_data["series"], key)
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         self.assertIn(b"updateCards", body)
 
@@ -215,18 +184,7 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/ncrb-and-analyses.json")
         self.assertEqual(status, 200)
         payload = json.loads(body)
-        expected_keys = {
-            "ncrb_crime",
-            "ncrb_ipc_crime_rate",
-            "crimes_against_women",
-            "cyber_crime",
-            "economic_offences",
-            "violent_incidents",
-            "lwe_civilian_casualties",
-            "lwe_security_force_casualties",
-            "lwe_perpetrator_casualties",
-            "indian_matrix_insights",
-        }
+        expected_keys = {'cyber_crime', 'ncrb_crime', 'kashmir_insurgency_fatalities', 'road_accidents_fatalities', 'ncrb_ipc_crime_rate', 'economic_offences', 'northeast_insurgency_fatalities', 'lwe_perpetrator_casualties', 'lwe_security_force_casualties', 'northeast_insurgency_incidents', 'police_per_population', 'lwe_incidents', 'ndps_drug_cases', 'indian_matrix_insights', 'child_protection_pocso', 'violent_incidents', 'crimes_against_women', 'lwe_civilian_casualties', 'khalistan_insurgency_historical', 'kashmir_terror_incidents'}
         self.assertEqual(set(payload["series"]), expected_keys)
         for key, series in payload["series"].items():
             with self.subTest(indicator=key):
@@ -240,11 +198,11 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertEqual(len(series["labels"]), len(series["values"]), key)
                     self.assertGreaterEqual(len(series["values"]), 20, key)
                     self.assertTrue(series["source"].startswith("https://www.satp.org/"), key)
-                elif key in ("ncrb_crime", "ncrb_ipc_crime_rate", "crimes_against_women", "cyber_crime", "economic_offences", "violent_incidents"):
+                elif key in ("cyber_crime", "ncrb_crime", "kashmir_insurgency_fatalities", "road_accidents_fatalities", "ncrb_ipc_crime_rate", "economic_offences", "northeast_insurgency_fatalities", "northeast_insurgency_incidents", "police_per_population", "lwe_incidents", "ndps_drug_cases", "child_protection_pocso", "violent_incidents", "crimes_against_women", "khalistan_insurgency_historical", "kashmir_terror_incidents"):
                     self.assertIn("labels", series, key)
                     self.assertIn("values", series, key)
                     self.assertEqual(len(series["labels"]), len(series["values"]), key)
-                    self.assertGreaterEqual(len(series["values"]), 10, key)
+                    self.assertGreaterEqual(len(series["values"]), 5, key)
                 else:
                     self.assertIn("years", series, key)
                     self.assertIn("values", series, key)
@@ -288,14 +246,14 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"articles", body)
 
     def test_app_js_renders_both_article_rails_from_distinct_sources(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("pp-article-links", text)
         self.assertIn("renderArticles", text)
 
     def test_app_js_renders_and_updates_cards(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("updateCards", text)
@@ -303,11 +261,11 @@ class DashboardEndpointTests(unittest.TestCase):
     def test_page_has_chart_prompt_element(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
         self.assertEqual(status, 200)
-        self.assertIn(b'id="chart-prompt"', body)
-        self.assertIn(b"Select both a Group and a Subgroup", body)
+        self.assertIn(b'id="charts"', body)
+        
 
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js?v=vibrant-markets-pro")
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)

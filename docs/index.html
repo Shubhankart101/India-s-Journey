@@ -81,28 +81,70 @@
       <div><span>Interaction</span><strong>Hover, zoom, pan, reset</strong></div>
     </section>
 
-    <section class="chart-controls" aria-label="Chart controls">
+        <section class="chart-controls" aria-label="Chart controls">
       <div class="group-pills-bar" id="group-pills">
         <button type="button" class="group-pill active" data-group="all">🇮🇳 All Groups</button>
         <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
+        <button type="button" class="group-pill" data-group="Industry Trends &amp; Performance">🏭 Industry Trends</button>
+        <button type="button" class="group-pill" data-group="Mining &amp; Natural Resources">⛏️ Mined Resources</button>
+        <button type="button" class="group-pill" data-group="Payments &amp; Digital Banking">💳 Payments &amp; Banking</button>
+        <button type="button" class="group-pill" data-group="State Performance &amp; Regional Health">🏛️ State Performance</button>
+        <button type="button" class="group-pill" data-group="Public Health &amp; Epidemiology">🩺 Public Health</button>
         <button type="button" class="group-pill" data-group="Social">👥 Social</button>
         <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
       </div>
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, Defence, Crime)..."></label>
-      <label>Group <select id="group-filter"><option value="all" selected>All groups</option><option value="Economic">Economic</option><option value="Social">Social</option><option value="Defence &amp; Strategic">Defence &amp; Strategic</option><option value="Crime &amp; Security">Crime &amp; Security</option><option value="Pew Research">Pew Research</option></select></label>
+      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, State, Mining, Crime)..."></label>
+      <label>Group <select id="group-filter">
+        <option value="all" selected>All groups</option>
+        <option value="Economic">Economic</option>
+        <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
+        <option value="Mining &amp; Natural Resources">Mining &amp; Natural Resources</option>
+        <option value="Payments &amp; Digital Banking">Payments &amp; Digital Banking</option>
+        <option value="State Performance &amp; Regional Health">State Performance &amp; Regional Health</option>
+        <option value="Public Health &amp; Epidemiology">Public Health &amp; Epidemiology</option>
+        <option value="Social">Social</option>
+        <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
+        <option value="Crime &amp; Security">Crime &amp; Security</option>
+        <option value="Pew Research">Pew Research</option>
+      </select></label>
       <label>Subgroup <select id="subgroup-filter">
         <option value="all" selected>All subgroups</option>
         <optgroup label="📈 Economic">
           <option>Macroeconomics</option>
+          <option>Per Capita Income &amp; Wealth</option>
           <option>Monetary Policy</option>
           <option>Trade &amp; External</option>
           <option>Markets</option>
-          <option>Infrastructure</option>
-          <option>Production &amp; Commodities</option>
-          <option>Media &amp; Publications</option>
           <option>Fiscal &amp; Union Budget</option>
+          <option>Media &amp; Publications</option>
+        </optgroup>
+        <optgroup label="🏭 Industry Trends &amp; Performance">
+          <option>Manufacturing &amp; Industrial Growth</option>
+          <option>Infrastructure Development</option>
+          <option>Production &amp; Commodities</option>
+        </optgroup>
+        <optgroup label="⛏️ Mining &amp; Natural Resources">
+          <option>Metallic Minerals &amp; Ores</option>
+          <option>Energy Minerals &amp; Fuel</option>
+          <option>Non-Metallic &amp; Industrial Minerals</option>
+          <option>Mineral Exports &amp; Trade</option>
+        </optgroup>
+        <optgroup label="💳 Payments &amp; Digital Banking">
+          <option>UPI &amp; Digital Payments</option>
+          <option>Card Spends &amp; Ecosystem</option>
+          <option>Digital Financial Index</option>
+        </optgroup>
+        <optgroup label="🏛️ State Performance &amp; Regional Health">
+          <option>State Financial Health &amp; GSDP</option>
+          <option>State Industrial &amp; Manufacturing Hubs</option>
+          <option>State Welfare &amp; Scheme Coverage</option>
+        </optgroup>
+        <optgroup label="🩺 Public Health &amp; Epidemiology">
+          <option>Mortality &amp; Lifespan Milestones</option>
+          <option>Disease Burden &amp; Epidemiology</option>
+          <option>Health Infrastructure &amp; Spending</option>
         </optgroup>
         <optgroup label="👥 Social">
           <option>Demographics</option>
@@ -115,9 +157,12 @@
           <option>Strategic Stockpiles &amp; Capabilities</option>
         </optgroup>
         <optgroup label="⚖️ Crime &amp; Security">
+          <option>Maoism / LWE</option>
+          <option>Jammu &amp; Kashmir Insurgency</option>
+          <option>North East Insurgency</option>
+          <option>Punjab Militancy &amp; Security</option>
           <option>Violence &amp; Crime</option>
           <option>Terrorism</option>
-          <option>Maoism / LWE</option>
         </optgroup>
         <optgroup label="📊 Pew Research">
           <option>Public opinion</option>
@@ -139,7 +184,6 @@
     </div>
 
     <section class="chart-grid" id="charts" aria-live="polite">
-      <p id="chart-prompt" class="chart-prompt" hidden>Select both a Group and a Subgroup above to see charts. The date range below then scopes to the exact indices in that selection.</p>
     </section>
 
     <section class="references" aria-label="References">
@@ -213,10 +257,20 @@
   </main>
 
   <footer>Inspired by PolityPolicy.com and Polity and Policy. Independent dashboard; charts are generated from the cited public sources.</footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
   <script src="data.js"></script>
   <script src="vendor/chart.umd.min.js"></script>
   <script src="vendor/hammer.min.js"></script>
   <script src="vendor/chartjs-plugin-zoom.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"><\/script>');
+      document.write('<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"><\/script>');
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
+    }
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
