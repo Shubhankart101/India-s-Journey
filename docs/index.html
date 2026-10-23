@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>India's Journey | Public Data Dashboard</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=state-source-index-20261023-2">
 </head>
 <body>
   <div id="era-bg-layer" class="era-bg-layer"></div>
@@ -138,6 +138,7 @@
         </optgroup>
         <optgroup label="🏛️ State Performance &amp; Regional Health">
           <option>State Financial Health &amp; GSDP</option>
+          <option>State Infrastructure &amp; Services</option>
           <option>State Industrial &amp; Manufacturing Hubs</option>
           <option>State Welfare &amp; Scheme Coverage</option>
         </optgroup>
@@ -188,6 +189,11 @@
 
     <section class="references" aria-label="References">
       <h2>🔗 References</h2>
+      <details class="chart-source-index">
+        <summary>Graph source index <span id="chart-source-index-count"></span></summary>
+        <label class="chart-source-index-search">Find a graph or URL <input id="chart-source-index-search" type="search" placeholder="Search chart titles, sources, or URLs"></label>
+        <ul id="chart-source-index-list" aria-live="polite"></ul>
+      </details>
       <details>
         <summary>🔗 References: APIs, official portals, and runtime libraries</summary>
         <div class="reference-columns">
@@ -271,6 +277,6 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="app.js"></script>
+  <script src="app.js?v=state-source-index-20261023-2"></script>
 </body>
 </html>

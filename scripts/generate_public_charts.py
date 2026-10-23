@@ -10,10 +10,26 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from zipfile import ZipFile
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
+RBI_STATE_WORKBOOKS = {
+    "pcnsdp": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/19T_11122025B8CC230E4A34431999B4D6A107707BCA.XLSX",
+    "gsdp": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/21T_11122025D994949B48C44B68B4465FBB9ADDFF3D.XLSX",
+    "power": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/138T_111220252D21BC51E5A842E4B25E954391C10A41.XLSX",
+}
+STATE_UT_NAMES = [
+    "Andaman & Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+    "Chandigarh", "Chhattisgarh", "Dadra & Nagar Haveli and Daman & Diu", "Delhi", "Goa",
+    "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka",
+    "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur",
+    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan",
+    "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+    "West Bengal",
+]
 
 
 def get_json(url: str) -> object:
@@ -26,6 +42,81 @@ def get_text(url: str) -> str:
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/csv,text/html,*/*;q=0.8"})
     with urlopen(request, timeout=30) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def excel_column_index(cell_reference: str) -> int:
+    column = 0
+    for character in re.match(r"[A-Z]+", cell_reference).group():
+        column = column * 26 + ord(character) - ord("A") + 1
+    return column
+
+
+def read_rbi_latest_worksheet(url: str) -> list[dict[int, str]]:
+    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
+    with urlopen(request, timeout=60) as response:
+        workbook = ZipFile(io.BytesIO(response.read()))
+    namespace = {"main": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+    shared_strings = []
+    if "xl/sharedStrings.xml" in workbook.namelist():
+        shared_root = ET.fromstring(workbook.read("xl/sharedStrings.xml"))
+        shared_strings = ["".join(item.itertext()) for item in shared_root.findall("main:si", namespace)]
+    sheet = ET.fromstring(workbook.read("xl/worksheets/sheet2.xml"))
+    parsed_rows = []
+    for row in sheet.findall(".//main:sheetData/main:row", namespace):
+        values = {}
+        for cell in row.findall("main:c", namespace):
+            value = cell.find("main:v", namespace)
+            text = value.text if value is not None else ""
+            if cell.attrib.get("t") == "s" and text:
+                text = shared_strings[int(text)]
+            elif cell.attrib.get("t") == "inlineStr":
+                inline = cell.find("main:is", namespace)
+                text = "".join(inline.itertext()) if inline is not None else ""
+            values[excel_column_index(cell.attrib["r"])] = text
+        parsed_rows.append(values)
+    return parsed_rows
+
+
+def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source: str, merge_daman_diu: bool = False) -> dict:
+    rows = read_rbi_latest_worksheet(url)
+    state_header_index = next(
+        (index for index, row in enumerate(rows) if "State/Union Territory" in row.values()),
+        None,
+    )
+    year_header_index = next(
+        (index for index, row in enumerate(rows) if fiscal_year in row.values()),
+        None,
+    )
+    if state_header_index is None or year_header_index is None:
+        raise ValueError(f"RBI state table header for {fiscal_year} was not found")
+    state_column = next(column for column, value in rows[state_header_index].items() if value == "State/Union Territory")
+    value_column = next(column for column, value in rows[year_header_index].items() if value == fiscal_year)
+    state_values = {}
+    for row in rows[max(state_header_index, year_header_index) + 1:]:
+        name = row.get(state_column, "").strip()
+        if not name or name.startswith(("*", "-")) or name == "ALL INDIA":
+            continue
+        if name == "Daman & Diu" and merge_daman_diu:
+            continue
+        if name == "Dadra & Nagar Haveli" and merge_daman_diu:
+            name = "Dadra & Nagar Haveli and Daman & Diu"
+        elif name == "Jammu & Kashmir*":
+            name = "Jammu & Kashmir"
+        raw_value = row.get(value_column, "").strip().replace(",", "")
+        try:
+            state_values[name] = float(raw_value) / divisor
+        except ValueError:
+            state_values[name] = None
+    labels = sorted(STATE_UT_NAMES, key=lambda name: (state_values.get(name) is None, -(state_values.get(name) or 0), name))
+    values = [state_values.get(name) for name in labels]
+    return {
+        "labels": labels,
+        "values": values,
+        "chartType": "bar",
+        "indexAxis": "y",
+        "source": source,
+        "note": f"FY{fiscal_year}. The RBI table provides {sum(value is not None for value in values)} separate observations; unreported State/UT values remain blank.",
+    }
 
 
 def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float], color: str, value_suffix: str) -> str:
@@ -85,6 +176,32 @@ def build_terrorism_fatalities_chart() -> dict:
     values = {row["Year"]: float(row["Fatalities"]) for row in rows if row["Entity"] == "India"}
     labels = sorted(values)
     return {"source": "Our World in Data; Global Terrorism Database-derived fatalities", "labels": labels, "values": [values[label] for label in labels]}
+
+
+def build_terrorism_derived_series(attacks: dict, fatalities: dict, population: dict) -> dict:
+    attack_values = dict(zip(attacks.get("labels", []), attacks.get("values", [])))
+    fatality_values = dict(zip(fatalities.get("labels", []), fatalities.get("values", [])))
+    population_values = dict(zip(population.get("labels", []), population.get("values", [])))
+    labels = sorted(
+        year for year in attack_values.keys() & fatality_values.keys() & population_values.keys()
+        if population_values[year] is not None and population_values[year] > 0
+    )
+    attacks_per_million = []
+    fatalities_per_million = []
+    fatalities_per_attack = []
+    for year in labels:
+        attacks_count = attack_values[year]
+        deaths = fatality_values[year]
+        people = population_values[year]
+        attacks_per_million.append(round(attacks_count / people * 1_000_000, 4))
+        fatalities_per_million.append(round(deaths / people * 1_000_000, 4))
+        fatalities_per_attack.append(round(deaths / attacks_count, 3) if attacks_count else None)
+    source = "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
+    return {
+        "terror_attacks_per_million": {"labels": labels, "values": attacks_per_million, "source": source},
+        "terror_fatalities_per_million": {"labels": labels, "values": fatalities_per_million, "source": source},
+        "terror_fatalities_per_attack": {"labels": labels, "values": fatalities_per_attack, "source": source},
+    }
 
 
 def build_lwe_aggregate() -> dict:
@@ -756,26 +873,10 @@ def build_textiles_apparel_exports() -> dict:
 
 # --- STATE PERFORMANCE & REGIONAL HEALTH BUILDERS ---
 def build_state_gsdp_comparison() -> dict:
-    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    mh = [24.1, 26.3, 27.1, 31.0, 35.2, 38.8, 42.5, 46.2, 50.1]
-    tn = [15.1, 16.6, 17.4, 19.8, 22.5, 24.8, 27.2, 29.8, 32.5]
-    gj = [14.2, 16.0, 16.5, 19.4, 22.0, 24.2, 26.8, 29.5, 32.2]
-    ka = [14.0, 15.6, 16.2, 18.9, 21.4, 23.6, 26.0, 28.5, 31.0]
-    up = [14.5, 15.8, 16.4, 19.1, 21.8, 24.0, 26.5, 29.0, 31.8]
-    wb = [10.2, 11.4, 11.8, 13.5, 15.3, 16.8, 18.5, 20.2, 22.0]
-    datasets = [
-        {"label": "Maharashtra 🏁", "values": mh, "color": "#58a6ff"},
-        {"label": "Tamil Nadu 🏭", "values": tn, "color": "#3fb950"},
-        {"label": "Gujarat ⚙️", "values": gj, "color": "#ff9933"},
-        {"label": "Karnataka 💻", "values": ka, "color": "#a371f7"},
-        {"label": "Uttar Pradesh 🌾", "values": up, "color": "#f6c344"},
-        {"label": "West Bengal ⚓", "values": wb, "color": "#ff7b72"},
-    ]
-    return {
-        "labels": years,
-        "datasets": datasets,
-        "source": "Reserve Bank of India (RBI) Handbook of Statistics on Indian States & MOSPI (GSDP at Current Prices in INR Lakh Crores)"
-    }
+    return build_rbi_state_snapshot(
+        RBI_STATE_WORKBOOKS["gsdp"], "2023-24", 10_000_000,
+        "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2023-24, INR lakh crore)",
+    )
 
 def build_state_fdi_inflows() -> dict:
     years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
@@ -856,13 +957,18 @@ def build_state_mudra_loans() -> dict:
     }
 
 def build_state_per_capita_income() -> dict:
-    states = ["Telangana", "Karnataka", "Haryana", "Tamil Nadu", "Gujarat", "Maharashtra", "Kerala", "Punjab", "West Bengal", "Rajasthan", "Odisha", "Madhya Pradesh", "Uttar Pradesh", "Bihar"]
-    income_k = [3.12, 3.01, 2.96, 2.75, 2.73, 2.52, 2.48, 1.82, 1.41, 1.35, 1.30, 1.22, 0.83, 0.54]
-    return {
-        "labels": states,
-        "values": income_k,
-        "source": "MOSPI & RBI Handbook of Statistics on Indian States (Net State Domestic Product Per Capita in INR Lakhs)"
-    }
+    return build_rbi_state_snapshot(
+        RBI_STATE_WORKBOOKS["pcnsdp"], "2023-24", 100_000,
+        "RBI Handbook of Statistics on Indian States 2024-25, Table 19 (per-capita NSDP at current prices; FY2023-24, INR lakh)",
+    )
+
+
+def build_state_power_per_capita() -> dict:
+    return build_rbi_state_snapshot(
+        RBI_STATE_WORKBOOKS["power"], "2024-25", 1,
+        "RBI Handbook of Statistics on Indian States 2024-25, Table 138; CEA per-capita power availability (FY2024-25, kWh)",
+        merge_daman_diu=True,
+    )
 
 def build_state_own_tax_revenue() -> dict:
     years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
@@ -1154,8 +1260,16 @@ def main() -> None:
     result["series"]["telecom_broadband_subscribers"] = build_telecom_broadband_subscribers()
 
     # State Performance & Regional Health
-    result["series"]["state_gsdp_comparison"] = build_state_gsdp_comparison()
-    result["series"]["state_per_capita_income"] = build_state_per_capita_income()
+    for key, builder in (
+        ("state_gsdp_comparison", build_state_gsdp_comparison),
+        ("state_per_capita_income", build_state_per_capita_income),
+        ("state_power_per_capita", build_state_power_per_capita),
+    ):
+        try:
+            result["series"][key] = builder()
+        except Exception as error:
+            cached = previous_series.get(key, {})
+            result["series"][key] = cached if cached.get("labels") and cached.get("values") else {"error": str(error)}
     result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
     result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
     result["series"]["state_own_tax_revenue"] = build_state_own_tax_revenue()
@@ -1241,6 +1355,11 @@ def main() -> None:
                     result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
                 except Exception:
                     result["series"][key] = {"error": str(error)}
+    result["series"].update(build_terrorism_derived_series(
+        result["series"].get("terror_attacks", {}),
+        result["series"].get("terror_fatalities", {}),
+        result["series"].get("population", {}),
+    ))
     market_labels = sorted({label for key in ("sensex", "nifty", "nifty_vix") for label in result["series"].get(key, {}).get("labels", [])})
     market_datasets = []
     for key, title, color in (("sensex", "Sensex", "#58a6ff"), ("nifty", "Nifty", "#3fb950"), ("nifty_vix", "Nifty VIX", "#f2cc60")):
@@ -1253,19 +1372,23 @@ def main() -> None:
     try:
         result["series"]["gdp_world_comparison"] = build_gdp_world_comparison()
     except Exception as error:
-        result["series"]["gdp_world_comparison"] = {"error": str(error)}
+        cached = previous_series.get("gdp_world_comparison", {})
+        result["series"]["gdp_world_comparison"] = cached if cached.get("labels") else {"error": str(error)}
     try:
         result["series"]["global_inflation_comparison"] = build_global_inflation_comparison()
     except Exception as error:
-        result["series"]["global_inflation_comparison"] = {"error": str(error)}
+        cached = previous_series.get("global_inflation_comparison", {})
+        result["series"]["global_inflation_comparison"] = cached if cached.get("labels") else {"error": str(error)}
     try:
         result["series"]["global_equity_indices"] = build_global_equity_indices()
     except Exception as error:
-        result["series"]["global_equity_indices"] = {"error": str(error)}
+        cached = previous_series.get("global_equity_indices", {})
+        result["series"]["global_equity_indices"] = cached if cached.get("labels") else {"error": str(error)}
     try:
         result["series"]["sectoral_market_indices"] = build_sectoral_market_indices()
     except Exception as error:
-        result["series"]["sectoral_market_indices"] = {"error": str(error)}
+        cached = previous_series.get("sectoral_market_indices", {})
+        result["series"]["sectoral_market_indices"] = cached if cached.get("labels") else {"error": str(error)}
     
     chart_json = json.dumps(result, indent=2) + "\n"
     (ROOT / "data" / "chart-latest.json").write_text(chart_json)

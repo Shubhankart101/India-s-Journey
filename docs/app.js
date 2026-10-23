@@ -8,7 +8,8 @@ const definitions = [
   ['tb_disease_incidence', 'Tuberculosis (TB) incidence rate', 'TB incidence rate per 100,000 population', 'Annual', '#ffa657', ' per 100k', 'https://nikshay.in/', 'Annual Tuberculosis (TB) incidence rate per 100,000 population tracking nationwide active case finding and treatment under National TB Elimination Programme.\n\nSourced from Central TB Division Nikshay Portal & WHO.'],
   ['non_communicable_diseases_burden', 'Disease burden: NCDs vs Communicable', '% Share of total disease DALYs burden', 'Annual / Survey', '#ff7b72', '% DALYs', 'https://www.icmr.gov.in/', 'Epidemiological transition chart comparing Non-Communicable Diseases (NCDs: cardiovascular, diabetes, cancer) vs Communicable/Maternal/Child disease burden.\n\nSourced from ICMR India State-Level Disease Burden Initiative & IHME.'],
   ['health_expenditure_gdp', 'Government health spend vs Out-of-pocket', 'Govt spending % GDP vs Out-of-pocket expenditure %', 'Annual', '#3fb950', '%', 'https://main.mohfw.gov.in/', 'Health financing transition comparing Government Health Expenditure (% of GDP) alongside reduction in Out-of-Pocket Expenditure (% total health spend).\n\nSourced from National Health Accounts (NHA) Estimates & MoHFW.'],
-  ['state_per_capita_income', 'Per capita income by state', 'Net State Domestic Product per capita in INR Lakhs', 'Annual / State', '#3fb950', ' INR Lakhs', 'https://www.mospi.gov.in/', 'Per capita Net State Domestic Product across 28 States & Union Territories (Telangana ₹3.12L, Karnataka ₹3.01L, Haryana ₹2.96L, Tamil Nadu ₹2.75L, Gujarat ₹2.73L).\n\nSourced from MOSPI & RBI Handbook of Statistics on Indian States.'],
+  ['state_per_capita_income', 'Per-capita NSDP by state/UT', 'Net State Domestic Product per person, FY2023-24', 'Annual snapshot (FY2023-24)', '#3fb950', ' INR lakh', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468', 'RBI Table 19 per-capita Net State Domestic Product at current prices for FY2023-24. All 36 current State/UT labels are shown; values remain blank where the RBI table does not report a separate UT figure.'],
+  ['state_power_per_capita', 'Per-capita power availability by state/UT', 'Electricity availability per person, FY2024-25', 'Annual snapshot (FY2024-25)', '#f6c344', ' kWh/person', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587', 'RBI Table 138, sourced to the Central Electricity Authority. The latest table combines Dadra & Nagar Haveli with Daman & Diu from FY2022-23 onward; Ladakh is not a separate row. The chart keeps all 36 current State/UT labels and leaves unavailable figures blank.'],
   ['state_own_tax_revenue', 'State Own Tax Revenue (SOTR)', 'State Own Tax Revenue in INR Lakh Crores', 'Annual / State', '#58a6ff', ' INR Lakh Cr', 'https://www.rbi.org.in/', 'State fiscal autonomy indicator tracking State Own Tax Revenue (SOTR) collections across major state economies.\n\nSourced from RBI State Finances Study & State Budgets.'],
   ['state_gst_collections', 'Monthly State GST collections', 'Average monthly GST revenue by state', 'Monthly / State', '#f6c344', ' INR Cr', 'https://www.gst.gov.in/', 'Monthly State GST (SGST) collections comparing commercial consumption volume across states.\n\nSourced from GSTN Portal & Ministry of Finance.'],
   ['state_manufacturing_gsdp_share', 'Manufacturing share of GSDP', 'Manufacturing sector % share of GSDP', 'Annual / State', '#ff9933', '% GSDP', 'https://www.mospi.gov.in/', 'Manufacturing depth comparing industrial contribution to state GDP (Gujarat 36.5%, Himachal 29.8%, Tamil Nadu 24.2%, Maharashtra 21.5%).\n\nSourced from MOSPI National Accounts & RBI State Statistics.'],
@@ -64,6 +65,9 @@ const definitions = [
   ['lwe_incidents', 'Maoist / LWE annual fatalities', 'Annual deaths in LWE violence', 'Annual (2004-2025)', '#f85149', ' deaths', 'https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division', 'Annual fatalities in Left-Wing Extremist violence across affected states, collated from official MHA annual reports and SATP compiled records.\n\nIt shows the structural decline in LWE violence over 22 years as security coverage and developmental interventions expanded across affected districts.'],
   ['terror_attacks', 'Terrorist attacks', 'India attacks in GTD-derived open data', '1970-2020', '#d29922', ' attacks', 'https://www.start.umd.edu/gtd/', 'The Global Terrorism Database is a reputable open research dataset covering terrorist events internationally from 1970 onward. This dashboard uses the India rows published by Our World in Data, with GTD provenance.\n\nIt is not an official Government of India dataset, and its event definitions differ from MHA and NCRB reporting. The series is not presented as a complete 1947-present history.'],
     ['terror_fatalities', 'Terrorism fatalities', 'Deaths in India GTD-derived attacks', '1970-2020', '#f85149', ' deaths', 'https://ourworldindata.org/grapher/terrorism-deaths.csv', 'This graph counts fatalities associated with India rows in the GTD-derived public series. It complements the attack-count graph by showing human cost rather than event frequency.\n\nIt is not an official Government of India dataset and does not provide a complete 1947-present history.'],
+  ['terror_attacks_per_million', 'Terrorist attacks per million people', 'GTD-derived attacks normalized by population', '1970-2020', '#f6c344', ' per million', 'https://ourworldindata.org/grapher/terrorist-attacks.csv', 'Annual India attack counts divided by the World Bank population series and expressed per million residents. This supports population-scaled comparisons over time; it is a derived measure, not a separate official count.\n\nCoverage is limited to years shared by the GTD-derived attack series and World Bank population data.', ['https://ourworldindata.org/grapher/terrorist-attacks.csv', 'https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json&per_page=100']],
+  ['terror_fatalities_per_million', 'Terrorism fatalities per million people', 'GTD-derived deaths normalized by population', '1970-2020', '#f85149', ' per million', 'https://ourworldindata.org/grapher/terrorism-deaths.csv', 'Annual fatalities associated with GTD-derived India attacks divided by the World Bank population series and expressed per million residents. This is a derived rate, not an official government terrorism count.\n\nCoverage is limited to years shared by the GTD-derived fatalities series and World Bank population data.', ['https://ourworldindata.org/grapher/terrorism-deaths.csv', 'https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json&per_page=100']],
+  ['terror_fatalities_per_attack', 'Fatalities per terrorist attack', 'GTD-derived annual deaths divided by annual attacks', '1970-2020', '#ff7b72', ' deaths/attack', 'https://ourworldindata.org/grapher/terrorism-deaths.csv', 'Annual India terrorism fatalities divided by annual GTD-derived attack counts. It describes aggregate lethality by year and is not an estimate of the probability that an individual attack causes fatalities. Years with zero attacks are left blank.', ['https://ourworldindata.org/grapher/terrorism-deaths.csv', 'https://ourworldindata.org/grapher/terrorist-attacks.csv']],
   ['ncrb_crime', 'NCRB crime indicators', 'Crime in India 2023 rates by category', 'Single-year snapshot', '#f778ba', ' per 100k', 'https://en.wikipedia.org/wiki/Crime_in_India', 'The National Crime Records Bureau publishes Crime in India tables covering reported offences, crime rates, and related public-safety measures. Editions are not consistently comparable across years, so this card shows a single-year (2023) snapshot across crime categories rather than a fabricated multi-year trend.\n\nValues are official Crime in India 2023 rates per 100,000 population (per 100,000 children for crimes against children), compiled and cited on Wikipedia from NCRB Crime in India 2023 Volumes I-III.'],
   ['pew_india_global_power', 'Pew: India and global power', 'Indian views of global conflicts and neighbours', 'Survey snapshots', '#79c0ff', '%', 'https://www.pewresearch.org/global/2008/12/04/india/', 'Each point is a distinct survey statement from the cited Pew Global Attitudes Project report, not a continuous measurement. It shows the share of respondents agreeing with a specific statement in a specific year.\n\nStatements are not comparable to each other and should not be read as a trend line; the x-axis lists the statement and year, not an evenly spaced time series. Additional survey editions can be added as they are individually verified.'],
   ['pew_india_leadership', 'Pew: views of leadership', 'Indian public opinion and leadership', 'Survey editions', '#bc8cff', ' responses', 'https://www.pewresearch.org/global/', 'This subgroup tracks Pew Research Center India findings on public views of national leadership and political confidence when comparable India observations are available.\n\nSurvey editions are not the same as annual administrative statistics. Results must retain their field dates, question wording, sample design, and uncertainty notes before being plotted.'],
@@ -145,7 +149,7 @@ const definitions = [
   ['electronics_manufacturing', 'Electronics manufacturing output', 'Domestic electronics manufacturing value', 'Annual', '#bc8cff', ' INR Lakh Cr', 'https://www.meity.gov.in/', 'Total production value of mobile phones, consumer electronics, IT hardware, and industrial electronics boosted by PLI schemes.\n\nSourced from MeitY and ICEA.'],
   ['pharma_exports_trajectory', 'Pharmaceutical exports', 'Biotech & pharmaceutical export value', 'Annual', '#3fb950', ' USD bn', 'https://pharmexcil.com/', 'Export value of active pharmaceutical ingredients (APIs), formulations, vaccines, and biosimilars to over 200 countries.\n\nSourced from Pharmexcil and Ministry of Commerce.'],
   ['textiles_apparel_exports', 'Textiles & apparel exports', 'Textiles, garments & technical textiles exports', 'Annual', '#e3b341', ' USD bn', 'https://texmin.nic.in/', 'Export earnings from cotton yarn, ready-made garments, man-made fibres, and technical textiles.\n\nSourced from Ministry of Textiles and DGFT.'],
-  ['state_gsdp_comparison', 'State GSDP trajectory comparison', 'GSDP at current prices across major economic states', 'Annual', '#58a6ff', ' INR Lakh Cr', 'https://data.rbi.org.in/', 'Gross State Domestic Product (GSDP) trajectory comparing India\'s largest state economies (Maharashtra, Tamil Nadu, Gujarat, Karnataka, Uttar Pradesh, West Bengal).\n\nSourced from Reserve Bank of India (RBI) Handbook of Statistics on Indian States and MOSPI.'],
+  ['state_gsdp_comparison', 'GSDP by state/UT', 'Gross State Domestic Product at current prices, FY2023-24', 'Annual snapshot (FY2023-24)', '#58a6ff', ' INR Lakh Cr', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470', 'RBI Table 21, Gross State Domestic Product at current prices for FY2023-24. All 36 current State/UT labels are shown; values remain blank where the RBI table does not report a separate UT figure. The chart is a one-year comparison, not a continuous growth trajectory.'],
   ['state_fdi_inflows', 'State FDI equity inflows comparison', 'FDI inflows across top destination states/regions', 'Annual', '#3fb950', ' USD bn', 'https://www.dpiit.gov.in/', 'Annual foreign direct investment (FDI) equity inflows received across leading state investment destinations.\n\nSourced from DPIIT and Ministry of Commerce State FDI statistics.'],
   ['state_debt_to_gsdp', 'State Debt-to-GSDP liabilities ratio', 'Outstanding liabilities as percentage of GSDP', 'Annual', '#ff7b72', '% GSDP', 'https://www.rbi.org.in/', 'State fiscal health and debt sustainability indicator tracking outstanding liabilities as a percentage of GSDP.\n\nSourced from RBI Study on State Finances and NITI Aayog.'],
   ['state_operating_factories', 'Registered operating factories by state', 'Total operating factory count from ASI census', 'Annual', '#f6c344', ' factories', 'https://www.mospi.gov.in/', 'Manufacturing footprint comparing registered operating factories across industrial hub states.\n\nSourced from MOSPI Annual Survey of Industries (ASI).'],
@@ -231,6 +235,43 @@ const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'p
 
 const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['per_capita_nni_inr', 'per_capita_income_ppp'].includes(key) ? 'Per Capita Income & Wealth' : ['pm_jan_dhan_yojana', 'pm_awas_yojana', 'jal_jeevan_mission', 'ayushman_bharat', 'sc_st_post_matric_scholarships', 'pm_svanidhi_street_vendors'].includes(key) ? 'Government Schemes' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['infant_mortality_rate', 'maternal_mortality_ratio'].includes(key) ? 'Mortality & Lifespan Milestones' : ['tb_disease_incidence', 'non_communicable_diseases_burden'].includes(key) ? 'Disease Burden & Epidemiology' : ['health_expenditure_gdp'].includes(key) ? 'Health Infrastructure & Spending' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_debt_to_gsdp', 'state_own_tax_revenue', 'state_gst_collections'].includes(key) ? 'State Financial Health & GSDP' : ['state_fdi_inflows', 'state_operating_factories', 'state_manufacturing_gsdp_share', 'state_export_preparedness_index', 'state_ease_of_doing_business'].includes(key) ? 'State Industrial & Manufacturing Hubs' : ['state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans', 'state_pmjdy_bank_accounts', 'state_pmjay_health_cards', 'state_pmsvanidhi_street_vendors', 'state_renewable_energy_capacity', 'state_national_highway_length', 'state_ev_adoption_charging'].includes(key) ? 'State Welfare & Scheme Coverage' : ['state_literacy_rates', 'state_infant_mortality_rate', 'state_life_expectancy'].includes(key) ? 'State Socio-Demographic Milestones' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['kashmir_insurgency_fatalities', 'kashmir_terror_incidents'].includes(key) ? 'Jammu & Kashmir Insurgency' : ['northeast_insurgency_fatalities', 'northeast_insurgency_incidents'].includes(key) ? 'North East Insurgency' : ['khalistan_insurgency_historical'].includes(key) ? 'Punjab Militancy & Security' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
 
+const renderChartSourceIndex = () => {
+  const list = document.querySelector('#chart-source-index-list');
+  const search = document.querySelector('#chart-source-index-search');
+  const count = document.querySelector('#chart-source-index-count');
+  if (!list) return;
+  definitions.forEach(definition => {
+    const [key, title, subtitle, frequency, , , source] = definition;
+    const urls = Array.isArray(definition[8]) ? definition[8] : [source];
+    const item = document.createElement('li');
+    item.className = 'chart-source-index-item';
+    const heading = document.createElement('strong');
+    heading.textContent = title;
+    const meta = document.createElement('span');
+    const category = ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : key === 'state_power_per_capita' ? 'State Performance & Regional Health' : categoryFor(key);
+    const subgroup = ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : subgroupFor(key);
+    meta.textContent = `${category} / ${subgroup} / ${frequency}`;
+    item.append(heading, meta);
+    for (const url of new Set(urls.filter(Boolean))) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      link.textContent = url;
+      item.append(link);
+    }
+    item.dataset.search = `${title} ${subtitle} ${frequency} ${urls.join(' ')}`.toLowerCase();
+    list.append(item);
+  });
+  if (count) count.textContent = `${definitions.length} charts`;
+  search?.addEventListener('input', () => {
+    const query = search.value.trim().toLowerCase();
+    for (const item of list.children) item.hidden = !item.dataset.search.includes(query);
+  });
+};
+
+renderChartSourceIndex();
+
 const formatMagnitude = (value, suffix = '') => {
   const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
   const formattedValue = Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -248,7 +289,7 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix ? ` ${suffix}` : ''}`;
 };
 
-const chartOptions = (suffix, hasMultipleDatasets = false) => {
+const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false) => {
   const pluginsConfig = {
     legend: { display: false },
     tooltip: { 
@@ -261,7 +302,7 @@ const chartOptions = (suffix, hasMultipleDatasets = false) => {
       boxPadding: 6,
       usePointStyle: true,
       callbacks: { 
-        label: context => ` ${context.dataset.label || 'Value'}: ${formatMagnitude(context.parsed.y, suffix)}` 
+        label: context => ` ${context.dataset.label || 'Value'}: ${formatMagnitude(horizontalBars ? context.parsed.x : context.parsed.y, suffix)}`
       } 
     }
   };
@@ -279,7 +320,16 @@ const chartOptions = (suffix, hasMultipleDatasets = false) => {
     animation: { duration: 600, easing: 'easeOutQuart' },
     interaction: { mode: 'index', intersect: false },
     plugins: pluginsConfig,
-    scales: {
+    scales: horizontalBars ? {
+      x: {
+        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, callback: value => formatMagnitude(value, suffix) }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, autoSkip: false, padding: 8 }
+      }
+    } : {
       x: { 
         grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
         ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } } 
@@ -404,8 +454,8 @@ async function main() {
   const charts = [];
   let lastCategory = '';
   const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9 };
-  const dashboardCategoryFor = key => ['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : categoryFor(key);
-  const dashboardSubgroupFor = key => ['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : subgroupFor(key);
+  const dashboardCategoryFor = key => ['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key);
+  const dashboardSubgroupFor = key => ['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key);
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = dashboardCategoryFor(key);
@@ -421,6 +471,7 @@ async function main() {
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
     const card = document.createElement('article');
     card.className = 'chart-card';
+    if (series.chartType === 'bar' && series.indexAxis === 'y') card.classList.add('state-rank-chart');
     const paragraphs = details.split('\\n\\n').map(paragraph => `<p>${paragraph}</p>`).join('');
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
@@ -429,7 +480,7 @@ async function main() {
     const eraKey = eraFor(key);
     card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
-    const context = live ? `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.` : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
+    const context = live ? (series.note || `This ${frequency.toLowerCase()} series contains ${observationCount} available observations. Values are fetched from the cited public source and plotted without smoothing.`) : 'This indicator is retained for source visibility, but no numeric values are shown until its official export can be checked automatically.';
     
     const labels = series?.labels || [];
     const values = series?.values || [];
@@ -534,9 +585,9 @@ async function main() {
     let chart = null;
     if (typeof Chart !== 'undefined') {
       chart = new Chart(canvas, {
-        type: 'line',
+        type: series.chartType || 'line',
         data: { labels, datasets: chartDatasets },
-        options: chartOptions(suffix, hasMultipleDatasets),
+        options: chartOptions(suffix, hasMultipleDatasets, series.chartType === 'bar' && series.indexAxis === 'y'),
       });
     }
 
@@ -619,6 +670,7 @@ async function main() {
     'Card Spends & Ecosystem': 'Payments & Digital Banking',
     'Digital Financial Index': 'Payments & Digital Banking',
     'State Financial Health & GSDP': 'State Performance & Regional Health',
+    'State Infrastructure & Services': 'State Performance & Regional Health',
     'State Industrial & Manufacturing Hubs': 'State Performance & Regional Health',
     'State Welfare & Scheme Coverage': 'State Performance & Regional Health',
     'Mortality & Lifespan Milestones': 'Public Health & Epidemiology',
@@ -651,6 +703,8 @@ async function main() {
     'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
     'Pew Research': ['Public opinion']
   };
+  groupToSubgroups.all.push('State Infrastructure & Services');
+  groupToSubgroups['State Performance & Regional Health'].push('State Infrastructure & Services');
 
   const addPeriodOptions = (select, periods, selected) => {
     select.replaceChildren(...periods.map(period => {

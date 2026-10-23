@@ -393,6 +393,8 @@ h2 { font-size:1.8rem; font-weight:700; }
 .chart-card h2 { font-size:1.35rem; margin-bottom:6px; font-weight:700; color:var(--ink); } 
 .chart-card p { color:var(--muted); font-size:.9rem; margin:0; line-height:1.5; }
 .chart-card canvas { width:100% !important; height:370px !important; }
+.chart-card.state-rank-chart { min-height:980px; }
+.chart-card.state-rank-chart canvas { height:760px !important; }
 
 /* Value Cruncher KPI Summary Bar */
 .value-cruncher-bar {
@@ -488,6 +490,13 @@ h2 { font-size:1.8rem; font-weight:700; }
 .references { border-top:1px solid var(--line); padding:36px 0 44px; }
 .references details { background:var(--panel); border:1px solid var(--card-border); border-radius:10px; padding:18px 22px; }
 .references summary { color:var(--saffron); cursor:pointer; font:700 .8rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; letter-spacing:0.06em; }
+.chart-source-index-search { display:grid; gap:8px; margin-top:18px; max-width:620px; color:var(--muted); font-size:.85rem; }
+.chart-source-index-search input { background:var(--bg); border:1px solid var(--line); border-radius:6px; color:var(--ink); font:inherit; min-width:0; padding:10px 12px; }
+#chart-source-index-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 24px; list-style:none; margin:18px 0 0; max-height:65vh; overflow:auto; padding:0 12px 0 0; }
+.chart-source-index-item { border-bottom:1px solid var(--line); display:grid; gap:5px; min-width:0; padding:10px 0; }
+.chart-source-index-item strong { color:var(--ink); font-size:.9rem; }
+.chart-source-index-item span { color:var(--muted); font-size:.74rem; }
+.chart-source-index-item a { font-size:.78rem; overflow-wrap:anywhere; }
 .reference-columns { display:grid; grid-template-columns:1fr 1fr; gap:36px; padding-top:20px; }
 .reference-columns h3 { color:var(--ink); font-size:1.05rem; margin:0 0 10px; }
 .reference-columns ul { margin:0 0 18px; padding-left:20px; }
@@ -511,5 +520,6 @@ footer { border-top:1px solid var(--line); color:var(--muted); padding:24px 0 48
   .chart-card { min-height:420px; padding:18px; } 
   .chart-card canvas { height:300px !important; } 
   .chart-wrap { min-height:320px; } 
+  #chart-source-index-list { grid-template-columns:1fr; }
   .reference-columns { grid-template-columns: 1fr; }
 }
