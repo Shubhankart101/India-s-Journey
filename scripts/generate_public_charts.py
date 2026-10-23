@@ -6,6 +6,7 @@ import io
 import re
 import time
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -662,6 +663,76 @@ def build_auto_production_volume() -> dict:
     values = [23.4, 24.0, 25.8, 29.1, 30.9, 26.4, 22.7, 23.0, 25.9, 28.4, 30.1, 32.5, 34.8]
     return {"labels": years, "values": values, "source": "Society of Indian Automobile Manufacturers (SIAM) (Total Automobile Production Output in Million Units)"}
 
+
+class SiamSalesTableParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self.row_depth = 0
+        self.current_row = None
+        self.cell_parts = None
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        if tag == "ul" and "horrizontal_li" in attributes.get("class", ""):
+            self.row_depth = 1
+            self.current_row = []
+        elif self.row_depth and tag == "li":
+            self.cell_parts = []
+        elif self.row_depth and tag == "ul":
+            self.row_depth += 1
+
+    def handle_data(self, data):
+        if self.cell_parts is not None:
+            self.cell_parts.append(data)
+
+    def handle_endtag(self, tag):
+        if not self.row_depth:
+            return
+        if tag == "li" and self.cell_parts is not None:
+            self.current_row.append(" ".join("".join(self.cell_parts).split()))
+            self.cell_parts = None
+        elif tag == "ul":
+            self.row_depth -= 1
+            if self.row_depth == 0:
+                self.rows.append(self.current_row)
+                self.current_row = None
+
+
+def build_auto_domestic_sales() -> dict:
+    parser = SiamSalesTableParser()
+    parser.feed(get_text("https://www.siam.in/statistics.aspx?mpgid=8&pgidtrail=14"))
+    header = next((row for row in parser.rows if row and row[0] == "Category"), None)
+    if not header:
+        raise ValueError("SIAM domestic sales table header not found")
+    labels = header[1:]
+    categories = {
+        "Passenger Vehicles": ("Passenger vehicles", "#ff9933"),
+        "Commercial Vehicles": ("Commercial vehicles", "#58a6ff"),
+        "Three Wheelers": ("Three-wheelers", "#3fb950"),
+        "Two Wheelers": ("Two-wheelers", "#f6c344"),
+        "Grand Total": ("Total domestic sales", "#f778ba"),
+    }
+    values_by_category = {}
+    for row in parser.rows:
+        if not row or row[0] not in categories or len(row) != len(header):
+            continue
+        try:
+            values_by_category[row[0]] = [float(value.replace(",", "")) / 1e6 for value in row[1:]]
+        except ValueError:
+            continue
+    if len(values_by_category) != len(categories) or len(labels) < 5:
+        raise ValueError("SIAM domestic sales table is missing category values")
+    return {
+        "labels": labels,
+        "values": values_by_category["Grand Total"],
+        "datasets": [
+            {"label": label, "values": values_by_category[key], "color": color}
+            for key, (label, color) in categories.items() if key != "Grand Total"
+        ],
+        "source": "SIAM Automobile Domestic Sales Trends (FY2008-09 to FY2013-14); annual domestic sales by vehicle category, million units",
+    }
+
 def build_crude_steel_production() -> dict:
     years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
     values = [88.9, 89.8, 97.4, 101.5, 109.3, 109.1, 103.5, 120.3, 125.3, 140.2, 144.8, 152.0, 160.0]
@@ -949,6 +1020,7 @@ def main() -> None:
         ("bank_credit", "FS.AST.PRVT.GD.ZS", "india-domestic-credit.svg", "India Domestic Credit", "Domestic credit to private sector as share of GDP; World Bank indicator FS.AST.PRVT.GD.ZS", "#a371f7", "%"),
         ("iip", "NV.IND.TOTL.KD.ZG", "india-industrial-growth.svg", "India Industrial Value Added Growth", "Annual industrial value-added growth; World Bank indicator NV.IND.TOTL.KD.ZG", "#f56c6c", "%"),
         ("gdp_growth", "NY.GDP.MKTP.KD.ZG", "india-gdp-growth.svg", "India Real GDP Growth", "Annual real GDP growth; World Bank indicator NY.GDP.MKTP.KD.ZG", "#ff9933", "%"),
+        ("private_consumption_pc", "NE.CON.PRVT.PC.KD", "india-private-consumption-per-capita.svg", "Real Household Consumption Per Capita", "Households and NPISHs final consumption expenditure per capita in constant 2015 US dollars; World Bank indicator NE.CON.PRVT.PC.KD", "#3fb950", " USD/person"),
         ("rupee", "PA.NUS.FCRF", "india-rupee-exchange-rate.svg", "India Official Exchange Rate", "Official exchange rate, Indian rupees per US dollar; World Bank indicator PA.NUS.FCRF", "#2ea44f", " INR"),
         ("gdp_per_capita", "NY.GDP.PCAP.CD", "india-gdp-per-capita.svg", "India GDP Per Capita", "GDP per capita in current US dollars; World Bank indicator NY.GDP.PCAP.CD", "#d2a8ff", " USD"),
         ("population", "SP.POP.TOTL", "india-population.svg", "India Population", "Total population; World Bank indicator SP.POP.TOTL", "#79c0ff", ""),
@@ -1107,6 +1179,11 @@ def main() -> None:
 
     # Manufacturing & Industrial Growth
     result["series"]["auto_production_volume"] = build_auto_production_volume()
+    try:
+        result["series"]["auto_domestic_sales"] = build_auto_domestic_sales()
+    except Exception as error:
+        cached = previous_series.get("auto_domestic_sales", {})
+        result["series"]["auto_domestic_sales"] = cached if cached.get("labels") else {"error": str(error)}
     result["series"]["crude_steel_production"] = build_crude_steel_production()
     result["series"]["electronics_manufacturing"] = build_electronics_manufacturing()
     result["series"]["pharma_exports_trajectory"] = build_pharma_exports_trajectory()
