@@ -44,6 +44,8 @@ The static dashboard reads the complete available history for each live series a
 
 The From/To controls are populated from the actual observations returned by the APIs. Economic Survey Statistical Appendix tables 9.1–9.4 now provide collated monthly GST, UPI, IIP, forex, exchange-rate, power, e-way bill, rail freight, port cargo, core-industry, crude-oil, fuel-consumption, export, and import observations through the daily pipeline. The extractor checks the 2022-23, 2023-24, 2024-25, and latest Survey editions, merges overlapping `YYYY-MM` observations, and keeps the official Survey tables as provenance. The dashboard does not fabricate monthly points by interpolation.
 
+Economic charts now include annual real GDP growth, monthly national merchandise balance, and annual merchandise balances with leading trading partners. Partner balances use UN Comtrade's latest matching year and report exports FOB minus imports CIF; automobile output is production data, not vehicle sales.
+
 The fuel graph is a **fuel consumption** activity series, not a retail fuel price index. **Indian crude oil basket price** is provided separately as the available Economic Survey fuel-price indicator. WPI is sourced from the official OEA monthly workbook and cached by the daily pipeline.
 
 Fiscal deficit is now populated as an annual percentage-of-GDP series from Economic Survey table 2.4 Excel editions. It is not presented as a monthly rupee series because the official table does not provide that frequency cleanly.
@@ -83,6 +85,7 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 
 - [World Bank API documentation](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392)
 - [CPI inflation API](https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&per_page=100)
+- [Real GDP growth API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=100)
 - [Trade share of GDP API](https://api.worldbank.org/v2/country/IND/indicator/NE.TRD.GNFS.ZS?format=json&per_page=100)
 - [Foreign reserves API](https://api.worldbank.org/v2/country/IND/indicator/FI.RES.TOTL.CD?format=json&per_page=100)
 - [Private-sector credit API](https://api.worldbank.org/v2/country/IND/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=100)
@@ -112,6 +115,7 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 - [Economic Survey table 9.2](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.2.pdf) for monthly UPI and IIP indicators.
 - [Economic Survey table 9.3](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf) for monthly forex reserves.
 - [Economic Survey table 9.4](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.4.pdf) for monthly exchange rate and external indicators.
+- [UN Comtrade API](https://comtradeapi.un.org/) for annual India merchandise exports and imports by trading partner.
 
 ### Indian government and public sources
 

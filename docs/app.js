@@ -1,4 +1,5 @@
 const definitions = [
+  ['gdp_growth', 'Real GDP growth', 'Annual real GDP growth', 'Annual', '#ff9933', '%', 'https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=IN', 'Annual percentage growth in real gross domestic product. This is a historical national-accounts series, not a forecast.\n\nSourced from the World Bank indicator NY.GDP.MKTP.KD.ZG.'],
   ['cpi', 'CPI inflation', 'Consumer prices', 'Annual', '#63b3ed', '%', 'https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=IN', 'Consumer price inflation tracks the annual change in the cost of a representative basket of goods and services. It is a broad measure of household purchasing-power pressure.\n\nThe series is useful alongside growth, exchange-rate, and trade indicators because imported costs and domestic demand can move inflation in different directions. Values are annual and come through the World Bank open API.'],
   ['per_capita_nni_inr', 'Per capita Net National Income', 'Per capita NNI at current prices in Indian Rupees', 'Annual', '#3fb950', ' INR', 'https://www.mospi.gov.in/', 'Per capita Net National Income (NNI) measures national income divided by population in current Indian Rupees. It expanded from ₹63,462 in FY2012 to ₹2.18 Lakh in FY2026.\n\nSourced from MOSPI National Accounts Statistics and official Economic Survey statements.'],
   ['per_capita_income_ppp', 'Per capita GNI in PPP dollars', 'GNI per capita in Purchasing Power Parity current international $', 'Annual', '#58a6ff', ' USD PPP', 'https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD', 'GNI per capita converted to international dollars using purchasing power parity (PPP) rates, accounting for domestic price differences.\n\nSourced from World Bank Open Data indicator NY.GNP.PCAP.PP.CD.'],
@@ -45,6 +46,8 @@ const definitions = [
   ['fuel_consumption', 'Fuel consumption', 'Petroleum product consumption', 'Monthly', '#f778ba', 'million MT', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab94.pdf', 'Fuel consumption measures petroleum product demand and is a useful activity proxy for transport, industry, and household energy use.\n\nIt is not a fuel price index. The dashboard labels it explicitly as consumption and sources it from Economic Survey table 9.4.'],
   ['merchandise_exports', 'Merchandise exports', 'Goods exports', 'Monthly', '#3fb950', 'USD bn', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab94.pdf', 'Merchandise exports measure the value of goods sold abroad. They connect the dashboard to external demand, foreign exchange earnings, and manufacturing competitiveness.\n\nThe monthly values are collated from Economic Survey table 9.4 and should be interpreted with imports and the current account.'],
   ['merchandise_imports', 'Merchandise imports', 'Goods imports', 'Monthly', '#bc8cff', 'USD bn', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab94.pdf', 'Merchandise imports measure the value of goods purchased from abroad. They capture domestic demand, imported inputs, energy exposure, and pressure on the trade balance.\n\nThe monthly values are collated from Economic Survey table 9.4 and are not the same as total services-inclusive imports.'],
+  ['merchandise_trade_balance', 'Merchandise trade balance', 'Goods exports minus goods imports', 'Monthly', '#f778ba', ' USD bn', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab94.pdf', 'The monthly merchandise trade balance is calculated as goods exports minus goods imports. Positive values indicate a surplus and negative values a deficit.\n\nThis national total excludes services and does not identify balances with individual countries or regions.'],
+  ['bilateral_trade_balance', 'Merchandise balance by trading partner', 'Exports minus imports for leading partners', 'Annual', '#79c0ff', ' USD bn', 'https://comtradeapi.un.org/public/v1/preview/C/A/HS', 'This chart compares India\'s reported merchandise exports and imports with its leading trading partners for the latest year with matching observations. Positive values indicate a surplus; negative values indicate a deficit.\n\nUN Comtrade reports exports on an FOB basis and imports on a CIF basis, so values are not perfectly symmetric. The chart covers goods only, not services, and is limited to the leading partners with verified code mappings.'],
   ['gdp_per_capita', 'GDP per capita', 'Current US dollars per person', 'Annual', '#d2a8ff', ' USD', 'https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=IN', 'GDP per capita divides the value of economic output by population. It is a broad scale indicator for comparing the economy over time, but it does not describe inequality, household income, or quality of life by itself.\n\nThe current-dollar series is sensitive to exchange rates and inflation. Read it alongside real growth and purchasing-power measures for a more complete picture.'],
   ['population', 'Population', 'Total population', 'Annual', '#79c0ff', '', 'https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IN', 'Population provides the denominator and demographic context for many other indicators. A growing population can expand the workforce and consumer base while also increasing demand for jobs, housing, health, and infrastructure.\n\nThis is a count of people, not a welfare measure. Per-capita indicators and age structure are needed to understand how demographic change affects living standards.'],
   ['unemployment', 'Unemployment rate', 'Share of the labour force without work', 'Annual', '#ffa657', '%', 'https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=IN', 'The unemployment rate measures the share of the labour force that is without work but available for and seeking employment. It does not capture underemployment or people who have stopped looking for work.\n\nLabour-market comparisons require care because survey design and informal employment affect measurement. This annual series is a useful macro context signal rather than a complete employment dashboard.'],
@@ -399,9 +402,11 @@ async function main() {
   const charts = [];
   let lastCategory = '';
   const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9 };
-  const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[categoryFor(left[0])] ?? 99) - (categoryOrder[categoryFor(right[0])] ?? 99));
+  const dashboardCategoryFor = key => ['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume'].includes(key) ? 'Economic' : categoryFor(key);
+  const dashboardSubgroupFor = key => ['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : subgroupFor(key);
+  const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
-    const category = categoryFor(key);
+    const category = dashboardCategoryFor(key);
     if (category !== lastCategory) {
       const heading = document.createElement('h2');
       heading.className = 'category-heading';
@@ -418,7 +423,7 @@ async function main() {
     card.dataset.title = `${title} ${subtitle}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
-    card.dataset.subgroup = subgroupFor(key);
+    card.dataset.subgroup = dashboardSubgroupFor(key);
     const eraKey = eraFor(key);
     card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
@@ -467,13 +472,13 @@ async function main() {
       </div>
     `;
 
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${subgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="deep-dive-btn" type="button">📊 Deep Dive</button><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="deep-dive-btn" type="button">📊 Deep Dive</button><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
     grid.append(card);
     const deepDiveBtn = card.querySelector('.deep-dive-btn');
     if (deepDiveBtn) {
       deepDiveBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        openIndicatorModal(key, title, subtitle, frequency, suffix, source, details, series, category, subgroupFor(key));
+        openIndicatorModal(key, title, subtitle, frequency, suffix, source, details, series, category, dashboardSubgroupFor(key));
       });
     }
     if (!live) return;
@@ -582,7 +587,7 @@ async function main() {
 
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => { if (chart) chart.resetZoom(); });
-    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: subgroupFor(key), era: eraKey });
+    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
@@ -633,7 +638,7 @@ async function main() {
   };
   const groupToSubgroups = {
     all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion'],
-    Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications'],
+    Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
     'Payments & Digital Banking': ['UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index'],

@@ -4,8 +4,10 @@ import json
 import csv
 import io
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -122,6 +124,65 @@ def build_gdp_world_comparison() -> dict:
         "datasets": datasets,
         "source": "World Bank API NY.GDP.MKTP.CD (GDP in current USD Trillion)",
     }
+
+
+def build_merchandise_trade_balance(exports: dict, imports: dict) -> dict:
+    export_values = dict(zip(exports.get("labels", []), exports.get("values", [])))
+    import_values = dict(zip(imports.get("labels", []), imports.get("values", [])))
+    labels = sorted(
+        label for label in export_values.keys() & import_values.keys()
+        if export_values[label] is not None and import_values[label] is not None
+    )
+    if not labels:
+        raise ValueError("No overlapping monthly merchandise export/import observations")
+    return {
+        "labels": labels,
+        "values": [round(float(export_values[label]) - float(import_values[label]), 3) for label in labels],
+        "source": "Economic Survey Statistical Appendix table 9.4; calculated as merchandise exports minus merchandise imports (national balance, not partner-specific)",
+    }
+
+
+def build_bilateral_trade_balance() -> dict:
+    partner_names = {
+        50: "Bangladesh", 156: "China", 276: "Germany", 344: "Hong Kong",
+        360: "Indonesia", 368: "Iraq", 380: "Italy", 392: "Japan",
+        410: "South Korea", 458: "Malaysia", 528: "Netherlands", 643: "Russia",
+        682: "Saudi Arabia", 702: "Singapore", 710: "South Africa",
+        757: "Switzerland", 784: "United Arab Emirates", 826: "United Kingdom",
+        842: "United States",
+    }
+    endpoint = "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    for year in range(datetime.now().year - 1, datetime.now().year - 4, -1):
+        flows = {}
+        for flow in ("M", "X"):
+            query = urlencode({
+                "reporterCode": 699,
+                "period": year,
+                "cmdCode": "TOTAL",
+                "flowCode": flow,
+            })
+            try:
+                payload = get_json(f"{endpoint}?{query}")
+                flows[flow] = {
+                    row["partnerCode"]: float(row["primaryValue"])
+                    for row in payload.get("data", [])
+                    if row.get("partnerCode") in partner_names and row.get("primaryValue") is not None
+                }
+            except Exception:
+                flows[flow] = {}
+            if flow == "M":
+                time.sleep(2.1)
+        partners = flows["X"].keys() & flows["M"].keys()
+        if len(partners) < 5:
+            continue
+        ranked = sorted(partners, key=lambda code: flows["X"][code] + flows["M"][code], reverse=True)[:12]
+        ranked.sort(key=lambda code: flows["X"][code] - flows["M"][code])
+        return {
+            "labels": [partner_names[code] for code in ranked],
+            "values": [round((flows["X"][code] - flows["M"][code]) / 1e9, 2) for code in ranked],
+            "source": f"UN Comtrade API, India merchandise trade by partner ({year}); exports FOB minus imports CIF, top partners by trade value",
+        }
+    raise ValueError("UN Comtrade did not provide matching export and import partner data")
 
 
 def build_global_inflation_comparison() -> dict:
@@ -874,12 +935,20 @@ def main() -> None:
     CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     result = {"generated_at_utc": generated, "series": {}}
+    previous_series = {}
+    previous_file = ROOT / "data" / "chart-latest.json"
+    if previous_file.is_file():
+        try:
+            previous_series = json.loads(previous_file.read_text(encoding="utf-8")).get("series", {})
+        except (OSError, json.JSONDecodeError):
+            pass
     indicators = [
         ("cpi", "FP.CPI.TOTL.ZG", "india-cpi-inflation.svg", "India CPI Inflation", "Annual consumer-price inflation; World Bank indicator FP.CPI.TOTL.ZG", "#63b3ed", "%"),
         ("trade", "NE.TRD.GNFS.ZS", "india-trade-share-gdp.svg", "India Trade Share of GDP", "Exports plus imports as share of GDP; World Bank indicator NE.TRD.GNFS.ZS", "#2ea44f", "%"),
         ("forex", "FI.RES.TOTL.CD", "india-foreign-reserves.svg", "India Foreign Exchange Reserves", "Total reserves including gold; World Bank indicator FI.RES.TOTL.CD", "#63b3ed", ""),
         ("bank_credit", "FS.AST.PRVT.GD.ZS", "india-domestic-credit.svg", "India Domestic Credit", "Domestic credit to private sector as share of GDP; World Bank indicator FS.AST.PRVT.GD.ZS", "#a371f7", "%"),
         ("iip", "NV.IND.TOTL.KD.ZG", "india-industrial-growth.svg", "India Industrial Value Added Growth", "Annual industrial value-added growth; World Bank indicator NV.IND.TOTL.KD.ZG", "#f56c6c", "%"),
+        ("gdp_growth", "NY.GDP.MKTP.KD.ZG", "india-gdp-growth.svg", "India Real GDP Growth", "Annual real GDP growth; World Bank indicator NY.GDP.MKTP.KD.ZG", "#ff9933", "%"),
         ("rupee", "PA.NUS.FCRF", "india-rupee-exchange-rate.svg", "India Official Exchange Rate", "Official exchange rate, Indian rupees per US dollar; World Bank indicator PA.NUS.FCRF", "#2ea44f", " INR"),
         ("gdp_per_capita", "NY.GDP.PCAP.CD", "india-gdp-per-capita.svg", "India GDP Per Capita", "GDP per capita in current US dollars; World Bank indicator NY.GDP.PCAP.CD", "#d2a8ff", " USD"),
         ("population", "SP.POP.TOTL", "india-population.svg", "India Population", "Total population; World Bank indicator SP.POP.TOTL", "#79c0ff", ""),
@@ -906,6 +975,17 @@ def main() -> None:
                 result["series"][k] = v
         except Exception as e:
             print(f"Error reading economic-survey-monthly.json: {e}")
+    try:
+        result["series"]["merchandise_trade_balance"] = build_merchandise_trade_balance(
+            result["series"].get("merchandise_exports", {}),
+            result["series"].get("merchandise_imports", {}),
+        )
+    except Exception as error:
+        result["series"]["merchandise_trade_balance"] = {"error": str(error)}
+    try:
+        result["series"]["bilateral_trade_balance"] = build_bilateral_trade_balance()
+    except Exception as error:
+        result["series"]["bilateral_trade_balance"] = {"error": str(error)}
 
     # Load ncrb and analyses data if available
     ncrb_file = ROOT / "data" / "ncrb-and-analyses.json"
@@ -1074,7 +1154,16 @@ def main() -> None:
             series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
             result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
         except Exception as error:
-            result["series"][key] = {"error": str(error)}
+            cached = previous_series.get(key, {})
+            if cached.get("labels") and cached.get("values"):
+                result["series"][key] = cached
+            else:
+                try:
+                    time.sleep(1.1)
+                    series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+                    result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
+                except Exception:
+                    result["series"][key] = {"error": str(error)}
     market_labels = sorted({label for key in ("sensex", "nifty", "nifty_vix") for label in result["series"].get(key, {}).get("labels", [])})
     market_datasets = []
     for key, title, color in (("sensex", "Sensex", "#58a6ff"), ("nifty", "Nifty", "#3fb950"), ("nifty_vix", "Nifty VIX", "#f2cc60")):
