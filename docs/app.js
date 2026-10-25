@@ -8,8 +8,8 @@ const definitions = [
   ['tb_disease_incidence', 'Tuberculosis (TB) incidence rate', 'TB incidence rate per 100,000 population', 'Annual', '#ffa657', ' per 100k', 'https://nikshay.in/', 'Annual Tuberculosis (TB) incidence rate per 100,000 population tracking nationwide active case finding and treatment under National TB Elimination Programme.\n\nSourced from Central TB Division Nikshay Portal & WHO.'],
   ['non_communicable_diseases_burden', 'Disease burden: NCDs vs Communicable', '% Share of total disease DALYs burden', 'Annual / Survey', '#ff7b72', '% DALYs', 'https://www.icmr.gov.in/', 'Epidemiological transition chart comparing Non-Communicable Diseases (NCDs: cardiovascular, diabetes, cancer) vs Communicable/Maternal/Child disease burden.\n\nSourced from ICMR India State-Level Disease Burden Initiative & IHME.'],
   ['health_expenditure_gdp', 'Government health spend vs Out-of-pocket', 'Govt spending % GDP vs Out-of-pocket expenditure %', 'Annual', '#3fb950', '%', 'https://main.mohfw.gov.in/', 'Health financing transition comparing Government Health Expenditure (% of GDP) alongside reduction in Out-of-Pocket Expenditure (% total health spend).\n\nSourced from National Health Accounts (NHA) Estimates & MoHFW.'],
-  ['state_per_capita_income', 'Per-capita NSDP by state/UT', 'Net State Domestic Product per person, FY2023-24', 'Annual snapshot (FY2023-24)', '#3fb950', ' INR lakh', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468', 'RBI Table 19 per-capita Net State Domestic Product at current prices for FY2023-24. All 36 current State/UT labels are shown; values remain blank where the RBI table does not report a separate UT figure.'],
-  ['state_power_per_capita', 'Per-capita power availability by state/UT', 'Electricity availability per person, FY2024-25', 'Annual snapshot (FY2024-25)', '#f6c344', ' kWh/person', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587', 'RBI Table 138, sourced to the Central Electricity Authority. The latest table combines Dadra & Nagar Haveli with Daman & Diu from FY2022-23 onward; Ladakh is not a separate row. The chart keeps all 36 current State/UT labels and leaves unavailable figures blank.'],
+  ['state_per_capita_income', 'Per-capita NSDP by state', 'Net State Domestic Product per person, FY2022-23', 'Annual snapshot (FY2022-23)', '#3fb950', ' INR lakh', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468', 'RBI Table 19 per-capita Net State Domestic Product at current prices. The comparable FY2022-23 snapshot includes all 28 States; Union Territories are excluded.'],
+  ['state_power_per_capita', 'Per-capita power availability by state', 'Electricity availability per person, FY2024-25', 'Annual snapshot (FY2024-25)', '#f6c344', ' kWh/person', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587', 'RBI Table 138, sourced to the Central Electricity Authority. The FY2024-25 comparison includes all 28 States; Union Territories are excluded.'],
   ['state_own_tax_revenue', 'State Own Tax Revenue (SOTR)', 'State Own Tax Revenue in INR Lakh Crores', 'Annual / State', '#58a6ff', ' INR Lakh Cr', 'https://www.rbi.org.in/', 'State fiscal autonomy indicator tracking State Own Tax Revenue (SOTR) collections across major state economies.\n\nSourced from RBI State Finances Study & State Budgets.'],
   ['state_gst_collections', 'Monthly State GST collections', 'Average monthly GST revenue by state', 'Monthly / State', '#f6c344', ' INR Cr', 'https://www.gst.gov.in/', 'Monthly State GST (SGST) collections comparing commercial consumption volume across states.\n\nSourced from GSTN Portal & Ministry of Finance.'],
   ['state_manufacturing_gsdp_share', 'Manufacturing share of GSDP', 'Manufacturing sector % share of GSDP', 'Annual / State', '#ff9933', '% GSDP', 'https://www.mospi.gov.in/', 'Manufacturing depth comparing industrial contribution to state GDP (Gujarat 36.5%, Himachal 29.8%, Tamil Nadu 24.2%, Maharashtra 21.5%).\n\nSourced from MOSPI National Accounts & RBI State Statistics.'],
@@ -37,7 +37,7 @@ const definitions = [
   ['forex', 'Foreign exchange reserves', 'Total reserves including gold', 'Annual', '#a371f7', 'USD', 'https://data.worldbank.org/indicator/FI.RES.TOTL.CD?locations=IN', 'Foreign-exchange reserves are external assets held by the monetary authority, including gold in this indicator. They help provide resilience against external-payment stress and exchange-rate volatility.\n\nReserve adequacy should be read with imports, debt, and the current account rather than treated as a standalone score. The displayed series is annual and denominated in current US dollars.'],
   ['bank_credit', 'Bank credit', 'Domestic credit to private sector', 'Annual', '#f56c6c', '%', 'https://data.worldbank.org/indicator/FS.AST.PRVT.GD.ZS?locations=IN', 'Domestic credit to the private sector measures financial-sector lending relative to the size of the economy. It can signal whether businesses and households have expanding or tightening access to finance.\n\nCredit growth is not automatically positive: the composition, repayment quality, and cost of borrowing matter. This annual ratio is a structural indicator, not a substitute for RBI monthly banking statistics.'],
   ['wpi', 'WPI inflation', 'Wholesale price inflation', 'Monthly', '#f6c344', '%', 'https://eaindustry.nic.in/', 'Wholesale price inflation tracks price movement at the producer and bulk-trade level. It can reveal input-cost pressure before those changes fully appear in consumer prices.\n\nWPI is not included in the Economic Survey monthly HFI tables used by this pipeline. The Office of the Economic Adviser remains the official source, but its public portal does not currently expose a stable automated export for this dashboard.'],
-  ['upi', 'UPI activity', 'UPI transaction volume', 'Monthly', '#ff8f66', 'Lakh', 'https://www.npci.org.in/what-we-do/upi/product-statistics', 'UPI transaction volume shows the scale of digital payments processed through India\'s real-time payments infrastructure. It is a useful activity and digitisation signal, especially when paired with transaction value.\n\nThe monthly volume series is collated from Economic Survey Statistical Appendix table 9.2; NPCI remains the authoritative product-statistics source.'],
+  ['upi', 'UPI activity', 'UPI transaction volume', 'Monthly', '#ff8f66', ' Crore', 'https://www.npci.org.in/what-we-do/upi/product-statistics', 'UPI transaction volume shows the scale of digital payments processed through India\'s real-time payments infrastructure. It is a useful activity and digitisation signal, especially when paired with transaction value.\n\nThe monthly volume series is collated from Economic Survey Statistical Appendix table 9.2; NPCI remains the authoritative product-statistics source.'],
   ['power_consumption', 'Power consumption', 'Electricity demand', 'Monthly', '#79c0ff', 'GWh', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab91.pdf', 'Power consumption is a high-frequency activity signal that reflects demand from households, services, and industry. It can move with weather, economic activity, and electrification.\n\nThe monthly series is collated from Economic Survey Statistical Appendix table 9.1. It measures electricity use, not generation capacity or reliability.'],
   ['eway_bills', 'E-way bills', 'Goods movement compliance volume', 'Monthly', '#56d364', 'million', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab91.pdf', 'E-way bills track electronically documented movement of goods. They provide a useful logistics and formal-commerce signal that complements GST collections.\n\nThe series is a transaction volume, not a rupee value or direct GDP estimate. It is collated from Economic Survey table 9.1.'],
   ['rail_freight', 'Rail freight traffic', 'Domestic rail freight', 'Monthly', '#f2cc60', 'thousand tonnes', 'https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab91.pdf', 'Rail freight traffic reflects movement of bulk commodities and industrial inputs through the rail network. It provides a physical-economy signal alongside digital and tax indicators.\n\nThe series is reported in thousand tonnes and comes from Economic Survey table 9.1.'],
@@ -149,7 +149,7 @@ const definitions = [
   ['electronics_manufacturing', 'Electronics manufacturing output', 'Domestic electronics manufacturing value', 'Annual', '#bc8cff', ' INR Lakh Cr', 'https://www.meity.gov.in/', 'Total production value of mobile phones, consumer electronics, IT hardware, and industrial electronics boosted by PLI schemes.\n\nSourced from MeitY and ICEA.'],
   ['pharma_exports_trajectory', 'Pharmaceutical exports', 'Biotech & pharmaceutical export value', 'Annual', '#3fb950', ' USD bn', 'https://pharmexcil.com/', 'Export value of active pharmaceutical ingredients (APIs), formulations, vaccines, and biosimilars to over 200 countries.\n\nSourced from Pharmexcil and Ministry of Commerce.'],
   ['textiles_apparel_exports', 'Textiles & apparel exports', 'Textiles, garments & technical textiles exports', 'Annual', '#e3b341', ' USD bn', 'https://texmin.nic.in/', 'Export earnings from cotton yarn, ready-made garments, man-made fibres, and technical textiles.\n\nSourced from Ministry of Textiles and DGFT.'],
-  ['state_gsdp_comparison', 'GSDP by state/UT', 'Gross State Domestic Product at current prices, FY2023-24', 'Annual snapshot (FY2023-24)', '#58a6ff', ' INR Lakh Cr', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470', 'RBI Table 21, Gross State Domestic Product at current prices for FY2023-24. All 36 current State/UT labels are shown; values remain blank where the RBI table does not report a separate UT figure. The chart is a one-year comparison, not a continuous growth trajectory.'],
+  ['state_gsdp_comparison', 'GSDP by state', 'Gross State Domestic Product at current prices, FY2022-23', 'Annual snapshot (FY2022-23)', '#58a6ff', ' INR Lakh Cr', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470', 'RBI Table 21, Gross State Domestic Product at current prices. The comparable FY2022-23 snapshot includes all 28 States; Union Territories are excluded. The chart is a one-year comparison, not a continuous growth trajectory.'],
   ['state_fdi_inflows', 'State FDI equity inflows comparison', 'FDI inflows across top destination states/regions', 'Annual', '#3fb950', ' USD bn', 'https://www.dpiit.gov.in/', 'Annual foreign direct investment (FDI) equity inflows received across leading state investment destinations.\n\nSourced from DPIIT and Ministry of Commerce State FDI statistics.'],
   ['state_debt_to_gsdp', 'State Debt-to-GSDP liabilities ratio', 'Outstanding liabilities as percentage of GSDP', 'Annual', '#ff7b72', '% GSDP', 'https://www.rbi.org.in/', 'State fiscal health and debt sustainability indicator tracking outstanding liabilities as a percentage of GSDP.\n\nSourced from RBI Study on State Finances and NITI Aayog.'],
   ['state_operating_factories', 'Registered operating factories by state', 'Total operating factory count from ASI census', 'Annual', '#f6c344', ' factories', 'https://www.mospi.gov.in/', 'Manufacturing footprint comparing registered operating factories across industrial hub states.\n\nSourced from MOSPI Annual Survey of Industries (ASI).'],
@@ -248,28 +248,49 @@ const renderChartSourceIndex = () => {
     const heading = document.createElement('strong');
     heading.textContent = title;
     const meta = document.createElement('span');
-    const category = ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : key === 'state_power_per_capita' ? 'State Performance & Regional Health' : categoryFor(key);
-    const subgroup = ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : subgroupFor(key);
+    const category = extraChartPlacement[key]?.category || (['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : key === 'state_power_per_capita' ? 'State Performance & Regional Health' : categoryFor(key));
+    const subgroup = extraChartPlacement[key]?.subgroup || (['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : subgroupFor(key));
     meta.textContent = `${category} / ${subgroup} / ${frequency}`;
     item.append(heading, meta);
+    const chartLink = document.createElement('a');
+    chartLink.className = 'source-chart-link';
+    chartLink.href = `#indicator-${key}`;
+    chartLink.textContent = 'View graph';
+    chartLink.addEventListener('click', event => {
+      event.preventDefault();
+      const groupSelect = document.querySelector('#group-filter');
+      const subgroupSelect = document.querySelector('#subgroup-filter');
+      if (groupSelect && subgroupSelect) {
+        groupSelect.value = category;
+        groupSelect.dispatchEvent(new Event('change', { bubbles: true }));
+        subgroupSelect.value = subgroup;
+        subgroupSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      window.location.hash = `indicator-${key}`;
+      document.getElementById(`indicator-${key}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    item.append(chartLink);
     for (const url of new Set(urls.filter(Boolean))) {
       const link = document.createElement('a');
       link.href = url;
       link.target = '_blank';
       link.rel = 'noreferrer';
-      link.textContent = url;
+      link.textContent = `${new URL(url).hostname.replace(/^www\./, '')} · Open source ↗`;
+      link.title = url;
       item.append(link);
     }
-    item.dataset.search = `${title} ${subtitle} ${frequency} ${urls.join(' ')}`.toLowerCase();
+    item.dataset.search = `${title} ${subtitle} ${frequency} ${definition[7] || ''} ${category} ${subgroup} ${urls.join(' ')}`.toLowerCase();
     list.append(item);
   });
-  if (count) count.textContent = `${definitions.length} charts`;
+  if (count) count.textContent = `${definitions.length} graphs`;
   search?.addEventListener('input', () => {
     const query = search.value.trim().toLowerCase();
     for (const item of list.children) item.hidden = !item.dataset.search.includes(query);
   });
 };
 
+const extraChartPlacement = window.INDIA_EXTRA_CHART_PLACEMENT || {};
+definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []));
 renderChartSourceIndex();
 
 const formatMagnitude = (value, suffix = '') => {
@@ -316,6 +337,7 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
   return {
     responsive: true,
     maintainAspectRatio: false,
+    indexAxis: horizontalBars ? 'y' : 'x',
     animation: { duration: 600, easing: 'easeOutQuart' },
     interaction: { mode: 'index', intersect: false },
     plugins: pluginsConfig,
@@ -387,6 +409,8 @@ async function main() {
 
   const data = dataPayload || { series: {} };
   data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}) };
+  const heroChartCount = document.querySelector('#hero-chart-count');
+  if (heroChartCount) heroChartCount.textContent = String(definitions.length);
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
   data.series.indian_matrix = { labels: matrixCadence.labels || [], values: matrixCadence.values || [], source: 'Indian Matrix public RSS feed' };
   const pewCadence = (data.series.pew_india_reports && data.series.pew_india_reports.values && data.series.pew_india_reports.values.length) ? data.series.pew_india_reports : (pewReports?.cadence || { labels: [], values: [] });
@@ -427,6 +451,38 @@ async function main() {
   renderArticles(articleLinks, imArticles.slice(0, 6), 'No public article snapshot available yet.');
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) renderArticles(polityPolicyLinks, ppArticles.slice(0, 6), 'No public article snapshot available yet.');
+  const pewReportItems = (dataPayload && dataPayload.pew_reports) || pewReports?.reports || [];
+  const renderPewReports = () => {
+    const list = document.querySelector('#pew-report-list');
+    const searchInput = document.querySelector('#pew-report-search');
+    const count = document.querySelector('#pew-report-count');
+    if (!list || !searchInput || !count) return;
+    const query = searchInput.value.trim().toLowerCase();
+    const terms = query.split(/\s+/).filter(Boolean);
+    const reports = pewReportItems
+      .filter(report => {
+        const searchable = `${report.title || ''} ${report.date || ''} ${report.link || ''}`.toLowerCase();
+        return /india/i.test(searchable) && terms.every(term => searchable.includes(term));
+      })
+      .sort((left, right) => String(right.date || '').localeCompare(String(left.date || '')));
+    list.replaceChildren();
+    reports.slice(0, 18).forEach(report => {
+      const item = document.createElement('a');
+      item.className = 'pew-report-item';
+      item.href = report.link;
+      item.target = '_blank';
+      item.rel = 'noreferrer';
+      const title = document.createElement('strong');
+      title.textContent = report.title || 'Pew Research report';
+      const date = document.createElement('span');
+      date.textContent = `${report.date || 'Date not listed'} · Open original report ↗`;
+      item.append(title, date);
+      list.append(item);
+    });
+    count.textContent = `${reports.length.toLocaleString()} India-related reports indexed · showing ${Math.min(reports.length, 18)}${query ? ' matches' : ' recent reports'}`;
+  };
+  document.querySelector('#pew-report-search')?.addEventListener('input', renderPewReports);
+  renderPewReports();
   const categoryBgMap = {
     Economic: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop", // Classical Architecture & Ancient Heritage
     'Industry Trends & Performance': "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop", // Industrial & Engineering Output
@@ -451,10 +507,36 @@ async function main() {
 
   const grid = document.querySelector('#charts');
   const charts = [];
+  const savedChartKeys = new Set();
+  const focusOverlay = document.querySelector('#chart-focus-overlay');
+  const focusContent = document.querySelector('#chart-focus-content');
+  const focusClose = document.querySelector('#chart-focus-close');
+  let expandedChart = null;
+  let expandedPlaceholder = null;
+  let expandOpener = null;
+  const closeExpandedChart = () => {
+    if (!expandedChart || !expandedPlaceholder) return;
+    const closingChart = expandedChart;
+    expandedPlaceholder.replaceWith(closingChart);
+    expandedChart = null;
+    expandedPlaceholder = null;
+    if (focusOverlay) focusOverlay.hidden = true;
+    const chartEntry = charts.find(item => item.card === closingChart);
+    chartEntry?.chart?.resize();
+    expandOpener?.focus();
+    expandOpener = null;
+  };
+  focusClose?.addEventListener('click', closeExpandedChart);
+  focusOverlay?.addEventListener('click', event => {
+    if (event.target === focusOverlay) closeExpandedChart();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeExpandedChart();
+  });
   let lastCategory = '';
   const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9 };
-  const dashboardCategoryFor = key => ['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key);
-  const dashboardSubgroupFor = key => ['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key);
+  const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
+  const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = dashboardCategoryFor(key);
@@ -471,8 +553,11 @@ async function main() {
     const card = document.createElement('article');
     card.className = 'chart-card';
     if (series.chartType === 'bar' && series.indexAxis === 'y') card.classList.add('state-rank-chart');
-    const paragraphs = details.split('\\n\\n').map(paragraph => `<p>${paragraph}</p>`).join('');
-    card.dataset.title = `${title} ${subtitle}`.toLowerCase();
+    const paragraphs = details.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+    const summary = details.split('\n\n')[0] || subtitle;
+    card.id = `indicator-${key}`;
+    card.dataset.key = key;
+    card.dataset.title = `${title} ${subtitle} ${details} ${category} ${dashboardSubgroupFor(key)}`.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
     card.dataset.subgroup = dashboardSubgroupFor(key);
@@ -483,13 +568,24 @@ async function main() {
     
     const labels = series?.labels || [];
     const values = series?.values || [];
+    const years = [...new Set(labels.map(label => String(label).match(/^(\d{4})/)?.[1]).filter(Boolean))].sort((a, b) => Number(a) - Number(b));
 
     let latestValStr = 'N/A';
     let growth5YrStr = 'N/A';
     let peakValStr = 'N/A';
 
     if (live) {
-      if (values && values.length > 0) {
+      if (series.scope === 'state' && values.length > 0) {
+        const available = values
+          .map((value, index) => ({ value, state: labels[index] }))
+          .filter(point => point.value !== null && point.value !== undefined && !isNaN(point.value));
+        latestValStr = `${available.length} / ${labels.length}`;
+        growth5YrStr = 'Cross-section';
+        if (available.length > 0) {
+          const highest = available.reduce((best, point) => point.value > best.value ? point : best);
+          peakValStr = `${highest.state} (${formatMagnitude(highest.value, suffix)})`;
+        }
+      } else if (values && values.length > 0) {
         const numValues = values.filter(v => v !== null && v !== undefined && !isNaN(v));
         if (numValues.length > 0) {
           const lastVal = numValues[numValues.length - 1];
@@ -509,23 +605,64 @@ async function main() {
           }
         }
       } else if (series?.datasets && series.datasets.length > 0) {
-        latestValStr = `${series.datasets.length} engine series`;
-        growth5YrStr = `Multi-dataset`;
-        peakValStr = `Base 100 rebased`;
+        latestValStr = `${series.datasets.length} series`;
+        growth5YrStr = 'Multi-series';
+        peakValStr = series.chartType === 'bar' ? 'See legend' : 'Indexed comparison';
       }
     }
 
     const valueCruncherHtml = `
       <div class="value-cruncher-bar">
-        <div class="vc-stat"><span class="vc-label">Latest Value</span><strong class="vc-val">${latestValStr}</strong></div>
-        <div class="vc-stat"><span class="vc-label">5Y Trend</span><strong class="vc-val growth">${growth5YrStr}</strong></div>
-        <div class="vc-stat"><span class="vc-label">Historical Peak</span><strong class="vc-val">${peakValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'States covered' : 'Latest Value'}</span><strong class="vc-val">${latestValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'Measure' : '5Y Trend'}</span><strong class="vc-val growth">${growth5YrStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'Highest state' : 'Historical Peak'}</span><strong class="vc-val">${peakValStr}</strong></div>
         <div class="vc-stat"><span class="vc-label">Observations</span><strong class="vc-val">${observationCount} ${frequency.toLowerCase()}</strong></div>
       </div>
     `;
 
-    card.innerHTML = `<header><div><h2>${title}</h2><p>${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div><span class="status-pill ${live ? 'live' : ''}">${live ? 'Live' : 'Source adapter pending'}</span><button class="deep-dive-btn" type="button">📊 Deep Dive</button><button class="reset" type="button">Reset</button></div></header>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}"></canvas>${live ? '' : '<p class="empty-state">The official source is linked below. Values will appear when its public export adapter is available.</p>'}</div><details class="insight"><summary>Read the indicator note</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Open official source</a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>`;
     grid.append(card);
+    card.querySelector('.expand-chart-btn').addEventListener('click', () => {
+      if (!focusOverlay || !focusContent) return;
+      expandedChart = card;
+      expandedPlaceholder = document.createElement('div');
+      expandedPlaceholder.hidden = true;
+      card.after(expandedPlaceholder);
+      expandOpener = card.querySelector('.expand-chart-btn');
+      focusContent.append(card);
+      focusOverlay.hidden = false;
+      chart?.resize();
+      focusClose?.focus();
+    });
+    if (years.length > 1) {
+      const range = document.createElement('div');
+      range.className = 'chart-range-controls';
+      range.innerHTML = `<span>PERIOD</span><label>From <select class="chart-range-start" aria-label="Start year for ${title}"></select></label><label>To <select class="chart-range-end" aria-label="End year for ${title}"></select></label>`;
+      const startSelect = range.querySelector('.chart-range-start');
+      const endSelect = range.querySelector('.chart-range-end');
+      for (const year of years) {
+        startSelect.add(new Option(year, year));
+        endSelect.add(new Option(year, year));
+      }
+      startSelect.value = years[0];
+      endSelect.value = years[years.length - 1];
+      card.querySelector('.chart-wrap').before(range);
+      card._range = { startSelect, endSelect };
+    }
+    const saveButton = card.querySelector('.save-chart-btn');
+    saveButton.addEventListener('click', event => {
+      event.stopPropagation();
+      if (savedChartKeys.has(key)) {
+        savedChartKeys.delete(key);
+        saveButton.textContent = '☆ Save';
+        saveButton.setAttribute('aria-pressed', 'false');
+      } else {
+        savedChartKeys.add(key);
+        saveButton.textContent = '★ Saved';
+        saveButton.setAttribute('aria-pressed', 'true');
+      }
+      updateCards();
+    });
     const deepDiveBtn = card.querySelector('.deep-dive-btn');
     if (deepDiveBtn) {
       deepDiveBtn.addEventListener('click', (e) => {
@@ -588,6 +725,38 @@ async function main() {
         data: { labels, datasets: chartDatasets },
         options: chartOptions(suffix, hasMultipleDatasets, series.chartType === 'bar' && series.indexAxis === 'y'),
       });
+      canvas.addEventListener('dblclick', () => card.querySelector('.expand-chart-btn')?.click());
+    }
+    if (chart && card._range) {
+      const baseDatasets = chart.data.datasets.map(dataset => [...dataset.data]);
+      const applyChartRange = () => {
+        let startYear = Number(card._range.startSelect.value);
+        let endYear = Number(card._range.endSelect.value);
+        if (startYear > endYear) {
+          if (document.activeElement === card._range.startSelect) {
+            endYear = startYear;
+            card._range.endSelect.value = String(endYear);
+          } else {
+            startYear = endYear;
+            card._range.startSelect.value = String(startYear);
+          }
+        }
+        const selected = labels.map((label, i) => ({ label, i, year: Number(String(label).slice(0, 4)) }))
+          .filter(point => point.year >= startYear && point.year <= endYear);
+        chart.data.labels = selected.map(point => point.label);
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+          dataset.data = selected.map(point => baseDatasets[datasetIndex][point.i]);
+        });
+        chart.resetZoom();
+        chart.update();
+      };
+      card._range.startSelect.addEventListener('change', applyChartRange);
+      card._range.endSelect.addEventListener('change', applyChartRange);
+      card.querySelector('.reset').addEventListener('click', () => {
+        card._range.startSelect.value = years[0];
+        card._range.endSelect.value = years[years.length - 1];
+        applyChartRange();
+      });
     }
 
     if (hasMultipleDatasets) {
@@ -639,7 +808,7 @@ async function main() {
 
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => { if (chart) chart.resetZoom(); });
-    charts.push({ chart, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey });
+    charts.push({ chart, card, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey });
   });
   const cards = [...grid.querySelectorAll('.chart-card')];
   const headings = [...grid.querySelectorAll('.category-heading')];
@@ -648,8 +817,10 @@ async function main() {
   const groupFilter = document.querySelector('#group-filter');
   const subgroupFilter = document.querySelector('#subgroup-filter');
   const search = document.querySelector('#chart-search');
-  const rangeStart = document.querySelector('#range-start');
-  const rangeEnd = document.querySelector('#range-end');
+  const savedToggle = document.querySelector('#saved-toggle');
+  const resultCount = document.querySelector('#chart-result-count');
+  const liveCount = document.querySelector('#hero-live-count');
+  if (liveCount) liveCount.textContent = String(cards.filter(card => card.dataset.state === 'live').length);
   const subgroupGroups = { 
     Macroeconomics: 'Economic', 
     'Per Capita Income & Wealth': 'Economic',
@@ -705,15 +876,6 @@ async function main() {
   groupToSubgroups.all.push('State Infrastructure & Services');
   groupToSubgroups['State Performance & Regional Health'].push('State Infrastructure & Services');
 
-  const addPeriodOptions = (select, periods, selected) => {
-    select.replaceChildren(...periods.map(period => {
-      const option = document.createElement('option');
-      option.value = period;
-      option.textContent = period;
-      option.selected = period === selected;
-      return option;
-    }));
-  };
   const updateSubgroupFilter = () => {
     const selectedGroup = groupFilter.value;
     const currentValue = subgroupFilter.value;
@@ -762,22 +924,6 @@ async function main() {
       subgroupFilter.value = 'all';
     }
   };
-  const updatePeriods = () => {
-    const scopedCharts = charts.filter(({ category, subgroup }) => (groupFilter.value === 'all' || category === groupFilter.value) && (subgroupFilter.value === 'all' || subgroup === subgroupFilter.value));
-    const rawYears = scopedCharts.flatMap(({ labels }) => 
-      (labels || []).map(l => {
-        const m = String(l).match(/^\d{4}/);
-        return m ? m[0] : null;
-      }).filter(Boolean)
-    );
-    const periods = [...new Set(rawYears)].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
-    if (!periods.length) return;
-    const start = periods[0];
-    const end = periods[periods.length - 1];
-    addPeriodOptions(rangeStart, periods, start);
-    addPeriodOptions(rangeEnd, periods, end);
-  };
-
   const groupHeroData = {
     Economic: {
       title: "📈 Economic, Per Capita Wealth & Capital Markets Atlas",
@@ -1080,7 +1226,11 @@ async function main() {
 
   const syncGroupPills = (grpVal) => {
     if (groupPills.length > 0) {
-      groupPills.forEach(p => p.classList.toggle('active', p.dataset.group === grpVal));
+      groupPills.forEach(p => {
+        const active = p.dataset.group === grpVal;
+        p.classList.toggle('active', active);
+        p.setAttribute('aria-pressed', String(active));
+      });
     }
   };
 
@@ -1102,7 +1252,6 @@ async function main() {
         if (categoryBgMap[pill.dataset.group]) setEraBackground(categoryBgMap[pill.dataset.group]);
         updateSubgroupFilter();
         updateGroupHero();
-        updatePeriods();
         updateCards();
       });
     });
@@ -1112,6 +1261,9 @@ async function main() {
     const query = search.value.trim().toLowerCase();
     updateGroupHero();
     const stateFilter = filter ? filter.value : 'all';
+    const hasSelectedScope = groupFilter.value !== 'all' || subgroupFilter.value !== 'all';
+    const pewLibrary = document.querySelector('#pew-report-library');
+    if (pewLibrary) pewLibrary.hidden = groupFilter.value !== 'Pew Research';
 
     let visibleCount = 0;
     cards.forEach(card => {
@@ -1119,13 +1271,15 @@ async function main() {
       const cardSubgroup = card.dataset.subgroup;
       const cardState = card.dataset.state;
       const cardTitle = card.dataset.title;
+      const isSaved = savedChartKeys.has(card.dataset.key);
 
       const matchesGroup = (groupFilter.value === 'all' || cardCategory === groupFilter.value);
       const matchesSubgroup = (subgroupFilter.value === 'all' || cardSubgroup === subgroupFilter.value);
       const matchesState = (stateFilter === 'all' || cardState === stateFilter);
       const matchesSearch = (!query || cardTitle.includes(query));
+      const matchesSaved = (!savedToggle?.getAttribute('aria-pressed') || savedToggle.getAttribute('aria-pressed') !== 'true' || isSaved);
 
-      const isMatch = (matchesGroup && matchesSubgroup && matchesState && matchesSearch);
+      const isMatch = (hasSelectedScope && matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesSaved);
       card.hidden = !isMatch;
       if (isMatch) visibleCount++;
     });
@@ -1143,12 +1297,30 @@ async function main() {
         emptyMsg.className = 'no-charts-message';
         grid.appendChild(emptyMsg);
       }
-      emptyMsg.innerHTML = `<p style="color:var(--muted); text-align:center; padding:40px; font-size:1.05rem;">No indicators match your current filter selection. Try selecting "All Groups" or "All Subgroups".</p>`;
+      emptyMsg.innerHTML = `<p style="color:var(--muted); text-align:center; padding:40px; font-size:1.05rem;">${hasSelectedScope ? 'No indicators match this selection. Try another group, subgroup, or search.' : 'Choose a group or subgroup above to explore its charts.'}</p>`;
       emptyMsg.hidden = false;
     } else if (emptyMsg) {
       emptyMsg.hidden = true;
     }
+    if (resultCount) resultCount.textContent = hasSelectedScope ? `Showing ${visibleCount} of ${cards.length} indicators` : 'Select a group or subgroup to begin';
   };
+  savedToggle?.addEventListener('click', () => {
+    const pressed = savedToggle.getAttribute('aria-pressed') !== 'true';
+    savedToggle.setAttribute('aria-pressed', String(pressed));
+    savedToggle.classList.toggle('active', pressed);
+    updateCards();
+  });
+  document.querySelector('#clear-filters')?.addEventListener('click', () => {
+    groupFilter.value = 'all';
+    subgroupFilter.value = 'all';
+    if (filter) filter.value = 'all';
+    search.value = '';
+    savedToggle?.setAttribute('aria-pressed', 'false');
+    savedToggle?.classList.remove('active');
+    syncGroupPills('all');
+    updateSubgroupFilter();
+    updateCards();
+  });
   if (filter) filter.addEventListener('change', updateCards);
   groupFilter.addEventListener('change', () => { 
     const grp = groupFilter.value;
@@ -1157,7 +1329,6 @@ async function main() {
     subgroupFilter.value = 'all';
     updateSubgroupFilter(); 
     updateGroupHero();
-    updatePeriods(); 
     updateCards(); 
   });
   subgroupFilter.addEventListener('change', () => { 
@@ -1168,55 +1339,9 @@ async function main() {
     }
     updateSubgroupFilter(); 
     updateGroupHero(); 
-    updatePeriods(); 
     updateCards(); 
   });
   search.addEventListener('input', updateCards);
-  const updateRange = () => {
-    const startYear = parseInt(rangeStart.value, 10);
-    const endYear = parseInt(rangeEnd.value, 10);
-
-    charts.forEach(({ chart, labels, values, datasets }) => {
-      if (!chart || !chart.data || !labels) return;
-      const isTimeSeries = labels.some(l => /^\d{4}/.test(String(l)));
-      let visible = [];
-
-      if (isTimeSeries && !isNaN(startYear) && !isNaN(endYear)) {
-        visible = labels.reduce((result, label, index) => {
-          const m = String(label).match(/^\d{4}/);
-          const y = m ? parseInt(m[0], 10) : null;
-          if (y !== null && y >= startYear && y <= endYear) {
-            result.push({ label, value: values[index] });
-          }
-          return result;
-        }, []);
-      } else {
-        visible = labels.map((label, index) => ({ label, value: values[index] }));
-      }
-
-      chart.data.labels = visible.map(point => point.label);
-      if (chart.data.datasets.length === 1) {
-        chart.data.datasets[0].data = visible.map(point => point.value);
-      } else {
-        chart.data.datasets.forEach((dataset, datasetIndex) => {
-          if (isTimeSeries && !isNaN(startYear) && !isNaN(endYear)) {
-            dataset.data = datasets[datasetIndex].data.map((value, index) => {
-              const m = String(labels[index]).match(/^\d{4}/);
-              const y = m ? parseInt(m[0], 10) : null;
-              return (y !== null && y >= startYear && y <= endYear) ? value : null;
-            });
-          } else {
-            dataset.data = datasets[datasetIndex].data;
-          }
-        });
-      }
-      if (typeof chart.resetZoom === 'function') chart.resetZoom();
-      chart.update();
-    });
-  };
-  rangeStart.addEventListener('change', updateRange);
-  rangeEnd.addEventListener('change', updateRange);
-
   // Force form controls to default state on startup so browser autocomplete desync is avoided
   if (groupFilter) groupFilter.value = 'all';
   if (subgroupFilter) subgroupFilter.value = 'all';
@@ -1224,7 +1349,6 @@ async function main() {
   if (filter) filter.value = 'all';
   syncGroupPills('all');
   updateSubgroupFilter();
-  updatePeriods();
   updateCards();
 }
 

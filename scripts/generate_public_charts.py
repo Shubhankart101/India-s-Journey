@@ -10,25 +10,21 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from zipfile import ZipFile
-import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
-RBI_STATE_WORKBOOKS = {
-    "pcnsdp": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/19T_11122025B8CC230E4A34431999B4D6A107707BCA.XLSX",
-    "gsdp": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/21T_11122025D994949B48C44B68B4465FBB9ADDFF3D.XLSX",
-    "power": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/138T_111220252D21BC51E5A842E4B25E954391C10A41.XLSX",
+RBI_STATE_TABLES = {
+    "pcnsdp": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468",
+    "gsdp": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470",
+    "power": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587",
 }
-STATE_UT_NAMES = [
-    "Andaman & Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
-    "Chandigarh", "Chhattisgarh", "Dadra & Nagar Haveli and Daman & Diu", "Delhi", "Goa",
-    "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka",
-    "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur",
-    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab", "Rajasthan",
-    "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
-    "West Bengal",
+STATE_NAMES = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa",
+    "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala",
+    "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland",
+    "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+    "Uttar Pradesh", "Uttarakhand", "West Bengal",
 ]
 
 
@@ -44,79 +40,83 @@ def get_text(url: str) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
-def excel_column_index(cell_reference: str) -> int:
-    column = 0
-    for character in re.match(r"[A-Z]+", cell_reference).group():
-        column = column * 26 + ord(character) - ord("A") + 1
-    return column
+class _HtmlTableRows(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self._row = None
+        self._cell = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "tr":
+            self._row = []
+        elif tag in ("td", "th") and self._row is not None:
+            self._cell = []
+
+    def handle_data(self, data):
+        if self._cell is not None:
+            self._cell.append(data)
+
+    def handle_endtag(self, tag):
+        if tag in ("td", "th") and self._cell is not None:
+            self._row.append(" ".join("".join(self._cell).split()))
+            self._cell = None
+        elif tag == "tr" and self._row is not None:
+            self.rows.append(self._row)
+            self._row = None
 
 
-def read_rbi_latest_worksheet(url: str) -> list[dict[int, str]]:
-    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})
-    with urlopen(request, timeout=60) as response:
-        workbook = ZipFile(io.BytesIO(response.read()))
-    namespace = {"main": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-    shared_strings = []
-    if "xl/sharedStrings.xml" in workbook.namelist():
-        shared_root = ET.fromstring(workbook.read("xl/sharedStrings.xml"))
-        shared_strings = ["".join(item.itertext()) for item in shared_root.findall("main:si", namespace)]
-    sheet = ET.fromstring(workbook.read("xl/worksheets/sheet2.xml"))
-    parsed_rows = []
-    for row in sheet.findall(".//main:sheetData/main:row", namespace):
-        values = {}
-        for cell in row.findall("main:c", namespace):
-            value = cell.find("main:v", namespace)
-            text = value.text if value is not None else ""
-            if cell.attrib.get("t") == "s" and text:
-                text = shared_strings[int(text)]
-            elif cell.attrib.get("t") == "inlineStr":
-                inline = cell.find("main:is", namespace)
-                text = "".join(inline.itertext()) if inline is not None else ""
-            values[excel_column_index(cell.attrib["r"])] = text
-        parsed_rows.append(values)
-    return parsed_rows
-
-
-def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source: str, merge_daman_diu: bool = False) -> dict:
-    rows = read_rbi_latest_worksheet(url)
-    state_header_index = next(
-        (index for index, row in enumerate(rows) if "State/Union Territory" in row.values()),
+def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source: str) -> dict:
+    parser = _HtmlTableRows()
+    parser.feed(get_text(url))
+    year_row_index = next(
+        (index for index, row in enumerate(parser.rows) if fiscal_year in row),
         None,
     )
-    year_header_index = next(
-        (index for index, row in enumerate(rows) if fiscal_year in row.values()),
-        None,
-    )
-    if state_header_index is None or year_header_index is None:
+    if year_row_index is None:
         raise ValueError(f"RBI state table header for {fiscal_year} was not found")
-    state_column = next(column for column, value in rows[state_header_index].items() if value == "State/Union Territory")
-    value_column = next(column for column, value in rows[year_header_index].items() if value == fiscal_year)
+    year_row = parser.rows[year_row_index]
+    year_column = year_row.index(fiscal_year)
+    value_column = year_column if year_row[0] == "State/Union Territory" else year_column + 1
     state_values = {}
-    for row in rows[max(state_header_index, year_header_index) + 1:]:
-        name = row.get(state_column, "").strip()
-        if not name or name.startswith(("*", "-")) or name == "ALL INDIA":
+    for row in parser.rows[year_row_index + 1:]:
+        if row and row[0] == "State/Union Territory":
+            break
+        if not row or len(row) <= value_column:
             continue
-        if name == "Daman & Diu" and merge_daman_diu:
+        name = row[0].strip().rstrip("*").strip()
+        if name not in STATE_NAMES:
             continue
-        if name == "Dadra & Nagar Haveli" and merge_daman_diu:
-            name = "Dadra & Nagar Haveli and Daman & Diu"
-        elif name == "Jammu & Kashmir*":
-            name = "Jammu & Kashmir"
-        raw_value = row.get(value_column, "").strip().replace(",", "")
+        raw_value = row[value_column].replace(",", "").strip()
         try:
             state_values[name] = float(raw_value) / divisor
         except ValueError:
             state_values[name] = None
-    labels = sorted(STATE_UT_NAMES, key=lambda name: (state_values.get(name) is None, -(state_values.get(name) or 0), name))
-    values = [state_values.get(name) for name in labels]
+    missing = [name for name in STATE_NAMES if state_values.get(name) is None]
+    if missing:
+        raise ValueError(f"RBI {fiscal_year} table is missing state values: {', '.join(missing)}")
+    labels = sorted(STATE_NAMES, key=lambda name: (-state_values[name], name))
+    values = [state_values[name] for name in labels]
     return {
         "labels": labels,
         "values": values,
         "chartType": "bar",
         "indexAxis": "y",
+        "scope": "state",
         "source": source,
-        "note": f"FY{fiscal_year}. The RBI table provides {sum(value is not None for value in values)} separate observations; unreported State/UT values remain blank.",
+        "note": f"FY{fiscal_year}. Includes all 28 States using the same reporting year; Union Territories are excluded.",
     }
+
+
+def has_complete_state_coverage(series: dict) -> bool:
+    labels = series.get("labels", [])
+    values = series.get("values", [])
+    return (
+        len(labels) == len(STATE_NAMES)
+        and set(labels) == set(STATE_NAMES)
+        and len(values) == len(STATE_NAMES)
+        and all(value is not None for value in values)
+    )
 
 
 def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float], color: str, value_suffix: str) -> str:
@@ -874,8 +874,8 @@ def build_textiles_apparel_exports() -> dict:
 # --- STATE PERFORMANCE & REGIONAL HEALTH BUILDERS ---
 def build_state_gsdp_comparison() -> dict:
     return build_rbi_state_snapshot(
-        RBI_STATE_WORKBOOKS["gsdp"], "2023-24", 10_000_000,
-        "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2023-24, INR lakh crore)",
+        RBI_STATE_TABLES["gsdp"], "2022-23", 10_000_000,
+        "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2022-23, INR lakh crore)",
     )
 
 def build_state_fdi_inflows() -> dict:
@@ -958,16 +958,15 @@ def build_state_mudra_loans() -> dict:
 
 def build_state_per_capita_income() -> dict:
     return build_rbi_state_snapshot(
-        RBI_STATE_WORKBOOKS["pcnsdp"], "2023-24", 100_000,
-        "RBI Handbook of Statistics on Indian States 2024-25, Table 19 (per-capita NSDP at current prices; FY2023-24, INR lakh)",
+        RBI_STATE_TABLES["pcnsdp"], "2022-23", 100_000,
+        "RBI Handbook of Statistics on Indian States 2024-25, Table 19 (per-capita NSDP at current prices; FY2022-23, INR lakh)",
     )
 
 
 def build_state_power_per_capita() -> dict:
     return build_rbi_state_snapshot(
-        RBI_STATE_WORKBOOKS["power"], "2024-25", 1,
+        RBI_STATE_TABLES["power"], "2024-25", 1,
         "RBI Handbook of Statistics on Indian States 2024-25, Table 138; CEA per-capita power availability (FY2024-25, kWh)",
-        merge_daman_diu=True,
     )
 
 def build_state_own_tax_revenue() -> dict:
@@ -1009,12 +1008,45 @@ def build_state_manufacturing_gsdp_share() -> dict:
     }
 
 def build_state_pmjdy_bank_accounts() -> dict:
-    states = ["Uttar Pradesh", "Bihar", "West Bengal", "Madhya Pradesh", "Rajasthan", "Maharashtra", "Odisha", "Assam"]
-    accounts_crore = [9.25, 5.82, 4.95, 4.12, 3.58, 3.42, 2.15, 2.08]
+    report_url = "https://pmjdy.gov.in/statewise-statistics"
+    page_text = get_text(report_url)
+    parser = _HtmlTableRows()
+    parser.feed(page_text)
+    header_index = next(
+        (index for index, row in enumerate(parser.rows) if "Total Beneficiaries" in row),
+        None,
+    )
+    if header_index is None:
+        raise ValueError("PMJDY statewise beneficiary table was not found")
+    header = parser.rows[header_index]
+    state_column = header.index("State Name")
+    total_column = header.index("Total Beneficiaries")
+    state_values = {}
+    for row in parser.rows[header_index + 1:]:
+        if len(row) <= max(state_column, total_column):
+            continue
+        name = row[state_column].strip()
+        if name not in STATE_NAMES:
+            continue
+        state_values[name] = float(row[total_column].replace(",", "")) / 10_000_000
+    missing = [name for name in STATE_NAMES if name not in state_values]
+    if missing:
+        raise ValueError(f"PMJDY report is missing state values: {', '.join(missing)}")
+    labels = sorted(STATE_NAMES, key=lambda name: (-state_values[name], name))
+    report_date = re.search(
+        r"Statewise account opening Report as on\s+(\d{2}/\d{2}/\d{4})",
+        page_text,
+        re.I,
+    )
+    date_note = f"Report dated {report_date.group(1)}. " if report_date else ""
     return {
-        "labels": states,
-        "values": accounts_crore,
-        "source": "Department of Financial Services, Ministry of Finance (PM Jan Dhan Yojana Bank Accounts in Crores by State)"
+        "labels": labels,
+        "values": [state_values[name] for name in labels],
+        "chartType": "bar",
+        "indexAxis": "y",
+        "scope": "state",
+        "source": f"Department of Financial Services, PMJDY statewise account opening report ({report_url})",
+        "note": f"{date_note}All 28 States are included; Union Territories are excluded. Values are total beneficiary accounts in crore.",
     }
 
 def build_state_pmjay_health_cards() -> dict:
@@ -1143,6 +1175,50 @@ def main() -> None:
         ("homicide_rate", "VC.IHR.PSRC.P5", "india-homicide-rate.svg", "India Intentional Homicide Rate", "Intentional homicides per 100,000 people; World Bank indicator VC.IHR.PSRC.P5", "#ff7b72", " per 100k"),
         ("defence_expenditure", "MS.MIL.XPND.GD.ZS", "india-defence-expenditure.svg", "India Defence Expenditure", "Military expenditure as share of GDP; World Bank indicator MS.MIL.XPND.GD.ZS", "#ff7b72", "% GDP"),
     ]
+    additional_indicators = [
+        ("gdp_ppp", "NY.GDP.MKTP.PP.CD", "india-gdp-ppp.svg", "GDP at Purchasing Power Parity", "Gross domestic product in current international dollars", "#58a6ff", " USD"),
+        ("gdp_deflator_growth", "NY.GDP.DEFL.KD.ZG", "india-gdp-deflator.svg", "GDP Deflator Inflation", "Annual GDP deflator inflation", "#ff9933", "%"),
+        ("capital_formation_gdp", "NE.GDI.FTOT.ZS", "india-capital-formation.svg", "Gross Capital Formation", "Gross capital formation as a share of GDP", "#3fb950", "% GDP"),
+        ("household_consumption_gdp", "NE.CON.PRVT.ZS", "india-household-consumption.svg", "Household Consumption Share", "Household consumption expenditure as a share of GDP", "#f778ba", "% GDP"),
+        ("gross_savings_rate", "NY.GNS.ICTR.ZS", "india-gross-savings.svg", "Gross Savings Rate", "Gross savings as a share of GDP", "#bc8cff", "% GDP"),
+        ("exports_gdp", "NE.EXP.GNFS.ZS", "india-exports-gdp.svg", "Exports of Goods and Services", "Exports of goods and services as a share of GDP", "#3fb950", "% GDP"),
+        ("imports_gdp", "NE.IMP.GNFS.ZS", "india-imports-gdp.svg", "Imports of Goods and Services", "Imports of goods and services as a share of GDP", "#ff7b72", "% GDP"),
+        ("remittances_gdp", "BX.TRF.PWKR.DT.GD.ZS", "india-remittances-gdp.svg", "Personal Remittances", "Personal remittances received as a share of GDP", "#79c0ff", "% GDP"),
+        ("reserves_import_months", "FI.RES.TOTL.MO", "india-reserves-import-months.svg", "Foreign Reserves in Months of Imports", "Total reserves measured in months of imports", "#a371f7", " months"),
+        ("debt_service_exports", "DT.TDS.DECT.GN.ZS", "india-debt-service-exports.svg", "External Debt Service", "Total external debt service as a share of exports", "#e3b341", "% exports"),
+        ("public_debt_gdp", "GC.DOD.TOTL.GD.ZS", "india-public-debt-gdp.svg", "Central Government Debt", "Central government debt as a share of GDP", "#ff7b72", "% GDP"),
+        ("current_health_spending", "SH.XPD.CHEX.GD.ZS", "india-health-spending.svg", "Current Health Expenditure", "Current health expenditure as a share of GDP", "#3fb950", "% GDP"),
+        ("physicians_density", "SH.MED.PHYS.ZS", "india-physicians-density.svg", "Physicians per 1,000 People", "Medical doctors per 1,000 people", "#58a6ff", " per 1k people"),
+        ("under5_mortality", "SH.DYN.MORT", "india-under5-mortality.svg", "Under-Five Mortality Rate", "Deaths before age five per 1,000 live births", "#ff7b72", " per 1k births"),
+        ("basic_water_access", "SH.H2O.BASW.ZS", "india-basic-water-access.svg", "Basic Drinking Water Access", "Population using at least basic drinking water services", "#79c0ff", "%"),
+        ("basic_sanitation_access", "SH.STA.SMSS.ZS", "india-basic-sanitation.svg", "Basic Sanitation Access", "Population using at least basic sanitation services", "#bc8cff", "%"),
+        ("urban_population_share", "SP.URB.TOTL.IN.ZS", "india-urban-population.svg", "Urban Population Share", "Urban population as a share of total population", "#f778ba", "%"),
+        ("population_growth", "SP.POP.GROW", "india-population-growth.svg", "Population Growth", "Annual population growth rate", "#79c0ff", "%"),
+        ("fertility_rate", "SP.DYN.TFRT.IN", "india-fertility-rate.svg", "Total Fertility Rate", "Births per woman", "#ff9933", " births/woman"),
+        ("primary_school_enrollment", "SE.PRM.ENRR", "india-primary-enrollment.svg", "Primary School Enrollment", "Gross enrollment ratio in primary education", "#58a6ff", "%"),
+        ("secondary_school_enrollment", "SE.SEC.ENRR", "india-secondary-enrollment.svg", "Secondary School Enrollment", "Gross enrollment ratio in secondary education", "#a371f7", "%"),
+        ("tertiary_school_enrollment", "SE.TER.ENRR", "india-tertiary-enrollment.svg", "Tertiary School Enrollment", "Gross enrollment ratio in tertiary education", "#f778ba", "%"),
+        ("education_spending_gdp", "SE.XPD.TOTL.GD.ZS", "india-education-spending.svg", "Government Education Spending", "Government expenditure on education as a share of GDP", "#e3b341", "% GDP"),
+        ("female_labor_participation", "SL.TLF.CACT.FE.ZS", "india-female-labor-participation.svg", "Female Labor Force Participation", "Female labor force participation rate", "#f778ba", "%"),
+        ("labor_force_participation", "SL.TLF.CACT.ZS", "india-labor-force-participation.svg", "Labor Force Participation", "Labor force participation rate", "#79c0ff", "%"),
+        ("employment_population_ratio", "SL.EMP.TOTL.SP.ZS", "india-employment-population.svg", "Employment-to-Population Ratio", "Employment as a share of the working-age population", "#3fb950", "%"),
+        ("adult_literacy_rate", "SE.ADT.LITR.ZS", "india-adult-literacy.svg", "Adult Literacy Rate", "Adult literacy rate, population ages 15 and older", "#bc8cff", "%"),
+        ("agriculture_gdp_share", "NV.AGR.TOTL.ZS", "india-agriculture-gdp.svg", "Agriculture Value Added", "Agriculture, forestry and fishing value added as a share of GDP", "#3fb950", "% GDP"),
+        ("industry_gdp_share", "NV.IND.TOTL.ZS", "india-industry-gdp.svg", "Industry Value Added", "Industry value added as a share of GDP", "#ff9933", "% GDP"),
+        ("services_gdp_share", "NV.SRV.TOTL.ZS", "india-services-gdp.svg", "Services Value Added", "Services value added as a share of GDP", "#58a6ff", "% GDP"),
+        ("manufacturing_gdp_share", "NV.IND.MANF.ZS", "india-manufacturing-gdp.svg", "Manufacturing Value Added", "Manufacturing value added as a share of GDP", "#e3b341", "% GDP"),
+        ("agricultural_land_share", "AG.LND.AGRI.ZS", "india-agricultural-land.svg", "Agricultural Land", "Agricultural land as a share of total land area", "#3fb950", "%"),
+        ("cereal_yield", "AG.YLD.CREL.KG", "india-cereal-yield.svg", "Cereal Yield", "Cereal production per harvested hectare", "#e3b341", " kg/hectare"),
+        ("energy_use_per_capita", "EG.USE.PCAP.KG.OE", "india-energy-use-per-capita.svg", "Energy Use per Capita", "Energy use per person", "#ff9933", " kg oil equivalent/person"),
+        ("electricity_use_per_capita", "EG.USE.ELEC.KH.PC", "india-electricity-use-per-capita.svg", "Electric Power Consumption per Capita", "Electric power consumption per person", "#f6c344", " kWh/person"),
+        ("renewable_energy_consumption", "EG.FEC.RNEW.ZS", "india-renewable-energy-consumption.svg", "Renewable Energy Consumption", "Renewable energy as a share of total final energy consumption", "#3fb950", "%"),
+        ("renewable_electricity_output", "EG.ELC.RNEW.ZS", "india-renewable-electricity.svg", "Renewable Electricity Output", "Renewable electricity as a share of total electricity output", "#79c0ff", "%"),
+        ("pm25_exposure", "EN.ATM.PM25.MC.M3", "india-pm25-exposure.svg", "Fine Particulate Matter Exposure", "Population-weighted annual mean PM2.5 exposure", "#ff7b72", " µg/m³"),
+        ("forest_area_share", "AG.LND.FRST.ZS", "india-forest-area.svg", "Forest Area", "Forest area as a share of total land area", "#3fb950", "%"),
+        ("mobile_subscriptions_per_100", "IT.CEL.SETS.P2", "india-mobile-subscriptions.svg", "Mobile Cellular Subscriptions", "Mobile cellular subscriptions per 100 people", "#f778ba", " per 100 people"),
+        ("fixed_broadband_per_100", "IT.NET.BBND.P2", "india-fixed-broadband.svg", "Fixed Broadband Subscriptions", "Fixed broadband subscriptions per 100 people", "#58a6ff", " per 100 people"),
+        ("military_expenditure_usd", "MS.MIL.XPND.CD", "india-military-expenditure-usd.svg", "Military Expenditure in Current US Dollars", "Military expenditure converted to current US dollars", "#ff7b72", " USD"),
+    ]
     
     # Load economic survey monthly data if available
     econ_file = ROOT / "data" / "economic-survey-monthly.json"
@@ -1151,6 +1227,20 @@ def main() -> None:
             econ_data = json.loads(econ_file.read_text(encoding="utf-8"))
             for k, v in econ_data.get("series", {}).items():
                 result["series"][k] = v
+            upi = result["series"].get("upi", {})
+            upi_labels = upi.get("labels", [])
+            upi_values = upi.get("values", [])
+            base_value = next((value for value in upi_values if value is not None and value > 0), None)
+            if base_value:
+                result["series"]["upi_volume_index"] = {
+                    "labels": upi_labels,
+                    "values": [value / base_value * 100 if value is not None else None for value in upi_values],
+                    "source": f"{upi.get('source', 'Economic Survey Statistical Appendix')}; monthly volume rebased to first available observation = 100",
+                    "unit": "index (April 2020 = 100)",
+                    "note": "A custom index calculated from the published monthly UPI transaction-volume series. It is separate from RBI's Digital Payments Index.",
+                }
+            else:
+                result["series"]["upi_volume_index"] = {"error": "No positive UPI volume observations are available"}
         except Exception as e:
             print(f"Error reading economic-survey-monthly.json: {e}")
     try:
@@ -1269,7 +1359,7 @@ def main() -> None:
             result["series"][key] = builder()
         except Exception as error:
             cached = previous_series.get(key, {})
-            result["series"][key] = cached if cached.get("labels") and cached.get("values") else {"error": str(error)}
+            result["series"][key] = cached if has_complete_state_coverage(cached) else {"error": str(error)}
     result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
     result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
     result["series"]["state_own_tax_revenue"] = build_state_own_tax_revenue()
@@ -1279,7 +1369,13 @@ def main() -> None:
     result["series"]["state_pmay_homes"] = build_state_pmay_homes()
     result["series"]["state_jjm_water_coverage"] = build_state_jjm_water_coverage()
     result["series"]["state_mudra_loans"] = build_state_mudra_loans()
-    result["series"]["state_pmjdy_bank_accounts"] = build_state_pmjdy_bank_accounts()
+    try:
+        result["series"]["state_pmjdy_bank_accounts"] = build_state_pmjdy_bank_accounts()
+    except Exception as error:
+        cached = previous_series.get("state_pmjdy_bank_accounts", {})
+        result["series"]["state_pmjdy_bank_accounts"] = (
+            cached if has_complete_state_coverage(cached) else {"error": str(error)}
+        )
     result["series"]["state_pmjay_health_cards"] = build_state_pmjay_health_cards()
     result["series"]["state_pmsvanidhi_street_vendors"] = build_state_pmsvanidhi_street_vendors()
     result["series"]["state_renewable_energy_capacity"] = build_state_renewable_energy_capacity()
@@ -1355,11 +1451,136 @@ def main() -> None:
                     result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
                 except Exception:
                     result["series"][key] = {"error": str(error)}
+    for key, indicator, file_name, title, subtitle, color, suffix in additional_indicators:
+        try:
+            series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+            result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
+        except Exception as error:
+            cached = previous_series.get(key, {})
+            if cached.get("labels") and cached.get("values"):
+                result["series"][key] = cached
+            else:
+                try:
+                    time.sleep(1.1)
+                    series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+                    result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
+                except Exception:
+                    result["series"][key] = {"error": str(error)}
     result["series"].update(build_terrorism_derived_series(
         result["series"].get("terror_attacks", {}),
         result["series"].get("terror_fatalities", {}),
         result["series"].get("population", {}),
     ))
+    series = result["series"]
+    for derived_key, base_key, title in (
+        ("state_gsdp_share", "state_gsdp_comparison", "RBI Handbook of Statistics on Indian States; share of reported GSDP"),
+        ("state_per_capita_income_index", "state_per_capita_income", "RBI Handbook of Statistics on Indian States; indexed to the State/UT median = 100"),
+        ("state_power_availability_index", "state_power_per_capita", "RBI Handbook of Statistics on Indian States and CEA; indexed to the State/UT median = 100"),
+    ):
+        base = series.get(base_key, {})
+        labels = base.get("labels", [])
+        values = base.get("values", [])
+        available = [value for value in values if value is not None]
+        if not available:
+            series[derived_key] = {"error": f"No observations available for {base_key}"}
+            continue
+        if derived_key == "state_gsdp_share":
+            denominator = sum(available)
+            transformed = [value / denominator * 100 if value is not None else None for value in values]
+            unit = "% of reported total"
+        else:
+            ordered = sorted(available)
+            middle = len(ordered) // 2
+            median = ordered[middle] if len(ordered) % 2 else (ordered[middle - 1] + ordered[middle]) / 2
+            transformed = [value / median * 100 if value is not None else None for value in values]
+            unit = "index (median = 100)"
+        fiscal_year = "FY2024-25" if derived_key == "state_power_availability_index" else "FY2022-23"
+        series[derived_key] = {
+            "labels": labels,
+            "values": transformed,
+            "chartType": "bar",
+            "indexAxis": "y",
+            "scope": "state",
+            "source": title,
+            "unit": unit,
+            "note": f"Calculated from the complete 28-State RBI snapshot for {fiscal_year}; Union Territories are excluded.",
+        }
+
+    population = dict(zip(series.get("population", {}).get("labels", []), series.get("population", {}).get("values", [])))
+    for derived_key, base_key, divisor in (
+        ("cyber_crime_rate", "cyber_crime", 100000),
+        ("ndps_case_rate", "ndps_drug_cases", 100000),
+        ("road_fatality_rate", "road_accidents_fatalities", 100000),
+    ):
+        base = series.get(base_key, {})
+        base_values = dict(zip(base.get("labels", []), base.get("values", [])))
+        labels = sorted(year for year in base_values.keys() & population.keys() if population[year])
+        series[derived_key] = {
+            "labels": labels,
+            "values": [base_values[year] / population[year] * divisor for year in labels],
+            "source": f"{base.get('source', base_key)}; rates calculated using World Bank population estimates",
+            "unit": "cases per 100,000 people",
+        }
+
+    for derived_key, base_key, terms, title in (
+        ("pew_india_religious_pluralism", "pew_india_religion_tolerance", ("respecting all religions", "better off with religious diversity"), "Pew India: Religious pluralism"),
+        ("pew_india_religious_practice", "pew_india_demographics_family", ("religion very important", "prays daily", "believes in karma"), "Pew India: Religious identity and practice"),
+    ):
+        base = series.get(base_key, {})
+        selected = [
+            (label, value) for label, value in zip(base.get("labels", []), base.get("values", []))
+            if any(term in label.lower() for term in terms)
+        ]
+        series[derived_key] = {
+            "labels": [label for label, _ in selected],
+            "values": [value for _, value in selected],
+            "source": base.get("source", "Pew Research Center India surveys"),
+            "note": "A thematic view of the same separately labelled Pew survey observations; values are not combined or interpolated.",
+            "unit": base.get("unit", "% of respondents"),
+        }
+
+    credit = series.get("credit_card_spends", {})
+    debit = series.get("debit_card_spends", {})
+    credit_values = dict(zip(credit.get("labels", []), credit.get("values", [])))
+    debit_values = dict(zip(debit.get("labels", []), debit.get("values", [])))
+    card_labels = sorted(credit_values.keys() & debit_values.keys())
+    series["card_spend_total"] = {
+        "labels": card_labels,
+        "values": [credit_values[year] + debit_values[year] for year in card_labels],
+        "source": f"{credit.get('source', 'RBI credit card data')}; {debit.get('source', 'RBI debit card data')}",
+        "unit": "INR lakh crore",
+    }
+    series["credit_card_spend_share"] = {
+        "labels": card_labels,
+        "values": [
+            credit_values[year] / (credit_values[year] + debit_values[year]) * 100
+            if credit_values[year] + debit_values[year] else None
+            for year in card_labels
+        ],
+        "source": f"{credit.get('source', 'RBI credit card data')}; {debit.get('source', 'RBI debit card data')}",
+        "unit": "% of credit and debit card spends",
+    }
+    upi_value = series.get("upi_transaction_value", {})
+    upi_labels = upi_value.get("labels", [])
+    upi_values = upi_value.get("values", [])
+    series["upi_value_growth"] = {
+        "labels": upi_labels[1:],
+        "values": [
+            (current - previous) / abs(previous) * 100 if previous else None
+            for previous, current in zip(upi_values, upi_values[1:])
+        ],
+        "source": f"{upi_value.get('source', 'NPCI and RBI UPI data')}; annual growth calculated from reported values",
+        "unit": "% year-over-year",
+    }
+    military = series.get("military_expenditure_usd", {})
+    military_values = dict(zip(military.get("labels", []), military.get("values", [])))
+    military_labels = sorted(year for year in military_values.keys() & population.keys() if population[year])
+    series["military_expenditure_per_capita"] = {
+        "labels": military_labels,
+        "values": [military_values[year] / population[year] for year in military_labels],
+        "source": f"{military.get('source', 'World Bank military expenditure')}; calculated per person using World Bank population estimates",
+        "unit": "USD/person",
+    }
     market_labels = sorted({label for key in ("sensex", "nifty", "nifty_vix") for label in result["series"].get(key, {}).get("labels", [])})
     market_datasets = []
     for key, title, color in (("sensex", "Sensex", "#58a6ff"), ("nifty", "Nifty", "#3fb950"), ("nifty_vix", "Nifty VIX", "#f2cc60")):

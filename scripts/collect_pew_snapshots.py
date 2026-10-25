@@ -6,10 +6,8 @@ survey statement (question + year) taken from a specific, cited Pew
 report. They are plotted as labelled snapshot points, never combined or
 interpolated into a fabricated continuous trend.
 
-Source: Pew Research Center, "India: Global Optimism, Local Fears"
-(December 4, 2008) https://www.pewresearch.org/global/2008/12/04/india/
-which itself reports figures from the 2007 and 2008 Pew Global Attitudes
-Project surveys.
+Values are manually transcribed from the cited Pew report pages and their
+published tables; survey snapshots are not annual time series.
 """
 import json
 from pathlib import Path
@@ -149,12 +147,68 @@ def build_snapshots():
             "unit": "% of respondents",
             "note": "Pew Research Center surveys on public views regarding climate change and environmental challenges in India.",
         },
+        "pew_india_2026_global_views": {
+            "labels": [
+                "Canada", "United States", "United Kingdom", "Germany", "Italy", "Sweden",
+                "France", "Netherlands", "Hungary", "Greece", "Poland", "Spain", "Sri Lanka",
+                "Japan", "Thailand", "Singapore", "Indonesia", "Philippines", "South Korea",
+                "Australia", "Bangladesh", "Malaysia", "Pakistan", "Israel",
+                "West Bank & East Jerusalem", "Turkey", "Kenya", "Ghana", "Nigeria",
+                "South Africa", "Brazil", "Colombia", "Mexico", "Peru", "Chile", "Argentina",
+            ],
+            "datasets": [
+                {"label": "Favorable", "values": [51, 45, 71, 63, 56, 55, 50, 49, 40, 39, 37, 37, 79, 55, 55, 51, 50, 49, 44, 44, 42, 41, 7, 60, 18, 15, 71, 50, 47, 38, 37, 36, 30, 29, 25, 24], "borderColor": "#3fb950"},
+                {"label": "Unfavorable", "values": [40, 50, 24, 29, 35, 38, 34, 31, 31, 33, 25, 41, 11, 42, 42, 48, 47, 42, 47, 55, 51, 58, 91, 29, 56, 72, 25, 36, 39, 46, 41, 41, 44, 39, 40, 41], "borderColor": "#ff7b72"},
+                {"label": "Don't know / refused", "values": [9, 4, 5, 8, 9, 8, 15, 20, 29, 28, 38, 22, 10, 4, 3, 1, 3, 9, 10, 1, 7, 0, 2, 11, 25, 13, 4, 14, 13, 16, 22, 23, 26, 31, 35, 35], "borderColor": "#79c0ff"},
+            ],
+            "chartType": "bar",
+            "indexAxis": "y",
+            "source": "https://www.pewresearch.org/short-reads/2026/08/13/public-opinion-of-india-is-mixed-across-36-countries/",
+            "unit": "% of respondents",
+            "note": "Pew Spring 2026 Global Attitudes Survey. Fieldwork ran Feb. 9–May 13, 2026. Percentages are the published country results; category totals may differ from 100 because of rounding. This measures opinions of India outside India, not Indian respondents.",
+        },
+        "pew_india_2026_top_threats": {
+            "labels": ["Pakistan", "China"],
+            "values": [54, 21],
+            "chartType": "bar",
+            "indexAxis": "y",
+            "source": "https://www.pewresearch.org/global/2026/08/13/india-and-pakistan-rivals-with-divergent-views-of-the-global-order/",
+            "unit": "% of respondents",
+            "note": "Share of Indian adults naming each country as India's greatest geopolitical threat in Pew's 2026 survey. Only the values explicitly reported in the article summary are shown; these are not an exhaustive distribution.",
+        },
+        "pew_india_2026_top_allies": {
+            "labels": ["Russia", "United States"],
+            "values": [36, 16],
+            "chartType": "bar",
+            "indexAxis": "y",
+            "source": "https://www.pewresearch.org/global/2026/08/13/india-and-pakistan-rivals-with-divergent-views-of-the-global-order/",
+            "unit": "% of respondents",
+            "note": "Share of Indian adults naming each country as India's most important ally in Pew's 2026 survey. Only the values explicitly reported in the article summary are shown; these are not an exhaustive distribution.",
+        },
+        "pew_india_2021_diversity_views": {
+            "labels": ["Benefits India", "Harms India", "Neither / no clear position"],
+            "values": [53, 24, 24],
+            "chartType": "bar",
+            "indexAxis": "y",
+            "source": "https://www.pewresearch.org/religion/2021/06/29/diversity-and-pluralism/",
+            "unit": "% of respondents",
+            "note": "Pew's Religion in India survey was conducted in 2019–2020. Published percentages are rounded, so the total is 101%. The third category includes respondents who said neither, did not know, or did not answer.",
+        },
+        "pew_india_2021_religious_freedom": {
+            "labels": ["Personally very free to practice religion", "Other religions very free to practice"],
+            "values": [91, 79],
+            "chartType": "bar",
+            "indexAxis": "y",
+            "source": "https://www.pewresearch.org/religion/2021/06/29/religious-freedom-discrimination-and-communal-relations/",
+            "unit": "% of respondents",
+            "note": "Pew's Religion in India survey was conducted in 2019–2020. The two bars report separate questions: respondents' own religious freedom and their assessment of freedom for people of other religions.",
+        },
     }
 
 
 def main():
     out = {
-        "generated_from": "manual verified extraction, single cited Pew report",
+        "generated_from": "manual extraction from cited Pew Research Center report pages",
         "series": build_snapshots(),
     }
     path = Path("data/pew-snapshots.json")
