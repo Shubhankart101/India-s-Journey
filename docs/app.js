@@ -273,20 +273,19 @@ const renderChartSourceIndex = () => {
 renderChartSourceIndex();
 
 const formatMagnitude = (value, suffix = '') => {
-  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(suffix);
-  const formattedValue = Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 });
-  if (declaredUnit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
+  const unitSuffix = suffix.trim();
+  const locale = /\bUSD\b|US dollars?|international \$/i.test(unitSuffix) ? 'en-US' : 'en-IN';
+  const declaredUnit = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i.test(unitSuffix);
+  const formattedValue = Number(value).toLocaleString(locale, { maximumFractionDigits: 2 });
+  if (declaredUnit) return `${formattedValue}${unitSuffix ? ` ${unitSuffix}` : ''}`;
   const absolute = Math.abs(value);
-  const units = [
-    [1e12, 'trillion'],
-    [1e9, 'billion'],
-    [1e6, 'million'],
-    [1e3, 'thousand'],
-  ];
+  const units = locale === 'en-US'
+    ? [[1e12, 'trillion'], [1e9, 'billion'], [1e6, 'million'], [1e3, 'thousand']]
+    : [[1e12, 'lakh crore'], [1e7, 'crore'], [1e5, 'lakh'], [1e3, 'thousand']];
   const unit = units.find(([threshold]) => absolute >= threshold);
-  if (!unit) return `${formattedValue}${suffix ? ` ${suffix}` : ''}`;
+  if (!unit) return `${formattedValue}${unitSuffix ? ` ${unitSuffix}` : ''}`;
   const amount = value / unit[0];
-  return `${amount.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${unit[1]}${suffix ? ` ${suffix}` : ''}`;
+  return `${amount.toLocaleString(locale, { maximumFractionDigits: 2 })} ${unit[1]}${unitSuffix ? ` ${unitSuffix}` : ''}`;
 };
 
 const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false) => {
