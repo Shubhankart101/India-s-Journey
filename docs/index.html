@@ -262,6 +262,13 @@
     </section>
   </main>
 
+  <div id="indicator-modal" class="modal-overlay" hidden>
+    <section class="indicator-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close Deep Dive">×</button>
+      <div id="modal-body"></div>
+    </section>
+  </div>
+
   <footer>Inspired by PolityPolicy.com and Polity and Policy. Independent dashboard; charts are generated from the cited public sources.</footer>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
@@ -277,6 +284,6 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="app.js?v=state-source-index-20261023-2"></script>
+  <script src="app.js?v=deep-dive-modal-20261025"></script>
 </body>
 </html>

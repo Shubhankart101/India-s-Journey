@@ -289,6 +289,16 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
         self.assertEqual(status, 200)
         self.assertIn(b'id="charts"', body)
+        self.assertIn(b'id="indicator-modal"', body)
+        self.assertIn(b'id="modal-close"', body)
+        self.assertIn(b'id="modal-body"', body)
+        self.assertIn(b'aria-modal="true"', body)
+        styles_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "docs", "styles.css",
+        )
+        with open(styles_path, "r", encoding="utf-8") as handle:
+            self.assertIn(".modal-overlay[hidden] { display:none; }", handle.read())
         
 
     def test_app_js_enables_legends_for_multi_dataset_charts_only(self):
@@ -297,6 +307,15 @@ class DashboardEndpointTests(unittest.TestCase):
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)
         self.assertIn("custom-legend", text)
+
+    def test_deep_dive_button_opens_and_closes_modal(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
+        self.assertEqual(status, 200)
+        text = body.decode("utf-8")
+        self.assertIn("openIndicatorModal(key, title, subtitle, frequency, suffix, source, details, series, category, dashboardSubgroupFor(key))", text)
+        self.assertIn("modal.hidden = false", text)
+        self.assertIn("modalCloseBtn.addEventListener('click'", text)
+        self.assertIn("e.key === 'Escape'", text)
 
     def test_daily_workflow_runs_all_collection_scripts(self):
         workflow_path = os.path.join(

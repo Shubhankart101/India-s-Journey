@@ -1241,6 +1241,7 @@ function openIndicatorModal(key, title, subtitle, frequency, suffix, source, det
   const modal = document.querySelector('#indicator-modal');
   const body = document.querySelector('#modal-body');
   if (!modal || !body) return;
+  const closeButton = modal.querySelector('#modal-close');
 
   const labels = series?.labels || [];
   const values = series?.values || [];
@@ -1299,7 +1300,7 @@ function openIndicatorModal(key, title, subtitle, frequency, suffix, source, det
 
   body.innerHTML = `
     <div class="modal-header">
-      <h2>${title}</h2>
+      <h2 id="modal-title">${title}</h2>
       <p>${subtitle}</p>
       <div class="modal-badges">
         <span class="hero-badge saffron">${category}</span>
@@ -1325,6 +1326,7 @@ function openIndicatorModal(key, title, subtitle, frequency, suffix, source, det
   `;
 
   modal.hidden = false;
+  closeButton?.focus();
 }
 
 const modalCloseBtn = document.querySelector('#modal-close');
@@ -1333,5 +1335,8 @@ if (modalCloseBtn && modalOverlay) {
   modalCloseBtn.addEventListener('click', () => { modalOverlay.hidden = true; });
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) modalOverlay.hidden = true;
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modalOverlay.hidden) modalOverlay.hidden = true;
   });
 }
