@@ -5,6 +5,8 @@
   "india_constituencies": [
     {
       "election_type": "State Assembly by-election",
+      "year": 2026,
+      "constituency_number": "9",
       "constituency": "THATTANCHAVADY",
       "state_or_ut": "Puducherry",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseU079.htm",
@@ -85,6 +87,8 @@
     },
     {
       "election_type": "State Assembly by-election",
+      "year": 2026,
+      "constituency_number": "35",
       "constituency": "MADURANTAKAM",
       "state_or_ut": "Tamil Nadu",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2235.htm",
@@ -261,6 +265,8 @@
     },
     {
       "election_type": "State Assembly by-election",
+      "year": 2026,
+      "constituency_number": "101",
       "constituency": "DHARAPURAM",
       "state_or_ut": "Tamil Nadu",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS22101.htm",
@@ -407,6 +413,8 @@
     },
     {
       "election_type": "State Assembly by-election",
+      "year": 2026,
+      "constituency_number": "70",
       "constituency": "REJINAGAR",
       "state_or_ut": "West Bengal",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2570.htm",
@@ -511,6 +519,8 @@
     },
     {
       "election_type": "State Assembly by-election",
+      "year": 2026,
+      "constituency_number": "210",
       "constituency": "NANDIGRAM",
       "state_or_ut": "West Bengal",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS25210.htm",
@@ -579,6 +589,8 @@
     },
     {
       "election_type": "Lok Sabha by-election",
+      "year": 2026,
+      "constituency_number": "9",
       "constituency": "Nagaon",
       "state_or_ut": "Assam",
       "source": "https://results.eci.gov.in/ResultPcByeOct2026/ConstituencywiseS039.htm",
@@ -1248,5 +1260,5 @@
       "unit": "electoral votes"
     }
   },
-  "generated_at_utc": "2026-10-25T14:18:48+00:00"
+  "generated_at_utc": "2026-10-25T18:00:40+00:00"
 }
