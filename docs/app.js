@@ -1031,7 +1031,8 @@ async function main() {
     "Public opinion": "assets/lotus-temple.svg",
     "Indian Elections": "assets/eci-building.svg",
     "U.S. Presidential Elections": "assets/us-capitol.svg",
-    "U.S. Federal Campaign Finance": "assets/us-capitol.svg",
+    "U.S. Presidential Campaign Finance": "assets/us-capitol.svg",
+    "U.S. Congressional Campaign Finance": "assets/us-capitol.svg",
     "International Visitor Trends": "assets/taj-mahal.svg",
     "World Heritage Sites": "assets/hampi.svg"
   };
@@ -1261,15 +1262,21 @@ async function main() {
     },
     "U.S. Presidential Elections": {
       title: "🇺🇸 U.S. Presidential Elections",
-      desc: "Read completed Presidential Electoral College results from the U.S. National Archives alongside FEC candidate-finance snapshots. Electoral College totals are not popular votes or ballots cast; campaign receipts are not vote totals.",
-      badge1: "U.S. National Archives & FEC",
-      badge2: "Electoral votes + campaign finance"
+      desc: "Compare completed U.S. Presidential Electoral College results from the National Archives. Electoral College totals are not popular votes or ballots cast; campaign finances are presented in separate subgroups.",
+      badge1: "U.S. National Archives",
+      badge2: "2000–2024 Electoral College"
     },
-    "U.S. Federal Campaign Finance": {
-      title: "🏛️ U.S. Federal Campaign Finance",
-      desc: "Compare FEC-reported candidate receipts, disbursements, cash on hand and debts for House and Senate election cycles. State values are grouped by the candidate's office state and party values are not presented as voting outcomes.",
+    "U.S. Presidential Campaign Finance": {
+      title: "💵 U.S. Presidential Campaign Finance",
+      desc: "Compare Federal Election Commission candidate receipts, disbursements, cash on hand and debts by party across presidential-office campaign-finance cycles. These filing-cycle snapshots are financial aggregates, not electoral results; some cycle years are midterms with no Presidential election.",
       badge1: "Federal Election Commission",
-      badge2: "2018–2024 election cycles"
+      badge2: "Candidate filings by cycle"
+    },
+    "U.S. Congressional Campaign Finance": {
+      title: "🏛️ U.S. Congressional Campaign Finance",
+      desc: "Compare FEC-reported House and Senate candidate receipts, disbursements, cash on hand and debts by candidate office state. These are campaign-finance totals—not votes, turnout, or winning seats.",
+      badge1: "Federal Election Commission",
+      badge2: "House & Senate cycles"
     },
     "International Visitor Trends": {
       title: "🧳 International Visitor Trends",

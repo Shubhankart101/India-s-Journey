@@ -10,12 +10,6 @@
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseU079.htm",
       "candidates": [
         {
-          "candidate": "Total",
-          "party": "",
-          "votes": 21857,
-          "vote_share_percent": null
-        },
-        {
           "candidate": "ASHOK ANAND",
           "party": "All India N.R. Congress",
           "votes": 13358,
@@ -95,12 +89,6 @@
       "state_or_ut": "Tamil Nadu",
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2235.htm",
       "candidates": [
-        {
-          "candidate": "Total",
-          "party": "",
-          "votes": 185292,
-          "vote_share_percent": null
-        },
         {
           "candidate": "K.MARAGATHAM KUMARAVEL",
           "party": "Tamilaga Vettri Kazhagam",
@@ -278,12 +266,6 @@
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS22101.htm",
       "candidates": [
         {
-          "candidate": "Total",
-          "party": "",
-          "votes": 180532,
-          "vote_share_percent": null
-        },
-        {
           "candidate": "SATHYABAMA.P",
           "party": "Tamilaga Vettri Kazhagam",
           "votes": 66841,
@@ -430,12 +412,6 @@
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2570.htm",
       "candidates": [
         {
-          "candidate": "Total",
-          "party": "",
-          "votes": 205747,
-          "vote_share_percent": null
-        },
-        {
           "candidate": "SHANKHARAVH SARKAR",
           "party": "Bharatiya Janata Party",
           "votes": 129914,
@@ -540,12 +516,6 @@
       "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS25210.htm",
       "candidates": [
         {
-          "candidate": "Total",
-          "party": "",
-          "votes": 216515,
-          "vote_share_percent": null
-        },
-        {
           "candidate": "HASI RANI RATH",
           "party": "Bharatiya Janata Party",
           "votes": 164427,
@@ -613,12 +583,6 @@
       "state_or_ut": "Assam",
       "source": "https://results.eci.gov.in/ResultPcByeOct2026/ConstituencywiseS039.htm",
       "candidates": [
-        {
-          "candidate": "Total",
-          "party": "",
-          "votes": 1454380,
-          "vote_share_percent": null
-        },
         {
           "candidate": "DEVASISH SHARMA",
           "party": "Bharatiya Janata Party",
@@ -779,13 +743,8 @@
   "series": {
     "india_live_candidate_votes": {
       "labels": [
-        "Assam · Nagaon · Total",
         "Assam · Nagaon · DEVASISH SHARMA",
         "Assam · Nagaon · MOHAMMED BADRUDDIN AJMAL",
-        "West Bengal · NANDIGRAM · Total",
-        "West Bengal · REJINAGAR · Total",
-        "Tamil Nadu · MADURANTAKAM · Total",
-        "Tamil Nadu · DHARAPURAM · Total",
         "West Bengal · NANDIGRAM · HASI RANI RATH",
         "West Bengal · REJINAGAR · SHANKHARAVH SARKAR",
         "Assam · Nagaon · SIBAMONI BORA",
@@ -797,7 +756,6 @@
         "Tamil Nadu · MADURANTAKAM · S.KANITHASAMPATH",
         "Tamil Nadu · DHARAPURAM · BANUMATHI.K",
         "West Bengal · NANDIGRAM · MILAN PRADHAN",
-        "Puducherry · THATTANCHAVADY · Total",
         "Puducherry · THATTANCHAVADY · ASHOK ANAND",
         "Assam · Nagaon · NOTA",
         "Assam · Nagaon · MONIRUL HUSSAIN",
@@ -808,16 +766,17 @@
         "Assam · Nagaon · SABINA YASMIN",
         "West Bengal · REJINAGAR · RABIUL ALAM CHOWDHURY",
         "West Bengal · REJINAGAR · MD. SAYEED",
-        "Assam · Nagaon · SAIFUR RAHMAN"
+        "Assam · Nagaon · SAIFUR RAHMAN",
+        "Tamil Nadu · MADURANTAKAM · G.JANAKIRAMAN",
+        "Puducherry · THATTANCHAVADY · K. SETHU @ SETHUSELVAM",
+        "Assam · Nagaon · YOUNUS TAMULY",
+        "Assam · Nagaon · MUSTAKIM ALAM",
+        "Assam · Nagaon · INAMUL HUDA",
+        "West Bengal · REJINAGAR · SAFIUZZAMAN SAIKH"
       ],
       "values": [
-        1454380,
         714349,
         572125,
-        216515,
-        205747,
-        185292,
-        180532,
         164427,
         129914,
         129492,
@@ -829,7 +788,6 @@
         47450,
         45280,
         41674,
-        21857,
         13358,
         9244,
         6746,
@@ -840,7 +798,13 @@
         4083,
         3847,
         3797,
-        3639
+        3639,
+        2709,
+        2664,
+        2602,
+        2322,
+        2054,
+        2044
       ],
       "chartType": "bar",
       "indexAxis": "y",
@@ -921,19 +885,19 @@
     "india_live_constituency_margin": {
       "labels": [
         "Assam · Nagaon",
-        "Tamil Nadu · DHARAPURAM",
-        "Tamil Nadu · MADURANTAKAM",
-        "West Bengal · REJINAGAR",
         "West Bengal · NANDIGRAM",
+        "West Bengal · REJINAGAR",
+        "Tamil Nadu · MADURANTAKAM",
+        "Tamil Nadu · DHARAPURAM",
         "Puducherry · THATTANCHAVADY"
       ],
       "values": [
-        740031,
-        113691,
-        111244,
-        75833,
-        52088,
-        8499
+        142224,
+        122753,
+        75816,
+        20040,
+        9471,
+        8482
       ],
       "chartType": "bar",
       "indexAxis": "y",
@@ -944,19 +908,19 @@
     "india_live_winner_vote_share": {
       "labels": [
         "Assam · Nagaon",
-        "Tamil Nadu · DHARAPURAM",
-        "Tamil Nadu · MADURANTAKAM",
-        "West Bengal · REJINAGAR",
         "West Bengal · NANDIGRAM",
+        "West Bengal · REJINAGAR",
+        "Tamil Nadu · MADURANTAKAM",
+        "Tamil Nadu · DHARAPURAM",
         "Puducherry · THATTANCHAVADY"
       ],
       "values": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        49.12,
+        75.94,
+        63.14,
+        39.96,
+        37.02,
+        61.12
       ],
       "chartType": "bar",
       "indexAxis": "y",
@@ -966,10 +930,14 @@
     },
     "india_live_party_seats": {
       "labels": [
-        "Unspecified"
+        "Bharatiya Janata Party",
+        "Tamilaga Vettri Kazhagam",
+        "All India N.R. Congress"
       ],
       "values": [
-        6
+        3,
+        2,
+        1
       ],
       "chartType": "bar",
       "indexAxis": "y",
@@ -1019,5 +987,5 @@
       "note": "Official Electoral College totals for the winner and main opponent in each presidential election from 2000 through 2024. These are electoral votes, not popular votes."
     }
   },
-  "generated_at_utc": "2026-10-25T13:19:03+00:00"
+  "generated_at_utc": "2026-10-25T14:18:48+00:00"
 }

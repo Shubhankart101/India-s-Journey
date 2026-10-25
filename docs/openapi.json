@@ -54,7 +54,7 @@
         "summary": "Federal Election Commission candidate campaign-finance summaries",
         "responses": {
           "200": {
-            "description": "Presidential, Senate and House campaign-finance aggregates for selected election cycles",
+            "description": "Presidential and Congressional candidate campaign-finance aggregates for selected filing cycles",
             "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
           }
         }

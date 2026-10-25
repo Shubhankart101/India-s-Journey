@@ -32,15 +32,21 @@ ECI voter services and Chief Electoral Officer notices publish Special Summary R
 
 The standalone **U.S. Elections** group contains:
 
-- National Archives winner and main-opponent Electoral College totals for Presidential elections from 2000 through 2024. These are electoral votes, not popular votes or ballots cast.
-- 48 Federal Election Commission (FEC) candidate-finance indicators: receipts, disbursements, cash on hand and debts for Presidential, Senate and House candidates across the 2018, 2020, 2022 and 2024 election cycles.
-- Presidential candidate-finance values aggregated by party; Senate and House values aggregated by candidate office state. A state-level campaign-finance total is not a vote count, and the presidential party aggregate is not a state-by-state result.
+- **U.S. Presidential Elections:** National Archives winner and main-opponent Electoral College totals for Presidential elections from 2000 through 2024. These are electoral votes, not popular votes or ballots cast.
+- **U.S. Presidential Campaign Finance:** 16 FEC indicators—receipts, disbursements, cash on hand and debts—aggregated by party for Presidential-office candidates in the 2018, 2020, 2022 and 2024 filing cycles. 2018 and 2022 are midterm years, not Presidential elections; cycle labels describe campaign-finance filing cycles, not election years for the office.
+- **U.S. Congressional Campaign Finance:** 32 FEC indicators for House and Senate candidates—four measures, two offices and four cycles—aggregated by candidate office state.
+
+Campaign-finance aggregates are not vote counts or turnout. Presidential party totals are not state-by-state results; Senate and House state totals are not results for a particular seat.
 
 Electoral College source: [National Archives Electoral College results](https://www.archives.gov/electoral-college).
 
 FEC source: [candidate summary files](https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/) and [cycle-specific bulk downloads](https://www.fec.gov/data/browse-data/?tab=candidates). Candidate totals include principal campaign committees and other authorized committees. FEC summaries update as reports are received and may change when amendments are processed. The dashboard checks the files daily; this is not a live result feed.
 
 U.S. popular vote by state, voter registration, turnout and constituency-level House returns are not included. No official, consistent dataset for these measures has been added, and FEC financial summaries are not a substitute.
+
+## ECI live-result interpretation
+
+The live ECI constituency tables include a separate `Total` row. It is the constituency-wide vote total, not a candidate, and is excluded from candidate rankings, winner share, margins and party-lead counts. Party-lead counts cover only the currently published constituencies in that snapshot; they are not complete election seat totals. Candidate vote shares are shown only when the ECI table reports them.
 
 ## Scraper design reference
 

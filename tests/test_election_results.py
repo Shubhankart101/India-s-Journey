@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 from scripts.collect_election_results import (
     _series_from_results,
+    _without_total_rows,
     collect_us_presidential_results,
     parse_constituency_results,
 )
@@ -23,6 +24,7 @@ class ElectionResultsTests(unittest.TestCase):
           <td>10</td><td>1,010</td><td>55.25</td></tr>
           <tr><td>2</td><td>Candidate B</td><td>Party B</td><td>800</td>
           <td>5</td><td>805</td><td>44.75</td></tr>
+          <tr><td></td><td>Total</td><td></td><td></td><td></td><td>1,815</td><td></td></tr>
         </table>
         """
         result = parse_constituency_results(
@@ -32,6 +34,8 @@ class ElectionResultsTests(unittest.TestCase):
         )
         self.assertEqual(result["constituency"], "MADURANTAKAM")
         self.assertEqual(result["state_or_ut"], "Tamil Nadu")
+        self.assertEqual(len(result["candidates"]), 2)
+        self.assertNotIn("Total", [candidate["candidate"] for candidate in result["candidates"]])
         self.assertEqual(result["candidates"][0]["votes"], 1010)
         self.assertEqual(result["candidates"][0]["vote_share_percent"], 55.25)
         self.assertIn("ConstituencywiseS2235.htm", result["source"])
@@ -75,7 +79,11 @@ class ElectionResultsTests(unittest.TestCase):
         records = [{
             "state_or_ut": "Tamil Nadu",
             "constituency": "MADURANTAKAM",
-            "candidates": [{"candidate": "Candidate A", "party": "Party A", "votes": 1010, "vote_share_percent": 55.25}],
+            "candidates": [
+                {"candidate": "Total", "party": "", "votes": 1815, "vote_share_percent": None},
+                {"candidate": "Candidate A", "party": "Party A", "votes": 1010, "vote_share_percent": 55.25},
+                {"candidate": "Candidate B", "party": "Party B", "votes": 805, "vote_share_percent": 44.35},
+            ],
         }]
         presidential = [{
             "year": 2024,
@@ -83,12 +91,29 @@ class ElectionResultsTests(unittest.TestCase):
             "opponent_electoral_votes": 226,
         }]
         series = _series_from_results(records, presidential)
-        self.assertEqual(series["india_live_candidate_votes"]["values"], [1010])
+        self.assertEqual(series["india_live_candidate_votes"]["values"], [1010, 805])
+        self.assertEqual(series["india_live_winner_vote_share"]["values"], [55.25])
+        self.assertEqual(series["india_live_party_seats"]["labels"], ["Party A"])
+        self.assertEqual(series["india_live_party_seats"]["values"], [1])
+        self.assertNotIn("Total", series["india_live_candidate_votes"]["labels"][0])
         self.assertIn("india_live_candidate_vote_share", series)
         self.assertIn("india_live_constituency_margin", series)
         self.assertIn("india_live_party_seats", series)
         self.assertIn("Form 20", series["india_live_candidate_votes"]["note"])
         self.assertIn("not popular votes", series["us_presidential_electoral_votes"]["note"])
+
+    def test_cached_eci_totals_are_removed_and_candidates_ranked(self):
+        records = [{
+            "state_or_ut": "State",
+            "constituency": "Seat",
+            "candidates": [
+                {"candidate": "Total", "party": "", "votes": 1000, "vote_share_percent": None},
+                {"candidate": "Runner-up", "party": "Party B", "votes": 400, "vote_share_percent": 40},
+                {"candidate": "Winner", "party": "Party A", "votes": 600, "vote_share_percent": 60},
+            ],
+        }]
+        cleaned = _without_total_rows(records)
+        self.assertEqual([candidate["candidate"] for candidate in cleaned[0]["candidates"]], ["Winner", "Runner-up"])
 
     def test_workflow_deploy_and_documentation_cover_election_data(self):
         root = Path(__file__).resolve().parents[1]
@@ -105,6 +130,17 @@ class ElectionResultsTests(unittest.TestCase):
         self.assertGreaterEqual(len(payload["india_constituencies"]), 1)
         self.assertEqual(len(payload["us_presidential_elections"]), 7)
         self.assertEqual(payload, deployed_payload)
+        for record in payload["india_constituencies"]:
+            self.assertNotIn("Total", [candidate["candidate"] for candidate in record["candidates"]])
+        winner_shares = payload["series"]["india_live_winner_vote_share"]["values"]
+        self.assertTrue(winner_shares)
+        self.assertTrue(all(value is not None for value in winner_shares))
+        party_leads = payload["series"]["india_live_party_seats"]
+        self.assertNotIn("Unspecified", party_leads["labels"])
+        self.assertEqual(sum(party_leads["values"]), len(payload["india_constituencies"]))
+        electoral_votes = payload["series"]["us_presidential_electoral_votes"]
+        self.assertEqual(len(electoral_votes["labels"]), 7)
+        self.assertTrue(all(len(dataset["values"]) == 7 for dataset in electoral_votes["datasets"]))
         for file_name in ("README.md", "ELECTIONS.md", "SOURCES-AND-LIMITATIONS.md", "PIPELINES.md"):
             self.assertTrue((root / "docs" / file_name).is_file() or (root / file_name).is_file())
 

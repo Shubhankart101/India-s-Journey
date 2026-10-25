@@ -120,6 +120,9 @@ def parse_constituency_results(html: str, source_url: str, election_type: str) -
     for row in page.rows:
         if len(row) <= votes_index or row == header:
             continue
+        candidate_name = row[candidate_index].strip()
+        if candidate_name.casefold() == "total":
+            continue
         try:
             votes = int(row[votes_index].replace(",", "").strip())
         except ValueError:
@@ -131,7 +134,7 @@ def parse_constituency_results(html: str, source_url: str, election_type: str) -
             except ValueError:
                 pass
         candidates.append({
-            "candidate": row[candidate_index],
+            "candidate": candidate_name,
             "party": row[party_index] if party_index is not None and len(row) > party_index else "",
             "votes": votes,
             "vote_share_percent": percent,
@@ -194,7 +197,24 @@ def collect_us_presidential_results() -> list[dict]:
     return results
 
 
+def _without_total_rows(constituencies: list[dict]) -> list[dict]:
+    cleaned = []
+    for record in constituencies:
+        candidates = [
+            candidate for candidate in record.get("candidates", [])
+            if str(candidate.get("candidate", "")).strip().casefold() != "total"
+        ]
+        if not candidates:
+            continue
+        cleaned.append({
+            **record,
+            "candidates": sorted(candidates, key=lambda candidate: candidate["votes"], reverse=True),
+        })
+    return cleaned
+
+
 def _series_from_results(constituencies: list[dict], presidential: list[dict]) -> dict:
+    constituencies = _without_total_rows(constituencies)
     candidates = [
         (record, candidate)
         for record in constituencies
@@ -309,6 +329,7 @@ def main() -> int:
     except (HTTPError, URLError, TimeoutError, ValueError) as error:
         errors.append(f"ECI: {error}")
         constituencies = previous.get("india_constituencies", [])
+    constituencies = _without_total_rows(constituencies)
     try:
         presidential = collect_us_presidential_results()
     except (HTTPError, URLError, TimeoutError, ValueError) as error:

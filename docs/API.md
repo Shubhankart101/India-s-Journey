@@ -15,7 +15,7 @@ This is a static GitHub Pages project, not a backend service. The Swagger UI at 
 | `/data/chart-latest.json` | Generated chart series and provenance |
 | `/data/election-results.json` | Current ECI and U.S. election snapshots |
 | `/data/historical-elections.json` | Candidate-level records parsed from available ECI workbooks; partial coverage |
-| `/data/us-campaign-finance.json` | FEC candidate-finance aggregates for Presidential, Senate and House cycles |
+| `/data/us-campaign-finance.json` | FEC candidate-finance aggregates for Presidential and Congressional candidates across four filing cycles |
 | `/data/economic-survey-monthly.json` | Monthly indicators collated from Economic Survey tables |
 | `/data/ncrb-and-analyses.json` | NCRB and public-safety data |
 | `/data/pew-india-reports.json` | Public Pew India report catalog |
