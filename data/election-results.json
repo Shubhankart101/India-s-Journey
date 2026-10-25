@@ -1,0 +1,1023 @@
+{
+  "refresh_frequency": "Every 3 hours",
+  "collection_status": "ok",
+  "collection_errors": [],
+  "india_constituencies": [
+    {
+      "election_type": "State Assembly by-election",
+      "constituency": "THATTANCHAVADY",
+      "state_or_ut": "Puducherry",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseU079.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 21857,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "ASHOK ANAND",
+          "party": "All India N.R. Congress",
+          "votes": 13358,
+          "vote_share_percent": 61.12
+        },
+        {
+          "candidate": "E. VINAYAGAM",
+          "party": "Indian National Congress",
+          "votes": 4876,
+          "vote_share_percent": 22.31
+        },
+        {
+          "candidate": "K. SETHU @ SETHUSELVAM",
+          "party": "Dravida Munnetra Kazhagam",
+          "votes": 2664,
+          "vote_share_percent": 12.19
+        },
+        {
+          "candidate": "A. M. SALEEM",
+          "party": "Communist Party of India",
+          "votes": 310,
+          "vote_share_percent": 1.42
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 225,
+          "vote_share_percent": 1.03
+        },
+        {
+          "candidate": "S. KARTHIKUMARI",
+          "party": "Naam Tamilar Katchi",
+          "votes": 172,
+          "vote_share_percent": 0.79
+        },
+        {
+          "candidate": "A. RAGU @ RAGUNATHAN",
+          "party": "Independent",
+          "votes": 70,
+          "vote_share_percent": 0.32
+        },
+        {
+          "candidate": "S. VASANTHI",
+          "party": "Independent",
+          "votes": 57,
+          "vote_share_percent": 0.26
+        },
+        {
+          "candidate": "KALAIVANAN",
+          "party": "Republican Party of India",
+          "votes": 54,
+          "vote_share_percent": 0.25
+        },
+        {
+          "candidate": "R. JAYABALAN",
+          "party": "Independent",
+          "votes": 35,
+          "vote_share_percent": 0.16
+        },
+        {
+          "candidate": "M. NITHYA",
+          "party": "Independent",
+          "votes": 28,
+          "vote_share_percent": 0.13
+        },
+        {
+          "candidate": "R. SAMINADANE",
+          "party": "Independent",
+          "votes": 8,
+          "vote_share_percent": 0.04
+        }
+      ]
+    },
+    {
+      "election_type": "State Assembly by-election",
+      "constituency": "MADURANTAKAM",
+      "state_or_ut": "Tamil Nadu",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2235.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 185292,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "K.MARAGATHAM KUMARAVEL",
+          "party": "Tamilaga Vettri Kazhagam",
+          "votes": 74048,
+          "vote_share_percent": 39.96
+        },
+        {
+          "candidate": "I.PARANTHAMEN",
+          "party": "Dravida Munnetra Kazhagam",
+          "votes": 54008,
+          "vote_share_percent": 29.15
+        },
+        {
+          "candidate": "S.KANITHASAMPATH",
+          "party": "All India Anna Dravida Munnetra Kazhagam",
+          "votes": 47450,
+          "vote_share_percent": 25.61
+        },
+        {
+          "candidate": "G.JANAKIRAMAN",
+          "party": "Naam Tamilar Katchi",
+          "votes": 2709,
+          "vote_share_percent": 1.46
+        },
+        {
+          "candidate": "SUGANTHI.P",
+          "party": "Communist Party of India (Marxist)",
+          "votes": 1986,
+          "vote_share_percent": 1.07
+        },
+        {
+          "candidate": "KRISHNAKANTH.E",
+          "party": "Independent",
+          "votes": 1004,
+          "vote_share_percent": 0.54
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 652,
+          "vote_share_percent": 0.35
+        },
+        {
+          "candidate": "P.N.R.BASKARAN",
+          "party": "Independent",
+          "votes": 497,
+          "vote_share_percent": 0.27
+        },
+        {
+          "candidate": "NAVINDAR.V",
+          "party": "Independent",
+          "votes": 410,
+          "vote_share_percent": 0.22
+        },
+        {
+          "candidate": "RAJAMANI",
+          "party": "Independent",
+          "votes": 353,
+          "vote_share_percent": 0.19
+        },
+        {
+          "candidate": "KAYALVIZHI",
+          "party": "Independent",
+          "votes": 349,
+          "vote_share_percent": 0.19
+        },
+        {
+          "candidate": "EZHIL.E",
+          "party": "Independent",
+          "votes": 267,
+          "vote_share_percent": 0.14
+        },
+        {
+          "candidate": "M.MANOKAR",
+          "party": "Independent",
+          "votes": 238,
+          "vote_share_percent": 0.13
+        },
+        {
+          "candidate": "K.ELAIYARASU",
+          "party": "Independent",
+          "votes": 216,
+          "vote_share_percent": 0.12
+        },
+        {
+          "candidate": "RANJITHAM.M",
+          "party": "Independent",
+          "votes": 154,
+          "vote_share_percent": 0.08
+        },
+        {
+          "candidate": "N.SATHIS KUMAR",
+          "party": "Independent",
+          "votes": 143,
+          "vote_share_percent": 0.08
+        },
+        {
+          "candidate": "K.BHUVANESWARI",
+          "party": "Anaithinthiya Anna Dravida Makkal Seyal katchi",
+          "votes": 112,
+          "vote_share_percent": 0.06
+        },
+        {
+          "candidate": "DR.G.MOORTHY",
+          "party": "Independent",
+          "votes": 112,
+          "vote_share_percent": 0.06
+        },
+        {
+          "candidate": "LOGESH.K",
+          "party": "Independent",
+          "votes": 91,
+          "vote_share_percent": 0.05
+        },
+        {
+          "candidate": "S.MURUGAN",
+          "party": "Independent",
+          "votes": 86,
+          "vote_share_percent": 0.05
+        },
+        {
+          "candidate": "M.KADIRVEL",
+          "party": "Independent",
+          "votes": 83,
+          "vote_share_percent": 0.04
+        },
+        {
+          "candidate": "S.ARUMUGAM",
+          "party": "Independent",
+          "votes": 70,
+          "vote_share_percent": 0.04
+        },
+        {
+          "candidate": "M.JEGAN",
+          "party": "Independent",
+          "votes": 67,
+          "vote_share_percent": 0.04
+        },
+        {
+          "candidate": "G.RAJASEKAR",
+          "party": "Desiya Makkal Sakthi Katchi",
+          "votes": 52,
+          "vote_share_percent": 0.03
+        },
+        {
+          "candidate": "J.RAVIKUMAR",
+          "party": "Republican Party of India (Sivaraj)",
+          "votes": 42,
+          "vote_share_percent": 0.02
+        },
+        {
+          "candidate": "V.MUTHUSELVAM",
+          "party": "Anti Corruption Dynamic Party",
+          "votes": 39,
+          "vote_share_percent": 0.02
+        },
+        {
+          "candidate": "M.G.RAMU",
+          "party": "Jebamani Janata",
+          "votes": 28,
+          "vote_share_percent": 0.02
+        },
+        {
+          "candidate": "K.ARUMUGAM",
+          "party": "Independent",
+          "votes": 26,
+          "vote_share_percent": 0.01
+        }
+      ]
+    },
+    {
+      "election_type": "State Assembly by-election",
+      "constituency": "DHARAPURAM",
+      "state_or_ut": "Tamil Nadu",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS22101.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 180532,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "SATHYABAMA.P",
+          "party": "Tamilaga Vettri Kazhagam",
+          "votes": 66841,
+          "vote_share_percent": 37.02
+        },
+        {
+          "candidate": "SUGANYA.S",
+          "party": "Dravida Munnetra Kazhagam",
+          "votes": 57370,
+          "vote_share_percent": 31.78
+        },
+        {
+          "candidate": "BANUMATHI.K",
+          "party": "All India Anna Dravida Munnetra Kazhagam",
+          "votes": 45280,
+          "vote_share_percent": 25.08
+        },
+        {
+          "candidate": "KARTHIKA.M",
+          "party": "Naam Tamilar Katchi",
+          "votes": 5268,
+          "vote_share_percent": 2.92
+        },
+        {
+          "candidate": "LAKSHMANAN.P",
+          "party": "Communist Party of India",
+          "votes": 1157,
+          "vote_share_percent": 0.64
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 677,
+          "vote_share_percent": 0.38
+        },
+        {
+          "candidate": "RAJARATHINAM.S",
+          "party": "Independent",
+          "votes": 655,
+          "vote_share_percent": 0.36
+        },
+        {
+          "candidate": "MARIMUTHU.N",
+          "party": "Independent",
+          "votes": 473,
+          "vote_share_percent": 0.26
+        },
+        {
+          "candidate": "MUTHUSAMY.P",
+          "party": "Independent",
+          "votes": 437,
+          "vote_share_percent": 0.24
+        },
+        {
+          "candidate": "BANUPRIYA.S",
+          "party": "Independent",
+          "votes": 325,
+          "vote_share_percent": 0.18
+        },
+        {
+          "candidate": "SATHISHKUMAR.M",
+          "party": "Independent",
+          "votes": 273,
+          "vote_share_percent": 0.15
+        },
+        {
+          "candidate": "PERUMAL.R",
+          "party": "Independent",
+          "votes": 253,
+          "vote_share_percent": 0.14
+        },
+        {
+          "candidate": "BANUMATHI.C",
+          "party": "Independent",
+          "votes": 250,
+          "vote_share_percent": 0.14
+        },
+        {
+          "candidate": "MAHENDRAN.S",
+          "party": "Independent",
+          "votes": 224,
+          "vote_share_percent": 0.12
+        },
+        {
+          "candidate": "NALLASAMY.P",
+          "party": "Independent",
+          "votes": 195,
+          "vote_share_percent": 0.11
+        },
+        {
+          "candidate": "ARULRAJU.G",
+          "party": "Anaithinthiya Anna Dravida Makkal Seyal katchi",
+          "votes": 154,
+          "vote_share_percent": 0.09
+        },
+        {
+          "candidate": "DHANALAKSHMI.S",
+          "party": "Independent",
+          "votes": 133,
+          "vote_share_percent": 0.07
+        },
+        {
+          "candidate": "JOTHEESHWARI.D",
+          "party": "Independent",
+          "votes": 124,
+          "vote_share_percent": 0.07
+        },
+        {
+          "candidate": "RAJESHWARI.V",
+          "party": "Independent",
+          "votes": 117,
+          "vote_share_percent": 0.06
+        },
+        {
+          "candidate": "SATHYABAMA.M",
+          "party": "Independent",
+          "votes": 102,
+          "vote_share_percent": 0.06
+        },
+        {
+          "candidate": "ARUMUGAM.R",
+          "party": "Ganasangam Party of India",
+          "votes": 91,
+          "vote_share_percent": 0.05
+        },
+        {
+          "candidate": "SASIPRIYA.S",
+          "party": "Independent",
+          "votes": 77,
+          "vote_share_percent": 0.04
+        },
+        {
+          "candidate": "MAHESHWARAN.S",
+          "party": "Anti Corruption Dynamic Party",
+          "votes": 56,
+          "vote_share_percent": 0.03
+        }
+      ]
+    },
+    {
+      "election_type": "State Assembly by-election",
+      "constituency": "REJINAGAR",
+      "state_or_ut": "West Bengal",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2570.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 205747,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "SHANKHARAVH SARKAR",
+          "party": "Bharatiya Janata Party",
+          "votes": 129914,
+          "vote_share_percent": 63.14
+        },
+        {
+          "candidate": "GOLAM NABI AZAD (ROBIN)",
+          "party": "Aam Janata Unnayan party",
+          "votes": 54098,
+          "vote_share_percent": 26.29
+        },
+        {
+          "candidate": "ABDULLAHIL KAFI",
+          "party": "Indian National Congress",
+          "votes": 6168,
+          "vote_share_percent": 3.0
+        },
+        {
+          "candidate": "RABIUL ALAM CHOWDHURY",
+          "party": "Mamata All India Trinamool Congress",
+          "votes": 3847,
+          "vote_share_percent": 1.87
+        },
+        {
+          "candidate": "MD. SAYEED",
+          "party": "Communist Party of India (Marxist)",
+          "votes": 3797,
+          "vote_share_percent": 1.85
+        },
+        {
+          "candidate": "SAFIUZZAMAN SAIKH",
+          "party": "Democratic Trinamool Congress",
+          "votes": 2044,
+          "vote_share_percent": 0.99
+        },
+        {
+          "candidate": "MEHEBUB ALAM",
+          "party": "Independent",
+          "votes": 1374,
+          "vote_share_percent": 0.67
+        },
+        {
+          "candidate": "GOLAK BANERJEE",
+          "party": "Independent",
+          "votes": 1227,
+          "vote_share_percent": 0.6
+        },
+        {
+          "candidate": "MAJIFUL HOQUE",
+          "party": "Independent",
+          "votes": 657,
+          "vote_share_percent": 0.32
+        },
+        {
+          "candidate": "IMRAN MALLIK",
+          "party": "Republican Party of India (Athawale)",
+          "votes": 597,
+          "vote_share_percent": 0.29
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 594,
+          "vote_share_percent": 0.29
+        },
+        {
+          "candidate": "SAHIN SAHA",
+          "party": "Jatiya Unnayan Party",
+          "votes": 376,
+          "vote_share_percent": 0.18
+        },
+        {
+          "candidate": "BIKASH CHANDRA MISRA",
+          "party": "Revolutionary Socialist Party",
+          "votes": 329,
+          "vote_share_percent": 0.16
+        },
+        {
+          "candidate": "JALALUDDIN MIDDER",
+          "party": "Independent",
+          "votes": 291,
+          "vote_share_percent": 0.14
+        },
+        {
+          "candidate": "SAIFUL ISLAM",
+          "party": "Independent",
+          "votes": 223,
+          "vote_share_percent": 0.11
+        },
+        {
+          "candidate": "TUSHAR PANDEY",
+          "party": "Independent",
+          "votes": 211,
+          "vote_share_percent": 0.1
+        }
+      ]
+    },
+    {
+      "election_type": "State Assembly by-election",
+      "constituency": "NANDIGRAM",
+      "state_or_ut": "West Bengal",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS25210.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 216515,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "HASI RANI RATH",
+          "party": "Bharatiya Janata Party",
+          "votes": 164427,
+          "vote_share_percent": 75.94
+        },
+        {
+          "candidate": "MILAN PRADHAN",
+          "party": "Indian National Congress",
+          "votes": 41674,
+          "vote_share_percent": 19.25
+        },
+        {
+          "candidate": "SANTI GOPAL GIRI",
+          "party": "Communist Party of India",
+          "votes": 5779,
+          "vote_share_percent": 2.67
+        },
+        {
+          "candidate": "ALI MD SABE MIRAJ KHAN",
+          "party": "All India Secular Front",
+          "votes": 1607,
+          "vote_share_percent": 0.74
+        },
+        {
+          "candidate": "EHTESHMUL HAQUE",
+          "party": "Democratic Trinamool Congress",
+          "votes": 853,
+          "vote_share_percent": 0.39
+        },
+        {
+          "candidate": "SAYED MAHAMMAD",
+          "party": "Independent",
+          "votes": 723,
+          "vote_share_percent": 0.33
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 643,
+          "vote_share_percent": 0.3
+        },
+        {
+          "candidate": "SK HASIBUL",
+          "party": "Jatiya Unnayan Party",
+          "votes": 325,
+          "vote_share_percent": 0.15
+        },
+        {
+          "candidate": "ABDUL RAFFIQ SAHA",
+          "party": "Independent",
+          "votes": 257,
+          "vote_share_percent": 0.12
+        },
+        {
+          "candidate": "SK MUJIBAR RAHAMAN ALI",
+          "party": "Independent",
+          "votes": 227,
+          "vote_share_percent": 0.1
+        }
+      ]
+    },
+    {
+      "election_type": "Lok Sabha by-election",
+      "constituency": "Nagaon",
+      "state_or_ut": "Assam",
+      "source": "https://results.eci.gov.in/ResultPcByeOct2026/ConstituencywiseS039.htm",
+      "candidates": [
+        {
+          "candidate": "Total",
+          "party": "",
+          "votes": 1454380,
+          "vote_share_percent": null
+        },
+        {
+          "candidate": "DEVASISH SHARMA",
+          "party": "Bharatiya Janata Party",
+          "votes": 714349,
+          "vote_share_percent": 49.12
+        },
+        {
+          "candidate": "MOHAMMED BADRUDDIN AJMAL",
+          "party": "All India United Democratic Front",
+          "votes": 572125,
+          "vote_share_percent": 39.34
+        },
+        {
+          "candidate": "SIBAMONI BORA",
+          "party": "Indian National Congress",
+          "votes": 129492,
+          "vote_share_percent": 8.9
+        },
+        {
+          "candidate": "NOTA",
+          "party": "None of the Above",
+          "votes": 9244,
+          "vote_share_percent": 0.64
+        },
+        {
+          "candidate": "MONIRUL HUSSAIN",
+          "party": "Independent",
+          "votes": 6746,
+          "vote_share_percent": 0.46
+        },
+        {
+          "candidate": "SABINA YASMIN",
+          "party": "Independent",
+          "votes": 4083,
+          "vote_share_percent": 0.28
+        },
+        {
+          "candidate": "SAIFUR RAHMAN",
+          "party": "Independent",
+          "votes": 3639,
+          "vote_share_percent": 0.25
+        },
+        {
+          "candidate": "YOUNUS TAMULY",
+          "party": "Independent",
+          "votes": 2602,
+          "vote_share_percent": 0.18
+        },
+        {
+          "candidate": "MUSTAKIM ALAM",
+          "party": "Independent",
+          "votes": 2322,
+          "vote_share_percent": 0.16
+        },
+        {
+          "candidate": "INAMUL HUDA",
+          "party": "Revolutionary Communist Party of India (Rasik Bhatt)",
+          "votes": 2054,
+          "vote_share_percent": 0.14
+        },
+        {
+          "candidate": "BARNALI SARMA",
+          "party": "Socialist Unity Centre Of India (COMMUNIST)",
+          "votes": 1676,
+          "vote_share_percent": 0.12
+        },
+        {
+          "candidate": "HAFIZ BURHANUDDIN",
+          "party": "The National Road Map Party of India",
+          "votes": 1532,
+          "vote_share_percent": 0.11
+        },
+        {
+          "candidate": "FARUK KHAN",
+          "party": "Independent",
+          "votes": 1344,
+          "vote_share_percent": 0.09
+        },
+        {
+          "candidate": "NAZRUL ISLAM",
+          "party": "Independent",
+          "votes": 1310,
+          "vote_share_percent": 0.09
+        },
+        {
+          "candidate": "EMRAN HUSSAIN",
+          "party": "Independent",
+          "votes": 1063,
+          "vote_share_percent": 0.07
+        },
+        {
+          "candidate": "AYUSH KUMAR SINGH",
+          "party": "Independent",
+          "votes": 799,
+          "vote_share_percent": 0.05
+        }
+      ]
+    }
+  ],
+  "us_presidential_elections": [
+    {
+      "year": 2000,
+      "winner": "George W. Bush [R]",
+      "winner_electoral_votes": 271,
+      "main_opponent": "Albert Gore, Jr. [D]",
+      "opponent_electoral_votes": 266,
+      "source": "https://www.archives.gov/electoral-college/2000"
+    },
+    {
+      "year": 2004,
+      "winner": "George W. Bush [R]",
+      "winner_electoral_votes": 286,
+      "main_opponent": "John F. Kerry [D]",
+      "opponent_electoral_votes": 251,
+      "source": "https://www.archives.gov/electoral-college/2004"
+    },
+    {
+      "year": 2008,
+      "winner": "Barack Obama [D]",
+      "winner_electoral_votes": 365,
+      "main_opponent": "John McCain [R]",
+      "opponent_electoral_votes": 173,
+      "source": "https://www.archives.gov/electoral-college/2008"
+    },
+    {
+      "year": 2012,
+      "winner": "Barack Obama [D]",
+      "winner_electoral_votes": 332,
+      "main_opponent": "Mitt Romney [R]",
+      "opponent_electoral_votes": 206,
+      "source": "https://www.archives.gov/electoral-college/2012"
+    },
+    {
+      "year": 2016,
+      "winner": "Donald J. Trump [R]",
+      "winner_electoral_votes": 304,
+      "main_opponent": "Hillary Clinton [D]",
+      "opponent_electoral_votes": 227,
+      "source": "https://www.archives.gov/electoral-college/2016"
+    },
+    {
+      "year": 2020,
+      "winner": "Joseph R. Biden Jr. [D]",
+      "winner_electoral_votes": 306,
+      "main_opponent": "Donald J. Trump [R]",
+      "opponent_electoral_votes": 232,
+      "source": "https://www.archives.gov/electoral-college/2020"
+    },
+    {
+      "year": 2024,
+      "winner": "Donald J. Trump [R]",
+      "winner_electoral_votes": 312,
+      "main_opponent": "Kamala D. Harris [D]",
+      "opponent_electoral_votes": 226,
+      "source": "https://www.archives.gov/electoral-college/2024"
+    }
+  ],
+  "series": {
+    "india_live_candidate_votes": {
+      "labels": [
+        "Assam · Nagaon · Total",
+        "Assam · Nagaon · DEVASISH SHARMA",
+        "Assam · Nagaon · MOHAMMED BADRUDDIN AJMAL",
+        "West Bengal · NANDIGRAM · Total",
+        "West Bengal · REJINAGAR · Total",
+        "Tamil Nadu · MADURANTAKAM · Total",
+        "Tamil Nadu · DHARAPURAM · Total",
+        "West Bengal · NANDIGRAM · HASI RANI RATH",
+        "West Bengal · REJINAGAR · SHANKHARAVH SARKAR",
+        "Assam · Nagaon · SIBAMONI BORA",
+        "Tamil Nadu · MADURANTAKAM · K.MARAGATHAM KUMARAVEL",
+        "Tamil Nadu · DHARAPURAM · SATHYABAMA.P",
+        "Tamil Nadu · DHARAPURAM · SUGANYA.S",
+        "West Bengal · REJINAGAR · GOLAM NABI AZAD (ROBIN)",
+        "Tamil Nadu · MADURANTAKAM · I.PARANTHAMEN",
+        "Tamil Nadu · MADURANTAKAM · S.KANITHASAMPATH",
+        "Tamil Nadu · DHARAPURAM · BANUMATHI.K",
+        "West Bengal · NANDIGRAM · MILAN PRADHAN",
+        "Puducherry · THATTANCHAVADY · Total",
+        "Puducherry · THATTANCHAVADY · ASHOK ANAND",
+        "Assam · Nagaon · NOTA",
+        "Assam · Nagaon · MONIRUL HUSSAIN",
+        "West Bengal · REJINAGAR · ABDULLAHIL KAFI",
+        "West Bengal · NANDIGRAM · SANTI GOPAL GIRI",
+        "Tamil Nadu · DHARAPURAM · KARTHIKA.M",
+        "Puducherry · THATTANCHAVADY · E. VINAYAGAM",
+        "Assam · Nagaon · SABINA YASMIN",
+        "West Bengal · REJINAGAR · RABIUL ALAM CHOWDHURY",
+        "West Bengal · REJINAGAR · MD. SAYEED",
+        "Assam · Nagaon · SAIFUR RAHMAN"
+      ],
+      "values": [
+        1454380,
+        714349,
+        572125,
+        216515,
+        205747,
+        185292,
+        180532,
+        164427,
+        129914,
+        129492,
+        74048,
+        66841,
+        57370,
+        54098,
+        54008,
+        47450,
+        45280,
+        41674,
+        21857,
+        13358,
+        9244,
+        6746,
+        6168,
+        5779,
+        5268,
+        4876,
+        4083,
+        3847,
+        3797,
+        3639
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "source": "Election Commission of India live results portal",
+      "note": "Top 30 candidates by reported vote total across the currently published Lok Sabha and Assembly by-election constituencies. The ECI portal labels displayed results provisional until Form 20 is published. Full candidate tables are retained in election-results.json."
+    },
+    "india_live_candidate_vote_share": {
+      "labels": [
+        "West Bengal · NANDIGRAM · HASI RANI RATH",
+        "West Bengal · REJINAGAR · SHANKHARAVH SARKAR",
+        "Puducherry · THATTANCHAVADY · ASHOK ANAND",
+        "Assam · Nagaon · DEVASISH SHARMA",
+        "Tamil Nadu · MADURANTAKAM · K.MARAGATHAM KUMARAVEL",
+        "Assam · Nagaon · MOHAMMED BADRUDDIN AJMAL",
+        "Tamil Nadu · DHARAPURAM · SATHYABAMA.P",
+        "Tamil Nadu · DHARAPURAM · SUGANYA.S",
+        "Tamil Nadu · MADURANTAKAM · I.PARANTHAMEN",
+        "West Bengal · REJINAGAR · GOLAM NABI AZAD (ROBIN)",
+        "Tamil Nadu · MADURANTAKAM · S.KANITHASAMPATH",
+        "Tamil Nadu · DHARAPURAM · BANUMATHI.K",
+        "Puducherry · THATTANCHAVADY · E. VINAYAGAM",
+        "West Bengal · NANDIGRAM · MILAN PRADHAN",
+        "Puducherry · THATTANCHAVADY · K. SETHU @ SETHUSELVAM",
+        "Assam · Nagaon · SIBAMONI BORA",
+        "West Bengal · REJINAGAR · ABDULLAHIL KAFI",
+        "Tamil Nadu · DHARAPURAM · KARTHIKA.M",
+        "West Bengal · NANDIGRAM · SANTI GOPAL GIRI",
+        "West Bengal · REJINAGAR · RABIUL ALAM CHOWDHURY",
+        "West Bengal · REJINAGAR · MD. SAYEED",
+        "Tamil Nadu · MADURANTAKAM · G.JANAKIRAMAN",
+        "Puducherry · THATTANCHAVADY · A. M. SALEEM",
+        "Tamil Nadu · MADURANTAKAM · SUGANTHI.P",
+        "Puducherry · THATTANCHAVADY · NOTA",
+        "West Bengal · REJINAGAR · SAFIUZZAMAN SAIKH",
+        "Puducherry · THATTANCHAVADY · S. KARTHIKUMARI",
+        "West Bengal · NANDIGRAM · ALI MD SABE MIRAJ KHAN",
+        "West Bengal · REJINAGAR · MEHEBUB ALAM",
+        "Assam · Nagaon · NOTA"
+      ],
+      "values": [
+        75.94,
+        63.14,
+        61.12,
+        49.12,
+        39.96,
+        39.34,
+        37.02,
+        31.78,
+        29.15,
+        26.29,
+        25.61,
+        25.08,
+        22.31,
+        19.25,
+        12.19,
+        8.9,
+        3.0,
+        2.92,
+        2.67,
+        1.87,
+        1.85,
+        1.46,
+        1.42,
+        1.07,
+        1.03,
+        0.99,
+        0.79,
+        0.74,
+        0.67,
+        0.64
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "source": "Election Commission of India live results portal",
+      "unit": "% of votes",
+      "note": "Top 30 candidates by reported vote share across currently published constituencies. ECI displays provisional results until Form 20."
+    },
+    "india_live_constituency_margin": {
+      "labels": [
+        "Assam · Nagaon",
+        "Tamil Nadu · DHARAPURAM",
+        "Tamil Nadu · MADURANTAKAM",
+        "West Bengal · REJINAGAR",
+        "West Bengal · NANDIGRAM",
+        "Puducherry · THATTANCHAVADY"
+      ],
+      "values": [
+        740031,
+        113691,
+        111244,
+        75833,
+        52088,
+        8499
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "source": "Calculated from Election Commission of India live constituency candidate totals",
+      "unit": "votes",
+      "note": "Reported-vote lead between the top two candidates in each currently published constituency. The ECI portal labels displayed results provisional until Form 20."
+    },
+    "india_live_winner_vote_share": {
+      "labels": [
+        "Assam · Nagaon",
+        "Tamil Nadu · DHARAPURAM",
+        "Tamil Nadu · MADURANTAKAM",
+        "West Bengal · REJINAGAR",
+        "West Bengal · NANDIGRAM",
+        "Puducherry · THATTANCHAVADY"
+      ],
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "source": "Election Commission of India live results portal",
+      "unit": "% of votes",
+      "note": "Reported vote share of the leading candidate in each currently published constituency. ECI displays provisional results until Form 20."
+    },
+    "india_live_party_seats": {
+      "labels": [
+        "Unspecified"
+      ],
+      "values": [
+        6
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "source": "Election Commission of India live constituency results",
+      "unit": "constituencies",
+      "note": "Count of currently published constituencies in which each party's candidate has the highest reported vote total. This is a provisional snapshot, not an all-election seat tally."
+    },
+    "us_presidential_electoral_votes": {
+      "labels": [
+        "2000",
+        "2004",
+        "2008",
+        "2012",
+        "2016",
+        "2020",
+        "2024"
+      ],
+      "datasets": [
+        {
+          "label": "Electoral votes — winner",
+          "values": [
+            271,
+            286,
+            365,
+            332,
+            304,
+            306,
+            312
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Electoral votes — main opponent",
+          "values": [
+            266,
+            251,
+            173,
+            206,
+            227,
+            232,
+            226
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "U.S. National Archives, Electoral College results",
+      "note": "Official Electoral College totals for the winner and main opponent in each presidential election from 2000 through 2024. These are electoral votes, not popular votes."
+    }
+  },
+  "generated_at_utc": "2026-10-25T13:19:03+00:00"
+}

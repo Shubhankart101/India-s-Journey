@@ -6,6 +6,7 @@ on:
     workflows:
       - Daily PolityPolicy Update
       - Weekly Substack Article Update
+      - Election Results Update
     types:
       - completed
   push:
@@ -19,6 +20,7 @@ on:
       - data/pew-india-reports.json
       - data/ncrb-and-analyses.json
       - data/pew-snapshots.json
+      - data/election-results.json
       - .github/workflows/deploy-dashboard.yml
 
 permissions:
@@ -51,6 +53,7 @@ jobs:
           if [ -f data/substack-latest.json ]; then cp data/substack-latest.json site/data/substack-latest.json; fi
           if [ -f data/ncrb-and-analyses.json ]; then cp data/ncrb-and-analyses.json site/data/ncrb-and-analyses.json; fi
           if [ -f data/pew-snapshots.json ]; then cp data/pew-snapshots.json site/data/pew-snapshots.json; fi
+          if [ -f data/election-results.json ]; then cp data/election-results.json site/data/election-results.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

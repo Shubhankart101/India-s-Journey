@@ -74,6 +74,8 @@
   place(['current_health_spending', 'physicians_density', 'basic_water_access', 'basic_sanitation_access'], 'Public Health & Epidemiology', 'Health Infrastructure & Spending');
   place(['under5_mortality'], 'Public Health & Epidemiology', 'Mortality & Lifespan Milestones');
   place(['urban_population_share', 'population_growth', 'fertility_rate', 'female_labor_participation', 'labor_force_participation', 'employment_population_ratio'], 'Social', 'Demographics');
+  place(['crude_birth_rate', 'crude_death_rate'], 'Social', 'Demographics');
+  place(['clean_fuel_access'], 'Social', 'Welfare');
   place(['primary_school_enrollment', 'secondary_school_enrollment', 'tertiary_school_enrollment', 'education_spending_gdp', 'adult_literacy_rate', 'mobile_subscriptions_per_100', 'fixed_broadband_per_100'], 'Social', 'Welfare');
   place(['agriculture_gdp_share', 'industry_gdp_share', 'services_gdp_share', 'manufacturing_gdp_share', 'cereal_yield'], 'Industry Trends & Performance', 'Manufacturing & Industrial Growth');
   place(['agricultural_land_share'], 'Industry Trends & Performance', 'Production & Commodities');
@@ -88,5 +90,7 @@
   place(['military_expenditure_usd', 'military_expenditure_per_capita'], 'Defence & Strategic', 'Defence Budget & Modernization');
   place(['upi_volume_index'], 'Payments & Digital Banking', 'UPI & Digital Payments');
   place(['pew_india_2026_global_views', 'pew_india_2026_top_threats', 'pew_india_2026_top_allies', 'pew_india_2021_diversity_views', 'pew_india_2021_religious_freedom'], 'Pew Research', 'Public opinion');
+  place(['india_live_candidate_votes', 'india_live_candidate_vote_share', 'india_live_constituency_margin', 'india_live_winner_vote_share', 'india_live_party_seats'], 'Elections', 'Indian Elections');
+  place(['us_presidential_electoral_votes'], 'Elections', 'U.S. Elections');
   window.INDIA_EXTRA_CHART_PLACEMENT = placements;
 })();

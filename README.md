@@ -12,7 +12,7 @@ This independent project was created to make India’s economic, social, and inf
 
 With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The dashboard now has a dedicated **Inspiration** section separate from the general About text, so PolityPolicy attribution is not mixed in with dashboard mechanics.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard organizes indicators into four top-level groups: Economic, Social, **Pew Research**, and Crime & Security, each split into contextual subgroups (13 total: Macroeconomics, Monetary Policy, Trade & External, Markets, Infrastructure, Production & Commodities, Media & Publications, Demographics, Welfare, Public opinion, Violence & Crime, Terrorism, Maoism/LWE). Pew Research is a dedicated group so that survey-based indicators are never mixed in with official administrative or macroeconomic series. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, and Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
 
 The **Markets Subgroup** under Economic includes rich global comparisons celebrating India's growth trajectory alongside the world's largest economies:
 - **Indian Market Indices**: Sensex, Nifty 50, and Nifty VIX rebased to 100.
@@ -104,6 +104,9 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 - [Foreign-direct-investment API](https://api.worldbank.org/v2/country/IND/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&per_page=100)
 - [Domestic-savings API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDS.TOTL.ZS?format=json&per_page=100)
 - [Electricity-access API](https://api.worldbank.org/v2/country/IND/indicator/EG.ELC.ACCS.ZS?format=json&per_page=100)
+- [Clean cooking fuel access API](https://api.worldbank.org/v2/country/IND/indicator/EG.CFT.ACCS.ZS?format=json&per_page=100)
+- [Crude birth-rate API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.CBRT.IN?format=json&per_page=100)
+- [Crude death-rate API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.CDRT.IN?format=json&per_page=100)
 - [Internet-users API](https://api.worldbank.org/v2/country/IND/indicator/IT.NET.USER.ZS?format=json&per_page=100)
 - [Life-expectancy API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.LE00.IN?format=json&per_page=100)
 - [Intentional homicide rate API](https://api.worldbank.org/v2/country/IND/indicator/VC.IHR.PSRC.P5?format=json&per_page=100)
@@ -122,6 +125,9 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 
 ### Indian government and public sources
 
+- [Election Commission of India results portal](https://results.eci.gov.in/) for currently published constituency-level election results.
+- [U.S. National Archives Electoral College results](https://www.archives.gov/electoral-college) for Presidential election outcomes.
+- [PPAC retail selling prices](https://ppac.gov.in/prices/retail-selling-price-rsp-of-petrol-diesel-and-domestic-lpg) for the government reference archive; no verified open daily feed is currently consumed by this project.
 - [GST portal](https://www.gst.gov.in/) for GST collections.
 - [Controller General of Accounts](https://cga.nic.in/) for Union fiscal accounts.
 - [MOSPI](https://www.mospi.gov.in/) for IIP and official statistics.
@@ -142,9 +148,17 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 
 Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above. The live dashboard now has a dedicated Inspiration section that separates PolityPolicy attribution from the general About text.
 
+## 🗳️ Elections, public services, and data coverage
+
+The Elections group includes current candidate-level ECI by-election results and U.S. Presidential Electoral College totals. ECI candidate totals refresh every three hours and remain provisional until Form 20. The current ECI portal is not a verified historical archive; complete historical Indian constituency results and U.S. House candidate vote totals are not claimed as covered.
+
+The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), plus specifically cited state snapshots. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
+
+See the [documentation index](docs/README.md), [election coverage](docs/ELECTIONS.md), [sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), and [pipeline guide](docs/PIPELINES.md) for implementation details and source scope.
+
 ## ⚙️ Automation
 
-The [weekly workflow](.github/workflows/weekly-substack-articles.yml) and [daily workflow](.github/workflows/daily-politypolicy-update.yml) regenerate public-source data and dashboard assets, including `scripts/collect_ncrb_and_analyses.py` and `scripts/collect_pew_snapshots.py`. Each card displays its actual release frequency; source adapters that need a stable public export are shown as pending rather than populated with estimates.
+The [weekly workflow](.github/workflows/weekly-substack-articles.yml), [daily workflow](.github/workflows/daily-politypolicy-update.yml), and [election results workflow](.github/workflows/election-results-update.yml) refresh article, economic, and election data at source-appropriate cadences. The election collector checks ECI and National Archives pages every three hours. Each card displays its actual observation frequency; a more frequent source check does not imply that annual or election-cycle data changes at that interval.
 
 ## 🛠️ Local Preview
 

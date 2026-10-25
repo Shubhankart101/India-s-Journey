@@ -160,6 +160,15 @@ const definitions = [
   ['child_protection_pocso', 'Crimes against children & POCSO', 'Registered offences against children', 'Annual (2014-2023)', '#ff7b72', ' cases', 'https://ncrb.gov.in/', 'Crimes reported against children including offences registered under the Protection of Children from Sexual Offences (POCSO) Act.\n\nSourced from official NCRB Crime in India volumes.'],
   ['road_accidents_fatalities', 'Road traffic accident fatalities', 'Annual deaths from road traffic accidents', 'Annual (2010-2024)', '#ffa657', ' deaths', 'https://morth.nic.in/', 'Annual fatalities resulting from road traffic accidents across National Highways, State Highways, and urban roads.\n\nSourced from MoRTH and NCRB Accidental Deaths & Suicides in India (ADSI).'],
   ['police_per_population', 'Police personnel per 100k population', 'Sanctioned police strength per 100,000 people', 'Annual (2010-2024)', '#79c0ff', ' per 100k', 'https://bprd.nic.in/', 'Sanctioned civil and armed police personnel relative to population size, measuring law enforcement operational capacity.\n\nSourced from Bureau of Police Research and Development (BPR&D).'],
+  ['india_live_candidate_votes', 'Indian live election results', 'Candidate vote totals in currently published Lok Sabha and State Assembly by-elections', 'Live (3-hour refresh)', '#ff9933', ' votes', 'https://results.eci.gov.in/', 'Top 30 candidates by currently reported vote totals from the Election Commission of India results portal. The chart is refreshed every three hours when the portal publishes data; the linked dataset preserves all parsed constituency and candidate rows. ECI displayed results are provisional until Form 20 is published. Historical Lok Sabha and Assembly result archives are not included because a stable, openly accessible official archive was not verified.'],
+  ['india_live_candidate_vote_share', 'Indian candidate vote share', 'Reported candidate share of votes in currently published constituencies', 'Live (3-hour refresh)', '#f6c344', '%', 'https://results.eci.gov.in/', 'Top 30 candidates by vote share from currently published ECI constituency tables. ECI displayed results are provisional until Form 20 is published.'],
+  ['india_live_constituency_margin', 'Indian constituency lead', 'Reported vote margin between the top two candidates', 'Live (3-hour refresh)', '#58a6ff', ' votes', 'https://results.eci.gov.in/', 'Calculated as the reported vote total of the leading candidate minus the runner-up in each currently published constituency. ECI displayed results are provisional until Form 20 is published.'],
+  ['india_live_winner_vote_share', 'Indian leading-candidate vote share', 'Reported vote share of the leading candidate by constituency', 'Live (3-hour refresh)', '#3fb950', '%', 'https://results.eci.gov.in/', 'Reported vote share of the current leading candidate in each published constituency. This live lead is provisional until Form 20 is published.'],
+  ['india_live_party_seats', 'Indian by-election party leads', 'Currently leading constituencies by party in the ECI snapshot', 'Live (3-hour refresh)', '#a371f7', ' constituencies', 'https://results.eci.gov.in/', 'Count of currently published constituencies in which each party candidate has the highest reported vote total. This is a provisional snapshot, not a historical or all-election seat tally.'],
+  ['us_presidential_electoral_votes', 'U.S. Presidential Electoral College', 'Winner and main opponent electoral votes, 2000–2024', 'Every 4 years', '#58a6ff', ' electoral votes', 'https://www.archives.gov/electoral-college', 'Official Electoral College results for the U.S. presidential elections from 2000 through 2024, sourced from the National Archives. The series compares electoral votes, not popular votes. U.S. House candidate vote totals are not included: those returns are published by state and a consistent official national feed was not verified.'],
+  ['crude_birth_rate', 'Crude Birth Rate', 'Annual births per 1,000 people in India', 'Annual', '#f778ba', ' births per 1,000 people', 'https://data.worldbank.org/indicator/SP.DYN.CBRT.IN?locations=IN', 'Annual national births per 1,000 people, from World Bank indicator SP.DYN.CBRT.IN. This is a national rate, not a state-level birth count.'],
+  ['crude_death_rate', 'Crude Death Rate', 'Annual deaths per 1,000 people in India', 'Annual', '#79c0ff', ' deaths per 1,000 people', 'https://data.worldbank.org/indicator/SP.DYN.CDRT.IN?locations=IN', 'Annual national deaths per 1,000 people, from World Bank indicator SP.DYN.CDRT.IN. This is a national rate, not a state-level death count.'],
+  ['clean_fuel_access', 'Access to Clean Fuels for Cooking', 'Population with access to clean fuels and technologies for cooking', 'Annual', '#e3b341', '%', 'https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IN', 'National share with access to clean cooking fuels and technologies, from World Bank indicator EG.CFT.ACCS.ZS. This is a clean-cooking access measure and must not be interpreted as household LPG connections or a state-wise gas network count.'],
 ];
 
 const eraData = {
@@ -407,8 +416,9 @@ async function main() {
     ]);
   }
 
+  const electionResults = await safeFetchJson('election-results.json', { series: {} });
   const data = dataPayload || { series: {} };
-  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}) };
+  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}) };
   const heroChartCount = document.querySelector('#hero-chart-count');
   if (heroChartCount) heroChartCount.textContent = String(definitions.length);
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
@@ -534,7 +544,7 @@ async function main() {
     if (event.key === 'Escape') closeExpandedChart();
   });
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -822,6 +832,8 @@ async function main() {
   const liveCount = document.querySelector('#hero-live-count');
   if (liveCount) liveCount.textContent = String(cards.filter(card => card.dataset.state === 'live').length);
   const subgroupGroups = { 
+    'Indian Elections': 'Elections',
+    'U.S. Elections': 'Elections',
     Macroeconomics: 'Economic', 
     'Per Capita Income & Wealth': 'Economic',
     'Monetary Policy': 'Economic', 
@@ -861,7 +873,7 @@ async function main() {
     'Public opinion': 'Pew Research' 
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion'],
+    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Elections'],
     Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Production & Commodities'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
@@ -871,7 +883,8 @@ async function main() {
     Social: ['Demographics', 'Welfare', 'Government Schemes'],
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
     'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
-    'Pew Research': ['Public opinion']
+    'Pew Research': ['Public opinion'],
+    Elections: ['Indian Elections', 'U.S. Elections']
   };
   groupToSubgroups.all.push('State Infrastructure & Services');
   groupToSubgroups['State Performance & Regional Health'].push('State Infrastructure & Services');
@@ -893,7 +906,8 @@ async function main() {
         Social: '👥 Social',
         'Defence & Strategic': '🛡️ Defence & Strategic',
         'Crime & Security': '⚖️ Crime & Security',
-        'Pew Research': '📊 Pew Research'
+        'Pew Research': '📊 Pew Research',
+        Elections: '🗳️ Elections'
       };
       Object.keys(groupToSubgroups).forEach(grpKey => {
         if (grpKey === 'all') return;
@@ -984,6 +998,12 @@ async function main() {
       desc: "Comprehensive national security atlas: Left-Wing Extremism (LWE / Maoism) 22-year fatality decline, Jammu & Kashmir terrorism reduction (2000-2025), North East insurgency pacification (2000-2025), historical Punjab militancy archive (1981-1995), NDPS drug offences, child protection/POCSO cases, road accident fatalities, and police strength.",
       badge1: "National Security",
       badge2: "MHA & SATP Databases"
+    },
+    Elections: {
+      title: "🗳️ Election Results Atlas",
+      desc: "Current ECI constituency-level by-election candidate totals alongside official U.S. Presidential Electoral College outcomes. These source-specific measures are separated rather than presented as directly comparable.",
+      badge1: "ECI Live Results",
+      badge2: "U.S. National Archives"
     }
   };
 
