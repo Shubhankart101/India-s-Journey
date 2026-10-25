@@ -79,6 +79,17 @@
     worldBank('safely_managed_drinking_water', 'Safely Managed Drinking Water', 'Population using safely managed drinking-water services', '#79c0ff', '%', 'SH.H2O.SMDW.ZS', 'Share of the population using safely managed drinking-water services, as estimated in the World Bank series.'),
   ];
 
+  window.INDIA_EXTRA_CHART_DEFINITIONS.push(
+    ['gdp_sector_composition', 'GDP Sector Composition', 'Latest reported agriculture, industry and services shares of GDP', 'Latest common annual observation', '#ff9933', '% of GDP', 'https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=IN', 'A doughnut view of the latest common World Bank sectoral value-added shares. Other GDP components are explicitly shown as the residual to 100%, not as a directly reported sector.'],
+    ['state_gsdp_composition', 'State GSDP Share: Largest States', 'Eight largest State shares and the remaining 20 States', 'Annual snapshot (FY2022-23)', '#58a6ff', '% of reported State GSDP', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470', 'Distribution of reported GSDP across the 28 States. The eight largest shares are shown individually; the other 20 States are combined. Union Territories are excluded.'],
+    ['urban_rural_population_composition', 'Urban and Rural Population Share', 'Latest urban and rural shares of India’s population', 'Latest annual estimate', '#f778ba', '% of population', 'https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=IN', 'World Bank urban population share and its rural complement. The rural value is calculated as 100% minus the reported urban share.'],
+    ['energy_supply_composition', 'Net Energy Import Dependence', 'Net energy imports and domestic supply as shares of energy use', 'Latest annual estimate', '#ff9933', '% of energy use', 'https://data.worldbank.org/indicator/EG.IMP.CONS.ZS?locations=IN', 'Doughnut summary of net energy imports and the calculated domestic-supply complement. This is net import dependence, not gross import volume.'],
+    ['disease_burden_composition', 'Disease Burden Composition', 'NCD, communicable and residual causes in the latest reported year', 'Latest available estimate', '#ff7b72', '% of DALYs', 'https://www.icmr.gov.in/', 'Two categories from the existing disease-burden series plus the residual to 100%, labelled other causes. The residual is calculated, not a separately reported measurement.'],
+    ['defence_budget_composition', 'Defence Share of Union Expenditure', 'Defence allocation compared with the remaining Union expenditure', 'Latest annual snapshot', '#f6c344', '% of Union expenditure', 'https://www.indiabudget.gov.in/', 'Defence expenditure share from the existing annual series and the calculated non-defence complement.'],
+    ['card_spending_composition', 'Credit and Debit Card Spending Mix', 'Credit-card and debit-card POS/e-commerce spending in the latest common year', 'Latest common annual observation', '#58a6ff', 'INR lakh crore', 'https://www.rbi.org.in/Scripts/BS_ViewPaymentSystems.aspx', 'Latest common-year RBI credit-card and debit-card POS/e-commerce spending. Debit-card ATM withdrawals are excluded.'],
+    ['india_live_party_seats_composition', 'Provisional Party Leads: Share of Published Seats', 'Party leads among currently published ECI constituencies', 'Live ECI snapshot', '#ff9933', 'constituencies', 'https://results.eci.gov.in/', 'Share of provisional party leads among only the constituencies currently published by ECI. This is not a statewide or all-election seat tally.']
+  );
+
   const cycles = [2018, 2020, 2022, 2024];
   const offices = [
     { code: 'P', name: 'President', subgroup: 'U.S. Presidential Campaign Finance', scope: 'candidate party' },
@@ -108,6 +119,27 @@
       ];
     }))
   ));
+  window.INDIA_EXTRA_CHART_DEFINITIONS.push(...cycles.map(cycle => [
+    `us_fec_${cycle}_p_receipt_composition`,
+    `${cycle} Presidential Candidate Receipts by Party`,
+    `Share of FEC-reported candidate receipts by party in filing cycle ${cycle}`,
+    `FEC filing cycle ${cycle}`,
+    '#3fb950',
+    ' USD',
+    `https://www.fec.gov/files/bulk-downloads/${cycle}/weball${String(cycle).slice(-2)}.zip`,
+    `Federal Election Commission Presidential-office candidate receipts grouped by party for the ${cycle} filing cycle. ${cycle === 2018 || cycle === 2022 ? 'This is a midterm filing cycle, not a Presidential election year. ' : ''}Shares describe reported campaign-finance receipts, not votes or public contributions alone.`
+  ]));
+  const presidentialYears = [2000, 2004, 2008, 2012, 2016, 2020, 2024];
+  window.INDIA_EXTRA_CHART_DEFINITIONS.push(...presidentialYears.map(year => [
+    `us_presidential_electoral_composition_${year}`,
+    `${year} Electoral College Vote Composition`,
+    `Winner, main opponent and other or unassigned electors in ${year}`,
+    `Presidential election ${year}`,
+    '#58a6ff',
+    ' electoral votes',
+    `https://www.archives.gov/electoral-college/${year}`,
+    `Distribution of all 538 Electoral College votes in ${year}. The remaining category includes votes for other candidates and any faithless or unassigned electors; these are not popular votes.`
+  ]));
 
   const placements = {};
   const place = (keys, category, subgroup) => keys.forEach(key => { placements[key] = { category, subgroup }; });
@@ -139,7 +171,17 @@
   place(['unesco_india_sites_cumulative', 'unesco_india_new_inscriptions', 'unesco_india_current_categories'], 'Tourism & Heritage', 'World Heritage Sites');
   place(['pew_india_2026_global_views', 'pew_india_2026_top_threats', 'pew_india_2026_top_allies', 'pew_india_2021_diversity_views', 'pew_india_2021_religious_freedom'], 'Pew Research', 'Public opinion');
   place(['india_live_candidate_votes', 'india_live_candidate_vote_share', 'india_live_constituency_margin', 'india_live_winner_vote_share', 'india_live_party_seats'], 'Elections', 'Indian Elections');
+  place(['india_live_party_seats_composition'], 'Elections', 'Indian Elections');
+  place(['gdp_sector_composition'], 'Economic', 'Macroeconomics');
+  place(['state_gsdp_composition'], 'State Performance & Regional Health', 'State Financial Health & GSDP');
+  place(['urban_rural_population_composition'], 'Social', 'Demographics');
+  place(['energy_supply_composition'], 'Mining & Natural Resources', 'Energy Minerals & Fuel');
+  place(['disease_burden_composition'], 'Public Health & Epidemiology', 'Disease Burden & Epidemiology');
+  place(['defence_budget_composition'], 'Defence & Strategic', 'Defence Budget & Modernization');
+  place(['card_spending_composition'], 'Payments & Digital Banking', 'Card Spends & Ecosystem');
   place(['us_presidential_electoral_votes'], 'U.S. Elections', 'U.S. Presidential Elections');
+  place(presidentialYears.map(year => `us_presidential_electoral_composition_${year}`), 'U.S. Elections', 'U.S. Presidential Elections');
+  place(cycles.map(cycle => `us_fec_${cycle}_p_receipt_composition`), 'U.S. Elections', 'U.S. Presidential Campaign Finance');
   for (const cycle of cycles) {
     for (const office of offices) {
       place(

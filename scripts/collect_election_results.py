@@ -242,7 +242,7 @@ def _series_from_results(constituencies: list[dict], presidential: list[dict]) -
             party = record["candidates"][0]["party"] or "Unspecified"
             party_wins[party] = party_wins.get(party, 0) + 1
     ranked_parties = sorted(party_wins.items(), key=lambda item: (-item[1], item[0]))
-    return {
+    series = {
         "india_live_candidate_votes": {
             "labels": [
                 f"{record['state_or_ut']} · {record['constituency']} · {candidate['candidate']}"
@@ -314,6 +314,59 @@ def _series_from_results(constituencies: list[dict], presidential: list[dict]) -
             "note": "Official Electoral College totals for the winner and main opponent in each presidential election from 2000 through 2024. These are electoral votes, not popular votes.",
         },
     }
+    series["india_live_party_seats_composition"] = {
+        **series["india_live_party_seats"],
+        "chartType": "doughnut",
+        "note": (
+            "Share of party leads among constituencies currently present on the ECI results portal. "
+            "This is a partial provisional snapshot, not a statewide or all-election seat result."
+        ),
+    }
+    for index, record in enumerate(constituencies, start=1):
+        ranked = record["candidates"]
+        top_candidates = ranked[:5]
+        other_votes = sum(candidate["votes"] for candidate in ranked[5:])
+        labels = [candidate["candidate"] for candidate in top_candidates]
+        values = [candidate["votes"] for candidate in top_candidates]
+        if other_votes:
+            labels.append("Other candidates")
+            values.append(other_votes)
+        series[f"india_live_constituency_vote_composition_{index}"] = {
+            "labels": labels,
+            "values": values,
+            "chartType": "doughnut",
+            "source": record["source"],
+            "note": (
+                f"Reported candidate vote counts in {record['constituency']}, {record['state_or_ut']}. "
+                "The five highest-vote candidates are shown individually; all remaining candidates, "
+                "including NOTA where present, are combined."
+            ),
+            "unit": "votes",
+        }
+    for result in presidential:
+        year = result["year"]
+        winner_votes = result["winner_electoral_votes"]
+        opponent_votes = result["opponent_electoral_votes"]
+        other_votes = 538 - winner_votes - opponent_votes
+        if other_votes < 0:
+            raise ValueError(f"Electoral College totals exceed 538 for {year}")
+        series[f"us_presidential_electoral_composition_{year}"] = {
+            "labels": [
+                f"Winner — {result['winner']}",
+                f"Main opponent — {result['main_opponent']}",
+                "Other or unassigned electors",
+            ],
+            "values": [winner_votes, opponent_votes, other_votes],
+            "chartType": "doughnut",
+            "source": result.get("source", US_ARCHIVES_URL.format(year=year)),
+            "note": (
+                f"Distribution of all 538 Electoral College votes in {year}. The residual includes "
+                "votes for other candidates and any faithless or unassigned electors; Electoral "
+                "College votes are not popular votes."
+            ),
+            "unit": "electoral votes",
+        }
+    return series
 
 
 def main() -> int:

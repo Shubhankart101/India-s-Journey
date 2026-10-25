@@ -16878,6 +16878,125 @@ window.INDIA_DASHBOARD_DATA = {
         76.4421942140842
       ],
       "source": "World Bank API SH.H2O.SMDW.ZS"
+    },
+    "gdp_sector_composition": {
+      "labels": [
+        "Agriculture",
+        "Industry",
+        "Services",
+        "Other GDP components"
+      ],
+      "values": [
+        16.23,
+        25.2,
+        49.34,
+        9.23
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API NV.AGR.TOTL.ZS; World Bank API NV.IND.TOTL.ZS; World Bank API NV.SRV.TOTL.ZS",
+      "note": "Value-added shares for the latest common World Bank observation (2025). Other GDP components are the residual to 100%, including net product taxes and rounding differences; this is not a directly reported sector.",
+      "unit": "% of GDP"
+    },
+    "state_gsdp_composition": {
+      "labels": [
+        "Maharashtra",
+        "Tamil Nadu",
+        "Karnataka",
+        "Uttar Pradesh",
+        "Gujarat",
+        "West Bengal",
+        "Rajasthan",
+        "Telangana",
+        "Other 20 States"
+      ],
+      "values": [
+        14.02,
+        9.14,
+        8.93,
+        8.84,
+        8.49,
+        5.84,
+        5.22,
+        5.05,
+        34.47
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21; state share of GSDP",
+      "note": "Share of reported GSDP across the 28 States in the cited RBI snapshot. The eight largest State shares are shown individually; the remaining 20 States are combined. Union Territories are excluded.",
+      "unit": "% of reported State GSDP"
+    },
+    "urban_rural_population_composition": {
+      "labels": [
+        "Urban population",
+        "Rural population"
+      ],
+      "values": [
+        35.69,
+        64.31
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API SP.URB.TOTL.IN.ZS",
+      "note": "Urban/rural population shares for 2025; rural population is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of population"
+    },
+    "energy_supply_composition": {
+      "labels": [
+        "Net energy imports",
+        "Domestic energy supply"
+      ],
+      "values": [
+        36.03,
+        63.97
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API EG.IMP.CONS.ZS",
+      "note": "Net energy-import dependence for 2024; domestic energy supply is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of energy use"
+    },
+    "defence_budget_composition": {
+      "labels": [
+        "Defence allocation",
+        "Other Union expenditure"
+      ],
+      "values": [
+        12.9,
+        87.1
+      ],
+      "chartType": "doughnut",
+      "source": "Union Budget of India Documents & Ministry of Finance Budget Allocation Data (% of Total Central Expenditure)",
+      "note": "Defence allocation as a share of total Union expenditure for 2025; other union expenditure is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of Union expenditure"
+    },
+    "disease_burden_composition": {
+      "labels": [
+        "Non-communicable diseases",
+        "Communicable and maternal/child diseases",
+        "Other causes"
+      ],
+      "values": [
+        68.5,
+        18.8,
+        12.7
+      ],
+      "chartType": "doughnut",
+      "source": "ICMR India State-Level Disease Burden Initiative & IHME Global Burden of Disease (% Total Disease DALYs Burden)",
+      "note": "Disease-burden shares for 2025. Other causes are the residual to 100% not covered by the two categories in the companion time-series chart.",
+      "unit": "% of DALYs"
+    },
+    "card_spending_composition": {
+      "labels": [
+        "Credit card spends",
+        "Debit card POS spends"
+      ],
+      "values": [
+        25.8,
+        6.8
+      ],
+      "chartType": "doughnut",
+      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
+      "note": "Credit-card and debit-card POS/e-commerce expenditure for the latest common reported year (2026), in INR lakh crore. Debit-card ATM withdrawals are excluded.",
+      "unit": "INR lakh crore"
     }
   },
   "indian_matrix_articles": [

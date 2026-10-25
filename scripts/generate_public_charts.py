@@ -285,6 +285,175 @@ def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle:
     return {"source": f"World Bank API {indicator}", "years": labels, "values": values}
 
 
+def build_composition_series(series: dict[str, dict]) -> dict[str, dict]:
+    charts: dict[str, dict] = {}
+
+    sector_keys = ("agriculture_gdp_share", "industry_gdp_share", "services_gdp_share")
+    sector_maps = [
+        dict(zip(series.get(key, {}).get("labels", []), series.get(key, {}).get("values", [])))
+        for key in sector_keys
+    ]
+    common_years = set.intersection(*(set(item) for item in sector_maps)) if sector_maps else set()
+    for year in sorted(common_years, reverse=True):
+        values = [mapping[year] for mapping in sector_maps]
+        if any(value is None for value in values):
+            continue
+        total = sum(values)
+        if 0 < total <= 100:
+            labels = ["Agriculture", "Industry", "Services"]
+            shares = [round(value, 2) for value in values]
+            residual = round(100 - sum(shares), 2)
+            if residual:
+                labels.append("Other GDP components")
+                shares.append(residual)
+            charts["gdp_sector_composition"] = {
+                "labels": labels,
+                "values": shares,
+                "chartType": "doughnut",
+                "source": "; ".join(series.get(key, {}).get("source", "World Bank Open Data") for key in sector_keys),
+                "note": (
+                    f"Value-added shares for the latest common World Bank observation ({year}). "
+                    "Other GDP components are the residual to 100%, including net product taxes and "
+                    "rounding differences; this is not a directly reported sector."
+                ),
+                "unit": "% of GDP",
+            }
+            break
+
+    state_share = series.get("state_gsdp_share", {})
+    state_points = [
+        (label, value)
+        for label, value in zip(state_share.get("labels", []), state_share.get("values", []))
+        if value is not None and value >= 0
+    ]
+    if state_points and abs(sum(value for _, value in state_points) - 100) < 0.01:
+        ranked_states = sorted(state_points, key=lambda point: point[1], reverse=True)
+        top_states, other_states = ranked_states[:8], ranked_states[8:]
+        charts["state_gsdp_composition"] = {
+            "labels": [label for label, _ in top_states] + (["Other 20 States"] if other_states else []),
+            "values": [round(value, 2) for _, value in top_states]
+            + ([round(sum(value for _, value in other_states), 2)] if other_states else []),
+            "chartType": "doughnut",
+            "scope": "category",
+            "source": state_share.get("source", "RBI state GSDP snapshot"),
+            "note": (
+                "Share of reported GSDP across the 28 States in the cited RBI snapshot. "
+                "The eight largest State shares are shown individually; the remaining 20 States "
+                "are combined. Union Territories are excluded."
+            ),
+            "unit": "% of reported State GSDP",
+        }
+
+    for key, output_key, labels, complement_label, source_label, note_prefix, unit in (
+        (
+            "urban_population_share",
+            "urban_rural_population_composition",
+            ["Urban population", "Rural population"],
+            "Rural population",
+            "World Bank Open Data",
+            "Urban/rural population shares",
+            "% of population",
+        ),
+        (
+            "net_energy_imports_share",
+            "energy_supply_composition",
+            ["Net energy imports", "Domestic energy supply"],
+            "Domestic energy supply",
+            "World Bank Open Data",
+            "Net energy-import dependence",
+            "% of energy use",
+        ),
+        (
+            "defence_budget_share",
+            "defence_budget_composition",
+            ["Defence allocation", "Other Union expenditure"],
+            "Other Union expenditure",
+            "Government of India Union Budget",
+            "Defence allocation as a share of total Union expenditure",
+            "% of Union expenditure",
+        ),
+    ):
+        base = series.get(key, {})
+        points = [
+            (label, value)
+            for label, value in zip(base.get("labels", []), base.get("values", []))
+            if value is not None and 0 <= value <= 100
+        ]
+        if not points:
+            continue
+        year, share = points[-1]
+        if key == "urban_population_share":
+            labels = ["Urban population", "Rural population"]
+        elif key == "net_energy_imports_share":
+            labels = ["Net energy imports", "Domestic energy supply"]
+        values = [round(share, 2), round(100 - share, 2)]
+        if sum(values) != 100:
+            values[1] = round(100 - values[0], 2)
+        charts[output_key] = {
+            "labels": labels,
+            "values": values,
+            "chartType": "doughnut",
+            "source": base.get("source", source_label),
+            "note": (
+                f"{note_prefix} for {year}; {complement_label.lower()} is calculated as the "
+                "complement. For energy, this is net imports as a share of energy use, not gross import volumes."
+            ),
+            "unit": unit,
+        }
+
+    disease = series.get("non_communicable_diseases_burden", {})
+    disease_labels = disease.get("labels", [])
+    disease_datasets = disease.get("datasets", [])[:2]
+    disease_maps = [dict(zip(disease_labels, item.get("values", []))) for item in disease_datasets]
+    common_years = set.intersection(*(set(item) for item in disease_maps)) if len(disease_maps) == 2 else set()
+    for year in sorted(common_years, reverse=True):
+        ncd, communicable = (item[year] for item in disease_maps)
+        if ncd is None or communicable is None:
+            continue
+        other = round(100 - ncd - communicable, 2)
+        if other < 0:
+            continue
+        charts["disease_burden_composition"] = {
+            "labels": [
+                "Non-communicable diseases",
+                "Communicable and maternal/child diseases",
+                "Other causes",
+            ],
+            "values": [round(ncd, 2), round(communicable, 2), other],
+            "chartType": "doughnut",
+            "source": disease.get("source", "ICMR and IHME disease-burden estimates"),
+            "note": (
+                f"Disease-burden shares for {year}. Other causes are the residual to 100% not "
+                "covered by the two categories in the companion time-series chart."
+            ),
+            "unit": "% of DALYs",
+        }
+        break
+
+    credit = series.get("credit_card_spends", {})
+    debit = series.get("debit_card_spends", {})
+    credit_map = dict(zip(credit.get("labels", []), credit.get("values", [])))
+    debit_map = dict(zip(debit.get("labels", []), debit.get("values", [])))
+    for year in sorted(credit_map.keys() & debit_map.keys(), reverse=True):
+        credit_value, debit_value = credit_map[year], debit_map[year]
+        if credit_value is None or debit_value is None or credit_value + debit_value <= 0:
+            continue
+        charts["card_spending_composition"] = {
+            "labels": ["Credit card spends", "Debit card POS spends"],
+            "values": [credit_value, debit_value],
+            "chartType": "doughnut",
+            "source": f"{credit.get('source', 'RBI credit card data')}; {debit.get('source', 'RBI debit card data')}",
+            "note": (
+                f"Credit-card and debit-card POS/e-commerce expenditure for the latest common "
+                f"reported year ({year}), in INR lakh crore. Debit-card ATM withdrawals are excluded."
+            ),
+            "unit": "INR lakh crore",
+        }
+        break
+
+    return charts
+
+
 def build_terrorism_chart() -> dict:
     rows = csv.DictReader(io.StringIO(get_text("https://ourworldindata.org/grapher/terrorist-attacks.csv")))
     values = {row["Year"]: float(row["Attacks"]) for row in rows if row["Entity"] == "India"}
@@ -1757,6 +1926,8 @@ def main() -> None:
     except Exception as error:
         cached = previous_series.get("sectoral_market_indices", {})
         result["series"]["sectoral_market_indices"] = cached if cached.get("labels") else {"error": str(error)}
+
+    result["series"].update(build_composition_series(result["series"]))
     
     chart_json = json.dumps(result, indent=2) + "\n"
     (ROOT / "data" / "chart-latest.json").write_text(chart_json)

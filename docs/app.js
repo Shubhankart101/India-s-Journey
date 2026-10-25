@@ -321,7 +321,25 @@ const formatMagnitude = (value, suffix = '') => {
 const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line') => {
   const isRadialChart = chartType === 'pie' || chartType === 'doughnut';
   const pluginsConfig = {
-    legend: { display: isRadialChart, position: 'bottom' },
+    legend: {
+      display: isRadialChart,
+      position: 'bottom',
+      labels: isRadialChart ? {
+        generateLabels: chart => {
+          const generator = Chart.overrides?.[chart.config.type]?.plugins?.legend?.labels?.generateLabels;
+          const items = generator ? generator(chart) : chart.data.labels.map((text, index) => ({ text, index }));
+          const values = chart.data.datasets[0]?.data || [];
+          const total = values.reduce((sum, value, index) => sum + (chart.getDataVisibility(index) ? Math.max(0, Number(value) || 0) : 0), 0);
+          return items.map(item => {
+            const value = Number(values[item.index]) || 0;
+            return {
+              ...item,
+              text: `${item.text} (${total ? (value / total * 100).toFixed(1) : '0.0'}%)`
+            };
+          });
+        }
+      } : undefined
+    },
     tooltip: {
       backgroundColor: 'rgba(11, 15, 25, 0.95)',
       titleColor: '#ff9933',
@@ -335,6 +353,13 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
         label: context => {
           const value = isRadialChart ? context.raw : horizontalBars ? context.parsed.x : context.parsed.y;
           const label = isRadialChart ? context.label : context.dataset.label || 'Value';
+          if (isRadialChart) {
+            const chart = context.chart;
+            const dataset = context.dataset.data || [];
+            const total = dataset.reduce((sum, amount, index) => sum + (chart.getDataVisibility(index) ? Math.max(0, Number(amount) || 0) : 0), 0);
+            const share = total ? ` (${(Number(value) / total * 100).toFixed(1)}%)` : '';
+            return ` ${label}: ${formatMagnitude(value, suffix)}${share}`;
+          }
           return ` ${label}: ${formatMagnitude(value, suffix)}`;
         }
       }
@@ -352,7 +377,12 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
     indexAxis: horizontalBars ? 'y' : 'x',
     animation: { duration: 600, easing: 'easeOutQuart' },
     interaction: { mode: 'index', intersect: isRadialChart },
-    plugins: pluginsConfig
+    plugins: pluginsConfig,
+    onClick: isRadialChart ? (event, elements, chart) => {
+      if (!elements.length) return;
+      chart.toggleDataVisibility(elements[0].index);
+      chart.update();
+    } : undefined
   };
   if (!isRadialChart) {
     options.scales = horizontalBars ? {
@@ -426,6 +456,21 @@ async function main() {
     safeFetchJson('election-results.json', { series: {} }),
     safeFetchJson('us-campaign-finance.json', { series: {} }),
   ]);
+  const liveConstituencies = electionResults?.india_constituencies || [];
+  liveConstituencies.forEach((record, index) => {
+    const key = `india_live_constituency_vote_composition_${index + 1}`;
+    definitions.push([
+      key,
+      `${record.constituency} candidate vote composition`,
+      `Reported candidate votes in ${record.constituency}, ${record.state_or_ut}`,
+      'Live ECI snapshot',
+      '#ff9933',
+      ' votes',
+      record.source || 'https://results.eci.gov.in/',
+      'Reported candidate votes for this currently published constituency. The five highest-vote candidates are shown individually; remaining candidates, including NOTA where present, are combined as Other candidates. ECI results are provisional until Form 20.'
+    ]);
+    extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' };
+  });
   const data = dataPayload || { series: {} };
   data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}) };
   const heroChartCount = document.querySelector('#hero-chart-count');
@@ -707,7 +752,12 @@ async function main() {
     };
 
     const isRadialChart = series.chartType === 'pie' || series.chartType === 'doughnut';
-    const radialColors = ['#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344'];
+    const radialColors = [
+      '#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344',
+      '#39c5bb', '#f778ba', '#a5d6ff', '#d2a8ff', '#ffa657', '#7ee787',
+      '#e3b341', '#79c0ff', '#db61a2', '#56d364', '#ff6b6b', '#8b949e',
+      '#d29922', '#a371f7'
+    ];
     let chartDatasets = [];
     if (series.datasets && series.datasets.length > 0) {
       chartDatasets = series.datasets.map((dataset, i) => {
@@ -731,11 +781,12 @@ async function main() {
       chartDatasets = [{
         label: title,
         data: values,
-        borderColor: isRadialChart ? radialColors : singleColor,
-        backgroundColor: isRadialChart ? radialColors : createGradientFill(singleColor.slice(0, 7)),
+        borderColor: isRadialChart ? labels.map((_, index) => radialColors[index % radialColors.length]) : singleColor,
+        backgroundColor: isRadialChart ? labels.map((_, index) => radialColors[index % radialColors.length]) : createGradientFill(singleColor.slice(0, 7)),
         fill: !isRadialChart,
         borderWidth: isRadialChart ? 2 : 2.8,
         hoverOffset: isRadialChart ? 8 : 0,
+        hoverBorderWidth: isRadialChart ? 3 : 0,
         pointRadius: isRadialChart ? 0 : 3,
         pointHoverRadius: isRadialChart ? 0 : 6,
         pointHoverBackgroundColor: singleColor,

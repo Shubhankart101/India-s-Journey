@@ -31,3 +31,7 @@ UNESCO property counts are reconstructed from current World Heritage List pages 
 Refresh schedules describe how often a pipeline checks a source, not how often the source publishes new observations. A three-hourly election-page check may return unchanged counts; annual estimates remain annual even if an API is queried daily.
 
 Interpret each chart alongside its displayed source, unit, frequency, note, and observation period. Missing or inaccessible source values are not interpolated or represented as zero.
+
+## Pie and doughnut charts
+
+Pie/doughnut views are added only when categories form a documented whole or the chart explicitly labels a calculated residual/complement. Examples include the reported State GSDP shares, urban/rural population shares, net energy-import dependence, electoral-vote composition, and candidate-receipt or provisional-lead shares. Independent rates, survey answers to different questions, and unlike State indicators are not turned into pie slices. Hover tooltips report values and shares; clicking a slice or legend item toggles it and recalculates visible-category shares.

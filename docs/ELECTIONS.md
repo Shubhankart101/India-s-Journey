@@ -10,6 +10,7 @@ The live collector follows ECI's currently published results landing page and pa
 - Schedule: every three hours through [Election Results Update](../.github/workflows/election-results-update.yml).
 - Scope: currently published constituencies discovered from the live portal; this is not a full election archive.
 - Measures: candidate votes, reported vote shares, leading-candidate vote share, and vote margins derived from the same constituency candidate table.
+- Charts also include a provisional party-lead share across currently published constituencies and a vote-composition doughnut for each published constituency. Each constituency chart shows its five highest-vote candidates separately and combines remaining candidates (including NOTA where present); the scope is never presented as a complete State tally.
 
 ## Historical Indian candidate results
 
@@ -35,6 +36,7 @@ The standalone **U.S. Elections** group contains:
 - **U.S. Presidential Elections:** National Archives winner and main-opponent Electoral College totals for Presidential elections from 2000 through 2024. These are electoral votes, not popular votes or ballots cast.
 - **U.S. Presidential Campaign Finance:** 16 FEC indicators—receipts, disbursements, cash on hand and debts—aggregated by party for Presidential-office candidates in the 2018, 2020, 2022 and 2024 filing cycles. 2018 and 2022 are midterm years, not Presidential elections; cycle labels describe campaign-finance filing cycles, not election years for the office.
 - **U.S. Congressional Campaign Finance:** 32 FEC indicators for House and Senate candidates—four measures, two offices and four cycles—aggregated by candidate office state.
+- Interactive doughnut summaries show winner, main opponent, and other/unassigned Electoral College votes for each Presidential election, plus Presidential-office candidate receipts by party for each FEC filing cycle.
 
 Campaign-finance aggregates are not vote counts or turnout. Presidential party totals are not state-by-state results; Senate and House state totals are not results for a particular seat.
 

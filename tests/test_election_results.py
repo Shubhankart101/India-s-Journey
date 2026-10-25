@@ -79,6 +79,7 @@ class ElectionResultsTests(unittest.TestCase):
         records = [{
             "state_or_ut": "Tamil Nadu",
             "constituency": "MADURANTAKAM",
+            "source": "https://results.eci.gov.in/test",
             "candidates": [
                 {"candidate": "Total", "party": "", "votes": 1815, "vote_share_percent": None},
                 {"candidate": "Candidate A", "party": "Party A", "votes": 1010, "vote_share_percent": 55.25},
@@ -87,6 +88,8 @@ class ElectionResultsTests(unittest.TestCase):
         }]
         presidential = [{
             "year": 2024,
+            "winner": "Candidate A",
+            "main_opponent": "Candidate B",
             "winner_electoral_votes": 312,
             "opponent_electoral_votes": 226,
         }]
@@ -95,12 +98,20 @@ class ElectionResultsTests(unittest.TestCase):
         self.assertEqual(series["india_live_winner_vote_share"]["values"], [55.25])
         self.assertEqual(series["india_live_party_seats"]["labels"], ["Party A"])
         self.assertEqual(series["india_live_party_seats"]["values"], [1])
+        self.assertEqual(series["india_live_party_seats_composition"]["chartType"], "doughnut")
         self.assertNotIn("Total", series["india_live_candidate_votes"]["labels"][0])
         self.assertIn("india_live_candidate_vote_share", series)
         self.assertIn("india_live_constituency_margin", series)
         self.assertIn("india_live_party_seats", series)
         self.assertIn("Form 20", series["india_live_candidate_votes"]["note"])
         self.assertIn("not popular votes", series["us_presidential_electoral_votes"]["note"])
+        constituency_pies = [
+            value for key, value in series.items()
+            if key.startswith("india_live_constituency_vote_composition_")
+        ]
+        self.assertEqual(len(constituency_pies), 1)
+        self.assertEqual(sum(constituency_pies[0]["values"]), 1815)
+        self.assertEqual(constituency_pies[0]["chartType"], "doughnut")
 
     def test_cached_eci_totals_are_removed_and_candidates_ranked(self):
         records = [{
@@ -127,6 +138,11 @@ class ElectionResultsTests(unittest.TestCase):
         self.assertIn("scripts/collect_election_results.py", workflow)
         self.assertIn("data/election-results.json", deploy)
         self.assertIn("safeFetchJson('election-results.json'", app)
+        self.assertIn("india_live_constituency_vote_composition_${index + 1}", app)
+        self.assertIn(
+            "extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' }",
+            app,
+        )
         self.assertGreaterEqual(len(payload["india_constituencies"]), 1)
         self.assertEqual(len(payload["us_presidential_elections"]), 7)
         self.assertEqual(payload, deployed_payload)
@@ -141,6 +157,10 @@ class ElectionResultsTests(unittest.TestCase):
         electoral_votes = payload["series"]["us_presidential_electoral_votes"]
         self.assertEqual(len(electoral_votes["labels"]), 7)
         self.assertTrue(all(len(dataset["values"]) == 7 for dataset in electoral_votes["datasets"]))
+        for year in range(2000, 2025, 4):
+            composition = payload["series"][f"us_presidential_electoral_composition_{year}"]
+            self.assertEqual(sum(composition["values"]), 538)
+            self.assertEqual(composition["chartType"], "doughnut")
         for file_name in ("README.md", "ELECTIONS.md", "SOURCES-AND-LIMITATIONS.md", "PIPELINES.md"):
             self.assertTrue((root / "docs" / file_name).is_file() or (root / file_name).is_file())
 

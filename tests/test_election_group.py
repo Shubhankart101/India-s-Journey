@@ -45,16 +45,53 @@ class ElectionGroupTests(unittest.TestCase):
         app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
         definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         series = payload["series"]
-        self.assertEqual(len(series), 48)
+        self.assertEqual(len(series), 52)
         for key, item in series.items():
             with self.subTest(series=key):
                 self.assertEqual(len(item["labels"]), len(item["values"]))
                 self.assertTrue(item["values"])
+        for cycle in (2018, 2020, 2022, 2024):
+            key = f"us_fec_{cycle}_p_receipt_composition"
+            self.assertEqual(series[key]["chartType"], "doughnut")
+            self.assertGreater(sum(series[key]["values"]), 0)
         self.assertIn("U.S. Congressional Campaign Finance", app)
         self.assertIn("U.S. Presidential Campaign Finance", app)
         self.assertIn("U.S. Congressional Campaign Finance", definitions)
         self.assertIn("U.S. Presidential Campaign Finance", definitions)
         self.assertIn("U.S. Presidential Elections", definitions)
+
+    def test_part_of_whole_chart_definitions_have_matching_data(self):
+        payload = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))
+        election = json.loads((ROOT / "data" / "election-results.json").read_text(encoding="utf-8"))
+        expected = (
+            "gdp_sector_composition",
+            "state_gsdp_composition",
+            "urban_rural_population_composition",
+            "energy_supply_composition",
+            "disease_burden_composition",
+            "defence_budget_composition",
+            "card_spending_composition",
+        )
+        for key in expected:
+            with self.subTest(chart=key):
+                item = payload["series"][key]
+                self.assertEqual(item["chartType"], "doughnut")
+                self.assertEqual(len(item["labels"]), len(item["values"]))
+                if key == "card_spending_composition":
+                    self.assertGreater(sum(item["values"]), 0)
+                else:
+                    self.assertAlmostEqual(sum(item["values"]), 100, places=1)
+        self.assertEqual(
+            election["series"]["india_live_party_seats_composition"]["chartType"],
+            "doughnut",
+        )
+        for index in range(1, len(election["india_constituencies"]) + 1):
+            pie = election["series"][f"india_live_constituency_vote_composition_{index}"]
+            self.assertEqual(pie["chartType"], "doughnut")
+            self.assertEqual(len(pie["labels"]), len(pie["values"]))
+        for year in range(2000, 2025, 4):
+            pie = election["series"][f"us_presidential_electoral_composition_{year}"]
+            self.assertEqual(sum(pie["values"]), 538)
 
     def test_subgroup_filters_are_derived_from_rendered_chart_placements(self):
         app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")

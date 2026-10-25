@@ -10,6 +10,7 @@ from scripts.collect_us_campaign_finance import (
     MEASURES,
     _candidate_summary_rows,
     build_cycle_series,
+    build_receipt_composition_series,
     series_key,
 )
 
@@ -67,6 +68,11 @@ class UsCampaignFinanceTests(unittest.TestCase):
         self.assertEqual(president["scope"], "category")
         self.assertEqual(len(series), len(MEASURES) * 3)
         self.assertTrue(president["source"].endswith("/2024/weball24.zip"))
+        composition = build_receipt_composition_series(2024, series)[
+            series_key(2024, "P", "receipt_composition")
+        ]
+        self.assertEqual(composition["chartType"], "doughnut")
+        self.assertEqual(composition["values"], president["values"])
 
     def test_rejects_unrecognized_candidate_summary_shape(self):
         stream = io.BytesIO()
@@ -75,17 +81,21 @@ class UsCampaignFinanceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unexpected row format"):
             _candidate_summary_rows(stream.getvalue(), 2024)
 
-    def test_published_snapshot_contains_48_sourced_series(self):
+    def test_published_snapshot_contains_52_sourced_series(self):
         root = Path(__file__).resolve().parents[1]
         payload = json.loads((root / "data" / "us-campaign-finance.json").read_text(encoding="utf-8"))
         self.assertEqual(payload["collection_status"], "ok")
         self.assertEqual(payload["cycles"], [2018, 2020, 2022, 2024])
-        self.assertEqual(len(payload["series"]), 48)
+        self.assertEqual(len(payload["series"]), 52)
         for key, series in payload["series"].items():
             self.assertTrue(key.startswith("us_fec_"), key)
             self.assertTrue(series["source"].startswith("https://www.fec.gov/"), key)
             self.assertTrue(series["labels"], key)
             self.assertEqual(len(series["labels"]), len(series["values"]), key)
+        for cycle in (2018, 2020, 2022, 2024):
+            pie = payload["series"][f"us_fec_{cycle}_p_receipt_composition"]
+            self.assertEqual(pie["chartType"], "doughnut")
+            self.assertGreater(sum(pie["values"]), 0)
 
 
 if __name__ == "__main__":

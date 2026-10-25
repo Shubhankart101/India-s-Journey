@@ -985,6 +985,267 @@
       ],
       "source": "U.S. National Archives, Electoral College results",
       "note": "Official Electoral College totals for the winner and main opponent in each presidential election from 2000 through 2024. These are electoral votes, not popular votes."
+    },
+    "india_live_party_seats_composition": {
+      "labels": [
+        "Bharatiya Janata Party",
+        "Tamilaga Vettri Kazhagam",
+        "All India N.R. Congress"
+      ],
+      "values": [
+        3,
+        2,
+        1
+      ],
+      "chartType": "doughnut",
+      "indexAxis": "y",
+      "source": "Election Commission of India live constituency results",
+      "unit": "constituencies",
+      "note": "Share of party leads among constituencies currently present on the ECI results portal. This is a partial provisional snapshot, not a statewide or all-election seat result."
+    },
+    "india_live_constituency_vote_composition_1": {
+      "labels": [
+        "ASHOK ANAND",
+        "E. VINAYAGAM",
+        "K. SETHU @ SETHUSELVAM",
+        "A. M. SALEEM",
+        "NOTA",
+        "Other candidates"
+      ],
+      "values": [
+        13358,
+        4876,
+        2664,
+        310,
+        225,
+        424
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseU079.htm",
+      "note": "Reported candidate vote counts in THATTANCHAVADY, Puducherry. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "india_live_constituency_vote_composition_2": {
+      "labels": [
+        "K.MARAGATHAM KUMARAVEL",
+        "I.PARANTHAMEN",
+        "S.KANITHASAMPATH",
+        "G.JANAKIRAMAN",
+        "SUGANTHI.P",
+        "Other candidates"
+      ],
+      "values": [
+        74048,
+        54008,
+        47450,
+        2709,
+        1986,
+        5091
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2235.htm",
+      "note": "Reported candidate vote counts in MADURANTAKAM, Tamil Nadu. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "india_live_constituency_vote_composition_3": {
+      "labels": [
+        "SATHYABAMA.P",
+        "SUGANYA.S",
+        "BANUMATHI.K",
+        "KARTHIKA.M",
+        "LAKSHMANAN.P",
+        "Other candidates"
+      ],
+      "values": [
+        66841,
+        57370,
+        45280,
+        5268,
+        1157,
+        4616
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS22101.htm",
+      "note": "Reported candidate vote counts in DHARAPURAM, Tamil Nadu. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "india_live_constituency_vote_composition_4": {
+      "labels": [
+        "SHANKHARAVH SARKAR",
+        "GOLAM NABI AZAD (ROBIN)",
+        "ABDULLAHIL KAFI",
+        "RABIUL ALAM CHOWDHURY",
+        "MD. SAYEED",
+        "Other candidates"
+      ],
+      "values": [
+        129914,
+        54098,
+        6168,
+        3847,
+        3797,
+        7923
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS2570.htm",
+      "note": "Reported candidate vote counts in REJINAGAR, West Bengal. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "india_live_constituency_vote_composition_5": {
+      "labels": [
+        "HASI RANI RATH",
+        "MILAN PRADHAN",
+        "SANTI GOPAL GIRI",
+        "ALI MD SABE MIRAJ KHAN",
+        "EHTESHMUL HAQUE",
+        "Other candidates"
+      ],
+      "values": [
+        164427,
+        41674,
+        5779,
+        1607,
+        853,
+        2175
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultAcByeOct2026/ConstituencywiseS25210.htm",
+      "note": "Reported candidate vote counts in NANDIGRAM, West Bengal. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "india_live_constituency_vote_composition_6": {
+      "labels": [
+        "DEVASISH SHARMA",
+        "MOHAMMED BADRUDDIN AJMAL",
+        "SIBAMONI BORA",
+        "NOTA",
+        "MONIRUL HUSSAIN",
+        "Other candidates"
+      ],
+      "values": [
+        714349,
+        572125,
+        129492,
+        9244,
+        6746,
+        22424
+      ],
+      "chartType": "doughnut",
+      "source": "https://results.eci.gov.in/ResultPcByeOct2026/ConstituencywiseS039.htm",
+      "note": "Reported candidate vote counts in Nagaon, Assam. The five highest-vote candidates are shown individually; all remaining candidates, including NOTA where present, are combined.",
+      "unit": "votes"
+    },
+    "us_presidential_electoral_composition_2000": {
+      "labels": [
+        "Winner — George W. Bush [R]",
+        "Main opponent — Albert Gore, Jr. [D]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        271,
+        266,
+        1
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2000",
+      "note": "Distribution of all 538 Electoral College votes in 2000. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2004": {
+      "labels": [
+        "Winner — George W. Bush [R]",
+        "Main opponent — John F. Kerry [D]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        286,
+        251,
+        1
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2004",
+      "note": "Distribution of all 538 Electoral College votes in 2004. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2008": {
+      "labels": [
+        "Winner — Barack Obama [D]",
+        "Main opponent — John McCain [R]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        365,
+        173,
+        0
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2008",
+      "note": "Distribution of all 538 Electoral College votes in 2008. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2012": {
+      "labels": [
+        "Winner — Barack Obama [D]",
+        "Main opponent — Mitt Romney [R]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        332,
+        206,
+        0
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2012",
+      "note": "Distribution of all 538 Electoral College votes in 2012. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2016": {
+      "labels": [
+        "Winner — Donald J. Trump [R]",
+        "Main opponent — Hillary Clinton [D]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        304,
+        227,
+        7
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2016",
+      "note": "Distribution of all 538 Electoral College votes in 2016. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2020": {
+      "labels": [
+        "Winner — Joseph R. Biden Jr. [D]",
+        "Main opponent — Donald J. Trump [R]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        306,
+        232,
+        0
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2020",
+      "note": "Distribution of all 538 Electoral College votes in 2020. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
+    },
+    "us_presidential_electoral_composition_2024": {
+      "labels": [
+        "Winner — Donald J. Trump [R]",
+        "Main opponent — Kamala D. Harris [D]",
+        "Other or unassigned electors"
+      ],
+      "values": [
+        312,
+        226,
+        0
+      ],
+      "chartType": "doughnut",
+      "source": "https://www.archives.gov/electoral-college/2024",
+      "note": "Distribution of all 538 Electoral College votes in 2024. The residual includes votes for other candidates and any faithless or unassigned electors; Electoral College votes are not popular votes.",
+      "unit": "electoral votes"
     }
   },
   "generated_at_utc": "2026-10-25T14:18:48+00:00"

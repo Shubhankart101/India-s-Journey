@@ -104,6 +104,21 @@ def build_cycle_series(cycle: int, rows: list[list[str]]) -> dict[str, dict]:
     return series
 
 
+def build_receipt_composition_series(cycle: int, receipts: dict[str, dict]) -> dict[str, dict]:
+    base = receipts[series_key(cycle, "P", "receipts")]
+    return {
+        series_key(cycle, "P", "receipt_composition"): {
+            **base,
+            "chartType": "doughnut",
+            "note": (
+                f"Share of reported Presidential-office candidate receipts by party in the {cycle} "
+                "FEC filing cycle. 2018 and 2022 are midterm years, not Presidential election years. "
+                "Receipts are campaign-finance totals, not votes or public contributions alone."
+            ),
+        }
+    }
+
+
 def collect_cycle(cycle: int) -> dict[str, dict]:
     request = Request(source_url(cycle), headers={"User-Agent": USER_AGENT})
     with urlopen(request, timeout=60) as response:
@@ -115,7 +130,8 @@ def build_payload(cycles: tuple[int, ...] = CYCLES) -> dict:
     series: dict[str, dict] = {}
     for cycle in cycles:
         series.update(collect_cycle(cycle))
-    expected_count = len(cycles) * len(OFFICES) * len(MEASURES)
+        series.update(build_receipt_composition_series(cycle, series))
+    expected_count = len(cycles) * (len(OFFICES) * len(MEASURES) + 1)
     if len(series) != expected_count:
         raise ValueError(f"Expected {expected_count} FEC series, collected {len(series)}")
     return {

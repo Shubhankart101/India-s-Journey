@@ -116,6 +116,15 @@ class DashboardEndpointTests(unittest.TestCase):
             "unesco_india_sites_cumulative", "unesco_india_new_inscriptions",
             "unesco_india_current_categories",
         })
+        expected.update({
+            "gdp_sector_composition",
+            "state_gsdp_composition",
+            "urban_rural_population_composition",
+            "energy_supply_composition",
+            "disease_burden_composition",
+            "defence_budget_composition",
+            "card_spending_composition",
+        })
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -197,23 +206,36 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/chart-latest.json")
         self.assertEqual(status, 200)
         series = json.loads(body)["series"]
+        election_status, election_body = self.fetch(f"{DASHBOARD_URL}/data/election-results.json")
+        self.assertEqual(election_status, 200)
+        election_series = json.loads(election_body)["series"]
+        finance_status, finance_body = self.fetch(f"{DASHBOARD_URL}/data/us-campaign-finance.json")
+        self.assertEqual(finance_status, 200)
+        finance_series = json.loads(finance_body)["series"]
         self.assertIn("additional-chart-definitions.js", page)
         self.assertGreaterEqual(definitions.count("worldBank('"), 35)
         self.assertIn("INDIA_EXTRA_CHART_PLACEMENT", definitions)
         self.assertIn("definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []))", app)
         keys = re.findall(r"worldBank\('([^']+)'", definitions)
         keys.extend(re.findall(r"^\s+\['([^']+)'", definitions, flags=re.MULTILINE))
-        self.assertEqual(len(keys), 72)
+        self.assertEqual(len(keys), 80)
         for key in keys:
             with self.subTest(chart=key):
-                self.assertIn(key, series)
-                item = series[key]
+                source = (
+                    election_series
+                    if key.startswith("india_live_") or key.startswith("us_presidential_electoral_composition_")
+                    else finance_series
+                    if key.startswith("us_fec_")
+                    else series
+                )
+                self.assertIn(key, source)
+                item = source[key]
                 self.assertTrue(item.get("values") or any(dataset.get("values") for dataset in item.get("datasets", [])), key)
                 if item.get("values"):
                     self.assertEqual(len(item.get("labels", [])), len(item["values"]), key)
                 for dataset in item.get("datasets", []):
                     self.assertEqual(len(item.get("labels", [])), len(dataset.get("values", [])), key)
-                self.assertIn("source", series[key], key)
+                self.assertIn("source", item, key)
 
     def test_new_pew_and_government_series_are_sourced_and_shaped(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/chart-latest.json")
@@ -451,6 +473,10 @@ class DashboardEndpointTests(unittest.TestCase):
         text = body.decode("utf-8")
         self.assertIn("hasMultipleDatasets", text)
         self.assertIn("custom-legend", text)
+        self.assertIn("generateLabels: chart =>", text)
+        self.assertIn("chart.getDataVisibility(index)", text)
+        self.assertIn("chart.toggleDataVisibility(elements[0].index)", text)
+        self.assertIn("toFixed(1)", text)
 
     def test_deep_dive_button_opens_and_closes_modal(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
