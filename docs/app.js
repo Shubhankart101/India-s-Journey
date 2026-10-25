@@ -846,68 +846,24 @@ async function main() {
   const resultCount = document.querySelector('#chart-result-count');
   const liveCount = document.querySelector('#hero-live-count');
   if (liveCount) liveCount.textContent = String(cards.filter(card => card.dataset.state === 'live').length);
-  const subgroupGroups = { 
-    'Indian Elections': 'Elections',
-    'U.S. Presidential Elections': 'U.S. Elections',
-    'U.S. Federal Campaign Finance': 'U.S. Elections',
-    Macroeconomics: 'Economic', 
-    'Per Capita Income & Wealth': 'Economic',
-    'Monetary Policy': 'Economic', 
-    'Trade & External': 'Economic', 
-    Markets: 'Economic', 
-    'Fiscal & Union Budget': 'Economic',
-    'Media & Publications': 'Economic',
-    'Manufacturing & Industrial Growth': 'Industry Trends & Performance',
-    'Infrastructure Development': 'Industry Trends & Performance',
-    'Production & Commodities': 'Industry Trends & Performance',
-    'Metallic Minerals & Ores': 'Mining & Natural Resources',
-    'Energy Minerals & Fuel': 'Mining & Natural Resources',
-    'Non-Metallic & Industrial Minerals': 'Mining & Natural Resources',
-    'Mineral Exports & Trade': 'Mining & Natural Resources',
-    'UPI & Digital Payments': 'Payments & Digital Banking',
-    'Card Spends & Ecosystem': 'Payments & Digital Banking',
-    'Digital Financial Index': 'Payments & Digital Banking',
-    'State Financial Health & GSDP': 'State Performance & Regional Health',
-    'State Infrastructure & Services': 'State Performance & Regional Health',
-    'State Industrial & Manufacturing Hubs': 'State Performance & Regional Health',
-    'State Welfare & Scheme Coverage': 'State Performance & Regional Health',
-    'Mortality & Lifespan Milestones': 'Public Health & Epidemiology',
-    'Disease Burden & Epidemiology': 'Public Health & Epidemiology',
-    'Health Infrastructure & Spending': 'Public Health & Epidemiology',
-    Demographics: 'Social', 
-    Welfare: 'Social', 
-    'Government Schemes': 'Social',
-    'Defence Exports & Production': 'Defence & Strategic', 
-    'Defence Budget & Modernization': 'Defence & Strategic', 
-    'Strategic Stockpiles & Capabilities': 'Defence & Strategic', 
-    'Maoism / LWE': 'Crime & Security',
-    'Jammu & Kashmir Insurgency': 'Crime & Security',
-    'North East Insurgency': 'Crime & Security',
-    'Punjab Militancy & Security': 'Crime & Security',
-    'Violence & Crime': 'Crime & Security', 
-    Terrorism: 'Crime & Security',
-    'Public opinion': 'Pew Research',
-    'International Visitor Trends': 'Tourism & Heritage',
-    'World Heritage Sites': 'Tourism & Heritage'
-  };
-  const groupToSubgroups = {
-    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Presidential Elections', 'U.S. Federal Campaign Finance', 'International Visitor Trends', 'World Heritage Sites'],
-    Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Production & Commodities'],
-    'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
-    'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
-    'Payments & Digital Banking': ['UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index'],
-    'State Performance & Regional Health': ['State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage'],
-    'Public Health & Epidemiology': ['Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending'],
-    Social: ['Demographics', 'Welfare', 'Government Schemes'],
-    'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
-    'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
-    'Pew Research': ['Public opinion'],
-    Elections: ['Indian Elections'],
-    'U.S. Elections': ['U.S. Presidential Elections', 'U.S. Federal Campaign Finance'],
-    'Tourism & Heritage': ['International Visitor Trends', 'World Heritage Sites']
-  };
-  groupToSubgroups.all.push('State Infrastructure & Services');
-  groupToSubgroups['State Performance & Regional Health'].push('State Infrastructure & Services');
+  const subgroupOwners = new Map();
+  const groupToSubgroups = { all: [] };
+  cards.forEach(card => {
+    const group = card.dataset.category;
+    const subgroup = card.dataset.subgroup;
+    if (!groupToSubgroups[group]) groupToSubgroups[group] = [];
+    if (!groupToSubgroups[group].includes(subgroup)) {
+      groupToSubgroups[group].push(subgroup);
+      groupToSubgroups.all.push(subgroup);
+    }
+    if (!subgroupOwners.has(subgroup)) subgroupOwners.set(subgroup, new Set());
+    subgroupOwners.get(subgroup).add(group);
+  });
+  const subgroupGroups = Object.fromEntries(
+    [...subgroupOwners]
+      .filter(([, groups]) => groups.size === 1)
+      .map(([subgroup, groups]) => [subgroup, groups.values().next().value])
+  );
 
   const updateSubgroupFilter = () => {
     const selectedGroup = groupFilter.value;
@@ -930,11 +886,14 @@ async function main() {
         Elections: '🗳️ Elections',
         'U.S. Elections': '🇺🇸 U.S. Elections'
       };
+      const displayedSubgroups = new Set();
       Object.keys(groupToSubgroups).forEach(grpKey => {
         if (grpKey === 'all') return;
         const optgroup = document.createElement('optgroup');
         optgroup.label = groupLabels[grpKey] || grpKey;
         groupToSubgroups[grpKey].forEach(subgroup => {
+          if (displayedSubgroups.has(subgroup)) return;
+          displayedSubgroups.add(subgroup);
           const option = document.createElement('option');
           option.value = subgroup;
           option.textContent = subgroup;
