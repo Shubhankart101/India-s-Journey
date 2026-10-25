@@ -20,18 +20,17 @@ jobs:
           python - <<'PY'
           import json
           import re
-          import xml.etree.ElementTree as ET
+          import sys
           from datetime import datetime, timezone
           from email.utils import parsedate_to_datetime
           from html import unescape
           from pathlib import Path
-          from urllib.request import Request, urlopen
+
+          sys.path.insert(0, 'scripts')
+          from rss_utils import fetch_rss
 
           FEED_URL = 'https://politypolicy.substack.com/feed'
-          request = Request(FEED_URL, headers={'User-Agent': 'PolityPolicyUpdate public RSS dashboard'})
-          with urlopen(request, timeout=30) as response:
-              feed_xml = response.read()
-          root = ET.fromstring(feed_xml)
+          root = fetch_rss(FEED_URL, 'PolityPolicyUpdate public RSS dashboard')
           channel = root.find('channel')
           items = []
           for item in channel.findall('item')[:12]:

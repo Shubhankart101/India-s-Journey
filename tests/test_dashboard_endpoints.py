@@ -308,10 +308,24 @@ class DashboardEndpointTests(unittest.TestCase):
         for script in (
             "scripts/generate_public_charts.py",
             "scripts/fetch_economic_survey_monthly.py",
+            "scripts/collect_substack.py",
+            "scripts/collect_indian_matrix.py",
             "scripts/collect_ncrb_and_analyses.py",
             "scripts/collect_pew_snapshots.py",
         ):
             self.assertIn(script, workflow, script)
+
+    def test_dashboard_deploys_after_article_collection_workflows(self):
+        workflow_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            ".github", "workflows", "deploy-dashboard.yml",
+        )
+        with open(workflow_path, "r", encoding="utf-8") as handle:
+            workflow = handle.read()
+        self.assertIn("workflow_run:", workflow)
+        self.assertIn("- Daily PolityPolicy Update", workflow)
+        self.assertIn("- Weekly Substack Article Update", workflow)
+        self.assertIn("workflow_run.conclusion == 'success'", workflow)
 
 
 if __name__ == "__main__":

@@ -62,10 +62,11 @@ jobs:
           python -m pip install --quiet pdfplumber openpyxl
           python scripts/fetch_economic_survey_monthly.py
 
-      - name: Collect Substack and Matrix articles
-        run: |
-          python scripts/collect_substack.py
-          python scripts/collect_indian_matrix.py
+      - name: Collect Polity and Policy articles
+        run: python scripts/collect_substack.py
+
+      - name: Collect Indian Matrix articles
+        run: python scripts/collect_indian_matrix.py
 
       - name: Collect NCRB and analysis data
         run: python scripts/collect_ncrb_and_analyses.py

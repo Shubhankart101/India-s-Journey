@@ -2,6 +2,12 @@ name: Deploy Interactive Dashboard
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Daily PolityPolicy Update
+      - Weekly Substack Article Update
+    types:
+      - completed
   push:
     branches: [main]
     paths:
@@ -9,6 +15,7 @@ on:
       - data/chart-latest.json
       - data/economic-survey-monthly.json
       - data/indian-matrix-latest.json
+      - data/substack-latest.json
       - data/pew-india-reports.json
       - data/ncrb-and-analyses.json
       - data/pew-snapshots.json
@@ -25,6 +32,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

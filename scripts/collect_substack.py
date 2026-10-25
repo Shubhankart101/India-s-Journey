@@ -7,17 +7,15 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
-from urllib.request import Request, urlopen
+
+from rss_utils import fetch_rss
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_URL = "https://politypolicy.substack.com/feed"
 
 
 def main() -> None:
-    request = Request(FEED_URL, headers={"User-Agent": "India's Journey Polity and Policy RSS collector"})
-    with urlopen(request, timeout=30) as response:
-        feed_xml = response.read()
-    root = ET.fromstring(feed_xml)
+    root = fetch_rss(FEED_URL, "India's Journey Polity and Policy RSS collector")
     channel = root.find("channel")
     items = []
     for item in channel.findall("item")[:20]:

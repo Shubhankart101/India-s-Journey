@@ -1,21 +1,19 @@
 from __future__ import annotations
 
 import json
-import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from urllib.request import Request, urlopen
+
+from rss_utils import fetch_rss
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_URL = "https://indianmatrix.substack.com/feed"
 
 
 def main() -> None:
-    request = Request(FEED_URL, headers={"User-Agent": "India's Journey public RSS collector"})
-    with urlopen(request, timeout=60) as response:
-        root = ET.fromstring(response.read())
+    root = fetch_rss(FEED_URL, "India's Journey public RSS collector")
     channel = root.find("channel")
     articles = []
     for item in channel.findall("item"):

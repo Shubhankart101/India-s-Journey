@@ -1,10 +1,22 @@
 {
-  "generated_at_utc": "2026-09-17T15:11:00+00:00",
+  "generated_at_utc": "2026-10-25T11:22:22+00:00",
   "feed_url": "https://politypolicy.substack.com/feed",
   "feed_title": "Polity and Policy by Tushar Gupta",
-  "feed_last_build_date": "Thu, 17 Sep 2026 15:11:00 GMT",
+  "feed_last_build_date": "Sun, 25 Oct 2026 10:50:57 GMT",
   "article_count": 20,
   "articles": [
+    {
+      "title": "Delhi Police And Virtue Of A Disproportionate Response",
+      "link": "https://politypolicy.substack.com/p/delhi-police-and-virtue-of-a-disproportionate",
+      "published": "Mon, 12 Oct 2026 14:09:58 GMT",
+      "description": "Who gets to define the excesses of a police force?"
+    },
+    {
+      "title": "Captain Smit Machchhar Saves The Day",
+      "link": "https://politypolicy.substack.com/p/captain-smit-machchhar-saves-the",
+      "published": "Thu, 01 Oct 2026 08:00:47 GMT",
+      "description": "An Indian Pilot Takes On A Terrorist, At 34,000 Feet"
+    },
     {
       "title": "India\u2019s Voters Are Fast Becoming Transactional",
       "link": "https://politypolicy.substack.com/p/indias-voters-are-fast-becoming-transactional",
@@ -112,18 +124,6 @@
       "link": "https://politypolicy.substack.com/p/cabinet-reshuffle-on-the-cards",
       "published": "Tue, 23 Jun 2026 18:55:35 GMT",
       "description": "Not fatigue of faces, but fatigue of ideas is what Modi must care for"
-    },
-    {
-      "title": "Our State Governments Have 'Commitment Issues'",
-      "link": "https://politypolicy.substack.com/p/our-state-governments-have-commitment",
-      "published": "Mon, 22 Jun 2026 07:32:50 GMT",
-      "description": "When it comes to the fiscal health of the states, there are several underlying concerns"
-    },
-    {
-      "title": "The Misplaced Adventures of the Silver-Spoon Scion",
-      "link": "https://politypolicy.substack.com/p/the-misplaced-adventures-of-the-silver",
-      "published": "Sat, 20 Jun 2026 11:27:07 GMT",
-      "description": "Why Rahul Gandhi\u2019s biggest hope is time?"
     }
   ]
 }
