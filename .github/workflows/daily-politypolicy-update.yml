@@ -71,6 +71,9 @@ jobs:
       - name: Collect NCRB and analysis data
         run: python scripts/collect_ncrb_and_analyses.py
 
+      - name: Refresh FEC candidate campaign-finance data
+        run: python scripts/collect_us_campaign_finance.py
+
       - name: Collect Pew India survey snapshots & report catalog
         run: |
           python scripts/collect_pew_snapshots.py

@@ -12,7 +12,7 @@ This independent project was created to make India’s economic, social, and inf
 
 With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The dashboard now has a dedicated **Inspiration** section separate from the general About text, so PolityPolicy attribution is not mixed in with dashboard mechanics.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, and Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
 
 The **Markets Subgroup** under Economic includes rich global comparisons celebrating India's growth trajectory alongside the world's largest economies:
 - **Indian Market Indices**: Sensex, Nifty 50, and Nifty VIX rebased to 100.
@@ -127,6 +127,7 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 
 - [Election Commission of India results portal](https://results.eci.gov.in/) for currently published constituency-level election results.
 - [U.S. National Archives Electoral College results](https://www.archives.gov/electoral-college) for Presidential election outcomes.
+- [Federal Election Commission candidate summary files](https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/) for federal candidate campaign-finance totals.
 - [PPAC retail selling prices](https://ppac.gov.in/prices/retail-selling-price-rsp-of-petrol-diesel-and-domestic-lpg) for the government reference archive; no verified open daily feed is currently consumed by this project.
 - [GST portal](https://www.gst.gov.in/) for GST collections.
 - [Controller General of Accounts](https://cga.nic.in/) for Union fiscal accounts.
@@ -150,7 +151,7 @@ Inspired by the public-data storytelling and visual exploration at [PolityPolicy
 
 ## 🗳️ Elections, public services, and data coverage
 
-The Elections group includes current candidate-level ECI results, a selectable archive of candidate returns parsed from public ECI statistical-report spreadsheets, and U.S. Presidential Electoral College totals. Current ECI totals refresh every three hours and remain provisional until Form 20. The historical workbook snapshot currently covers 20,041 observations from 16 reports in 15 States/UTs for 2021–2023; it is partial and does not claim complete historical Lok Sabha or State Assembly coverage. U.S. House candidate returns and comparable SSR/SIR electoral-roll revision time series are not currently included.
+The Indian Elections group includes current candidate-level ECI results and a selectable archive of candidate returns parsed from public ECI statistical-report spreadsheets. Current ECI totals refresh every three hours and remain provisional until Form 20. The historical workbook snapshot currently covers 20,041 observations from 16 reports in 15 States/UTs for 2021–2023; it is partial and does not claim complete historical Lok Sabha or State Assembly coverage. The separate U.S. Elections group presents National Archives Electoral College totals and 48 daily-refreshed FEC campaign-finance indicators across the 2018–2024 Presidential, Senate and House cycles. FEC financial totals are not votes; U.S. popular-vote, turnout and constituency-level House results are not included. Comparable SSR/SIR electoral-roll revision time series are also not currently included.
 
 The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), plus specifically cited state snapshots. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
 

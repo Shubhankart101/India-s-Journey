@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-10-25T13:18:37+00:00",
+  "generated_at_utc": "2026-10-25T14:05:06+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -3974,7 +3974,7 @@ window.INDIA_DASHBOARD_DATA = {
       "indexAxis": "y",
       "source": "https://www.pewresearch.org/short-reads/2026/08/13/public-opinion-of-india-is-mixed-across-36-countries/",
       "unit": "% of respondents",
-      "note": "Pew Spring 2026 Global Attitudes Survey. Fieldwork ran Feb. 9\u2013May 13, 2026. Percentages are the published country results; category totals may differ from 100 because of rounding. This measures opinions of India outside India, not Indian respondents."
+      "note": "Pew Spring 2026 Global Attitudes Survey. Fieldwork ran Feb. 9–May 13, 2026. Percentages are the published country results; category totals may differ from 100 because of rounding. This measures opinions of India outside India, not Indian respondents."
     },
     "pew_india_2026_top_threats": {
       "labels": [
@@ -4021,7 +4021,7 @@ window.INDIA_DASHBOARD_DATA = {
       "indexAxis": "y",
       "source": "https://www.pewresearch.org/religion/2021/06/29/diversity-and-pluralism/",
       "unit": "% of respondents",
-      "note": "Pew's Religion in India survey was conducted in 2019\u20132020. Published percentages are rounded, so the total is 101%. The third category includes respondents who said neither, did not know, or did not answer."
+      "note": "Pew's Religion in India survey was conducted in 2019–2020. Published percentages are rounded, so the total is 101%. The third category includes respondents who said neither, did not know, or did not answer."
     },
     "pew_india_2021_religious_freedom": {
       "labels": [
@@ -4036,7 +4036,7 @@ window.INDIA_DASHBOARD_DATA = {
       "indexAxis": "y",
       "source": "https://www.pewresearch.org/religion/2021/06/29/religious-freedom-discrimination-and-communal-relations/",
       "unit": "% of respondents",
-      "note": "Pew's Religion in India survey was conducted in 2019\u20132020. The two bars report separate questions: respondents' own religious freedom and their assessment of freedom for people of other religions."
+      "note": "Pew's Religion in India survey was conducted in 2019–2020. The two bars report separate questions: respondents' own religious freedom and their assessment of freedom for people of other religions."
     },
     "terror_attacks": {
       "source": "Our World in Data; Global Terrorism Database-derived series",
@@ -4363,7 +4363,7 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "datasets": [
         {
-          "label": "Defence Production (INR Cr) \ud83d\udee1\ufe0f",
+          "label": "Defence Production (INR Cr) 🛡️",
           "values": [
             46429.0,
             50022.0,
@@ -4380,7 +4380,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#58a6ff"
         },
         {
-          "label": "Defence Exports (INR Cr) \ud83d\ude80",
+          "label": "Defence Exports (INR Cr) 🚀",
           "values": [
             1941.0,
             2059.0,
@@ -5104,7 +5104,7 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "datasets": [
         {
-          "label": "Government Health Spending (% GDP) \ud83c\udfe5",
+          "label": "Government Health Spending (% GDP) 🏥",
           "values": [
             1.13,
             1.15,
@@ -5122,7 +5122,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#3fb950"
         },
         {
-          "label": "Out-of-Pocket Expenditure (% Total Health Exp) \ud83d\udcb8",
+          "label": "Out-of-Pocket Expenditure (% Total Health Exp) 💸",
           "values": [
             64.2,
             62.6,
@@ -14982,7 +14982,7 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "datasets": [
         {
-          "label": "India \ud83c\uddee\ud83c\uddf3",
+          "label": "India 🇮🇳",
           "values": [
             0.321,
             0.27,
@@ -15024,7 +15024,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#ff9933"
         },
         {
-          "label": "United States \ud83c\uddfa\ud83c\uddf8",
+          "label": "United States 🇺🇸",
           "values": [
             5.963,
             6.158,
@@ -15066,7 +15066,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#58a6ff"
         },
         {
-          "label": "China \ud83c\udde8\ud83c\uddf3",
+          "label": "China 🇨🇳",
           "values": [
             0.362,
             0.385,
@@ -15108,7 +15108,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#ff7b72"
         },
         {
-          "label": "Germany \ud83c\udde9\ud83c\uddea",
+          "label": "Germany 🇩🇪",
           "values": [
             1.778,
             1.876,
@@ -15150,7 +15150,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#f6c344"
         },
         {
-          "label": "Japan \ud83c\uddef\ud83c\uddf5",
+          "label": "Japan 🇯🇵",
           "values": [
             3.253,
             3.725,
@@ -15192,7 +15192,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#a371f7"
         },
         {
-          "label": "United Kingdom \ud83c\uddec\ud83c\udde7",
+          "label": "United Kingdom 🇬🇧",
           "values": [
             1.093,
             1.143,
@@ -15277,7 +15277,7 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "datasets": [
         {
-          "label": "India \ud83c\uddee\ud83c\uddf3",
+          "label": "India 🇮🇳",
           "values": [
             8.97,
             13.87,
@@ -15319,7 +15319,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#ff9933"
         },
         {
-          "label": "United States \ud83c\uddfa\ud83c\uddf8",
+          "label": "United States 🇺🇸",
           "values": [
             5.4,
             4.23,
@@ -15361,7 +15361,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#58a6ff"
         },
         {
-          "label": "Euro Area \ud83c\uddea\ud83c\uddfa",
+          "label": "Euro Area 🇪🇺",
           "values": [
             4.5,
             4.31,
@@ -15436,7 +15436,7 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "datasets": [
         {
-          "label": "India BSE Sensex \ud83c\uddee\ud83c\uddf3",
+          "label": "India BSE Sensex 🇮🇳",
           "values": [
             100.0,
             81.5,
@@ -15468,7 +15468,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#ff9933"
         },
         {
-          "label": "US S&P 500 \ud83c\uddfa\ud83c\uddf8",
+          "label": "US S&P 500 🇺🇸",
           "values": [
             100.0,
             88.1,
@@ -15500,7 +15500,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#58a6ff"
         },
         {
-          "label": "UK FTSE 100 \ud83c\uddec\ud83c\udde7",
+          "label": "UK FTSE 100 🇬🇧",
           "values": [
             100.0,
             83.8,
@@ -15532,7 +15532,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#3fb950"
         },
         {
-          "label": "Japan Nikkei 225 \ud83c\uddef\ud83c\uddf5",
+          "label": "Japan Nikkei 225 🇯🇵",
           "values": [
             100.0,
             74.3,
@@ -15564,7 +15564,7 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#a371f7"
         },
         {
-          "label": "China Shanghai Comp \ud83c\udde8\ud83c\uddf3",
+          "label": "China Shanghai Comp 🇨🇳",
           "values": [
             100.0,
             80.4,
@@ -16425,14 +16425,464 @@ window.INDIA_DASHBOARD_DATA = {
         7,
         1
       ],
-      "chartType": "bar",
+      "chartType": "doughnut",
       "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
       "note": "Current property classifications on the official UNESCO World Heritage List."
+    },
+    "agricultural_employment_share": {
+      "labels": [
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        63.1283195373591,
+        62.8983336367001,
+        62.6630638065269,
+        62.3712403783223,
+        61.9744284767541,
+        61.5133808555238,
+        61.1586254457877,
+        60.647957461241,
+        59.8780266801724,
+        59.607310099104,
+        58.8908092207151,
+        58.2078564520654,
+        57.1646505429386,
+        55.9994573237763,
+        55.0204533123109,
+        54.2730178999296,
+        53.3688684377217,
+        52.8791883959001,
+        51.9444266180638,
+        51.056070239905,
+        49.0753059155876,
+        47.0881544623322,
+        46.2418839816327,
+        45.2547111152237,
+        44.2796936892031,
+        43.2048505926307,
+        42.2671064682124,
+        41.2949989249141,
+        40.6518149993227,
+        44.6754951957099,
+        44.0791868866382,
+        42.8609991503088,
+        43.5135811245793,
+        42.3547738876441,
+        41.6251280877573
+      ],
+      "source": "World Bank API SL.AGR.EMPL.ZS"
+    },
+    "urban_population_growth": {
+      "labels": [
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        2.94721853177682,
+        3.03298711732024,
+        3.11639041084409,
+        3.20840647256961,
+        3.20456523194607,
+        3.1695795384884,
+        3.24350049444171,
+        3.30228526768949,
+        3.31487787379116,
+        3.46032931840731,
+        3.51162478128917,
+        3.70117641783145,
+        4.02484806306095,
+        4.24290706523084,
+        4.39235402034092,
+        4.39629501965597,
+        4.34654188540704,
+        4.17052201572009,
+        4.01424240268514,
+        3.83876027160039,
+        3.52975000151859,
+        3.35088492623538,
+        3.2655661263642,
+        3.1946005591058,
+        3.1177070718566,
+        3.05842557624661,
+        3.00742243299857,
+        2.97007125859935,
+        2.96309247445092,
+        2.96595033376523,
+        2.95191798872441,
+        2.90701465061509,
+        2.85113984742116,
+        2.78363663627483,
+        2.75028974249716,
+        2.7428697140376,
+        2.72877734893913,
+        2.72471690086078,
+        2.72603044346746,
+        2.74716354214945,
+        2.79167632635927,
+        2.78430381700354,
+        2.75957503853038,
+        2.77480790295643,
+        2.74412999366421,
+        2.7138445773411,
+        2.68838973840524,
+        2.6496554632103,
+        2.68133844908469,
+        2.71046640355998,
+        2.60834363267832,
+        2.37699314592326,
+        2.33991754994745,
+        2.25647131147126,
+        2.17617533145353,
+        2.16325487902533,
+        2.12248866445848,
+        2.0460160617663,
+        1.97750804279549,
+        1.89985832105548,
+        1.73813803578169,
+        1.69490092263281,
+        1.7773369092557,
+        1.77423382325139,
+        1.7603200913122
+      ],
+      "source": "World Bank API SP.URB.GROW"
+    },
+    "net_energy_imports_share": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        11.3046972227073,
+        12.0023093461533,
+        13.8816602836719,
+        14.3264082530972,
+        14.0357105458743,
+        15.3892952155556,
+        16.9639396644197,
+        17.9411886573695,
+        19.3441402187682,
+        21.3270198503899,
+        21.8853980166612,
+        21.6073691788254,
+        22.1971248214699,
+        22.3530867785805,
+        23.0514758590311,
+        24.767346059726,
+        26.0732509018908,
+        27.096895890432,
+        28.2972575397255,
+        29.685032732244,
+        30.5770469863313,
+        31.3090800016844,
+        33.1389867532093,
+        34.2689442537448,
+        36.7825814157684,
+        37.2650394954722,
+        37.4052497261486,
+        37.4145749334972,
+        37.668541730755,
+        39.2632936374959,
+        37.358072625921,
+        35.3166290163036,
+        36.6643532745518,
+        36.9585579039788,
+        36.0305276064275
+      ],
+      "source": "World Bank API EG.IMP.CONS.ZS"
+    },
+    "lower_secondary_completion": {
+      "labels": [
+        "1987",
+        "1988",
+        "1989",
+        "2002",
+        "2003",
+        "2006",
+        "2008",
+        "2011",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        41.9629096984863,
+        42.9567985534668,
+        43.5080184936523,
+        55.2153396606445,
+        58.6993789672852,
+        64.5084762573242,
+        69.8714370727539,
+        78.9787047633292,
+        82.4575020623288,
+        86.9745843147787,
+        86.1211897637251,
+        86.2597112438317,
+        85.9737227202048,
+        86.7525787353516,
+        88.7661819458008,
+        90.2341568239864,
+        90.0373294435214,
+        85.477406853637,
+        87.2821389864812,
+        87.9890735130602
+      ],
+      "source": "World Bank API SE.SEC.CMPT.LO.ZS"
+    },
+    "government_health_spending_per_capita": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        3.82144911,
+        3.72714112,
+        3.66131509,
+        4.097732,
+        4.48195072,
+        5.53438837,
+        6.02389091,
+        7.44656324,
+        8.52019224,
+        9.74715444,
+        11.73934408,
+        13.91175177,
+        13.5616419,
+        12.79745235,
+        13.33445508,
+        14.90307278,
+        16.02965318,
+        18.67114483,
+        19.70634426,
+        21.28210144,
+        23.14088483,
+        30.52121945,
+        32.92679071,
+        33.04847848
+      ],
+      "source": "World Bank API SH.XPD.GHED.PC.CD"
+    },
+    "safely_managed_drinking_water": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        37.6400057360068,
+        39.1028624674025,
+        40.6085464510428,
+        42.1267048046039,
+        43.657414461879,
+        45.1996271683436,
+        46.7534238129321,
+        48.3188378954124,
+        49.8955302994742,
+        51.4825314020622,
+        53.0798644691443,
+        54.6875065992042,
+        56.3075690119533,
+        57.9390790581161,
+        59.5816046729688,
+        61.2343987010564,
+        62.8967025513523,
+        64.567945966321,
+        66.2471046550041,
+        67.9333667144175,
+        69.6259050057647,
+        71.3240226487586,
+        73.0266809621397,
+        74.7331217386926,
+        76.4421942140842
+      ],
+      "source": "World Bank API SH.H2O.SMDW.ZS"
     }
   },
   "indian_matrix_articles": [
     {
-      "title": "From \u20b9269 a GB to Almost Free",
+      "title": "From ₹269 a GB to Almost Free",
       "link": "https://indianmatrix.substack.com/p/from-269-a-gb-to-almost-free",
       "published": "Mon, 19 Oct 2026 12:50:39 GMT",
       "date": "2026-10-19"
@@ -16468,7 +16918,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-09-30"
     },
     {
-      "title": "The Copper Gap: Sterlite\u2019s Closure and India\u2019s Tightrope Walk to Copper Security",
+      "title": "The Copper Gap: Sterlite’s Closure and India’s Tightrope Walk to Copper Security",
       "link": "https://indianmatrix.substack.com/p/the-copper-gap-sterlites-closure",
       "published": "Mon, 21 Sep 2026 13:28:31 GMT",
       "date": "2026-09-21"
@@ -16480,13 +16930,13 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-09-19"
     },
     {
-      "title": "How Zudio\u2019s 1000th Store Maps India\u2019s Changing Household Budgets",
+      "title": "How Zudio’s 1000th Store Maps India’s Changing Household Budgets",
       "link": "https://indianmatrix.substack.com/p/how-zudios-1000th-store-maps-indias",
       "published": "Tue, 15 Sep 2026 13:03:00 GMT",
       "date": "2026-09-15"
     },
     {
-      "title": "The Invisible Friction: Why India\u2019s NGO-to-Startup Ratio is a Red Flag for Growth",
+      "title": "The Invisible Friction: Why India’s NGO-to-Startup Ratio is a Red Flag for Growth",
       "link": "https://indianmatrix.substack.com/p/the-invisible-friction-why-indias",
       "published": "Sat, 05 Sep 2026 12:22:51 GMT",
       "date": "2026-09-05"
@@ -16528,7 +16978,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-07-30"
     },
     {
-      "title": "What Indira Gandhi\u2019s Bank Nationalisation Diktat Promised - And Failed to Deliver",
+      "title": "What Indira Gandhi’s Bank Nationalisation Diktat Promised - And Failed to Deliver",
       "link": "https://indianmatrix.substack.com/p/what-indira-gandhis-bank-nationalisation",
       "published": "Sat, 18 Jul 2026 12:17:14 GMT",
       "date": "2026-07-18"
@@ -16609,7 +17059,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-07-15"
     },
     {
-      "title": "China\u2019s image in the Asia-Pacific region",
+      "title": "China’s image in the Asia-Pacific region",
       "link": "https://www.pewresearch.org/global/2026/07/15/chinas-image-in-the-asia-pacific-region/",
       "date": "2026-07-15"
     },
@@ -16654,7 +17104,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-06-23"
     },
     {
-      "title": "In middle-income nations, most say the U.S. interferes in other countries\u2019 affairs",
+      "title": "In middle-income nations, most say the U.S. interferes in other countries’ affairs",
       "link": "https://www.pewresearch.org/global/2026/06/23/in-middle-income-nations-most-say-the-u-s-interferes-in-other-countries-affairs/",
       "date": "2026-06-23"
     },
@@ -16669,7 +17119,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-06-23"
     },
     {
-      "title": "Comparing how Americans and others around the world view the United States\u2019 global role",
+      "title": "Comparing how Americans and others around the world view the United States’ global role",
       "link": "https://www.pewresearch.org/global/2026/06/23/comparing-how-americans-and-others-around-the-world-view-the-united-states-global-role/",
       "date": "2026-06-23"
     },
@@ -16709,27 +17159,27 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-05-28"
     },
     {
-      "title": "5 facts about Africa\u2019s population growth",
+      "title": "5 facts about Africa’s population growth",
       "link": "https://www.pewresearch.org/short-reads/2026/05/19/5-facts-about-africas-population-growth/",
       "date": "2026-05-19"
     },
     {
-      "title": "What countries do Americans think are gaining and losing influence in today\u2019s world?",
+      "title": "What countries do Americans think are gaining and losing influence in today’s world?",
       "link": "https://www.pewresearch.org/global/2026/04/28/what-countries-do-americans-think-are-gaining-and-losing-influence-in-todays-world/",
       "date": "2026-04-28"
     },
     {
-      "title": "Americans stand out internationally for their pessimism about the nation\u2019s political system",
+      "title": "Americans stand out internationally for their pessimism about the nation’s political system",
       "link": "https://www.pewresearch.org/short-reads/2026/04/15/americans-stand-out-internationally-for-their-pessimism-about-the-nations-political-system/",
       "date": "2026-04-15"
     },
     {
-      "title": "Negative views of Israel, Netanyahu continue to rise among Americans \u2013 especially young people",
+      "title": "Negative views of Israel, Netanyahu continue to rise among Americans – especially young people",
       "link": "https://www.pewresearch.org/short-reads/2026/04/07/negative-views-of-israel-netanyahu-continue-to-rise-among-americans-especially-young-people/",
       "date": "2026-04-07"
     },
     {
-      "title": "Gas Prices Are Americans\u2019 Top Concern in Iran War",
+      "title": "Gas Prices Are Americans’ Top Concern in Iran War",
       "link": "https://www.pewresearch.org/global/2026/04/07/gas-prices-are-americans-top-concern-in-iran-war/",
       "date": "2026-04-07"
     },
@@ -16739,7 +17189,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-03-16"
     },
     {
-      "title": "In the U.S. and other countries, fewer people now say it\u2019s necessary to believe in God to be moral",
+      "title": "In the U.S. and other countries, fewer people now say it’s necessary to believe in God to be moral",
       "link": "https://www.pewresearch.org/short-reads/2026/03/05/in-the-us-and-other-countries-fewer-people-now-say-its-necessary-to-believe-in-god-to-be-moral/",
       "date": "2026-03-05"
     },
@@ -16754,22 +17204,22 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-03-02"
     },
     {
-      "title": "Where, and why, people aren\u2019t proud of their country",
+      "title": "Where, and why, people aren’t proud of their country",
       "link": "https://www.pewresearch.org/global/2026/02/17/where-and-why-people-arent-proud-of-their-country/",
       "date": "2026-02-17"
     },
     {
-      "title": "Where in the world are people proud of their nation\u2019s politics and economy, and why?",
+      "title": "Where in the world are people proud of their nation’s politics and economy, and why?",
       "link": "https://www.pewresearch.org/global/2026/02/17/where-in-the-world-are-people-proud-of-their-nations-politics-and-economy-and-why/",
       "date": "2026-02-17"
     },
     {
-      "title": "Where in the world are people proud of their nation\u2019s people and diversity?",
+      "title": "Where in the world are people proud of their nation’s people and diversity?",
       "link": "https://www.pewresearch.org/global/2026/02/17/where-in-the-world-are-people-proud-of-their-nations-people-and-diversity/",
       "date": "2026-02-17"
     },
     {
-      "title": "Where in the world are people proud of their country\u2019s culture and lifestyle?",
+      "title": "Where in the world are people proud of their country’s culture and lifestyle?",
       "link": "https://www.pewresearch.org/global/2026/02/17/where-in-the-world-are-people-proud-of-their-countrys-culture-and-lifestyle/",
       "date": "2026-02-17"
     },
@@ -16789,7 +17239,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2026-02-17"
     },
     {
-      "title": "Which countries have the most \u2013 and fewest \u2013 public holidays?",
+      "title": "Which countries have the most – and fewest – public holidays?",
       "link": "https://www.pewresearch.org/short-reads/2026/02/12/which-countries-have-the-most-and-fewest-public-holidays/",
       "date": "2026-02-12"
     },
@@ -16814,17 +17264,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-12-08"
     },
     {
-      "title": "Where most people trust others and where they don\u2019t around the world",
+      "title": "Where most people trust others and where they don’t around the world",
       "link": "https://www.pewresearch.org/short-reads/2025/12/01/where-most-people-trust-others-and-where-they-dont-around-the-world/",
       "date": "2025-12-01"
     },
     {
-      "title": "People who trust others tend to support international cooperation more than those who don\u2019t",
+      "title": "People who trust others tend to support international cooperation more than those who don’t",
       "link": "https://www.pewresearch.org/short-reads/2025/12/01/people-who-trust-others-tend-to-support-international-cooperation-more-than-those-who-dont/",
       "date": "2025-12-01"
     },
     {
-      "title": "South Africans See Their Country\u2019s Influence Weakening Ahead of G20",
+      "title": "South Africans See Their Country’s Influence Weakening Ahead of G20",
       "link": "https://www.pewresearch.org/global/2025/11/13/south-africans-see-their-countrys-influence-weakening-ahead-of-g20/",
       "date": "2025-11-13"
     },
@@ -17024,7 +17474,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-07-15"
     },
     {
-      "title": "2. China\u2019s economic power and economic relations",
+      "title": "2. China’s economic power and economic relations",
       "link": "https://www.pewresearch.org/global/2025/07/15/chinas-economic-power-and-economic-relations/",
       "date": "2025-07-15"
     },
@@ -17034,7 +17484,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-07-15"
     },
     {
-      "title": "5 facts about how the world\u2019s population is expected to change by 2100",
+      "title": "5 facts about how the world’s population is expected to change by 2100",
       "link": "https://www.pewresearch.org/short-reads/2025/07/09/5-facts-about-how-the-worlds-population-is-expected-to-change-by-2100/",
       "date": "2025-07-09"
     },
@@ -17049,12 +17499,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-07-08"
     },
     {
-      "title": "2. Who do people think is their country\u2019s greatest threat?",
+      "title": "2. Who do people think is their country’s greatest threat?",
       "link": "https://www.pewresearch.org/global/2025/07/08/who-do-people-think-is-their-countrys-greatest-threat/",
       "date": "2025-07-08"
     },
     {
-      "title": "1. Who do people think is their country\u2019s most important ally?",
+      "title": "1. Who do people think is their country’s most important ally?",
       "link": "https://www.pewresearch.org/global/2025/07/08/who-do-people-think-is-their-countrys-most-important-ally/",
       "date": "2025-07-08"
     },
@@ -17109,7 +17559,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-06-11"
     },
     {
-      "title": "4. Views of Trump\u2019s characteristics",
+      "title": "4. Views of Trump’s characteristics",
       "link": "https://www.pewresearch.org/global/2025/06/11/views-of-trumps-characteristics/",
       "date": "2025-06-11"
     },
@@ -17129,7 +17579,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-06-11"
     },
     {
-      "title": "Islam was the world\u2019s fastest-growing religion from 2010 to 2020",
+      "title": "Islam was the world’s fastest-growing religion from 2010 to 2020",
       "link": "https://www.pewresearch.org/short-reads/2025/06/10/islam-was-the-worlds-fastest-growing-religion-from-2010-to-2020/",
       "date": "2025-06-10"
     },
@@ -17149,7 +17599,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-06-09"
     },
     {
-      "title": "7. \u2018Other religions\u2019 population change",
+      "title": "7. ‘Other religions’ population change",
       "link": "https://www.pewresearch.org/religion/2025/06/09/other-religions-population-change/",
       "date": "2025-06-09"
     },
@@ -17224,12 +17674,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-05-06"
     },
     {
-      "title": "3. Americans\u2019 views of allies and threats",
+      "title": "3. Americans’ views of allies and threats",
       "link": "https://www.pewresearch.org/global/2025/05/01/americans-views-of-allies-and-threats/",
       "date": "2025-05-01"
     },
     {
-      "title": "2. The United States\u2019 standing in the world",
+      "title": "2. The United States’ standing in the world",
       "link": "https://www.pewresearch.org/global/2025/05/01/the-united-states-standing-in-the-world/",
       "date": "2025-05-01"
     },
@@ -17304,7 +17754,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-02-27"
     },
     {
-      "title": "What makes someone \u2018truly\u2019 belong in a country? Views differ on language, birthplace, other factors",
+      "title": "What makes someone ‘truly’ belong in a country? Views differ on language, birthplace, other factors",
       "link": "https://www.pewresearch.org/short-reads/2025/01/28/what-makes-someone-truly-belong-in-a-country-views-differ-on-importance-of-language-birthplace-and-other-factors/",
       "date": "2025-01-28"
     },
@@ -17334,7 +17784,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-01-28"
     },
     {
-      "title": "2. How important should religion be for a country\u2019s leader?",
+      "title": "2. How important should religion be for a country’s leader?",
       "link": "https://www.pewresearch.org/global/2025/01/28/how-important-should-religion-be-for-a-countrys-leader/",
       "date": "2025-01-28"
     },
@@ -17349,7 +17799,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-01-09"
     },
     {
-      "title": "En todo el mundo, la desigualdad econ\u00f3mica se considera un desaf\u00edo importante",
+      "title": "En todo el mundo, la desigualdad económica se considera un desafío importante",
       "link": "https://www.pewresearch.org/2025/01/09/global-economic-inequality-press-release-spanish/",
       "date": "2025-01-09"
     },
@@ -17364,7 +17814,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2025-01-09"
     },
     {
-      "title": "3. Views of children\u2019s financial future",
+      "title": "3. Views of children’s financial future",
       "link": "https://www.pewresearch.org/global/2025/01/09/views-of-childrens-financial-future/",
       "date": "2025-01-09"
     },
@@ -17419,7 +17869,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-10-09"
     },
     {
-      "title": "1. Asian American immigrants\u2019 experiences adjusting to life in the U.S.",
+      "title": "1. Asian American immigrants’ experiences adjusting to life in the U.S.",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2024/10/09/asian-american-immigrants-experiences-adjusting-to-life-in-the-u-s/",
       "date": "2024-10-09"
     },
@@ -17444,7 +17894,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-09-05"
     },
     {
-      "title": "Many around the globe say it\u2019s important their leader stands up for people\u2019s religious beliefs",
+      "title": "Many around the globe say it’s important their leader stands up for people’s religious beliefs",
       "link": "https://www.pewresearch.org/short-reads/2024/08/28/many-around-the-globe-say-its-important-their-leader-stands-up-for-peoples-religious-beliefs/",
       "date": "2024-08-28"
     },
@@ -17454,7 +17904,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-08-22"
     },
     {
-      "title": "The Religious Composition of the World\u2019s Migrants",
+      "title": "The Religious Composition of the World’s Migrants",
       "link": "https://www.pewresearch.org/religion/2024/08/19/the-religious-composition-of-the-worlds-migrants/",
       "date": "2024-08-19"
     },
@@ -17539,12 +17989,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-07-22"
     },
     {
-      "title": "How the origins of America\u2019s immigrants have changed since 1850",
+      "title": "How the origins of America’s immigrants have changed since 1850",
       "link": "https://www.pewresearch.org/short-reads/2024/07/22/how-the-origins-of-americas-immigrants-have-changed-since-1850/",
       "date": "2024-07-22"
     },
     {
-      "title": "72% of Americans say the U.S. used to be a good example of democracy, but isn\u2019t anymore",
+      "title": "72% of Americans say the U.S. used to be a good example of democracy, but isn’t anymore",
       "link": "https://www.pewresearch.org/short-reads/2024/07/10/72-of-americans-say-the-us-used-to-be-a-good-example-of-democracy-but-isnt-anymore/",
       "date": "2024-07-10"
     },
@@ -17559,12 +18009,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-07-09"
     },
     {
-      "title": "3. How people in the Asia-Pacific region view China\u2019s role on the world stage",
+      "title": "3. How people in the Asia-Pacific region view China’s role on the world stage",
       "link": "https://www.pewresearch.org/global/2024/07/09/how-people-in-the-asia-pacific-region-view-chinas-role-on-the-world-stage/",
       "date": "2024-07-09"
     },
     {
-      "title": "2. Views of China\u2019s influence on domestic economic conditions",
+      "title": "2. Views of China’s influence on domestic economic conditions",
       "link": "https://www.pewresearch.org/global/2024/07/09/views-of-chinas-influence-on-domestic-economic-conditions/",
       "date": "2024-07-09"
     },
@@ -17719,7 +18169,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-03-13"
     },
     {
-      "title": "4. Restrictions on religion in the world\u2019s 25 most populous countries in 2021",
+      "title": "4. Restrictions on religion in the world’s 25 most populous countries in 2021",
       "link": "https://www.pewresearch.org/religion/2024/03/05/restrictions-on-religion-in-the-worlds-25-most-populous-countries-in-2021/",
       "date": "2024-03-05"
     },
@@ -17734,7 +18184,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-03-05"
     },
     {
-      "title": "Latinos\u2019 Views on the Migrant Situation at the U.S.-Mexico Border",
+      "title": "Latinos’ Views on the Migrant Situation at the U.S.-Mexico Border",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2024/03/04/latinos-views-on-the-migrant-situation-at-the-us-mexico-border/",
       "date": "2024-03-04"
     },
@@ -17744,7 +18194,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-02-28"
     },
     {
-      "title": "Representative Democracy Remains a Popular Ideal, but People Around the World Are Critical of How It\u2019s Working",
+      "title": "Representative Democracy Remains a Popular Ideal, but People Around the World Are Critical of How It’s Working",
       "link": "https://www.pewresearch.org/global/2024/02/28/representative-democracy-remains-a-popular-ideal-but-people-around-the-world-are-critical-of-how-its-working/",
       "date": "2024-02-28"
     },
@@ -17774,7 +18224,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2024-01-09"
     },
     {
-      "title": "China\u2019s Christian population appears to have stopped growing after rising rapidly in the 1980s and \u201990s",
+      "title": "China’s Christian population appears to have stopped growing after rising rapidly in the 1980s and ’90s",
       "link": "https://www.pewresearch.org/short-reads/2023/12/12/chinas-christian-population-appears-to-have-stopped-growing-after-rising-rapidly-in-the-1980s-and-90s/",
       "date": "2023-12-12"
     },
@@ -17804,12 +18254,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-12-06"
     },
     {
-      "title": "3. Asian Americans and the \u2018model minority\u2019 stereotype",
+      "title": "3. Asian Americans and the ‘model minority’ stereotype",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/11/30/asian-americans-and-the-model-minority-stereotype/",
       "date": "2023-11-30"
     },
     {
-      "title": "2. Asian Americans and the \u2018forever foreigner\u2019 stereotype",
+      "title": "2. Asian Americans and the ‘forever foreigner’ stereotype",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/11/30/asian-americans-and-the-forever-foreigner-stereotype/",
       "date": "2023-11-30"
     },
@@ -17839,7 +18289,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-11-06"
     },
     {
-      "title": "Most countries don\u2019t observe daylight saving time",
+      "title": "Most countries don’t observe daylight saving time",
       "link": "https://www.pewresearch.org/short-reads/2023/10/26/most-countries-dont-observe-daylight-saving-time/",
       "date": "2023-10-26"
     },
@@ -17889,17 +18339,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-08-29"
     },
     {
-      "title": "4. Indians\u2019 views of other countries",
+      "title": "4. Indians’ views of other countries",
       "link": "https://www.pewresearch.org/global/2023/08/29/indians-views-of-other-countries/",
       "date": "2023-08-29"
     },
     {
-      "title": "3. Indians\u2019 views of India",
+      "title": "3. Indians’ views of India",
       "link": "https://www.pewresearch.org/global/2023/08/29/indians-views-of-india/",
       "date": "2023-08-29"
     },
     {
-      "title": "2. Indians\u2019 views of Modi and other national leaders",
+      "title": "2. Indians’ views of Modi and other national leaders",
       "link": "https://www.pewresearch.org/global/2023/08/29/indians-views-of-modi-and-other-national-leaders/",
       "date": "2023-08-29"
     },
@@ -17919,7 +18369,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-07-31"
     },
     {
-      "title": "China\u2019s Approach to Foreign Policy Gets Largely Negative Reviews in 24-Country Survey",
+      "title": "China’s Approach to Foreign Policy Gets Largely Negative Reviews in 24-Country Survey",
       "link": "https://www.pewresearch.org/global/2023/07/27/chinas-approach-to-foreign-policy-gets-largely-negative-reviews-in-24-country-survey/",
       "date": "2023-07-27"
     },
@@ -17934,12 +18384,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-07-27"
     },
     {
-      "title": "3. Which country is the world\u2019s top economy?",
+      "title": "3. Which country is the world’s top economy?",
       "link": "https://www.pewresearch.org/global/2023/07/27/which-country-is-the-worlds-top-economy/",
       "date": "2023-07-27"
     },
     {
-      "title": "2. China\u2019s international behavior",
+      "title": "2. China’s international behavior",
       "link": "https://www.pewresearch.org/global/2023/07/27/chinas-international-behavior/",
       "date": "2023-07-27"
     },
@@ -17949,7 +18399,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-07-27"
     },
     {
-      "title": "Americans\u2019 Views of Space: U.S. Role, NASA Priorities and Impact of Private Companies",
+      "title": "Americans’ Views of Space: U.S. Role, NASA Priorities and Impact of Private Companies",
       "link": "https://www.pewresearch.org/science/2023/07/20/americans-views-of-space-u-s-role-nasa-priorities-and-impact-of-private-companies/",
       "date": "2023-07-20"
     },
@@ -17959,37 +18409,37 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-07-19"
     },
     {
-      "title": "7. Vietnamese Americans\u2019 views of Vietnam and other places",
+      "title": "7. Vietnamese Americans’ views of Vietnam and other places",
       "link": "https://www.pewresearch.org/global/2023/07/19/vietnamese-americans-views-of-vietnam-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "6. Taiwanese Americans\u2019 views of Taiwan and other places",
+      "title": "6. Taiwanese Americans’ views of Taiwan and other places",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/07/19/taiwanese-americans-views-of-taiwan-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "5. Korean Americans\u2019 views of South Korea and other places",
+      "title": "5. Korean Americans’ views of South Korea and other places",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/07/19/korean-americans-views-of-south-korea-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "4. Japanese Americans\u2019 views of Japan and other places",
+      "title": "4. Japanese Americans’ views of Japan and other places",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/07/19/japanese-americans-views-of-japan-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "3. Indian Americans\u2019 views of India and other places",
+      "title": "3. Indian Americans’ views of India and other places",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/07/19/indian-americans-views-of-india-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "2. Filipino Americans\u2019 views of the Philippines and other places",
+      "title": "2. Filipino Americans’ views of the Philippines and other places",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2023/07/19/filipino-americans-views-of-the-philippines-and-other-places/",
       "date": "2023-07-19"
     },
     {
-      "title": "1. Chinese Americans\u2019 views of China and other places",
+      "title": "1. Chinese Americans’ views of China and other places",
       "link": "https://www.pewresearch.org/global/2023/07/19/chinese-americans-views-of-china-and-other-places/",
       "date": "2023-07-19"
     },
@@ -18024,7 +18474,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-06-27"
     },
     {
-      "title": "How Americans\u2019 views of the U.S. compare with international views of the U.S.",
+      "title": "How Americans’ views of the U.S. compare with international views of the U.S.",
       "link": "https://www.pewresearch.org/short-reads/2023/06/27/how-americans-views-of-the-us-compare-with-international-views-of-the-us/",
       "date": "2023-06-27"
     },
@@ -18039,7 +18489,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-06-27"
     },
     {
-      "title": "3. The United States\u2019 role in world affairs",
+      "title": "3. The United States’ role in world affairs",
       "link": "https://www.pewresearch.org/global/2023/06/27/the-united-states-role-in-world-affairs/",
       "date": "2023-06-27"
     },
@@ -18064,7 +18514,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-06-21"
     },
     {
-      "title": "Economic ratings are poor \u2013 and getting worse \u2013 in most countries surveyed",
+      "title": "Economic ratings are poor – and getting worse – in most countries surveyed",
       "link": "https://www.pewresearch.org/short-reads/2023/06/15/economic-ratings-are-poor-and-getting-worse-in-most-countries-surveyed/",
       "date": "2023-06-15"
     },
@@ -18094,7 +18544,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2023-02-28"
     },
     {
-      "title": "Key facts as India surpasses China as the world\u2019s most populous country",
+      "title": "Key facts as India surpasses China as the world’s most populous country",
       "link": "https://www.pewresearch.org/short-reads/2023/02/09/key-facts-as-india-surpasses-china-as-the-worlds-most-populous-country/",
       "date": "2023-02-09"
     },
@@ -18124,7 +18574,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-12-06"
     },
     {
-      "title": "Key facts about China\u2019s declining population",
+      "title": "Key facts about China’s declining population",
       "link": "https://www.pewresearch.org/short-reads/2022/12/05/key-facts-about-chinas-declining-population/",
       "date": "2022-12-05"
     },
@@ -18149,7 +18599,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-11-29"
     },
     {
-      "title": "1. Number of countries with \u2018very high\u2019 government restrictions falls for third straight year in 2020",
+      "title": "1. Number of countries with ‘very high’ government restrictions falls for third straight year in 2020",
       "link": "https://www.pewresearch.org/religion/2022/11/29/number-of-countries-with-very-high-government-restrictions-falls-for-third-straight-year-in-2020/",
       "date": "2022-11-29"
     },
@@ -18204,7 +18654,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-08-23"
     },
     {
-      "title": "India\u2019s Sex Ratio at Birth Begins To Normalize",
+      "title": "India’s Sex Ratio at Birth Begins To Normalize",
       "link": "https://www.pewresearch.org/religion/2022/08/23/indias-sex-ratio-at-birth-begins-to-normalize/",
       "date": "2022-08-23"
     },
@@ -18239,7 +18689,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-06-29"
     },
     {
-      "title": "Prevailing view among Americans is that U.S. influence in the world is weakening \u2013 and China\u2019s is growing",
+      "title": "Prevailing view among Americans is that U.S. influence in the world is weakening – and China’s is growing",
       "link": "https://www.pewresearch.org/short-reads/2022/06/23/prevailing-view-among-americans-is-that-u-s-influence-in-the-world-is-weakening-and-chinas-is-growing/",
       "date": "2022-06-23"
     },
@@ -18289,7 +18739,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-03-02"
     },
     {
-      "title": "1. Views on women\u2019s place in society",
+      "title": "1. Views on women’s place in society",
       "link": "https://www.pewresearch.org/religion/2022/03/02/views-on-womens-place-in-society/",
       "date": "2022-03-02"
     },
@@ -18309,7 +18759,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-02-07"
     },
     {
-      "title": "6. Altering \u201creality\u201d",
+      "title": "6. Altering “reality”",
       "link": "https://www.pewresearch.org/internet/2022/02/07/6-altering-reality/",
       "date": "2022-02-07"
     },
@@ -18319,7 +18769,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2022-01-20"
     },
     {
-      "title": "Key facts about U.S. immigration policies and Biden\u2019s proposed changes",
+      "title": "Key facts about U.S. immigration policies and Biden’s proposed changes",
       "link": "https://www.pewresearch.org/short-reads/2022/01/11/key-facts-about-u-s-immigration-policies-and-bidens-proposed-changes/",
       "date": "2022-01-11"
     },
@@ -18354,7 +18804,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-11-22"
     },
     {
-      "title": "41 countries ban religion-related groups; Jehovah\u2019s Witnesses, Baha\u2019is among the most commonly targeted",
+      "title": "41 countries ban religion-related groups; Jehovah’s Witnesses, Baha’is among the most commonly targeted",
       "link": "https://www.pewresearch.org/short-reads/2021/11/15/41-countries-ban-religion-related-groups-jehovahs-witnesses-bahais-among-the-most-commonly-targeted/",
       "date": "2021-11-15"
     },
@@ -18369,7 +18819,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-09-30"
     },
     {
-      "title": "4. Restrictions on religion in the world\u2019s 25 most populous countries in 2019",
+      "title": "4. Restrictions on religion in the world’s 25 most populous countries in 2019",
       "link": "https://www.pewresearch.org/religion/2021/09/30/restrictions-on-religion-in-the-worlds-25-most-populous-countries-in-2019/",
       "date": "2021-09-30"
     },
@@ -18414,7 +18864,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-08-11"
     },
     {
-      "title": "In India, Hindu support for Modi\u2019s party varies by region and is tied to beliefs about diet and language",
+      "title": "In India, Hindu support for Modi’s party varies by region and is tied to beliefs about diet and language",
       "link": "https://www.pewresearch.org/short-reads/2021/08/05/in-india-hindu-support-for-modis-party-varies-by-region-and-is-tied-to-beliefs-about-diet-and-language/",
       "date": "2021-08-05"
     },
@@ -18424,7 +18874,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-07-21"
     },
     {
-      "title": "For most of India\u2019s Hindus, religious and national identities are closely linked",
+      "title": "For most of India’s Hindus, religious and national identities are closely linked",
       "link": "https://www.pewresearch.org/short-reads/2021/07/20/for-most-of-indias-hindus-religious-and-national-identities-are-closely-linked/",
       "date": "2021-07-20"
     },
@@ -18454,27 +18904,27 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-07-01"
     },
     {
-      "title": "\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe\u0bb5\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bae\u0bcd: \u0b9a\u0b95\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0ba4\u0bcd\u0ba4\u0ba9\u0bcd\u0bae\u0bc8\u0baf\u0bc1\u0bae\u0bcd, \u0ba4\u0ba9\u0bbf\u0bae\u0bc8\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bc1\u0bae\u0bcd",
+      "title": "இந்தியாவில் மதம்: சகிப்புத்தன்மையும், தனிமைப்படுத்துதலும்",
       "link": "https://www.pewresearch.org/religion/2021/06/29/summary-of-findings-tamil-2/",
       "date": "2021-06-29"
     },
     {
-      "title": "\u0b87\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe\u0bb5\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bae\u0bcd: \u0b9a\u0b95\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0ba4\u0bcd\u0ba4\u0ba9\u0bcd\u0bae\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0ba4\u0ba9\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bc1\u0bae\u0bcd",
+      "title": "இந்தியாவில் மதம்: சகிப்புத்தன்மையும் தனிப்படுத்துதலும்",
       "link": "https://www.pewresearch.org/religion/2021/06/29/tamil-summary/",
       "date": "2021-06-29"
     },
     {
-      "title": "\u09ad\u09be\u09b0\u09a4\u09c7 \u09a7\u09b0\u09cd\u09ae: \u09b8\u09b9\u09a8\u09b6\u09c0\u09b2\u09a4\u09be \u098f\u09ac\u0982 \u09aa\u09c3\u09a5\u0995\u09c0\u0995\u09b0\u09a3",
+      "title": "ভারতে ধর্ম: সহনশীলতা এবং পৃথকীকরণ",
       "link": "https://www.pewresearch.org/religion/2021/06/29/bengali-summary/",
       "date": "2021-06-29"
     },
     {
-      "title": "\u092d\u093e\u0930\u0924\u093e\u0924\u0940\u0932 \u0927\u0930\u094d\u092e : \u0938\u0939\u093f\u0937\u094d\u0923\u0941\u0924\u093e \u0906\u0923\u093f \u0935\u093f\u0932\u0917\u094d\u0928\u0924\u093e",
+      "title": "भारतातील धर्म : सहिष्णुता आणि विलग्नता",
       "link": "https://www.pewresearch.org/religion/2021/06/29/marathi-summary/",
       "date": "2021-06-29"
     },
     {
-      "title": "\u092d\u093e\u0930\u0924 \u092e\u0947\u0902 \u0927\u0930\u094d\u092e: \u0938\u0939\u093f\u0937\u094d\u0923\u0941\u0924\u093e \u0914\u0930 \u0905\u0932\u0917\u093e\u0935",
+      "title": "भारत में धर्म: सहिष्णुता और अलगाव",
       "link": "https://www.pewresearch.org/religion/2021/06/29/hindi-summary/",
       "date": "2021-06-29"
     },
@@ -18584,7 +19034,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-05-14"
     },
     {
-      "title": "Americans\u2019 views of Asia-Pacific nations have not changed since 2018 \u2013 with the exception of China",
+      "title": "Americans’ views of Asia-Pacific nations have not changed since 2018 – with the exception of China",
       "link": "https://www.pewresearch.org/short-reads/2021/04/12/americans-views-of-asia-pacific-nations-have-not-changed-since-2018-with-the-exception-of-china/",
       "date": "2021-04-12"
     },
@@ -18604,7 +19054,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-03-18"
     },
     {
-      "title": "In the pandemic, India\u2019s middle class shrinks and poverty spreads while China sees smaller changes",
+      "title": "In the pandemic, India’s middle class shrinks and poverty spreads while China sees smaller changes",
       "link": "https://www.pewresearch.org/short-reads/2021/03/18/in-the-pandemic-indias-middle-class-shrinks-and-poverty-spreads-while-china-sees-smaller-changes/",
       "date": "2021-03-18"
     },
@@ -18634,7 +19084,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2021-02-12"
     },
     {
-      "title": "Women in many countries face harassment for clothing deemed too religious \u2013 or too secular",
+      "title": "Women in many countries face harassment for clothing deemed too religious – or too secular",
       "link": "https://www.pewresearch.org/short-reads/2020/12/16/women-in-many-countries-face-harassment-for-clothing-deemed-too-religious-or-too-secular/",
       "date": "2020-12-16"
     },
@@ -18684,12 +19134,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-10-19"
     },
     {
-      "title": "Key facts about women\u2019s suffrage around the world, a century after U.S. ratified 19th Amendment",
+      "title": "Key facts about women’s suffrage around the world, a century after U.S. ratified 19th Amendment",
       "link": "https://www.pewresearch.org/short-reads/2020/10/05/key-facts-about-womens-suffrage-around-the-world-a-century-after-u-s-ratified-19th-amendment/",
       "date": "2020-10-05"
     },
     {
-      "title": "In U.S. and UK, Globalization Leaves Some Feeling \u2018Left Behind\u2019 or \u2018Swept Up\u2019",
+      "title": "In U.S. and UK, Globalization Leaves Some Feeling ‘Left Behind’ or ‘Swept Up’",
       "link": "https://www.pewresearch.org/global/2020/10/05/in-u-s-and-uk-globalization-leaves-some-feeling-left-behind-or-swept-up/",
       "date": "2020-10-05"
     },
@@ -18734,12 +19184,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-09-15"
     },
     {
-      "title": "L\u2019immagine degli USA precipita a livello internazionale perch\u00e9 la maggioranza afferma che il Paese ha gestito male il Coronavirus",
+      "title": "L’immagine degli USA precipita a livello internazionale perché la maggioranza afferma che il Paese ha gestito male il Coronavirus",
       "link": "https://www.pewresearch.org/global/2020/09/15/limmagine-degli-usa-precipita-a-livello-internazionale-perche-la-maggioranza-afferma-che-il-paese-ha-gestito-male-il-coronavirus/",
       "date": "2020-09-15"
     },
     {
-      "title": "La imagen de Estados Unidos se desploma a nivel internacional mientras la mayor parte de la opini\u00f3n p\u00fablica habla sobre su mala gesti\u00f3n de la crisis del coronavirus",
+      "title": "La imagen de Estados Unidos se desploma a nivel internacional mientras la mayor parte de la opinión pública habla sobre su mala gestión de la crisis del coronavirus",
       "link": "https://www.pewresearch.org/global/2020/09/15/la-imagen-de-estados-unidos-se-desploma-a-nivel-internacional-mientras-la-mayor-parte-de-la-opinion-publica-habla-sobre-su-mala-gestion-de-la-crisis-del-coronavirus/",
       "date": "2020-09-15"
     },
@@ -18879,7 +19329,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-02-26"
     },
     {
-      "title": "2. The nation\u2019s most populous states are home to most immigrant voters",
+      "title": "2. The nation’s most populous states are home to most immigrant voters",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2020/02/26/the-nations-most-populous-states-are-home-to-most-immigrant-voters/",
       "date": "2020-02-26"
     },
@@ -18909,7 +19359,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-02-21"
     },
     {
-      "title": "While India\u2019s public views Trump positively, there\u2019s less enthusiasm for his trade policies",
+      "title": "While India’s public views Trump positively, there’s less enthusiasm for his trade policies",
       "link": "https://www.pewresearch.org/short-reads/2020/02/20/while-indias-public-views-trump-positively-theres-less-enthusiasm-for-his-trade-policies/",
       "date": "2020-02-20"
     },
@@ -18939,12 +19389,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-01-09"
     },
     {
-      "title": "La popolarit\u00e0 di Trump rimane bassa in tutto il mondo, mentre il giudizio sugli Stati Uniti resta per lo pi\u00f9 positivo",
+      "title": "La popolarità di Trump rimane bassa in tutto il mondo, mentre il giudizio sugli Stati Uniti resta per lo più positivo",
       "link": "https://www.pewresearch.org/global/2020/01/08/la-popolarita-di-trump-rimane-bassa-in-tutto-il-mondo-mentre-il-giudizio-sugli-stati-uniti-resta-per-lo-piu-positivo/",
       "date": "2020-01-08"
     },
     {
-      "title": "La calificaci\u00f3n de Trump se mantiene baja en todo el mundo, mientras que las opiniones sobre los Estados Unidos siguen siendo, en su mayor\u00eda, favorables",
+      "title": "La calificación de Trump se mantiene baja en todo el mundo, mientras que las opiniones sobre los Estados Unidos siguen siendo, en su mayoría, favorables",
       "link": "https://www.pewresearch.org/global/2020/01/08/la-calificacion-de-trump-se-mantiene-baja-en-todo-el-mundo-mientras-que-las-opiniones-sobre-los-estados-unidos-siguen-siendo-en-su-mayoria-favorables/",
       "date": "2020-01-08"
     },
@@ -18959,12 +19409,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2020-01-08"
     },
     {
-      "title": "2. Little support for Trump\u2019s international policies",
+      "title": "2. Little support for Trump’s international policies",
       "link": "https://www.pewresearch.org/global/2020/01/08/little-support-for-trumps-international-policies/",
       "date": "2020-01-08"
     },
     {
-      "title": "1. Little trust in Trump\u2019s handling of international affairs",
+      "title": "1. Little trust in Trump’s handling of international affairs",
       "link": "https://www.pewresearch.org/global/2020/01/08/little-trust-in-trumps-handling-of-international-affairs/",
       "date": "2020-01-08"
     },
@@ -18974,7 +19424,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-12-13"
     },
     {
-      "title": "U.S. has world\u2019s highest rate of children living in single-parent households",
+      "title": "U.S. has world’s highest rate of children living in single-parent households",
       "link": "https://www.pewresearch.org/short-reads/2019/12/12/u-s-children-more-likely-than-children-in-other-countries-to-live-with-just-one-parent/",
       "date": "2019-12-12"
     },
@@ -19009,7 +19459,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-12-12"
     },
     {
-      "title": "U.S. is seen as a top ally in many countries \u2013 but others view it as a threat",
+      "title": "U.S. is seen as a top ally in many countries – but others view it as a threat",
       "link": "https://www.pewresearch.org/short-reads/2019/12/05/u-s-is-seen-as-a-top-ally-in-many-countries-but-others-view-it-as-a-threat/",
       "date": "2019-12-05"
     },
@@ -19019,7 +19469,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-12-05"
     },
     {
-      "title": "China\u2019s Economic Growth Mostly Welcomed in Emerging Markets, but Neighbors Wary of Its Influence",
+      "title": "China’s Economic Growth Mostly Welcomed in Emerging Markets, but Neighbors Wary of Its Influence",
       "link": "https://www.pewresearch.org/global/2019/12/05/chinas-economic-growth-mostly-welcomed-in-emerging-markets-but-neighbors-wary-of-its-influence/",
       "date": "2019-12-05"
     },
@@ -19109,17 +19559,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-07-15"
     },
     {
-      "title": "For World Population Day, a look at the countries with the biggest projected gains \u2013 and losses \u2013 by 2100",
+      "title": "For World Population Day, a look at the countries with the biggest projected gains – and losses – by 2100",
       "link": "https://www.pewresearch.org/short-reads/2019/07/10/for-world-population-day-a-look-at-the-countries-with-the-biggest-projected-gains-and-losses-by-2100/",
       "date": "2019-07-10"
     },
     {
-      "title": "How people in G20 nations see key issues ahead of this year\u2019s summit",
+      "title": "How people in G20 nations see key issues ahead of this year’s summit",
       "link": "https://www.pewresearch.org/short-reads/2019/06/26/how-people-in-g20-nations-see-key-issues-ahead-of-this-years-summit/",
       "date": "2019-06-26"
     },
     {
-      "title": "World\u2019s population is projected to nearly stop growing by the end of the century",
+      "title": "World’s population is projected to nearly stop growing by the end of the century",
       "link": "https://www.pewresearch.org/short-reads/2019/06/17/worlds-population-is-projected-to-nearly-stop-growing-by-the-end-of-the-century/",
       "date": "2019-06-17"
     },
@@ -19134,7 +19584,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-05-31"
     },
     {
-      "title": "Key facts about U.S. immigration policies and Trump\u2019s proposed changes",
+      "title": "Key facts about U.S. immigration policies and Trump’s proposed changes",
       "link": "https://www.pewresearch.org/short-reads/2019/05/17/key-facts-about-u-s-immigration-policies-and-proposed-changes/",
       "date": "2019-05-17"
     },
@@ -19159,7 +19609,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-05-13"
     },
     {
-      "title": "1. Users say they regularly encounter false and misleading content on social media \u2013 but also new ideas",
+      "title": "1. Users say they regularly encounter false and misleading content on social media – but also new ideas",
       "link": "https://www.pewresearch.org/internet/2019/05/13/users-say-they-regularly-encounter-false-and-misleading-content-on-social-media-but-also-new-ideas/",
       "date": "2019-05-13"
     },
@@ -19194,7 +19644,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-04-29"
     },
     {
-      "title": "3. How people around the world view religion\u2019s role in their countries",
+      "title": "3. How people around the world view religion’s role in their countries",
       "link": "https://www.pewresearch.org/global/2019/04/22/how-people-around-the-world-view-religions-role-in-their-countries/",
       "date": "2019-04-22"
     },
@@ -19239,7 +19689,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2019-03-07"
     },
     {
-      "title": "3. People say the internet brings economic and educational benefits \u2013 but some are concerned about the societal impact of social media",
+      "title": "3. People say the internet brings economic and educational benefits – but some are concerned about the societal impact of social media",
       "link": "https://www.pewresearch.org/internet/2019/03/07/people-say-the-internet-brings-economic-and-educational-benefits-but-some-are-concerned-about-the-societal-impact-of-social-media/",
       "date": "2019-03-07"
     },
@@ -19299,7 +19749,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2018-12-17"
     },
     {
-      "title": "Many worldwide oppose more migration \u2013 both into and out of their countries",
+      "title": "Many worldwide oppose more migration – both into and out of their countries",
       "link": "https://www.pewresearch.org/short-reads/2018/12/10/many-worldwide-oppose-more-migration-both-into-and-out-of-their-countries/",
       "date": "2018-12-10"
     },
@@ -19324,12 +19774,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2018-11-05"
     },
     {
-      "title": "3. China\u2019s power seen as rising more than other major nations",
+      "title": "3. China’s power seen as rising more than other major nations",
       "link": "https://www.pewresearch.org/global/2018/10/01/chinas-power-seen-as-rising-more-than-other-major-nations/",
       "date": "2018-10-01"
     },
     {
-      "title": "Americans, Like Many in Other Advanced Economies, Not Convinced of Trade\u2019s Benefits",
+      "title": "Americans, Like Many in Other Advanced Economies, Not Convinced of Trade’s Benefits",
       "link": "https://www.pewresearch.org/global/2018/09/26/americans-like-many-in-other-advanced-economies-not-convinced-of-trades-benefits/",
       "date": "2018-09-26"
     },
@@ -19364,7 +19814,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2018-09-14"
     },
     {
-      "title": "Partisan Divides in Views of Many Countries \u2013 but Not North Korea",
+      "title": "Partisan Divides in Views of Many Countries – but Not North Korea",
       "link": "https://www.pewresearch.org/politics/2018/09/10/partisan-divides-in-views-of-many-countries-but-not-north-korea/",
       "date": "2018-09-10"
     },
@@ -19509,7 +19959,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2018-03-08"
     },
     {
-      "title": "C\u00f3mo se ve a la democracia, un gobierno militar y otros sistemas pol\u00edticos en pa\u00edses alrededor del mundo",
+      "title": "Cómo se ve a la democracia, un gobierno militar y otros sistemas políticos en países alrededor del mundo",
       "link": "https://www.pewresearch.org/global/2018/02/12/como-se-ve-a-la-democracia-un-gobierno-militar-y-otros-sistemas-politicos-en-paises-alrededor-del-mundo/",
       "date": "2018-02-12"
     },
@@ -19554,7 +20004,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-12-05"
     },
     {
-      "title": "Europe\u2019s Growing Muslim Population",
+      "title": "Europe’s Growing Muslim Population",
       "link": "https://www.pewresearch.org/religion/2017/11/29/europes-growing-muslim-population/",
       "date": "2017-11-29"
     },
@@ -19574,7 +20024,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-11-15"
     },
     {
-      "title": "3. Indians satisfied with country\u2019s direction but worry about crime, terrorism",
+      "title": "3. Indians satisfied with country’s direction but worry about crime, terrorism",
       "link": "https://www.pewresearch.org/global/2017/11/15/indians-satisfied-with-countrys-direction-but-worry-about-crime-terrorism/",
       "date": "2017-11-15"
     },
@@ -19604,7 +20054,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-10-30"
     },
     {
-      "title": "Japanese Divided on Democracy\u2019s Success at Home, but Value Voice of the People",
+      "title": "Japanese Divided on Democracy’s Success at Home, but Value Voice of the People",
       "link": "https://www.pewresearch.org/global/2017/10/17/japanese-divided-on-democracys-success-at-home-but-value-voice-of-the-people/",
       "date": "2017-10-17"
     },
@@ -19639,7 +20089,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-10-12"
     },
     {
-      "title": "Malala\u2019s 2012 shooting came at time of high social hostilities in Pakistan",
+      "title": "Malala’s 2012 shooting came at time of high social hostilities in Pakistan",
       "link": "https://www.pewresearch.org/short-reads/2017/10/09/malalas-2012-shooting-came-at-time-of-high-social-hostilities-in-pakistan/",
       "date": "2017-10-09"
     },
@@ -19659,7 +20109,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-09-19"
     },
     {
-      "title": "In global popularity contest, U.S. and China \u2013 not Russia \u2013 vie for first",
+      "title": "In global popularity contest, U.S. and China – not Russia – vie for first",
       "link": "https://www.pewresearch.org/short-reads/2017/08/23/in-global-popularity-contest-u-s-and-china-not-russia-vie-for-first/",
       "date": "2017-08-23"
     },
@@ -19679,7 +20129,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-08-09"
     },
     {
-      "title": "Few see EU as world\u2019s top economic power despite its relative might",
+      "title": "Few see EU as world’s top economic power despite its relative might",
       "link": "https://www.pewresearch.org/short-reads/2017/08/09/few-see-eu-as-worlds-top-economic-power-despite-its-relative-might/",
       "date": "2017-08-09"
     },
@@ -19704,7 +20154,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-07-26"
     },
     {
-      "title": "Globally, More Name U.S. Than China as World\u2019s Leading Economic Power",
+      "title": "Globally, More Name U.S. Than China as World’s Leading Economic Power",
       "link": "https://www.pewresearch.org/global/2017/07/13/more-name-u-s-than-china-as-worlds-leading-economic-power/",
       "date": "2017-07-13"
     },
@@ -19724,17 +20174,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-07-05"
     },
     {
-      "title": "People\u2019s views of their national economies don\u2019t always square with data",
+      "title": "People’s views of their national economies don’t always square with data",
       "link": "https://www.pewresearch.org/short-reads/2017/06/27/peoples-views-of-their-national-economies-dont-always-square-with-data/",
       "date": "2017-06-27"
     },
     {
-      "title": "4 charts on how Russians see their country\u2019s place in the world",
+      "title": "4 charts on how Russians see their country’s place in the world",
       "link": "https://www.pewresearch.org/short-reads/2017/06/21/4-charts-on-how-russians-see-their-countrys-place-in-the-world/",
       "date": "2017-06-21"
     },
     {
-      "title": "After Brexit, an uncertain fate for UK\u2019s nearly 3 million EU-born migrants",
+      "title": "After Brexit, an uncertain fate for UK’s nearly 3 million EU-born migrants",
       "link": "https://www.pewresearch.org/short-reads/2017/06/19/after-brexit-an-uncertain-fate-for-uks-nearly-3-million-migrants-from-eu/",
       "date": "2017-06-19"
     },
@@ -19774,7 +20224,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-04-27"
     },
     {
-      "title": "Religious restrictions vary significantly in the world\u2019s most populous countries",
+      "title": "Religious restrictions vary significantly in the world’s most populous countries",
       "link": "https://www.pewresearch.org/short-reads/2017/04/13/religious-restrictions-vary-significantly-in-the-worlds-most-populous-countries/",
       "date": "2017-04-13"
     },
@@ -19794,12 +20244,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-04-11"
     },
     {
-      "title": "Why people with no religion are projected to decline as a share of the world\u2019s population",
+      "title": "Why people with no religion are projected to decline as a share of the world’s population",
       "link": "https://www.pewresearch.org/short-reads/2017/04/07/why-people-with-no-religion-are-projected-to-decline-as-a-share-of-the-worlds-population/",
       "date": "2017-04-07"
     },
     {
-      "title": "Why Muslims are the world\u2019s fastest-growing religious group",
+      "title": "Why Muslims are the world’s fastest-growing religious group",
       "link": "https://www.pewresearch.org/short-reads/2017/04/06/why-muslims-are-the-worlds-fastest-growing-religious-group/",
       "date": "2017-04-06"
     },
@@ -19824,17 +20274,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2017-03-07"
     },
     {
-      "title": "India is a top source and destination for world\u2019s migrants",
+      "title": "India is a top source and destination for world’s migrants",
       "link": "https://www.pewresearch.org/short-reads/2017/03/03/india-is-a-top-source-and-destination-for-worlds-migrants/",
       "date": "2017-03-03"
     },
     {
-      "title": "World\u2019s Muslim population more widespread than you might think",
+      "title": "World’s Muslim population more widespread than you might think",
       "link": "https://www.pewresearch.org/short-reads/2017/01/31/worlds-muslim-population-more-widespread-than-you-might-think/",
       "date": "2017-01-31"
     },
     {
-      "title": "Many around the world say women\u2019s equality is very important",
+      "title": "Many around the world say women’s equality is very important",
       "link": "https://www.pewresearch.org/short-reads/2017/01/19/many-around-the-world-say-womens-equality-is-very-important/",
       "date": "2017-01-19"
     },
@@ -20039,17 +20489,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2016-06-29"
     },
     {
-      "title": "2. Obama\u2019s international image remains strong in Europe and Asia",
+      "title": "2. Obama’s international image remains strong in Europe and Asia",
       "link": "https://www.pewresearch.org/global/2016/06/29/2-obamas-international-image-remains-strong-in-europe-and-asia/",
       "date": "2016-06-29"
     },
     {
-      "title": "1. America\u2019s international image",
+      "title": "1. America’s international image",
       "link": "https://www.pewresearch.org/global/2016/06/29/americas-international-image/",
       "date": "2016-06-29"
     },
     {
-      "title": "4. Among the world\u2019s 25 most populous countries, the highest overall restrictions on religion in 2014 were in Egypt, Indonesia, Pakistan, Russia and Turkey",
+      "title": "4. Among the world’s 25 most populous countries, the highest overall restrictions on religion in 2014 were in Egypt, Indonesia, Pakistan, Russia and Turkey",
       "link": "https://www.pewresearch.org/religion/2016/06/23/among-the-worlds-25-most-populous-countries-the-highest-overall-restrictions-on-religion-in-2014-were-in-egypt-indonesia-pakistan-russia-and-turkey/",
       "date": "2016-06-23"
     },
@@ -20059,7 +20509,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2016-06-23"
     },
     {
-      "title": "About four-in-ten of the world\u2019s migrants live in the U.S. or Europe",
+      "title": "About four-in-ten of the world’s migrants live in the U.S. or Europe",
       "link": "https://www.pewresearch.org/short-reads/2016/06/22/about-four-in-ten-of-the-worlds-migrants-live-in-the-u-s-or-europe/",
       "date": "2016-06-22"
     },
@@ -20079,12 +20529,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2016-05-23"
     },
     {
-      "title": "World\u2019s centenarian population projected to grow eightfold by 2050",
+      "title": "World’s centenarian population projected to grow eightfold by 2050",
       "link": "https://www.pewresearch.org/short-reads/2016/04/21/worlds-centenarian-population-projected-to-grow-eightfold-by-2050/",
       "date": "2016-04-21"
     },
     {
-      "title": "Global tech companies see India\u2019s vast offline population as untapped market",
+      "title": "Global tech companies see India’s vast offline population as untapped market",
       "link": "https://www.pewresearch.org/short-reads/2016/04/06/global-tech-companies-see-indias-vast-offline-population-as-untapped-market/",
       "date": "2016-04-06"
     },
@@ -20129,12 +20579,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-12-23"
     },
     {
-      "title": "Asia\u2019s pivotal role at the Paris climate talks",
+      "title": "Asia’s pivotal role at the Paris climate talks",
       "link": "https://www.pewresearch.org/global/2015/12/03/asias-pivotal-role-at-the-paris-climate-talks/",
       "date": "2015-12-03"
     },
     {
-      "title": "Asia\u2019s views hold key to (lack of) climate change accord",
+      "title": "Asia’s views hold key to (lack of) climate change accord",
       "link": "https://www.pewresearch.org/global/2015/11/25/asias-views-hold-key-to-lack-of-climate-change-accord/",
       "date": "2015-11-25"
     },
@@ -20244,7 +20694,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-07-22"
     },
     {
-      "title": "China\u2019s middle class surges, while India\u2019s lags behind",
+      "title": "China’s middle class surges, while India’s lags behind",
       "link": "https://www.pewresearch.org/short-reads/2015/07/15/china-india-middle-class/",
       "date": "2015-07-15"
     },
@@ -20269,7 +20719,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-07-08"
     },
     {
-      "title": "Despite Poverty\u2019s Plunge, Middle-Class Status Remains Out of Reach for Many",
+      "title": "Despite Poverty’s Plunge, Middle-Class Status Remains Out of Reach for Many",
       "link": "https://www.pewresearch.org/global/2015/07/08/despite-povertys-plunge-middle-class-status-remains-out-of-reach-for-many/",
       "date": "2015-07-08"
     },
@@ -20289,7 +20739,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-07-08"
     },
     {
-      "title": "6 key takeaways about the world\u2019s emerging middle class",
+      "title": "6 key takeaways about the world’s emerging middle class",
       "link": "https://www.pewresearch.org/short-reads/2015/07/08/6-key-takeaways-about-the-worlds-emerging-middle-class/",
       "date": "2015-07-08"
     },
@@ -20319,12 +20769,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-06-23"
     },
     {
-      "title": "1. America\u2019s Global Image",
+      "title": "1. America’s Global Image",
       "link": "https://www.pewresearch.org/global/2015/06/23/1-americas-global-image/",
       "date": "2015-06-23"
     },
     {
-      "title": "What is each country\u2019s second-largest religious group?",
+      "title": "What is each country’s second-largest religious group?",
       "link": "https://www.pewresearch.org/short-reads/2015/06/22/what-is-each-countrys-second-largest-religious-group/",
       "date": "2015-06-22"
     },
@@ -20349,7 +20799,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-04-23"
     },
     {
-      "title": "By 2050, India to have world\u2019s largest populations of Hindus and Muslims",
+      "title": "By 2050, India to have world’s largest populations of Hindus and Muslims",
       "link": "https://www.pewresearch.org/short-reads/2015/04/21/by-2050-india-to-have-worlds-largest-populations-of-hindus-and-muslims/",
       "date": "2015-04-21"
     },
@@ -20369,7 +20819,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-04-02"
     },
     {
-      "title": "Number of Muslims Worldwide Expected to Nearly Equal Number of Christians by 2050; Religiously Unaffiliated Will Make Up Declining Share of World\u2019s Population",
+      "title": "Number of Muslims Worldwide Expected to Nearly Equal Number of Christians by 2050; Religiously Unaffiliated Will Make Up Declining Share of World’s Population",
       "link": "https://www.pewresearch.org/religion/2015/04/02/number-of-muslims-worldwide-expected-to-nearly-equal-number-of-christians-by-2050-religiously-unaffiliated-will-make-up-declining-share-of-worlds-population/",
       "date": "2015-04-02"
     },
@@ -20419,7 +20869,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-04-02"
     },
     {
-      "title": "Testimony of Jeffrey S. Passel \u2013 Unauthorized Immigrant Population: National and State Trends, Industries and Occupations",
+      "title": "Testimony of Jeffrey S. Passel – Unauthorized Immigrant Population: National and State Trends, Industries and Occupations",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2015/03/26/testimony-of-jeffrey-s-passel-unauthorized-immigrant-population/",
       "date": "2015-03-26"
     },
@@ -20464,7 +20914,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-03-04"
     },
     {
-      "title": "Religious restrictions among the world\u2019s most populous countries",
+      "title": "Religious restrictions among the world’s most populous countries",
       "link": "https://www.pewresearch.org/short-reads/2015/03/03/religious-restrictions-among-the-worlds-most-populous-countries/",
       "date": "2015-03-03"
     },
@@ -20494,7 +20944,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2015-02-26"
     },
     {
-      "title": "South Korea\u2019s Millennials downbeat about payoff of education, future",
+      "title": "South Korea’s Millennials downbeat about payoff of education, future",
       "link": "https://www.pewresearch.org/short-reads/2015/02/25/south-koreas-millennials-downbeat-about-payoff-of-education-future/",
       "date": "2015-02-25"
     },
@@ -20539,7 +20989,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-12-18"
     },
     {
-      "title": "Pope Francis\u2019 Image Positive in Much of World",
+      "title": "Pope Francis’ Image Positive in Much of World",
       "link": "https://www.pewresearch.org/global/2014/12/11/pope-francis-image-positive-in-much-of-world/",
       "date": "2014-12-11"
     },
@@ -20549,7 +20999,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-12-11"
     },
     {
-      "title": "Indians Don\u2019t Hate Foreigners and Their Money Anymore",
+      "title": "Indians Don’t Hate Foreigners and Their Money Anymore",
       "link": "https://www.pewresearch.org/global/2014/11/25/indians-dont-hate-foreigners-and-their-money-anymore/",
       "date": "2014-11-25"
     },
@@ -20634,7 +21084,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-09-30"
     },
     {
-      "title": "Modi\u2019s visit to U.S. builds on positive feelings between Indians and Americans",
+      "title": "Modi’s visit to U.S. builds on positive feelings between Indians and Americans",
       "link": "https://www.pewresearch.org/short-reads/2014/09/26/modis-visit-to-u-s-builds-on-positive-feelings-between-indians-and-americans/",
       "date": "2014-09-26"
     },
@@ -20649,7 +21099,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-09-16"
     },
     {
-      "title": "Indians among most likely in the world to see extremist groups as \u2018major threat\u2019",
+      "title": "Indians among most likely in the world to see extremist groups as ‘major threat’",
       "link": "https://www.pewresearch.org/short-reads/2014/09/10/indians-among-most-likely-in-the-world-to-see-extremist-groups-as-major-threat/",
       "date": "2014-09-10"
     },
@@ -20679,7 +21129,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-08-27"
     },
     {
-      "title": "News companies make play for India\u2019s growing digital market",
+      "title": "News companies make play for India’s growing digital market",
       "link": "https://www.pewresearch.org/short-reads/2014/08/22/news-companies-make-play-for-indias-growing-digital-market/",
       "date": "2014-08-22"
     },
@@ -20704,7 +21154,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-07-14"
     },
     {
-      "title": "Global Opposition to U.S. Surveillance and Drones, but Limited Harm to America\u2019s Image",
+      "title": "Global Opposition to U.S. Surveillance and Drones, but Limited Harm to America’s Image",
       "link": "https://www.pewresearch.org/global/2014/07/14/global-opposition-to-u-s-surveillance-and-drones-but-limited-harm-to-americas-image/",
       "date": "2014-07-14"
     },
@@ -20744,12 +21194,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-05-30"
     },
     {
-      "title": "Politics in India: Still a Man\u2019s Game",
+      "title": "Politics in India: Still a Man’s Game",
       "link": "https://www.pewresearch.org/global/2014/04/27/politics-in-india-still-a-mans-game/",
       "date": "2014-04-27"
     },
     {
-      "title": "Study: Rape in India a \u2018Major National Problem\u2019",
+      "title": "Study: Rape in India a ‘Major National Problem’",
       "link": "https://www.pewresearch.org/global/2014/04/23/study-rape-in-india-a-major-national-problem/",
       "date": "2014-04-23"
     },
@@ -20759,17 +21209,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-04-22"
     },
     {
-      "title": "Data Feed: Google\u2019s campaign donations, tax day facts, world military spending",
+      "title": "Data Feed: Google’s campaign donations, tax day facts, world military spending",
       "link": "https://www.pewresearch.org/short-reads/2014/04/14/data-feed-googles-campaign-donations-tax-day-facts-world-military-spending/",
       "date": "2014-04-14"
     },
     {
-      "title": "Data Feed: Congress\u2019 shrinking middle ground, internet ad revenue, U.S. global leadership",
+      "title": "Data Feed: Congress’ shrinking middle ground, internet ad revenue, U.S. global leadership",
       "link": "https://www.pewresearch.org/short-reads/2014/04/11/data-feed-congress-shrinking-middle-ground-internet-ad-revenue-u-s-global-leadership/",
       "date": "2014-04-11"
     },
     {
-      "title": "Why Pocketbook Politics Will Decide India\u2019s Election",
+      "title": "Why Pocketbook Politics Will Decide India’s Election",
       "link": "https://www.pewresearch.org/global/2014/04/08/why-pocketbook-politics-will-decide-indias-election/",
       "date": "2014-04-08"
     },
@@ -20784,12 +21234,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-04-08"
     },
     {
-      "title": "India\u2019s Watershed Moment Will Have Global Ripples",
+      "title": "India’s Watershed Moment Will Have Global Ripples",
       "link": "https://www.pewresearch.org/global/2014/04/07/indias-watershed-moment-will-have-global-ripples/",
       "date": "2014-04-07"
     },
     {
-      "title": "Data Feed: Democrats and inequality, remittances from migrant women, gasoline taxes, India\u2019s big election",
+      "title": "Data Feed: Democrats and inequality, remittances from migrant women, gasoline taxes, India’s big election",
       "link": "https://www.pewresearch.org/short-reads/2014/04/07/data-feed-democrats-and-inequality-remittances-from-migrant-women-gasoline-taxes-indias-big-election/",
       "date": "2014-04-07"
     },
@@ -20814,7 +21264,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-04-04"
     },
     {
-      "title": "Meet the Man Tipped as India\u2019s Next Leader",
+      "title": "Meet the Man Tipped as India’s Next Leader",
       "link": "https://www.pewresearch.org/global/2014/04/03/meet-the-man-tipped-as-indias-next-leader/",
       "date": "2014-04-03"
     },
@@ -20834,7 +21284,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-03-31"
     },
     {
-      "title": "India\u2019s BJP Says Economy Would Be First Priority",
+      "title": "India’s BJP Says Economy Would Be First Priority",
       "link": "https://www.pewresearch.org/global/2014/03/31/indias-bjp-says-economy-would-be-first-priority/",
       "date": "2014-03-31"
     },
@@ -20864,7 +21314,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-03-26"
     },
     {
-      "title": "Beware Irrational Exuberance Before India\u2019s Vote",
+      "title": "Beware Irrational Exuberance Before India’s Vote",
       "link": "https://www.pewresearch.org/global/2014/03/20/beware-irrational-exuberance-before-indias-vote/",
       "date": "2014-03-20"
     },
@@ -20874,7 +21324,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-03-13"
     },
     {
-      "title": "India\u2019s Upstart Party Preaches Anticorruption",
+      "title": "India’s Upstart Party Preaches Anticorruption",
       "link": "https://www.pewresearch.org/global/2014/03/12/indias-upstart-party-preaches-anticorruption/",
       "date": "2014-03-12"
     },
@@ -20884,7 +21334,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-03-11"
     },
     {
-      "title": "Predicting the future on the Web\u2019s 25th anniversary",
+      "title": "Predicting the future on the Web’s 25th anniversary",
       "link": "https://www.pewresearch.org/internet/2014/03/11/predicting-the-future-on-the-webs-25th-anniversary/",
       "date": "2014-03-11"
     },
@@ -20899,17 +21349,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-03-05"
     },
     {
-      "title": "India Announces April 7 as Start Date for World\u2019s Largest General Election",
+      "title": "India Announces April 7 as Start Date for World’s Largest General Election",
       "link": "https://www.pewresearch.org/global/2014/03/05/india-announces-april-7-as-start-date-for-worlds-largest-general-election/",
       "date": "2014-03-05"
     },
     {
-      "title": "India\u2019s election and the economy: A useful campaign",
+      "title": "India’s election and the economy: A useful campaign",
       "link": "https://www.pewresearch.org/global/2014/03/01/indias-election-and-the-economy-a-useful-campaign/",
       "date": "2014-03-01"
     },
     {
-      "title": "Data Feed: Millennials\u2019 college payoff, Marcellus Shale job boom, global food waste",
+      "title": "Data Feed: Millennials’ college payoff, Marcellus Shale job boom, global food waste",
       "link": "https://www.pewresearch.org/short-reads/2014/02/28/data-feed-millennials-college-education-payoff-marcellus-shale-job-boom-global-food-waste/",
       "date": "2014-02-28"
     },
@@ -20919,17 +21369,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-02-27"
     },
     {
-      "title": "Poll Indicates Landslide Victory by India\u2019s BJP Party",
+      "title": "Poll Indicates Landslide Victory by India’s BJP Party",
       "link": "https://www.pewresearch.org/global/2014/02/27/poll-indicates-landslide-victory-by-indias-bjp-party/",
       "date": "2014-02-27"
     },
     {
-      "title": "India\u2019s Opposition BJP Will Storm the Next Election",
+      "title": "India’s Opposition BJP Will Storm the Next Election",
       "link": "https://www.pewresearch.org/global/2014/02/27/indias-opposition-bjp-will-storm-the-next-election/",
       "date": "2014-02-27"
     },
     {
-      "title": "Indians\u2019 support for Modi, BJP shows an itch for change",
+      "title": "Indians’ support for Modi, BJP shows an itch for change",
       "link": "https://www.pewresearch.org/short-reads/2014/02/27/indians-support-for-modi-bjp-shows-an-itch-for-change/",
       "date": "2014-02-27"
     },
@@ -20939,12 +21389,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-02-27"
     },
     {
-      "title": "Everything\u2019s Coming Up Modi",
+      "title": "Everything’s Coming Up Modi",
       "link": "https://www.pewresearch.org/global/2014/02/27/everythings-coming-up-modi/",
       "date": "2014-02-27"
     },
     {
-      "title": "Poll Hints at Looming Defeat for India\u2019s Dominant Political Party",
+      "title": "Poll Hints at Looming Defeat for India’s Dominant Political Party",
       "link": "https://www.pewresearch.org/global/2014/02/26/poll-hints-at-looming-defeat-for-indias-dominant-political-party/",
       "date": "2014-02-26"
     },
@@ -20954,12 +21404,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-02-26"
     },
     {
-      "title": "Data Feed: Clinton\u2019s public image, consumer spending and education, cat bites and depression",
+      "title": "Data Feed: Clinton’s public image, consumer spending and education, cat bites and depression",
       "link": "https://www.pewresearch.org/short-reads/2014/02/21/data-feed-clintons-public-image-consumer-spending-and-education-cat-bites-and-depression/",
       "date": "2014-02-21"
     },
     {
-      "title": "Behind Facebook\u2019s WhatsApp purchase: A global appetite for texting",
+      "title": "Behind Facebook’s WhatsApp purchase: A global appetite for texting",
       "link": "https://www.pewresearch.org/short-reads/2014/02/20/behind-facebooks-whatsapp-purchase-a-global-appetite-for-texting/",
       "date": "2014-02-20"
     },
@@ -20979,7 +21429,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-01-30"
     },
     {
-      "title": "Data Feed: Hillary Clinton leads, GDP up 3.2%, uninsured don\u2019t like ACA",
+      "title": "Data Feed: Hillary Clinton leads, GDP up 3.2%, uninsured don’t like ACA",
       "link": "https://www.pewresearch.org/short-reads/2014/01/30/data-feed-hillary-clinton-leads-gdp-up-3-2-uninsured-dont-like-aca/",
       "date": "2014-01-30"
     },
@@ -21029,7 +21479,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2014-01-12"
     },
     {
-      "title": "Which countries Americans like \u2026 and don\u2019t",
+      "title": "Which countries Americans like … and don’t",
       "link": "https://www.pewresearch.org/short-reads/2013/12/30/which-countries-americans-like-and-dont/",
       "date": "2013-12-30"
     },
@@ -21069,7 +21519,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-12-17"
     },
     {
-      "title": "India \u2018More Important\u2019 Than China As an Ally to U.S.",
+      "title": "India ‘More Important’ Than China As an Ally to U.S.",
       "link": "https://www.pewresearch.org/global/2013/12/04/india-more-important-than-china-as-an-ally-to-u-s/",
       "date": "2013-12-04"
     },
@@ -21099,7 +21549,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-11-19"
     },
     {
-      "title": "Remittances to Latin America Recover\u2014but Not to Mexico",
+      "title": "Remittances to Latin America Recover—but Not to Mexico",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2013/11/15/remittances-to-latin-america-recover-but-not-to-mexico/",
       "date": "2013-11-15"
     },
@@ -21134,12 +21584,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-09-03"
     },
     {
-      "title": "China\u2019s economic influence in Asia doesn\u2019t always lead to positive feelings",
+      "title": "China’s economic influence in Asia doesn’t always lead to positive feelings",
       "link": "https://www.pewresearch.org/short-reads/2013/08/16/chinas-economic-influence-in-asia-doesnt-always-lead-to-positive-feelings/",
       "date": "2013-08-16"
     },
     {
-      "title": "America\u2019s Global Image Remains More Positive than China\u2019s",
+      "title": "America’s Global Image Remains More Positive than China’s",
       "link": "https://www.pewresearch.org/global/2013/07/18/americas-global-image-remains-more-positive-than-chinas/",
       "date": "2013-07-18"
     },
@@ -21204,7 +21654,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-05-07"
     },
     {
-      "title": "The World\u2019s Muslims: Religion, Politics and Society",
+      "title": "The World’s Muslims: Religion, Politics and Society",
       "link": "https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-overview/",
       "date": "2013-04-30"
     },
@@ -21219,7 +21669,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-04-30"
     },
     {
-      "title": "Conference Call Transcript: The World\u2019s Muslims: Religion, Politics and Society",
+      "title": "Conference Call Transcript: The World’s Muslims: Religion, Politics and Society",
       "link": "https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-event-transcript/",
       "date": "2013-04-30"
     },
@@ -21244,7 +21694,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-02-15"
     },
     {
-      "title": "Seeds of Unrest in Pakistan\u2019s Economy",
+      "title": "Seeds of Unrest in Pakistan’s Economy",
       "link": "https://www.pewresearch.org/global/2013/02/07/seeds-of-unrest-in-pakistans-economy/",
       "date": "2013-02-07"
     },
@@ -21264,7 +21714,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2013-02-04"
     },
     {
-      "title": "Viewpoint: Pakistan\u2019s Economic Woes Are Being Overlooked",
+      "title": "Viewpoint: Pakistan’s Economic Woes Are Being Overlooked",
       "link": "https://www.pewresearch.org/global/2013/01/28/viewpoint-pakistans-economic-woes-are-being-overlooked/",
       "date": "2013-01-28"
     },
@@ -21364,7 +21814,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-10-16"
     },
     {
-      "title": "From India Shining to \u2026 India Whining?",
+      "title": "From India Shining to … India Whining?",
       "link": "https://www.pewresearch.org/global/2012/10/10/from-india-shining-to-india-whining/",
       "date": "2012-10-10"
     },
@@ -21384,7 +21834,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-09-18"
     },
     {
-      "title": "Majority in India Not Satisfied with Country\u2019s Direction",
+      "title": "Majority in India Not Satisfied with Country’s Direction",
       "link": "https://www.pewresearch.org/short-reads/2012/09/18/majority-in-india-not-satisfied-with-countrys-direction/",
       "date": "2012-09-18"
     },
@@ -21409,7 +21859,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-09-10"
     },
     {
-      "title": "Goodbye \u2018India Shining\u2019",
+      "title": "Goodbye ‘India Shining’",
       "link": "https://www.pewresearch.org/global/2012/09/10/goodbye-india-shining/",
       "date": "2012-09-10"
     },
@@ -21439,7 +21889,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-09-10"
     },
     {
-      "title": "The World\u2019s Muslims: Unity and Diversity",
+      "title": "The World’s Muslims: Unity and Diversity",
       "link": "https://www.pewresearch.org/religion/2012/08/09/the-worlds-muslims-unity-and-diversity-executive-summary/",
       "date": "2012-08-09"
     },
@@ -21474,7 +21924,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-07-31"
     },
     {
-      "title": "Main Findings: Higher education\u2019s destination by 2020",
+      "title": "Main Findings: Higher education’s destination by 2020",
       "link": "https://www.pewresearch.org/internet/2012/07/27/main-findings-higher-educations-destination-by-2020/",
       "date": "2012-07-27"
     },
@@ -21539,7 +21989,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-07-12"
     },
     {
-      "title": "Emerging Economies \u2013 Rich And Confident",
+      "title": "Emerging Economies – Rich And Confident",
       "link": "https://www.pewresearch.org/global/2012/07/12/emerging-economies-rich-and-confident/",
       "date": "2012-07-12"
     },
@@ -21654,7 +22104,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-05-18"
     },
     {
-      "title": "India\u2019s Broken Promise",
+      "title": "India’s Broken Promise",
       "link": "https://www.pewresearch.org/global/2012/04/25/indias-broken-promise/",
       "date": "2012-04-25"
     },
@@ -21664,7 +22114,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-04-17"
     },
     {
-      "title": "U.S. is Top Destination for World\u2019s Migrants",
+      "title": "U.S. is Top Destination for World’s Migrants",
       "link": "https://www.pewresearch.org/short-reads/2012/03/13/u-s-is-top-destination-for-worlds-migrants/",
       "date": "2012-03-13"
     },
@@ -21714,7 +22164,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-03-08"
     },
     {
-      "title": "Overview of Migrants\u2019 Origins and Destinations",
+      "title": "Overview of Migrants’ Origins and Destinations",
       "link": "https://www.pewresearch.org/religion/2012/03/08/religious-migration-overview-of-migrants-origins-and-destinations/",
       "date": "2012-03-08"
     },
@@ -21739,7 +22189,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-03-08"
     },
     {
-      "title": "Faith on the Move \u2013 The Religious Affiliation of International Migrants",
+      "title": "Faith on the Move – The Religious Affiliation of International Migrants",
       "link": "https://www.pewresearch.org/religion/2012/03/08/religious-migration-exec/",
       "date": "2012-03-08"
     },
@@ -21754,7 +22204,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2012-03-08"
     },
     {
-      "title": "Does Humanitarian Aid Improve America\u2019s Image?",
+      "title": "Does Humanitarian Aid Improve America’s Image?",
       "link": "https://www.pewresearch.org/global/2012/03/06/does-humanitarian-aid-improve-americas-image/",
       "date": "2012-03-06"
     },
@@ -21859,7 +22309,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2011-08-09"
     },
     {
-      "title": "Rising Restrictions on Religion \u2013 One-third of the world\u2019s population experiences an increase",
+      "title": "Rising Restrictions on Religion – One-third of the world’s population experiences an increase",
       "link": "https://www.pewresearch.org/religion/2011/08/09/rising-restrictions-on-religion2/",
       "date": "2011-08-09"
     },
@@ -21924,7 +22374,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2011-06-21"
     },
     {
-      "title": "A Tech Mogul\u2019s Biography Galvanizes Social Media",
+      "title": "A Tech Mogul’s Biography Galvanizes Social Media",
       "link": "https://www.pewresearch.org/journalism/2011/04/21/tech-moguls-biography-galvanizes-social-media/",
       "date": "2011-04-21"
     },
@@ -21934,7 +22384,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2011-03-19"
     },
     {
-      "title": "Global Trouble Spots Top Public\u2019s News Interests",
+      "title": "Global Trouble Spots Top Public’s News Interests",
       "link": "https://www.pewresearch.org/politics/2011/02/24/global-trouble-spots-top-publics-news-interests/",
       "date": "2011-02-24"
     },
@@ -22069,22 +22519,22 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2010-11-09"
     },
     {
-      "title": "Obama\u2019s India trip stirs fears in Pakistan about power balance",
+      "title": "Obama’s India trip stirs fears in Pakistan about power balance",
       "link": "https://www.pewresearch.org/global/2010/11/05/obamas-india-trip-stirs-fears-in-pakistan-about-power-balance/",
       "date": "2010-11-05"
     },
     {
-      "title": "India\u2019s prosperity reflects 2 sides of coin",
+      "title": "India’s prosperity reflects 2 sides of coin",
       "link": "https://www.pewresearch.org/global/2010/11/05/indias-prosperity-reflects-2-sides-of-coin/",
       "date": "2010-11-05"
     },
     {
-      "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
+      "title": "Indonesia’s Place Along the Spectrum of Global Religious Restriction",
       "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
       "date": "2010-11-04"
     },
     {
-      "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
+      "title": "Indonesia’s Place Along the Spectrum of Global Religious Restriction",
       "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
       "date": "2010-11-04"
     },
@@ -22164,12 +22614,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2010-09-22"
     },
     {
-      "title": "Tablighi Jama\u2019at",
+      "title": "Tablighi Jama’at",
       "link": "https://www.pewresearch.org/religion/2010/09/15/muslim-networks-and-movements-in-western-europe-tablighi-jamaat/",
       "date": "2010-09-15"
     },
     {
-      "title": "Muslim Brotherhood and Jama\u2019at-i Islami",
+      "title": "Muslim Brotherhood and Jama’at-i Islami",
       "link": "https://www.pewresearch.org/religion/2010/09/15/muslim-networks-and-movements-in-western-europe-muslim-brotherhood-and-jamaat-i-islami/",
       "date": "2010-09-15"
     },
@@ -22254,7 +22704,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2010-06-17"
     },
     {
-      "title": "India\u2019s Census and the Caste Question",
+      "title": "India’s Census and the Caste Question",
       "link": "https://www.pewresearch.org/social-trends/2010/06/09/indias-census-and-the-caste-question/",
       "date": "2010-06-09"
     },
@@ -22274,7 +22724,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2010-03-19"
     },
     {
-      "title": "Reviving America\u2019s Global Image",
+      "title": "Reviving America’s Global Image",
       "link": "https://www.pewresearch.org/global/2010/03/05/reviving-americas-global-image/",
       "date": "2010-03-05"
     },
@@ -22394,7 +22844,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2009-10-20"
     },
     {
-      "title": "Obama\u2019s Nobel Prize",
+      "title": "Obama’s Nobel Prize",
       "link": "https://www.pewresearch.org/global/2009/10/09/obamas-nobel-prize/",
       "date": "2009-10-09"
     },
@@ -22439,7 +22889,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2009-08-28"
     },
     {
-      "title": "President Obama\u2019s Advisory Council on Faith-Based and Neighborhood Partnerships",
+      "title": "President Obama’s Advisory Council on Faith-Based and Neighborhood Partnerships",
       "link": "https://www.pewresearch.org/religion/2009/08/18/president-obamas-advisory-council-on-faith-based-and-neighborhood-partnerships/",
       "date": "2009-08-18"
     },
@@ -22459,12 +22909,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2009-08-13"
     },
     {
-      "title": "China Will Be World\u2019s Top Superpower",
+      "title": "China Will Be World’s Top Superpower",
       "link": "https://www.pewresearch.org/short-reads/2009/08/03/china-will-be-worlds-top-superpower/",
       "date": "2009-08-03"
     },
     {
-      "title": "Health Care Front-And-Center on Public\u2019s News Agenda",
+      "title": "Health Care Front-And-Center on Public’s News Agenda",
       "link": "https://www.pewresearch.org/politics/2009/07/30/health-care-front-and-center-on-publics-news-agenda/",
       "date": "2009-07-30"
     },
@@ -22554,7 +23004,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2008-12-19"
     },
     {
-      "title": "Part 3: Bush and America\u2019s Place in the the World",
+      "title": "Part 3: Bush and America’s Place in the the World",
       "link": "https://www.pewresearch.org/politics/2008/12/18/part-3-bush-and-americas-place-in-the-the-world/",
       "date": "2008-12-18"
     },
@@ -22574,7 +23024,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2008-12-11"
     },
     {
-      "title": "News of Obama\u2019s Team Linked with Mounting Challenges They\u2019ll Face",
+      "title": "News of Obama’s Team Linked with Mounting Challenges They’ll Face",
       "link": "https://www.pewresearch.org/journalism/2008/12/09/news-of-obamas-team-linked-with-mounting-challenges-theyll-face/",
       "date": "2008-12-09"
     },
@@ -22594,17 +23044,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2008-12-04"
     },
     {
-      "title": "Global Media Celebrate Obama Victory \u2013 But Cautious Too",
+      "title": "Global Media Celebrate Obama Victory – But Cautious Too",
       "link": "https://www.pewresearch.org/global/2008/11/13/global-media-celebrate-obama-victory-but-cautious-too/",
       "date": "2008-11-13"
     },
     {
-      "title": "Religion and Politics \u201908: The Candidates on the Issues",
+      "title": "Religion and Politics ’08: The Candidates on the Issues",
       "link": "https://www.pewresearch.org/religion/2008/11/04/religion-and-politics-08-the-candidates-on-the-issues/",
       "date": "2008-11-04"
     },
     {
-      "title": "Religion and Politics \u201908: John McCain",
+      "title": "Religion and Politics ’08: John McCain",
       "link": "https://www.pewresearch.org/religion/2008/11/04/religion-and-politics-08-john-mccain/",
       "date": "2008-11-04"
     },
@@ -22689,7 +23139,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2008-07-17"
     },
     {
-      "title": "Religious Groups\u2019 Official Positions on Stem Cell Research",
+      "title": "Religious Groups’ Official Positions on Stem Cell Research",
       "link": "https://www.pewresearch.org/religion/2008/07/17/religious-groups-official-positions-on-stem-cell-research/",
       "date": "2008-07-17"
     },
@@ -22729,7 +23179,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2008-06-19"
     },
     {
-      "title": "Global Economic Gloom \u2013 China and India Notable Exceptions",
+      "title": "Global Economic Gloom – China and India Notable Exceptions",
       "link": "https://www.pewresearch.org/global/2008/06/12/global-economic-gloom-china-and-india-notable-exceptions/",
       "date": "2008-06-12"
     },
@@ -22814,7 +23264,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-12-03"
     },
     {
-      "title": "Spiritual \u201cRenewalists\u201d in America",
+      "title": "Spiritual “Renewalists” in America",
       "link": "https://www.pewresearch.org/short-reads/2007/11/27/spiritual-renewalists-in-america/",
       "date": "2007-11-27"
     },
@@ -22849,7 +23299,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-10-30"
     },
     {
-      "title": "World Publics Welcome Global Trade \u2014 But Not Immigration",
+      "title": "World Publics Welcome Global Trade — But Not Immigration",
       "link": "https://www.pewresearch.org/global/2007/10/04/world-publics-welcome-global-trade-but-not-immigration/",
       "date": "2007-10-04"
     },
@@ -22879,12 +23329,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-10-04"
     },
     {
-      "title": "Musharraf\u2019s Support Shrinks, Even As More Pakistanis Reject Terrorism\u2026 and the U.S.",
+      "title": "Musharraf’s Support Shrinks, Even As More Pakistanis Reject Terrorism… and the U.S.",
       "link": "https://www.pewresearch.org/global/2007/08/08/pakistanis-increasingly-reject-terrorism-and-the-us/",
       "date": "2007-08-08"
     },
     {
-      "title": "Happiness Is Increasing in Many Countries \u2014 But Why?",
+      "title": "Happiness Is Increasing in Many Countries — But Why?",
       "link": "https://www.pewresearch.org/global/2007/07/24/happiness-is-increasing-in-many-countries-but-why/",
       "date": "2007-07-24"
     },
@@ -22939,7 +23389,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-06-27"
     },
     {
-      "title": "Chapter 2. Global Threats: The World\u2019s Shifting Agenda",
+      "title": "Chapter 2. Global Threats: The World’s Shifting Agenda",
       "link": "https://www.pewresearch.org/global/2007/06/27/chapter-2-global-threats-the-worlds-shifting-agenda/",
       "date": "2007-06-27"
     },
@@ -22964,7 +23414,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-05-16"
     },
     {
-      "title": "God\u2019s Will: Iran\u2019s Polity and the Challenges of the Future",
+      "title": "God’s Will: Iran’s Polity and the Challenges of the Future",
       "link": "https://www.pewresearch.org/religion/2007/05/15/gods-will-irans-polity-and-the-challenges-of-the-future/",
       "date": "2007-05-15"
     },
@@ -22974,7 +23424,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2007-05-09"
     },
     {
-      "title": "America\u2019s Image in the World: Findings from the Pew Global Attitudes Project",
+      "title": "America’s Image in the World: Findings from the Pew Global Attitudes Project",
       "link": "https://www.pewresearch.org/global/2007/03/14/americas-image-in-the-world-findings-from-the-pew-global-attitudes-project/",
       "date": "2007-03-14"
     },
@@ -23014,7 +23464,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-10-05"
     },
     {
-      "title": "Spirit and Power \u2013 A 10-Country Survey of Pentecostals",
+      "title": "Spirit and Power – A 10-Country Survey of Pentecostals",
       "link": "https://www.pewresearch.org/religion/2006/10/05/spirit-and-power/",
       "date": "2006-10-05"
     },
@@ -23069,12 +23519,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-09-24"
     },
     {
-      "title": "Scenario Three: Autonomous technology is a problem\u2026",
+      "title": "Scenario Three: Autonomous technology is a problem…",
       "link": "https://www.pewresearch.org/internet/2006/09/24/scenario-three-autonomous-technology-is-a-problem/",
       "date": "2006-09-24"
     },
     {
-      "title": "Scenario Six: The internet opens worldwide access to success\u2026",
+      "title": "Scenario Six: The internet opens worldwide access to success…",
       "link": "https://www.pewresearch.org/internet/2006/09/24/scenario-six-the-internet-opens-worldwide-access-to-success/",
       "date": "2006-09-24"
     },
@@ -23094,7 +23544,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-09-24"
     },
     {
-      "title": "Japan\u2019s View of China\u2019s Military Might",
+      "title": "Japan’s View of China’s Military Might",
       "link": "https://www.pewresearch.org/short-reads/2006/09/22/japans-view-of-chinas-military-might/",
       "date": "2006-09-22"
     },
@@ -23114,17 +23564,17 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-08-24"
     },
     {
-      "title": "\u201cRemedy\u201d Ads May be Hazardous to Your Health",
+      "title": "“Remedy” Ads May be Hazardous to Your Health",
       "link": "https://www.pewresearch.org/2006/08/23/remedy-ads-may-be-hazardous-to-your-health/",
       "date": "2006-08-23"
     },
     {
-      "title": "What\u2019s Next for the Ethnic Media?",
+      "title": "What’s Next for the Ethnic Media?",
       "link": "https://www.pewresearch.org/journalism/2006/08/21/whats-next-for-the-ethnic-media/",
       "date": "2006-08-21"
     },
     {
-      "title": "America\u2019s Foreign Fans",
+      "title": "America’s Foreign Fans",
       "link": "https://www.pewresearch.org/short-reads/2006/08/09/americas-foreign-fans/",
       "date": "2006-08-09"
     },
@@ -23134,7 +23584,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-07-24"
     },
     {
-      "title": "Timothy Samuel Shah Explains \u2019Why God is Winning\u2019",
+      "title": "Timothy Samuel Shah Explains ’Why God is Winning’",
       "link": "https://www.pewresearch.org/religion/2006/07/18/timothy-samuel-shah-explains-why-god-is-winning/",
       "date": "2006-07-18"
     },
@@ -23189,7 +23639,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-06-22"
     },
     {
-      "title": "I. Muslims and the West \u2013 How Each Sees The Other",
+      "title": "I. Muslims and the West – How Each Sees The Other",
       "link": "https://www.pewresearch.org/global/2006/06/22/i-muslims-and-the-west-how-each-sees-the-other/",
       "date": "2006-06-22"
     },
@@ -23204,12 +23654,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-06-13"
     },
     {
-      "title": "I. America\u2019s Image and U.S. Foreign Policy",
+      "title": "I. America’s Image and U.S. Foreign Policy",
       "link": "https://www.pewresearch.org/global/2006/06/13/i-americas-image-and-u-s-foreign-policy/",
       "date": "2006-06-13"
     },
     {
-      "title": "America\u2019s Image Slips, But Allies Share U.S. Concerns Over Iran, Hamas",
+      "title": "America’s Image Slips, But Allies Share U.S. Concerns Over Iran, Hamas",
       "link": "https://www.pewresearch.org/global/2006/06/13/americas-image-slips-but-allies-share-us-concerns-over-iran-hamas/",
       "date": "2006-06-13"
     },
@@ -23234,7 +23684,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-04-24"
     },
     {
-      "title": "The New Face of Global Christianity: The Emergence of \u2019Progressive Pentecostalism\u2019",
+      "title": "The New Face of Global Christianity: The Emergence of ’Progressive Pentecostalism’",
       "link": "https://www.pewresearch.org/religion/2006/04/12/the-new-face-of-global-christianity-the-emergence-of-progressive-pentecostalism/",
       "date": "2006-04-12"
     },
@@ -23279,7 +23729,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2006-02-07"
     },
     {
-      "title": "Russia\u2019s Weakened Democratic Embrace",
+      "title": "Russia’s Weakened Democratic Embrace",
       "link": "https://www.pewresearch.org/global/2006/01/05/russias-weakened-democratic-embrace/",
       "date": "2006-01-05"
     },
@@ -23309,7 +23759,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2005-11-16"
     },
     {
-      "title": "China\u2019s Optimism",
+      "title": "China’s Optimism",
       "link": "https://www.pewresearch.org/global/2005/11/16/chinas-optimism/",
       "date": "2005-11-16"
     },
@@ -23354,7 +23804,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2005-06-23"
     },
     {
-      "title": "Chapter 4. Views of America\u2019s Role in the World",
+      "title": "Chapter 4. Views of America’s Role in the World",
       "link": "https://www.pewresearch.org/global/2005/06/23/chapter-4-views-of-americas-role-in-the-world/",
       "date": "2005-06-23"
     },
@@ -23444,7 +23894,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2003-11-18"
     },
     {
-      "title": "Global Gender Gaps \u2013 Women Like Their Lives Better",
+      "title": "Global Gender Gaps – Women Like Their Lives Better",
       "link": "https://www.pewresearch.org/global/2003/10/29/global-gender-gaps/",
       "date": "2003-10-29"
     },
@@ -23489,7 +23939,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2003-06-03"
     },
     {
-      "title": "Ambassador\u2019s Address His Excellency Martin Palou\u0161, Czech Ambassador to the United States",
+      "title": "Ambassador’s Address His Excellency Martin Palouš, Czech Ambassador to the United States",
       "link": "https://www.pewresearch.org/religion/2003/04/09/ambassadors-address-his-excellency-martin-palou-czech-ambassador-to-the-united-states/",
       "date": "2003-04-09"
     },
@@ -23504,12 +23954,12 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2003-02-05"
     },
     {
-      "title": "Bush Targets Top Global Problem \u2013 AIDS",
+      "title": "Bush Targets Top Global Problem – AIDS",
       "link": "https://www.pewresearch.org/politics/2003/01/31/bush-targets-top-global-problem-aids-2/",
       "date": "2003-01-31"
     },
     {
-      "title": "Bush Targets Top Global Problem \u2013 AIDS",
+      "title": "Bush Targets Top Global Problem – AIDS",
       "link": "https://www.pewresearch.org/global/2003/01/31/bush-targets-top-global-problem-aids/",
       "date": "2003-01-31"
     },
@@ -23569,7 +24019,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2002-02-06"
     },
     {
-      "title": "Unusually High Interest In Bush\u2019s State Of The Union",
+      "title": "Unusually High Interest In Bush’s State Of The Union",
       "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
       "date": "2002-01-17"
     },
@@ -23634,7 +24084,7 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "1998-06-15"
     },
     {
-      "title": "America\u2019s Place in the World II",
+      "title": "America’s Place in the World II",
       "link": "https://www.pewresearch.org/politics/1997/10/10/americas-place-in-the-world-ii/",
       "date": "1997-10-10"
     }
@@ -23653,19 +24103,19 @@ window.INDIA_DASHBOARD_DATA = {
       "description": "An Indian Pilot Takes On A Terrorist, At 34,000 Feet"
     },
     {
-      "title": "India\u2019s Voters Are Fast Becoming Transactional",
+      "title": "India’s Voters Are Fast Becoming Transactional",
       "link": "https://politypolicy.substack.com/p/indias-voters-are-fast-becoming-transactional",
       "published": "Thu, 17 Sep 2026 10:47:21 GMT",
-      "description": "...and it\u2019s good news"
+      "description": "...and it’s good news"
     },
     {
       "title": "Stop Fearing India's $110 Billion China Deficit",
       "link": "https://politypolicy.substack.com/p/stop-fearing-indias-110-billion-china",
       "published": "Mon, 14 Sep 2026 11:19:33 GMT",
-      "description": "New Delhi\u2019s trade imbalance with Beijing will increase before it decreases"
+      "description": "New Delhi’s trade imbalance with Beijing will increase before it decreases"
     },
     {
-      "title": "Why You May Not \u2018Feel\u2019 The GDP Growth?",
+      "title": "Why You May Not ‘Feel’ The GDP Growth?",
       "link": "https://politypolicy.substack.com/p/why-you-may-not-feel-the-gdp-growth",
       "published": "Wed, 09 Sep 2026 10:14:09 GMT",
       "description": "What Lies Beyond the Mathematical Fallacies Manufactured For Television"
@@ -23674,13 +24124,13 @@ window.INDIA_DASHBOARD_DATA = {
       "title": "Modi Must Build the Cities States Won't",
       "link": "https://politypolicy.substack.com/p/modi-must-build-the-cities-states",
       "published": "Mon, 07 Sep 2026 12:15:29 GMT",
-      "description": "BJP\u2019s Infrastructure Story Needs A Local Detour"
+      "description": "BJP’s Infrastructure Story Needs A Local Detour"
     },
     {
-      "title": "It\u2019s Working 7.8 Per Cent Growth In Q1 FY2027",
+      "title": "It’s Working 7.8 Per Cent Growth In Q1 FY2027",
       "link": "https://politypolicy.substack.com/p/its-working-78-per-cent-growth-in",
       "published": "Tue, 01 Sep 2026 06:06:57 GMT",
-      "description": "Except for a few voices, nobody talks about India\u2019s debt."
+      "description": "Except for a few voices, nobody talks about India’s debt."
     },
     {
       "title": "India's Fiscal Nightmare: The Strait of Hormuz",
@@ -23698,7 +24148,7 @@ window.INDIA_DASHBOARD_DATA = {
       "title": "Petrol And Pizza, Crude and Capsicum",
       "link": "https://politypolicy.substack.com/p/petrol-and-pizza-crude-and-capsicum",
       "published": "Thu, 09 Jul 2026 06:09:08 GMT",
-      "description": "The economics and environmentalism around ethanol bashing don\u2019t add up."
+      "description": "The economics and environmentalism around ethanol bashing don’t add up."
     },
     {
       "title": "Why Is The Prime Minister Travelling To Indonesia and Australia",

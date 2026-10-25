@@ -318,39 +318,44 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(locale, { maximumFractionDigits: 2 })} ${unit[1]}${unitSuffix ? ` ${unitSuffix}` : ''}`;
 };
 
-const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false) => {
+const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line') => {
+  const isRadialChart = chartType === 'pie' || chartType === 'doughnut';
   const pluginsConfig = {
-    legend: { display: false },
-    tooltip: { 
-      backgroundColor: 'rgba(11, 15, 25, 0.95)', 
-      titleColor: '#ff9933', 
-      bodyColor: '#e8edf2', 
-      borderColor: 'rgba(255, 153, 51, 0.35)', 
-      borderWidth: 1, 
+    legend: { display: isRadialChart, position: 'bottom' },
+    tooltip: {
+      backgroundColor: 'rgba(11, 15, 25, 0.95)',
+      titleColor: '#ff9933',
+      bodyColor: '#e8edf2',
+      borderColor: 'rgba(255, 153, 51, 0.35)',
+      borderWidth: 1,
       padding: 12,
       boxPadding: 6,
       usePointStyle: true,
-      callbacks: { 
-        label: context => ` ${context.dataset.label || 'Value'}: ${formatMagnitude(horizontalBars ? context.parsed.x : context.parsed.y, suffix)}`
-      } 
+      callbacks: {
+        label: context => {
+          const value = isRadialChart ? context.raw : horizontalBars ? context.parsed.x : context.parsed.y;
+          const label = isRadialChart ? context.label : context.dataset.label || 'Value';
+          return ` ${label}: ${formatMagnitude(value, suffix)}`;
+        }
+      }
     }
   };
-
-  if (typeof Chart !== 'undefined' && Chart.registry && Chart.registry.plugins && Chart.registry.plugins.get('zoom')) {
-    pluginsConfig.zoom = { 
-      pan: { enabled: true, mode: 'x' }, 
-      zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' } 
+  if (!isRadialChart && typeof Chart !== 'undefined' && Chart.registry && Chart.registry.plugins && Chart.registry.plugins.get('zoom')) {
+    pluginsConfig.zoom = {
+      pan: { enabled: true, mode: 'x' },
+      zoom: { wheel: { enabled: true }, pinch: { enabled: true }, mode: 'x' }
     };
   }
-
-  return {
+  const options = {
     responsive: true,
     maintainAspectRatio: false,
     indexAxis: horizontalBars ? 'y' : 'x',
     animation: { duration: 600, easing: 'easeOutQuart' },
-    interaction: { mode: 'index', intersect: false },
-    plugins: pluginsConfig,
-    scales: horizontalBars ? {
+    interaction: { mode: 'index', intersect: isRadialChart },
+    plugins: pluginsConfig
+  };
+  if (!isRadialChart) {
+    options.scales = horizontalBars ? {
       x: {
         grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
         ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, callback: value => formatMagnitude(value, suffix) }
@@ -360,16 +365,17 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
         ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, autoSkip: false, padding: 8 }
       }
     } : {
-      x: { 
-        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } } 
+      x: {
+        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } }
       },
-      y: { 
-        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false }, 
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) } 
-      },
-    },
-  };
+      y: {
+        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) }
+      }
+    };
+  }
+  return options;
 };
 
 async function safeFetchJson(filename, defaultVal = {}) {
@@ -416,9 +422,12 @@ async function main() {
     ]);
   }
 
-  const electionResults = await safeFetchJson('election-results.json', { series: {} });
+  const [electionResults, usCampaignFinance] = await Promise.all([
+    safeFetchJson('election-results.json', { series: {} }),
+    safeFetchJson('us-campaign-finance.json', { series: {} }),
+  ]);
   const data = dataPayload || { series: {} };
-  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}) };
+  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}) };
   const heroChartCount = document.querySelector('#hero-chart-count');
   if (heroChartCount) heroChartCount.textContent = String(definitions.length);
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
@@ -505,6 +514,7 @@ async function main() {
     'Crime & Security': "assets/supreme-court.svg",
     'Pew Research': "assets/lotus-temple.svg",
     Elections: "assets/eci-building.svg",
+    'U.S. Elections': "assets/us-capitol.svg",
     'Tourism & Heritage': "assets/hampi.svg"
   };
 
@@ -546,7 +556,7 @@ async function main() {
     if (event.key === 'Escape') closeExpandedChart();
   });
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -587,7 +597,7 @@ async function main() {
     let peakValStr = 'N/A';
 
     if (live) {
-      if (series.scope === 'state' && values.length > 0) {
+      if (['state', 'category'].includes(series.scope) && values.length > 0) {
         const available = values
           .map((value, index) => ({ value, state: labels[index] }))
           .filter(point => point.value !== null && point.value !== undefined && !isNaN(point.value));
@@ -625,9 +635,9 @@ async function main() {
 
     const valueCruncherHtml = `
       <div class="value-cruncher-bar">
-        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'States covered' : 'Latest Value'}</span><strong class="vc-val">${latestValStr}</strong></div>
-        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'Measure' : '5Y Trend'}</span><strong class="vc-val growth">${growth5YrStr}</strong></div>
-        <div class="vc-stat"><span class="vc-label">${series.scope === 'state' ? 'Highest state' : 'Historical Peak'}</span><strong class="vc-val">${peakValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${['state', 'category'].includes(series.scope) ? (series.scopeLabel || 'Categories covered') : 'Latest Value'}</span><strong class="vc-val">${latestValStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${['state', 'category'].includes(series.scope) ? 'Measure' : '5Y Trend'}</span><strong class="vc-val growth">${growth5YrStr}</strong></div>
+        <div class="vc-stat"><span class="vc-label">${['state', 'category'].includes(series.scope) ? (series.highestLabel || 'Highest category') : 'Historical Peak'}</span><strong class="vc-val">${peakValStr}</strong></div>
         <div class="vc-stat"><span class="vc-label">Observations</span><strong class="vc-val">${observationCount} ${frequency.toLowerCase()}</strong></div>
       </div>
     `;
@@ -696,6 +706,8 @@ async function main() {
       return g;
     };
 
+    const isRadialChart = series.chartType === 'pie' || series.chartType === 'doughnut';
+    const radialColors = ['#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344'];
     let chartDatasets = [];
     if (series.datasets && series.datasets.length > 0) {
       chartDatasets = series.datasets.map((dataset, i) => {
@@ -719,14 +731,15 @@ async function main() {
       chartDatasets = [{
         label: title,
         data: values,
-        borderColor: singleColor,
-        backgroundColor: createGradientFill(singleColor.slice(0, 7)),
-        fill: true,
-        borderWidth: 2.8,
-        pointRadius: 3,
-        pointHoverRadius: 6,
+        borderColor: isRadialChart ? radialColors : singleColor,
+        backgroundColor: isRadialChart ? radialColors : createGradientFill(singleColor.slice(0, 7)),
+        fill: !isRadialChart,
+        borderWidth: isRadialChart ? 2 : 2.8,
+        hoverOffset: isRadialChart ? 8 : 0,
+        pointRadius: isRadialChart ? 0 : 3,
+        pointHoverRadius: isRadialChart ? 0 : 6,
         pointHoverBackgroundColor: singleColor,
-        tension: 0.32
+        tension: isRadialChart ? 0 : 0.32
       }];
     }
 
@@ -735,7 +748,7 @@ async function main() {
       chart = new Chart(canvas, {
         type: series.chartType || 'line',
         data: { labels, datasets: chartDatasets },
-        options: chartOptions(suffix, hasMultipleDatasets, series.chartType === 'bar' && series.indexAxis === 'y'),
+      options: chartOptions(suffix, hasMultipleDatasets, series.chartType === 'bar' && series.indexAxis === 'y', series.chartType || 'line'),
       });
       canvas.addEventListener('dblclick', () => card.querySelector('.expand-chart-btn')?.click());
     }
@@ -835,7 +848,8 @@ async function main() {
   if (liveCount) liveCount.textContent = String(cards.filter(card => card.dataset.state === 'live').length);
   const subgroupGroups = { 
     'Indian Elections': 'Elections',
-    'U.S. Elections': 'Elections',
+    'U.S. Presidential Elections': 'U.S. Elections',
+    'U.S. Federal Campaign Finance': 'U.S. Elections',
     Macroeconomics: 'Economic', 
     'Per Capita Income & Wealth': 'Economic',
     'Monetary Policy': 'Economic', 
@@ -877,7 +891,7 @@ async function main() {
     'World Heritage Sites': 'Tourism & Heritage'
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Elections', 'International Visitor Trends', 'World Heritage Sites'],
+    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Presidential Elections', 'U.S. Federal Campaign Finance', 'International Visitor Trends', 'World Heritage Sites'],
     Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Production & Commodities'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
@@ -888,7 +902,8 @@ async function main() {
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
     'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
     'Pew Research': ['Public opinion'],
-    Elections: ['Indian Elections', 'U.S. Elections'],
+    Elections: ['Indian Elections'],
+    'U.S. Elections': ['U.S. Presidential Elections', 'U.S. Federal Campaign Finance'],
     'Tourism & Heritage': ['International Visitor Trends', 'World Heritage Sites']
   };
   groupToSubgroups.all.push('State Infrastructure & Services');
@@ -912,7 +927,8 @@ async function main() {
         'Defence & Strategic': '🛡️ Defence & Strategic',
         'Crime & Security': '⚖️ Crime & Security',
         'Pew Research': '📊 Pew Research',
-        Elections: '🗳️ Elections'
+        Elections: '🗳️ Elections',
+        'U.S. Elections': '🇺🇸 U.S. Elections'
       };
       Object.keys(groupToSubgroups).forEach(grpKey => {
         if (grpKey === 'all') return;
@@ -1010,6 +1026,12 @@ async function main() {
       badge1: "Election Commission of India",
       badge2: "Historical coverage is partial"
     },
+    "U.S. Elections": {
+      title: "🇺🇸 U.S. Elections & Campaign Finance",
+      desc: "Explore U.S. presidential Electoral College outcomes from the National Archives alongside Federal Election Commission candidate-finance summaries for presidential, Senate and House cycles. Finance charts report aggregate receipts, disbursements, cash on hand and debts by party or candidate office state; they are not voting or turnout measures.",
+      badge1: "U.S. National Archives & FEC",
+      badge2: "Presidential + Congress"
+    },
     "Tourism & Heritage": {
       title: "🏛️ Tourism & UNESCO World Heritage",
       desc: "Follow annual international visitor and receipts indicators, then explore India’s UNESCO World Heritage properties by inscription year. Visitor totals are national, while the heritage series is reconstructed from current official inscription records; neither is a state-wise monument attendance measure.",
@@ -1049,7 +1071,8 @@ async function main() {
     "Terrorism": "assets/supreme-court.svg",
     "Public opinion": "assets/lotus-temple.svg",
     "Indian Elections": "assets/eci-building.svg",
-    "U.S. Elections": "assets/eci-building.svg",
+    "U.S. Presidential Elections": "assets/us-capitol.svg",
+    "U.S. Federal Campaign Finance": "assets/us-capitol.svg",
     "International Visitor Trends": "assets/taj-mahal.svg",
     "World Heritage Sites": "assets/hampi.svg"
   };
@@ -1277,11 +1300,17 @@ async function main() {
       badge1: "ECI results & report archive",
       badge2: "Historical archive is partial"
     },
-    "U.S. Elections": {
-      title: "🇺🇸 U.S. Presidential Electoral College",
-      desc: "Read Presidential winner and main-opponent Electoral College totals from the U.S. National Archives for completed cycles from 2000 through 2024. Electoral College votes are not popular votes or ballots cast, and the series is separate from Indian candidate-level constituency returns.",
-      badge1: "U.S. National Archives",
-      badge2: "Electoral College votes"
+    "U.S. Presidential Elections": {
+      title: "🇺🇸 U.S. Presidential Elections",
+      desc: "Read completed Presidential Electoral College results from the U.S. National Archives alongside FEC candidate-finance snapshots. Electoral College totals are not popular votes or ballots cast; campaign receipts are not vote totals.",
+      badge1: "U.S. National Archives & FEC",
+      badge2: "Electoral votes + campaign finance"
+    },
+    "U.S. Federal Campaign Finance": {
+      title: "🏛️ U.S. Federal Campaign Finance",
+      desc: "Compare FEC-reported candidate receipts, disbursements, cash on hand and debts for House and Senate election cycles. State values are grouped by the candidate's office state and party values are not presented as voting outcomes.",
+      badge1: "Federal Election Commission",
+      badge2: "2018–2024 election cycles"
     },
     "International Visitor Trends": {
       title: "🧳 International Visitor Trends",

@@ -36,6 +36,7 @@ class TourismHeritageTests(unittest.TestCase):
         self.assertEqual(annual["values"][:3], [1, 0, 1])
         self.assertIn("current official list", cumulative["note"])
         self.assertEqual(series["unesco_india_current_categories"]["values"], [1, 1, 0])
+        self.assertEqual(series["unesco_india_current_categories"]["chartType"], "doughnut")
 
     def test_published_tourism_series_have_sources_and_dashboard_placements(self):
         payload = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))
@@ -54,6 +55,7 @@ class TourismHeritageTests(unittest.TestCase):
             self.assertTrue(series.get("source"), key)
             self.assertIn(key, definitions)
         self.assertGreater(payload["series"]["unesco_india_sites_cumulative"]["values"][-1], 0)
+        self.assertEqual(payload["series"]["unesco_india_current_categories"]["chartType"], "doughnut")
 
 
 if __name__ == "__main__":

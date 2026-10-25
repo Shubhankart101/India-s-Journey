@@ -1,6 +1,6 @@
 # Election data coverage
 
-The Elections group separates different electoral systems and source types. It does not combine Indian candidate votes with U.S. Electoral College votes or describe them as directly comparable.
+The dashboard separates **Elections** (Indian results) from **U.S. Elections** (U.S. National Archives results and FEC campaign-finance aggregates). It does not combine Indian candidate votes with U.S. Electoral College votes or describe campaign finances as election outcomes.
 
 ## Current Indian results
 
@@ -28,13 +28,20 @@ The dashboard's historical explorer lets readers choose an available election ty
 
 ECI voter services and Chief Electoral Officer notices publish Special Summary Revision (SSR) and Special Intensive Revision (SIR) instructions, schedules and occasional roll statistics. The project links the official [ECI voter services portal](https://voters.eci.gov.in/) but does **not** yet publish a complete, comparable State/constituency time series of additions, deletions, claims, objections and final elector totals for SSR/SIR. The public notices are not a consistent machine-readable historical feed; no missing totals are inferred from current elector counts. A dedicated index requires extraction from the official revision tables and explicit year/State/roll-stage coverage.
 
-## United States: Presidential elections
+## United States: Presidential elections and campaign finance
 
-The dashboard reads winner and main-opponent Electoral College totals for U.S. Presidential elections from 2000 through 2024.
+The standalone **U.S. Elections** group contains:
 
-- Source: [National Archives Electoral College results](https://www.archives.gov/electoral-college).
-- Measure: Electoral College votes, not popular votes or ballots cast.
+- National Archives winner and main-opponent Electoral College totals for Presidential elections from 2000 through 2024. These are electoral votes, not popular votes or ballots cast.
+- 48 Federal Election Commission (FEC) candidate-finance indicators: receipts, disbursements, cash on hand and debts for Presidential, Senate and House candidates across the 2018, 2020, 2022 and 2024 election cycles.
+- Presidential candidate-finance values aggregated by party; Senate and House values aggregated by candidate office state. A state-level campaign-finance total is not a vote count, and the presidential party aggregate is not a state-by-state result.
 
-## United States: House elections
+Electoral College source: [National Archives Electoral College results](https://www.archives.gov/electoral-college).
 
-House candidate returns are not included. Official House results are reported by State; no complete federal candidate-results source was verified in this project. Third-party aggregations are not substituted and labelled as official.
+FEC source: [candidate summary files](https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/) and [cycle-specific bulk downloads](https://www.fec.gov/data/browse-data/?tab=candidates). Candidate totals include principal campaign committees and other authorized committees. FEC summaries update as reports are received and may change when amendments are processed. The dashboard checks the files daily; this is not a live result feed.
+
+U.S. popular vote by state, voter registration, turnout and constituency-level House returns are not included. No official, consistent dataset for these measures has been added, and FEC financial summaries are not a substitute.
+
+## Scraper design reference
+
+The [india-votes-data project](https://github.com/thecont1/india-votes-data) was reviewed as a design reference for constituency-result collection and normalized candidate records. Its database/API architecture does not fit this static site. No code or data from it was copied; this project's ECI collector and FEC pipeline use project-specific standard-library parsers and static JSON outputs. The repository is MIT-licensed.

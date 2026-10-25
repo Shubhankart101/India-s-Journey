@@ -6,6 +6,8 @@ The dashboard includes World Bank annual national series for electricity access,
 
 Some state comparisons use RBI publications, Jal Jeevan Mission reporting, and other cited portals. They are snapshots where the source publishes one comparable year, not annual histories. A state metric is not described as complete coverage unless its generated dataset contains every expected State observation.
 
+Additional annual World Bank series now cover agricultural employment (`SL.AGR.EMPL.ZS`), urban population growth (`SP.URB.GROW`), net energy imports (`EG.IMP.CONS.ZS`), lower-secondary completion (`SE.SEC.CMPT.LO.ZS`), government health spending per capita in current US dollars (`SH.XPD.GHED.PC.CD`), and safely managed drinking water (`SH.H2O.SMDW.ZS`). Their latest observation years differ. Net energy imports may be negative for a net exporter, and current-dollar health spending is not inflation-adjusted.
+
 State-wise birth and death counts and a comparable annual state TFR series are not included. SRS and Civil Registration System publications have different reference periods, availability, and definitions. A state series must be assembled from published tables before it can be plotted; national annual fertility estimates are not a substitute for state observations.
 
 ## Fuel prices and energy
@@ -14,7 +16,7 @@ The fuel-consumption series measures activity/volume, not retail prices. The Ind
 
 ## Elections
 
-See [Election data coverage](ELECTIONS.md) for ECI provisional status, the partial historical workbook archive, SSR/SIR gaps, the U.S. Electoral College measure, and House coverage limitations.
+See [Election data coverage](ELECTIONS.md) for ECI provisional status, the partial historical workbook archive, SSR/SIR gaps, U.S. Electoral College outcomes and FEC campaign-finance aggregates. FEC receipts and spending are not vote or turnout data.
 
 The ECI archive currently supplies candidate-level workbook observations for selected State Assembly elections. It does not establish complete historic coverage, and unsupported PDF layouts remain absent. The dataset and explorer expose only parsed observations and their original report links.
 

@@ -179,7 +179,7 @@ def build_unesco_india_series() -> dict[str, dict]:
         "unesco_india_current_categories": {
             "labels": ["Cultural", "Natural", "Mixed"],
             "values": [cultural, natural, len(sites) - cultural - natural],
-            "chartType": "bar",
+            "chartType": "doughnut",
             "source": source,
             "note": "Current property classifications on the official UNESCO World Heritage List.",
         },
@@ -1344,6 +1344,12 @@ def main() -> None:
         ("mobile_subscriptions_per_100", "IT.CEL.SETS.P2", "india-mobile-subscriptions.svg", "Mobile Cellular Subscriptions", "Mobile cellular subscriptions per 100 people", "#f778ba", " per 100 people"),
         ("fixed_broadband_per_100", "IT.NET.BBND.P2", "india-fixed-broadband.svg", "Fixed Broadband Subscriptions", "Fixed broadband subscriptions per 100 people", "#58a6ff", " per 100 people"),
         ("military_expenditure_usd", "MS.MIL.XPND.CD", "india-military-expenditure-usd.svg", "Military Expenditure in Current US Dollars", "Military expenditure converted to current US dollars", "#ff7b72", " USD"),
+        ("agricultural_employment_share", "SL.AGR.EMPL.ZS", "india-agricultural-employment.svg", "Employment in Agriculture", "Employment in agriculture as a share of total employment", "#3fb950", "%"),
+        ("urban_population_growth", "SP.URB.GROW", "india-urban-population-growth.svg", "Urban Population Growth", "Annual growth rate of the urban population", "#f778ba", "%"),
+        ("net_energy_imports_share", "EG.IMP.CONS.ZS", "india-net-energy-imports.svg", "Net Energy Imports", "Net energy imports as a share of energy use", "#ff9933", "%"),
+        ("lower_secondary_completion", "SE.SEC.CMPT.LO.ZS", "india-lower-secondary-completion.svg", "Lower Secondary Completion Rate", "Completion rate for lower secondary education", "#a371f7", "%"),
+        ("government_health_spending_per_capita", "SH.XPD.GHED.PC.CD", "india-government-health-spending-per-capita.svg", "Government Health Spending per Capita", "Domestic general government health expenditure per person in current US dollars", "#3fb950", " USD"),
+        ("safely_managed_drinking_water", "SH.H2O.SMDW.ZS", "india-safely-managed-water.svg", "Safely Managed Drinking Water", "Population using safely managed drinking-water services", "#79c0ff", "%"),
     ]
     
     # Load economic survey monthly data if available

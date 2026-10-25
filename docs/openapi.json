@@ -48,6 +48,18 @@
         }
       }
     },
+    "/data/us-campaign-finance.json": {
+      "get": {
+        "operationId": "getUsCampaignFinance",
+        "summary": "Federal Election Commission candidate campaign-finance summaries",
+        "responses": {
+          "200": {
+            "description": "Presidential, Senate and House campaign-finance aggregates for selected election cycles",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
     "/data/economic-survey-monthly.json": {
       "get": {
         "operationId": "getEconomicSurveyIndicators",

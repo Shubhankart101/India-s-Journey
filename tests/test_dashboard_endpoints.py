@@ -92,6 +92,9 @@ class DashboardEndpointTests(unittest.TestCase):
             "current_health_spending", "physicians_density", "under5_mortality",
             "basic_water_access", "basic_sanitation_access", "urban_population_share",
             "population_growth", "fertility_rate", "crude_birth_rate", "crude_death_rate",
+            "agricultural_employment_share", "urban_population_growth", "net_energy_imports_share",
+            "lower_secondary_completion", "government_health_spending_per_capita",
+            "safely_managed_drinking_water",
             "clean_fuel_access", "primary_school_enrollment",
             "secondary_school_enrollment", "tertiary_school_enrollment", "education_spending_gdp",
             "female_labor_participation", "labor_force_participation",
@@ -200,7 +203,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []))", app)
         keys = re.findall(r"worldBank\('([^']+)'", definitions)
         keys.extend(re.findall(r"^\s+\['([^']+)'", definitions, flags=re.MULTILINE))
-        self.assertEqual(len(keys), 66)
+        self.assertEqual(len(keys), 72)
         for key in keys:
             with self.subTest(chart=key):
                 self.assertIn(key, series)

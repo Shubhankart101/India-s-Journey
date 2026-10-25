@@ -35,7 +35,7 @@
         <div class="hero-metrics" aria-label="Dashboard overview">
           <div><strong id="hero-chart-count">—</strong><span>indicators</span></div>
           <div><strong id="hero-live-count">—</strong><span>with data</span></div>
-          <div><strong id="hero-group-count">12</strong><span>areas to explore</span></div>
+          <div><strong id="hero-group-count">13</strong><span>areas to explore</span></div>
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
@@ -106,6 +106,7 @@
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
         <button type="button" class="group-pill" data-group="Elections">🗳️ Elections</button>
+        <button type="button" class="group-pill" data-group="U.S. Elections">🇺🇸 U.S. Elections</button>
         <button type="button" class="group-pill" data-group="Tourism &amp; Heritage">🏛️ Tourism &amp; Heritage</button>
       </div>
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, State, Mining, Crime)..."></label>
@@ -124,6 +125,7 @@
         <option value="Crime &amp; Security">Crime &amp; Security</option>
         <option value="Pew Research">Pew Research</option>
         <option value="Elections">Elections</option>
+        <option value="U.S. Elections">U.S. Elections</option>
         <option value="Tourism &amp; Heritage">Tourism &amp; Heritage</option>
       </select>
       <label>Subgroup <select id="subgroup-filter">
@@ -187,7 +189,10 @@
         </optgroup>
         <optgroup label="🗳️ Elections">
           <option>Indian Elections</option>
-          <option>U.S. Elections</option>
+        </optgroup>
+        <optgroup label="🇺🇸 U.S. Elections">
+          <option>U.S. Presidential Elections</option>
+          <option>U.S. Federal Campaign Finance</option>
         </optgroup>
         <optgroup label="🏛️ Tourism &amp; Heritage">
           <option>International Visitor Trends</option>
@@ -280,6 +285,8 @@
               <li><a href="https://www.sipri.org/databases" target="_blank" rel="noreferrer">SIPRI databases</a></li>
               <li><a href="https://old.eci.gov.in/statistical-report/statistical-reports/" target="_blank" rel="noreferrer">Election Commission of India — statistical reports archive</a></li>
               <li><a href="https://voters.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India — voter services, SSR and SIR notices</a></li>
+              <li><a href="https://www.archives.gov/electoral-college" target="_blank" rel="noreferrer">U.S. National Archives — Electoral College results</a></li>
+              <li><a href="https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/" target="_blank" rel="noreferrer">Federal Election Commission — candidate summary file definitions</a></li>
               <li><a href="https://whc.unesco.org/en/list/" target="_blank" rel="noreferrer">UNESCO World Heritage List — official properties and inscription dates</a></li>
               <li><a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=IN" target="_blank" rel="noreferrer">World Bank — international tourism arrivals</a></li>
             </ul>
@@ -302,11 +309,12 @@
         </div>
       </details>
       <details class="image-reference-index">
-        <summary>Original India-inspired background illustrations</summary>
+        <summary>Original India- and U.S.-inspired background illustrations</summary>
         <p>These are original vector illustrations created for this dashboard, not downloaded photographs or official depictions. Subjects are visual interpretations; use the linked institution or heritage page for authoritative facts and photographs.</p>
         <ul>
           <li><a href="assets/parliament.svg">Parliament-inspired civic building illustration</a> · <a href="https://sansad.in/ls/about/introduction" target="_blank" rel="noreferrer">Lok Sabha — Parliament of India</a></li>
           <li><a href="assets/eci-building.svg">Election institution illustration</a> · <a href="https://www.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India</a></li>
+          <li><a href="assets/us-capitol.svg">U.S. Capitol-inspired civic illustration</a> · <a href="https://www.aoc.gov/explore-capitol-campus/buildings-grounds/capitol-building" target="_blank" rel="noreferrer">Architect of the Capitol — U.S. Capitol Building</a></li>
           <li><a href="assets/supreme-court.svg">Court architecture illustration</a> · <a href="https://www.sci.gov.in/" target="_blank" rel="noreferrer">Supreme Court of India</a></li>
           <li><a href="assets/hospital.svg">Public health institution illustration</a> · <a href="https://mohfw.gov.in/" target="_blank" rel="noreferrer">Ministry of Health and Family Welfare</a></li>
           <li><a href="assets/rail-station.svg">Railway station illustration</a> · <a href="https://indianrailways.gov.in/" target="_blank" rel="noreferrer">Indian Railways</a></li>

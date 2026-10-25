@@ -71,7 +71,43 @@
     ['pew_india_2026_top_allies', 'Pew: Most important allies named in India (2026)', 'Countries named as India’s most important ally', '2026 survey snapshot', '#79c0ff', '%', 'https://www.pewresearch.org/global/2026/08/13/india-and-pakistan-rivals-with-divergent-views-of-the-global-order/', 'Share of Indian adults naming Russia or the United States as India’s most important ally in Pew’s 2026 survey. Only figures published in the article summary are shown; the chart is not an exhaustive distribution.'],
     ['pew_india_2021_diversity_views', 'Pew: Views on religious diversity in India', 'Whether religious diversity benefits or harms India', '2019–20 survey', '#bc8cff', '%', 'https://www.pewresearch.org/religion/2021/06/29/diversity-and-pluralism/', 'Pew’s Religion in India survey was conducted in 2019–2020 and published in 2021. The no-clear-position category includes “neither,” do not know, and no answer; rounded figures total 101%.'],
     ['pew_india_2021_religious_freedom', 'Pew: Religious freedom perceptions in India', 'Personal freedom to practice and perceived freedom for other faiths', '2019–20 survey', '#f778ba', '%', 'https://www.pewresearch.org/religion/2021/06/29/religious-freedom-discrimination-and-communal-relations/', 'Two distinct questions from Pew’s Religion in India survey (fieldwork in 2019–2020): respondents’ assessment of their own freedom and freedom for people of other religions.'],
+    worldBank('agricultural_employment_share', 'Employment in Agriculture', 'Employment in agriculture as a share of total employment', '#3fb950', '%', 'SL.AGR.EMPL.ZS', 'Share of total employment in agriculture, based on the World Bank series that uses ILO modelled estimates.'),
+    worldBank('urban_population_growth', 'Urban Population Growth', 'Annual growth rate of the urban population', '#f778ba', '%', 'SP.URB.GROW', 'Annual growth rate of the population living in urban areas. Sourced from World Bank Open Data.'),
+    worldBank('net_energy_imports_share', 'Net Energy Imports', 'Net energy imports as a share of energy use', '#ff9933', '%', 'EG.IMP.CONS.ZS', 'Net energy imports relative to energy use; negative values indicate net exports. Sourced from World Bank Open Data.'),
+    worldBank('lower_secondary_completion', 'Lower Secondary Completion Rate', 'Completion rate for lower secondary education', '#a371f7', '%', 'SE.SEC.CMPT.LO.ZS', 'Completion rate for lower secondary education. Sourced from World Bank Open Data.'),
+    worldBank('government_health_spending_per_capita', 'Government Health Spending per Capita', 'Domestic general government health expenditure per person in current US dollars', '#3fb950', ' USD', 'SH.XPD.GHED.PC.CD', 'Domestic general government health expenditure per capita in current US dollars. Nominal values are not adjusted for inflation.'),
+    worldBank('safely_managed_drinking_water', 'Safely Managed Drinking Water', 'Population using safely managed drinking-water services', '#79c0ff', '%', 'SH.H2O.SMDW.ZS', 'Share of the population using safely managed drinking-water services, as estimated in the World Bank series.'),
   ];
+
+  const cycles = [2018, 2020, 2022, 2024];
+  const offices = [
+    { code: 'P', name: 'President', subgroup: 'U.S. Presidential Elections', scope: 'candidate party' },
+    { code: 'S', name: 'Senate', subgroup: 'U.S. Federal Campaign Finance', scope: 'candidate office state' },
+    { code: 'H', name: 'House', subgroup: 'U.S. Federal Campaign Finance', scope: 'candidate office state' },
+  ];
+  const measures = [
+    { key: 'receipts', title: 'Total Receipts', color: '#3fb950' },
+    { key: 'disbursements', title: 'Total Disbursements', color: '#ff9933' },
+    { key: 'cash_on_hand', title: 'Cash on Hand', color: '#58a6ff' },
+    { key: 'debts_owed', title: 'Debt Owed', color: '#ff7b72' },
+  ];
+  window.INDIA_EXTRA_CHART_DEFINITIONS.push(...cycles.flatMap(cycle =>
+    offices.flatMap(office => measures.map(measure => {
+      const key = `us_fec_${cycle}_${office.code.toLowerCase()}_${measure.key}`;
+      const url = `https://www.fec.gov/files/bulk-downloads/${cycle}/weball${String(cycle).slice(-2)}.zip`;
+      const details = `Federal Election Commission candidate-summary totals for the ${cycle} election cycle. ${measure.title} are aggregated by ${office.scope}. ${office.code === 'P' ? 'Presidential candidate totals use party as the grouping because the FEC summary file does not report state presidential vote totals.' : 'House and Senate candidate totals are grouped by candidate office state.'}\n\nThese are campaign-finance amounts, not votes, turnout, or public contributions alone. Candidate summaries include authorized committees and may be revised when amended reports are processed.`;
+      return [
+        key,
+        `${cycle} ${office.name} Candidate ${measure.title}`,
+        `${office.name} candidate campaign-finance totals by ${office.code === 'P' ? 'party' : 'state'}`,
+        `Election cycle ${cycle}`,
+        measure.color,
+        ' USD',
+        url,
+        details,
+      ];
+    }))
+  ));
 
   const placements = {};
   const place = (keys, category, subgroup) => keys.forEach(key => { placements[key] = { category, subgroup }; });
@@ -85,7 +121,11 @@
   place(['primary_school_enrollment', 'secondary_school_enrollment', 'tertiary_school_enrollment', 'education_spending_gdp', 'adult_literacy_rate', 'mobile_subscriptions_per_100', 'fixed_broadband_per_100'], 'Social', 'Welfare');
   place(['agriculture_gdp_share', 'industry_gdp_share', 'services_gdp_share', 'manufacturing_gdp_share', 'cereal_yield'], 'Industry Trends & Performance', 'Manufacturing & Industrial Growth');
   place(['agricultural_land_share'], 'Industry Trends & Performance', 'Production & Commodities');
-  place(['energy_use_per_capita', 'electricity_use_per_capita', 'renewable_energy_consumption', 'renewable_electricity_output', 'forest_area_share', 'pm25_exposure'], 'Mining & Natural Resources', 'Energy & Environment');
+  place(['energy_use_per_capita', 'electricity_use_per_capita', 'renewable_energy_consumption', 'renewable_electricity_output', 'forest_area_share', 'pm25_exposure', 'net_energy_imports_share'], 'Mining & Natural Resources', 'Energy Minerals & Fuel');
+  place(['agricultural_employment_share'], 'Industry Trends & Performance', 'Production & Commodities');
+  place(['urban_population_growth'], 'Social', 'Demographics');
+  place(['lower_secondary_completion'], 'Social', 'Welfare');
+  place(['government_health_spending_per_capita', 'safely_managed_drinking_water'], 'Public Health & Epidemiology', 'Health Infrastructure & Spending');
   place(['state_gsdp_share'], 'State Performance & Regional Health', 'State Financial Health & GSDP');
   place(['state_per_capita_income_index'], 'State Performance & Regional Health', 'State Financial Health & GSDP');
   place(['state_power_availability_index'], 'State Performance & Regional Health', 'State Infrastructure & Services');
@@ -99,6 +139,15 @@
   place(['unesco_india_sites_cumulative', 'unesco_india_new_inscriptions', 'unesco_india_current_categories'], 'Tourism & Heritage', 'World Heritage Sites');
   place(['pew_india_2026_global_views', 'pew_india_2026_top_threats', 'pew_india_2026_top_allies', 'pew_india_2021_diversity_views', 'pew_india_2021_religious_freedom'], 'Pew Research', 'Public opinion');
   place(['india_live_candidate_votes', 'india_live_candidate_vote_share', 'india_live_constituency_margin', 'india_live_winner_vote_share', 'india_live_party_seats'], 'Elections', 'Indian Elections');
-  place(['us_presidential_electoral_votes'], 'Elections', 'U.S. Elections');
+  place(['us_presidential_electoral_votes'], 'U.S. Elections', 'U.S. Presidential Elections');
+  for (const cycle of cycles) {
+    for (const office of offices) {
+      place(
+        measures.map(measure => `us_fec_${cycle}_${office.code.toLowerCase()}_${measure.key}`),
+        'U.S. Elections',
+        office.subgroup,
+      );
+    }
+  }
   window.INDIA_EXTRA_CHART_PLACEMENT = placements;
 })();
