@@ -363,7 +363,8 @@ h2 { font-size:1.8rem; font-weight:700; }
 .history-metric strong, .history-metric span { display: block; }
 .history-metric strong { color: var(--ink); font-size: 1.15rem; }
 .history-metric span { margin-top: 4px; color: var(--muted); font-size: .75rem; }
-.history-chart-wrap { height: 360px; margin: 18px 0; }
+.history-chart-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin: 18px 0; }
+.history-chart-wrap { height: 360px; min-width: 0; }
 .history-table-wrap { overflow-x: auto; margin: 16px 0; }
 .history-table-wrap table { width: 100%; border-collapse: collapse; text-align: left; }
 .history-table-wrap caption { padding: 10px 0; color: var(--muted); text-align: left; }
@@ -912,6 +913,7 @@ body {
 .pew-report-item strong { color:var(--ink); font-size:.8rem; line-height:1.4; }
 .pew-report-item span { color:#ffbd73; font-size:.64rem; }
 @media(max-width:640px) {
+  .history-chart-grid { grid-template-columns:1fr; }
   .chart-focus-overlay { padding:6px; }
   .chart-focus-dialog { border-radius:12px; height:98vh; padding:12px; width:100%; }
   .chart-focus-content .chart-card { padding:4px 2px 20px; }

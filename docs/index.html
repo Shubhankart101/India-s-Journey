@@ -230,7 +230,7 @@
       <div class="explorer-heading">
         <p class="eyebrow">Official archive · constituency detail</p>
         <h2 id="historical-election-title">Explore historical Indian election results</h2>
-        <p>Select an available election, state and constituency to inspect candidate votes, vote share and the reported electorate. Coverage reflects downloadable ECI reports currently parsed; it is not a complete all-years archive.</p>
+        <p>Select an available election, state and constituency to inspect candidate votes, vote share and the reported electorate. Lok Sabha seats in the live ECI feed include an interactive candidate-vote pie; historical coverage reflects downloadable reports currently parsed and is not a complete all-years archive.</p>
       </div>
       <div class="historical-election-controls">
         <label>Election type <select id="history-type"><option value="">Loading…</option></select></label>
@@ -241,7 +241,10 @@
       <p id="history-status" class="history-status" role="status" aria-live="polite">Historical result data has not been loaded.</p>
       <div id="history-result" class="history-result" hidden>
         <div class="history-metrics" id="history-metrics"></div>
-        <div class="history-chart-wrap"><canvas id="history-vote-chart" aria-label="Candidate votes in selected constituency"></canvas></div>
+        <div class="history-chart-grid">
+          <div class="history-chart-wrap"><canvas id="history-vote-chart" aria-label="Candidate votes in selected constituency"></canvas></div>
+          <div class="history-chart-wrap"><canvas id="history-vote-composition-chart" aria-label="Candidate vote composition in selected constituency"></canvas></div>
+        </div>
         <div class="history-table-wrap">
           <table>
             <caption>Candidate results in the selected constituency</caption>

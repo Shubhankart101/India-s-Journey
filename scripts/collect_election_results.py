@@ -116,6 +116,7 @@ def parse_constituency_results(html: str, source_url: str, election_type: str) -
     )
     constituency = match.group(2).strip() if match else urlparse(source_url).path.rsplit("/", 1)[-1]
     state = match.group(3).strip() if match else ""
+    year_match = re.search(r"(?<!\d)(?:19|20)\d{2}(?!\d)", urlparse(source_url).path)
     candidates = []
     for row in page.rows:
         if len(row) <= votes_index or row == header:
@@ -144,6 +145,8 @@ def parse_constituency_results(html: str, source_url: str, election_type: str) -
     candidates.sort(key=lambda item: item["votes"], reverse=True)
     return {
         "election_type": election_type,
+        "year": int(year_match.group(0)) if year_match else None,
+        "constituency_number": match.group(1) if match else "",
         "constituency": constituency,
         "state_or_ut": state,
         "source": source_url,

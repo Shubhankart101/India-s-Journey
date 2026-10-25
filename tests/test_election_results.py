@@ -52,11 +52,13 @@ class ElectionResultsTests(unittest.TestCase):
         """
         result = parse_constituency_results(
             html,
-            "https://results.eci.gov.in/ResultPc/ConstituencywiseS039.htm",
+            "https://results.eci.gov.in/ResultPcByeOct2026/ConstituencywiseS039.htm",
             "Lok Sabha by-election",
         )
         self.assertEqual(result["constituency"], "Nagaon")
         self.assertEqual(result["state_or_ut"], "Assam")
+        self.assertEqual(result["year"], 2026)
+        self.assertEqual(result["constituency_number"], "9")
 
     def test_us_archives_parser_extracts_all_presidential_cycles(self):
         def fake_fetch(url):
@@ -143,6 +145,9 @@ class ElectionResultsTests(unittest.TestCase):
             "extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' }",
             app,
         )
+        self.assertIn("const liveObservations = liveConstituencies.flatMap", app)
+        self.assertIn("history-vote-composition-chart", app)
+        self.assertIn("type: 'doughnut'", app)
         self.assertGreaterEqual(len(payload["india_constituencies"]), 1)
         self.assertEqual(len(payload["us_presidential_elections"]), 7)
         self.assertEqual(payload, deployed_payload)

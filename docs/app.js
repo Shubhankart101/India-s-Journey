@@ -1409,6 +1409,7 @@ async function main() {
   const historicalExplorer = document.querySelector('#historical-election-explorer');
   let historicalPayloadPromise = null;
   let historicalChart = null;
+  let historicalCompositionChart = null;
   let historicalExplorerInitialized = false;
   let historicalExplorerInitializing = false;
   const loadHistoricalExplorer = async () => {
@@ -1428,7 +1429,25 @@ async function main() {
       historicalPayloadPromise = safeFetchJson('historical-elections.json', { observations: [] });
     }
     const payload = await historicalPayloadPromise;
-    const observations = Array.isArray(payload?.observations) ? payload.observations : [];
+    const archiveObservations = Array.isArray(payload?.observations) ? payload.observations : [];
+    const liveObservations = liveConstituencies.flatMap(record => {
+      const year = record.year || Number(record.source.match(/(?:19|20)\d{2}/)?.[0]);
+      if (!year) return [];
+      return record.candidates.map(candidate => ({
+        year,
+        election_type: record.election_type,
+        state_or_ut: record.state_or_ut,
+        constituency_number: record.constituency_number || '',
+        constituency: record.constituency,
+        candidate: candidate.candidate,
+        party: candidate.party,
+        votes: candidate.votes,
+        vote_share_percent: candidate.vote_share_percent,
+        electors: null,
+        source: record.source
+      }));
+    });
+    const observations = [...archiveObservations, ...liveObservations];
     if (!observations.length) {
       status.textContent = 'Historical ECI results could not be loaded. Try again later or open the official statistical-report archive.';
       resultPanel.hidden = true;
@@ -1441,7 +1460,8 @@ async function main() {
     const types = [...new Set(observations.map(row => row.election_type))].sort();
     const reportedYears = [...new Set(observations.map(row => row.year))].sort((a, b) => a - b);
     const reportedStates = new Set(observations.map(row => row.state_or_ut).filter(Boolean)).size;
-    status.textContent = `Archive coverage: ${reportedYears[0]}–${reportedYears[reportedYears.length - 1]} · ${reportedStates} States/UTs · ${observations.length.toLocaleString('en-IN')} candidate results. ${payload.reports_with_candidate_results} of ${payload.catalog_entries_scanned} relevant ECI archive entries yielded parseable workbooks; ${payload.reports_without_supported_download} had no supported XLSX. ${payload.collection_status === 'partial' ? 'Years and States/UTs without supported detailed-result workbooks are not represented.' : 'Coverage follows the available official downloadable workbooks.'}`;
+    const liveLokSabhaSeats = liveConstituencies.filter(record => record.election_type === 'Lok Sabha by-election').length;
+    status.textContent = `Archive coverage: ${reportedYears[0]}–${reportedYears[reportedYears.length - 1]} · ${reportedStates} States/UTs · ${observations.length.toLocaleString('en-IN')} archive and live candidate results. ${liveLokSabhaSeats ? `The current ECI feed also includes ${liveLokSabhaSeats} Lok Sabha by-election constituency. ` : ''}${payload.reports_with_candidate_results} of ${payload.catalog_entries_scanned} relevant ECI archive entries yielded parseable workbooks; ${payload.reports_without_supported_download} had no supported XLSX. ${payload.collection_status === 'partial' ? 'Years and States/UTs without supported detailed-result workbooks are not represented.' : 'Coverage follows the available official downloadable workbooks.'}`;
 
     const setOptions = (select, values, prompt) => {
       select.replaceChildren(new Option(prompt, ''));
@@ -1473,7 +1493,8 @@ async function main() {
           && String(row.year) === yearSelect.value
           && row.state_or_ut === stateSelect.value
           && row.constituency_number === number
-          && row.constituency === constituency)
+          && row.constituency === constituency
+          && row.candidate.trim().toLowerCase() !== 'total')
         .sort((a, b) => b.votes - a.votes);
       if (!rows.length) {
         resultPanel.hidden = true;
@@ -1541,6 +1562,38 @@ async function main() {
           }
         }
       });
+      historicalCompositionChart?.destroy();
+      const leadingCandidates = rows.slice(0, 5);
+      const otherVotes = rows.slice(5).reduce((total, row) => total + row.votes, 0);
+      const compositionLabels = leadingCandidates.map(row => row.candidate);
+      const compositionValues = leadingCandidates.map(row => row.votes);
+      if (otherVotes > 0) {
+        compositionLabels.push('Other candidates');
+        compositionValues.push(otherVotes);
+      }
+      const compositionOptions = chartOptions(' votes', false, false, 'doughnut');
+      compositionOptions.plugins.title = {
+        display: true,
+        text: `${constituency} candidate vote composition · ${stateSelect.value} · ${yearSelect.value}`
+      };
+      historicalCompositionChart = new Chart(
+        document.querySelector('#history-vote-composition-chart'),
+        {
+          type: 'doughnut',
+          data: {
+            labels: compositionLabels,
+            datasets: [{
+              label: 'Votes',
+              data: compositionValues,
+              backgroundColor: ['#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344'],
+              borderColor: '#161b22',
+              borderWidth: 2,
+              hoverOffset: 8
+            }]
+          },
+          options: compositionOptions
+        }
+      );
     };
     const refreshConstituencies = () => {
       setOptions(constituencySelect, constituenciesFor(), 'Select a constituency');
