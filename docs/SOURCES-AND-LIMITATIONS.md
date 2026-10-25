@@ -14,7 +14,15 @@ The fuel-consumption series measures activity/volume, not retail prices. The Ind
 
 ## Elections
 
-See [Election data coverage](ELECTIONS.md) for ECI provisional status, the U.S. Electoral College measure, and historical / House coverage gaps.
+See [Election data coverage](ELECTIONS.md) for ECI provisional status, the partial historical workbook archive, SSR/SIR gaps, the U.S. Electoral College measure, and House coverage limitations.
+
+The ECI archive currently supplies candidate-level workbook observations for selected State Assembly elections. It does not establish complete historic coverage, and unsupported PDF layouts remain absent. The dataset and explorer expose only parsed observations and their original report links.
+
+## Tourism and World Heritage
+
+International tourism arrival, departure, and receipt series use World Bank indicators (`ST.INT.ARVL`, `ST.INT.DPRT`, `ST.INT.RCPT.CD`). Coverage is annual and latest years differ; receipts are nominal current US dollars. These series do not describe domestic travel or visits to specific destinations.
+
+UNESCO property counts are reconstructed from current World Heritage List pages and inscription dates, not from archived snapshots of the list. The result is a count of currently listed properties by inscription year, not visitor attendance or tourism revenue. State-wise tourism and monument-level annual visitation are not presented without a comparable source.
 
 ## Interpreting frequency
 

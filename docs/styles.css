@@ -294,6 +294,26 @@ h2 { font-size:1.8rem; font-weight:700; }
   margin: 0;
   max-width: 750px;
 }
+.group-hero-art {
+  flex: 0 0 190px;
+  width: 190px;
+  margin: 0;
+  text-align: center;
+}
+.group-hero-art img {
+  display: block;
+  width: 190px;
+  height: 105px;
+  object-fit: cover;
+  border: 1px solid rgba(244, 222, 192, .2);
+  border-radius: 8px;
+  background: rgba(7, 12, 16, .25);
+}
+.group-hero-art figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .68rem;
+}
 .group-hero-badges {
   display: flex;
   flex-direction: column;
@@ -311,6 +331,45 @@ h2 { font-size:1.8rem; font-weight:700; }
 .hero-badge.saffron { background: rgba(255, 153, 51, 0.15); color: var(--saffron); border: 1px solid rgba(255, 153, 51, 0.3); }
 .hero-badge.green { background: rgba(46, 164, 79, 0.15); color: #7dd3a7; border: 1px solid rgba(46, 164, 79, 0.3); }
 .hero-badge.blue { background: rgba(99, 179, 237, 0.15); color: var(--blue); border: 1px solid rgba(99, 179, 237, 0.3); }
+
+.historical-election-explorer {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(19, 26, 36, .96), rgba(13, 18, 25, .96));
+}
+.historical-election-explorer[hidden] { display: none; }
+.explorer-heading h2 { margin: 0 0 8px; }
+.explorer-heading > p:last-child, .history-status { color: var(--muted); line-height: 1.6; }
+.historical-election-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 20px 0 12px;
+}
+.historical-election-controls label { display: grid; gap: 6px; color: var(--muted); font-size: .8rem; }
+.historical-election-controls select {
+  width: 100%;
+  min-width: 0;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px;
+}
+.history-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0; }
+.history-metric { padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.025); }
+.history-metric strong, .history-metric span { display: block; }
+.history-metric strong { color: var(--ink); font-size: 1.15rem; }
+.history-metric span { margin-top: 4px; color: var(--muted); font-size: .75rem; }
+.history-chart-wrap { height: 360px; margin: 18px 0; }
+.history-table-wrap { overflow-x: auto; margin: 16px 0; }
+.history-table-wrap table { width: 100%; border-collapse: collapse; text-align: left; }
+.history-table-wrap caption { padding: 10px 0; color: var(--muted); text-align: left; }
+.history-table-wrap th, .history-table-wrap td { padding: 9px 12px; border-bottom: 1px solid var(--line); }
+.history-table-wrap th { color: var(--muted); font-size: .75rem; }
+.image-reference-index > p { color: var(--muted); max-width: 900px; }
 
 .status { display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); margin:28px 0; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
 .intro { border-top:1px solid var(--line); padding:38px 0 18px; }
@@ -549,6 +608,10 @@ footer { border-top:1px solid var(--line); color:var(--muted); padding:24px 0 48
   .status,.chart-grid { grid-template-columns:1fr; } 
   .group-hero { flex-direction:column; align-items:flex-start; gap:16px; }
   .group-hero-badges { align-items:flex-start; flex-direction:row; flex-wrap:wrap; }
+  .group-hero-art { flex: initial; width: min(100%, 320px); }
+  .group-hero-art img { width: 100%; height: 150px; }
+  .historical-election-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .history-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .chart-card { min-height:420px; padding:18px; } 
   .chart-card canvas { height:300px !important; } 
   .chart-wrap { min-height:320px; } 

@@ -1,0 +1,133 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "India's Journey Public Data API",
+    "version": "1.0.0",
+    "description": "Read-only static JSON resources published by the India’s Journey dashboard on GitHub Pages. These are files, not a server-backed API: there are no write operations, authentication, or guaranteed response-time objectives. Use Try it out to fetch each public resource."
+  },
+  "servers": [
+    {
+      "url": "https://shubhankart101.github.io/India-s-Journey",
+      "description": "Public GitHub Pages deployment"
+    }
+  ],
+  "paths": {
+    "/data/chart-latest.json": {
+      "get": {
+        "operationId": "getLatestChartData",
+        "summary": "Latest generated public indicator series",
+        "responses": {
+          "200": {
+            "description": "Chart data and source metadata",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/election-results.json": {
+      "get": {
+        "operationId": "getCurrentElectionResults",
+        "summary": "Current ECI and U.S. Presidential election snapshots",
+        "responses": {
+          "200": {
+            "description": "Election results, coverage notes and source URLs",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/historical-elections.json": {
+      "get": {
+        "operationId": "getHistoricalIndianElectionResults",
+        "summary": "Parsed candidate results from available ECI historical workbooks",
+        "responses": {
+          "200": {
+            "description": "Candidate-level observations with report-level coverage metadata; historical coverage is partial",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/economic-survey-monthly.json": {
+      "get": {
+        "operationId": "getEconomicSurveyIndicators",
+        "summary": "Monthly indicators collated from Economic Survey tables",
+        "responses": {
+          "200": {
+            "description": "Series, source and observation metadata",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/ncrb-and-analyses.json": {
+      "get": {
+        "operationId": "getNcrbAndAnalysisData",
+        "summary": "Public safety and NCRB-related dashboard data",
+        "responses": {
+          "200": {
+            "description": "Series and data-source notes",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/pew-india-reports.json": {
+      "get": {
+        "operationId": "getPewIndiaReports",
+        "summary": "Indexed public Pew Research Center India reports",
+        "responses": {
+          "200": {
+            "description": "Report titles, dates and original URLs",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/pew-snapshots.json": {
+      "get": {
+        "operationId": "getPewSurveySnapshots",
+        "summary": "Dated Pew survey snapshot observations",
+        "responses": {
+          "200": {
+            "description": "Selected dated survey observations and source notes",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/indian-matrix-latest.json": {
+      "get": {
+        "operationId": "getIndianMatrixArticles",
+        "summary": "Latest public Indian Matrix RSS snapshot",
+        "responses": {
+          "200": {
+            "description": "Public article titles, dates and links",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
+    "/data/substack-latest.json": {
+      "get": {
+        "operationId": "getPolityPolicyArticles",
+        "summary": "Latest public Polity and Policy RSS snapshot",
+        "responses": {
+          "200": {
+            "description": "Public article titles, dates and links",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "JsonResource": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "The resource-specific JSON object. Fields and update cadence are documented in the resource and project documentation."
+      }
+    }
+  }
+}

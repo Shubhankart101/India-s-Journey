@@ -1,0 +1,41 @@
+name: Historical Election Archive Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 1 * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: historical-election-archive
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Collect available official ECI detailed-result workbooks
+        run: python scripts/collect_historical_elections.py
+      - name: Run historical parser tests
+        run: python -m unittest discover -s tests -p 'test_historical_elections.py' -v
+      - name: Commit refreshed historical archive
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/historical-elections.json docs/data/historical-elections.json
+          if git diff --cached --quiet; then
+            echo "No historical election data change."
+            exit 0
+          fi
+          git commit -m "Refresh historical election archive"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

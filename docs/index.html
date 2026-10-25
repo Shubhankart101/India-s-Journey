@@ -6,7 +6,7 @@
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>India's Journey — Explore India in data</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=state-comparison-popover-v3-20261025">
+  <link rel="stylesheet" href="styles.css?v=historical-tourism-api-v2">
 </head>
 <body>
   <div id="era-bg-layer" class="era-bg-layer"></div>
@@ -18,6 +18,7 @@
       <a href="#explore">Explore</a>
       <a href="#about">About</a>
       <a href="#references">Sources</a>
+      <a href="api.html">API</a>
     </nav>
   </header>
 
@@ -34,7 +35,7 @@
         <div class="hero-metrics" aria-label="Dashboard overview">
           <div><strong id="hero-chart-count">—</strong><span>indicators</span></div>
           <div><strong id="hero-live-count">—</strong><span>with data</span></div>
-          <div><strong id="hero-group-count">10</strong><span>areas to explore</span></div>
+          <div><strong id="hero-group-count">12</strong><span>areas to explore</span></div>
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
@@ -83,7 +84,7 @@
 
     <section class="status" aria-label="Dashboard status">
       <div><span>Last generated</span><strong id="generated">Loading</strong></div>
-      <div><span>Coverage</span><strong>10 themes · national &amp; state</strong></div>
+      <div><span>Coverage</span><strong>12 themes · national &amp; state</strong></div>
       <div><span>Explore</span><strong>Search · compare · zoom · inspect</strong></div>
     </section>
 
@@ -105,6 +106,7 @@
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
         <button type="button" class="group-pill" data-group="Elections">🗳️ Elections</button>
+        <button type="button" class="group-pill" data-group="Tourism &amp; Heritage">🏛️ Tourism &amp; Heritage</button>
       </div>
       <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, State, Mining, Crime)..."></label>
       <button type="button" class="saved-toggle" id="saved-toggle" aria-pressed="false">☆ Saved charts</button>
@@ -122,6 +124,7 @@
         <option value="Crime &amp; Security">Crime &amp; Security</option>
         <option value="Pew Research">Pew Research</option>
         <option value="Elections">Elections</option>
+        <option value="Tourism &amp; Heritage">Tourism &amp; Heritage</option>
       </select>
       <label>Subgroup <select id="subgroup-filter">
         <option value="all" selected>All subgroups</option>
@@ -186,6 +189,10 @@
           <option>Indian Elections</option>
           <option>U.S. Elections</option>
         </optgroup>
+        <optgroup label="🏛️ Tourism &amp; Heritage">
+          <option>International Visitor Trends</option>
+          <option>World Heritage Sites</option>
+        </optgroup>
       </select></label>
     </section>
 
@@ -194,6 +201,10 @@
         <h2 id="group-hero-title">Group Title</h2>
         <p id="group-hero-desc">Group Description</p>
       </div>
+      <figure class="group-hero-art">
+        <img id="group-hero-image" src="assets/parliament.svg" alt="">
+        <figcaption id="group-hero-image-caption"></figcaption>
+      </figure>
       <div class="group-hero-badges" id="group-hero-badges">
         <span class="hero-badge saffron">1947 — 2026</span>
         <span class="hero-badge green">Global Comparison</span>
@@ -207,6 +218,33 @@
       </div>
       <p id="pew-report-count" class="pew-report-count" aria-live="polite"></p>
       <div id="pew-report-list" class="pew-report-list"></div>
+    </section>
+
+    <section id="historical-election-explorer" class="historical-election-explorer" aria-labelledby="historical-election-title" hidden>
+      <div class="explorer-heading">
+        <p class="eyebrow">Official archive · constituency detail</p>
+        <h2 id="historical-election-title">Explore historical Indian election results</h2>
+        <p>Select an available election, state and constituency to inspect candidate votes, vote share and the reported electorate. Coverage reflects downloadable ECI reports currently parsed; it is not a complete all-years archive.</p>
+      </div>
+      <div class="historical-election-controls">
+        <label>Election type <select id="history-type"><option value="">Loading…</option></select></label>
+        <label>Year <select id="history-year" disabled><option value="">Select an election type</option></select></label>
+        <label>State / UT <select id="history-state" disabled><option value="">Select a year</option></select></label>
+        <label>Constituency <select id="history-constituency" disabled><option value="">Select a state</option></select></label>
+      </div>
+      <p id="history-status" class="history-status" role="status" aria-live="polite">Historical result data has not been loaded.</p>
+      <div id="history-result" class="history-result" hidden>
+        <div class="history-metrics" id="history-metrics"></div>
+        <div class="history-chart-wrap"><canvas id="history-vote-chart" aria-label="Candidate votes in selected constituency"></canvas></div>
+        <div class="history-table-wrap">
+          <table>
+            <caption>Candidate results in the selected constituency</caption>
+            <thead><tr><th scope="col">Candidate</th><th scope="col">Party</th><th scope="col">Votes</th><th scope="col">Vote share</th></tr></thead>
+            <tbody id="history-candidate-rows"></tbody>
+          </table>
+        </div>
+        <a id="history-source-link" class="text-link" target="_blank" rel="noreferrer">Open the original ECI report ↗</a>
+      </div>
     </section>
 
     <section class="chart-grid" id="charts" aria-live="polite">
@@ -240,6 +278,10 @@
               <li><a href="https://ncrb.gov.in/" target="_blank" rel="noreferrer">National Crime Records Bureau</a></li>
               <li><a href="https://www.pewresearch.org/global/" target="_blank" rel="noreferrer">Pew Research Center — Global</a></li>
               <li><a href="https://www.sipri.org/databases" target="_blank" rel="noreferrer">SIPRI databases</a></li>
+              <li><a href="https://old.eci.gov.in/statistical-report/statistical-reports/" target="_blank" rel="noreferrer">Election Commission of India — statistical reports archive</a></li>
+              <li><a href="https://voters.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India — voter services, SSR and SIR notices</a></li>
+              <li><a href="https://whc.unesco.org/en/list/" target="_blank" rel="noreferrer">UNESCO World Heritage List — official properties and inscription dates</a></li>
+              <li><a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=IN" target="_blank" rel="noreferrer">World Bank — international tourism arrivals</a></li>
             </ul>
           </div>
           <div>
@@ -258,6 +300,21 @@
             </ul>
           </div>
         </div>
+      </details>
+      <details class="image-reference-index">
+        <summary>Original India-inspired background illustrations</summary>
+        <p>These are original vector illustrations created for this dashboard, not downloaded photographs or official depictions. Subjects are visual interpretations; use the linked institution or heritage page for authoritative facts and photographs.</p>
+        <ul>
+          <li><a href="assets/parliament.svg">Parliament-inspired civic building illustration</a> · <a href="https://sansad.in/ls/about/introduction" target="_blank" rel="noreferrer">Lok Sabha — Parliament of India</a></li>
+          <li><a href="assets/eci-building.svg">Election institution illustration</a> · <a href="https://www.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India</a></li>
+          <li><a href="assets/supreme-court.svg">Court architecture illustration</a> · <a href="https://www.sci.gov.in/" target="_blank" rel="noreferrer">Supreme Court of India</a></li>
+          <li><a href="assets/hospital.svg">Public health institution illustration</a> · <a href="https://mohfw.gov.in/" target="_blank" rel="noreferrer">Ministry of Health and Family Welfare</a></li>
+          <li><a href="assets/rail-station.svg">Railway station illustration</a> · <a href="https://indianrailways.gov.in/" target="_blank" rel="noreferrer">Indian Railways</a></li>
+          <li><a href="assets/minerals.svg">Mining and geology illustration</a> · <a href="https://ibm.gov.in/" target="_blank" rel="noreferrer">Indian Bureau of Mines</a></li>
+          <li><a href="assets/hampi.svg">Hampi-inspired heritage illustration</a> · <a href="https://whc.unesco.org/en/list/241/" target="_blank" rel="noreferrer">UNESCO — Group of Monuments at Hampi</a></li>
+          <li><a href="assets/taj-mahal.svg">Taj Mahal-inspired heritage illustration</a> · <a href="https://whc.unesco.org/en/list/252/" target="_blank" rel="noreferrer">UNESCO — Taj Mahal</a></li>
+          <li><a href="assets/lotus-temple.svg">Lotus-inspired civic illustration</a> · <a href="https://bahaihouseofworship.in/" target="_blank" rel="noreferrer">Bahá’í House of Worship, New Delhi</a></li>
+        </ul>
       </details>
     </section>
   </main>
@@ -279,7 +336,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="data.js?v=state-comparison-popover-v3-20261025"></script>
+  <script src="data.js?v=historical-tourism-api-v2"></script>
   <script src="vendor/chart.umd.min.js"></script>
   <script src="vendor/hammer.min.js"></script>
   <script src="vendor/chartjs-plugin-zoom.min.js"></script>
@@ -290,7 +347,7 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="additional-chart-definitions.js?v=state-comparison-popover-v3-20261025"></script>
-  <script src="app.js?v=state-comparison-popover-v3-20261025"></script>
+  <script src="additional-chart-definitions.js?v=historical-tourism-api-v2"></script>
+  <script src="app.js?v=historical-tourism-api-v2"></script>
 </body>
 </html>

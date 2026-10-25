@@ -150,11 +150,13 @@ Inspired by the public-data storytelling and visual exploration at [PolityPolicy
 
 ## 🗳️ Elections, public services, and data coverage
 
-The Elections group includes current candidate-level ECI by-election results and U.S. Presidential Electoral College totals. ECI candidate totals refresh every three hours and remain provisional until Form 20. The current ECI portal is not a verified historical archive; complete historical Indian constituency results and U.S. House candidate vote totals are not claimed as covered.
+The Elections group includes current candidate-level ECI results, a selectable archive of candidate returns parsed from public ECI statistical-report spreadsheets, and U.S. Presidential Electoral College totals. Current ECI totals refresh every three hours and remain provisional until Form 20. The historical workbook snapshot currently covers 20,041 observations from 16 reports in 15 States/UTs for 2021–2023; it is partial and does not claim complete historical Lok Sabha or State Assembly coverage. U.S. House candidate returns and comparable SSR/SIR electoral-roll revision time series are not currently included.
 
 The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), plus specifically cited state snapshots. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
 
-See the [documentation index](docs/README.md), [election coverage](docs/ELECTIONS.md), [sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), and [pipeline guide](docs/PIPELINES.md) for implementation details and source scope.
+The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://shubhankart101.github.io/India-s-Journey/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
+
+The requested 20,000-word article for every group and subgroup is not claimed as complete. Writing that volume responsibly requires source-by-source editorial research; the project does not inflate descriptions with repeated text. See the [documentation index](docs/README.md), [election coverage](docs/ELECTIONS.md), [tourism and heritage methods](docs/TOURISM-AND-HERITAGE.md), [API guide](docs/API.md), [sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), and [pipeline guide](docs/PIPELINES.md) for current implementation and known gaps.
 
 ## ⚙️ Automation
 

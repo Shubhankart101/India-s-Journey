@@ -5,6 +5,12 @@
   ];
 
   window.INDIA_EXTRA_CHART_DEFINITIONS = [
+    worldBank('tourism_arrivals', 'International Tourist Arrivals', 'International tourism arrivals to India', '#ff9933', ' arrivals', 'ST.INT.ARVL', 'International tourist arrivals reported in the World Bank series. This annual count depends on national reporting and definitions; it is not a state-wise or monument-specific visitor count.'),
+    worldBank('tourism_departures', 'International Tourist Departures', 'International tourism departures from India', '#58a6ff', ' departures', 'ST.INT.DPRT', 'International tourist departures reported in the World Bank series. This is a national outbound-travel count, not an inbound tourism measure.'),
+    worldBank('tourism_receipts_usd', 'International Tourism Receipts', 'International tourism receipts in current US dollars', '#3fb950', ' USD', 'ST.INT.RCPT.CD', 'International tourism receipts in current US dollars. Values are nominal and exchange-rate sensitive; this series is not adjusted for inflation.'),
+    ['unesco_india_sites_cumulative', 'India’s UNESCO World Heritage Sites', 'Cumulative properties by inscription year', 'Annual', '#e3b341', 'sites', 'https://whc.unesco.org/en/list/', 'The cumulative series is reconstructed from the current UNESCO property pages and their inscription dates. It is not a historical archived total and can change if the current list or site classification is revised.'],
+    ['unesco_india_new_inscriptions', 'New UNESCO World Heritage Inscription Events', 'Properties inscribed in each year', 'Annual', '#bc8cff', 'sites', 'https://whc.unesco.org/en/list/', 'Annual additions are counted from inscription years on the current official list. The series can be revised if the official property record changes.'],
+    ['unesco_india_current_categories', 'India’s Current UNESCO Site Categories', 'Current cultural, natural and mixed properties', 'Current list', '#79c0ff', 'sites', 'https://whc.unesco.org/en/list/', 'Current UNESCO property classifications; category counts are a snapshot and are not historical totals.'],
     worldBank('gdp_ppp', 'GDP at Purchasing Power Parity', 'Gross domestic product in current international dollars', '#58a6ff', ' USD', 'NY.GDP.MKTP.PP.CD', 'GDP converted using purchasing-power-parity rates for cross-country price differences. Sourced from World Bank Open Data.'),
     worldBank('gdp_deflator_growth', 'GDP Deflator Inflation', 'Annual GDP deflator inflation', '#ff9933', '%', 'NY.GDP.DEFL.KD.ZG', 'Annual change in the GDP deflator, covering prices across domestically produced output. Sourced from World Bank Open Data.'),
     worldBank('capital_formation_gdp', 'Gross Capital Formation', 'Gross capital formation as a share of GDP', '#3fb950', '% GDP', 'NE.GDI.FTOT.ZS', 'Investment in fixed assets and changes in inventories as a share of GDP. Sourced from World Bank Open Data.'),
@@ -89,6 +95,8 @@
   place(['upi_value_growth'], 'Payments & Digital Banking', 'UPI & Digital Payments');
   place(['military_expenditure_usd', 'military_expenditure_per_capita'], 'Defence & Strategic', 'Defence Budget & Modernization');
   place(['upi_volume_index'], 'Payments & Digital Banking', 'UPI & Digital Payments');
+  place(['tourism_arrivals', 'tourism_departures', 'tourism_receipts_usd'], 'Tourism & Heritage', 'International Visitor Trends');
+  place(['unesco_india_sites_cumulative', 'unesco_india_new_inscriptions', 'unesco_india_current_categories'], 'Tourism & Heritage', 'World Heritage Sites');
   place(['pew_india_2026_global_views', 'pew_india_2026_top_threats', 'pew_india_2026_top_allies', 'pew_india_2021_diversity_views', 'pew_india_2021_religious_freedom'], 'Pew Research', 'Public opinion');
   place(['india_live_candidate_votes', 'india_live_candidate_vote_share', 'india_live_constituency_margin', 'india_live_winner_vote_share', 'india_live_party_seats'], 'Elections', 'Indian Elections');
   place(['us_presidential_electoral_votes'], 'Elections', 'U.S. Elections');

@@ -1,28 +1,40 @@
 # Election data coverage
 
-## India: Lok Sabha and State Assemblies
+The Elections group separates different electoral systems and source types. It does not combine Indian candidate votes with U.S. Electoral College votes or describe them as directly comparable.
 
-The collector follows the Election Commission of India (ECI) results landing-page redirect, discovers the currently published Assembly and Lok Sabha by-election result pages, and reads constituency-wise candidate tables. Each retained constituency record includes election type, constituency, State/UT when provided, candidate, party, total votes, vote share, and the ECI source URL.
+## Current Indian results
+
+The live collector follows ECI's currently published results landing page and parses the constituency tables it exposes. The official site identifies these results as provisional until final Form 20 returns are available.
 
 - Source: [ECI results portal](https://results.eci.gov.in/).
 - Schedule: every three hours through [Election Results Update](../.github/workflows/election-results-update.yml).
-- Display: candidate vote totals for up to the 30 highest-vote candidates in currently published constituencies. The JSON snapshot retains all parsed candidate rows.
-- Derived indices: candidate vote totals, reported candidate vote shares, leading-candidate vote share, vote margin over the runner-up, and leading constituencies by party. Constituency margins are calculated from the same current ECI candidate totals.
-- Status: ECI's displayed results are provisional until Form 20. This chart is not a certified final-result series.
-- Scope limitation: the current portal is discovered dynamically and is not a verified archive of all historical Lok Sabha and State Assembly elections. Historical constituency-level Indian results are not claimed as complete.
+- Scope: currently published constituencies discovered from the live portal; this is not a full election archive.
+- Measures: candidate votes, reported vote shares, leading-candidate vote share, and vote margins derived from the same constituency candidate table.
+
+## Historical Indian candidate results
+
+The monthly [Historical Election Archive Update](../.github/workflows/historical-election-archive-update.yml) follows public ECI statistical-report pages and downloads public XLSX files whose names identify detailed results. It extracts rows only when candidate, constituency and total-vote columns can be identified, keeps the report URL on every row, and records collection failures in the JSON metadata.
+
+The committed snapshot currently contains **20,041 candidate observations from 16 ECI workbooks** for **2021–2023 across 15 States/UTs**. The collector scans 82 election-related catalog entries; most do not yet yield a supported candidate-results workbook, so the output records partial coverage rather than completeness. Workbook layouts vary, many archive reports are PDFs or lack a supported detailed-result spreadsheet, and this snapshot does not yet contain a verified historical Lok Sabha constituency series. Never interpret a missing State, year or seat as zero votes.
+
+The dashboard's historical explorer lets readers choose an available election type, year, State/UT and constituency. Candidate rows, chart values and reported electorate use Indian-number formatting. Vote shares are shown only when they appear in the source workbook; they are not reconstructed from partial totals.
+
+- Source catalog: [ECI statistical reports](https://old.eci.gov.in/statistical-report/statistical-reports/).
+- Refresh: monthly; run `python scripts/collect_historical_elections.py` for a manual collection.
+- Output: `data/historical-elections.json` and the deployed `data/historical-elections.json`.
+- Tests: `python -m unittest discover -s tests -p 'test_historical_elections.py' -v`.
+
+## SSR and SIR electoral-roll revisions
+
+ECI voter services and Chief Electoral Officer notices publish Special Summary Revision (SSR) and Special Intensive Revision (SIR) instructions, schedules and occasional roll statistics. The project links the official [ECI voter services portal](https://voters.eci.gov.in/) but does **not** yet publish a complete, comparable State/constituency time series of additions, deletions, claims, objections and final elector totals for SSR/SIR. The public notices are not a consistent machine-readable historical feed; no missing totals are inferred from current elector counts. A dedicated index requires extraction from the official revision tables and explicit year/State/roll-stage coverage.
 
 ## United States: Presidential elections
 
-The dashboard reads the winner and main opponent Electoral College totals for U.S. Presidential elections from 2000 through 2024 from the National Archives.
+The dashboard reads winner and main-opponent Electoral College totals for U.S. Presidential elections from 2000 through 2024.
 
 - Source: [National Archives Electoral College results](https://www.archives.gov/electoral-college).
-- Frequency: each election cycle (the collector checks the published archive every three hours).
 - Measure: Electoral College votes, not popular votes or ballots cast.
 
 ## United States: House elections
 
-House candidate returns are not included. The United States does not have a single verified federal results feed for all House districts in the source set reviewed; official returns are reported by state. Fundraising reports, turnout estimates, and third-party aggregations are not substituted and labelled as official House results.
-
-## Comparability
-
-The Indian series is candidate-level votes in currently published by-election constituencies; the U.S. series is national Electoral College votes in completed Presidential elections. These are separate subgroups and measures, not a normalized head-to-head comparison. The dashboard does not infer turnout, vote share, or historical continuity beyond source observations.
+House candidate returns are not included. Official House results are reported by State; no complete federal candidate-results source was verified in this project. Third-party aggregations are not substituted and labelled as official.

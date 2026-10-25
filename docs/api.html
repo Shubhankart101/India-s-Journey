@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API explorer — India's Journey</title>
+  <link rel="stylesheet" href="styles.css?v=historical-tourism-api-v2">
+  <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
+  <style>
+    .api-page { width: min(1180px, calc(100% - 32px)); margin: 40px auto; }
+    .api-intro, .endpoint-checks { padding: 20px; margin: 18px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+    .endpoint-checks button { padding: 9px 14px; color: var(--ink); background: var(--green); border: 0; border-radius: 6px; cursor: pointer; }
+    .endpoint-checks table { width: 100%; margin-top: 14px; border-collapse: collapse; text-align: left; }
+    .endpoint-checks th, .endpoint-checks td { padding: 9px; border-bottom: 1px solid var(--line); }
+    #swagger-ui { margin-top: 24px; }
+    .swagger-ui { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand-mark" href="index.html"><span class="brand-emblem">IJ</span><span>INDIA'S JOURNEY<small>PUBLIC DATA API</small></span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a href="index.html">Dashboard</a><a href="index.html#references">Sources</a></nav>
+  </header>
+  <main class="api-page">
+    <section class="api-intro">
+      <p class="eyebrow">Read-only public data</p>
+      <h1>API &amp; endpoint explorer</h1>
+      <p>This GitHub Pages project serves static JSON files, not a server-backed REST API. Swagger UI lets you inspect and try each documented GET resource. The check below fetches every documented data file from this deployment and verifies that it returns valid JSON.</p>
+    </section>
+    <section class="endpoint-checks" aria-labelledby="checks-title">
+      <h2 id="checks-title">Check all data endpoints</h2>
+      <button id="run-endpoint-checks" type="button">Run all endpoint checks</button>
+      <p id="endpoint-check-status" role="status" aria-live="polite">Checks have not been run.</p>
+      <table>
+        <thead><tr><th scope="col">Resource</th><th scope="col">HTTP</th><th scope="col">JSON</th></tr></thead>
+        <tbody id="endpoint-check-results"></tbody>
+      </table>
+    </section>
+    <div id="swagger-ui"></div>
+  </main>
+  <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script>
+    const apiResources = [
+      'chart-latest.json', 'election-results.json', 'historical-elections.json',
+      'economic-survey-monthly.json', 'ncrb-and-analyses.json',
+      'pew-india-reports.json', 'pew-snapshots.json',
+      'indian-matrix-latest.json', 'substack-latest.json'
+    ];
+    document.querySelector('#run-endpoint-checks').addEventListener('click', async () => {
+      const button = document.querySelector('#run-endpoint-checks');
+      const status = document.querySelector('#endpoint-check-status');
+      const body = document.querySelector('#endpoint-check-results');
+      button.disabled = true;
+      body.replaceChildren();
+      status.textContent = 'Checking all published JSON resources…';
+      const results = await Promise.all(apiResources.map(async resource => {
+        const row = document.createElement('tr');
+        const name = document.createElement('td');
+        name.textContent = resource;
+        const http = document.createElement('td');
+        const json = document.createElement('td');
+        try {
+          const response = await fetch(`data/${resource}`, { cache: 'no-store' });
+          http.textContent = String(response.status);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          await response.json();
+          json.textContent = 'Valid JSON';
+          row.dataset.ok = 'true';
+        } catch (error) {
+          json.textContent = error.message;
+          row.dataset.ok = 'false';
+        }
+        row.append(name, http, json);
+        return row;
+      }));
+      results.forEach(row => body.append(row));
+      const failed = results.filter(row => row.dataset.ok !== 'true').length;
+      status.textContent = failed === 0
+        ? `All ${results.length} documented data resources returned valid JSON.`
+        : `${failed} of ${results.length} resources failed. Check deployment status and the resource URL above.`;
+      button.disabled = false;
+    });
+    SwaggerUIBundle({
+      url: './openapi.json',
+      dom_id: '#swagger-ui',
+      deepLinking: true,
+      displayRequestDuration: true,
+      supportedSubmitMethods: ['get'],
+      presets: [SwaggerUIBundle.presets.apis],
+      layout: 'BaseLayout'
+    });
+  </script>
+</body>
+</html>

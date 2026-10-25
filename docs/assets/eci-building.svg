@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs><linearGradient id="poll" x2="0" y2="1"><stop stop-color="#6b7c7b" stop-opacity=".6"/><stop offset="1" stop-color="#d48548" stop-opacity=".25"/></linearGradient></defs>
+  <rect width="1200" height="600" fill="url(#poll)"/>
+  <circle cx="930" cy="115" r="62" fill="#ffe0a9" fill-opacity=".5"/>
+  <path d="M100 490h1000M140 470h920" stroke="#f8e8d4" stroke-opacity=".7" stroke-width="12"/>
+  <path d="M285 460V320h630v140M245 320h710l-55-40H300z" fill="#f4e6d4" fill-opacity=".74"/>
+  <path d="M350 460V340m125 120V340m125 120V340m125 120V340m125 120V340" stroke="#516660" stroke-opacity=".7" stroke-width="12"/>
+  <path d="M460 280q140-150 280 0z" fill="#f4e6d4" fill-opacity=".76"/>
+  <path d="M554 215h92v-25h-92zm36-25v-35h20v35" fill="#f4e6d4" fill-opacity=".8"/>
+  <path d="M565 390h70v70h-70z" fill="#c85f3a" fill-opacity=".65"/>
+</svg>

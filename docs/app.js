@@ -177,56 +177,56 @@ const eraData = {
     name: "India's Multi-Era Long View Atlas",
     years: "3300 BCE — 2026 CE",
     desc: "A long-run journey through India's civilizational roots, freedom movement, republic building, economic reforms, defence production, and digital powerhouse transformation.",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: Ancient Temple Architecture & Heritage"
+    image: "assets/parliament.svg",
+    attribution: "Original India-inspired vector illustration; see image references"
   },
   ancient: {
     id: "ancient",
     name: "Ancient & Classical India",
     years: "3300 BCE — 1200 CE",
     desc: "Indus Valley civilization, Vedic foundations, Maurya Empire under Ashoka, Gupta Golden Age, and Chola maritime trade.",
-    image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: Sanchi & Ancient Classical Architecture"
+    image: "assets/hampi.svg",
+    attribution: "Original Hampi-inspired vector illustration; see image references"
   },
   medieval: {
     id: "medieval",
     name: "Medieval & Imperial Era",
     years: "1200 — 1757 CE",
     desc: "Vijayanagara Empire, Mughal architecture, Maratha Confederacy, and historical silk & spice trade networks.",
-    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: Hampi Stone Chariot & Imperial Heritage"
+    image: "assets/hampi.svg",
+    attribution: "Original Hampi-inspired vector illustration; see image references"
   },
   freedom: {
     id: "freedom",
     name: "Colonial & Freedom Movement",
     years: "1757 — 1947 CE",
     desc: "Colonial trade monopoly, 1857 Uprising, Swadeshi Movement, Mahatma Gandhi's Salt Satyagraha, and 1947 Independence.",
-    image: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: Freedom Movement & National Heritage"
+    image: "assets/parliament.svg",
+    attribution: "Original civic-building vector illustration; see image references"
   },
   republic: {
     id: "republic",
     name: "Early Republic & Industrialization",
     years: "1947 — 1990 CE",
     desc: "Nation building post-independence, Five-Year Plans, Green & White Revolutions, Bhakra Nangal Dam, and ISRO foundations.",
-    image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: India Gate & Republic Capital"
+    image: "assets/parliament.svg",
+    attribution: "Original civic-building vector illustration; see image references"
   },
   liberalization: {
     id: "liberalization",
     name: "Economic Reform & IT Revolution",
     years: "1991 — 2013 CE",
     desc: "1991 Economic Liberalization, BSE & NSE stock market growth, IT sector expansion, highway infrastructure, and global trade.",
-    image: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: Mumbai Financial Center & Stock Market Growth"
+    image: "assets/parliament.svg",
+    attribution: "Original civic-building vector illustration; see image references"
   },
   modern: {
     id: "modern",
     name: "Modern Digital & Strategic Era",
     years: "2014 — Present",
     desc: "Digital India, UPI real-time payments, indigenous defence production (Make in India), defence exports, Chandrayaan space missions, and global powerhouse rise.",
-    image: "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop",
-    attribution: "📷 Open Source: High-Tech Aerospace & Defence Innovation"
+    image: "assets/rail-station.svg",
+    attribution: "Original infrastructure vector illustration; see image references"
   }
 };
 
@@ -494,16 +494,18 @@ async function main() {
   document.querySelector('#pew-report-search')?.addEventListener('input', renderPewReports);
   renderPewReports();
   const categoryBgMap = {
-    Economic: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=1600&auto=format&fit=crop", // Classical Architecture & Ancient Heritage
-    'Industry Trends & Performance': "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop", // Industrial & Engineering Output
-    'Mining & Natural Resources': "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=1600&auto=format&fit=crop", // Mineral Quarrying & Earth Mining
-    'Payments & Digital Banking': "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1600&auto=format&fit=crop", // Digital Technology
-    'State Performance & Regional Health': "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1600&auto=format&fit=crop", // South Indian Temple Gopuram & Architecture
-    'Public Health & Epidemiology': "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1600&auto=format&fit=crop", // Healthcare & Medical Research
-    Social: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1600&auto=format&fit=crop", // Hampi Stone Chariot Civilisational Heritage
-    'Defence & Strategic': "https://images.unsplash.com/photo-1618042164219-62c820f10723?q=80&w=1600&auto=format&fit=crop", // Aerospace & Defence Innovation
-    'Crime & Security': "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1600&auto=format&fit=crop", // Law & Justice Monument
-    'Pew Research': "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1600&auto=format&fit=crop"
+    Economic: "assets/parliament.svg",
+    'Industry Trends & Performance': "assets/rail-station.svg",
+    'Mining & Natural Resources': "assets/minerals.svg",
+    'Payments & Digital Banking': "assets/lotus-temple.svg",
+    'State Performance & Regional Health': "assets/hampi.svg",
+    'Public Health & Epidemiology': "assets/hospital.svg",
+    Social: "assets/taj-mahal.svg",
+    'Defence & Strategic': "assets/parliament.svg",
+    'Crime & Security': "assets/supreme-court.svg",
+    'Pew Research': "assets/lotus-temple.svg",
+    Elections: "assets/eci-building.svg",
+    'Tourism & Heritage': "assets/hampi.svg"
   };
 
   const setEraBackground = (imgUrl) => {
@@ -870,10 +872,12 @@ async function main() {
     'Punjab Militancy & Security': 'Crime & Security',
     'Violence & Crime': 'Crime & Security', 
     Terrorism: 'Crime & Security',
-    'Public opinion': 'Pew Research' 
+    'Public opinion': 'Pew Research',
+    'International Visitor Trends': 'Tourism & Heritage',
+    'World Heritage Sites': 'Tourism & Heritage'
   };
   const groupToSubgroups = {
-    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Elections'],
+    all: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities', 'Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade', 'UPI & Digital Payments', 'Card Spends & Ecosystem', 'Digital Financial Index', 'State Financial Health & GSDP', 'State Industrial & Manufacturing Hubs', 'State Welfare & Scheme Coverage', 'Mortality & Lifespan Milestones', 'Disease Burden & Epidemiology', 'Health Infrastructure & Spending', 'Demographics', 'Welfare', 'Government Schemes', 'Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities', 'Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism', 'Public opinion', 'Indian Elections', 'U.S. Elections', 'International Visitor Trends', 'World Heritage Sites'],
     Economic: ['Macroeconomics', 'Per Capita Income & Wealth', 'Monetary Policy', 'Trade & External', 'Markets', 'Fiscal & Union Budget', 'Media & Publications', 'Manufacturing & Industrial Growth', 'Production & Commodities'],
     'Industry Trends & Performance': ['Manufacturing & Industrial Growth', 'Infrastructure Development', 'Production & Commodities'],
     'Mining & Natural Resources': ['Metallic Minerals & Ores', 'Energy Minerals & Fuel', 'Non-Metallic & Industrial Minerals', 'Mineral Exports & Trade'],
@@ -884,7 +888,8 @@ async function main() {
     'Defence & Strategic': ['Defence Exports & Production', 'Defence Budget & Modernization', 'Strategic Stockpiles & Capabilities'],
     'Crime & Security': ['Maoism / LWE', 'Jammu & Kashmir Insurgency', 'North East Insurgency', 'Punjab Militancy & Security', 'Violence & Crime', 'Terrorism'],
     'Pew Research': ['Public opinion'],
-    Elections: ['Indian Elections', 'U.S. Elections']
+    Elections: ['Indian Elections', 'U.S. Elections'],
+    'Tourism & Heritage': ['International Visitor Trends', 'World Heritage Sites']
   };
   groupToSubgroups.all.push('State Infrastructure & Services');
   groupToSubgroups['State Performance & Regional Health'].push('State Infrastructure & Services');
@@ -1001,10 +1006,52 @@ async function main() {
     },
     Elections: {
       title: "🗳️ Election Results Atlas",
-      desc: "Current ECI constituency-level by-election candidate totals alongside official U.S. Presidential Electoral College outcomes. These source-specific measures are separated rather than presented as directly comparable.",
-      badge1: "ECI Live Results",
-      badge2: "U.S. National Archives"
+      desc: "Explore current ECI candidate results alongside a growing archive of downloadable ECI historical statistical reports. Historical rows are source-linked and selectable by election, state and constituency; available archived workbooks do not yet provide complete coverage of every election year or state.",
+      badge1: "Election Commission of India",
+      badge2: "Historical coverage is partial"
+    },
+    "Tourism & Heritage": {
+      title: "🏛️ Tourism & UNESCO World Heritage",
+      desc: "Follow annual international visitor and receipts indicators, then explore India’s UNESCO World Heritage properties by inscription year. Visitor totals are national, while the heritage series is reconstructed from current official inscription records; neither is a state-wise monument attendance measure.",
+      badge1: "World Bank annual indicators",
+      badge2: "UNESCO property records"
     }
+  };
+
+  const subgroupArtMap = {
+    "Macroeconomics": "assets/parliament.svg",
+    "Per Capita Income & Wealth": "assets/parliament.svg",
+    "Monetary Policy": "assets/parliament.svg",
+    "Trade & External": "assets/rail-station.svg",
+    "Markets": "assets/parliament.svg",
+    "Manufacturing & Industrial Growth": "assets/rail-station.svg",
+    "Infrastructure Development": "assets/rail-station.svg",
+    "Metallic Minerals & Ores": "assets/minerals.svg",
+    "Energy Minerals & Fuel": "assets/minerals.svg",
+    "Non-Metallic & Industrial Minerals": "assets/minerals.svg",
+    "UPI & Digital Payments": "assets/lotus-temple.svg",
+    "State Financial Health & GSDP": "assets/hampi.svg",
+    "State Infrastructure & Services": "assets/rail-station.svg",
+    "Mortality & Lifespan Milestones": "assets/hospital.svg",
+    "Disease Burden & Epidemiology": "assets/hospital.svg",
+    "Health Infrastructure & Spending": "assets/hospital.svg",
+    "Demographics": "assets/taj-mahal.svg",
+    "Welfare": "assets/lotus-temple.svg",
+    "Government Schemes": "assets/parliament.svg",
+    "Defence Exports & Production": "assets/parliament.svg",
+    "Defence Budget & Modernization": "assets/parliament.svg",
+    "Strategic Stockpiles & Capabilities": "assets/parliament.svg",
+    "Maoism / LWE": "assets/minerals.svg",
+    "Jammu & Kashmir Insurgency": "assets/hampi.svg",
+    "North East Insurgency": "assets/hampi.svg",
+    "Punjab Militancy & Security": "assets/supreme-court.svg",
+    "Violence & Crime": "assets/supreme-court.svg",
+    "Terrorism": "assets/supreme-court.svg",
+    "Public opinion": "assets/lotus-temple.svg",
+    "Indian Elections": "assets/eci-building.svg",
+    "U.S. Elections": "assets/eci-building.svg",
+    "International Visitor Trends": "assets/taj-mahal.svg",
+    "World Heritage Sites": "assets/hampi.svg"
   };
 
   const subgroupHeroData = {
@@ -1223,6 +1270,30 @@ async function main() {
       desc: "Landmark Pew Research Center survey snapshots: global power perceptions, US-India bilateral ties, domestic economic confidence, religious tolerance & pluralism (29,999 respondents), gender equality views, news media trust, and climate change awareness.",
       badge1: "Pew Global Survey",
       badge2: "Public Attitudes Data"
+    },
+    "Indian Elections": {
+      title: "🗳️ Indian Lok Sabha & State Assembly Results",
+      desc: "Compare currently published ECI constituency tables with candidate rows parsed from available ECI historical statistical-report workbooks. Select an available election, year, State/UT and constituency to inspect the original reported votes. The historical workbook archive is partial: missing periods or seats are unavailable, not zero, and live results remain provisional until Form 20.",
+      badge1: "ECI results & report archive",
+      badge2: "Historical archive is partial"
+    },
+    "U.S. Elections": {
+      title: "🇺🇸 U.S. Presidential Electoral College",
+      desc: "Read Presidential winner and main-opponent Electoral College totals from the U.S. National Archives for completed cycles from 2000 through 2024. Electoral College votes are not popular votes or ballots cast, and the series is separate from Indian candidate-level constituency returns.",
+      badge1: "U.S. National Archives",
+      badge2: "Electoral College votes"
+    },
+    "International Visitor Trends": {
+      title: "🧳 International Visitor Trends",
+      desc: "Track World Bank annual counts of international arrivals and departures alongside international tourism receipts in current US dollars. These are national measures reported at different frequencies of availability; receipts are nominal, and the indicators do not measure domestic travel, visits to individual monuments or State-level tourism.",
+      badge1: "World Bank indicators",
+      badge2: "Annual national series"
+    },
+    "World Heritage Sites": {
+      title: "🏛️ UNESCO World Heritage Inscription Record",
+      desc: "Explore annual inscription events, a cumulative count reconstructed from current UNESCO property pages, and current cultural/natural/mixed classifications. The historical line is not an archived snapshot for each year: revisions to today's list can change the reconstructed past, and inscription counts are not visitor numbers.",
+      badge1: "UNESCO World Heritage Centre",
+      badge2: "Current-list reconstruction"
     }
   };
 
@@ -1234,13 +1305,25 @@ async function main() {
       hero.hidden = true;
       return;
     }
-    const heroInfo = groupHeroData[grp];
+    const heroInfo = subgroupHeroData[subgroupFilter.value] || groupHeroData[grp];
     const heroTitle = document.querySelector('#group-hero-title');
     const heroDesc = document.querySelector('#group-hero-desc');
     const heroBadges = document.querySelector('#group-hero-badges');
+    const heroImage = document.querySelector('#group-hero-image');
+    const heroImageCaption = document.querySelector('#group-hero-image-caption');
+    const artPath = subgroupArtMap[subgroupFilter.value] || categoryBgMap[grp];
     if (heroTitle) heroTitle.textContent = heroInfo.title;
     if (heroDesc) heroDesc.textContent = heroInfo.desc;
     if (heroBadges) heroBadges.innerHTML = `<span class="hero-badge saffron">${heroInfo.badge1}</span><span class="hero-badge green">${heroInfo.badge2}</span>`;
+    if (heroImage && artPath) {
+      heroImage.src = artPath;
+      heroImage.alt = `${subgroupFilter.value !== 'all' ? subgroupFilter.value : grp} themed original illustration`;
+    }
+    if (heroImageCaption) {
+      heroImageCaption.textContent = subgroupFilter.value !== 'all'
+        ? `Original illustration · ${subgroupFilter.value}`
+        : 'Original India-inspired vector illustration';
+    }
     hero.hidden = false;
   };
 
@@ -1277,11 +1360,183 @@ async function main() {
     });
   }
 
+  const historicalExplorer = document.querySelector('#historical-election-explorer');
+  let historicalPayloadPromise = null;
+  let historicalChart = null;
+  let historicalExplorerInitialized = false;
+  let historicalExplorerInitializing = false;
+  const loadHistoricalExplorer = async () => {
+    if (historicalExplorerInitialized || historicalExplorerInitializing) return;
+    historicalExplorerInitializing = true;
+    const status = document.querySelector('#history-status');
+    const resultPanel = document.querySelector('#history-result');
+    const typeSelect = document.querySelector('#history-type');
+    const yearSelect = document.querySelector('#history-year');
+    const stateSelect = document.querySelector('#history-state');
+    const constituencySelect = document.querySelector('#history-constituency');
+    if (!status || !resultPanel || !typeSelect || !yearSelect || !stateSelect || !constituencySelect) {
+      historicalExplorerInitializing = false;
+      return;
+    }
+    if (!historicalPayloadPromise) {
+      historicalPayloadPromise = safeFetchJson('historical-elections.json', { observations: [] });
+    }
+    const payload = await historicalPayloadPromise;
+    const observations = Array.isArray(payload?.observations) ? payload.observations : [];
+    if (!observations.length) {
+      status.textContent = 'Historical ECI results could not be loaded. Try again later or open the official statistical-report archive.';
+      resultPanel.hidden = true;
+      historicalExplorerInitializing = false;
+      return;
+    }
+    historicalExplorerInitialized = true;
+    historicalExplorerInitializing = false;
+    const years = [...new Set(observations.map(row => String(row.year)))].sort((a, b) => Number(b) - Number(a));
+    const types = [...new Set(observations.map(row => row.election_type))].sort();
+    const reportedYears = [...new Set(observations.map(row => row.year))].sort((a, b) => a - b);
+    const reportedStates = new Set(observations.map(row => row.state_or_ut).filter(Boolean)).size;
+    status.textContent = `Archive coverage: ${reportedYears[0]}–${reportedYears[reportedYears.length - 1]} · ${reportedStates} States/UTs · ${observations.length.toLocaleString('en-IN')} candidate results. ${payload.reports_with_candidate_results} of ${payload.catalog_entries_scanned} relevant ECI archive entries yielded parseable workbooks; ${payload.reports_without_supported_download} had no supported XLSX. ${payload.collection_status === 'partial' ? 'Years and States/UTs without supported detailed-result workbooks are not represented.' : 'Coverage follows the available official downloadable workbooks.'}`;
+
+    const setOptions = (select, values, prompt) => {
+      select.replaceChildren(new Option(prompt, ''));
+      values.forEach(item => select.add(new Option(item.label, item.value)));
+      select.disabled = values.length === 0;
+    };
+    const stateFor = () => {
+      const type = typeSelect.value;
+      const year = yearSelect.value;
+      return [...new Set(observations
+        .filter(row => row.election_type === type && String(row.year) === year && row.state_or_ut)
+        .map(row => row.state_or_ut))].sort((a, b) => a.localeCompare(b));
+    };
+    const constituenciesFor = () => {
+      const byId = new Map();
+      observations
+        .filter(row => row.election_type === typeSelect.value
+          && String(row.year) === yearSelect.value
+          && row.state_or_ut === stateSelect.value)
+        .forEach(row => byId.set(`${row.constituency_number}|${row.constituency}`, row));
+      return [...byId.entries()]
+        .map(([value, row]) => ({ value, label: `${row.constituency_number ? `${row.constituency_number} · ` : ''}${row.constituency}` }))
+        .sort((a, b) => a.label.localeCompare(b.label));
+    };
+    const renderResults = () => {
+      const [number, constituency] = constituencySelect.value.split('|');
+      const rows = observations
+        .filter(row => row.election_type === typeSelect.value
+          && String(row.year) === yearSelect.value
+          && row.state_or_ut === stateSelect.value
+          && row.constituency_number === number
+          && row.constituency === constituency)
+        .sort((a, b) => b.votes - a.votes);
+      if (!rows.length) {
+        resultPanel.hidden = true;
+        return;
+      }
+      resultPanel.hidden = false;
+      const numberFormat = new Intl.NumberFormat('en-IN');
+      const winner = rows[0];
+      const runnerUp = rows[1];
+      const electorate = rows.find(row => row.electors !== null)?.electors;
+      const metrics = document.querySelector('#history-metrics');
+      metrics.replaceChildren();
+      [
+        ['Candidates reported', numberFormat.format(rows.length)],
+        ['Leading candidate votes', numberFormat.format(winner.votes)],
+        ['Lead over next candidate', runnerUp ? numberFormat.format(winner.votes - runnerUp.votes) : 'Not reported'],
+        ['Electorate reported', electorate === undefined ? 'Not reported' : numberFormat.format(electorate)]
+      ].forEach(([label, value]) => {
+        const item = document.createElement('div');
+        item.className = 'history-metric';
+        const strong = document.createElement('strong');
+        strong.textContent = value;
+        const caption = document.createElement('span');
+        caption.textContent = label;
+        item.append(strong, caption);
+        metrics.append(item);
+      });
+      const body = document.querySelector('#history-candidate-rows');
+      body.replaceChildren();
+      rows.forEach(row => {
+        const tr = document.createElement('tr');
+        [row.candidate, row.party || 'Not reported', numberFormat.format(row.votes),
+          row.vote_share_percent === null ? 'Not reported' : `${row.vote_share_percent.toLocaleString('en-IN')}%`]
+          .forEach(value => {
+            const td = document.createElement('td');
+            td.textContent = value;
+            tr.append(td);
+          });
+        body.append(tr);
+      });
+      const sourceLink = document.querySelector('#history-source-link');
+      sourceLink.href = winner.source;
+      sourceLink.textContent = `Open the original ECI report for ${stateSelect.value} ↗`;
+      historicalChart?.destroy();
+      const canvas = document.querySelector('#history-vote-chart');
+      historicalChart = new Chart(canvas, {
+        type: 'bar',
+        data: {
+          labels: rows.slice(0, 12).map(row => row.candidate),
+          datasets: [{
+            label: 'Votes',
+            data: rows.slice(0, 12).map(row => row.votes),
+            backgroundColor: rows.slice(0, 12).map((_, index) => index === 0 ? '#ff9933' : '#58a6ff'),
+            borderRadius: 5
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false }, title: { display: true, text: `${constituency} · ${stateSelect.value} · ${yearSelect.value}` } },
+          scales: {
+            x: { ticks: { callback: value => Number(value).toLocaleString('en-IN') } },
+            y: { ticks: { autoSkip: false } }
+          }
+        }
+      });
+    };
+    const refreshConstituencies = () => {
+      setOptions(constituencySelect, constituenciesFor(), 'Select a constituency');
+      resultPanel.hidden = true;
+    };
+    const refreshStates = () => {
+      setOptions(stateSelect, stateFor().map(value => ({ value, label: value })), 'Select a State/UT');
+      refreshConstituencies();
+    };
+    const refreshYears = () => {
+      const matchingYears = years.filter(year => observations.some(row =>
+        row.election_type === typeSelect.value && String(row.year) === year));
+      setOptions(yearSelect, matchingYears.map(value => ({ value, label: value })), 'Select an election year');
+      refreshStates();
+    };
+    setOptions(typeSelect, types.map(value => ({ value, label: value })), 'Select an election type');
+    typeSelect.addEventListener('change', refreshYears);
+    yearSelect.addEventListener('change', refreshStates);
+    stateSelect.addEventListener('change', refreshConstituencies);
+    constituencySelect.addEventListener('change', renderResults);
+    if (types.includes('State Assembly')) typeSelect.value = 'State Assembly';
+    else typeSelect.value = types[0];
+    refreshYears();
+    if (yearSelect.options.length > 1) yearSelect.selectedIndex = 1;
+    refreshStates();
+    if (stateSelect.options.length > 1) stateSelect.selectedIndex = 1;
+    refreshConstituencies();
+    if (constituencySelect.options.length > 1) {
+      constituencySelect.selectedIndex = 1;
+      renderResults();
+    }
+  };
+
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
     updateGroupHero();
     const stateFilter = filter ? filter.value : 'all';
     const hasSelectedScope = groupFilter.value !== 'all' || subgroupFilter.value !== 'all';
+    if (historicalExplorer) {
+      historicalExplorer.hidden = groupFilter.value !== 'Elections';
+      if (!historicalExplorer.hidden) void loadHistoricalExplorer();
+    }
     const pewLibrary = document.querySelector('#pew-report-library');
     if (pewLibrary) pewLibrary.hidden = groupFilter.value !== 'Pew Research';
 

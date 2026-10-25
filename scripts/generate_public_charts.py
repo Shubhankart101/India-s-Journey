@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -64,6 +65,125 @@ class _HtmlTableRows(HTMLParser):
         elif tag == "tr" and self._row is not None:
             self.rows.append(self._row)
             self._row = None
+
+
+class _UnescoListParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.items = []
+        self._classes = ""
+        self._href = ""
+        self._country_href = ""
+        self._country_text = []
+        self._in_country_heading = False
+        self._in_india_section = False
+        self._collecting_item = False
+        self._in_list_item = False
+        self._in_anchor = False
+        self._anchor_text = []
+        self._item_text = []
+
+    def handle_starttag(self, tag, attrs):
+        attributes = dict(attrs)
+        if tag == "h4":
+            self._in_country_heading = True
+            self._country_href = ""
+            self._country_text = []
+        elif tag == "a" and self._in_country_heading:
+            self._country_href = attributes.get("href", "")
+        elif tag == "li":
+            self._classes = attributes.get("class", "")
+            self._href = ""
+            self._collecting_item = self._in_india_section
+            self._in_list_item = self._collecting_item
+            self._in_anchor = False
+            self._anchor_text = []
+            self._item_text = []
+        elif tag == "a" and self._collecting_item:
+            href = attributes.get("href", "")
+            if re.fullmatch(r"/en/list/\d+/?", href):
+                self._href = href
+                self._in_anchor = True
+                self._anchor_text = []
+
+    def handle_data(self, data):
+        if self._in_country_heading:
+            self._country_text.append(data)
+        if self._in_list_item:
+            self._item_text.append(data)
+        if self._in_anchor:
+            self._anchor_text.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "h4" and self._in_country_heading:
+            country = " ".join("".join(self._country_text).split())
+            self._in_india_section = (
+                self._country_href.rstrip("/") == "/en/statesparties/in"
+                or country == "India"
+            )
+            self._in_country_heading = False
+        elif tag == "a" and self._in_anchor:
+            self._in_anchor = False
+        elif tag == "li" and self._collecting_item:
+            if self._href:
+                self.items.append({
+                    "url": self._href,
+                    "name": " ".join("".join(self._anchor_text).split()),
+                    "category": self._classes.strip(),
+                })
+            self._in_list_item = False
+            self._collecting_item = False
+
+
+def build_unesco_india_series() -> dict[str, dict]:
+    list_url = "https://whc.unesco.org/en/list/"
+    parser = _UnescoListParser()
+    parser.feed(get_text(list_url))
+    sites_by_url = {item["url"]: item for item in parser.items}
+    if not sites_by_url:
+        raise ValueError("UNESCO World Heritage List did not contain India site entries")
+    sites = []
+    for item in sites_by_url.values():
+        page = get_text("https://whc.unesco.org" + item["url"])
+        match = re.search(r"Date of Inscription:</strong>\s*(\d{4})", page)
+        if match is None:
+            raise ValueError(f"UNESCO inscription date missing for {item['name']}")
+        sites.append({**item, "year": int(match.group(1))})
+        time.sleep(0.1)
+    labels = [str(year) for year in range(min(site["year"] for site in sites), datetime.now(timezone.utc).year + 1)]
+    annual = {year: 0 for year in map(int, labels)}
+    for site in sites:
+        annual[site["year"]] += 1
+    cumulative = []
+    total = 0
+    for label in labels:
+        total += annual[int(label)]
+        cumulative.append(total)
+    cultural = sum(1 for site in sites if "cultural" in site["category"])
+    natural = sum(1 for site in sites if "natural" in site["category"])
+    source = f"UNESCO World Heritage Centre; current India-listed property pages ({len(sites)} sites)"
+    note = "Annual additions and cumulative totals are reconstructed from inscription dates on the current official list, not an archived yearly snapshot; site boundaries or classifications may change."
+    return {
+        "unesco_india_sites_cumulative": {
+            "labels": labels,
+            "values": cumulative,
+            "source": source,
+            "note": note,
+        },
+        "unesco_india_new_inscriptions": {
+            "labels": labels,
+            "values": [annual[int(label)] for label in labels],
+            "source": source,
+            "note": note,
+        },
+        "unesco_india_current_categories": {
+            "labels": ["Cultural", "Natural", "Mixed"],
+            "values": [cultural, natural, len(sites) - cultural - natural],
+            "chartType": "bar",
+            "source": source,
+            "note": "Current property classifications on the official UNESCO World Heritage List.",
+        },
+    }
 
 
 def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source: str) -> dict:
@@ -1176,6 +1296,9 @@ def main() -> None:
         ("defence_expenditure", "MS.MIL.XPND.GD.ZS", "india-defence-expenditure.svg", "India Defence Expenditure", "Military expenditure as share of GDP; World Bank indicator MS.MIL.XPND.GD.ZS", "#ff7b72", "% GDP"),
     ]
     additional_indicators = [
+        ("tourism_arrivals", "ST.INT.ARVL", "india-international-tourist-arrivals.svg", "International Tourist Arrivals", "International tourism, number of arrivals; World Bank indicator ST.INT.ARVL", "#ff9933", " arrivals"),
+        ("tourism_departures", "ST.INT.DPRT", "india-international-tourist-departures.svg", "International Tourist Departures", "International tourism, number of departures; World Bank indicator ST.INT.DPRT", "#58a6ff", " departures"),
+        ("tourism_receipts_usd", "ST.INT.RCPT.CD", "india-international-tourism-receipts.svg", "International Tourism Receipts", "International tourism receipts in current US dollars; World Bank indicator ST.INT.RCPT.CD", "#3fb950", " USD"),
         ("gdp_ppp", "NY.GDP.MKTP.PP.CD", "india-gdp-ppp.svg", "GDP at Purchasing Power Parity", "Gross domestic product in current international dollars", "#58a6ff", " USD"),
         ("gdp_deflator_growth", "NY.GDP.DEFL.KD.ZG", "india-gdp-deflator.svg", "GDP Deflator Inflation", "Annual GDP deflator inflation", "#ff9933", "%"),
         ("capital_formation_gdp", "NE.GDI.FTOT.ZS", "india-capital-formation.svg", "Gross Capital Formation", "Gross capital formation as a share of GDP", "#3fb950", "% GDP"),
@@ -1474,6 +1597,21 @@ def main() -> None:
         result["series"].get("terror_fatalities", {}),
         result["series"].get("population", {}),
     ))
+    try:
+        result["series"].update(build_unesco_india_series())
+    except (OSError, ValueError, URLError, TimeoutError) as error:
+        cached = {
+            key: previous_series[key]
+            for key in (
+                "unesco_india_sites_cumulative",
+                "unesco_india_new_inscriptions",
+                "unesco_india_current_categories",
+            )
+            if key in previous_series
+        }
+        result["series"].update(cached)
+        if not cached:
+            result["series"]["unesco_india_sites_cumulative"] = {"error": str(error)}
     series = result["series"]
     for derived_key, base_key, title in (
         ("state_gsdp_share", "state_gsdp_comparison", "RBI Handbook of Statistics on Indian States; share of reported GSDP"),

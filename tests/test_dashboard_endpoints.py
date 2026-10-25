@@ -109,6 +109,9 @@ class DashboardEndpointTests(unittest.TestCase):
             "upi_volume_index", "pew_india_2026_global_views",
             "pew_india_2026_top_threats", "pew_india_2026_top_allies",
             "pew_india_2021_diversity_views", "pew_india_2021_religious_freedom",
+            "tourism_arrivals", "tourism_departures", "tourism_receipts_usd",
+            "unesco_india_sites_cumulative", "unesco_india_new_inscriptions",
+            "unesco_india_current_categories",
         })
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
@@ -197,7 +200,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []))", app)
         keys = re.findall(r"worldBank\('([^']+)'", definitions)
         keys.extend(re.findall(r"^\s+\['([^']+)'", definitions, flags=re.MULTILINE))
-        self.assertEqual(len(keys), 60)
+        self.assertEqual(len(keys), 66)
         for key in keys:
             with self.subTest(chart=key):
                 self.assertIn(key, series)
@@ -430,7 +433,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=state-comparison-popover-v3-20261025', body)
+        self.assertIn(b'styles.css?v=historical-tourism-api-v2', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",
