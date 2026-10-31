@@ -144,7 +144,7 @@ See [Deployment](docs/DEPLOYMENT.md) for every variable.
 | Render free web service | Full app (`render.yaml`) | Sleeps after 15 minutes idle |
 | Koyeb free instance | Full app (`Dockerfile`) | Always on, small instance |
 | Google Cloud Run | Full app (`Dockerfile`) | Free monthly allowance; scales to zero; needs billing account |
-| Hugging Face Spaces (Docker) | Full app (`python scripts/deploy_hf_space.py`) | Public only; auto-deploys on push once `HF_TOKEN` is set |
+| Hugging Face Spaces (Docker) | Full app (`python scripts/deploy_hf_space.py`) | Needs HF PRO for Docker Spaces; manual workflow |
 | Cloudflare Pages / Netlify | Static dashboard (`docs/`) | Static mirror |
 
 On every free tier SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.

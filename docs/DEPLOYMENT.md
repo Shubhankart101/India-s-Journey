@@ -23,7 +23,7 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | **Render** (`render.yaml`, recommended) | Full Django + React app | One free web service | Sleeps after 15 minutes idle (cold start ~1 minute); disk resets on deploy |
 | **Koyeb** | Full app from the `Dockerfile` | One free instance | Doesn't sleep; small CPU/RAM; no persistent disk |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
-| **Hugging Face Spaces** (Docker SDK, scripted) | Full app from the `Dockerfile` | Free CPU for public Spaces | Public only; sleeps after 48 hours idle |
+| **Hugging Face Spaces** (Docker SDK, scripted) | Full app from the `Dockerfile` | **Not free:** Docker Spaces need HF PRO (Static Spaces stay free) | Public only; sleeps after 48 hours idle |
 | **Cloudflare Pages / Netlify** | Static dashboard in `docs/` | Free static hosting | Static only; a mirror of GitHub Pages |
 
 Fly.io and Railway now offer only trial credit, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
@@ -49,7 +49,7 @@ hf auth login                                  # write token
 python scripts/deploy_hf_space.py              # -> <user>/indiasjourney; --space owner/name to override
 ```
 
-To redeploy on every push, add a write token as the `HF_TOKEN` repository secret (and optionally an `HF_SPACE` variable such as `owner/indiasjourney`). [`deploy-hf-space.yml`](../.github/workflows/deploy-hf-space.yml) then runs the same script; without the secret it skips.
+Hugging Face now requires a PRO subscription for Docker Spaces (creating one on a free account returns `402 Payment Required`). With PRO, add a write token as the `HF_TOKEN` repository secret (and optionally an `HF_SPACE` variable such as `owner/indiasjourney`) and run [`deploy-hf-space.yml`](../.github/workflows/deploy-hf-space.yml) manually from the Actions tab.
 
 **Koyeb:** create a service from this GitHub repository, choose the `Dockerfile` builder, set the environment variables above, and use `/api/health/` as the health check.
 
