@@ -135,6 +135,8 @@ class DashboardEndpointTests(unittest.TestCase):
         expected.add("auto_domestic_sales_mix")
         from tourism_comparison_layer import KEYS as tourism_keys
         expected.update(tourism_keys)
+        from manufacturing_layer import KEYS as manufacturing_keys
+        expected.update(manufacturing_keys)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -468,7 +470,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=more-pies-v4', body)
+        self.assertIn(b'styles.css?v=product-v5', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",

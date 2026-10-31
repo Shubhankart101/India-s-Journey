@@ -25,6 +25,8 @@ The daily pipeline downloads the FEC candidate-summary bulk files for the 2018, 
 
 `scripts/official_indicator_layer.py` adds 30 World Bank line indicators and 13 composition pies across the Economic, Industry, Payments, State services, Health, Defence, Mining, Social and Tourism groups. Each series carries a `meta` block (title, subtitle, category, subgroup, colour, unit), so the dashboard registers it without hand-written definitions. A failed World Bank call keeps the previously published series.
 
+The daily chart builder also runs `scripts/tourism_comparison_layer.py` (World Bank arrivals and receipts for India and the most-visited countries) and `scripts/manufacturing_layer.py`. The manufacturing layer reads annual sectoral and monthly IIP rows from the paginated MOSPI API (`api.mospi.gov.in/api/iip`, base 2011-12, legacy-TLS context) plus the SIAM historical production table. If a source fails, the layer keeps the previously published series.
+
 ## Data flow
 
 1. A collector writes a JSON snapshot under `data/`.

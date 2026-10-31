@@ -318,6 +318,13 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(locale, { maximumFractionDigits: 2 })} ${unit[1]}${unitSuffix ? ` ${unitSuffix}` : ''}`;
 };
 
+const CHART_THEME = {
+  ink: '#1d1d1f', muted: '#6e6e73', grid: 'rgba(0, 0, 0, 0.06)', legend: '#424245',
+  tooltipBg: 'rgba(255, 255, 255, 0.97)', tooltipTitle: '#1d1d1f', tooltipBody: '#424245',
+  tooltipBorder: 'rgba(0, 0, 0, 0.1)', sliceBorder: '#ffffff',
+  font: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif'
+};
+
 const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line') => {
   const isRadialChart = chartType === 'pie' || chartType === 'doughnut';
   const pluginsConfig = {
@@ -341,10 +348,10 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
       } : undefined
     },
     tooltip: {
-      backgroundColor: 'rgba(11, 15, 25, 0.95)',
-      titleColor: '#ff9933',
-      bodyColor: '#e8edf2',
-      borderColor: 'rgba(255, 153, 51, 0.35)',
+      backgroundColor: CHART_THEME.tooltipBg,
+      titleColor: CHART_THEME.tooltipTitle,
+      bodyColor: CHART_THEME.tooltipBody,
+      borderColor: CHART_THEME.tooltipBorder,
       borderWidth: 1,
       padding: 12,
       boxPadding: 6,
@@ -385,23 +392,25 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
     } : undefined
   };
   if (!isRadialChart) {
+    const axisTicks = { color: CHART_THEME.muted, font: { size: 11, family: CHART_THEME.font } };
+    const axisGrid = { color: CHART_THEME.grid, drawBorder: false };
     options.scales = horizontalBars ? {
       x: {
-        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, callback: value => formatMagnitude(value, suffix) }
+        grid: axisGrid,
+        ticks: { ...axisTicks, callback: value => formatMagnitude(value, suffix) }
       },
       y: {
         grid: { display: false },
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, autoSkip: false, padding: 8 }
+        ticks: { ...axisTicks, autoSkip: false, padding: 8 }
       }
     } : {
       x: {
-        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' } }
+        grid: axisGrid,
+        ticks: { ...axisTicks }
       },
       y: {
-        grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
-        ticks: { color: '#9aa8b6', font: { size: 11, family: 'system-ui, sans-serif' }, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) }
+        grid: axisGrid,
+        ticks: { ...axisTicks, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) }
       }
     };
   }
@@ -411,7 +420,7 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
     options.layout = { padding: { top: 30 } };
     options.animation = { animateRotate: true, animateScale: true, duration: 800, easing: 'easeOutQuart' };
     options.onHover = (event, elements) => { if (event.native?.target) event.native.target.style.cursor = elements.length ? 'pointer' : 'default'; };
-    pluginsConfig.legend.labels.color = '#c9d1d9';
+    pluginsConfig.legend.labels.color = CHART_THEME.legend;
     pluginsConfig.legend.labels.usePointStyle = true;
     pluginsConfig.legend.labels.boxWidth = 10;
     pluginsConfig.centerReadout = { suffix };
@@ -436,11 +445,11 @@ if (typeof Chart !== 'undefined' && !Chart.registry?.plugins?.get?.('centerReado
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#f0f6fc';
-      ctx.font = `700 ${fontSize}px system-ui, sans-serif`;
+      ctx.fillStyle = CHART_THEME.ink;
+      ctx.font = `700 ${fontSize}px ${CHART_THEME.font}`;
       ctx.fillText(formatMagnitude(value, pluginOptions.suffix), arc.x, arc.y - fontSize * 0.45);
-      ctx.fillStyle = '#9aa8b6';
-      ctx.font = `500 ${Math.max(9, fontSize * 0.55)}px system-ui, sans-serif`;
+      ctx.fillStyle = CHART_THEME.muted;
+      ctx.font = `500 ${Math.max(9, fontSize * 0.55)}px ${CHART_THEME.font}`;
       ctx.fillText(caption, arc.x, arc.y + fontSize * 0.65);
       ctx.restore();
     }
@@ -835,8 +844,8 @@ async function main() {
             borderColor: dsColor,
             backgroundColor: createGradientFill(dsColor.slice(0, 7)),
             fill: true,
-            borderWidth: 2.8,
-            pointRadius: 2.5,
+            borderWidth: labels.length > 60 ? 2 : 2.8,
+            pointRadius: labels.length > 60 ? 0 : 2.5,
             pointHoverRadius: 6,
             pointHoverBackgroundColor: dsColor,
             tension: 0.32,
@@ -851,13 +860,13 @@ async function main() {
       return { labels: shownLabels, datasets: [{
         label: title,
         data: points ? points.map(point => point.value) : values,
-        borderColor: isRadialChart ? '#0d1117' : singleColor,
+        borderColor: isRadialChart ? CHART_THEME.sliceBorder : singleColor,
         backgroundColor: isRadialChart ? palette : createGradientFill(singleColor.slice(0, 7)),
         fill: !isRadialChart,
         borderWidth: isRadialChart ? 2 : 2.8,
         hoverOffset: isRadialChart ? 14 : 0,
         hoverBorderWidth: isRadialChart ? 3 : 0,
-        pointRadius: isRadialChart ? 0 : 3,
+        pointRadius: isRadialChart || labels.length > 60 ? 0 : 3,
         pointHoverRadius: isRadialChart ? 0 : 6,
         pointHoverBackgroundColor: singleColor,
         tension: isRadialChart ? 0 : 0.32
@@ -1189,10 +1198,52 @@ async function main() {
     "U.S. Presidential Campaign Finance": "assets/us-capitol.svg",
     "U.S. Congressional Campaign Finance": "assets/us-capitol.svg",
     "International Visitor Trends": "assets/taj-mahal.svg",
+    "Global Tourism Comparison": "assets/taj-mahal.svg",
+    "Heavy Industry & Metals": "assets/minerals.svg",
+    "Automobiles & Transport Equipment": "assets/rail-station.svg",
+    "Food Processing & Consumer Goods": "assets/hampi.svg",
+    "Chemicals, Pharma & Electronics": "assets/hospital.svg",
+    "Industrial Output Monitor (IIP)": "assets/rail-station.svg",
     "World Heritage Sites": "assets/hampi.svg"
   };
 
   const subgroupHeroData = {
+    "Heavy Industry & Metals": {
+      title: "🏗️ Heavy Industry, Metals & Capital Goods",
+      desc: "Basic metals (iron, steel, aluminium), fabricated metal products, machinery, electrical equipment, cement and other non-metallic minerals, and refined petroleum, tracked through MOSPI's Index of Industrial Production since 2011-12, plus UNIDO's technology-intensity split.",
+      badge1: "MOSPI IIP",
+      badge2: "Steel, Machinery & Cement"
+    },
+    "Automobiles & Transport Equipment": {
+      title: "🚗 Cars, Two-Wheelers & Transport Equipment",
+      desc: "Output of motor vehicles (cars, utility vehicles, trucks, trailers) and other transport equipment (dominated by two-wheelers), monthly and annual from MOSPI IIP, with SIAM's segment-wise production mix.",
+      badge1: "MOSPI IIP & SIAM",
+      badge2: "Cars & Two-Wheelers"
+    },
+    "Food Processing & Consumer Goods": {
+      title: "🍚 Food Processing & Consumer Manufacturing",
+      desc: "Food products, beverages, tobacco, textiles, apparel, leather, wood, paper, printing and furniture: the labour-intensive consumer industries, with UNIDO's composition of manufacturing value added.",
+      badge1: "MOSPI IIP & UNIDO",
+      badge2: "Food, Textiles & Consumer"
+    },
+    "Chemicals, Pharma & Electronics": {
+      title: "💊 Chemicals, Pharmaceuticals & Electronics",
+      desc: "Chemicals, pharmaceuticals, rubber and plastics, and computers, electronics and optical products: India's process and high-technology manufacturing base.",
+      badge1: "MOSPI IIP",
+      badge2: "Pharma & Electronics"
+    },
+    "Industrial Output Monitor (IIP)": {
+      title: "📡 Industrial Output Monitor",
+      desc: "Monthly IIP by use (capital, intermediate, infrastructure, consumer durables and non-durables), industry growth rankings, cumulative change since 2011-12, and how many industries are expanding versus contracting.",
+      badge1: "Monthly MOSPI data",
+      badge2: "Growth Rankings"
+    },
+    "Global Tourism Comparison": {
+      title: "🌍 India vs the World's Top Destinations",
+      desc: "International arrivals, tourism receipts, spending per visitor and the tourism balance for India against France, Spain, the United States, China, Italy, Türkiye, Mexico, Thailand, Germany, the UK, Japan and the UAE.",
+      badge1: "World Bank / UN Tourism",
+      badge2: "Global Benchmark"
+    },
     "Macroeconomics": {
       title: "📊 Macroeconomics & Growth Trajectory",
       desc: "Core macroeconomic balance sheet: GDP per capita, CPI inflation, Union fiscal deficit, current account balance, tax-to-GDP ratio, and gross domestic savings.",
@@ -1510,6 +1561,57 @@ async function main() {
     });
   }
 
+  const tileGallery = document.querySelector('#tile-gallery-track');
+  if (tileGallery && groupPills.length) {
+    const groupCounts = charts.reduce((counts, item) => ({ ...counts, [item.category]: (counts[item.category] || 0) + 1 }), {});
+    groupPills.forEach(pill => {
+      const group = pill.dataset.group;
+      const info = groupHeroData[group];
+      if (group === 'all' || !info) return;
+      const tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'product-tile';
+      tile.style.setProperty('--tile-art', `url("${categoryBgMap[group] || 'assets/parliament.svg'}")`);
+      const eyebrow = document.createElement('span');
+      eyebrow.className = 'product-tile-eyebrow';
+      eyebrow.textContent = `${groupCounts[group] || 0} indicators`;
+      const heading = document.createElement('strong');
+      heading.textContent = info.title.replace(/^[^\p{L}\p{N}]+/u, '');
+      const blurb = document.createElement('span');
+      blurb.className = 'product-tile-copy';
+      blurb.textContent = `${info.badge1} · ${info.badge2}`;
+      const plus = document.createElement('span');
+      plus.className = 'product-tile-plus';
+      plus.setAttribute('aria-hidden', 'true');
+      plus.textContent = '+';
+      tile.append(eyebrow, heading, blurb, plus);
+      tile.setAttribute('aria-label', `Explore ${group}`);
+      tile.addEventListener('click', () => {
+        pill.click();
+        document.querySelector('#explore')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      tileGallery.append(tile);
+    });
+    document.querySelectorAll('[data-gallery-scroll]').forEach(button => {
+      button.addEventListener('click', () => {
+        tileGallery.scrollBy({ left: Number(button.dataset.galleryScroll) * tileGallery.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(element => revealObserver.observe(element));
+  } else {
+    document.querySelectorAll('[data-reveal]').forEach(element => element.classList.add('is-revealed'));
+  }
+
   const historicalExplorer = document.querySelector('#historical-election-explorer');
   let historicalPayloadPromise = null;
   let historicalChart = null;
@@ -1732,7 +1834,7 @@ async function main() {
               label: 'Votes',
               data: compositionValues,
               backgroundColor: ['#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344'],
-              borderColor: '#161b22',
+              borderColor: CHART_THEME.sliceBorder,
               borderWidth: 2,
               hoverOffset: 8
             }]

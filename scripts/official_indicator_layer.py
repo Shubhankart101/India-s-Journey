@@ -126,6 +126,11 @@ COMPOSITIONS = (
      (("Agriculture", "ER.H2O.FWAG.ZS"), ("Industry", "ER.H2O.FWIN.ZS")), "Domestic use"),
     ("wb_military_budget_share", "Military Share of Government Spending", "Share of general government expenditure (SIPRI)", "Defence & Strategic", "Defence Budget & Modernization", "%",
      (("Military", "MS.MIL.XPND.ZS"),), "All other government spending"),
+    ("wb_manufacturing_value_added_mix", "Manufacturing Value Added by Industry", "Share of manufacturing value added (UNIDO)", "Industry Trends & Performance", "Food Processing & Consumer Goods", "%",
+     (("Food, beverages & tobacco", "NV.MNF.FBTO.ZS.UN"), ("Machinery & transport equipment", "NV.MNF.MTRN.ZS.UN"),
+      ("Chemicals", "NV.MNF.CHEM.ZS.UN"), ("Textiles & clothing", "NV.MNF.TXTL.ZS.UN")), "Other manufacturing (incl. metals)"),
+    ("wb_manufacturing_tech_intensity", "Manufacturing by Technology Intensity", "Medium- and high-tech share of manufacturing value added (UNIDO)", "Industry Trends & Performance", "Heavy Industry & Metals", "%",
+     (("Medium & high-tech industry", "NV.MNF.TECH.ZS.UN"),), "Low-tech & resource-based industry"),
 )
 
 
