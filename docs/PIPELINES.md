@@ -23,7 +23,25 @@ The historical collector downloads public detailed-result XLSX workbooks from EC
 
 The daily pipeline downloads the FEC candidate-summary bulk files for the 2018, 2020, 2022, 2024 and 2026 cycles, validates their ZIP members and row layout, and aggregates four reported financial measures by candidate party (President) or candidate office state (House and Senate), plus 10 composition pies per cycle (party, incumbency and funding-source mixes). It publishes 115 series in `data/us-campaign-finance.json`; it does not estimate votes, turnout, or public contributions. An unexpected source format or failed download stops collection instead of publishing empty or zero-filled data.
 
-`scripts/official_indicator_layer.py` adds 30 World Bank line indicators and 13 composition pies across the Economic, Industry, Payments, State services, Health, Defence, Mining, Social and Tourism groups. Each series carries a `meta` block (title, subtitle, category, subgroup, colour, unit), so the dashboard registers it without hand-written definitions. A failed World Bank call keeps the previously published series.
+`scripts/official_indicator_layer.py` adds 30 World Bank line indicators and 13 composition pies across the Economic, Industry, Payments, State services, Health, Defence, Mining, Social and Tourism groups. It also adds 17 `EXPLAINED_INDICATORS`, covering environment, agriculture, social and health. Each series carries a `meta` block (title, subtitle, category, subgroup, colour, unit, and for explained series `explain: {what, read, why}`), so the dashboard registers it without hand-written definitions. A failed World Bank call keeps the previously published series.
+
+`scripts/mospi_layer.py` (also run by the daily chart builder) adds 46 explained series from the MoSPI API platform (`api.mospi.gov.in`, legacy-TLS context, pages of at most 200 rows).
+
+Sources:
+- EnviStats India (`/api/env/getEnvStatsRecords`);
+- Women & Men in India (`/api/gender/getGenderRecords`);
+- AISHE (`/api/aishe/getAisheRecords`);
+- PLFS (`/api/plfs/getData`).
+
+The specs are declarative. Each declares one of three chart kinds: a national line, a latest-period State/UT ranking, or a latest-period composition. Specs can also sum months into annual totals. The layer handles these source quirks:
+- a national total filed under a State name is relabelled All India;
+- `(P)` and `*` year markers are stripped, and the note records those years as provisional;
+- projected periods are excluded;
+- mislabelled units (oilseeds and sugarcane are in lakh tonnes) carry a caveat.
+
+If an indicator fails, its previous series is kept.
+
+`scripts/export_catalog.mjs` turns `meta.explain` into "What it shows — / How to read it — / Why it matters —" paragraphs in each indicator's `details`, which the React indicator page renders as explainer tiles.
 
 The daily chart builder also runs `scripts/tourism_comparison_layer.py` (World Bank arrivals and receipts for India and the most-visited countries) and `scripts/manufacturing_layer.py`. The manufacturing layer reads annual sectoral and monthly IIP rows from the paginated MOSPI API (`api.mospi.gov.in/api/iip`, base 2011-12, legacy-TLS context) plus the SIAM historical production table. If a source fails, the layer keeps the previously published series.
 

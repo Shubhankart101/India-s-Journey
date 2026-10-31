@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
-import { chartModes, formatMagnitude, isRadial, seriesStats } from '../format.js';
+import { changeSeries, chartModes, formatMagnitude, isRadial, linearTrend, parseExplainer, seriesStats } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { ErrorState, Loading } from '../components/States.jsx';
@@ -53,8 +53,23 @@ function IndicatorView({ indicator }) {
     };
   }, [indicator, range, yearLabels, mode]);
 
+  const [view, setView] = useState('levels');
+  const [trendOn, setTrendOn] = useState(false);
+  const analysable = yearLabels && !isRadial(mode);
+  const inPoints = /%/.test(indicator.suffix || '');
+  const changeSuffix = inPoints ? ' pp' : '%';
+  const trend = useMemo(() => (analysable && trendOn && view === 'levels' && visible.datasets.length === 1
+    ? linearTrend(visible.datasets[0].values) : null), [analysable, trendOn, view, visible]);
+  const shown = useMemo(() => {
+    if (!analysable) return visible;
+    const datasets = view === 'change'
+      ? visible.datasets.map(dataset => ({ ...dataset, values: changeSeries(dataset.values, inPoints) }))
+      : visible.datasets;
+    return { labels: visible.labels, datasets: trend ? [...datasets, { label: 'Linear trend', trend: true, values: trend.line }] : datasets };
+  }, [analysable, view, visible, inPoints, trend]);
+
   const stats = seriesStats(visible.datasets[0]?.values || []);
-  const paragraphs = (indicator.details || '').split(/\n\n+/).filter(Boolean);
+  const { explain, paragraphs } = parseExplainer(indicator.details);
   const inCompare = compare.has(indicator.key);
   const art = indicator.subgroup_art || indicator.category_art;
 
@@ -133,16 +148,33 @@ function IndicatorView({ indicator }) {
                     </select>
                   </div>
                 )}
+                {analysable && (
+                  <div className="segmented" role="group" aria-label="Analysis">
+                      <button type="button" className={view === 'change' ? 'active' : ''} aria-pressed={view === 'change'}
+                        onClick={() => setView(current => (current === 'change' ? 'levels' : 'change'))}>Δ Change</button>
+                      {visible.datasets.length === 1 && (
+                        <button type="button" className={trendOn ? 'active' : ''} aria-pressed={trendOn} disabled={view === 'change'}
+                          onClick={() => setTrendOn(current => !current)}>↗ Trend</button>
+                      )}
+                  </div>
+                )}
               </div>
+              {analysable && (view === 'change' || trend) && (
+                <p className="chart-tool-note muted small" aria-live="polite">
+                  {view === 'change'
+                      ? `Showing period-on-period change (${inPoints ? 'percentage points' : '% change'}).`
+                      : `Trend: ${trend.slope >= 0 ? '+' : ''}${formatMagnitude(trend.slope, indicator.suffix)} per period · R² ${trend.r2.toFixed(2)}`}
+                </p>
+              )}
               <div className="detail-chart">
                 <Suspense fallback={<div className="chart-skeleton" />}>
                   <ChartView
                     title={indicator.title}
-                    labels={visible.labels}
-                    datasets={visible.datasets}
+                    labels={shown.labels}
+                    datasets={shown.datasets}
                     type={mode}
                     indexAxis={indicator.index_axis}
-                    suffix={indicator.suffix}
+                    suffix={analysable && view === 'change' ? changeSuffix : indicator.suffix}
                     color={indicator.color}
                   />
                 </Suspense>
@@ -166,7 +198,17 @@ function IndicatorView({ indicator }) {
       <section className="section two-col">
         <div>
           <h2>About this indicator</h2>
-          {paragraphs.length ? paragraphs.map(text => <p key={text.slice(0, 40)}>{text}</p>) : <p className="muted">No additional notes.</p>}
+          {explain && (
+            <div className="explainer-grid">
+              {[['what', 'What it shows'], ['read', 'How to read it'], ['why', 'Why it matters']].filter(([part]) => explain[part]).map(([part, heading]) => (
+                <div className={`explainer-tile explainer-${part}`} key={part}>
+                  <h3>{heading}</h3>
+                  <p>{explain[part]}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          {paragraphs.length ? paragraphs.map(text => <p key={text.slice(0, 40)}>{text}</p>) : !explain && <p className="muted">No additional notes.</p>}
           {indicator.note && <p className="muted">{indicator.note}</p>}
         </div>
         <aside className="card source-card">

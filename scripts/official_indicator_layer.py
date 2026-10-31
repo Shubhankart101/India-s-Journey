@@ -70,6 +70,81 @@ LINE_INDICATORS = (
     ("wb_fuel_imports", "TM.VAL.FUEL.ZS.UN", "Fuel Imports", "Fuels as a share of merchandise imports", "Mining & Natural Resources", "Mineral Exports & Trade", "#ff7b72", "%"),
 )
 
+ENV, AGRI, SOCIAL, HEALTH = "Environment & Climate", "Agriculture & Food", "Social", "Public Health & Epidemiology"
+
+# Indicators that carry a plain-language explainer: (what it shows, how to read it, why it matters).
+EXPLAINED_INDICATORS = (
+    ("wb_co2_per_capita", "EN.GHG.CO2.PC.CE.AR5", "CO2 Emissions per Person", "Tonnes of CO2 per capita, excluding land use", ENV, "Climate & Weather", "#ff7b72", " t per person", (
+        "Carbon dioxide released per Indian each year from fossil fuels, cement and industry.",
+        "A rising line means emissions are growing faster than population. India's figure is about a third of the world average and a sixth of the US level.",
+        "Per-person emissions frame India's climate-equity argument: total emissions are large, but each citizen's footprint is small.")),
+    ("wb_total_ghg", "EN.GHG.ALL.MT.CE.AR5", "Total Greenhouse Gas Emissions", "Million tonnes of CO2-equivalent, excluding land use", ENV, "Climate & Weather", "#ff9933", " Mt CO2e", (
+        "All greenhouse gases India emits each year (CO2, methane, nitrous oxide and F-gases), converted to CO2-equivalent.",
+        "The slope shows how fast emissions are growing; compare it with GDP growth to judge whether the economy is decarbonising.",
+        "India is now the world's third-largest emitter in total, which makes its 2070 net-zero pathway globally significant.")),
+    ("wb_protected_areas", "ER.PTD.TOTL.ZS", "Protected Areas", "Terrestrial and marine protected areas, % of territory", ENV, "Forests & Land", "#3fb950", "%", (
+        "The share of India's land and territorial waters inside national parks, sanctuaries and other protected areas.",
+        "Higher is more protected; the global 30x30 target asks countries to protect 30% by 2030.",
+        "Protected areas safeguard tigers, elephants and watersheds, but expanding them must be balanced against forest-dwellers' rights.")),
+    ("wb_freshwater_per_capita", "ER.H2O.INTR.PC", "Renewable Freshwater per Person", "Cubic metres of internal renewable water per person", ENV, "Forests & Land", "#58a6ff", " m3 per person", (
+        "How much renewable freshwater (rivers and groundwater recharge) India has per person.",
+        "The total resource is roughly fixed, so the line falls as population grows. Below 1,700 m3 a country is 'water-stressed'; below 1,000 it is 'water-scarce'.",
+        "Falling water per person explains groundwater depletion, inter-State river disputes and the push for micro-irrigation and Jal Jeevan Mission.")),
+    ("wb_population_density", "EN.POP.DNST", "Population Density", "People per square kilometre of land", ENV, "Forests & Land", "#bc8cff", " per sq km", (
+        "The average number of people living on each square kilometre of India's land.",
+        "A steadily rising line; India is one of the most densely populated large countries.",
+        "Density raises pressure on land, forests, water and cities, and shapes disaster exposure.")),
+    ("wb_fertiliser_per_ha", "AG.CON.FERT.ZS", "Fertiliser Use per Hectare", "Kg of N+P+K nutrients per hectare of arable land", AGRI, "Farm Inputs", "#58a6ff", " kg/ha", (
+        "How intensively Indian farmland is fertilised: kilograms of nitrogen, phosphate and potash applied per hectare.",
+        "A rising line means more intensive farming. Compare it with cereal yields to see whether extra fertiliser still raises output.",
+        "Heavy, unbalanced fertiliser use raises the subsidy bill and degrades soil and groundwater, which is why soil-health cards and nano-urea are being promoted.")),
+    ("wb_irrigated_land", "AG.LND.IRIG.AG.ZS", "Irrigated Agricultural Land", "Share of agricultural land that is irrigated, %", AGRI, "Farm Inputs", "#39c5bb", "%", (
+        "The share of India's agricultural land that receives irrigation rather than depending only on rain.",
+        "Higher means farming is better protected from monsoon failures.",
+        "Irrigation is the biggest buffer against drought; PM Krishi Sinchayee Yojana aims to extend it to every farm.")),
+    ("wb_arable_land_per_capita", "AG.LND.ARBL.HA.PC", "Arable Land per Person", "Hectares of arable land per person", AGRI, "Farm Inputs", "#f6c344", " ha per person", (
+        "How much cropland India has for each person.",
+        "The line falls as population grows on a fixed land base; fragmentation means the average farm holding is now about one hectare.",
+        "Shrinking land per person makes productivity growth, not area expansion, the only route to feeding more people.")),
+    ("wb_food_production_index", "AG.PRD.FOOD.XD", "Food Production Index", "Index of food output, 2014-2016 = 100", AGRI, "Crop Production", "#3fb950", "", (
+        "A volume index of all food crops and livestock produced in India, set to 100 for 2014-2016.",
+        "A value of 120 means 20% more food than the 2014-16 average. Steady growth with few dips shows resilient farm output.",
+        "It summarises whether food supply is keeping pace with population and demand.")),
+    ("wb_undernourishment", "SN.ITK.DEFC.ZS", "Prevalence of Undernourishment", "Share of population below minimum calorie needs, %", HEALTH, "Nutrition & Food Security", "#ff7b72", "%", (
+        "The FAO estimate of the share of Indians whose usual food intake does not meet minimum energy needs.",
+        "Lower is better. It is a three-year average, so it moves slowly.",
+        "Hunger is SDG 2 and the target of the National Food Security Act and PM Garib Kalyan Anna Yojana; this is also an input to the Global Hunger Index.")),
+    ("wb_child_stunting", "SH.STA.STNT.ZS", "Child Stunting (modelled)", "Children under 5 too short for their age, %", HEALTH, "Nutrition & Food Security", "#f778ba", "%", (
+        "The share of children under five who are too short for their age, a sign of chronic undernutrition.",
+        "Lower is better; the trend comes from UNICEF/WHO/World Bank modelled estimates that smooth survey years (NFHS).",
+        "Stunting harms brain development and lifetime earnings and is the main target of POSHAN Abhiyaan.")),
+    ("wb_measles_immunisation", "SH.IMM.MEAS", "Measles Immunisation", "Children aged 12-23 months vaccinated, %", HEALTH, "Disease Burden & Epidemiology", "#3fb950", "%", (
+        "The share of young children who have received the measles vaccine.",
+        "Higher is better; at least 95% is needed to stop measles outbreaks. Dips show disruptions such as COVID-19.",
+        "Measles coverage is a bellwether for the whole routine-immunisation system under Mission Indradhanush.")),
+    ("wb_youth_unemployment", "SL.UEM.1524.ZS", "Youth Unemployment (ILO estimate)", "Unemployed as % of labour force aged 15-24", SOCIAL, "Employment & Poverty", "#f778ba", "%", (
+        "The ILO-modelled unemployment rate for young people aged 15-24, comparable across countries.",
+        "Read it with the PLFS youth chart: the methods differ, but both show youth unemployment far above the overall rate.",
+        "It shows how well the economy absorbs new entrants into the workforce each year.")),
+    ("wb_women_in_parliament", "SG.GEN.PARL.ZS", "Women in Parliament", "Share of Lok Sabha seats held by women, %", SOCIAL, "Gender & Population", "#bc8cff", "%", (
+        "The share of seats in the lower house of Parliament held by women.",
+        "Steps in the line follow general elections. The Women's Reservation Act (2023) will reserve one-third of seats once it takes effect.",
+        "Representation shapes which issues reach the legislative agenda.")),
+    ("wb_rnd_spending", "GB.XPD.RSDV.GD.ZS", "Research & Development Spending", "Gross domestic spending on R&D, % of GDP", SOCIAL, "Higher Education", "#58a6ff", "% of GDP", (
+        "Total spending on research and development by government, business and universities as a share of GDP.",
+        "India's figure stays near 0.7%, against about 2.5% in China and over 3% in the US and South Korea.",
+        "R&D drives innovation and productivity; the Anusandhan National Research Foundation is meant to lift private research spending.")),
+    ("wb_researchers", "SP.POP.SCIE.RD.P6", "Researchers per Million People", "Full-time researchers in R&D per million population", SOCIAL, "Higher Education", "#bc8cff", " per million", (
+        "The number of people working full-time in research per million population.",
+        "Higher means a larger research workforce; India's figure is low by international standards.",
+        "A country's research base decides its ability to innovate in fields from vaccines to semiconductors.")),
+    ("wb_ict_service_exports", "BX.GSR.CCIS.ZS", "ICT Service Exports", "Computer, communications and other services, % of service exports", "Economic", "Trade & External", "#58a6ff", "%", (
+        "The share of India's service exports that come from IT, software, communications and related business services.",
+        "A high, rising share shows how central the IT and global-capability-centre industry is to India's exports.",
+        "Services exports pay for much of India's merchandise trade deficit, making this sector a pillar of external stability.")),
+)
+
+
 # key, title, subtitle, category, subgroup, unit, parts[(label, code)], residual label or None
 COMPOSITIONS = (
     ("wb_exports_composition", "Merchandise Exports by Product Group", "Share of merchandise exports", "Economic", "Trade & External", "%",
@@ -151,9 +226,12 @@ def _observations(get_json: Callable[[str], object], code: str) -> dict[str, flo
     return {row["date"]: float(row["value"]) for row in payload[1] if row.get("value") is not None}
 
 
-def _meta(title: str, subtitle: str, category: str, subgroup: str, color: str, suffix: str) -> dict:
-    return {"title": title, "subtitle": subtitle, "frequency": "Annual", "color": color,
+def _meta(title: str, subtitle: str, category: str, subgroup: str, color: str, suffix: str, explain: tuple | None = None) -> dict:
+    meta = {"title": title, "subtitle": subtitle, "frequency": "Annual", "color": color,
             "suffix": suffix, "category": category, "subgroup": subgroup}
+    if explain:
+        meta["explain"] = dict(zip(("what", "read", "why"), explain))
+    return meta
 
 
 def build_official_layer(get_json: Callable[[str], object], previous: dict[str, dict]) -> dict[str, dict]:
@@ -173,7 +251,8 @@ def build_official_layer(get_json: Callable[[str], object], previous: dict[str, 
         return cache[code]
 
     series: dict[str, dict] = {}
-    for key, code, title, subtitle, category, subgroup, color, suffix in LINE_INDICATORS:
+    lines = [(*item, None) for item in LINE_INDICATORS] + list(EXPLAINED_INDICATORS)
+    for key, code, title, subtitle, category, subgroup, color, suffix, explain in lines:
         try:
             observed = fetch(code)
             if not observed:
@@ -185,7 +264,7 @@ def build_official_layer(get_json: Callable[[str], object], previous: dict[str, 
                 "source": f"World Bank API {code}",
                 "unit": suffix.strip(),
                 "note": f"{subtitle}. Official national statistics compiled by the World Bank (indicator {code}); gaps reflect years without a reported value.",
-                "meta": _meta(title, subtitle, category, subgroup, color, suffix),
+                "meta": _meta(title, subtitle, category, subgroup, color, suffix, explain),
             }
         except Exception:  # keep the last good series when the API is unavailable
             if previous.get(key, {}).get("values"):

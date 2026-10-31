@@ -18,6 +18,7 @@ try:
     from scripts.tourism_comparison_layer import build_tourism_comparison_layer
     from scripts.manufacturing_layer import build_manufacturing_layer
     from scripts.mining_layer import build_mining_layer
+    from scripts.mospi_layer import build_mospi_layer
     from scripts.rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
@@ -25,6 +26,7 @@ except ImportError:  # executed directly as scripts/generate_public_charts.py
     from tourism_comparison_layer import build_tourism_comparison_layer
     from manufacturing_layer import build_manufacturing_layer
     from mining_layer import build_mining_layer
+    from mospi_layer import build_mospi_layer
     from rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1491,6 +1493,7 @@ def main() -> None:
                 except Exception:
                     result["series"][key] = {"error": str(error)}
     result["series"].update(build_official_layer(get_json, previous_series))
+    result["series"].update(build_mospi_layer(previous_series))
     result["series"].update(build_tourism_comparison_layer(get_json, previous_series))
     result["series"].update(build_manufacturing_layer(previous_series))
     result["series"].update(build_mining_layer(previous_series))

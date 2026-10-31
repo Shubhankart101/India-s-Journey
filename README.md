@@ -13,7 +13,17 @@ This independent project was created to make India’s economic, social, and inf
 
 With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. Every page (static site and web app) has a **With thanks** section with one column for PolityPolicy and one for Indian Matrix, each listing its three latest articles; footers link to it and the status and Django sign-in/error pages carry the same thanks. The Home and About introductions use identical copy on the static site and in the React app.
 
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
+Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Environment & Climate, Agriculture & Food, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
+
+**Explained official datasets.** 46 series come straight from the Ministry of Statistics' open API platform (EnviStats India, Women & Men in India, AISHE and PLFS), plus 17 more World Bank indicators. Together they cover climate and rainfall, forests, pollution and waste, disasters, energy transition, crops, farm inputs, livestock and fisheries, labour-force participation by sex, higher education and nutrition. Every one of these charts carries a three-part explainer: **What it shows**, **How to read it** and **Why it matters**.
+
+**Chart tools.** Every live static chart has a toolbar:
+- **Δ Change**: period-on-period change, in percentage points when the series is already a %;
+- **Trend line**: a least-squares fit with its slope and R² for the visible range;
+- **Data table** and **CSV download**;
+- **Share**: copies a deep link like `explore.html?chart=mospi_foodgrain_production` that opens the right group and highlights the chart.
+
+The React indicator page offers the same Δ Change and Trend controls and the explainer tiles.
 
 The **Markets Subgroup** under Economic includes rich global comparisons celebrating India's growth trajectory alongside the world's largest economies:
 - **Indian Market Indices**: Sensex, Nifty 50, and Nifty VIX rebased to 100.
@@ -209,6 +219,7 @@ Data commits pushed by the scheduled workflows trigger a redeploy, which re-impo
 - [GST portal](https://www.gst.gov.in/) for GST collections.
 - [Controller General of Accounts](https://cga.nic.in/) for Union fiscal accounts.
 - [MOSPI](https://www.mospi.gov.in/) for IIP and official statistics.
+- [MoSPI eSankhyiki API platform](https://esankhyiki.mospi.gov.in/) (`api.mospi.gov.in`) for EnviStats India, Women & Men in India, AISHE and PLFS indicators.
 - [RBI DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for monetary, banking, and exchange-rate data.
 - [Office of the Economic Adviser](https://eaindustry.nic.in/) for WPI.
 - [NPCI UPI statistics](https://www.npci.org.in/what-we-do/upi/product-statistics) for UPI activity.

@@ -298,6 +298,45 @@ const formatMagnitude = (value, suffix = '') => {
   return `${amount.toLocaleString(locale, { maximumFractionDigits: 2 })} ${unit[1]}${unitSuffix ? ` ${unitSuffix}` : ''}`;
 };
 
+const EXPLAIN_PARTS = [['what', 'What it shows'], ['read', 'How to read it'], ['why', 'Why it matters']];
+const explainDetails = explain => explain ? EXPLAIN_PARTS.filter(([part]) => explain[part]).map(([part, heading]) => `${heading} — ${explain[part]}`).join('\n\n') : '';
+const escapeHtml = text => String(text ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+// Period-on-period change: percentage points for rates already in %, otherwise relative % change.
+const changeSeries = (values, inPoints) => values.map((value, index) => {
+  const previous = index > 0 ? values[index - 1] : null;
+  if (value === null || value === undefined || previous === null || previous === undefined || !Number.isFinite(Number(value)) || !Number.isFinite(Number(previous))) return null;
+  if (inPoints) return Math.round((value - previous) * 100) / 100;
+  return previous === 0 ? null : Math.round(((value - previous) / Math.abs(previous)) * 10000) / 100;
+});
+
+const linearTrend = values => {
+  const points = values.map((value, x) => ({ x, y: value === null || value === undefined ? NaN : Number(value) })).filter(point => Number.isFinite(point.y));
+  if (points.length < 3) return null;
+  const n = points.length;
+  const meanX = points.reduce((sum, point) => sum + point.x, 0) / n;
+  const meanY = points.reduce((sum, point) => sum + point.y, 0) / n;
+  const varX = points.reduce((sum, point) => sum + (point.x - meanX) ** 2, 0);
+  if (!varX) return null;
+  const slope = points.reduce((sum, point) => sum + (point.x - meanX) * (point.y - meanY), 0) / varX;
+  const intercept = meanY - slope * meanX;
+  const residual = points.reduce((sum, point) => sum + (point.y - (intercept + slope * point.x)) ** 2, 0);
+  const total = points.reduce((sum, point) => sum + (point.y - meanY) ** 2, 0);
+  return { slope, line: values.map((_, x) => intercept + slope * x), r2: total ? 1 - residual / total : 1 };
+};
+
+const seriesToCsv = series => {
+  const cell = value => {
+    const text = value === null || value === undefined ? '' : String(value);
+    return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+  };
+  const labels = series.labels || [];
+  const datasets = series.datasets?.length ? series.datasets.map(dataset => ({ label: dataset.label, values: dataset.values || dataset.data || [] })) : [{ label: 'Value', values: series.values || [] }];
+  const rows = [['Period / category', ...datasets.map(dataset => dataset.label)]];
+  labels.forEach((label, index) => rows.push([label, ...datasets.map(dataset => dataset.values[index])]));
+  return rows.map(row => row.map(cell).join(',')).join('\n');
+};
+
 const CHART_THEME = {
   ink: '#f5f5f7', muted: '#a1a1a6', grid: 'rgba(255, 255, 255, 0.08)', legend: '#d2d2d7',
   tooltipBg: 'rgba(28, 28, 30, 0.96)', tooltipTitle: '#f5f5f7', tooltipBody: '#d2d2d7',
@@ -503,7 +542,7 @@ async function main() {
   Object.entries(data.series).forEach(([key, series]) => {
     const meta = series?.meta;
     if (!meta || definedKeys.has(key)) return;
-    definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', series.source || '', series.note || meta.subtitle || '']);
+    definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', series.source || '', explainDetails(meta.explain) || series.note || meta.subtitle || '']);
     definedKeys.add(key);
     if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
   });
@@ -564,6 +603,8 @@ async function main() {
     "State Performance & Regional Health": "assets/states.svg",
     "Public Health & Epidemiology": "assets/health.svg",
     "Social": "assets/social.svg",
+    "Environment & Climate": "assets/environment.svg",
+    "Agriculture & Food": "assets/agriculture.svg",
     "Defence & Strategic": "assets/defence.svg",
     "Crime & Security": "assets/security.svg",
     "Pew Research": "assets/opinion.svg",
@@ -620,7 +661,7 @@ async function main() {
     if (event.key === 'Escape') closeExpandedChart();
   });
   let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -655,7 +696,9 @@ async function main() {
     card.className = 'chart-card';
     if (series.chartType === 'bar' && series.indexAxis === 'y') card.classList.add('state-rank-chart');
     const paragraphs = details.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
-    const summary = details.split('\n\n')[0] || subtitle;
+    const explain = series?.meta?.explain;
+    const summary = explain?.what || details.split('\n\n')[0] || subtitle;
+    const explainerHtml = explain && (explain.read || explain.why) ? `<div class="chart-explainer">${explain.read ? `<div class="explainer-tile"><span>📖 How to read it</span><p>${escapeHtml(explain.read)}</p></div>` : ''}${explain.why ? `<div class="explainer-tile"><span>💡 Why it matters</span><p>${escapeHtml(explain.why)}</p></div>` : ''}</div>` : '';
     card.id = `indicator-${key}`;
     card.dataset.key = key;
     card.dataset.title = `${title} ${subtitle} ${details} ${category} ${dashboardSubgroupFor(key)}`.toLowerCase();
@@ -721,7 +764,7 @@ async function main() {
       </div>
     `;
 
-    card.innerHTML = `<header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>`;
+    card.innerHTML = `<header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${explainerHtml}${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>`;
     grid.append(card);
     let chart = null;
     card.querySelector('.expand-chart-btn').addEventListener('click', () => {
@@ -818,13 +861,18 @@ async function main() {
       const rest = points.slice(11);
       return [...points.slice(0, 11), { label: `Other (${rest.length})`, value: rest.reduce((sum, point) => sum + point.value, 0) }];
     };
+    const isTimeSeries = years.length > 1 && !nativeRadial;
+    const changeInPoints = /%/.test(suffix);
+    let viewMode = 'levels';
+    let trendOn = false;
+    const shownValues = (array, isRadialChart) => (!isRadialChart && viewMode === 'change') ? changeSeries(array, changeInPoints) : array;
     const buildDatasets = isRadialChart => {
       if (series.datasets && series.datasets.length > 0) {
         return { labels, datasets: series.datasets.map((dataset, i) => {
           const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
           return {
             label: dataset.label,
-            data: dataset.values || dataset.data,
+            data: shownValues(dataset.values || dataset.data, isRadialChart),
             borderColor: dsColor,
             backgroundColor: createGradientFill(dsColor.slice(0, 7)),
             fill: true,
@@ -843,7 +891,7 @@ async function main() {
       const palette = shownLabels.map((_, index) => radialColors[index % radialColors.length]);
       return { labels: shownLabels, datasets: [{
         label: title,
-        data: points ? points.map(point => point.value) : values,
+        data: points ? points.map(point => point.value) : shownValues(values, isRadialChart),
         borderColor: isRadialChart ? CHART_THEME.sliceBorder : singleColor,
         backgroundColor: isRadialChart ? palette : createGradientFill(singleColor.slice(0, 7)),
         fill: !isRadialChart,
@@ -862,14 +910,75 @@ async function main() {
       const isRadialChart = type === 'pie' || type === 'doughnut';
       const built = buildDatasets(isRadialChart);
       chartDatasets = built.datasets;
+      const shownSuffix = !isRadialChart && viewMode === 'change' ? (changeInPoints ? ' pp' : '%') : suffix;
       return new Chart(canvas, {
         type,
         data: built,
-        options: chartOptions(suffix, hasMultipleDatasets, !isRadialChart && series.chartType === 'bar' && series.indexAxis === 'y', type),
+        options: chartOptions(shownSuffix, hasMultipleDatasets, !isRadialChart && series.chartType === 'bar' && series.indexAxis === 'y', type),
       });
+    };
+    let fullLabels = [];
+    let fullData = [];
+    const toolNote = document.createElement('span');
+    toolNote.className = 'chart-tool-note';
+    toolNote.setAttribute('aria-live', 'polite');
+    // Re-applies the period range and trend overlay on top of whatever view (levels/change, pie/bar) is drawn.
+    const applyView = () => {
+      if (!chart) return;
+      let indexes = fullLabels.map((_, i) => i);
+      if (card._range) {
+        let startYear = Number(card._range.startSelect.value);
+        let endYear = Number(card._range.endSelect.value);
+        if (startYear > endYear) {
+          if (document.activeElement === card._range.startSelect) {
+            endYear = startYear;
+            card._range.endSelect.value = String(endYear);
+          } else {
+            startYear = endYear;
+            card._range.startSelect.value = String(startYear);
+          }
+        }
+        indexes = indexes.filter(i => {
+          const year = Number(String(fullLabels[i]).slice(0, 4));
+          return year >= startYear && year <= endYear;
+        });
+      }
+      chart.data.labels = indexes.map(i => fullLabels[i]);
+      chart.data.datasets = chart.data.datasets.filter(dataset => !dataset.isTrend);
+      chart.data.datasets.forEach((dataset, datasetIndex) => {
+        dataset.data = indexes.map(i => fullData[datasetIndex][i]);
+      });
+      toolNote.textContent = viewMode === 'change' ? `Showing period-on-period change (${changeInPoints ? 'percentage points' : '% change'}).` : '';
+      if (trendOn && chart.data.datasets.length === 1) {
+        const fit = linearTrend(chart.data.datasets[0].data);
+        if (fit) {
+          chart.data.datasets.push({
+            isTrend: true, type: 'line', label: 'Linear trend', data: fit.line.map(value => Math.round(value * 1000) / 1000),
+            borderColor: '#f5f5f7', borderDash: [6, 5], borderWidth: 1.8, pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1
+          });
+          const unit = viewMode === 'change' ? (changeInPoints ? ' pp' : '%') : suffix;
+          toolNote.textContent = `Trend ${fit.slope >= 0 ? '+' : '−'}${formatMagnitude(Math.abs(fit.slope), unit)} per period · fit R² ${fit.r2.toFixed(2)}`;
+        } else {
+          toolNote.textContent = 'Not enough points in this range for a trend line.';
+        }
+      }
+      chart.resetZoom?.();
+      chart.update();
+    };
+    const rebuildChart = () => {
+      if (!chart) return;
+      chart.destroy();
+      chart = createChart(activeType);
+      fullLabels = [...chart.data.labels];
+      fullData = chart.data.datasets.map(dataset => [...dataset.data]);
+      const entry = charts.find(item => item.card === card);
+      if (entry) entry.chart = chart;
+      applyView();
     };
     if (typeof Chart !== 'undefined') {
       chart = createChart(activeType);
+      fullLabels = [...chart.data.labels];
+      fullData = chart.data.datasets.map(dataset => [...dataset.data]);
       canvas.addEventListener('dblclick', () => card.querySelector('.expand-chart-btn')?.click());
     }
     if (chart && canTogglePie) {
@@ -889,46 +998,85 @@ async function main() {
         event.stopPropagation();
         const nextType = button.dataset.type === 'doughnut' ? (nativeRadial ? series.chartType : 'doughnut') : barType;
         if (nextType === activeType) return;
-        chart.destroy();
         activeType = nextType;
-        chart = createChart(activeType);
-        const entry = charts.find(item => item.card === card);
-        if (entry) entry.chart = chart;
+        rebuildChart();
         syncToggle();
       });
       syncToggle();
       card.querySelector('.chart-wrap').prepend(toggle);
     }
     if (chart && card._range) {
-      const baseDatasets = chart.data.datasets.map(dataset => [...dataset.data]);
-      const applyChartRange = () => {
-        let startYear = Number(card._range.startSelect.value);
-        let endYear = Number(card._range.endSelect.value);
-        if (startYear > endYear) {
-          if (document.activeElement === card._range.startSelect) {
-            endYear = startYear;
-            card._range.endSelect.value = String(endYear);
-          } else {
-            startYear = endYear;
-            card._range.startSelect.value = String(startYear);
-          }
-        }
-        const selected = labels.map((label, i) => ({ label, i, year: Number(String(label).slice(0, 4)) }))
-          .filter(point => point.year >= startYear && point.year <= endYear);
-        chart.data.labels = selected.map(point => point.label);
-        chart.data.datasets.forEach((dataset, datasetIndex) => {
-          dataset.data = selected.map(point => baseDatasets[datasetIndex][point.i]);
-        });
-        chart.resetZoom();
-        chart.update();
-      };
-      card._range.startSelect.addEventListener('change', applyChartRange);
-      card._range.endSelect.addEventListener('change', applyChartRange);
+      card._range.startSelect.addEventListener('change', applyView);
+      card._range.endSelect.addEventListener('change', applyView);
       card.querySelector('.reset').addEventListener('click', () => {
         card._range.startSelect.value = years[0];
         card._range.endSelect.value = years[years.length - 1];
-        applyChartRange();
+        applyView();
       });
+    }
+    if (chart) {
+      const tools = document.createElement('div');
+      tools.className = 'chart-tools';
+      tools.setAttribute('role', 'toolbar');
+      tools.setAttribute('aria-label', `Tools for ${title}`);
+      const canTrend = isTimeSeries && !hasMultipleDatasets && !(series.datasets?.length > 1);
+      tools.innerHTML = [
+        isTimeSeries ? `<button type="button" data-tool="change" aria-pressed="false" title="Show the change from one period to the         next">Δ ${changeInPoints ? 'Change (pp)' : '% Change'}</button>` : '',
+                canTrend ? '<button type="button" data-tool="trend" aria-pressed="false" title="Overlay a straight-line trend fitted to the visible range">↗ Trend line</button>' : '',
+                '<button type="button" data-tool="table" aria-pressed="false" title="Show the numbers behind the chart">▦ Data table</button>',
+                '<button type="button" data-tool="csv" title="Download the series as CSV">⇩ CSV</button>',
+                '<button type="button" data-tool="link" title="Copy a link straight to this chart">🔗 Share</button>'
+      ].join('');
+      tools.append(toolNote);
+      const tablePanel = document.createElement('div');
+      tablePanel.className = 'chart-data-table';
+      tablePanel.hidden = true;
+      const renderTable = () => {
+        const sets = series.datasets?.length ? series.datasets.map(dataset => ({ label: dataset.label, values: dataset.values || dataset.data || [] })) : [{ label: title, values }];
+        const order = labels.map((_, i) => i);
+        if (isTimeSeries) order.reverse();
+        tablePanel.innerHTML = `<table><thead><tr><th scope="col">${isTimeSeries ? 'Period' : 'Category'}</th>${sets.map(set => `<th scope="col">${escapeHtml(set.label)}</th>`).join('')}</tr></thead><tbody>${order.map(i => `<tr><th scope="row">${escapeHtml(labels[i])}</th>${sets.map(set => `<td>${set.values[i] === null || set.values[i] === undefined ? '—' : escapeHtml(formatMagnitude(set.values[i], suffix))}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+      };
+      tools.addEventListener('click', async event => {
+        const button = event.target.closest('button');
+        if (!button) return;
+        event.stopPropagation();
+        const tool = button.dataset.tool;
+        if (tool === 'change') {
+          viewMode = viewMode === 'change' ? 'levels' : 'change';
+          button.setAttribute('aria-pressed', String(viewMode === 'change'));
+          button.classList.toggle('active', viewMode === 'change');
+          rebuildChart();
+        } else if (tool === 'trend') {
+          trendOn = !trendOn;
+          button.setAttribute('aria-pressed', String(trendOn));
+          button.classList.toggle('active', trendOn);
+          applyView();
+        } else if (tool === 'table') {
+          tablePanel.hidden = !tablePanel.hidden;
+          if (!tablePanel.hidden && !tablePanel.firstChild) renderTable();
+          button.setAttribute('aria-pressed', String(!tablePanel.hidden));
+          button.classList.toggle('active', !tablePanel.hidden);
+        } else if (tool === 'csv') {
+          const blob = new Blob([seriesToCsv(series)], { type: 'text/csv;charset=utf-8' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = `${key}.csv`;
+          document.body.append(link);
+          link.click();
+          link.remove();
+          setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+        } else if (tool === 'link') {
+          const url = `${window.location.origin}${window.location.pathname}?chart=${encodeURIComponent(key)}`;
+          try {
+            await navigator.clipboard.writeText(url);
+            toolNote.textContent = 'Link copied to clipboard.';
+          } catch {
+            toolNote.textContent = url;
+          }
+        }
+      });
+      card.querySelector('.chart-wrap').after(tools, tablePanel);
     }
 
     if (hasMultipleDatasets) {
@@ -1142,6 +1290,18 @@ async function main() {
       badge1: "U.S. National Archives & FEC",
       badge2: "Presidential + Congress"
     },
+    "Environment & Climate": {
+      title: "🌿 Environment, Climate & Energy Transition",
+      desc: "Official Government of India environment statistics from MoSPI's EnviStats India: IMD temperature, rainfall and cyclone records, Forest Survey of India forest cover, CPCB waste data, NCRB deaths from natural causes and CEA electricity generation by source, plus World Bank emissions, water and protected-area indicators. Every chart explains what it shows, how to read it and why it matters.",
+      badge1: "MoSPI EnviStats · IMD · FSI · CPCB · CEA",
+      badge2: "Climate & Energy"
+    },
+    "Agriculture & Food": {
+      title: "🌾 Agriculture, Food & Farm Inputs",
+      desc: "Foodgrain, oilseed and sugarcane production from the Ministry of Agriculture, fertiliser use and imports from the Department of Fertilizers, the Livestock Census and fish production, all through MoSPI's API, alongside World Bank irrigation, fertiliser-intensity and food-production indices.",
+      badge1: "MoSPI EnviStats · MoA&FW · DAHD",
+      badge2: "Food Security"
+    },
     "Tourism & Heritage": {
       title: "🏛️ Tourism & UNESCO World Heritage",
       desc: "Follow annual international visitor and receipts indicators, then explore India’s UNESCO World Heritage properties by inscription year. Visitor totals are national, while the heritage series is reconstructed from current official inscription records; neither is a state-wise monument attendance measure.",
@@ -1214,7 +1374,18 @@ async function main() {
     "U.S. Campaign Funding Composition": "assets/funding-mix.svg",
     "International Visitor Trends": "assets/visitor-trends.svg",
     "World Heritage Sites": "assets/heritage-sites.svg",
-    "Global Tourism Comparison": "assets/global-tourism.svg"
+    "Global Tourism Comparison": "assets/global-tourism.svg",
+    "Climate & Weather": "assets/climate-weather.svg",
+    "Forests & Land": "assets/forests-land.svg",
+    "Pollution & Waste": "assets/pollution-waste.svg",
+    "Disasters & Extremes": "assets/disasters.svg",
+    "Energy Transition": "assets/energy-transition.svg",
+    "Crop Production": "assets/crop-production.svg",
+    "Farm Inputs": "assets/farm-inputs.svg",
+    "Livestock & Fisheries": "assets/livestock-fisheries.svg",
+    "Gender & Population": "assets/gender-population.svg",
+    "Higher Education": "assets/higher-education.svg",
+    "Nutrition & Food Security": "assets/nutrition.svg"
   };
 
   const subgroupHeroData = {
@@ -1247,6 +1418,72 @@ async function main() {
       desc: "Monthly IIP by use (capital, intermediate, infrastructure, consumer durables and non-durables), industry growth rankings, cumulative change since 2011-12, and how many industries are expanding versus contracting.",
       badge1: "Monthly MOSPI data",
       badge2: "Growth Rankings"
+    },
+    "Climate & Weather": {
+      title: "🌦️ Temperature, Rainfall, Cyclones & Heat",
+      desc: "IMD's all-India seasonal temperature since 2001, annual and monsoon rainfall, cyclonic storms over the Bay of Bengal and Arabian Sea, State heat-wave days, and World Bank CO2 and greenhouse-gas emissions.",
+      badge1: "IMD via MoSPI EnviStats",
+      badge2: "Climate Signals"
+    },
+    "Forests & Land": {
+      title: "🌳 Forests, Water & Land",
+      desc: "Forest cover from every State of Forest Report since 2001, nationally and by State, with protected areas, renewable freshwater per person and population density.",
+      badge1: "Forest Survey of India",
+      badge2: "Natural Capital"
+    },
+    "Pollution & Waste": {
+      title: "♻️ Urban Waste & Plastic",
+      desc: "Municipal solid waste generated, collected, treated and landfilled by State, and national plastic-waste estimates from the Central Pollution Control Board.",
+      badge1: "CPCB via MoSPI",
+      badge2: "Swachh Bharat"
+    },
+    "Disasters & Extremes": {
+      title: "⛈️ Disasters & Deaths from Natural Causes",
+      desc: "NCRB counts of deaths from lightning, floods, heat stroke, cold, landslides and cyclones: the human cost of weather extremes.",
+      badge1: "NCRB via MoSPI",
+      badge2: "Disaster Risk"
+    },
+    "Energy Transition": {
+      title: "⚡ Electricity Generation & the Energy Transition",
+      desc: "Central Electricity Authority generation since 1947 by source (coal, gas, hydro, nuclear, renewables) and the latest generation mix.",
+      badge1: "CEA via MoSPI",
+      badge2: "500 GW Non-fossil Goal"
+    },
+    "Crop Production": {
+      title: "🌾 Foodgrains, Oilseeds & Sugarcane",
+      desc: "Crop-year production of rice, wheat, coarse cereals, pulses, oilseeds and sugarcane, with the World Bank food production index.",
+      badge1: "Ministry of Agriculture",
+      badge2: "Food Security"
+    },
+    "Farm Inputs": {
+      title: "🚜 Fertiliser, Irrigation & Land",
+      desc: "N-P-K fertiliser consumption, production and imports since 1981-82, fertiliser intensity per hectare, irrigated share and arable land per person.",
+      badge1: "Dept. of Fertilizers & World Bank",
+      badge2: "Farm Productivity"
+    },
+    "Livestock & Fisheries": {
+      title: "🐄 Livestock & Fisheries",
+      desc: "Livestock Census counts of cattle, buffaloes, goats, sheep and pigs since 1951, and inland vs marine fish production since 1950-51.",
+      badge1: "DAHD & Dept. of Fisheries",
+      badge2: "Allied Sectors"
+    },
+    "Gender & Population": {
+      title: "⚖️ Gender & Population",
+      desc: "Sample Registration System sex ratio at birth, Census sex ratio since 1951, women's age at marriage, fertility by women's education and women in Parliament.",
+      badge1: "SRS & Census via MoSPI",
+      badge2: "Women & Men in India"
+    },
+    "Higher Education": {
+      title: "🎓 Universities, Colleges & Research",
+      desc: "AISHE counts of universities and colleges, enrolment by sex, level and social group, State-wise GER, and World Bank R&D spending and researcher density.",
+      badge1: "AISHE (Ministry of Education)",
+      badge2: "NEP 2020 Targets"
+    },
+    "Nutrition & Food Security": {
+      title: "🍲 Nutrition & Food Security",
+      desc: "FAO undernourishment estimates and modelled child-stunting rates, the outcomes targeted by the National Food Security Act and POSHAN Abhiyaan.",
+      badge1: "FAO / UNICEF / WHO via World Bank",
+      badge2: "SDG 2"
     },
     "Global Tourism Comparison": {
       title: "🌍 India vs the World's Top Destinations",
@@ -1993,6 +2230,19 @@ async function main() {
   if (params.get('q')) {
     search.value = params.get('q');
     search.dispatchEvent(new Event('input'));
+  }
+  const startChart = params.get('chart');
+  const linkedCard = startChart ? document.getElementById(`indicator-${startChart}`) : null;
+  if (linkedCard) {
+    groupFilter.value = linkedCard.dataset.category;
+    groupFilter.dispatchEvent(new Event('change'));
+    if (hasOption(subgroupFilter, linkedCard.dataset.subgroup)) {
+      subgroupFilter.value = linkedCard.dataset.subgroup;
+      subgroupFilter.dispatchEvent(new Event('change'));
+    }
+    lazyCharts.get(linkedCard)?.();
+    linkedCard.classList.add('deep-linked');
+    setTimeout(() => linkedCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 250);
   }
   const syncUrl = () => {
     const next = new URLSearchParams();

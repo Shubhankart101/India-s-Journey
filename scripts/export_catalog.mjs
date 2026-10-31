@@ -89,10 +89,12 @@ const definitions = [...app.definitions];
   app.extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' };
 });
 const definedKeys = new Set(definitions.map(definition => definition[0]));
+const explainDetails = explain => explain ? [['what', 'What it shows'], ['read', 'How to read it'], ['why', 'Why it matters']]
+  .filter(([part]) => explain[part]).map(([part, heading]) => `${heading} — ${explain[part]}`).join('\n\n') : '';
 for (const [key, item] of Object.entries(series)) {
   const meta = item?.meta;
   if (!meta || definedKeys.has(key)) continue;
-  definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', item.source || '', item.note || meta.subtitle || '']);
+  definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', item.source || '', explainDetails(meta.explain) || item.note || meta.subtitle || '']);
   definedKeys.add(key);
   if (meta.category) app.extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
 }

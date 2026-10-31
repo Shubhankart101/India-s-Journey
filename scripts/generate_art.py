@@ -1189,6 +1189,179 @@ def _(r, p):
     return place(globe(p, 170), 600, 300) + place(plane(p), 0, 120, .7) + on_ground(p, 'gt', 540)
 
 
+# ---------- Environment, agriculture and population motifs ----------
+
+def wind_turbine(p, h=260, dl=0):
+    blade = path(f'M0 0 L-7 -6 L0 {-h * .42} L7 -6Z', p[7], extra=' opacity=".9"')
+    rotor = ''.join(g(blade, f'rotate({a})') for a in (0, 120, 240)) + circle(0, 0, 8, p[6])
+    return path(f'M-6 0 L-3 {-h} L3 {-h} L6 0Z', p[5]) + spinning(0, -h, rotor, 'rot', dl)
+
+
+def solar_panels(p, n=4):
+    out = ''
+    for i in range(n):
+        x = (i - (n - 1) / 2) * 130
+        out += path(f'M{x - 56} -40 L{x - 36} -96 L{x + 56} -96 L{x + 36} -40Z', p[3], p[6], 2)
+        out += path(f'M{x - 46} -68 H{x + 46} M{x} -96 L{x} -40', stroke=p[6], width=1.5, extra=' opacity=".6"')
+        out += rect(x - 3, -40, 6, 40, p[5]) + path(f'M{x - 36} -96 L{x + 56} -96', stroke=p[7], width=2, extra=' class="tw" opacity=".7"')
+    return out
+
+
+def thermometer(p):
+    return (rect(-16, -230, 32, 210, p[5], 16) + circle(0, -14, 32, p[5]) + rect(-7, -200, 14, 190, p[6], 7, ' class="pulse"')
+            + circle(0, -14, 22, p[6]) + ''.join(path(f'M18 {-60 - i * 30} h14', stroke=p[5], width=3) for i in range(5)))
+
+
+def rain(p, rng, n=26, w=900, top=-360):
+    return ''.join(path(f'M{f(rng.uniform(-w / 2, w / 2))} {f(top + rng.uniform(0, 200))} l-6 22', stroke=p[7], width=2,
+                        extra=f' class="drop" opacity=".7" style="{delay(-rng.uniform(0, 3.5))}"') for _ in range(n))
+
+
+def storm_cloud(p, w=260):
+    return (circle(-w * .25, 0, w * .2, p[3]) + circle(0, -w * .12, w * .27, p[3]) + circle(w * .28, 0, w * .19, p[3])
+            + rect(-w * .45, 0, w * .9, w * .14, p[3], w * .07))
+
+
+def lightning(p):
+    return path('M20 0 L-14 70 H10 L-18 150 L40 52 H14 L44 0Z', p[2], extra=' class="tw"')
+
+
+def cyclone(p, r=150):
+    arms = ''.join(path(f'M0 0 Q{f(r * .9)} {f(-r * .15)} {f(r * .7)} {f(r * .75)}', stroke=p[7], width=10 - i * 2,
+                        extra=' opacity=".55"') for i in range(3))
+    return spinning(0, 0, ''.join(g(arms, f'rotate({a})') for a in (0, 120, 240)) + circle(0, 0, r * .12, p[2]), 'rot-r')
+
+
+def crop_field(p, rng, n=26, w=1100):
+    out = ''
+    for i in range(n):
+        x, h = -w / 2 + i * w / n + rng.uniform(-8, 8), rng.uniform(70, 120)
+        stalk = path(f'M0 0 Q4 {f(-h / 2)} 0 {f(-h)}', stroke=p[6], width=3)
+        grains = ''.join(f'<ellipse cx="{f((-1) ** k * 6)}" cy="{f(-h + 8 + k * 9)}" rx="5" ry="9" fill="{p[2]}"/>' for k in range(5))
+        out += g(stalk + grains, f'translate({f(x)} 0)', cls='bob', style=delay(-i * .3) + ';animation-duration:5s')
+    return out
+
+
+def tractor(p):
+    return (rect(-90, -86, 110, 46, p[6], 8) + rect(-10, -130, 50, 60, p[3], 6) + rect(0, -122, 30, 26, p[2], 3, ' opacity=".7"')
+            + circle(46, -36, 40, p[5]) + circle(46, -36, 16, p[3]) + circle(-66, -24, 24, p[5]) + circle(-66, -24, 10, p[3])
+            + rect(-80, -120, 8, 34, p[5]) + smoke_puffs(-76, -124, p[7], 3, 10))
+
+
+def cow(p, s=1.0):
+    body = (f'<ellipse cx="0" cy="-60" rx="60" ry="32" fill="{p[7]}"/>' + circle(-12, -66, 12, p[3]) + circle(22, -52, 9, p[3])
+            + f'<ellipse cx="66" cy="-80" rx="20" ry="15" fill="{p[7]}"/>' + path('M58 -94 l-6 -14 M74 -94 l6 -14', stroke=p[5], width=4)
+            + ''.join(rect(x, -36, 10, 36, p[7]) for x in (-44, -24, 22, 40)) + path('M-60 -64 q-20 10 -14 40', stroke=p[7], width=4))
+    return g(body, f'scale({f(s)})')
+
+
+def fish(p, color=None, s=1.0):
+    color = color or p[6]
+    return g(f'<ellipse cx="0" cy="0" rx="34" ry="16" fill="{color}"/>' + path('M30 0 L58 -18 V18Z', color) + circle(-18, -4, 4, p[0]),
+             f'scale({f(s)})')
+
+
+def sack(p, label='NPK'):
+    return (path('M-50 0 Q-60 -70 -40 -120 Q0 -134 40 -120 Q60 -70 50 0Z', p[7]) + path('M-40 -120 Q0 -108 40 -120', stroke=p[3], width=4)
+            + text(0, -58, label, 24, p[3]))
+
+
+def bins(p):
+    out = ''
+    for i, c in enumerate((p[6], '#3fb950', '#58a6ff')):
+        x = (i - 1) * 90
+        out += rect(x - 32, -110, 64, 110, c, 6) + rect(x - 38, -122, 76, 14, p[5], 4) + path(f'M{x - 12} -80 V-24 M{x + 12} -80 V-24', stroke=p[0], width=3, extra=' opacity=".4"')
+    return out
+
+
+def landfill(p, rng):
+    out = path('M-260 0 Q-140 -150 0 -170 Q150 -150 260 0Z', p[3])
+    for _ in range(18):
+        out += rect(rng.uniform(-180, 160), rng.uniform(-140, -20), rng.uniform(12, 30), rng.uniform(8, 18), rng.choice((p[6], p[5], p[2])), 3, ' opacity=".7"')
+    return out + ''.join(g(circle(0, 0, 10, '#fff', ' opacity=".9"'), f'translate({x} {y})', cls='fly', style=delay(-i * 5)) for i, (x, y) in enumerate(((0, -220), (-90, -260))))
+
+
+def family(p, rng):
+    sizes = (1.0, .95, .6, .5)
+    return ''.join(g(person(p[6] if i % 2 else p[7], s), f'translate({(i - 1.5) * 70} 0)', cls='bob', style=delay(-i)) for i, s in enumerate(sizes))
+
+
+def plate(p):
+    return (f'<ellipse cx="0" cy="-20" rx="120" ry="30" fill="{p[7]}"/>' + f'<ellipse cx="0" cy="-26" rx="94" ry="20" fill="{p[3]}"/>'
+            + circle(-40, -34, 18, p[2]) + circle(10, -36, 20, p[6]) + circle(52, -30, 14, '#3fb950'))
+
+
+# Environment & Climate
+@scene('environment', 'forest', 'mountains')
+def _(r, p):
+    return on_ground(p, 'env', 520) + place(forest(p, r, 12, 700), 320, 520, .8) + place(wind_turbine(p), 880, 520) + place(wind_turbine(p, 200, -3), 1030, 520) + place(solar_panels(p, 2), 640, 540, .7)
+
+
+@scene('climate-weather', 'ocean', 'hills', (300, 140, 50))
+def _(r, p):
+    return (on_ground(p, 'clim', 540) + place(storm_cloud(p), 760, 170) + place(rain(p, r), 760, 540) + place(lightning(p), 820, 200, .9)
+            + place(thermometer(p), 260, 520, .9))
+
+
+@scene('forests-land', 'forest')
+def _(r, p):
+    return on_ground(p, 'forest', 520) + place(forest(p, r, 22, 1300, 110, 260), 600, 520) + place(forest(p, r, 10, 700, 60, 120), 900, 560, .8)
+
+
+@scene('pollution-waste', 'slate', 'city')
+def _(r, p):
+    return on_ground(p, 'waste', 520) + place(landfill(p, r), 380, 520, .9) + place(bins(p), 900, 520, .85) + place(factory(p, 300), 1120, 520, .4, opacity=.6)
+
+
+@scene('disasters', 'night', 'sea', (200, 110, 30))
+def _(r, p):
+    return water(p, 470) + place(cyclone(p, 170), 760, 240) + place(storm_cloud(p, 300), 320, 150) + place(rain(p, r, 20, 500), 320, 470) + place(lightning(p), 360, 190)
+
+
+@scene('energy-transition', 'gold')
+def _(r, p):
+    return (on_ground(p, 'energy', 520) + place(solar_panels(p, 4), 360, 540, .85) + place(wind_turbine(p, 280), 820, 520)
+            + place(wind_turbine(p, 230, -4), 990, 520) + place(wind_turbine(p, 180, -7), 1120, 520) + power_lines(p, [620], 220, 520))
+
+
+# Agriculture & Food
+@scene('agriculture', 'saffron')
+def _(r, p):
+    return on_ground(p, 'agri', 520) + place(crop_field(p, r, 20, 760), 380, 540) + place(tractor(p), 920, 540, .9) + place(huts(p, 2), 1100, 520, .5)
+
+
+@scene('crop-production', 'gold')
+def _(r, p):
+    return on_ground(p, 'crop', 520) + place(crop_field(p, r, 34, 1300), 600, 560, 1.1) + place(bar_chart(p, r, 5, 260, 160), 980, 300, .6)
+
+
+@scene('farm-inputs', 'desert')
+def _(r, p):
+    return on_ground(p, 'inputs', 520) + place(sack(p), 330, 530) + place(sack(p, 'UREA'), 450, 540, .85) + place(tractor(p), 820, 540) + water(p, 560, 40)
+
+
+@scene('livestock-fisheries', 'emerald', 'sea')
+def _(r, p):
+    return (water(p, 500) + on_ground(p, 'live', 470) + place(cow(p), 260, 470, 1.0) + place(cow(p), 470, 480, .8)
+            + g(place(fish(p), 760, 540) + place(fish(p, p[2], .8), 900, 570) + place(fish(p, p[7], .7), 1040, 540), cls='wave'))
+
+
+# Social and health additions
+@scene('gender-population', 'rose')
+def _(r, p):
+    return on_ground(p, 'gender', 530) + place(family(p, r), 400, 530, 1.2) + place(pie(p, [48, 52]), 900, 260, .7) + place(crowd(p, r, 6, 500), 950, 560, .6)
+
+
+@scene('higher-education', 'royal', 'city')
+def _(r, p):
+    return on_ground(p, 'higher', 520) + place(school(p), 380, 520, 1.1) + place(grad_cap(p), 860, 220, .9) + place(books(p, r), 900, 520, .8)
+
+
+@scene('nutrition', 'teal')
+def _(r, p):
+    return on_ground(p, 'nutri', 530) + place(plate(p), 420, 520, 1.3) + place(family(p, r), 900, 530, .9) + place(crop_field(p, r, 8, 300), 140, 540, .7)
+
+
 def main():
     for d in OUTPUT_DIRS:
         d.mkdir(parents=True, exist_ok=True)

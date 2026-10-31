@@ -137,8 +137,10 @@ class DashboardEndpointTests(unittest.TestCase):
         })
         import sys
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
-        from official_indicator_layer import COMPOSITIONS, LINE_INDICATORS
-        expected.update(row[0] for row in LINE_INDICATORS + COMPOSITIONS)
+        from official_indicator_layer import COMPOSITIONS, EXPLAINED_INDICATORS, LINE_INDICATORS
+        expected.update(row[0] for row in LINE_INDICATORS + COMPOSITIONS + EXPLAINED_INDICATORS)
+        from mospi_layer import SPECS as mospi_specs
+        expected.update(spec["key"] for spec in mospi_specs)
         import derived_pie_layer as derived
         for specs in (derived.CUMULATIVE, derived.LATEST, derived.BINARY, derived.PERIODS, derived.REGION_PIES):
             expected.update(row[0] for row in specs)

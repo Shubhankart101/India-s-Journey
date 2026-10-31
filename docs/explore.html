@@ -7,14 +7,14 @@
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>Explore — India's Journey</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=thanks-v12">
-  <link rel="stylesheet" href="product-theme.css?v=thanks-v12">
+  <link rel="stylesheet" href="styles.css?v=data-v13">
+  <link rel="stylesheet" href="product-theme.css?v=data-v13">
 </head>
 <body class="product-theme" data-page="explore">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=thanks-v12"></script>
+  <script src="site.js?v=data-v13"></script>
 
   <main>
     <section class="explore-heading" id="explore" aria-labelledby="explore-title">
@@ -31,6 +31,8 @@
         <button type="button" class="group-pill" data-group="State Performance &amp; Regional Health">🏛️ State Performance</button>
         <button type="button" class="group-pill" data-group="Public Health &amp; Epidemiology">🩺 Public Health</button>
         <button type="button" class="group-pill" data-group="Social">👥 Social</button>
+        <button type="button" class="group-pill" data-group="Environment &amp; Climate">🌿 Environment &amp; Climate</button>
+        <button type="button" class="group-pill" data-group="Agriculture &amp; Food">🌾 Agriculture &amp; Food</button>
         <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
         <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
         <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
@@ -50,6 +52,8 @@
         <option value="State Performance &amp; Regional Health">State Performance &amp; Regional Health</option>
         <option value="Public Health &amp; Epidemiology">Public Health &amp; Epidemiology</option>
         <option value="Social">Social</option>
+        <option value="Environment &amp; Climate">Environment &amp; Climate</option>
+        <option value="Agriculture &amp; Food">Agriculture &amp; Food</option>
         <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
         <option value="Crime &amp; Security">Crime &amp; Security</option>
         <option value="Pew Research">Pew Research</option>
@@ -96,10 +100,27 @@
           <option>Mortality &amp; Lifespan Milestones</option>
           <option>Disease Burden &amp; Epidemiology</option>
           <option>Health Infrastructure &amp; Spending</option>
+          <option>Nutrition &amp; Food Security</option>
         </optgroup>
         <optgroup label="👥 Social">
           <option>Demographics</option>
+          <option>Gender &amp; Population</option>
+          <option>Education</option>
+          <option>Higher Education</option>
+          <option>Employment &amp; Poverty</option>
           <option>Welfare</option>
+        </optgroup>
+        <optgroup label="🌿 Environment &amp; Climate">
+          <option>Climate &amp; Weather</option>
+          <option>Forests &amp; Land</option>
+          <option>Pollution &amp; Waste</option>
+          <option>Disasters &amp; Extremes</option>
+          <option>Energy Transition</option>
+        </optgroup>
+        <optgroup label="🌾 Agriculture &amp; Food">
+          <option>Crop Production</option>
+          <option>Farm Inputs</option>
+          <option>Livestock &amp; Fisheries</option>
         </optgroup>
         <optgroup label="🛡️ Defence &amp; Strategic">
           <option>Defence Exports &amp; Production</option>
@@ -303,7 +324,7 @@
   </div>
 
   <footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the public sources listed on the Explore page.</footer>
-  <script src="data.js?v=thanks-v12"></script>
+  <script src="data.js?v=data-v13"></script>
   <script src="vendor/chart.umd.min.js"></script>
   <script src="vendor/hammer.min.js"></script>
   <script src="vendor/chartjs-plugin-zoom.min.js"></script>
@@ -314,7 +335,7 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="additional-chart-definitions.js?v=thanks-v12"></script>
-  <script src="app.js?v=thanks-v12"></script>
+  <script src="additional-chart-definitions.js?v=data-v13"></script>
+  <script src="app.js?v=data-v13"></script>
 </body>
 </html>

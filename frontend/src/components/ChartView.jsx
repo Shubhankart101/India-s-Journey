@@ -48,6 +48,12 @@ export function buildChartData({ labels, datasets, type, color }) {
   return {
     labels,
     datasets: datasets.map((dataset, index) => {
+      if (dataset.trend) {
+        return {
+          type: 'line', label: dataset.label, data: dataset.values, borderColor: '#f5f5f7', borderDash: [6, 5], borderWidth: 1.8,
+          pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1,
+        };
+      }
       const lineColor = dataset.color || (index === 0 ? color : null) || PALETTE[(index + 2) % PALETTE.length];
       return {
         label: dataset.label,

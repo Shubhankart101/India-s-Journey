@@ -77,3 +77,44 @@ export function chartModes({ chart_type: chartType = 'line', labels = [], datase
   const preferPie = nativeRadial || (additive && ['Elections', 'U.S. Elections'].includes(category));
   return { modes: [radialType, barType], initial: preferPie ? radialType : barType };
 }
+
+const EXPLAINER_HEADINGS = { 'What it shows': 'what', 'How to read it': 'read', 'Why it matters': 'why' };
+
+// Splits catalog details into "What it shows / How to read it / Why it matters" parts and any remaining notes.
+export function parseExplainer(details = '') {
+  const explain = {};
+  const rest = [];
+  for (const paragraph of String(details || '').split(/\n\n+/).filter(Boolean)) {
+    const match = paragraph.match(/^(What it shows|How to read it|Why it matters) — ([\s\S]+)$/);
+    if (match) explain[EXPLAINER_HEADINGS[match[1]]] = match[2].trim();
+    else rest.push(paragraph);
+  }
+  return { explain: Object.keys(explain).length ? explain : null, paragraphs: rest };
+}
+
+// Period-on-period change: percentage points when the series is already a %, otherwise relative % change.
+export function changeSeries(values, inPoints = false) {
+  return values.map((value, index) => {
+    const previous = index > 0 ? values[index - 1] : null;
+    if (value === null || value === undefined || previous === null || previous === undefined) return null;
+    if (!Number.isFinite(Number(value)) || !Number.isFinite(Number(previous))) return null;
+    if (inPoints) return Math.round((value - previous) * 100) / 100;
+    return previous === 0 ? null : Math.round(((value - previous) / Math.abs(previous)) * 10000) / 100;
+  });
+}
+
+// Ordinary least-squares line through the non-missing points, indexed by position.
+export function linearTrend(values) {
+  const points = values.map((value, x) => ({ x, y: value === null || value === undefined ? NaN : Number(value) }))
+    .filter(point => Number.isFinite(point.y));
+  if (points.length < 3) return null;
+  const meanX = points.reduce((sum, point) => sum + point.x, 0) / points.length;
+  const meanY = points.reduce((sum, point) => sum + point.y, 0) / points.length;
+  const varX = points.reduce((sum, point) => sum + (point.x - meanX) ** 2, 0);
+  if (!varX) return null;
+  const slope = points.reduce((sum, point) => sum + (point.x - meanX) * (point.y - meanY), 0) / varX;
+  const intercept = meanY - slope * meanX;
+  const residual = points.reduce((sum, point) => sum + (point.y - (intercept + slope * point.x)) ** 2, 0);
+  const total = points.reduce((sum, point) => sum + (point.y - meanY) ** 2, 0);
+  return { slope, line: values.map((_, x) => Math.round((intercept + slope * x) * 1000) / 1000), r2: total ? 1 - residual / total : 1 };
+}

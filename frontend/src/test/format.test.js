@@ -1,5 +1,26 @@
 import { describe, expect, it } from 'vitest';
-import { chartModes, formatAxis, formatDate, formatMagnitude, isUsd, seriesStats } from '../format.js';
+import { changeSeries, chartModes, formatAxis, formatDate, formatMagnitude, isUsd, linearTrend, parseExplainer, seriesStats } from '../format.js';
+
+describe('analysis helpers', () => {
+  it('computes relative change or percentage-point change', () => {
+    expect(changeSeries([100, 110, null, 99])).toEqual([null, 10, null, null]);
+    expect(changeSeries([5, 7.5], true)).toEqual([null, 2.5]);
+    expect(changeSeries([0, 4])).toEqual([null, null]);
+  });
+
+  it('fits a least-squares trend line', () => {
+    const trend = linearTrend([1, 3, null, 7]);
+    expect(trend.slope).toBeCloseTo(2);
+    expect(trend.r2).toBeCloseTo(1);
+    expect(trend.line).toEqual([1, 3, 5, 7]);
+    expect(linearTrend([1, 2])).toBeNull();
+  });
+
+  it('splits explainer paragraphs from other notes', () => {
+    expect(parseExplainer('What it shows — A.\n\nWhy it matters — B.\n\nNote.')).toEqual({ explain: { what: 'A.', why: 'B.' }, paragraphs: ['Note.'] });
+    expect(parseExplainer('Plain.')).toEqual({ explain: null, paragraphs: ['Plain.'] });
+  });
+});
 
 describe('formatMagnitude', () => {
   it('uses the international system for USD values', () => {

@@ -10,6 +10,26 @@ Additional annual World Bank series now cover agricultural employment (`SL.AGR.E
 
 State-wise birth and death counts and a comparable annual state TFR series are not included. SRS and Civil Registration System publications have different reference periods, availability, and definitions. A state series must be assembled from published tables before it can be plotted; national annual fertility estimates are not a substitute for state observations.
 
+## MoSPI official statistics (environment, agriculture, gender, education)
+
+The Environment & Climate and Agriculture & Food groups, and several Social and Public Health charts, use MoSPI's eSankhyiki API. Its sources are:
+- EnviStats India: IMD temperature and rainfall, ISFR forest cover, CPCB waste, disasters, energy, and crop, fertiliser, livestock and fish production;
+- Women & Men in India: SRS life expectancy, maternal mortality and sex ratios;
+- AISHE: higher-education enrolment;
+- PLFS: labour-force participation and unemployment by sex.
+
+Limitations:
+- **Frequency.** Most of these are annual or survey-year compilations, not monthly feeds. A compendium may lag its underlying survey by one to two years.
+- **Provisional years.** Years the source marks provisional `(P)` are named in each chart's note.
+- **Hidden national totals.** ISFR forest tables file the national total under a State name; the layer detects and relabels it.
+- **Units.** Oilseed and sugarcane production are reported in lakh tonnes even though the source label says million tonnes. The Uttarakhand solid-waste figure looks anomalous and is shown with a caveat.
+- **Projections excluded.** SRS life-expectancy projections (2021-25 onward) are not plotted.
+- **One-year waste funnel.** The solid-waste generation-to-treatment funnel has only one reporting year, so it is a snapshot, not a trend.
+
+## Chart tools
+
+The **Δ Change** view plots period-on-period change: percentage points for series already expressed in %, and relative % change otherwise. The **Trend line** is an ordinary least-squares fit over the visible range. It is descriptive only, not a forecast, and a low R² means the series is not well described by a straight line.
+
 ## Fuel prices and energy
 
 The fuel-consumption series measures activity/volume, not retail prices. The Indian crude basket price is a distinct crude-price measure, not a petrol/diesel pump price. PPAC's retail selling price archive and oil-marketing-company pages did not yield a verified, openly downloadable daily retail-price table for automated collection. No daily Indian retail prices are estimated or copied from unofficial aggregators.

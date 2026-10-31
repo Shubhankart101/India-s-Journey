@@ -210,6 +210,27 @@ describe('Indicator detail', () => {
     expect(document.title).toBe("Real GDP growth · India's Journey");
   });
 
+  it('switches to period-on-period change and overlays a trend line', async () => {
+    mockApi({ 'GET /api/indicators/gdp_growth/': detail() });
+    renderApp('/indicator/gdp_growth');
+    await screen.findByTestId('chart');
+    await userEvent.click(screen.getByRole('button', { name: '↗ Trend' }));
+    expect(screen.getByTestId('chart')).toHaveAttribute('data-datasets', '2');
+    expect(screen.getByText(/R² /)).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('button', { name: 'Δ Change' }));
+    expect(screen.getByTestId('chart')).toHaveAttribute('data-values', JSON.stringify([[null, 1.2, -1.7]]));
+    expect(screen.getByText(/percentage points/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '↗ Trend' })).toBeDisabled();
+  });
+
+  it('renders explainer tiles from structured details', async () => {
+    mockApi({ 'GET /api/indicators/gdp_growth/': detail({ details: 'What it shows — Output.\n\nHow to read it — Higher is faster.\n\nWhy it matters — Jobs.\n\nExtra note.' }) });
+    renderApp('/indicator/gdp_growth');
+    expect(await screen.findByRole('heading', { name: 'What it shows' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Why it matters' }).nextSibling).toHaveTextContent('Jobs.');
+    expect(screen.getByText('Extra note.')).toBeInTheDocument();
+  });
+
   it('filters the chart by year range', async () => {
     mockApi({ 'GET /api/indicators/gdp_growth/': detail() });
     renderApp('/indicator/gdp_growth');
