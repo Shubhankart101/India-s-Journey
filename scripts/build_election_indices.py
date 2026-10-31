@@ -17,6 +17,7 @@ WINNER_BANDS = ((30, "Under 30%"), (40, "30–40%"), (50, "40–50%"), (60, "50�
 CANDIDATE_BANDS = ((5, "Up to 5"), (10, "6–10"), (15, "11–15"), (20, "16–20"), (float("inf"), "21 or more"))
 SUBGROUP_LS = "Lok Sabha 2024 — National"
 SUBGROUP_LS_STATES = "Lok Sabha 2024 — States"
+SUBGROUP_COMPARE = "Election Comparisons Across States"
 SUBGROUP_ASSEMBLY = "State Assembly Results 2022–2026"
 
 
@@ -51,12 +52,12 @@ def _contests(observations: list[dict]) -> dict[tuple, list[dict]]:
 
 
 def _series(key: str, labels, values, *, title: str, subtitle: str, frequency: str, unit: str,
-            subgroup: str, note: str, source: str, color: str = "#ff9933") -> tuple[str, dict]:
+            subgroup: str, note: str, source: str, color: str = "#ff9933", chart: str = "doughnut") -> tuple[str, dict]:
+    shape = {"chartType": "doughnut", "scope": "category"} if chart == "doughnut" else {"chartType": "bar", "indexAxis": "y", "scope": "state"}
     return key, {
         "labels": labels,
         "values": values,
-        "chartType": "doughnut",
-        "scope": "category",
+        **shape,
         "source": source,
         "unit": unit.strip(),
         "note": note,
@@ -91,7 +92,33 @@ def _election_summary(contests: list[list[dict]]) -> dict[str, Counter]:
         if total and len(counted) >= 2:
             margins[_band((counted[0]["votes"] - counted[1]["votes"]) / total * 100, MARGIN_BANDS)] += 1
             winners[_band(counted[0]["votes"] / total * 100, WINNER_BANDS)] += 1
-    return {"seats": seats, "votes": votes, "margins": margins, "winners": winners, "sizes": sizes, "nota": nota}
+    party_mix = Counter()
+    for party, value in votes.items():
+        party_mix["Independent candidates" if party == "Independent" else "NOTA" if party == "NOTA" else "Party candidates"] += value
+    margin_points = []
+    for rows in contests:
+        counted = [row for row in rows if row["votes"] is not None]
+        total = sum(row["votes"] for row in counted)
+        if total and len(counted) >= 2:
+            margin_points.append((counted[0]["votes"] - counted[1]["votes"]) / total * 100)
+    candidates = [len([row for row in rows if row["party"] != NOTA]) for rows in contests]
+    return {"seats": seats, "votes": votes, "margins": margins, "winners": winners, "sizes": sizes, "nota": nota,
+            "mix": party_mix, "margin_points": margin_points, "candidates": candidates}
+
+
+def _stats(summary: dict[str, Counter]) -> dict[str, float | None]:
+    total = summary["nota"]["Candidates"] + summary["nota"]["NOTA"]
+    margins, candidates = summary["margin_points"], summary["candidates"]
+    seats = sum(summary["seats"].values())
+    return {
+        "nota": round(summary["nota"]["NOTA"] / total * 100, 2) if total else None,
+        "independent": round(summary["mix"]["Independent candidates"] / total * 100, 2) if total else None,
+        "close": round(sum(1 for value in margins if value < 5) / len(margins) * 100, 1) if margins else None,
+        "margin": round(sorted(margins)[len(margins) // 2], 2) if margins else None,
+        "candidates": round(sum(candidates) / len(candidates), 1) if candidates else None,
+        "largest": round(summary["seats"].most_common(1)[0][1] / seats * 100, 1) if seats else None,
+        "parties": len([party for party, count in summary["seats"].items() if count]),
+    }
 
 
 def build_indices(payload: dict) -> dict:
@@ -147,6 +174,23 @@ def build_indices(payload: dict) -> dict:
         add(_series(f"india_ls2024_{slug}_party_votes", *_ranked(state_summary["votes"], 8), title=f"Lok Sabha 2024 {state}: Votes by Party",
                     subtitle="Listed candidate votes by party, including NOTA", unit=" votes", subgroup=SUBGROUP_LS_STATES, color="#58a6ff",
                     note=f"{calc}.", **base))
+        add(_series(f"india_ls2024_{slug}_margin_bands", *_ordered(state_summary["margins"], MARGIN_BANDS), title=f"Lok Sabha 2024 {state}: Victory Margins",
+                    subtitle="Seats by winner's lead over the runner-up, in percentage points", unit=" seats", subgroup=SUBGROUP_LS_STATES, color="#3fb950",
+                    note=f"{calc}.", **base))
+
+    ls_stats = {state: _stats(_election_summary([rows for rows in ls if rows[0]["state_or_ut"] == state])) for state in state_seats}
+    compare = dict(frequency="General election 2024", source=source, subgroup=SUBGROUP_COMPARE, chart="bar")
+    for metric, key, title, subtitle, unit, color in (
+        ("nota", "india_ls2024_state_nota_share", "Lok Sabha 2024: NOTA Share by State/UT", "NOTA votes as a share of all listed votes", "%", "#ff7b72"),
+        ("close", "india_ls2024_state_close_contests", "Lok Sabha 2024: Close Contests by State/UT", "Share of seats decided by under 5 percentage points", "%", "#3fb950"),
+        ("margin", "india_ls2024_state_median_margin", "Lok Sabha 2024: Median Victory Margin by State/UT", "Median winner lead over the runner-up", " pts", "#58a6ff"),
+        ("candidates", "india_ls2024_state_candidates_per_seat", "Lok Sabha 2024: Candidates per Seat by State/UT", "Average contesting candidates per constituency (NOTA excluded)", " candidates", "#f6c344"),
+        ("independent", "india_ls2024_state_independent_share", "Lok Sabha 2024: Independent Vote Share by State/UT", "Votes for independent candidates as a share of all listed votes", "%", "#f778ba"),
+        ("largest", "india_ls2024_state_largest_party_seat_share", "Lok Sabha 2024: Largest Party's Seat Share by State/UT", "Share of a State/UT's seats won by its leading party", "%", "#bc8cff"),
+    ):
+        ranked = sorted(((state, values[metric]) for state, values in ls_stats.items() if values[metric] is not None), key=lambda item: item[1], reverse=True)
+        add(_series(key, [state for state, _ in ranked], [value for _, value in ranked], title=title, subtitle=subtitle, unit=unit, color=color,
+                    note=f"{calc}. All {len(ranked)} States/UTs with contested seats are shown.", **compare))
 
     assemblies: dict[tuple[int, str], list[list[dict]]] = defaultdict(list)
     for (year, kind, state, _), rows in grouped.items():
@@ -164,6 +208,41 @@ def build_indices(payload: dict) -> dict:
         add(_series(f"india_assembly_{slug}_margin_bands", *_ordered(assembly["margins"], MARGIN_BANDS), title=f"{state} Assembly {year}: Victory Margins",
                     subtitle="Seats by winner's lead over the runner-up, in percentage points", unit=" seats", color="#3fb950",
                     note=f"{calc}.", **common))
+        add(_series(f"india_assembly_{slug}_winner_share_bands", *_ordered(assembly["winners"], WINNER_BANDS), title=f"{state} Assembly {year}: Winner Vote-Share Bands",
+                    subtitle="Seats by the winning candidate's share of listed votes", unit=" seats", color="#bc8cff", note=f"{calc}.", **common))
+        add(_series(f"india_assembly_{slug}_candidate_field_bands", *_ordered(assembly["sizes"], CANDIDATE_BANDS), title=f"{state} Assembly {year}: Candidates per Seat",
+                    subtitle="Seats grouped by the number of contesting candidates (NOTA excluded)", unit=" seats", color="#f6c344",
+                    note="Counts candidates listed in each constituency result; NOTA is not a candidate.", **common))
+        add(_series(f"india_assembly_{slug}_vote_mix", *_ranked(assembly["mix"]), title=f"{state} Assembly {year}: Party, Independent & NOTA Votes",
+                    subtitle="Votes for party candidates, independents and NOTA", unit=" votes", color="#f778ba", note=f"{calc}.", **common))
+
+    latest: dict[str, tuple[int, dict]] = {}
+    for (year, state), contests in assemblies.items():
+        if state not in latest or year > latest[state][0]:
+            latest[state] = (year, _election_summary(contests))
+    assembly_compare = dict(frequency="Latest Assembly election, 2022?2026", source=source, subgroup=SUBGROUP_COMPARE)
+    seats_total = Counter()
+    for _, summary in latest.values():
+        seats_total.update(summary["seats"])
+    add(_series("india_assembly_latest_party_seats", *_ranked(seats_total, 12), title="Latest Assembly Elections: Seats by Party",
+                subtitle=f"Seats won across the latest Assembly election in {len(latest)} States/UTs", unit=" seats", color="#ff9933",
+                note="Sums seat winners from each State/UT's most recent Assembly election in the 2022?2026 ECI-derived results.", **assembly_compare))
+    states_won = Counter(summary["seats"].most_common(1)[0][0] for _, summary in latest.values() if summary["seats"])
+    add(_series("india_assembly_latest_largest_party_states", *_ranked(states_won, 10), title="Latest Assembly Elections: States Led by Party",
+                subtitle="Number of States/UTs where each party won the most seats", unit=" States/UTs", color="#39c5bb",
+                note="Largest single party by seats in each State/UT's most recent Assembly election.", **assembly_compare))
+    assembly_stats = {f"{state} ({year})": _stats(summary) for state, (year, summary) in latest.items()}
+    for metric, key, title, subtitle, unit, color in (
+        ("nota", "india_assembly_state_nota_share", "Assembly Elections: NOTA Share by State/UT", "NOTA votes as a share of all listed votes, latest election", "%", "#ff7b72"),
+        ("close", "india_assembly_state_close_contests", "Assembly Elections: Close Contests by State/UT", "Share of seats decided by under 5 percentage points, latest election", "%", "#3fb950"),
+        ("margin", "india_assembly_state_median_margin", "Assembly Elections: Median Victory Margin by State/UT", "Median winner lead over the runner-up, latest election", " pts", "#58a6ff"),
+        ("candidates", "india_assembly_state_candidates_per_seat", "Assembly Elections: Candidates per Seat by State/UT", "Average contesting candidates per constituency, latest election", " candidates", "#f6c344"),
+        ("largest", "india_assembly_state_largest_party_seat_share", "Assembly Elections: Largest Party's Seat Share", "Share of Assembly seats won by the leading party, latest election", "%", "#bc8cff"),
+        ("parties", "india_assembly_state_parties_winning", "Assembly Elections: Parties Winning Seats", "Number of distinct parties (independents as one) winning at least one seat", " parties", "#f778ba"),
+    ):
+        ranked = sorted(((state, values[metric]) for state, values in assembly_stats.items() if values[metric] is not None), key=lambda item: item[1], reverse=True)
+        add(_series(key, [state for state, _ in ranked], [value for _, value in ranked], title=title, subtitle=subtitle, unit=unit, color=color,
+                    note=f"{calc}. Each State/UT's most recent Assembly election is used (year in brackets).", **{**assembly_compare, "chart": "bar"}))
 
     return {
         "generated_at_utc": payload.get("generated_at_utc") or datetime.now(timezone.utc).replace(microsecond=0).isoformat(),

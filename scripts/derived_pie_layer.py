@@ -10,10 +10,10 @@ import re
 YEAR = re.compile(r"^\d{4}$")
 
 REGIONS = {
-    "North": ("Himachal Pradesh", "Punjab", "Haryana", "Uttarakhand", "Jammu & Kashmir", "Jammu and Kashmir", "Delhi", "Delhi NCR"),
+    "North": ("Himachal Pradesh", "Punjab", "Haryana", "Uttarakhand", "Jammu & Kashmir", "Jammu and Kashmir", "Ladakh", "Delhi", "Delhi NCR", "Chandigarh"),
     "Central": ("Uttar Pradesh", "Madhya Pradesh", "Chhattisgarh"),
-    "West": ("Gujarat", "Maharashtra", "Rajasthan", "Goa"),
-    "South": ("Andhra Pradesh", "Telangana", "Karnataka", "Kerala", "Tamil Nadu"),
+    "West": ("Gujarat", "Maharashtra", "Rajasthan", "Goa", "Dadra & Nagar Haveli and Daman & Diu"),
+    "South": ("Andhra Pradesh", "Telangana", "Karnataka", "Kerala", "Tamil Nadu", "Puducherry", "Lakshadweep", "Andaman & Nicobar Islands"),
     "East": ("Bihar", "Jharkhand", "Odisha", "West Bengal"),
     "North-East": ("Assam", "Arunachal Pradesh", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Sikkim", "Tripura"),
 }

@@ -139,6 +139,10 @@ class DashboardEndpointTests(unittest.TestCase):
         expected.update(manufacturing_keys)
         from mining_layer import KEYS as mining_keys
         expected.update(mining_keys)
+        from rbi_state_layer import STATES_AND_UTS
+        rbi_keys = {key for key in payload["series"] if key.startswith("rbi_state_") or re.match(r"state_\w+_(region_share|distribution|all_india_trend)$", key)}
+        self.assertGreaterEqual(len(rbi_keys), 100)
+        expected.update(rbi_keys)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -178,13 +182,14 @@ class DashboardEndpointTests(unittest.TestCase):
         }
         for key in state_series_keys:
             series = payload["series"][key]
-            self.assertEqual(len(series.get("labels", [])), 28, key)
-            self.assertEqual(len(series.get("values", [])), 28, key)
+            self.assertGreaterEqual(len(series.get("labels", [])), 28, key)
+            self.assertEqual(len(series.get("values", [])), len(series["labels"]), key)
             self.assertTrue(all(value is not None for value in series["values"]), key)
             self.assertEqual(series.get("scope"), "state", key)
             self.assertEqual(series.get("chartType"), "bar", key)
             self.assertEqual(series.get("indexAxis"), "y", key)
-            self.assertEqual(set(series["labels"]), expected_states, key)
+            self.assertTrue(expected_states <= set(series["labels"]) <= set(STATES_AND_UTS), key)
+            self.assertTrue(set(series["labels"]) - expected_states, f"{key} should include Union Territories")
             self.assertIn("PMJDY" if key == "state_pmjdy_bank_accounts" else "RBI", series.get("source", ""))
         for key in ("state_gsdp_share", "state_per_capita_income_index", "state_power_availability_index"):
             self.assertIn(payload["series"][key].get("unit"), {"% of reported total", "index (median = 100)"}, key)

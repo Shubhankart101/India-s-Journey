@@ -18,12 +18,14 @@ try:
     from scripts.tourism_comparison_layer import build_tourism_comparison_layer
     from scripts.manufacturing_layer import build_manufacturing_layer
     from scripts.mining_layer import build_mining_layer
+    from scripts.rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
     from derived_pie_layer import build_derived_layer
     from tourism_comparison_layer import build_tourism_comparison_layer
     from manufacturing_layer import build_manufacturing_layer
     from mining_layer import build_mining_layer
+    from rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
 
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
@@ -33,13 +35,8 @@ RBI_STATE_TABLES = {
     "gsdp": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23470",
     "power": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587",
 }
-STATE_NAMES = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa",
-    "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala",
-    "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland",
-    "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-    "Uttar Pradesh", "Uttarakhand", "West Bengal",
-]
+# All 28 States must be present; Union Territories are included wherever the source publishes them.
+STATE_NAMES = list(STATES)
 
 
 def get_json(url: str) -> object:
@@ -217,18 +214,18 @@ def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source:
             break
         if not row or len(row) <= value_column:
             continue
-        name = row[0].strip().rstrip("*").strip()
-        if name not in STATE_NAMES:
+        name = canonical_state(row[0])
+        if name not in STATES_AND_UTS:
             continue
         raw_value = row[value_column].replace(",", "").strip()
         try:
             state_values[name] = float(raw_value) / divisor
         except ValueError:
-            state_values[name] = None
+            continue
     missing = [name for name in STATE_NAMES if state_values.get(name) is None]
     if missing:
         raise ValueError(f"RBI {fiscal_year} table is missing state values: {', '.join(missing)}")
-    labels = sorted(STATE_NAMES, key=lambda name: (-state_values[name], name))
+    labels = sorted(state_values, key=lambda name: (-state_values[name], name))
     values = [state_values[name] for name in labels]
     return {
         "labels": labels,
@@ -237,7 +234,7 @@ def build_rbi_state_snapshot(url: str, fiscal_year: str, divisor: float, source:
         "indexAxis": "y",
         "scope": "state",
         "source": source,
-        "note": f"FY{fiscal_year}. Includes all 28 States using the same reporting year; Union Territories are excluded.",
+        "note": f"FY{fiscal_year}, same reporting year for every State/UT. {coverage_note(labels)}",
     }
 
 
@@ -245,9 +242,9 @@ def has_complete_state_coverage(series: dict) -> bool:
     labels = series.get("labels", [])
     values = series.get("values", [])
     return (
-        len(labels) == len(STATE_NAMES)
-        and set(labels) == set(STATE_NAMES)
-        and len(values) == len(STATE_NAMES)
+        set(STATE_NAMES) <= set(labels)
+        and set(labels) <= set(STATES_AND_UTS)
+        and len(values) == len(labels)
         and all(value is not None for value in values)
     )
 
@@ -343,16 +340,15 @@ def build_composition_series(series: dict[str, dict]) -> dict[str, dict]:
         ranked_states = sorted(state_points, key=lambda point: point[1], reverse=True)
         top_states, other_states = ranked_states[:8], ranked_states[8:]
         charts["state_gsdp_composition"] = {
-            "labels": [label for label, _ in top_states] + (["Other 20 States"] if other_states else []),
+            "labels": [label for label, _ in top_states] + ([f"Other {len(other_states)} States/UTs"] if other_states else []),
             "values": [round(value, 2) for _, value in top_states]
             + ([round(sum(value for _, value in other_states), 2)] if other_states else []),
             "chartType": "doughnut",
             "scope": "category",
             "source": state_share.get("source", "RBI state GSDP snapshot"),
             "note": (
-                "Share of reported GSDP across the 28 States in the cited RBI snapshot. "
-                "The eight largest State shares are shown individually; the remaining 20 States "
-                "are combined. Union Territories are excluded."
+                "Share of reported GSDP across every State and Union Territory in the cited RBI snapshot. "
+                "The eight largest shares are shown individually; the remaining States/UTs are combined."
             ),
             "unit": "% of reported State GSDP",
         }
@@ -1222,15 +1218,6 @@ def build_state_debt_to_gsdp() -> dict:
         "source": "RBI Study on State Finances & NITI Aayog (% Total Debt / Outstanding Liabilities to GSDP Ratio)"
     }
 
-def build_state_operating_factories() -> dict:
-    states = ["Tamil Nadu", "Gujarat", "Maharashtra", "Uttar Pradesh", "Karnataka", "Andhra Pradesh"]
-    factories = [38837, 28479, 25610, 16184, 15820, 14205]
-    return {
-        "labels": states,
-        "values": factories,
-        "source": "MOSPI Annual Survey of Industries (ASI) (Total Operating Registered Factories Count by State)"
-    }
-
 def build_state_pmay_homes() -> dict:
     states = ["Uttar Pradesh", "Madhya Pradesh", "Bihar", "West Bengal", "Rajasthan", "Maharashtra"]
     houses_lakhs = [34.5, 31.2, 28.6, 26.4, 18.9, 16.5]
@@ -1271,26 +1258,6 @@ def build_state_power_per_capita() -> dict:
         "RBI Handbook of Statistics on Indian States 2024-25, Table 138; CEA per-capita power availability (FY2024-25, kWh)",
     )
 
-def build_state_own_tax_revenue() -> dict:
-    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    mh = [1.85, 1.98, 2.12, 2.56, 2.92, 3.25, 3.65, 4.05]
-    tn = [1.12, 1.20, 1.28, 1.54, 1.76, 1.98, 2.22, 2.48]
-    gj = [0.89, 0.95, 1.04, 1.28, 1.46, 1.65, 1.88, 2.12]
-    ka = [1.02, 1.10, 1.18, 1.42, 1.62, 1.82, 2.05, 2.30]
-    up = [1.22, 1.31, 1.42, 1.68, 1.92, 2.18, 2.46, 2.78]
-    datasets = [
-        {"label": "Maharashtra SOTR", "values": mh, "color": "#58a6ff"},
-        {"label": "Tamil Nadu SOTR", "values": tn, "color": "#3fb950"},
-        {"label": "Gujarat SOTR", "values": gj, "color": "#ff9933"},
-        {"label": "Karnataka SOTR", "values": ka, "color": "#a371f7"},
-        {"label": "Uttar Pradesh SOTR", "values": up, "color": "#f6c344"},
-    ]
-    return {
-        "labels": years,
-        "datasets": datasets,
-        "source": "Controller General of Accounts & RBI State Finances (State Own Tax Revenue - SOTR in INR Lakh Crores)"
-    }
-
 def build_state_gst_collections() -> dict:
     states = ["Maharashtra", "Karnataka", "Gujarat", "Tamil Nadu", "Uttar Pradesh", "West Bengal", "Haryana", "Delhi NCR"]
     monthly_gst_cr = [28500, 12800, 11400, 10600, 9200, 5800, 5600, 5400]
@@ -1298,15 +1265,6 @@ def build_state_gst_collections() -> dict:
         "labels": states,
         "values": monthly_gst_cr,
         "source": "GSTN Portal & Ministry of Finance (Average Monthly State GST Collections in INR Crores)"
-    }
-
-def build_state_manufacturing_gsdp_share() -> dict:
-    states = ["Gujarat", "Himachal Pradesh", "Tamil Nadu", "Maharashtra", "Haryana", "Karnataka", "Punjab", "West Bengal"]
-    manufacturing_share = [36.5, 29.8, 24.2, 21.5, 19.8, 18.2, 14.5, 12.8]
-    return {
-        "labels": states,
-        "values": manufacturing_share,
-        "source": "MOSPI National Accounts & RBI State Statistics (Manufacturing Sector % Share of GSDP)"
     }
 
 def build_state_pmjdy_bank_accounts() -> dict:
@@ -1327,14 +1285,17 @@ def build_state_pmjdy_bank_accounts() -> dict:
     for row in parser.rows[header_index + 1:]:
         if len(row) <= max(state_column, total_column):
             continue
-        name = row[state_column].strip()
-        if name not in STATE_NAMES:
+        name = canonical_state(row[state_column])
+        if name not in STATES_AND_UTS:
             continue
-        state_values[name] = float(row[total_column].replace(",", "")) / 10_000_000
+        try:
+            state_values[name] = state_values.get(name, 0) + float(row[total_column].replace(",", "")) / 10_000_000
+        except ValueError:
+            continue
     missing = [name for name in STATE_NAMES if name not in state_values]
     if missing:
         raise ValueError(f"PMJDY report is missing state values: {', '.join(missing)}")
-    labels = sorted(STATE_NAMES, key=lambda name: (-state_values[name], name))
+    labels = sorted(state_values, key=lambda name: (-state_values[name], name))
     report_date = re.search(
         r"Statewise account opening Report as on\s+(\d{2}/\d{2}/\d{4})",
         page_text,
@@ -1348,7 +1309,7 @@ def build_state_pmjdy_bank_accounts() -> dict:
         "indexAxis": "y",
         "scope": "state",
         "source": f"Department of Financial Services, PMJDY statewise account opening report ({report_url})",
-        "note": f"{date_note}All 28 States are included; Union Territories are excluded. Values are total beneficiary accounts in crore.",
+        "note": f"{date_note}{coverage_note(labels)} Values are total beneficiary accounts in crore.",
     }
 
 def build_state_pmjay_health_cards() -> dict:
@@ -1369,24 +1330,6 @@ def build_state_pmsvanidhi_street_vendors() -> dict:
         "source": "MoHUA PM SVANidhi Portal (Micro-Credit Working Capital Loans Disbursed in Lakh Vendors by State)"
     }
 
-def build_state_renewable_energy_capacity() -> dict:
-    states = ["Rajasthan", "Gujarat", "Tamil Nadu", "Karnataka", "Maharashtra", "Andhra Pradesh", "Madhya Pradesh"]
-    capacity_gw = [28.5, 26.2, 21.4, 18.9, 14.8, 11.2, 8.9]
-    return {
-        "labels": states,
-        "values": capacity_gw,
-        "source": "Ministry of New and Renewable Energy (MNRE) & CEA (Installed Solar & Wind Energy Capacity in GW by State)"
-    }
-
-def build_state_national_highway_length() -> dict:
-    states = ["Maharashtra", "Uttar Pradesh", "Rajasthan", "Madhya Pradesh", "Gujarat", "Karnataka", "Tamil Nadu", "Assam"]
-    highway_km = [18459, 12272, 10618, 9105, 8760, 7652, 6850, 4077]
-    return {
-        "labels": states,
-        "values": highway_km,
-        "source": "Ministry of Road Transport and Highways (MoRTH) (National Highways Length in Kilometres by State)"
-    }
-
 def build_state_literacy_rates() -> dict:
     states = ["Kerala", "Mizoram", "Goa", "Tripura", "Himachal Pradesh", "Tamil Nadu", "Maharashtra", "Gujarat", "West Bengal", "Punjab", "Uttar Pradesh", "Bihar"]
     literacy_pct = [96.2, 91.3, 88.7, 87.8, 83.8, 80.1, 82.3, 78.0, 76.3, 75.8, 67.7, 61.8]
@@ -1394,24 +1337,6 @@ def build_state_literacy_rates() -> dict:
         "labels": states,
         "values": literacy_pct,
         "source": "MOSPI Periodic Labour Force Survey & Census Estimates (Literacy Rate % across States)"
-    }
-
-def build_state_infant_mortality_rate() -> dict:
-    states = ["Kerala", "Delhi NCR", "Tamil Nadu", "Maharashtra", "Punjab", "Gujarat", "West Bengal", "Uttar Pradesh", "Madhya Pradesh"]
-    imr = [6.0, 12.0, 13.0, 16.0, 18.0, 23.0, 22.0, 38.0, 43.0]
-    return {
-        "labels": states,
-        "values": imr,
-        "source": "Sample Registration System (SRS) Bulletin, Registrar General of India (Infant Mortality Rate per 1,000 live births by State)"
-    }
-
-def build_state_life_expectancy() -> dict:
-    states = ["Kerala", "Delhi NCR", "Jammu & Kashmir", "Himachal Pradesh", "Punjab", "Maharashtra", "Tamil Nadu", "Gujarat", "Uttar Pradesh"]
-    expectancy = [75.2, 74.8, 74.2, 73.5, 72.8, 72.5, 72.1, 70.2, 65.8]
-    return {
-        "labels": states,
-        "values": expectancy,
-        "source": "SRS Abridged Life Tables, Registrar General of India (Life Expectancy at Birth in Years by State)"
     }
 
 def build_state_ev_adoption_charging() -> dict:
@@ -1676,10 +1601,7 @@ def main() -> None:
             result["series"][key] = cached if has_complete_state_coverage(cached) else {"error": str(error)}
     result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
     result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
-    result["series"]["state_own_tax_revenue"] = build_state_own_tax_revenue()
     result["series"]["state_gst_collections"] = build_state_gst_collections()
-    result["series"]["state_operating_factories"] = build_state_operating_factories()
-    result["series"]["state_manufacturing_gsdp_share"] = build_state_manufacturing_gsdp_share()
     result["series"]["state_pmay_homes"] = build_state_pmay_homes()
     result["series"]["state_jjm_water_coverage"] = build_state_jjm_water_coverage()
     result["series"]["state_mudra_loans"] = build_state_mudra_loans()
@@ -1692,14 +1614,22 @@ def main() -> None:
         )
     result["series"]["state_pmjay_health_cards"] = build_state_pmjay_health_cards()
     result["series"]["state_pmsvanidhi_street_vendors"] = build_state_pmsvanidhi_street_vendors()
-    result["series"]["state_renewable_energy_capacity"] = build_state_renewable_energy_capacity()
-    result["series"]["state_national_highway_length"] = build_state_national_highway_length()
     result["series"]["state_literacy_rates"] = build_state_literacy_rates()
-    result["series"]["state_infant_mortality_rate"] = build_state_infant_mortality_rate()
-    result["series"]["state_life_expectancy"] = build_state_life_expectancy()
     result["series"]["state_ev_adoption_charging"] = build_state_ev_adoption_charging()
     result["series"]["state_export_preparedness_index"] = build_state_export_preparedness_index()
     result["series"]["state_ease_of_doing_business"] = build_state_ease_of_doing_business()
+    curated_note = (
+        "Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT "
+        "ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of "
+        "Statistics on Indian States are shown alongside."
+    )
+    for key in (
+        "state_fdi_inflows", "state_debt_to_gsdp", "state_gst_collections", "state_pmay_homes",
+        "state_jjm_water_coverage", "state_mudra_loans", "state_pmjay_health_cards",
+        "state_pmsvanidhi_street_vendors", "state_literacy_rates", "state_ev_adoption_charging",
+        "state_export_preparedness_index", "state_ease_of_doing_business",
+    ):
+        result["series"][key].setdefault("note", curated_note)
 
     # Manufacturing & Industrial Growth
     result["series"]["auto_production_volume"] = build_auto_production_volume()
@@ -1784,6 +1714,7 @@ def main() -> None:
     result["series"].update(build_tourism_comparison_layer(get_json, previous_series))
     result["series"].update(build_manufacturing_layer(previous_series))
     result["series"].update(build_mining_layer(previous_series))
+    result["series"].update(build_rbi_state_layer(get_text, previous_series))
     result["series"].update(build_terrorism_derived_series(
         result["series"].get("terror_attacks", {}),
         result["series"].get("terror_fatalities", {}),
@@ -1836,7 +1767,7 @@ def main() -> None:
             "scope": "state",
             "source": title,
             "unit": unit,
-            "note": f"Calculated from the complete 28-State RBI snapshot for {fiscal_year}; Union Territories are excluded.",
+            "note": f"Calculated from the RBI snapshot for {fiscal_year} covering all 28 States and every Union Territory the source reports. {coverage_note(labels)}",
         }
 
     population = dict(zip(series.get("population", {}).get("labels", []), series.get("population", {}).get("values", [])))
