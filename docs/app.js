@@ -554,6 +554,8 @@ async function main() {
   renderArticles(articleLinks, imArticles.slice(0, 6), 'No public article snapshot available yet.');
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) renderArticles(polityPolicyLinks, ppArticles.slice(0, 6), 'No public article snapshot available yet.');
+  renderArticles(document.querySelector('#thanks-pp-articles'), ppArticles.slice(0, 3), 'No public article snapshot available yet.');
+  renderArticles(document.querySelector('#thanks-im-articles'), imArticles.slice(0, 3), 'No public article snapshot available yet.');
   const pewReportItems = (dataPayload && dataPayload.pew_reports) || pewReports?.reports || [];
   const renderPewReports = () => {
     const list = document.querySelector('#pew-report-list');
@@ -2041,6 +2043,7 @@ main().catch(error => {
   if (articleLinks) articleLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) polityPolicyLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
+  document.querySelectorAll('#thanks-pp-articles, #thanks-im-articles').forEach(el => { el.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>'; });
   const chartGrid = document.querySelector('#charts');
   if (chartGrid) chartGrid.innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });

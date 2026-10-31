@@ -226,6 +226,7 @@ body.product-theme .modal-stat-card * { color: inherit; }
 
 /* References and footer */
 body.product-theme .references { background: none; border: 0; }
+body.product-theme .thanks-card { background: var(--glass); border-color: var(--card-border); border-left: 3px solid #ff9933; border-radius: var(--radius-lg); }
 body.product-theme .references details { background: var(--glass); border: 1px solid var(--card-border); border-radius: var(--radius-lg); color: var(--ink); }
 body.product-theme .references summary { color: var(--ink); }
 body.product-theme footer { color: var(--muted); font-size: .78rem; border-top: 1px solid var(--line); padding: 22px 0 40px; }

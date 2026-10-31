@@ -887,6 +887,15 @@ body {
 .chart-source-index-item a { font-size:.72rem; }
 .source-chart-link { color:#ffbd73; font-weight:750; }
 .references .reference-columns { padding-top:18px; }
+.thanks { border-top:1px solid rgba(255,255,255,.08); margin-top:25px; padding-top:8px; scroll-margin-top:25px; }
+.thanks h2 { font-size:clamp(2rem,4vw,2.8rem); letter-spacing:-.045em; margin:8px 0; }
+.thanks-columns { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; margin-top:18px; }
+.thanks-card { background:rgba(18,24,34,.9); border:1px solid rgba(255,255,255,.08); border-left:3px solid var(--saffron); border-radius:14px; padding:22px; display:flex; flex-direction:column; gap:12px; }
+.thanks-card h3 { margin:0; font-size:1.3rem; }
+.thanks-card > p { color:var(--muted); margin:0; }
+.thanks-card .thanks-label { margin-top:4px; }
+.thanks-card .text-link { margin-top:auto; }
+@media (max-width: 760px) { .thanks-columns { grid-template-columns:1fr; } }
 .reference-columns ul { color:var(--muted); font-size:.87rem; }
 .reference-columns h3 { margin-top:10px; }
 .no-charts-message { background:rgba(255,255,255,.025); border:1px dashed rgba(255,255,255,.15); border-radius:12px; grid-column:1/-1; }

@@ -11,7 +11,7 @@
 
 This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
 
-With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The dashboard now has a dedicated **Inspiration** section separate from the general About text, so PolityPolicy attribution is not mixed in with dashboard mechanics.
+With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. The Explore page has a dedicated **With thanks** section ([`explore.html#thanks`](https://indiasjourney.netlify.app/explore.html#thanks)) with one column for PolityPolicy and one for Indian Matrix, each listing its three latest articles. Every page footer links to it.
 
 Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
 
@@ -224,7 +224,7 @@ Data commits pushed by the scheduled workflows trigger a redeploy, which re-impo
 
 ## 🙏 Attribution
 
-Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above. The live dashboard now has a dedicated Inspiration section that separates PolityPolicy attribution from the general About text.
+Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above. The live dashboard has a **With thanks** section on the Explore page with separate PolityPolicy and Indian Matrix columns.
 
 ## 🗳️ Elections, public services, and data coverage
 
