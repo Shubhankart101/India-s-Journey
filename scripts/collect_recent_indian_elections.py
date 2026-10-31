@@ -22,6 +22,7 @@ ECI_GE2024_BASE = "https://www.eci.gov.in/eci-backend/public/all_files/GE-2024-s
 ECI_LS2024_RESULTS_PATH = "GE-2024-statistical-report/33-Constituency-Wise-Detailed-Result.xls"
 ECI_LS2024_RESULTS_URL = f"{ECI_GE2024_BASE}/33-Constituency-Wise-Detailed-Result.xls"
 ECI_LS2024_PARTIES_URL = f"{ECI_GE2024_BASE}/3-List-Of-Political-Parties-Participated.xlsx"
+ECI_ACCEPT = "application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, */*"
 # Surat was declared uncontested before polling, so ECI report 33 has no candidate rows for it.
 SURAT_UNCONTESTED = ("Gujarat", "Surat", "MUKESHKUMAR CHANDRAKAANT DALAL", "BJP")
 ASSEMBLY_FILE_PATTERN = re.compile(r"data/csv/20(?:22|23|24|25|26)Assembly-[A-Z]{2}\.csv")
@@ -212,14 +213,39 @@ def parse_state_names(content: bytes, commit_sha: str) -> dict[str, str]:
     }
 
 
+def lok_sabha_2024_observations() -> list[dict]:
+    """Parse ECI report 33, or reuse the saved 2024 rows when ECI blocks the request.
+
+    The 2024 Lok Sabha results are final, and eci.gov.in answers some cloud-runner IP ranges with
+    HTTP 403/406, so a blocked download must not stop the Assembly results from refreshing.
+    """
+    try:
+        party_names = read_eci_party_names(fetch_bytes(ECI_LS2024_PARTIES_URL, ECI_ACCEPT))
+        return parse_lok_sabha_2024_rows(
+            read_eci_results_rows(fetch_bytes(ECI_LS2024_RESULTS_URL, ECI_ACCEPT)), party_names
+        )
+    except (HTTPError, URLError, TimeoutError) as error:
+        try:
+            previous = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            raise error
+        rows = []
+        for row in previous.get("observations", []):
+            if row.get("year") == 2024 and row.get("election_type") == "Lok Sabha":
+                row = {key: value for key, value in row.items() if key != "source_file"}
+                row["source"] = ECI_LS2024_RESULTS_URL
+                rows.append(row)
+        if not rows:
+            raise error
+        print(f"::warning::ECI download failed ({error}); reusing {len(rows)} saved 2024 Lok Sabha rows.")
+        return rows
+
+
 def collect_recent_results() -> dict:
     commit_sha, commit_date, paths = source_snapshot()
     states_url = f"{RAW_BASE}/{commit_sha}/data/states.csv"
     state_names = parse_state_names(fetch_bytes(states_url), commit_sha)
-    party_names = read_eci_party_names(fetch_bytes(ECI_LS2024_PARTIES_URL))
-    observations: list[dict] = parse_lok_sabha_2024_rows(
-        read_eci_results_rows(fetch_bytes(ECI_LS2024_RESULTS_URL)), party_names
-    )
+    observations: list[dict] = lok_sabha_2024_observations()
     source_files = [{"path": ECI_LS2024_RESULTS_PATH, "url": ECI_LS2024_RESULTS_URL}]
     source_index = {ECI_LS2024_RESULTS_URL: 0}
     for path in paths:
