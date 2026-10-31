@@ -319,9 +319,9 @@ const formatMagnitude = (value, suffix = '') => {
 };
 
 const CHART_THEME = {
-  ink: '#1d1d1f', muted: '#6e6e73', grid: 'rgba(0, 0, 0, 0.06)', legend: '#424245',
-  tooltipBg: 'rgba(255, 255, 255, 0.97)', tooltipTitle: '#1d1d1f', tooltipBody: '#424245',
-  tooltipBorder: 'rgba(0, 0, 0, 0.1)', sliceBorder: '#ffffff',
+  ink: '#f5f5f7', muted: '#a1a1a6', grid: 'rgba(255, 255, 255, 0.08)', legend: '#d2d2d7',
+  tooltipBg: 'rgba(28, 28, 30, 0.96)', tooltipTitle: '#f5f5f7', tooltipBody: '#d2d2d7',
+  tooltipBorder: 'rgba(255, 255, 255, 0.14)', sliceBorder: '#1c1c1e',
   font: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif'
 };
 
@@ -1513,6 +1513,7 @@ async function main() {
     const heroImage = document.querySelector('#group-hero-image');
     const heroImageCaption = document.querySelector('#group-hero-image-caption');
     const artPath = subgroupArtMap[subgroupFilter.value] || categoryBgMap[grp];
+    if (artPath) setEraBackground(artPath);
     if (heroTitle) heroTitle.textContent = heroInfo.title;
     if (heroDesc) heroDesc.textContent = heroInfo.desc;
     if (heroBadges) heroBadges.innerHTML = `<span class="hero-badge saffron">${heroInfo.badge1}</span><span class="hero-badge green">${heroInfo.badge2}</span>`;
