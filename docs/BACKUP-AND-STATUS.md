@@ -1,6 +1,6 @@
 # Backup site and status page
 
-The Django app runs on Render. If it is down, asleep (free plan) or being deployed, visitors can still use the **static GitHub Pages dashboard** at <https://shubhankart101.github.io/India-s-Journey/>. Both are built from the same collectors and the same `docs/data/*.json` files, so the backup always has the same data as the app.
+The Django app runs on Render. If it is down, asleep (free plan) or being deployed, visitors can still use the **static GitHub Pages dashboard** at <https://shubhankart101.github.io/India-s-Journey/>, mirrored on Netlify at <https://indiasjourney.netlify.app>. Both are built from the same collectors and the same `docs/data/*.json` files, so the backup always has the same data as the app.
 
 ## Where users are sent to the backup
 

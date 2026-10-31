@@ -2,6 +2,7 @@
 
 <p align="center">
 	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
+	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/Netlify%20mirror-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify mirror"></a>
 	<a href="https://github.com/Shubhankart101/India-s-Journey/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
 	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
 </p>
@@ -39,6 +40,8 @@ An interactive mixed-frequency dashboard built from original public-source data.
 ## 🚀 Open Dashboard
 
 <a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
+
+The same static dashboard is also live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [API explorer](https://indiasjourney.netlify.app/api.html), [Status](https://indiasjourney.netlify.app/status.html)).
 
 The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, subgroup filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
 
@@ -91,7 +94,7 @@ The repository also contains a full web app, alongside the static GitHub Pages s
 - Side-by-side comparison of up to four indicators, with an optional "rebase to 100" view.
 - **Sign in with Google or Microsoft (Outlook) only.** There are no local passwords. Signed-in users can save charts. See [Authentication](docs/AUTHENTICATION.md).
 - **Swagger UI at `/api/docs/`** to try every endpoint, plus ReDoc at `/api/redoc/` and the OpenAPI schema at `/api/schema/`. See the [API guide](docs/API.md).
-- **A GitHub Pages backup.** Every error page, the offline banner and the footer link to the [static dashboard](https://shubhankart101.github.io/India-s-Journey/) and its [status page](https://shubhankart101.github.io/India-s-Journey/status.html). An [uptime monitor](.github/workflows/uptime-monitor.yml) opens and closes `outage` issues. See [Backup and status](docs/BACKUP-AND-STATUS.md).
+- **A GitHub Pages backup.** Every error page, the offline banner and the footer link to the [static dashboard](https://shubhankart101.github.io/India-s-Journey/) and its [status page](https://shubhankart101.github.io/India-s-Journey/status.html). The same backup is mirrored on Netlify at <https://indiasjourney.netlify.app>. An [uptime monitor](.github/workflows/uptime-monitor.yml) opens and closes `outage` issues. See [Backup and status](docs/BACKUP-AND-STATUS.md).
 - The Django admin at `/admin/` (staff only).
 - A mobile layout with a bottom tab bar.
 
@@ -145,7 +148,7 @@ See [Deployment](docs/DEPLOYMENT.md) for every variable.
 | GitHub Pages | Static dashboard (`docs/`) | Already live; doubles as the backup site |
 | Render free web service | Full app (`render.yaml`) | Sleeps after 15 minutes idle |
 | Google Cloud Run | Full app (`Dockerfile`) | Free monthly allowance; scales to zero; needs billing account |
-| Netlify | Static dashboard (`docs/`) | Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
+| Netlify | Static dashboard (`docs/`) | Live at <https://indiasjourney.netlify.app>. Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
 | Cloudflare Pages | Static dashboard (`docs/`) | Static mirror; set the output directory to `docs` |
 
 On every free tier SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.

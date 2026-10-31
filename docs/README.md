@@ -1,6 +1,6 @@
 # Project documentation
 
-India's Journey has two parts: a static, source-linked dashboard on GitHub Pages, and a Django + React web app built from the same data. The static site also serves as the backup when the app is down. This documentation distinguishes automatically refreshed observations from snapshots and from data that is not yet available as a reproducible public series.
+India's Journey has two parts: a static, source-linked dashboard on GitHub Pages (mirrored at <https://indiasjourney.netlify.app>), and a Django + React web app built from the same data. The static site also serves as the backup when the app is down. This documentation distinguishes automatically refreshed observations from snapshots and from data that is not yet available as a reproducible public series.
 
 **Data**
 - [Election coverage](ELECTIONS.md): ECI results, the separate U.S. Elections group, FEC finance indicators, refreshes and coverage gaps.

@@ -4,7 +4,7 @@
                  scheduled GitHub Actions collectors (see PIPELINES.md)
                                     |
                                     v
-            data/*.json  --->  docs/data/*.json  --->  GitHub Pages (static dashboard, backup)
+            data/*.json  --->  docs/data/*.json  --->  GitHub Pages + Netlify (static dashboard, backup)
                  |                                           ^
    scripts/export_catalog.mjs                                | links on every error page,
                  v                                           | footer, status page, outage issues
@@ -32,7 +32,7 @@
 | `scripts/generate_art.py` | Generates the animated per-group and per-subgroup SVG illustrations into `docs/assets/` and `frontend/public/art/` |
 | `frontend/src/components/ArtBackdrop.jsx` | Cross-fading, parallax page backdrop used by the Home, Explore, Indicator and About pages |
 | `frontend/src/components/Motion.jsx` | Interaction layer: scroll progress, glassy header, scroll-in reveals, cursor spotlight, count-up stats, typewriter, subgroup marquee, back-to-top |
-| `netlify.toml` | Publishes `docs/` on Netlify (no build step) |
+| `netlify.toml` | Publishes `docs/` on Netlify at <https://indiasjourney.netlify.app> (no build step) |
 | `webapp/journey/` | Django project: settings, root URLs, WSGI |
 | `webapp/indicators/` | Models (Group, Subgroup, Indicator, Article, SavedChart), import commands, API views, OAuth adapters, error handlers |
 | `webapp/templates/` | Server-rendered error pages and allauth overrides, all with backup links |

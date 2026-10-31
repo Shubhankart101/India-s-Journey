@@ -667,6 +667,16 @@ async function main() {
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
+  // Building 900+ Chart.js instances up front froze the page for minutes; each chart is now created
+  // only when its card comes near the viewport (hidden, filtered-out cards never build).
+  const lazyCharts = new WeakMap();
+  const chartObserver = typeof IntersectionObserver === 'function' ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      chartObserver.unobserve(entry.target);
+      lazyCharts.get(entry.target)?.();
+    });
+  }, { rootMargin: '600px 0px' }) : null;
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = dashboardCategoryFor(key);
     if (grid && category !== lastCategory) {
@@ -756,8 +766,10 @@ async function main() {
 
     card.innerHTML = `<header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>`;
     grid.append(card);
+    let chart = null;
     card.querySelector('.expand-chart-btn').addEventListener('click', () => {
       if (!focusOverlay || !focusContent) return;
+      lazyCharts.get(card)?.();
       expandedChart = card;
       expandedPlaceholder = document.createElement('div');
       expandedPlaceholder.hidden = true;
@@ -805,6 +817,12 @@ async function main() {
       });
     }
     if (!live) return;
+    const chartEntry = { chart: null, card, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey };
+    charts.push(chartEntry);
+    let chartBuilt = false;
+    const ensureChart = () => {
+    if (chartBuilt) return;
+    chartBuilt = true;
     const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
 
     const canvas = card.querySelector('canvas');
@@ -883,7 +901,6 @@ async function main() {
     };
     let chartDatasets = buildDatasets(nativeRadial || preferPie).datasets;
 
-    let chart = null;
     const createChart = type => {
       const isRadialChart = type === 'pie' || type === 'doughnut';
       const built = buildDatasets(isRadialChart);
@@ -1006,7 +1023,11 @@ async function main() {
 
     const reset = card.querySelector('.reset');
     if (reset) reset.addEventListener('click', () => { if (chart) chart.resetZoom(); });
-    charts.push({ chart, card, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey });
+    chartEntry.chart = chart;
+    };
+    lazyCharts.set(card, ensureChart);
+    if (chartObserver) chartObserver.observe(card);
+    else ensureChart();
   });
   const cards = grid ? [...grid.querySelectorAll('.chart-card')] : [];
   const headings = grid ? [...grid.querySelectorAll('.category-heading')] : [];
