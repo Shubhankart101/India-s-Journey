@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks.js';
+import { BackupLinks } from '../components/Resilience.jsx';
 
 export default function NotFound() {
   useDocumentTitle('Page not found');
@@ -12,6 +13,7 @@ export default function NotFound() {
         <Link className="btn btn-primary" to="/">Go home</Link>
         <Link className="btn btn-ghost" to="/explore">Explore indicators</Link>
       </div>
+      <BackupLinks />
     </section>
   );
 }

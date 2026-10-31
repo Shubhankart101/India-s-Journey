@@ -27,9 +27,33 @@ describe('api client', () => {
   });
 
   it('raises ApiError with the server message', async () => {
-    mockApi({ 'POST /api/auth/login/': json({ detail: 'Invalid username or password.' }, 400) });
+    mockApi({ 'POST /api/saved/': json({ detail: 'Authentication credentials were not provided.' }, 403) });
     document.cookie = 'csrftoken=t';
-    await expect(api.login({ username: 'a', password: 'b' })).rejects.toMatchObject({ status: 400, message: 'Invalid username or password.' });
+    await expect(api.save('gdp_growth')).rejects.toMatchObject({ status: 403, message: 'Authentication credentials were not provided.' });
+  });
+
+  it('has no password login or registration methods', () => {
+    expect(api.login).toBeUndefined();
+    expect(api.register).toBeUndefined();
+  });
+
+  it('loads OAuth providers and reads the CSRF cookie', async () => {
+    mockApi();
+    document.cookie = 'csrftoken=a%2Bb';
+    expect((await api.providers()).map(item => item.id)).toEqual(['google', 'microsoft']);
+    expect(api.csrfToken()).toBe('a+b');
+  });
+
+  it('announces when the API is unreachable', async () => {
+    const seen = [];
+    const listener = () => seen.push('down');
+    window.addEventListener('api:unreachable', listener);
+    globalThis.fetch = async () => { throw new TypeError('Failed to fetch'); };
+    await expect(request('/api/stats/')).rejects.toMatchObject({ status: 0 });
+    mockApi({ '/api/stats/': json({ detail: 'Bad gateway' }, 502) });
+    await expect(request('/api/stats/')).rejects.toMatchObject({ status: 502 });
+    window.removeEventListener('api:unreachable', listener);
+    expect(seen).toEqual(['down', 'down']);
   });
 
   it('formats field errors and network failures', () => {

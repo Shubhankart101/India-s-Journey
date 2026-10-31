@@ -40,9 +40,11 @@ export async function request(path, { method = 'GET', body, signal } = {}) {
     });
   } catch (error) {
     if (error.name === 'AbortError') throw error;
+    window.dispatchEvent(new Event('api:unreachable'));
     throw new ApiError(0, null);
   }
   if (response.status === 204) return null;
+  if ([502, 503, 504].includes(response.status)) window.dispatchEvent(new Event('api:unreachable'));
   const data = await response.json().catch(() => null);
   if (!response.ok) throw new ApiError(response.status, data);
   return data;
@@ -76,8 +78,9 @@ export const api = {
   articles: (params, signal) => request(`/api/articles/${toQuery(params)}`, { signal }),
   downloadUrl: (key, format) => `/api/indicators/${encodeURIComponent(key)}/download/?format=${format}`,
   me: () => request('/api/auth/me/'),
-  login: credentials => request('/api/auth/login/', { method: 'POST', body: credentials }),
-  register: details => request('/api/auth/register/', { method: 'POST', body: details }),
+  csrf: () => request('/api/auth/csrf/'),
+  csrfToken: () => decodeURIComponent(cookie('csrftoken')),
+  providers: signal => request('/api/auth/providers/', { signal }),
   logout: () => request('/api/auth/logout/', { method: 'POST', body: {} }),
   saved: () => request('/api/saved/'),
   save: (key, note = '') => request('/api/saved/', { method: 'POST', body: { key, note } }),

@@ -2,6 +2,8 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
+import { API_DOCS_URL, BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
+import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
@@ -37,7 +39,10 @@ export default function Layout() {
           <div className="account">
             {user ? (
               <>
-                <span className="muted hide-sm">Hi, {user.username}</span>
+                <span className="muted hide-sm" title={user.email || undefined}>
+                  Hi, {user.name || user.username}
+                  {user.providers?.length > 0 && <small className="provider-tag"> · {user.providers.join(', ')}</small>}
+                </span>
                 <button type="button" className="btn btn-ghost" onClick={logout}>Sign out</button>
               </>
             ) : <Link to="/login" className="btn btn-ghost">Sign in</Link>}
@@ -45,8 +50,11 @@ export default function Layout() {
         </div>
       </header>
 
+      <OfflineBanner />
       <main id="main" className="main">
-        <Outlet />
+        <ErrorBoundary key={location.pathname}>
+          <Outlet />
+        </ErrorBoundary>
       </main>
 
       {compare.items.length > 0 && location.pathname !== '/compare' && (
@@ -59,7 +67,11 @@ export default function Layout() {
 
       <footer className="site-footer">
         <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. Every chart links to its source.</p>
-        <p><a href="/admin/">Admin</a> · <a href="/api/">API</a> · <a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a></p>
+        <p>
+          <a href={API_DOCS_URL}>API docs</a> · <a href="/api/">API</a> · <a href="/admin/">Admin</a>
+          {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_STATUS_URL} rel="noopener">Status</a>
+          {' · '}<a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a>
+        </p>
       </footer>
 
       <nav className="tab-bar" aria-label="Mobile">

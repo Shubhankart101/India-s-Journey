@@ -1,12 +1,21 @@
 # Project documentation
 
-India's Journey is a static, source-linked dashboard. This documentation distinguishes automatically refreshed observations from snapshots and from data that is not yet available as a reproducible public series.
+India's Journey has two parts: a static, source-linked dashboard on GitHub Pages, and a Django + React web app built from the same data. The static site also serves as the backup when the app is down. This documentation distinguishes automatically refreshed observations from snapshots and from data that is not yet available as a reproducible public series.
 
+**Data**
 - [Election coverage](ELECTIONS.md): ECI results, the separate U.S. Elections group, FEC finance indicators, refreshes and coverage gaps.
 - [Tourism and heritage](TOURISM-AND-HERITAGE.md): World Bank visitor indicators and UNESCO inscription-date methods.
-- [Public data API](API.md): documented static JSON resources, Swagger UI, and endpoint checks.
 - [Sources and limitations](SOURCES-AND-LIMITATIONS.md): source-by-source coverage for services, demographics, energy prices, and elections.
-- [Pipelines and deployment](PIPELINES.md): collection schedules, file flow, deployment, and failure behavior.
+- [Pipelines and deployment](PIPELINES.md): collection schedules, file flow, CI jobs, monitoring, and failure behavior.
+
+**Web app**
+- [Architecture](ARCHITECTURE.md): components, request routing and design decisions.
+- [APIs and Swagger](API.md): the Django REST API (Swagger at `/api/docs/`) and the static JSON resources.
+- [Authentication](AUTHENTICATION.md): Google and Microsoft (Outlook) sign-in only, and how to set up each provider.
+- [Backup site and status](BACKUP-AND-STATUS.md): how users reach GitHub Pages when the app is down, the status page and the uptime monitor.
+- [Deployment](DEPLOYMENT.md): Render Blueprint, Terraform, environment variables and post-deploy checks.
+- [Testing](TESTING.md): Django, Vitest, Playwright, Terraform and static-site suites.
+- [Terraform samples](../infra/terraform/README.md), [Contributing](../CONTRIBUTING.md), [Security](../SECURITY.md).
 
 ## Quick start
 

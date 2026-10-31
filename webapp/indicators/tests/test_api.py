@@ -29,7 +29,10 @@ class PublicApiTests(ApiTestCase):
         self.assertIn('indicators', response.json()['endpoints'])
 
     def test_health(self):
-        self.assertEqual(self.client.get('/api/health/').json(), {'status': 'ok', 'indicators': 4})
+        body = self.client.get('/api/health/').json()
+        self.assertEqual(body['status'], 'ok')
+        self.assertEqual(body['indicators'], 4)
+        self.assertTrue(body['backup_url'].startswith('https://'))
 
     def test_categories_include_counts_and_subgroups(self):
         data = self.client.get('/api/categories/').json()
@@ -139,52 +142,53 @@ class PublicApiTests(ApiTestCase):
 
 
 class AuthAndSavedChartTests(ApiTestCase):
-    password = 'Strong-pass-123'
-
-    def register(self, username='asha'):
-        return self.client.post('/api/auth/register/', {'username': username, 'password': self.password, 'email': 'a@example.com'}, format='json')
+    def sign_in(self, username='asha', client=None):
+        user = get_user_model().objects.create_user(username, f'{username}@example.com')
+        (client or self.client).force_login(user)
+        return user
 
     def test_me_is_anonymous_by_default_and_sets_csrf_cookie(self):
         response = self.client.get('/api/auth/me/')
         self.assertEqual(response.json(), {'authenticated': False, 'user': None})
         self.assertIn('csrftoken', response.cookies)
 
-    def test_register_logs_in(self):
-        response = self.register()
-        self.assertEqual(response.status_code, 201)
-        self.assertEqual(response.json()['user']['username'], 'asha')
-        self.assertTrue(self.client.get('/api/auth/me/').json()['authenticated'])
+    def test_me_describes_signed_in_user(self):
+        user = self.sign_in()
+        user.first_name, user.last_name = 'Asha', 'Rao'
+        user.save()
+        body = self.client.get('/api/auth/me/').json()
+        self.assertTrue(body['authenticated'])
+        self.assertEqual(body['user']['name'], 'Asha Rao')
+        self.assertEqual(body['user']['providers'], [])
+        self.assertEqual(body['user']['saved_count'], 0)
+        self.assertNotIn('password', body['user'])
 
-    def test_register_validation(self):
-        self.register()
-        self.client.post('/api/auth/logout/')
-        duplicate = self.client.post('/api/auth/register/', {'username': 'ASHA', 'password': self.password}, format='json')
-        self.assertEqual(duplicate.status_code, 400)
-        self.assertIn('username', duplicate.json())
-        weak = self.client.post('/api/auth/register/', {'username': 'ravi', 'password': '123'}, format='json')
-        self.assertEqual(weak.status_code, 400)
-        bad_name = self.client.post('/api/auth/register/', {'username': 'a b', 'password': self.password}, format='json')
-        self.assertEqual(bad_name.status_code, 400)
+    def test_password_endpoints_are_gone(self):
+        for url in ['/api/auth/register/', '/api/auth/login/']:
+            response = self.client.post(url, {'username': 'x', 'password': 'Strong-pass-123'}, format='json')
+            self.assertEqual(response.status_code, 404, url)
 
-    def test_login_logout(self):
-        get_user_model().objects.create_user('meera', password=self.password)
-        bad = self.client.post('/api/auth/login/', {'username': 'meera', 'password': 'wrong'}, format='json')
-        self.assertEqual(bad.status_code, 400)
-        good = self.client.post('/api/auth/login/', {'username': 'meera', 'password': self.password}, format='json')
-        self.assertEqual(good.status_code, 200)
-        self.assertEqual(good.json()['user']['saved_count'], 0)
-        self.client.post('/api/auth/logout/')
+    def test_logout(self):
+        self.sign_in()
+        response = self.client.post('/api/auth/logout/')
+        self.assertEqual(response.json(), {'authenticated': False, 'user': None})
         self.assertFalse(self.client.get('/api/auth/me/').json()['authenticated'])
 
+    def test_logout_requires_post(self):
+        self.sign_in()
+        self.assertEqual(self.client.get('/api/auth/logout/').status_code, 405)
+        self.assertTrue(self.client.get('/api/auth/me/').json()['authenticated'])
+
     def test_session_writes_require_csrf_token(self):
-        get_user_model().objects.create_user('csrf', password=self.password)
         client = APIClient(enforce_csrf_checks=True)
-        client.post('/api/auth/login/', {'username': 'csrf', 'password': self.password}, format='json')
+        self.sign_in('csrf', client)
         blocked = client.post('/api/saved/', {'key': 'gdp_growth'}, format='json')
         self.assertEqual(blocked.status_code, 403)
         token = client.get('/api/auth/me/').cookies['csrftoken'].value
         allowed = client.post('/api/saved/', {'key': 'gdp_growth'}, format='json', HTTP_X_CSRFTOKEN=token)
         self.assertEqual(allowed.status_code, 201)
+        self.assertEqual(client.post('/api/auth/logout/').status_code, 403)
+        self.assertEqual(client.post('/api/auth/logout/', HTTP_X_CSRFTOKEN=token).status_code, 200)
 
     def test_saved_charts_require_login(self):
         self.assertEqual(self.client.get('/api/saved/').status_code, 403)
@@ -192,7 +196,7 @@ class AuthAndSavedChartTests(ApiTestCase):
         self.assertEqual(self.client.delete('/api/saved/gdp_growth/').status_code, 403)
 
     def test_saved_chart_crud(self):
-        self.register()
+        self.sign_in()
         created = self.client.post('/api/saved/', {'key': 'gdp_growth', 'note': 'watch'}, format='json')
         self.assertEqual(created.status_code, 201)
         self.assertEqual(created.json()['indicator']['key'], 'gdp_growth')
@@ -201,26 +205,35 @@ class AuthAndSavedChartTests(ApiTestCase):
         listing = self.client.get('/api/saved/').json()
         self.assertEqual([(item['indicator']['key'], item['note']) for item in listing], [('gdp_growth', 'updated')])
         self.assertTrue(self.client.get('/api/indicators/gdp_growth/').json()['is_saved'])
+        self.assertEqual(self.client.get('/api/auth/me/').json()['user']['saved_count'], 1)
         self.assertEqual(self.client.post('/api/saved/', {'key': 'nope'}, format='json').status_code, 400)
+        self.assertEqual(self.client.post('/api/saved/', {}, format='json').status_code, 400)
         self.assertEqual(self.client.delete('/api/saved/gdp_growth/').status_code, 204)
         self.assertEqual(self.client.delete('/api/saved/gdp_growth/').status_code, 404)
         self.assertEqual(self.client.get('/api/saved/').json(), [])
 
+    def test_saved_lists_newest_first_with_summaries(self):
+        self.sign_in()
+        for key in ['gdp_growth', 'seat_share', 'exports_usd']:
+            self.client.post('/api/saved/', {'key': key}, format='json')
+        keys = [item['indicator']['key'] for item in self.client.get('/api/saved/').json()]
+        self.assertEqual(sorted(keys), ['exports_usd', 'gdp_growth', 'seat_share'])
+        self.assertTrue(all('labels' not in item['indicator'] for item in self.client.get('/api/saved/').json()))
+
     def test_saved_charts_are_private_per_user(self):
-        self.register('first')
+        self.sign_in('first')
         self.client.post('/api/saved/', {'key': 'seat_share'}, format='json')
         self.client.post('/api/auth/logout/')
-        self.register('second')
+        self.sign_in('second')
         self.assertEqual(self.client.get('/api/saved/').json(), [])
         self.assertEqual(self.client.delete('/api/saved/seat_share/').status_code, 404)
         self.assertEqual(SavedChart.objects.count(), 1)
 
-    def test_auth_endpoints_are_throttled(self):
-        statuses = [
-            self.client.post('/api/auth/login/', {'username': 'x', 'password': 'y'}, format='json').status_code
-            for _ in range(25)
-        ]
-        self.assertIn(429, statuses)
+    def test_deleting_user_removes_saved_charts(self):
+        user = self.sign_in()
+        self.client.post('/api/saved/', {'key': 'seat_share'}, format='json')
+        user.delete()
+        self.assertEqual(SavedChart.objects.count(), 0)
 
 
 class SpaAndAdminTests(ApiTestCase):

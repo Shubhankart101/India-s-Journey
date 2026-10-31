@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AuthProvider } from './auth.jsx';
 import { CompareProvider } from './compare.jsx';
 import Layout from './components/Layout.jsx';
@@ -14,6 +14,12 @@ const AuthPage = lazy(() => import('./pages/AuthPage.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
+// Accounts are created automatically on first Google/Microsoft sign-in.
+function RegisterRedirect() {
+  const { search } = useLocation();
+  return <Navigate to={`/login${search}`} replace />;
+}
+
 export function AppRoutes() {
   return (
     <Suspense fallback={<Loading />}>
@@ -24,8 +30,8 @@ export function AppRoutes() {
           <Route path="indicator/:key" element={<Indicator />} />
           <Route path="compare" element={<Compare />} />
           <Route path="saved" element={<Saved />} />
-          <Route path="login" element={<AuthPage mode="login" />} />
-          <Route path="register" element={<AuthPage mode="register" />} />
+          <Route path="login" element={<AuthPage />} />
+          <Route path="register" element={<RegisterRedirect />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>

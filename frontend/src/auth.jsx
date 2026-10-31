@@ -16,14 +16,12 @@ export function AuthProvider({ children }) {
     return () => { active = false; };
   }, []);
 
-  const login = useCallback(async credentials => setUser((await api.login(credentials)).user), []);
-  const register = useCallback(async details => setUser((await api.register(details)).user), []);
   const logout = useCallback(async () => {
     await api.logout();
     setUser(null);
   }, []);
 
-  const value = useMemo(() => ({ user, ready, login, register, logout }), [user, ready, login, register, logout]);
+  const value = useMemo(() => ({ user, ready, logout }), [user, ready, logout]);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

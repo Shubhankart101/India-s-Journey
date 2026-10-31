@@ -9,5 +9,22 @@ services:
         value: 'false'
       - key: DJANGO_SECRET_KEY
         generateValue: true
+      - key: BACKUP_SITE_URL
+        value: https://shubhankart101.github.io/India-s-Journey/
+      - key: BACKUP_STATUS_URL
+        value: https://shubhankart101.github.io/India-s-Journey/status.html
+      # Sign-in is Google / Microsoft (Outlook) only. Set these in the Render dashboard; a provider whose
+      # credentials are blank is simply hidden. Callback URLs: docs/AUTHENTICATION.md.
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_TENANT
+        value: common
       # SQLite lives in the container and resets on redeploy. On a paid plan, attach a disk
       # (e.g. mountPath /var/data) and set DJANGO_SQLITE_PATH=/var/data/db.sqlite3 to keep accounts.
+      # infra/terraform provisions all of this (plus the Microsoft app registration) declaratively.

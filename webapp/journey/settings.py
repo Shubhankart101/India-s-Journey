@@ -32,7 +32,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.microsoft',
     'indicators',
 ]
 
@@ -46,19 +54,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
+    'indicators.auth.MissingProviderMiddleware',
 ]
 
 ROOT_URLCONF = 'journey.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'indicators.context_processors.backup_links',
             ],
         },
     },
@@ -108,16 +119,85 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
     'DEFAULT_PAGINATION_CLASS': 'indicators.pagination.StandardPagination',
     'PAGE_SIZE': 24,
-    'DEFAULT_THROTTLE_RATES': {'auth': os.environ.get('AUTH_THROTTLE_RATE', '20/min')},
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': "India's Journey API",
+    'DESCRIPTION': (
+        'Read-only indicator catalogue (groups, indicators, compare, downloads, articles) plus session-authenticated '
+        'saved charts. Sign in with Google or Microsoft from the web app; Swagger "Try it out" then reuses that session '
+        'and sends the CSRF token automatically.'
+    ),
+    'VERSION': '2.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+    'SWAGGER_UI_SETTINGS': {'deepLinking': True, 'displayRequestDuration': True, 'tryItOutEnabled': True, 'filter': True},
+    'COMPONENT_SPLIT_REQUEST': True,
+}
+
+# The static GitHub Pages dashboard doubles as the fallback whenever this app is unavailable.
+BACKUP_SITE_URL = os.environ.get('BACKUP_SITE_URL', 'https://shubhankart101.github.io/India-s-Journey/')
+BACKUP_STATUS_URL = os.environ.get('BACKUP_STATUS_URL', BACKUP_SITE_URL.rstrip('/') + '/status.html')
+
+# Sign-in: Google and Microsoft (Outlook.com / Live / Microsoft 365) only. No local passwords for site users;
+# Django admin keeps its own staff login for superusers created with `createsuperuser`.
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+SOCIALACCOUNT_ONLY = True
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*']
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_ADAPTER = 'indicators.auth.AccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'indicators.auth.SocialAccountAdapter'
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+SOCIALACCOUNT_EMAIL_AUTHENTICATION_AUTO_CONNECT = True
+SOCIALACCOUNT_LOGIN_ON_GET = False
+SOCIALACCOUNT_STORE_TOKENS = False
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+
+def _oauth_app(prefix, **extra):
+    client_id = os.environ.get(f'{prefix}_CLIENT_ID', '').strip()
+    secret = os.environ.get(f'{prefix}_CLIENT_SECRET', '').strip()
+    return [{'client_id': client_id, 'secret': secret, 'key': '', **extra}] if client_id and secret else []
+
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APPS': _oauth_app('GOOGLE'),
+        'SCOPE': ['openid', 'profile', 'email'],
+        'AUTH_PARAMS': {'prompt': 'select_account'},
+        'OAUTH_PKCE_ENABLED': True,
+    },
+    'microsoft': {
+        # "common" accepts personal Outlook.com/Hotmail/Live accounts and work/school accounts.
+        'APPS': _oauth_app('MICROSOFT', settings={'tenant': os.environ.get('MICROSOFT_TENANT', 'common')}),
+        'SCOPE': ['User.Read'],
+        'AUTH_PARAMS': {'prompt': 'select_account'},
+        'OAUTH_PKCE_ENABLED': True,
+    },
+}
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 CSRF_COOKIE_SAMESITE = 'Lax'
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
+    # Only turn off for production-mode tests served over plain http (e.g. the Playwright e2e server).
+    SESSION_COOKIE_SECURE = env_bool('DJANGO_SECURE_COOKIES', True)
+    CSRF_COOKIE_SECURE = SESSION_COOKIE_SECURE
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_REFERRER_POLICY = 'same-origin'
 

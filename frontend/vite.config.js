@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 const backend = process.env.DJANGO_URL || 'http://127.0.0.1:8000';
@@ -10,6 +10,7 @@ export default defineConfig({
     proxy: {
       '/api': backend,
       '/admin': backend,
+      '/accounts': backend,
       '/static': backend,
     },
   },
@@ -30,6 +31,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.jsx'],
+    include: ['src/**/*.test.{js,jsx}'],
     css: false,
   },
 });

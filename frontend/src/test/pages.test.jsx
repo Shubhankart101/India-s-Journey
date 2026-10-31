@@ -176,7 +176,7 @@ describe('Indicator detail', () => {
     renderApp('/indicator/gdp_growth');
     await userEvent.click(await screen.findByRole('button', { name: '☆ Save' }));
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/login?next=/indicator/gdp_growth'));
-    expect(await screen.findByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Sign in', level: 1 })).toBeInTheDocument();
   });
 
   it('saves and unsaves for signed-in users', async () => {

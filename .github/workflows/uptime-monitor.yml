@@ -1,0 +1,66 @@
+name: Uptime monitor
+
+# Pings the Django app; opens an "outage" issue pointing visitors to the GitHub Pages backup when it is down,
+# and closes it automatically once the app recovers. docs/status.html links to these issues.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: uptime-monitor
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    env:
+      APP_URL: ${{ vars.APP_URL || 'https://indias-journey.onrender.com' }}
+      BACKUP_SITE_URL: ${{ vars.BACKUP_SITE_URL || 'https://shubhankart101.github.io/India-s-Journey/' }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Health check (retries cover free-tier cold starts)
+        id: health
+        run: |
+          url="${APP_URL%/}/api/health/"
+          for attempt in 1 2 3 4 5; do
+            code=$(curl -s -o body.json -w '%{http_code}' --max-time 60 "$url" || echo 000)
+            echo "Attempt $attempt: HTTP $code"
+            if [ "$code" = "200" ] && grep -q '"status"' body.json; then
+              echo "up=true" >> "$GITHUB_OUTPUT"; cat body.json; exit 0
+            fi
+            sleep 20
+          done
+          echo "up=false" >> "$GITHUB_OUTPUT"
+          echo "last_code=$code" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure outage label exists
+        run: gh label create outage --color B60205 --description "Web app is unreachable" 2>/dev/null || true
+
+      - name: Open outage issue
+        if: steps.health.outputs.up == 'false'
+        run: |
+          open=$(gh issue list --label outage --state open --json number --jq '.[0].number')
+          note="Health check \`${APP_URL%/}/api/health/\` failed at $(date -u '+%Y-%m-%d %H:%M UTC') (last HTTP ${{ steps.health.outputs.last_code }})."
+          if [ -n "$open" ]; then
+            gh issue comment "$open" --body "$note"
+          else
+            gh issue create --label outage --title "Web app is down" --body "$note
+
+          While it is down, use the backup dashboard: $BACKUP_SITE_URL
+          Live status: ${BACKUP_SITE_URL%/}/status.html
+
+          This issue closes automatically when the health check passes again."
+          fi
+
+      - name: Close resolved outage issues
+        if: steps.health.outputs.up == 'true'
+        run: |
+          for n in $(gh issue list --label outage --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Recovered: health check passed at $(date -u '+%Y-%m-%d %H:%M UTC')."
+          done

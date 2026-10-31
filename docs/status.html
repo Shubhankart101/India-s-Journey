@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Live status of the India's Journey web app, with this static dashboard as the always-on backup.">
+  <title>Status — India's Journey</title>
+  <style>
+    :root { color-scheme: dark; --bg: #000; --card: #1c1c1e; --line: rgba(255,255,255,.12); --ink: #f5f5f7; --muted: #a1a1a6; --ok: #30d158; --warn: #ffd60a; --down: #ff453a; --accent: #ff9933; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(1200px 600px at 50% -10%, #1d1d1f, #000 60%); color: var(--ink); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; display: grid; place-items: center; padding: 24px; }
+    main { width: min(640px, 100%); }
+    .tricolor { height: 4px; border-radius: 4px; background: linear-gradient(90deg, #ff9933 33%, #fff 33% 66%, #138808 66%); margin-bottom: 28px; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.02em; margin: 0 0 8px; }
+    p { color: var(--muted); margin: 0 0 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px; margin: 18px 0; }
+    .state { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 600; color: var(--ink); margin: 0; }
+    .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--muted); box-shadow: 0 0 0 4px rgba(255,255,255,.06); flex: none; }
+    [data-state="up"] .dot { background: var(--ok); }
+    [data-state="slow"] .dot { background: var(--warn); }
+    [data-state="down"] .dot { background: var(--down); }
+    dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 16px 0 0; font-size: .92rem; }
+    dt { color: var(--muted); }
+    dd { margin: 0; word-break: break-all; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    a.btn, button.btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; text-decoration: none; cursor: pointer; }
+    a.btn.primary { background: var(--accent); border-color: var(--accent); color: #000; font-weight: 600; }
+    a { color: var(--accent); }
+    small { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tricolor" aria-hidden="true"></div>
+    <h1>India's Journey status</h1>
+    <p>The interactive web app (Django + React) runs on a separate host. This GitHub Pages dashboard is its always-on backup with the same public data.</p>
+
+    <section class="card" id="status" data-state="checking" aria-live="polite">
+      <p class="state"><span class="dot" aria-hidden="true"></span><span id="state-text">Checking the web app…</span></p>
+      <dl>
+        <dt>App</dt><dd><a id="app-link" href="#">—</a></dd>
+        <dt>Response</dt><dd id="latency">—</dd>
+        <dt>Indicators</dt><dd id="indicators">—</dd>
+        <dt>Checked</dt><dd id="checked">—</dd>
+      </dl>
+    </section>
+
+    <div class="actions">
+      <a class="btn primary" id="open-app" href="#">Open the web app</a>
+      <a class="btn" href="./">Use the backup dashboard</a>
+      <button class="btn" type="button" id="recheck">Check again</button>
+    </div>
+
+    <section class="card">
+      <p><strong style="color:var(--ink)">If the app is down</strong></p>
+      <p>Every chart, source and download is also available on the <a href="./">static dashboard</a> and through the <a href="api.html">read-only JSON API explorer</a>. Free hosting can take up to a minute to wake from sleep — a “slow” result usually means it is starting.</p>
+      <small>Outages are tracked automatically in <a href="https://github.com/Shubhankart101/India-s-Journey/issues?q=label%3Aoutage">GitHub issues labelled “outage”</a>.</small>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      // Override with ?app=https://your-host when the web app is deployed elsewhere.
+      const DEFAULT_APP_URL = 'https://indias-journey.onrender.com';
+      const SLOW_MS = 4000;
+      const TIMEOUT_MS = 60000;
+      const param = new URLSearchParams(location.search).get('app');
+      const appUrl = (param && /^https?:\/\//.test(param) ? param : DEFAULT_APP_URL).replace(/\/+$/, '');
+      const $ = id => document.getElementById(id);
+      $('app-link').href = $('open-app').href = appUrl + '/';
+      $('app-link').textContent = appUrl;
+
+      const show = (state, text, extra = {}) => {
+        $('status').dataset.state = state;
+        $('state-text').textContent = text;
+        $('latency').textContent = extra.latency ?? '—';
+        $('indicators').textContent = extra.indicators ?? '—';
+        $('checked').textContent = new Date().toLocaleString();
+      };
+
+      async function check() {
+        show('checking', 'Checking the web app…');
+        const started = performance.now();
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+        try {
+          const response = await fetch(appUrl + '/api/health/', { cache: 'no-store', signal: controller.signal });
+          const ms = Math.round(performance.now() - started);
+          const body = response.ok ? await response.json() : null;
+          if (body && body.status === 'ok') {
+            show(ms > SLOW_MS ? 'slow' : 'up', ms > SLOW_MS ? 'Up, but slow (probably waking from sleep)' : 'Operational', {
+              latency: ms + ' ms', indicators: String(body.indicators),
+            });
+          } else {
+            show('down', 'Degraded — the app answered with HTTP ' + response.status, { latency: ms + ' ms' });
+          }
+        } catch (error) {
+          show('down', error.name === 'AbortError' ? 'Down — no answer within 60 s' : 'Down — the app is unreachable');
+        } finally {
+          clearTimeout(timer);
+        }
+      }
+
+      $('recheck').addEventListener('click', check);
+      check();
+    })();
+  </script>
+</body>
+</html>

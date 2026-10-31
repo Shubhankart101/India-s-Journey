@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.password_validation import validate_password
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
 from .models import Article, Category, Indicator, SavedChart, Subgroup
@@ -23,6 +23,7 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ['name', 'slug', 'order', 'title', 'description', 'badges', 'art', 'indicator_count', 'live_count', 'subgroups']
 
+    @extend_schema_field(SubgroupSerializer(many=True))
     def get_subgroups(self, obj):
         return SubgroupSerializer(getattr(obj, 'annotated_subgroups', obj.subgroups.all()), many=True).data
 
@@ -53,7 +54,7 @@ class IndicatorDetailSerializer(IndicatorSummarySerializer):
             'category_art', 'subgroup_art', 'is_saved', 'updated_at',
         ]
 
-    def get_is_saved(self, obj):
+    def get_is_saved(self, obj) -> bool:
         request = self.context.get('request')
         if not request or not request.user.is_authenticated:
             return False
@@ -78,37 +79,69 @@ class SavedChartSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    providers = serializers.SerializerMethodField()
     saved_count = serializers.SerializerMethodField()
 
     class Meta:
         model = get_user_model()
-        fields = ['id', 'username', 'email', 'date_joined', 'is_staff', 'saved_count']
+        fields = ['id', 'username', 'name', 'email', 'date_joined', 'is_staff', 'providers', 'saved_count']
 
-    def get_saved_count(self, obj):
+    def get_name(self, obj) -> str:
+        return obj.get_full_name() or obj.username
+
+    def get_providers(self, obj) -> list[str]:
+        return sorted({account.provider for account in obj.socialaccount_set.all()})
+
+    def get_saved_count(self, obj) -> int:
         return obj.saved_charts.count()
 
 
-class RegisterSerializer(serializers.Serializer):
-    username = serializers.RegexField(r'^[\w.@+-]{3,150}$', error_messages={
-        'invalid': 'Use 3-150 letters, digits or @/./+/-/_ characters.'})
-    email = serializers.EmailField(required=False, allow_blank=True)
-    password = serializers.CharField(write_only=True, trim_whitespace=False)
-
-    def validate_username(self, value):
-        if get_user_model().objects.filter(username__iexact=value).exists():
-            raise serializers.ValidationError('That username is already taken.')
-        return value
-
-    def validate(self, attrs):
-        user = get_user_model()(username=attrs['username'], email=attrs.get('email', ''))
-        validate_password(attrs['password'], user)
-        return attrs
-
-    def create(self, validated_data):
-        return get_user_model().objects.create_user(
-            username=validated_data['username'], email=validated_data.get('email', ''), password=validated_data['password'])
+class AuthStateSerializer(serializers.Serializer):
+    authenticated = serializers.BooleanField()
+    user = UserSerializer(allow_null=True)
 
 
-class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField()
-    password = serializers.CharField(write_only=True, trim_whitespace=False)
+class ProviderSerializer(serializers.Serializer):
+    id = serializers.CharField()
+    name = serializers.CharField()
+    login_url = serializers.CharField(help_text='POST here (form submit with csrfmiddlewaretoken and next) to start OAuth.')
+
+
+class CompareSeriesSerializer(serializers.Serializer):
+    key = serializers.CharField()
+    title = serializers.CharField()
+    suffix = serializers.CharField()
+    color = serializers.CharField()
+    category = serializers.CharField()
+    subgroup = serializers.CharField()
+    chart_type = serializers.CharField()
+    values = serializers.ListField(child=serializers.FloatField(allow_null=True))
+
+
+class CompareSerializer(serializers.Serializer):
+    labels = serializers.ListField(child=serializers.CharField())
+    series = CompareSeriesSerializer(many=True)
+    missing = serializers.ListField(child=serializers.CharField())
+
+
+class StatsSerializer(serializers.Serializer):
+    indicators = serializers.IntegerField()
+    live_indicators = serializers.IntegerField()
+    radial_indicators = serializers.IntegerField()
+    categories = serializers.IntegerField()
+    subgroups = serializers.IntegerField()
+    articles = serializers.IntegerField()
+    data_points = serializers.IntegerField()
+    source_generated_at = serializers.DateTimeField(allow_null=True)
+    last_refresh = serializers.DateTimeField(allow_null=True)
+
+
+class HealthSerializer(serializers.Serializer):
+    status = serializers.CharField()
+    indicators = serializers.IntegerField()
+    backup_url = serializers.URLField()
+
+
+class DetailSerializer(serializers.Serializer):
+    detail = serializers.CharField()

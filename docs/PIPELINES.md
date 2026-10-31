@@ -57,3 +57,26 @@ python -m unittest tests.test_dashboard_endpoints
 ```
 
 Network collection requires access to the public ECI and National Archives pages. Parser tests use local fixtures and do not require network access.
+
+## Continuous integration
+
+[`webapp-ci.yml`](../.github/workflows/webapp-ci.yml) runs on every push and pull request that touches `webapp/`, `frontend/`, `infra/`, the catalogue, the `Dockerfile` or `render.yaml`:
+
+| Job | What it checks |
+| --- | --- |
+| **Django tests + OpenAPI schema** | `check --deploy` with production settings, no missing migrations, the full Django test suite (API, OAuth, Swagger, error pages), `spectacular --validate --fail-on-warn` (the schema is uploaded as an artifact), and `import_catalog` |
+| **React unit tests + build** | Vitest suite and production build |
+| **Playwright end-to-end** | Builds the SPA, starts Django in production mode, and runs the e2e suites on desktop Chrome and Pixel 7. The report is uploaded on failure |
+| **Terraform** | `fmt -check`, `validate`, and `terraform test` with mock providers for every module and environment |
+| **Docker image builds** | Builds the production image (not pushed) |
+
+See [TESTING.md](TESTING.md) for details.
+
+## Monitoring and backup
+
+| Workflow | Cron (UTC) | Purpose |
+| --- | --- | --- |
+| [Uptime monitor](../.github/workflows/uptime-monitor.yml) | `*/30 * * * *` | Pings `APP_URL/api/health/` with cold-start retries. Opens an `outage` issue linking the GitHub Pages backup, and closes it on recovery |
+| [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) | After the collectors | Publishes `docs/`, which is both the static dashboard and the backup site with [`status.html`](status.html) |
+
+See [BACKUP-AND-STATUS.md](BACKUP-AND-STATUS.md) and [DEPLOYMENT.md](DEPLOYMENT.md).

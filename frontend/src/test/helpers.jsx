@@ -11,6 +11,11 @@ export const json = (body, status = 200) => ({
   json: async () => body,
 });
 
+export const providers = [
+  { id: 'google', name: 'Google', login_url: '/accounts/google/login/' },
+  { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
+];
+
 // routes: { 'GET /api/stats/': body | (url, init) => body | json(body, status) }
 export function mockApi(routes = {}) {
   const calls = [];
@@ -22,6 +27,7 @@ export function mockApi(routes = {}) {
     if (handler === undefined) {
       if (url.pathname === '/api/auth/me/') return json({ authenticated: false, user: null });
       if (url.pathname === '/api/auth/csrf/') return json({ detail: 'ok' });
+      if (url.pathname === '/api/auth/providers/') return json(providers);
       return json({ detail: 'Not found.' }, 404);
     }
     const result = typeof handler === 'function' ? await handler(url, init) : handler;

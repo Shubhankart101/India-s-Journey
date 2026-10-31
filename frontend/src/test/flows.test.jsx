@@ -63,59 +63,79 @@ describe('Compare', () => {
 });
 
 describe('Accounts', () => {
-  it('signs in and returns to the requested page', async () => {
-    document.cookie = 'csrftoken=tok';
+  it('offers only Google and Microsoft sign-in, posting to allauth with CSRF and next', async () => {
+    const { calls } = mockApi({
+      'GET /api/auth/csrf/': () => {
+        document.cookie = 'csrftoken=tok123';
+        return { detail: 'ok' };
+      },
+    });
+    renderApp('/login?next=/indicator/gdp_growth');
+    const google = await screen.findByRole('button', { name: /Continue with Google/ });
+    const microsoft = screen.getByRole('button', { name: /Continue with Microsoft \(Outlook\)/ });
+    expect(screen.queryByLabelText('Password')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Username')).not.toBeInTheDocument();
+    expect(calls.some(call => call.path === '/api/auth/csrf/')).toBe(true);
+
+    const form = google.closest('form');
+    expect(form).toHaveAttribute('method', 'post');
+    expect(form).toHaveAttribute('action', '/accounts/google/login/');
+    expect(form.querySelector('[name=next]')).toHaveValue('/indicator/gdp_growth');
+    expect(form.querySelector('[name=process]')).toHaveValue('login');
+    form.addEventListener('submit', event => event.preventDefault());
+    await userEvent.click(google);
+    expect(form.querySelector('[name=csrfmiddlewaretoken]')).toHaveValue('tok123');
+    expect(microsoft.closest('form')).toHaveAttribute('action', '/accounts/microsoft/login/');
+  });
+
+  it('never forwards an off-site next URL to the provider', async () => {
+    mockApi();
+    renderApp('/login?next=//evil.example/steal');
+    const button = await screen.findByRole('button', { name: /Continue with Google/ });
+    expect(button.closest('form').querySelector('[name=next]')).toHaveValue('/saved');
+  });
+
+  it('shows only the providers configured on the server', async () => {
+    mockApi({ '/api/auth/providers/': [{ id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' }] });
+    renderApp('/login');
+    expect(await screen.findByRole('button', { name: /Microsoft/ })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Google/ })).not.toBeInTheDocument();
+  });
+
+  it('explains when no provider is configured', async () => {
+    mockApi({ '/api/auth/providers/': [] });
+    renderApp('/login');
+    expect(await screen.findByRole('alert')).toHaveTextContent('Sign-in is temporarily unavailable');
+  });
+
+  it('shows the provider error passed back by the server', async () => {
+    mockApi();
+    renderApp('/login?error=unavailable');
+    expect(await screen.findByRole('alert')).toHaveTextContent('not configured');
+  });
+
+  it('links to the backup site when providers cannot be loaded', async () => {
+    mockApi({ '/api/auth/providers/': json({ detail: 'Service unavailable' }, 503) });
+    renderApp('/login');
+    expect(await screen.findByRole('link', { name: /backup dashboard/ })).toHaveAttribute('href', 'https://shubhankart101.github.io/India-s-Journey/');
+  });
+
+  it('sends signed-in users straight to next', async () => {
     mockApi({
-      'POST /api/auth/login/': { authenticated: true, user: { id: 1, username: 'asha', saved_count: 0 } },
+      '/api/auth/me/': { authenticated: true, user: { id: 1, username: 'asha', name: 'Asha Rao', providers: ['google'] } },
       'GET /api/saved/': [],
     });
     renderApp('/login?next=/saved');
-    await userEvent.type(await screen.findByLabelText('Username'), 'asha');
-    await userEvent.type(screen.getByLabelText('Password'), 'Strong-pass-123');
-    await userEvent.click(screen.getByRole('button', { name: 'Sign in' }));
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent(/^\/saved$/));
-    expect(await screen.findByText(/No saved charts yet/)).toBeInTheDocument();
-    expect(screen.getByText('Hi, asha')).toBeInTheDocument();
+    expect(await screen.findByText(/Hi, Asha Rao/)).toBeInTheDocument();
+    expect(screen.getByText(/google/)).toBeInTheDocument();
   });
 
-  it('shows login errors', async () => {
-    document.cookie = 'csrftoken=tok';
-    mockApi({ 'POST /api/auth/login/': json({ detail: 'Invalid username or password.' }, 400) });
-    renderApp('/login');
-    await userEvent.type(await screen.findByLabelText('Username'), 'asha');
-    await userEvent.type(screen.getByLabelText('Password'), 'wrong');
-    await userEvent.click(screen.getByRole('button', { name: 'Sign in' }));
-    expect(await screen.findByRole('alert')).toHaveTextContent('Invalid username or password.');
-  });
-
-  it('validates matching passwords before registering', async () => {
-    const { calls } = mockApi();
-    renderApp('/register');
-    await userEvent.type(await screen.findByLabelText('Username'), 'ravi');
-    await userEvent.type(screen.getByLabelText('Password'), 'Strong-pass-123');
-    await userEvent.type(screen.getByLabelText('Confirm password'), 'different');
-    await userEvent.click(screen.getByRole('button', { name: 'Create account' }));
-    expect(screen.getByRole('alert')).toHaveTextContent('Passwords do not match.');
-    expect(calls.some(call => call.path === '/api/auth/register/')).toBe(false);
-  });
-
-  it('registers a new account and surfaces server validation', async () => {
-    document.cookie = 'csrftoken=tok';
-    let attempt = 0;
-    mockApi({
-      'POST /api/auth/register/': () => (attempt++ === 0
-        ? json({ password: ['This password is too common.'] }, 400)
-        : json({ authenticated: true, user: { id: 2, username: 'ravi', saved_count: 0 } }, 201)),
-      'GET /api/saved/': [],
-    });
-    renderApp('/register');
-    await userEvent.type(await screen.findByLabelText('Username'), 'ravi');
-    await userEvent.type(screen.getByLabelText('Password'), 'password1');
-    await userEvent.type(screen.getByLabelText('Confirm password'), 'password1');
-    await userEvent.click(screen.getByRole('button', { name: 'Create account' }));
-    expect(await screen.findByRole('alert')).toHaveTextContent('password: This password is too common.');
-    await userEvent.click(screen.getByRole('button', { name: 'Create account' }));
-    expect(await screen.findByText('Hi, ravi')).toBeInTheDocument();
+  it('redirects the old register page to sign-in, keeping next', async () => {
+    mockApi();
+    renderApp('/register?next=/compare');
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/login?next=/compare'));
+    expect(await screen.findByRole('button', { name: /Continue with Google/ })).toBeInTheDocument();
   });
 
   it('signs out from the header', async () => {

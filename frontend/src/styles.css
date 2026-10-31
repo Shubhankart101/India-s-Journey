@@ -146,6 +146,17 @@ select:disabled { opacity: 0.5; }
 .auth-card { width: min(420px, 100%); padding: 28px; display: flex; flex-direction: column; gap: 14px; }
 .auth-card label { display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; color: var(--muted); }
 .auth-card h1 { font-size: 1.8rem; }
+.btn-provider { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; background: #fff; color: #1d1d1f; border: 1px solid transparent; font-weight: 600; }
+.btn-provider:hover { background: #f2f2f7; }
+.btn-microsoft { background: #2f2f2f; color: #fff; border-color: var(--line); }
+.btn-microsoft:hover { background: #3a3a3c; }
+.provider-icon { font-weight: 700; width: 20px; text-align: center; }
+.backup-links { color: var(--muted); font-size: 0.9rem; margin-top: 12px; }
+.backup-links.small { font-size: 0.82rem; }
+.state-error .backup-links { color: var(--muted); }
+.offline-banner { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 8px 16px; background: #3a1d1d; color: #ffd7d5; font-size: 0.88rem; }
+.offline-banner a { color: #fff; text-decoration: underline; }
+.offline-banner .btn { min-height: 28px; padding: 0 10px; }
 
 /* Compare */
 .picker { position: relative; max-width: 640px; }
