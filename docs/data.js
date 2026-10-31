@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-10-31T14:09:02+00:00",
+  "generated_at_utc": "2026-10-31T15:12:49+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -31083,99 +31083,6 @@ window.INDIA_DASHBOARD_DATA = {
         "subgroup": "Mining Output Monitor (IIP)"
       }
     },
-    "iip_mining_annual": {
-      "labels": [
-        "2012-13",
-        "2013-14",
-        "2014-15",
-        "2015-16",
-        "2016-17",
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24",
-        "2024-25",
-        "2025-26"
-      ],
-      "values": [
-        94.7,
-        94.6,
-        93.3,
-        97.3,
-        102.5,
-        104.9,
-        107.9,
-        109.6,
-        101.0,
-        113.3,
-        119.9,
-        128.9,
-        132.8,
-        134.6
-      ],
-      "source": "MOSPI IIP API (api.mospi.gov.in)",
-      "unit": "index",
-      "note": "Mining and quarrying output (coal, lignite, crude oil, natural gas, metallic and non-metallic minerals), fiscal-year averages. MOSPI Index of Industrial Production, base 2011-12 = 100. The latest periods are provisional and revised in later releases.",
-      "meta": {
-        "title": "IIP: Mining Output Index",
-        "subtitle": "Annual Index of Industrial Production for mining, 2011-12 = 100",
-        "frequency": "Annual",
-        "color": "#e3b341",
-        "suffix": " index",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Mining Output Monitor (IIP)"
-      }
-    },
-    "iip_mining_annual_growth": {
-      "labels": [
-        "2012-13",
-        "2013-14",
-        "2014-15",
-        "2015-16",
-        "2016-17",
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24",
-        "2024-25",
-        "2025-26"
-      ],
-      "values": [
-        -5.3,
-        -0.1,
-        -1.4,
-        4.3,
-        5.3,
-        2.3,
-        2.9,
-        1.6,
-        -7.8,
-        12.2,
-        5.8,
-        7.5,
-        3.0,
-        1.4
-      ],
-      "chartType": "bar",
-      "source": "MOSPI IIP API (api.mospi.gov.in)",
-      "unit": "%",
-      "note": "Year-on-year growth in the fiscal-year mining index. MOSPI Index of Industrial Production, base 2011-12 = 100. The latest periods are provisional and revised in later releases.",
-      "meta": {
-        "title": "Mining Output Growth by Fiscal Year",
-        "subtitle": "Year-on-year change in the mining IIP",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Mining Output Monitor (IIP)"
-      }
-    },
     "wpi_iron_ore": {
       "labels": [
         "2012-04",
@@ -41348,6 +41255,30 @@ window.INDIA_DASHBOARD_DATA = {
         "subgroup": "Mineral Price Monitor (WPI)"
       }
     },
+    "wpi_mineral_rising_vs_falling": {
+      "labels": [
+        "Prices rising",
+        "Prices falling"
+      ],
+      "values": [
+        12,
+        4
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "MOSPI Wholesale Price Index API (api.mospi.gov.in)",
+      "unit": "minerals",
+      "note": "How many of the 16 tracked minerals and fuels had higher or lower wholesale prices in 2026-04 than a year earlier. Wholesale Price Index, base 2011-12 = 100, compiled by the Office of the Economic Adviser (DPIIT) and published through MOSPI. The latest two months are provisional and are revised after eight weeks.",
+      "meta": {
+        "title": "Minerals with Rising vs Falling Prices (2026-04)",
+        "subtitle": "Count of commodities by year-on-year price direction",
+        "frequency": "Monthly",
+        "color": "#ff9933",
+        "suffix": " minerals",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Mineral Price Monitor (WPI)"
+      }
+    },
     "wpi_mineral_since_base": {
       "labels": [
         "Zinc concentrate",
@@ -41397,30 +41328,6 @@ window.INDIA_DASHBOARD_DATA = {
         "frequency": "Monthly",
         "color": "#ff9933",
         "suffix": "%",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Mineral Price Monitor (WPI)"
-      }
-    },
-    "wpi_mineral_rising_vs_falling": {
-      "labels": [
-        "Prices rising",
-        "Prices falling"
-      ],
-      "values": [
-        12,
-        4
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "MOSPI Wholesale Price Index API (api.mospi.gov.in)",
-      "unit": "minerals",
-      "note": "How many of the 16 tracked minerals and fuels had higher or lower wholesale prices in 2026-04 than a year earlier. Wholesale Price Index, base 2011-12 = 100, compiled by the Office of the Economic Adviser (DPIIT) and published through MOSPI. The latest two months are provisional and are revised after eight weeks.",
-      "meta": {
-        "title": "Minerals with Rising vs Falling Prices (2026-04)",
-        "subtitle": "Count of commodities by year-on-year price direction",
-        "frequency": "Monthly",
-        "color": "#ff9933",
-        "suffix": " minerals",
         "category": "Mining & Natural Resources",
         "subgroup": "Mineral Price Monitor (WPI)"
       }
@@ -41577,6 +41484,99 @@ window.INDIA_DASHBOARD_DATA = {
         "suffix": "%",
         "category": "Mining & Natural Resources",
         "subgroup": "Mineral Price Monitor (WPI)"
+      }
+    },
+    "iip_mining_annual": {
+      "labels": [
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25",
+        "2025-26"
+      ],
+      "values": [
+        94.7,
+        94.6,
+        93.3,
+        97.3,
+        102.5,
+        104.9,
+        107.9,
+        109.6,
+        101.0,
+        113.3,
+        119.9,
+        128.9,
+        132.8,
+        134.6
+      ],
+      "source": "MOSPI IIP API (api.mospi.gov.in)",
+      "unit": "index",
+      "note": "Mining and quarrying output (coal, lignite, crude oil, natural gas, metallic and non-metallic minerals), fiscal-year averages. MOSPI Index of Industrial Production, base 2011-12 = 100. The latest periods are provisional and revised in later releases.",
+      "meta": {
+        "title": "IIP: Mining Output Index",
+        "subtitle": "Annual Index of Industrial Production for mining, 2011-12 = 100",
+        "frequency": "Annual",
+        "color": "#e3b341",
+        "suffix": " index",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Mining Output Monitor (IIP)"
+      }
+    },
+    "iip_mining_annual_growth": {
+      "labels": [
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24",
+        "2024-25",
+        "2025-26"
+      ],
+      "values": [
+        -5.3,
+        -0.1,
+        -1.4,
+        4.3,
+        5.3,
+        2.3,
+        2.9,
+        1.6,
+        -7.8,
+        12.2,
+        5.8,
+        7.5,
+        3.0,
+        1.4
+      ],
+      "chartType": "bar",
+      "source": "MOSPI IIP API (api.mospi.gov.in)",
+      "unit": "%",
+      "note": "Year-on-year growth in the fiscal-year mining index. MOSPI Index of Industrial Production, base 2011-12 = 100. The latest periods are provisional and revised in later releases.",
+      "meta": {
+        "title": "Mining Output Growth by Fiscal Year",
+        "subtitle": "Year-on-year change in the mining IIP",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Mining Output Monitor (IIP)"
       }
     },
     "iip_mining_monthly_compare": {
