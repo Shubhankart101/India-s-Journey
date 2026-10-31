@@ -716,28 +716,6 @@ body {
 .hero-metrics div { display:grid; gap:3px; }
 .hero-metrics strong { color:#fff; font:750 1.4rem ui-monospace,SFMono-Regular,Consolas,monospace; }
 .hero-metrics span { color:#9ca8b6; font-size:.72rem; letter-spacing:.04em; }
-.hero-art { align-items:center; display:flex; justify-content:center; min-height:245px; position:relative; }
-.hero-map-mark {
-  align-items:center;
-  background:linear-gradient(150deg,rgba(255,153,51,.22),rgba(19,136,8,.12));
-  border:1px solid rgba(255,195,113,.4);
-  border-radius:48% 42% 48% 40%;
-  box-shadow:0 0 90px rgba(255,153,51,.16), inset 0 0 45px rgba(255,255,255,.04);
-  color:#ffe1b5;
-  display:flex;
-  font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:800;
-  height:200px;
-  justify-content:center;
-  transform:rotate(-9deg);
-  width:170px;
-}
-.hero-orbit { border:1px solid rgba(255,255,255,.12); border-radius:50%; height:280px; position:absolute; transform:rotate(-27deg); width:390px; }
-.orbit-two { border-color:rgba(255,153,51,.23); height:330px; transform:rotate(38deg); width:300px; }
-.hero-sparkline { align-items:end; bottom:22px; display:flex; gap:7px; height:80px; position:absolute; right:2%; transform:rotate(-9deg); }
-.hero-sparkline span { background:linear-gradient(0deg,rgba(255,153,51,.14),#ff9933); border-radius:4px 4px 0 0; height:var(--h,40%); opacity:.75; width:9px; }
-.hero-sparkline span:nth-child(2n) { --h:62%; }.hero-sparkline span:nth-child(3n) { --h:34%; }.hero-sparkline span:nth-child(4n) { --h:86%; }.hero-sparkline span:nth-child(5n) { --h:55%; }
-.hero-art-label { bottom:0; color:#9ba7b5; font-size:.68rem; letter-spacing:.15em; position:absolute; right:5%; text-transform:uppercase; }
 .intro { border-top:0; padding:10px 0 38px; }
 .intro h2 { font-size:clamp(1.8rem,3vw,2.65rem); letter-spacing:-.045em; max-width:720px; }
 .intro p:not(.eyebrow) { color:#aeb8c4; }
@@ -915,11 +893,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
   .site-nav { gap:13px; }
   .site-nav a { font-size:.72rem; }
   .product-hero { grid-template-columns:1fr; margin:20px 0 30px; padding:27px 23px; }
-  .hero-art { min-height:165px; }
-  .hero-map-mark { height:145px; width:130px; }
-  .hero-orbit { height:200px; width:280px; }
-  .orbit-two { height:235px; width:220px; }
-  .hero-sparkline { bottom:8px; }
   .hero-metrics { gap:20px; }
   .source-note,.explore-heading { align-items:flex-start; flex-direction:column; }
   .chart-controls { align-items:stretch; }

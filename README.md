@@ -1,4 +1,4 @@
-﻿# 📊 India's Journey | Public Data Dashboard
+# 📊 India's Journey | Public Data Dashboard
 
 <p align="center">
 	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
@@ -251,7 +251,7 @@ The **Industry Trends & Performance** group adds a manufacturing deep-dive (`scr
 
 The **Mining & Natural Resources** group adds `scripts/mining_layer.py` (31 series) from official MOSPI APIs. Monthly wholesale price indices since 2012 (base 2011-12) cover iron ore, bauxite, copper, zinc, lead, manganese, chromite, limestone, rock phosphate, garnet, sillimanite, crude oil, natural gas, coking and non-coking coal, and lignite. There are comparison charts, inflation rankings, an annual mineral-inflation trend and interactive pies: rising vs falling prices, and minerals by price change since 2011-12. Mining output comes from the IIP: annual and monthly indices, growth, a comparison with other sectors, an expanding-vs-contracting months pie and mining's official IIP weight. Two new subgroups, Mineral Price Monitor (WPI) and Mining Output Monitor (IIP), sit alongside ten World Bank resource indicators (coal, oil, gas and total resource rents, mineral and energy depletion, and ores/metals and fuel trade shares).
 
-The interface uses a dark product-page design (`docs/product-theme.css`) with the group and subgroup artwork as a full-screen backdrop. It has a frosted sticky navigation bar, a large centred hero, a "Get to know" gallery of tiles (one per group), scroll reveals, and translucent rounded chart cards. Animations respect `prefers-reduced-motion`.
+The interface uses a dark product-page design (`docs/product-theme.css`) with the group and subgroup artwork as a full-screen backdrop. It has a frosted sticky navigation bar, a large centred hero that mirrors the web app home (catalogue stats, a group carousel with three mini headline indices per group, subgroup marquees, "Browse by group" tiles and the latest articles), scroll reveals, and translucent rounded chart cards. Animations respect `prefers-reduced-motion`.
 
 The site has four pages: `index.html` (Home), `explore.html` (charts, filters, sources), `about.html` and `api.html`. `docs/site.js` injects the shared header and a bottom tab bar on mobile. Group tiles link to `explore.html?group=...`, and the Explore filters sync to the URL (`?group=&subgroup=&q=`) so views can be shared.
 

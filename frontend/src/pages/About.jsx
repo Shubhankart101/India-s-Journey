@@ -67,7 +67,7 @@ export default function About() {
         <h2>Public data. Clear provenance.</h2>
         <p className="muted">Each graph links to its underlying source and explains its unit and cadence. Some indicators are annual, some are survey snapshots, and some are assembled from official tables. Read the chart note before comparing unlike measures.</p>
         <div className="about-steps">
-          <div className="card about-step"><span className="eyebrow">1 · Choose</span><strong>Pick a theme.</strong><span className="muted">Thirteen themes cover the economy, industry, health, security, elections and more. Each has subgroups.</span></div>
+          <div className="card about-step"><span className="eyebrow">1 · Choose</span><strong>Pick a theme.</strong><span className="muted">Fifteen themes cover the economy, industry, health, environment, agriculture, security, elections and more. Each has subgroups.</span></div>
           <div className="card about-step"><span className="eyebrow">2 · Inspect</span><strong>Hover, zoom, switch.</strong><span className="muted">Hover for exact values, zoom in, and switch between line, bar and pie views where the data allows.</span></div>
           <div className="card about-step"><span className="eyebrow">3 · Verify</span><strong>Open the source.</strong><span className="muted">Open any chart for the full series, the method and the cited publisher behind each indicator.</span></div>
         </div>

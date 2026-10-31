@@ -6,19 +6,20 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="About India's Journey: an independent atlas of public data on India, with clear provenance for every chart.">
   <title>About — India's Journey</title>
-  <link rel="stylesheet" href="styles.css?v=data-v13">
-  <link rel="stylesheet" href="product-theme.css?v=data-v13">
+  <link rel="stylesheet" href="styles.css?v=data-v14">
+  <link rel="stylesheet" href="product-theme.css?v=data-v14">
 </head>
 <body class="product-theme" data-page="about">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=data-v13"></script>
+  <script src="site.js?v=data-v14"></script>
 
   <main>
     <section class="page-title">
       <p class="eyebrow">About the atlas</p>
       <h1>Understand the data, <span>not just the line.</span></h1>
+      <p class="page-stats" id="about-stats" hidden></p>
     </section>
 
     <section class="intro" id="about" aria-labelledby="about-title" data-reveal>
@@ -49,7 +50,7 @@
       <div class="feature-card">
         <span class="eyebrow">1 · Choose</span>
         <strong>Pick a theme.</strong>
-        <span>Thirteen themes cover the economy, industry, health, security, elections and more. Each has subgroups.</span>
+        <span>Fifteen themes cover the economy, industry, health, environment, agriculture, security, elections and more. Each has subgroups.</span>
       </div>
       <div class="feature-card">
         <span class="eyebrow">2 · Inspect</span>
@@ -61,6 +62,30 @@
         <strong>Open the source.</strong>
         <span>Open any chart for the full series, the method and the cited publisher behind each indicator.</span>
       </div>
+    </section>
+
+    <section class="intro" aria-labelledby="using-title" data-reveal>
+      <div>
+        <h2 id="using-title">Using the data</h2>
+        <p>Every chart has a CSV download, a data table and a share link in its toolbar. The same data is available from the <a href="api.html">JSON API</a>.</p>
+        <p>Save charts with the ★ button; they are kept in this browser. Compare and sign-in are part of the local web app.</p>
+      </div>
+    </section>
+
+    <section class="home-section" id="articles" aria-labelledby="articles-title" data-reveal>
+      <h2 id="articles-title">Articles and reports</h2>
+      <div class="filter-row">
+        <select id="article-kind" aria-label="Publisher">
+          <option value="">All publishers</option>
+          <option value="indian_matrix">Indian Matrix</option>
+          <option value="polity_policy">Polity and Policy</option>
+          <option value="pew">Pew Research Center</option>
+        </select>
+        <input type="search" id="article-search" placeholder="Search article titles" aria-label="Search articles">
+      </div>
+      <p class="article-loading" id="article-empty" hidden>No articles match.</p>
+      <ul class="article-list" id="article-list"><li class="article-loading">Loading articles…</li></ul>
+      <div class="center"><button type="button" class="button" id="article-more" hidden>Load more</button></div>
     </section>
 
     <section class="cta-band" data-reveal>
@@ -92,8 +117,8 @@
   </main>
 
   <footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the public sources listed on the Explore page.</footer>
-  <script src="data.js?v=data-v13"></script>
-  <script src="additional-chart-definitions.js?v=data-v13"></script>
-  <script src="app.js?v=data-v13"></script>
+  <script src="data.js?v=data-v14"></script>
+  <script src="additional-chart-definitions.js?v=data-v14"></script>
+  <script src="app.js?v=data-v14"></script>
 </body>
 </html>

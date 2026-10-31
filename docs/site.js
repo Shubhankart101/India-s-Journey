@@ -123,22 +123,26 @@
       }
     }
 
-    // Count up hero metrics whenever app.js fills them with a number.
+    // Count up hero metrics whenever app.js fills them with a number; a new value mid-animation retargets it.
     document.querySelectorAll('.hero-metrics strong').forEach(node => {
+      let written = null;
+      let target = 0;
+      let frame = 0;
       const animate = () => {
         const text = node.textContent.trim();
-        if (reduced || node.dataset.counting || !/^[\d,]+$/.test(text)) return;
-        const target = Number(text.replace(/,/g, ''));
-        if (!target) return;
-        node.dataset.counting = '1';
+        if (reduced || text === written || !/^[\d,]+$/.test(text)) return;
+        const next = Number(text.replace(/,/g, ''));
+        if (!next) return;
+        target = next;
+        if (frame) return;
         const start = performance.now();
         const step = now => {
           const t = Math.min((now - start) / 1400, 1);
-          node.textContent = Math.round(target * (1 - (1 - t) ** 3)).toLocaleString('en-IN');
-          if (t < 1) requestAnimationFrame(step);
-          else delete node.dataset.counting;
+          written = Math.round(target * (1 - (1 - t) ** 3)).toLocaleString('en-IN');
+          node.textContent = written;
+          frame = t < 1 ? requestAnimationFrame(step) : 0;
         };
-        requestAnimationFrame(step);
+        frame = requestAnimationFrame(step);
       };
       new MutationObserver(animate).observe(node, { childList: true, characterData: true, subtree: true });
       animate();
@@ -146,7 +150,7 @@
 
     if (!reduced && window.matchMedia('(hover: hover)').matches) {
       document.addEventListener('pointermove', event => {
-        const card = event.target.closest?.('.chart-card, .feature-card, .product-tile, .tile-card, .group-hero');
+        const card = event.target.closest?.('.chart-card, .feature-card, .group-tile, .mini-index, .tile-card, .group-hero');
         if (!card) return;
         const box = card.getBoundingClientRect();
         card.style.setProperty('--mx', `${event.clientX - box.left}px`);
@@ -163,7 +167,7 @@
       });
     }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
     const tag = () => {
-      document.querySelectorAll('.chart-card, .feature-card, .product-tile').forEach((node, index) => {
+      document.querySelectorAll('.chart-card, .feature-card, .group-tile, .article-list li').forEach((node, index) => {
         if (node.dataset.rise || node.hasAttribute('data-reveal')) return;
         node.dataset.rise = '1';
         if (node.getBoundingClientRect().top < window.innerHeight) return;

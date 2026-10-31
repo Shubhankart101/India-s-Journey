@@ -496,6 +496,215 @@ async function safeFetchJson(filename, defaultVal = {}) {
   return defaultVal;
 }
 
+// Home and About mirror the web app: stats, a group carousel with mini indices, subgroup marquees,
+// group tiles and the article list, all built from the same catalogue the explorer uses.
+const MINI_COLORS = ['#ff9933', '#58a6ff', '#3fb950', '#bc8cff', '#8b949e'];
+const isFiniteValue = value => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
+const formatDay = value => {
+  const date = new Date(value);
+  return value && !Number.isNaN(date.getTime()) ? date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : String(value || '');
+};
+const seriesPreview = series => {
+  const labels = series?.labels || [];
+  const first = series?.datasets?.[0];
+  const values = series?.values?.length ? series.values : first?.values || first?.data || [];
+  const type = series?.chartType || 'line';
+  if (type === 'pie' || type === 'doughnut' || type === 'bar' || labels.length <= 40) return { labels, values };
+  const step = (labels.length - 1) / 39;
+  const indexes = [...new Set(Array.from({ length: 40 }, (_, position) => Math.round(position * step)))];
+  return { labels: indexes.map(index => labels[index]), values: indexes.map(index => values[index]) };
+};
+const miniTrendPoints = series => {
+  const { labels, values } = seriesPreview(series);
+  return labels.map((label, index) => ({ label: String(label), value: values[index] }))
+    .filter(point => /^\d{4}/.test(point.label) && isFiniteValue(point.value))
+    .map(point => ({ label: point.label, value: Number(point.value) }));
+};
+const miniSnapshotParts = (series, foldOther) => {
+  const { labels, values } = seriesPreview(series);
+  const parts = labels.map((label, index) => ({ label: String(label), value: Number(values[index]) }))
+    .filter(part => isFiniteValue(part.value) && part.value > 0)
+    .sort((left, right) => right.value - left.value);
+  if (parts.length <= 4) return parts;
+  if (!foldOther) return parts.slice(0, 4);
+  return [...parts.slice(0, 3), { label: 'Other', value: parts.slice(3).reduce((sum, part) => sum + part.value, 0) }];
+};
+const pickStaticMiniIndices = (items, limit = 3) => {
+  const radial = item => ['pie', 'doughnut'].includes(item.series?.chartType);
+  const live = items.filter(item => item.live && item.series?.scope !== 'state');
+  const trends = live.filter(item => !radial(item))
+    .map(item => ({ kind: 'trend', item, points: miniTrendPoints(item.series) }))
+    .filter(pick => pick.points.length >= 3).slice(0, limit);
+  if (trends.length >= limit) return trends;
+  const used = new Set(trends.map(pick => pick.item.key));
+  const snapshots = live.filter(item => !used.has(item.key) && miniTrendPoints(item.series).length < 3)
+    .map(item => ({ kind: 'snapshot', item, radial: radial(item), parts: miniSnapshotParts(item.series, radial(item)) }))
+    .filter(pick => pick.parts.length >= 2).slice(0, limit - trends.length);
+  return [...trends, ...snapshots];
+};
+const miniChangeText = (points, suffix = '') => {
+  const [previous, latest] = points.slice(-2).map(point => point.value);
+  if (previous === undefined || latest === undefined) return null;
+  if (/%/.test(suffix)) return { value: latest - previous, text: `${latest - previous >= 0 ? '+' : '−'}${Math.abs(latest - previous).toFixed(1)} pp` };
+  if (!previous) return null;
+  const change = ((latest - previous) / Math.abs(previous)) * 100;
+  return { value: change, text: `${change >= 0 ? '+' : '−'}${Math.abs(change).toFixed(1)}%` };
+};
+const miniTileHtml = pick => {
+  const { item } = pick;
+  const title = `<span class="mini-title">${escapeHtml(item.title)}</span>`;
+  if (pick.kind === 'trend') {
+    const { points } = pick;
+    const latest = points[points.length - 1];
+    const change = miniChangeText(points, item.suffix);
+    const values = points.map(point => point.value);
+    const min = Math.min(...values);
+    const span = Math.max(...values) - min || 1;
+    const line = values.map((value, index) => `${((index / (values.length - 1)) * 120).toFixed(1)},${(31 - ((value - min) / span) * 28).toFixed(1)}`).join(' ');
+    return `${title}<span class="mini-row"><strong>${escapeHtml(formatMagnitude(latest.value, item.suffix))}</strong>${change ? `<span class="mini-change ${change.value >= 0 ? 'up' : 'down'}">${change.value >= 0 ? '▲' : '▼'} ${change.text}</span>` : ''}</span>`
+      + `<svg class="mini-spark" viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true" style="--spark:${escapeHtml(item.color || '#ff9933')}"><polygon points="0,34 ${line} 120,34"></polygon><polyline points="${line}"></polyline></svg>`
+      + `<span class="mini-period">${escapeHtml(points[0].label.slice(0, 4))}–${escapeHtml(latest.label)}</span>`;
+  }
+  const { parts, radial } = pick;
+  const total = parts.reduce((sum, part) => sum + part.value, 0);
+  const [leader] = parts;
+  const shown = radial ? `${((leader.value / total) * 100).toFixed(1)}%` : formatMagnitude(leader.value, item.suffix);
+  const bars = radial
+    ? `<span class="mini-share" aria-hidden="true">${parts.map((part, index) => `<span style="width:${(part.value / total) * 100}%;background:${MINI_COLORS[index % MINI_COLORS.length]}"></span>`).join('')}</span>`
+    : `<span class="mini-ranks" aria-hidden="true">${parts.map((part, index) => `<span style="width:${(part.value / leader.value) * 100}%;background:${MINI_COLORS[index % MINI_COLORS.length]}"></span>`).join('')}</span>`;
+  return `${title}<strong class="mini-value">${escapeHtml(shown)}</strong><span class="mini-leader">${escapeHtml(leader.label)}</span>${bars}<span class="mini-period">${radial ? 'Share of total' : 'Highest values'} · latest snapshot</span>`;
+};
+
+function renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroData, subgroupArtMap, setEraBackground, generatedAt, articleSources }) {
+  const groups = Object.keys(categoryOrder)
+    .map(name => ({ name, items: charts.filter(item => item.category === name) }))
+    .filter(group => group.items.length)
+    .map(group => ({ ...group, subgroups: [...new Set(group.items.map(item => item.subgroup))], art: categoryBgMap[group.name] || 'assets/parliament.svg' }));
+  const setText = (selector, value) => { const node = document.querySelector(selector); if (node) node.textContent = value; };
+  setText('#hero-chart-count', charts.length.toLocaleString('en-IN'));
+  setText('#hero-radial-count', charts.filter(item => ['pie', 'doughnut'].includes(item.series?.chartType)).length.toLocaleString('en-IN'));
+  setText('#hero-group-count', String(groups.length));
+  setText('#hero-point-count', charts.reduce((sum, item) => sum + (item.series?.labels?.length || 0), 0).toLocaleString('en-IN'));
+  const generatedNode = document.querySelector('#hero-generated');
+  if (generatedNode && generatedAt) {
+    generatedNode.textContent = `Data generated ${formatDay(generatedAt)}`;
+    generatedNode.hidden = false;
+  }
+  const aboutStats = document.querySelector('#about-stats');
+  if (aboutStats) {
+    const subgroupCount = groups.reduce((sum, group) => sum + group.subgroups.length, 0);
+    aboutStats.textContent = `${charts.length.toLocaleString('en-IN')} indicators · ${subgroupCount} subgroups · last refresh ${generatedAt ? formatDay(generatedAt) : 'pending'}`;
+    aboutStats.hidden = false;
+  }
+  const exploreLink = (group, subgroup) => `explore.html?group=${encodeURIComponent(group)}${subgroup ? `&subgroup=${encodeURIComponent(subgroup)}` : ''}`;
+
+  const slidesNode = document.querySelector('#hero-slides');
+  if (slidesNode && groups.length > 1) {
+    const caption = document.querySelector('#hero-caption');
+    const miniList = document.querySelector('#mini-indices');
+    const dots = document.querySelector('#slide-dots');
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+    let paused = false;
+    const show = index => {
+      current = (index + groups.length) % groups.length;
+      const group = groups[current];
+      setEraBackground(group.art);
+      caption.href = exploreLink(group.name);
+      caption.querySelector('strong').textContent = group.name;
+      miniList.setAttribute('aria-label', `Headline ${group.name} indicators`);
+      miniList.innerHTML = pickStaticMiniIndices(group.items).map(pick => `<li><a class="mini-index mini-${pick.kind}" href="explore.html?chart=${encodeURIComponent(pick.item.key)}" title="${escapeHtml(pick.item.subtitle || pick.item.title)}">${miniTileHtml(pick)}</a></li>`).join('');
+      miniList.classList.remove('is-entering');
+      void miniList.offsetWidth;
+      miniList.classList.add('is-entering');
+      [...dots.children].forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === current);
+        dot.setAttribute('aria-pressed', String(dotIndex === current));
+      });
+    };
+    groups.forEach((group, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'slide-dot';
+      dot.setAttribute('aria-label', `Show ${group.name} scene`);
+      dot.addEventListener('click', () => show(index));
+      dots.append(dot);
+    });
+    const hero = slidesNode.closest('.product-hero') || slidesNode;
+    hero.addEventListener('pointerenter', () => { paused = true; });
+    hero.addEventListener('pointerleave', () => { paused = false; });
+    hero.addEventListener('focusin', () => { paused = true; });
+    hero.addEventListener('focusout', () => { paused = false; });
+    slidesNode.hidden = false;
+    show(0);
+    if (!reducedMotion) setInterval(() => { if (!paused && !document.hidden) show(current + 1); }, 7000);
+  }
+
+  const marqueeBand = document.querySelector('#marquee-band');
+  if (marqueeBand) {
+    const links = groups.flatMap(group => group.subgroups.map(subgroup => ({ href: exploreLink(group.name, subgroup), label: subgroup, art: subgroupArtMap[subgroup] || group.art })));
+    const half = Math.ceil(links.length / 2);
+    const row = (items, hidden) => items.map(item => `<a class="marquee-item" href="${escapeHtml(item.href)}"${hidden ? ' tabindex="-1"' : ''}><img src="${escapeHtml(item.art)}" alt="" loading="lazy"><span>${escapeHtml(item.label)}</span></a>`).join('');
+    const marquee = (items, label, reverse) => `<nav class="marquee${reverse ? ' reverse' : ''}" aria-label="${label}"><div class="marquee-track"><div class="marquee-group">${row(items, false)}</div><div class="marquee-group" aria-hidden="true">${row(items, true)}</div></div></nav>`;
+    if (links.length) {
+      marqueeBand.innerHTML = marquee(links.slice(0, half), 'Featured subgroups', false) + marquee(links.slice(half), 'More subgroups', true);
+      marqueeBand.hidden = false;
+    }
+  }
+
+  const groupGrid = document.querySelector('#group-grid');
+  if (groupGrid) {
+    groupGrid.innerHTML = groups.map(group => `<a class="group-tile" href="${escapeHtml(exploreLink(group.name))}" style="--tile-art:url('${escapeHtml(group.art)}')">`
+      + `<span class="eyebrow">${group.subgroups.length} subgroups</span><h3>${escapeHtml(group.name)}</h3>`
+      + `<p class="clamp-2">${escapeHtml(groupHeroData[group.name]?.desc || '')}</p>`
+      + `<span class="chip">${group.items.filter(item => item.live).length} live charts</span></a>`).join('');
+    groupGrid.querySelectorAll('.group-tile').forEach(tile => {
+      tile.addEventListener('pointermove', event => {
+        const box = tile.getBoundingClientRect();
+        tile.style.setProperty('--rx', `${(((event.clientY - box.top) / box.height) - 0.5) * -8}deg`);
+        tile.style.setProperty('--ry', `${(((event.clientX - box.left) / box.width) - 0.5) * 10}deg`);
+        tile.style.setProperty('--gx', `${((event.clientX - box.left) / box.width) * 100}%`);
+      });
+      tile.addEventListener('pointerleave', () => ['--rx', '--ry', '--gx'].forEach(name => tile.style.removeProperty(name)));
+    });
+  }
+
+  const seen = new Set();
+  const articles = articleSources.flatMap(([kind, publisher, items]) => (items || []).map(item => ({
+    title: item.title || 'Untitled public article',
+    url: item.link || item.url || '',
+    published: item.published || item.date || '',
+    publisher,
+    kind,
+  })))
+    .filter(item => /^https?:\/\//.test(item.url) && !seen.has(item.url) && seen.add(item.url))
+    .sort((left, right) => (Date.parse(right.published) || 0) - (Date.parse(left.published) || 0));
+  const articleItem = article => `<li><a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a><small>${escapeHtml(article.publisher)} · ${escapeHtml(formatDay(article.published))}</small></li>`;
+  const latest = document.querySelector('#latest-articles');
+  if (latest) latest.innerHTML = articles.slice(0, 6).map(articleItem).join('') || '<li class="article-loading">No articles yet.</li>';
+
+  const articleList = document.querySelector('#article-list');
+  if (articleList) {
+    const kind = document.querySelector('#article-kind');
+    const search = document.querySelector('#article-search');
+    const more = document.querySelector('#article-more');
+    const empty = document.querySelector('#article-empty');
+    let shown = 20;
+    const render = () => {
+      const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+      const matches = articles.filter(article => (!kind.value || article.kind === kind.value) && terms.every(term => article.title.toLowerCase().includes(term)));
+      articleList.innerHTML = matches.slice(0, shown).map(articleItem).join('');
+      empty.hidden = matches.length > 0;
+      more.hidden = matches.length <= shown;
+    };
+    let timer = 0;
+    kind.addEventListener('change', () => { shown = 20; render(); });
+    search.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => { shown = 20; render(); }, 300); });
+    more.addEventListener('click', () => { shown += 20; render(); });
+    render();
+  }
+}
+
 async function main() {
   let dataPayload = window.INDIA_DASHBOARD_DATA;
   let economicSurvey = { series: {} };
@@ -505,21 +714,23 @@ async function main() {
   let pewSnapshots = { series: {} };
 
   if (!dataPayload || !dataPayload.series || Object.keys(dataPayload.series).length === 0) {
-    [dataPayload, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
+    [dataPayload, indianMatrix, pewReports] = await Promise.all([
       safeFetchJson('chart-latest.json', { series: {} }),
-      safeFetchJson('economic-survey-monthly.json', { series: {} }),
       safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
       safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
-      safeFetchJson('ncrb-and-analyses.json', { series: {} }),
-      safeFetchJson('pew-snapshots.json', { series: {} }),
     ]);
   }
 
-  const [electionResults, usCampaignFinance, electionIndices] = await Promise.all([
+  // These overlays refresh more often than data.js, so they are always applied (as the web app's catalog export does).
+  const [electionResults, usCampaignFinance, electionIndices, surveyOverlay, ncrbOverlay, pewOverlay] = await Promise.all([
     safeFetchJson('election-results.json', { series: {} }),
     safeFetchJson('us-campaign-finance.json', { series: {} }),
     safeFetchJson('election-indices.json', { series: {} }),
+    safeFetchJson('economic-survey-monthly.json', { series: {} }),
+    safeFetchJson('ncrb-and-analyses.json', { series: {} }),
+    safeFetchJson('pew-snapshots.json', { series: {} }),
   ]);
+  [economicSurvey, ncrbeAnalyses, pewSnapshots] = [surveyOverlay, ncrbOverlay, pewOverlay];
   const liveConstituencies = electionResults?.india_constituencies || [];
   liveConstituencies.forEach((record, index) => {
     const key = `india_live_constituency_vote_composition_${index + 1}`;
@@ -546,8 +757,6 @@ async function main() {
     definedKeys.add(key);
     if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
   });
-  const heroChartCount = document.querySelector('#hero-chart-count');
-  if (heroChartCount) heroChartCount.textContent = String(definitions.length);
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
   data.series.indian_matrix = { labels: matrixCadence.labels || [], values: matrixCadence.values || [], source: 'Indian Matrix public RSS feed' };
   const pewCadence = (data.series.pew_india_reports && data.series.pew_india_reports.values && data.series.pew_india_reports.values.length) ? data.series.pew_india_reports : (pewReports?.cadence || { labels: [], values: [] });
@@ -689,7 +898,7 @@ async function main() {
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
     // Pages without a chart grid only need group counts, so skip building the card.
     if (!grid) {
-      charts.push({ category, subgroup: dashboardSubgroupFor(key), live: Boolean(live) });
+      charts.push({ key, title, subtitle, color, suffix, series, category, subgroup: dashboardSubgroupFor(key), live: Boolean(live) });
       return;
     }
     const card = document.createElement('article');
@@ -1143,8 +1352,6 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const savedToggle = document.querySelector('#saved-toggle');
   const resultCount = document.querySelector('#chart-result-count');
-  const liveCount = document.querySelector('#hero-live-count');
-  if (liveCount) liveCount.textContent = String(grid ? cards.filter(card => card.dataset.state === 'live').length : charts.filter(item => item.live).length);
   const subgroupOwners = new Map();
   const groupToSubgroups = { all: [] };
   cards.forEach(card => {
@@ -1815,41 +2022,11 @@ async function main() {
     });
   }
 
-  const tileGallery = document.querySelector('#tile-gallery-track');
-  if (tileGallery) {
-    const groupCounts = charts.reduce((counts, item) => ({ ...counts, [item.category]: (counts[item.category] || 0) + 1 }), {});
-    Object.keys(categoryOrder).forEach(group => {
-      const info = groupHeroData[group];
-      if (!info) return;
-      const tile = document.createElement('button');
-      tile.type = 'button';
-      tile.className = 'product-tile';
-      tile.style.setProperty('--tile-art', `url("${categoryBgMap[group] || 'assets/parliament.svg'}")`);
-      const eyebrow = document.createElement('span');
-      eyebrow.className = 'product-tile-eyebrow';
-      eyebrow.textContent = `${groupCounts[group] || 0} indicators`;
-      const heading = document.createElement('strong');
-      heading.textContent = info.title.replace(/^[^\p{L}\p{N}]+/u, '');
-      const blurb = document.createElement('span');
-      blurb.className = 'product-tile-copy';
-      blurb.textContent = `${info.badge1} · ${info.badge2}`;
-      const plus = document.createElement('span');
-      plus.className = 'product-tile-plus';
-      plus.setAttribute('aria-hidden', 'true');
-      plus.textContent = '+';
-      tile.append(eyebrow, heading, blurb, plus);
-      tile.setAttribute('aria-label', `Explore ${group}`);
-      tile.addEventListener('click', () => {
-        window.location.href = `explore.html?group=${encodeURIComponent(group)}`;
-      });
-      tileGallery.append(tile);
-    });
-    document.querySelectorAll('[data-gallery-scroll]').forEach(button => {
-      button.addEventListener('click', () => {
-        tileGallery.scrollBy({ left: Number(button.dataset.galleryScroll) * tileGallery.clientWidth * 0.8, behavior: 'smooth' });
-      });
-    });
-  }
+  renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroData, subgroupArtMap, setEraBackground, generatedAt: data.generated_at_utc, articleSources: [
+    ['indian_matrix', 'Indian Matrix', (dataPayload && dataPayload.indian_matrix_articles) || indianMatrix?.articles || []],
+    ['polity_policy', 'Polity and Policy', (dataPayload && dataPayload.polity_policy_articles) || []],
+    ['pew', 'Pew Research Center', pewReportItems],
+  ] });
 
   if (!grid) return;
 

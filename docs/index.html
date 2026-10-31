@@ -6,14 +6,14 @@
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>India's Journey — Explore India in data</title>
-  <link rel="stylesheet" href="styles.css?v=data-v13">
-  <link rel="stylesheet" href="product-theme.css?v=data-v13">
+  <link rel="stylesheet" href="styles.css?v=data-v14">
+  <link rel="stylesheet" href="product-theme.css?v=data-v14">
 </head>
 <body class="product-theme" data-page="home">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=data-v13"></script>
+  <script src="site.js?v=data-v14"></script>
 
   <main>
     <section class="product-hero" aria-labelledby="intro-title">
@@ -26,61 +26,36 @@
           <a class="text-link" href="about.html">How it works <span aria-hidden="true">›</span></a>
         </div>
         <div class="hero-metrics" aria-label="Dashboard overview">
-          <div><strong id="hero-chart-count">—</strong><span>indicators</span></div>
-          <div><strong id="hero-live-count">—</strong><span>with data</span></div>
-          <div><strong id="hero-group-count">13</strong><span>areas to explore</span></div>
+          <div><strong id="hero-chart-count">—</strong><span>Indicators</span></div>
+          <div><strong id="hero-radial-count">—</strong><span>Interactive pies</span></div>
+          <div><strong id="hero-group-count">—</strong><span>Groups</span></div>
+          <div><strong id="hero-point-count">—</strong><span>Data points</span></div>
+        </div>
+        <p class="hero-generated" id="hero-generated" hidden></p>
+        <div class="hero-slides" id="hero-slides" hidden>
+          <a class="hero-caption" id="hero-caption" href="explore.html">Now showing <strong></strong> →</a>
+          <ul class="mini-indices" id="mini-indices"></ul>
+          <div class="slide-dots" id="slide-dots" role="group" aria-label="Choose background scene"></div>
         </div>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-        <div class="hero-map-mark">भारत</div>
-        <div class="hero-sparkline"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <span class="hero-art-label">A story in motion</span>
+    </section>
+
+    <div class="marquee-band" id="marquee-band" hidden></div>
+
+    <section class="home-section" aria-labelledby="groups-title" data-reveal>
+      <div class="section-head">
+        <h2 id="groups-title">Browse by group</h2>
+        <a href="explore.html">See all →</a>
       </div>
+      <div class="group-grid" id="group-grid"><p class="article-loading">Loading groups…</p></div>
     </section>
 
-    <section class="tile-gallery" id="highlights" aria-labelledby="tile-gallery-title" data-reveal>
-      <div class="tile-gallery-heading">
-        <h2 id="tile-gallery-title">Get to know India’s Journey.</h2>
-        <div class="tile-gallery-controls">
-          <button type="button" data-gallery-scroll="-1" aria-label="Scroll gallery left">‹</button>
-          <button type="button" data-gallery-scroll="1" aria-label="Scroll gallery right">›</button>
-        </div>
+    <section class="home-section" aria-labelledby="latest-title" data-reveal>
+      <div class="section-head">
+        <h2 id="latest-title">Latest analysis</h2>
+        <a href="about.html#articles">All articles →</a>
       </div>
-      <div class="tile-gallery-track" id="tile-gallery-track" role="list"></div>
-    </section>
-
-    <section class="feature-grid" aria-label="Where to go next" data-reveal>
-      <a class="feature-card" href="explore.html">
-        <span class="eyebrow">Explore</span>
-        <strong>Every indicator, one place.</strong>
-        <span>Filter by theme and subgroup, search, zoom, compare and open a deep dive for any chart.</span>
-        <span class="feature-link">Open the explorer ›</span>
-      </a>
-      <a class="feature-card" href="about.html">
-        <span class="eyebrow">About</span>
-        <strong>Evidence before inference.</strong>
-        <span>What the atlas is, how to read a chart and why unavailable data is never estimated.</span>
-        <span class="feature-link">Read the story ›</span>
-      </a>
-      <a class="feature-card" href="explore.html#references">
-        <span class="eyebrow">Sources</span>
-        <strong>Public data, clear provenance.</strong>
-        <span>Search the citation behind every chart and browse the official publishers we use.</span>
-        <span class="feature-link">Browse the sources ›</span>
-      </a>
-      <a class="feature-card" href="api.html">
-        <span class="eyebrow">API</span>
-        <strong>Open JSON, read-only.</strong>
-        <span>Inspect and test every documented data file with the built-in Swagger explorer.</span>
-        <span class="feature-link">Open the API explorer ›</span>
-      </a>
-    </section>
-
-    <section class="status" aria-label="Dashboard status" data-reveal>
-      <div><span>Last generated</span><strong id="generated">Loading</strong></div>
-      <div><span>Coverage</span><strong>13 themes · national &amp; state</strong></div>
-      <div><span>Explore</span><strong>Search · compare · zoom · inspect</strong></div>
+      <ul class="article-list" id="latest-articles"><li class="article-loading">Loading articles…</li></ul>
     </section>
 
     <section class="thanks" id="thanks" aria-labelledby="thanks-title" data-reveal>
@@ -107,8 +82,8 @@
   </main>
 
   <footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the public sources listed on the Explore page. <a href="status.html">Web app status</a></footer>
-  <script src="data.js?v=data-v13"></script>
-  <script src="additional-chart-definitions.js?v=data-v13"></script>
-  <script src="app.js?v=data-v13"></script>
+  <script src="data.js?v=data-v14"></script>
+  <script src="additional-chart-definitions.js?v=data-v14"></script>
+  <script src="app.js?v=data-v14"></script>
 </body>
 </html>
