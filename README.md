@@ -104,7 +104,7 @@ The repository also contains a full web app, alongside the static GitHub Pages s
 - Side-by-side comparison of up to four indicators, with an optional "rebase to 100" view.
 - **Sign in with Google or Microsoft (Outlook) only.** There are no local passwords. Signed-in users can save charts. See [Authentication](docs/AUTHENTICATION.md).
 - **Swagger UI at `/api/docs/`** to try every endpoint, plus ReDoc at `/api/redoc/` and the OpenAPI schema at `/api/schema/`. See the [API guide](docs/API.md).
-- **A GitHub Pages backup.** Every error page, the offline banner and the footer link to the [static dashboard](https://shubhankart101.github.io/India-s-Journey/) and its [status page](https://shubhankart101.github.io/India-s-Journey/status.html). The same backup is mirrored on Netlify at <https://indiasjourney.netlify.app>. An [uptime monitor](.github/workflows/uptime-monitor.yml) opens and closes `outage` issues. See [Backup and status](docs/BACKUP-AND-STATUS.md).
+- **A GitHub Pages backup.** Every error page, the offline banner and the footer link to the [static dashboard](https://shubhankart101.github.io/India-s-Journey/) and its [status page](https://shubhankart101.github.io/India-s-Journey/status.html). The same backup is mirrored on Netlify at <https://indiasjourney.netlify.app>. An [uptime monitor](.github/workflows/uptime-monitor.yml) checks both hosted copies every 30 minutes and opens and closes `outage` issues. See [Backup and status](docs/BACKUP-AND-STATUS.md).
 - The Django admin at `/admin/` (staff only).
 - A mobile layout with a bottom tab bar.
 

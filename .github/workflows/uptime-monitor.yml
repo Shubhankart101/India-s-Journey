@@ -1,11 +1,17 @@
 name: Uptime monitor
 
-# Pings the Django app; opens an "outage" issue pointing visitors to the GitHub Pages backup when it is down,
-# and closes it automatically once the app recovers. docs/status.html links to these issues.
+# Checks the hosted static dashboards (Netlify and its GitHub Pages mirror). Opens an "outage" issue that points
+# visitors to whichever site is still up, and closes it automatically once every site recovers.
+# The Django app runs locally, so it is only checked when an app_url is given on a manual run.
 on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
+    inputs:
+      app_url:
+        description: 'Optional hosted Django app URL to health-check as well (for example https://my-host)'
+        required: false
+        default: ''
 
 permissions:
   issues: write
@@ -15,54 +21,68 @@ concurrency:
   group: uptime-monitor
   cancel-in-progress: false
 
+env:
+  PRIMARY_SITE_URL: https://indiasjourney.netlify.app/
+  BACKUP_SITE_URL: https://shubhankart101.github.io/India-s-Journey/
+
 jobs:
   ping:
-    # The app runs locally by default; set the APP_URL repository variable once it is hosted.
-    if: vars.APP_URL != ''
     runs-on: ubuntu-latest
     env:
-      APP_URL: ${{ vars.APP_URL }}
-      BACKUP_SITE_URL: ${{ vars.BACKUP_SITE_URL || 'https://shubhankart101.github.io/India-s-Journey/' }}
+      APP_URL: ${{ github.event.inputs.app_url }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:
-      - name: Health check (retries cover free-tier cold starts)
+      - name: Health check (retries cover transient CDN and cold-start failures)
         id: health
         run: |
-          url="${APP_URL%/}/api/health/"
-          for attempt in 1 2 3 4 5; do
-            code=$(curl -s -o body.json -w '%{http_code}' --max-time 60 "$url" || echo 000)
-            echo "Attempt $attempt: HTTP $code"
-            if [ "$code" = "200" ] && grep -q '"status"' body.json; then
-              echo "up=true" >> "$GITHUB_OUTPUT"; cat body.json; exit 0
-            fi
-            sleep 20
-          done
-          echo "up=false" >> "$GITHUB_OUTPUT"
-          echo "last_code=$code" >> "$GITHUB_OUTPUT"
+          check() { # name url marker
+            for attempt in 1 2 3 4 5; do
+              code=$(curl -sL -o body.txt -w '%{http_code}' --max-time 60 "$2" || echo 000)
+              echo "$1 attempt $attempt: HTTP $code"
+              if [ "$code" = "200" ] && grep -q "$3" body.txt; then return 0; fi
+              sleep 20
+            done
+            echo "- $1 (\`$2\`) failed with HTTP $code" >> failures.md
+            return 1
+          }
+          : > failures.md
+          check "Netlify dashboard" "$PRIMARY_SITE_URL" "India" || true
+          check "GitHub Pages backup" "$BACKUP_SITE_URL" "India" || true
+          if [ -n "$APP_URL" ]; then check "Django app" "${APP_URL%/}/api/health/" '"status"' || true; fi
+          if [ -s failures.md ]; then
+            echo "up=false" >> "$GITHUB_OUTPUT"
+            { echo 'failures<<EOF'; cat failures.md; echo 'EOF'; } >> "$GITHUB_OUTPUT"
+          else
+            echo "up=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Ensure outage label exists
-        run: gh label create outage --color B60205 --description "Web app is unreachable" 2>/dev/null || true
+        run: gh label create outage --color B60205 --description "A hosted dashboard is unreachable" 2>/dev/null || true
 
       - name: Open outage issue
         if: steps.health.outputs.up == 'false'
+        env:
+          FAILURES: ${{ steps.health.outputs.failures }}
         run: |
           open=$(gh issue list --label outage --state open --json number --jq '.[0].number')
-          note="Health check \`${APP_URL%/}/api/health/\` failed at $(date -u '+%Y-%m-%d %H:%M UTC') (last HTTP ${{ steps.health.outputs.last_code }})."
+          note="Health check failed at $(date -u '+%Y-%m-%d %H:%M UTC'):
+
+          $FAILURES"
           if [ -n "$open" ]; then
             gh issue comment "$open" --body "$note"
           else
-            gh issue create --label outage --title "Web app is down" --body "$note
+            gh issue create --label outage --title "Dashboard is down" --body "$note
 
-          While it is down, use the backup dashboard: $BACKUP_SITE_URL
+          Use whichever copy is still up: $PRIMARY_SITE_URL or $BACKUP_SITE_URL
           Live status: ${BACKUP_SITE_URL%/}/status.html
 
-          This issue closes automatically when the health check passes again."
+          This issue closes automatically when every health check passes again."
           fi
 
       - name: Close resolved outage issues
         if: steps.health.outputs.up == 'true'
         run: |
           for n in $(gh issue list --label outage --state open --json number --jq '.[].number'); do
-            gh issue close "$n" --comment "Recovered: health check passed at $(date -u '+%Y-%m-%d %H:%M UTC')."
+            gh issue close "$n" --comment "Recovered: health checks passed at $(date -u '+%Y-%m-%d %H:%M UTC')."
           done

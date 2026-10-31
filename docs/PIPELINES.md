@@ -97,7 +97,7 @@ See [TESTING.md](TESTING.md) for details.
 
 | Workflow | Cron (UTC) | Purpose |
 | --- | --- | --- |
-| [Uptime monitor](../.github/workflows/uptime-monitor.yml) | `*/30 * * * *` | Skipped unless the `APP_URL` repository variable is set. Pings `APP_URL/api/health/` with cold-start retries. Opens an `outage` issue linking the GitHub Pages backup, and closes it on recovery |
+| [Uptime monitor](../.github/workflows/uptime-monitor.yml) | `*/30 * * * *` | Checks the Netlify dashboard and the GitHub Pages mirror with retries (plus `<app_url>/api/health/` when an `app_url` is given on a manual run). Opens an `outage` issue listing failed sites and linking the copy still up, and closes it on recovery |
 | [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) | After the collectors | Publishes `docs/`, which is both the static dashboard and the backup site with [`status.html`](status.html) |
 
 See [BACKUP-AND-STATUS.md](BACKUP-AND-STATUS.md) and [DEPLOYMENT.md](DEPLOYMENT.md).

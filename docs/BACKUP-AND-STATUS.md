@@ -13,7 +13,7 @@ The Django app runs on Render. If it is down, asleep (free plan) or being deploy
 | Browser offline | `OfflineBanner` |
 | Unknown front-end route | `NotFound` page with backup links |
 | Render maintenance mode | Render redirects every request to `BACKUP_SITE_URL` (Render dashboard: **Settings ? Maintenance mode**) |
-| The whole host is unreachable | The [uptime monitor](../.github/workflows/uptime-monitor.yml) opens an `outage` issue that links to the backup |
+| A hosted dashboard is unreachable | The [uptime monitor](../.github/workflows/uptime-monitor.yml) opens an `outage` issue that links to the copy that is still up |
 
 The app's footer always links to **Backup site** and **Status**.
 
@@ -38,8 +38,8 @@ It also links to open `outage` issues. Use `status.html?app=https://your-host` t
 
 [`uptime-monitor.yml`](../.github/workflows/uptime-monitor.yml) runs every 30 minutes and can also be started by hand:
 
-1. It requests `${APP_URL}/api/health/` up to five times, 20 s apart, so a cold start is not reported as an outage.
-2. If every attempt fails, it opens an issue labelled `outage` with links to the backup and status pages. If such an issue is already open, it adds a comment instead.
-3. When the app is healthy again, it closes the open outage issues with a recovery comment.
+1. It requests the Netlify dashboard (<https://indiasjourney.netlify.app>) and the GitHub Pages mirror up to five times each, 20 s apart, so a brief CDN hiccup is not reported as an outage.
+2. If any site fails every attempt, it opens an issue labelled `outage` listing the failed sites, with links to both copies and the status page. If such an issue is already open, it adds a comment instead.
+3. When every site is healthy again, it closes the open outage issues with a recovery comment.
 
-The monitor only runs when the repository variable `APP_URL` is set (the app runs locally by default, so it is skipped until the app is hosted). `BACKUP_SITE_URL` overrides the backup link. Create both under **Settings ? Secrets and variables ? Actions ? Variables**; the workflow creates the `outage` label on first use if it is missing.
+The Django app runs locally, so it is not checked on schedule. To check a hosted copy, start the workflow by hand (**Actions → Uptime monitor → Run workflow**) and fill in `app_url`; it then also requests `<app_url>/api/health/`. No repository variables are needed, and the workflow creates the `outage` label on first use if it is missing.
