@@ -8,6 +8,7 @@ on:
       - Weekly Substack Article Update
       - Election Results Update
       - Historical Election Archive Update
+      - Recent Indian Election Data Update
     types:
       - completed
   push:
@@ -23,6 +24,7 @@ on:
       - data/pew-snapshots.json
       - data/election-results.json
       - data/historical-elections.json
+      - data/recent-indian-elections.json
       - data/us-campaign-finance.json
       - .github/workflows/deploy-dashboard.yml
 
@@ -58,6 +60,7 @@ jobs:
           if [ -f data/pew-snapshots.json ]; then cp data/pew-snapshots.json site/data/pew-snapshots.json; fi
           if [ -f data/election-results.json ]; then cp data/election-results.json site/data/election-results.json; fi
           if [ -f data/historical-elections.json ]; then cp data/historical-elections.json site/data/historical-elections.json; fi
+          if [ -f data/recent-indian-elections.json ]; then cp data/recent-indian-elections.json site/data/recent-indian-elections.json; fi
           if [ -f data/us-campaign-finance.json ]; then cp data/us-campaign-finance.json site/data/us-campaign-finance.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:

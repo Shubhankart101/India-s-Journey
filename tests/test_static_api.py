@@ -1,4 +1,4 @@
-import json
+﻿import json
 import unittest
 from pathlib import Path
 
@@ -8,6 +8,7 @@ API_RESOURCES = (
     "chart-latest.json",
     "election-results.json",
     "historical-elections.json",
+    "recent-indian-elections.json",
     "us-campaign-finance.json",
     "economic-survey-monthly.json",
     "ncrb-and-analyses.json",
@@ -52,6 +53,14 @@ class StaticApiTests(unittest.TestCase):
         self.assertIn("python scripts/collect_historical_elections.py", workflow)
         self.assertIn("Historical Election Archive Update", deploy)
         self.assertIn("data/historical-elections.json", deploy)
+
+    def test_recent_indian_election_refresh_is_scheduled_and_deployed(self):
+        workflow = (ROOT / ".github" / "workflows" / "recent-indian-elections-update.yml").read_text(encoding="utf-8")
+        deploy = (ROOT / ".github" / "workflows" / "deploy-dashboard.yml").read_text(encoding="utf-8")
+        self.assertIn("schedule:", workflow)
+        self.assertIn("python scripts/collect_recent_indian_elections.py", workflow)
+        self.assertIn("Recent Indian Election Data Update", deploy)
+        self.assertIn("data/recent-indian-elections.json", deploy)
 
 
 if __name__ == "__main__":

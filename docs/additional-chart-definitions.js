@@ -90,7 +90,7 @@
     ['india_live_party_seats_composition', 'Provisional Party Leads: Share of Published Seats', 'Party leads among currently published ECI constituencies', 'Live ECI snapshot', '#ff9933', 'constituencies', 'https://results.eci.gov.in/', 'Share of provisional party leads among only the constituencies currently published by ECI. This is not a statewide or all-election seat tally.']
   );
 
-  const cycles = [2018, 2020, 2022, 2024];
+  const cycles = [2018, 2020, 2022, 2024, 2026];
   const offices = [
     { code: 'P', name: 'President', subgroup: 'U.S. Presidential Campaign Finance', scope: 'candidate party' },
     { code: 'S', name: 'Senate', subgroup: 'U.S. Congressional Campaign Finance', scope: 'candidate office state' },
@@ -106,7 +106,7 @@
     offices.flatMap(office => measures.map(measure => {
       const key = `us_fec_${cycle}_${office.code.toLowerCase()}_${measure.key}`;
       const url = `https://www.fec.gov/files/bulk-downloads/${cycle}/weball${String(cycle).slice(-2)}.zip`;
-      const details = `Federal Election Commission candidate-summary totals for the ${cycle} filing cycle. ${measure.title} are aggregated by ${office.scope}. ${office.code === 'P' ? 'Presidential candidate totals use party as the grouping because the FEC summary file does not report state presidential vote totals. The 2018 and 2022 filing cycles are midterm years, not Presidential election years.' : 'House and Senate candidate totals are grouped by candidate office state.'}\n\nThese are campaign-finance amounts, not votes, turnout, or public contributions alone. Candidate summaries include authorized committees and may be revised when amended reports are processed.`;
+      const details = `Federal Election Commission candidate-summary totals for the ${cycle} filing cycle. ${measure.title} are aggregated by ${office.scope}. ${office.code === 'P' ? 'Presidential candidate totals use party as the grouping because the FEC summary file does not report state presidential vote totals. The 2018, 2022 and 2026 filing cycles are midterm years, not Presidential election years.' : 'House and Senate candidate totals are grouped by candidate office state.'}\n\nThese are campaign-finance amounts, not votes, turnout, or public contributions alone. Candidate summaries include authorized committees and may be revised when amended reports are processed.`;
       return [
         key,
         `${cycle} ${office.code === 'P' ? 'Presidential' : office.name} Candidate ${measure.title}`,
@@ -127,7 +127,7 @@
     '#3fb950',
     ' USD',
     `https://www.fec.gov/files/bulk-downloads/${cycle}/weball${String(cycle).slice(-2)}.zip`,
-    `Federal Election Commission Presidential-office candidate receipts grouped by party for the ${cycle} filing cycle. ${cycle === 2018 || cycle === 2022 ? 'This is a midterm filing cycle, not a Presidential election year. ' : ''}Shares describe reported campaign-finance receipts, not votes or public contributions alone.`
+    `Federal Election Commission Presidential-office candidate receipts grouped by party for the ${cycle} filing cycle. ${[2018, 2022, 2026].includes(cycle) ? 'This is a midterm filing cycle, not a Presidential election year. ' : ''}Shares describe reported campaign-finance receipts, not votes or public contributions alone.`
   ]));
   const presidentialYears = [2000, 2004, 2008, 2012, 2016, 2020, 2024];
   window.INDIA_EXTRA_CHART_DEFINITIONS.push(...presidentialYears.map(year => [

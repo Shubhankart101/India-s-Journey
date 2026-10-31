@@ -48,6 +48,18 @@
         }
       }
     },
+    "/data/recent-indian-elections.json": {
+      "get": {
+        "operationId": "getRecentIndianElectionResults",
+        "summary": "Recent Lok Sabha and State Assembly constituency candidate results",
+        "responses": {
+          "200": {
+            "description": "Candidate-level results for the 2024 Lok Sabha election and recent State Assembly elections, with pinned source commit and coverage metadata",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
     "/data/us-campaign-finance.json": {
       "get": {
         "operationId": "getUsCampaignFinance",

@@ -12,7 +12,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUTS = (ROOT / "data" / "us-campaign-finance.json", ROOT / "docs" / "data" / "us-campaign-finance.json")
 USER_AGENT = "IndiaJourney public-data dashboard"
-CYCLES = (2018, 2020, 2022, 2024)
+CYCLES = (2018, 2020, 2022, 2024, 2026)
 OFFICES = {
     "P": ("President", "party"),
     "S": ("Senate", "state"),
@@ -112,7 +112,7 @@ def build_receipt_composition_series(cycle: int, receipts: dict[str, dict]) -> d
             "chartType": "doughnut",
             "note": (
                 f"Share of reported Presidential-office candidate receipts by party in the {cycle} "
-                "FEC filing cycle. 2018 and 2022 are midterm years, not Presidential election years. "
+                "FEC filing cycle. 2018, 2022 and 2026 are midterm years, not Presidential election years. "
                 "Receipts are campaign-finance totals, not votes or public contributions alone."
             ),
         }

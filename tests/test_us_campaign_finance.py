@@ -81,18 +81,18 @@ class UsCampaignFinanceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unexpected row format"):
             _candidate_summary_rows(stream.getvalue(), 2024)
 
-    def test_published_snapshot_contains_52_sourced_series(self):
+    def test_published_snapshot_contains_65_sourced_series(self):
         root = Path(__file__).resolve().parents[1]
         payload = json.loads((root / "data" / "us-campaign-finance.json").read_text(encoding="utf-8"))
         self.assertEqual(payload["collection_status"], "ok")
-        self.assertEqual(payload["cycles"], [2018, 2020, 2022, 2024])
-        self.assertEqual(len(payload["series"]), 52)
+        self.assertEqual(payload["cycles"], [2018, 2020, 2022, 2024, 2026])
+        self.assertEqual(len(payload["series"]), 65)
         for key, series in payload["series"].items():
             self.assertTrue(key.startswith("us_fec_"), key)
             self.assertTrue(series["source"].startswith("https://www.fec.gov/"), key)
             self.assertTrue(series["labels"], key)
             self.assertEqual(len(series["labels"]), len(series["values"]), key)
-        for cycle in (2018, 2020, 2022, 2024):
+        for cycle in (2018, 2020, 2022, 2024, 2026):
             pie = payload["series"][f"us_fec_{cycle}_p_receipt_composition"]
             self.assertEqual(pie["chartType"], "doughnut")
             self.assertGreater(sum(pie["values"]), 0)
