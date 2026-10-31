@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title description">
+  <title id="title">Original United States Capitol-inspired illustration</title>
+  <desc id="description">A stylized civic building with a central dome, columns, and a starry blue background.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop offset="0" stop-color="#10294b"/>
+      <stop offset="1" stop-color="#1c4972"/>
+    </linearGradient>
+    <linearGradient id="stone" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0e7d5"/>
+      <stop offset="1" stop-color="#c8bda7"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="420" fill="url(#sky)"/>
+  <g fill="#f7d78a" opacity=".8">
+    <circle cx="114" cy="64" r="2"/><circle cx="225" cy="102" r="2"/>
+    <circle cx="771" cy="74" r="2"/><circle cx="863" cy="129" r="2"/>
+    <circle cx="684" cy="44" r="2"/>
+  </g>
+  <path d="M0 325h960v95H0z" fill="#132b3b"/>
+  <g fill="url(#stone)" stroke="#b2a58e" stroke-width="3">
+    <path d="M164 332h632v-28H164z"/>
+    <path d="M190 301h580v-18H190z"/>
+    <path d="M221 282h518l-50-105H271z"/>
+    <path d="M300 177a180 180 0 0 1 360 0z"/>
+    <path d="M330 173a150 150 0 0 1 300 0z" fill="#d5c9b4"/>
+    <path d="M450 80h60l-8-39h-44z"/>
+    <path d="M462 40h36V16h-36z"/>
+  </g>
+  <g fill="#e7dcc8">
+    <path d="M264 177h18v102h-18z"/><path d="M324 177h18v102h-18z"/>
+    <path d="M384 177h18v102h-18z"/><path d="M444 177h18v102h-18z"/>
+    <path d="M504 177h18v102h-18z"/><path d="M564 177h18v102h-18z"/>
+    <path d="M624 177h18v102h-18z"/><path d="M684 177h18v102h-18z"/>
+  </g>
+  <path d="M90 350h780" stroke="#e6b85c" stroke-width="4" opacity=".7"/>
+</svg>

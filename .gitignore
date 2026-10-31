@@ -1,2 +1,8 @@
 __pycache__/
 *.pyc
+
+node_modules/
+frontend/dist/
+webapp/db.sqlite3
+webapp/staticfiles/
+.venv/

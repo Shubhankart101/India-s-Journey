@@ -69,6 +69,13 @@ jobs:
       - name: Refresh public-source charts, World Bank layer & JS bundle
         run: python scripts/generate_public_charts.py
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Export catalogue for the Django app
+        run: node scripts/export_catalog.mjs
       - name: Commit daily data and charts
         run: |
           git config user.name "github-actions[bot]"

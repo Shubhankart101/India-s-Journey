@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: indias-journey
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health/
+    envVars:
+      - key: DJANGO_DEBUG
+        value: 'false'
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      # SQLite lives in the container and resets on redeploy. On a paid plan, attach a disk
+      # (e.g. mountPath /var/data) and set DJANGO_SQLITE_PATH=/var/data/db.sqlite3 to keep accounts.

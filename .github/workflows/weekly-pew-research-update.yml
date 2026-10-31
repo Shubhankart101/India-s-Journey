@@ -26,7 +26,9 @@ jobs:
           python scripts/collect_pew_india_reports.py
 
       - name: Rebuild public chart bundle
-        run: python scripts/generate_public_charts.py
+        run: |
+          python scripts/generate_public_charts.py
+          node scripts/export_catalog.mjs
 
       - name: Commit Pew data
         run: |

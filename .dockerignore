@@ -1,0 +1,9 @@
+.git
+**/node_modules
+frontend/dist
+webapp/db.sqlite3
+webapp/staticfiles
+**/__pycache__
+.venv
+history
+substack-history

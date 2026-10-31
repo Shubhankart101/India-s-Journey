@@ -27,7 +27,9 @@ jobs:
           python scripts/fetch_economic_survey_monthly.py
 
       - name: Rebuild public chart bundle
-        run: python scripts/generate_public_charts.py
+        run: |
+          python scripts/generate_public_charts.py
+          node scripts/export_catalog.mjs
 
       - name: Commit monthly economic data
         run: |

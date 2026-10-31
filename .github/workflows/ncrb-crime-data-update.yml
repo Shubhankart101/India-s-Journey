@@ -24,7 +24,9 @@ jobs:
         run: python scripts/collect_ncrb_and_analyses.py
 
       - name: Rebuild public chart bundle
-        run: python scripts/generate_public_charts.py
+        run: |
+          python scripts/generate_public_charts.py
+          node scripts/export_catalog.mjs
 
       - name: Commit NCRB data
         run: |
