@@ -3,6 +3,7 @@ import { api } from '../api.js';
 import { formatDate } from '../format.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
+import ArtBackdrop from '../components/ArtBackdrop.jsx';
 
 const KINDS = [
   ['', 'All publishers'],
@@ -35,7 +36,8 @@ export default function About() {
 
   return (
     <>
-      <section className="page-hero with-art" style={{ '--hero-art': 'url(/art/lotus-temple.svg)' }}>
+      <section className="page-hero with-art">
+        <ArtBackdrop art="heritage-sites.svg" />
         <p className="eyebrow">About</p>
         <h1>Built on official, public data.</h1>
         <p className="lead">India's Journey collects public series from MOSPI, RBI, the World Bank, the Election Commission of India, the U.S. FEC, NCRB, Pew Research and other official publishers. Scheduled pipelines refresh each dataset on its own release cadence, and every chart links back to its source.</p>

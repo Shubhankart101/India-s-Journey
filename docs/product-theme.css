@@ -31,8 +31,12 @@ body.product-theme a:hover { color: var(--link); text-decoration: underline; }
 body.product-theme h1, body.product-theme h2, body.product-theme h3 { font-family: var(--font-display); color: var(--ink); letter-spacing: -0.015em; }
 body.product-theme .eyebrow { font-family: var(--font-text); color: #ff9f0a; font-weight: 600; letter-spacing: 0; text-transform: none; font-size: 1.05rem; }
 
-/* Group and subgroup artwork stays as a full-screen backdrop, dimmed for legibility. */
-body.product-theme .era-bg-layer { opacity: .8 !important; filter: saturate(1.25) brightness(1); }
+/* Group and subgroup artwork stays as a full-screen backdrop, dimmed for legibility. It slowly zooms and
+   shifts with the pointer and scroll (site.js sets --px/--py/--sy); scene changes fade through .is-swapping. */
+body.product-theme .era-bg-layer { opacity: .8 !important; filter: saturate(1.25) brightness(1); inset: -40px; width: auto; height: auto; translate: calc(var(--px, 0) * -36px) calc(var(--py, 0) * -24px - var(--sy, 0) * 0.06px); transition: opacity .45s ease, translate .6s cubic-bezier(.2, .7, .2, 1), filter .45s ease; animation: era-zoom 40s ease-in-out infinite alternate; will-change: translate, scale; }
+body.product-theme .era-bg-layer.is-swapping { opacity: 0 !important; filter: blur(8px) saturate(1.25); }
+@keyframes era-zoom { from { scale: 1.02; } to { scale: 1.12; } }
+@media (prefers-reduced-motion: reduce) { body.product-theme .era-bg-layer { animation: none; translate: none; transition: opacity .2s; } }
 body.product-theme .era-overlay { background: linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .45) 55%, rgba(0, 0, 0, .62) 100%); }
 body.product-theme .tricolor-bar { height: 3px; box-shadow: none; position: relative; z-index: 1001; }
 

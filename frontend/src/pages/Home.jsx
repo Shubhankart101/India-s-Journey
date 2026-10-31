@@ -1,8 +1,23 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api.js';
 import { formatDate } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
 import { ErrorState, Loading } from '../components/States.jsx';
+import ArtBackdrop from '../components/ArtBackdrop.jsx';
+
+const SLIDE_MS = 7000;
+
+const tilt = event => {
+  const node = event.currentTarget;
+  const box = node.getBoundingClientRect();
+  node.style.setProperty('--rx', `${(((event.clientY - box.top) / box.height) - 0.5) * -8}deg`);
+  node.style.setProperty('--ry', `${(((event.clientX - box.left) / box.width) - 0.5) * 10}deg`);
+  node.style.setProperty('--gx', `${((event.clientX - box.left) / box.width) * 100}%`);
+};
+const untilt = event => {
+  ['--rx', '--ry', '--gx'].forEach(name => event.currentTarget.style.removeProperty(name));
+};
 
 export default function Home() {
   useDocumentTitle('');
@@ -10,10 +25,26 @@ export default function Home() {
   const categories = useAsync(signal => api.categories(signal), []);
   const articles = useAsync(signal => api.articles({ page_size: 6 }, signal), []);
   const s = stats.data;
+  const slides = (categories.data || []).filter(category => category.art);
+  const [slide, setSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused || slides.length < 2) return undefined;
+    const timer = setInterval(() => setSlide(current => (current + 1) % slides.length), SLIDE_MS);
+    return () => clearInterval(timer);
+  }, [paused, slides.length]);
+  const current = slides[slide % (slides.length || 1)];
 
   return (
     <>
-      <section className="hero" style={{ '--hero-art': 'url(/art/parliament.svg)' }}>
+      <section
+        className="hero"
+        onPointerEnter={() => setPaused(true)}
+        onPointerLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
+      >
+        <ArtBackdrop art={current?.art || 'parliament.svg'} />
         <p className="eyebrow">Official data · refreshed on schedule</p>
         <h1>India's Journey.<br /><span className="gradient-text">Every number, sourced.</span></h1>
         <p className="lead">Search hundreds of indicators on the economy, industry, mining, elections, health, society and tourism — open any chart, compare up to four side by side, and download the data.</p>
@@ -30,6 +61,25 @@ export default function Home() {
           </dl>
         )}
         {s?.source_generated_at && <p className="muted small">Data generated {formatDate(s.source_generated_at)}</p>}
+        {slides.length > 1 && (
+          <div className="hero-slides">
+            <Link className="hero-caption" to={`/explore?category=${current.slug}`}>
+              Now showing <strong>{current.name}</strong> →
+            </Link>
+            <div className="slide-dots" role="group" aria-label="Choose background scene">
+              {slides.map((category, index) => (
+                <button
+                  type="button"
+                  key={category.slug}
+                  className={`slide-dot${index === slide % slides.length ? ' active' : ''}`}
+                  aria-label={`Show ${category.name} scene`}
+                  aria-pressed={index === slide % slides.length}
+                  onClick={() => setSlide(index)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="section">
@@ -46,6 +96,8 @@ export default function Home() {
               to={`/explore?category=${category.slug}`}
               className="group-tile"
               style={{ '--tile-art': `url(/art/${category.art || 'parliament.svg'})` }}
+              onPointerMove={tilt}
+              onPointerLeave={untilt}
             >
               <span className="eyebrow">{category.subgroups.length} subgroups</span>
               <h3>{category.name}</h3>

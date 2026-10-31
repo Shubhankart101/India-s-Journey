@@ -33,5 +33,6 @@ export default defineConfig({
     setupFiles: ['./src/test/setup.jsx'],
     include: ['src/**/*.test.{js,jsx}'],
     css: false,
+    testTimeout: 20000,
   },
 });

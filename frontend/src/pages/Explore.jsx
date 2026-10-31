@@ -4,6 +4,7 @@ import { api } from '../api.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
+import ArtBackdrop from '../components/ArtBackdrop.jsx';
 
 const PAGE_SIZE = 24;
 const FILTER_KEYS = ['q', 'category', 'subgroup', 'live', 'chart', 'sort'];
@@ -57,12 +58,13 @@ export default function Explore() {
     }
   };
 
-  const heroArt = subgroup?.art || category?.art;
+  const heroArt = subgroup?.art || category?.art || 'economy.svg';
   const activeFilters = FILTER_KEYS.filter(key => filters[key] && key !== 'sort').length;
 
   return (
     <>
-      <section className={`page-hero${heroArt ? ' with-art' : ''}`} style={heroArt ? { '--hero-art': `url(/art/${heroArt})` } : undefined}>
+      <section className="page-hero with-art">
+        <ArtBackdrop art={heroArt} />
         <p className="eyebrow">{category ? 'Group' : 'Explore'}</p>
         <h1>{subgroup?.title || category?.title || 'Every indicator, one search away.'}</h1>
         <p className="lead">{subgroup?.description || category?.description || 'Filter by group and subgroup, search any keyword, then open an indicator for the full chart, data table and downloads.'}</p>
@@ -117,17 +119,36 @@ export default function Explore() {
             </button>
           )}
         </div>
-        {category && (
-          <div className="chip-row" role="list" aria-label="Subgroups">
+        {category ? (
+          <div className="picture-rail" role="list" aria-label="Subgroups">
             {category.subgroups.map(item => (
               <button
                 type="button"
                 role="listitem"
                 key={item.slug}
-                className={`chip chip-button${item.slug === filters.subgroup ? ' active' : ''}`}
+                aria-pressed={item.slug === filters.subgroup}
+                className={`picture-card${item.slug === filters.subgroup ? ' active' : ''}`}
+                style={{ '--card-art': `url(/art/${item.art || category.art})` }}
                 onClick={() => update({ subgroup: item.slug === filters.subgroup ? '' : item.slug })}
               >
-                {item.name}
+                <span className="picture-name">{item.name}</span>
+                <span className="picture-meta">{item.indicator_count} charts</span>
+              </button>
+            ))}
+          </div>
+        ) : (categories.data || []).length > 0 && (
+          <div className="picture-rail" role="list" aria-label="Groups">
+            {categories.data.map(item => (
+              <button
+                type="button"
+                role="listitem"
+                key={item.slug}
+                className="picture-card"
+                style={{ '--card-art': `url(/art/${item.art || 'economy.svg'})` }}
+                onClick={() => update({ category: item.slug, subgroup: '' })}
+              >
+                <span className="picture-name">{item.name}</span>
+                <span className="picture-meta">{item.subgroups.length} subgroups</span>
               </button>
             ))}
           </div>

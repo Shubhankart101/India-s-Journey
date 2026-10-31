@@ -42,3 +42,25 @@
     targets.forEach(element => observer.observe(element));
   });
 })();
+
+/* Pointer and scroll parallax for the illustrated full-page backdrop. */
+(() => {
+  const layer = document.querySelector('#era-bg-layer');
+  if (!layer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let frame = 0;
+  let px = 0;
+  let py = 0;
+  const paint = () => {
+    frame = 0;
+    layer.style.setProperty('--px', px.toFixed(3));
+    layer.style.setProperty('--py', py.toFixed(3));
+    layer.style.setProperty('--sy', String(Math.min(window.scrollY, 1500)));
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(paint); };
+  window.addEventListener('pointermove', event => {
+    px = event.clientX / window.innerWidth - 0.5;
+    py = event.clientY / window.innerHeight - 0.5;
+    schedule();
+  }, { passive: true });
+  window.addEventListener('scroll', schedule, { passive: true });
+})();

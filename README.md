@@ -97,6 +97,8 @@ The repository also contains a full web app, alongside the static GitHub Pages s
 
 **Data flow:** the collectors and `generate_public_charts.py` update `docs/`. Then [`scripts/export_catalog.mjs`](scripts/export_catalog.mjs) writes `data/catalog.json`, and `manage.py import_catalog` loads it into SQLite. Every scheduled workflow that regenerates charts also re-exports the catalogue. To run the whole chain locally, use `python webapp/manage.py refresh_data`.
 
+**Illustrations:** every group and subgroup has its own animated SVG scene. Animations stop when the user has reduced motion turned on. [`scripts/generate_art.py`](scripts/generate_art.py) generates these scenes into `docs/assets/` and `frontend/public/art/`. The scenes are mapped to subgroups in `categoryBgMap` and `subgroupArtMap` in `docs/app.js`. After changing the art, run `python scripts/generate_art.py`, then re-export the catalogue and import it.
+
 **Local development**
 
 ```bash

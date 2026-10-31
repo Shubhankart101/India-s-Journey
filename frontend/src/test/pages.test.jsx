@@ -11,10 +11,27 @@ describe('Layout and Home', () => {
     mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
     renderApp('/');
     expect(await screen.findByText('691')).toBeInTheDocument();
-    const tile = await screen.findByRole('link', { name: /Economic/ });
+    const tile = await screen.findByRole('link', { name: /subgroups\s*Economic/ });
     expect(tile).toHaveAttribute('href', '/explore?category=economic');
     expect(tile.style.getPropertyValue('--tile-art')).toContain('/art/parliament.svg');
     expect(await screen.findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('cycles the hero backdrop through group scenes with selectable dots', async () => {
+    mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
+    const { container } = renderApp('/');
+    expect(await screen.findByRole('link', { name: /Now showing\s*Economic/ })).toHaveAttribute('href', '/explore?category=economic');
+    const backdrop = container.querySelector('.hero .art-backdrop');
+    expect(backdrop).toHaveAttribute('aria-hidden', 'true');
+    expect(backdrop).toHaveAttribute('data-art', 'parliament.svg');
+    const dot = screen.getByRole('button', { name: 'Show Elections scene' });
+    expect(dot).toHaveAttribute('aria-pressed', 'false');
+    await userEvent.click(dot);
+    expect(dot).toHaveAttribute('aria-pressed', 'true');
+    expect(backdrop).toHaveAttribute('data-art', 'eci-building.svg');
+    expect(screen.getByRole('link', { name: /Now showing\s*Elections/ })).toHaveAttribute('href', '/explore?category=elections');
+    await waitFor(() => expect(backdrop.querySelectorAll('img')).toHaveLength(2));
+    expect([...backdrop.querySelectorAll('img')].map(img => img.getAttribute('src'))).toEqual(['/art/parliament.svg', '/art/eci-building.svg']);
   });
 
   it('has desktop navigation and a mobile tab bar', async () => {
@@ -75,6 +92,25 @@ describe('Explore', () => {
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?q=coal'));
     const searches = calls.filter(call => call.path === '/api/indicators/' && call.params.get('q'));
     expect(searches.map(call => call.params.get('q'))).toEqual(['coal']);
+  });
+
+  it('shows illustrated picture rails for groups and subgroups', async () => {
+    mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary()]) });
+    const { container } = renderApp('/explore');
+    const groups = await screen.findByRole('list', { name: 'Groups' });
+    const electionsCard = within(groups).getByText('Elections').closest('button');
+    expect(electionsCard.style.getPropertyValue('--card-art')).toContain('/art/eci-building.svg');
+    await userEvent.click(within(groups).getByText('Economic').closest('button'));
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?category=economic'));
+
+    const subgroups = await screen.findByRole('list', { name: 'Subgroups' });
+    const trade = within(subgroups).getByText('Trade').closest('button');
+    expect(trade.style.getPropertyValue('--card-art')).toContain('/art/rail-station.svg');
+    expect(trade).toHaveAttribute('aria-pressed', 'false');
+    await userEvent.click(trade);
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('subgroup=trade'));
+    expect(trade).toHaveAttribute('aria-pressed', 'true');
+    expect(container.querySelector('.page-hero .art-backdrop')).toHaveAttribute('data-art', 'rail-station.svg');
   });
 
   it('reads filters from a deep link and can clear them', async () => {

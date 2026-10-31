@@ -600,27 +600,37 @@ async function main() {
   document.querySelector('#pew-report-search')?.addEventListener('input', renderPewReports);
   renderPewReports();
   const categoryBgMap = {
-    Economic: "assets/parliament.svg",
-    'Industry Trends & Performance': "assets/rail-station.svg",
-    'Mining & Natural Resources': "assets/minerals.svg",
-    'Payments & Digital Banking': "assets/lotus-temple.svg",
-    'State Performance & Regional Health': "assets/hampi.svg",
-    'Public Health & Epidemiology': "assets/hospital.svg",
-    Social: "assets/taj-mahal.svg",
-    'Defence & Strategic': "assets/parliament.svg",
-    'Crime & Security': "assets/supreme-court.svg",
-    'Pew Research': "assets/lotus-temple.svg",
-    Elections: "assets/eci-building.svg",
-    'U.S. Elections': "assets/us-capitol.svg",
-    'Tourism & Heritage': "assets/hampi.svg"
+    "Economic": "assets/economy.svg",
+    "Industry Trends & Performance": "assets/industry.svg",
+    "Mining & Natural Resources": "assets/mining.svg",
+    "Payments & Digital Banking": "assets/payments.svg",
+    "State Performance & Regional Health": "assets/states.svg",
+    "Public Health & Epidemiology": "assets/health.svg",
+    "Social": "assets/social.svg",
+    "Defence & Strategic": "assets/defence.svg",
+    "Crime & Security": "assets/security.svg",
+    "Pew Research": "assets/opinion.svg",
+    "Elections": "assets/elections.svg",
+    "U.S. Elections": "assets/us-elections.svg",
+    "Tourism & Heritage": "assets/tourism.svg"
   };
 
   const setEraBackground = (imgUrl) => {
     const bgLayer = document.querySelector('#era-bg-layer');
-    if (bgLayer && imgUrl) {
-      bgLayer.style.backgroundImage = `url("${imgUrl}")`;
+    if (!bgLayer || !imgUrl) return;
+    const next = `url("${imgUrl}")`;
+    if (bgLayer.style.backgroundImage === next) return;
+    if (!bgLayer.style.backgroundImage) {
+      bgLayer.style.backgroundImage = next;
       bgLayer.style.opacity = '0.55';
+      return;
     }
+    bgLayer.classList.add('is-swapping');
+    clearTimeout(bgLayer.swapTimer);
+    bgLayer.swapTimer = setTimeout(() => {
+      bgLayer.style.backgroundImage = next;
+      bgLayer.classList.remove('is-swapping');
+    }, 380);
   };
   setEraBackground(categoryBgMap.Economic);
 
@@ -1163,49 +1173,71 @@ async function main() {
   };
 
   const subgroupArtMap = {
-    "Macroeconomics": "assets/parliament.svg",
-    "Per Capita Income & Wealth": "assets/parliament.svg",
-    "Monetary Policy": "assets/parliament.svg",
-    "Trade & External": "assets/rail-station.svg",
-    "Markets": "assets/parliament.svg",
-    "Manufacturing & Industrial Growth": "assets/rail-station.svg",
-    "Infrastructure Development": "assets/rail-station.svg",
-    "Metallic Minerals & Ores": "assets/minerals.svg",
-    "Energy Minerals & Fuel": "assets/minerals.svg",
-    "Non-Metallic & Industrial Minerals": "assets/minerals.svg",
-    "UPI & Digital Payments": "assets/lotus-temple.svg",
-    "State Financial Health & GSDP": "assets/hampi.svg",
-    "State Infrastructure & Services": "assets/rail-station.svg",
-    "Mortality & Lifespan Milestones": "assets/hospital.svg",
-    "Disease Burden & Epidemiology": "assets/hospital.svg",
-    "Health Infrastructure & Spending": "assets/hospital.svg",
-    "Demographics": "assets/taj-mahal.svg",
-    "Welfare": "assets/lotus-temple.svg",
-    "Government Schemes": "assets/parliament.svg",
-    "Defence Exports & Production": "assets/parliament.svg",
-    "Defence Budget & Modernization": "assets/parliament.svg",
-    "Strategic Stockpiles & Capabilities": "assets/parliament.svg",
-    "Maoism / LWE": "assets/minerals.svg",
-    "Jammu & Kashmir Insurgency": "assets/hampi.svg",
-    "North East Insurgency": "assets/hampi.svg",
-    "Punjab Militancy & Security": "assets/supreme-court.svg",
-    "Violence & Crime": "assets/supreme-court.svg",
-    "Terrorism": "assets/supreme-court.svg",
-    "Public opinion": "assets/lotus-temple.svg",
-    "Indian Elections": "assets/eci-building.svg",
-    "U.S. Presidential Elections": "assets/us-capitol.svg",
-    "U.S. Presidential Campaign Finance": "assets/us-capitol.svg",
-    "U.S. Congressional Campaign Finance": "assets/us-capitol.svg",
-    "International Visitor Trends": "assets/taj-mahal.svg",
-    "Global Tourism Comparison": "assets/taj-mahal.svg",
-    "Heavy Industry & Metals": "assets/minerals.svg",
-    "Automobiles & Transport Equipment": "assets/rail-station.svg",
-    "Food Processing & Consumer Goods": "assets/hampi.svg",
-    "Chemicals, Pharma & Electronics": "assets/hospital.svg",
-    "Industrial Output Monitor (IIP)": "assets/rail-station.svg",
-    "Mineral Price Monitor (WPI)": "assets/minerals.svg",
-    "Mining Output Monitor (IIP)": "assets/minerals.svg",
-    "World Heritage Sites": "assets/hampi.svg"
+    "Macroeconomics": "assets/macro-skyline.svg",
+    "Per Capita Income & Wealth": "assets/income-wealth.svg",
+    "Manufacturing & Industrial Growth": "assets/factory-floor.svg",
+    "Trade & External": "assets/port-trade.svg",
+    "Monetary Policy": "assets/central-bank.svg",
+    "Production & Commodities": "assets/commodities.svg",
+    "Media & Publications": "assets/media-press.svg",
+    "Markets": "assets/stock-market.svg",
+    "Fiscal & Union Budget": "assets/union-budget.svg",
+    "Infrastructure Development": "assets/infrastructure.svg",
+    "Food Processing & Consumer Goods": "assets/food-processing.svg",
+    "Heavy Industry & Metals": "assets/steel-plant.svg",
+    "Automobiles & Transport Equipment": "assets/auto-highway.svg",
+    "Chemicals, Pharma & Electronics": "assets/chem-pharma.svg",
+    "Industrial Output Monitor (IIP)": "assets/iip-monitor.svg",
+    "Metallic Minerals & Ores": "assets/metal-ores.svg",
+    "Energy Minerals & Fuel": "assets/energy-fuel.svg",
+    "Non-Metallic & Industrial Minerals": "assets/industrial-minerals.svg",
+    "Mineral Exports & Trade": "assets/mineral-exports.svg",
+    "Mining Output Monitor (IIP)": "assets/mining-output.svg",
+    "Mineral Price Monitor (WPI)": "assets/mineral-prices.svg",
+    "UPI & Digital Payments": "assets/upi-payments.svg",
+    "Card Spends & Ecosystem": "assets/card-spends.svg",
+    "Digital Financial Index": "assets/digital-index.svg",
+    "State Banking & Credit": "assets/state-banking.svg",
+    "Regional Rural Banks": "assets/rural-banks.svg",
+    "Pensions & Social Security": "assets/pensions.svg",
+    "State Financial Health & GSDP": "assets/state-gsdp.svg",
+    "State Infrastructure & Services": "assets/state-infra.svg",
+    "State Welfare & Scheme Coverage": "assets/state-welfare.svg",
+    "State Socio-Demographic Milestones": "assets/state-demography.svg",
+    "State Industrial & Manufacturing Hubs": "assets/state-industry.svg",
+    "State Economy & Industry": "assets/state-economy.svg",
+    "Mortality & Lifespan Milestones": "assets/lifespan.svg",
+    "Disease Burden & Epidemiology": "assets/epidemiology.svg",
+    "Health Infrastructure & Spending": "assets/health-infra.svg",
+    "State Health Outcomes": "assets/state-health.svg",
+    "State Health Infrastructure": "assets/state-hospitals.svg",
+    "Demographics": "assets/demographics.svg",
+    "Welfare": "assets/welfare.svg",
+    "Government Schemes": "assets/schemes.svg",
+    "Employment & Poverty": "assets/employment.svg",
+    "Education": "assets/education.svg",
+    "Defence Budget & Modernization": "assets/defence-budget.svg",
+    "Defence Exports & Production": "assets/defence-exports.svg",
+    "Strategic Stockpiles & Capabilities": "assets/strategic-assets.svg",
+    "North East Insurgency": "assets/northeast-hills.svg",
+    "Jammu & Kashmir Insurgency": "assets/kashmir-valley.svg",
+    "Punjab Militancy & Security": "assets/punjab-border.svg",
+    "Violence & Crime": "assets/law-justice.svg",
+    "Maoism / LWE": "assets/red-corridor.svg",
+    "Terrorism": "assets/counter-terror.svg",
+    "Public opinion": "assets/public-opinion.svg",
+    "Indian Elections": "assets/ballot-box.svg",
+    "Lok Sabha 2024 — National": "assets/lok-sabha.svg",
+    "Lok Sabha 2024 — States": "assets/vote-map.svg",
+    "Election Comparisons Across States": "assets/election-compare.svg",
+    "State Assembly Results 2022–2026": "assets/assembly-results.svg",
+    "U.S. Presidential Elections": "assets/white-house.svg",
+    "U.S. Presidential Campaign Finance": "assets/campaign-finance.svg",
+    "U.S. Congressional Campaign Finance": "assets/congress-finance.svg",
+    "U.S. Campaign Funding Composition": "assets/funding-mix.svg",
+    "International Visitor Trends": "assets/visitor-trends.svg",
+    "World Heritage Sites": "assets/heritage-sites.svg",
+    "Global Tourism Comparison": "assets/global-tourism.svg"
   };
 
   const subgroupHeroData = {

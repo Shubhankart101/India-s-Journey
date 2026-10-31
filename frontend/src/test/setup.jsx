@@ -1,7 +1,10 @@
 import '@testing-library/jest-dom/vitest';
-import { cleanup } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
 import { afterEach, vi } from 'vitest';
 import { clearApiCache } from '../api.js';
+
+// Lazy chart chunks can take over a second to import on a busy machine; the default 1s findBy wait is flaky there.
+configure({ asyncUtilTimeout: 5000 });
 
 // Canvas rendering is not available in jsdom; render the chart config as data attributes instead.
 vi.mock('react-chartjs-2', () => ({

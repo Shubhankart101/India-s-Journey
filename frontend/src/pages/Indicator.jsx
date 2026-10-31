@@ -7,6 +7,7 @@ import { chartModes, formatMagnitude, isRadial, seriesStats } from '../format.js
 import { useAsync, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { ErrorState, Loading } from '../components/States.jsx';
+import ArtBackdrop from '../components/ArtBackdrop.jsx';
 
 const ChartView = lazy(() => import('../components/ChartView.jsx'));
 const MODE_LABEL = { doughnut: '◔ Pie', pie: '◔ Pie', bar: '▥ Bar', line: '⌇ Line' };
@@ -77,7 +78,8 @@ function IndicatorView({ indicator }) {
 
   return (
     <>
-      <section className={`page-hero detail-hero${art ? ' with-art' : ''}`} style={art ? { '--hero-art': `url(/art/${art})` } : undefined}>
+      <section className="page-hero detail-hero with-art">
+        <ArtBackdrop art={art || 'economy.svg'} />
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <Link to="/explore">Explore</Link>
           <span aria-hidden="true">›</span>
