@@ -23,7 +23,7 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | **Render** (`render.yaml`, recommended) | Full Django + React app | One free web service | Sleeps after 15 minutes idle (cold start ~1 minute); disk resets on deploy |
 | **Koyeb** | Full app from the `Dockerfile` | One free instance | Doesn't sleep; small CPU/RAM; no persistent disk |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
-| **Hugging Face Spaces** (Docker SDK) | Full app from the `Dockerfile` | Free CPU for public Spaces | Public only; sleeps when idle; set `PORT=7860` (or `app_port`) |
+| **Hugging Face Spaces** (Docker SDK, scripted) | Full app from the `Dockerfile` | Free CPU for public Spaces | Public only; sleeps after 48 hours idle |
 | **Cloudflare Pages / Netlify** | Static dashboard in `docs/` | Free static hosting | Static only; a mirror of GitHub Pages |
 
 Fly.io and Railway now offer only trial credit, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
@@ -37,7 +37,21 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
   --set-env-vars DJANGO_ALLOWED_HOSTS=<service>.run.app,DJANGO_CSRF_TRUSTED_ORIGINS=https://<service>.run.app,DJANGO_SECRET_KEY=<random>
 ```
 
-**Koyeb / Hugging Face Spaces:** create a service (or Docker Space) from this GitHub repository, choose the `Dockerfile` builder, set the environment variables above, and use `/api/health/` as the health check.
+**Hugging Face Spaces:** [`scripts/deploy_hf_space.py`](../scripts/deploy_hf_space.py) creates (or updates) a Docker Space and uploads the tracked files. The Space uses [`huggingface/README.md`](../huggingface/README.md) as its card (`sdk: docker`, `app_port: 8000`). The script also:
+- generates the `DJANGO_SECRET_KEY` secret on first deploy;
+- sets `DJANGO_SQLITE_PATH=/tmp/db.sqlite3` (Spaces run as a non-root user), `DJANGO_FRAME_ANCESTORS=https://huggingface.co` and the backup URLs.
+
+Django trusts the `SPACE_HOST` hostname that Spaces inject. Google/Microsoft sign-in only works on the direct `https://<user>-<space>.hf.space` URL, not inside the huggingface.co frame; register that URL's callbacks and add the OAuth credentials as Space secrets.
+
+```bash
+pip install huggingface_hub
+hf auth login                                  # write token
+python scripts/deploy_hf_space.py              # -> <user>/indiasjourney; --space owner/name to override
+```
+
+To redeploy on every push, add a write token as the `HF_TOKEN` repository secret (and optionally an `HF_SPACE` variable such as `owner/indiasjourney`). [`deploy-hf-space.yml`](../.github/workflows/deploy-hf-space.yml) then runs the same script; without the secret it skips.
+
+**Koyeb:** create a service from this GitHub repository, choose the `Dockerfile` builder, set the environment variables above, and use `/api/health/` as the health check.
 
 ## The container
 
@@ -57,6 +71,7 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 | `GOOGLE_CLIENT_ID` / `_SECRET` | to enable Google | |
 | `MICROSOFT_CLIENT_ID` / `_SECRET`, `MICROSOFT_TENANT` | to enable Microsoft | The tenant defaults to `common` |
 | `BACKUP_SITE_URL`, `BACKUP_STATUS_URL` | no | Backup links on the error pages |
+| `DJANGO_FRAME_ANCESTORS` | no | Comma-separated origins allowed to embed the app (e.g. `https://huggingface.co`); otherwise `X-Frame-Options: DENY` |
 | `DJANGO_LOG_LEVEL` | no | Default `INFO` |
 
 ## After deploying

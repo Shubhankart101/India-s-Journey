@@ -20,9 +20,13 @@ if not SECRET_KEY:
 
 ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
-if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
-    ALLOWED_HOSTS.append(os.environ['RENDER_EXTERNAL_HOSTNAME'])
-    CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}")
+for host_variable in ('RENDER_EXTERNAL_HOSTNAME', 'SPACE_HOST'):
+    # Render and Hugging Face Spaces inject the public hostname of the running service.
+    if os.environ.get(host_variable):
+        ALLOWED_HOSTS.append(os.environ[host_variable])
+        CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ[host_variable]}")
+# Space pages on huggingface.co embed the app in an iframe; list allowed parent origins here.
+FRAME_ANCESTORS = env_list('DJANGO_FRAME_ANCESTORS')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -53,6 +57,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'journey.middleware.FrameAncestorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'indicators.auth.MissingProviderMiddleware',
