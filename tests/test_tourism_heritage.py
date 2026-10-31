@@ -57,6 +57,20 @@ class TourismHeritageTests(unittest.TestCase):
         self.assertGreater(payload["series"]["unesco_india_sites_cumulative"]["values"][-1], 0)
         self.assertEqual(payload["series"]["unesco_india_current_categories"]["chartType"], "doughnut")
 
+    def test_global_tourism_comparison_series_include_india(self):
+        from scripts.tourism_comparison_layer import KEYS
+        payload = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))
+        for key in KEYS:
+            series = payload["series"][key]
+            self.assertEqual(series["meta"]["subgroup"], "Global Tourism Comparison", key)
+            if series.get("datasets"):
+                self.assertIn("India", [dataset["label"] for dataset in series["datasets"]], key)
+                for dataset in series["datasets"]:
+                    self.assertEqual(len(dataset["values"]), len(series["labels"]), key)
+            else:
+                self.assertIn("India", series["labels"], key)
+                self.assertEqual(len(series["labels"]), len(series["values"]), key)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

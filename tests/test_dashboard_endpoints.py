@@ -133,6 +133,8 @@ class DashboardEndpointTests(unittest.TestCase):
         for specs in (derived.CUMULATIVE, derived.LATEST, derived.BINARY, derived.PERIODS, derived.REGION_PIES):
             expected.update(row[0] for row in specs)
         expected.add("auto_domestic_sales_mix")
+        from tourism_comparison_layer import KEYS as tourism_keys
+        expected.update(tourism_keys)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):

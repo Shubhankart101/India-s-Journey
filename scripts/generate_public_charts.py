@@ -15,9 +15,11 @@ from urllib.request import Request, urlopen
 try:
     from scripts.official_indicator_layer import build_official_layer
     from scripts.derived_pie_layer import build_derived_layer
+    from scripts.tourism_comparison_layer import build_tourism_comparison_layer
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
     from derived_pie_layer import build_derived_layer
+    from tourism_comparison_layer import build_tourism_comparison_layer
 
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
@@ -1775,6 +1777,7 @@ def main() -> None:
                 except Exception:
                     result["series"][key] = {"error": str(error)}
     result["series"].update(build_official_layer(get_json, previous_series))
+    result["series"].update(build_tourism_comparison_layer(get_json, previous_series))
     result["series"].update(build_terrorism_derived_series(
         result["series"].get("terror_attacks", {}),
         result["series"].get("terror_fatalities", {}),
