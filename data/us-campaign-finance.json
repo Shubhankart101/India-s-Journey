@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T06:38:00+00:00",
+  "generated_at_utc": "2026-10-31T07:00:20+00:00",
   "source": "Federal Election Commission candidate summary bulk files",
   "cycles": [
     2018,
@@ -1077,6 +1077,312 @@
       "highestLabel": "Highest state",
       "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
       "note": "2018 FEC candidate-summary totals for House candidates. Debts owed by committee are summed by candidate office state. These are campaign-finance aggregates, not votes, turnout, or public contributions alone. FEC summaries may be revised as amended reports are processed."
+    },
+    "us_fec_2018_h_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1182125507.67,
+        762916604.78,
+        25147813.15,
+        5016948.23,
+        475465.12,
+        268322.97
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 House: Receipts by Party",
+        "subtitle": "Share of House candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_h_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        985261662.57,
+        535039626.37,
+        451645888.3
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 House: Receipts: Incumbents vs Challengers",
+        "subtitle": "House candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_h_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Candidate's own contributions",
+        "Other receipts",
+        "Other loans",
+        "Party committees"
+      ],
+      "values": [
+        1234037928.53,
+        424750673.14,
+        142310708.86,
+        96278092.51,
+        52781142.29,
+        16515799.21,
+        7073557.25,
+        2450953.91
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, House candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 House: Where the Money Came From",
+        "subtitle": "House candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_h_party_candidates": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1537.0,
+        1275.0,
+        84.0,
+        65.0,
+        43.0,
+        23.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 House: Candidates by Party",
+        "subtitle": "House candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_s_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        621659534.22,
+        497047912.91,
+        25783510.06,
+        4639634.35,
+        848582.5,
+        20241.38
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 Senate: Receipts by Party",
+        "subtitle": "Share of Senate candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_s_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        603657083.34,
+        430005238.79,
+        116243342.16
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 Senate: Receipts: Incumbents vs Challengers",
+        "subtitle": "Senate candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_s_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Candidate's own contributions",
+        "Transfers from authorized committees",
+        "Other receipts",
+        "Other loans",
+        "Party committees"
+      ],
+      "values": [
+        763672135.24,
+        112498759.94,
+        107656983.37,
+        77224642.96,
+        71471132.66,
+        15564730.44,
+        1553890.62,
+        979991.13
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, Senate candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 Senate: Where the Money Came From",
+        "subtitle": "Senate candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_s_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Independent",
+        "Libertarian",
+        "Other parties",
+        "Green"
+      ],
+      "values": [
+        292.0,
+        184.0,
+        30.0,
+        15.0,
+        15.0,
+        7.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 Senate: Candidates by Party",
+        "subtitle": "Senate candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_p_funding_mix": {
+      "labels": [
+        "Transfers from authorized committees",
+        "Individual contributions",
+        "Other receipts",
+        "Candidate loans",
+        "Candidate's own contributions",
+        "Other committees (PACs)"
+      ],
+      "values": [
+        35850096.66,
+        30008856.71,
+        14225394.34,
+        7440421.36,
+        337597.69,
+        194656.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, President candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 President: Where the Money Came From",
+        "subtitle": "President candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2018_p_party_candidates": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        38.0,
+        33.0,
+        22.0,
+        14.0,
+        8.0,
+        2.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2018/weball18.zip",
+      "note": "2018 FEC candidate-summary file, President candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2018 President: Candidates by Party",
+        "subtitle": "President candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
     },
     "us_fec_2018_p_receipt_composition": {
       "labels": [
@@ -2241,6 +2547,316 @@
       "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
       "note": "2020 FEC candidate-summary totals for House candidates. Debts owed by committee are summed by candidate office state. These are campaign-finance aggregates, not votes, turnout, or public contributions alone. FEC summaries may be revised as amended reports are processed."
     },
+    "us_fec_2020_h_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1142633267.23,
+        1026501637.79,
+        24177020.95,
+        10265294.15,
+        380903.56,
+        55565.05
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 House: Receipts by Party",
+        "subtitle": "Share of House candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_h_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        1234806814.31,
+        722616444.69,
+        244507365.7
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 House: Receipts: Incumbents vs Challengers",
+        "subtitle": "House candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_h_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Candidate's own contributions",
+        "Other receipts",
+        "Other loans",
+        "Party committees"
+      ],
+      "values": [
+        1491891474.85,
+        408869835.77,
+        127697008.62,
+        102498123.72,
+        41212234.99,
+        26463240.41,
+        4128274.64,
+        2452892.46
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, House candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 House: Where the Money Came From",
+        "subtitle": "House candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_h_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1533.0,
+        1440.0,
+        86.0,
+        62.0,
+        36.0,
+        14.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 House: Candidates by Party",
+        "subtitle": "House candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_s_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1273718439.62,
+        916928688.02,
+        33519367.93,
+        6718884.54,
+        290825.65,
+        14900.03
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 Senate: Receipts by Party",
+        "subtitle": "Share of Senate candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_s_incumbency_receipts": {
+      "labels": [
+        "Challengers",
+        "Incumbents",
+        "Open-seat candidates"
+      ],
+      "values": [
+        1056387522.35,
+        1030508523.27,
+        98874491.98
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 Senate: Receipts: Incumbents vs Challengers",
+        "subtitle": "Senate candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_s_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Transfers from authorized committees",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Other loans",
+        "Party committees"
+      ],
+      "values": [
+        1878666749.09,
+        126760025.54,
+        109515135.15,
+        76143498.01,
+        21314110.13,
+        9801845.53,
+        7651358.59,
+        1465740.48
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, Senate candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 Senate: Where the Money Came From",
+        "subtitle": "Senate candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_s_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        286.0,
+        233.0,
+        28.0,
+        21.0,
+        15.0,
+        4.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 Senate: Candidates by Party",
+        "subtitle": "Senate candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_p_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Candidate's own contributions",
+        "Other committees (PACs)",
+        "Transfers from authorized committees",
+        "Candidate loans",
+        "Other receipts",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        21211159383.53,
+        4370318582.51,
+        1926408956.16,
+        563742451.26,
+        131756225.89,
+        74018709.87,
+        3141994.72,
+        1010626.98
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, President candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 President: Where the Money Came From",
+        "subtitle": "President candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2020_p_party_candidates": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        74.0,
+        44.0,
+        37.0,
+        36.0,
+        21.0,
+        9.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2020/weball20.zip",
+      "note": "2020 FEC candidate-summary file, President candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2020 President: Candidates by Party",
+        "subtitle": "President candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
     "us_fec_2020_p_receipt_composition": {
       "labels": [
         "AMP",
@@ -3377,6 +3993,316 @@
       "highestLabel": "Highest state",
       "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
       "note": "2022 FEC candidate-summary totals for House candidates. Debts owed by committee are summed by candidate office state. These are campaign-finance aggregates, not votes, turnout, or public contributions alone. FEC summaries may be revised as amended reports are processed."
+    },
+    "us_fec_2022_h_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1141667202.05,
+        1063366145.77,
+        20836865.31,
+        4589945.9,
+        458733.62,
+        66772.48
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 House: Receipts by Party",
+        "subtitle": "Share of House candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_h_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        1344040762.99,
+        613431354.0,
+        273197798.15
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 House: Receipts: Incumbents vs Challengers",
+        "subtitle": "House candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_h_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        1490961134.35,
+        398415431.45,
+        158073197.56,
+        137138936.0,
+        29215585.86,
+        14951015.75,
+        2436430.53,
+        1106589.19
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, House candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 House: Where the Money Came From",
+        "subtitle": "House candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_h_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1788.0,
+        1388.0,
+        87.0,
+        51.0,
+        36.0,
+        9.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 House: Candidates by Party",
+        "subtitle": "House candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_s_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1047921916.67,
+        820577110.27,
+        27022984.19,
+        12465796.1,
+        388025.72,
+        201656.73
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 Senate: Receipts by Party",
+        "subtitle": "Share of Senate candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_s_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Open-seat candidates",
+        "Challengers"
+      ],
+      "values": [
+        1019216317.92,
+        465002773.08,
+        422971067.63
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 Senate: Receipts: Incumbents vs Challengers",
+        "subtitle": "Senate candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_s_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Other committees (PACs)",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        1468886397.31,
+        177127368.35,
+        112241330.05,
+        98957455.84,
+        31142673.75,
+        19376733.45,
+        1524306.0,
+        144301.05
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, Senate candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 Senate: Where the Money Came From",
+        "subtitle": "Senate candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_s_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        349.0,
+        236.0,
+        28.0,
+        26.0,
+        21.0,
+        3.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 Senate: Candidates by Party",
+        "subtitle": "Senate candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_p_funding_mix": {
+      "labels": [
+        "Candidate's own contributions",
+        "Transfers from authorized committees",
+        "Other receipts",
+        "Candidate loans",
+        "Individual contributions",
+        "Other loans",
+        "Other committees (PACs)",
+        "Party committees"
+      ],
+      "values": [
+        384298926.15,
+        11331451.07,
+        10492658.53,
+        635434.97,
+        524045.56,
+        102500.0,
+        34100.0,
+        3700.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, President candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 President: Where the Money Came From",
+        "subtitle": "President candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2022_p_party_candidates": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        38.0,
+        34.0,
+        23.0,
+        22.0,
+        11.0,
+        3.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2022/weball22.zip",
+      "note": "2022 FEC candidate-summary file, President candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2022 President: Candidates by Party",
+        "subtitle": "President candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
     },
     "us_fec_2022_p_receipt_composition": {
       "labels": [
@@ -4529,6 +5455,316 @@
       "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
       "note": "2024 FEC candidate-summary totals for House candidates. Debts owed by committee are summed by candidate office state. These are campaign-finance aggregates, not votes, turnout, or public contributions alone. FEC summaries may be revised as amended reports are processed."
     },
+    "us_fec_2024_h_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1312087332.32,
+        1054567589.48,
+        24905102.71,
+        11719458.65,
+        359430.13,
+        109547.88
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 House: Receipts by Party",
+        "subtitle": "Share of House candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_h_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        1558782647.67,
+        523113704.86,
+        318561859.35
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 House: Receipts: Incumbents vs Challengers",
+        "subtitle": "House candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_h_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Other loans",
+        "Party committees"
+      ],
+      "values": [
+        1458413602.8,
+        444903841.07,
+        233847323.77,
+        199584609.52,
+        43332852.6,
+        18220524.03,
+        3154414.17,
+        2597781.16
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, House candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 House: Where the Money Came From",
+        "subtitle": "House candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_h_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1569.0,
+        1328.0,
+        92.0,
+        47.0,
+        30.0,
+        7.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 House: Candidates by Party",
+        "subtitle": "House candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_s_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1001413789.93,
+        667311596.41,
+        39670425.01,
+        15536595.18,
+        163728.7,
+        116164.88
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 Senate: Receipts by Party",
+        "subtitle": "Share of Senate candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_s_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Open-seat candidates",
+        "Challengers"
+      ],
+      "values": [
+        837126059.6,
+        467531484.24,
+        415092291.45
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 Senate: Receipts: Incumbents vs Challengers",
+        "subtitle": "Senate candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_s_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Other committees (PACs)",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        1205862896.96,
+        188590395.82,
+        186556031.44,
+        89266137.79,
+        44039884.33,
+        7307313.76,
+        1554658.8,
+        1128171.73
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, Senate candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 Senate: Where the Money Came From",
+        "subtitle": "Senate candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_s_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Other parties",
+        "Libertarian",
+        "Independent",
+        "Green"
+      ],
+      "values": [
+        324.0,
+        216.0,
+        21.0,
+        20.0,
+        19.0,
+        9.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 Senate: Candidates by Party",
+        "subtitle": "Senate candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_p_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Transfers from authorized committees",
+        "Candidate loans",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Party committees",
+        "Other committees (PACs)",
+        "Other loans"
+      ],
+      "values": [
+        1422362278.47,
+        1080751240.96,
+        94198247.65,
+        60233757.6,
+        55185422.2,
+        3020860.34,
+        1640135.42,
+        766234.08
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, President candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 President: Where the Money Came From",
+        "subtitle": "President candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2024_p_party_candidates": {
+      "labels": [
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Democratic",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        59.0,
+        36.0,
+        33.0,
+        30.0,
+        13.0,
+        4.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2024/weball24.zip",
+      "note": "2024 FEC candidate-summary file, President candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2024 President: Candidates by Party",
+        "subtitle": "President candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
     "us_fec_2024_p_receipt_composition": {
       "labels": [
         "AMP",
@@ -5677,6 +6913,316 @@
       "highestLabel": "Highest state",
       "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
       "note": "2026 FEC candidate-summary totals for House candidates. Debts owed by committee are summed by candidate office state. These are campaign-finance aggregates, not votes, turnout, or public contributions alone. FEC summaries may be revised as amended reports are processed."
+    },
+    "us_fec_2026_h_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1409211976.57,
+        1135550262.53,
+        25998006.78,
+        9112484.35,
+        394451.12,
+        391946.15
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 House: Receipts by Party",
+        "subtitle": "Share of House candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_h_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        1354830308.0,
+        746911344.42,
+        478721868.69
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 House: Receipts: Incumbents vs Challengers",
+        "subtitle": "House candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_h_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Other committees (PACs)",
+        "Candidate loans",
+        "Transfers from authorized committees",
+        "Candidate's own contributions",
+        "Other receipts",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        1493988623.01,
+        430200646.6,
+        335839240.32,
+        235253411.93,
+        41095746.39,
+        40509432.28,
+        2730030.2,
+        2256320.45
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, House candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 House: Where the Money Came From",
+        "subtitle": "House candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_h_party_candidates": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1731.0,
+        1604.0,
+        115.0,
+        114.0,
+        30.0,
+        11.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, House candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 House: Candidates by Party",
+        "subtitle": "House candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_s_party_receipts": {
+      "labels": [
+        "Democratic",
+        "Republican",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        1048651997.56,
+        495673764.46,
+        47609069.14,
+        25717340.79,
+        526498.53,
+        102426.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 Senate: Receipts by Party",
+        "subtitle": "Share of Senate candidate receipts by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_s_incumbency_receipts": {
+      "labels": [
+        "Incumbents",
+        "Challengers",
+        "Open-seat candidates"
+      ],
+      "values": [
+        619655773.11,
+        589868549.27,
+        408490890.72
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 Senate: Receipts: Incumbents vs Challengers",
+        "subtitle": "Senate candidate receipts by incumbency status",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_s_funding_mix": {
+      "labels": [
+        "Individual contributions",
+        "Transfers from authorized committees",
+        "Candidate loans",
+        "Other committees (PACs)",
+        "Other receipts",
+        "Candidate's own contributions",
+        "Party committees",
+        "Other loans"
+      ],
+      "values": [
+        1145765746.34,
+        232494137.61,
+        94089856.67,
+        89793678.35,
+        34946296.59,
+        18387110.8,
+        2437509.81,
+        487875.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, Senate candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 Senate: Where the Money Came From",
+        "subtitle": "Senate candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_s_party_candidates": {
+      "labels": [
+        "Republican",
+        "Democratic",
+        "Independent",
+        "Other parties",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        312.0,
+        256.0,
+        32.0,
+        24.0,
+        15.0,
+        4.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, Senate candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 Senate: Candidates by Party",
+        "subtitle": "Senate candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_p_funding_mix": {
+      "labels": [
+        "Other receipts",
+        "Individual contributions",
+        "Transfers from authorized committees",
+        "Other committees (PACs)",
+        "Candidate's own contributions",
+        "Other loans",
+        "Candidate loans",
+        "Party committees"
+      ],
+      "values": [
+        27071000.6,
+        10766089.46,
+        1707494.09,
+        634751.7,
+        567504.84,
+        55408.49,
+        41809.27,
+        4597.77
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, President candidates. Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; 'Other receipts' is total receipts minus those listed sources. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 President: Where the Money Came From",
+        "subtitle": "President candidate receipts by funding source",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
+    },
+    "us_fec_2026_p_party_candidates": {
+      "labels": [
+        "Republican",
+        "Other parties",
+        "Independent",
+        "Democratic",
+        "Libertarian",
+        "Green"
+      ],
+      "values": [
+        30.0,
+        30.0,
+        29.0,
+        24.0,
+        6.0,
+        1.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.fec.gov/files/bulk-downloads/2026/weball26.zip",
+      "note": "2026 FEC candidate-summary file, President candidates. Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed.",
+      "meta": {
+        "title": "2026 President: Candidates by Party",
+        "subtitle": "President candidates filing FEC summaries, by party",
+        "frequency": "Daily FEC refresh",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "U.S. Elections",
+        "subgroup": "U.S. Campaign Funding Composition"
+      }
     },
     "us_fec_2026_p_receipt_composition": {
       "labels": [

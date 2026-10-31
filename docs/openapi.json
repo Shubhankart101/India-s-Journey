@@ -72,6 +72,18 @@
         }
       }
     },
+    "/data/election-indices.json": {
+      "get": {
+        "operationId": "getElectionIndices",
+        "summary": "Derived Lok Sabha and State Assembly seat and vote-share pie indices",
+        "responses": {
+          "200": {
+            "description": "Doughnut-chart series with self-describing meta (title, subtitle, category, subgroup) built from official ECI results",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
     "/data/economic-survey-monthly.json": {
       "get": {
         "operationId": "getEconomicSurveyIndicators",

@@ -405,8 +405,47 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
       }
     };
   }
+  if (isRadialChart) {
+    options.cutout = chartType === 'doughnut' ? '58%' : 0;
+    options.radius = '92%';
+    options.layout = { padding: { top: 30 } };
+    options.animation = { animateRotate: true, animateScale: true, duration: 800, easing: 'easeOutQuart' };
+    options.onHover = (event, elements) => { if (event.native?.target) event.native.target.style.cursor = elements.length ? 'pointer' : 'default'; };
+    pluginsConfig.legend.labels.color = '#c9d1d9';
+    pluginsConfig.legend.labels.usePointStyle = true;
+    pluginsConfig.legend.labels.boxWidth = 10;
+    pluginsConfig.centerReadout = { suffix };
+  }
   return options;
 };
+if (typeof Chart !== 'undefined' && !Chart.registry?.plugins?.get?.('centerReadout')) {
+  Chart.register({
+    id: 'centerReadout',
+    afterDraw(chart, _args, pluginOptions) {
+      if (chart.config.type !== 'doughnut' || !pluginOptions || pluginOptions.suffix === undefined) return;
+      const meta = chart.getDatasetMeta(0);
+      const arc = meta?.data?.[0];
+      if (!arc) return;
+      const values = chart.data.datasets[0]?.data || [];
+      const total = values.reduce((sum, value, index) => sum + (chart.getDataVisibility(index) ? Math.max(0, Number(value) || 0) : 0), 0);
+      const active = chart.getActiveElements()[0];
+      const value = active ? Number(values[active.index]) || 0 : total;
+      const caption = active ? `${String(chart.data.labels[active.index]).slice(0, 22)} · ${total ? (value / total * 100).toFixed(1) : '0.0'}%` : 'Total shown';
+      const { ctx } = chart;
+      const fontSize = Math.max(11, Math.min(20, arc.innerRadius / 4));
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#f0f6fc';
+      ctx.font = `700 ${fontSize}px system-ui, sans-serif`;
+      ctx.fillText(formatMagnitude(value, pluginOptions.suffix), arc.x, arc.y - fontSize * 0.45);
+      ctx.fillStyle = '#9aa8b6';
+      ctx.font = `500 ${Math.max(9, fontSize * 0.55)}px system-ui, sans-serif`;
+      ctx.fillText(caption, arc.x, arc.y + fontSize * 0.65);
+      ctx.restore();
+    }
+  });
+}
 
 async function safeFetchJson(filename, defaultVal = {}) {
   const paths = [
@@ -452,9 +491,10 @@ async function main() {
     ]);
   }
 
-  const [electionResults, usCampaignFinance] = await Promise.all([
+  const [electionResults, usCampaignFinance, electionIndices] = await Promise.all([
     safeFetchJson('election-results.json', { series: {} }),
     safeFetchJson('us-campaign-finance.json', { series: {} }),
+    safeFetchJson('election-indices.json', { series: {} }),
   ]);
   const liveConstituencies = electionResults?.india_constituencies || [];
   liveConstituencies.forEach((record, index) => {
@@ -472,7 +512,16 @@ async function main() {
     extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' };
   });
   const data = dataPayload || { series: {} };
-  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}) };
+  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}), ...(electionIndices?.series || {}) };
+  // Generated series can describe themselves via `meta`, so new indices need no hand-written definition.
+  const definedKeys = new Set(definitions.map(definition => definition[0]));
+  Object.entries(data.series).forEach(([key, series]) => {
+    const meta = series?.meta;
+    if (!meta || definedKeys.has(key)) return;
+    definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', series.source || '', series.note || meta.subtitle || '']);
+    definedKeys.add(key);
+    if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
+  });
   const heroChartCount = document.querySelector('#hero-chart-count');
   if (heroChartCount) heroChartCount.textContent = String(definitions.length);
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
@@ -751,57 +800,112 @@ async function main() {
       return g;
     };
 
-    const isRadialChart = series.chartType === 'pie' || series.chartType === 'doughnut';
+    const nativeRadial = series.chartType === 'pie' || series.chartType === 'doughnut';
+    const numericValues = values.map(Number).filter(value => Number.isFinite(value));
+    const additiveCategorical = !series.datasets?.length && labels.length >= 2 && labels.length <= 80
+      && !labels.some(label => /^\d{4}/.test(String(label)))
+      && (['state', 'category'].includes(series.scope) || series.chartType === 'bar')
+      && !/%|rate|index|ratio|per\b|per-|score|average|share|growth|yoy|change|years|°|days|density|expectancy/i.test(`${suffix} ${title}`)
+      && numericValues.every(value => value >= 0) && numericValues.filter(value => value > 0).length >= 2;
+    const canTogglePie = nativeRadial || additiveCategorical;
+    const preferPie = additiveCategorical && ['Elections', 'U.S. Elections'].includes(category);
+    const barType = nativeRadial ? 'bar' : (series.chartType || 'line');
+    let activeType = nativeRadial ? series.chartType : preferPie ? 'doughnut' : barType;
     const radialColors = [
       '#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344',
       '#39c5bb', '#f778ba', '#a5d6ff', '#d2a8ff', '#ffa657', '#7ee787',
       '#e3b341', '#79c0ff', '#db61a2', '#56d364', '#ff6b6b', '#8b949e',
       '#d29922', '#a371f7'
     ];
-    let chartDatasets = [];
-    if (series.datasets && series.datasets.length > 0) {
-      chartDatasets = series.datasets.map((dataset, i) => {
-        const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
-        return {
-          label: dataset.label,
-          data: dataset.values || dataset.data,
-          borderColor: dsColor,
-          backgroundColor: createGradientFill(dsColor.slice(0, 7)),
-          fill: true,
-          borderWidth: 2.8,
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
-          pointHoverBackgroundColor: dsColor,
-          tension: 0.32,
-          spanGaps: true
-        };
-      });
-    } else {
+    const radialPoints = () => {
+      const points = labels.map((label, i) => ({ label, value: Number(values[i]) }))
+        .filter(point => Number.isFinite(point.value) && point.value > 0)
+        .sort((a, b) => b.value - a.value);
+      if (points.length <= 12) return points;
+      const rest = points.slice(11);
+      return [...points.slice(0, 11), { label: `Other (${rest.length})`, value: rest.reduce((sum, point) => sum + point.value, 0) }];
+    };
+    const buildDatasets = isRadialChart => {
+      if (series.datasets && series.datasets.length > 0) {
+        return { labels, datasets: series.datasets.map((dataset, i) => {
+          const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
+          return {
+            label: dataset.label,
+            data: dataset.values || dataset.data,
+            borderColor: dsColor,
+            backgroundColor: createGradientFill(dsColor.slice(0, 7)),
+            fill: true,
+            borderWidth: 2.8,
+            pointRadius: 2.5,
+            pointHoverRadius: 6,
+            pointHoverBackgroundColor: dsColor,
+            tension: 0.32,
+            spanGaps: true
+          };
+        }) };
+      }
       const singleColor = color || '#58a6ff';
-      chartDatasets = [{
+      const points = isRadialChart ? radialPoints() : null;
+      const shownLabels = points ? points.map(point => point.label) : labels;
+      const palette = shownLabels.map((_, index) => radialColors[index % radialColors.length]);
+      return { labels: shownLabels, datasets: [{
         label: title,
-        data: values,
-        borderColor: isRadialChart ? labels.map((_, index) => radialColors[index % radialColors.length]) : singleColor,
-        backgroundColor: isRadialChart ? labels.map((_, index) => radialColors[index % radialColors.length]) : createGradientFill(singleColor.slice(0, 7)),
+        data: points ? points.map(point => point.value) : values,
+        borderColor: isRadialChart ? '#0d1117' : singleColor,
+        backgroundColor: isRadialChart ? palette : createGradientFill(singleColor.slice(0, 7)),
         fill: !isRadialChart,
         borderWidth: isRadialChart ? 2 : 2.8,
-        hoverOffset: isRadialChart ? 8 : 0,
+        hoverOffset: isRadialChart ? 14 : 0,
         hoverBorderWidth: isRadialChart ? 3 : 0,
         pointRadius: isRadialChart ? 0 : 3,
         pointHoverRadius: isRadialChart ? 0 : 6,
         pointHoverBackgroundColor: singleColor,
         tension: isRadialChart ? 0 : 0.32
-      }];
-    }
+      }] };
+    };
+    let chartDatasets = buildDatasets(nativeRadial || preferPie).datasets;
 
     let chart = null;
-    if (typeof Chart !== 'undefined') {
-      chart = new Chart(canvas, {
-        type: series.chartType || 'line',
-        data: { labels, datasets: chartDatasets },
-      options: chartOptions(suffix, hasMultipleDatasets, series.chartType === 'bar' && series.indexAxis === 'y', series.chartType || 'line'),
+    const createChart = type => {
+      const isRadialChart = type === 'pie' || type === 'doughnut';
+      const built = buildDatasets(isRadialChart);
+      chartDatasets = built.datasets;
+      return new Chart(canvas, {
+        type,
+        data: built,
+        options: chartOptions(suffix, hasMultipleDatasets, !isRadialChart && series.chartType === 'bar' && series.indexAxis === 'y', type),
       });
+    };
+    if (typeof Chart !== 'undefined') {
+      chart = createChart(activeType);
       canvas.addEventListener('dblclick', () => card.querySelector('.expand-chart-btn')?.click());
+    }
+    if (chart && canTogglePie) {
+      const toggle = document.createElement('div');
+      toggle.className = 'chart-type-toggle';
+      toggle.setAttribute('role', 'group');
+      toggle.setAttribute('aria-label', `Chart type for ${title}`);
+      toggle.innerHTML = `<button type="button" data-type="doughnut">◔ Pie</button><button type="button" data-type="${barType}">▥ ${barType === 'line' ? 'Line' : 'Bar'}</button>`;
+      const syncToggle = () => toggle.querySelectorAll('button').forEach(button => {
+        const active = (button.dataset.type === 'doughnut') === (activeType === 'pie' || activeType === 'doughnut');
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      toggle.addEventListener('click', event => {
+        const button = event.target.closest('button');
+        if (!button) return;
+        event.stopPropagation();
+        const nextType = button.dataset.type === 'doughnut' ? (nativeRadial ? series.chartType : 'doughnut') : barType;
+        if (nextType === activeType) return;
+        chart.destroy();
+        activeType = nextType;
+        chart = createChart(activeType);
+        const entry = charts.find(item => item.card === card);
+        if (entry) entry.chart = chart;
+        syncToggle();
+      });
+      syncToggle();
+      card.querySelector('.chart-wrap').prepend(toggle);
     }
     if (chart && card._range) {
       const baseDatasets = chart.data.datasets.map(dataset => [...dataset.data]);

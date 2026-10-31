@@ -18,7 +18,12 @@ REPOSITORY = "thecont1/india-votes-data"
 API_BASE = f"https://api.github.com/repos/{REPOSITORY}"
 RAW_BASE = f"https://raw.githubusercontent.com/{REPOSITORY}"
 USER_AGENT = "IndiaJourney public election data collector"
-PARLIAMENTARY_FILE = "archive/2024 Parliamentary Elections India.csv"
+ECI_GE2024_BASE = "https://www.eci.gov.in/eci-backend/public/all_files/GE-2024-statistical-report"
+ECI_LS2024_RESULTS_PATH = "GE-2024-statistical-report/33-Constituency-Wise-Detailed-Result.xls"
+ECI_LS2024_RESULTS_URL = f"{ECI_GE2024_BASE}/33-Constituency-Wise-Detailed-Result.xls"
+ECI_LS2024_PARTIES_URL = f"{ECI_GE2024_BASE}/3-List-Of-Political-Parties-Participated.xlsx"
+# Surat was declared uncontested before polling, so ECI report 33 has no candidate rows for it.
+SURAT_UNCONTESTED = ("Gujarat", "Surat", "MUKESHKUMAR CHANDRAKAANT DALAL", "BJP")
 ASSEMBLY_FILE_PATTERN = re.compile(r"data/csv/20(?:22|23|24|25|26)Assembly-[A-Z]{2}\.csv")
 
 
@@ -42,9 +47,79 @@ def source_snapshot() -> tuple[str, str, list[str]]:
     )
     if not files:
         raise ValueError("The election data repository contains no supported recent Assembly CSV files")
-    if PARLIAMENTARY_FILE not in {item.get("path") for item in tree.get("tree", [])}:
-        raise ValueError("The election data repository is missing the 2024 Lok Sabha results CSV")
-    return commit_sha, commit["commit"]["committer"]["date"], [PARLIAMENTARY_FILE, *files]
+    return commit_sha, commit["commit"]["committer"]["date"], files
+
+
+def read_eci_party_names(content: bytes) -> dict[str, str]:
+    from openpyxl import load_workbook
+
+    sheet = load_workbook(io.BytesIO(content), read_only=True).worksheets[0]
+    names = {"IND": "Independent", "NOTA": "None of the Above"}
+    for row in sheet.iter_rows(values_only=True):
+        if len(row) > 4 and isinstance(row[0], (int, float)) and row[2] and row[4]:
+            names.setdefault(str(row[2]).strip(), str(row[4]).strip().replace("\u2013", "-"))
+    if len(names) < 100:
+        raise ValueError("ECI party list workbook has too few parties")
+    return names
+
+
+def read_eci_results_rows(content: bytes) -> list[list]:
+    import xlrd
+
+    # ECI's published .xls has a benign OLE directory quirk that xlrd flags as corruption.
+    sheet = xlrd.open_workbook(file_contents=content, ignore_workbook_corruption=True).sheet_by_index(0)
+    header = [str(value).strip() for value in sheet.row_values(2)]
+    if header[:3] != ["State Name", "PC Name", "Candidate Name"] or header[6] != "Party Name" or header[12] != "Total":
+        raise ValueError(f"Unexpected ECI constituency-wise result layout: {header}")
+    return [sheet.row_values(index) for index in range(3, sheet.nrows)]
+
+
+def parse_lok_sabha_2024_rows(rows: list[list], party_names: dict[str, str]) -> list[dict]:
+    seats: dict[tuple[str, str], list[dict]] = defaultdict(list)
+
+    def add(state: str, constituency: str, candidate: str, party: str, votes: int | None) -> None:
+        seats[(state.casefold(), constituency.casefold())].append({
+            "year": 2024,
+            "election_type": "Lok Sabha",
+            "state_or_ut": state,
+            "constituency_number": "",
+            "constituency": constituency,
+            "candidate": candidate,
+            "party": party_names.get(party, party),
+            "votes": votes,
+            "result_status": "reported" if votes is not None else "uncontested",
+            "electors": None,
+            "source": ECI_LS2024_RESULTS_URL,
+            "vote_share_method": None,
+        })
+
+    for row in rows:
+        if len(row) < 13 or not str(row[1]).strip() or not str(row[2]).strip():
+            continue
+        try:
+            votes = int(float(row[12]))
+        except (TypeError, ValueError) as error:
+            raise ValueError(f"Invalid ECI vote total for {row[1]}: {row[12]!r}") from error
+        add(str(row[0]).strip(), str(row[1]).strip(), str(row[2]).strip(), str(row[6]).strip(), votes)
+    if (SURAT_UNCONTESTED[0].casefold(), SURAT_UNCONTESTED[1].casefold()) not in seats:
+        add(*SURAT_UNCONTESTED, None)
+    return _with_vote_shares(seats.values())
+
+
+def _with_vote_shares(seat_groups) -> list[dict]:
+    observations = []
+    for candidates in seat_groups:
+        total_votes = sum(candidate["votes"] or 0 for candidate in candidates)
+        for candidate in candidates:
+            candidate["vote_share_percent"] = (
+                round(candidate["votes"] / total_votes * 100, 4)
+                if candidate["votes"] is not None and total_votes > 0
+                else None
+            )
+            if candidate["votes"] is not None and total_votes > 0:
+                candidate["vote_share_method"] = "calculated_from_listed_candidate_votes"
+            observations.append(candidate)
+    return observations
 
 
 def _read_csv_rows(content: bytes, source_url: str) -> list[dict[str, str]]:
@@ -80,48 +155,32 @@ def parse_recent_csv(
 ) -> list[dict]:
     source_url = f"{RAW_BASE}/{commit_sha}/{quote(relative_path, safe='/')}"
     rows = _read_csv_rows(content, source_url)
-    parliamentary = relative_path == PARLIAMENTARY_FILE
-    required = (
-        {"State", "Constituency", "Party", "Candidate", "Votes"}
-        if parliamentary
-        else {"election_year", "election_state", "constituency", "constituency_no",
-              "candidate", "party", "evm_votes", "postal_votes"}
-    )
+    required = {"election_year", "election_state", "constituency", "constituency_no",
+                "candidate", "party", "evm_votes", "postal_votes"}
     missing = required - set(rows[0])
     if missing:
         raise ValueError(f"Election CSV is missing columns {sorted(missing)}: {source_url}")
 
     seats: dict[tuple[str, str, str, str], list[dict]] = defaultdict(list)
     for row in rows:
-        candidate = row.get("Candidate" if parliamentary else "candidate", "").strip()
-        constituency = row.get("Constituency" if parliamentary else "constituency", "").strip()
+        candidate = row.get("candidate", "").strip()
+        constituency = row.get("constituency", "").strip()
         if not candidate or not constituency or candidate.casefold() == "total":
             continue
-        if parliamentary:
-            year = 2024
-            election_type = "Lok Sabha"
-            state = row["State"].strip()
-            # The source "Constituency ID" repeats across seats, so it is not an ECI PC number.
-            number = ""
-            raw_votes = row.get("Votes", "").strip()
-            uncontested = raw_votes.casefold().startswith("uncontest")
-            votes = None if uncontested else _integer(raw_votes, "votes", source_url)
-        else:
-            year = _integer(row["election_year"], "election year", source_url)
-            if year not in range(2022, 2027):
-                raise ValueError(f"Unexpected Assembly election year {year}: {source_url}")
-            election_type = "State Assembly"
-            state_code = row["election_state"].strip().upper()
-            state = state_names.get(state_code, "")
-            if not state:
-                raise ValueError(f"Unknown ECI state code {state_code!r}: {source_url}")
-            number = row["constituency_no"].strip()
-            votes = (
-                _integer(row["evm_votes"], "EVM votes", source_url)
-                + _integer(row["postal_votes"], "postal votes", source_url)
-            )
-        seat_id = constituency.casefold() if parliamentary else number or constituency.casefold()
-        seat_key = (str(year), election_type, state.casefold(), seat_id)
+        year = _integer(row["election_year"], "election year", source_url)
+        if year not in range(2022, 2027):
+            raise ValueError(f"Unexpected Assembly election year {year}: {source_url}")
+        election_type = "State Assembly"
+        state_code = row["election_state"].strip().upper()
+        state = state_names.get(state_code, "")
+        if not state:
+            raise ValueError(f"Unknown ECI state code {state_code!r}: {source_url}")
+        number = row["constituency_no"].strip()
+        votes = (
+            _integer(row["evm_votes"], "EVM votes", source_url)
+            + _integer(row["postal_votes"], "postal votes", source_url)
+        )
+        seat_key = (str(year), election_type, state.casefold(), number or constituency.casefold())
         seats[seat_key].append({
             "year": year,
             "election_type": election_type,
@@ -129,28 +188,16 @@ def parse_recent_csv(
             "constituency_number": number,
             "constituency": constituency,
             "candidate": candidate,
-            "party": row.get("Party" if parliamentary else "party", "").strip(),
+            "party": row.get("party", "").strip(),
             "votes": votes,
-            "result_status": "uncontested" if parliamentary and uncontested else "reported",
+            "result_status": "reported",
             "electors": None,
             "source": source_url,
             "vote_share_method": None,
         })
     if not seats:
         raise ValueError(f"Election CSV contains no usable constituency results: {source_url}")
-    observations = []
-    for candidates in seats.values():
-        total_votes = sum(candidate["votes"] or 0 for candidate in candidates)
-        for candidate in candidates:
-            candidate["vote_share_percent"] = (
-                round(candidate["votes"] / total_votes * 100, 4)
-                if candidate["votes"] is not None and total_votes > 0
-                else None
-            )
-            if candidate["votes"] is not None and total_votes > 0:
-                candidate["vote_share_method"] = "calculated_from_listed_candidate_votes"
-            observations.append(candidate)
-    return observations
+    return _with_vote_shares(seats.values())
 
 
 def parse_state_names(content: bytes, commit_sha: str) -> dict[str, str]:
@@ -169,11 +216,16 @@ def collect_recent_results() -> dict:
     commit_sha, commit_date, paths = source_snapshot()
     states_url = f"{RAW_BASE}/{commit_sha}/data/states.csv"
     state_names = parse_state_names(fetch_bytes(states_url), commit_sha)
-    observations: list[dict] = []
-    source_index = {}
-    for index, path in enumerate(paths):
+    party_names = read_eci_party_names(fetch_bytes(ECI_LS2024_PARTIES_URL))
+    observations: list[dict] = parse_lok_sabha_2024_rows(
+        read_eci_results_rows(fetch_bytes(ECI_LS2024_RESULTS_URL)), party_names
+    )
+    source_files = [{"path": ECI_LS2024_RESULTS_PATH, "url": ECI_LS2024_RESULTS_URL}]
+    source_index = {ECI_LS2024_RESULTS_URL: 0}
+    for path in paths:
         source_url = f"{RAW_BASE}/{commit_sha}/{quote(path, safe='/')}"
-        source_index[source_url] = index
+        source_index[source_url] = len(source_files)
+        source_files.append({"path": path, "url": source_url})
         observations.extend(parse_recent_csv(fetch_bytes(source_url), path, commit_sha, state_names))
 
     unique: dict[tuple, dict] = {}
@@ -186,6 +238,8 @@ def collect_recent_results() -> dict:
             if row["election_type"] == "Lok Sabha"
             else row["constituency_number"] or row["constituency"].casefold(),
             row["candidate"].casefold(),
+            row["party"].casefold(),
+            row["votes"],
         )
         unique[key] = row
     observations = list(unique.values())
@@ -211,20 +265,14 @@ def collect_recent_results() -> dict:
         -(row["votes"] or 0), row["candidate"].casefold(),
     ))
     return {
-        "source": "ECI results normalized by the India Votes Data project; candidate records are linked to the exact source CSV",
+        "source": "2024 Lok Sabha: ECI GE 2024 statistical report 33 (Constituency Wise Detailed Result); 2022-2026 Assembly: ECI results normalized by the India Votes Data project. Candidate records link to the exact source file.",
         "source_repository": f"https://github.com/{REPOSITORY}",
         "source_commit": commit_sha,
         "source_commit_date": commit_date,
         "refresh_frequency": "Daily",
         "collection_status": "ok",
-        "vote_share_method": "Calculated from the listed candidate vote totals for that constituency; uncontested candidates without a reported vote count have no calculated share.",
-        "source_files": [
-            {
-                "path": path,
-                "url": f"{RAW_BASE}/{commit_sha}/{quote(path, safe='/')}",
-            }
-            for path in paths
-        ],
+        "vote_share_method": "Calculated from the listed candidate vote totals (EVM + postal) for that constituency; uncontested candidates without a reported vote count have no calculated share.",
+        "source_files": source_files,
         "observation_count": len(observations),
         "lok_sabha_2024_constituency_count": len(parliamentary_seats),
         "assembly_election_years": sorted({

@@ -7,8 +7,10 @@ import zipfile
 from pathlib import Path
 
 from scripts.collect_us_campaign_finance import (
+    COMPOSITION_SPECS,
     MEASURES,
     _candidate_summary_rows,
+    build_composition_series,
     build_cycle_series,
     build_receipt_composition_series,
     series_key,
@@ -74,6 +76,30 @@ class UsCampaignFinanceTests(unittest.TestCase):
         self.assertEqual(composition["chartType"], "doughnut")
         self.assertEqual(composition["values"], president["values"])
 
+    def test_builds_party_incumbency_and_funding_source_pies(self):
+        rows = []
+        for candidate_id, party, status, receipts, individual in (
+            ("H0CA00001", "DEM", "I", 100, 60), ("H0CA00002", "REP", "C", 40, 30),
+            ("S0CA00001", "DEM", "O", 50, 50), ("S0TX00001", "LIB", "C", 10, 10),
+            ("P00000001", "DEM", "C", 200, 150), ("P00000002", "XYZ", "C", 20, 5),
+        ):
+            row = candidate_row(candidate_id, party, "CA", receipts, 0, 0, 0)
+            row[2] = status
+            row[17] = str(individual)
+            rows.append(row)
+        series = build_composition_series(2024, rows)
+        self.assertEqual(len(series), len(COMPOSITION_SPECS))
+        house_party = series[series_key(2024, "H", "party_receipts")]
+        self.assertEqual(dict(zip(house_party["labels"], house_party["values"])), {"Democratic": 100, "Republican": 40})
+        incumbency = series[series_key(2024, "H", "incumbency_receipts")]
+        self.assertEqual(dict(zip(incumbency["labels"], incumbency["values"])), {"Incumbents": 100, "Challengers": 40})
+        funding = series[series_key(2024, "H", "funding_mix")]
+        self.assertEqual(dict(zip(funding["labels"], funding["values"])), {"Individual contributions": 90, "Other receipts": 50})
+        president = series[series_key(2024, "P", "party_candidates")]
+        self.assertEqual(dict(zip(president["labels"], president["values"])), {"Democratic": 1, "Other parties": 1})
+        self.assertEqual(house_party["meta"]["category"], "U.S. Elections")
+        self.assertEqual(house_party["chartType"], "doughnut")
+
     def test_rejects_unrecognized_candidate_summary_shape(self):
         stream = io.BytesIO()
         with zipfile.ZipFile(stream, "w", zipfile.ZIP_DEFLATED) as archive:
@@ -81,12 +107,13 @@ class UsCampaignFinanceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unexpected row format"):
             _candidate_summary_rows(stream.getvalue(), 2024)
 
-    def test_published_snapshot_contains_65_sourced_series(self):
+    def test_published_snapshot_contains_115_sourced_series(self):
         root = Path(__file__).resolve().parents[1]
         payload = json.loads((root / "data" / "us-campaign-finance.json").read_text(encoding="utf-8"))
         self.assertEqual(payload["collection_status"], "ok")
         self.assertEqual(payload["cycles"], [2018, 2020, 2022, 2024, 2026])
-        self.assertEqual(len(payload["series"]), 65)
+        self.assertEqual(len(payload["series"]), 115)
+        self.assertEqual(sum(1 for item in payload["series"].values() if item.get("meta")), 50)
         for key, series in payload["series"].items():
             self.assertTrue(key.startswith("us_fec_"), key)
             self.assertTrue(series["source"].startswith("https://www.fec.gov/"), key)

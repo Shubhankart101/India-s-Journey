@@ -45,7 +45,7 @@ class ElectionGroupTests(unittest.TestCase):
         app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
         definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         series = payload["series"]
-        self.assertEqual(len(series), 65)
+        self.assertEqual(len(series), 115)
         for key, item in series.items():
             with self.subTest(series=key):
                 self.assertEqual(len(item["labels"]), len(item["values"]))

@@ -57,29 +57,16 @@ jobs:
           print(json.dumps(snapshot))
           PY
 
-      - name: Refresh Economic Survey monthly tables
-        run: |
-          python -m pip install --quiet pdfplumber openpyxl
-          python scripts/fetch_economic_survey_monthly.py
-
       - name: Collect Polity and Policy articles
         run: python scripts/collect_substack.py
 
       - name: Collect Indian Matrix articles
         run: python scripts/collect_indian_matrix.py
 
-      - name: Collect NCRB and analysis data
-        run: python scripts/collect_ncrb_and_analyses.py
-
       - name: Refresh FEC candidate campaign-finance data
         run: python scripts/collect_us_campaign_finance.py
 
-      - name: Collect Pew India survey snapshots & report catalog
-        run: |
-          python scripts/collect_pew_snapshots.py
-          python scripts/collect_pew_india_reports.py
-
-      - name: Refresh public-source charts & JS bundle
+      - name: Refresh public-source charts, World Bank layer & JS bundle
         run: python scripts/generate_public_charts.py
 
       - name: Commit daily data and charts

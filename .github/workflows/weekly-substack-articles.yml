@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: weekly-substack-readme
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -80,23 +84,16 @@ jobs:
           Path('README.md').write_text(re.sub(r'<!-- SUBSTACK:START -->.*?<!-- SUBSTACK:END -->', section, readme, flags=re.S))
           PY
 
-      - name: Generate public-source charts
-        run: python scripts/generate_public_charts.py
-
-      - name: Collect Indian Matrix public feed
-        run: python scripts/collect_indian_matrix.py
-
-      - name: Collect Pew India report catalog
-        run: python scripts/collect_pew_india_reports.py
-
       - name: Commit weekly article snapshot
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md data assets
+          git add README.md data
           if git diff --cached --quiet; then
             echo "No article change to commit."
             exit 0
           fi
           git commit -m "Refresh weekly Polity and Policy articles"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

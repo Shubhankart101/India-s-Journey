@@ -6,7 +6,7 @@
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>India's Journey — Explore India in data</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=historical-tourism-api-v2">
+  <link rel="stylesheet" href="styles.css?v=election-pies-v3">
 </head>
 <body>
   <div id="era-bg-layer" class="era-bg-layer"></div>
@@ -189,11 +189,15 @@
         </optgroup>
         <optgroup label="🗳️ Elections">
           <option>Indian Elections</option>
+          <option>Lok Sabha 2024 — National</option>
+          <option>Lok Sabha 2024 — States</option>
+          <option>State Assembly Results 2022–2026</option>
         </optgroup>
         <optgroup label="🇺🇸 U.S. Elections">
           <option>U.S. Presidential Elections</option>
           <option>U.S. Presidential Campaign Finance</option>
           <option>U.S. Congressional Campaign Finance</option>
+          <option>U.S. Campaign Funding Composition</option>
         </optgroup>
         <optgroup label="🏛️ Tourism &amp; Heritage">
           <option>International Visitor Trends</option>
@@ -288,9 +292,11 @@
               <li><a href="https://www.pewresearch.org/global/" target="_blank" rel="noreferrer">Pew Research Center — Global</a></li>
               <li><a href="https://www.sipri.org/databases" target="_blank" rel="noreferrer">SIPRI databases</a></li>
               <li><a href="https://old.eci.gov.in/statistical-report/statistical-reports/" target="_blank" rel="noreferrer">Election Commission of India — statistical reports archive</a></li>
+              <li><a href="https://www.eci.gov.in/eci-backend/public/api/election-result?category_id=1" target="_blank" rel="noreferrer">Election Commission of India — GE 2024 statistical reports (report 33 constituency-wise detailed result)</a></li>
               <li><a href="https://voters.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India — voter services, SSR and SIR notices</a></li>
               <li><a href="https://www.archives.gov/electoral-college" target="_blank" rel="noreferrer">U.S. National Archives — Electoral College results</a></li>
               <li><a href="https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/" target="_blank" rel="noreferrer">Federal Election Commission — candidate summary file definitions</a></li>
+              <li><a href="https://data.worldbank.org/country/india" target="_blank" rel="noreferrer">World Bank — India indicators (official-indicator layer and composition pies)</a></li>
               <li><a href="https://whc.unesco.org/en/list/" target="_blank" rel="noreferrer">UNESCO World Heritage List — official properties and inscription dates</a></li>
               <li><a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=IN" target="_blank" rel="noreferrer">World Bank — international tourism arrivals</a></li>
             </ul>
@@ -348,7 +354,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="data.js?v=historical-tourism-api-v2"></script>
+  <script src="data.js?v=election-pies-v3"></script>
   <script src="vendor/chart.umd.min.js"></script>
   <script src="vendor/hammer.min.js"></script>
   <script src="vendor/chartjs-plugin-zoom.min.js"></script>
@@ -359,7 +365,7 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="additional-chart-definitions.js?v=historical-tourism-api-v2"></script>
-  <script src="app.js?v=historical-tourism-api-v2"></script>
+  <script src="additional-chart-definitions.js?v=election-pies-v3"></script>
+  <script src="app.js?v=election-pies-v3"></script>
 </body>
 </html>

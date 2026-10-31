@@ -125,6 +125,10 @@ class DashboardEndpointTests(unittest.TestCase):
             "defence_budget_composition",
             "card_spending_composition",
         })
+        import sys
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
+        from official_indicator_layer import COMPOSITIONS, LINE_INDICATORS
+        expected.update(row[0] for row in LINE_INDICATORS + COMPOSITIONS)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -458,7 +462,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=historical-tourism-api-v2', body)
+        self.assertIn(b'styles.css?v=election-pies-v3', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",
@@ -487,22 +491,34 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("modalCloseBtn.addEventListener('click'", text)
         self.assertIn("e.key === 'Escape'", text)
 
-    def test_daily_workflow_runs_all_collection_scripts(self):
-        workflow_path = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            ".github", "workflows", "daily-politypolicy-update.yml",
+    def test_collection_scripts_run_on_dataset_cadence_schedules(self):
+        workflows_dir = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".github", "workflows",
         )
-        with open(workflow_path, "r", encoding="utf-8") as handle:
-            workflow = handle.read()
-        for script in (
-            "scripts/generate_public_charts.py",
-            "scripts/fetch_economic_survey_monthly.py",
-            "scripts/collect_substack.py",
-            "scripts/collect_indian_matrix.py",
-            "scripts/collect_ncrb_and_analyses.py",
-            "scripts/collect_pew_snapshots.py",
-        ):
-            self.assertIn(script, workflow, script)
+        expected = {
+            "daily-politypolicy-update.yml": ("'30 2 * * *'", (
+                "scripts/collect_substack.py", "scripts/collect_indian_matrix.py",
+                "scripts/collect_us_campaign_finance.py", "scripts/generate_public_charts.py")),
+            "weekly-pew-research-update.yml": ("'0 4 * * 1'", (
+                "scripts/collect_pew_snapshots.py", "scripts/collect_pew_india_reports.py",
+                "scripts/generate_public_charts.py")),
+            "monthly-economic-review-update.yml": ("'0 4 5,15,25 * *'", (
+                "scripts/fetch_economic_survey_monthly.py", "scripts/generate_public_charts.py")),
+            "ncrb-crime-data-update.yml": ("'30 5 1 * *'", (
+                "scripts/collect_ncrb_and_analyses.py", "scripts/generate_public_charts.py")),
+            "recent-indian-elections-update.yml": ("'15 8 * * *'", (
+                "scripts/collect_recent_indian_elections.py", "scripts/build_election_indices.py")),
+        }
+        for file_name, (cron, scripts) in expected.items():
+            with open(os.path.join(workflows_dir, file_name), "r", encoding="utf-8") as handle:
+                workflow = handle.read()
+            with self.subTest(workflow=file_name):
+                self.assertIn(f"cron: {cron}", workflow)
+                for script in scripts:
+                    self.assertIn(script, workflow, script)
+                if "generate_public_charts" in workflow:
+                    self.assertIn("group: daily-public-data", workflow)
+                self.assertIn("git rebase origin/main", workflow)
 
     def test_dashboard_deploys_after_article_collection_workflows(self):
         workflow_path = os.path.join(
@@ -512,8 +528,10 @@ class DashboardEndpointTests(unittest.TestCase):
         with open(workflow_path, "r", encoding="utf-8") as handle:
             workflow = handle.read()
         self.assertIn("workflow_run:", workflow)
-        self.assertIn("- Daily PolityPolicy Update", workflow)
-        self.assertIn("- Weekly Substack Article Update", workflow)
+        for name in ("Daily PolityPolicy Update", "Weekly Substack Article Update", "Weekly Pew Research Update",
+                     "Monthly Economic Review Update", "NCRB Crime Data Update", "Recent Indian Election Data Update"):
+            self.assertIn(f"- {name}", workflow)
+        self.assertIn("site/data/election-indices.json", workflow)
         self.assertIn("workflow_run.conclusion == 'success'", workflow)
 
 

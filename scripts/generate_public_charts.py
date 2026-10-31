@@ -12,6 +12,11 @@ from urllib.parse import urlencode
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
+try:
+    from scripts.official_indicator_layer import build_official_layer
+except ImportError:  # executed directly as scripts/generate_public_charts.py
+    from official_indicator_layer import build_official_layer
+
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
@@ -1767,6 +1772,7 @@ def main() -> None:
                     result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
                 except Exception:
                     result["series"][key] = {"error": str(error)}
+    result["series"].update(build_official_layer(get_json, previous_series))
     result["series"].update(build_terrorism_derived_series(
         result["series"].get("terror_attacks", {}),
         result["series"].get("terror_fatalities", {}),

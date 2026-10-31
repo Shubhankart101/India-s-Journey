@@ -6,6 +6,9 @@ on:
     workflows:
       - Daily PolityPolicy Update
       - Weekly Substack Article Update
+      - Weekly Pew Research Update
+      - Monthly Economic Review Update
+      - NCRB Crime Data Update
       - Election Results Update
       - Historical Election Archive Update
       - Recent Indian Election Data Update
@@ -26,6 +29,7 @@ on:
       - data/historical-elections.json
       - data/recent-indian-elections.json
       - data/us-campaign-finance.json
+      - data/election-indices.json
       - .github/workflows/deploy-dashboard.yml
 
 permissions:
@@ -62,6 +66,7 @@ jobs:
           if [ -f data/historical-elections.json ]; then cp data/historical-elections.json site/data/historical-elections.json; fi
           if [ -f data/recent-indian-elections.json ]; then cp data/recent-indian-elections.json site/data/recent-indian-elections.json; fi
           if [ -f data/us-campaign-finance.json ]; then cp data/us-campaign-finance.json site/data/us-campaign-finance.json; fi
+          if [ -f data/election-indices.json ]; then cp data/election-indices.json site/data/election-indices.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

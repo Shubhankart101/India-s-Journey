@@ -27,7 +27,7 @@ The dashboard's historical explorer lets readers choose an available election ty
 
 ## Recent Indian constituency results
 
-`data/recent-indian-elections.json` adds **41,350 candidate observations** from 21 ECI-derived CSV files in [thecont1/india-votes-data](https://github.com/thecont1/india-votes-data), pinned to commit `7d8cf637f83d223b178d11659103a1f52647367a`. Coverage is:
+`data/recent-indian-elections.json` adds **41,465 candidate observations** from 21 source files. Lok Sabha 2024 is read from the official ECI [statistical report 33](https://www.eci.gov.in/) (*Constituency-Wise Detailed Result*), with party names from report 3; State Assembly results come from ECI-derived CSV files in [thecont1/india-votes-data](https://github.com/thecont1/india-votes-data), pinned to commit `7d8cf637f83d223b178d11659103a1f52647367a`. Rows are de-duplicated on candidate, party and votes so namesake candidates in one seat (for example Karur and Pollachi) are kept separately. Party tallies match ECI: Lok Sabha 2024 BJP 240, INC 99, SP 37, AITC 29, DMK 22. Coverage is:
 
 - **Lok Sabha 2024:** all 543 parliamentary constituencies across 36 States/UTs.
 - **Assembly 2022:** Goa, Manipur, Punjab, Uttar Pradesh and Uttarakhand.
@@ -37,6 +37,10 @@ The dashboard's historical explorer lets readers choose an available election ty
 - **Assembly 2026:** Assam, Kerala, Puducherry, Tamil Nadu and West Bengal.
 
 Assembly EVM and postal votes are added. Source CSVs do not publish vote-share percentages, so shares are calculated from listed candidate totals and marked `*` in the explorer. Surat's uncontested 2024 Lok Sabha winner has no vote count; it is shown as not reported, not zero, and no vote pie is drawn. The [Recent Indian Election Data Update](../.github/workflows/recent-indian-elections-update.yml) checks daily, validates all 543 Lok Sabha seats, and commits only changed source data. This is recent coverage, not every Indian election ever held; pre-2024 Lok Sabha constituency history remains unavailable in this static archive.
+
+### Election pie indices
+
+`scripts/build_election_indices.py` derives **112 interactive doughnut indices** (`data/election-indices.json`) in three Elections subgroups: *Lok Sabha 2024 — National* (8: seats and votes by party, victory-margin bands, winner vote-share bands, candidates per seat, NOTA share, seats by State/UT, party vs independent votes), *Lok Sabha 2024 — States* (44: seat and vote pies for 22 multi-seat States/UTs) and *State Assembly Results 2022–2026* (60: seat and vote pies for each Assembly election). Click a slice to hide it, hover for value and share, and use the Bar/Pie toggle on any additive card; the centre shows the total.
 
 ## SSR and SIR electoral-roll revisions
 
@@ -49,6 +53,7 @@ The standalone **U.S. Elections** group contains:
 - **U.S. Presidential Elections:** National Archives winner and main-opponent Electoral College totals for Presidential elections from 2000 through 2024. These are electoral votes, not popular votes or ballots cast.
 - **U.S. Presidential Campaign Finance:** 20 FEC indicators—receipts, disbursements, cash on hand and debts—aggregated by party for Presidential-office candidates in the 2018, 2020, 2022, 2024 and 2026 filing cycles. 2018, 2022 and 2026 are midterm years, not Presidential elections; cycle labels describe campaign-finance filing cycles, not election years for the office.
 - **U.S. Congressional Campaign Finance:** 40 FEC indicators for House and Senate candidates—four measures, two offices and five cycles—aggregated by candidate office state.
+- **U.S. Campaign Funding Composition:** 50 FEC doughnuts (10 per cycle) splitting candidates and receipts by party, receipts by incumbents vs challengers, and where the money came from (individual contributions, PACs, party committees, candidate contributions and loans, transfers, other) for each office.
 - Interactive doughnut summaries show winner, main opponent, and other/unassigned Electoral College votes for each Presidential election, plus Presidential-office candidate receipts by party for each FEC filing cycle.
 
 Campaign-finance aggregates are not vote counts or turnout. Presidential party totals are not state-by-state results; Senate and House state totals are not results for a particular seat.

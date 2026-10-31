@@ -119,11 +119,103 @@ def build_receipt_composition_series(cycle: int, receipts: dict[str, dict]) -> d
     }
 
 
+PARTY_NAMES = {"DEM": "Democratic", "REP": "Republican", "LIB": "Libertarian", "GRE": "Green", "IND": "Independent"}
+INCUMBENCY = {"I": "Incumbents", "C": "Challengers", "O": "Open-seat candidates"}
+FUNDING_COLUMNS = (
+    ("Individual contributions", 17),
+    ("Other committees (PACs)", 25),
+    ("Party committees", 26),
+    ("Candidate's own contributions", 11),
+    ("Candidate loans", 12),
+    ("Other loans", 13),
+    ("Transfers from authorized committees", 6),
+)
+COMPOSITION_SUBGROUP = "U.S. Campaign Funding Composition"
+COMPOSITION_SPECS = (
+    ("H", "party_receipts"), ("H", "incumbency_receipts"), ("H", "funding_mix"), ("H", "party_candidates"),
+    ("S", "party_receipts"), ("S", "incumbency_receipts"), ("S", "funding_mix"), ("S", "party_candidates"),
+    ("P", "funding_mix"), ("P", "party_candidates"),
+)
+
+
+def _amount(value: str) -> float:
+    try:
+        return float(value or 0)
+    except ValueError:
+        return 0.0
+
+
+def _party(code: str) -> str:
+    return PARTY_NAMES.get(code.strip().upper(), "Other parties")
+
+
+def build_composition_series(cycle: int, rows: list[list[str]]) -> dict[str, dict]:
+    sums: dict[tuple[str, str], dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for row in rows:
+        office = row[0][:1].upper()
+        if office not in OFFICES:
+            continue
+        receipts = _amount(row[5])
+        party = _party(row[4])
+        sums[(office, "party_receipts")][party] += receipts
+        sums[(office, "party_candidates")][party] += 1
+        status = INCUMBENCY.get(row[2].strip().upper())
+        if status:
+            sums[(office, "incumbency_receipts")][status] += receipts
+        listed = 0.0
+        for label, column in FUNDING_COLUMNS:
+            amount = _amount(row[column])
+            sums[(office, "funding_mix")][label] += amount
+            listed += amount
+        sums[(office, "funding_mix")]["Other receipts"] += max(0.0, receipts - listed)
+
+    titles = {
+        "party_receipts": ("Receipts by Party", "Share of {office} candidate receipts by party", " USD"),
+        "incumbency_receipts": ("Receipts: Incumbents vs Challengers", "{office} candidate receipts by incumbency status", " USD"),
+        "funding_mix": ("Where the Money Came From", "{office} candidate receipts by funding source", " USD"),
+        "party_candidates": ("Candidates by Party", "{office} candidates filing FEC summaries, by party", " candidates"),
+    }
+    series: dict[str, dict] = {}
+    for office, measure in COMPOSITION_SPECS:
+        office_label = OFFICES[office][0]
+        points = sorted(
+            ((label, round(value, 2)) for label, value in sums[(office, measure)].items() if value > 0),
+            key=lambda point: -point[1],
+        )
+        if not points:
+            raise ValueError(f"FEC {cycle} {office_label} {measure} composition has no positive parts")
+        title, subtitle, unit = titles[measure]
+        series[series_key(cycle, office, measure)] = {
+            "labels": [label for label, _ in points],
+            "values": [value for _, value in points],
+            "chartType": "doughnut",
+            "scope": "category",
+            "source": source_url(cycle),
+            "note": (
+                f"{cycle} FEC candidate-summary file, {office_label} candidates. "
+                + ("Funding sources use the FEC individual, other-committee, party, candidate, loan and transfer columns; "
+                   "'Other receipts' is total receipts minus those listed sources. " if measure == "funding_mix" else "")
+                + "Campaign-finance aggregates, not votes. FEC summaries may be revised as amended reports are processed."
+            ),
+            "meta": {
+                "title": f"{cycle} {office_label}: {title}",
+                "subtitle": subtitle.format(office=office_label),
+                "frequency": "Daily FEC refresh",
+                "color": "#58a6ff",
+                "suffix": unit,
+                "category": "U.S. Elections",
+                "subgroup": COMPOSITION_SUBGROUP,
+            },
+        }
+    return series
+
+
 def collect_cycle(cycle: int) -> dict[str, dict]:
     request = Request(source_url(cycle), headers={"User-Agent": USER_AGENT})
     with urlopen(request, timeout=60) as response:
         archive_bytes = response.read()
-    return build_cycle_series(cycle, _candidate_summary_rows(archive_bytes, cycle))
+    rows = _candidate_summary_rows(archive_bytes, cycle)
+    return {**build_cycle_series(cycle, rows), **build_composition_series(cycle, rows)}
 
 
 def build_payload(cycles: tuple[int, ...] = CYCLES) -> dict:
@@ -131,7 +223,7 @@ def build_payload(cycles: tuple[int, ...] = CYCLES) -> dict:
     for cycle in cycles:
         series.update(collect_cycle(cycle))
         series.update(build_receipt_composition_series(cycle, series))
-    expected_count = len(cycles) * (len(OFFICES) * len(MEASURES) + 1)
+    expected_count = len(cycles) * (len(OFFICES) * len(MEASURES) + 1 + len(COMPOSITION_SPECS))
     if len(series) != expected_count:
         raise ValueError(f"Expected {expected_count} FEC series, collected {len(series)}")
     return {

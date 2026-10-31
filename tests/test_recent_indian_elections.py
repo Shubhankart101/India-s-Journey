@@ -2,38 +2,52 @@
 
 import json
 import unittest
+from collections import Counter
 from pathlib import Path
 
-from scripts.collect_recent_indian_elections import parse_recent_csv, parse_state_names
+from scripts.collect_recent_indian_elections import (
+    ECI_LS2024_RESULTS_URL,
+    parse_lok_sabha_2024_rows,
+    parse_recent_csv,
+    parse_state_names,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_SHA = "a" * 40
+OFFICIAL_LS2024_SEATS = {
+    "Bharatiya Janata Party": 240,
+    "Indian National Congress": 99,
+    "Samajwadi Party": 37,
+    "All India Trinamool Congress": 29,
+    "Dravida Munnetra Kazhagam": 22,
+    "Telugu Desam": 16,
+    "Janata Dal (United)": 12,
+    "Independent": 7,
+}
+
+
+def _row(state, seat, candidate, party, votes):
+    return [state, seat, candidate, "", "", "", party, "", 0, 0, votes, 0, votes]
 
 
 class RecentIndianElectionTests(unittest.TestCase):
-    def test_parses_2024_lok_sabha_votes_and_keeps_same_numbered_seats_separate(self):
-        content = (
-            'State;"Constituency";"Party";"Candidate";"Votes";"State ID";"Constituency ID"\n'
-            'State A;"Seat One";"Party A";"Candidate A";"600";"S01";"1"\n'
-            'State A;"Seat One";"Party B";"Candidate B";"400";"S01";"1"\n'
-            'State A;"Seat Two";"Party A";"Candidate A";"100";"S01";"1"\n'
-            'State A;"Seat Two";"Party B";"Candidate C";"900";"S01";"1"\n'
-        ).encode()
-        records = parse_recent_csv(
-            content,
-            "archive/2024 Parliamentary Elections India.csv",
-            TEST_SHA,
-            {},
-        )
-        self.assertEqual(len(records), 4)
-        self.assertEqual(
-            {row["constituency"]: row["vote_share_percent"] for row in records if row["candidate"] in ("Candidate A", "Candidate C")},
-            {"Seat One": 60.0, "Seat Two": 90.0},
-        )
-        self.assertEqual(records[0]["election_type"], "Lok Sabha")
-        self.assertEqual(records[0]["year"], 2024)
-        self.assertEqual(records[0]["vote_share_method"], "calculated_from_listed_candidate_votes")
-        self.assertIn(TEST_SHA, records[0]["source"])
+    def test_parses_eci_lok_sabha_rows_keeps_namesakes_and_adds_surat(self):
+        rows = [
+            _row("State A", "Seat One", "Candidate A", "BJP", 600),
+            _row("State A", "Seat One", "Candidate A", "IND", 50),
+            _row("State A", "Seat One", "Candidate B", "INC", 350),
+            ["Footnote"],
+        ]
+        records = parse_lok_sabha_2024_rows(rows, {"BJP": "Bharatiya Janata Party", "IND": "Independent"})
+        seat = [row for row in records if row["constituency"] == "Seat One"]
+        self.assertEqual([row["votes"] for row in seat], [600, 50, 350])
+        self.assertEqual(seat[0]["party"], "Bharatiya Janata Party")
+        self.assertEqual(seat[0]["vote_share_percent"], 60.0)
+        self.assertEqual(seat[0]["source"], ECI_LS2024_RESULTS_URL)
+        surat = [row for row in records if row["constituency"] == "Surat"]
+        self.assertEqual(len(surat), 1)
+        self.assertEqual(surat[0]["result_status"], "uncontested")
+        self.assertIsNone(surat[0]["votes"])
 
     def test_parses_assembly_evm_and_postal_votes_with_state_lookup(self):
         state_names = parse_state_names(
@@ -73,9 +87,22 @@ class RecentIndianElectionTests(unittest.TestCase):
         self.assertEqual(recent["assembly_election_years"], [2022, 2023, 2024, 2025, 2026])
         self.assertIn("calculated from the listed candidate vote totals", recent["vote_share_method"].lower())
         self.assertTrue(all(
-            recent["source_files"][row["source_file"]]["url"].startswith("https://raw.githubusercontent.com/")
+            recent["source_files"][row["source_file"]]["url"].startswith(
+                "https://raw.githubusercontent.com/" if row["election_type"] == "State Assembly"
+                else "https://www.eci.gov.in/"
+            )
             for row in recent["observations"]
         ))
+
+    def test_published_lok_sabha_2024_winners_match_official_party_tally(self):
+        recent = json.loads((ROOT / "data" / "recent-indian-elections.json").read_text(encoding="utf-8"))
+        seats = {}
+        for row in recent["observations"]:
+            if row["election_type"] == "Lok Sabha":
+                seats.setdefault((row["state_or_ut"], row["constituency"]), []).append(row)
+        winners = Counter(max(rows, key=lambda row: row["votes"] or 0)["party"] for rows in seats.values())
+        self.assertEqual(len(seats), 543)
+        self.assertEqual({party: winners[party] for party in OFFICIAL_LS2024_SEATS}, OFFICIAL_LS2024_SEATS)
 
 
 if __name__ == "__main__":
