@@ -1210,6 +1210,8 @@ async function main() {
     "Food Processing & Consumer Goods": "assets/hampi.svg",
     "Chemicals, Pharma & Electronics": "assets/hospital.svg",
     "Industrial Output Monitor (IIP)": "assets/rail-station.svg",
+    "Mineral Price Monitor (WPI)": "assets/minerals.svg",
+    "Mining Output Monitor (IIP)": "assets/minerals.svg",
     "World Heritage Sites": "assets/hampi.svg"
   };
 
@@ -1447,6 +1449,18 @@ async function main() {
       desc: "Global mineral trade trajectory: total Mineral & Metal export value ($38.5 Billion), Iron Ore export volume (49.5 MT), Refined Petroleum product export volume (71.5 MMT), and Critical Mineral Strategic Import Dependency Index (reduced from 100% to 68.5%).",
       badge1: "DGFT & PPAC Trade",
       badge2: "Petroleum & Ore Exports"
+    },
+    "Mineral Price Monitor (WPI)": {
+      title: "💹 Mineral Price Monitor",
+      desc: "Official monthly wholesale prices of iron ore, bauxite, copper, zinc, lead, manganese, chromite, limestone, rock phosphate, crude oil, natural gas, coal and lignite since 2012, with inflation rankings, price-change bands and rising-vs-falling pies.",
+      badge1: "MOSPI / DPIIT WPI",
+      badge2: "16 Commodities"
+    },
+    "Mining Output Monitor (IIP)": {
+      title: "⛏️ Mining Output Monitor",
+      desc: "Annual and monthly mining and quarrying output from MOSPI's Index of Industrial Production, compared with manufacturing and electricity, with growth trends and mining's official weight in the IIP.",
+      badge1: "Monthly MOSPI data",
+      badge2: "Mining & Quarrying"
     },
     "Violence & Crime": {
       title: "⚖️ Cognizable Crime & Public Safety",

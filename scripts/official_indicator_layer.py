@@ -58,6 +58,16 @@ LINE_INDICATORS = (
     ("wb_government_health_share", "SH.XPD.GHED.GE.ZS", "Health in Government Expenditure", "Domestic general government health expenditure as a share of total government spending", "Public Health & Epidemiology", "Health Infrastructure & Spending", "#3fb950", "%"),
     ("wb_renewable_final_energy", "EG.FEC.RNEW.ZS", "Renewables in Final Energy Consumption", "Renewable energy as a share of total final energy consumption", "Mining & Natural Resources", "Energy Minerals & Fuel", "#56d364", "%"),
     ("wb_protected_land", "ER.LND.PTLD.ZS", "Terrestrial Protected Areas", "Protected land as a share of total land area", "Mining & Natural Resources", "Non-Metallic & Industrial Minerals", "#3fb950", "%"),
+    ("wb_total_resource_rents", "NY.GDP.TOTL.RT.ZS", "Total Natural Resource Rents", "Oil, gas, coal, mineral and forest rents as a share of GDP", "Mining & Natural Resources", "Metallic Minerals & Ores", "#ff9933", "% GDP"),
+    ("wb_coal_rents", "NY.GDP.COAL.RT.ZS", "Coal Rents", "Coal rents (hard and soft coal) as a share of GDP", "Mining & Natural Resources", "Energy Minerals & Fuel", "#8b949e", "% GDP"),
+    ("wb_oil_rents", "NY.GDP.PETR.RT.ZS", "Oil Rents", "Crude oil rents as a share of GDP", "Mining & Natural Resources", "Energy Minerals & Fuel", "#bc8cff", "% GDP"),
+    ("wb_natural_gas_rents", "NY.GDP.NGAS.RT.ZS", "Natural Gas Rents", "Natural gas rents as a share of GDP", "Mining & Natural Resources", "Energy Minerals & Fuel", "#58a6ff", "% GDP"),
+    ("wb_mineral_depletion", "NY.ADJ.DMIN.GN.ZS", "Mineral Depletion", "Value of mineral stocks extracted, as a share of GNI", "Mining & Natural Resources", "Metallic Minerals & Ores", "#d29922", "% GNI"),
+    ("wb_energy_depletion", "NY.ADJ.DNGY.GN.ZS", "Energy Depletion", "Value of coal, oil and gas stocks extracted, as a share of GNI", "Mining & Natural Resources", "Energy Minerals & Fuel", "#ff7b72", "% GNI"),
+    ("wb_ores_metals_exports", "TX.VAL.MMTL.ZS.UN", "Ores & Metals Exports", "Ores and metals as a share of merchandise exports", "Mining & Natural Resources", "Mineral Exports & Trade", "#e3b341", "%"),
+    ("wb_ores_metals_imports", "TM.VAL.MMTL.ZS.UN", "Ores & Metals Imports", "Ores and metals as a share of merchandise imports", "Mining & Natural Resources", "Mineral Exports & Trade", "#ffa657", "%"),
+    ("wb_fuel_exports", "TX.VAL.FUEL.ZS.UN", "Fuel Exports", "Fuels as a share of merchandise exports", "Mining & Natural Resources", "Mineral Exports & Trade", "#3fb950", "%"),
+    ("wb_fuel_imports", "TM.VAL.FUEL.ZS.UN", "Fuel Imports", "Fuels as a share of merchandise imports", "Mining & Natural Resources", "Mineral Exports & Trade", "#ff7b72", "%"),
 )
 
 # key, title, subtitle, category, subgroup, unit, parts[(label, code)], residual label or None

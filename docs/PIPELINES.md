@@ -27,6 +27,8 @@ The daily pipeline downloads the FEC candidate-summary bulk files for the 2018, 
 
 The daily chart builder also runs `scripts/tourism_comparison_layer.py` (World Bank arrivals and receipts for India and the most-visited countries) and `scripts/manufacturing_layer.py`. The manufacturing layer reads annual sectoral and monthly IIP rows from the paginated MOSPI API (`api.mospi.gov.in/api/iip`, base 2011-12, legacy-TLS context) plus the SIAM historical production table. If a source fails, the layer keeps the previously published series.
 
+`scripts/mining_layer.py` (also run by the daily chart builder) adds the Mining & Natural Resources deep-dive. It pages through the MOSPI WPI API (`api.mospi.gov.in/api/wpi/getWpiRecords`, `group_code` 1103000000 minerals, 1104000000 crude petroleum & natural gas, 1201000000 coal) for monthly item prices since April 2012, and the MOSPI IIP API for annual and monthly mining output. Rankings, price-change bands and rising-vs-falling pies are recomputed on every run from the latest month, and the previous series are kept if MOSPI is unavailable.
+
 ## Data flow
 
 1. A collector writes a JSON snapshot under `data/`.

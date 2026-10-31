@@ -137,6 +137,8 @@ class DashboardEndpointTests(unittest.TestCase):
         expected.update(tourism_keys)
         from manufacturing_layer import KEYS as manufacturing_keys
         expected.update(manufacturing_keys)
+        from mining_layer import KEYS as mining_keys
+        expected.update(mining_keys)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -488,7 +490,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=pages-v7', body)
+        self.assertIn(b'styles.css?v=mining-v8', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",
