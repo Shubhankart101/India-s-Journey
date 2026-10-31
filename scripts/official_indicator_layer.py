@@ -40,6 +40,24 @@ LINE_INDICATORS = (
     ("wb_fossil_fuel_share", "EG.USE.COMM.FO.ZS", "Fossil-Fuel Energy Consumption", "Fossil fuels as a share of total energy consumption", "Mining & Natural Resources", "Energy Minerals & Fuel", "#8b949e", "%"),
     ("wb_gini_index", "SI.POV.GINI", "Gini Index", "Consumption inequality (0 = perfect equality)", "Social", "Welfare", "#bc8cff", ""),
     ("wb_dependency_ratio", "SP.POP.DPND", "Age Dependency Ratio", "Dependants (under 15 and 65+) per 100 working-age people", "Social", "Demographics", "#79c0ff", ""),
+    ("wb_poverty_extreme", "SI.POV.DDAY", "Extreme Poverty Headcount", "Population below the World Bank international extreme-poverty line (line value is revised by the Bank over time)", "Social", "Welfare", "#ff7b72", "%"),
+    ("wb_poverty_lower_middle", "SI.POV.LMIC", "Lower-Middle-Income Poverty Headcount", "Population below the lower-middle-income-country poverty line", "Social", "Welfare", "#ffa657", "%"),
+    ("wb_poverty_upper_middle", "SI.POV.UMIC", "Upper-Middle-Income Poverty Headcount", "Population below the upper-middle-income-country poverty line", "Social", "Welfare", "#e3b341", "%"),
+    ("wb_female_labor_share", "SL.TLF.TOTL.FE.ZS", "Women's Share of the Labour Force", "Female labour force as a share of the total labour force", "Social", "Welfare", "#f778ba", "%"),
+    ("wb_primary_completion", "SE.PRM.CMPT.ZS", "Primary Completion Rate", "Children completing the last year of primary school", "Social", "Welfare", "#3fb950", "%"),
+    ("wb_net_migration", "SM.POP.NETM", "Net Migration", "Net migrants (immigrants minus emigrants) over five-year periods", "Social", "Demographics", "#79c0ff", " people"),
+    ("wb_internet_users", "IT.NET.USER.ZS", "Internet Users", "Individuals using the internet as a share of the population", "Payments & Digital Banking", "Digital Financial Index", "#58a6ff", "%"),
+    ("wb_ict_goods_exports", "TX.VAL.ICTG.ZS.UN", "ICT Goods Exports", "ICT goods as a share of total merchandise exports", "Industry Trends & Performance", "Manufacturing & Industrial Growth", "#bc8cff", "%"),
+    ("wb_ict_goods_imports", "TM.VAL.ICTG.ZS.UN", "ICT Goods Imports", "ICT goods as a share of total merchandise imports", "Economic", "Trade & External", "#79c0ff", "%"),
+    ("wb_military_gdp", "MS.MIL.XPND.GD.ZS", "Military Expenditure (% of GDP)", "Military spending as a share of GDP (SIPRI)", "Defence & Strategic", "Defence Budget & Modernization", "#ff7b72", "% GDP"),
+    ("wb_military_govt", "MS.MIL.XPND.ZS", "Military Share of Government Expenditure", "Military spending as a share of general government expenditure (SIPRI)", "Defence & Strategic", "Defence Budget & Modernization", "#ffa657", "%"),
+    ("wb_road_deaths", "SH.STA.TRAF.P5", "Road Traffic Death Rate", "Road-traffic deaths per 100,000 people (WHO)", "Crime & Security", "Violence & Crime", "#ff7b72", " per 100k"),
+    ("wb_suicide_rate", "SH.STA.SUIC.P5", "Suicide Mortality Rate", "Suicide deaths per 100,000 people (WHO)", "Crime & Security", "Violence & Crime", "#d2a8ff", " per 100k"),
+    ("wb_smoking", "SH.PRV.SMOK", "Smoking Prevalence", "Adults who smoke (WHO age-standardised)", "Public Health & Epidemiology", "Disease Burden & Epidemiology", "#8b949e", "%"),
+    ("wb_malaria_incidence", "SH.MLR.INCD.P3", "Malaria Incidence", "Malaria cases per 1,000 people at risk", "Public Health & Epidemiology", "Disease Burden & Epidemiology", "#ffa657", " per 1,000"),
+    ("wb_government_health_share", "SH.XPD.GHED.GE.ZS", "Health in Government Expenditure", "Domestic general government health expenditure as a share of total government spending", "Public Health & Epidemiology", "Health Infrastructure & Spending", "#3fb950", "%"),
+    ("wb_renewable_final_energy", "EG.FEC.RNEW.ZS", "Renewables in Final Energy Consumption", "Renewable energy as a share of total final energy consumption", "Mining & Natural Resources", "Energy Minerals & Fuel", "#56d364", "%"),
+    ("wb_protected_land", "ER.LND.PTLD.ZS", "Terrestrial Protected Areas", "Protected land as a share of total land area", "Mining & Natural Resources", "Non-Metallic & Industrial Minerals", "#3fb950", "%"),
 )
 
 # key, title, subtitle, category, subgroup, unit, parts[(label, code)], residual label or None
@@ -76,6 +94,38 @@ COMPOSITIONS = (
      (("Agricultural land", "AG.LND.AGRI.ZS"), ("Forest", "AG.LND.FRST.ZS")), "Other land"),
     ("wb_tourism_receipts_mix", "Tourism Receipts by Type", "International tourism receipts, current US dollars", "Tourism & Heritage", "International Visitor Trends", " USD",
      (("Travel items", "ST.INT.TVLR.CD"), ("Passenger transport", "ST.INT.TRNR.CD")), None),
+    ("wb_female_employment_sector", "Women's Employment by Sector", "Share of female employment", "Industry Trends & Performance", "Production & Commodities", "%",
+     (("Agriculture", "SL.AGR.EMPL.FE.ZS"), ("Industry", "SL.IND.EMPL.FE.ZS"), ("Services", "SL.SRV.EMPL.FE.ZS")), None),
+    ("wb_male_employment_sector", "Men's Employment by Sector", "Share of male employment", "Industry Trends & Performance", "Production & Commodities", "%",
+     (("Agriculture", "SL.AGR.EMPL.MA.ZS"), ("Industry", "SL.IND.EMPL.MA.ZS"), ("Services", "SL.SRV.EMPL.MA.ZS")), None),
+    ("wb_gdp_expenditure_mix", "GDP by Expenditure", "Share of GDP", "Economic", "Macroeconomics", "%",
+     (("Household consumption", "NE.CON.PRVT.ZS"), ("Government consumption", "NE.CON.GOVT.ZS"), ("Gross fixed capital formation", "NE.GDI.FTOT.ZS")), "Net exports & inventories"),
+    ("wb_services_exports_mix", "Commercial Services Exports by Type", "Share of commercial service exports", "Economic", "Trade & External", "%",
+     (("Travel", "BX.GSR.TRVL.ZS"), ("Transport", "BX.GSR.TRAN.ZS"), ("Insurance & financial", "BX.GSR.INSF.ZS"),
+      ("Communications, computer & ICT", "BX.GSR.CMCP.ZS")), "Other business services"),
+    ("wb_services_imports_mix", "Commercial Services Imports by Type", "Share of commercial service imports", "Economic", "Trade & External", "%",
+     (("Travel", "BM.GSR.TRVL.ZS"), ("Insurance & financial", "BM.GSR.INSF.ZS"), ("Communications, computer & ICT", "BM.GSR.CMCP.ZS")), "Transport & other services"),
+    ("wb_government_expense_mix", "Central Government Expense by Type", "Share of central government expense", "Economic", "Fiscal & Union Budget", "%",
+     (("Compensation of employees", "GC.XPN.COMP.ZS"), ("Interest payments", "GC.XPN.INTP.ZS"), ("Goods & services", "GC.XPN.GSRV.ZS"),
+      ("Subsidies, grants & social benefits", "GC.XPN.TRFT.ZS")), "Other expense"),
+    ("wb_external_debt_mix", "External Debt by Maturity and Creditor", "Total external debt stocks, current US dollars", "Economic", "Trade & External", " USD",
+     (("Long-term debt", "DT.DOD.DLXF.CD"), ("Short-term debt", "DT.DOD.DSTC.CD"), ("Use of IMF credit", "DT.DOD.DIMF.CD")), None),
+    ("wb_gender_population", "Population by Sex", "Share of total population", "Social", "Demographics", "%",
+     (("Female", "SP.POP.TOTL.FE.ZS"), ("Male", "SP.POP.TOTL.MA.ZS")), None),
+    ("wb_labour_force_status", "Employed vs Unemployed", "Share of the labour force (modelled ILO estimate)", "Social", "Welfare", "%",
+     (("Unemployed", "SL.UEM.TOTL.ZS"),), "Employed"),
+    ("wb_water_service_level", "Drinking-Water Service Level", "Share of population (JMP)", "State Performance & Regional Health", "State Infrastructure & Services", "%",
+     (("Safely managed", "SH.H2O.SMDW.ZS"),), "Basic, limited or unimproved"),
+    ("wb_sanitation_service_level", "Sanitation Service Level", "Share of population (JMP)", "State Performance & Regional Health", "State Infrastructure & Services", "%",
+     (("Safely managed", "SH.STA.SMSS.ZS"), ("Open defecation", "SH.STA.ODFC.ZS")), "Basic or limited"),
+    ("wb_causes_of_death", "Causes of Death", "Share of total deaths (WHO)", "Public Health & Epidemiology", "Disease Burden & Epidemiology", "%",
+     (("Communicable, maternal & nutritional", "SH.DTH.COMM.ZS"), ("Non-communicable", "SH.DTH.NCOM.ZS"), ("Injuries", "SH.DTH.INJR.ZS")), None),
+    ("wb_health_spending_split", "Out-of-Pocket vs Government Health Spending", "Share of current health expenditure", "Public Health & Epidemiology", "Health Infrastructure & Spending", "%",
+     (("Out-of-pocket", "SH.XPD.OOPC.CH.ZS"), ("Government", "SH.XPD.GHED.CH.ZS")), "Other prepaid private & external"),
+    ("wb_freshwater_withdrawals", "Freshwater Withdrawals by Sector", "Share of total freshwater withdrawals (FAO AQUASTAT)", "Mining & Natural Resources", "Non-Metallic & Industrial Minerals", "%",
+     (("Agriculture", "ER.H2O.FWAG.ZS"), ("Industry", "ER.H2O.FWIN.ZS")), "Domestic use"),
+    ("wb_military_budget_share", "Military Share of Government Spending", "Share of general government expenditure (SIPRI)", "Defence & Strategic", "Defence Budget & Modernization", "%",
+     (("Military", "MS.MIL.XPND.ZS"),), "All other government spending"),
 )
 
 
@@ -96,7 +146,15 @@ def build_official_layer(get_json: Callable[[str], object], previous: dict[str, 
 
     def fetch(code: str) -> dict[str, float]:
         if code not in cache:
-            cache[code] = _observations(get_json, code)
+            for attempt in range(3):
+                try:
+                    cache[code] = _observations(get_json, code)
+                    break
+                except ValueError:
+                    raise  # no data is a definitive answer, not a transient failure
+                except Exception:
+                    if attempt == 2:
+                        raise
         return cache[code]
 
     series: dict[str, dict] = {}

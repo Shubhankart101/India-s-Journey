@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-31T07:04:43+00:00",
+  "generated_at_utc": "2026-10-31T07:41:13+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -17469,6 +17469,1304 @@
         "subgroup": "Demographics"
       }
     },
+    "wb_poverty_extreme": {
+      "labels": [
+        "1977",
+        "1983",
+        "1987",
+        "1993",
+        "2004",
+        "2009",
+        "2011",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        59.7,
+        50.9,
+        51.8,
+        47.5,
+        46.4,
+        34.6,
+        27.1,
+        5.3,
+        2.6
+      ],
+      "source": "World Bank API SI.POV.DDAY",
+      "unit": "%",
+      "note": "Population below the World Bank international extreme-poverty line (line value is revised by the Bank over time). Official national statistics compiled by the World Bank (indicator SI.POV.DDAY); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Extreme Poverty Headcount",
+        "subtitle": "Population below the World Bank international extreme-poverty line (line value is revised by the Bank over time)",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_poverty_lower_middle": {
+      "labels": [
+        "1977",
+        "1983",
+        "1987",
+        "1993",
+        "2004",
+        "2009",
+        "2011",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        82.9,
+        78.0,
+        78.7,
+        76.2,
+        74.5,
+        66.1,
+        57.7,
+        23.9,
+        16.1
+      ],
+      "source": "World Bank API SI.POV.LMIC",
+      "unit": "%",
+      "note": "Population below the lower-middle-income-country poverty line. Official national statistics compiled by the World Bank (indicator SI.POV.LMIC); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Lower-Middle-Income Poverty Headcount",
+        "subtitle": "Population below the lower-middle-income-country poverty line",
+        "frequency": "Annual",
+        "color": "#ffa657",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_poverty_upper_middle": {
+      "labels": [
+        "1977",
+        "1983",
+        "1987",
+        "1993",
+        "2004",
+        "2009",
+        "2011",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        97.4,
+        97.2,
+        97.0,
+        97.3,
+        96.3,
+        95.0,
+        92.5,
+        82.1,
+        80.0
+      ],
+      "source": "World Bank API SI.POV.UMIC",
+      "unit": "%",
+      "note": "Population below the upper-middle-income-country poverty line. Official national statistics compiled by the World Bank (indicator SI.POV.UMIC); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Upper-Middle-Income Poverty Headcount",
+        "subtitle": "Population below the upper-middle-income-country poverty line",
+        "frequency": "Annual",
+        "color": "#e3b341",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_female_labor_share": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        25.3291666765319,
+        25.4115550291599,
+        25.5003303621729,
+        25.5913046908496,
+        25.6960193832643,
+        26.045258171075,
+        26.3947997410233,
+        26.7426735349234,
+        27.0920817144675,
+        27.4398057339715,
+        27.7890375024769,
+        27.9324322202899,
+        28.0788988641758,
+        28.2298793462636,
+        28.3870015308713,
+        28.5484124988957,
+        27.8892574062721,
+        27.2272889223942,
+        26.5613848236897,
+        25.8934878397925,
+        25.2233059518446,
+        24.7641376803459,
+        24.3085528948494,
+        24.287985206335,
+        24.3029750032092,
+        24.3590784230794,
+        24.4337880971946,
+        24.5196387309549,
+        24.5975525560696,
+        24.6620426287145,
+        24.5059963511351,
+        25.6511321916829,
+        26.6147411953148,
+        27.5277753691858,
+        28.311817927669,
+        28.3115461442145
+      ],
+      "source": "World Bank API SL.TLF.TOTL.FE.ZS",
+      "unit": "%",
+      "note": "Female labour force as a share of the total labour force. Official national statistics compiled by the World Bank (indicator SL.TLF.TOTL.FE.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Women's Share of the Labour Force",
+        "subtitle": "Female labour force as a share of the total labour force",
+        "frequency": "Annual",
+        "color": "#f778ba",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_primary_completion": {
+      "labels": [
+        "1971",
+        "1974",
+        "1987",
+        "1988",
+        "1995",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2008",
+        "2009",
+        "2011",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2019",
+        "2020",
+        "2021",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        39.2732810974121,
+        41.4041900634766,
+        62.0545501708984,
+        63.8644981384277,
+        70.7761611938477,
+        68.1259231567383,
+        75.279411315918,
+        74.7691879272461,
+        77.9369201660156,
+        82.5344009399414,
+        97.7276763916016,
+        98.8512878417969,
+        95.8912340766036,
+        96.9724810288294,
+        99.0281030972801,
+        99.9040031261847,
+        99.3136774343373,
+        98.5887118701809,
+        96.2056732177734,
+        98.1474685668945,
+        99.085491664945,
+        93.4889604461665,
+        94.4876304742988,
+        90.2563989745259
+      ],
+      "source": "World Bank API SE.PRM.CMPT.ZS",
+      "unit": "%",
+      "note": "Children completing the last year of primary school. Official national statistics compiled by the World Bank (indicator SE.PRM.CMPT.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Primary Completion Rate",
+        "subtitle": "Children completing the last year of primary school",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_net_migration": {
+      "labels": [
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        146955.0,
+        295177.0,
+        -70514.0,
+        21640.0,
+        -141916.0,
+        -248299.0,
+        -566982.0,
+        -70314.0,
+        -995416.0,
+        -851844.0,
+        233782.0,
+        -974574.0,
+        -82816.0,
+        -404743.0,
+        347869.0,
+        434205.0,
+        275984.0,
+        590626.0,
+        -210444.0,
+        774094.0,
+        210914.0,
+        33243.0,
+        -10687.0,
+        119694.0,
+        -32313.0,
+        -89991.0,
+        -249545.0,
+        -219150.0,
+        -155676.0,
+        -2907.0,
+        125514.0,
+        -157911.0,
+        35155.0,
+        2364.0,
+        -375253.0,
+        -57297.0,
+        -26388.0,
+        880.0,
+        -1049.0,
+        -95320.0,
+        -143960.0,
+        -70346.0,
+        -732419.0,
+        -606970.0,
+        -206660.0,
+        -929454.0,
+        -342177.0,
+        -1037200.0,
+        -1020047.0,
+        -312905.0,
+        -50905.0,
+        -247017.0,
+        -198935.0,
+        -151372.0,
+        -227263.0,
+        -655085.0,
+        81248.0,
+        -251642.0,
+        -589794.0,
+        -978969.0,
+        -73806.0,
+        -348916.0,
+        -1353478.0,
+        -979179.0,
+        -630830.0,
+        -495753.0
+      ],
+      "source": "World Bank API SM.POP.NETM",
+      "unit": "people",
+      "note": "Net migrants (immigrants minus emigrants) over five-year periods. Official national statistics compiled by the World Bank (indicator SM.POP.NETM); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Net Migration",
+        "subtitle": "Net migrants (immigrants minus emigrants) over five-year periods",
+        "frequency": "Annual",
+        "color": "#79c0ff",
+        "suffix": " people",
+        "category": "Social",
+        "subgroup": "Demographics"
+      }
+    },
+    "wb_internet_users": {
+      "labels": [
+        "1990",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        0.0,
+        0.000111,
+        0.000218,
+        0.00107,
+        0.0262,
+        0.0463,
+        0.0708,
+        0.139,
+        0.273,
+        0.527532449930946,
+        0.660146377009928,
+        1.53787558175083,
+        1.68648997063625,
+        1.97613649190559,
+        2.388099909,
+        2.80549986534254,
+        3.95,
+        4.38,
+        5.12,
+        7.5,
+        10.07,
+        11.10000038,
+        12.30000019,
+        13.5,
+        14.89999962,
+        16.5,
+        18.20000076,
+        20.0813000379384,
+        29.52350044,
+        43.40544313,
+        49.2580986,
+        55.9,
+        60.25230026,
+        64.9434967,
+        70.0
+      ],
+      "source": "World Bank API IT.NET.USER.ZS",
+      "unit": "%",
+      "note": "Individuals using the internet as a share of the population. Official national statistics compiled by the World Bank (indicator IT.NET.USER.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Internet Users",
+        "subtitle": "Individuals using the internet as a share of the population",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "%",
+        "category": "Payments & Digital Banking",
+        "subgroup": "Digital Financial Index"
+      }
+    },
+    "wb_ict_goods_exports": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        1.6,
+        1.85,
+        1.4,
+        1.51,
+        1.27,
+        0.99,
+        0.98,
+        0.91,
+        0.67,
+        3.19,
+        1.72,
+        2.07,
+        1.94,
+        1.53,
+        0.91,
+        0.83,
+        0.9,
+        0.81,
+        1.14,
+        1.9,
+        2.01,
+        2.18,
+        2.77,
+        4.2,
+        5.71
+      ],
+      "source": "World Bank API TX.VAL.ICTG.ZS.UN",
+      "unit": "%",
+      "note": "ICT goods as a share of total merchandise exports. Official national statistics compiled by the World Bank (indicator TX.VAL.ICTG.ZS.UN); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "ICT Goods Exports",
+        "subtitle": "ICT goods as a share of total merchandise exports",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "%",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Manufacturing & Industrial Growth"
+      }
+    },
+    "wb_ict_goods_imports": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        5.42,
+        5.9,
+        7.01,
+        8.38,
+        8.25,
+        7.59,
+        7.58,
+        7.3,
+        3.95,
+        7.63,
+        6.22,
+        5.68,
+        5.13,
+        5.54,
+        6.14,
+        8.03,
+        8.45,
+        8.69,
+        8.61,
+        8.93,
+        10.39,
+        8.65,
+        7.64,
+        9.11,
+        10.02
+      ],
+      "source": "World Bank API TM.VAL.ICTG.ZS.UN",
+      "unit": "%",
+      "note": "ICT goods as a share of total merchandise imports. Official national statistics compiled by the World Bank (indicator TM.VAL.ICTG.ZS.UN); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "ICT Goods Imports",
+        "subtitle": "ICT goods as a share of total merchandise imports",
+        "frequency": "Annual",
+        "color": "#79c0ff",
+        "suffix": "%",
+        "category": "Economic",
+        "subgroup": "Trade & External"
+      }
+    },
+    "wb_military_gdp": {
+      "labels": [
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        2.0040123457,
+        2.0743597206,
+        2.7454004329,
+        4.0253060264,
+        3.8192369802,
+        3.871414914,
+        3.5723706459,
+        3.2239237215,
+        3.2455685847,
+        3.1408145581,
+        3.1851830399,
+        3.6524535236,
+        3.7179474613,
+        3.1586437671,
+        3.2028263244,
+        3.5345987811,
+        3.4778831429,
+        3.1627719371,
+        3.1263317017,
+        3.2613286579,
+        3.1337813297,
+        3.1862481222,
+        3.3451176656,
+        3.3230686597,
+        3.4168755944,
+        3.5690302776,
+        4.1064686807,
+        4.231317527,
+        3.7286717828,
+        3.5341797277,
+        3.1462146103,
+        2.9099743276,
+        2.7048397056,
+        2.8235422457,
+        2.6646737271,
+        2.5784835725,
+        2.4727682255,
+        2.647732426,
+        2.7273114168,
+        2.9571956474,
+        2.9489299062,
+        2.9244355463,
+        2.8268668305,
+        2.6777769322,
+        2.828752248,
+        2.9105875016,
+        2.6803815602,
+        2.478246528,
+        2.6314607812,
+        3.1293847274,
+        2.8894632716,
+        2.7044822228,
+        2.6181663476,
+        2.5488248901,
+        2.5439817646,
+        2.4574500606,
+        2.5431515211,
+        2.5315113606,
+        2.424284526,
+        2.5459982314,
+        2.8036158111,
+        2.4687415303,
+        2.3830980984,
+        2.3567942668,
+        2.2233765419,
+        2.2951791794
+      ],
+      "source": "World Bank API MS.MIL.XPND.GD.ZS",
+      "unit": "% GDP",
+      "note": "Military spending as a share of GDP (SIPRI). Official national statistics compiled by the World Bank (indicator MS.MIL.XPND.GD.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Military Expenditure (% of GDP)",
+        "subtitle": "Military spending as a share of GDP (SIPRI)",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "% GDP",
+        "category": "Defence & Strategic",
+        "subgroup": "Defence Budget & Modernization"
+      }
+    },
+    "wb_military_govt": {
+      "labels": [
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        14.7782733736,
+        13.5662007082,
+        12.4005838733,
+        10.8575159613,
+        10.3122997243,
+        10.9685970547,
+        10.3457363754,
+        10.5032518311,
+        10.3272806403,
+        10.6779015257,
+        10.6595076235,
+        11.6405638176,
+        11.5030570436,
+        10.5239515333,
+        9.8795558989,
+        9.100118151,
+        10.1174290766,
+        10.4231282651,
+        9.478415923,
+        8.8511822082,
+        8.8887814419,
+        10.3147376036,
+        9.8642303237,
+        9.5927674177,
+        9.2726210643,
+        9.2959831974,
+        9.5047904898,
+        8.8304880163,
+        9.0794973859,
+        9.3897579693,
+        9.1025959668,
+        9.319864911,
+        8.7610805762,
+        7.9923620894,
+        8.02432419,
+        8.0875192403,
+        7.6302468554,
+        8.1773223795
+      ],
+      "source": "World Bank API MS.MIL.XPND.ZS",
+      "unit": "%",
+      "note": "Military spending as a share of general government expenditure (SIPRI). Official national statistics compiled by the World Bank (indicator MS.MIL.XPND.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Military Share of Government Expenditure",
+        "subtitle": "Military spending as a share of general government expenditure (SIPRI)",
+        "frequency": "Annual",
+        "color": "#ffa657",
+        "suffix": "%",
+        "category": "Defence & Strategic",
+        "subgroup": "Defence Budget & Modernization"
+      }
+    },
+    "wb_road_deaths": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019"
+      ],
+      "values": [
+        16.9,
+        16.6,
+        16.3,
+        15.8,
+        15.6,
+        15.9,
+        16.3,
+        16.7,
+        17.1,
+        17.0,
+        17.2,
+        17.4,
+        17.6,
+        17.0,
+        16.1,
+        15.6,
+        15.3,
+        15.2,
+        15.5,
+        15.6
+      ],
+      "source": "World Bank API SH.STA.TRAF.P5",
+      "unit": "per 100k",
+      "note": "Road-traffic deaths per 100,000 people (WHO). Official national statistics compiled by the World Bank (indicator SH.STA.TRAF.P5); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Road Traffic Death Rate",
+        "subtitle": "Road-traffic deaths per 100,000 people (WHO)",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " per 100k",
+        "category": "Crime & Security",
+        "subgroup": "Violence & Crime"
+      }
+    },
+    "wb_suicide_rate": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        15.93,
+        15.1,
+        15.14,
+        15.03,
+        15.4,
+        15.68,
+        15.86,
+        15.86,
+        15.8,
+        15.68,
+        15.9,
+        15.85,
+        15.88,
+        15.68,
+        15.12,
+        14.63,
+        14.62,
+        14.87,
+        14.31,
+        13.98,
+        13.01,
+        12.56
+      ],
+      "source": "World Bank API SH.STA.SUIC.P5",
+      "unit": "per 100k",
+      "note": "Suicide deaths per 100,000 people (WHO). Official national statistics compiled by the World Bank (indicator SH.STA.SUIC.P5); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Suicide Mortality Rate",
+        "subtitle": "Suicide deaths per 100,000 people (WHO)",
+        "frequency": "Annual",
+        "color": "#d2a8ff",
+        "suffix": " per 100k",
+        "category": "Crime & Security",
+        "subgroup": "Violence & Crime"
+      }
+    },
+    "wb_smoking": {
+      "labels": [
+        "2000",
+        "2005",
+        "2007",
+        "2010",
+        "2015",
+        "2020",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        55.7,
+        46.7,
+        43.1,
+        38.5,
+        31.6,
+        26.2,
+        24.4,
+        23.5,
+        22.6
+      ],
+      "source": "World Bank API SH.PRV.SMOK",
+      "unit": "%",
+      "note": "Adults who smoke (WHO age-standardised). Official national statistics compiled by the World Bank (indicator SH.PRV.SMOK); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Smoking Prevalence",
+        "subtitle": "Adults who smoke (WHO age-standardised)",
+        "frequency": "Annual",
+        "color": "#8b949e",
+        "suffix": "%",
+        "category": "Public Health & Epidemiology",
+        "subgroup": "Disease Burden & Epidemiology"
+      }
+    },
+    "wb_malaria_incidence": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        21.8,
+        21.63,
+        19.51,
+        20.28,
+        21.75,
+        22.41,
+        16.5,
+        14.9,
+        14.54,
+        13.84,
+        13.09,
+        10.54,
+        8.1,
+        6.26,
+        6.33,
+        6.44,
+        6.29,
+        4.61,
+        3.43,
+        2.84,
+        2.53,
+        2.5,
+        1.4,
+        1.34,
+        1.48
+      ],
+      "source": "World Bank API SH.MLR.INCD.P3",
+      "unit": "per 1,000",
+      "note": "Malaria cases per 1,000 people at risk. Official national statistics compiled by the World Bank (indicator SH.MLR.INCD.P3); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Malaria Incidence",
+        "subtitle": "Malaria cases per 1,000 people at risk",
+        "frequency": "Annual",
+        "color": "#ffa657",
+        "suffix": " per 1,000",
+        "category": "Public Health & Epidemiology",
+        "subgroup": "Disease Burden & Epidemiology"
+      }
+    },
+    "wb_government_health_share": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        3.05056,
+        2.90321684,
+        2.77127647,
+        2.67687607,
+        2.6527741,
+        2.93604422,
+        2.88599753,
+        2.78734279,
+        2.79898262,
+        3.1219337,
+        3.11162996,
+        3.38130069,
+        3.43849397,
+        3.23883247,
+        3.25070548,
+        3.37624002,
+        3.39333463,
+        3.66080451,
+        3.67532182,
+        3.84729862,
+        3.68660474,
+        4.45562935,
+        4.71439028,
+        4.58670855
+      ],
+      "source": "World Bank API SH.XPD.GHED.GE.ZS",
+      "unit": "%",
+      "note": "Domestic general government health expenditure as a share of total government spending. Official national statistics compiled by the World Bank (indicator SH.XPD.GHED.GE.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Health in Government Expenditure",
+        "subtitle": "Domestic general government health expenditure as a share of total government spending",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "%",
+        "category": "Public Health & Epidemiology",
+        "subgroup": "Health Infrastructure & Spending"
+      }
+    },
+    "wb_renewable_final_energy": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        53.0,
+        52.0,
+        51.5,
+        51.5,
+        50.5,
+        49.5,
+        49.1,
+        47.9,
+        48.0,
+        47.1,
+        46.9,
+        47.1,
+        45.8,
+        45.6,
+        44.9,
+        44.2,
+        43.2,
+        41.5,
+        39.4,
+        37.4,
+        36.2,
+        35.0,
+        34.8,
+        34.9,
+        33.9,
+        33.4,
+        33.0,
+        32.5,
+        32.9,
+        33.5,
+        36.1,
+        34.9
+      ],
+      "source": "World Bank API EG.FEC.RNEW.ZS",
+      "unit": "%",
+      "note": "Renewable energy as a share of total final energy consumption. Official national statistics compiled by the World Bank (indicator EG.FEC.RNEW.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Renewables in Final Energy Consumption",
+        "subtitle": "Renewable energy as a share of total final energy consumption",
+        "frequency": "Annual",
+        "color": "#56d364",
+        "suffix": "%",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Energy Minerals & Fuel"
+      }
+    },
+    "wb_protected_land": {
+      "labels": [
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        5.9,
+        5.9,
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        6.0,
+        7.5,
+        7.5,
+        7.5,
+        7.7,
+        7.7
+      ],
+      "source": "World Bank API ER.LND.PTLD.ZS",
+      "unit": "%",
+      "note": "Protected land as a share of total land area. Official national statistics compiled by the World Bank (indicator ER.LND.PTLD.ZS); gaps reflect years without a reported value.",
+      "meta": {
+        "title": "Terrestrial Protected Areas",
+        "subtitle": "Protected land as a share of total land area",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "%",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Non-Metallic & Industrial Minerals"
+      }
+    },
     "wb_exports_composition": {
       "labels": [
         "Manufactures",
@@ -17829,6 +19127,400 @@
         "suffix": " USD",
         "category": "Tourism & Heritage",
         "subgroup": "International Visitor Trends"
+      }
+    },
+    "wb_female_employment_sector": {
+      "labels": [
+        "Agriculture",
+        "Industry",
+        "Services"
+      ],
+      "values": [
+        59.83,
+        16.14,
+        24.03
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SL.AGR.EMPL.FE.ZS, SL.IND.EMPL.FE.ZS, SL.SRV.EMPL.FE.ZS",
+      "unit": "%",
+      "note": "Share of female employment, latest year with every component reported (2025). World Bank indicators SL.AGR.EMPL.FE.ZS, SL.IND.EMPL.FE.ZS, SL.SRV.EMPL.FE.ZS.",
+      "meta": {
+        "title": "Women's Employment by Sector (2025)",
+        "subtitle": "Share of female employment",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Production & Commodities"
+      }
+    },
+    "wb_male_employment_sector": {
+      "labels": [
+        "Agriculture",
+        "Industry",
+        "Services"
+      ],
+      "values": [
+        34.43,
+        29.64,
+        35.93
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SL.AGR.EMPL.MA.ZS, SL.IND.EMPL.MA.ZS, SL.SRV.EMPL.MA.ZS",
+      "unit": "%",
+      "note": "Share of male employment, latest year with every component reported (2025). World Bank indicators SL.AGR.EMPL.MA.ZS, SL.IND.EMPL.MA.ZS, SL.SRV.EMPL.MA.ZS.",
+      "meta": {
+        "title": "Men's Employment by Sector (2025)",
+        "subtitle": "Share of male employment",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Production & Commodities"
+      }
+    },
+    "wb_gdp_expenditure_mix": {
+      "labels": [
+        "Household consumption",
+        "Government consumption",
+        "Gross fixed capital formation",
+        "Net exports & inventories"
+      ],
+      "values": [
+        56.67,
+        10.77,
+        31.68,
+        0.88
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API NE.CON.PRVT.ZS, NE.CON.GOVT.ZS, NE.GDI.FTOT.ZS",
+      "unit": "%",
+      "note": "Share of GDP, latest year with every component reported (2025). World Bank indicators NE.CON.PRVT.ZS, NE.CON.GOVT.ZS, NE.GDI.FTOT.ZS. 'Net exports & inventories' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "GDP by Expenditure (2025)",
+        "subtitle": "Share of GDP",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Economic",
+        "subgroup": "Macroeconomics"
+      }
+    },
+    "wb_services_exports_mix": {
+      "labels": [
+        "Travel",
+        "Transport",
+        "Insurance & financial",
+        "Communications, computer & ICT",
+        "Other business services"
+      ],
+      "values": [
+        7.69,
+        7.73,
+        2.75,
+        55.41,
+        26.42
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API BX.GSR.TRVL.ZS, BX.GSR.TRAN.ZS, BX.GSR.INSF.ZS, BX.GSR.CMCP.ZS",
+      "unit": "%",
+      "note": "Share of commercial service exports, latest year with every component reported (2025). World Bank indicators BX.GSR.TRVL.ZS, BX.GSR.TRAN.ZS, BX.GSR.INSF.ZS, BX.GSR.CMCP.ZS. 'Other business services' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Commercial Services Exports by Type (2025)",
+        "subtitle": "Share of commercial service exports",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Economic",
+        "subgroup": "Trade & External"
+      }
+    },
+    "wb_services_imports_mix": {
+      "labels": [
+        "Travel",
+        "Insurance & financial",
+        "Communications, computer & ICT",
+        "Transport & other services"
+      ],
+      "values": [
+        17.53,
+        2.92,
+        61.7,
+        17.85
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API BM.GSR.TRVL.ZS, BM.GSR.INSF.ZS, BM.GSR.CMCP.ZS",
+      "unit": "%",
+      "note": "Share of commercial service imports, latest year with every component reported (2025). World Bank indicators BM.GSR.TRVL.ZS, BM.GSR.INSF.ZS, BM.GSR.CMCP.ZS. 'Transport & other services' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Commercial Services Imports by Type (2025)",
+        "subtitle": "Share of commercial service imports",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Economic",
+        "subgroup": "Trade & External"
+      }
+    },
+    "wb_government_expense_mix": {
+      "labels": [
+        "Compensation of employees",
+        "Interest payments",
+        "Goods & services",
+        "Subsidies, grants & social benefits",
+        "Other expense"
+      ],
+      "values": [
+        12.06,
+        23.23,
+        6.5,
+        42.52,
+        15.69
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API GC.XPN.COMP.ZS, GC.XPN.INTP.ZS, GC.XPN.GSRV.ZS, GC.XPN.TRFT.ZS",
+      "unit": "%",
+      "note": "Share of central government expense, latest year with every component reported (2022). World Bank indicators GC.XPN.COMP.ZS, GC.XPN.INTP.ZS, GC.XPN.GSRV.ZS, GC.XPN.TRFT.ZS. 'Other expense' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Central Government Expense by Type (2022)",
+        "subtitle": "Share of central government expense",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Economic",
+        "subgroup": "Fiscal & Union Budget"
+      }
+    },
+    "wb_external_debt_mix": {
+      "labels": [
+        "Long-term debt",
+        "Short-term debt",
+        "Use of IMF credit"
+      ],
+      "values": [
+        555307373499.3,
+        139568064000.0,
+        21580586391.1
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD",
+      "unit": "USD",
+      "note": "Total external debt stocks, current US dollars, latest year with every component reported (2024). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
+      "meta": {
+        "title": "External Debt by Maturity and Creditor (2024)",
+        "subtitle": "Total external debt stocks, current US dollars",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " USD",
+        "category": "Economic",
+        "subgroup": "Trade & External"
+      }
+    },
+    "wb_gender_population": {
+      "labels": [
+        "Female",
+        "Male"
+      ],
+      "values": [
+        48.44,
+        51.56
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SP.POP.TOTL.FE.ZS, SP.POP.TOTL.MA.ZS",
+      "unit": "%",
+      "note": "Share of total population, latest year with every component reported (2025). World Bank indicators SP.POP.TOTL.FE.ZS, SP.POP.TOTL.MA.ZS.",
+      "meta": {
+        "title": "Population by Sex (2025)",
+        "subtitle": "Share of total population",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Demographics"
+      }
+    },
+    "wb_labour_force_status": {
+      "labels": [
+        "Unemployed",
+        "Employed"
+      ],
+      "values": [
+        4.22,
+        95.78
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SL.UEM.TOTL.ZS",
+      "unit": "%",
+      "note": "Share of the labour force (modelled ILO estimate), latest year with every component reported (2025). World Bank indicators SL.UEM.TOTL.ZS. 'Employed' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Employed vs Unemployed (2025)",
+        "subtitle": "Share of the labour force (modelled ILO estimate)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Social",
+        "subgroup": "Welfare"
+      }
+    },
+    "wb_water_service_level": {
+      "labels": [
+        "Safely managed",
+        "Basic, limited or unimproved"
+      ],
+      "values": [
+        76.44,
+        23.56
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SH.H2O.SMDW.ZS",
+      "unit": "%",
+      "note": "Share of population (JMP), latest year with every component reported (2024). World Bank indicators SH.H2O.SMDW.ZS. 'Basic, limited or unimproved' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Drinking-Water Service Level (2024)",
+        "subtitle": "Share of population (JMP)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Infrastructure & Services"
+      }
+    },
+    "wb_sanitation_service_level": {
+      "labels": [
+        "Safely managed",
+        "Open defecation",
+        "Basic or limited"
+      ],
+      "values": [
+        62.79,
+        6.73,
+        30.48
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SH.STA.SMSS.ZS, SH.STA.ODFC.ZS",
+      "unit": "%",
+      "note": "Share of population (JMP), latest year with every component reported (2024). World Bank indicators SH.STA.SMSS.ZS, SH.STA.ODFC.ZS. 'Basic or limited' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Sanitation Service Level (2024)",
+        "subtitle": "Share of population (JMP)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Infrastructure & Services"
+      }
+    },
+    "wb_causes_of_death": {
+      "labels": [
+        "Communicable, maternal & nutritional",
+        "Non-communicable",
+        "Injuries"
+      ],
+      "values": [
+        38.38,
+        49.08,
+        7.04
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SH.DTH.COMM.ZS, SH.DTH.NCOM.ZS, SH.DTH.INJR.ZS",
+      "unit": "%",
+      "note": "Share of total deaths (WHO), latest year with every component reported (2021). World Bank indicators SH.DTH.COMM.ZS, SH.DTH.NCOM.ZS, SH.DTH.INJR.ZS.",
+      "meta": {
+        "title": "Causes of Death (2021)",
+        "subtitle": "Share of total deaths (WHO)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Public Health & Epidemiology",
+        "subgroup": "Disease Burden & Epidemiology"
+      }
+    },
+    "wb_health_spending_split": {
+      "labels": [
+        "Out-of-pocket",
+        "Government",
+        "Other prepaid private & external"
+      ],
+      "values": [
+        43.89,
+        39.02,
+        17.09
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API SH.XPD.OOPC.CH.ZS, SH.XPD.GHED.CH.ZS",
+      "unit": "%",
+      "note": "Share of current health expenditure, latest year with every component reported (2023). World Bank indicators SH.XPD.OOPC.CH.ZS, SH.XPD.GHED.CH.ZS. 'Other prepaid private & external' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Out-of-Pocket vs Government Health Spending (2023)",
+        "subtitle": "Share of current health expenditure",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Public Health & Epidemiology",
+        "subgroup": "Health Infrastructure & Spending"
+      }
+    },
+    "wb_freshwater_withdrawals": {
+      "labels": [
+        "Agriculture",
+        "Industry",
+        "Domestic use"
+      ],
+      "values": [
+        90.41,
+        2.23,
+        7.36
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API ER.H2O.FWAG.ZS, ER.H2O.FWIN.ZS",
+      "unit": "%",
+      "note": "Share of total freshwater withdrawals (FAO AQUASTAT), latest year with every component reported (2022). World Bank indicators ER.H2O.FWAG.ZS, ER.H2O.FWIN.ZS. 'Domestic use' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Freshwater Withdrawals by Sector (2022)",
+        "subtitle": "Share of total freshwater withdrawals (FAO AQUASTAT)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Non-Metallic & Industrial Minerals"
+      }
+    },
+    "wb_military_budget_share": {
+      "labels": [
+        "Military",
+        "All other government spending"
+      ],
+      "values": [
+        8.18,
+        91.82
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API MS.MIL.XPND.ZS",
+      "unit": "%",
+      "note": "Share of general government expenditure (SIPRI), latest year with every component reported (2025). World Bank indicators MS.MIL.XPND.ZS. 'All other government spending' is the residual to 100%, not a directly reported category.",
+      "meta": {
+        "title": "Military Share of Government Spending (2025)",
+        "subtitle": "Share of general government expenditure (SIPRI)",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Defence & Strategic",
+        "subgroup": "Defence Budget & Modernization"
       }
     },
     "terror_attacks_per_million": {
@@ -20122,6 +21814,880 @@
       "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
       "note": "Credit-card and debit-card POS/e-commerce expenditure for the latest common reported year (2026), in INR lakh crore. Debit-card ATM withdrawals are excluded.",
       "unit": "INR lakh crore"
+    },
+    "lwe_casualties_cumulative": {
+      "labels": [
+        "Civilians",
+        "Security forces",
+        "Extremists"
+      ],
+      "values": [
+        4136.0,
+        2722.0,
+        5001.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
+      "meta": {
+        "title": "Left-Wing Extremism Casualties by Group (2000\u20132025)",
+        "subtitle": "Who bore the casualties of the Maoist insurgency",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "insurgency_fatalities_by_theatre": {
+      "labels": [
+        "Jammu & Kashmir",
+        "North East",
+        "Left-wing extremism"
+      ],
+      "values": [
+        22970.0,
+        10652.0,
+        11859.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database; MHA North East Division & SATP North East Insurgency Database; https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "fatalities",
+      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
+      "meta": {
+        "title": "Insurgency Fatalities by Theatre (2000\u20132025)",
+        "subtitle": "Fatalities in the three major internal-security theatres",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "insurgency_incidents_by_theatre": {
+      "labels": [
+        "Jammu & Kashmir",
+        "North East",
+        "Left-wing extremism"
+      ],
+      "values": [
+        32.0,
+        142.0,
+        168.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division Performance Reports; Ministry of Home Affairs Annual Reports (North East Division); Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+      "unit": "incidents",
+      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Insurgency Incidents by Theatre (2025)",
+        "subtitle": "Incidents in the three major internal-security theatres",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " incidents",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "specialised_crime_cases_mix": {
+      "labels": [
+        "Crimes against children (POCSO)",
+        "Narcotics (NDPS)",
+        "Cyber crime"
+      ],
+      "values": [
+        177435.0,
+        108420.0,
+        85803.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "NCRB Crime in India (Crimes against Children & POCSO Act); NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act); NCRB Cyber Crime statistics (IT Act & IPC cyber offences)",
+      "unit": "cases",
+      "note": "Latest year reported for every slice (2023). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Registered Cases by Specialised Crime Head (2023)",
+        "subtitle": "NCRB cases under three specialised heads",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " cases",
+        "category": "Crime & Security",
+        "subgroup": "Violence & Crime"
+      }
+    },
+    "lwe_casualties_latest": {
+      "labels": [
+        "Civilians",
+        "Security forces",
+        "Extremists"
+      ],
+      "values": [
+        54.0,
+        33.0,
+        390.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Left-Wing Extremism Casualties, Latest Year (2025)",
+        "subtitle": "Casualties by group in the most recent reported year",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "cards_in_circulation_mix": {
+      "labels": [
+        "Debit cards",
+        "Credit cards"
+      ],
+      "values": [
+        101.5,
+        12.8
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Reserve Bank of India Payment System Statistics (Active Debit Cards in Circulation in Crore Cards); Reserve Bank of India Payment System Statistics (Active Credit Cards in Circulation in Crore Cards)",
+      "unit": "crore cards",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Cards in Circulation: Debit vs Credit (2026)",
+        "subtitle": "RBI payment-card stock",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " crore cards",
+        "category": "Payments & Digital Banking",
+        "subgroup": "Card Spends & Ecosystem"
+      }
+    },
+    "mineral_output_mix": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Limestone",
+        "Lignite"
+      ],
+      "values": [
+        1140.0,
+        315.0,
+        505.0,
+        54.8
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes); Indian Bureau of Mines (IBM) & Ministry of Mines (Iron Ore Production Output in Million Tonnes); Indian Bureau of Mines & Cement Manufacturers Association (Limestone Production in Million Tonnes); NLC India & Ministry of Coal (Lignite Production Output in Million Tonnes)",
+      "unit": "Million Tonnes",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Major Mineral Output Mix (2026)",
+        "subtitle": "Coal, lignite, iron ore and limestone output",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " Million Tonnes",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Metallic Minerals & Ores"
+      }
+    },
+    "tourist_flows_mix": {
+      "labels": [
+        "Inbound arrivals",
+        "Outbound departures"
+      ],
+      "values": [
+        17914000.0,
+        26915000.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API ST.INT.ARVL; World Bank API ST.INT.DPRT",
+      "unit": "visitors",
+      "note": "Latest year reported for every slice (2019). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Inbound vs Outbound Tourists (2019)",
+        "subtitle": "International tourist arrivals and departures",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " visitors",
+        "category": "Tourism & Heritage",
+        "subgroup": "International Visitor Trends"
+      }
+    },
+    "connectivity_mix": {
+      "labels": [
+        "Mobile",
+        "Fixed broadband"
+      ],
+      "values": [
+        79.35,
+        3.15
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API IT.CEL.SETS.P2; World Bank API IT.NET.BBND.P2",
+      "unit": "per 100 people",
+      "note": "Latest year reported for every slice (2024). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Mobile vs Fixed Broadband Subscriptions (2024)",
+        "subtitle": "Subscriptions per 100 people",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " per 100 people",
+        "category": "Payments & Digital Banking",
+        "subgroup": "Digital Financial Index"
+      }
+    },
+    "sector_export_value_mix": {
+      "labels": [
+        "Pharmaceuticals",
+        "Textiles & apparel",
+        "Minerals & metals"
+      ],
+      "values": [
+        35.5,
+        44.2,
+        38.5
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pharmexcil & Ministry of Commerce (Pharmaceutical & Biotech Exports Trajectory in USD Billion); Ministry of Textiles & DGFT (Textiles, Garments & Technical Textiles Export Trajectory in USD Billion); Directorate General of Foreign Trade (DGFT) & Ministry of Mines (Mineral & Ore Exports Value in USD Billion)",
+      "unit": "USD bn",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Sector Export Value Mix (2026)",
+        "subtitle": "Pharmaceutical, textile and mineral & metal exports",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " USD bn",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Production & Commodities"
+      }
+    },
+    "terror_attacks_by_decade": {
+      "labels": [
+        "1970\u20131979",
+        "1980\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132021"
+      ],
+      "values": [
+        24.0,
+        1228.0,
+        1790.0,
+        2572.0,
+        7865.0,
+        685.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Our World in Data; Global Terrorism Database-derived series",
+      "unit": "attacks",
+      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Terrorist Attacks by Decade",
+        "subtitle": "Attacks recorded in the Global Terrorism Database, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " attacks",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "terror_fatalities_by_decade": {
+      "labels": [
+        "1970\u20131979",
+        "1980\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132021"
+      ],
+      "values": [
+        35.0,
+        3096.0,
+        6211.0,
+        6230.0,
+        4574.0,
+        347.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Our World in Data; Global Terrorism Database-derived fatalities",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Terrorism Fatalities by Decade",
+        "subtitle": "Fatalities recorded in the Global Terrorism Database, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "kashmir_fatalities_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        19209.0,
+        2582.0,
+        1179.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Jammu & Kashmir Fatalities by Period",
+        "subtitle": "Insurgency-related fatalities, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Jammu & Kashmir Insurgency"
+      }
+    },
+    "northeast_fatalities_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        8253.0,
+        2070.0,
+        329.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "MHA North East Division & SATP North East Insurgency Database",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "North East Fatalities by Period",
+        "subtitle": "Insurgency-related fatalities, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "North East Insurgency"
+      }
+    },
+    "lwe_civilian_casualties_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        1907.0,
+        1862.0,
+        367.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Maoist Violence: Civilian Casualties by Period",
+        "subtitle": "Civilian casualties, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "khalistan_fatalities_by_period": {
+      "labels": [
+        "1981\u20131984",
+        "1985\u20131989",
+        "1990\u20131994",
+        "1995"
+      ],
+      "values": [
+        1323.0,
+        6388.0,
+        13854.0,
+        172.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
+      "unit": "",
+      "note": "Annual values summed into 5-year periods between 1981 and 1995; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Punjab Militancy by Period",
+        "subtitle": "Annual series summed over 5-year periods",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": "",
+        "category": "Crime & Security",
+        "subgroup": "Punjab Militancy & Security"
+      }
+    },
+    "coal_output_by_period": {
+      "labels": [
+        "2010\u20132014",
+        "2015\u20132019",
+        "2020\u20132024",
+        "2025\u20132026"
+      ],
+      "values": [
+        2759.0,
+        3310.0,
+        4424.0,
+        2230.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes)",
+      "unit": "Million Tonnes",
+      "note": "Annual values summed into 5-year periods between 2010 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Coal Output by Period",
+        "subtitle": "Domestic coal output, five-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " Million Tonnes",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Energy Minerals & Fuel"
+      }
+    },
+    "pew_reports_by_period": {
+      "labels": [
+        "1997\u20131999",
+        "2000\u20132004",
+        "2005\u20132009",
+        "2010\u20132014",
+        "2015\u20132019",
+        "2020\u20132024",
+        "2025\u20132026"
+      ],
+      "values": [
+        5.0,
+        43.0,
+        221.0,
+        355.0,
+        310.0,
+        318.0,
+        165.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pew Research Center India public report catalog",
+      "unit": "reports",
+      "note": "Annual values summed into 5-year periods between 1997 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Pew India Publications by Period",
+        "subtitle": "Number of Pew Research Center reports mentioning India, five-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "unesco_inscriptions_by_period": {
+      "labels": [
+        "1983\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132026"
+      ],
+      "values": [
+        19.0,
+        3.0,
+        5.0,
+        11.0,
+        7.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
+      "unit": "sites",
+      "note": "Annual values summed into 10-year periods between 1983 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "UNESCO Inscriptions in India by Period",
+        "subtitle": "New World Heritage inscriptions, ten-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " sites",
+        "category": "Tourism & Heritage",
+        "subgroup": "World Heritage Sites"
+      }
+    },
+    "state_pmjdy_region_share": {
+      "labels": [
+        "Central",
+        "East",
+        "West",
+        "South",
+        "North-East",
+        "North"
+      ],
+      "values": [
+        17.39,
+        17.39,
+        9.84,
+        8.08,
+        3.08,
+        2.78
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
+      "unit": "accounts",
+      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
+      "meta": {
+        "title": "Jan Dhan Accounts by Region",
+        "subtitle": "PMJDY bank accounts grouped by region",
+        "frequency": "Derived from State snapshot",
+        "color": "#ff9933",
+        "suffix": " accounts",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Welfare & Scheme Coverage"
+      }
+    },
+    "state_gsdp_region_share": {
+      "labels": [
+        "South",
+        "West",
+        "Central",
+        "East",
+        "North",
+        "North-East"
+      ],
+      "values": [
+        83.51,
+        72.95,
+        39.76,
+        34.08,
+        21.52,
+        7.85
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2022-23, INR lakh crore)",
+      "unit": "INR",
+      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
+      "meta": {
+        "title": "GSDP by Region",
+        "subtitle": "Gross State Domestic Product grouped by region",
+        "frequency": "Derived from State snapshot",
+        "color": "#ff9933",
+        "suffix": " INR",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Financial Health & GSDP"
+      }
+    },
+    "pew_smartphone_ownership": {
+      "labels": [
+        "Own a smartphone",
+        "Do not own one"
+      ],
+      "values": [
+        7.0,
+        93.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Smartphone Ownership (2013)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_social_media_use": {
+      "labels": [
+        "Use social media",
+        "Do not use it"
+      ],
+      "values": [
+        54.0,
+        46.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Social Media Use (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_internet_use": {
+      "labels": [
+        "Use the internet",
+        "Do not use it"
+      ],
+      "values": [
+        45.0,
+        55.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Internet Use (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_whatsapp_use": {
+      "labels": [
+        "Use WhatsApp regularly",
+        "Do not"
+      ],
+      "values": [
+        51.0,
+        49.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "WhatsApp Use (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_fake_news_concern": {
+      "labels": [
+        "Concerned",
+        "Not concerned / no answer"
+      ],
+      "values": [
+        77.0,
+        23.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Concern About Fake News (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_social_media_democracy": {
+      "labels": [
+        "Good for democracy",
+        "Other views"
+      ],
+      "values": [
+        71.0,
+        29.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Social Media and Democracy (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_leadership_favorability": {
+      "labels": [
+        "Favorable",
+        "Other views"
+      ],
+      "values": [
+        88.0,
+        12.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "View of National Leadership (2017)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_climate_threat": {
+      "labels": [
+        "Major threat",
+        "Other views"
+      ],
+      "values": [
+        73.0,
+        27.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/climate-change-energy/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Climate Change as a Major Threat (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_equal_rights": {
+      "labels": [
+        "Should have equal rights",
+        "Other views"
+      ],
+      "values": [
+        88.0,
+        12.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Equal Rights for Men and Women (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_daily_prayer": {
+      "labels": [
+        "Pray daily",
+        "Do not"
+      ],
+      "values": [
+        60.0,
+        40.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Daily Prayer (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_religious_freedom": {
+      "labels": [
+        "Very free",
+        "Less than very free"
+      ],
+      "values": [
+        91.0,
+        9.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Freedom to Practise Religion (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "auto_domestic_sales_mix": {
+      "labels": [
+        "Passenger vehicles",
+        "Commercial vehicles",
+        "Three-wheelers",
+        "Two-wheelers"
+      ],
+      "values": [
+        2.5,
+        0.63,
+        0.48,
+        14.81
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "SIAM Automobile Domestic Sales Trends (FY2008-09 to FY2013-14); annual domestic sales by vehicle category, million units",
+      "unit": "million vehicles",
+      "note": "Latest reported value for each segment of the dashboard series (2013-14).",
+      "meta": {
+        "title": "Automobile Domestic Sales by Segment",
+        "subtitle": "Passenger, commercial, three- and two-wheeler sales",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " million vehicles",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Manufacturing & Industrial Growth"
+      }
     }
   },
   "indian_matrix_articles": [

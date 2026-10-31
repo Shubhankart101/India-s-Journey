@@ -129,6 +129,10 @@ class DashboardEndpointTests(unittest.TestCase):
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"))
         from official_indicator_layer import COMPOSITIONS, LINE_INDICATORS
         expected.update(row[0] for row in LINE_INDICATORS + COMPOSITIONS)
+        import derived_pie_layer as derived
+        for specs in (derived.CUMULATIVE, derived.LATEST, derived.BINARY, derived.PERIODS, derived.REGION_PIES):
+            expected.update(row[0] for row in specs)
+        expected.add("auto_domestic_sales_mix")
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -462,7 +466,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=election-pies-v3', body)
+        self.assertIn(b'styles.css?v=more-pies-v4', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",

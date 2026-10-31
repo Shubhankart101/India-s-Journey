@@ -14,8 +14,10 @@ from urllib.request import Request, urlopen
 
 try:
     from scripts.official_indicator_layer import build_official_layer
+    from scripts.derived_pie_layer import build_derived_layer
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
+    from derived_pie_layer import build_derived_layer
 
 ROOT = Path(__file__).resolve().parents[1]
 CHART_DIR = ROOT / "assets" / "charts"
@@ -1934,6 +1936,7 @@ def main() -> None:
         result["series"]["sectoral_market_indices"] = cached if cached.get("labels") else {"error": str(error)}
 
     result["series"].update(build_composition_series(result["series"]))
+    result["series"].update(build_derived_layer(result["series"]))
     
     chart_json = json.dumps(result, indent=2) + "\n"
     (ROOT / "data" / "chart-latest.json").write_text(chart_json)

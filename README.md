@@ -1,4 +1,4 @@
-# 📊 India's Journey | Public Data Dashboard
+﻿# 📊 India's Journey | Public Data Dashboard
 
 <p align="center">
 	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
@@ -153,7 +153,7 @@ Inspired by the public-data storytelling and visual exploration at [PolityPolicy
 
 The Indian Elections group includes current candidate-level ECI results and a selectable archive of candidate returns parsed from public ECI statistical-report spreadsheets. ECI constituency-wide `Total` rows are excluded from candidate rankings and party-lead counts. Current ECI totals refresh every three hours and remain provisional until Form 20. The historical workbook snapshot currently covers 20,041 observations from 16 reports in 15 States/UTs for 2021–2023; it is partial. A daily-refreshed recent snapshot adds 41,465 candidate rows: all 543 constituencies from the 2024 Lok Sabha election (official ECI statistical report 33) and Assembly elections from 2022 through 2026, with calculated vote shares marked, plus 112 interactive seat/vote pie indices. It does not claim every historical Lok Sabha or State Assembly election. The separate U.S. Elections group presents National Archives Electoral College totals and 115 daily-refreshed FEC campaign-finance series (including 50 funding-composition pies) across five filing cycles, 2018–2026. Presidential results, Presidential candidate finances, and Congressional candidate finances are separately grouped; FEC financial totals are not votes. U.S. popular-vote, turnout and constituency-level House results are not included. Comparable SSR/SIR electoral-roll revision time series are also not currently included.
 
-The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), an official-indicator layer of 30 further World Bank series and 13 composition pies (trade mix, revenue mix, employment by sector, age structure, electricity mix, health financing, land use and more), plus specifically cited state snapshots. Additive cards have a Bar/Pie toggle. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
+The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), an official-indicator layer of 50 further World Bank series and 29 composition pies, plus a derived layer (`scripts/derived_pie_layer.py`) of 30+ pies built from other dashboard series (insurgency and crime mixes, Pew agree-vs-other splits, regional shares, period totals) (trade mix, revenue mix, employment by sector, age structure, electricity mix, health financing, land use and more), plus specifically cited state snapshots. Additive cards have a Bar/Pie toggle. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
 
 The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://shubhankart101.github.io/India-s-Journey/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
 
@@ -170,3 +170,4 @@ python -m http.server 8000 --directory docs
 ```
 
 Open `http://localhost:8000` in a browser.
+
