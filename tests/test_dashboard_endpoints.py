@@ -2,6 +2,7 @@ import json
 import os
 import re
 import ssl
+import time
 import unittest
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -67,8 +68,18 @@ class DashboardEndpointTests(unittest.TestCase):
                 "Accept": "application/json,text/html,*/*;q=0.8",
             },
         )
+        # Government portals are often slow from cloud runners: retry timeouts and dropped connections.
+        for attempt in range(1, 4):
+            try:
+                return self._open(request, url)
+            except (TimeoutError, URLError) as error:
+                if attempt == 3:
+                    self.fail(f"Endpoint could not be reached after 3 attempts: {url} ({getattr(error, 'reason', error)})")
+                time.sleep(2 * attempt)
+
+    def _open(self, request, url):
         try:
-            with urlopen(request, timeout=30) as response:
+            with urlopen(request, timeout=45) as response:
                 return response.status, response.read()
         except HTTPError as error:
             return error.code, error.read()
@@ -77,13 +88,13 @@ class DashboardEndpointTests(unittest.TestCase):
                 # Some government portals (e.g. eaindustry.nic.in) omit intermediate certificates.
                 # This is only a reachability check and no data is read, so retry unverified.
                 try:
-                    with urlopen(request, timeout=30, context=ssl._create_unverified_context()) as response:
+                    with urlopen(request, timeout=45, context=ssl._create_unverified_context()) as response:
                         return response.status, response.read()
                 except HTTPError as retry_error:
                     return retry_error.code, retry_error.read()
                 except URLError as retry_error:
                     error = retry_error
-            self.fail(f"Endpoint could not be reached: {url} ({error.reason})")
+            raise error
 
     def test_dashboard_page_is_served(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/")
