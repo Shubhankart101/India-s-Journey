@@ -300,3 +300,39 @@ body.product-theme [data-reveal].is-revealed { opacity: 1; transform: none; }
   body.product-theme [data-reveal] { opacity: 1; transform: none; transition: none; }
   body.product-theme .chart-card, body.product-theme .product-tile { animation: none; transition: none; }
 }
+
+/* Interactive layer (site.js): progress bar, glassy header, typewriter, spotlight cards, rise-in, back to top */
+body.product-theme .scroll-progress { position: fixed; z-index: 1002; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #ff9933, var(--link) 50%, #30d158); transform: scaleX(var(--progress, 0)); transform-origin: left; pointer-events: none; }
+body.product-theme .masthead { transition: background .3s ease, box-shadow .3s ease; }
+body.product-theme .masthead.is-scrolled { background: rgba(0, 0, 0, .74); box-shadow: 0 10px 30px rgba(0, 0, 0, .45); }
+body.product-theme .site-nav a { position: relative; }
+body.product-theme .site-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, #ff9933, var(--link), #30d158); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+body.product-theme .site-nav a:hover::after, body.product-theme .site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+body.product-theme .brand-emblem { transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+body.product-theme .brand-mark:hover .brand-emblem { transform: rotate(-8deg) scale(1.1); }
+body.product-theme .hero-typed { margin: 14px 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: clamp(.95rem, 2vw, 1.2rem); color: var(--muted); min-height: 1.6em; }
+body.product-theme .typewriter-text { color: #ff9933; }
+body.product-theme .caret { display: inline-block; width: 2px; height: 1.1em; margin-left: 3px; vertical-align: -.15em; background: #30d158; animation: ij-blink 1s step-end infinite; }
+@keyframes ij-blink { 50% { opacity: 0; } }
+body.product-theme .product-hero h1 span { background-size: 200% auto; animation: ij-shimmer 8s linear infinite; }
+@keyframes ij-shimmer { to { background-position: 200% center; } }
+body.product-theme .button { transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+body.product-theme .button:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(41, 151, 255, .45); }
+body.product-theme .hero-metrics strong { font-variant-numeric: tabular-nums; }
+body.product-theme .chart-card, body.product-theme .feature-card { background: radial-gradient(circle 260px at var(--mx, -400px) var(--my, -400px), rgba(41, 151, 255, .1), transparent 70%), var(--glass); }
+body.product-theme .chart-card:hover { background: radial-gradient(circle 260px at var(--mx, -400px) var(--my, -400px), rgba(255, 153, 51, .12), transparent 70%), rgba(36, 36, 38, .82); }
+body.product-theme a.feature-card:hover { background: radial-gradient(circle 260px at var(--mx, -400px) var(--my, -400px), rgba(255, 153, 51, .14), transparent 70%), rgba(44, 44, 46, .85); }
+body.product-theme .group-pill:hover { transform: translateY(-2px); background: rgba(255, 153, 51, .18); }
+body.product-theme .rise { animation: none; opacity: 0; translate: 0 32px; transition: opacity .7s ease var(--rise-delay, 0ms), translate .7s cubic-bezier(.2, .8, .2, 1) var(--rise-delay, 0ms), transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s ease, background .3s ease; }
+body.product-theme .rise.is-in { opacity: 1; translate: 0 0; }
+body.product-theme .scroll-top { position: fixed; z-index: 1001; right: 22px; bottom: 26px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--link); color: #000; font-size: 1.2rem; font-weight: 700; cursor: pointer; box-shadow: 0 10px 26px rgba(41, 151, 255, .4); opacity: 0; pointer-events: none; transform: translateY(16px); transition: opacity .3s, transform .3s, background .2s; }
+body.product-theme .scroll-top.visible { opacity: 1; pointer-events: auto; transform: none; }
+body.product-theme .scroll-top:hover { background: #ff9933; }
+@media (max-width: 840px) {
+  body.product-theme .scroll-top { right: 14px; bottom: calc(76px + env(safe-area-inset-bottom)); width: 42px; height: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.product-theme .rise { opacity: 1; translate: none; }
+  body.product-theme .caret, body.product-theme .product-hero h1 span { animation: none; }
+  body.product-theme .scroll-top, body.product-theme .masthead, body.product-theme .site-nav a::after { transition: none; }
+}

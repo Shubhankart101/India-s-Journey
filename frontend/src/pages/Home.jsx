@@ -5,8 +5,10 @@ import { formatDate } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
 import { ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
+import { CountUp, Marquee, Typewriter } from '../components/Motion.jsx';
 
 const SLIDE_MS = 7000;
+const TOPICS = ['GDP and inflation', 'UPI payments', 'coal and iron ore', 'Lok Sabha results', 'public health', 'defence and security', 'tourism and heritage'];
 
 const tilt = event => {
   const node = event.currentTarget;
@@ -34,6 +36,12 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [paused, slides.length]);
   const current = slides[slide % (slides.length || 1)];
+  const subgroupLinks = (categories.data || []).flatMap(category => category.subgroups.map(sub => ({
+    to: `/explore?category=${category.slug}&subgroup=${sub.slug}`,
+    label: sub.name,
+    art: sub.art || category.art,
+  })));
+  const half = Math.ceil(subgroupLinks.length / 2);
 
   return (
     <>
@@ -45,8 +53,10 @@ export default function Home() {
         onBlur={() => setPaused(false)}
       >
         <ArtBackdrop art={current?.art || 'parliament.svg'} />
+        <div className="hero-orbs" aria-hidden="true"><span /><span /><span /></div>
         <p className="eyebrow">Official data · refreshed on schedule</p>
         <h1>India's Journey.<br /><span className="gradient-text">Every number, sourced.</span></h1>
+        <p className="hero-typed">Track <Typewriter phrases={TOPICS} /></p>
         <p className="lead">Search hundreds of indicators on the economy, industry, mining, elections, health, society and tourism — open any chart, compare up to four side by side, and download the data.</p>
         <div className="hero-actions">
           <Link className="btn btn-primary" to="/explore">Explore indicators</Link>
@@ -54,10 +64,10 @@ export default function Home() {
         </div>
         {s && (
           <dl className="stat-row">
-            <div><dt>Indicators</dt><dd>{s.indicators.toLocaleString('en-IN')}</dd></div>
-            <div><dt>Interactive pies</dt><dd>{s.radial_indicators.toLocaleString('en-IN')}</dd></div>
-            <div><dt>Groups</dt><dd>{s.categories}</dd></div>
-            <div><dt>Data points</dt><dd>{s.data_points.toLocaleString('en-IN')}</dd></div>
+            <div><dt>Indicators</dt><dd><CountUp value={s.indicators} /></dd></div>
+            <div><dt>Interactive pies</dt><dd><CountUp value={s.radial_indicators} /></dd></div>
+            <div><dt>Groups</dt><dd><CountUp value={s.categories} /></dd></div>
+            <div><dt>Data points</dt><dd><CountUp value={s.data_points} /></dd></div>
           </dl>
         )}
         {s?.source_generated_at && <p className="muted small">Data generated {formatDate(s.source_generated_at)}</p>}
@@ -81,6 +91,13 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      {subgroupLinks.length > 0 && (
+        <div className="marquee-band">
+          <Marquee items={subgroupLinks.slice(0, half)} label="Featured subgroups" />
+          <Marquee items={subgroupLinks.slice(half)} label="More subgroups" reverse />
+        </div>
+      )}
 
       <section className="section">
         <div className="section-head">

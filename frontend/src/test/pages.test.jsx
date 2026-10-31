@@ -54,7 +54,24 @@ describe('Layout and Home', () => {
     });
     renderApp('/');
     await userEvent.click(await screen.findByRole('button', { name: 'Try again' }));
-    expect(await screen.findByRole('link', { name: /Elections/ })).toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: /subgroups\s*Elections/ })).toBeInTheDocument();
+  });
+
+  it('adds a subgroup marquee, typewriter topics and a back-to-top button', async () => {
+    mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
+    const { container } = renderApp('/');
+    const featured = await screen.findByRole('navigation', { name: 'Featured subgroups' });
+    expect(within(featured).getByRole('link', { name: 'Macro Overview' })).toHaveAttribute('href', '/explore?category=economic&subgroup=macro-overview');
+    const more = screen.getByRole('navigation', { name: 'More subgroups' });
+    expect(within(more).getByRole('link', { name: 'Indian Elections' })).toHaveAttribute('href', '/explore?category=elections&subgroup=indian-elections');
+    // The looping duplicate copy is hidden from assistive tech and the tab order.
+    const copy = featured.querySelector('.marquee-group[aria-hidden="true"] a');
+    expect(copy).toHaveAttribute('tabindex', '-1');
+    expect(screen.getByText(/GDP and inflation, UPI payments/)).toHaveClass('sr-only');
+    expect(container.querySelector('.hero-orbs')).toHaveAttribute('aria-hidden', 'true');
+    expect(container.querySelector('.scroll-progress')).toBeInTheDocument();
+    const top = screen.getByRole('button', { name: 'Back to top', hidden: true });
+    expect(top).toHaveAttribute('tabindex', '-1');
   });
 
   it('renders the 404 page for unknown routes', async () => {

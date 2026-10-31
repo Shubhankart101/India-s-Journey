@@ -22,7 +22,18 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | **GitHub Pages** (already live) | Static dashboard in `docs/` | Free for public repositories | No login, API or Swagger; this is the backup site |
 | **Render** (`render.yaml`) | Full Django + React app | One free web service | Sleeps after 15 minutes idle (cold start ~1 minute); disk resets on deploy |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
-| **Cloudflare Pages / Netlify** | Static dashboard in `docs/` | Free static hosting | Static only; a mirror of GitHub Pages |
+| **Netlify** (`netlify.toml`) | Static dashboard in `docs/` | Free static hosting | Static only; a mirror of GitHub Pages |
+| **Cloudflare Pages** | Static dashboard in `docs/` | Free static hosting | Static only; set the build output directory to `docs` |
+
+### Netlify
+
+The repository root has no `index.html`, so Netlify needs to be told to publish `docs/`. Otherwise every URL shows Netlify's "Page not found". [`netlify.toml`](../netlify.toml) does this. It has no build command, adds a few security and cache headers, and `docs/404.html` serves as the not-found page.
+
+1. In Netlify, choose **Add new site ? Import an existing project**, pick this repository and the `main` branch. Leave the build command empty; `netlify.toml` supplies `publish = "docs"`.
+2. If the site already exists, open **Site configuration ? Build & deploy ? Build settings** and make sure **Base directory** is empty and **Publish directory** is `docs`. Values set in the UI are overridden by `netlify.toml`. Then choose **Deploys ? Trigger deploy ? Clear cache and deploy site**.
+3. New sites can start as **Private**: visitors get a password page or a 401. Choose **Make public** (or **Site configuration ? Access & security ? Visitor access**) to open it to everyone.
+
+Netlify serves the static dashboard only. Sign-in, Compare, Saved and Swagger need the Django app, so it runs locally or on a container host.
 
 Fly.io and Railway now offer only trial credit, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
 

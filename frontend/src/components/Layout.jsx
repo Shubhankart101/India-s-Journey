@@ -4,6 +4,7 @@ import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
 import { API_DOCS_URL, BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
+import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
@@ -17,6 +18,9 @@ export default function Layout() {
   const { user, logout } = useAuth();
   const compare = useCompare();
   const location = useLocation();
+  const scrolled = useScrolled();
+  useAutoReveal();
+  usePointerSpotlight();
   useEffect(() => {
     window.scrollTo?.(0, 0);
   }, [location.pathname]);
@@ -25,9 +29,10 @@ export default function Layout() {
   return (
     <div className="app">
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header">
+      <ScrollProgress />
+      <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner">
-          <Link to="/" className="brand">India's Journey</Link>
+          <Link to="/" className="brand">India's Journey<span className="brand-dot" aria-hidden="true">.</span></Link>
           <nav className="desktop-nav" aria-label="Primary">
             {NAV.map(item => (
               <NavLink key={item.to} to={item.to} end={item.end}>
@@ -64,6 +69,8 @@ export default function Layout() {
           <button type="button" className="btn btn-ghost" onClick={compare.clear}>Clear</button>
         </aside>
       )}
+
+      <ScrollTopButton />
 
       <footer className="site-footer">
         <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. Every chart links to its source.</p>

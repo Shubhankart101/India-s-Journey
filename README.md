@@ -97,7 +97,7 @@ The repository also contains a full web app, alongside the static GitHub Pages s
 
 **Data flow:** the collectors and `generate_public_charts.py` update `docs/`. Then [`scripts/export_catalog.mjs`](scripts/export_catalog.mjs) writes `data/catalog.json`, and `manage.py import_catalog` loads it into SQLite. Every scheduled workflow that regenerates charts also re-exports the catalogue. To run the whole chain locally, use `python webapp/manage.py refresh_data`.
 
-**Illustrations:** every group and subgroup has its own animated SVG scene. Animations stop when the user has reduced motion turned on. [`scripts/generate_art.py`](scripts/generate_art.py) generates these scenes into `docs/assets/` and `frontend/public/art/`. The scenes are mapped to subgroups in `categoryBgMap` and `subgroupArtMap` in `docs/app.js`. After changing the art, run `python scripts/generate_art.py`, then re-export the catalogue and import it.
+**Illustrations:** every group and subgroup has its own animated SVG scene. Animations stop when the user has reduced motion turned on. Both sites also add a scroll-progress bar, a header that turns glassy on scroll, a typewriter line in the hero, count-up stats, cards that rise in and glow under the cursor, and a back-to-top button ([`Motion.jsx`](frontend/src/components/Motion.jsx) in the app, the end of [`docs/site.js`](docs/site.js) for the static site). The app's home page also has scrolling strips of subgroup links. [`scripts/generate_art.py`](scripts/generate_art.py) generates these scenes into `docs/assets/` and `frontend/public/art/`. The scenes are mapped to subgroups in `categoryBgMap` and `subgroupArtMap` in `docs/app.js`. After changing the art, run `python scripts/generate_art.py`, then re-export the catalogue and import it.
 
 **Local development**
 
@@ -145,7 +145,8 @@ See [Deployment](docs/DEPLOYMENT.md) for every variable.
 | GitHub Pages | Static dashboard (`docs/`) | Already live; doubles as the backup site |
 | Render free web service | Full app (`render.yaml`) | Sleeps after 15 minutes idle |
 | Google Cloud Run | Full app (`Dockerfile`) | Free monthly allowance; scales to zero; needs billing account |
-| Cloudflare Pages / Netlify | Static dashboard (`docs/`) | Static mirror |
+| Netlify | Static dashboard (`docs/`) | Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
+| Cloudflare Pages | Static dashboard (`docs/`) | Static mirror; set the output directory to `docs` |
 
 On every free tier SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
 
