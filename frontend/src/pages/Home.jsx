@@ -5,6 +5,7 @@ import { formatDate } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
 import { ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
+import MiniIndices from '../components/MiniIndices.jsx';
 import { CountUp, Marquee, Typewriter } from '../components/Motion.jsx';
 
 const SLIDE_MS = 7000;
@@ -76,6 +77,7 @@ export default function Home() {
             <Link className="hero-caption" to={`/explore?category=${current.slug}`}>
               Now showing <strong>{current.name}</strong> →
             </Link>
+            <MiniIndices category={current} />
             <div className="slide-dots" role="group" aria-label="Choose background scene">
               {slides.map((category, index) => (
                 <button

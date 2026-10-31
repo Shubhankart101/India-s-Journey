@@ -54,6 +54,47 @@ describe('Layout and Home', () => {
     expect([...backdrop.querySelectorAll('img')].map(img => img.getAttribute('src'))).toEqual(['/art/parliament.svg', '/art/eci-building.svg']);
   });
 
+  it('shows mini indices with sparklines for the group on screen', async () => {
+    const elections = summary({ key: 'turnout', title: 'Voter turnout', category: 'Elections', category_slug: 'elections', suffix: '%', preview: { labels: ['2014', '2019', '2024'], datasets: [{ label: 'Turnout', values: [66.4, 67.4, 65.8] }] } });
+    const { calls } = mockApi({
+      '/api/stats/': stats,
+      '/api/categories/': categories,
+      '/api/articles/': articles,
+      '/api/indicators/': url => page(url.searchParams.get('category') === 'elections'
+        ? [elections]
+        : [summary(), summary({ key: 'seat_pie', chart_type: 'doughnut' }), summary({ key: 'gdp_level', title: 'GDP level', suffix: ' USD', preview: { labels: ['2022', '2023', '2024'], datasets: [{ label: 'GDP', values: [3e12, 3.5e12, 3.85e12] }] } })]),
+    });
+    renderApp('/');
+    const strip = await screen.findByRole('list', { name: 'Headline Economic indicators' });
+    const links = within(strip).getAllByRole('link');
+    expect(links.map(link => link.getAttribute('href'))).toEqual(['/indicator/gdp_growth', '/indicator/gdp_level']);
+    expect(links[0]).toHaveTextContent('6.5 %');
+    expect(links[0]).toHaveTextContent('▼ −1.7 pp');
+    expect(links[1]).toHaveTextContent('3.85 trillion USD');
+    expect(links[1]).toHaveTextContent('▲ +10.0%');
+    expect(strip.querySelectorAll('svg.mini-spark polyline')).toHaveLength(2);
+    expect(calls.some(call => call.path === '/api/indicators/' && call.params.get('live') === 'true')).toBe(true);
+    await userEvent.click(screen.getByRole('button', { name: 'Show Elections scene' }));
+    const next = await screen.findByRole('list', { name: 'Headline Elections indicators' });
+    expect(within(next).getByRole('link')).toHaveAttribute('href', '/indicator/turnout');
+  });
+
+  it('falls back to latest-snapshot share tiles for groups without trends', async () => {
+    const seats = summary({
+      key: 'seat_share', title: 'Seat share', chart_type: 'doughnut', category: 'Elections', category_slug: 'elections', suffix: ' seats',
+      preview: { labels: ['BJP', 'INC', 'SP', 'TMC', 'DMK', 'Others'], datasets: [{ label: 'Seats', values: [240, 99, 37, 29, 22, 116] }] },
+    });
+    const ranking = summary({ key: 'state_rank', scope: 'state', category_slug: 'elections', chart_type: 'bar', preview: { labels: ['A', 'B'], datasets: [{ label: 'x', values: [1, 2] }] } });
+    mockApi({ '/api/stats/': stats, '/api/categories/': [categories[1], categories[0]], '/api/articles/': articles, '/api/indicators/': page([ranking, seats]) });
+    const { container } = renderApp('/');
+    const strip = await screen.findByRole('list', { name: 'Headline Elections indicators' });
+    const tile = within(strip).getByRole('link');
+    expect(tile).toHaveAttribute('href', '/indicator/seat_share');
+    expect(tile).toHaveTextContent('44.2%');
+    expect(tile).toHaveTextContent('BJP');
+    expect(container.querySelectorAll('.mini-share span')).toHaveLength(4);
+  });
+
   it('has desktop navigation and a mobile tab bar', async () => {
     mockApi({ '/api/stats/': stats, '/api/categories/': [], '/api/articles/': page([]) });
     renderApp('/');

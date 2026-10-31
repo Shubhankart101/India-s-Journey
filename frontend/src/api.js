@@ -73,6 +73,7 @@ export const api = {
   stats: signal => cached('/api/stats/', signal),
   categories: signal => cached('/api/categories/', signal),
   indicators: (params, signal) => request(`/api/indicators/${toQuery(params)}`, { signal }),
+  groupHeadlines: (slug, signal) => cached(`/api/indicators/${toQuery({ category: slug, live: 'true', page_size: 24 })}`, signal),
   indicator: (key, signal) => request(`/api/indicators/${encodeURIComponent(key)}/`, { signal }),
   compare: (keys, signal) => request(`/api/compare/${toQuery({ keys: keys.join(',') })}`, { signal }),
   articles: (params, signal) => request(`/api/articles/${toQuery(params)}`, { signal }),
