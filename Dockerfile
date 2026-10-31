@@ -16,4 +16,4 @@ COPY . .
 COPY --from=frontend /app/frontend/dist frontend/dist
 RUN DJANGO_SECRET_KEY=build-only python webapp/manage.py collectstatic --noinput
 EXPOSE 8000
-CMD python webapp/manage.py migrate --noinput && python webapp/manage.py import_catalog && gunicorn journey.wsgi --chdir webapp --bind 0.0.0.0:$PORT --workers ${WEB_CONCURRENCY:-2} --timeout 60
+CMD python webapp/manage.py migrate --noinput && python webapp/manage.py import_catalog && gunicorn journey.wsgi --chdir webapp --bind 0.0.0.0:$PORT --workers 2 --timeout 60

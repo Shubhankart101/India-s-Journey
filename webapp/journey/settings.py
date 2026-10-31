@@ -20,11 +20,10 @@ if not SECRET_KEY:
 
 ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
-for host_variable in ('RENDER_EXTERNAL_HOSTNAME', 'KOYEB_PUBLIC_DOMAIN'):
-    # Render and Koyeb inject the public hostname of the running service.
-    if os.environ.get(host_variable):
-        ALLOWED_HOSTS.append(os.environ[host_variable])
-        CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ[host_variable]}")
+if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
+    # Render injects the public hostname of the running service.
+    ALLOWED_HOSTS.append(os.environ['RENDER_EXTERNAL_HOSTNAME'])
+    CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}")
 
 INSTALLED_APPS = [
     'django.contrib.admin',

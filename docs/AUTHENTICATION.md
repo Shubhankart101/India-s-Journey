@@ -49,10 +49,10 @@ Set up the Google OAuth client in the Google Cloud console:
    - publish the app.
 2. Go to **Credentials**, then **Create credentials**, then **OAuth client ID**, and choose **Web application**.
 3. Add an **Authorized redirect URI** for every host:
-   - `https://indias-journey-<org>.koyeb.app/accounts/google/login/callback/` (your Koyeb service URL)
+   - `https://<service>.onrender.com/accounts/google/login/callback/` (your Render service URL)
    - `https://<custom-domain>/accounts/google/login/callback/`
    - `http://localhost:8000/accounts/google/login/callback/` (local development only)
-4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings (for example the Koyeb service settings).
+4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings (for example the Render dashboard).
 
 ### Microsoft (Outlook)
 
