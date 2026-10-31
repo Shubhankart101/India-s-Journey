@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
-import { API_DOCS_URL, BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
+import { API_DOCS_URL, BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
 import Thanks from './Thanks.jsx';
 import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
@@ -80,7 +80,7 @@ export default function Layout() {
         <p>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the cited public sources.</p>
         <p>
           <a href={API_DOCS_URL}>API docs</a> · <a href="/api/">API</a> · <a href="/admin/">Admin</a>
-          {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_STATUS_URL} rel="noopener">Status</a>
+          {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_MIRROR_URL} rel="noopener">Mirror</a>
           {' · '}<a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a>
         </p>
       </footer>

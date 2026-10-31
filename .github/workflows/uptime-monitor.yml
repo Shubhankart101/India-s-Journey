@@ -74,8 +74,7 @@ jobs:
           else
             gh issue create --label outage --title "Dashboard is down" --body "$note
 
-          Use whichever copy is still up: $PRIMARY_SITE_URL or $BACKUP_SITE_URL
-          Live status: ${BACKUP_SITE_URL%/}/status.html
+          Use whichever copy is still up: $PRIMARY_SITE_URL (primary) or $BACKUP_SITE_URL (GitHub Pages backup mirror)
 
           This issue closes automatically when every health check passes again."
           fi

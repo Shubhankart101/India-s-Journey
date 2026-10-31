@@ -9,7 +9,6 @@ on:
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
-      - 'render.yaml'
       - '.github/workflows/webapp-ci.yml'
   pull_request:
     paths:
@@ -18,7 +17,6 @@ on:
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
-      - 'render.yaml'
       - '.github/workflows/webapp-ci.yml'
   workflow_dispatch:
 

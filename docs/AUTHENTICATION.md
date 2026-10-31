@@ -49,10 +49,9 @@ Set up the Google OAuth client in the Google Cloud console:
    - publish the app.
 2. Go to **Credentials**, then **Create credentials**, then **OAuth client ID**, and choose **Web application**.
 3. Add an **Authorized redirect URI** for every host:
-   - `https://<service>.onrender.com/accounts/google/login/callback/` (your Render service URL)
-   - `https://<custom-domain>/accounts/google/login/callback/`
+   - `https://<your-host>/accounts/google/login/callback/` (if you host the app)
    - `http://localhost:8000/accounts/google/login/callback/` (local development; see below)
-4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings (for example the Render dashboard).
+4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings, or in `.env` for local development.
 
 ### Microsoft (Outlook)
 

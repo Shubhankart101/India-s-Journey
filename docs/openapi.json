@@ -7,8 +7,12 @@
   },
   "servers": [
     {
+      "url": "https://indiasjourney.netlify.app",
+      "description": "Public Netlify deployment"
+    },
+    {
       "url": "https://shubhankart101.github.io/India-s-Journey",
-      "description": "Public GitHub Pages deployment"
+      "description": "GitHub Pages backup mirror"
     }
   ],
   "paths": {

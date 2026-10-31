@@ -1,8 +1,8 @@
 # 📊 India's Journey | Public Data Dashboard
 
 <p align="center">
-	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Live dashboard"></a>
-	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/Netlify%20mirror-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify mirror"></a>
+	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live dashboard on Netlify"></a>
+	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages backup"></a>
 	<a href="https://github.com/Shubhankart101/India-s-Journey/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
 	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
 </p>
@@ -49,9 +49,9 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 ## 🚀 Open Dashboard
 
-<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-2088FF?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Open interactive dashboard"></a>
+<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Open interactive dashboard"></a>
 
-The same static dashboard is also live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [API explorer](https://indiasjourney.netlify.app/api.html), [Status](https://indiasjourney.netlify.app/status.html)).
+The static dashboard is live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API explorer](https://indiasjourney.netlify.app/api.html)). GitHub Pages keeps an identical backup copy at <https://shubhankart101.github.io/India-s-Journey/> in case Netlify is unavailable.
 
 The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, subgroup filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
 
@@ -93,7 +93,7 @@ Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 
 
 ## 🧩 Web app (Django + React)
 
-The repository also contains a full web app, alongside the static GitHub Pages site in `docs/`. It is a Django REST API ([`webapp/`](webapp)) with a React + Vite single-page frontend ([`frontend/`](frontend)). It loads the same indicators, but much faster: the API returns paginated summaries with downsampled previews, and the chart library loads lazily only when a chart scrolls into view.
+The repository also contains a full web app, alongside the static Netlify site in `docs/`. It is a Django REST API ([`webapp/`](webapp)) with a React + Vite single-page frontend ([`frontend/`](frontend)). It loads the same indicators, but much faster: the API returns paginated summaries with downsampled previews, and the chart library loads lazily only when a chart scrolls into view.
 
 **Features**
 - A dedicated URL for each indicator (`/indicator/<key>`), with:
@@ -104,7 +104,7 @@ The repository also contains a full web app, alongside the static GitHub Pages s
 - Side-by-side comparison of up to four indicators, with an optional "rebase to 100" view.
 - **Sign in with Google or Microsoft (Outlook) only.** There are no local passwords. Signed-in users can save charts. See [Authentication](docs/AUTHENTICATION.md).
 - **Swagger UI at `/api/docs/`** to try every endpoint, plus ReDoc at `/api/redoc/` and the OpenAPI schema at `/api/schema/`. See the [API guide](docs/API.md).
-- **A GitHub Pages backup.** Every error page, the offline banner and the footer link to the [static dashboard](https://shubhankart101.github.io/India-s-Journey/) and its [status page](https://shubhankart101.github.io/India-s-Journey/status.html). The same backup is mirrored on Netlify at <https://indiasjourney.netlify.app>. An [uptime monitor](.github/workflows/uptime-monitor.yml) checks both hosted copies every 30 minutes and opens and closes `outage` issues. See [Backup and status](docs/BACKUP-AND-STATUS.md).
+- **A static backup.** Every error page, the offline banner and the footer link to the [Netlify dashboard](https://indiasjourney.netlify.app) and its [GitHub Pages mirror](https://shubhankart101.github.io/India-s-Journey/). An [uptime monitor](.github/workflows/uptime-monitor.yml) checks both copies every 30 minutes and opens and closes `outage` issues. See [Static site and backup](docs/BACKUP.md).
 - The Django admin at `/admin/` (staff only).
 - A mobile layout with a bottom tab bar.
 
@@ -138,30 +138,28 @@ cd frontend && npm run build && npm run test:e2e  # Playwright: desktop + mobile
 
 These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/webapp-ci.yml), together with OpenAPI validation and a Docker build.
 
-**Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile) with the [`render.yaml`](render.yaml) Blueprint; see [Deployment](docs/DEPLOYMENT.md#render-blueprint-renderyaml). The container:
+**Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile) to any container host; see [Deployment](docs/DEPLOYMENT.md#hosting-the-web-app-optional). The container:
 1. builds the frontend;
 2. runs `migrate` and `import_catalog`;
 3. serves everything with gunicorn and whitenoise.
 
 Configuration:
-- `DJANGO_SECRET_KEY` is generated by Render; set a long random value on other hosts.
+- `DJANGO_SECRET_KEY` must be a long random value.
 - `GOOGLE_CLIENT_ID`/`_SECRET` and `MICROSOFT_CLIENT_ID`/`_SECRET` enable sign-in.
-- `BACKUP_SITE_URL` sets the backup link.
-- The Render hostname is trusted automatically; `DJANGO_ALLOWED_HOSTS` and `DJANGO_CSRF_TRUSTED_ORIGINS` are for custom domains.
+- `BACKUP_SITE_URL` (Netlify) and `BACKUP_MIRROR_URL` (GitHub Pages) set the backup links.
+- `DJANGO_ALLOWED_HOSTS` and `DJANGO_CSRF_TRUSTED_ORIGINS` list your host names.
 
 See [Deployment](docs/DEPLOYMENT.md) for every variable.
 
-**Free hosting options** (details in [Deployment](docs/DEPLOYMENT.md#free-hosting-options)):
+**Hosting** (details in [Deployment](docs/DEPLOYMENT.md)):
 
 | Option | Hosts | Notes |
 | --- | --- | --- |
-| GitHub Pages | Static dashboard (`docs/`) | Already live; doubles as the backup site |
-| Render free web service | Full app (`render.yaml`) | Sleeps after 15 minutes idle |
-| Google Cloud Run | Full app (`Dockerfile`) | Free monthly allowance; scales to zero; needs billing account |
-| Netlify | Static dashboard (`docs/`) | Live at <https://indiasjourney.netlify.app>. Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
-| Cloudflare Pages | Static dashboard (`docs/`) | Static mirror; set the output directory to `docs` |
+| Netlify | Static dashboard (`docs/`) | **Primary site**, live at <https://indiasjourney.netlify.app>. Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
+| GitHub Pages | Static dashboard (`docs/`) | Backup mirror of Netlify, published by [`deploy-dashboard.yml`](.github/workflows/deploy-dashboard.yml) |
+| Django + React app | Full app (`Dockerfile`) | Runs locally; any container host (e.g. Google Cloud Run) works if you want to host it |
 
-On every free tier SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
+On free container hosts SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
 
 Data commits pushed by the scheduled workflows trigger a redeploy, which re-imports the catalogue. On the free plan SQLite is ephemeral, so user accounts reset on redeploy. To keep them, attach a persistent disk and set `DJANGO_SQLITE_PATH` to a file on that disk.
 
@@ -243,7 +241,7 @@ The Indian Elections group includes current candidate-level ECI results and a se
 
 The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), an official-indicator layer of 50 further World Bank series and 29 composition pies, plus a derived layer (`scripts/derived_pie_layer.py`) of 30+ pies built from other dashboard series (insurgency and crime mixes, Pew agree-vs-other splits, regional shares, period totals) (trade mix, revenue mix, employment by sector, age structure, electricity mix, health financing, land use and more), plus specifically cited state snapshots. Additive cards have a Bar/Pie toggle. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
 
-The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. A **Global Tourism Comparison** subgroup (`scripts/tourism_comparison_layer.py`) benchmarks India against the ten most-visited countries (France, Spain, U.S., China, Italy, Turkiye, Mexico, Thailand, Germany, U.K.) plus Japan and the UAE: arrival, receipt and export-share trend lines, share-of-group pies for arrivals, receipts, outbound spending and departures, and 2019 rankings for receipts per arrival, arrivals per 100 residents, receipts as % of GDP and the tourism balance. The World Bank stopped updating these UN Tourism indicators after 2020, so 2019 is the pre-pandemic benchmark. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://shubhankart101.github.io/India-s-Journey/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
+The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. A **Global Tourism Comparison** subgroup (`scripts/tourism_comparison_layer.py`) benchmarks India against the ten most-visited countries (France, Spain, U.S., China, Italy, Turkiye, Mexico, Thailand, Germany, U.K.) plus Japan and the UAE: arrival, receipt and export-share trend lines, share-of-group pies for arrivals, receipts, outbound spending and departures, and 2019 rankings for receipts per arrival, arrivals per 100 residents, receipts as % of GDP and the tourism balance. The World Bank stopped updating these UN Tourism indicators after 2020, so 2019 is the pre-pandemic benchmark. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://indiasjourney.netlify.app/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
 
 The **Industry Trends & Performance** group adds a manufacturing deep-dive (`scripts/manufacturing_layer.py`, 35 series) built from the official MOSPI Index of Industrial Production API (base 2011-12). It covers 23 industry indices (basic metals, fabricated metals, motor vehicles, other transport equipment incl. two-wheelers, food products, beverages, textiles, apparel, chemicals, pharmaceuticals, electronics, machinery, electrical equipment and more), with comparison charts, growth rankings, monthly use-based trends and interactive expanding-vs-contracting pies. The new subgroups are Heavy Industry & Metals, Automobiles & Transport Equipment, Food Processing & Consumer Goods, Chemicals, Pharma & Electronics, and the Industrial Output Monitor. The latest IIP year is provisional. SIAM's public vehicle-production tables stop at 2013-14, so the SIAM production-mix pies are historical and recent vehicle trends come from IIP. Two World Bank pies add the manufacturing value-added mix and the technology-intensity split.
 
@@ -259,7 +257,7 @@ The requested 20,000-word article for every group and subgroup is not claimed as
 
 ## 🗺️ Architecture diagrams
 
-[`docs/diagrams/architecture.drawio`](docs/diagrams/architecture.drawio) has five editable draw.io pages: system overview, data pipeline (workflows → scripts → JSON), static site, Django + React app, and deployment (GitHub Pages and [Netlify](https://indiasjourney.netlify.app)). Open it at [app.diagrams.net](https://app.diagrams.net) or with the VS Code Draw.io Integration extension. See also [ARCHITECTURE.md](docs/ARCHITECTURE.md).
+[`docs/diagrams/architecture.drawio`](docs/diagrams/architecture.drawio) has five editable draw.io pages: system overview, data pipeline (workflows → scripts → JSON), static site, Django + React app, and deployment ([Netlify](https://indiasjourney.netlify.app) with the GitHub Pages backup). Open it at [app.diagrams.net](https://app.diagrams.net) or with the VS Code Draw.io Integration extension. See also [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## ⚙️ Automation
 

@@ -1,7 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
+import { BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from '../components/Resilience.jsx';
 import { ErrorState } from '../components/States.jsx';
 import { ApiError } from '../api.js';
@@ -13,10 +13,10 @@ const home = {
   '/api/articles/': { count: 0, next: null, previous: null, results: [] },
 };
 
-describe('GitHub Pages backup', () => {
-  it('defaults to the public GitHub Pages mirror', () => {
-    expect(BACKUP_URL).toBe('https://shubhankart101.github.io/India-s-Journey/');
-    expect(BACKUP_STATUS_URL).toBe('https://shubhankart101.github.io/India-s-Journey/status.html');
+describe('Netlify backup and GitHub Pages mirror', () => {
+  it('defaults to the public Netlify site and its GitHub Pages mirror', () => {
+    expect(BACKUP_URL).toBe('https://indiasjourney.netlify.app/');
+    expect(BACKUP_MIRROR_URL).toBe('https://shubhankart101.github.io/India-s-Journey/');
   });
 
   it('is linked from the 404 page', async () => {
@@ -24,7 +24,7 @@ describe('GitHub Pages backup', () => {
     renderApp('/definitely/not/here');
     expect(await screen.findByText('This page wandered off.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /backup dashboard/ })).toHaveAttribute('href', BACKUP_URL);
-    expect(screen.getByRole('link', { name: 'app status' })).toHaveAttribute('href', BACKUP_STATUS_URL);
+    expect(screen.getByRole('link', { name: 'GitHub Pages mirror' })).toHaveAttribute('href', BACKUP_MIRROR_URL);
   });
 
   it('is linked from the footer next to the Swagger docs', async () => {
@@ -32,7 +32,7 @@ describe('GitHub Pages backup', () => {
     renderApp('/');
     expect(await screen.findByRole('link', { name: 'Backup site' })).toHaveAttribute('href', BACKUP_URL);
     expect(screen.getByRole('link', { name: 'API docs' })).toHaveAttribute('href', '/api/docs/');
-    expect(screen.getByRole('link', { name: 'Status' })).toHaveAttribute('href', BACKUP_STATUS_URL);
+    expect(screen.getByRole('link', { name: 'Mirror' })).toHaveAttribute('href', BACKUP_MIRROR_URL);
   });
 
   it('is offered by error states only when the server is down', () => {

@@ -1,11 +1,11 @@
 import { Component, useEffect, useState } from 'react';
-import { BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
+import { BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
 
 export function BackupLinks({ compact = false }) {
   return (
     <p className={`backup-links${compact ? ' small' : ''}`}>
-      App having trouble? Use the <a href={BACKUP_URL} rel="noopener">backup dashboard on GitHub Pages</a>
-      {' '}or check <a href={BACKUP_STATUS_URL} rel="noopener">app status</a>.
+      App having trouble? Use the <a href={BACKUP_URL} rel="noopener">backup dashboard on Netlify</a>
+      {' '}or its <a href={BACKUP_MIRROR_URL} rel="noopener">GitHub Pages mirror</a>.
     </p>
   );
 }

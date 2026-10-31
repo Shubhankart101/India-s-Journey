@@ -321,7 +321,7 @@ class HealthView(APIView):
     @extend_schema(summary='Liveness check', responses=HealthSerializer)
     def get(self, request):
         response = Response({'status': 'ok', 'indicators': Indicator.objects.count(), 'backup_url': settings.BACKUP_SITE_URL})
-        # Public, non-sensitive payload: lets the GitHub Pages status page poll it cross-origin.
+        # Public, non-sensitive payload, so cross-origin monitors can poll it.
         response['Access-Control-Allow-Origin'] = '*'
         response['Cache-Control'] = 'no-store'
         return response

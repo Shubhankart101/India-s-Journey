@@ -6,14 +6,14 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
                  scheduled GitHub Actions collectors (see PIPELINES.md)
                                     |
                                     v
-            data/*.json  --->  docs/data/*.json  --->  GitHub Pages + Netlify (static dashboard, backup)
+            data/*.json  --->  docs/data/*.json  --->  Netlify (static dashboard) + GitHub Pages (backup mirror)
                  |                                           ^
    scripts/export_catalog.mjs                                | links on every error page,
-                 v                                           | footer, status page, outage issues
+                 v                                           | footer, outage issues
           data/catalog.json                                  |
                  |  manage.py import_catalog                 |
                  v                                           |
-   +-------------------- Render (Docker) ------------------------------+
+   +------------- Local (or any Docker host) --------------------------+
    |  gunicorn + Django 5 + DRF          whitenoise (static + SPA)     |
    |   /api/*       JSON API (drf-spectacular -> /api/docs/ Swagger)   |
    |   /accounts/*  django-allauth: Google, Microsoft (Outlook) only   |
@@ -21,7 +21,7 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
    |   /*           React + Vite SPA (frontend/dist)                   |
    |  SQLite (DJANGO_SQLITE_PATH, optional persistent disk)            |
    +-------------------------------------------------------------------+
-                 ^ deployed from render.yaml (or any Docker host, see DEPLOYMENT.md)
+                 ^ runs locally; the Dockerfile works on any container host (DEPLOYMENT.md)
 ```
 
 ## Components
@@ -29,12 +29,12 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
 | Path | Role |
 | --- | --- |
 | `scripts/`, `.github/workflows/*update*.yml` | Collectors that fetch official sources and write `data/` |
-| `docs/` | Static GitHub Pages dashboard: Home, Explore, About, API, Status. Also the backup site |
+| `docs/` | Static dashboard (Home, Explore, About, API) published on Netlify and mirrored on GitHub Pages. Also the backup site for the web app |
 | `scripts/export_catalog.mjs` | Evaluates the dashboard's chart definitions and writes `data/catalog.json` |
 | `scripts/generate_art.py` | Generates the animated per-group and per-subgroup SVG illustrations into `docs/assets/` and `frontend/public/art/` |
 | `frontend/src/components/ArtBackdrop.jsx` | Cross-fading, parallax page backdrop used by the Home, Explore, Indicator and About pages |
 | `frontend/src/components/Motion.jsx` | Interaction layer: scroll progress, glassy header, scroll-in reveals, cursor spotlight, count-up stats, typewriter, subgroup marquee, back-to-top |
-| `netlify.toml` | Publishes `docs/` on Netlify at <https://indiasjourney.netlify.app> (no build step) |
+| `netlify.toml` | Publishes `docs/` on Netlify at <https://indiasjourney.netlify.app> (no build step); `deploy-dashboard.yml` publishes the GitHub Pages backup |
 | `webapp/journey/` | Django project: settings, root URLs, WSGI |
 | `webapp/indicators/` | Models (Group, Subgroup, Indicator, Article, SavedChart), import commands, API views, OAuth adapters, error handlers |
 | `webapp/templates/` | Server-rendered error pages and allauth overrides, all with backup links |
@@ -55,6 +55,6 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
 - **OAuth only.** There are no password hashes for site users. Login is a POST with CSRF, using PKCE and minimal scopes. See [AUTHENTICATION.md](AUTHENTICATION.md).
 - **Session authentication with CSRF** for the SPA and Swagger. They share an origin, so no tokens are stored in the browser.
 - **The schema view is serialized with a lock.** drf-spectacular's generator is not thread-safe under gunicorn threads.
-- **The health endpoint is public and readable cross-origin** (`Access-Control-Allow-Origin: *`, `no-store`), so the static status page can call it. No other endpoint sends CORS headers.
+- **The health endpoint is public and readable cross-origin** (`Access-Control-Allow-Origin: *`, `no-store`), so external monitors can call it. No other endpoint sends CORS headers.
 - **Degradation is visible.** The offline banner, error boundary and error pages all point to the static backup, which uses the same data.
-- **SQLite** keeps operations simple; the catalogue can be rebuilt from `data/catalog.json` on every boot. Only users and saved charts need persistence, which a Render disk provides.
+- **SQLite** keeps operations simple; the catalogue can be rebuilt from `data/catalog.json` on every boot. Only users and saved charts need persistence, which a persistent disk (`DJANGO_SQLITE_PATH`) provides.

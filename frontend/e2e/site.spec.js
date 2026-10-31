@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const BACKUP = 'https://shubhankart101.github.io/India-s-Journey/';
+const BACKUP = 'https://indiasjourney.netlify.app/';
 
 test.describe('site', () => {
   test('home loads stats, groups and navigation', async ({ page }) => {

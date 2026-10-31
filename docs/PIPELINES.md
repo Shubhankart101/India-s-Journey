@@ -82,7 +82,7 @@ Network collection requires access to the public ECI and National Archives pages
 
 ## Continuous integration
 
-[`webapp-ci.yml`](../.github/workflows/webapp-ci.yml) runs on every push and pull request that touches `webapp/`, `frontend/`, the catalogue, the `Dockerfile` or `render.yaml`:
+[`webapp-ci.yml`](../.github/workflows/webapp-ci.yml) runs on every push and pull request that touches `webapp/`, `frontend/`, the catalogue, or the `Dockerfile`:
 
 | Job | What it checks |
 | --- | --- |
@@ -98,6 +98,6 @@ See [TESTING.md](TESTING.md) for details.
 | Workflow | Cron (UTC) | Purpose |
 | --- | --- | --- |
 | [Uptime monitor](../.github/workflows/uptime-monitor.yml) | `*/30 * * * *` | Checks the Netlify dashboard and the GitHub Pages mirror with retries (plus `<app_url>/api/health/` when an `app_url` is given on a manual run). Opens an `outage` issue listing failed sites and linking the copy still up, and closes it on recovery |
-| [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) | After the collectors | Publishes `docs/`, which is both the static dashboard and the backup site with [`status.html`](status.html) |
+| [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) | After the collectors | Publishes `docs/` to GitHub Pages as the backup mirror of the Netlify site (Netlify redeploys itself on every push) |
 
-See [BACKUP-AND-STATUS.md](BACKUP-AND-STATUS.md) and [DEPLOYMENT.md](DEPLOYMENT.md).
+See [BACKUP.md](BACKUP.md) and [DEPLOYMENT.md](DEPLOYMENT.md).

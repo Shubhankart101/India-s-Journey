@@ -42,10 +42,6 @@ if not SECRET_KEY:
 
 ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
-if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
-    # Render injects the public hostname of the running service.
-    ALLOWED_HOSTS.append(os.environ['RENDER_EXTERNAL_HOSTNAME'])
-    CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ['RENDER_EXTERNAL_HOSTNAME']}")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -161,9 +157,9 @@ SPECTACULAR_SETTINGS = {
     'COMPONENT_SPLIT_REQUEST': True,
 }
 
-# The static GitHub Pages dashboard doubles as the fallback whenever this app is unavailable.
-BACKUP_SITE_URL = os.environ.get('BACKUP_SITE_URL', 'https://shubhankart101.github.io/India-s-Journey/')
-BACKUP_STATUS_URL = os.environ.get('BACKUP_STATUS_URL', BACKUP_SITE_URL.rstrip('/') + '/status.html')
+# The static Netlify dashboard is the fallback whenever this app is unavailable; GitHub Pages mirrors it.
+BACKUP_SITE_URL = os.environ.get('BACKUP_SITE_URL', 'https://indiasjourney.netlify.app/')
+BACKUP_MIRROR_URL = os.environ.get('BACKUP_MIRROR_URL', 'https://shubhankart101.github.io/India-s-Journey/')
 
 # Sign-in: Google and Microsoft (Outlook.com / Live / Microsoft 365) only. No local passwords for site users;
 # Django admin keeps its own staff login for superusers created with `createsuperuser`.

@@ -1,4 +1,4 @@
-"""OpenAPI / Swagger docs, error pages with the GitHub Pages backup link, and API hardening."""
+"""OpenAPI / Swagger docs, error pages with the Netlify backup and GitHub Pages mirror links, and API hardening."""
 from pathlib import Path
 from unittest import mock
 
@@ -9,7 +9,8 @@ from rest_framework.test import APIClient
 
 from .fixtures import load_sample
 
-BACKUP = 'https://shubhankart101.github.io/India-s-Journey/'
+BACKUP = 'https://indiasjourney.netlify.app/'
+MIRROR = 'https://shubhankart101.github.io/India-s-Journey/'
 
 
 class DocsTestCase(TestCase):
@@ -159,7 +160,8 @@ class ErrorPageTests(DocsTestCase):
         response = self.client.get('/accounts/definitely-missing/', HTTP_ACCEPT='text/html')
         self.assertEqual(response.status_code, 404)
         self.assertContains(response, BACKUP, status_code=404)
-        self.assertContains(response, 'status.html', status_code=404)
+        self.assertContains(response, MIRROR, status_code=404)
+        self.assertNotContains(response, 'status.html', status_code=404)
         self.assertContains(response, 'wandered off', status_code=404)
 
     def test_api_404_is_json_with_backup(self):
@@ -213,10 +215,10 @@ class ErrorPageTests(DocsTestCase):
         self.assertEqual(response.status_code, 503)
         self.assertContains(response, BACKUP, status_code=503)
 
-    @override_settings(BACKUP_SITE_URL='https://mirror.example/', BACKUP_STATUS_URL='https://mirror.example/status.html')
+    @override_settings(BACKUP_SITE_URL='https://backup.example/', BACKUP_MIRROR_URL='https://mirror.example/')
     def test_backup_url_is_configurable(self):
-        self.assertEqual(self.client.get('/api/health/').json()['backup_url'], 'https://mirror.example/')
-        self.assertContains(self.client.get('/accounts/missing/'), 'https://mirror.example/status.html', status_code=404)
+        self.assertEqual(self.client.get('/api/health/').json()['backup_url'], 'https://backup.example/')
+        self.assertContains(self.client.get('/accounts/missing/'), 'https://mirror.example/', status_code=404)
 
 
 class HardeningTests(DocsTestCase):

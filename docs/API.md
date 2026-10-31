@@ -3,7 +3,7 @@
 The project has two APIs:
 
 1. The **Django REST API** of the web app, with interactive **Swagger UI at `/api/docs/`**. See the next section.
-2. **Static JSON resources** on GitHub Pages, documented with their own Swagger UI at [`api.html`](api.html). This is also the API of the backup site.
+2. **Static JSON resources** on the Netlify site (mirrored on GitHub Pages), documented with their own Swagger UI at [`api.html`](api.html). This is also the API of the backup site.
 
 ## Web app REST API (`/api/`)
 
@@ -36,14 +36,14 @@ Swagger UI has *Try it out* enabled for every operation, and its UI assets are s
 Sign-in itself happens outside the JSON API: a POST to `/accounts/{google,microsoft}/login/` starts the OAuth redirect. See [AUTHENTICATION.md](AUTHENTICATION.md).
 
 Errors are always JSON under `/api/`, including unknown paths:
-`{"detail": "...", "status_code": 404, "backup_site": "https://shubhankart101.github.io/India-s-Journey/", "status_page": ".../status.html"}`.
+`{"detail": "Not found.", "backup_url": "https://indiasjourney.netlify.app/"}`.
 Lists are paginated (`count`, `next`, `previous`, `results`), with at most 100 items per page.
 
 `test_docs_and_errors.py` checks that the schema documents exactly these paths and that the documented response fields match the real payloads. CI also runs `manage.py spectacular --validate --fail-on-warn`.
 
-## Static JSON resources (GitHub Pages)
+## Static JSON resources (Netlify and GitHub Pages)
 
-This section documents the static GitHub Pages project, which has no backend. The Swagger UI at [`api.html`](api.html) documents read-only `GET` access to the project's JSON files. It does not expose mutation endpoints or guarantee an API service-level objective.
+This section documents the static site, published on Netlify and mirrored on GitHub Pages; it has no backend. The Swagger UI at [`api.html`](api.html) documents read-only `GET` access to the project's JSON files. It does not expose mutation endpoints or guarantee an API service-level objective.
 
 ## Interactive checks
 
@@ -72,4 +72,4 @@ The OpenAPI source is [`openapi.json`](openapi.json). Tests check that every spe
 
 ## Local preview
 
-From the repository root, run `python -m http.server 8000 --directory docs`, then open `http://localhost:8000/api.html`. The Swagger specification's server URL points to the public GitHub Pages deployment; the on-page all-resource check uses the local `data/` directory when served locally.
+From the repository root, run `python -m http.server 8000 --directory docs`, then open `http://localhost:8000/api.html`. The Swagger specification lists the public Netlify deployment first and the GitHub Pages mirror second; the on-page all-resource check uses the local `data/` directory when served locally.

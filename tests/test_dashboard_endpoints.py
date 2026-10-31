@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 
 DASHBOARD_URL = os.environ.get(
     "DASHBOARD_URL",
-    "https://shubhankart101.github.io/India-s-Journey/",
+    "https://indiasjourney.netlify.app/",
 ).rstrip("/")
 
 OFFICIAL_SOURCES = {
@@ -436,10 +436,6 @@ class DashboardEndpointTests(unittest.TestCase):
             self.assertIn(b'href="https://politypolicy.substack.com/"', body, page)
             self.assertIn(b'href="https://substack.com/@indianmatrix"', body, page)
             self.assertIn(b'<footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>)', body, page)
-        status, body = self.fetch(f"{DASHBOARD_URL}/status.html")
-        self.assertEqual(status, 200)
-        self.assertIn(b'id="thanks"', body)
-        self.assertIn(b"Indian Matrix", body)
 
     def test_home_and_about_share_the_web_app_intro(self):
         root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

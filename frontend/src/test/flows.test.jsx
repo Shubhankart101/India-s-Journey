@@ -117,7 +117,7 @@ describe('Accounts', () => {
   it('links to the backup site when providers cannot be loaded', async () => {
     mockApi({ '/api/auth/providers/': json({ detail: 'Service unavailable' }, 503) });
     renderApp('/login');
-    expect(await screen.findByRole('link', { name: /backup dashboard/ })).toHaveAttribute('href', 'https://shubhankart101.github.io/India-s-Journey/');
+    expect(await screen.findByRole('link', { name: /backup dashboard/ })).toHaveAttribute('href', 'https://indiasjourney.netlify.app/');
   });
 
   it('sends signed-in users straight to next', async () => {

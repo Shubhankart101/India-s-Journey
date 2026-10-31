@@ -149,7 +149,7 @@ class RedirectTests(OAuthTestCase):
         response = self.client.get('/accounts/google/login/')
         self.assertEqual(response.status_code, 200)
         self.assertNotIn('Location', response)
-        self.assertContains(response, 'github.io')
+        self.assertContains(response, 'indiasjourney.netlify.app')
 
     def test_login_post_requires_csrf(self):
         from django.test import Client
@@ -231,7 +231,7 @@ class CallbackTests(OAuthTestCase):
             response = self.client.get('/accounts/google/login/callback/', {'code': 'x', 'state': 'forged'})
             session.assert_not_called()
         self.assertContains(response, "couldn't sign you in", status_code=401)
-        self.assertContains(response, 'github.io', status_code=401)
+        self.assertContains(response, 'indiasjourney.netlify.app', status_code=401)
         self.assertFalse(self.client.get('/api/auth/me/').json()['authenticated'])
 
     def test_token_exchange_failure_shows_error_page(self):
