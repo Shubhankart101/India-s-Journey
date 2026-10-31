@@ -6,7 +6,6 @@ on:
     paths:
       - 'webapp/**'
       - 'frontend/**'
-      - 'infra/**'
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
@@ -16,7 +15,6 @@ on:
     paths:
       - 'webapp/**'
       - 'frontend/**'
-      - 'infra/**'
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
@@ -120,29 +118,6 @@ jobs:
             frontend/playwright-report
             frontend/test-results
           retention-days: 7
-
-  terraform:
-    name: Terraform fmt / validate / test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: '1.9.8'
-      - name: Format
-        run: terraform fmt -check -recursive infra/terraform
-      - name: Validate and test (mock providers, no cloud credentials)
-        run: |
-          set -e
-          for dir in infra/terraform/modules/* infra/terraform/environments/*; do
-            echo "::group::$dir"
-            terraform -chdir="$dir" init -backend=false -input=false
-            terraform -chdir="$dir" validate
-            if ls "$dir"/tests/*.tftest.hcl >/dev/null 2>&1; then
-              terraform -chdir="$dir" test
-            fi
-            echo "::endgroup::"
-          done
 
   docker:
     name: Docker image builds

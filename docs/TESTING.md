@@ -6,7 +6,6 @@
 | OpenAPI schema | drf-spectacular | n/a | `cd webapp && python manage.py spectacular --validate --fail-on-warn --file openapi-schema.yml` |
 | React components and flows | Vitest + Testing Library | `frontend/src/**/*.test.{js,jsx}` | `cd frontend && npm test` |
 | Full stack in a real browser | Playwright (desktop Chrome + Pixel 7) | [`frontend/e2e/`](../frontend/e2e) | `cd frontend && npm run build && npm run test:e2e` |
-| Infrastructure | `terraform test` with mock providers | `infra/terraform/**/tests/*.tftest.hcl` | `terraform -chdir=infra/terraform/modules/render_web_service test` (and so on) |
 | Static site and collectors | `unittest` | [`tests/`](../tests) | `python -m unittest discover -s tests` |
 
 CI runs all of these. See [Pipelines](PIPELINES.md#continuous-integration).

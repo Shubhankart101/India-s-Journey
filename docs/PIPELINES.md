@@ -62,14 +62,13 @@ Network collection requires access to the public ECI and National Archives pages
 
 ## Continuous integration
 
-[`webapp-ci.yml`](../.github/workflows/webapp-ci.yml) runs on every push and pull request that touches `webapp/`, `frontend/`, `infra/`, the catalogue, the `Dockerfile` or `render.yaml`:
+[`webapp-ci.yml`](../.github/workflows/webapp-ci.yml) runs on every push and pull request that touches `webapp/`, `frontend/`, the catalogue, the `Dockerfile` or `render.yaml`:
 
 | Job | What it checks |
 | --- | --- |
 | **Django tests + OpenAPI schema** | `check --deploy` with production settings, no missing migrations, the full Django test suite (API, OAuth, Swagger, error pages), `spectacular --validate --fail-on-warn` (the schema is uploaded as an artifact), and `import_catalog` |
 | **React unit tests + build** | Vitest suite and production build |
 | **Playwright end-to-end** | Builds the SPA, starts Django in production mode, and runs the e2e suites on desktop Chrome and Pixel 7. The report is uploaded on failure |
-| **Terraform** | `fmt -check`, `validate`, and `terraform test` with mock providers for every module and environment |
 | **Docker image builds** | Builds the production image (not pushed) |
 
 See [TESTING.md](TESTING.md) for details.

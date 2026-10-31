@@ -13,9 +13,9 @@ India's Journey has two parts: a static, source-linked dashboard on GitHub Pages
 - [APIs and Swagger](API.md): the Django REST API (Swagger at `/api/docs/`) and the static JSON resources.
 - [Authentication](AUTHENTICATION.md): Google and Microsoft (Outlook) sign-in only, and how to set up each provider.
 - [Backup site and status](BACKUP-AND-STATUS.md): how users reach GitHub Pages when the app is down, the status page and the uptime monitor.
-- [Deployment](DEPLOYMENT.md): Render Blueprint, Terraform, environment variables and post-deploy checks.
-- [Testing](TESTING.md): Django, Vitest, Playwright, Terraform and static-site suites.
-- [Terraform samples](../infra/terraform/README.md), [Contributing](../CONTRIBUTING.md), [Security](../SECURITY.md).
+- [Deployment](DEPLOYMENT.md): Render Blueprint, free hosting options, environment variables and post-deploy checks.
+- [Testing](TESTING.md): Django, Vitest, Playwright and static-site suites.
+- [Contributing](../CONTRIBUTING.md), [Security](../SECURITY.md).
 
 ## Quick start
 

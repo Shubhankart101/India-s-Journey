@@ -41,7 +41,7 @@ Each provider takes its credentials from environment variables. You can instead 
 
 ### Google
 
-Google OAuth clients cannot be created with Terraform, so set this one up by hand:
+Set up the Google OAuth client in the Google Cloud console:
 
 1. Open Google Cloud console, go to **APIs & Services**, then **OAuth consent screen**:
    - choose the *External* user type;
@@ -52,19 +52,10 @@ Google OAuth clients cannot be created with Terraform, so set this one up by han
    - `https://indias-journey.onrender.com/accounts/google/login/callback/`
    - `https://<custom-domain>/accounts/google/login/callback/`
    - `http://localhost:8000/accounts/google/login/callback/` (local development only)
-
-   `terraform output google_redirect_uris` prints the production list.
-4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in Render. With Terraform, use `TF_VAR_google_client_id` and `TF_VAR_google_client_secret`.
+4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings (for example the Render dashboard).
 
 ### Microsoft (Outlook)
 
-**With Terraform (recommended):** [`infra/terraform/modules/azuread_oauth_app`](../infra/terraform/modules/azuread_oauth_app) does the whole setup:
-- creates the app registration with `AzureADandPersonalMicrosoftAccount` sign-in, v2 tokens and the Microsoft Graph `User.Read` scope, with implicit grant disabled;
-- adds callback URIs for every host;
-- creates a client secret that rotates every 180 days;
-- passes the credentials to Render.
-
-**By hand:**
 1. In the Entra admin center, go to **App registrations**, then **New registration**.
 2. For *Supported account types*, choose **Accounts in any organizational directory and personal Microsoft accounts**.
 3. Under *Redirect URI*, choose **Web** and enter `https://<host>/accounts/microsoft/login/callback/`.
@@ -75,7 +66,7 @@ Google OAuth clients cannot be created with Terraform, so set this one up by han
 ## Local development
 
 Without credentials, the sign-in page says that sign-in isn't configured yet. Everything else in the app still works. To test a real login locally:
-1. Create development OAuth clients with `http://localhost:8000/...` callbacks. For Microsoft, set `allow_localhost_redirects = true` in Terraform.
+1. Create development OAuth clients with `http://localhost:8000/...` callbacks. For Microsoft, add the `http://localhost:8000/accounts/microsoft/login/callback/` redirect URI to the app registration.
 2. Export the variables.
 3. Use `npm run build` and the Django server on port 8000. The Vite dev server on 5173 also proxies `/accounts`.
 

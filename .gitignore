@@ -11,11 +11,4 @@ frontend/test-results/
 frontend/playwright-report/
 frontend/blob-report/
 
-# Terraform
-**/.terraform/
-*.tfstate
-*.tfstate.*
-*.tfplan
-infra/terraform/**/terraform.tfvars
-infra/terraform/modules/**/.terraform.lock.hcl
 webapp/openapi-schema.yml

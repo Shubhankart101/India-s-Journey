@@ -19,7 +19,7 @@
    |   /*           React + Vite SPA (frontend/dist)                   |
    |  SQLite (DJANGO_SQLITE_PATH, optional persistent disk)            |
    +-------------------------------------------------------------------+
-                 ^ provisioned by infra/terraform (Render, Entra ID app, GitHub settings)
+                 ^ deployed from render.yaml (or any Docker host, see DEPLOYMENT.md)
 ```
 
 ## Components
@@ -33,7 +33,6 @@
 | `webapp/indicators/` | Models (Group, Subgroup, Indicator, Article, SavedChart), import commands, API views, OAuth adapters, error handlers |
 | `webapp/templates/` | Server-rendered error pages and allauth overrides, all with backup links |
 | `frontend/` | React 19 SPA (React Router, lazy-loaded Chart.js); Vitest unit tests and Playwright e2e tests |
-| `infra/terraform/` | Sample Terraform modules and the production composition |
 
 ## Request routing
 

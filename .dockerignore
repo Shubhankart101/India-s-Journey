@@ -9,5 +9,4 @@ history
 substack-history
 frontend/test-results
 frontend/playwright-report
-infra/terraform/**/.terraform
 **/*.tfstate*

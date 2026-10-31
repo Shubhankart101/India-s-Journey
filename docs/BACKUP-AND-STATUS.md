@@ -12,7 +12,7 @@ The Django app runs on Render. If it is down, asleep (free plan) or being deploy
 | API unreachable, or 502/503/504 | `OfflineBanner` at the top of every page, plus backup links in `ErrorState` |
 | Browser offline | `OfflineBanner` |
 | Unknown front-end route | `NotFound` page with backup links |
-| Render maintenance mode | Render redirects every request to `BACKUP_SITE_URL` (Terraform `maintenance_mode = true`) |
+| Render maintenance mode | Render redirects every request to `BACKUP_SITE_URL` (Render dashboard: **Settings ? Maintenance mode**) |
 | The whole host is unreachable | The [uptime monitor](../.github/workflows/uptime-monitor.yml) opens an `outage` issue that links to the backup |
 
 The app's footer always links to **Backup site** and **Status**.
@@ -42,4 +42,4 @@ It also links to open `outage` issues. Use `status.html?app=https://your-host` t
 2. If every attempt fails, it opens an issue labelled `outage` with links to the backup and status pages. If such an issue is already open, it adds a comment instead.
 3. When the app is healthy again, it closes the open outage issues with a recovery comment.
 
-Set the repository variables `APP_URL` and `BACKUP_SITE_URL` to point it elsewhere. The [`github_repository`](../infra/terraform/modules/github_repository) Terraform module manages both variables and the `outage` label.
+Set the repository variables `APP_URL` and `BACKUP_SITE_URL` to point it elsewhere. Create both under **Settings ? Secrets and variables ? Actions ? Variables**; the workflow creates the `outage` label on first use if it is missing.

@@ -24,7 +24,6 @@ Run the suites your change touches. All of them run in CI.
 cd webapp && python manage.py test indicators
 cd webapp && python manage.py spectacular --validate --fail-on-warn --file openapi-schema.yml
 cd frontend && npm test && npm run build && npm run test:e2e
-terraform fmt -recursive infra/terraform     # if you touched infra/
 python -m unittest discover -s tests          # if you touched collectors or docs/
 ```
 
@@ -37,4 +36,4 @@ See [docs/TESTING.md](docs/TESTING.md) for what each suite covers.
 - **Authentication:** do not add local password sign-in. Only Google and Microsoft are supported, by design.
 - **Errors:** user-facing failures should offer the backup site (`BackupLinks` in React, `errors/error.html` in Django).
 - **Mobile:** check every UI change at a 390 px width. The Playwright *mobile* project runs on a Pixel 7.
-- **Commits:** keep them small and descriptive. Never commit secrets, `terraform.tfvars` or state files.
+- **Commits:** keep them small and descriptive. Never commit secrets or `.env` files.

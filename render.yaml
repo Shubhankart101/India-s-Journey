@@ -26,5 +26,4 @@ services:
       - key: MICROSOFT_TENANT
         value: common
       # SQLite lives in the container and resets on redeploy. On a paid plan, attach a disk
-      # (e.g. mountPath /var/data) and set DJANGO_SQLITE_PATH=/var/data/db.sqlite3 to keep accounts.
-      # infra/terraform provisions all of this (plus the Microsoft app registration) declaratively.
+      # (e.g. mountPath /var/data) and set DJANGO_SQLITE_PATH=/var/data/db.sqlite3 to keep accounts.

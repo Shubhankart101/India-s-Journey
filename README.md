@@ -121,9 +121,9 @@ cd frontend && npm test                         # Vitest + Testing Library: page
 cd frontend && npm run build && npm run test:e2e  # Playwright: desktop + mobile, OAuth redirects, Swagger, backup links
 ```
 
-These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/webapp-ci.yml), together with OpenAPI validation, Terraform tests and a Docker build.
+These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/webapp-ci.yml), together with OpenAPI validation and a Docker build.
 
-**Deploy (Render):** [`render.yaml`](render.yaml) builds the [`Dockerfile`](Dockerfile). Alternatively, the sample [Terraform modules](infra/terraform/README.md) provision the Render service, the Microsoft (Outlook) app registration and the GitHub repository settings. The container:
+**Deploy (Render):** [`render.yaml`](render.yaml) builds the [`Dockerfile`](Dockerfile). The container:
 1. builds the frontend;
 2. runs `migrate` and `import_catalog`;
 3. serves everything with gunicorn and whitenoise.
@@ -135,6 +135,19 @@ Configuration:
 - `DJANGO_ALLOWED_HOSTS` and `DJANGO_CSRF_TRUSTED_ORIGINS` are optional extras.
 
 See [Deployment](docs/DEPLOYMENT.md) for every variable.
+
+**Free hosting options** (details in [Deployment](docs/DEPLOYMENT.md#free-hosting-options)):
+
+| Option | Hosts | Notes |
+| --- | --- | --- |
+| GitHub Pages | Static dashboard (`docs/`) | Already live; doubles as the backup site |
+| Render free web service | Full app (`render.yaml`) | Sleeps after 15 minutes idle |
+| Koyeb free instance | Full app (`Dockerfile`) | Always on, small instance |
+| Google Cloud Run | Full app (`Dockerfile`) | Free monthly allowance; scales to zero; needs billing account |
+| Hugging Face Spaces (Docker) | Full app (`Dockerfile`) | Public only; set `PORT=7860` |
+| Cloudflare Pages / Netlify | Static dashboard (`docs/`) | Static mirror |
+
+On every free tier SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
 
 Data commits pushed by the scheduled workflows trigger a redeploy, which re-imports the catalogue. On the free plan SQLite is ephemeral, so user accounts reset on redeploy. To keep them, attach a persistent disk and set `DJANGO_SQLITE_PATH` to a file on that disk.
 
