@@ -161,6 +161,8 @@ The **Industry Trends & Performance** group adds a manufacturing deep-dive (`scr
 
 The interface uses a dark product-page design (`docs/product-theme.css`) with the group and subgroup artwork as a full-screen backdrop. It has a frosted sticky navigation bar, a large centred hero, a "Get to know" gallery of tiles (one per group), scroll reveals, and translucent rounded chart cards. Animations respect `prefers-reduced-motion`.
 
+The site has four pages: `index.html` (Home), `explore.html` (charts, filters, sources), `about.html` and `api.html`. `docs/site.js` injects the shared header and a bottom tab bar on mobile. Group tiles link to `explore.html?group=...`, and the Explore filters sync to the URL (`?group=&subgroup=&q=`) so views can be shared.
+
 The requested 20,000-word article for every group and subgroup is not claimed as complete. Writing that volume responsibly requires source-by-source editorial research; the project does not inflate descriptions with repeated text. See the [documentation index](docs/README.md), [election coverage](docs/ELECTIONS.md), [tourism and heritage methods](docs/TOURISM-AND-HERITAGE.md), [API guide](docs/API.md), [sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), and [pipeline guide](docs/PIPELINES.md) for current implementation and known gaps.
 
 ## ⚙️ Automation

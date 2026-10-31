@@ -137,6 +137,7 @@ body.product-theme .article-button, body.product-theme .article-links a { backgr
 
 /* Explore header and controls */
 body.product-theme .explore-heading { padding: 90px 0 18px; border: 0; text-align: center; display: block; }
+body.product-theme .explore-heading .eyebrow { text-align: center; }
 body.product-theme .explore-heading h2 { font-size: clamp(2.4rem, 6vw, 4.6rem); font-weight: 700; letter-spacing: -0.04em; margin: 0 0 10px; }
 body.product-theme .explore-heading p { color: var(--muted); font-size: 1.2rem; }
 body.product-theme .result-count { color: var(--muted); }
@@ -225,18 +226,71 @@ body.product-theme .references details { background: var(--glass); border: 1px s
 body.product-theme .references summary { color: var(--ink); }
 body.product-theme footer { color: var(--muted); font-size: .78rem; border-top: 1px solid var(--line); padding: 22px 0 40px; }
 
+/* Multi-page additions */
+@view-transition { navigation: auto; }
+body.product-theme .masthead .site-nav a[aria-current="page"] { opacity: 1; color: #fff; font-weight: 600; }
+body.product-theme .page-title { text-align: center; padding: 84px 0 24px; }
+body.product-theme .page-title h1 { font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.06; font-weight: 700; letter-spacing: -0.04em; margin: 0; }
+body.product-theme .page-title h1 span { background: linear-gradient(90deg, #ff9933, #2997ff 60%, #30d158); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+body.product-theme .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 28px 0; }
+body.product-theme .feature-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 28px; color: var(--muted); text-decoration: none;
+  background: var(--glass); border: 1px solid var(--card-border); border-radius: var(--radius-xl);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s ease, background .3s ease;
+}
+body.product-theme a.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); background: rgba(44, 44, 46, .85); text-decoration: none; color: var(--muted); }
+body.product-theme .feature-card strong { color: var(--ink); font-family: var(--font-display); font-size: 1.45rem; line-height: 1.15; letter-spacing: -0.02em; }
+body.product-theme .feature-card .eyebrow { font-size: .85rem; }
+body.product-theme .feature-link { margin-top: auto; padding-top: 10px; color: var(--link); }
+body.product-theme .cta-band { text-align: center; padding: 64px 0 40px; }
+body.product-theme .cta-band h2 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -0.035em; margin: 0 0 22px; }
+
+/* Mobile tab bar (hidden on larger screens) */
+body.product-theme .tabbar { display: none; }
+
 /* Scroll reveals */
 body.product-theme [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity .9s cubic-bezier(.2, .8, .2, 1), transform .9s cubic-bezier(.2, .8, .2, 1); }
 body.product-theme [data-reveal].is-revealed { opacity: 1; transform: none; }
 @keyframes product-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 840px) {
+  body.product-theme { font-size: 16px; padding-bottom: calc(66px + env(safe-area-inset-bottom)); }
   body.product-theme .site-nav { display: none; }
+  body.product-theme .masthead { height: 48px; padding: 0 16px; }
+  body.product-theme .brand-mark { font-size: 1.12rem; }
   body.product-theme .nav-cta { margin-left: auto; }
-  body.product-theme .product-hero { padding-top: 56px; }
-  body.product-theme .hero-metrics { gap: 26px; }
+  body.product-theme main, body.product-theme footer { width: calc(100% - 28px); }
+  body.product-theme .product-hero { padding: 48px 0 24px; }
+  body.product-theme .hero-actions { flex-direction: column; gap: 14px; }
+  body.product-theme .hero-metrics { gap: 22px; margin-top: 32px; }
+  body.product-theme .hero-art { margin-top: 36px; border-radius: 22px; }
+  body.product-theme .hero-map-mark { font-size: 4.5rem; width: auto; height: auto; transform: none; }
+  body.product-theme .tile-gallery { padding-top: 48px; }
+  body.product-theme .tile-gallery-controls { display: none; }
+  body.product-theme .tile-gallery-track { grid-auto-columns: 82%; margin-right: -14px; padding-right: 14px; }
   body.product-theme .product-tile { min-height: 420px; }
+  body.product-theme .intro, body.product-theme .source-note { padding: 26px 20px; border-radius: 22px; }
+  body.product-theme .page-title { padding-top: 48px; }
+  body.product-theme .explore-heading { padding-top: 48px; }
   body.product-theme .chart-controls { position: static; }
+  body.product-theme .group-pills-bar { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding: 2px 2px 10px; margin: 0 -14px; padding-inline: 14px; }
+  body.product-theme .group-pills-bar::-webkit-scrollbar { display: none; }
+  body.product-theme .group-pill { flex: 0 0 auto; white-space: nowrap; }
+  body.product-theme .chart-card { padding: 18px 16px; border-radius: 22px; }
+  body.product-theme .group-hero { padding: 22px 18px; border-radius: 22px; }
+  body.product-theme .historical-election-explorer, body.product-theme .pew-report-library { padding: 18px 14px; border-radius: 22px; overflow-x: auto; }
+  body.product-theme .endpoint-checks { padding: 14px; }
+  body.product-theme .tabbar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1100;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    background: rgba(22, 22, 23, .86); border-top: 1px solid rgba(255, 255, 255, .1);
+    -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px);
+  }
+  body.product-theme .tabbar a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; color: var(--muted); font-size: .68rem; text-decoration: none; border-radius: 12px; }
+  body.product-theme .tabbar a[aria-current="page"] { color: #fff; }
+  body.product-theme .tabbar .tab-icon { font-size: 1.25rem; line-height: 1.2; }
+  body.product-theme .tabbar a[aria-current="page"] .tab-icon { color: var(--link); }
 }
 @media (prefers-reduced-motion: reduce) {
   body.product-theme [data-reveal] { opacity: 1; transform: none; transition: none; }

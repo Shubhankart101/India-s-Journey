@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 
@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ElectionGroupTests(unittest.TestCase):
     def test_us_elections_separates_results_from_presidential_and_congressional_finance(self):
-        page = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        page = (ROOT / "docs" / "explore.html").read_text(encoding="utf-8")
         app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
         definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         self.assertIn('data-group="U.S. Elections"', page)

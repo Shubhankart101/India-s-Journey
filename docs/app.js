@@ -549,6 +549,7 @@ async function main() {
   const genEl = document.querySelector('#generated');
   if (genEl) genEl.textContent = data.generated_at_utc ? new Date(data.generated_at_utc).toLocaleString() : new Date().toLocaleString();
   const renderArticles = (container, items, emptyMessage) => {
+    if (!container) return;
     container.replaceChildren();
     if (!items || !items.length) {
       container.innerHTML = `<p class="article-loading">${emptyMessage}</p>`;
@@ -665,7 +666,7 @@ async function main() {
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
   orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
     const category = dashboardCategoryFor(key);
-    if (category !== lastCategory) {
+    if (grid && category !== lastCategory) {
       const heading = document.createElement('h2');
       heading.className = 'category-heading';
       heading.dataset.category = category;
@@ -675,6 +676,11 @@ async function main() {
     }
     const series = data.series[key] || { error: 'No generated series is available yet' };
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
+    // Pages without a chart grid only need group counts, so skip building the card.
+    if (!grid) {
+      charts.push({ category, subgroup: dashboardSubgroupFor(key), live: Boolean(live) });
+      return;
+    }
     const card = document.createElement('article');
     card.className = 'chart-card';
     if (series.chartType === 'bar' && series.indexAxis === 'y') card.classList.add('state-rank-chart');
@@ -999,9 +1005,9 @@ async function main() {
     if (reset) reset.addEventListener('click', () => { if (chart) chart.resetZoom(); });
     charts.push({ chart, card, labels, values: values || series.datasets?.[0]?.data || series.datasets?.[0]?.values || [], datasets: series.datasets?.map(dataset => ({ data: [...(dataset.data || dataset.values)] })) || [], category, subgroup: dashboardSubgroupFor(key), era: eraKey });
   });
-  const cards = [...grid.querySelectorAll('.chart-card')];
-  const headings = [...grid.querySelectorAll('.category-heading')];
-  const subHeadings = [...grid.querySelectorAll('.subgroup-heading')];
+  const cards = grid ? [...grid.querySelectorAll('.chart-card')] : [];
+  const headings = grid ? [...grid.querySelectorAll('.category-heading')] : [];
+  const subHeadings = grid ? [...grid.querySelectorAll('.subgroup-heading')] : [];
   const filter = document.querySelector('#chart-filter');
   const groupFilter = document.querySelector('#group-filter');
   const subgroupFilter = document.querySelector('#subgroup-filter');
@@ -1009,7 +1015,7 @@ async function main() {
   const savedToggle = document.querySelector('#saved-toggle');
   const resultCount = document.querySelector('#chart-result-count');
   const liveCount = document.querySelector('#hero-live-count');
-  if (liveCount) liveCount.textContent = String(cards.filter(card => card.dataset.state === 'live').length);
+  if (liveCount) liveCount.textContent = String(grid ? cards.filter(card => card.dataset.state === 'live').length : charts.filter(item => item.live).length);
   const subgroupOwners = new Map();
   const groupToSubgroups = { all: [] };
   cards.forEach(card => {
@@ -1563,12 +1569,11 @@ async function main() {
   }
 
   const tileGallery = document.querySelector('#tile-gallery-track');
-  if (tileGallery && groupPills.length) {
+  if (tileGallery) {
     const groupCounts = charts.reduce((counts, item) => ({ ...counts, [item.category]: (counts[item.category] || 0) + 1 }), {});
-    groupPills.forEach(pill => {
-      const group = pill.dataset.group;
+    Object.keys(categoryOrder).forEach(group => {
       const info = groupHeroData[group];
-      if (group === 'all' || !info) return;
+      if (!info) return;
       const tile = document.createElement('button');
       tile.type = 'button';
       tile.className = 'product-tile';
@@ -1588,8 +1593,7 @@ async function main() {
       tile.append(eyebrow, heading, blurb, plus);
       tile.setAttribute('aria-label', `Explore ${group}`);
       tile.addEventListener('click', () => {
-        pill.click();
-        document.querySelector('#explore')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.location.href = `explore.html?group=${encodeURIComponent(group)}`;
       });
       tileGallery.append(tile);
     });
@@ -1600,18 +1604,7 @@ async function main() {
     });
   }
 
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-revealed');
-        revealObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('[data-reveal]').forEach(element => revealObserver.observe(element));
-  } else {
-    document.querySelectorAll('[data-reveal]').forEach(element => element.classList.add('is-revealed'));
-  }
+  if (!grid) return;
 
   const historicalExplorer = document.querySelector('#historical-election-explorer');
   let historicalPayloadPromise = null;
@@ -1973,6 +1966,34 @@ async function main() {
   syncGroupPills('all');
   updateSubgroupFilter();
   updateCards();
+
+  // Deep links such as explore.html?group=Economic&subgroup=...&q=gdp, kept in sync as filters change.
+  const hasOption = (select, value) => [...select.options].some(option => option.value === value);
+  const params = new URLSearchParams(window.location.search);
+  const startGroup = params.get('group');
+  if (startGroup && hasOption(groupFilter, startGroup)) {
+    groupFilter.value = startGroup;
+    groupFilter.dispatchEvent(new Event('change'));
+  }
+  const startSubgroup = params.get('subgroup');
+  if (startSubgroup && hasOption(subgroupFilter, startSubgroup)) {
+    subgroupFilter.value = startSubgroup;
+    subgroupFilter.dispatchEvent(new Event('change'));
+  }
+  if (params.get('q')) {
+    search.value = params.get('q');
+    search.dispatchEvent(new Event('input'));
+  }
+  const syncUrl = () => {
+    const next = new URLSearchParams();
+    if (groupFilter.value !== 'all') next.set('group', groupFilter.value);
+    if (subgroupFilter.value !== 'all') next.set('subgroup', subgroupFilter.value);
+    if (search.value.trim()) next.set('q', search.value.trim());
+    const query = next.toString();
+    history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
+  };
+  [groupFilter, subgroupFilter].forEach(select => select.addEventListener('change', syncUrl));
+  search.addEventListener('input', syncUrl);
 }
 
 main().catch(error => {
@@ -1980,7 +2001,8 @@ main().catch(error => {
   if (articleLinks) articleLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
   const polityPolicyLinks = document.querySelector('#pp-article-links');
   if (polityPolicyLinks) polityPolicyLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
-  document.querySelector('#charts').innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
+  const chartGrid = document.querySelector('#charts');
+  if (chartGrid) chartGrid.innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });
 
 

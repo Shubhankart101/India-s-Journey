@@ -193,7 +193,7 @@ class DashboardEndpointTests(unittest.TestCase):
             self.assertIn("World Bank population", series.get("source", ""))
 
     def test_chart_source_index_has_graph_level_urls(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         self.assertIn(b'id="chart-source-index-list"', body)
         self.assertIn(b'id="chart-focus-overlay"', body)
@@ -287,7 +287,7 @@ class DashboardEndpointTests(unittest.TestCase):
                 self.assertTrue(any(row.get("value") is not None for row in payload[1]), key)
 
     def test_page_references_runtime_and_data_assets(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         self.assertIn(b"Project references, data methods", body)
         self.assertIn(b'id="references"', body)
@@ -300,7 +300,9 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertNotIn(b'id="range-end"', body)
         self.assertIn(b'id="chart-focus-overlay"', body)
         self.assertIn(b"Sources &amp; references", body)
-        self.assertIn(b"article-links", body)
+        status, about = self.fetch(f"{DASHBOARD_URL}/about.html")
+        self.assertEqual(status, 200)
+        self.assertIn(b"article-links", about)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/economic-survey-monthly.json")
         self.assertEqual(status, 200)
         self.assertIn(b"series", body)
@@ -402,7 +404,7 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertEqual(len(series["years"]), len(series["values"]), key)
 
     def test_page_has_dedicated_polity_policy_section(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/about.html")
         self.assertEqual(status, 200)
         self.assertIn(b'id="polity-policy-title"', body)
         self.assertIn(b"Polity and Policy latest articles", body)
@@ -411,7 +413,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'href="https://politypolicy.substack.com/"', body)
 
     def test_page_exposes_all_subgroups(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         for subgroup in (
@@ -425,16 +427,16 @@ class DashboardEndpointTests(unittest.TestCase):
             self.assertIn(subgroup, text, subgroup)
 
     def test_page_has_dedicated_pew_research_group(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
         self.assertIn('value="Pew Research"', text)
         self.assertIn(">Pew Research<", text)
 
     def test_page_has_separate_polity_policy_article_rail(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/about.html")
         self.assertEqual(status, 200)
-        self.assertIn(b'<details class="reading-list-popover">', body)
+        self.assertIn(b'<details class="reading-list-popover" open>', body)
         self.assertIn(b'class="reading-list-panel"', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -462,15 +464,31 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("updateCards", text)
         self.assertIn("indexAxis: horizontalBars ? 'y' : 'x'", text)
 
+    def test_site_is_multi_page_and_mobile_ready(self):
+        for page, marker in (("index.html", "home"), ("explore.html", "explore"), ("about.html", "about"), ("api.html", "api")):
+            status, body = self.fetch(f"{DASHBOARD_URL}/{page}")
+            self.assertEqual(status, 200, page)
+            self.assertIn(f'data-page="{marker}"'.encode(), body, page)
+            self.assertIn(b"width=device-width", body, page)
+            self.assertIn(b"site.js", body, page)
+        status, script = self.fetch(f"{DASHBOARD_URL}/site.js")
+        self.assertEqual(status, 200)
+        for target in (b"index.html", b"explore.html", b"about.html", b"api.html", b"tabbar"):
+            self.assertIn(target, script)
+        status, css = self.fetch(f"{DASHBOARD_URL}/product-theme.css")
+        self.assertEqual(status, 200)
+        self.assertIn(b".tabbar", css)
+        self.assertIn(b"max-width: 840px", css)
+
     def test_page_has_chart_prompt_element(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/")
+        status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         self.assertIn(b'id="charts"', body)
         self.assertIn(b'id="indicator-modal"', body)
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=dark-v6', body)
+        self.assertIn(b'styles.css?v=pages-v7', body)
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",

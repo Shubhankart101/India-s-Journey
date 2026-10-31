@@ -2,28 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>India's Journey — Explore India in data</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=dark-v6">
-  <link rel="stylesheet" href="product-theme.css?v=dark-v6">
+  <link rel="stylesheet" href="styles.css?v=pages-v7">
+  <link rel="stylesheet" href="product-theme.css?v=pages-v7">
 </head>
-<body class="product-theme">
+<body class="product-theme" data-page="home">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <header class="masthead">
-    <a class="brand-mark" href="#" aria-label="India's Journey home"><span class="brand-emblem">IJ</span><span>India's Journey<small>The public data atlas</small></span></a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="#highlights">Overview</a>
-      <a href="#explore">Explore</a>
-      <a href="#about">About</a>
-      <a href="#references">Sources</a>
-      <a href="api.html">API</a>
-    </nav>
-    <a class="nav-cta" href="#explore">Explore data</a>
-  </header>
+  <script src="site.js?v=pages-v7"></script>
 
   <main>
     <section class="product-hero" aria-labelledby="intro-title">
@@ -32,8 +22,8 @@
         <h1 id="intro-title">India, in <span>perspective.</span></h1>
         <p class="lede">A thousand signals. One changing nation. Explore the data behind India’s economy, people, health, industry and public life—with the context and sources to follow every line.</p>
         <div class="hero-actions">
-          <a class="button" href="#explore">Explore the data</a>
-          <a class="text-link" href="#references">How we source the numbers <span aria-hidden="true">›</span></a>
+          <a class="button" href="explore.html">Explore the data</a>
+          <a class="text-link" href="about.html">How it works <span aria-hidden="true">›</span></a>
         </div>
         <div class="hero-metrics" aria-label="Dashboard overview">
           <div><strong id="hero-chart-count">—</strong><span>indicators</span></div>
@@ -60,326 +50,43 @@
       <div class="tile-gallery-track" id="tile-gallery-track" role="list"></div>
     </section>
 
-    <section class="intro" id="about" aria-labelledby="about-title" data-reveal>
-      <div>
-        <p class="eyebrow">The idea behind the atlas</p>
-        <h2 id="about-title">Big change is easier to see, one signal at a time.</h2>
-        <p>India’s story isn’t a single headline or a single number. This independent, public-data project brings together long-run indicators and current snapshots so you can explore what changed, when it changed, and how the evidence is measured.</p>
-        <p>Start with a theme, search for an indicator, and use the period controls to narrow the view. Hover for exact values, zoom into a moment, or open <strong>Deep Dive</strong> for the full series, notes and cited source. Every chart keeps its frequency and limitations visible; unavailable data is never filled with an estimate.</p>
-        <p class="inspiration-note">Made in appreciation of public-data storytelling by <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy</a>, <a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Polity and Policy</a> and <a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix</a>. This is an independent project and does not represent those publishers.</p>
-      </div>
-      <details class="reading-list-popover">
-        <summary>From the reading list <span>Latest articles</span></summary>
-        <div class="reading-list-panel">
-          <section aria-labelledby="article-rail-title">
-            <p class="eyebrow" id="article-rail-title">Indian Matrix</p>
-            <div id="article-links" class="article-links" aria-live="polite">
-              <p class="article-loading">Loading latest public articles…</p>
-            </div>
-          </section>
-          <section aria-labelledby="polity-policy-title">
-            <p class="eyebrow reading-list-label" id="polity-policy-title">Polity and Policy latest articles</p>
-            <div id="pp-article-links" class="article-links" aria-live="polite">
-              <p class="article-loading">Loading latest public articles…</p>
-            </div>
-          </section>
-        </div>
-      </details>
-    </section>
-
-    <section class="source-note" aria-label="Data and source principles" data-reveal>
-      <div>
-        <p class="eyebrow">Evidence before inference</p>
-        <h2>Public data. Clear provenance.</h2>
-        <p>Each graph links to its underlying source and explains its unit and cadence. Some indicators are annual, some are survey snapshots, and some are assembled from official tables. Read the chart note before comparing unlike measures.</p>
-      </div>
-      <a class="text-link" href="#references">Browse the source directory <span aria-hidden="true">↓</span></a>
+    <section class="feature-grid" aria-label="Where to go next" data-reveal>
+      <a class="feature-card" href="explore.html">
+        <span class="eyebrow">Explore</span>
+        <strong>Every indicator, one place.</strong>
+        <span>Filter by theme and subgroup, search, zoom, compare and open a deep dive for any chart.</span>
+        <span class="feature-link">Open the explorer ›</span>
+      </a>
+      <a class="feature-card" href="about.html">
+        <span class="eyebrow">About</span>
+        <strong>Evidence before inference.</strong>
+        <span>What the atlas is, how to read a chart and why unavailable data is never estimated.</span>
+        <span class="feature-link">Read the story ›</span>
+      </a>
+      <a class="feature-card" href="explore.html#references">
+        <span class="eyebrow">Sources</span>
+        <strong>Public data, clear provenance.</strong>
+        <span>Search the citation behind every chart and browse the official publishers we use.</span>
+        <span class="feature-link">Browse the sources ›</span>
+      </a>
+      <a class="feature-card" href="api.html">
+        <span class="eyebrow">API</span>
+        <strong>Open JSON, read-only.</strong>
+        <span>Inspect and test every documented data file with the built-in Swagger explorer.</span>
+        <span class="feature-link">Open the API explorer ›</span>
+      </a>
     </section>
 
     <section class="status" aria-label="Dashboard status" data-reveal>
       <div><span>Last generated</span><strong id="generated">Loading</strong></div>
-      <div><span>Coverage</span><strong>12 themes · national &amp; state</strong></div>
+      <div><span>Coverage</span><strong>13 themes · national &amp; state</strong></div>
       <div><span>Explore</span><strong>Search · compare · zoom · inspect</strong></div>
-    </section>
-
-    <section class="explore-heading" id="explore" aria-labelledby="explore-title">
-      <div><p class="eyebrow">Choose your starting point</p><h2 id="explore-title">Explore the indicators</h2><p>Follow a theme or search for a question. The charts update as you narrow the view.</p></div>
-      <p class="result-count" id="chart-result-count" aria-live="polite">Loading indicators…</p>
-    </section>
-    <section class="chart-controls" aria-label="Chart controls">
-      <div class="group-pills-bar" id="group-pills">
-        <button type="button" class="group-pill active" data-group="all">↺ Reset selection</button>
-        <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
-        <button type="button" class="group-pill" data-group="Industry Trends &amp; Performance">🏭 Industry Trends</button>
-        <button type="button" class="group-pill" data-group="Mining &amp; Natural Resources">⛏️ Mined Resources</button>
-        <button type="button" class="group-pill" data-group="Payments &amp; Digital Banking">💳 Payments &amp; Banking</button>
-        <button type="button" class="group-pill" data-group="State Performance &amp; Regional Health">🏛️ State Performance</button>
-        <button type="button" class="group-pill" data-group="Public Health &amp; Epidemiology">🩺 Public Health</button>
-        <button type="button" class="group-pill" data-group="Social">👥 Social</button>
-        <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
-        <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
-        <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
-        <button type="button" class="group-pill" data-group="Elections">🗳️ Elections</button>
-        <button type="button" class="group-pill" data-group="U.S. Elections">🇺🇸 U.S. Elections</button>
-        <button type="button" class="group-pill" data-group="Tourism &amp; Heritage">🏛️ Tourism &amp; Heritage</button>
-      </div>
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, State, Mining, Crime)..."></label>
-      <button type="button" class="saved-toggle" id="saved-toggle" aria-pressed="false">☆ Saved charts</button>
-      <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
-      <select id="group-filter" class="visually-hidden" aria-label="Selected group">
-        <option value="all" selected>All groups</option>
-        <option value="Economic">Economic</option>
-        <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
-        <option value="Mining &amp; Natural Resources">Mining &amp; Natural Resources</option>
-        <option value="Payments &amp; Digital Banking">Payments &amp; Digital Banking</option>
-        <option value="State Performance &amp; Regional Health">State Performance &amp; Regional Health</option>
-        <option value="Public Health &amp; Epidemiology">Public Health &amp; Epidemiology</option>
-        <option value="Social">Social</option>
-        <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
-        <option value="Crime &amp; Security">Crime &amp; Security</option>
-        <option value="Pew Research">Pew Research</option>
-        <option value="Elections">Elections</option>
-        <option value="U.S. Elections">U.S. Elections</option>
-        <option value="Tourism &amp; Heritage">Tourism &amp; Heritage</option>
-      </select>
-      <label>Subgroup <select id="subgroup-filter">
-        <option value="all" selected>All subgroups</option>
-        <optgroup label="📈 Economic">
-          <option>Macroeconomics</option>
-          <option>Per Capita Income &amp; Wealth</option>
-          <option>Monetary Policy</option>
-          <option>Trade &amp; External</option>
-          <option>Markets</option>
-          <option>Fiscal &amp; Union Budget</option>
-          <option>Media &amp; Publications</option>
-        </optgroup>
-        <optgroup label="🏭 Industry Trends &amp; Performance">
-          <option>Manufacturing &amp; Industrial Growth</option>
-          <option>Infrastructure Development</option>
-          <option>Production &amp; Commodities</option>
-        </optgroup>
-        <optgroup label="⛏️ Mining &amp; Natural Resources">
-          <option>Metallic Minerals &amp; Ores</option>
-          <option>Energy Minerals &amp; Fuel</option>
-          <option>Non-Metallic &amp; Industrial Minerals</option>
-          <option>Mineral Exports &amp; Trade</option>
-        </optgroup>
-        <optgroup label="💳 Payments &amp; Digital Banking">
-          <option>UPI &amp; Digital Payments</option>
-          <option>Card Spends &amp; Ecosystem</option>
-          <option>Digital Financial Index</option>
-        </optgroup>
-        <optgroup label="🏛️ State Performance &amp; Regional Health">
-          <option>State Financial Health &amp; GSDP</option>
-          <option>State Infrastructure &amp; Services</option>
-          <option>State Industrial &amp; Manufacturing Hubs</option>
-          <option>State Welfare &amp; Scheme Coverage</option>
-        </optgroup>
-        <optgroup label="🩺 Public Health &amp; Epidemiology">
-          <option>Mortality &amp; Lifespan Milestones</option>
-          <option>Disease Burden &amp; Epidemiology</option>
-          <option>Health Infrastructure &amp; Spending</option>
-        </optgroup>
-        <optgroup label="👥 Social">
-          <option>Demographics</option>
-          <option>Welfare</option>
-          <option>Government Schemes</option>
-        </optgroup>
-        <optgroup label="🛡️ Defence &amp; Strategic">
-          <option>Defence Exports &amp; Production</option>
-          <option>Defence Budget &amp; Modernization</option>
-          <option>Strategic Stockpiles &amp; Capabilities</option>
-        </optgroup>
-        <optgroup label="⚖️ Crime &amp; Security">
-          <option>Maoism / LWE</option>
-          <option>Jammu &amp; Kashmir Insurgency</option>
-          <option>North East Insurgency</option>
-          <option>Punjab Militancy &amp; Security</option>
-          <option>Violence &amp; Crime</option>
-          <option>Terrorism</option>
-        </optgroup>
-        <optgroup label="📊 Pew Research">
-          <option>Public opinion</option>
-        </optgroup>
-        <optgroup label="🗳️ Elections">
-          <option>Indian Elections</option>
-          <option>Lok Sabha 2024 — National</option>
-          <option>Lok Sabha 2024 — States</option>
-          <option>State Assembly Results 2022–2026</option>
-        </optgroup>
-        <optgroup label="🇺🇸 U.S. Elections">
-          <option>U.S. Presidential Elections</option>
-          <option>U.S. Presidential Campaign Finance</option>
-          <option>U.S. Congressional Campaign Finance</option>
-          <option>U.S. Campaign Funding Composition</option>
-        </optgroup>
-        <optgroup label="🏛️ Tourism &amp; Heritage">
-          <option>International Visitor Trends</option>
-          <option>World Heritage Sites</option>
-        </optgroup>
-      </select></label>
-    </section>
-
-    <div id="group-hero" class="group-hero" hidden>
-      <div class="group-hero-content">
-        <h2 id="group-hero-title">Group Title</h2>
-        <p id="group-hero-desc">Group Description</p>
-      </div>
-      <figure class="group-hero-art">
-        <img id="group-hero-image" src="assets/parliament.svg" alt="">
-        <figcaption id="group-hero-image-caption"></figcaption>
-      </figure>
-      <div class="group-hero-badges" id="group-hero-badges">
-        <span class="hero-badge saffron">1947 — 2026</span>
-        <span class="hero-badge green">Global Comparison</span>
-      </div>
-    </div>
-
-    <section id="pew-report-library" class="pew-report-library" aria-label="Pew Research report library" hidden>
-      <div class="pew-library-heading">
-        <div><p class="eyebrow">Past findings · latest publications</p><h2>Pew Research: India report library</h2><p>Browse dated Pew reports and survey findings. Publication date is not the survey fieldwork date; open each report for its methodology and question details.</p></div>
-        <label>Search the report archive <input id="pew-report-search" type="search" placeholder="Search topics, titles or years"></label>
-      </div>
-      <p id="pew-report-count" class="pew-report-count" aria-live="polite"></p>
-      <div id="pew-report-list" class="pew-report-list"></div>
-    </section>
-
-    <section id="historical-election-explorer" class="historical-election-explorer" aria-labelledby="historical-election-title" hidden>
-      <div class="explorer-heading">
-        <p class="eyebrow">Official archive · constituency detail</p>
-        <h2 id="historical-election-title">Explore historical Indian election results</h2>
-        <p>Select an available election, state and constituency to inspect candidate votes, vote share and the reported electorate. Lok Sabha seats in the live ECI feed include an interactive candidate-vote pie; the archive includes all 543 seats from the 2024 Lok Sabha election and recent Assembly elections through 2026, but is not a complete all-years archive.</p>
-      </div>
-      <div class="historical-election-controls">
-        <label>Election type <select id="history-type"><option value="">Loading…</option></select></label>
-        <label>Year <select id="history-year" disabled><option value="">Select an election type</option></select></label>
-        <label>State / UT <select id="history-state" disabled><option value="">Select a year</option></select></label>
-        <label>Constituency <select id="history-constituency" disabled><option value="">Select a state</option></select></label>
-      </div>
-      <p id="history-status" class="history-status" role="status" aria-live="polite">Historical result data has not been loaded.</p>
-      <div id="history-result" class="history-result" hidden>
-        <div class="history-metrics" id="history-metrics"></div>
-        <div class="history-chart-grid">
-          <div class="history-chart-wrap"><canvas id="history-vote-chart" aria-label="Candidate votes in selected constituency"></canvas></div>
-          <div class="history-chart-wrap"><canvas id="history-vote-composition-chart" aria-label="Candidate vote composition in selected constituency"></canvas></div>
-        </div>
-        <div class="history-table-wrap">
-          <table>
-            <caption>Candidate results in the selected constituency</caption>
-            <thead><tr><th scope="col">Candidate</th><th scope="col">Party</th><th scope="col">Votes</th><th scope="col">Vote share</th></tr></thead>
-            <tbody id="history-candidate-rows"></tbody>
-          </table>
-        </div>
-        <a id="history-source-link" class="text-link" target="_blank" rel="noreferrer">Open the original ECI report ↗</a>
-      </div>
-    </section>
-
-    <section class="chart-grid" id="charts" aria-live="polite">
-    </section>
-
-    <section class="references" id="references" aria-label="References" data-reveal>
-      <p class="eyebrow">Follow the evidence</p>
-      <h2>Sources &amp; references</h2>
-      <p class="references-intro">Every chart below has a direct source link. Search by indicator, topic, institution or URL. For charts built from multiple inputs, open the graph’s note for the full provenance and method.</p>
-      <details class="chart-source-index">
-        <summary>Browse chart citations <span id="chart-source-index-count"></span></summary>
-        <label class="chart-source-index-search">Find an indicator, publisher or URL <input id="chart-source-index-search" type="search" placeholder="Try World Bank, RBI, health, or a chart title"></label>
-        <ul id="chart-source-index-list" aria-live="polite"></ul>
-      </details>
-      <details>
-        <summary>Project references, data methods &amp; tools</summary>
-        <div class="reference-columns">
-          <div>
-            <h3>Public data publishers</h3>
-            <ul>
-              <li><a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392" target="_blank" rel="noreferrer">World Bank Open Data &amp; API documentation</a></li>
-              <li><a href="https://data.rbi.org.in/DBIE/" target="_blank" rel="noreferrer">Reserve Bank of India Database on Indian Economy</a></li>
-              <li><a href="https://pmjdy.gov.in/statewise-statistics" target="_blank" rel="noreferrer">Department of Financial Services — PMJDY statewise accounts</a></li>
-              <li><a href="https://www.mospi.gov.in/" target="_blank" rel="noreferrer">Ministry of Statistics and Programme Implementation</a></li>
-              <li><a href="https://www.indiabudget.gov.in/economicsurvey/" target="_blank" rel="noreferrer">Economic Survey of India</a></li>
-              <li><a href="https://www.npci.org.in/what-we-do/upi/product-statistics" target="_blank" rel="noreferrer">NPCI UPI product statistics</a></li>
-              <li><a href="https://morth.gov.in/road-accident-in-india" target="_blank" rel="noreferrer">Ministry of Road Transport and Highways — road accident reports</a></li>
-              <li><a href="https://mnre.gov.in/en/physical-progress/" target="_blank" rel="noreferrer">Ministry of New and Renewable Energy — physical progress</a></li>
-              <li><a href="https://hmis.mohfw.gov.in/#!/standardReports" target="_blank" rel="noreferrer">Ministry of Health and Family Welfare — HMIS reports</a></li>
-              <li><a href="https://pmjay.gov.in/" target="_blank" rel="noreferrer">National Health Authority — Ayushman Bharat PM-JAY</a></li>
-              <li><a href="https://ncrb.gov.in/" target="_blank" rel="noreferrer">National Crime Records Bureau</a></li>
-              <li><a href="https://www.pewresearch.org/global/" target="_blank" rel="noreferrer">Pew Research Center — Global</a></li>
-              <li><a href="https://www.sipri.org/databases" target="_blank" rel="noreferrer">SIPRI databases</a></li>
-              <li><a href="https://old.eci.gov.in/statistical-report/statistical-reports/" target="_blank" rel="noreferrer">Election Commission of India — statistical reports archive</a></li>
-              <li><a href="https://www.eci.gov.in/eci-backend/public/api/election-result?category_id=1" target="_blank" rel="noreferrer">Election Commission of India — GE 2024 statistical reports (report 33 constituency-wise detailed result)</a></li>
-              <li><a href="https://voters.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India — voter services, SSR and SIR notices</a></li>
-              <li><a href="https://www.archives.gov/electoral-college" target="_blank" rel="noreferrer">U.S. National Archives — Electoral College results</a></li>
-              <li><a href="https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/" target="_blank" rel="noreferrer">Federal Election Commission — candidate summary file definitions</a></li>
-              <li><a href="https://data.worldbank.org/country/india" target="_blank" rel="noreferrer">World Bank — India indicators (official-indicator layer and composition pies)</a></li>
-              <li><a href="https://whc.unesco.org/en/list/" target="_blank" rel="noreferrer">UNESCO World Heritage List — official properties and inscription dates</a></li>
-              <li><a href="https://data.worldbank.org/indicator/ST.INT.ARVL?locations=IN" target="_blank" rel="noreferrer">World Bank — international tourism arrivals</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Project &amp; reading references</h3>
-            <ul>
-              <li><a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy — public-data storytelling</a></li>
-              <li><a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Polity and Policy — essays and analysis</a></li>
-              <li><a href="https://politypolicy.substack.com/feed" target="_blank" rel="noreferrer">Polity and Policy public RSS feed</a></li>
-              <li><a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix — public writing</a></li>
-            </ul>
-            <h3>Interactive chart tools</h3>
-            <ul>
-              <li><a href="https://www.chartjs.org/docs/latest/" target="_blank" rel="noreferrer">Chart.js documentation</a></li>
-              <li><a href="https://hammerjs.github.io/" target="_blank" rel="noreferrer">Hammer.js documentation</a></li>
-              <li><a href="https://www.chartjs.org/chartjs-plugin-zoom/latest/" target="_blank" rel="noreferrer">Chart.js zoom plugin documentation</a></li>
-            </ul>
-          </div>
-        </div>
-      </details>
-      <details class="image-reference-index">
-        <summary>Original India- and U.S.-inspired background illustrations</summary>
-        <p>These are original vector illustrations created for this dashboard, not downloaded photographs or official depictions. Subjects are visual interpretations; use the linked institution or heritage page for authoritative facts and photographs.</p>
-        <ul>
-          <li><a href="assets/parliament.svg">Parliament-inspired civic building illustration</a> · <a href="https://sansad.in/ls/about/introduction" target="_blank" rel="noreferrer">Lok Sabha — Parliament of India</a></li>
-          <li><a href="assets/eci-building.svg">Election institution illustration</a> · <a href="https://www.eci.gov.in/" target="_blank" rel="noreferrer">Election Commission of India</a></li>
-          <li><a href="assets/us-capitol.svg">U.S. Capitol-inspired civic illustration</a> · <a href="https://www.aoc.gov/explore-capitol-campus/buildings-grounds/capitol-building" target="_blank" rel="noreferrer">Architect of the Capitol — U.S. Capitol Building</a></li>
-          <li><a href="assets/supreme-court.svg">Court architecture illustration</a> · <a href="https://www.sci.gov.in/" target="_blank" rel="noreferrer">Supreme Court of India</a></li>
-          <li><a href="assets/hospital.svg">Public health institution illustration</a> · <a href="https://mohfw.gov.in/" target="_blank" rel="noreferrer">Ministry of Health and Family Welfare</a></li>
-          <li><a href="assets/rail-station.svg">Railway station illustration</a> · <a href="https://indianrailways.gov.in/" target="_blank" rel="noreferrer">Indian Railways</a></li>
-          <li><a href="assets/minerals.svg">Mining and geology illustration</a> · <a href="https://ibm.gov.in/" target="_blank" rel="noreferrer">Indian Bureau of Mines</a></li>
-          <li><a href="assets/hampi.svg">Hampi-inspired heritage illustration</a> · <a href="https://whc.unesco.org/en/list/241/" target="_blank" rel="noreferrer">UNESCO — Group of Monuments at Hampi</a></li>
-          <li><a href="assets/taj-mahal.svg">Taj Mahal-inspired heritage illustration</a> · <a href="https://whc.unesco.org/en/list/252/" target="_blank" rel="noreferrer">UNESCO — Taj Mahal</a></li>
-          <li><a href="assets/lotus-temple.svg">Lotus-inspired civic illustration</a> · <a href="https://bahaihouseofworship.in/" target="_blank" rel="noreferrer">Bahá’í House of Worship, New Delhi</a></li>
-        </ul>
-      </details>
     </section>
   </main>
 
-  <div id="indicator-modal" class="modal-overlay" hidden>
-    <section class="indicator-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-      <button id="modal-close" class="modal-close" type="button" aria-label="Close Deep Dive">×</button>
-      <div id="modal-body"></div>
-    </section>
-  </div>
-  <div id="chart-focus-overlay" class="chart-focus-overlay" hidden>
-    <section class="chart-focus-dialog" role="dialog" aria-modal="true" aria-label="Expanded chart" tabindex="-1">
-      <button id="chart-focus-close" class="chart-focus-close" type="button" aria-label="Close expanded chart">×</button>
-      <div class="chart-focus-content" id="chart-focus-content"></div>
-    </section>
-  </div>
-
-  <footer>Inspired by PolityPolicy.com and Polity and Policy. Independent dashboard; charts are generated from the cited public sources.</footer>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="data.js?v=dark-v6"></script>
-  <script src="vendor/chart.umd.min.js"></script>
-  <script src="vendor/hammer.min.js"></script>
-  <script src="vendor/chartjs-plugin-zoom.min.js"></script>
-  <script>
-    if (typeof Chart === 'undefined') {
-      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"><\/script>');
-      document.write('<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"><\/script>');
-      document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
-    }
-  </script>
-  <script src="additional-chart-definitions.js?v=dark-v6"></script>
-  <script src="app.js?v=dark-v6"></script>
+  <footer>Inspired by PolityPolicy.com and Polity and Policy. Independent dashboard; charts are generated from the public sources listed on the Explore page.</footer>
+  <script src="data.js?v=pages-v7"></script>
+  <script src="additional-chart-definitions.js?v=pages-v7"></script>
+  <script src="app.js?v=pages-v7"></script>
 </body>
 </html>
