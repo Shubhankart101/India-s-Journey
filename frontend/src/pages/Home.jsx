@@ -54,13 +54,13 @@ export default function Home() {
       >
         <ArtBackdrop art={current?.art || 'parliament.svg'} />
         <div className="hero-orbs" aria-hidden="true"><span /><span /><span /></div>
-        <p className="eyebrow">Official data · refreshed on schedule</p>
-        <h1>India's Journey.<br /><span className="gradient-text">Every number, sourced.</span></h1>
+        <p className="eyebrow">A living atlas · 1947 to today</p>
+        <h1>India, in <span className="gradient-text">perspective.</span></h1>
         <p className="hero-typed">Track <Typewriter phrases={TOPICS} /></p>
-        <p className="lead">Search hundreds of indicators on the economy, industry, mining, elections, health, society and tourism — open any chart, compare up to four side by side, and download the data.</p>
+        <p className="lead">A thousand signals. One changing nation. Explore the data behind India’s economy, people, health, industry and public life—with the context and sources to follow every line.</p>
         <div className="hero-actions">
-          <Link className="btn btn-primary" to="/explore">Explore indicators</Link>
-          <Link className="btn btn-ghost" to="/compare">Compare</Link>
+          <Link className="btn btn-primary" to="/explore">Explore the data</Link>
+          <Link className="btn btn-ghost" to="/about">How it works ›</Link>
         </div>
         {s && (
           <dl className="stat-row">

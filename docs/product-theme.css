@@ -134,9 +134,6 @@ body.product-theme .status div { background: var(--glass); border: 1px solid var
 body.product-theme .status span { color: var(--muted); }
 body.product-theme .status strong { color: var(--ink); }
 
-body.product-theme .reading-list-popover > summary { background: var(--glass); color: var(--ink); border: 1px solid var(--line); border-radius: 980px; }
-body.product-theme .reading-list-popover > summary span { color: var(--muted); }
-body.product-theme .reading-list-panel { background: rgba(28, 28, 30, .96); border: 1px solid var(--card-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-lift); color: var(--ink); }
 body.product-theme .article-button, body.product-theme .article-links a { background: rgba(255, 255, 255, .08); color: var(--ink); border-color: transparent; border-radius: 14px; }
 
 /* Explore header and controls */

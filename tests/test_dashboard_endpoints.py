@@ -319,7 +319,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"Sources &amp; references", body)
         status, about = self.fetch(f"{DASHBOARD_URL}/about.html")
         self.assertEqual(status, 200)
-        self.assertIn(b"article-links", about)
+        self.assertIn(b'id="thanks-im-articles"', about)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/economic-survey-monthly.json")
         self.assertEqual(status, 200)
         self.assertIn(b"series", body)
@@ -420,14 +420,46 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertIn("values", series, key)
                     self.assertEqual(len(series["years"]), len(series["values"]), key)
 
-    def test_page_has_dedicated_polity_policy_section(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/about.html")
+    def test_every_page_has_with_thanks_section_for_both_publishers(self):
+        for page in ("index.html", "explore.html", "about.html", "api.html", "404.html"):
+            status, body = self.fetch(f"{DASHBOARD_URL}/{page}")
+            self.assertEqual(status, 200, page)
+            self.assertEqual(body.count(b'id="thanks"'), 1, page)
+            self.assertIn(b'id="thanks-pp-title">PolityPolicy<', body, page)
+            self.assertIn(b'id="thanks-im-title">Indian Matrix<', body, page)
+            self.assertIn(b'id="thanks-pp-articles"', body, page)
+            self.assertIn(b'id="thanks-im-articles"', body, page)
+            self.assertIn(b"This is an independent project and does not represent those publishers.", body, page)
+            self.assertIn(b'href="https://politypolicy.com/"', body, page)
+            self.assertIn(b'href="https://politypolicy.substack.com/"', body, page)
+            self.assertIn(b'href="https://substack.com/@indianmatrix"', body, page)
+            self.assertIn(b'<footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>)', body, page)
+        status, body = self.fetch(f"{DASHBOARD_URL}/status.html")
         self.assertEqual(status, 200)
-        self.assertIn(b'id="polity-policy-title"', body)
-        self.assertIn(b"Polity and Policy latest articles", body)
-        self.assertIn(b"This is an independent project and does not represent those publishers.", body)
-        self.assertIn(b'href="https://politypolicy.com/"', body)
-        self.assertIn(b'href="https://politypolicy.substack.com/"', body)
+        self.assertIn(b'id="thanks"', body)
+        self.assertIn(b"Indian Matrix", body)
+
+    def test_home_and_about_share_the_web_app_intro(self):
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        with open(os.path.join(root, "frontend", "src", "pages", "Home.jsx"), encoding="utf-8") as handle:
+            home_jsx = handle.read()
+        with open(os.path.join(root, "frontend", "src", "pages", "About.jsx"), encoding="utf-8") as handle:
+            about_jsx = handle.read()
+        status, home = self.fetch(f"{DASHBOARD_URL}/index.html")
+        self.assertEqual(status, 200)
+        status, about = self.fetch(f"{DASHBOARD_URL}/about.html")
+        self.assertEqual(status, 200)
+        for text in ("A living atlas · 1947 to today", "A thousand signals. One changing nation.", "How it works"):
+            self.assertIn(text.encode(), home, text)
+            self.assertIn(text, home_jsx, text)
+        for text in (
+            "Understand the data, ", "not just the line.", "Big change is easier to see, one signal at a time.",
+            "This independent, public-data project brings together long-run indicators",
+            "Values in U.S. dollars use the international system", "Public data. Clear provenance.",
+            "Hover for exact values, zoom in, and switch between line, bar and pie views where the data allows.",
+        ):
+            self.assertIn(text.encode(), about, text)
+            self.assertIn(text, about_jsx, text)
 
     def test_page_exposes_all_subgroups(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
@@ -450,29 +482,16 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn('value="Pew Research"', text)
         self.assertIn(">Pew Research<", text)
 
-    def test_page_has_separate_polity_policy_article_rail(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/about.html")
-        self.assertEqual(status, 200)
-        self.assertIn(b'<details class="reading-list-popover" open>', body)
-        self.assertIn(b'class="reading-list-panel"', body)
-        styles_path = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            "docs", "styles.css",
-        )
-        with open(styles_path, "rb") as styles:
-            self.assertIn(b"reading-list-popover[open]", styles.read())
-        self.assertIn(b'id="pp-article-links"', body)
-        self.assertIn(b"Polity and Policy latest articles", body)
-        status, body = self.fetch(f"{DASHBOARD_URL}/data/substack-latest.json")
-        self.assertEqual(status, 200)
-        self.assertIn(b"articles", body)
-
-    def test_app_js_renders_both_article_rails_from_distinct_sources(self):
-        status, body = self.fetch(f"{DASHBOARD_URL}/app.js")
+    def test_site_js_renders_both_thanks_columns_from_distinct_feeds(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/site.js")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
-        self.assertIn("pp-article-links", text)
-        self.assertIn("renderArticles", text)
+        self.assertIn("['#thanks-pp-articles', 'substack-latest.json']", text)
+        self.assertIn("['#thanks-im-articles', 'indian-matrix-latest.json']", text)
+        for feed in ("substack-latest.json", "indian-matrix-latest.json"):
+            status, body = self.fetch(f"{DASHBOARD_URL}/data/{feed}")
+            self.assertEqual(status, 200, feed)
+            self.assertTrue(json.loads(body)["articles"], feed)
 
     def test_app_js_renders_and_updates_cards(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/app.js")

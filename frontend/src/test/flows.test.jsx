@@ -192,6 +192,9 @@ describe('About', () => {
     await userEvent.selectOptions(screen.getByRole('combobox', { name: 'Publisher' }), 'pew');
     expect(await screen.findByText('pew article page 1')).toBeInTheDocument();
     expect(screen.queryByText('all article page 2')).not.toBeInTheDocument();
-    expect(calls.filter(call => call.path === '/api/articles/').every(call => call.params.get('page_size') === '20')).toBe(true);
+    // The site-wide thanks section asks for three articles per publisher; the About list always pages by 20.
+    const aboutCalls = calls.filter(call => call.path === '/api/articles/' && call.params.get('page_size') !== '3');
+    expect(aboutCalls.length).toBeGreaterThan(0);
+    expect(aboutCalls.every(call => call.params.get('page_size') === '20')).toBe(true);
   });
 });

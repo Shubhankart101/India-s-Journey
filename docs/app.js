@@ -458,10 +458,7 @@ async function safeFetchJson(filename, defaultVal = {}) {
 }
 
 async function main() {
-  const articleLinks = document.querySelector('#article-links');
-  
   let dataPayload = window.INDIA_DASHBOARD_DATA;
-  let articles = { articles: [] };
   let economicSurvey = { series: {} };
   let indianMatrix = { cadence: { labels: [], values: [] }, articles: [] };
   let pewReports = { cadence: { labels: [], values: [] }, reports: [] };
@@ -469,9 +466,8 @@ async function main() {
   let pewSnapshots = { series: {} };
 
   if (!dataPayload || !dataPayload.series || Object.keys(dataPayload.series).length === 0) {
-    [dataPayload, articles, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
+    [dataPayload, economicSurvey, indianMatrix, pewReports, ncrbeAnalyses, pewSnapshots] = await Promise.all([
       safeFetchJson('chart-latest.json', { series: {} }),
-      safeFetchJson('substack-latest.json', { articles: [] }),
       safeFetchJson('economic-survey-monthly.json', { series: {} }),
       safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
       safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
@@ -528,34 +524,6 @@ async function main() {
   data.series.market_indices = { labels: marketLabels, datasets: marketDatasets };
   const genEl = document.querySelector('#generated');
   if (genEl) genEl.textContent = data.generated_at_utc ? new Date(data.generated_at_utc).toLocaleString() : new Date().toLocaleString();
-  const renderArticles = (container, items, emptyMessage) => {
-    if (!container) return;
-    container.replaceChildren();
-    if (!items || !items.length) {
-      container.innerHTML = `<p class="article-loading">${emptyMessage}</p>`;
-      return;
-    }
-    items.forEach(article => {
-      const link = document.createElement('a');
-      link.className = 'article-button';
-      link.href = article.link;
-      link.target = '_blank';
-      link.rel = 'noreferrer';
-      const title = document.createElement('strong');
-      title.textContent = article.title || 'Untitled public article';
-      const date = document.createElement('span');
-      date.textContent = `${article.published || 'Public article'} ↗`;
-      link.append(title, date);
-      container.append(link);
-    });
-  };
-  const imArticles = (dataPayload && dataPayload.indian_matrix_articles) || (indianMatrix && indianMatrix.articles) || [];
-  const ppArticles = (dataPayload && dataPayload.polity_policy_articles) || (articles && articles.articles) || [];
-  renderArticles(articleLinks, imArticles.slice(0, 6), 'No public article snapshot available yet.');
-  const polityPolicyLinks = document.querySelector('#pp-article-links');
-  if (polityPolicyLinks) renderArticles(polityPolicyLinks, ppArticles.slice(0, 6), 'No public article snapshot available yet.');
-  renderArticles(document.querySelector('#thanks-pp-articles'), ppArticles.slice(0, 3), 'No public article snapshot available yet.');
-  renderArticles(document.querySelector('#thanks-im-articles'), imArticles.slice(0, 3), 'No public article snapshot available yet.');
   const pewReportItems = (dataPayload && dataPayload.pew_reports) || pewReports?.reports || [];
   const renderPewReports = () => {
     const list = document.querySelector('#pew-report-list');
@@ -2039,11 +2007,6 @@ async function main() {
 }
 
 main().catch(error => {
-  const articleLinks = document.querySelector('#article-links');
-  if (articleLinks) articleLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
-  const polityPolicyLinks = document.querySelector('#pp-article-links');
-  if (polityPolicyLinks) polityPolicyLinks.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>';
-  document.querySelectorAll('#thanks-pp-articles, #thanks-im-articles').forEach(el => { el.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>'; });
   const chartGrid = document.querySelector('#charts');
   if (chartGrid) chartGrid.innerHTML = `<p>Dashboard data could not be loaded: ${error.message}</p>`;
 });

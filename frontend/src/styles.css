@@ -302,3 +302,14 @@ thead th { color: var(--muted); font-weight: 500; position: sticky; top: 0; back
   .chart-card { padding: 12px; }
   .action-row .btn { flex: 1 1 calc(50% - 10px); }
 }
+
+/* "With thanks" section shown on every page */
+.thanks { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 28px; }
+.thanks h2 { margin: 0.3rem 0; }
+.thanks-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.thanks-card { display: flex; flex-direction: column; gap: 10px; padding: 20px; border: 1px solid var(--line); border-left: 3px solid var(--saffron); border-radius: 18px; background: rgba(255, 255, 255, 0.04); }
+.thanks-card h3, .thanks-card p { margin: 0; }
+.thanks-read { margin-top: auto; font-weight: 600; }
+.about-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.about-step { display: flex; flex-direction: column; gap: 6px; padding: 18px; }
+@media (max-width: 760px) { .thanks-columns, .about-steps { grid-template-columns: 1fr; } }

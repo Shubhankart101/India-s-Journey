@@ -14,7 +14,27 @@ describe('Layout and Home', () => {
     const tile = await screen.findByRole('link', { name: /subgroups\s*Economic/ });
     expect(tile).toHaveAttribute('href', '/explore?category=economic');
     expect(tile.style.getPropertyValue('--tile-art')).toContain('/art/parliament.svg');
-    expect(await screen.findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
+    const latest = (await screen.findByRole('heading', { name: 'Latest analysis' })).closest('section');
+    expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('shows the intro shared with the static site and a with-thanks section for both publishers', async () => {
+    const { calls } = mockApi({
+      '/api/stats/': stats,
+      '/api/categories/': categories,
+      '/api/articles/': url => page([{ title: `${url.searchParams.get('kind') || 'all'} latest`, url: `https://example.com/${url.searchParams.get('kind')}`, published: '', published_at: null, publisher: 'X', kind: url.searchParams.get('kind') }]),
+    });
+    renderApp('/');
+    expect(screen.getByRole('heading', { level: 1, name: 'India, in perspective.' })).toBeInTheDocument();
+    expect(screen.getByText(/A thousand signals\. One changing nation\./)).toBeInTheDocument();
+    const thanks = screen.getByRole('region', { name: 'The writing that inspired this atlas' });
+    const polity = within(thanks).getByRole('article', { name: 'PolityPolicy' });
+    const matrix = within(thanks).getByRole('article', { name: 'Indian Matrix' });
+    expect(await within(polity).findByRole('link', { name: 'polity_policy latest' })).toHaveAttribute('target', '_blank');
+    expect(await within(matrix).findByRole('link', { name: 'indian_matrix latest' })).toBeInTheDocument();
+    expect(within(polity).getByRole('link', { name: "Tushar Gupta's Polity and Policy Substack" })).toHaveAttribute('href', 'https://politypolicy.substack.com/');
+    expect(calls.some(call => call.params.get('kind') === 'polity_policy' && call.params.get('page_size') === '3')).toBe(true);
+    expect(calls.some(call => call.params.get('kind') === 'indian_matrix' && call.params.get('page_size') === '3')).toBe(true);
   });
 
   it('cycles the hero backdrop through group scenes with selectable dots', async () => {

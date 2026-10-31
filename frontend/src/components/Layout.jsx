@@ -4,6 +4,7 @@ import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
 import { API_DOCS_URL, BACKUP_STATUS_URL, BACKUP_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
+import Thanks from './Thanks.jsx';
 import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
 
 const NAV = [
@@ -72,8 +73,11 @@ export default function Layout() {
 
       <ScrollTopButton />
 
+      <div className="main"><Thanks /></div>
+
       <footer className="site-footer">
         <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. Every chart links to its source.</p>
+        <p>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the cited public sources.</p>
         <p>
           <a href={API_DOCS_URL}>API docs</a> · <a href="/api/">API</a> · <a href="/admin/">Admin</a>
           {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_STATUS_URL} rel="noopener">Status</a>

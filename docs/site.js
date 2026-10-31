@@ -176,3 +176,37 @@
     new MutationObserver(tag).observe(document.querySelector('main') || document.body, { childList: true, subtree: true });
   });
 })();
+
+/* "With thanks" columns: latest PolityPolicy and Indian Matrix articles on every page. */
+(() => {
+  const feeds = [['#thanks-pp-articles', 'substack-latest.json'], ['#thanks-im-articles', 'indian-matrix-latest.json']];
+  const render = (container, articles) => {
+    container.replaceChildren();
+    if (!articles.length) {
+      container.innerHTML = '<p class="article-loading">No public article snapshot available yet.</p>';
+      return;
+    }
+    articles.slice(0, 3).forEach(article => {
+      const link = document.createElement('a');
+      link.className = 'article-button';
+      link.href = article.link;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      const title = document.createElement('strong');
+      title.textContent = article.title || 'Untitled public article';
+      const date = document.createElement('span');
+      date.textContent = `${article.published || 'Public article'} ↗`;
+      link.append(title, date);
+      container.append(link);
+    });
+  };
+  const load = () => feeds.forEach(([selector, file]) => {
+    const container = document.querySelector(selector);
+    if (!container) return;
+    fetch(`data/${file}`)
+      .then(response => (response.ok ? response.json() : Promise.reject(new Error(response.statusText))))
+      .then(payload => render(container, (payload.articles || []).filter(article => article && article.link)))
+      .catch(() => { container.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>'; });
+  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', load); else load();
+})();
