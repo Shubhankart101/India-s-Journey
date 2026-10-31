@@ -1,0 +1,53 @@
+name: Deploy to Koyeb
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'webapp/**'
+      - 'frontend/**'
+      - 'data/**'
+      - 'Dockerfile'
+      - '.github/workflows/deploy-koyeb.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: koyeb-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy the free instance
+    runs-on: ubuntu-latest
+    env:
+      KOYEB_API_TOKEN: ${{ secrets.KOYEB_API_TOKEN }}
+    steps:
+      - name: Skip when no token is configured
+        if: env.KOYEB_API_TOKEN == ''
+        run: echo "::notice::Add the KOYEB_API_TOKEN repository secret to deploy to Koyeb."
+      - name: Install and configure the Koyeb CLI
+        if: env.KOYEB_API_TOKEN != ''
+        uses: koyeb-community/koyeb-actions@v2
+        with:
+          api_token: ${{ secrets.KOYEB_API_TOKEN }}
+      - name: Build the Dockerfile and deploy
+        if: env.KOYEB_API_TOKEN != ''
+        uses: koyeb/action-git-deploy@v1
+        with:
+          app-name: indias-journey
+          service-name: web
+          git-branch: main
+          git-builder: docker
+          # The free instance (512 MB, 0.1 vCPU) is only offered in Frankfurt and sleeps after an hour idle.
+          service-instance-type: free
+          service-regions: fra
+          service-ports: '8000:http'
+          service-routes: '/:8000'
+          service-checks: '8000:http:/api/health/'
+          service-checks-grace-period: '8000=300'
+          service-env: 'PORT=8000,WEB_CONCURRENCY=1,DJANGO_DEBUG=false,DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }},BACKUP_SITE_URL=https://shubhankart101.github.io/India-s-Journey/,BACKUP_STATUS_URL=https://shubhankart101.github.io/India-s-Journey/status.html,MICROSOFT_TENANT=common'
+          build-timeout: 1500
+          healthy-timeout: 900

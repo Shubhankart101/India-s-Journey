@@ -5,9 +5,27 @@ There are two deployments (see [Free hosting options](#free-hosting-options) for
 | Target | How | Trigger |
 | --- | --- | --- |
 | Static dashboard (also the backup) | [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes `docs/` to GitHub Pages | Push to `main`, or after any collector workflow |
-| Django + React web app | Render builds the root [`Dockerfile`](../Dockerfile) | Push to `main` (Render auto-deploy) |
+| Django + React web app | [`deploy-koyeb.yml`](../.github/workflows/deploy-koyeb.yml) builds the root [`Dockerfile`](../Dockerfile) on a Koyeb free instance | Push to `main` touching the app or data, or run it manually |
 
-## Option A: Render Blueprint (`render.yaml`)
+## Option A: Koyeb free instance (default pipeline)
+
+[`deploy-koyeb.yml`](../.github/workflows/deploy-koyeb.yml) uses the official Koyeb actions to create or update the `indias-journey` app with a `web` service:
+- built from the root `Dockerfile` on Koyeb (`git-builder: docker`);
+- `free` instance type (512 MB RAM, 0.1 vCPU) in Frankfurt (`fra`), the only region for free instances;
+- port 8000, health check `/api/health/` with a 5-minute start-up grace period;
+- one gunicorn worker (`WEB_CONCURRENCY=1`) to fit in 512 MB.
+
+Django trusts the `KOYEB_PUBLIC_DOMAIN` hostname that Koyeb injects, so no host settings are needed. The free instance sleeps after an hour without traffic; the next request wakes it in a few seconds.
+
+**Setup (once):**
+1. Create a free account at https://app.koyeb.com, then create an API token under **Settings ? API**.
+2. Add it as the `KOYEB_API_TOKEN` repository secret: `gh secret set KOYEB_API_TOKEN`.
+3. Add a long random `DJANGO_SECRET_KEY` repository secret: `python -c "import secrets;print(secrets.token_urlsafe(50))" | gh secret set DJANGO_SECRET_KEY`.
+4. Run **Actions ? Deploy to Koyeb ? Run workflow**. Without the token, the workflow skips.
+
+The app URL is shown on the service page (`https://indias-journey-<org>.koyeb.app`). To enable sign-in, add `GOOGLE_*`/`MICROSOFT_*` variables to the service in the Koyeb control panel and register `https://<host>/accounts/{google,microsoft}/login/callback/`.
+
+## Option B: Render Blueprint (`render.yaml`)
 
 1. In Render, choose **New**, then **Blueprint**, and select this repository. [`render.yaml`](../render.yaml) creates the `indias-journey` web service with the health check `/api/health/`.
 2. Fill in the `sync: false` secrets: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `MICROSOFT_CLIENT_ID` and `MICROSOFT_CLIENT_SECRET`. See [AUTHENTICATION.md](AUTHENTICATION.md).
@@ -20,13 +38,12 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | Option | What you host | Free tier (Oct 2026) | Trade-offs |
 | --- | --- | --- | --- |
 | **GitHub Pages** (already live) | Static dashboard in `docs/` | Free for public repositories | No login, API or Swagger; this is the backup site |
-| **Render** (`render.yaml`, recommended) | Full Django + React app | One free web service | Sleeps after 15 minutes idle (cold start ~1 minute); disk resets on deploy |
-| **Koyeb** | Full app from the `Dockerfile` | One free instance | Doesn't sleep; small CPU/RAM; no persistent disk |
+| **Render** (`render.yaml`) | Full Django + React app | One free web service | Sleeps after 15 minutes idle (cold start ~1 minute); disk resets on deploy |
+| **Koyeb** (default pipeline) | Full app from the `Dockerfile` | One free instance (512 MB, 0.1 vCPU, Frankfurt) | Sleeps after 1 hour idle; no persistent disk |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
-| **Hugging Face Spaces** (Docker SDK, scripted) | Full app from the `Dockerfile` | **Not free:** Docker Spaces need HF PRO (Static Spaces stay free) | Public only; sleeps after 48 hours idle |
 | **Cloudflare Pages / Netlify** | Static dashboard in `docs/` | Free static hosting | Static only; a mirror of GitHub Pages |
 
-Fly.io and Railway now offer only trial credit, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
+Fly.io and Railway now offer only trial credit, Hugging Face requires PRO for Docker Spaces, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
 
 **Persistent data on free tiers.** None of these free plans keeps a disk, so SQLite (user accounts and saved charts) resets on redeploy or restart. The indicator catalogue is re-imported on every start, so the dashboards are unaffected.
 
@@ -37,27 +54,11 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
   --set-env-vars DJANGO_ALLOWED_HOSTS=<service>.run.app,DJANGO_CSRF_TRUSTED_ORIGINS=https://<service>.run.app,DJANGO_SECRET_KEY=<random>
 ```
 
-**Hugging Face Spaces:** [`scripts/deploy_hf_space.py`](../scripts/deploy_hf_space.py) creates (or updates) a Docker Space and uploads the tracked files. The Space uses [`huggingface/README.md`](../huggingface/README.md) as its card (`sdk: docker`, `app_port: 8000`). The script also:
-- generates the `DJANGO_SECRET_KEY` secret on first deploy;
-- sets `DJANGO_SQLITE_PATH=/tmp/db.sqlite3` (Spaces run as a non-root user), `DJANGO_FRAME_ANCESTORS=https://huggingface.co` and the backup URLs.
-
-Django trusts the `SPACE_HOST` hostname that Spaces inject. Google/Microsoft sign-in only works on the direct `https://<user>-<space>.hf.space` URL, not inside the huggingface.co frame; register that URL's callbacks and add the OAuth credentials as Space secrets.
-
-```bash
-pip install huggingface_hub
-hf auth login                                  # write token
-python scripts/deploy_hf_space.py              # -> <user>/indiasjourney; --space owner/name to override
-```
-
-Hugging Face now requires a PRO subscription for Docker Spaces (creating one on a free account returns `402 Payment Required`). With PRO, add a write token as the `HF_TOKEN` repository secret (and optionally an `HF_SPACE` variable such as `owner/indiasjourney`) and run [`deploy-hf-space.yml`](../.github/workflows/deploy-hf-space.yml) manually from the Actions tab.
-
-**Koyeb:** create a service from this GitHub repository, choose the `Dockerfile` builder, set the environment variables above, and use `/api/health/` as the health check.
-
 ## The container
 
 - **Stage 1:** `node:22-slim` builds the React app with `npm ci` and `npm run build`.
 - **Stage 2:** `python:3.12-slim` installs the Django requirements and runs `collectstatic` (whitenoise, compressed and hashed).
-- **On start:** `migrate`, then `import_catalog`, then gunicorn with 2 workers on `$PORT`.
+- **On start:** `migrate`, then `import_catalog`, then gunicorn with `WEB_CONCURRENCY` workers (default 2) on `$PORT`.
 
 ## Environment variables
 
@@ -65,13 +66,13 @@ Hugging Face now requires a PRO subscription for Docker Spaces (creating one on 
 | --- | --- | --- |
 | `DJANGO_SECRET_KEY` | yes | Generated by Render; set a long random value on other hosts |
 | `DJANGO_DEBUG` | no (`false` in the image) | Never enable in production |
-| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated. `RENDER_EXTERNAL_HOSTNAME` is added automatically |
+| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated. `KOYEB_PUBLIC_DOMAIN` and `RENDER_EXTERNAL_HOSTNAME` are added automatically |
 | `DJANGO_SQLITE_PATH` | with a disk | e.g. `/var/data/db.sqlite3`, so accounts survive redeploys |
 | `DJANGO_SECURE_COOKIES` | no (default on when not DEBUG) | Secure session and CSRF cookies |
 | `GOOGLE_CLIENT_ID` / `_SECRET` | to enable Google | |
 | `MICROSOFT_CLIENT_ID` / `_SECRET`, `MICROSOFT_TENANT` | to enable Microsoft | The tenant defaults to `common` |
 | `BACKUP_SITE_URL`, `BACKUP_STATUS_URL` | no | Backup links on the error pages |
-| `DJANGO_FRAME_ANCESTORS` | no | Comma-separated origins allowed to embed the app (e.g. `https://huggingface.co`); otherwise `X-Frame-Options: DENY` |
+| `WEB_CONCURRENCY` | no | Gunicorn workers (default 2; 1 on the Koyeb free instance) |
 | `DJANGO_LOG_LEVEL` | no | Default `INFO` |
 
 ## After deploying

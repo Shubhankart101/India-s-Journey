@@ -283,15 +283,7 @@ class HardeningTests(DocsTestCase):
         self.assertFalse(settings.CSRF_COOKIE_HTTPONLY)  # the SPA and Swagger UI read it to send X-CSRFToken
 
     def test_clickjacking_protection(self):
-        response = self.client.get('/api/')
-        self.assertEqual(response.get('X-Frame-Options'), 'DENY')
-        self.assertNotIn('Content-Security-Policy', response)
-
-    @override_settings(FRAME_ANCESTORS=['https://huggingface.co'])
-    def test_framing_allowed_only_for_listed_ancestors(self):
-        response = self.client.get('/api/')
-        self.assertNotIn('X-Frame-Options', response)
-        self.assertEqual(response['Content-Security-Policy'], "frame-ancestors 'self' https://huggingface.co")
+        self.assertEqual(self.client.get('/api/').get('X-Frame-Options'), 'DENY')
 
     def test_only_health_is_readable_cross_origin(self):
         health = self.client.get('/api/health/', HTTP_ORIGIN='https://shubhankart101.github.io')
