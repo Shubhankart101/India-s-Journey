@@ -31,10 +31,12 @@ jobs:
           from pathlib import Path
 
           sys.path.insert(0, 'scripts')
-          from rss_utils import fetch_rss
+          from rss_utils import fetch_rss_or_none
 
           FEED_URL = 'https://politypolicy.substack.com/feed'
-          root = fetch_rss(FEED_URL, 'PolityPolicyUpdate public RSS dashboard')
+          root = fetch_rss_or_none(FEED_URL, 'PolityPolicyUpdate public RSS dashboard')
+          if root is None:
+              sys.exit(0)
           channel = root.find('channel')
           items = []
           for item in channel.findall('item')[:12]:

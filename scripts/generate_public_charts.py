@@ -28,7 +28,6 @@ except ImportError:  # executed directly as scripts/generate_public_charts.py
     from rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
 
 ROOT = Path(__file__).resolve().parents[1]
-CHART_DIR = ROOT / "assets" / "charts"
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
 RBI_STATE_TABLES = {
     "pcnsdp": "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468",
@@ -249,49 +248,12 @@ def has_complete_state_coverage(series: dict) -> bool:
     )
 
 
-def svg_chart(title: str, subtitle: str, labels: list[str], values: list[float], color: str, value_suffix: str) -> str:
-    width, height, padding = 960, 360, 62
-    chart_width, chart_height = width - padding * 2, height - padding * 2
-    maximum = max(values) if values else 1
-    minimum = min(0, min(values)) if values else 0
-    span = max(maximum - minimum, 1)
-    points = []
-    for index, value in enumerate(values):
-        x = padding + (chart_width * index / max(len(values) - 1, 1))
-        y = padding + chart_height - ((value - minimum) / span * chart_height)
-        points.append((x, y))
-    line = " ".join(f"{x:.1f},{y:.1f}" for x, y in points)
-    area = f"{padding},{padding + chart_height} {line} {padding + chart_width},{padding + chart_height}"
-    grid = []
-    for index in range(5):
-        y = padding + chart_height * index / 4
-        value = maximum - span * index / 4
-        grid.append(f'<line x1="{padding}" y1="{y:.1f}" x2="{padding + chart_width}" y2="{y:.1f}" stroke="#263241" stroke-width="1"/>')
-        grid.append(f'<text x="{padding - 12}" y="{y + 4:.1f}" text-anchor="end" fill="#9da7b3" font-size="11">{value:.1f}{value_suffix}</text>')
-    x_labels = []
-    for index, label in enumerate(labels):
-        if index == 0 or index == len(labels) - 1 or index % max(len(labels) // 5, 1) == 0:
-            x = padding + chart_width * index / max(len(labels) - 1, 1)
-            x_labels.append(f'<text x="{x:.1f}" y="{height - 22}" text-anchor="middle" fill="#9da7b3" font-size="11">{label}</text>')
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-label="{title}">
-  <rect width="100%" height="100%" fill="#0d1117" rx="8"/>
-  <text x="{padding}" y="30" fill="#e6edf3" font-size="18" font-family="system-ui, sans-serif" font-weight="700">{title}</text>
-  <text x="{padding}" y="50" fill="#9da7b3" font-size="12" font-family="system-ui, sans-serif">{subtitle}</text>
-  {''.join(grid)}
-  <polygon points="{area}" fill="{color}" opacity="0.16"/>
-  <polyline points="{line}" fill="none" stroke="{color}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-  {''.join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{color}"/>' for x, y in points)}
-  {''.join(x_labels)}
-</svg>'''
-
-
-def build_world_bank_chart(indicator: str, file_name: str, title: str, subtitle: str, color: str, suffix: str) -> dict:
+def build_world_bank_chart(indicator: str) -> dict:
     payload = get_json(f"https://api.worldbank.org/v2/country/IND/indicator/{indicator}?format=json&per_page=100")
     rows = [row for row in payload[1] if row["value"] is not None]
     rows = sorted(rows, key=lambda row: int(row["date"]))
     labels = [row["date"] for row in rows]
     values = [float(row["value"]) for row in rows]
-    (CHART_DIR / file_name).write_text(svg_chart(title, subtitle, labels, values, color, suffix))
     return {"source": f"World Bank API {indicator}", "years": labels, "values": values}
 
 
@@ -410,34 +372,6 @@ def build_composition_series(series: dict[str, dict]) -> dict[str, dict]:
             "unit": unit,
         }
 
-    disease = series.get("non_communicable_diseases_burden", {})
-    disease_labels = disease.get("labels", [])
-    disease_datasets = disease.get("datasets", [])[:2]
-    disease_maps = [dict(zip(disease_labels, item.get("values", []))) for item in disease_datasets]
-    common_years = set.intersection(*(set(item) for item in disease_maps)) if len(disease_maps) == 2 else set()
-    for year in sorted(common_years, reverse=True):
-        ncd, communicable = (item[year] for item in disease_maps)
-        if ncd is None or communicable is None:
-            continue
-        other = round(100 - ncd - communicable, 2)
-        if other < 0:
-            continue
-        charts["disease_burden_composition"] = {
-            "labels": [
-                "Non-communicable diseases",
-                "Communicable and maternal/child diseases",
-                "Other causes",
-            ],
-            "values": [round(ncd, 2), round(communicable, 2), other],
-            "chartType": "doughnut",
-            "source": disease.get("source", "ICMR and IHME disease-burden estimates"),
-            "note": (
-                f"Disease-burden shares for {year}. Other causes are the residual to 100% not "
-                "covered by the two categories in the companion time-series chart."
-            ),
-            "unit": "% of DALYs",
-        }
-        break
 
     credit = series.get("credit_card_spends", {})
     debit = series.get("debit_card_spends", {})
@@ -500,14 +434,6 @@ def build_terrorism_derived_series(attacks: dict, fatalities: dict, population: 
         "terror_fatalities_per_million": {"labels": labels, "values": fatalities_per_million, "source": source},
         "terror_fatalities_per_attack": {"labels": labels, "values": fatalities_per_attack, "source": source},
     }
-
-
-def build_lwe_aggregate() -> dict:
-    text = re.sub(r"<[^>]+>", " ", get_text("https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division"))
-    match = re.search(r"Between 2004 to 2025.*?(\d[\d,]*) people have been killed", text, re.I | re.S)
-    if not match:
-        raise ValueError("MHA LWE aggregate not found")
-    return {"source": "Ministry of Home Affairs LWE Division", "labels": ["2004-2025"], "values": [float(match.group(1).replace(",", ""))]}
 
 
 def build_gdp_world_comparison() -> dict:
@@ -685,42 +611,6 @@ def build_per_capita_income_ppp() -> dict:
     values = [1810.0, 2220.0, 2880.0, 3730.0, 5020.0, 6720.0, 7720.0, 7420.0, 8880.0, 9650.0, 10250.0, 10980.0, 11820.0]
     return {"labels": years, "values": values, "source": "World Bank Open Data NY.GNP.PCAP.PP.CD (GNI per capita, PPP in current international $)"}
 
-def build_infant_mortality_rate() -> dict:
-    years = ["1990", "1995", "2000", "2005", "2010", "2015", "2018", "2020", "2021", "2022", "2023", "2024", "2025"]
-    values = [88.6, 76.2, 66.7, 55.8, 45.1, 35.2, 29.9, 27.0, 26.6, 25.5, 24.8, 23.9, 23.0]
-    return {"labels": years, "values": values, "source": "Sample Registration System (SRS), Registrar General of India & World Bank SP.DYN.IMRT.IN (Infant Mortality Rate per 1,000 live births)"}
-
-def build_maternal_mortality_ratio() -> dict:
-    years = ["2000", "2005", "2010", "2013", "2016", "2018", "2020", "2022", "2024", "2025"]
-    values = [384.0, 280.0, 212.0, 167.0, 130.0, 113.0, 103.0, 97.0, 93.0, 89.0]
-    return {"labels": years, "values": values, "source": "SRS Special Bulletin on Maternal Mortality in India & WHO/UNICEF (Maternal Mortality Ratio per 100,000 live births)"}
-
-def build_tb_disease_incidence() -> dict:
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
-    values = [217.0, 217.0, 211.0, 204.0, 199.0, 193.0, 180.0, 210.0, 198.0, 191.0, 182.0, 175.0]
-    return {"labels": years, "values": values, "source": "Central TB Division, Ministry of Health & Family Welfare Nikshay Portal & WHO (TB Incidence Rate per 100,000 population)"}
-
-def build_non_communicable_diseases_burden() -> dict:
-    years = ["1990", "1995", "2000", "2005", "2010", "2015", "2019", "2022", "2025"]
-    ncd = [37.9, 42.1, 46.8, 51.5, 56.2, 61.8, 65.2, 66.8, 68.5]
-    communicable = [53.6, 47.8, 41.5, 35.8, 30.2, 25.1, 22.1, 20.5, 18.8]
-    datasets = [
-        {"label": "Non-Communicable Diseases (NCDs: Heart, Diabetes, Cancer %)", "values": ncd, "color": "#ff7b72"},
-        {"label": "Communicable & Maternal/Child Diseases (%)", "values": communicable, "color": "#58a6ff"},
-    ]
-    return {"labels": years, "datasets": datasets, "source": "ICMR India State-Level Disease Burden Initiative & IHME Global Burden of Disease (% Total Disease DALYs Burden)"}
-
-def build_health_expenditure_gdp() -> dict:
-    years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
-    govt_health = [1.13, 1.15, 1.18, 1.20, 1.28, 1.28, 1.35, 1.84, 1.95, 2.10, 2.15, 2.25]
-    oop_health = [64.2, 62.6, 60.6, 58.7, 55.0, 53.2, 50.1, 47.1, 44.8, 42.0, 39.5, 38.0]
-    datasets = [
-        {"label": "Government Health Spending (% GDP) 🏥", "values": govt_health, "color": "#3fb950"},
-        {"label": "Out-of-Pocket Expenditure (% Total Health Exp) 💸", "values": oop_health, "color": "#ffa657"},
-    ]
-    return {"labels": years, "datasets": datasets, "source": "National Health Accounts (NHA) Estimates & Ministry of Health and Family Welfare"}
-
-
 def build_defence_exports() -> dict:
     years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
     values = [1153.0, 1941.0, 2059.0, 1522.0, 4682.0, 10745.0, 9115.0, 8434.0, 12815.0, 15920.0, 21083.0, 23497.0]
@@ -836,46 +726,6 @@ def build_capital_expenditure_capex() -> dict:
     }
 
 
-def build_pm_jan_dhan_yojana() -> dict:
-    years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [14.7, 21.4, 28.2, 31.4, 35.3, 38.1, 42.2, 45.1, 48.6, 51.8, 54.2, 56.1]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "Department of Financial Services, Ministry of Finance (PMJDY Cumulative Accounts Opened in Crores)",
-    }
-
-
-def build_pm_awas_yojana() -> dict:
-    years = ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [12.4, 38.6, 75.2, 118.5, 154.2, 185.1, 230.4, 282.0, 321.5, 365.0, 392.0]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "Ministry of Rural Development & MoHUA (PMAY Housing Units Sanctioned & Completed in Lakhs)",
-    }
-
-
-def build_jal_jeevan_mission() -> dict:
-    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [16.8, 28.4, 43.1, 56.5, 68.2, 75.4, 78.5, 81.2]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "Department of Drinking Water & Sanitation, Ministry of Jal Shakti (% Rural Household Tap Water Access)",
-    }
-
-
-def build_ayushman_bharat() -> dict:
-    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [4.2, 10.5, 12.8, 16.4, 21.8, 28.4, 34.6, 38.2, 41.5]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "National Health Authority (NHA) PM-JAY Ayushman Bharat Health Cards Issued in Crores",
-    }
-
-
 def build_social_category_literacy() -> dict:
     categories = ["Scheduled Castes (SC)", "Scheduled Tribes (ST)", "Other Backward Classes (OBC)", "General Category"]
     literacy_rates = [66.1, 59.0, 74.5, 83.2]
@@ -896,16 +746,6 @@ def build_religious_demographics() -> dict:
     }
 
 
-def build_sc_st_scholarships() -> dict:
-    years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [42.5, 46.1, 51.4, 55.2, 59.8, 62.4, 64.8, 67.2, 71.5, 76.0, 79.4, 82.1]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "Ministry of Social Justice & Empowerment and Ministry of Tribal Affairs (Post-Matric Scholarship Beneficiaries in Lakhs)",
-    }
-
-
 def build_pm_mudra_social_breakdown() -> dict:
     categories = ["Women Entrepreneurs", "OBC Category", "Scheduled Castes (SC)", "Scheduled Tribes (ST)"]
     percentages = [68.0, 28.0, 18.0, 6.0]
@@ -913,16 +753,6 @@ def build_pm_mudra_social_breakdown() -> dict:
         "labels": categories,
         "values": percentages,
         "source": "PMMY MUDRA Portal & Ministry of Finance (Percentage Share of Total Sanctioned Borrower Accounts)",
-    }
-
-
-def build_pm_svanidhi_street_vendors() -> dict:
-    years = ["2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    values = [14.2, 28.5, 42.1, 57.8, 68.4, 76.1, 82.5]
-    return {
-        "labels": years,
-        "values": values,
-        "source": "Ministry of Housing and Urban Affairs (PM SVANidhi Micro-Credit Disbursements to Street Vendors in Lakhs)",
     }
 
 
@@ -1176,48 +1006,6 @@ def build_state_gsdp_comparison() -> dict:
         "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2022-23, INR lakh crore)",
     )
 
-def build_state_fdi_inflows() -> dict:
-    years = ["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    mh = [14.8, 16.2, 14.5, 15.4, 14.8, 15.6, 17.2, 18.8]
-    ka = [7.5, 8.6, 18.4, 10.3, 4.8, 5.5, 6.2, 7.0]
-    gj = [4.3, 21.9, 2.7, 4.7, 4.9, 7.3, 8.5, 9.6]
-    dl = [7.6, 5.6, 8.2, 8.1, 6.5, 6.8, 7.2, 7.8]
-    tn = [2.4, 2.3, 3.0, 2.8, 2.2, 2.9, 3.4, 4.0]
-    datasets = [
-        {"label": "Maharashtra", "values": mh, "color": "#58a6ff"},
-        {"label": "Karnataka", "values": ka, "color": "#a371f7"},
-        {"label": "Gujarat", "values": gj, "color": "#ff9933"},
-        {"label": "Delhi NCR", "values": dl, "color": "#f6c344"},
-        {"label": "Tamil Nadu", "values": tn, "color": "#3fb950"},
-    ]
-    return {
-        "labels": years,
-        "datasets": datasets,
-        "source": "DPIIT & Ministry of Commerce State-wise FDI Equity Inflows (USD Billion)"
-    }
-
-def build_state_debt_to_gsdp() -> dict:
-    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"]
-    mh = [17.8, 17.6, 20.2, 19.8, 18.5, 18.2, 18.0, 17.8, 17.5]
-    gj = [18.5, 18.2, 21.0, 19.4, 18.2, 17.9, 17.6, 17.4, 17.1]
-    ka = [18.2, 18.5, 23.2, 23.8, 22.6, 22.1, 22.5, 22.8, 23.0]
-    tn = [22.4, 23.1, 27.5, 27.8, 27.2, 26.8, 26.5, 26.2, 25.8]
-    up = [28.6, 29.2, 34.2, 33.5, 32.1, 30.5, 29.8, 29.2, 28.5]
-    wb = [34.5, 35.2, 38.6, 37.8, 37.1, 36.5, 36.0, 35.5, 35.0]
-    datasets = [
-        {"label": "Maharashtra (17.5%)", "values": mh, "color": "#58a6ff"},
-        {"label": "Gujarat (17.1%)", "values": gj, "color": "#ff9933"},
-        {"label": "Karnataka (23.0%)", "values": ka, "color": "#a371f7"},
-        {"label": "Tamil Nadu (25.8%)", "values": tn, "color": "#3fb950"},
-        {"label": "Uttar Pradesh (28.5%)", "values": up, "color": "#f6c344"},
-        {"label": "West Bengal (35.0%)", "values": wb, "color": "#ff7b72"},
-    ]
-    return {
-        "labels": years,
-        "datasets": datasets,
-        "source": "RBI Study on State Finances & NITI Aayog (% Total Debt / Outstanding Liabilities to GSDP Ratio)"
-    }
-
 def build_state_pmay_homes() -> dict:
     states = ["Uttar Pradesh", "Madhya Pradesh", "Bihar", "West Bengal", "Rajasthan", "Maharashtra"]
     houses_lakhs = [34.5, 31.2, 28.6, 26.4, 18.9, 16.5]
@@ -1368,7 +1156,6 @@ def build_state_ease_of_doing_business() -> dict:
 
 
 def main() -> None:
-    CHART_DIR.mkdir(parents=True, exist_ok=True)
     generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     result = {"generated_at_utc": generated, "series": {}}
     previous_series = {}
@@ -1537,24 +1324,19 @@ def main() -> None:
     result["series"]["budget_yoy_growth"] = build_budget_yoy_growth()
     result["series"]["capital_expenditure_capex"] = build_capital_expenditure_capex()
     result["series"]["gross_tax_yoy_growth"] = build_gross_tax_yoy_growth()
-    result["series"]["pm_jan_dhan_yojana"] = build_pm_jan_dhan_yojana()
-    result["series"]["pm_awas_yojana"] = build_pm_awas_yojana()
-    result["series"]["jal_jeevan_mission"] = build_jal_jeevan_mission()
-    result["series"]["ayushman_bharat"] = build_ayushman_bharat()
     result["series"]["social_category_literacy"] = build_social_category_literacy()
     result["series"]["religious_demographics"] = build_religious_demographics()
-    result["series"]["sc_st_post_matric_scholarships"] = build_sc_st_scholarships()
     result["series"]["pm_mudra_social_breakdown"] = build_pm_mudra_social_breakdown()
-    result["series"]["pm_svanidhi_street_vendors"] = build_pm_svanidhi_street_vendors()
+    for key in ("social_category_literacy", "religious_demographics", "pm_mudra_social_breakdown"):
+        result["series"][key].setdefault(
+            "note",
+            "Static snapshot from the cited publication; it is not refreshed automatically and has no single "
+            "reporting year across categories.",
+        )
 
     # Per Capita Income & Health Indicators
     result["series"]["per_capita_nni_inr"] = build_per_capita_nni_inr()
     result["series"]["per_capita_income_ppp"] = build_per_capita_income_ppp()
-    result["series"]["infant_mortality_rate"] = build_infant_mortality_rate()
-    result["series"]["maternal_mortality_ratio"] = build_maternal_mortality_ratio()
-    result["series"]["tb_disease_incidence"] = build_tb_disease_incidence()
-    result["series"]["non_communicable_diseases_burden"] = build_non_communicable_diseases_burden()
-    result["series"]["health_expenditure_gdp"] = build_health_expenditure_gdp()
 
     # Mining & Natural Resources
     result["series"]["iron_ore_production"] = build_iron_ore_production()
@@ -1599,8 +1381,6 @@ def main() -> None:
         except Exception as error:
             cached = previous_series.get(key, {})
             result["series"][key] = cached if has_complete_state_coverage(cached) else {"error": str(error)}
-    result["series"]["state_fdi_inflows"] = build_state_fdi_inflows()
-    result["series"]["state_debt_to_gsdp"] = build_state_debt_to_gsdp()
     result["series"]["state_gst_collections"] = build_state_gst_collections()
     result["series"]["state_pmay_homes"] = build_state_pmay_homes()
     result["series"]["state_jjm_water_coverage"] = build_state_jjm_water_coverage()
@@ -1624,7 +1404,7 @@ def main() -> None:
         "Statistics on Indian States are shown alongside."
     )
     for key in (
-        "state_fdi_inflows", "state_debt_to_gsdp", "state_gst_collections", "state_pmay_homes",
+        "state_gst_collections", "state_pmay_homes",
         "state_jjm_water_coverage", "state_mudra_loans", "state_pmjay_health_cards",
         "state_pmsvanidhi_street_vendors", "state_literacy_rates", "state_ev_adoption_charging",
         "state_export_preparedness_index", "state_ease_of_doing_business",
@@ -1682,7 +1462,7 @@ def main() -> None:
 
     for key, indicator, file_name, title, subtitle, color, suffix in indicators:
         try:
-            series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+            series = build_world_bank_chart(indicator)
             result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
         except Exception as error:
             cached = previous_series.get(key, {})
@@ -1691,13 +1471,13 @@ def main() -> None:
             else:
                 try:
                     time.sleep(1.1)
-                    series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+                    series = build_world_bank_chart(indicator)
                     result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
                 except Exception:
                     result["series"][key] = {"error": str(error)}
     for key, indicator, file_name, title, subtitle, color, suffix in additional_indicators:
         try:
-            series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+            series = build_world_bank_chart(indicator)
             result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
         except Exception as error:
             cached = previous_series.get(key, {})
@@ -1706,7 +1486,7 @@ def main() -> None:
             else:
                 try:
                     time.sleep(1.1)
-                    series = build_world_bank_chart(indicator, file_name, title, subtitle, color, suffix)
+                    series = build_world_bank_chart(indicator)
                     result["series"][key] = {"labels": series["years"], "values": series["values"], "source": series["source"]}
                 except Exception:
                     result["series"][key] = {"error": str(error)}

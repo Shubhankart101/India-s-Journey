@@ -733,11 +733,6 @@ def speech(p, rng, n=5):
     return out
 
 
-def ship_wheel(p, r=110):
-    spokes = ''.join(f'<g transform="rotate({a})"><path d="M0 0 V{-r - 26}" stroke="{p[6]}" stroke-width="10" stroke-linecap="round"/></g>' for a in range(0, 360, 45))
-    return spokes + circle(0, 0, r, 'none', f' stroke="{p[6]}" stroke-width="14"') + circle(0, 0, 24, p[6])
-
-
 def place(content, x, y, s=1.0, cls='', style='', opacity=None):
     return g(content, at(x, y, s), cls=cls, style=style, opacity=opacity)
 
@@ -1065,11 +1060,6 @@ def _(r, p):
 @scene('welfare', 'saffron')
 def _(r, p):
     return on_ground(p, 'welfare') + place(huts(p, 4), 480, 520, .9) + place(coins(p), 1040, 520, .7)
-
-
-@scene('schemes', 'forest')
-def _(r, p):
-    return on_ground(p, 'schemes') + place(huts(p, 3), 360, 520, .85) + place(power_lines(p, [-200, 120]), 900, 520, .8) + place(phone_qr(p, r), 1100, 540, .45)
 
 
 @scene('employment', 'steel', 'city')

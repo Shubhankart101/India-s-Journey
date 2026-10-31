@@ -8,14 +8,16 @@ from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
 
-from rss_utils import fetch_rss
+from rss_utils import fetch_rss_or_none
 
 ROOT = Path(__file__).resolve().parents[1]
 FEED_URL = "https://politypolicy.substack.com/feed"
 
 
 def main() -> None:
-    root = fetch_rss(FEED_URL, "India's Journey Polity and Policy RSS collector")
+    root = fetch_rss_or_none(FEED_URL, "India's Journey Polity and Policy RSS collector")
+    if root is None:
+        return
     channel = root.find("channel")
     items = []
     for item in channel.findall("item")[:20]:

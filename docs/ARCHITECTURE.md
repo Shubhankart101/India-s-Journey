@@ -1,5 +1,7 @@
 # Architecture
 
+Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams/architecture.drawio). Open the file at [app.diagrams.net](https://app.diagrams.net) (File ? Open from ? Device) or with the VS Code *Draw.io Integration* extension. It has five pages: System overview, Data pipeline, Static site, Django + React app, and Deployment.
+
 ```
                  scheduled GitHub Actions collectors (see PIPELINES.md)
                                     |

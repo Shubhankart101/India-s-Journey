@@ -10,6 +10,7 @@ India's Journey has two parts: a static, source-linked dashboard on GitHub Pages
 
 **Web app**
 - [Architecture](ARCHITECTURE.md): components, request routing and design decisions.
+- [Architecture diagrams](diagrams/architecture.drawio): five-page editable draw.io file (overview, pipeline, static site, web app, deployment).
 - [APIs and Swagger](API.md): the Django REST API (Swagger at `/api/docs/`) and the static JSON resources.
 - [Authentication](AUTHENTICATION.md): Google and Microsoft (Outlook) sign-in only, and how to set up each provider.
 - [Backup site and status](BACKUP-AND-STATUS.md): how users reach GitHub Pages when the app is down, the status page and the uptime monitor.

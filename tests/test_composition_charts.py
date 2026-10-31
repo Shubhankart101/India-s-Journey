@@ -16,14 +16,6 @@ class CompositionChartTests(unittest.TestCase):
             "state_gsdp_share": {"labels": states, "values": state_values, "source": "RBI state shares"},
             "urban_population_share": {"labels": ["2023", "2024"], "values": [35, 36], "source": "WB urban"},
             "net_energy_imports_share": {"labels": ["2024"], "values": [40], "source": "WB energy"},
-            "non_communicable_diseases_burden": {
-                "labels": ["2022"],
-                "datasets": [
-                    {"values": [67]},
-                    {"values": [20]},
-                ],
-                "source": "Disease burden source",
-            },
             "defence_budget_share": {"labels": ["2024"], "values": [13], "source": "Union Budget"},
             "credit_card_spends": {"labels": ["2023", "2024"], "values": [12, 15], "source": "RBI credit"},
             "debit_card_spends": {"labels": ["2023", "2024"], "values": [8, 5], "source": "RBI debit"},
@@ -36,7 +28,6 @@ class CompositionChartTests(unittest.TestCase):
             "state_gsdp_composition",
             "urban_rural_population_composition",
             "energy_supply_composition",
-            "disease_burden_composition",
             "defence_budget_composition",
             "card_spending_composition",
         })
@@ -48,7 +39,6 @@ class CompositionChartTests(unittest.TestCase):
         self.assertEqual(sum(charts["gdp_sector_composition"]["values"]), 100)
         self.assertEqual(sum(charts["state_gsdp_composition"]["values"]), 100)
         self.assertEqual(charts["urban_rural_population_composition"]["labels"], ["Urban population", "Rural population"])
-        self.assertEqual(charts["disease_burden_composition"]["values"], [67, 20, 13])
         self.assertIn("2024", charts["card_spending_composition"]["note"])
 
     def test_does_not_create_state_share_pie_for_incomplete_coverage(self):

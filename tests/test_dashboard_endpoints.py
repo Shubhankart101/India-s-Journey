@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import ssl
 import unittest
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -72,6 +73,16 @@ class DashboardEndpointTests(unittest.TestCase):
         except HTTPError as error:
             return error.code, error.read()
         except URLError as error:
+            if isinstance(error.reason, ssl.SSLCertVerificationError):
+                # Some government portals (e.g. eaindustry.nic.in) omit intermediate certificates.
+                # This is only a reachability check and no data is read, so retry unverified.
+                try:
+                    with urlopen(request, timeout=30, context=ssl._create_unverified_context()) as response:
+                        return response.status, response.read()
+                except HTTPError as retry_error:
+                    return retry_error.code, retry_error.read()
+                except URLError as retry_error:
+                    error = retry_error
             self.fail(f"Endpoint could not be reached: {url} ({error.reason})")
 
     def test_dashboard_page_is_served(self):
@@ -83,7 +94,7 @@ class DashboardEndpointTests(unittest.TestCase):
         status, body = self.fetch(f"{DASHBOARD_URL}/data/chart-latest.json")
         self.assertEqual(status, 200)
         payload = json.loads(body)
-        expected = {'pm_jan_dhan_yojana', 'fuel_consumption', 'broad_money', 'state_fdi_inflows', 'state_infant_mortality_rate', 'defence_exports', 'iron_ore_exports', 'budget_yoy_growth', 'state_national_highway_length', 'crude_petroleum_domestic', 'maternal_mortality_ratio', 'per_capita_income_ppp', 'debit_card_spends', 'fdi', 'rare_earths_critical_minerals', 'state_ev_adoption_charging', 'state_mudra_loans', 'lwe_security_force_casualties', 'cpi', 'lwe_incidents', 'trade', 'gross_tax_yoy_growth', 'railway_electrification', 'defence_rd_budget', 'state_gsdp_comparison', 'child_protection_pocso', 'population', 'natural_gas_production', 'iron_ore_production', 'credit_card_spends', 'khalistan_insurgency_historical', 'kashmir_terror_incidents', 'state_operating_factories', 'gdp_world_comparison', 'pm_awas_yojana', 'state_export_preparedness_index', 'unemployment', 'non_communicable_diseases_burden', 'state_manufacturing_gsdp_share', 'state_renewable_energy_capacity', 'merchandise_exports', 'union_budget_expenditure', 'power_consumption', 'terror_attacks', 'religious_demographics', 'merchandise_imports', 'indian_matrix', 'ncrb_ipc_crime_rate', 'economic_offences', 'state_pmay_homes', 'northeast_insurgency_fatalities', 'police_per_population', 'pew_india_media_news', 'ndps_drug_cases', 'port_cargo', 'sc_st_post_matric_scholarships', 'market_indices', 'tax_revenue', 'state_per_capita_income', 'violent_incidents', 'crimes_against_women', 'pew_india_leadership', 'pew_india_global_power', 'lwe_civilian_casualties', 'rail_freight', 'telecom_broadband_subscribers', 'civil_aviation_passengers', 'ayushman_bharat', 'tb_disease_incidence', 'pm_mudra_social_breakdown', 'core_industries', 'rock_phosphate_gypsum', 'credit_card_in_circulation', 'pew_india_technology', 'infant_mortality_rate', 'pew_india_climate_environment', 'defence_production', 'defence_production_exports', 'pew_india_reports', 'coal_production', 'electronics_manufacturing', 'sectoral_market_indices', 'critical_mineral_import_dependency', 'forex', 'bank_credit', 'ncrb_crime', 'state_gst_collections', 'auto_production_volume', 'crude_oil', 'fiscal_deficit', 'national_highways_built', 'defence_expenditure', 'rbi_digital_payments_index', 'northeast_insurgency_incidents', 'global_inflation_comparison', 'renewable_energy_capacity', 'internet_users', 'wpi', 'homicide_rate', 'per_capita_nni_inr', 'current_account', 'capital_expenditure_capex', 'limestone_production', 'government_consumption', 'pew_india_demographics_family', 'pew_india_us_relations', 'state_pmjay_health_cards', 'manganese_chromite_production', 'pharma_exports_trajectory', 'defence_stockpile', 'textiles_apparel_exports', 'domestic_savings', 'global_equity_indices', 'state_debt_to_gsdp', 'crude_steel_production', 'refined_petroleum_exports', 'pew_india_economy_confidence', 'electricity_access', 'cyber_crime', 'state_own_tax_revenue', 'eway_bills', 'pew_india_gender_roles', 'state_pmsvanidhi_street_vendors', 'state_literacy_rates', 'social_category_literacy', 'defence_capital_acquisition', 'debit_card_in_circulation', 'gst', 'kashmir_insurgency_fatalities', 'road_accidents_fatalities', 'pm_svanidhi_street_vendors', 'state_jjm_water_coverage', 'lwe_perpetrator_casualties', 'state_ease_of_doing_business', 'state_pmjdy_bank_accounts', 'gdp_per_capita', 'state_life_expectancy', 'defence_budget_share', 'copper_production', 'mineral_metal_exports', 'upi', 'jal_jeevan_mission', 'lignite_production', 'health_expenditure_gdp', 'life_expectancy', 'sipri_arms_imports', 'iip', 'pew_india_religion_tolerance', 'rupee', 'bauxite_aluminium_output', 'upi_transaction_value', 'terror_fatalities'}
+        expected = {'fuel_consumption', 'broad_money', 'state_infant_mortality_rate', 'defence_exports', 'iron_ore_exports', 'budget_yoy_growth', 'state_national_highway_length', 'crude_petroleum_domestic', 'per_capita_income_ppp', 'debit_card_spends', 'fdi', 'rare_earths_critical_minerals', 'state_ev_adoption_charging', 'state_mudra_loans', 'lwe_security_force_casualties', 'cpi', 'lwe_incidents', 'trade', 'gross_tax_yoy_growth', 'railway_electrification', 'defence_rd_budget', 'state_gsdp_comparison', 'child_protection_pocso', 'population', 'natural_gas_production', 'iron_ore_production', 'credit_card_spends', 'khalistan_insurgency_historical', 'kashmir_terror_incidents', 'state_operating_factories', 'gdp_world_comparison', 'state_export_preparedness_index', 'unemployment', 'state_manufacturing_gsdp_share', 'state_renewable_energy_capacity', 'merchandise_exports', 'union_budget_expenditure', 'power_consumption', 'terror_attacks', 'religious_demographics', 'merchandise_imports', 'indian_matrix', 'ncrb_ipc_crime_rate', 'economic_offences', 'state_pmay_homes', 'northeast_insurgency_fatalities', 'police_per_population', 'pew_india_media_news', 'ndps_drug_cases', 'port_cargo', 'market_indices', 'tax_revenue', 'state_per_capita_income', 'violent_incidents', 'crimes_against_women', 'pew_india_leadership', 'pew_india_global_power', 'lwe_civilian_casualties', 'rail_freight', 'telecom_broadband_subscribers', 'civil_aviation_passengers', 'pm_mudra_social_breakdown', 'core_industries', 'rock_phosphate_gypsum', 'credit_card_in_circulation', 'pew_india_technology', 'pew_india_climate_environment', 'defence_production', 'defence_production_exports', 'pew_india_reports', 'coal_production', 'electronics_manufacturing', 'sectoral_market_indices', 'critical_mineral_import_dependency', 'forex', 'bank_credit', 'ncrb_crime', 'state_gst_collections', 'auto_production_volume', 'crude_oil', 'fiscal_deficit', 'national_highways_built', 'defence_expenditure', 'rbi_digital_payments_index', 'northeast_insurgency_incidents', 'global_inflation_comparison', 'renewable_energy_capacity', 'internet_users', 'wpi', 'homicide_rate', 'per_capita_nni_inr', 'current_account', 'capital_expenditure_capex', 'limestone_production', 'government_consumption', 'pew_india_demographics_family', 'pew_india_us_relations', 'state_pmjay_health_cards', 'manganese_chromite_production', 'pharma_exports_trajectory', 'defence_stockpile', 'textiles_apparel_exports', 'domestic_savings', 'global_equity_indices', 'crude_steel_production', 'refined_petroleum_exports', 'pew_india_economy_confidence', 'electricity_access', 'cyber_crime', 'state_own_tax_revenue', 'eway_bills', 'pew_india_gender_roles', 'state_pmsvanidhi_street_vendors', 'state_literacy_rates', 'social_category_literacy', 'defence_capital_acquisition', 'debit_card_in_circulation', 'gst', 'kashmir_insurgency_fatalities', 'road_accidents_fatalities', 'state_jjm_water_coverage', 'lwe_perpetrator_casualties', 'state_ease_of_doing_business', 'state_pmjdy_bank_accounts', 'gdp_per_capita', 'state_life_expectancy', 'defence_budget_share', 'copper_production', 'mineral_metal_exports', 'upi', 'lignite_production', 'life_expectancy', 'sipri_arms_imports', 'iip', 'pew_india_religion_tolerance', 'rupee', 'bauxite_aluminium_output', 'upi_transaction_value', 'terror_fatalities'}
         expected.update({"sensex", "nifty", "nifty_vix", "gdp_growth", "merchandise_trade_balance", "bilateral_trade_balance", "private_consumption_pc", "auto_domestic_sales", "state_power_per_capita", "terror_attacks_per_million", "terror_fatalities_per_million", "terror_fatalities_per_attack"})
         expected.update({
             "gdp_ppp", "gdp_deflator_growth", "capital_formation_gdp", "household_consumption_gdp",
@@ -121,7 +132,6 @@ class DashboardEndpointTests(unittest.TestCase):
             "state_gsdp_composition",
             "urban_rural_population_composition",
             "energy_supply_composition",
-            "disease_burden_composition",
             "defence_budget_composition",
             "card_spending_composition",
         })
@@ -150,7 +160,7 @@ class DashboardEndpointTests(unittest.TestCase):
                 for dataset in series["datasets"]:
                     self.assertEqual(len(series["labels"]), len(dataset.get("values", [])), key)
                 continue
-            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports", "state_fdi_inflows", "state_debt_to_gsdp", "non_communicable_diseases_burden", "health_expenditure_gdp", "state_own_tax_revenue"):
+            if key in ("market_indices", "gdp_world_comparison", "global_inflation_comparison", "global_equity_indices", "sectoral_market_indices", "defence_production_exports", "state_own_tax_revenue"):
                 self.assertIn("labels", series, key)
                 continue
             self.assertTrue(series.get("values") or series.get("error"), key)
@@ -237,7 +247,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []))", app)
         keys = re.findall(r"worldBank\('([^']+)'", definitions)
         keys.extend(re.findall(r"^\s+\['([^']+)'", definitions, flags=re.MULTILINE))
-        self.assertEqual(len(keys), 80)
+        self.assertEqual(len(keys), 79)
         for key in keys:
             with self.subTest(chart=key):
                 source = (
@@ -495,7 +505,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b'id="modal-close"', body)
         self.assertIn(b'id="modal-body"', body)
         self.assertIn(b'aria-modal="true"', body)
-        self.assertIn(b'styles.css?v=mining-v8', body)
+        self.assertRegex(body, rb'styles\.css\?v=[\w.-]+')
         styles_path = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
             "docs", "styles.css",

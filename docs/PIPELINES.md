@@ -31,6 +31,8 @@ The daily chart builder also runs `scripts/tourism_comparison_layer.py` (World B
 
 `scripts/mining_layer.py` (also run by the daily chart builder) adds the Mining & Natural Resources deep-dive. It pages through the MOSPI WPI API (`api.mospi.gov.in/api/wpi/getWpiRecords`, `group_code` 1103000000 minerals, 1104000000 crude petroleum & natural gas, 1201000000 coal) for monthly item prices since April 2012, and the MOSPI IIP API for annual and monthly mining output. Rankings, price-change bands and rising-vs-falling pies are recomputed on every run from the latest month, and the previous series are kept if MOSPI is unavailable.
 
+Substack blocks RSS requests from some GitHub-hosted runner IPs with HTTP 403. `scripts/rss_utils.fetch_rss_or_none()` turns a blocked or unreachable feed into a workflow `::warning::`. The collectors then keep the previously committed article snapshot, and the rest of the daily pipeline (public charts, World Bank, FEC) still runs. Before this change, one blocked feed stopped the whole daily job and left every chart stale.
+
 ## Data flow
 
 1. A collector writes a JSON snapshot under `data/`.

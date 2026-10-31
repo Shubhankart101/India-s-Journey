@@ -215,10 +215,6 @@ def _when(column: str) -> str:
     return f" ({period})" if re.search(r"\d{4}", period) else ""
 
 
-def _short(title: str) -> str:
-    return re.sub(r"\s+(?:by State/UT|across States & UTs)", "", title)
-
-
 def _period(label: str) -> str:
     return label.split(" | ")[0]
 

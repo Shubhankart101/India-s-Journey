@@ -68,7 +68,6 @@ class ElectionGroupTests(unittest.TestCase):
             "state_gsdp_composition",
             "urban_rural_population_composition",
             "energy_supply_composition",
-            "disease_burden_composition",
             "defence_budget_composition",
             "card_spending_composition",
         )

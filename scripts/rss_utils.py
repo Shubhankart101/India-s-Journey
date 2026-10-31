@@ -10,7 +10,10 @@ MAX_ATTEMPTS = 3
 
 
 def fetch_rss(url: str, user_agent: str) -> ET.Element:
-    request = Request(url, headers={"User-Agent": user_agent})
+    request = Request(url, headers={
+        "User-Agent": user_agent,
+        "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+    })
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             with urlopen(request, timeout=30) as response:
@@ -39,3 +42,16 @@ def fetch_rss(url: str, user_agent: str) -> ET.Element:
         time.sleep(delay)
 
     raise RuntimeError(f"Could not fetch RSS feed from {url}")
+
+
+def fetch_rss_or_none(url: str, user_agent: str) -> ET.Element | None:
+    """Fetch a feed, but return None instead of failing the whole pipeline.
+
+    Substack answers some cloud-runner IP ranges with HTTP 403. Callers keep the
+    previous snapshot in that case so later collectors still run.
+    """
+    try:
+        return fetch_rss(url, user_agent)
+    except (HTTPError, RuntimeError) as error:
+        print(f"::warning::Keeping the previous snapshot; could not fetch {url}: {error}")
+        return None
