@@ -1,4 +1,4 @@
-﻿# Architecture
+# Architecture
 
 ```
                  scheduled GitHub Actions collectors (see PIPELINES.md)

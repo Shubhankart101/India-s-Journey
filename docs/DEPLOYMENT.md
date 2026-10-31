@@ -27,7 +27,7 @@ terraform init && terraform plan && terraform apply
 
 ## The container
 
-- **Stage 1:** `node:20-slim` builds the React app with `npm ci` and `npm run build`.
+- **Stage 1:** `node:22-slim` builds the React app with `npm ci` and `npm run build`.
 - **Stage 2:** `python:3.12-slim` installs the Django requirements and runs `collectstatic` (whitenoise, compressed and hashed).
 - **On start:** `migrate`, then `import_catalog`, then gunicorn with 2 workers on `$PORT`.
 
