@@ -42,4 +42,4 @@ It also links to open `outage` issues. Use `status.html?app=https://your-host` t
 2. If every attempt fails, it opens an issue labelled `outage` with links to the backup and status pages. If such an issue is already open, it adds a comment instead.
 3. When the app is healthy again, it closes the open outage issues with a recovery comment.
 
-Set the repository variables `APP_URL` and `BACKUP_SITE_URL` to point it elsewhere. Create both under **Settings ? Secrets and variables ? Actions ? Variables**; the workflow creates the `outage` label on first use if it is missing.
+The monitor only runs when the repository variable `APP_URL` is set (the app runs locally by default, so it is skipped until the app is hosted). `BACKUP_SITE_URL` overrides the backup link. Create both under **Settings ? Secrets and variables ? Actions ? Variables**; the workflow creates the `outage` label on first use if it is missing.

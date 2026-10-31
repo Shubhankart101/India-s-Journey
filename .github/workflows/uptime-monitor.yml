@@ -17,9 +17,11 @@ concurrency:
 
 jobs:
   ping:
+    # The app runs locally by default; set the APP_URL repository variable once it is hosted.
+    if: vars.APP_URL != ''
     runs-on: ubuntu-latest
     env:
-      APP_URL: ${{ vars.APP_URL || 'https://indias-journey.onrender.com' }}
+      APP_URL: ${{ vars.APP_URL }}
       BACKUP_SITE_URL: ${{ vars.BACKUP_SITE_URL || 'https://shubhankart101.github.io/India-s-Journey/' }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
