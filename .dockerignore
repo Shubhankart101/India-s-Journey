@@ -10,3 +10,5 @@ substack-history
 frontend/test-results
 frontend/playwright-report
 **/*.tfstate*
+.env
+.env.*

@@ -51,7 +51,7 @@ Set up the Google OAuth client in the Google Cloud console:
 3. Add an **Authorized redirect URI** for every host:
    - `https://<service>.onrender.com/accounts/google/login/callback/` (your Render service URL)
    - `https://<custom-domain>/accounts/google/login/callback/`
-   - `http://localhost:8000/accounts/google/login/callback/` (local development only)
+   - `http://localhost:8000/accounts/google/login/callback/` (local development; see below)
 4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in your host's environment settings (for example the Render dashboard).
 
 ### Microsoft (Outlook)
@@ -65,10 +65,15 @@ Set up the Google OAuth client in the Google Cloud console:
 
 ## Local development
 
-Without credentials, the sign-in page says that sign-in isn't configured yet. Everything else in the app still works. To test a real login locally:
-1. Create development OAuth clients with `http://localhost:8000/...` callbacks. For Microsoft, add the `http://localhost:8000/accounts/microsoft/login/callback/` redirect URI to the app registration.
-2. Export the variables.
-3. Use `npm run build` and the Django server on port 8000. The Vite dev server on 5173 also proxies `/accounts`.
+Without credentials, the sign-in page says that sign-in isn't configured yet. Everything else in the app still works. To turn on real Google and Microsoft sign-in locally:
+
+1. Create the Google OAuth client and the Microsoft app registration as described above, with these redirect URIs (use the port you run Django on):
+   - `http://localhost:8000/accounts/google/login/callback/`
+   - `http://localhost:8000/accounts/microsoft/login/callback/` (platform **Web**; Microsoft only accepts plain `http` for `localhost`)
+2. Copy [`.env.example`](../.env.example) to `.env` in the repository root and fill in the client IDs and secrets. `.env` is gitignored and excluded from the Docker image. Django reads it on start (`load_env_file` in `settings.py`). Real environment variables take precedence, and `manage.py test` ignores the file. Set `DJANGO_ENV_FILE` to read a different file.
+3. Build the frontend (`cd frontend; npm run build`), start Django (`cd webapp; python manage.py runserver 8000`), and open **http://localhost:8000/login**. Use `localhost`, not `127.0.0.1`, so the callback matches the registered URI. The Vite dev server on 5173 also proxies `/accounts`.
+
+Check what is configured with `curl http://localhost:8000/api/auth/providers/`. Each provider with credentials is listed.
 
 ## Admin
 

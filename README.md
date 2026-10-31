@@ -104,7 +104,7 @@ pip install -r webapp/requirements.txt
 python webapp/manage.py migrate
 python webapp/manage.py import_catalog
 python webapp/manage.py createsuperuser   # optional, for /admin/
-# optional: export GOOGLE_CLIENT_ID/SECRET and MICROSOFT_CLIENT_ID/SECRET to enable sign-in
+# optional: copy .env.example to .env and add Google/Microsoft OAuth credentials to enable sign-in
 python webapp/manage.py runserver 8000
 
 cd frontend

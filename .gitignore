@@ -12,3 +12,8 @@ frontend/playwright-report/
 frontend/blob-report/
 
 webapp/openapi-schema.yml
+
+# Local secrets (see .env.example)
+.env
+.env.*
+!.env.example
