@@ -9,6 +9,8 @@ on:
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
+      - 'render.yaml'
+      - 'fly.toml'
       - '.github/workflows/webapp-ci.yml'
   pull_request:
     paths:
@@ -17,6 +19,8 @@ on:
       - 'scripts/export_catalog.mjs'
       - 'data/catalog.json'
       - 'Dockerfile'
+      - 'render.yaml'
+      - 'fly.toml'
       - '.github/workflows/webapp-ci.yml'
   workflow_dispatch:
 
@@ -118,7 +122,7 @@ jobs:
           retention-days: 7
 
   docker:
-    name: Docker image builds
+    name: Docker image builds and runs in 512 MB (Render / Fly.io)
     runs-on: ubuntu-latest
     needs: [backend, frontend]
     steps:
@@ -128,6 +132,39 @@ jobs:
         with:
           context: .
           push: false
+          load: true
           tags: indias-journey:ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - name: Run like the Render / Fly.io free plans
+        run: |
+          docker run -d --name app -p 8000:8000 --memory 512m --memory-swap 512m \
+            -e DJANGO_SECRET_KEY=ci-only-not-secret-ci-only-not-secret-ci-only-not-secret \
+            -e WEB_CONCURRENCY=1 -e RENDER_EXTERNAL_HOSTNAME=localhost \
+            indias-journey:ci
+          for i in $(seq 1 60); do
+            if curl -fsS http://localhost:8000/api/health/ >/dev/null 2>&1; then echo "up after ${i}x2s"; break; fi
+            if [ "$(docker inspect -f '{{.State.Running}}' app)" != "true" ]; then break; fi
+            sleep 2
+          done
+      - name: Smoke test pages and API
+        run: |
+          set -e
+          curl -fsS http://localhost:8000/api/health/
+          echo
+          for path in / /explore /compare /sources /api /api/categories/ "/api/indicators/?page_size=1" /api/docs/; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "http://localhost:8000$path")
+            echo "$code $path"
+            [ "$code" = "200" ]
+          done
+          curl -fsS http://localhost:8000/ | grep -q '<div id="root">'
+      - name: Memory and OOM check
+        if: always()
+        run: |
+          docker stats --no-stream --format 'memory {{.MemUsage}} ({{.MemPerc}})' app || true
+          oom=$(docker inspect -f '{{.State.OOMKilled}}' app)
+          echo "OOMKilled=$oom"
+          [ "$oom" = "false" ]
+      - name: Container logs
+        if: always()
+        run: docker logs app 2>&1 | tail -n 60
