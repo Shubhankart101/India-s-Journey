@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-11-01T09:29:12+00:00",
+  "generated_at_utc": "2026-11-01T11:58:29+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -2786,30 +2786,30 @@ window.INDIA_DASHBOARD_DATA = {
         "Russia",
         "Iraq",
         "Saudi Arabia",
-        "United Arab Emirates",
-        "South Korea",
+        "Switzerland",
         "Indonesia",
         "Japan",
+        "South Korea",
         "Germany",
-        "United Kingdom",
+        "United Arab Emirates",
         "Netherlands",
         "United States"
       ],
       "values": [
-        -131.41,
-        -58.37,
-        -23.95,
-        -20.47,
-        -17.13,
-        -17.05,
-        -16.88,
-        -16.06,
-        -9.12,
-        7.19,
-        15.96,
-        45.36
+        -105.72,
+        -63.01,
+        -26.37,
+        -23.81,
+        -17.22,
+        -16.64,
+        -13.67,
+        -13.36,
+        -8.45,
+        -4.52,
+        20.69,
+        33.69
       ],
-      "source": "UN Comtrade API, India merchandise trade by partner (2025); exports FOB minus imports CIF, top partners by trade value"
+      "source": "UN Comtrade API, India merchandise trade by partner (2023); exports FOB minus imports CIF, top partners by trade value"
     },
     "ncrb_crime": {
       "source": "https://en.wikipedia.org/wiki/Crime_in_India",
