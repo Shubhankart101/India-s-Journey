@@ -20,6 +20,10 @@ try:
     from scripts.mining_layer import build_mining_layer
     from scripts.mospi_layer import build_mospi_layer
     from scripts.rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
+    from scripts.innovation_layer import build_innovation_layer
+    from scripts.expansion_layer import build_expansion_layer
+    from scripts.derived_groups_layer import build_derived_groups_layer
+    from scripts.legal_layer import build_legal_layer
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
     from derived_pie_layer import build_derived_layer
@@ -28,6 +32,10 @@ except ImportError:  # executed directly as scripts/generate_public_charts.py
     from mining_layer import build_mining_layer
     from mospi_layer import build_mospi_layer
     from rbi_state_layer import STATES, STATES_AND_UTS, build_rbi_state_layer, canonical_state, coverage_note
+    from innovation_layer import build_innovation_layer
+    from expansion_layer import build_expansion_layer
+    from derived_groups_layer import build_derived_groups_layer
+    from legal_layer import build_legal_layer
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
@@ -1498,6 +1506,10 @@ def main() -> None:
     result["series"].update(build_manufacturing_layer(previous_series))
     result["series"].update(build_mining_layer(previous_series))
     result["series"].update(build_rbi_state_layer(get_text, previous_series))
+    result["series"].update(build_innovation_layer(get_json, previous_series))
+    result["series"].update(build_expansion_layer(get_json, previous_series))
+    result["series"].update(build_derived_groups_layer(ROOT))
+    result["series"].update(build_legal_layer(ROOT))
     result["series"].update(build_terrorism_derived_series(
         result["series"].get("terror_attacks", {}),
         result["series"].get("terror_fatalities", {}),

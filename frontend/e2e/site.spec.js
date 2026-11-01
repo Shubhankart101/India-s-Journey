@@ -39,8 +39,19 @@ test.describe('site', () => {
     await expect(page.getByRole('table')).toBeVisible();
   });
 
+  test('API overview links to both published APIs', async ({ page }) => {
+    await page.goto('/api');
+    await expect(page.getByRole('heading', { name: 'API & endpoint explorer' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Open Swagger UI' })).toHaveAttribute('href', '/api/docs/');
+    await expect(page.getByRole('link', { name: 'Open static JSON API explorer' })).toHaveAttribute(
+      'href',
+      'https://indiasjourney.netlify.app/api.html',
+    );
+    await expect(page.getByRole('navigation', { name: 'Primary' })).toHaveCount(0);
+  });
+
   test('deep links work on a hard refresh', async ({ page }) => {
-    for (const path of ['/explore', '/compare', '/about', '/login', '/saved']) {
+    for (const path of ['/explore', '/compare', '/about', '/sources', '/api']) {
       const response = await page.goto(path);
       expect(response.status(), path).toBe(200);
     }

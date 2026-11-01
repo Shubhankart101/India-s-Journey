@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useCompare } from '../compare.jsx';
+import { MAX_COMPARE, useCompare } from '../compare.jsx';
+import { PALETTE_COMPARE } from '../palette.js';
 import { chartModes, formatMagnitude } from '../format.js';
 import LazyChart from './LazyChart.jsx';
 
@@ -8,6 +9,7 @@ export default function IndicatorCard({ indicator }) {
   const preview = indicator.preview || { labels: [], datasets: [] };
   const { initial } = chartModes({ ...indicator, labels: preview.labels, datasets: preview.datasets });
   const inCompare = compare.has(indicator.key);
+  const slot = compare.items.findIndex(item => item.key === indicator.key);
   return (
     <article className="card indicator-card">
       <Link to={`/indicator/${indicator.key}`} className="card-link" aria-label={`Open ${indicator.title}`}>
@@ -40,12 +42,13 @@ export default function IndicatorCard({ indicator }) {
       <button
         type="button"
         className={`compare-toggle${inCompare ? ' active' : ''}`}
+        style={slot >= 0 ? { '--slot': PALETTE_COMPARE[slot % PALETTE_COMPARE.length] } : undefined}
         aria-pressed={inCompare}
         disabled={!inCompare && compare.full}
         onClick={() => compare.toggle(indicator)}
-        title={!inCompare && compare.full ? 'Compare holds up to four indicators' : 'Add to compare'}
+        title={!inCompare && compare.full ? `Compare holds up to ${MAX_COMPARE} indicators — remove one first` : inCompare ? 'Remove from compare' : 'Add to compare'}
       >
-        {inCompare ? '✓ Comparing' : '+ Compare'}
+        {inCompare ? '✓ Added' : '+ Compare'}
       </button>
     </article>
   );

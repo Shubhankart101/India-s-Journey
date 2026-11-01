@@ -12,6 +12,52 @@
 | [Election Results Update](../.github/workflows/election-results-update.yml) | Every 3 hours | Live counting days | `data/election-results.json` |
 | [Historical Election Archive Update](../.github/workflows/historical-election-archive-update.yml) | Monthly | Statistical reports are published after elections | `data/historical-elections.json` |
 | [Recent Indian Election Data Update](../.github/workflows/recent-indian-elections-update.yml) | `15 8 * * *` | Picks up newly declared results | `data/recent-indian-elections.json`, `data/election-indices.json` |
+| [Sports Data Update](../.github/workflows/sports-data-update.yml) | `15 4 * * 2` | Rankings and match records change after each international window; a weekly check is enough | `data/sports_sources/*.json`, `data/sports.json` |
+| [Weekly Legal Data Update](../.github/workflows/legal-data-update.yml) | `30 4 * * 3` | NJDG docket totals change daily; a weekly snapshot captures pendency and disposition movement | `data/legal/njdg_snapshot.json`, `data/legal/njdg_history.json`, judiciary chart series |
+
+Every workflow that changes chart data also runs `node scripts/export_catalog.mjs` and commits `data/catalog.json`. The Django container imports that catalogue when it starts (`manage.py import_catalog`), so the web app shows the same data as the static site after its next deploy.
+
+## Pipelines by group
+
+| Explore group | Builder script(s) | Workflow | Schedule (UTC) |
+| --- | --- | --- | --- |
+| Economic | `generate_public_charts.py` (World Bank, markets, RBI), `fetch_economic_survey_monthly.py`, `collect_indian_matrix.py` | Daily PolityPolicy Update, Monthly Economic Review Update | Daily 02:30; 5th/15th/25th 04:00 |
+| Industry Trends & Performance | `manufacturing_layer.py` (MOSPI IIP, SIAM) | Daily PolityPolicy Update | Daily 02:30 |
+| Mining & Natural Resources | `mining_layer.py` (MOSPI WPI and IIP), `official_indicator_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Payments & Digital Banking | `generate_public_charts.py`, `rbi_state_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| State Performance & Regional Health | `rbi_state_layer.py`, `derived_pie_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Public Health & Epidemiology | `official_indicator_layer.py`, `rbi_state_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Social | `official_indicator_layer.py`, `mospi_layer.py` (PLFS, AISHE, Women & Men), `rbi_state_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Environment & Climate | `mospi_layer.py` (EnviStats), `official_indicator_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Agriculture & Food | `mospi_layer.py`, `official_indicator_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Defence & Strategic | `generate_public_charts.py`, `official_indicator_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Crime & Security | `collect_ncrb_and_analyses.py` | NCRB Crime Data Update | 1st of month 05:30 |
+| Pew Research | `collect_pew_snapshots.py`, `collect_pew_india_reports.py` | Weekly Pew Research Update | Monday 04:00 |
+| Elections (India) | `collect_election_results.py`, `collect_recent_indian_elections.py`, `build_election_indices.py`, `collect_historical_elections.py` | Election Results Update, Recent Indian Election Data Update, Historical Election Archive Update | Every 3 h; daily 08:15; 1st of month 07:00 |
+| U.S. Elections | `collect_us_campaign_finance.py` (FEC), `collect_election_results.py` (National Archives) | Daily PolityPolicy Update, Election Results Update | Daily 02:30; every 3 h |
+| Tourism & Heritage | `generate_public_charts.py` (World Bank, UNESCO), `tourism_comparison_layer.py` | Daily PolityPolicy Update | Daily 02:30 |
+| Innovation & Technology | `innovation_layer.py` (World Bank WDI: WIPO patents/designs, UNESCO R&D, ITU digital, high-tech trade, entrepreneurship) | Daily PolityPolicy Update | Daily 02:30 |
+| Extra subgroups in 12 groups | `expansion_layer.py` (World Bank WDI, `xp_*` keys), `derived_groups_layer.py` (Pew, Elections, U.S. Elections; derived from committed data, `dg_*` keys) | Daily PolityPolicy Update | Daily 02:30 |
+| Sports, Cricket, Hockey, Football | `refresh_sports_sources.py` → `sports_fetch/{individual,cricket,hockey,football}.py` → `build_sports_data.py` | Sports Data Update | Tuesday 04:15 |
+| Judiciary & Pending Cases | `legal_fetch/njdg.py` -> `legal_layer.py` (Supreme Court, High Courts, district and subordinate courts) | Weekly Legal Data Update | Wednesday 04:30 |
+
+Each source has its own failure handling. If a source fails, the previous series or snapshot is kept, so a broken site never empties a chart.
+
+### Innovation and expansion layers
+
+`scripts/innovation_layer.py` publishes 131 series (keys `innov_*`) in nine Innovation & Technology subgroups: Patents & IP, Industrial Designs & IP Filings, Research & Development, Scientific Publications & Talent, High-Tech Trade & Manufacturing, IP Royalties & Technology Payments, Digital Technology Adoption, Startups & New Business, and Global Innovation Benchmarks. `scripts/expansion_layer.py` adds about 300 World Bank series as two or three new subgroups in each of the twelve non-sports groups, and `scripts/derived_groups_layer.py` derives about 130 more for Pew Research, Elections and U.S. Elections from the committed snapshots. All three run inside `generate_public_charts.py` after the RBI state layer; a failed call keeps the previously published series. Their tests live in `tests/test_innovation_layer.py`, `tests/test_expansion_layer.py` and `tests/test_derived_groups_layer.py`.
+
+### Judiciary & Pending Cases pipeline
+
+`scripts/legal_fetch/njdg.py` visits the official Supreme Court, High Courts and district/subordinate-courts NJDG portals, then uses their `home/fetchStateData`, `home/newPendDashboard` and `home/updateInstitutionDisp` AJAX actions. It writes normalized response tables and series arrays to `data/legal/njdg_snapshot.json`; `data/legal/njdg_history.json` appends dated portal pendency snapshots. `scripts/legal_layer.py` builds the three Judiciary & Pending Cases subgroups from that committed snapshot and can merge them into both chart JSON files without running the network-heavy public-chart generator (`python -m scripts.legal_layer --merge`). The weekly workflow validates the layer and refreshes the public catalog and static chart bundles.
+
+### Static bundles for `file://`
+
+Browsers block `fetch()` when the static pages are opened straight from disk. `scripts/export_catalog.mjs` therefore also writes two script bundles next to `data.js`: `docs/compare-data.js` (time series for the Compare page) and `docs/overlays.js` (the overlay JSONs `app.js` merges in: sports, election results and indices, U.S. campaign finance, Economic Survey, NCRB, Pew and the article feeds). Online, `app.js` still fetches the JSON files and falls back to the bundle; on `file://` it uses the bundle directly, so all 21 groups appear either way. Re-run `node scripts/export_catalog.mjs` whenever an overlay JSON changes.
+
+### Sports pipeline
+
+`scripts/refresh_sports_sources.py` runs one fetcher module per sport family and writes `data/sports_sources/{cricket,hockey,football,individual_sports}.json`. Each producer runs on its own. If one fails, its previous series are kept and listed under `stale` in the snapshot. `scripts/build_sports_data.py` then builds `data/sports.json` from the snapshots only. The workflow runs `tests/test_sports_data.py` before committing, and the tests reject wiki sources, empty subgroups and player indices without both past and current players. See [SPORTS.md](SPORTS.md) and [`scripts/sports_fetch/README.md`](../scripts/sports_fetch/README.md).
 
 Workflows that rebuild `chart-latest.json` share the `daily-public-data` concurrency group, so they never race; each fetches and rebases before pushing. [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) runs after any of them succeeds.
 

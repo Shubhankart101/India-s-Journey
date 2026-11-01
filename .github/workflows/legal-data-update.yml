@@ -1,0 +1,54 @@
+name: Weekly Legal Data Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 4 * * 3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-public-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install fetcher dependency
+        run: python -m pip install requests
+
+      - name: Fetch official NJDG snapshots
+        run: python -m scripts.legal_fetch.njdg
+
+      - name: Rebuild legal charts from the committed snapshot
+        run: python -m scripts.legal_layer --merge
+
+      - name: Validate legal data
+        run: python -m unittest tests.test_legal_layer
+
+      - name: Rebuild public catalog and static bundles
+        run: node scripts/export_catalog.mjs
+
+      - name: Commit legal data and chart outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/legal data/chart-latest.json docs/data/chart-latest.json docs/data.js data/catalog.json docs/compare-data.js docs/overlays.js
+          if git diff --cached --quiet; then
+            echo "No NJDG data change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh official NJDG court data"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

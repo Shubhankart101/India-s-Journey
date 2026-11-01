@@ -1,7 +1,7 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
-import { json, mockApi, page, renderApp, summary } from './helpers.jsx';
+import { mockApi, page, renderApp, summary } from './helpers.jsx';
 
 const comparePayload = {
   labels: ['2022', '2023', '2024'],
@@ -62,113 +62,14 @@ describe('Compare', () => {
   });
 });
 
-describe('Accounts', () => {
-  it('offers only Google and Microsoft sign-in, posting to allauth with CSRF and next', async () => {
-    const { calls } = mockApi({
-      'GET /api/auth/csrf/': () => {
-        document.cookie = 'csrftoken=tok123';
-        return { detail: 'ok' };
-      },
-    });
-    renderApp('/login?next=/indicator/gdp_growth');
-    const google = await screen.findByRole('button', { name: /Continue with Google/ });
-    const microsoft = screen.getByRole('button', { name: /Continue with Microsoft \(Outlook\)/ });
-    expect(screen.queryByLabelText('Password')).not.toBeInTheDocument();
-    expect(screen.queryByLabelText('Username')).not.toBeInTheDocument();
-    expect(calls.some(call => call.path === '/api/auth/csrf/')).toBe(true);
-
-    const form = google.closest('form');
-    expect(form).toHaveAttribute('method', 'post');
-    expect(form).toHaveAttribute('action', '/accounts/google/login/');
-    expect(form.querySelector('[name=next]')).toHaveValue('/indicator/gdp_growth');
-    expect(form.querySelector('[name=process]')).toHaveValue('login');
-    form.addEventListener('submit', event => event.preventDefault());
-    await userEvent.click(google);
-    expect(form.querySelector('[name=csrfmiddlewaretoken]')).toHaveValue('tok123');
-    expect(microsoft.closest('form')).toHaveAttribute('action', '/accounts/microsoft/login/');
-  });
-
-  it('never forwards an off-site next URL to the provider', async () => {
-    mockApi();
-    renderApp('/login?next=//evil.example/steal');
-    const button = await screen.findByRole('button', { name: /Continue with Google/ });
-    expect(button.closest('form').querySelector('[name=next]')).toHaveValue('/saved');
-  });
-
-  it('shows only the providers configured on the server', async () => {
-    mockApi({ '/api/auth/providers/': [{ id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' }] });
+describe('Account features', () => {
+  it('keeps sign-in and saved routes unavailable until account support is added', async () => {
+    const { calls } = mockApi();
     renderApp('/login');
-    expect(await screen.findByRole('button', { name: /Microsoft/ })).toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /Google/ })).not.toBeInTheDocument();
-  });
-
-  it('explains when no provider is configured', async () => {
-    mockApi({ '/api/auth/providers/': [] });
-    renderApp('/login');
-    expect(await screen.findByRole('alert')).toHaveTextContent('Sign-in is temporarily unavailable');
-  });
-
-  it('shows the provider error passed back by the server', async () => {
-    mockApi();
-    renderApp('/login?error=unavailable');
-    expect(await screen.findByRole('alert')).toHaveTextContent('not configured');
-  });
-
-  it('links to the backup site when providers cannot be loaded', async () => {
-    mockApi({ '/api/auth/providers/': json({ detail: 'Service unavailable' }, 503) });
-    renderApp('/login');
-    expect(await screen.findByRole('link', { name: /backup dashboard/ })).toHaveAttribute('href', 'https://indiasjourney.netlify.app/');
-  });
-
-  it('sends signed-in users straight to next', async () => {
-    mockApi({
-      '/api/auth/me/': { authenticated: true, user: { id: 1, username: 'asha', name: 'Asha Rao', providers: ['google'] } },
-      'GET /api/saved/': [],
-    });
-    renderApp('/login?next=/saved');
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent(/^\/saved$/));
-    expect(await screen.findByText(/Hi, Asha Rao/)).toBeInTheDocument();
-    expect(screen.getByText(/google/)).toBeInTheDocument();
-  });
-
-  it('redirects the old register page to sign-in, keeping next', async () => {
-    mockApi();
-    renderApp('/register?next=/compare');
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/login?next=/compare'));
-    expect(await screen.findByRole('button', { name: /Continue with Google/ })).toBeInTheDocument();
-  });
-
-  it('signs out from the header', async () => {
-    document.cookie = 'csrftoken=tok';
-    mockApi({
-      '/api/auth/me/': { authenticated: true, user: { id: 1, username: 'asha' } },
-      'POST /api/auth/logout/': { authenticated: false, user: null },
-      '/api/stats/': { indicators: 1, radial_indicators: 0, categories: 1, data_points: 3 },
-      '/api/categories/': [],
-      '/api/articles/': page([]),
-    });
-    renderApp('/');
-    await userEvent.click(await screen.findByRole('button', { name: 'Sign out' }));
-    expect(await screen.findByRole('link', { name: 'Sign in' })).toBeInTheDocument();
-  });
-
-  it('redirects anonymous visitors away from saved charts', async () => {
-    mockApi();
-    renderApp('/saved');
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/login?next=/saved'));
-  });
-
-  it('lists and removes saved charts', async () => {
-    document.cookie = 'csrftoken=tok';
-    mockApi({
-      '/api/auth/me/': { authenticated: true, user: { id: 1, username: 'asha' } },
-      'GET /api/saved/': [{ key: 'gdp_growth', note: '', created_at: '2026-05-01T00:00:00Z', indicator: summary() }],
-      'DELETE /api/saved/gdp_growth/': { ok: true, status: 204, json: async () => null },
-    });
-    renderApp('/saved');
-    expect(await screen.findByRole('heading', { name: 'Real GDP growth' })).toBeInTheDocument();
-    await userEvent.click(screen.getByRole('button', { name: 'Remove Real GDP growth' }));
-    expect(await screen.findByText(/No saved charts yet/)).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'This page wandered off.' })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Sign in' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Saved' })).not.toBeInTheDocument();
+    expect(calls.some(call => call.path.startsWith('/api/auth/'))).toBe(false);
   });
 });
 
@@ -192,7 +93,7 @@ describe('About', () => {
     await userEvent.selectOptions(screen.getByRole('combobox', { name: 'Publisher' }), 'pew');
     expect(await screen.findByText('pew article page 1')).toBeInTheDocument();
     expect(screen.queryByText('all article page 2')).not.toBeInTheDocument();
-    // The site-wide thanks section asks for three articles per publisher; the About list always pages by 20.
+    // The Sources acknowledgement asks for three articles per publisher; the About list pages by 20.
     const aboutCalls = calls.filter(call => call.path === '/api/articles/' && call.params.get('page_size') !== '3');
     expect(aboutCalls.length).toBeGreaterThan(0);
     expect(aboutCalls.every(call => call.params.get('page_size') === '20')).toBe(true);

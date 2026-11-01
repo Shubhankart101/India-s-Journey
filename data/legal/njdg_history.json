@@ -1,0 +1,419 @@
+{
+  "source_urls": {
+    "supreme_court": "https://scdg.sci.gov.in/scnjdg/",
+    "high_courts": "https://njdg.ecourts.gov.in/hcnjdg_v2/",
+    "lower_courts": "https://njdg.ecourts.gov.in/njdg_v3/"
+  },
+  "snapshots": [
+    {
+      "fetched_at": "2026-11-01T15:00:27+00:00",
+      "pendency": {
+        "supreme_court": {
+          "landing_metrics": {
+            "Pending Civil Cases": 74429,
+            "Pending Criminal Cases": 22772,
+            "Total Pending Cases": 97201,
+            "Disposal in Current Year": 34813
+          },
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                19726,
+                2391,
+                558,
+                742,
+                17,
+                0,
+                0
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                15586,
+                2164,
+                523,
+                681,
+                6,
+                0,
+                0
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                4140,
+                227,
+                35,
+                61,
+                11,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "high_courts": {
+          "landing_metrics": {},
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                1960310,
+                1151626,
+                684966,
+                1285697,
+                1064720,
+                333828,
+                73641
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                1316552,
+                802718,
+                503498,
+                933599,
+                695823,
+                234201,
+                50315
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                643758,
+                348908,
+                181468,
+                352098,
+                368897,
+                99627,
+                23326
+              ]
+            }
+          }
+        },
+        "lower_courts": {
+          "landing_metrics": {},
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                21297548,
+                11195407,
+                6579017,
+                8135459,
+                4071038,
+                547407,
+                68209
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                4735665,
+                2677499,
+                1468023,
+                1553182,
+                690118,
+                91397,
+                24480
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                16561883,
+                8517908,
+                5110994,
+                6582277,
+                3380920,
+                456010,
+                43729
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "fetched_at": "2026-11-01T15:11:12+00:00",
+      "pendency": {
+        "supreme_court": {
+          "landing_metrics": {
+            "Pending Civil Cases": 74429,
+            "Pending Criminal Cases": 22772,
+            "Total Pending Cases": 97201,
+            "Disposal in Current Year": 34813
+          },
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                19726,
+                2391,
+                558,
+                742,
+                17,
+                0,
+                0
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                15586,
+                2164,
+                523,
+                681,
+                6,
+                0,
+                0
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                4140,
+                227,
+                35,
+                61,
+                11,
+                0,
+                0
+              ]
+            }
+          }
+        },
+        "high_courts": {
+          "landing_metrics": {},
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                1960310,
+                1151626,
+                684966,
+                1285697,
+                1064720,
+                333828,
+                73641
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                1316552,
+                802718,
+                503498,
+                933599,
+                695823,
+                234201,
+                50315
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                643758,
+                348908,
+                181468,
+                352098,
+                368897,
+                99627,
+                23326
+              ]
+            }
+          }
+        },
+        "lower_courts": {
+          "landing_metrics": {},
+          "pending_age_profiles": {
+            "Total": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                21297548,
+                11195407,
+                6579017,
+                8135459,
+                4071038,
+                547407,
+                68209
+              ]
+            },
+            "Civil": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                4735665,
+                2677499,
+                1468023,
+                1553182,
+                690118,
+                91397,
+                24480
+              ]
+            },
+            "Criminal": {
+              "labels": [
+                "0 to 1 Years",
+                "1 to 3 Years",
+                "3 to 5 Years",
+                "5 to 10 Years",
+                "10 to 20 Years",
+                "20 to 30 Years",
+                "Above 30 Years"
+              ],
+              "values": [
+                16561883,
+                8517908,
+                5110994,
+                6582277,
+                3380920,
+                456010,
+                43729
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

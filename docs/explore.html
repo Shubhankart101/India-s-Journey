@@ -7,43 +7,65 @@
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>Explore — India's Journey</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=data-v14">
-  <link rel="stylesheet" href="product-theme.css?v=data-v14">
+  <link rel="stylesheet" href="styles.css?v=data-v25">
+  <link rel="stylesheet" href="product-theme.css?v=data-v25">
 </head>
 <body class="product-theme" data-page="explore">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=data-v14"></script>
+  <script src="site.js?v=data-v25"></script>
 
   <main>
     <section class="explore-heading" id="explore" aria-labelledby="explore-title">
-      <div><p class="eyebrow">Choose your starting point</p><h2 id="explore-title">Explore the indicators</h2><p>Follow a theme or search for a question. The charts update as you narrow the view.</p></div>
-      <p class="result-count" id="chart-result-count" aria-live="polite">Loading indicators…</p>
+      <div><p class="eyebrow">Explore</p><h2 id="explore-title">Every indicator, one search away.</h2><p>Filter by group and subgroup, search any keyword, then open an indicator for the full chart, data table and downloads.</p></div>
+      <p class="result-count visually-hidden" id="chart-result-count" aria-live="polite">Loading indicators…</p>
+    </section>
+    <div id="group-hero" class="group-hero" hidden>
+      <div class="group-hero-content">
+        <h2 id="group-hero-title">Group Title</h2>
+        <p id="group-hero-desc">Group Description</p>
+      </div>
+      <figure class="group-hero-art">
+        <img id="group-hero-image" src="assets/parliament.svg" alt="">
+        <figcaption id="group-hero-image-caption"></figcaption>
+      </figure>
+      <div class="group-hero-badges" id="group-hero-badges">
+        <span class="hero-badge saffron">1947 — 2026</span>
+        <span class="hero-badge green">Global Comparison</span>
+      </div>
+    </div>
+
+    <section class="explore-browse" aria-label="Browse">
+      <div class="explore-browse-head"><h2 id="explore-browse-title">Browse by group</h2><span class="muted" id="explore-browse-meta">16 groups</span></div>
+      <div class="explore-grid" id="explore-grid" role="list" aria-label="Groups">
+        <button type="button" role="listitem" class="explore-tile" data-group="Economic" style="--card-art:url('assets/economy.svg')" aria-pressed="false"><span class="explore-tile-name">Economic</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Industry Trends &amp; Performance" style="--card-art:url('assets/industry.svg')" aria-pressed="false"><span class="explore-tile-name">Industry Trends &amp; Performance</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Mining &amp; Natural Resources" style="--card-art:url('assets/mining.svg')" aria-pressed="false"><span class="explore-tile-name">Mining &amp; Natural Resources</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Payments &amp; Digital Banking" style="--card-art:url('assets/payments.svg')" aria-pressed="false"><span class="explore-tile-name">Payments &amp; Digital Banking</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="State Performance &amp; Regional Health" style="--card-art:url('assets/states.svg')" aria-pressed="false"><span class="explore-tile-name">State Performance &amp; Regional Health</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Public Health &amp; Epidemiology" style="--card-art:url('assets/health.svg')" aria-pressed="false"><span class="explore-tile-name">Public Health &amp; Epidemiology</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Social" style="--card-art:url('assets/social.svg')" aria-pressed="false"><span class="explore-tile-name">Social</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Environment &amp; Climate" style="--card-art:url('assets/environment.svg')" aria-pressed="false"><span class="explore-tile-name">Environment &amp; Climate</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Agriculture &amp; Food" style="--card-art:url('assets/agriculture.svg')" aria-pressed="false"><span class="explore-tile-name">Agriculture &amp; Food</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Defence &amp; Strategic" style="--card-art:url('assets/defence.svg')" aria-pressed="false"><span class="explore-tile-name">Defence &amp; Strategic</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Crime &amp; Security" style="--card-art:url('assets/security.svg')" aria-pressed="false"><span class="explore-tile-name">Crime &amp; Security</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Judiciary &amp; Pending Cases" style="--card-art:url('assets/judiciary.svg')" aria-pressed="false"><span class="explore-tile-name">Judiciary &amp; Pending Cases</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Pew Research" style="--card-art:url('assets/opinion.svg')" aria-pressed="false"><span class="explore-tile-name">Pew Research</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Elections" style="--card-art:url('assets/elections.svg')" aria-pressed="false"><span class="explore-tile-name">Elections</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="U.S. Elections" style="--card-art:url('assets/us-elections.svg')" aria-pressed="false"><span class="explore-tile-name">U.S. Elections</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Tourism &amp; Heritage" style="--card-art:url('assets/tourism.svg')" aria-pressed="false"><span class="explore-tile-name">Tourism &amp; Heritage</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Innovation &amp; Technology" style="--card-art:url('assets/innovation.svg')" aria-pressed="false"><span class="explore-tile-name">Innovation &amp; Technology</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Sports" style="--card-art:url('assets/sports.svg')" aria-pressed="false"><span class="explore-tile-name">Sports</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Cricket" style="--card-art:url('assets/cricket.svg')" aria-pressed="false"><span class="explore-tile-name">Cricket</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Hockey" style="--card-art:url('assets/hockey.svg')" aria-pressed="false"><span class="explore-tile-name">Hockey</span><span class="explore-tile-meta">Open group</span></button>
+        <button type="button" role="listitem" class="explore-tile" data-group="Football" style="--card-art:url('assets/football.svg')" aria-pressed="false"><span class="explore-tile-name">Football</span><span class="explore-tile-meta">Open group</span></button>
+      </div>
     </section>
     <section class="chart-controls" aria-label="Chart controls">
-      <div class="group-pills-bar" id="group-pills">
-        <button type="button" class="group-pill active" data-group="all">↺ Reset selection</button>
-        <button type="button" class="group-pill" data-group="Economic">📈 Economic</button>
-        <button type="button" class="group-pill" data-group="Industry Trends &amp; Performance">🏭 Industry Trends</button>
-        <button type="button" class="group-pill" data-group="Mining &amp; Natural Resources">⛏️ Mined Resources</button>
-        <button type="button" class="group-pill" data-group="Payments &amp; Digital Banking">💳 Payments &amp; Banking</button>
-        <button type="button" class="group-pill" data-group="State Performance &amp; Regional Health">🏛️ State Performance</button>
-        <button type="button" class="group-pill" data-group="Public Health &amp; Epidemiology">🩺 Public Health</button>
-        <button type="button" class="group-pill" data-group="Social">👥 Social</button>
-        <button type="button" class="group-pill" data-group="Environment &amp; Climate">🌿 Environment &amp; Climate</button>
-        <button type="button" class="group-pill" data-group="Agriculture &amp; Food">🌾 Agriculture &amp; Food</button>
-        <button type="button" class="group-pill" data-group="Defence &amp; Strategic">🛡️ Defence &amp; Strategic</button>
-        <button type="button" class="group-pill" data-group="Crime &amp; Security">⚖️ Crime &amp; Security</button>
-        <button type="button" class="group-pill" data-group="Pew Research">📊 Pew Research</button>
-        <button type="button" class="group-pill" data-group="Elections">🗳️ Elections</button>
-        <button type="button" class="group-pill" data-group="U.S. Elections">🇺🇸 U.S. Elections</button>
-        <button type="button" class="group-pill" data-group="Tourism &amp; Heritage">🏛️ Tourism &amp; Heritage</button>
-      </div>
-      <label>Find an indicator <input id="chart-search" type="search" placeholder="Search indicators (e.g. GDP, Sensex, State, Mining, Crime)..."></label>
-      <button type="button" class="saved-toggle" id="saved-toggle" aria-pressed="false">☆ Saved charts</button>
-      <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
-      <select id="group-filter" class="visually-hidden" aria-label="Selected group">
+      <div class="filter-row">
+      <label class="search"><span class="visually-hidden">Search indicators</span><input id="chart-search" type="search" aria-label="Search indicators" placeholder="Search e.g. coal, GDP, Lok Sabha, tourism"></label>
+      <label><span class="visually-hidden">Group</span><select id="group-filter" aria-label="Group">
         <option value="all" selected>All groups</option>
         <option value="Economic">Economic</option>
         <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
@@ -56,12 +78,18 @@
         <option value="Agriculture &amp; Food">Agriculture &amp; Food</option>
         <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
         <option value="Crime &amp; Security">Crime &amp; Security</option>
+        <option value="Judiciary &amp; Pending Cases">Judiciary &amp; Pending Cases</option>
         <option value="Pew Research">Pew Research</option>
         <option value="Elections">Elections</option>
         <option value="U.S. Elections">U.S. Elections</option>
         <option value="Tourism &amp; Heritage">Tourism &amp; Heritage</option>
-      </select>
-      <label>Subgroup <select id="subgroup-filter">
+        <option value="Innovation &amp; Technology">Innovation &amp; Technology</option>
+        <option value="Sports">Sports</option>
+        <option value="Cricket">Cricket</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Football">Football</option>
+      </select></label>
+      <label><span class="visually-hidden">Subgroup</span><select id="subgroup-filter" aria-label="Subgroup">
         <option value="all" selected>All subgroups</option>
         <optgroup label="📈 Economic">
           <option>Macroeconomics</option>
@@ -154,23 +182,69 @@
           <option>International Visitor Trends</option>
           <option>World Heritage Sites</option>
         </optgroup>
+        <optgroup label="⚖️ Judiciary &amp; Pending Cases">
+          <option>Supreme Court</option>
+          <option>High Courts</option>
+          <option>Lower Courts</option>
+        </optgroup>
+        <optgroup label="💡 Innovation &amp; Technology">
+          <option>Patents &amp; Intellectual Property</option>
+          <option>Industrial Designs &amp; IP Filings</option>
+          <option>Research &amp; Development</option>
+          <option>Scientific Publications &amp; Talent</option>
+          <option>High-Tech Trade &amp; Manufacturing</option>
+          <option>IP Royalties &amp; Technology Payments</option>
+          <option>Digital Technology Adoption</option>
+          <option>Startups &amp; New Business</option>
+          <option>Global Innovation Benchmarks</option>
+        </optgroup>
+        <optgroup label="🏅 Sports">
+          <option>Olympic &amp; Paralympic Medals</option>
+          <option>Asian &amp; Commonwealth Games</option>
+          <option>Athletics</option>
+          <option>Shooting &amp; Archery</option>
+          <option>Combat &amp; Strength</option>
+          <option>Racket Sports</option>
+          <option>Chess &amp; Kabaddi</option>
+        </optgroup>
+        <optgroup label="🏏 Cricket">
+          <option>Men's Cricket</option>
+          <option>Women's Cricket</option>
+          <option>ICC Tournaments</option>
+          <option>ICC Rankings</option>
+          <option>Batting: Past vs Current</option>
+          <option>Bowling: Past vs Current</option>
+        </optgroup>
+        <optgroup label="🏑 Hockey">
+          <option>Men's Hockey</option>
+          <option>Women's Hockey</option>
+          <option>FIH Rankings &amp; Pro League</option>
+          <option>Hockey Players: Past vs Current</option>
+        </optgroup>
+        <optgroup label="⚽ Football">
+          <option>Men's Football</option>
+          <option>Women's Football</option>
+          <option>FIFA Rankings</option>
+          <option>Footballers: Past vs Current</option>
+        </optgroup>
       </select></label>
+      <label><span class="visually-hidden">Chart type</span><select id="chart-type-filter" aria-label="Chart type">
+        <option value="">All chart types</option>
+        <option value="radial">Pie charts</option>
+        <option value="line">Line charts</option>
+        <option value="bar">Bar charts</option>
+      </select></label>
+      <label><span class="visually-hidden">Sort</span><select id="chart-sort" aria-label="Sort">
+        <option value="">Default order</option>
+        <option value="title">A–Z</option>
+        <option value="points">Most data points</option>
+        <option value="recent">Recently updated</option>
+      </select></label>
+      <button type="button" class="saved-toggle" id="saved-toggle" aria-pressed="false">☆ Saved charts</button>
+      <button type="button" class="clear-filters" id="clear-filters">Clear filters</button>
+      </div>
+      <p class="filter-summary" id="filter-summary" aria-live="polite"></p>
     </section>
-
-    <div id="group-hero" class="group-hero" hidden>
-      <div class="group-hero-content">
-        <h2 id="group-hero-title">Group Title</h2>
-        <p id="group-hero-desc">Group Description</p>
-      </div>
-      <figure class="group-hero-art">
-        <img id="group-hero-image" src="assets/parliament.svg" alt="">
-        <figcaption id="group-hero-image-caption"></figcaption>
-      </figure>
-      <div class="group-hero-badges" id="group-hero-badges">
-        <span class="hero-badge saffron">1947 — 2026</span>
-        <span class="hero-badge green">Global Comparison</span>
-      </div>
-    </div>
 
     <section id="pew-report-library" class="pew-report-library" aria-label="Pew Research report library" hidden>
       <div class="pew-library-heading">
@@ -214,7 +288,7 @@
     <section class="chart-grid" id="charts" aria-live="polite">
     </section>
 
-    <section class="references" id="references" aria-label="References" data-reveal>
+    <section class="references" id="references" aria-label="References" data-reveal hidden>
       <p class="eyebrow">Follow the evidence</p>
       <h2>Sources &amp; references</h2>
       <p class="references-intro">Every chart below has a direct source link. Search by indicator, topic, institution or URL. For charts built from multiple inputs, open the graph’s note for the full provenance and method.</p>
@@ -287,27 +361,6 @@
       </details>
     </section>
 
-    <section class="thanks" id="thanks" aria-labelledby="thanks-title" data-reveal>
-      <p class="eyebrow">With thanks</p>
-      <h2 id="thanks-title">The writing that inspired this atlas</h2>
-      <p class="references-intro">India's Journey was built in appreciation of two bodies of public-data writing. This is an independent project and does not represent those publishers.</p>
-      <div class="thanks-columns">
-        <article class="thanks-card" aria-labelledby="thanks-pp-title">
-          <h3 id="thanks-pp-title">PolityPolicy</h3>
-          <p>Sincere thanks to <a href="https://politypolicy.com/" target="_blank" rel="noreferrer">PolityPolicy</a> and <a href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Tushar Gupta's Polity and Policy Substack</a>. Their clear, visual explanations of policy and public data encouraged the chart-first approach of this dashboard.</p>
-          <p class="eyebrow thanks-label">Latest from Polity and Policy</p>
-          <div id="thanks-pp-articles" class="article-links" aria-live="polite"><p class="article-loading">Loading latest public articles…</p></div>
-          <a class="text-link" href="https://politypolicy.substack.com/" target="_blank" rel="noreferrer">Read Polity and Policy <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="thanks-card" aria-labelledby="thanks-im-title">
-          <h3 id="thanks-im-title">Indian Matrix</h3>
-          <p>Sincere thanks to <a href="https://substack.com/@indianmatrix" target="_blank" rel="noreferrer">Indian Matrix</a>, whose data-led essays on India's economy, institutions and strategy shaped many of the questions this atlas tries to answer.</p>
-          <p class="eyebrow thanks-label">Latest from Indian Matrix</p>
-          <div id="thanks-im-articles" class="article-links" aria-live="polite"><p class="article-loading">Loading latest public articles…</p></div>
-          <a class="text-link" href="https://indianmatrix.substack.com/" target="_blank" rel="noreferrer">Read Indian Matrix <span aria-hidden="true">›</span></a>
-        </article>
-      </div>
-    </section>
   </main>
 
   <div id="indicator-modal" class="modal-overlay" hidden>
@@ -323,8 +376,9 @@
     </section>
   </div>
 
-  <footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the public sources listed on the Explore page.</footer>
-  <script src="data.js?v=data-v14"></script>
+  <footer class="site-footer"><p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. Every chart links to its source.</p><p><a href="api.html">API</a> &middot; <a href="sources.html">Sources</a> &middot; <a href="https://indiasjourney.netlify.app/" rel="noopener">Backup site</a> &middot; <a href="https://shubhankart101.github.io/India-s-Journey/" rel="noopener">Mirror</a> &middot; <a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a></p></footer>
+  <script src="overlays.js?v=data-v25"></script>
+  <script src="data.js?v=data-v25"></script>
   <script src="vendor/chart.umd.min.js"></script>
   <script src="vendor/hammer.min.js"></script>
   <script src="vendor/chartjs-plugin-zoom.min.js"></script>
@@ -335,7 +389,7 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"><\/script>');
     }
   </script>
-  <script src="additional-chart-definitions.js?v=data-v14"></script>
-  <script src="app.js?v=data-v14"></script>
+  <script src="additional-chart-definitions.js?v=data-v25"></script>
+  <script src="app.js?v=data-v25"></script>
 </body>
 </html>

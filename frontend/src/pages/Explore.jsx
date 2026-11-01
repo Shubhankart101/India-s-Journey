@@ -5,6 +5,7 @@ import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
+import { AMBIENT_ART } from '../art.js';
 
 const PAGE_SIZE = 24;
 const FILTER_KEYS = ['q', 'category', 'subgroup', 'live', 'chart', 'sort'];
@@ -58,7 +59,11 @@ export default function Explore() {
     }
   };
 
-  const heroArt = subgroup?.art || category?.art || 'economy.svg';
+  const heroArt = useMemo(() => {
+    if (subgroup?.art) return subgroup.art;
+    if (category) return [...new Set([category.art, ...category.subgroups.map(item => item.art)].filter(Boolean))];
+    return AMBIENT_ART;
+  }, [category, subgroup]);
   const activeFilters = FILTER_KEYS.filter(key => filters[key] && key !== 'sort').length;
 
   return (
@@ -70,17 +75,64 @@ export default function Explore() {
         <p className="lead">{subgroup?.description || category?.description || 'Filter by group and subgroup, search any keyword, then open an indicator for the full chart, data table and downloads.'}</p>
       </section>
 
+      <section className="explore-browse" aria-label="Browse">
+        <div className="explore-browse-head">
+          <h2>{category ? `Inside ${category.name}` : 'Browse by group'}</h2>
+          <span className="muted">{category ? `${category.subgroups.length} subgroups` : `${(categories.data || []).length} groups`}</span>
+        </div>
+        {category ? (
+          <div className="explore-grid" role="list" aria-label="Subgroups">
+            <button type="button" role="listitem" className="explore-tile explore-tile-back" onClick={() => update({ category: '', subgroup: '' })}>
+              <span className="explore-tile-name">← All groups</span>
+              <span className="explore-tile-meta">Back to every group</span>
+            </button>
+            {category.subgroups.map(item => (
+              <button
+                type="button"
+                role="listitem"
+                key={item.slug}
+                aria-pressed={item.slug === filters.subgroup}
+                className={`explore-tile${item.slug === filters.subgroup ? ' active' : ''}`}
+                style={{ '--card-art': `url(/art/${item.art || category.art})` }}
+                onClick={() => update({ subgroup: item.slug === filters.subgroup ? '' : item.slug })}
+              >
+                <span className="explore-tile-count">{item.indicator_count}</span>
+                <span className="explore-tile-name">{item.name}</span>
+                <span className="explore-tile-meta">{item.indicator_count} charts</span>
+              </button>
+            ))}
+          </div>
+        ) : (categories.data || []).length > 0 && (
+          <div className="explore-grid" role="list" aria-label="Groups">
+            {categories.data.map(item => (
+              <button
+                type="button"
+                role="listitem"
+                key={item.slug}
+                className="explore-tile"
+                style={{ '--card-art': `url(/art/${item.art || 'economy.svg'})` }}
+                onClick={() => update({ category: item.slug, subgroup: '' })}
+              >
+                <span className="explore-tile-count">{item.subgroups.reduce((sum, sub) => sum + (sub.indicator_count || 0), 0)}</span>
+                <span className="explore-tile-name">{item.name}</span>
+                <span className="explore-tile-meta">{item.subgroups.length} subgroups</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </section>
+
       <section className="filters" aria-label="Filters">
-        <label className="search">
-          <span className="sr-only">Search indicators</span>
-          <input
-            type="search"
-            placeholder="Search e.g. coal, GDP, Lok Sabha, tourism"
-            value={query}
-            onChange={event => setQuery(event.target.value)}
-          />
-        </label>
         <div className="filter-row">
+          <label className="search">
+            <span className="sr-only">Search indicators</span>
+            <input
+              type="search"
+              placeholder="Search e.g. coal, GDP, Lok Sabha, tourism"
+              value={query}
+              onChange={event => setQuery(event.target.value)}
+            />
+          </label>
           <label>
             <span className="sr-only">Group</span>
             <select value={filters.category} onChange={event => update({ category: event.target.value, subgroup: '' })} aria-label="Group">
@@ -119,40 +171,10 @@ export default function Explore() {
             </button>
           )}
         </div>
-        {category ? (
-          <div className="picture-rail" role="list" aria-label="Subgroups">
-            {category.subgroups.map(item => (
-              <button
-                type="button"
-                role="listitem"
-                key={item.slug}
-                aria-pressed={item.slug === filters.subgroup}
-                className={`picture-card${item.slug === filters.subgroup ? ' active' : ''}`}
-                style={{ '--card-art': `url(/art/${item.art || category.art})` }}
-                onClick={() => update({ subgroup: item.slug === filters.subgroup ? '' : item.slug })}
-              >
-                <span className="picture-name">{item.name}</span>
-                <span className="picture-meta">{item.indicator_count} charts</span>
-              </button>
-            ))}
-          </div>
-        ) : (categories.data || []).length > 0 && (
-          <div className="picture-rail" role="list" aria-label="Groups">
-            {categories.data.map(item => (
-              <button
-                type="button"
-                role="listitem"
-                key={item.slug}
-                className="picture-card"
-                style={{ '--card-art': `url(/art/${item.art || 'economy.svg'})` }}
-                onClick={() => update({ category: item.slug, subgroup: '' })}
-              >
-                <span className="picture-name">{item.name}</span>
-                <span className="picture-meta">{item.subgroups.length} subgroups</span>
-              </button>
-            ))}
-          </div>
-        )}
+        <p className="filter-summary muted">
+          {first.loading ? 'Counting…' : `${pages.count.toLocaleString('en-IN')} indicator${pages.count === 1 ? '' : 's'}`}
+          {category ? ` in ${subgroup?.name || category.name}` : ' across every group'}
+        </p>
       </section>
 
       <section className="section" aria-live="polite">
@@ -160,7 +182,6 @@ export default function Explore() {
         {first.error && <ErrorState error={first.error} onRetry={first.reload} />}
         {!first.loading && !first.error && (
           <>
-            <p className="muted result-count">{pages.count.toLocaleString('en-IN')} indicator{pages.count === 1 ? '' : 's'}</p>
             {pages.items.length === 0 ? <Empty>No indicators match. Try a broader search.</Empty> : (
               <div className="card-grid">
                 {pages.items.map(indicator => <IndicatorCard key={indicator.key} indicator={indicator} />)}

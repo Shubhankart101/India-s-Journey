@@ -11,9 +11,9 @@ const PUBLISHERS = [
     read: 'Read Polity and Policy',
     body: (
       <>
-        Sincere thanks to <a href="https://politypolicy.com/" target="_blank" rel="noopener noreferrer">PolityPolicy</a> and{' '}
-        <a href="https://politypolicy.substack.com/" target="_blank" rel="noopener noreferrer">Tushar Gupta's Polity and Policy Substack</a>.
-        Their clear, visual explanations of policy and public data encouraged the chart-first approach of this dashboard.
+        With thanks to <a href="https://politypolicy.com/" target="_blank" rel="noopener noreferrer">PolityPolicy</a> and{' '}
+        <a href="https://politypolicy.substack.com/" target="_blank" rel="noopener noreferrer">Tushar Gupta's Polity and Policy Substack</a>{' '}
+        for their clear, visual explanations of policy and public data.
       </>
     ),
   },
@@ -25,8 +25,8 @@ const PUBLISHERS = [
     read: 'Read Indian Matrix',
     body: (
       <>
-        Sincere thanks to <a href="https://substack.com/@indianmatrix" target="_blank" rel="noopener noreferrer">Indian Matrix</a>, whose data-led
-        essays on India's economy, institutions and strategy shaped many of the questions this atlas tries to answer.
+        With thanks to <a href="https://substack.com/@indianmatrix" target="_blank" rel="noopener noreferrer">Indian Matrix</a> for its data-led
+        writing on India's economy, institutions and strategy.
       </>
     ),
   },
@@ -61,7 +61,7 @@ export default function Thanks() {
     <section className="thanks" id="thanks" aria-labelledby="thanks-title">
       <span className="eyebrow">With thanks</span>
       <h2 id="thanks-title">The writing that inspired this atlas</h2>
-      <p className="muted">India's Journey was built in appreciation of two bodies of public-data writing. This is an independent project and does not represent those publishers.</p>
+      <p className="muted">This independent project was encouraged by public-data writing from PolityPolicy, Polity and Policy, and Indian Matrix.</p>
       <div className="thanks-columns">
         {PUBLISHERS.map(publisher => <ThanksCard key={publisher.kind} publisher={publisher} />)}
       </div>

@@ -1,25 +1,28 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useAuth } from '../auth.jsx';
-import { useCompare } from '../compare.jsx';
-import { API_DOCS_URL, BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
+import { MAX_COMPARE, useCompare } from '../compare.jsx';
+import { PALETTE_COMPARE } from '../palette.js';
+import { BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
-import Thanks from './Thanks.jsx';
+import ArtBackdrop from './ArtBackdrop.jsx';
+import { AMBIENT_ART } from '../art.js';
 import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
   { to: '/explore', label: 'Explore', icon: '◎' },
+  { to: '/sources', label: 'Sources', icon: '❡' },
   { to: '/compare', label: 'Compare', icon: '⇄' },
-  { to: '/saved', label: 'Saved', icon: '★' },
   { to: '/about', label: 'About', icon: 'ℹ' },
+  { to: '/api', label: 'API', icon: '{ }' },
 ];
 
 export default function Layout() {
-  const { user, logout } = useAuth();
   const compare = useCompare();
   const location = useLocation();
   const scrolled = useScrolled();
+  const hasPageArtwork = ['/', '/explore', '/about', '/sources'].includes(location.pathname)
+    || location.pathname.startsWith('/indicator/');
   useAutoReveal();
   usePointerSpotlight();
   useEffect(() => {
@@ -29,6 +32,7 @@ export default function Layout() {
 
   return (
     <div className="app">
+      {!hasPageArtwork && <ArtBackdrop art={AMBIENT_ART} className="app-default-backdrop" />}
       <a className="skip-link" href="#main">Skip to content</a>
       <ScrollProgress />
       <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
@@ -42,17 +46,7 @@ export default function Layout() {
               </NavLink>
             ))}
           </nav>
-          <div className="account">
-            {user ? (
-              <>
-                <span className="muted hide-sm" title={user.email || undefined}>
-                  Hi, {user.name || user.username}
-                  {user.providers?.length > 0 && <small className="provider-tag"> · {user.providers.join(', ')}</small>}
-                </span>
-                <button type="button" className="btn btn-ghost" onClick={logout}>Sign out</button>
-              </>
-            ) : <Link to="/login" className="btn btn-ghost">Sign in</Link>}
-          </div>
+          <Link to="/explore" className="btn btn-primary header-cta">Explore data</Link>
         </div>
       </header>
 
@@ -64,22 +58,27 @@ export default function Layout() {
       </main>
 
       {compare.items.length > 0 && location.pathname !== '/compare' && (
-        <aside className="compare-tray" aria-label="Compare tray">
-          <span>{compare.items.length} selected</span>
-          <Link className="btn btn-primary" to={compareHref}>Compare</Link>
+        <aside className="compare-tray" aria-label="Compare tray" aria-live="polite">
+          <span className="tray-count"><span aria-hidden="true">⇄ </span>{compare.items.length} selected<small> / {MAX_COMPARE}</small></span>
+          <ul className="tray-chips" aria-label="Selected for comparison">
+            {compare.items.map((item, index) => (
+              <li key={item.key} className="tray-chip" style={{ '--slot': PALETTE_COMPARE[index % PALETTE_COMPARE.length] }}>
+                <span className="tray-chip-title" title={item.title}>{item.title}</span>
+                <button type="button" aria-label={`Remove ${item.title} from compare`} onClick={() => compare.toggle(item)}>×</button>
+              </li>
+            ))}
+          </ul>
+          <Link className="btn btn-primary" to={compareHref}>Compare<span aria-hidden="true"> →</span></Link>
           <button type="button" className="btn btn-ghost" onClick={compare.clear}>Clear</button>
         </aside>
       )}
 
       <ScrollTopButton />
 
-      <div className="main"><Thanks /></div>
-
       <footer className="site-footer">
         <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. Every chart links to its source.</p>
-        <p>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>). Independent dashboard; charts are generated from the cited public sources.</p>
         <p>
-          <a href={API_DOCS_URL}>API docs</a> · <a href="/api/">API</a> · <a href="/admin/">Admin</a>
+          <Link to="/api">API</Link> · <Link to="/sources">Sources</Link>
           {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_MIRROR_URL} rel="noopener">Mirror</a>
           {' · '}<a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a>
         </p>

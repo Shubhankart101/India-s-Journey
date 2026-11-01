@@ -17,9 +17,9 @@ test.describe('responsive layout', () => {
   });
 
   test('no page scrolls sideways', async ({ page }) => {
-    for (const path of ['/', '/explore', '/about', '/login']) {
+    for (const path of ['/', '/explore', '/about', '/api']) {
       await page.goto(path);
-      await page.waitForLoadState('networkidle');
+      await expect(page.locator('main')).toBeVisible();
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       expect(overflow, path).toBeLessThanOrEqual(1);
     }

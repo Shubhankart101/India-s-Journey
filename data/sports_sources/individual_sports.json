@@ -1,0 +1,1403 @@
+{
+ "fetched_at_utc": "2026-11-01T12:35:02+00:00",
+ "fetcher": "scripts/sports_fetch/individual.py",
+ "series": [
+  {
+   "key": "badminton_bwf_world_championships_medals",
+   "sport": "Badminton",
+   "title": "India at the BWF World Championships - medals by edition",
+   "description": "Gold, silver and bronze medals won by Indian players at each BWF World Championships, read from the official BWF podium pages.",
+   "labels": [
+    "2011",
+    "2013",
+    "2014",
+    "2015",
+    "2017",
+    "2018",
+    "2019",
+    "2021",
+    "2022",
+    "2023",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://bwfworldchampionships.bwfbadminton.com/results/5601/bwf-world-championships-2026/podium (and the /podium page of each edition in the tournament selector, 1989-2026)",
+   "publisher": "Badminton World Federation (BWF)",
+   "as_of": "2026-11-01",
+   "notes": "Totals G1 S4 B10 across 25 editions checked (1989-2026); editions with no Indian medal omitted (1989-2010 had none). Pre-1989 editions are not in the BWF results selector. Medals: 2011: B: Women's Doubles - Jwala GUTTA / Ashwini PONNAPPA | 2013: B: Women's Singles - PUSARLA V. Sindhu | 2014: B: Women's Singles - PUSARLA V. Sindhu | 2015: S: Women's Singles - Saina NEHWAL | 2017: S: Women's Singles - PUSARLA V. Sindhu; B: Women's Singles - Saina NEHWAL | 2018: S: Women's Singles - PUSARLA V. Sindhu | 2019: B: Men's Singles - SAI PRANEETH B.; G: Women's Singles - PUSARLA V. Sindhu | 2021: S: Men's Singles - KIDAMBI Srikanth; B: Men's Singles - Lakshya SEN | 2022: B: Men's Doubles - Satwiksairaj RANKIREDDY / Chirag SHETTY | 2023: B: Men's Singles - PRANNOY H. S. | 2025: B: Men's Doubles - Satwiksairaj RANKIREDDY / Chirag SHETTY | 2026: B: Women's Doubles - Treesa JOLLY / GAYATRI GOPICHA PULLELA",
+   "producer": "badminton_bwf_world_championships_medals"
+  },
+  {
+   "key": "badminton_bwf_world_ranking_indians_by_discipline",
+   "sport": "Badminton",
+   "title": "Indian players/pairs in the BWF World Rankings (week 44, 2026)",
+   "description": "Number of Indian singles players or doubles pairs ranked in the BWF world top 20, top 50 and top 100 in each discipline.",
+   "labels": [
+    "Men's singles",
+    "Women's singles",
+    "Men's doubles",
+    "Women's doubles",
+    "Mixed doubles"
+   ],
+   "datasets": [
+    {
+     "label": "Top 20",
+     "values": [
+      2,
+      1,
+      1,
+      1,
+      0
+     ]
+    },
+    {
+     "label": "Top 50",
+     "values": [
+      4,
+      8,
+      2,
+      5,
+      3
+     ]
+    },
+    {
+     "label": "Top 100",
+     "values": [
+      12,
+      15,
+      6,
+      7,
+      7
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://extranet-lv.bwfbadminton.com/api/vue-rankingtable?rankId=2&catId=6..10&publicationId=0&pageKey=100&page=1 (data behind https://bwfbadminton.com/rankings/)",
+   "publisher": "Badminton World Federation (BWF)",
+   "as_of": "2026-10-27",
+   "notes": "BWF World Rankings publication 2026 week 44 (27 Oct 2026). Best-ranked Indian per discipline: Men's singles: #14 Lakshya SEN; Women's singles: #8 PUSARLA V. Sindhu; Men's doubles: #6 Satwiksairaj RANKIREDDY / Chirag SHETTY; Women's doubles: #19 Treesa JOLLY / GAYATRI GOPICHAND PULLELA; Mixed doubles: #21 DHRUV KAPILA / Tanisha CRASTO.",
+   "producer": "badminton_bwf_world_ranking_indians_by_discipline"
+  },
+  {
+   "key": "badminton_bwf_best_indian_world_rank",
+   "sport": "Badminton",
+   "title": "Best-ranked Indian in each BWF discipline (week 44, 2026)",
+   "description": "World ranking position of the highest-ranked Indian singles player or doubles pair in each discipline.",
+   "labels": [
+    "Men's singles (Lakshya SEN)",
+    "Women's singles (PUSARLA V. Sindhu)",
+    "Men's doubles (Satwiksairaj RANKIREDDY / Chirag SHETTY)",
+    "Women's doubles (Treesa JOLLY / GAYATRI GOPICHAND PULLELA)",
+    "Mixed doubles (DHRUV KAPILA / Tanisha CRASTO)"
+   ],
+   "datasets": [
+    {
+     "label": "World rank",
+     "values": [
+      14,
+      8,
+      6,
+      19,
+      21
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://extranet-lv.bwfbadminton.com/api/vue-rankingtable?rankId=2&catId=6..10&publicationId=0&pageKey=100&page=1",
+   "publisher": "Badminton World Federation (BWF)",
+   "as_of": "2026-10-27",
+   "notes": "Lower is better.",
+   "producer": "badminton_bwf_best_indian_world_rank"
+  },
+  {
+   "key": "badminton_thomas_uber_cup_india_finish",
+   "sport": "Badminton",
+   "title": "India at the Thomas & Uber Cup Finals - final placing",
+   "description": "India's final placing band at each Thomas Cup (men) and Uber Cup (women) Finals, from BWF results pages.",
+   "labels": [
+    "2008",
+    "2010",
+    "2012",
+    "2014",
+    "2016",
+    "2018",
+    "2020",
+    "2022",
+    "2024",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Thomas Cup (best position in band)",
+     "values": [
+      null,
+      5,
+      null,
+      9,
+      13,
+      9,
+      5,
+      1,
+      5,
+      3
+     ]
+    },
+    {
+     "label": "Uber Cup (best position in band)",
+     "values": [
+      null,
+      5,
+      null,
+      3,
+      3,
+      9,
+      5,
+      5,
+      5,
+      9
+     ]
+    }
+   ],
+   "chart": "line",
+   "source_url": "https://bwfthomasubercups.bwfbadminton.com/results/ (/podium of each edition 2008-2026)",
+   "publisher": "Badminton World Federation (BWF)",
+   "as_of": "2026-11-01",
+   "notes": "Lower is better; value is the top of the published band (1 = champion, 3 = semi-final 3/4, 5 = quarter-final 5/8, 9 = 9/12, 13 = 13/16). Published bands - Thomas: 2008 not listed, 2010 5/8, 2012 not listed, 2014 9/12, 2016 13/16, 2018 9/12, 2020 5/8, 2022 1, 2024 5/8, 2026 3/4; Uber: 2008 not listed, 2010 5/8, 2012 not listed, 2014 3/4, 2016 3/4, 2018 9/12, 2020 5/8, 2022 5/8, 2024 5/8, 2026 9/12. null = India not among teams listed on the page (2008 page lists only the top 4; India did not appear among the 12 finalists in 2012). India won the Thomas Cup in 2022.",
+   "producer": "badminton_thomas_uber_cup_india_finish"
+  },
+  {
+   "key": "badminton_sudirman_cup_india_finish",
+   "sport": "Badminton",
+   "title": "India at the Sudirman Cup (mixed team) - final placing",
+   "description": "India's final placing at each BWF Sudirman Cup since 2007, from BWF results pages.",
+   "labels": [
+    "2007",
+    "2009",
+    "2011",
+    "2013",
+    "2015",
+    "2017",
+    "2019",
+    "2021",
+    "2023",
+    "2025"
+   ],
+   "datasets": [
+    {
+     "label": "Final position (top of band)",
+     "values": [
+      18,
+      17,
+      5,
+      9,
+      9,
+      5,
+      9,
+      9,
+      null,
+      9
+     ]
+    }
+   ],
+   "chart": "line",
+   "source_url": "https://bwfsudirmancup.bwfbadminton.com/results/ (/podium of each edition 2007-2025)",
+   "publisher": "Badminton World Federation (BWF)",
+   "as_of": "2026-11-01",
+   "notes": "Lower is better. Published placings: 2007 18, 2009 17, 2011 5/8, 2013 9/12, 2015 9/12, 2017 5/8, 2019 9/12, 2021 9/12, 2023 not listed, 2025 9/12. 2023 page lists only the top 8 (India not among them). 2007/2009 used tiered levels (overall position shown).",
+   "producer": "badminton_sudirman_cup_india_finish"
+  },
+  {
+   "key": "shooting_issf_world_championships_medals",
+   "sport": "Shooting",
+   "title": "India at ISSF World Championships (2022-2025)",
+   "description": "India's gold, silver and bronze medals at each ISSF World Championship since 2022, from the ISSF official medal standings (senior and junior events combined as published).",
+   "labels": [
+    "2022 Osijek (Shotgun)",
+    "2022 Cairo (Rifle / Pistol)",
+    "2023 Baku (All Events)",
+    "2025 Athens (Shotgun)",
+    "2025 Cairo (Rifle / Pistol)"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      1,
+      12,
+      6,
+      0,
+      3
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      1,
+      9,
+      0,
+      0,
+      6
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      2,
+      13,
+      8,
+      1,
+      4
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.issf-sports.org/competitions/{id} (medalStanding block); list via https://api.issf-sports.org/api/v01/competitions?year=YYYY",
+   "publisher": "ISSF (International Shooting Sport Federation)",
+   "as_of": "2026-11-01",
+   "notes": "ISSF publishes medal standings online only from 2022; World Championships with zero India medals omitted. ISSF medal standings at World Championships include junior events. Totals G22 S16 B28 = 66. 2022 Chateauroux id 3081: IND rank None, event total medals 36; 2022 Osijek id 3073: IND rank 5, event total medals 64; 2022 Cairo id 3074: IND rank 2, event total medals 209; 2023 Baku id 3085: IND rank 3, event total medals 192; 2025 Athens id 3332: IND rank 9, event total medals 27; 2025 Cairo id 3275: IND rank 3, event total medals 114; 2026 Tallinn id 3499: IND rank None, event total medals 51; 2026 Cairo id 3576: IND rank None, event total medals 15; 2026 Doha id 3421: no standing published yet",
+   "producer": "shooting_issf_world_championships_medals"
+  },
+  {
+   "key": "shooting_issf_world_cup_medals_by_year",
+   "sport": "Shooting",
+   "title": "India's ISSF World Cup medals by year (2022-2026)",
+   "description": "Total gold, silver and bronze medals won by India across all senior ISSF World Cup stages (Rifle/Pistol/Shotgun) in each year.",
+   "labels": [
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      11,
+      8,
+      3,
+      9,
+      6
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      13,
+      5,
+      3,
+      6,
+      3
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      6,
+      12,
+      2,
+      7,
+      3
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.issf-sports.org/competitions/{id} medal standings for each World Cup stage; stage list from https://api.issf-sports.org/api/v01/competitions?year=YYYY",
+   "publisher": "ISSF",
+   "as_of": "2026-11-01",
+   "notes": "Sum of ISSF medal standings for India per World Cup stage (Junior World Cups, Target Sprint and World Cup Finals excluded). Stages counted per year: 2022: 7 stages with standings - Cairo(3024):4-2-1, Nicosia(3023):0-1-0, Lima(3026):0-0-1, Rio de Janeiro(3080):0-0-0, Lonato(3028):0-1-0, Baku(3032):2-3-0, Changwon(3034):5-6-4 | 2023: 12 stages with standings - Rabat(3105):0-0-0, Jakarta(3104):0-0-0, Cairo(3107):4-0-3, Doha(3108):0-0-1, Bhopal(3112):1-1-5, Larnaca(3110):0-0-0, Las Palmas, Lima(3120):0-0-0, Cairo(3113):1-0-0, Baku(3114):1-2-1, Almaty(3119):0-1-1, Lonato(3115):0-0-1, Rio de Janeiro(3123):1-1-0 | 2024: 5 stages with standings - Cairo(3207):2-3-1, Rabat(3166):0-0-0, Baku(3203):0-0-0, Munich(3201):1-0-1, Lonato(3204):0-0-0 | 2025: 6 stages with standings - Buenos Aires(3268):4-2-2, Lima(3274):2-4-1, Nicosia(3269):0-0-1, Munich(3271):2-0-2, Lonato(3272):0-0-0, Ningbo(3273):1-0-1 | 2026: 7 stages with standings - Tangier(3279):0-0-0, Granada(3280):1-0-0, Almaty(3281):0-0-1, Munich(3284):2-2-0, Lonato(3285):1-0-0, Hangzhou(3574):1-1-2, Cairo(3289):1-0-0. 2026 season counts stages completed by Nov 2026. World Cup Final: 2023: Doha(3202):0-0-1 | 2024: New Delhi(3326):0-2-2 | 2025: Doha(3393):2-3-1",
+   "producer": "shooting_issf_world_cup_medals_by_year"
+  },
+  {
+   "key": "wrestling_uww_senior_world_championships_medals",
+   "sport": "Wrestling",
+   "title": "India at UWW Senior World Championships (2025-2026)",
+   "description": "India's medals at the last two Senior World Wrestling Championships, read from UWW's official per-weight final rankings.",
+   "labels": [
+    "2025 Zagreb",
+    "2026 Astana"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      2
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      1,
+      1
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://uww.org/events/senior-world-championships (Zagreb 2025, athena id 1002) and https://uww.org/events/senior-world-championships-0 (Astana 2026, athena id 1050) - Medal Summary tab (fetchRanking server action per weight category)",
+   "publisher": "United World Wrestling (UWW)",
+   "as_of": "2026-11-01",
+   "notes": "Counted ranks 1-3 for team IND in all senior weight categories (FS, GR, WW) per edition; wrestling awards two bronzes per category. Totals G1 S2 B2 = 5. 2025 Zagreb: Bronze - Antim ANTIM (Senior Ww 53Kg); 2026 Astana: Silver - Neelam NEELAM (Senior Ww 50Kg); 2026 Astana: Gold - Manisha MANISHA (Senior Ww 59Kg); 2026 Astana: Bronze - Tanu SHARMA (Senior Ww 72Kg); 2026 Astana: Silver - Kajal KAJAL (Senior Ww 76Kg); 2026 Astana snapshot: 4 categories not yet completed when fetched (SENIOR FS 57kg, SENIOR FS 74kg, SENIOR FS 79kg, SENIOR FS 92kg). Earlier editions are not exposed on the new uww.org results platform.",
+   "producer": "wrestling_uww_senior_world_championships_medals"
+  },
+  {
+   "key": "athletics_world_championships_medals",
+   "sport": "Athletics",
+   "title": "India at the World Athletics Championships",
+   "description": "Medals won by India at each World Athletics Championships edition where India reached the podium (1983-2025).",
+   "labels": [
+    "2003",
+    "2022",
+    "2023"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      1,
+      0
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      1,
+      0,
+      0
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://worldathletics.org/competitions/world-athletics-championships/budapest23/medaltable ; World Athletics GraphQL API https://graphql-prod-4897.edge.aws.worldathletics.org/graphql (getEvents, getMedals countryCode=IND, getWawMedalDetails)",
+   "publisher": "World Athletics",
+   "as_of": "2026-11-01",
+   "notes": "Only editions with an India medal shown; editions checked: 1983, 1987, 1991, 1993, 1995, 1997, 1999, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019, 2022, 2023, 2025. Totals G1 S1 B1 = 3. Medallists: 2003: Bronze - Anju Bobby George (W) Long Jump 6.70; 2022: Silver - Neeraj CHOPRA (M) Javelin Throw 88.13; 2023: Gold - Neeraj CHOPRA (M) Javelin Throw 88.17",
+   "medallists": [
+    "2003: Bronze - Anju Bobby George (W) Long Jump 6.70",
+    "2022: Silver - Neeraj CHOPRA (M) Javelin Throw 88.13",
+    "2023: Gold - Neeraj CHOPRA (M) Javelin Throw 88.17"
+   ],
+   "producer": "athletics_world_championships_medals"
+  },
+  {
+   "key": "athletics_world_u20_championships_medals",
+   "sport": "Athletics",
+   "title": "India at the World Athletics U20 Championships",
+   "description": "Medals won by India at World Athletics U20 (formerly World Junior) Championships editions where India medalled (1986-2026).",
+   "labels": [
+    "2002",
+    "2014",
+    "2016",
+    "2018",
+    "2021",
+    "2022",
+    "2024",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://worldathletics.org/competitions/world-athletics-u20-championships ; World Athletics GraphQL API https://graphql-prod-4897.edge.aws.worldathletics.org/graphql (getEvents, getMedals countryCode=IND, getWawMedalDetails)",
+   "publisher": "World Athletics",
+   "as_of": "2026-11-01",
+   "notes": "Only editions with an India medal shown; editions checked: 1986, 1988, 1990, 1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2021, 2022, 2024, 2026. Totals G2 S6 B6 = 14. Medallists: 2002: Bronze - Seema PUNIA (W) Discus Throw 55.83; 2014: Bronze - Navjeet Kaur Dhillon (W) Discus Throw 56.36; 2016: Gold - Neeraj CHOPRA (M) Javelin Throw 86.48; 2018: Gold - Hima DAS (W) 400 Metres 51.46; 2021: Silver - . AMIT (M) 10,000 Metres Race Walk 42:17.94; 2021: Silver - Shaili SINGH (W) Long Jump 6.59; 2021: Bronze - India U20 (X) 4x400 Metres Relay 3:20.60; 2022: Silver - Selva P. THIRUMARAN (M) Triple Jump 16.15; 2022: Silver - India U20 (X) 4x400 Metres Relay 3:17.76; 2022: Bronze - RUPAL (W) 400 Metres 51.85; 2024: Bronze - . AARTI (W) 10,000 Metres Race Walk 44:39.39; 2026: Silver - . BASANT (M) High Jump 2.21; 2026: Silver - Ashish YADAV (M) Javelin Throw 74.09; 2026: Bronze - Shahnavaz KHAN (M) Long Jump 7.84",
+   "medallists": [
+    "2002: Bronze - Seema PUNIA (W) Discus Throw 55.83",
+    "2014: Bronze - Navjeet Kaur Dhillon (W) Discus Throw 56.36",
+    "2016: Gold - Neeraj CHOPRA (M) Javelin Throw 86.48",
+    "2018: Gold - Hima DAS (W) 400 Metres 51.46",
+    "2021: Silver - . AMIT (M) 10,000 Metres Race Walk 42:17.94",
+    "2021: Silver - Shaili SINGH (W) Long Jump 6.59",
+    "2021: Bronze - India U20 (X) 4x400 Metres Relay 3:20.60",
+    "2022: Silver - Selva P. THIRUMARAN (M) Triple Jump 16.15",
+    "2022: Silver - India U20 (X) 4x400 Metres Relay 3:17.76",
+    "2022: Bronze - RUPAL (W) 400 Metres 51.85",
+    "2024: Bronze - . AARTI (W) 10,000 Metres Race Walk 44:39.39",
+    "2026: Silver - . BASANT (M) High Jump 2.21",
+    "2026: Silver - Ashish YADAV (M) Javelin Throw 74.09",
+    "2026: Bronze - Shahnavaz KHAN (M) Long Jump 7.84"
+   ],
+   "producer": "athletics_world_u20_championships_medals"
+  },
+  {
+   "key": "boxing_womens_world_championships_medals",
+   "sport": "Boxing",
+   "title": "India at Women's World Boxing Championships - medals by edition",
+   "description": "Gold/silver/bronze medals won by Indian women at the elite Women's World Championships, read from official Swiss Timing / sportdata medallist and medal-standing reports.",
+   "labels": [
+    "2008",
+    "2014",
+    "2016",
+    "2018",
+    "2019",
+    "2022",
+    "2023",
+    "2025"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      1,
+      2,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      2,
+      0,
+      0,
+      2,
+      3,
+      2,
+      0,
+      1
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.iba.sport/wp-content/uploads/2015/02/Medallist-by-weigh-category.pdf ; https://www.iba.sport/wp-content/uploads/2022/09/C93.pdf ; https://www.iba.sport/wp-content/uploads/2016/02/Medallist-by-weigh.pdf ; https://www.iba.sport/wp-content/uploads/2018/11/Medalists-by-weight-category.pdf ; https://www.iba.sport/wp-content/uploads/2019/10/C93.pdf ; https://www.iba.sport/wp-content/uploads/2022/05/C93-3.pdf ; https://www.iba.sport/wp-content/uploads/2023/03/Medals_Nation-new.pdf ; https://www.worldboxingliverpool.com/_files/ugd/8876a4_884036ec9ba54704bd906b8a633376d6.pdf",
+   "publisher": "International Boxing Association (IBA/AIBA); World Boxing (2025)",
+   "as_of": "2026-11-01",
+   "notes": "Editions: 2008 Ningbo (Mary Kom G; Usha Nagisetty S; Chhoto Loura, L. Sarita B), 2014 Jeju (Sarjubala Devi S, Saweety S), 2016 Astana (Sonia Lather S), 2018 New Delhi (Mary Kom G; Sonia S; Simranjit Kaur, Lovlina Borgohain B), 2019 Ulan-Ude (Manju Rani S; Mary Kom, Jamuna Boro, Lovlina B), 2022 Istanbul (Nikhat Zareen G; Manisha, Parveen B), 2023 New Delhi IBA medal table IND 4-0-0, 2025 Liverpool = first World Boxing Championships (Minakshi G, Jaismine G, Nupur S, Pooja Rani B). Editions 2001-2006, 2010 and 2012 have no medal report on iba.sport event pages, so they are omitted.",
+   "producer": "boxing_womens_world_championships_medals"
+  },
+  {
+   "key": "boxing_mens_world_championships_medals",
+   "sport": "Boxing",
+   "title": "India at Men's World Boxing Championships - medals by edition",
+   "description": "Gold/silver/bronze medals won by Indian men at the elite Men's World Championships, read from official IBA/AIBA and World Boxing medal reports.",
+   "labels": [
+    "2007",
+    "2015",
+    "2017",
+    "2019",
+    "2021",
+    "2023",
+    "2025"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      3,
+      0
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.iba.sport/wp-content/uploads/2015/02/Medallists.pdf ; https://www.iba.sport/wp-content/uploads/2015/02/Medallist-by-weight-category.pdf ; https://www.iba.sport/wp-content/uploads/2017/07/ROOT-C93.pdf ; https://www.iba.sport/wp-content/uploads/2019/09/C93.pdf ; https://www.iba.sport/wp-content/uploads/2021/11/C93.pdf ; https://www.iba.sport/wp-content/uploads/2023/05/Medals_Nation-new-1.pdf ; https://www.worldboxingliverpool.com/_files/ugd/8876a4_884036ec9ba54704bd906b8a633376d6.pdf",
+   "publisher": "International Boxing Association (IBA/AIBA); World Boxing (2025)",
+   "as_of": "2026-11-01",
+   "notes": "Editions: 2007 Chicago (none), 2015 Doha (Shiva Thapa B; standings IND 0-0-1), 2017 Hamburg (Gaurav Bidhuri B), 2019 Ekaterinburg (Amit Panghal S, Manish Kaushik B; standings IND 0-1-1), 2021 Belgrade (Akash Kumar B), 2023 Tashkent (IBA medal table IND 0-0-3), 2025 Liverpool World Boxing (no Indian men medallists). 2009, 2011, 2013 and earlier have no medal report on iba.sport; 2025 IBA Dubai men's event not included (India competes under World Boxing).",
+   "producer": "boxing_mens_world_championships_medals"
+  },
+  {
+   "key": "weightlifting_world_championships_total_medals",
+   "sport": "Weightlifting",
+   "title": "India at IWF World Championships - Total-lift medals by edition (2011-2026)",
+   "description": "Gold/silver/bronze medals in the Total (overall) ranking won by Indian lifters at senior IWF World Championships, from IWF results-by-events pages.",
+   "labels": [
+    "2011",
+    "2013",
+    "2014",
+    "2015",
+    "2017",
+    "2018",
+    "2019",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://iwf.sport/results/results-by-events/results-by-events-upto2018/?event_id=405 ; https://iwf.sport/results/results-by-events/results-by-events-2018-2025/?event_id=562 ; https://iwf.sport/results/results-by-events/results-by-events-2025-2026/?event_id=661 (also event_id 190,253,298,341,441,472,522,577,616; 2026: https://iwf.sport/results/results-by-events/?event_id=700)",
+   "publisher": "International Weightlifting Federation (IWF)",
+   "as_of": "2026-11-01",
+   "notes": "Only Total-ranking medals counted (IWF also awards separate snatch and clean & jerk small medals, not counted). Medals: 2017 Anaheim 48kg W gold - Saikhom Mirabai Chanu (194 kg); 2022 Bogota 49kg W silver - Mirabai Chanu (200 kg); 2025 Forde 48kg W silver - Mirabai Chanu (199 kg). 2026 Ningbo was in progress (7 categories published at fetch time; best Indian: Gyaneshwari Yadav 8th, 53kg W). Editions before 2011 not checked; 2016 had no Worlds (Olympic year).",
+   "producer": "weightlifting_world_championships_total_medals"
+  },
+  {
+   "key": "chess_top10_indian_open_ratings",
+   "sport": "Chess",
+   "title": "Top 10 Indian players by FIDE standard rating (Open), November 2026",
+   "description": "FIDE standard ratings of the ten highest-rated active Indian players on the 1 November 2026 rating list.",
+   "labels": [
+    "Praggnanandhaa R",
+    "Erigaisi Arjun",
+    "Anand, Viswanathan",
+    "Nihal Sarin",
+    "Gukesh D",
+    "Vidit, Santosh Gujrathi",
+    "Pranav, V",
+    "Pranesh M",
+    "Aravindh, Chithambaram VR.",
+    "Harikrishna, Pentala"
+   ],
+   "datasets": [
+    {
+     "label": "Standard rating",
+     "values": [
+      2763,
+      2746,
+      2739,
+      2720,
+      2710,
+      2693,
+      2679,
+      2673,
+      2673,
+      2659
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://ratings.fide.com/a_top_var.php?continent=0&country=IND&rating=standard&gender=&age1=0&age2=0&period=1&period2=1",
+   "publisher": "FIDE (International Chess Federation) - ratings.fide.com",
+   "as_of": "2026-11-01",
+   "notes": "Active players only, as published on the FIDE top lists page.",
+   "producer": "chess_top10_indian_open_ratings"
+  },
+  {
+   "key": "chess_top10_indian_women_ratings",
+   "sport": "Chess",
+   "title": "Top 10 Indian players by FIDE standard rating (Women), November 2026",
+   "description": "FIDE standard ratings of the ten highest-rated active Indian women players on the 1 November 2026 rating list.",
+   "labels": [
+    "Koneru, Humpy",
+    "Divya Deshmukh",
+    "Vaishali, Rameshbabu",
+    "Dronavalli, Harika",
+    "Savitha Shri B",
+    "Vantika Agrawal",
+    "Pratitee Bordoloi",
+    "Kalyani Sirin",
+    "Rakshitta Ravi",
+    "Modipalli Deekshitha"
+   ],
+   "datasets": [
+    {
+     "label": "Standard rating",
+     "values": [
+      2520,
+      2488,
+      2452,
+      2444,
+      2405,
+      2399,
+      2393,
+      2386,
+      2369,
+      2349
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://ratings.fide.com/a_top_var.php?continent=0&country=IND&rating=standard&gender=F&age1=0&age2=0&period=1&period2=1",
+   "publisher": "FIDE (International Chess Federation) - ratings.fide.com",
+   "as_of": "2026-11-01",
+   "notes": "Active players only, as published on the FIDE top lists page.",
+   "producer": "chess_top10_indian_women_ratings"
+  },
+  {
+   "key": "chess_india_titled_players",
+   "sport": "Chess",
+   "title": "Indian FIDE-titled players by highest title",
+   "description": "Count of players registered with federation IND in the FIDE rating database, grouped by their highest FIDE title.",
+   "labels": [
+    "GM",
+    "IM",
+    "FM",
+    "CM",
+    "WGM",
+    "WIM",
+    "WFM",
+    "WCM"
+   ],
+   "datasets": [
+    {
+     "label": "Players",
+     "values": [
+      97,
+      169,
+      214,
+      174,
+      15,
+      48,
+      81,
+      76
+     ]
+    }
+   ],
+   "chart": "doughnut",
+   "source_url": "https://ratings.fide.com/download/players_list.zip",
+   "publisher": "FIDE (International Chess Federation) - ratings.fide.com",
+   "as_of": "2026-10-31",
+   "notes": "Computed from the official FIDE combined players list (Tit field, file dated 2026-10-31); total titled = 874. Women holding an open title are counted under that title; the separate women-title field gives WGM 28, WIM 51, WFM 83, WCM 77. Includes inactive registered players. GMs by federation: RUS 184, USA 115, GER 103, IND 97, UKR 85; IND 97 (rank 4). IND players listed: 212,731.",
+   "producer": "chess_india_titled_players"
+  },
+  {
+   "key": "chess_india_federation_rank_top10_average",
+   "sport": "Chess",
+   "title": "India's world federation ranking (average rating of top 10 players)",
+   "description": "India's rank among national federations by average FIDE rating of its top 10 players, open and women lists.",
+   "labels": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026",
+    "Nov 2026"
+   ],
+   "datasets": [
+    {
+     "label": "Open rank",
+     "values": [
+      8,
+      5,
+      5,
+      5,
+      5,
+      5,
+      6,
+      5,
+      4,
+      2,
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "label": "Women rank",
+     "values": [
+      5,
+      5,
+      4,
+      7,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2
+     ]
+    }
+   ],
+   "chart": "line",
+   "source_url": "https://ratings.fide.com/a_top_fed_list.php?list=open&period=2026-11-01 (and list=women; period=YYYY-01-01 for each year)",
+   "publisher": "FIDE (International Chess Federation) - ratings.fide.com",
+   "as_of": "2026-11-01",
+   "notes": "Lower is better. Top-10 averages (open): 2015 2651, 2016 2657, 2017 2665, 2018 2661, 2019 2653, 2020 2657, 2021 2659, 2022 2661, 2023 2683, 2024 2701, 2025 2714, 2026 2705, Nov 2026 2706; (women): 2015 2389, 2016 2394, 2017 2401, 2018 2362, 2019 2386, 2020 2404, 2021 2403, 2022 2405, 2023 2404, 2024 2427, 2025 2418, 2026 2400, Nov 2026 2420. Rating periods are 1 January of each year; the last is 1 November 2026.",
+   "producer": "chess_india_federation_rank_top10_average"
+  },
+  {
+   "key": "chess_olympiad_india_match_record",
+   "sport": "Chess",
+   "title": "India at the Chess Olympiad: match wins, draws and losses (2022, 2024)",
+   "description": "Match results over 11 rounds and final placing of Indian teams at the 44th (Chennai 2022) and 45th (Budapest 2024) Chess Olympiads.",
+   "labels": [
+    "2024 Budapest Open (India)",
+    "2024 Budapest Women (India)",
+    "2022 Chennai Open (India 1)",
+    "2022 Chennai Open (India 2)",
+    "2022 Chennai Open (India 3)",
+    "2022 Chennai Women (India 1)",
+    "2022 Chennai Women (India 2)",
+    "2022 Chennai Women (India 3)"
+   ],
+   "datasets": [
+    {
+     "label": "Won",
+     "values": [
+      10,
+      9,
+      7,
+      8,
+      6,
+      8,
+      7,
+      7
+     ]
+    },
+    {
+     "label": "Drawn",
+     "values": [
+      1,
+      1,
+      3,
+      2,
+      2,
+      1,
+      2,
+      1
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      0,
+      1,
+      1,
+      1,
+      3,
+      2,
+      2,
+      3
+     ]
+    },
+    {
+     "label": "Final rank",
+     "values": [
+      1,
+      1,
+      4,
+      3,
+      31,
+      3,
+      8,
+      17
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://chess-results.com/tnr967173.aspx?lan=1&art=63 ; https://chess-results.com/tnr967172.aspx?lan=1&art=63 ; https://chess-results.com/tnr653631.aspx?lan=1&art=63 ; https://chess-results.com/tnr653632.aspx?lan=1&art=63",
+   "publisher": "Chess-Results.com (official results server for the FIDE Chess Olympiad, linked from chessolympiad2024.fide.com)",
+   "as_of": "2026-11-01",
+   "notes": "W/D/L derived from each round match score on the final ranking crosstable (4 boards: >2 win, 2 draw, <2 loss); verified that 2W+D equals the published match points (21,19,17,18,14,17,16,15). Final rank 1 = gold. Game points: 2024 Budapest Open (India): 35.0, 2024 Budapest Women (India): 31.0, 2022 Chennai Open (India 1): 29.0, 2022 Chennai Open (India 2): 32.5, 2022 Chennai Open (India 3): 26.0, 2022 Chennai Women (India 1): 29.0, 2022 Chennai Women (India 2): 30.0, 2022 Chennai Women (India 3): 27.0.",
+   "producer": "chess_olympiad_india_match_record"
+  },
+  {
+   "key": "kabaddi_pkl_season12_standings",
+   "sport": "Kabaddi",
+   "title": "Pro Kabaddi League Season 12 (2025) - league-stage wins and losses by team",
+   "description": "Wins and losses of the 12 PKL franchises in the Season 12 league stage (18 matches each), from the official PKL points table.",
+   "labels": [
+    "Puneri Paltan",
+    "Dabang Delhi K.C.",
+    "Bengaluru Bulls",
+    "Telugu Titans",
+    "Haryana Steelers",
+    "U Mumba",
+    "Patna Pirates",
+    "Jaipur Pink Panthers",
+    "UP Yoddhas",
+    "Tamil Thalaivas",
+    "Gujarat Giants",
+    "Bengal Warriorz"
+   ],
+   "datasets": [
+    {
+     "label": "Won",
+     "values": [
+      13,
+      13,
+      11,
+      10,
+      10,
+      10,
+      8,
+      8,
+      7,
+      6,
+      6,
+      6
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      5,
+      5,
+      7,
+      8,
+      8,
+      8,
+      10,
+      10,
+      11,
+      12,
+      12,
+      12
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.prokabaddi.com/standings",
+   "publisher": "Pro Kabaddi League (Mashal Sports) - official site",
+   "as_of": "2025-10-31",
+   "notes": "Points table last updated 31/10/2025 21:20:46 (series_id 185, 'Season 12' default). No ties/draws recorded; total 108 wins = 108 losses. League points: Puneri Paltan 26, Dabang Delhi K.C. 26, Bengaluru Bulls 22, Telugu Titans 20, Haryana Steelers 20, U Mumba 20, Patna Pirates 16, Jaipur Pink Panthers 16, UP Yoddhas 14, Tamil Thalaivas 12, Gujarat Giants 12, Bengal Warriorz 12. Feed champion_id=2 -> Dabang Delhi K.C. (season champion). This is a domestic franchise league, not India national-team data.",
+   "producer": "kabaddi_pkl_season12_standings"
+  },
+  {
+   "key": "tennis_davis_cup_ties_by_decade",
+   "sport": "Tennis",
+   "title": "India in the Davis Cup - ties won and lost by decade (1921-2026)",
+   "description": "Davis Cup ties won and lost by India per decade, from the ITF Davis Cup nation page data.",
+   "labels": [
+    "1920s",
+    "1930s",
+    "1940s",
+    "1950s",
+    "1960s",
+    "1970s",
+    "1980s",
+    "1990s",
+    "2000s",
+    "2010s",
+    "2020s"
+   ],
+   "datasets": [
+    {
+     "label": "Won",
+     "values": [
+      8,
+      1,
+      0,
+      8,
+      32,
+      17,
+      11,
+      14,
+      17,
+      11,
+      6
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      8,
+      5,
+      2,
+      8,
+      10,
+      9,
+      9,
+      10,
+      9,
+      11,
+      6
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.daviscup.com/en/teams/babe228c-fe49-424a-a7fc-03c6439b019e",
+   "publisher": "ITF / Davis Cup (daviscup.com)",
+   "as_of": "2026-11-01",
+   "notes": "Official headline: 212 ties played, 125 won - 87 lost; first year 1921, years played 89. World Group record 8-16 over 16 years. Latest ties: 2026 Qualifiers Round 1: India 3-2 Netherlands (won); 2026 Qualifiers Round 2: India 1-3 Korea, Rep. (lost). Data: api.itf-production.sports-data.stadion.io/custom/nationPageWcot/babe228c-fe49-424a-a7fc-03c6439b019e/dc (the API behind the official site); decade buckets use the ITF calendarYear of each tie (2020/21 COVID-season ties are dated 2021).",
+   "producer": "tennis_davis_cup_ties_by_decade"
+  },
+  {
+   "key": "tennis_bjk_cup_ties_by_decade",
+   "sport": "Tennis",
+   "title": "India in the Billie Jean King Cup - ties won and lost by decade (1991-2026)",
+   "description": "Billie Jean King Cup (formerly Fed Cup) ties won and lost by India per decade, from the ITF nation page data.",
+   "labels": [
+    "1990s",
+    "2000s",
+    "2010s",
+    "2020s"
+   ],
+   "datasets": [
+    {
+     "label": "Won",
+     "values": [
+      15,
+      21,
+      21,
+      19
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      14,
+      20,
+      16,
+      14
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://www.billiejeankingcup.com/ (India nation page, ITF id babe228c-fe49-424a-a7fc-03c6439b019e)",
+   "publisher": "ITF / Billie Jean King Cup",
+   "as_of": "2026-11-01",
+   "notes": "Official headline: 140 ties played, 76 won - 64 lost; first year 1991, years played 34. Latest ties: 2026 Group I Round Robin: India 3-0 Mongolia (won); 2026 Group I Round Robin: India 2-1 Korea, Rep. (won). Data: api.itf-production.sports-data.stadion.io/custom/nationPageWcot/babe228c-fe49-424a-a7fc-03c6439b019e/bjkc (the API behind the official site); decade buckets use the ITF calendarYear of each tie (2020/21 COVID-season ties are dated 2021).",
+   "producer": "tennis_bjk_cup_ties_by_decade"
+  },
+  {
+   "key": "archery_world_championships_medals",
+   "sport": "Archery",
+   "title": "India at the World Archery Championships (outdoor) - medals by edition",
+   "description": "Gold, silver and bronze medals won by Indian archers at each outdoor World Archery Championships, from World Archery competition medal tables.",
+   "labels": [
+    "2005",
+    "2011",
+    "2015",
+    "2017",
+    "2019",
+    "2021",
+    "2023",
+    "2025"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      1
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      3,
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.worldarchery.sport/v3/MEDALSTABLE/?CompId=<competitionId> (India row of each competition's medal table); competitions from https://api.worldarchery.sport/v3/COMPETITIONS/?Featured=1",
+   "publisher": "World Archery Federation (worldarchery.sport results API)",
+   "as_of": "2026-11-01",
+   "notes": "Totals G4 S10 B3; only editions with an Indian medal are listed; 53 editions checked (1931-2025). Team medals count once, as in the official medal table. Per edition (G-S-B): 2005: Madrid 2005 World Archery Championships 0-1-0 | 2011: Turin 2011 World Archery Championships 0-1-0 | 2015: Copenhagen 2015 World Archery Championships 0-2-0 | 2017: Mexico City 2017 Hyundai World Archery Championships 0-1-0 | 2019: ’s-Hertogenbosch 2019 Hyundai World Archery Championships + OG QT World Ranking Event 0-1-2 | 2021: Yankton 2021 Hyundai World Archery Championships 0-3-0 | 2023: Berlin 2023 Hyundai World Archery Championships 3-0-1 | 2025: Gwangju 2025 Hyundai World Archery Championships 1-1-0",
+   "producer": "archery_world_championships_medals"
+  },
+  {
+   "key": "archery_world_cup_medals_by_year",
+   "sport": "Archery",
+   "title": "India at the Archery World Cup (outdoor stages + Final) - medals by year",
+   "description": "Gold, silver and bronze medals won by Indian archers across outdoor Archery World Cup stages and the World Cup Final each season.",
+   "labels": [
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Gold",
+     "values": [
+      1,
+      2,
+      1,
+      3,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      7,
+      4,
+      7,
+      7,
+      3,
+      5
+     ]
+    },
+    {
+     "label": "Silver",
+     "values": [
+      1,
+      0,
+      1,
+      1,
+      3,
+      8,
+      4,
+      4,
+      5,
+      3,
+      2,
+      0,
+      4,
+      0,
+      0,
+      0,
+      3,
+      2,
+      5,
+      5,
+      1
+     ]
+    },
+    {
+     "label": "Bronze",
+     "values": [
+      0,
+      1,
+      1,
+      4,
+      2,
+      2,
+      0,
+      3,
+      4,
+      3,
+      2,
+      1,
+      6,
+      1,
+      0,
+      1,
+      3,
+      8,
+      3,
+      7,
+      2
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.worldarchery.sport/v3/MEDALSTABLE/?CompId=<competitionId> (India row of each competition's medal table); competitions from https://api.worldarchery.sport/v3/COMPETITIONS/?Featured=1",
+   "publisher": "World Archery Federation (worldarchery.sport results API)",
+   "as_of": "2026-11-01",
+   "notes": "Totals 2006-2026: G50 S52 B54 (of which World Cup Final: G2 S9 B3). Recurve and compound, individual/team/mixed; team medals count once, as in each competition's official medal table. No World Cup stage or Final is listed by World Archery for 2020.",
+   "producer": "archery_world_cup_medals_by_year"
+  }
+ ],
+ "not_available": [
+  {
+   "item": "Wrestling - UWW Senior World Championships before 2025",
+   "reason": "UWW's current results platform only exposes 2025-2026 editions; older-edition APIs require authentication."
+  },
+  {
+   "item": "Shooting - ISSF medal standings before 2022",
+   "reason": "ISSF results site does not publish nation medal standings for earlier competitions."
+  },
+  {
+   "item": "Badminton - BWF World Championships before 1989 (e.g. 1983)",
+   "reason": "Editions before 1989 are not in the official BWF World Championships results selector."
+  },
+  {
+   "item": "Badminton - Thomas/Uber Cup 2008 and 2012, Sudirman Cup 2023 India placings",
+   "reason": "Official podium pages list only top teams (India not shown)."
+  },
+  {
+   "item": "Chess - Chess Olympiad results before 2022",
+   "reason": "Not collected; only 2022 and 2024 crosstables were parsed from chess-results.com."
+  },
+  {
+   "item": "Boxing - Women's Worlds 2001-2006, 2010, 2012; Men's Worlds 2009, 2011, 2013 and earlier",
+   "reason": "iba.sport event pages for these editions have no medallist/medal-standing reports."
+  },
+  {
+   "item": "Boxing - IBA Men's World Championships Dubai 2025",
+   "reason": "Not included; only per-weight bracket PDFs are published, and Indian boxers competed under World Boxing (Liverpool 2025)."
+  },
+  {
+   "item": "Weightlifting - IWF World Championships before 2011; snatch/clean & jerk small medals",
+   "reason": "Earlier editions not located in the IWF results-by-events archive; only Total-ranking medals were counted."
+  },
+  {
+   "item": "Weightlifting - 2026 IWF World Championships (Ningbo) final medals",
+   "reason": "Event was in progress when fetched (7 categories published, no Indian medal yet)."
+  },
+  {
+   "item": "Kabaddi - India's Asian Games and Kabaddi World Cup results (W/L)",
+   "reason": "No official IKF/AKFI/OCA results page with match data was found reachable; only PKL standings were collected."
+  },
+  {
+   "item": "Tennis - ATP/WTA rankings of top Indians",
+   "reason": "Not collected (ATP/WTA sites are not federation/government sources in scope and were not fetched)."
+  }
+ ],
+ "stale": [
+  {
+   "producer": "boxing_womens_world_championships_medals",
+   "error": "RuntimeError: historical PDF source (IBA / World Boxing medal reports); kept from snapshot",
+   "kept_series": [
+    "boxing_womens_world_championships_medals"
+   ]
+  },
+  {
+   "producer": "boxing_mens_world_championships_medals",
+   "error": "RuntimeError: historical PDF source (IBA / World Boxing medal reports); kept from snapshot",
+   "kept_series": [
+    "boxing_mens_world_championships_medals"
+   ]
+  },
+  {
+   "producer": "weightlifting_world_championships_total_medals",
+   "error": "RuntimeError: iwf.sport refuses non-browser clients (https://iwf.sport/results/results-by-events/?event_id=700: HTTP Error 403: Forbidden); kept from snapshot",
+   "kept_series": [
+    "weightlifting_world_championships_total_medals"
+   ]
+  }
+ ]
+}

@@ -11,7 +11,7 @@
 
 This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
 
-With sincere thanks to [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) for the inspiring work that encouraged this visual, thoughtful approach to public information. Every page (static site and web app) has a **With thanks** section with one column for PolityPolicy and one for Indian Matrix, each listing its three latest articles; footers link to it and the status and Django sign-in/error pages carry the same thanks. The Home and About introductions use identical copy on the static site and in the React app.
+The Sources page contains a dedicated acknowledgement of [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix), including their latest public articles. The Home and About introductions use identical copy on the static site and in the React app.
 
 Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Environment & Climate, Agriculture & Food, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
 
@@ -37,7 +37,7 @@ The **Markets Subgroup** under Economic includes rich global comparisons celebra
 - **Interactive Legend Chips**: Interactive legend badges above multi-dataset charts allow hovering to highlight specific datasets and clicking to toggle series visibility.
 - **Canvas Gradient Fills & Smooth Curves**: Smooth Bezier curves (`tension: 0.32`) with custom translucent linear canvas gradients under chart lines.
 
-**Charts are only shown once both a Group and a Subgroup are explicitly selected.** Before that, the chart area shows a prompt instead of every indicator at once. This keeps the view purposeful and, critically, means the From/To date-range dropdowns are always scoped to the exact indices in the selected subgroup rather than the union of every series on the dashboard — so the available dateline changes to match the indices you're actually looking at.
+**All indicators are shown by default**, 24 compact cards at a time with a "Load more" button; choosing a group and subgroup narrows the grid, and the From/To date-range dropdowns are scoped to the indices currently in view.
 
 Indian Matrix is now represented by a weekly publication-cadence graph and a right-side article rail sourced from its public RSS feed. It lives under Economic → Media & Publications, distinct from the Pew Research group.
 
@@ -46,6 +46,12 @@ Pew Research Center India has its own dedicated top-level group (subgroup: Publi
 The About panel's right-side reading rail is populated from Indian Matrix's public RSS feed. The dedicated Inspiration section further down has its own separate reading rail populated from the public Polity and Policy RSS snapshot, so the two attributions are never mixed in the same list. The weekly pipeline refreshes article titles, dates, and URLs for both feeds; the Pages deployment copies those snapshots into the dashboard so the buttons stay linked to the latest available public articles.
 
 An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
+
+**Groups (21).** Economic, Industry Trends & Performance, Mining & Natural Resources, Payments & Digital Banking, State Performance & Regional Health, Public Health & Epidemiology, Social, Environment & Climate, Agriculture & Food, Defence & Strategic, Crime & Security, Pew Research, Elections, U.S. Elections, Tourism & Heritage, **Innovation & Technology** (131 charts in 9 subgroups: patents, designs, R&D, publications, high-tech trade, IP royalties, digital adoption, startups and global benchmarks), **Judiciary & Pending Cases** (Supreme Court, High Courts and Lower Courts), Sports, Cricket, Hockey and Football. The static Explore page mirrors the web app: group tiles, a compact card grid paged 24 at a time, and a full-detail overlay when a card is opened.
+
+**Compare.** Every chart card has a **+ Compare** toggle (up to four series, colour-coded by slot). A floating tray lists the picks, and `compare.html` (static) or `/compare` (web app) overlays them on one chart with an optional rebase-to-100 and a shareable link.
+
+**Opening from disk.** The static pages work from `file://` as well as over http: `export_catalog.mjs` writes `docs/overlays.js` and `docs/compare-data.js` so no `fetch()` is needed. See [docs/PIPELINES.md](docs/PIPELINES.md).
 
 ## 🚀 Open Dashboard
 
@@ -102,8 +108,8 @@ The repository also contains a full web app, alongside the static Netlify site i
   - CSV and JSON downloads.
 - Server-side search and filters by group, subgroup, chart type and sort order.
 - Side-by-side comparison of up to four indicators, with an optional "rebase to 100" view.
-- **Sign in with Google or Microsoft (Outlook) only.** There are no local passwords. Signed-in users can save charts. See [Authentication](docs/AUTHENTICATION.md).
-- **Swagger UI at `/api/docs/`** to try every endpoint, plus ReDoc at `/api/redoc/` and the OpenAPI schema at `/api/schema/`. See the [API guide](docs/API.md).
+- **Account sign-in and saved charts are currently disabled in the web app.** The backend authentication integration is retained for a future release; see [Authentication](docs/AUTHENTICATION.md).
+- **An API overview at `/api`** links to Swagger UI, ReDoc, the OpenAPI schema and public endpoints. See the [API guide](docs/API.md).
 - **A static backup.** Every error page, the offline banner and the footer link to the [Netlify dashboard](https://indiasjourney.netlify.app) and its [GitHub Pages mirror](https://shubhankart101.github.io/India-s-Journey/). An [uptime monitor](.github/workflows/uptime-monitor.yml) checks both copies every 30 minutes and opens and closes `outage` issues. See [Static site and backup](docs/BACKUP.md).
 - The Django admin at `/admin/` (staff only).
 - A mobile layout with a bottom tab bar.
@@ -233,7 +239,7 @@ Data commits pushed by the scheduled workflows trigger a redeploy, which re-impo
 
 ## 🙏 Attribution
 
-Inspired by the public-data storytelling and visual exploration at [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix). This is an independent dashboard using original charts generated from the public sources listed above. Every page of the live dashboard has a **With thanks** section with separate PolityPolicy and Indian Matrix columns.
+Acknowledgements for [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) are consolidated on the Sources page. This is an independent dashboard using original charts generated from the public sources listed above.
 
 ## 🗳️ Elections, public services, and data coverage
 
@@ -242,6 +248,15 @@ The Indian Elections group includes current candidate-level ECI results and a se
 The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), an official-indicator layer of 50 further World Bank series and 29 composition pies, plus a derived layer (`scripts/derived_pie_layer.py`) of 30+ pies built from other dashboard series (insurgency and crime mixes, Pew agree-vs-other splits, regional shares, period totals) (trade mix, revenue mix, employment by sector, age structure, electricity mix, health financing, land use and more), plus specifically cited state snapshots. Additive cards have a Bar/Pie toggle. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
 
 The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. A **Global Tourism Comparison** subgroup (`scripts/tourism_comparison_layer.py`) benchmarks India against the ten most-visited countries (France, Spain, U.S., China, Italy, Turkiye, Mexico, Thailand, Germany, U.K.) plus Japan and the UAE: arrival, receipt and export-share trend lines, share-of-group pies for arrivals, receipts, outbound spending and departures, and 2019 rankings for receipts per arrival, arrivals per 100 residents, receipts as % of GDP and the tourism balance. The World Bank stopped updating these UN Tourism indicators after 2020, so 2019 is the pre-pandemic benchmark. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://indiasjourney.netlify.app/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
+
+Four sports groups (`scripts/build_sports_data.py`, 121 series) use only official sources, never wiki pages.
+
+- **Sports**: Olympic, Paralympic, Asian Games and Commonwealth Games medals, plus athletics, shooting, archery, wrestling, boxing, weightlifting, badminton, tennis, chess and kabaddi.
+- **Cricket**: men's and women's results, ICC tournaments, ICC team and player rankings, and **past-vs-current batting and bowling indices** (Test, ODI and T20I, men and women).
+- **Hockey**: FIH records, rankings, the Pro League, and past-vs-current top scorers and most-capped players.
+- **Football**: FIFA ranking history, the current Asian top 10, men's and women's results by competition and by year, and past-vs-current footballers.
+
+Fetchers in `scripts/sports_fetch/` refresh the official snapshots in `data/sports_sources/` every week through the [Sports Data Update](.github/workflows/sports-data-update.yml) workflow. If a source is down, its last good data is kept. [docs/SPORTS.md](docs/SPORTS.md) lists each publisher, the player-index rules and the known gaps.
 
 The **Industry Trends & Performance** group adds a manufacturing deep-dive (`scripts/manufacturing_layer.py`, 35 series) built from the official MOSPI Index of Industrial Production API (base 2011-12). It covers 23 industry indices (basic metals, fabricated metals, motor vehicles, other transport equipment incl. two-wheelers, food products, beverages, textiles, apparel, chemicals, pharmaceuticals, electronics, machinery, electrical equipment and more), with comparison charts, growth rankings, monthly use-based trends and interactive expanding-vs-contracting pies. The new subgroups are Heavy Industry & Metals, Automobiles & Transport Equipment, Food Processing & Consumer Goods, Chemicals, Pharma & Electronics, and the Industrial Output Monitor. The latest IIP year is provisional. SIAM's public vehicle-production tables stop at 2013-14, so the SIAM production-mix pies are historical and recent vehicle trends come from IIP. Two World Bank pies add the manufacturing value-added mix and the technology-intensity split.
 
@@ -261,7 +276,7 @@ The requested 20,000-word article for every group and subgroup is not claimed as
 
 ## ⚙️ Automation
 
-Each dataset has its own workflow on a source-appropriate schedule: [daily](.github/workflows/daily-politypolicy-update.yml) (articles, FEC, World Bank and public charts), [weekly Substack](.github/workflows/weekly-substack-articles.yml), [weekly Pew](.github/workflows/weekly-pew-research-update.yml), [Monthly Economic Review](.github/workflows/monthly-economic-review-update.yml) (three checks a month), [NCRB](.github/workflows/ncrb-crime-data-update.yml) (monthly check for the annual release), [recent elections](.github/workflows/recent-indian-elections-update.yml) (daily, rebuilds election pies), and [live election results](.github/workflows/election-results-update.yml) (every three hours). See the [pipeline guide](docs/PIPELINES.md) for the full schedule table. Each card displays its actual observation frequency; a more frequent source check does not imply that annual or election-cycle data changes at that interval. The web app is checked by [Web app CI](.github/workflows/webapp-ci.yml) and monitored by the [uptime monitor](.github/workflows/uptime-monitor.yml).
+Each dataset has its own workflow on a source-appropriate schedule: [daily](.github/workflows/daily-politypolicy-update.yml) (articles, FEC, World Bank and public charts), [weekly Substack](.github/workflows/weekly-substack-articles.yml), [weekly Pew](.github/workflows/weekly-pew-research-update.yml), [Monthly Economic Review](.github/workflows/monthly-economic-review-update.yml) (three checks a month), [NCRB](.github/workflows/ncrb-crime-data-update.yml) (monthly check for the annual release), [recent elections](.github/workflows/recent-indian-elections-update.yml) (daily, rebuilds election pies), and [live election results](.github/workflows/election-results-update.yml) (every three hours), and [sports](.github/workflows/sports-data-update.yml) (weekly, official sports fetchers). See the [pipeline guide](docs/PIPELINES.md) for the schedule table and a group-by-group map of which script and workflow refreshes each Explore group. Every data workflow also re-exports `data/catalog.json`, which the Django app imports when it starts. Each card displays its actual observation frequency; a more frequent source check does not imply that annual or election-cycle data changes at that interval. The web app is checked by [Web app CI](.github/workflows/webapp-ci.yml) and monitored by the [uptime monitor](.github/workflows/uptime-monitor.yml).
 
 Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
 
@@ -272,4 +287,3 @@ python -m http.server 8000 --directory docs
 ```
 
 Open `http://localhost:8000` in a browser.
-

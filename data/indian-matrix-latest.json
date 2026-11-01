@@ -1,9 +1,15 @@
 {
-  "generated_at_utc": "2026-10-25T11:22:22+00:00",
+  "generated_at_utc": "2026-11-01T13:30:00+00:00",
   "feed_url": "https://indianmatrix.substack.com/feed",
   "feed_title": "The Indian Matrix\u2019s Substack",
   "article_count": 20,
   "articles": [
+    {
+      "title": "From \u2018Gunda Raj\u2019 to Industrial Engine: How Uttar Pradesh\u2019s Law & Order Turnaround Paved the Way for \u20b912 Lakh Crore+ in Investments",
+      "link": "https://indianmatrix.substack.com/p/from-gunda-raj-to-industrial-engine",
+      "published": "Mon, 26 Oct 2026 12:41:41 GMT",
+      "date": "2026-10-26"
+    },
     {
       "title": "From \u20b9269 a GB to Almost Free",
       "link": "https://indianmatrix.substack.com/p/from-269-a-gb-to-almost-free",
@@ -117,17 +123,10 @@
       "link": "https://indianmatrix.substack.com/p/indias-economic-shield-in-the-west",
       "published": "Tue, 07 Jul 2026 12:45:07 GMT",
       "date": "2026-07-07"
-    },
-    {
-      "title": "India's Cooling Revolution",
-      "link": "https://indianmatrix.substack.com/p/indias-cooling-revolution",
-      "published": "Thu, 02 Jul 2026 13:15:18 GMT",
-      "date": "2026-07-02"
     }
   ],
   "cadence": {
     "labels": [
-      "2026-W27",
       "2026-W28",
       "2026-W29",
       "2026-W31",
@@ -140,10 +139,10 @@
       "2026-W40",
       "2026-W41",
       "2026-W42",
-      "2026-W43"
+      "2026-W43",
+      "2026-W44"
     ],
     "values": [
-      1,
       2,
       1,
       2,
@@ -155,6 +154,7 @@
       1,
       2,
       2,
+      1,
       1,
       1
     ]

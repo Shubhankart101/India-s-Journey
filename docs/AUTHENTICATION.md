@@ -1,15 +1,15 @@
-# Authentication: Google and Microsoft (Outlook) only
+# Authentication integration (temporarily disabled)
 
-The web app has **no local usernames or passwords** for site users. People sign in with a Google account or a Microsoft account (Outlook.com, Hotmail, Live, Microsoft 365 work or school). Accounts are created automatically the first time someone signs in. The only password login is the Django admin at `/admin/`, and it is only for staff created with `createsuperuser`.
+The React app currently exposes no account, sign-in or saved-chart UI. The Django authentication integration and session-backed API remain in place for a future release. The following notes describe that dormant integration for maintainers; the only active password login is the staff-only Django admin at `/admin/`.
 
 | Piece | Where |
 | --- | --- |
 | Provider config | `SOCIALACCOUNT_PROVIDERS` in [`webapp/journey/settings.py`](../webapp/journey/settings.py) |
 | Provider allow-list and adapters | [`webapp/indicators/auth.py`](../webapp/indicators/auth.py) |
-| Sign-in page | [`frontend/src/pages/AuthPage.jsx`](../frontend/src/pages/AuthPage.jsx) |
+| Sign-in UI | Removed from the React app; restore `frontend/src/auth.jsx`, `pages/AuthPage.jsx` and `pages/Saved.jsx` from git history when accounts return |
 | Tests | [`webapp/indicators/tests/test_oauth.py`](../webapp/indicators/tests/test_oauth.py), [`frontend/e2e/auth.spec.js`](../frontend/e2e/auth.spec.js) |
 
-## How sign-in works
+## Sign-in flow when re-enabled
 
 1. `/login` calls `GET /api/auth/providers/`, which returns only the providers that have a client ID configured.
 2. Each provider button is a **POST** form (CSRF-protected) to `/accounts/<provider>/login/`. A plain GET does not start a login (`SOCIALACCOUNT_LOGIN_ON_GET = False`), so other sites cannot trigger one.
@@ -19,9 +19,9 @@ The web app has **no local usernames or passwords** for site users. People sign 
 4. The provider redirects back to `/accounts/<provider>/login/callback/`. allauth creates or updates the user, starts a Django session, and redirects to `next`. `next` must be a same-site path; anything else is ignored.
 5. The React app reads `GET /api/auth/me/`. `POST /api/auth/logout/` ends the session.
 
-Errors on the way back render a page with HTTP 401 and links to try again or to use the backup site. If a provider is not configured, its route redirects to `/login?error=unavailable` rather than returning a 500.
+When the UI is re-enabled, errors on the way back render a page with HTTP 401 and links to try again or to use the backup site. If a provider is not configured, its route redirects to `/login?error=unavailable` rather than returning a 500.
 
-Visiting `/register`, `/accounts/login/` or `/accounts/signup/` redirects to `/login`. Local signup is closed in `AccountAdapter.is_open_for_signup`.
+The `/login`, `/register` and `/saved` React routes are not mounted while account UI is disabled. The legacy `/accounts/login/` and `/accounts/signup/` aliases redirect to the dashboard. Local signup remains closed in `AccountAdapter.is_open_for_signup`.
 
 ### Account linking
 
@@ -64,13 +64,13 @@ Set up the Google OAuth client in the Google Cloud console:
 
 ## Local development
 
-Without credentials, the sign-in page says that sign-in isn't configured yet. Everything else in the app still works. To turn on real Google and Microsoft sign-in locally:
+To turn on real Google and Microsoft sign-in locally after restoring the UI routes:
 
 1. Create the Google OAuth client and the Microsoft app registration as described above, with these redirect URIs (use the port you run Django on):
    - `http://localhost:8000/accounts/google/login/callback/`
    - `http://localhost:8000/accounts/microsoft/login/callback/` (platform **Web**; Microsoft only accepts plain `http` for `localhost`)
 2. Copy [`.env.example`](../.env.example) to `.env` in the repository root and fill in the client IDs and secrets. `.env` is gitignored and excluded from the Docker image. Django reads it on start (`load_env_file` in `settings.py`). Real environment variables take precedence, and `manage.py test` ignores the file. Set `DJANGO_ENV_FILE` to read a different file.
-3. Build the frontend (`cd frontend; npm run build`), start Django (`cd webapp; python manage.py runserver 8000`), and open **http://localhost:8000/login**. Use `localhost`, not `127.0.0.1`, so the callback matches the registered URI. The Vite dev server on 5173 also proxies `/accounts`.
+3. Restore the account routes, build the frontend (`cd frontend; npm run build`), start Django (`cd webapp; python manage.py runserver 8000`), and open **http://localhost:8000/login**. Use `localhost`, not `127.0.0.1`, so the callback matches the registered URI. The Vite dev server on 5173 also proxies `/accounts`.
 
 Check what is configured with `curl http://localhost:8000/api/auth/providers/`. Each provider with credentials is listed.
 

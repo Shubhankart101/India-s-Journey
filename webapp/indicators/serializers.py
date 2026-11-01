@@ -37,7 +37,7 @@ class IndicatorSummarySerializer(serializers.ModelSerializer):
     class Meta:
         model = Indicator
         fields = [
-            'key', 'title', 'subtitle', 'frequency', 'color', 'suffix', 'category', 'category_slug', 'subgroup',
+            'key', 'title', 'subtitle', 'frequency', 'color', 'suffix', 'source_url', 'source', 'category', 'category_slug', 'subgroup',
             'subgroup_slug', 'chart_type', 'index_axis', 'scope', 'is_live', 'point_count', 'first_label',
             'latest_label', 'latest_value', 'preview', 'updated_at',
         ]
@@ -50,7 +50,7 @@ class IndicatorDetailSerializer(IndicatorSummarySerializer):
 
     class Meta(IndicatorSummarySerializer.Meta):
         fields = IndicatorSummarySerializer.Meta.fields[:-2] + [
-            'source_url', 'details', 'labels', 'datasets', 'scope_label', 'note', 'source', 'unit', 'error',
+            'details', 'labels', 'datasets', 'scope_label', 'note', 'unit', 'error',
             'category_art', 'subgroup_art', 'is_saved', 'updated_at',
         ]
 

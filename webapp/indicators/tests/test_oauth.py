@@ -255,8 +255,8 @@ class CallbackTests(OAuthTestCase):
 
 class LocalAccountsDisabledTests(OAuthTestCase):
     def test_allauth_login_and_signup_pages_redirect_to_spa(self):
-        self.assertEqual(self.client.get('/accounts/login/')['Location'], '/login')
-        self.assertEqual(self.client.get('/accounts/signup/?next=/saved')['Location'], '/login?next=/saved')
+        self.assertEqual(self.client.get('/accounts/login/')['Location'], '/')
+        self.assertEqual(self.client.get('/accounts/signup/?next=/saved')['Location'], '/?next=/saved')
 
     def test_password_signup_is_impossible(self):
         self.client.post('/accounts/signup/', {'email': 'x@example.com', 'password1': 'Strong-pass-123', 'password2': 'Strong-pass-123'})

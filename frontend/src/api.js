@@ -78,12 +78,4 @@ export const api = {
   compare: (keys, signal) => request(`/api/compare/${toQuery({ keys: keys.join(',') })}`, { signal }),
   articles: (params, signal) => request(`/api/articles/${toQuery(params)}`, { signal }),
   downloadUrl: (key, format) => `/api/indicators/${encodeURIComponent(key)}/download/?format=${format}`,
-  me: () => request('/api/auth/me/'),
-  csrf: () => request('/api/auth/csrf/'),
-  csrfToken: () => decodeURIComponent(cookie('csrftoken')),
-  providers: signal => request('/api/auth/providers/', { signal }),
-  logout: () => request('/api/auth/logout/', { method: 'POST', body: {} }),
-  saved: () => request('/api/saved/'),
-  save: (key, note = '') => request('/api/saved/', { method: 'POST', body: { key, note } }),
-  unsave: key => request(`/api/saved/${encodeURIComponent(key)}/`, { method: 'DELETE' }),
 };

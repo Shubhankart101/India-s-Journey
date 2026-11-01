@@ -1,0 +1,58 @@
+name: Sports Data Update
+
+# Refreshes the Sports, Cricket, Hockey and Football groups from the governing bodies
+# (ICC/Statsguru, FIH, FIFA/AIFF, BWF, FIDE, ISSF, World Archery, World Athletics, PKL ...).
+# Rankings and player records move weekly; a failed source keeps its last good snapshot.
+on:
+  workflow_dispatch:
+    inputs:
+      fetchers:
+        description: 'Space-separated fetchers to run (cricket hockey football individual); blank = all'
+        required: false
+        default: ''
+  schedule:
+    - cron: '15 4 * * 2'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-public-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Refresh official sports snapshots and rebuild sports charts
+        env:
+          FETCHERS: ${{ github.event.inputs.fetchers }}
+        run: python scripts/refresh_sports_sources.py $FETCHERS
+
+      - name: Validate sports data
+        run: python -m unittest tests.test_sports_data
+
+      - name: Rebuild public catalog
+        run: node scripts/export_catalog.mjs
+
+      - name: Commit sports data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs
+          if git diff --cached --quiet; then
+            echo "No sports data change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh official sports, cricket, hockey and football data"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

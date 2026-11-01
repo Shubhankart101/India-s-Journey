@@ -4,7 +4,7 @@ const USD_PATTERN = /\bUSD\b|US dollars?|international \$/i;
 const DECLARED_UNIT = /thousand|million|lakh|gwh|mt|tonnes|usd\/barrel|usd bn|inr bn|inr cr|sipri tiv|incidents|attacks|deaths|cases|females/i;
 
 export const isUsd = suffix => USD_PATTERN.test(String(suffix || '').trim());
-export const localeFor = suffix => (isUsd(suffix) ? 'en-US' : 'en-IN');
+const localeFor = suffix => (isUsd(suffix) ? 'en-US' : 'en-IN');
 
 export function formatMagnitude(value, suffix = '') {
   if (value === null || value === undefined || value === '' || !Number.isFinite(Number(value))) return '—';

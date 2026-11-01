@@ -11,6 +11,7 @@ API_RESOURCES = (
     "recent-indian-elections.json",
     "us-campaign-finance.json",
     "election-indices.json",
+    "sports.json",
     "economic-survey-monthly.json",
     "ncrb-and-analyses.json",
     "pew-india-reports.json",

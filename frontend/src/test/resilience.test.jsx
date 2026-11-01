@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
@@ -27,11 +27,11 @@ describe('Netlify backup and GitHub Pages mirror', () => {
     expect(screen.getByRole('link', { name: 'GitHub Pages mirror' })).toHaveAttribute('href', BACKUP_MIRROR_URL);
   });
 
-  it('is linked from the footer next to the Swagger docs', async () => {
+  it('links to the API overview from the primary navigation', async () => {
     mockApi(home);
     renderApp('/');
     expect(await screen.findByRole('link', { name: 'Backup site' })).toHaveAttribute('href', BACKUP_URL);
-    expect(screen.getByRole('link', { name: 'API docs' })).toHaveAttribute('href', '/api/docs/');
+    expect(within(screen.getByRole('navigation', { name: 'Primary' })).getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
     expect(screen.getByRole('link', { name: 'Mirror' })).toHaveAttribute('href', BACKUP_MIRROR_URL);
   });
 

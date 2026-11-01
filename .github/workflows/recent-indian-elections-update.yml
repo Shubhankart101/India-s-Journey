@@ -32,11 +32,13 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_recent_indian_elections.py' -v
           python -m unittest discover -s tests -p 'test_election_indices.py' -v
+      - name: Export web-app catalogue
+        run: node scripts/export_catalog.mjs
       - name: Commit refreshed election data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/recent-indian-elections.json docs/data/recent-indian-elections.json data/election-indices.json docs/data/election-indices.json
+          git add data/recent-indian-elections.json docs/data/recent-indian-elections.json data/election-indices.json           docs/data/election-indices.json data/catalog.json docs/compare-data.js
           if git diff --cached --quiet; then
             echo "No recent election data change."
             exit 0

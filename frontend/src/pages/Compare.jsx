@@ -48,6 +48,20 @@ export default function Compare() {
   };
 
   const data = result.data;
+  const [copied, setCopied] = useState(false);
+  const clearAll = () => {
+    setKeys([]);
+    compare.clear();
+  };
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // Clipboard can be blocked (insecure context); the address bar still holds the shareable URL.
+    }
+  };
   const mixedUnits = data ? new Set(data.series.map(item => item.suffix.trim())).size > 1 : false;
   const datasets = useMemo(() => (data?.series || []).map((item, index) => ({
     label: item.title,
@@ -73,6 +87,13 @@ export default function Compare() {
             </li>
           ))}
         </ul>
+        {keys.length > 0 && (
+          <div className="compare-actions">
+            <span className="muted small">{keys.length} of {MAX_COMPARE} selected</span>
+            <button type="button" className="btn btn-ghost" onClick={copyLink}>{copied ? '✓ Link copied' : 'Copy link'}</button>
+            <button type="button" className="btn btn-ghost" onClick={clearAll}>Clear all</button>
+          </div>
+        )}
         {data?.missing?.length > 0 && <p className="form-error">Not found: {data.missing.join(', ')}</p>}
       </section>
 

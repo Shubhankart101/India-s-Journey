@@ -56,7 +56,7 @@ def _truthy(value):
 
 def _summary_queryset():
     return Indicator.objects.select_related('category', 'subgroup').defer(
-        'labels', 'datasets', 'details', 'note', 'source', 'search_text')
+        'labels', 'datasets', 'details', 'note', 'search_text')
 
 
 @extend_schema_view(get=extend_schema(summary='Groups with subgroup counts'))

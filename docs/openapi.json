@@ -88,6 +88,18 @@
         }
       }
     },
+    "/data/sports.json": {
+      "get": {
+        "operationId": "getSportsRecords",
+        "summary": "India's medal tallies and team win/loss records",
+        "responses": {
+          "200": {
+            "description": "Olympic, Paralympic, Asian Games and Commonwealth Games medals by edition and sport, plus cricket, hockey and football results, as series with self-describing meta",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/JsonResource" } } }
+          }
+        }
+      }
+    },
     "/data/economic-survey-monthly.json": {
       "get": {
         "operationId": "getEconomicSurveyIndicators",

@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import { MemoryRouter, useLocation } from 'react-router-dom';
 import { vi } from 'vitest';
 import { AppRoutes } from '../App.jsx';
-import { AuthProvider } from '../auth.jsx';
 import { CompareProvider } from '../compare.jsx';
 
 export const json = (body, status = 200) => ({
@@ -10,11 +9,6 @@ export const json = (body, status = 200) => ({
   status,
   json: async () => body,
 });
-
-export const providers = [
-  { id: 'google', name: 'Google', login_url: '/accounts/google/login/' },
-  { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
-];
 
 // routes: { 'GET /api/stats/': body | (url, init) => body | json(body, status) }
 export function mockApi(routes = {}) {
@@ -24,12 +18,7 @@ export function mockApi(routes = {}) {
     const method = (init.method || 'GET').toUpperCase();
     calls.push({ method, path: url.pathname, search: url.search, params: url.searchParams, init });
     const handler = routes[`${method} ${url.pathname}`] ?? routes[url.pathname];
-    if (handler === undefined) {
-      if (url.pathname === '/api/auth/me/') return json({ authenticated: false, user: null });
-      if (url.pathname === '/api/auth/csrf/') return json({ detail: 'ok' });
-      if (url.pathname === '/api/auth/providers/') return json(providers);
-      return json({ detail: 'Not found.' }, 404);
-    }
+    if (handler === undefined) return json({ detail: 'Not found.' }, 404);
     const result = typeof handler === 'function' ? await handler(url, init) : handler;
     return result && typeof result.json === 'function' && 'status' in result ? result : json(result);
   });
@@ -37,7 +26,7 @@ export function mockApi(routes = {}) {
   return { fetchMock, calls };
 }
 
-export function LocationProbe() {
+function LocationProbe() {
   const location = useLocation();
   return <output data-testid="location">{`${location.pathname}${location.search}`}</output>;
 }
@@ -45,12 +34,10 @@ export function LocationProbe() {
 export function renderApp(path = '/') {
   return render(
     <MemoryRouter initialEntries={[path]}>
-      <AuthProvider>
-        <CompareProvider>
-          <AppRoutes />
-          <LocationProbe />
-        </CompareProvider>
-      </AuthProvider>
+      <CompareProvider>
+        <AppRoutes />
+        <LocationProbe />
+      </CompareProvider>
     </MemoryRouter>,
   );
 }

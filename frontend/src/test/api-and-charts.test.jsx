@@ -3,7 +3,6 @@ import { api, ApiError, request, toQuery } from '../api.js';
 import { Chart as ChartJS } from 'chart.js';
 import { buildChartData, buildOptions, radialPoints } from '../components/ChartView.jsx';
 import { normalise } from '../pages/Compare.jsx';
-import { safeNext } from '../pages/AuthPage.jsx';
 import { json, mockApi } from './helpers.jsx';
 
 describe('api client', () => {
@@ -20,7 +19,7 @@ describe('api client', () => {
       },
       'POST /api/saved/': { key: 'gdp_growth' },
     });
-    await api.save('gdp_growth');
+    await request('/api/saved/', { method: 'POST', body: { key: 'gdp_growth', note: '' } });
     expect(calls.map(call => `${call.method} ${call.path}`)).toEqual(['GET /api/auth/csrf/', 'POST /api/saved/']);
     expect(calls[1].init.headers['X-CSRFToken']).toBe('abc123');
     expect(JSON.parse(calls[1].init.body)).toEqual({ key: 'gdp_growth', note: '' });
@@ -29,19 +28,11 @@ describe('api client', () => {
   it('raises ApiError with the server message', async () => {
     mockApi({ 'POST /api/saved/': json({ detail: 'Authentication credentials were not provided.' }, 403) });
     document.cookie = 'csrftoken=t';
-    await expect(api.save('gdp_growth')).rejects.toMatchObject({ status: 403, message: 'Authentication credentials were not provided.' });
+    await expect(request('/api/saved/', { method: 'POST', body: { key: 'gdp_growth' } })).rejects.toMatchObject({ status: 403, message: 'Authentication credentials were not provided.' });
   });
 
-  it('has no password login or registration methods', () => {
-    expect(api.login).toBeUndefined();
-    expect(api.register).toBeUndefined();
-  });
-
-  it('loads OAuth providers and reads the CSRF cookie', async () => {
-    mockApi();
-    document.cookie = 'csrftoken=a%2Bb';
-    expect((await api.providers()).map(item => item.id)).toEqual(['google', 'microsoft']);
-    expect(api.csrfToken()).toBe('a+b');
+  it('exposes no account methods until sign-in is added', () => {
+    for (const name of ['login', 'register', 'me', 'logout', 'saved', 'save']) expect(api[name]).toBeUndefined();
   });
 
   it('announces when the API is unreachable', async () => {
@@ -122,12 +113,5 @@ describe('page helpers', () => {
   it('rebases series to 100', () => {
     expect(normalise([null, 50, 100, null])).toEqual([null, 100, 200, null]);
     expect(normalise([null, 0])).toEqual([null, null]);
-  });
-
-  it('only allows same-site redirects after sign-in', () => {
-    expect(safeNext('/indicator/x')).toBe('/indicator/x');
-    expect(safeNext('//evil.com')).toBe('/saved');
-    expect(safeNext('https://evil.com')).toBe('/saved');
-    expect(safeNext(null)).toBe('/saved');
   });
 });

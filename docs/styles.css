@@ -548,6 +548,7 @@ h2 { font-size:1.8rem; font-weight:700; }
 .insight summary { color:var(--saffron); cursor:pointer; font:700 .78rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; letter-spacing:0.06em; }
 .insight p { color:var(--muted); font-size:.92rem; line-height:1.65; margin:14px 0 0; }
 .references { border-top:1px solid var(--line); padding:36px 0 44px; }
+.sources-heading { padding-top: 72px; }
 .references details { background:var(--panel); border:1px solid var(--card-border); border-radius:10px; padding:18px 22px; }
 .references summary { color:var(--saffron); cursor:pointer; font:700 .8rem ui-monospace, SFMono-Regular, Consolas, monospace; text-transform:uppercase; letter-spacing:0.06em; }
 .chart-source-index-search { display:grid; gap:8px; margin-top:18px; max-width:620px; color:var(--muted); font-size:.85rem; }

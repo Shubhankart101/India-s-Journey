@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export const prefersReducedMotion = () =>
+const prefersReducedMotion = () =>
   typeof window !== 'undefined' && Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
 
 const canObserve = () => typeof window !== 'undefined' && 'IntersectionObserver' in window && !prefersReducedMotion();
@@ -56,7 +56,7 @@ export function ScrollTopButton() {
   );
 }
 
-const REVEAL_SELECTOR = '.section, .page-hero, .group-tile, .card, .picture-card, .article-list li, .stat-row > div, .marquee';
+const REVEAL_SELECTOR = '.section, .page-hero, .group-tile, .card, .explore-tile, .article-list li, .stat-row > div, .marquee';
 
 /**
  * Fades and lifts content into view as it scrolls in, for every page. Elements are tagged automatically
@@ -75,7 +75,8 @@ export function useAutoReveal() {
         entry.target.classList.add('is-visible');
         io.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    // threshold 0: a ratio threshold can never be met by sections many screens tall (e.g. the source list).
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
     const tag = () => {
       root.querySelectorAll(REVEAL_SELECTOR).forEach((node, index) => {
         if (node.dataset.reveal) return;
@@ -102,7 +103,7 @@ export function usePointerSpotlight() {
   useEffect(() => {
     if (prefersReducedMotion() || !window.matchMedia?.('(hover: hover)').matches) return undefined;
     const onMove = event => {
-      const card = event.target.closest?.('.card, .group-tile, .picture-card, .glass');
+      const card = event.target.closest?.('.card, .group-tile, .explore-tile, .glass');
       if (!card) return;
       const box = card.getBoundingClientRect();
       card.style.setProperty('--mx', `${event.clientX - box.left}px`);

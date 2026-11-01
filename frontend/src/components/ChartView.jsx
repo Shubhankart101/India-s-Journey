@@ -12,7 +12,7 @@ ChartJS.register(
 ChartJS.defaults.color = '#a1a1a6';
 ChartJS.defaults.font.family = '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif';
 
-export const PALETTE = [
+const PALETTE = [
   '#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344', '#39c5bb', '#f778ba', '#a5d6ff', '#d2a8ff',
   '#ffa657', '#7ee787', '#e3b341', '#79c0ff', '#db61a2', '#56d364', '#ff6b6b', '#8b949e', '#d29922', '#a371f7',
 ];

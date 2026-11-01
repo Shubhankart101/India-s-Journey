@@ -1,0 +1,1115 @@
+{
+ "fetched_at_utc": "2026-11-01T13:41:28+00:00",
+ "fetcher": "scripts/sports_fetch/football.py",
+ "series": [
+  {
+   "key": "fifa_rank_history_india_men",
+   "sport": "Football",
+   "title": "India men's FIFA ranking: year-end, best and worst rank",
+   "description": "India men's FIFA World Ranking by year (final, best and worst rank during the year).",
+   "labels": [
+    "1992",
+    "1993",
+    "1994",
+    "1995",
+    "1996",
+    "1997",
+    "1998",
+    "1999",
+    "2000",
+    "2001",
+    "2002",
+    "2003",
+    "2004",
+    "2005",
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Final rank",
+     "values": [
+      143,
+      100,
+      109,
+      121,
+      120,
+      112,
+      110,
+      106,
+      122,
+      121,
+      127,
+      127,
+      132,
+      127,
+      157,
+      143,
+      143,
+      134,
+      142,
+      162,
+      166,
+      154,
+      171,
+      166,
+      135,
+      105,
+      97,
+      108,
+      104,
+      104,
+      106,
+      102,
+      126,
+      142,
+      138
+     ]
+    },
+    {
+     "label": "Best rank",
+     "values": [
+      143,
+      99,
+      101,
+      111,
+      94,
+      109,
+      110,
+      106,
+      106,
+      113,
+      120,
+      122,
+      132,
+      127,
+      117,
+      143,
+      143,
+      134,
+      130,
+      144,
+      154,
+      143,
+      145,
+      141,
+      135,
+      96,
+      96,
+      101,
+      104,
+      104,
+      104,
+      99,
+      117,
+      127,
+      136
+     ]
+    },
+    {
+     "label": "Worst rank",
+     "values": [
+      143,
+      129,
+      113,
+      121,
+      124,
+      121,
+      127,
+      116,
+      122,
+      124,
+      130,
+      133,
+      143,
+      135,
+      157,
+      165,
+      154,
+      156,
+      160,
+      163,
+      169,
+      167,
+      171,
+      173,
+      163,
+      132,
+      102,
+      108,
+      109,
+      107,
+      106,
+      102,
+      127,
+      142,
+      141
+     ]
+    }
+   ],
+   "chart": "line",
+   "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=men",
+   "publisher": "FIFA (inside.fifa.com)",
+   "as_of": "ranking updated 2026-07-20; fetched 2026-11-01",
+   "notes": "Current rank 138 with 1084.93 points (previous rank 138). Lower number is better. 2026 row is year-to-date. Page highlights: Current rank 138th; Highest Ranking 94th; Lowest Rank 173rd; Average Rank 129th",
+   "producer": "fifa_rank_history_india_men"
+  },
+  {
+   "key": "fifa_rank_history_india_women",
+   "sport": "Football",
+   "title": "India women's FIFA ranking: year-end, best and worst rank",
+   "description": "India women's FIFA World Ranking by year (final, best and worst rank during the year).",
+   "labels": [
+    "2003",
+    "2004",
+    "2005",
+    "2006",
+    "2007",
+    "2008",
+    "2009",
+    "2010",
+    "2011",
+    "2012",
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Final rank",
+     "values": [
+      57,
+      58,
+      56,
+      55,
+      56,
+      52,
+      50,
+      56,
+      53,
+      52,
+      49,
+      53,
+      57,
+      54,
+      57,
+      62,
+      57,
+      53,
+      55,
+      61,
+      65,
+      69,
+      67,
+      69
+     ]
+    },
+    {
+     "label": "Best rank",
+     "values": [
+      56,
+      58,
+      56,
+      55,
+      55,
+      52,
+      50,
+      55,
+      53,
+      52,
+      49,
+      50,
+      55,
+      54,
+      56,
+      59,
+      57,
+      53,
+      55,
+      56,
+      60,
+      66,
+      63,
+      69
+     ]
+    },
+    {
+     "label": "Worst rank",
+     "values": [
+      57,
+      58,
+      58,
+      56,
+      57,
+      55,
+      50,
+      56,
+      54,
+      54,
+      51,
+      53,
+      57,
+      58,
+      60,
+      62,
+      63,
+      55,
+      57,
+      61,
+      65,
+      69,
+      70,
+      69
+     ]
+    }
+   ],
+   "chart": "line",
+   "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=women",
+   "publisher": "FIFA (inside.fifa.com)",
+   "as_of": "ranking updated 2026-06-16; fetched 2026-11-01",
+   "notes": "Current rank 69 with 1368.699 points (previous rank 69). Lower number is better. 2026 row is year-to-date. Page highlights: Current rank 69th; Highest Ranking 49th; Lowest Rank 70th; Average Rank 57th",
+   "producer": "fifa_rank_history_india_women"
+  },
+  {
+   "key": "fifa_india_men_results_by_competition",
+   "sport": "Football",
+   "title": "India men: results by competition, 2018-2026 (FIFA-listed matches)",
+   "description": "W/D/L and goals for India men in FIFA-listed matches from 2018 to 2026, grouped by competition/season.",
+   "labels": [
+    "Asian Cup Qualification 2019 UAE",
+    "AFC Asian Cup 2019 UAE",
+    "Preliminary Competition for the 2022 FWC Asian Zone",
+    "Friendlies",
+    "SAFF Championship 2021 Maldives",
+    "Asian Cup Qualification 2023 China PR",
+    "FIFA World Cup 2026 AFC Qualifiers",
+    "AFC Asian Cup 2023 Qatar",
+    "Asian Nations Cup 2027 Prel. Comp."
+   ],
+   "datasets": [
+    {
+     "label": "Played",
+     "values": [
+      1,
+      3,
+      8,
+      24,
+      5,
+      3,
+      6,
+      3,
+      6
+     ]
+    },
+    {
+     "label": "Won",
+     "values": [
+      0,
+      1,
+      1,
+      5,
+      3,
+      3,
+      1,
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Drawn",
+     "values": [
+      0,
+      0,
+      4,
+      7,
+      2,
+      0,
+      2,
+      0,
+      2
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      1,
+      2,
+      3,
+      12,
+      0,
+      0,
+      3,
+      3,
+      3
+     ]
+    },
+    {
+     "label": "Goals for",
+     "values": [
+      1,
+      4,
+      6,
+      26,
+      8,
+      8,
+      3,
+      0,
+      4
+     ]
+    },
+    {
+     "label": "Goals against",
+     "values": [
+      2,
+      4,
+      7,
+      47,
+      2,
+      1,
+      7,
+      6,
+      6
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "59 completed matches returned by the FIFA calendar; regular-time scores. The feed does not list every match India men played, so treat as FIFA-listed matches only. 'Asian Nations Cup 2027 Prel. Comp.' is FIFA's label for the AFC Asian Cup 2027 qualifiers.",
+   "producer": "fifa_india_men_results_by_competition"
+  },
+  {
+   "key": "fifa_india_women_results_by_competition",
+   "sport": "Football",
+   "title": "India women: results by competition, 1997-2026 (FIFA-listed matches)",
+   "description": "W/D/L and goals for India women in FIFA-listed matches from 1997 to 2026, grouped by competition/season.",
+   "labels": [
+    "FIFA WWC 1999 Prel. Comp. AFC",
+    "FIFA WWC 2003 Prel. Comp. AFC",
+    "FIFA WWC 2007 Prel. Comp. AFC",
+    "FIFA WWC 2015 Prel. Comp. AFC",
+    "FIFA WWC 2019 Prel. Comp. AFC",
+    "Friendlies Women 2021",
+    "Torneio Internacional Feminino de Seleções 2021",
+    "Friendlies Women 2022",
+    "Friendlies Women 2023",
+    "Women's Asian Games 2022 China PR",
+    "Friendlies Women 2024",
+    "Friendlies Women 2025",
+    "FIFA Women's World Cup 2027 AFC Qualifiers",
+    "Women's Asian Cup Qualification 2026 Australia",
+    "Hybrid Friendlies Women 2026",
+    "FIFA Series 2026 Kenya",
+    "Friendlies Women 2026"
+   ],
+   "datasets": [
+    {
+     "label": "Played",
+     "values": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      7,
+      3,
+      2,
+      5,
+      2,
+      5,
+      8,
+      7,
+      4,
+      8,
+      2,
+      2
+     ]
+    },
+    {
+     "label": "Won",
+     "values": [
+      2,
+      1,
+      1,
+      0,
+      1,
+      3,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      4,
+      4,
+      5,
+      1,
+      0
+     ]
+    },
+    {
+     "label": "Drawn",
+     "values": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      4,
+      3,
+      0,
+      2,
+      2,
+      2,
+      6,
+      3,
+      0,
+      2,
+      1,
+      2
+     ]
+    },
+    {
+     "label": "Goals for",
+     "values": [
+      13,
+      7,
+      13,
+      2,
+      3,
+      11,
+      2,
+      2,
+      5,
+      1,
+      16,
+      14,
+      26,
+      24,
+      17,
+      3,
+      0
+     ]
+    },
+    {
+     "label": "Goals against",
+     "values": [
+      1,
+      14,
+      5,
+      5,
+      25,
+      7,
+      11,
+      0,
+      7,
+      3,
+      6,
+      12,
+      17,
+      1,
+      6,
+      4,
+      12
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=1885024&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "71 completed matches returned by the FIFA calendar; regular-time scores. The feed does not list every match India women played, so treat as FIFA-listed matches only.",
+   "producer": "fifa_india_women_results_by_competition"
+  },
+  {
+   "key": "fifa_india_men_results_by_year",
+   "sport": "Football",
+   "title": "India men: results by year, 1993-2026 (FIFA-listed matches)",
+   "description": "Matches played, won, drawn and lost, with goals for and against, for India men in each calendar year FIFA lists matches.",
+   "labels": [
+    "1993",
+    "1996",
+    "2001",
+    "2004",
+    "2007",
+    "2011",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Played",
+     "values": [
+      8,
+      3,
+      6,
+      6,
+      2,
+      2,
+      8,
+      4,
+      5,
+      1,
+      8,
+      12,
+      8,
+      5,
+      9,
+      8,
+      8
+     ]
+    },
+    {
+     "label": "Won",
+     "values": [
+      1,
+      1,
+      3,
+      1,
+      0,
+      0,
+      2,
+      2,
+      4,
+      0,
+      1,
+      5,
+      3,
+      3,
+      0,
+      2,
+      1
+     ]
+    },
+    {
+     "label": "Drawn",
+     "values": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      3,
+      5,
+      1,
+      0,
+      4,
+      2,
+      2
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      6,
+      1,
+      1,
+      4,
+      1,
+      1,
+      5,
+      2,
+      0,
+      1,
+      4,
+      2,
+      4,
+      2,
+      5,
+      4,
+      5
+     ]
+    },
+    {
+     "label": "Goals for",
+     "values": [
+      8,
+      3,
+      11,
+      2,
+      3,
+      2,
+      6,
+      8,
+      10,
+      1,
+      7,
+      15,
+      10,
+      6,
+      4,
+      11,
+      6
+     ]
+    },
+    {
+     "label": "Goals against",
+     "values": [
+      22,
+      7,
+      5,
+      18,
+      6,
+      5,
+      12,
+      7,
+      3,
+      2,
+      9,
+      13,
+      12,
+      7,
+      12,
+      8,
+      19
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "103 completed matches in 17 calendar years; years with no FIFA-listed match are omitted. Regular-time scores. FIFA's feed does not list every match, so early years are incomplete.",
+   "producer": "fifa_india_men_results_by_year"
+  },
+  {
+   "key": "fifa_india_women_results_by_year",
+   "sport": "Football",
+   "title": "India women: results by year, 1997-2026 (FIFA-listed matches)",
+   "description": "Matches played, won, drawn and lost, with goals for and against, for India women in each calendar year FIFA lists matches.",
+   "labels": [
+    "1997",
+    "2003",
+    "2005",
+    "2013",
+    "2017",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+   ],
+   "datasets": [
+    {
+     "label": "Played",
+     "values": [
+      3,
+      3,
+      3,
+      3,
+      4,
+      10,
+      2,
+      7,
+      5,
+      16,
+      15
+     ]
+    },
+    {
+     "label": "Won",
+     "values": [
+      2,
+      1,
+      1,
+      0,
+      1,
+      3,
+      2,
+      0,
+      1,
+      10,
+      6
+     ]
+    },
+    {
+     "label": "Drawn",
+     "values": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      3,
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "label": "Lost",
+     "values": [
+      1,
+      2,
+      2,
+      2,
+      3,
+      7,
+      0,
+      4,
+      2,
+      6,
+      8
+     ]
+    },
+    {
+     "label": "Goals for",
+     "values": [
+      13,
+      7,
+      13,
+      2,
+      3,
+      13,
+      2,
+      6,
+      16,
+      62,
+      22
+     ]
+    },
+    {
+     "label": "Goals against",
+     "values": [
+      1,
+      14,
+      5,
+      5,
+      25,
+      18,
+      0,
+      10,
+      6,
+      14,
+      38
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=1885024&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "71 completed matches in 11 calendar years; years with no FIFA-listed match are omitted. Regular-time scores. FIFA's feed does not list every match, so early years are incomplete.",
+   "producer": "fifa_india_women_results_by_year"
+  },
+  {
+   "key": "fifa_current_rank_asia_top10_men",
+   "sport": "Football",
+   "title": "FIFA men's ranking: top 10 Asian teams and India (2025-09-18 update)",
+   "description": "Ranking points of the ten highest-ranked AFC men's teams and India in the FIFA World Ranking, with each team's world rank.",
+   "labels": [
+    "Japan",
+    "IR Iran",
+    "Korea Republic",
+    "Australia",
+    "Qatar",
+    "Uzbekistan",
+    "Iraq",
+    "Saudi Arabia",
+    "Jordan",
+    "United Arab Emirates",
+    "India"
+   ],
+   "datasets": [
+    {
+     "label": "Ranking points",
+     "values": [
+      1640.47,
+      1622.61,
+      1593.19,
+      1583.49,
+      1453.65,
+      1453.31,
+      1422.2,
+      1420.65,
+      1391.33,
+      1379.86,
+      1113.8
+     ]
+    },
+    {
+     "label": "World rank",
+     "values": [
+      19,
+      21,
+      23,
+      25,
+      53,
+      54,
+      58,
+      59,
+      62,
+      67,
+      134
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=men",
+   "publisher": "FIFA (inside.fifa.com ranking-overview)",
+   "as_of": "ranking update of 2025-09-18; fetched 2026-11-01",
+   "notes": "AFC members only, ordered by FIFA rank; India is 134 in the world and 24 of 46 ranked AFC teams. This is the latest full table FIFA's ranking-overview feed serves (id id14870, listed 2025-09-18); newer updates return an empty table.",
+   "producer": "fifa_current_rank_asia_top10_men"
+  },
+  {
+   "key": "fifa_current_rank_asia_top10_women",
+   "sport": "Football",
+   "title": "FIFA women's ranking: top 10 Asian teams and India (2025-08-07 update)",
+   "description": "Ranking points of the ten highest-ranked AFC women's teams and India in the FIFA World Ranking, with each team's world rank.",
+   "labels": [
+    "Japan",
+    "Korea DPR",
+    "Australia",
+    "China PR",
+    "Korea Republic",
+    "Vietnam",
+    "Philippines",
+    "Chinese Taipei",
+    "Uzbekistan",
+    "Thailand",
+    "India"
+   ],
+   "datasets": [
+    {
+     "label": "Ranking points",
+     "values": [
+      1971.05,
+      1944.22,
+      1835.34,
+      1807.34,
+      1778.85,
+      1616.52,
+      1549.47,
+      1539.63,
+      1487.67,
+      1481.12,
+      1408.29
+     ]
+    },
+    {
+     "label": "World rank",
+     "values": [
+      8,
+      10,
+      15,
+      16,
+      21,
+      37,
+      39,
+      42,
+      52,
+      53,
+      63
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=women",
+   "publisher": "FIFA (inside.fifa.com ranking-overview)",
+   "as_of": "ranking update of 2025-08-07; fetched 2026-11-01",
+   "notes": "AFC members only, ordered by FIFA rank; India is 63 in the world and 12 of 40 ranked AFC teams. This is the latest full table FIFA's ranking-overview feed serves (id ranking_20250807, listed 2025-08-07); newer updates return an empty table.",
+   "producer": "fifa_current_rank_asia_top10_women"
+  },
+  {
+   "key": "football_players_men_top_scorers",
+   "sport": "Football",
+   "title": "India men: top scorers, past and current players (FIFA match records since 1993)",
+   "description": "The ten India men players with the most goals in international matches FIFA has line-up records for since 1993, marked as past or current players.",
+   "labels": [
+    "Sunil Chetri (current)",
+    "Jeje Lalpekhlua (past)",
+    "Manvir Singh (current)",
+    "Jo Ancheri (past)",
+    "Sandesh Jhingan (current)",
+    "Anirudh Thapa (current)",
+    "Rahul Bheke (current)",
+    "Sathyan Vatta Barambath (past)",
+    "Sahal Abdul Samad (current)",
+    "Baichung Bhutia (past)"
+   ],
+   "datasets": [
+    {
+     "label": "Goals",
+     "values": [
+      29,
+      9,
+      4,
+      4,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2
+     ]
+    },
+    {
+     "label": "Appearances",
+     "values": [
+      59,
+      21,
+      35,
+      7,
+      46,
+      32,
+      29,
+      7,
+      23,
+      13
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z + https://api.fifa.com/api/v3/live/football/{idCompetition}/{idSeason}/{idStage}/{idMatch}?language=en",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-01); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
+   "producer": "football_players_men_top_scorers"
+  },
+  {
+   "key": "football_players_men_most_appearances",
+   "sport": "Football",
+   "title": "India men: most appearances, past and current players (FIFA match records since 1993)",
+   "description": "The ten India men players with the most appearances in international matches FIFA has line-up records for since 1993, marked as past or current players.",
+   "labels": [
+    "Sunil Chetri (current)",
+    "Gurpreet Singh (current)",
+    "Sandesh Jhingan (current)",
+    "Manvir Singh (current)",
+    "Anirudh Thapa (current)",
+    "Udanta Singh (past)",
+    "Rahul Bheke (current)",
+    "Pritam Kotal (past)",
+    "Akash Mishra (current)",
+    "Suresh Wangjam (current)"
+   ],
+   "datasets": [
+    {
+     "label": "Appearances",
+     "values": [
+      59,
+      59,
+      46,
+      35,
+      32,
+      30,
+      29,
+      27,
+      26,
+      25
+     ]
+    },
+    {
+     "label": "Goals",
+     "values": [
+      29,
+      0,
+      3,
+      4,
+      3,
+      0,
+      3,
+      0,
+      0,
+      1
+     ]
+    }
+   ],
+   "chart": "bar",
+   "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z + https://api.fifa.com/api/v3/live/football/{idCompetition}/{idSeason}/{idStage}/{idMatch}?language=en",
+   "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
+   "as_of": "fetched 2026-11-01",
+   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-01); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
+   "producer": "football_players_men_most_appearances"
+  }
+ ],
+ "not_available": [
+  {
+   "item": "AIFF (the-aiff.com) / AFC match records",
+   "reason": "No structured results API located; FIFA API used instead."
+  },
+  {
+   "item": "Official all-time international caps and goals for India players (AIFF / FIFA)",
+   "reason": "Neither AIFF nor FIFA publishes a career caps-and-goals table. Player series are totals counted from FIFA's per-match line-ups and goal events, which only cover the matches FIFA lists, so they are lower than career records for players who also played before that coverage began."
+  },
+  {
+   "item": "India women's player goals and appearances (past vs current)",
+   "reason": "FIFA publishes line-ups for only a handful of India women's matches (9 of 71 listed), so any player ranking would misrepresent careers; it is not charted."
+  },
+  {
+   "item": "Current FIFA ranking table (latest update)",
+   "reason": "The ranking-overview endpoint returns an empty table for the newest update ids, so the Asia comparison uses the latest update FIFA still serves in full."
+  }
+ ],
+ "stale": []
+}

@@ -51,6 +51,8 @@ class PublicApiTests(ApiTestCase):
         self.assertIsNotNone(data['next'])
         first = data['results'][0]
         self.assertEqual(first['key'], 'gdp_growth')
+        self.assertIn('source_url', first)
+        self.assertEqual(first['source'], 'World Bank')
         self.assertNotIn('labels', first)
         self.assertNotIn('datasets', first)
         self.assertLessEqual(len(first['preview']['labels']), 40)

@@ -1,0 +1,653 @@
+{
+  "checks": [
+    {
+      "item": "Olympics 1900",
+      "held": "0/2/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1928",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1932",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1936",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1948",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1952",
+      "held": "1/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1956",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1960",
+      "held": "0/1/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1964",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1968",
+      "held": "0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1972",
+      "held": "0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1980",
+      "held": "1/0/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 1996",
+      "held": "0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2000",
+      "held": "0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2004",
+      "held": "0/1/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2008",
+      "held": "1/0/2",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2012",
+      "held": "0/2/4",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2016",
+      "held": "0/1/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated this exact India edition tally. IOC olympics.com and www.olympics.com result/archive URLs timed out; PIB search surfaced no edition-specific exact color breakdown."
+    },
+    {
+      "item": "Olympics 2020",
+      "held": "1/2/4",
+      "official": "1/2/4",
+      "status": "confirmed",
+      "url": "https://www.olympics.com/en/news/tokyo-2020-medals-for-mirabai-and-lovlina-india-equals-rio-2016-tally",
+      "publisher": "IOC / Olympics.com",
+      "notes": "Official Olympics.com India Tokyo 2020 recap states 1 gold, 2 silver and 4 bronze; the page timed out in fetch but appears in Olympics.com search index."
+    },
+    {
+      "item": "Olympics 2024",
+      "held": "0/1/5",
+      "official": "0/1/5",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2045963",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB states six medals: one silver and five bronze at Paris 2024."
+    },
+    {
+      "item": "Olympics all editions total",
+      "held": "10/10/21",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/news/india-olympics-medals",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source accessible here stated the complete all-time G/S/B total as a single figure; medal archive and India overview attempts timed out."
+    },
+    {
+      "item": "Olympics medals by sport",
+      "held": "Hockey 8/1/4; Shooting 1/2/4; Athletics 1/3/0; Wrestling 0/2/6; Badminton 0/1/2; Boxing 0/0/3; Weightlifting 0/1/1; Tennis 0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.olympics.com/en/olympic-games/olympic-results",
+      "publisher": "IOC / Olympics.com",
+      "notes": "No official source found aggregating India?s all-edition medal totals by sport; the accessible official sources are event/edition results. Olympics.com archive requests timed out."
+    },
+    {
+      "item": "Paralympics 1972",
+      "held": "1/0/0",
+      "official": "1/0/0",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/heidelberg-1972/results/medalstandings",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC official standings/search record identifies India?s one gold and no silver/bronze; IPC feature identifies Petkar?s Heidelberg 1972 gold."
+    },
+    {
+      "item": "Paralympics 1984",
+      "held": "0/2/2",
+      "official": "0/2/2",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/stoke-mandeville-new-york-1984/results/medalstandings",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC official 1984 medal-standings archive; exact India row is indexed as 0 gold, 2 silver, 2 bronze."
+    },
+    {
+      "item": "Paralympics 2004",
+      "held": "1/0/1",
+      "official": "1/0/1",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/athens-2004/results/medalstandings",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC official Athens 2004 results archive; India indexed at 1 gold, 0 silver, 1 bronze."
+    },
+    {
+      "item": "Paralympics 2012",
+      "held": "0/1/0",
+      "official": "0/1/0",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/india",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC India profile lists London 2012 medals 0 gold, 1 silver, 0 bronze."
+    },
+    {
+      "item": "Paralympics 2016",
+      "held": "2/1/1",
+      "official": "2/1/1",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/india",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC India profile lists Rio 2016 medals 2 gold, 1 silver, 1 bronze."
+    },
+    {
+      "item": "Paralympics 2020",
+      "held": "5/8/6",
+      "official": "5/8/6",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/tokyo-2020/results/medaltable",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC official Tokyo 2020 medal standings; IPC India profile also lists 5/8/6."
+    },
+    {
+      "item": "Paralympics 2024",
+      "held": "7/9/13",
+      "official": "7/9/13",
+      "status": "confirmed",
+      "url": "https://www.paralympic.org/paris-2024-paralympic-games/results/medalstandings",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC official Paris 2024 medal table lists India 7/9/13 (29 total); IPC India profile agrees."
+    },
+    {
+      "item": "Paralympics all editions total",
+      "held": "16/21/23",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.paralympic.org/india",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC India profile gives recent edition rows, not a cumulative all-time G/S/B total. A sum of edition records was not represented as a direct official source value."
+    },
+    {
+      "item": "Paralympics medals by sport",
+      "held": "Athletics 8/15/12; Badminton 3/3/3; Shooting 3/2/4; Archery 1/0/2; Swimming 1/0/0; Table tennis 0/1/0; Powerlifting 0/0/1; Judo 0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://www.paralympic.org/feature/indian-medallists-watch-new-delhi-2025",
+      "publisher": "International Paralympic Committee",
+      "notes": "IPC states India has eight Paralympic athletics golds, and Paris 2024 athletics alone was 4/6/7 (17 medals); its public article does not state the all-edition sport-wise silver/bronze totals. The alternative Athletics 8/16/13 was not verified and, with the other supplied sport rows unchanged, makes sport sums 16/22/24 rather than the stated overall 16/21/23. Thus 8/15/12 is plausible but not officially confirmed as a complete group."
+    },
+    {
+      "item": "Asian Games 1951",
+      "held": "15/16/20",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1954",
+      "held": "5/4/8",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1958",
+      "held": "5/4/4",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1962",
+      "held": "10/13/10",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1966",
+      "held": "7/3/11",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1970",
+      "held": "6/9/10",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1974",
+      "held": "4/12/12",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1978",
+      "held": "11/11/6",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1982",
+      "held": "13/19/25",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1986",
+      "held": "5/9/23",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1990",
+      "held": "1/8/14",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1994",
+      "held": "4/3/16",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 1998",
+      "held": "7/11/17",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 2002",
+      "held": "11/12/13",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 2006",
+      "held": "10/17/26",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 2010",
+      "held": "14/17/34",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://ocasia.org",
+      "publisher": "Olympic Council of Asia / PIB",
+      "notes": "No edition-specific exact official tally located. OCA ocasia.org and www.ocasia.org did not resolve from this machine/web fetch; PIB historical coverage available here did not state this edition?s complete G/S/B figure."
+    },
+    {
+      "item": "Asian Games 2014",
+      "held": "11/9/37",
+      "official": "11/9/37",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressNoteDetails.aspx?NoteId=159339&ModuleId=3&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB 2026 backgrounder historical medal table gives Incheon 2014 as 57 medals, 11/9/37."
+    },
+    {
+      "item": "Asian Games 2018",
+      "held": "16/23/31",
+      "official": "15/24/30",
+      "status": "differs",
+      "url": "https://pib.gov.in/PressNoteDetails.aspx?NoteId=159339&ModuleId=3&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB 2026 backgrounder historical medal table gives Jakarta 2018 as 69 medals, 15/24/30; differs from held 16/23/31. A 2023 PIB backgrounder elsewhere uses 70 and 16 gold, so there is an official-source inconsistency; latest PIB table was used here."
+    },
+    {
+      "item": "Asian Games 2022 (held 2023)",
+      "held": "28/38/40",
+      "official": "28/38/41",
+      "status": "differs",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1988258",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB year-end review explicitly reports 107 medals: 28 gold, 38 silver, 41 bronze. Held bronze value is one too low; Games were branded Hangzhou 2022 but held in 2023."
+    },
+    {
+      "item": "Asian Games 2026",
+      "held": "21/27/37",
+      "official": "21/27/37",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/FactsheetDetails.aspx?id=151080&NoteId=151080&ModuleId=16",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB Aichi-Nagoya factsheet explicitly gives total 21/27/37 (85) in the India medal tally table."
+    },
+    {
+      "item": "Commonwealth Games 1934",
+      "held": "0/0/1",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1958",
+      "held": "2/1/0",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1966",
+      "held": "3/4/3",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1970",
+      "held": "5/3/4",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1974",
+      "held": "4/8/3",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1978",
+      "held": "5/5/5",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1982",
+      "held": "5/8/3",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1990",
+      "held": "13/8/11",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1994",
+      "held": "6/11/7",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 1998",
+      "held": "7/10/8",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 2002",
+      "held": "30/22/17",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 2006",
+      "held": "22/17/11",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 2010",
+      "held": "38/27/36",
+      "official": null,
+      "status": "unverifiable",
+      "url": "https://thecgf.com/results",
+      "publisher": "Commonwealth Games Federation / PIB",
+      "notes": "No exact official edition tally found for this edition. thecgf.com and thecgf.com/results connection attempts failed; PIB sources consulted do not provide this older edition?s full tally."
+    },
+    {
+      "item": "Commonwealth Games 2014",
+      "held": "15/30/19",
+      "official": "15/30/19",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressNoteDetails.aspx?NoteId=159339&ModuleId=3&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB 2026 backgrounder historical table gives Glasgow 2014 as 64 medals, 15/30/19."
+    },
+    {
+      "item": "Commonwealth Games 2018",
+      "held": "26/20/20",
+      "official": "26/20/20",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressNoteDetails.aspx?NoteId=159339&ModuleId=3&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB 2026 backgrounder historical table gives Gold Coast 2018 as 66 medals, 26/20/20."
+    },
+    {
+      "item": "Commonwealth Games 2022",
+      "held": "21/16/23",
+      "official": "22/16/23",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1851485",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB says India bagged 22 gold, 16 silver and 23 bronze at Birmingham."
+    },
+    {
+      "item": "Commonwealth Games 2026",
+      "held": "13/17/9",
+      "official": "13/17/9",
+      "status": "confirmed",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2293849&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)",
+      "notes": "PIB 2026 Games backgrounder says India finished fourth with 39 medals: 13 gold, 17 silver, nine bronze."
+    }
+  ],
+  "official_pages": [
+    {
+      "event": "Olympics",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2045963",
+      "publisher": "Press Information Bureau (Government of India)"
+    },
+    {
+      "event": "Olympics",
+      "url": "https://www.olympics.com/en/news/tokyo-2020-medals-for-mirabai-and-lovlina-india-equals-rio-2016-tally",
+      "publisher": "IOC / Olympics.com"
+    },
+    {
+      "event": "Paralympics",
+      "url": "https://www.paralympic.org/india",
+      "publisher": "International Paralympic Committee"
+    },
+    {
+      "event": "Asian Games",
+      "url": "https://pib.gov.in/FactsheetDetails.aspx?id=151080&NoteId=151080&ModuleId=16",
+      "publisher": "Press Information Bureau (Government of India)"
+    },
+    {
+      "event": "Asian Games",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1988258",
+      "publisher": "Press Information Bureau (Government of India)"
+    },
+    {
+      "event": "Commonwealth Games",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2293849&reg=3&lang=1",
+      "publisher": "Press Information Bureau (Government of India)"
+    },
+    {
+      "event": "Commonwealth Games",
+      "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1851485",
+      "publisher": "Press Information Bureau (Government of India)"
+    }
+  ]
+}

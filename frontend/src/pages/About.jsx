@@ -4,6 +4,7 @@ import { formatDate } from '../format.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
+import { AMBIENT_ART } from '../art.js';
 
 const KINDS = [
   ['', 'All publishers'],
@@ -37,7 +38,7 @@ export default function About() {
   return (
     <>
       <section className="page-hero with-art">
-        <ArtBackdrop art="heritage-sites.svg" />
+        <ArtBackdrop art={AMBIENT_ART} />
         <p className="eyebrow">About the atlas</p>
         <h1>Understand the data, <span className="gradient-text">not just the line.</span></h1>
         {stats.data && (
@@ -76,8 +77,8 @@ export default function About() {
       <section className="section two-col">
         <div>
           <h2>Using the data</h2>
-          <p>Every indicator has its own page with a CSV and JSON download. The same data is available from the <a href="/api/">JSON API</a>.</p>
-          <p>Create an account to save charts. Compare works without an account.</p>
+          <p>Every indicator has its own page with a CSV and JSON download. The same data is available from the <a href="/api">API explorer</a>.</p>
+          <p>Compare indicators side by side without an account.</p>
         </div>
       </section>
 

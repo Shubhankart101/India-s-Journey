@@ -1,4 +1,4 @@
-import { screen, waitFor, within } from '@testing-library/react';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 import { categories, detail, json, mockApi, page, renderApp, summary } from './helpers.jsx';
@@ -18,23 +18,16 @@ describe('Layout and Home', () => {
     expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
-  it('shows the intro shared with the static site and a with-thanks section for both publishers', async () => {
-    const { calls } = mockApi({
+  it('shows the intro shared with the static site without repeating the Sources acknowledgement', async () => {
+    mockApi({
       '/api/stats/': stats,
       '/api/categories/': categories,
-      '/api/articles/': url => page([{ title: `${url.searchParams.get('kind') || 'all'} latest`, url: `https://example.com/${url.searchParams.get('kind')}`, published: '', published_at: null, publisher: 'X', kind: url.searchParams.get('kind') }]),
+      '/api/articles/': articles,
     });
     renderApp('/');
     expect(screen.getByRole('heading', { level: 1, name: 'India, in perspective.' })).toBeInTheDocument();
     expect(screen.getByText(/A thousand signals\. One changing nation\./)).toBeInTheDocument();
-    const thanks = screen.getByRole('region', { name: 'The writing that inspired this atlas' });
-    const polity = within(thanks).getByRole('article', { name: 'PolityPolicy' });
-    const matrix = within(thanks).getByRole('article', { name: 'Indian Matrix' });
-    expect(await within(polity).findByRole('link', { name: 'polity_policy latest' })).toHaveAttribute('target', '_blank');
-    expect(await within(matrix).findByRole('link', { name: 'indian_matrix latest' })).toBeInTheDocument();
-    expect(within(polity).getByRole('link', { name: "Tushar Gupta's Polity and Policy Substack" })).toHaveAttribute('href', 'https://politypolicy.substack.com/');
-    expect(calls.some(call => call.params.get('kind') === 'polity_policy' && call.params.get('page_size') === '3')).toBe(true);
-    expect(calls.some(call => call.params.get('kind') === 'indian_matrix' && call.params.get('page_size') === '3')).toBe(true);
+    expect(screen.queryByRole('region', { name: 'The writing that inspired this atlas' })).not.toBeInTheDocument();
   });
 
   it('cycles the hero backdrop through group scenes with selectable dots', async () => {
@@ -62,16 +55,18 @@ describe('Layout and Home', () => {
       '/api/articles/': articles,
       '/api/indicators/': url => page(url.searchParams.get('category') === 'elections'
         ? [elections]
-        : [summary(), summary({ key: 'seat_pie', chart_type: 'doughnut' }), summary({ key: 'gdp_level', title: 'GDP level', suffix: ' USD', preview: { labels: ['2022', '2023', '2024'], datasets: [{ label: 'GDP', values: [3e12, 3.5e12, 3.85e12] }] } })]),
+        : [summary({ source: 'World Bank', source_url: 'https://data.worldbank.org/' }), summary({ key: 'seat_pie', chart_type: 'doughnut' }), summary({ key: 'gdp_level', title: 'GDP level', suffix: ' USD', preview: { labels: ['2022', '2023', '2024'], datasets: [{ label: 'GDP', values: [3e12, 3.5e12, 3.85e12] }] } })]),
     });
     renderApp('/');
     const strip = await screen.findByRole('list', { name: 'Headline Economic indicators' });
     const links = within(strip).getAllByRole('link');
-    expect(links.map(link => link.getAttribute('href'))).toEqual(['/indicator/gdp_growth', '/indicator/gdp_level']);
-    expect(links[0]).toHaveTextContent('6.5 %');
-    expect(links[0]).toHaveTextContent('▼ −1.7 pp');
-    expect(links[1]).toHaveTextContent('3.85 trillion USD');
-    expect(links[1]).toHaveTextContent('▲ +10.0%');
+    const chartLinks = links.filter(link => link.classList.contains('mini-index-main'));
+    expect(chartLinks.map(link => link.getAttribute('href'))).toEqual(['/indicator/gdp_growth', '/indicator/gdp_level']);
+    expect(chartLinks[0]).toHaveTextContent('6.5 %');
+    expect(chartLinks[0]).toHaveTextContent('▼ −1.7 pp');
+    expect(chartLinks[1]).toHaveTextContent('3.85 trillion USD');
+    expect(chartLinks[1]).toHaveTextContent('▲ +10.0%');
+    expect(within(strip).getByRole('link', { name: 'data.worldbank.org · Source ↗' })).toHaveAttribute('href', 'https://data.worldbank.org/');
     expect(strip.querySelectorAll('svg.mini-spark polyline')).toHaveLength(2);
     expect(calls.some(call => call.path === '/api/indicators/' && call.params.get('live') === 'true')).toBe(true);
     await userEvent.click(screen.getByRole('button', { name: 'Show Elections scene' }));
@@ -101,9 +96,24 @@ describe('Layout and Home', () => {
     const primary = screen.getByRole('navigation', { name: 'Primary' });
     const mobile = screen.getByRole('navigation', { name: 'Mobile' });
     for (const nav of [primary, mobile]) {
-      expect(within(nav).getAllByRole('link')).toHaveLength(5);
+      expect(within(nav).getAllByRole('link')).toHaveLength(6);
     }
-    expect(screen.getByRole('link', { name: 'Sign in' })).toHaveAttribute('href', '/login');
+    expect(within(primary).getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
+    expect(screen.queryByRole('link', { name: 'Sign in' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Saved' })).not.toBeInTheDocument();
+  });
+
+  it('shows Django and static API resources without the general site chrome', async () => {
+    mockApi();
+    renderApp('/api');
+    expect(await screen.findByRole('heading', { name: 'API & endpoint explorer' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Open Swagger UI' })).toHaveAttribute('href', '/api/docs/');
+    expect(screen.getByRole('link', { name: 'Open static JSON API explorer' })).toHaveAttribute(
+      'href',
+      'https://indiasjourney.netlify.app/api.html',
+    );
+    expect(screen.queryByRole('navigation', { name: 'Primary' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('contentinfo')).not.toBeInTheDocument();
   });
 
   it('shows a retry button when the API fails', async () => {
@@ -142,6 +152,68 @@ describe('Layout and Home', () => {
   });
 });
 
+describe('Sources', () => {
+  it('shows a standalone searchable source directory without the Explore page', async () => {
+    const indicators = [
+      summary({
+        key: 'gdp_growth',
+        title: 'Real GDP growth',
+        source_url: 'https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG',
+      }),
+      summary({
+        key: 'cpi',
+        title: 'CPI inflation',
+        source_url: 'https://www.mospi.gov.in/',
+      }),
+      summary({
+        key: 'wb_lending_rate',
+        title: 'Bank lending interest rate',
+        source_url: 'World Bank API FR.INR.LEND',
+      }),
+      summary({
+        key: 'report_source',
+        title: 'Annual report citation',
+        source: 'Ministry annual report',
+        source_url: '',
+      }),
+    ];
+    const { calls } = mockApi({
+      '/api/indicators/': url => {
+        const pageNumber = Number(url.searchParams.get('page') || 1);
+        return page(pageNumber === 1 ? indicators.slice(0, 1) : indicators.slice(1), {
+          next: pageNumber === 1 ? '/api/indicators/?page=2' : null,
+          count: indicators.length,
+        });
+      },
+      '/api/articles/': page([]),
+    });
+    renderApp('/sources');
+
+    expect(await screen.findByRole('heading', { name: 'Sources & references' })).toBeInTheDocument();
+    expect(screen.getByRole('region', { name: 'The writing that inspired this atlas' })).toBeInTheDocument();
+    expect(await screen.findByText('Real GDP growth')).toBeInTheDocument();
+    expect(await screen.findByText('CPI inflation')).toBeInTheDocument();
+    expect(await screen.findByText('Bank lending interest rate')).toBeInTheDocument();
+    expect(screen.getByText('World Bank API FR.INR.LEND')).toBeInTheDocument();
+    expect(await screen.findByText('Annual report citation')).toBeInTheDocument();
+    expect(screen.getByText('Ministry annual report')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /data\.worldbank\.org · Open source/ })).toHaveAttribute(
+      'href',
+      indicators[0].source_url,
+    );
+    expect(screen.getAllByRole('link', { name: 'View graph' })[0]).toHaveAttribute('href', '/indicator/gdp_growth');
+    expect(screen.getByText('4 graphs')).toBeInTheDocument();
+    expect(screen.getByText('Public data publishers, project references & tools')).toBeInTheDocument();
+    expect(screen.getByText('Original background illustrations')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Find an indicator, publisher or URL'), { target: { value: 'mospi' } });
+    await waitFor(() => expect(screen.queryByText('Real GDP growth')).not.toBeInTheDocument());
+    expect(screen.getByText('CPI inflation')).toBeInTheDocument();
+    expect(calls.filter(call => call.path === '/api/indicators/')).toHaveLength(2);
+    expect(screen.queryByText('Every indicator, one search away.')).not.toBeInTheDocument();
+    expect(screen.getAllByRole('link', { name: 'Sources' }).every(link => link.getAttribute('href') === '/sources')).toBe(true);
+  });
+});
+
 describe('Explore', () => {
   it('loads indicators and syncs filters with the URL', async () => {
     const { calls } = mockApi({
@@ -158,7 +230,7 @@ describe('Explore', () => {
     expect(await screen.findByRole('heading', { name: 'Seat share' })).toBeInTheDocument();
     expect(screen.getByTestId('location')).toHaveTextContent('/explore?category=elections');
     expect(screen.getByRole('heading', { level: 1, name: 'Elections' })).toBeInTheDocument();
-    expect(screen.getByTestId('chart')).toHaveAttribute('data-type', 'doughnut');
+    expect(await screen.findByTestId('chart')).toHaveAttribute('data-type', 'doughnut');
     expect(calls.some(call => call.path === '/api/indicators/' && call.params.get('category') === 'elections')).toBe(true);
   });
 
@@ -172,7 +244,7 @@ describe('Explore', () => {
     expect(searches.map(call => call.params.get('q'))).toEqual(['coal']);
   });
 
-  it('shows illustrated picture rails for groups and subgroups', async () => {
+  it('shows an illustrated tile grid for groups and subgroups', async () => {
     mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary()]) });
     const { container } = renderApp('/explore');
     const groups = await screen.findByRole('list', { name: 'Groups' });
@@ -189,6 +261,8 @@ describe('Explore', () => {
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('subgroup=trade'));
     expect(trade).toHaveAttribute('aria-pressed', 'true');
     expect(container.querySelector('.page-hero .art-backdrop')).toHaveAttribute('data-art', 'rail-station.svg');
+    await userEvent.click(within(subgroups).getByText('← All groups').closest('button'));
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent(/^\/explore$/));
   });
 
   it('reads filters from a deep link and can clear them', async () => {
@@ -231,6 +305,11 @@ describe('Explore', () => {
     expect(tray).toHaveTextContent('4 selected');
     expect(within(tray).getByRole('link', { name: 'Compare' })).toHaveAttribute('href', '/compare?keys=a,b,c,d');
     expect(screen.getByRole('button', { name: '+ Compare' })).toBeDisabled();
+    expect(within(tray).getAllByRole('listitem')).toHaveLength(4);
+    await userEvent.click(within(tray).getByRole('button', { name: 'Remove Indicator b from compare' }));
+    expect(tray).toHaveTextContent('3 selected');
+    expect(within(tray).getByRole('link', { name: 'Compare' })).toHaveAttribute('href', '/compare?keys=a,c,d');
+    expect(screen.getAllByRole('button', { name: '+ Compare' }).every(button => !button.disabled)).toBe(true);
     await userEvent.click(within(tray).getByRole('button', { name: 'Clear' }));
     expect(screen.queryByRole('complementary', { name: 'Compare tray' })).not.toBeInTheDocument();
   });
@@ -306,29 +385,12 @@ describe('Indicator detail', () => {
     expect(within(table).getByText('8.2 %')).toBeInTheDocument();
   });
 
-  it('sends anonymous users to sign in when saving', async () => {
+  it('does not expose account-only save controls', async () => {
     mockApi({ 'GET /api/indicators/gdp_growth/': detail() });
     renderApp('/indicator/gdp_growth');
-    await userEvent.click(await screen.findByRole('button', { name: '☆ Save' }));
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/login?next=/indicator/gdp_growth'));
-    expect(await screen.findByRole('heading', { name: 'Sign in', level: 1 })).toBeInTheDocument();
-  });
-
-  it('saves and unsaves for signed-in users', async () => {
-    document.cookie = 'csrftoken=tok';
-    const { calls } = mockApi({
-      '/api/auth/me/': { authenticated: true, user: { id: 1, username: 'asha', saved_count: 0 } },
-      'GET /api/indicators/gdp_growth/': detail(),
-      'POST /api/saved/': json({ key: 'gdp_growth' }, 201),
-      'DELETE /api/saved/gdp_growth/': { ok: true, status: 204, json: async () => null },
-    });
-    renderApp('/indicator/gdp_growth');
-    await screen.findByText('Hi, asha');
-    await userEvent.click(await screen.findByRole('button', { name: '☆ Save' }));
-    expect(await screen.findByRole('button', { name: '★ Saved' })).toHaveAttribute('aria-pressed', 'true');
-    await userEvent.click(screen.getByRole('button', { name: '★ Saved' }));
-    expect(await screen.findByRole('button', { name: '☆ Save' })).toBeInTheDocument();
-    expect(calls.filter(call => call.method !== 'GET').map(call => call.method)).toEqual(['POST', 'DELETE']);
+    await screen.findByRole('heading', { name: 'Real GDP growth' });
+    expect(screen.queryByRole('button', { name: /save/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '+ Compare' })).toBeInTheDocument();
   });
 
   it('shows a friendly message for unknown indicators', async () => {

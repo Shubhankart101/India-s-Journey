@@ -14,9 +14,9 @@ handler500 = 'indicators.views.error_500'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('indicators.urls')),
-    # allauth's own sign-in/sign-up pages are replaced by the React /login page (Google + Microsoft buttons).
-    path('accounts/login/', RedirectView.as_view(url='/login', query_string=True)),
-    path('accounts/signup/', RedirectView.as_view(url='/login', query_string=True)),
+    # Keep generic allauth pages out of the app while account UI is disabled.
+    path('accounts/login/', RedirectView.as_view(url='/', query_string=True)),
+    path('accounts/signup/', RedirectView.as_view(url='/', query_string=True)),
     path('accounts/', include('allauth.urls')),
     re_path(r'^(?!api/|admin/|static/|accounts/).*$', spa_index, name='spa'),
 ]

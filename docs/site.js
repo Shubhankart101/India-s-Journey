@@ -1,31 +1,96 @@
 /* Shared chrome for every page: the sticky header, the mobile tab bar and scroll reveals. */
+/* Compare selection shared with the web app's behaviour: up to four indicators kept in localStorage. */
+window.IndiaCompare = (() => {
+  const MAX = 4;
+  const KEY = 'ij-compare';
+  const listeners = new Set();
+  const read = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(KEY) || '[]');
+      return Array.isArray(parsed) ? parsed.filter(item => item && item.key).slice(0, MAX) : [];
+    } catch { return []; }
+  };
+  let items = read();
+  const save = () => {
+    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch { /* private mode: keep for this visit */ }
+    listeners.forEach(listener => listener(items));
+  };
+  return {
+    MAX,
+    PALETTE: ['#ff9933', '#58a6ff', '#3fb950', '#bc8cff'],
+    items: () => items.slice(),
+    slot: key => items.findIndex(item => item.key === key),
+    has: key => items.some(item => item.key === key),
+    full: () => items.length >= MAX,
+    toggle: indicator => {
+      if (items.some(item => item.key === indicator.key)) items = items.filter(item => item.key !== indicator.key);
+      else if (items.length < MAX) items = [...items, { key: indicator.key, title: indicator.title }];
+      save();
+    },
+    set: next => { items = next.filter(item => item && item.key).slice(0, MAX); save(); },
+    clear: () => { items = []; save(); },
+    subscribe: listener => { listeners.add(listener); return () => listeners.delete(listener); },
+  };
+})();
+
 (() => {
   const page = document.body.dataset.page || 'home';
   const links = [
     { id: 'home', href: 'index.html', label: 'Home', icon: '⌂' },
-    { id: 'explore', href: 'explore.html', label: 'Explore', icon: '◔' },
+    { id: 'explore', href: 'explore.html', label: 'Explore', icon: '◎' },
+    { id: 'sources', href: 'sources.html', label: 'Sources', icon: '❡' },
+    { id: 'compare', href: 'compare.html', label: 'Compare', icon: '⇄' },
     { id: 'about', href: 'about.html', label: 'About', icon: 'ⓘ' },
-    { id: 'sources', href: 'explore.html#references', label: 'Sources', icon: '❡', desktopOnly: true },
     { id: 'api', href: 'api.html', label: 'API', icon: '{ }' }
   ];
   const current = id => (id === page ? ' aria-current="page"' : '');
+  const compareCount = () => window.IndiaCompare.items().length;
+  const badge = id => (id === 'compare' && compareCount() ? `<span class="nav-badge">${compareCount()}</span>` : '');
 
   const header = `
   <header class="masthead">
     <a class="brand-mark" href="index.html" aria-label="India's Journey home"><span class="brand-emblem">IJ</span><span>India's Journey<small>The public data atlas</small></span></a>
     <nav class="site-nav" aria-label="Main navigation">
-      ${links.map(link => `<a href="${link.href}"${current(link.id)}>${link.label}</a>`).join('')}
+      ${links.map(link => `<a href="${link.href}"${current(link.id)} data-nav="${link.id}">${link.label}${badge(link.id)}</a>`).join('')}
     </nav>
     <a class="nav-cta" href="explore.html">Explore data</a>
   </header>`;
   const script = document.currentScript;
   if (script) script.insertAdjacentHTML('beforebegin', header);
 
+  const renderCompareChrome = () => {
+    const count = compareCount();
+    document.querySelectorAll('[data-nav="compare"]').forEach(link => {
+      link.querySelector('.nav-badge')?.remove();
+      if (count) link.insertAdjacentHTML('beforeend', `<span class="nav-badge">${count}</span>`);
+    });
+    let tray = document.querySelector('.compare-tray');
+    if (!count || page === 'compare') { tray?.remove(); return; }
+    if (!tray) {
+      tray = document.createElement('aside');
+      tray.className = 'compare-tray';
+      tray.setAttribute('aria-label', 'Compare tray');
+      document.body.append(tray);
+    }
+    const items = window.IndiaCompare.items();
+    const keys = items.map(item => encodeURIComponent(item.key)).join(',');
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+    const chips = items.map((item, index) => `<li class="tray-chip" style="--slot:${window.IndiaCompare.PALETTE[index % window.IndiaCompare.PALETTE.length]}"><span class="tray-chip-title" title="${esc(item.title)}">${esc(item.title)}</span><button type="button" data-remove="${esc(item.key)}" aria-label="Remove ${esc(item.title)} from compare">×</button></li>`).join('');
+    tray.setAttribute('aria-live', 'polite');
+    tray.innerHTML = `<span class="tray-count"><span aria-hidden="true">⇄ </span>${count} selected<small> / ${window.IndiaCompare.MAX}</small></span><ul class="tray-chips" aria-label="Selected for comparison">${chips}</ul><a class="tray-btn tray-primary" href="compare.html?keys=${keys}">Compare<span aria-hidden="true"> →</span></a><button type="button" class="tray-btn" data-clear>Clear</button>`;
+    tray.querySelector('[data-clear]').addEventListener('click', () => window.IndiaCompare.clear());
+    tray.querySelectorAll('[data-remove]').forEach(button => button.addEventListener('click', () => {
+      window.IndiaCompare.set(window.IndiaCompare.items().filter(item => item.key !== button.dataset.remove));
+    }));
+  };
+  window.IndiaCompare.subscribe(renderCompareChrome);
+
   document.addEventListener('DOMContentLoaded', () => {
     const tabs = links.filter(link => !link.desktopOnly)
-      .map(link => `<a href="${link.href}"${current(link.id)}><span class="tab-icon" aria-hidden="true">${link.icon}</span><span>${link.label}</span></a>`)
+      .map(link => `<a href="${link.href}"${current(link.id)} data-nav="${link.id}"><span class="tab-icon" aria-hidden="true">${link.icon}</span><span>${link.label}</span></a>`)
       .join('');
     document.body.insertAdjacentHTML('beforeend', `<nav class="tabbar" aria-label="Primary">${tabs}</nav>`);
+    renderCompareChrome();
 
     const targets = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window)) {
@@ -41,6 +106,50 @@
     }, { threshold: 0.12 });
     targets.forEach(element => observer.observe(element));
   });
+})();
+
+/* Background art controller: paints a scene with a soft swap, and rotates an ambient playlist of
+   animated landmark scenes on pages that are not showing a specific group's artwork. */
+window.IndiaArt = (() => {
+  const ambient = ['red-fort', 'himalaya', 'backwaters', 'isro-launch', 'konark-sun-temple', 'varanasi-ghats',
+    'sea-link', 'renewables', 'monsoon-fields', 'toy-train-hills', 'sports', 'trophy', 'athletics', 'multi-sport-games',
+    'racket-sports', 'chess-kabaddi', 'cricket-batting', 'football-players', 'hockey-players'].map(name => `assets/${name}.svg`);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const layer = () => document.querySelector('#era-bg-layer');
+  let timer = 0;
+  let index = 0;
+
+  const paint = url => {
+    const bgLayer = layer();
+    if (!bgLayer || !url) return;
+    const next = `url("${url}")`;
+    if (bgLayer.style.backgroundImage === next) return;
+    if (!bgLayer.style.backgroundImage) {
+      bgLayer.style.backgroundImage = next;
+      return;
+    }
+    bgLayer.classList.add('is-swapping');
+    clearTimeout(bgLayer.swapTimer);
+    bgLayer.swapTimer = setTimeout(() => {
+      bgLayer.style.backgroundImage = next;
+      bgLayer.classList.remove('is-swapping');
+    }, 380);
+  };
+  const stop = () => { clearInterval(timer); timer = 0; };
+  const start = () => {
+    stop();
+    paint(ambient[index]);
+    if (reduced) return;
+    timer = setInterval(() => {
+      if (document.hidden) return;
+      index = (index + 1) % ambient.length;
+      paint(ambient[index]);
+      new Image().src = ambient[(index + 1) % ambient.length];
+    }, 9000);
+  };
+  const isAmbientPage = ['explore', 'about', 'sources', '404'].includes(document.body.dataset.page);
+  if (isAmbientPage && layer()) start();
+  return { ambient, paint, start, stop, resume: start, isAmbientPage, isRunning: () => Boolean(timer) };
 })();
 
 /* Pointer and scroll parallax for the illustrated full-page backdrop. */
@@ -181,7 +290,7 @@
   });
 })();
 
-/* "With thanks" columns: latest PolityPolicy and Indian Matrix articles on every page. */
+/* Latest publisher articles are shown only in the Sources page acknowledgement. */
 (() => {
   const feeds = [['#thanks-pp-articles', 'substack-latest.json'], ['#thanks-im-articles', 'indian-matrix-latest.json']];
   const render = (container, articles) => {
@@ -207,8 +316,13 @@
   const load = () => feeds.forEach(([selector, file]) => {
     const container = document.querySelector(selector);
     if (!container) return;
-    fetch(`data/${file}`)
-      .then(response => (response.ok ? response.json() : Promise.reject(new Error(response.statusText))))
+    const bundled = window.INDIA_OVERLAY_DATA?.[file];
+    const source = bundled && location.protocol === 'file:'
+      ? Promise.resolve(bundled)
+      : fetch(`data/${file}`)
+        .then(response => (response.ok ? response.json() : Promise.reject(new Error(response.statusText))))
+        .catch(error => bundled || Promise.reject(error));
+    source
       .then(payload => render(container, (payload.articles || []).filter(article => article && article.link)))
       .catch(() => { container.innerHTML = '<p class="article-loading">Articles are temporarily unavailable.</p>'; });
   });

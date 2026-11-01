@@ -4,12 +4,18 @@ const definitions = [
   ['per_capita_nni_inr', 'Per capita Net National Income', 'Per capita NNI at current prices in Indian Rupees', 'Annual', '#3fb950', ' INR', 'https://www.mospi.gov.in/', 'Per capita Net National Income (NNI) measures national income divided by population in current Indian Rupees. It expanded from ₹63,462 in FY2012 to ₹2.18 Lakh in FY2026.\n\nSourced from MOSPI National Accounts Statistics and official Economic Survey statements.'],
   ['per_capita_income_ppp', 'Per capita GNI in PPP dollars', 'GNI per capita in Purchasing Power Parity current international $', 'Annual', '#58a6ff', ' USD PPP', 'https://data.worldbank.org/indicator/NY.GNP.PCAP.PP.CD', 'GNI per capita converted to international dollars using purchasing power parity (PPP) rates, accounting for domestic price differences.\n\nSourced from World Bank Open Data indicator NY.GNP.PCAP.PP.CD.'],
   ['state_per_capita_income', 'Per-capita NSDP by state', 'Net State Domestic Product per person, FY2022-23', 'Annual snapshot (FY2022-23)', '#3fb950', ' INR lakh', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23468', 'RBI Table 19 per-capita Net State Domestic Product at current prices. The comparable FY2022-23 snapshot covers all 28 States plus every Union Territory the RBI reports.'],
-  ['state_power_per_capita', 'Per-capita power availability by state', 'Electricity availability per person, FY2024-25', 'Annual snapshot (FY2024-25)', '#f6c344', ' kWh/person', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587', 'RBI Table 138, sourced to the Central Electricity Authority. The FY2024-25 comparison covers all 28 States plus every Union Territory the RBI reports.'],
-  ['state_gst_collections', 'Monthly State GST collections', 'Average monthly GST revenue by state', 'Static snapshot', '#f6c344', ' INR Cr', 'https://www.gst.gov.in/', 'Monthly State GST (SGST) collections comparing commercial consumption volume across states.\n\nSourced from GSTN Portal & Ministry of Finance.'],
+  ['state_power_per_capita', 'Per-capita power availability by state', 'Electricity availability per person, FY2024-25', 'Annual snapshot (FY2024-25)', '#f6c344', ' kWh/person', 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23587', 'RBI Table 138, sourced to the Central Electricity Authority. The FY2024-25 comparison covers all 28 States plus every Union Territory the RBI reports.'],
+
+  ['state_gst_collections', 'Monthly State GST collections', 'Average monthly GST revenue by state', 'Static snapshot', '#f6c344', ' INR Cr', 'https://www.gst.gov.in/', 'Monthly State GST (SGST) collections comparing commercial consumption volume across states.\n\nSourced from GSTN Portal & Ministry of Finance.'],
+
   ['state_pmjdy_bank_accounts', 'PM Jan Dhan accounts by state', 'Cumulative PMJDY bank accounts opened in Crores', 'Annual / State', '#79c0ff', ' Crore accounts', 'https://pmjdy.gov.in/', 'State-wise distribution of PM Jan Dhan Yojana financial inclusion bank accounts (Uttar Pradesh 9.25 Cr, Bihar 5.82 Cr, West Bengal 4.95 Cr).\n\nSourced from Department of Financial Services, Ministry of Finance.'],
   ['state_pmjay_health_cards', 'Ayushman Bharat cards by state', 'Ayushman Bharat PM-JAY health cards issued in Crores', 'Static snapshot', '#f778ba', ' Crore cards', 'https://pmjay.gov.in/', 'State-wise distribution of Ayushman Bharat health protection cards issued to vulnerable households.\n\nSourced from National Health Authority (NHA) PM-JAY Open Dashboard.'],
-  ['state_pmsvanidhi_street_vendors', 'PM SVANidhi vendor credit by state', 'Micro-credit working capital loans disbursed in Lakh vendors', 'Static snapshot', '#3fb950', ' Lakh vendors', 'https://pmsvanidhi.mohua.gov.in/', 'State-level street vendor micro-credit loan disbursements under PM SVANidhi scheme.\n\nSourced from Ministry of Housing and Urban Affairs (MoHUA).'],
-  ['state_literacy_rates', 'Literacy rates across States & UTs', 'Literacy rate % across 28 States and 8 UTs', 'Static snapshot', '#bc8cff', '%', 'https://www.mospi.gov.in/', 'State-wise literacy rate comparison across India\'s federal landscape (Kerala 96.2%, Mizoram 91.3%, Goa 88.7%, Himachal 83.8%, Maharashtra 82.3%).\n\nSourced from MOSPI Periodic Labour Force Survey & Census Estimates.'],
+  ['state_pmsvanidhi_street_vendors', 'PM SVANidhi vendor credit by state', 'Micro-credit working capital loans disbursed in Lakh vendors', 'Static snapshot', '#3fb950', ' Lakh vendors', 'https://pmsvanidhi.mohua.gov.in/', 'State-level street vendor micro-credit loan disbursements under PM SVANidhi scheme.\n\nSourced from Ministry of Housing and Urban Affairs (MoHUA).'],
+
+
+  ['state_literacy_rates', 'Literacy rates across States & UTs', 'Literacy rate % across 28 States and 8 UTs', 'Static snapshot', '#bc8cff', '%', 'https://www.mospi.gov.in/', 'State-wise literacy rate comparison across India\'s federal landscape (Kerala 96.2%, Mizoram 91.3%, Goa 88.7%, Himachal 83.8%, Maharashtra 82.3%).\n\nSourced from MOSPI Periodic Labour Force Survey & Census Estimates.'],
+
+
   ['state_ev_adoption_charging', 'Electric Vehicle adoption by state', 'EV registrations & POS charging stations in Thousands', 'Static snapshot', '#3fb950', ' Thousand EVs', 'https://vahan.parivahan.gov.in/', 'State-wise electric mobility transition comparing EV vehicle registrations and charging station infrastructure.\n\nSourced from Ministry of Heavy Industries VAHAN Portal.'],
   ['state_export_preparedness_index', 'Export Preparedness Index by state', 'NITI Aayog EPI overall composite score out of 100', 'Static snapshot', '#58a6ff', ' Index', 'https://www.niti.gov.in/', 'State export competitiveness benchmark evaluating policy ecosystem, business environment, and export performance (Tamil Nadu 79.2, Maharashtra 78.6, Karnataka 76.4).\n\nSourced from NITI Aayog Export Preparedness Index.'],
   ['state_ease_of_doing_business', 'Ease of Doing Business by state', 'DPIIT BRAP Top Achievers Business Reform score %', 'Static snapshot', '#a371f7', '% score', 'https://dpiit.gov.in/', 'State business environment ranking evaluating Business Reform Action Plan (BRAP) implementation.\n\nSourced from DPIIT Ease of Doing Business State Rankings.'],
@@ -151,65 +157,6 @@ const definitions = [
   ['clean_fuel_access', 'Access to Clean Fuels for Cooking', 'Population with access to clean fuels and technologies for cooking', 'Annual', '#e3b341', '%', 'https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IN', 'National share with access to clean cooking fuels and technologies, from World Bank indicator EG.CFT.ACCS.ZS. This is a clean-cooking access measure and must not be interpreted as household LPG connections or a state-wise gas network count.'],
 ];
 
-const eraData = {
-  all: {
-    id: "all",
-    name: "India's Multi-Era Long View Atlas",
-    years: "3300 BCE — 2026 CE",
-    desc: "A long-run journey through India's civilizational roots, freedom movement, republic building, economic reforms, defence production, and digital powerhouse transformation.",
-    image: "assets/parliament.svg",
-    attribution: "Original India-inspired vector illustration; see image references"
-  },
-  ancient: {
-    id: "ancient",
-    name: "Ancient & Classical India",
-    years: "3300 BCE — 1200 CE",
-    desc: "Indus Valley civilization, Vedic foundations, Maurya Empire under Ashoka, Gupta Golden Age, and Chola maritime trade.",
-    image: "assets/hampi.svg",
-    attribution: "Original Hampi-inspired vector illustration; see image references"
-  },
-  medieval: {
-    id: "medieval",
-    name: "Medieval & Imperial Era",
-    years: "1200 — 1757 CE",
-    desc: "Vijayanagara Empire, Mughal architecture, Maratha Confederacy, and historical silk & spice trade networks.",
-    image: "assets/hampi.svg",
-    attribution: "Original Hampi-inspired vector illustration; see image references"
-  },
-  freedom: {
-    id: "freedom",
-    name: "Colonial & Freedom Movement",
-    years: "1757 — 1947 CE",
-    desc: "Colonial trade monopoly, 1857 Uprising, Swadeshi Movement, Mahatma Gandhi's Salt Satyagraha, and 1947 Independence.",
-    image: "assets/parliament.svg",
-    attribution: "Original civic-building vector illustration; see image references"
-  },
-  republic: {
-    id: "republic",
-    name: "Early Republic & Industrialization",
-    years: "1947 — 1990 CE",
-    desc: "Nation building post-independence, Five-Year Plans, Green & White Revolutions, Bhakra Nangal Dam, and ISRO foundations.",
-    image: "assets/parliament.svg",
-    attribution: "Original civic-building vector illustration; see image references"
-  },
-  liberalization: {
-    id: "liberalization",
-    name: "Economic Reform & IT Revolution",
-    years: "1991 — 2013 CE",
-    desc: "1991 Economic Liberalization, BSE & NSE stock market growth, IT sector expansion, highway infrastructure, and global trade.",
-    image: "assets/parliament.svg",
-    attribution: "Original civic-building vector illustration; see image references"
-  },
-  modern: {
-    id: "modern",
-    name: "Modern Digital & Strategic Era",
-    years: "2014 — Present",
-    desc: "Digital India, UPI real-time payments, indigenous defence production (Make in India), defence exports, Chandrayaan space missions, and global powerhouse rise.",
-    image: "assets/rail-station.svg",
-    attribution: "Original infrastructure vector illustration; see image references"
-  }
-};
-
 const eraFor = key => {
   if (['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports', 'upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency', 'state_gsdp_comparison', 'state_per_capita_income', 'state_own_tax_revenue', 'state_gst_collections', 'state_operating_factories', 'state_manufacturing_gsdp_share', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans', 'state_pmjdy_bank_accounts', 'state_pmjay_health_cards', 'state_pmsvanidhi_street_vendors', 'state_renewable_energy_capacity', 'state_national_highway_length', 'state_literacy_rates', 'state_infant_mortality_rate', 'state_life_expectancy', 'state_ev_adoption_charging', 'state_export_preparedness_index', 'state_ease_of_doing_business', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'internet_users', 'cyber_crime', 'sectoral_market_indices'].includes(key)) return 'modern';
   if (['market_indices', 'global_equity_indices', 'gdp_world_comparison', 'fdi', 'trade', 'eway_bills', 'gst', 'crimes_against_women', 'economic_offences'].includes(key)) return 'liberalization';
@@ -223,6 +170,16 @@ const eraFor = key => {
 const categoryFor = key => ['pew_india_global_power', 'pew_india_leadership', 'pew_india_reports', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Pew Research' : ['defence_expenditure', 'defence_exports', 'defence_production', 'defence_stockpile', 'defence_production_exports', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition', 'sipri_arms_imports'].includes(key) ? 'Defence & Strategic' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production', 'coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production', 'limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum', 'mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mining & Natural Resources' : ['upi', 'upi_transaction_value', 'credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation', 'rbi_digital_payments_index'].includes(key) ? 'Payments & Digital Banking' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'core_industries', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers', 'crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Industry Trends & Performance' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_own_tax_revenue', 'state_gst_collections', 'state_operating_factories', 'state_manufacturing_gsdp_share', 'state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans', 'state_pmjdy_bank_accounts', 'state_pmjay_health_cards', 'state_pmsvanidhi_street_vendors', 'state_renewable_energy_capacity', 'state_national_highway_length', 'state_literacy_rates', 'state_infant_mortality_rate', 'state_life_expectancy', 'state_ev_adoption_charging', 'state_export_preparedness_index', 'state_ease_of_doing_business'].includes(key) ? 'State Performance & Regional Health' : ['homicide_rate', 'lwe_incidents', 'northeast_insurgency_fatalities', 'northeast_insurgency_incidents', 'kashmir_insurgency_fatalities', 'kashmir_terror_incidents', 'khalistan_insurgency_historical', 'terror_attacks', 'terror_fatalities', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Crime & Security' : ['population', 'unemployment', 'electricity_access', 'internet_users', 'life_expectancy', 'social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown'].includes(key) ? 'Social' : 'Economic';
 
 const subgroupFor = key => ['union_budget_expenditure', 'budget_yoy_growth', 'capital_expenditure_capex', 'gross_tax_yoy_growth'].includes(key) ? 'Fiscal & Union Budget' : ['per_capita_nni_inr', 'per_capita_income_ppp'].includes(key) ? 'Per Capita Income & Wealth' : ['social_category_literacy', 'religious_demographics', 'pm_mudra_social_breakdown', 'population', 'unemployment'].includes(key) ? 'Demographics' : ['electricity_access', 'internet_users', 'life_expectancy'].includes(key) ? 'Welfare' : ['defence_exports', 'defence_production', 'defence_production_exports'].includes(key) ? 'Defence Exports & Production' : ['defence_expenditure', 'defence_budget_share', 'defence_rd_budget', 'defence_capital_acquisition'].includes(key) ? 'Defence Budget & Modernization' : ['defence_stockpile', 'sipri_arms_imports'].includes(key) ? 'Strategic Stockpiles & Capabilities' : ['iron_ore_production', 'bauxite_aluminium_output', 'copper_production', 'manganese_chromite_production'].includes(key) ? 'Metallic Minerals & Ores' : ['coal_production', 'lignite_production', 'crude_petroleum_domestic', 'natural_gas_production'].includes(key) ? 'Energy Minerals & Fuel' : ['limestone_production', 'rare_earths_critical_minerals', 'rock_phosphate_gypsum'].includes(key) ? 'Non-Metallic & Industrial Minerals' : ['mineral_metal_exports', 'iron_ore_exports', 'refined_petroleum_exports', 'critical_mineral_import_dependency'].includes(key) ? 'Mineral Exports & Trade' : ['upi', 'upi_transaction_value'].includes(key) ? 'UPI & Digital Payments' : ['credit_card_spends', 'debit_card_spends', 'credit_card_in_circulation', 'debit_card_in_circulation'].includes(key) ? 'Card Spends & Ecosystem' : ['rbi_digital_payments_index'].includes(key) ? 'Digital Financial Index' : ['auto_production_volume', 'crude_steel_production', 'electronics_manufacturing', 'pharma_exports_trajectory', 'textiles_apparel_exports', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['power_consumption', 'eway_bills', 'rail_freight', 'port_cargo', 'national_highways_built', 'railway_electrification', 'renewable_energy_capacity', 'civil_aviation_passengers', 'telecom_broadband_subscribers'].includes(key) ? 'Infrastructure Development' : ['crude_oil', 'fuel_consumption', 'wpi'].includes(key) ? 'Production & Commodities' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_own_tax_revenue', 'state_gst_collections'].includes(key) ? 'State Financial Health & GSDP' : ['state_operating_factories', 'state_manufacturing_gsdp_share', 'state_export_preparedness_index', 'state_ease_of_doing_business'].includes(key) ? 'State Industrial & Manufacturing Hubs' : ['state_pmay_homes', 'state_jjm_water_coverage', 'state_mudra_loans', 'state_pmjdy_bank_accounts', 'state_pmjay_health_cards', 'state_pmsvanidhi_street_vendors', 'state_renewable_energy_capacity', 'state_national_highway_length', 'state_ev_adoption_charging'].includes(key) ? 'State Welfare & Scheme Coverage' : ['state_literacy_rates', 'state_infant_mortality_rate', 'state_life_expectancy'].includes(key) ? 'State Socio-Demographic Milestones' : ['cpi', 'gst', 'fiscal_deficit', 'gdp_per_capita', 'current_account', 'tax_revenue', 'government_consumption', 'domestic_savings', 'fdi'].includes(key) ? 'Macroeconomics' : ['broad_money', 'bank_credit'].includes(key) ? 'Monetary Policy' : ['trade', 'forex', 'rupee', 'merchandise_exports', 'merchandise_imports'].includes(key) ? 'Trade & External' : ['market_indices', 'sensex', 'nifty', 'nifty_vix', 'global_equity_indices', 'gdp_world_comparison', 'sectoral_market_indices', 'global_inflation_comparison'].includes(key) ? 'Markets' : ['indian_matrix'].includes(key) ? 'Media & Publications' : ['pew_india_global_power', 'pew_india_leadership', 'pew_india_us_relations', 'pew_india_economy_confidence', 'pew_india_technology', 'pew_india_reports', 'pew_india_religion_tolerance', 'pew_india_demographics_family', 'pew_india_gender_roles', 'pew_india_media_news', 'pew_india_climate_environment'].includes(key) ? 'Public opinion' : ['lwe_incidents', 'lwe_civilian_casualties', 'lwe_security_force_casualties', 'lwe_perpetrator_casualties'].includes(key) ? 'Maoism / LWE' : ['kashmir_insurgency_fatalities', 'kashmir_terror_incidents'].includes(key) ? 'Jammu & Kashmir Insurgency' : ['northeast_insurgency_fatalities', 'northeast_insurgency_incidents'].includes(key) ? 'North East Insurgency' : ['khalistan_insurgency_historical'].includes(key) ? 'Punjab Militancy & Security' : ['homicide_rate', 'ncrb_crime', 'ncrb_ipc_crime_rate', 'crimes_against_women', 'cyber_crime', 'economic_offences', 'ndps_drug_cases', 'child_protection_pocso', 'road_accidents_fatalities', 'police_per_population', 'violent_incidents'].includes(key) ? 'Violence & Crime' : ['terror_attacks', 'terror_fatalities'].includes(key) ? 'Terrorism' : 'Macroeconomics';
+
+const parseSourceUrl = value => {
+  try {
+    const url = new URL(value);
+    return ['http:', 'https:'].includes(url.protocol) ? url : null;
+  } catch (error) {
+    if (error instanceof TypeError) return null;
+    throw error;
+  }
+};
 
 const renderChartSourceIndex = () => {
   const list = document.querySelector('#chart-source-index-list');
@@ -243,30 +200,24 @@ const renderChartSourceIndex = () => {
     item.append(heading, meta);
     const chartLink = document.createElement('a');
     chartLink.className = 'source-chart-link';
-    chartLink.href = `#indicator-${key}`;
+    chartLink.href = `explore.html?chart=${encodeURIComponent(key)}`;
     chartLink.textContent = 'View graph';
-    chartLink.addEventListener('click', event => {
-      event.preventDefault();
-      const groupSelect = document.querySelector('#group-filter');
-      const subgroupSelect = document.querySelector('#subgroup-filter');
-      if (groupSelect && subgroupSelect) {
-        groupSelect.value = category;
-        groupSelect.dispatchEvent(new Event('change', { bubbles: true }));
-        subgroupSelect.value = subgroup;
-        subgroupSelect.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-      window.location.hash = `indicator-${key}`;
-      document.getElementById(`indicator-${key}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
     item.append(chartLink);
     for (const url of new Set(urls.filter(Boolean))) {
-      const link = document.createElement('a');
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noreferrer';
-      link.textContent = `${new URL(url).hostname.replace(/^www\./, '')} · Open source ↗`;
-      link.title = url;
-      item.append(link);
+      const sourceUrl = parseSourceUrl(url);
+      if (sourceUrl) {
+        const link = document.createElement('a');
+        link.href = sourceUrl.href;
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+        link.textContent = `${sourceUrl.hostname.replace(/^www\./, '')} · Open source ↗`;
+        link.title = url;
+        item.append(link);
+      } else {
+        const source = document.createElement('span');
+        source.textContent = url;
+        item.append(source);
+      }
     }
     item.dataset.search = `${title} ${subtitle} ${frequency} ${definition[7] || ''} ${category} ${subgroup} ${urls.join(' ')}`.toLowerCase();
     list.append(item);
@@ -280,7 +231,6 @@ const renderChartSourceIndex = () => {
 
 const extraChartPlacement = window.INDIA_EXTRA_CHART_PLACEMENT || {};
 definitions.push(...(window.INDIA_EXTRA_CHART_DEFINITIONS || []));
-renderChartSourceIndex();
 
 const formatMagnitude = (value, suffix = '') => {
   const unitSuffix = suffix.trim();
@@ -476,6 +426,9 @@ if (typeof Chart !== 'undefined' && !Chart.registry?.plugins?.get?.('centerReado
 }
 
 async function safeFetchJson(filename, defaultVal = {}) {
+  // fetch() is blocked on file://, so use the bundled overlays.js copy there (and as a fallback online).
+  const bundled = window.INDIA_OVERLAY_DATA?.[filename];
+  if (bundled && location.protocol === 'file:') return bundled;
   const paths = [
     `data/${filename}?ts=${Date.now()}`,
     `data/${filename}`,
@@ -493,7 +446,7 @@ async function safeFetchJson(filename, defaultVal = {}) {
       // try next path
     }
   }
-  return defaultVal;
+  return bundled || defaultVal;
 }
 
 // Home and About mirror the web app: stats, a group carousel with mini indices, subgroup marquees,
@@ -574,6 +527,16 @@ const miniTileHtml = pick => {
     : `<span class="mini-ranks" aria-hidden="true">${parts.map((part, index) => `<span style="width:${(part.value / leader.value) * 100}%;background:${MINI_COLORS[index % MINI_COLORS.length]}"></span>`).join('')}</span>`;
   return `${title}<strong class="mini-value">${escapeHtml(shown)}</strong><span class="mini-leader">${escapeHtml(leader.label)}</span>${bars}<span class="mini-period">${radial ? 'Share of total' : 'Highest values'} · latest snapshot</span>`;
 };
+const miniCitationHtml = pick => {
+  const refs = pick.item.sourceRefs || [];
+  if (!refs.length) return '';
+  const sourceUrls = refs.map(parseSourceUrl).filter(Boolean);
+  const title = escapeHtml(refs.join(' · '));
+  if (sourceUrls.length) {
+    return `<div class="mini-citations" aria-label="Sources" title="${title}">${sourceUrls.map(url => `<a href="${escapeHtml(url.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(url.hostname.replace(/^www\./, ''))} · Source ↗</a>`).join(' · ')}</div>`;
+  }
+  return `<div class="mini-citations" aria-label="Sources" title="${title}">${escapeHtml(refs[0])}</div>`;
+};
 
 function renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroData, subgroupArtMap, setEraBackground, generatedAt, articleSources }) {
   const groups = Object.keys(categoryOrder)
@@ -613,7 +576,7 @@ function renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroDat
       caption.href = exploreLink(group.name);
       caption.querySelector('strong').textContent = group.name;
       miniList.setAttribute('aria-label', `Headline ${group.name} indicators`);
-      miniList.innerHTML = pickStaticMiniIndices(group.items).map(pick => `<li><a class="mini-index mini-${pick.kind}" href="explore.html?chart=${encodeURIComponent(pick.item.key)}" title="${escapeHtml(pick.item.subtitle || pick.item.title)}">${miniTileHtml(pick)}</a></li>`).join('');
+      miniList.innerHTML = pickStaticMiniIndices(group.items).map(pick => `<li><article class="mini-index mini-${pick.kind}"><a class="mini-index-main" href="explore.html?chart=${encodeURIComponent(pick.item.key)}" title="${escapeHtml(pick.item.subtitle || pick.item.title)}">${miniTileHtml(pick)}</a>${miniCitationHtml(pick)}</article></li>`).join('');
       miniList.classList.remove('is-entering');
       void miniList.offsetWidth;
       miniList.classList.add('is-entering');
@@ -722,13 +685,14 @@ async function main() {
   }
 
   // These overlays refresh more often than data.js, so they are always applied (as the web app's catalog export does).
-  const [electionResults, usCampaignFinance, electionIndices, surveyOverlay, ncrbOverlay, pewOverlay] = await Promise.all([
+  const [electionResults, usCampaignFinance, electionIndices, surveyOverlay, ncrbOverlay, pewOverlay, sportsOverlay] = await Promise.all([
     safeFetchJson('election-results.json', { series: {} }),
     safeFetchJson('us-campaign-finance.json', { series: {} }),
     safeFetchJson('election-indices.json', { series: {} }),
     safeFetchJson('economic-survey-monthly.json', { series: {} }),
     safeFetchJson('ncrb-and-analyses.json', { series: {} }),
     safeFetchJson('pew-snapshots.json', { series: {} }),
+    safeFetchJson('sports.json', { series: {} }),
   ]);
   [economicSurvey, ncrbeAnalyses, pewSnapshots] = [surveyOverlay, ncrbOverlay, pewOverlay];
   const liveConstituencies = electionResults?.india_constituencies || [];
@@ -747,7 +711,7 @@ async function main() {
     extraChartPlacement[key] = { category: 'Elections', subgroup: 'Indian Elections' };
   });
   const data = dataPayload || { series: {} };
-  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}), ...(electionIndices?.series || {}) };
+  data.series = { ...(data.series || {}), ...(economicSurvey?.series || {}), ...(ncrbeAnalyses?.series || {}), ...(pewSnapshots?.series || {}), ...(electionResults?.series || {}), ...(usCampaignFinance?.series || {}), ...(electionIndices?.series || {}), ...(sportsOverlay?.series || {}) };
   // Generated series can describe themselves via `meta`, so new indices need no hand-written definition.
   const definedKeys = new Set(definitions.map(definition => definition[0]));
   Object.entries(data.series).forEach(([key, series]) => {
@@ -757,6 +721,7 @@ async function main() {
     definedKeys.add(key);
     if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
   });
+  renderChartSourceIndex();
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
   data.series.indian_matrix = { labels: matrixCadence.labels || [], values: matrixCadence.values || [], source: 'Indian Matrix public RSS feed' };
   const pewCadence = (data.series.pew_india_reports && data.series.pew_india_reports.values && data.series.pew_india_reports.values.length) ? data.series.pew_india_reports : (pewReports?.cadence || { labels: [], values: [] });
@@ -819,27 +784,26 @@ async function main() {
     "Pew Research": "assets/opinion.svg",
     "Elections": "assets/elections.svg",
     "U.S. Elections": "assets/us-elections.svg",
-    "Tourism & Heritage": "assets/tourism.svg"
+    "Tourism & Heritage": "assets/tourism.svg",
+    "Sports": "assets/sports.svg",
+    "Cricket": "assets/cricket.svg",
+    "Hockey": "assets/hockey.svg",
+    "Football": "assets/football.svg",
+    "Innovation & Technology": "assets/innovation.svg",
+    "Judiciary & Pending Cases": "assets/judiciary.svg"
   };
 
   const setEraBackground = (imgUrl) => {
-    const bgLayer = document.querySelector('#era-bg-layer');
-    if (!bgLayer || !imgUrl) return;
-    const next = `url("${imgUrl}")`;
-    if (bgLayer.style.backgroundImage === next) return;
-    if (!bgLayer.style.backgroundImage) {
-      bgLayer.style.backgroundImage = next;
-      bgLayer.style.opacity = '0.55';
+    if (!imgUrl) return;
+    if (window.IndiaArt) {
+      window.IndiaArt.stop();
+      window.IndiaArt.paint(imgUrl);
       return;
     }
-    bgLayer.classList.add('is-swapping');
-    clearTimeout(bgLayer.swapTimer);
-    bgLayer.swapTimer = setTimeout(() => {
-      bgLayer.style.backgroundImage = next;
-      bgLayer.classList.remove('is-swapping');
-    }, 380);
+    const bgLayer = document.querySelector('#era-bg-layer');
+    if (bgLayer) bgLayer.style.backgroundImage = `url("${imgUrl}")`;
   };
-  setEraBackground(categoryBgMap.Economic);
+  if (!window.IndiaArt || !window.IndiaArt.isAmbientPage) setEraBackground(categoryBgMap.Economic);
 
   const grid = document.querySelector('#charts');
   const charts = [];
@@ -861,6 +825,7 @@ async function main() {
     chartEntry?.chart?.resize();
     expandOpener?.focus();
     expandOpener = null;
+    updateCards();
   };
   focusClose?.addEventListener('click', closeExpandedChart);
   focusOverlay?.addEventListener('click', event => {
@@ -869,8 +834,10 @@ async function main() {
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeExpandedChart();
   });
-  let lastCategory = '';
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12 };
+  const compareStore = window.IndiaCompare || { has: () => false, full: () => false, toggle: () => {}, subscribe: () => {} };
+  const compareButtonSyncers = [];
+  compareStore.subscribe(() => compareButtonSyncers.forEach(sync => sync()));
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -884,21 +851,18 @@ async function main() {
       lazyCharts.get(entry.target)?.();
     });
   }, { rootMargin: '600px 0px' }) : null;
-  orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details], index) => {
+  orderedDefinitions.forEach(([key, title, subtitle, frequency, color, suffix, source, details, , extraSources], index) => {
     const category = dashboardCategoryFor(key);
-    if (grid && category !== lastCategory) {
-      const heading = document.createElement('h2');
-      heading.className = 'category-heading';
-      heading.dataset.category = category;
-      heading.textContent = category;
-      grid.append(heading);
-      lastCategory = category;
-    }
     const series = data.series[key] || { error: 'No generated series is available yet' };
     const live = series && !series.error && (series.values?.length || series.datasets?.length);
+    const sourceRefs = [...new Set([
+      ...(Array.isArray(extraSources) ? extraSources : []),
+      source,
+      series.source,
+    ].filter(value => typeof value === 'string' && value.trim()))];
     // Pages without a chart grid only need group counts, so skip building the card.
     if (!grid) {
-      charts.push({ key, title, subtitle, color, suffix, series, category, subgroup: dashboardSubgroupFor(key), live: Boolean(live) });
+      charts.push({ key, title, subtitle, color, suffix, series, sourceRefs, category, subgroup: dashboardSubgroupFor(key), live: Boolean(live) });
       return;
     }
     const card = document.createElement('article');
@@ -914,6 +878,9 @@ async function main() {
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
     card.dataset.subgroup = dashboardSubgroupFor(key);
+    card.dataset.chartKind = ['pie', 'doughnut'].includes(series.chartType) ? 'radial' : (series.chartType === 'bar' ? 'bar' : 'line');
+    card.dataset.points = String(series?.labels?.length || series?.values?.length || 0);
+    card.dataset.latest = String(String((series?.labels || []).slice(-1)[0] || '').match(/(\d{4})/)?.[1] || 0);
     const eraKey = eraFor(key);
     card.dataset.era = eraKey;
     const observationCount = series?.values?.length || series?.labels?.length || 0;
@@ -973,21 +940,66 @@ async function main() {
       </div>
     `;
 
-    card.innerHTML = `<header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${explainerHtml}${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>`;
+    let latestLabel = '';
+    if (live && !['state', 'category'].includes(series.scope)) {
+      for (let i = values.length - 1; i >= 0; i -= 1) {
+        if (values[i] !== null && values[i] !== undefined && !isNaN(values[i])) { latestLabel = labels[i] ?? ''; break; }
+      }
+      if (!latestLabel && !values.length) latestLabel = labels[labels.length - 1] ?? '';
+    }
+    const footValue = live ? (['state', 'category'].includes(series.scope) ? `${labels.length} ${series.scopeLabel ? escapeHtml(series.scopeLabel.toLowerCase()) : 'categories'}` : `<strong>${latestValStr}</strong>${latestLabel ? ` <span class="muted">· ${escapeHtml(String(latestLabel))}</span>` : ''}`) : '<span class="muted">Source-linked</span>';
+    const cardFootHtml = `<div class="card-foot"><span class="card-foot-value">${footValue}</span><span class="chip">${escapeHtml(frequency)}</span></div>`;
+    card.innerHTML = `<button class="compare-toggle" type="button" aria-pressed="false" aria-label="Add ${escapeHtml(title)} to compare"${live ? '' : ' disabled'}>+ Compare</button><p class="card-eyebrow">${escapeHtml(dashboardSubgroupFor(key))}</p><header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${explainerHtml}${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>${cardFootHtml}`;
     grid.append(card);
     let chart = null;
-    card.querySelector('.expand-chart-btn').addEventListener('click', () => {
-      if (!focusOverlay || !focusContent) return;
+    const openExpanded = opener => {
+      if (!focusOverlay || !focusContent || expandedChart === card) return;
       lazyCharts.get(card)?.();
       expandedChart = card;
       expandedPlaceholder = document.createElement('div');
       expandedPlaceholder.hidden = true;
       card.after(expandedPlaceholder);
-      expandOpener = card.querySelector('.expand-chart-btn');
+      expandOpener = opener || card;
+      card.hidden = false;
       focusContent.append(card);
       focusOverlay.hidden = false;
-      chart?.resize();
+      setTimeout(() => charts.find(item => item.card === card)?.chart?.resize(), 0);
       focusClose?.focus();
+    };
+    card.querySelector('.expand-chart-btn').addEventListener('click', event => {
+      event.stopPropagation();
+      openExpanded(event.currentTarget);
+    });
+    // Like the web app's indicator cards: the whole compact card opens the full view.
+    card.tabIndex = 0;
+    card.setAttribute('aria-label', `${title}. Open full chart`);
+    card.addEventListener('click', event => {
+      if (expandedChart === card) return;
+      if (event.target.closest('button, a, select, input, label, summary, details')) return;
+      openExpanded(card);
+    });
+    card.addEventListener('keydown', event => {
+      if (expandedChart === card || event.target !== card) return;
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openExpanded(card); }
+    });
+    const compareButton = card.querySelector('.compare-toggle');
+    const syncCompareButton = () => {
+      const active = compareStore.has(key);
+      const slot = compareStore.slot ? compareStore.slot(key) : -1;
+      const full = !active && compareStore.full();
+      compareButton.classList.toggle('active', active);
+      compareButton.setAttribute('aria-pressed', String(active));
+      compareButton.textContent = active ? '✓ Added' : '+ Compare';
+      if (slot >= 0 && compareStore.PALETTE) compareButton.style.setProperty('--slot', compareStore.PALETTE[slot % compareStore.PALETTE.length]);
+      else compareButton.style.removeProperty('--slot');
+      compareButton.title = full ? `Compare holds up to ${compareStore.MAX || 4} indicators — remove one first` : active ? 'Remove from compare' : 'Add to compare';
+      if (live) compareButton.disabled = full;
+    };
+    compareButtonSyncers.push(syncCompareButton);
+    syncCompareButton();
+    compareButton.addEventListener('click', event => {
+      event.stopPropagation();
+      compareStore.toggle({ key, title });
     });
     if (years.length > 1) {
       const range = document.createElement('div');
@@ -1079,13 +1091,15 @@ async function main() {
       if (series.datasets && series.datasets.length > 0) {
         return { labels, datasets: series.datasets.map((dataset, i) => {
           const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
+          const solidBars = series.chartType === 'bar';
           return {
             label: dataset.label,
             data: shownValues(dataset.values || dataset.data, isRadialChart),
             borderColor: dsColor,
-            backgroundColor: createGradientFill(dsColor.slice(0, 7)),
-            fill: true,
-            borderWidth: labels.length > 60 ? 2 : 2.8,
+            backgroundColor: solidBars ? `${dsColor.slice(0, 7)}cc` : createGradientFill(dsColor.slice(0, 7)),
+            fill: !solidBars,
+            borderWidth: solidBars ? 0 : labels.length > 60 ? 2 : 2.8,
+            borderRadius: solidBars ? 4 : 0,
             pointRadius: labels.length > 60 ? 0 : 2.5,
             pointHoverRadius: 6,
             pointHoverBackgroundColor: dsColor,
@@ -1352,6 +1366,20 @@ async function main() {
   const search = document.querySelector('#chart-search');
   const savedToggle = document.querySelector('#saved-toggle');
   const resultCount = document.querySelector('#chart-result-count');
+  const chartTypeFilter = document.querySelector('#chart-type-filter');
+  const chartSort = document.querySelector('#chart-sort');
+  const filterSummary = document.querySelector('#filter-summary');
+  const PAGE_SIZE = 24;
+  let pageLimit = PAGE_SIZE;
+  let lastFilterKey = '';
+  let loadMoreButton = null;
+  if (grid) {
+    const loadMoreWrap = document.createElement('div');
+    loadMoreWrap.className = 'load-more-wrap';
+    loadMoreWrap.innerHTML = '<button type="button" class="load-more-btn" hidden>Load more</button>';
+    grid.after(loadMoreWrap);
+    loadMoreButton = loadMoreWrap.querySelector('button');
+  }
   const subgroupOwners = new Map();
   const groupToSubgroups = { all: [] };
   cards.forEach(card => {
@@ -1382,6 +1410,7 @@ async function main() {
     defaultOpt.textContent = selectedGroup === 'all' ? 'All subgroups' : `All ${selectedGroup} subgroups`;
     subgroupFilter.appendChild(defaultOpt);
 
+    const subgroupCount = (group, subgroup) => cards.filter(card => card.dataset.subgroup === subgroup && (!group || card.dataset.category === group)).length;
     if (selectedGroup === 'all') {
       const groupLabels = {
         Economic: '📈 Economic',
@@ -1402,7 +1431,7 @@ async function main() {
           displayedSubgroups.add(subgroup);
           const option = document.createElement('option');
           option.value = subgroup;
-          option.textContent = subgroup;
+          option.textContent = `${subgroup} (${subgroupCount(grpKey, subgroup)})`;
           optgroup.appendChild(option);
         });
         subgroupFilter.appendChild(optgroup);
@@ -1412,7 +1441,7 @@ async function main() {
       availableSubgroups.forEach(subgroup => {
         const option = document.createElement('option');
         option.value = subgroup;
-        option.textContent = subgroup;
+        option.textContent = `${subgroup} (${subgroupCount(selectedGroup, subgroup)})`;
         subgroupFilter.appendChild(option);
       });
     }
@@ -1514,6 +1543,42 @@ async function main() {
       desc: "Follow annual international visitor and receipts indicators, then explore India’s UNESCO World Heritage properties by inscription year. Visitor totals are national, while the heritage series is reconstructed from current official inscription records; neither is a state-wise monument attendance measure.",
       badge1: "World Bank annual indicators",
       badge2: "UNESCO property records"
+    },
+    "Sports": {
+      title: "🏅 Sports: Medals, Wins & Records",
+      desc: "India's medals at the Olympics, Paralympics, Asian Games and Commonwealth Games, Games by Games and sport by sport, and the results and rankings of India's athletes, shooters, archers, wrestlers, boxers, lifters, shuttlers, tennis players, chess players and kabaddi teams, all taken from the official governing bodies.",
+      badge1: "IOC · IPC · OCA · CGF records",
+      badge2: "World federations · PIB"
+    },
+    "Cricket": {
+      title: "🏏 Cricket: Wins, Losses, Rankings & Players",
+      desc: "All-time international results of India's men's and women's teams in Tests, ODIs and T20Is, records and titles at ICC tournaments, India's place in the official ICC team and player rankings, and career batting and bowling records that set today's players beside the greats.",
+      badge1: "ICC rankings & events",
+      badge2: "Statsguru records · Past vs current"
+    },
+    "Hockey": {
+      title: "🏑 Hockey: Results, Rankings & Players",
+      desc: "Won, drawn and lost records of India's men's and women's hockey teams at the Olympics, World Cups and other FIH events, India's place in the current FIH world rankings, their FIH Hockey Pro League seasons, and goal-scoring and appearance records of past and current players.",
+      badge1: "FIH official records",
+      badge2: "Olympics · World Cup · Players"
+    },
+    "Football": {
+      title: "⚽ Football: Results, Rankings & Players",
+      desc: "India's men's and women's national teams: FIFA ranking history, results by competition and year as recorded by FIFA, and the goals and appearances of past and current India internationals.",
+      badge1: "FIFA · AIFF official records",
+      badge2: "Men's & women's teams · Players"
+    },
+    "Innovation & Technology": {
+      title: "💡 Innovation & Technology",
+      desc: "How fast India is inventing: patent and trademark filings by residents and non-residents, industrial designs, R&D spending and researchers, scientific publications, high-tech exports, IP royalty flows, digital adoption, new business formation and India's standing against other major economies.",
+      badge1: "WIPO · World Bank · UNESCO · ITU",
+      badge2: "131 indices · 9 subgroups"
+    },
+    "Judiciary & Pending Cases": {
+      title: "⚖️ Judiciary & Pending Cases",
+      desc: "How many cases are waiting for a verdict in India's courts: pendency in the Supreme Court, all 25 High Courts and the district and subordinate courts, split by civil and criminal matters, case age, case type and state, with monthly institution and disposal, all taken from the National Judicial Data Grid.",
+      badge1: "NJDG · Supreme Court · eCourts",
+      badge2: "Supreme Court · High Courts · Lower Courts"
     }
   };
 
@@ -1592,10 +1657,94 @@ async function main() {
     "Livestock & Fisheries": "assets/livestock-fisheries.svg",
     "Gender & Population": "assets/gender-population.svg",
     "Higher Education": "assets/higher-education.svg",
-    "Nutrition & Food Security": "assets/nutrition.svg"
+    "Nutrition & Food Security": "assets/nutrition.svg",
+    "Olympic & Paralympic Medals": "assets/sports-medals.svg",
+    "Asian & Commonwealth Games": "assets/multi-sport-games.svg",
+    "Athletics": "assets/athletics.svg",
+    "Shooting & Archery": "assets/shooting-archery.svg",
+    "Combat & Strength": "assets/combat-strength.svg",
+    "Racket Sports": "assets/racket-sports.svg",
+    "Chess & Kabaddi": "assets/chess-kabaddi.svg",
+    "Men's Cricket": "assets/cricket.svg",
+    "Women's Cricket": "assets/cricket-women.svg",
+    "ICC Tournaments": "assets/trophy.svg",
+    "ICC Rankings": "assets/rankings.svg",
+    "Batting: Past vs Current": "assets/cricket-batting.svg",
+    "Bowling: Past vs Current": "assets/cricket-bowling.svg",
+    "Men's Hockey": "assets/hockey.svg",
+    "Women's Hockey": "assets/hockey-women.svg",
+    "FIH Rankings & Pro League": "assets/rankings.svg",
+    "Hockey Players: Past vs Current": "assets/hockey-players.svg",
+    "Men's Football": "assets/football.svg",
+    "Women's Football": "assets/football-women.svg",
+    "FIFA Rankings": "assets/football-rankings.svg",
+    "Footballers: Past vs Current": "assets/football-players.svg",
+    "Patents & Intellectual Property": "assets/patents-ip.svg",
+    "Industrial Designs & IP Filings": "assets/patents-ip.svg",
+    "Research & Development": "assets/research-lab.svg",
+    "Scientific Publications & Talent": "assets/higher-education.svg",
+    "High-Tech Trade & Manufacturing": "assets/innovation.svg",
+    "IP Royalties & Technology Payments": "assets/funding-mix.svg",
+    "Digital Technology Adoption": "assets/digital-index.svg",
+    "Startups & New Business": "assets/startup-hub.svg",
+    "Global Innovation Benchmarks": "assets/rankings.svg",
+    "Supreme Court": "assets/supreme-court.svg",
+    "High Courts": "assets/high-court.svg",
+    "Lower Courts": "assets/district-court.svg",
+    "Savings & Investment": "assets/macro-skyline.svg",
+    "Prices & Inflation Benchmarks": "assets/commodities.svg",
+    "External Debt & Reserves": "assets/central-bank.svg",
+    "Industrial Structure & Productivity": "assets/factory-floor.svg",
+    "Logistics & Freight": "assets/port-trade.svg",
+    "Energy Use & Imports": "assets/energy-fuel.svg",
+    "Resource Rents & Natural Capital": "assets/minerals.svg",
+    "Financial Inclusion & Credit Depth": "assets/rural-banks.svg",
+    "Insurance & Capital Markets": "assets/stock-market.svg",
+    "Urban vs Rural Divide": "assets/state-demography.svg",
+    "Urbanisation & Cities": "assets/sea-link.svg",
+    "Communicable Diseases": "assets/epidemiology.svg",
+    "Health Workforce & Immunisation": "assets/hospital.svg",
+    "Gender Equality": "assets/gender-population.svg",
+    "Children & Youth": "assets/education.svg",
+    "Air Quality & Emissions": "assets/pollution-waste.svg",
+    "Water Resources": "assets/monsoon-fields.svg",
+    "Farm Productivity & Yields": "assets/crop-production.svg",
+    "Food Trade & Land Use": "assets/forests-land.svg",
+    "Armed Forces & Personnel": "assets/combat-strength.svg",
+    "Military Spending Benchmarks": "assets/defence-budget.svg",
+    "Conflict & Displacement": "assets/counter-terror.svg",
+    "Rule of Law & Governance": "assets/supreme-court.svg",
+    "Air & Transport Connectivity": "assets/infrastructure.svg",
+    "Travel Spending & Balance": "assets/global-tourism.svg",
+    "Publication Activity": "assets/public-opinion.svg",
+    "Report Themes": "assets/media-press.svg",
+    "Survey Snapshot Comparisons": "assets/opinion.svg",
+    "Historical Candidate Field & Competition": "assets/ballot-box.svg",
+    "Historical Victory Margins": "assets/vote-map.svg",
+    "Recent Effective Candidate Field": "assets/assembly-results.svg",
+    "Cycle-over-Cycle Finance Trends": "assets/campaign-finance.svg",
+    "State Finance Rankings": "assets/congress-finance.svg"
   };
 
   const subgroupHeroData = {
+    "Supreme Court": {
+      title: "🏛️ Supreme Court",
+      desc: "Cases pending before the Supreme Court of India: registered and unregistered matters, civil versus criminal, how long cases have waited, case types, matters listed or awaiting scrutiny, and monthly filings against disposals.",
+      badge1: "Supreme Court NJDG",
+      badge2: "Pendency · Age · Case types"
+    },
+    "High Courts": {
+      title: "⚖️ High Courts",
+      desc: "Pendency across India's 25 High Courts: which courts carry the largest backlogs, how old pending cases are (up to more than 30 years), writ petitions, appeals and other case types, and how each High Court's disposals compare with new filings.",
+      badge1: "High Courts NJDG",
+      badge2: "25 High Courts · Civil & Criminal"
+    },
+    "Lower Courts": {
+      title: "🏢 Lower Courts",
+      desc: "District and subordinate courts, where most Indians meet the justice system: state-by-state pending cases, the age of the backlog, undated and excessively dated cases, cases filed by women and senior citizens, and monthly institution versus disposal.",
+      badge1: "District Courts NJDG",
+      badge2: "36 States & UTs · 5 crore+ cases"
+    },
     "Heavy Industry & Metals": {
       title: "🏗️ Heavy Industry, Metals & Capital Goods",
       desc: "Basic metals (iron, steel, aluminium), fabricated metal products, machinery, electrical equipment, cement and other non-metallic minerals, and refined petroleum, tracked through MOSPI's Index of Industrial Production since 2011-12, plus UNIDO's technology-intensity split.",
@@ -1955,72 +2104,275 @@ async function main() {
       desc: "Explore annual inscription events, a cumulative count reconstructed from current UNESCO property pages, and current cultural/natural/mixed classifications. The historical line is not an archived snapshot for each year: revisions to today's list can change the reconstructed past, and inscription counts are not visitor numbers.",
       badge1: "UNESCO World Heritage Centre",
       badge2: "Current-list reconstruction"
+    },
+    "Olympic & Paralympic Medals": {
+      title: "🥇 Olympic & Paralympic Medals",
+      desc: "Every medal India has won at the Summer Olympics (41) and Summer Paralympics (60), Games by Games and sport by sport, plus a cross-event view of medals in every sport India has reached a podium in at the four major multi-sport Games.",
+      badge1: "IOC & IPC records",
+      badge2: "Paris 1900 – Paris 2024"
+    },
+    "Asian & Commonwealth Games": {
+      title: "🏟️ Asian & Commonwealth Games",
+      desc: "India's 863 Asian Games and 602 Commonwealth Games medals by edition and by sport, with its Commonwealth medal-table position over time. Totals run to the 2026 Games in Aichi–Nagoya and Glasgow.",
+      badge1: "OCA & CGF records",
+      badge2: "1934 – 2026"
+    },
+    "Athletics": {
+      title: "🏃 Athletics",
+      desc: "India's medals at the World Athletics Championships and the World Athletics U20 Championships, edition by edition, as published by World Athletics. Olympic, Asian Games and Commonwealth Games athletics medals are in the Games subgroups.",
+      badge1: "World Athletics records",
+      badge2: "Seniors · U20"
+    },
+    "Shooting & Archery": {
+      title: "🎯 Shooting & Archery",
+      desc: "Medals won by Indian shooters at ISSF World Championships and World Cups (2022 onwards), and by Indian archers at World Archery Championships and World Cup stages and Finals.",
+      badge1: "ISSF · World Archery",
+      badge2: "Rifle · Pistol · Shotgun · Bow"
+    },
+    "Combat & Strength": {
+      title: "🤼 Wrestling, Boxing & Weightlifting",
+      desc: "India's medals at the senior World Wrestling Championships (2025–26), the men's and women's World Boxing Championships, and the IWF World Weightlifting Championships (total-lift medals).",
+      badge1: "UWW · IBA / World Boxing · IWF",
+      badge2: "Mat · Ring · Platform"
+    },
+    "Racket Sports": {
+      title: "🏸 Badminton & Tennis",
+      desc: "Indian medals at the BWF World Championships, current BWF world rankings by discipline, Thomas, Uber and Sudirman Cup finishes, and India's Davis Cup and Billie Jean King Cup ties won and lost by decade.",
+      badge1: "BWF · ITF records",
+      badge2: "Singles · Doubles · Team"
+    },
+    "Chess & Kabaddi": {
+      title: "♟️ Chess & Kabaddi",
+      desc: "India's top-rated players, titled-player count and federation rank from the FIDE rating lists, Chess Olympiad match records, and the Pro Kabaddi League season standings.",
+      badge1: "FIDE · Pro Kabaddi League",
+      badge2: "Board · Mat"
+    },
+    "Men's Cricket": {
+      title: "🏏 Men's Cricket",
+      desc: "All-time results of India's men's team in Tests, ODIs and T20Is: matches won, lost, drawn, tied and with no result, and win percentages by format.",
+      badge1: "ESPNcricinfo Statsguru",
+      badge2: "Tests · ODIs · T20Is"
+    },
+    "Women's Cricket": {
+      title: "🏏 Women's Cricket",
+      desc: "All-time results of India's women's team across Tests, ODIs and T20Is.",
+      badge1: "ESPNcricinfo Statsguru",
+      badge2: "Tests · ODIs · T20Is"
+    },
+    "ICC Tournaments": {
+      title: "🏆 ICC Tournaments",
+      desc: "India's match records at the men's and women's ODI World Cups, T20 World Cups and the Champions Trophy, edition by edition.",
+      badge1: "ICC event records",
+      badge2: "Men's & women's events"
+    },
+    "ICC Rankings": {
+      title: "📈 ICC Team & Player Rankings",
+      desc: "India's position and rating in the official ICC team rankings for Tests, ODIs and T20Is, men and women, and the Indian batters, bowlers and all-rounders in the ICC player rankings.",
+      badge1: "ICC official rankings",
+      badge2: "Teams · Players"
+    },
+    "Batting: Past vs Current": {
+      title: "🏏 Batting: Past vs Current",
+      desc: "India's leading run-scorers in Tests, ODIs and T20Is, men and women, with career runs and batting averages. Every player is marked as past (retired) or current, so today's batters can be measured against the greats.",
+      badge1: "ESPNcricinfo Statsguru",
+      badge2: "Runs · Averages"
+    },
+    "Bowling: Past vs Current": {
+      title: "🎯 Bowling: Past vs Current",
+      desc: "India's leading wicket-takers in every format, men and women, with career wickets and bowling averages, marking which bowlers are still playing and which are legends of earlier eras.",
+      badge1: "ESPNcricinfo Statsguru",
+      badge2: "Wickets · Averages"
+    },
+    "Men's Hockey": {
+      title: "🏑 Men's Hockey",
+      desc: "Won, drawn and lost records of India's men's hockey team at the Olympics, the FIH World Cup and other FIH events, with goals scored and conceded.",
+      badge1: "FIH official records",
+      badge2: "8 Olympic golds"
+    },
+    "Women's Hockey": {
+      title: "🏑 Women's Hockey",
+      desc: "Won, drawn and lost records of India's women's hockey team at the Olympics, the FIH World Cup and other FIH events.",
+      badge1: "FIH official records",
+      badge2: "Olympics · World Cup"
+    },
+    "FIH Rankings & Pro League": {
+      title: "📈 FIH Rankings & Pro League",
+      desc: "India's men's and women's FIH world-ranking points against the current top ten, and their standings in each FIH Hockey Pro League season.",
+      badge1: "FIH rankings",
+      badge2: "Pro League seasons"
+    },
+    "Hockey Players: Past vs Current": {
+      title: "🏑 Hockey Players: Past vs Current",
+      desc: "Goals and appearances of India's men's and women's hockey players in official FIH-recorded matches, with each player marked as current or past.",
+      badge1: "FIH · Hockey India records",
+      badge2: "Goals · Caps"
+    },
+    "Men's Football": {
+      title: "⚽ Men's Football",
+      desc: "India men's international results by competition and by year as recorded by FIFA: matches won, drawn and lost, with goals scored and conceded.",
+      badge1: "FIFA official records",
+      badge2: "Results · Goals"
+    },
+    "Women's Football": {
+      title: "⚽ Women's Football",
+      desc: "India women's international results by competition and by year as recorded by FIFA.",
+      badge1: "FIFA official records",
+      badge2: "Results · Goals"
+    },
+    "FIFA Rankings": {
+      title: "📈 FIFA Rankings",
+      desc: "India's men's and women's FIFA world ranking over the years, with the best and worst positions in each year, and India's place among Asian nations in the latest table.",
+      badge1: "FIFA/Coca-Cola World Ranking",
+      badge2: "Men · Women"
+    },
+    "Footballers: Past vs Current": {
+      title: "⚽ Footballers: Past vs Current",
+      desc: "Goals and appearances of India men's international footballers in FIFA-recorded matches, marking which players are still in the national team and which have moved on.",
+      badge1: "FIFA match line-ups",
+      badge2: "Goals · Appearances"
+    },
+    "Patents & Intellectual Property": {
+      title: "📜 Patents & Intellectual Property",
+      desc: "Patent applications and grants filed by Indian residents and non-residents, trademark filings and India's growing share of global IP activity.",
+      badge1: "WIPO statistics",
+      badge2: "Patents · Trademarks"
+    },
+    "Industrial Designs & IP Filings": {
+      title: "🎨 Industrial Designs & IP Filings",
+      desc: "Industrial design applications, utility filings and other registered IP rights showing how Indian firms protect product innovation.",
+      badge1: "WIPO statistics",
+      badge2: "Designs · IP rights"
+    },
+    "Research & Development": {
+      title: "🔬 Research & Development",
+      desc: "Gross spending on R&D as a share of GDP, researchers and technicians per million people, and how India compares with peers.",
+      badge1: "UNESCO UIS · World Bank",
+      badge2: "R&D intensity · Researchers"
+    },
+    "Scientific Publications & Talent": {
+      title: "📚 Scientific Publications & Talent",
+      desc: "Scientific and technical journal articles, tertiary enrolment and the talent pipeline behind India's research output.",
+      badge1: "NSF · UNESCO",
+      badge2: "Publications · Talent"
+    },
+    "High-Tech Trade & Manufacturing": {
+      title: "🛰️ High-Tech Trade & Manufacturing",
+      desc: "High-technology exports, ICT goods and services trade, and medium/high-tech manufacturing value added.",
+      badge1: "World Bank WDI · UNIDO",
+      badge2: "Exports · Manufacturing"
+    },
+    "IP Royalties & Technology Payments": {
+      title: "💱 IP Royalties & Technology Payments",
+      desc: "Charges for the use of intellectual property received and paid, showing whether India licenses technology in or out.",
+      badge1: "IMF BoP via World Bank",
+      badge2: "Receipts · Payments"
+    },
+    "Digital Technology Adoption": {
+      title: "📱 Digital Technology Adoption",
+      desc: "Internet users, mobile and broadband subscriptions, secure servers and ICT service exports tracking India's digital diffusion.",
+      badge1: "ITU · World Bank",
+      badge2: "Internet · Broadband"
+    },
+    "Startups & New Business": {
+      title: "🚀 Startups & New Business",
+      desc: "New business registrations, entry density and the cost and time to start a business.",
+      badge1: "World Bank Entrepreneurship",
+      badge2: "New firms · Entry density"
+    },
+    "Global Innovation Benchmarks": {
+      title: "🌐 Global Innovation Benchmarks",
+      desc: "India alongside China, the US, Brazil and other peers on patents, R&D, high-tech exports and digital adoption.",
+      badge1: "WIPO · World Bank",
+      badge2: "Peer comparison"
     }
   };
 
+  const exploreHeadingDefaults = (() => {
+    const heading = document.querySelector('#explore');
+    if (!heading) return null;
+    const eyebrow = heading.querySelector('.eyebrow');
+    const title = heading.querySelector('#explore-title');
+    const lead = heading.querySelector('#explore-title + p');
+    return { eyebrow, title, lead, texts: [eyebrow?.textContent, title?.textContent, lead?.textContent] };
+  })();
+
+  const setExploreHeading = (eyebrowText, titleText, leadText) => {
+    if (!exploreHeadingDefaults) return;
+    const { eyebrow, title, lead } = exploreHeadingDefaults;
+    if (eyebrow) eyebrow.textContent = eyebrowText;
+    if (title) title.textContent = titleText;
+    if (lead) lead.textContent = leadText;
+  };
+
+  // Mirrors the web app: picking a group swaps the page heading for the group's own title and story.
   const updateGroupHero = () => {
     const hero = document.querySelector('#group-hero');
-    if (!hero) return;
+    if (hero) hero.hidden = true;
     const grp = groupFilter.value;
     if (grp === 'all' || !groupHeroData[grp]) {
-      hero.hidden = true;
+      if (window.IndiaArt && window.IndiaArt.isAmbientPage && !window.IndiaArt.isRunning()) window.IndiaArt.resume();
+      if (exploreHeadingDefaults) setExploreHeading(...exploreHeadingDefaults.texts);
       return;
     }
     const heroInfo = subgroupHeroData[subgroupFilter.value] || groupHeroData[grp];
-    const heroTitle = document.querySelector('#group-hero-title');
-    const heroDesc = document.querySelector('#group-hero-desc');
-    const heroBadges = document.querySelector('#group-hero-badges');
-    const heroImage = document.querySelector('#group-hero-image');
-    const heroImageCaption = document.querySelector('#group-hero-image-caption');
     const artPath = subgroupArtMap[subgroupFilter.value] || categoryBgMap[grp];
     if (artPath) setEraBackground(artPath);
-    if (heroTitle) heroTitle.textContent = heroInfo.title;
-    if (heroDesc) heroDesc.textContent = heroInfo.desc;
-    if (heroBadges) heroBadges.innerHTML = `<span class="hero-badge saffron">${heroInfo.badge1}</span><span class="hero-badge green">${heroInfo.badge2}</span>`;
-    if (heroImage && artPath) {
-      heroImage.src = artPath;
-      heroImage.alt = `${subgroupFilter.value !== 'all' ? subgroupFilter.value : grp} themed original illustration`;
-    }
-    if (heroImageCaption) {
-      heroImageCaption.textContent = subgroupFilter.value !== 'all'
-        ? `Original illustration · ${subgroupFilter.value}`
-        : 'Original India-inspired vector illustration';
-    }
-    hero.hidden = false;
+    setExploreHeading('Group', heroInfo.title, heroInfo.desc);
   };
 
-  const syncGroupPills = (grpVal) => {
-    if (groupPills.length > 0) {
-      groupPills.forEach(p => {
-        const active = p.dataset.group === grpVal;
-        p.classList.toggle('active', active);
-        p.setAttribute('aria-pressed', String(active));
-      });
+  const exploreGrid = document.querySelector('#explore-grid');
+  const exploreBrowseTitle = document.querySelector('#explore-browse-title');
+  const exploreBrowseMeta = document.querySelector('#explore-browse-meta');
+  const tileHtml = ({ attr, art, name, meta, count, active, back }) => `<button type="button" role="listitem" class="explore-tile${active ? ' active' : ''}${back ? ' explore-tile-back' : ''}" ${attr}${art ? ` style="--card-art:url('${escapeHtml(art)}')"` : ''}${back ? '' : ` aria-pressed="${active ? 'true' : 'false'}"`}>${count !== undefined ? `<span class="explore-tile-count">${count}</span>` : ''}<span class="explore-tile-name">${escapeHtml(name)}</span><span class="explore-tile-meta">${escapeHtml(meta)}</span></button>`;
+  const renderExploreGrid = () => {
+    if (!exploreGrid) return;
+    const grp = groupFilter.value;
+    if (grp === 'all' || !groupToSubgroups[grp]) {
+      const groups = Object.keys(groupToSubgroups).filter(name => name !== 'all')
+        .sort((left, right) => (categoryOrder[left] ?? 99) - (categoryOrder[right] ?? 99));
+      exploreGrid.setAttribute('aria-label', 'Groups');
+      exploreGrid.innerHTML = groups.map(name => tileHtml({
+        attr: `data-group="${escapeHtml(name)}"`,
+        art: categoryBgMap[name],
+        name,
+        meta: `${groupToSubgroups[name].length} subgroups`,
+        count: cards.filter(card => card.dataset.category === name).length,
+      })).join('');
+      if (exploreBrowseTitle) exploreBrowseTitle.textContent = 'Browse by group';
+      if (exploreBrowseMeta) exploreBrowseMeta.textContent = `${groups.length} groups`;
+      return;
     }
+    const subs = groupToSubgroups[grp];
+    exploreGrid.setAttribute('aria-label', 'Subgroups');
+    exploreGrid.innerHTML = tileHtml({ attr: 'data-group="all"', name: '← All groups', meta: 'Back to every group', back: true })
+      + subs.map(name => {
+        const count = cards.filter(card => card.dataset.category === grp && card.dataset.subgroup === name).length;
+        return tileHtml({
+          attr: `data-subgroup="${escapeHtml(name)}"`,
+          art: subgroupArtMap[name] || categoryBgMap[grp],
+          name,
+          meta: `${count} charts`,
+          count,
+          active: subgroupFilter.value === name,
+        });
+      }).join('');
+    if (exploreBrowseTitle) exploreBrowseTitle.textContent = `Inside ${grp}`;
+    if (exploreBrowseMeta) exploreBrowseMeta.textContent = `${subs.length} subgroups`;
   };
+  const syncGroupPills = () => renderExploreGrid();
 
-  const groupEraMap = {
-    Economic: 'liberalization',
-    Social: 'republic',
-    'Defence & Strategic': 'modern',
-    'Crime & Security': 'republic',
-    'Pew Research': 'modern'
-  };
-
-  const groupPills = document.querySelectorAll('.group-pill');
-  if (groupPills.length > 0) {
-    groupPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        syncGroupPills(pill.dataset.group);
-        groupFilter.value = pill.dataset.group;
-        subgroupFilter.value = 'all';
-        if (categoryBgMap[pill.dataset.group]) setEraBackground(categoryBgMap[pill.dataset.group]);
-        updateSubgroupFilter();
-        updateGroupHero();
-        updateCards();
-      });
-    });
-  }
+  exploreGrid?.addEventListener('click', event => {
+    const tile = event.target.closest('.explore-tile');
+    if (!tile) return;
+    if (tile.dataset.group) {
+      groupFilter.value = tile.dataset.group;
+      subgroupFilter.value = 'all';
+      groupFilter.dispatchEvent(new Event('change'));
+    } else if (tile.dataset.subgroup) {
+      subgroupFilter.value = subgroupFilter.value === tile.dataset.subgroup ? 'all' : tile.dataset.subgroup;
+      subgroupFilter.dispatchEvent(new Event('change'));
+    }
+  });
 
   renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroData, subgroupArtMap, setEraBackground, generatedAt: data.generated_at_utc, articleSources: [
     ['indian_matrix', 'Indian Matrix', (dataPayload && dataPayload.indian_matrix_articles) || indianMatrix?.articles || []],
@@ -2318,17 +2670,33 @@ async function main() {
       const matchesState = (stateFilter === 'all' || cardState === stateFilter);
       const matchesSearch = (!query || cardTitle.includes(query));
       const matchesSaved = (!savedToggle?.getAttribute('aria-pressed') || savedToggle.getAttribute('aria-pressed') !== 'true' || isSaved);
+      const matchesChart = (!chartTypeFilter?.value || card.dataset.chartKind === chartTypeFilter.value);
 
-      const isMatch = (hasSelectedScope && matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesSaved);
-      card.hidden = !isMatch;
+      const isMatch = (matchesGroup && matchesSubgroup && matchesState && matchesSearch && matchesSaved && matchesChart);
+      card.hidden = !isMatch && card !== expandedChart;
       if (isMatch) visibleCount++;
     });
-    headings.forEach(heading => {
-      heading.hidden = !cards.some(card => !card.hidden && card.dataset.category === heading.dataset.category);
-    });
-    subHeadings.forEach(subHeading => {
-      subHeading.hidden = !cards.some(card => !card.hidden && card.dataset.subgroup === subHeading.dataset.subgroup);
-    });
+    const sortMode = chartSort?.value || '';
+    const sortedCards = sortMode ? [...cards].sort((left, right) => {
+      if (sortMode === 'title') return (left.querySelector('h2')?.textContent || '').localeCompare(right.querySelector('h2')?.textContent || '');
+      if (sortMode === 'points') return Number(right.dataset.points) - Number(left.dataset.points);
+      return Number(right.dataset.latest) - Number(left.dataset.latest);
+    }) : null;
+    cards.forEach(card => { card.style.order = ''; });
+    if (sortedCards) sortedCards.forEach((card, index) => { card.style.order = String(index + 1); });
+    headings.forEach(heading => { heading.hidden = true; });
+    subHeadings.forEach(subHeading => { subHeading.hidden = true; });
+
+    // Same paging as the web app's Explore: 24 cards at a time with a "Load more" button.
+    const filterKey = [groupFilter.value, subgroupFilter.value, query, stateFilter, chartTypeFilter?.value, sortMode, savedToggle?.getAttribute('aria-pressed')].join('|');
+    if (filterKey !== lastFilterKey) { pageLimit = PAGE_SIZE; lastFilterKey = filterKey; }
+    const matchedInOrder = (sortedCards || cards).filter(card => !card.hidden);
+    matchedInOrder.forEach((card, index) => { if (index >= pageLimit && card !== expandedChart) card.hidden = true; });
+    const remaining = Math.max(0, matchedInOrder.length - pageLimit);
+    if (loadMoreButton) {
+      loadMoreButton.hidden = remaining === 0;
+      loadMoreButton.textContent = `Load more (${remaining.toLocaleString('en-IN')} left)`;
+    }
 
     let emptyMsg = grid.querySelector('.no-charts-message');
     if (visibleCount === 0) {
@@ -2337,13 +2705,21 @@ async function main() {
         emptyMsg.className = 'no-charts-message';
         grid.appendChild(emptyMsg);
       }
-      emptyMsg.innerHTML = `<p style="color:var(--muted); text-align:center; padding:40px; font-size:1.05rem;">${hasSelectedScope ? 'No indicators match this selection. Try another group, subgroup, or search.' : 'Choose a group or subgroup above to explore its charts.'}</p>`;
+      emptyMsg.innerHTML = '<p style="color:var(--muted); text-align:center; padding:40px; font-size:1.05rem;">No indicators match this selection. Try another group, subgroup, or search.</p>';
       emptyMsg.hidden = false;
     } else if (emptyMsg) {
       emptyMsg.hidden = true;
     }
-    if (resultCount) resultCount.textContent = hasSelectedScope ? `Showing ${visibleCount} of ${cards.length} indicators` : 'Select a group or subgroup to begin';
+    if (resultCount) resultCount.textContent = `Showing ${Math.min(visibleCount, pageLimit)} of ${visibleCount} indicators`;
+    if (filterSummary) {
+      const scope = subgroupFilter.value !== 'all' ? subgroupFilter.value : groupFilter.value !== 'all' ? groupFilter.value : '';
+      const noun = `${visibleCount.toLocaleString('en-IN')} indicator${visibleCount === 1 ? '' : 's'}`;
+      filterSummary.textContent = hasSelectedScope ? `${noun} in ${scope}${query ? ` matching “${search.value.trim()}”` : ''}` : `${noun} across every group${query ? ` matching “${search.value.trim()}”` : ''}`;
+    }
   };
+  if (loadMoreButton) loadMoreButton.addEventListener('click', () => { pageLimit += PAGE_SIZE; updateCards(); });
+  chartTypeFilter?.addEventListener('change', updateCards);
+  chartSort?.addEventListener('change', updateCards);
   savedToggle?.addEventListener('click', () => {
     const pressed = savedToggle.getAttribute('aria-pressed') !== 'true';
     savedToggle.setAttribute('aria-pressed', String(pressed));
@@ -2354,6 +2730,8 @@ async function main() {
     groupFilter.value = 'all';
     subgroupFilter.value = 'all';
     if (filter) filter.value = 'all';
+    if (chartTypeFilter) chartTypeFilter.value = '';
+    if (chartSort) chartSort.value = '';
     search.value = '';
     savedToggle?.setAttribute('aria-pressed', 'false');
     savedToggle?.classList.remove('active');
@@ -2378,6 +2756,7 @@ async function main() {
       if (categoryBgMap[groupFilter.value]) setEraBackground(categoryBgMap[groupFilter.value]);
     }
     updateSubgroupFilter(); 
+    renderExploreGrid();
     updateGroupHero(); 
     updateCards(); 
   });
@@ -2408,6 +2787,9 @@ async function main() {
     search.value = params.get('q');
     search.dispatchEvent(new Event('input'));
   }
+  if (chartTypeFilter && hasOption(chartTypeFilter, params.get('chart_type') || '')) chartTypeFilter.value = params.get('chart_type') || '';
+  if (chartSort && hasOption(chartSort, params.get('sort') || '')) chartSort.value = params.get('sort') || '';
+  if (params.get('chart_type') || params.get('sort')) updateCards();
   const startChart = params.get('chart');
   const linkedCard = startChart ? document.getElementById(`indicator-${startChart}`) : null;
   if (linkedCard) {
@@ -2419,17 +2801,20 @@ async function main() {
     }
     lazyCharts.get(linkedCard)?.();
     linkedCard.classList.add('deep-linked');
-    setTimeout(() => linkedCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 250);
+    // Paging may hide the card in the grid, so open it in the full view (the web app's indicator page).
+    setTimeout(() => linkedCard.click(), 250);
   }
   const syncUrl = () => {
     const next = new URLSearchParams();
     if (groupFilter.value !== 'all') next.set('group', groupFilter.value);
     if (subgroupFilter.value !== 'all') next.set('subgroup', subgroupFilter.value);
     if (search.value.trim()) next.set('q', search.value.trim());
+    if (chartTypeFilter?.value) next.set('chart_type', chartTypeFilter.value);
+    if (chartSort?.value) next.set('sort', chartSort.value);
     const query = next.toString();
     history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
   };
-  [groupFilter, subgroupFilter].forEach(select => select.addEventListener('change', syncUrl));
+  [groupFilter, subgroupFilter, chartTypeFilter, chartSort].filter(Boolean).forEach(select => select.addEventListener('change', syncUrl));
   search.addEventListener('input', syncUrl);
 }
 

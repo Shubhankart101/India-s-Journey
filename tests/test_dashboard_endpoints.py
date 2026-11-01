@@ -166,6 +166,10 @@ class DashboardEndpointTests(unittest.TestCase):
         rbi_keys = {key for key in payload["series"] if key.startswith("rbi_state_") or re.match(r"state_\w+_(region_share|distribution|all_india_trend)$", key)}
         self.assertGreaterEqual(len(rbi_keys), 100)
         expected.update(rbi_keys)
+        # Innovation, expansion and derived-group layers build their key sets from live API data.
+        layer_keys = {key for key in payload["series"] if key.startswith(("innov_", "xp_", "dg_", "jud_"))}
+        self.assertGreaterEqual(len([key for key in layer_keys if key.startswith("innov_")]), 100)
+        expected.update(layer_keys)
         self.assertEqual(set(payload["series"]), expected)
         for key, series in payload["series"].items():
             if series.get("datasets"):
@@ -332,7 +336,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn(b"Sources &amp; references", body)
         status, about = self.fetch(f"{DASHBOARD_URL}/about.html")
         self.assertEqual(status, 200)
-        self.assertIn(b'id="thanks-im-articles"', about)
+        self.assertNotIn(b'id="thanks-im-articles"', about)
         status, body = self.fetch(f"{DASHBOARD_URL}/data/economic-survey-monthly.json")
         self.assertEqual(status, 200)
         self.assertIn(b"series", body)
@@ -433,20 +437,21 @@ class DashboardEndpointTests(unittest.TestCase):
                     self.assertIn("values", series, key)
                     self.assertEqual(len(series["years"]), len(series["values"]), key)
 
-    def test_every_page_has_with_thanks_section_for_both_publishers(self):
-        for page in ("index.html", "explore.html", "about.html", "api.html", "404.html"):
+    def test_thanks_section_lives_only_on_the_sources_page(self):
+        status, body = self.fetch(f"{DASHBOARD_URL}/sources.html")
+        self.assertEqual(status, 200)
+        self.assertEqual(body.count(b'id="thanks"'), 1)
+        self.assertIn(b'id="thanks-pp-title">PolityPolicy<', body)
+        self.assertIn(b'id="thanks-im-title">Indian Matrix<', body)
+        self.assertIn(b'id="thanks-pp-articles"', body)
+        self.assertIn(b'id="thanks-im-articles"', body)
+        self.assertIn(b'href="https://politypolicy.com/"', body)
+        self.assertIn(b'href="https://politypolicy.substack.com/"', body)
+        self.assertIn(b'href="https://substack.com/@indianmatrix"', body)
+        for page in ("index.html", "explore.html", "about.html", "api.html", "compare.html", "404.html"):
             status, body = self.fetch(f"{DASHBOARD_URL}/{page}")
             self.assertEqual(status, 200, page)
-            self.assertEqual(body.count(b'id="thanks"'), 1, page)
-            self.assertIn(b'id="thanks-pp-title">PolityPolicy<', body, page)
-            self.assertIn(b'id="thanks-im-title">Indian Matrix<', body, page)
-            self.assertIn(b'id="thanks-pp-articles"', body, page)
-            self.assertIn(b'id="thanks-im-articles"', body, page)
-            self.assertIn(b"This is an independent project and does not represent those publishers.", body, page)
-            self.assertIn(b'href="https://politypolicy.com/"', body, page)
-            self.assertIn(b'href="https://politypolicy.substack.com/"', body, page)
-            self.assertIn(b'href="https://substack.com/@indianmatrix"', body, page)
-            self.assertIn(b'<footer>Inspired by PolityPolicy.com, Polity and Policy and Indian Matrix (<a href="#thanks">with thanks</a>)', body, page)
+            self.assertNotIn(b'id="thanks"', body, page)
 
     def test_home_and_about_share_the_web_app_intro(self):
         root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -510,20 +515,32 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertIn("indexAxis: horizontalBars ? 'y' : 'x'", text)
 
     def test_site_is_multi_page_and_mobile_ready(self):
-        for page, marker in (("index.html", "home"), ("explore.html", "explore"), ("about.html", "about"), ("api.html", "api")):
+        for page, marker in (("index.html", "home"), ("explore.html", "explore"), ("sources.html", "sources"), ("about.html", "about"), ("api.html", "api")):
             status, body = self.fetch(f"{DASHBOARD_URL}/{page}")
             self.assertEqual(status, 200, page)
             self.assertIn(f'data-page="{marker}"'.encode(), body, page)
             self.assertIn(b"width=device-width", body, page)
-            self.assertIn(b"site.js", body, page)
+            # The API page is a standalone API reference without the site chrome.
+            if page != "api.html":
+                self.assertIn(b"site.js", body, page)
         status, script = self.fetch(f"{DASHBOARD_URL}/site.js")
         self.assertEqual(status, 200)
-        for target in (b"index.html", b"explore.html", b"about.html", b"api.html", b"tabbar"):
+        for target in (b"index.html", b"explore.html", b"sources.html", b"about.html", b"api.html", b"tabbar"):
             self.assertIn(target, script)
         status, css = self.fetch(f"{DASHBOARD_URL}/product-theme.css")
         self.assertEqual(status, 200)
         self.assertIn(b".tabbar", css)
         self.assertIn(b"max-width: 840px", css)
+
+    def test_sources_page_is_separate_from_explore(self):
+        status, sources = self.fetch(f"{DASHBOARD_URL}/sources.html")
+        self.assertEqual(status, 200)
+        self.assertIn(b'data-page="sources"', sources)
+        self.assertIn(b'id="chart-source-index-list"', sources)
+        self.assertNotIn(b'id="charts"', sources)
+        status, explore = self.fetch(f"{DASHBOARD_URL}/explore.html")
+        self.assertEqual(status, 200)
+        self.assertIn(b'href="sources.html"', explore)
 
     def test_page_has_chart_prompt_element(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")

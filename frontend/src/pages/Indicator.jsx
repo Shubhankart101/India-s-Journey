@@ -1,7 +1,6 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { api } from '../api.js';
-import { useAuth } from '../auth.jsx';
 import { useCompare } from '../compare.jsx';
 import { changeSeries, chartModes, formatMagnitude, isRadial, linearTrend, parseExplainer, seriesStats } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
@@ -30,14 +29,9 @@ export default function Indicator() {
 }
 
 function IndicatorView({ indicator }) {
-  const navigate = useNavigate();
-  const { user } = useAuth();
   const compare = useCompare();
   const { modes, initial } = chartModes(indicator);
   const [mode, setMode] = useState(initial);
-  const [saved, setSaved] = useState(indicator.is_saved);
-  const [saving, setSaving] = useState(false);
-  const [saveError, setSaveError] = useState('');
   const [showTable, setShowTable] = useState(false);
 
   const yearLabels = indicator.labels.length > 2 && indicator.labels.every(label => /^\d{4}/.test(label));
@@ -73,24 +67,6 @@ function IndicatorView({ indicator }) {
   const inCompare = compare.has(indicator.key);
   const art = indicator.subgroup_art || indicator.category_art;
 
-  const toggleSave = async () => {
-    if (!user) {
-      navigate(`/login?next=/indicator/${indicator.key}`);
-      return;
-    }
-    setSaving(true);
-    setSaveError('');
-    try {
-      if (saved) await api.unsave(indicator.key);
-      else await api.save(indicator.key);
-      setSaved(!saved);
-    } catch (error) {
-      setSaveError(error.message);
-    } finally {
-      setSaving(false);
-    }
-  };
-
   return (
     <>
       <section className="page-hero detail-hero with-art">
@@ -105,9 +81,6 @@ function IndicatorView({ indicator }) {
         <h1>{indicator.title}</h1>
         {indicator.subtitle && <p className="lead">{indicator.subtitle}</p>}
         <div className="action-row">
-          <button type="button" className={`btn ${saved ? 'btn-primary' : 'btn-ghost'}`} onClick={toggleSave} disabled={saving} aria-pressed={saved}>
-            {saved ? '★ Saved' : '☆ Save'}
-          </button>
           <button
             type="button"
             className={`btn ${inCompare ? 'btn-primary' : 'btn-ghost'}`}
@@ -120,7 +93,6 @@ function IndicatorView({ indicator }) {
           <a className="btn btn-ghost" href={api.downloadUrl(indicator.key, 'csv')} download>⇩ CSV</a>
           <a className="btn btn-ghost" href={api.downloadUrl(indicator.key, 'json')} download>⇩ JSON</a>
         </div>
-        {saveError && <p className="form-error" role="alert">{saveError}</p>}
       </section>
 
       <section className="section">

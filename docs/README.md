@@ -7,6 +7,7 @@ India's Journey has two parts: a static, source-linked dashboard on Netlify at <
 - [Tourism and heritage](TOURISM-AND-HERITAGE.md): World Bank visitor indicators and UNESCO inscription-date methods.
 - [Sources and limitations](SOURCES-AND-LIMITATIONS.md): source-by-source coverage for services, demographics, energy prices, and elections.
 - [Pipelines and deployment](PIPELINES.md): collection schedules, file flow, CI jobs, monitoring, and failure behavior.
+- [Sports, Cricket, Hockey and Football](SPORTS.md): official sources, past-vs-current player indices, the weekly sports refresh, and known gaps.
 
 **Web app**
 - [Architecture](ARCHITECTURE.md): components, request routing and design decisions.

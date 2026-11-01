@@ -78,6 +78,7 @@ const series = {
   ...(electionResults.series || {}),
   ...(readJson('us-campaign-finance.json', {}).series || {}),
   ...(readJson('election-indices.json', {}).series || {}),
+  ...(readJson('sports.json', {}).series || {}),
 };
 
 const definitions = [...app.definitions];
@@ -214,5 +215,26 @@ const catalog = {
 const outFile = process.argv[2] ? path.resolve(process.argv[2]) : path.join(root, 'data', 'catalog.json');
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, `${JSON.stringify(catalog)}\n`);
+// The static Compare page needs the same catalogue but must also work from file://, where fetch() is
+// blocked, so the default run writes a compact script with just the comparable time series.
+if (!process.argv[2]) {
+  const comparable = indicators
+    .filter(item => !['state', 'category'].includes(item.series.scope) && item.series.labels.length > 1 && item.series.datasets.length)
+    .map(item => [item.key, item.title, item.category, item.subgroup, item.suffix || '', item.series.labels, item.series.datasets[0].values]);
+  fs.writeFileSync(path.join(root, 'docs', 'compare-data.js'), `window.INDIA_COMPARE_DATA = ${JSON.stringify(comparable)};\n`);
+  // Same reason for the overlay JSONs app.js merges in (sports, election indices, ...): bundle them so
+  // every group also shows up when the static pages are opened straight from disk.
+  const overlayFiles = [
+    'indian-matrix-latest.json', 'pew-india-reports.json', 'substack-latest.json', 'election-results.json',
+    'us-campaign-finance.json', 'election-indices.json', 'economic-survey-monthly.json',
+    'ncrb-and-analyses.json', 'pew-snapshots.json', 'sports.json'
+  ];
+  const overlays = {};
+  for (const file of overlayFiles) {
+    const full = path.join(root, 'docs', 'data', file);
+    if (fs.existsSync(full)) overlays[file] = JSON.parse(fs.readFileSync(full, 'utf8'));
+  }
+  fs.writeFileSync(path.join(root, 'docs', 'overlays.js'), `window.INDIA_OVERLAY_DATA = ${JSON.stringify(overlays)};\n`);
+}
 const live = indicators.filter(indicator => indicator.series.datasets.length).length;
 console.log(`Exported ${indicators.length} indicators (${live} with data), ${categories.length} groups and ${articles.length} articles to ${path.relative(root, outFile)}`);

@@ -32,7 +32,7 @@ const snapshotParts = (item, foldOther = true) => {
 
 // Prefers headline time series (sparkline tiles); groups without enough trends are topped up with
 // latest-snapshot tiles (share bars), so every group gets a mini view.
-export function pickMiniIndices(results = [], limit = MAX_TILES) {
+function pickMiniIndices(results = [], limit = MAX_TILES) {
   const live = results.filter(item => item.is_live);
   const trends = live.filter(item => !isRadial(item.chart_type) && item.scope !== 'state')
     .map(item => ({ kind: 'trend', item, points: trendPoints(item) }))
@@ -47,7 +47,7 @@ export function pickMiniIndices(results = [], limit = MAX_TILES) {
   return [...trends, ...snapshots];
 }
 
-export function miniChange(points, suffix = '') {
+function miniChange(points, suffix = '') {
   const [previous, latest] = points.slice(-2).map(point => point.value);
   if (previous === undefined || latest === undefined) return null;
   if (/%/.test(suffix)) return { value: latest - previous, text: `${latest - previous >= 0 ? '+' : '−'}${Math.abs(latest - previous).toFixed(1)} pp` };
@@ -127,6 +127,32 @@ function SnapshotTile({ item, parts }) {
   );
 }
 
+function parseSourceUrl(value) {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return ['http:', 'https:'].includes(url.protocol) ? url : null;
+  } catch (error) {
+    if (error instanceof TypeError) return null;
+    throw error;
+  }
+}
+
+function MiniCitation({ item }) {
+  const sourceUrl = parseSourceUrl(item.source_url);
+  const sourceLabel = item.source || item.source_url || '';
+  if (!sourceLabel) return null;
+  return (
+    <div className="mini-citations" title={[item.source, item.source_url].filter(Boolean).join(' · ')}>
+      {sourceUrl ? (
+        <a href={sourceUrl.href} target="_blank" rel="noopener noreferrer">
+          {sourceUrl.hostname.replace(/^www\./, '')} · Source ↗
+        </a>
+      ) : <span>{sourceLabel}</span>}
+    </div>
+  );
+}
+
 export default function MiniIndices({ category }) {
   const { data } = useAsync(signal => api.groupHeadlines(category.slug, signal), [category.slug]);
   const picks = pickMiniIndices((data?.results || []).filter(item => item.category_slug === category.slug));
@@ -134,11 +160,12 @@ export default function MiniIndices({ category }) {
   return (
     <ul className="mini-indices" aria-label={`Headline ${category.name} indicators`} key={category.slug}>
       {picks.map(pick => (
-        <li key={pick.item.key}>
-          <Link className={`mini-index mini-${pick.kind}`} to={`/indicator/${pick.item.key}`} title={pick.item.subtitle || pick.item.title}>
+        <li className={`mini-index mini-${pick.kind}`} key={pick.item.key}>
+          <Link className="mini-index-main" to={`/indicator/${pick.item.key}`} title={pick.item.subtitle || pick.item.title}>
             <span className="mini-title">{pick.item.title}</span>
             {pick.kind === 'trend' ? <TrendTile {...pick} /> : <SnapshotTile {...pick} />}
           </Link>
+          <MiniCitation item={pick.item} />
         </li>
       ))}
     </ul>
