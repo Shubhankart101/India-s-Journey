@@ -6,11 +6,11 @@ test.describe('account features (currently disabled)', () => {
     expect((await request.post('/api/auth/register/', { data: { username: 'a', password: 'b' } })).status()).toBe(404);
   });
 
-  test('login and saved routes are not exposed in the app', async ({ page }) => {
+  test('login and saved routes are not exposed in the app', async ({ page, isMobile }) => {
     await page.goto('/login');
     await expect(page.getByRole('heading', { name: 'This page wandered off.' })).toBeVisible();
-    const primary = page.getByRole('navigation', { name: 'Primary' });
-    await expect(primary.getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
+    const nav = page.getByRole('navigation', { name: isMobile ? 'Mobile' : 'Primary' });
+    await expect(nav.getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
     await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(0);
     await expect(page.getByRole('link', { name: 'Saved' })).toHaveCount(0);
 
