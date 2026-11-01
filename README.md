@@ -144,7 +144,7 @@ cd frontend && npm run build && npm run test:e2e  # Playwright: desktop + mobile
 
 These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/webapp-ci.yml), together with OpenAPI validation and a Docker build.
 
-**Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile) to any container host; see [Deployment](docs/DEPLOYMENT.md#hosting-the-web-app-optional). The container:
+**Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile): [`render.yaml`](render.yaml) is a ready Render blueprint (free plan), [`fly.toml`](fly.toml) sets up Fly.io, and any other container host works too. See [Deployment](docs/DEPLOYMENT.md#hosting-the-web-app-optional). The container:
 1. builds the frontend;
 2. runs `migrate` and `import_catalog`;
 3. serves everything with gunicorn and whitenoise.
@@ -163,7 +163,7 @@ See [Deployment](docs/DEPLOYMENT.md) for every variable.
 | --- | --- | --- |
 | Netlify | Static dashboard (`docs/`) | **Primary site**, live at <https://indiasjourney.netlify.app>. Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
 | GitHub Pages | Static dashboard (`docs/`) | Backup mirror of Netlify, published by [`deploy-dashboard.yml`](.github/workflows/deploy-dashboard.yml) |
-| Django + React app | Full app (`Dockerfile`) | Runs locally; any container host (e.g. Google Cloud Run) works if you want to host it |
+| Django + React app | Full app (`Dockerfile`) | Runs locally; deploy to Render ([`render.yaml`](render.yaml)), Fly.io ([`fly.toml`](fly.toml)) or any container host such as Google Cloud Run |
 
 On free container hosts SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
 

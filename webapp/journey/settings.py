@@ -43,6 +43,19 @@ if not SECRET_KEY:
 ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
 
+# Trust the default public hostname that Render and Fly.io inject, so no host config is needed there.
+PLATFORM_HOSTS = [
+    host for host in (
+        os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip(),
+        f"{os.environ['FLY_APP_NAME'].strip()}.fly.dev" if os.environ.get('FLY_APP_NAME', '').strip() else '',
+    ) if host
+]
+for _host in PLATFORM_HOSTS:
+    if _host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(_host)
+    if f'https://{_host}' not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(f'https://{_host}')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

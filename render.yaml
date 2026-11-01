@@ -1,0 +1,39 @@
+# Render Blueprint for the Django + React web app (Dashboard → New → Blueprint → pick this repo).
+# Render injects RENDER_EXTERNAL_HOSTNAME, which settings.py adds to ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS.
+services:
+  - type: web
+    name: indias-journey
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: singapore
+    healthCheckPath: /api/health/
+    autoDeploy: true
+    # Only rebuild when something the web app ships changes; static-site (docs/) and collector commits are skipped.
+    buildFilter:
+      paths:
+        - Dockerfile
+        - webapp/**
+        - frontend/**
+        - data/catalog.json
+      ignoredPaths:
+        - "**/*.md"
+        - frontend/e2e/**
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      # 512 MB on the free plan: one gunicorn worker leaves headroom for the catalogue import at start-up.
+      - key: WEB_CONCURRENCY
+        value: "1"
+      - key: DJANGO_LOG_LEVEL
+        value: INFO
+      # Optional sign-in; fill in from the Render dashboard if/when login is enabled.
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: MICROSOFT_CLIENT_ID
+        sync: false
+      - key: MICROSOFT_CLIENT_SECRET
+        sync: false

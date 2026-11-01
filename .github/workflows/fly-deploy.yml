@@ -1,0 +1,36 @@
+name: Deploy web app to Fly.io
+
+# Runs only when the FLY_API_TOKEN secret exists (create it with `fly tokens create deploy`).
+on:
+  push:
+    branches: [main]
+    paths:
+      - Dockerfile
+      - fly.toml
+      - webapp/**
+      - frontend/**
+      - data/catalog.json
+      - "!**/*.md"
+      - "!frontend/e2e/**"
+  workflow_dispatch:
+
+concurrency:
+  group: fly-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - name: Skip when Fly.io is not configured
+        if: env.FLY_API_TOKEN == ''
+        run: echo "FLY_API_TOKEN is not set; skipping the Fly.io deploy."
+      - uses: actions/checkout@v4
+        if: env.FLY_API_TOKEN != ''
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+        if: env.FLY_API_TOKEN != ''
+      - name: Deploy
+        if: env.FLY_API_TOKEN != ''
+        run: flyctl deploy --remote-only

@@ -6,7 +6,7 @@ There are two deployments, plus a backup mirror:
 | --- | --- | --- |
 | **Static dashboard on Netlify** (primary, <https://indiasjourney.netlify.app>) | [`netlify.toml`](../netlify.toml) publishes `docs/` as-is | Every push to `main` |
 | Backup mirror on GitHub Pages (<https://shubhankart101.github.io/India-s-Journey/>) | [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` | Push to `main`, or after any collector workflow |
-| Django + React web app | Runs locally; optionally deploy the root [`Dockerfile`](../Dockerfile) to any container host | Manual |
+| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Render ([`render.yaml`](../render.yaml)), Fly.io ([`fly.toml`](../fly.toml)) or any container host | Render: auto on push. Fly.io: [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) once `FLY_API_TOKEN` is set |
 
 See [BACKUP.md](BACKUP.md) for how the app and the two static copies point to each other.
 
@@ -19,6 +19,27 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | **Netlify** (`netlify.toml`, live) | Static dashboard in `docs/` | Free static hosting | Static only; the primary public site |
 | **GitHub Pages** (live) | Static dashboard in `docs/` | Free for public repositories | Static only; the backup mirror of Netlify |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
+| **Render** (`render.yaml`) | Full app from the `Dockerfile` | Free web service: 512 MB RAM, 0.1 CPU, 750 instance-hours/month | Sleeps after 15 minutes idle (~1 minute cold start); no disk on the free plan |
+| **Fly.io** (`fly.toml`) | Full app from the `Dockerfile` | Trial credit only for new accounts; then pay-as-you-go | Card required; machines stop when idle, so a 512 MB machine costs only while it runs |
+
+On Render and Fly.io you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$RENDER_EXTERNAL_HOSTNAME` and `$FLY_APP_NAME.fly.dev` automatically. Set them only for a custom domain.
+
+### Render
+
+1. In Render, choose **New → Blueprint**, connect this repository and pick `main`. Render reads [`render.yaml`](../render.yaml) and creates the `indias-journey` web service on the free plan, with a generated `DJANGO_SECRET_KEY`.
+2. Wait for the first build (about 5–8 minutes) and open `https://indias-journey.onrender.com` (Render adds a suffix if the name is taken).
+3. Later pushes redeploy automatically, but only when `Dockerfile`, `webapp/`, `frontend/` or `data/catalog.json` change, so the frequent static-site and collector commits don't use up the free build minutes.
+
+To deploy without the blueprint: **New → Web Service**, choose the repo, runtime **Docker**, plan **Free**, health check path `/api/health/`, and add `DJANGO_SECRET_KEY` and `WEB_CONCURRENCY=1`.
+
+### Fly.io
+
+1. Install `flyctl` (`iwr https://fly.io/install.ps1 -useb | iex` on Windows, or `curl -L https://fly.io/install.sh | sh`) and run `fly auth login`.
+2. From the repository root, create the app from [`fly.toml`](../fly.toml): `fly launch --no-deploy --copy-config --name <app-name>`. If the name differs from `indias-journey`, keep the one `fly launch` writes into `fly.toml`.
+3. Set the secret: `fly secrets set DJANGO_SECRET_KEY=$(python -c "import secrets; print(secrets.token_urlsafe(50))")`.
+4. Deploy: `fly deploy`. The app runs in Mumbai (`bom`) at `https://<app-name>.fly.dev`.
+5. For automatic deploys, run `fly tokens create deploy` and save the token as the repository secret `FLY_API_TOKEN`. [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) then deploys on the same paths as Render, and skips itself while the secret is missing.
+
 ### Netlify
 
 The static dashboard is live at **<https://indiasjourney.netlify.app>** (Home, [Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API](https://indiasjourney.netlify.app/api.html)). Every push to `main` redeploys it, and GitHub Pages mirrors it as the backup.
@@ -29,9 +50,7 @@ The repository root has no `index.html`, so Netlify needs to be told to publish 
 2. If the site already exists, open **Site configuration → Build & deploy → Build settings** and make sure **Base directory** is empty and **Publish directory** is `docs`. Values set in the UI are overridden by `netlify.toml`. Then choose **Deploys → Trigger deploy → Clear cache and deploy site**.
 3. New sites can start as **Private**: visitors get a password page or a 401. Choose **Make public** (or **Site configuration → Access & security → Visitor access**) to open it to everyone.
 
-Netlify serves the static dashboard only. Sign-in, Compare, Saved and Swagger need the Django app, so it runs locally or on a container host.
-
-Fly.io and Railway now offer only trial credit, and PythonAnywhere's free plan doesn't run Docker, so they are not listed.
+Netlify serves the static dashboard only. Compare, Swagger and the API need the Django app, so it runs locally or on a container host.
 
 **Persistent data on free tiers.** None of these free plans keeps a disk, so SQLite (user accounts and saved charts) resets on redeploy or restart. The indicator catalogue is re-imported on every start, so the dashboards are unaffected.
 
@@ -46,7 +65,7 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 
 - **Stage 1:** `node:22-slim` builds the React app with `npm ci` and `npm run build`.
 - **Stage 2:** `python:3.12-slim` installs the Django requirements and runs `collectstatic` (whitenoise, compressed and hashed).
-- **On start:** `migrate`, then `import_catalog`, then gunicorn with 2 workers on `$PORT`.
+- **On start:** `migrate`, then `import_catalog`, then gunicorn with `$WEB_CONCURRENCY` workers (default 2; Render and Fly.io set 1) on `$PORT`.
 
 ## Environment variables
 
@@ -54,7 +73,8 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 | --- | --- | --- |
 | `DJANGO_SECRET_KEY` | yes | A long random value |
 | `DJANGO_DEBUG` | no (`false` in the image) | Never enable in production |
-| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated |
+| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated. Render and Fly.io default domains are added automatically |
+| `WEB_CONCURRENCY` | no (`2` in the image) | Gunicorn workers; use `1` on 512 MB plans |
 | `DJANGO_SQLITE_PATH` | with a disk | e.g. `/var/data/db.sqlite3`, so accounts survive redeploys |
 | `DJANGO_SECURE_COOKIES` | no (default on when not DEBUG) | Secure session and CSRF cookies |
 | `GOOGLE_CLIENT_ID` / `_SECRET` | to enable Google | |
