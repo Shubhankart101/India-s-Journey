@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-11-02T09:45:22+00:00",
+  "generated_at_utc": "2026-11-02T12:02:47+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -6466,11 +6466,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "pew_india_reports": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -6498,17 +6493,12 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        1,
-        2,
-        2,
-        1,
-        6,
-        12,
-        19,
+        9,
+        20,
         5,
         23,
         60,
-        38,
+        39,
         49,
         51,
         54,
@@ -6527,7 +6517,7 @@ window.INDIA_DASHBOARD_DATA = {
         65,
         79,
         115,
-        50
+        64
       ],
       "source": "Pew Research Center India public report catalog"
     },
@@ -103829,11 +103819,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_reports_per_year": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -103861,11 +103846,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -103896,7 +103876,7 @@ window.INDIA_DASHBOARD_DATA = {
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports Published per Year",
         "subtitle": "Dated catalogue entries by publication year",
@@ -103914,11 +103894,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_reports_cumulative": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -103946,42 +103921,37 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        1.0,
-        3.0,
-        5.0,
-        6.0,
-        12.0,
-        24.0,
-        43.0,
-        48.0,
-        71.0,
-        131.0,
-        169.0,
-        218.0,
-        269.0,
-        323.0,
-        373.0,
-        473.0,
-        522.0,
-        624.0,
-        703.0,
-        760.0,
-        819.0,
-        870.0,
-        934.0,
-        1001.0,
-        1063.0,
-        1108.0,
-        1173.0,
-        1252.0,
-        1367.0,
-        1417.0
+        9.0,
+        29.0,
+        34.0,
+        57.0,
+        117.0,
+        156.0,
+        205.0,
+        256.0,
+        310.0,
+        360.0,
+        460.0,
+        509.0,
+        611.0,
+        690.0,
+        747.0,
+        806.0,
+        857.0,
+        921.0,
+        988.0,
+        1050.0,
+        1095.0,
+        1160.0,
+        1239.0,
+        1354.0,
+        1418.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Cumulative Pew India Reports in Catalogue",
         "subtitle": "Dated catalogue entries accumulated over time",
@@ -104005,16 +103975,16 @@ window.INDIA_DASHBOARD_DATA = {
         "Q4"
       ],
       "values": [
-        286.0,
-        373.0,
-        417.0,
-        341.0
+        282.0,
+        369.0,
+        424.0,
+        343.0
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Quarter",
         "subtitle": "Catalogue dates grouped by calendar quarter",
@@ -104041,11 +104011,11 @@ window.INDIA_DASHBOARD_DATA = {
         "Sunday"
       ],
       "values": [
-        225.0,
+        223.0,
         389.0,
-        316.0,
-        389.0,
-        85.0,
+        310.0,
+        399.0,
+        84.0,
         3.0,
         10.0
       ],
@@ -104053,7 +104023,7 @@ window.INDIA_DASHBOARD_DATA = {
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Weekday",
         "subtitle": "Catalogue dates grouped by weekday",
@@ -104085,24 +104055,24 @@ window.INDIA_DASHBOARD_DATA = {
         "Dec"
       ],
       "values": [
-        77.0,
+        76.0,
+        91.0,
+        115.0,
         93.0,
-        116.0,
-        94.0,
         58.0,
-        221.0,
+        218.0,
         177.0,
         109.0,
-        131.0,
-        98.0,
+        138.0,
+        103.0,
         108.0,
-        135.0
+        132.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Month",
         "subtitle": "Catalogue dates grouped by calendar month",
@@ -104120,22 +104090,20 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_publications_by_decade": {
       "labels": [
-        "1990s",
         "2000s",
         "2010s",
         "2020s"
       ],
       "values": [
-        5.0,
-        264.0,
+        256.0,
         665.0,
-        483.0
+        497.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Decade",
         "subtitle": "Catalogue entries grouped into calendar decades",
@@ -104153,11 +104121,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_economy_livelihoods": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104185,11 +104148,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104238,11 +104196,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_religion_society": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104270,11 +104223,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104323,11 +104271,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_politics_governance": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104355,11 +104298,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104408,11 +104346,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_international_affairs": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104440,11 +104373,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104493,11 +104421,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_technology_media": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104525,11 +104448,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104578,11 +104496,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_climate_environment": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104610,11 +104523,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -104663,11 +104571,6 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "dg_pew_theme_gender_demographics": {
       "labels": [
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
         "2002",
         "2003",
         "2004",
@@ -104695,11 +104598,6 @@ window.INDIA_DASHBOARD_DATA = {
         "2026"
       ],
       "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
         0.0,
         0.0,
         0.0,
@@ -159484,8 +159382,7 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "pew_reports_by_period": {
       "labels": [
-        "1997\u20131999",
-        "2000\u20132004",
+        "2002\u20132004",
         "2005\u20132009",
         "2010\u20132014",
         "2015\u20132019",
@@ -159493,19 +159390,18 @@ window.INDIA_DASHBOARD_DATA = {
         "2025\u20132026"
       ],
       "values": [
-        5.0,
-        43.0,
-        221.0,
+        34.0,
+        222.0,
         355.0,
         310.0,
         318.0,
-        165.0
+        179.0
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "Pew Research Center India public report catalog",
       "unit": "reports",
-      "note": "Annual values summed into 5-year periods between 1997 and 2026; the first and last periods may be shorter.",
+      "note": "Annual values summed into 5-year periods between 2002 and 2026; the first and last periods may be shorter.",
       "meta": {
         "title": "Pew India Publications by Period",
         "subtitle": "Number of Pew Research Center reports mentioning India, five-year totals",
@@ -160026,6 +159922,76 @@ window.INDIA_DASHBOARD_DATA = {
     }
   ],
   "pew_reports": [
+    {
+      "title": "What We Know About Eligible Voters Who Are Naturalized U.S. Citizens",
+      "link": "https://www.pewresearch.org/short-reads/2026/10/27/what-we-know-about-eligible-voters-who-are-naturalized-us-citizens/",
+      "date": "2026-10-27"
+    },
+    {
+      "title": "How Do Americans Feel About G20 Countries?",
+      "link": "https://www.pewresearch.org/global/2026/10/16/how-do-americans-feel-about-g20-countries/",
+      "date": "2026-10-16"
+    },
+    {
+      "title": "Social Media Platform Use Around the World",
+      "link": "https://www.pewresearch.org/global/2026/10/01/social-media-platform-use-around-the-world/",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/global/2026/10/01/methodology-social-media-democracy/",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Americans Are Negative About Social Media\u2019s Impact on Democracy \u2013 and the Rest of the World Is Catching Up",
+      "link": "https://www.pewresearch.org/global/2026/10/01/americans-are-negative-about-social-medias-impact-on-democracy-and-the-rest-of-the-world-is-catching-up/",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "Across the Globe, People Increasingly Say Social Media Is Harming Democracy",
+      "link": "https://www.pewresearch.org/global/2026/10/01/across-the-globe-people-increasingly-say-social-media-is-harming-democracy/",
+      "date": "2026-10-01"
+    },
+    {
+      "title": "How well synthetic polls capture the diversity of public opinion",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-polls-capture-the-diversity-of-public-opinion/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Who has heard or read a lot about AI, and how is awareness changing?",
+      "link": "https://www.pewresearch.org/global/2026/09/17/who-has-heard-or-read-a-lot-about-ai-and-how-is-awareness-changing/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "What do young people around the world think about AI?",
+      "link": "https://www.pewresearch.org/global/2026/09/17/what-do-young-people-around-the-world-think-about-ai/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/global/2026/09/17/methodology-global-ai-2026/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Globally, More People Expect AI to Cause Job Loss Than Growth",
+      "link": "https://www.pewresearch.org/global/2026/09/17/globally-more-people-expect-ai-to-cause-job-loss-than-growth/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Do people trust China, the U.S. or the EU to regulate AI?",
+      "link": "https://www.pewresearch.org/global/2026/09/17/do-people-trust-china-the-u-s-or-the-eu-to-regulate-ai/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Concerns about AI are especially widespread in high-income countries",
+      "link": "https://www.pewresearch.org/global/2026/09/17/concerns-about-ai-are-especially-widespread-in-high-income-countries/",
+      "date": "2026-09-17"
+    },
+    {
+      "title": "Many across 37 countries view the UN favorably, but opinions have become more negative in some places",
+      "link": "https://www.pewresearch.org/short-reads/2026/08/27/many-across-37-countries-view-the-un-favorably-but-opinions-have-become-more-negative-in-some-places/",
+      "date": "2026-08-27"
+    },
     {
       "title": "Public opinion of India is mixed across 36 countries",
       "link": "https://www.pewresearch.org/short-reads/2026/08/13/public-opinion-of-india-is-mixed-across-36-countries/",
@@ -162948,12 +162914,12 @@ window.INDIA_DASHBOARD_DATA = {
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
+      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
       "date": "2018-06-06"
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
+      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
       "date": "2018-06-06"
     },
     {
@@ -165553,12 +165519,12 @@ window.INDIA_DASHBOARD_DATA = {
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
       "date": "2010-11-04"
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
       "date": "2010-11-04"
     },
     {
@@ -165838,12 +165804,12 @@ window.INDIA_DASHBOARD_DATA = {
     },
     {
       "title": "Global Warming Seen as a Major Problem Around the World",
-      "link": "https://www.pewresearch.org/science/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world-2/",
+      "link": "https://www.pewresearch.org/global/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world/",
       "date": "2009-12-02"
     },
     {
       "title": "Global Warming Seen as a Major Problem Around the World",
-      "link": "https://www.pewresearch.org/global/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world/",
+      "link": "https://www.pewresearch.org/science/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world-2/",
       "date": "2009-12-02"
     },
     {
@@ -166344,6 +166310,11 @@ window.INDIA_DASHBOARD_DATA = {
     {
       "title": "Chapter 4. Values and American Exceptionalism",
       "link": "https://www.pewresearch.org/global/2007/10/04/chapter-4-values-and-american-exceptionalism/",
+      "date": "2007-10-04"
+    },
+    {
+      "title": "Chapter 3. Views of Religion and Morality",
+      "link": "https://www.pewresearch.org/global/2007/10/04/chapter-3-views-of-religion-and-morality/",
       "date": "2007-10-04"
     },
     {
@@ -166898,12 +166869,12 @@ window.INDIA_DASHBOARD_DATA = {
     },
     {
       "title": "Most of the World Still Does Without",
-      "link": "https://www.pewresearch.org/global/2003/11/25/most-of-the-world-still-does-without/",
+      "link": "https://www.pewresearch.org/politics/2003/11/25/most-of-the-world-still-does-without-2/",
       "date": "2003-11-25"
     },
     {
       "title": "Most of the World Still Does Without",
-      "link": "https://www.pewresearch.org/politics/2003/11/25/most-of-the-world-still-does-without-2/",
+      "link": "https://www.pewresearch.org/global/2003/11/25/most-of-the-world-still-does-without/",
       "date": "2003-11-25"
     },
     {
@@ -166925,6 +166896,11 @@ window.INDIA_DASHBOARD_DATA = {
       "title": "Global Gender Gaps",
       "link": "https://www.pewresearch.org/politics/2003/10/29/global-gender-gaps-3/",
       "date": "2003-10-29"
+    },
+    {
+      "title": "World Publics Approve Increased International Trade",
+      "link": "https://www.pewresearch.org/politics/2003/09/05/world-publics-approve-increased-international-trade-2/",
+      "date": "2003-09-05"
     },
     {
       "title": "World Publics Approve Increased International Trade",
@@ -167022,11 +166998,6 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2002-09-10"
     },
     {
-      "title": "Judgment Day for School Vouchers",
-      "link": "https://www.pewresearch.org/religion/2002/06/28/judgment-day-for-school-vouchers/",
-      "date": "2002-06-28"
-    },
-    {
       "title": "Other Important Findings and Analysis",
       "link": "https://www.pewresearch.org/politics/2002/06/27/other-important-findings-and-analysis-2/",
       "date": "2002-06-27"
@@ -167037,79 +167008,9 @@ window.INDIA_DASHBOARD_DATA = {
       "date": "2002-05-23"
     },
     {
-      "title": "God Bless America: Reflections on Civil Religion After September 11",
-      "link": "https://www.pewresearch.org/religion/2002/02/06/god-bless-america-reflections-on-civil-religion-after-september-11/",
-      "date": "2002-02-06"
-    },
-    {
       "title": "Unusually High Interest In Bush\u2019s State Of The Union",
       "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
       "date": "2002-01-17"
-    },
-    {
-      "title": "Other Important Findings",
-      "link": "https://www.pewresearch.org/politics/2002/01/17/other-important-findings-3/",
-      "date": "2002-01-17"
-    },
-    {
-      "title": "Survey Methodology",
-      "link": "https://www.pewresearch.org/global/2001/12/19/survey-methodology/",
-      "date": "2001-12-19"
-    },
-    {
-      "title": "Survey Methodology",
-      "link": "https://www.pewresearch.org/politics/2001/12/19/survey-methodology-4/",
-      "date": "2001-12-19"
-    },
-    {
-      "title": "Questionnaire",
-      "link": "https://www.pewresearch.org/global/2001/12/19/questionnaire/",
-      "date": "2001-12-19"
-    },
-    {
-      "title": "Commentary by Kenneth M. Pollack, Senior Fellow, Council on Foreign Relations",
-      "link": "https://www.pewresearch.org/politics/2001/10/24/commentary-by-kenneth-m-pollack-senior-fellow-council-on-foreign-relations/",
-      "date": "2001-10-24"
-    },
-    {
-      "title": "Moral Freedom: The Search for Virtue in a World of Choice",
-      "link": "https://www.pewresearch.org/religion/2001/06/12/moral-freedom-the-search-for-virtue-in-a-world-of-choice/",
-      "date": "2001-06-12"
-    },
-    {
-      "title": "Other Important Findings and Analyses",
-      "link": "https://www.pewresearch.org/politics/2001/02/22/other-important-findings-and-analyses-13/",
-      "date": "2001-02-22"
-    },
-    {
-      "title": "God Fearing Voters, God Fearing Candidates: Does Religion Really Matter in the 2000 Elections?",
-      "link": "https://www.pewresearch.org/religion/2000/09/20/god-fearing-voters-god-fearing-candidates-does-religion-really-matter-in-the-2000-elections/",
-      "date": "2000-09-20"
-    },
-    {
-      "title": "Continued Public Support for Kosovo, But Worries Grow",
-      "link": "https://www.pewresearch.org/politics/1999/04/21/continued-public-support-for-kosovo-but-worries-grow/",
-      "date": "1999-04-21"
-    },
-    {
-      "title": "Support for NATO Air Strikes with Plenty of Buts",
-      "link": "https://www.pewresearch.org/politics/1999/03/29/support-for-nato-air-strikes-with-plenty-of-buts/",
-      "date": "1999-03-29"
-    },
-    {
-      "title": "Other Important Findings",
-      "link": "https://www.pewresearch.org/politics/1998/08/07/other-important-findings-7/",
-      "date": "1998-08-07"
-    },
-    {
-      "title": "Other Important Findings",
-      "link": "https://www.pewresearch.org/politics/1998/06/15/other-important-findings-8/",
-      "date": "1998-06-15"
-    },
-    {
-      "title": "America\u2019s Place in the World II",
-      "link": "https://www.pewresearch.org/politics/1997/10/10/americas-place-in-the-world-ii/",
-      "date": "1997-10-10"
     }
   ],
   "polity_policy_articles": [
