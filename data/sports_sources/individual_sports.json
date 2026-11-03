@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-01T12:35:02+00:00",
+ "fetched_at_utc": "2026-11-03T12:27:04+00:00",
  "fetcher": "scripts/sports_fetch/individual.py",
  "series": [
   {
@@ -77,14 +77,14 @@
    "chart": "bar",
    "source_url": "https://bwfworldchampionships.bwfbadminton.com/results/5601/bwf-world-championships-2026/podium (and the /podium page of each edition in the tournament selector, 1989-2026)",
    "publisher": "Badminton World Federation (BWF)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Totals G1 S4 B10 across 25 editions checked (1989-2026); editions with no Indian medal omitted (1989-2010 had none). Pre-1989 editions are not in the BWF results selector. Medals: 2011: B: Women's Doubles - Jwala GUTTA / Ashwini PONNAPPA | 2013: B: Women's Singles - PUSARLA V. Sindhu | 2014: B: Women's Singles - PUSARLA V. Sindhu | 2015: S: Women's Singles - Saina NEHWAL | 2017: S: Women's Singles - PUSARLA V. Sindhu; B: Women's Singles - Saina NEHWAL | 2018: S: Women's Singles - PUSARLA V. Sindhu | 2019: B: Men's Singles - SAI PRANEETH B.; G: Women's Singles - PUSARLA V. Sindhu | 2021: S: Men's Singles - KIDAMBI Srikanth; B: Men's Singles - Lakshya SEN | 2022: B: Men's Doubles - Satwiksairaj RANKIREDDY / Chirag SHETTY | 2023: B: Men's Singles - PRANNOY H. S. | 2025: B: Men's Doubles - Satwiksairaj RANKIREDDY / Chirag SHETTY | 2026: B: Women's Doubles - Treesa JOLLY / GAYATRI GOPICHA PULLELA",
    "producer": "badminton_bwf_world_championships_medals"
   },
   {
    "key": "badminton_bwf_world_ranking_indians_by_discipline",
    "sport": "Badminton",
-   "title": "Indian players/pairs in the BWF World Rankings (week 44, 2026)",
+   "title": "Indian players/pairs in the BWF World Rankings (week 45, 2026)",
    "description": "Number of Indian singles players or doubles pairs ranked in the BWF world top 20, top 50 and top 100 in each discipline.",
    "labels": [
     "Men's singles",
@@ -108,7 +108,7 @@
      "label": "Top 50",
      "values": [
       4,
-      8,
+      9,
       2,
       5,
       3
@@ -119,23 +119,23 @@
      "values": [
       12,
       15,
-      6,
       7,
-      7
+      6,
+      6
      ]
     }
    ],
    "chart": "bar",
    "source_url": "https://extranet-lv.bwfbadminton.com/api/vue-rankingtable?rankId=2&catId=6..10&publicationId=0&pageKey=100&page=1 (data behind https://bwfbadminton.com/rankings/)",
    "publisher": "Badminton World Federation (BWF)",
-   "as_of": "2026-10-27",
-   "notes": "BWF World Rankings publication 2026 week 44 (27 Oct 2026). Best-ranked Indian per discipline: Men's singles: #14 Lakshya SEN; Women's singles: #8 PUSARLA V. Sindhu; Men's doubles: #6 Satwiksairaj RANKIREDDY / Chirag SHETTY; Women's doubles: #19 Treesa JOLLY / GAYATRI GOPICHAND PULLELA; Mixed doubles: #21 DHRUV KAPILA / Tanisha CRASTO.",
+   "as_of": "2026-11-03",
+   "notes": "BWF World Rankings publication 2026 week 45 (3 Nov 2026). Best-ranked Indian per discipline: Men's singles: #13 Lakshya SEN; Women's singles: #6 PUSARLA V. Sindhu; Men's doubles: #6 Satwiksairaj RANKIREDDY / Chirag SHETTY; Women's doubles: #20 Treesa JOLLY / GAYATRI GOPICHAND PULLELA; Mixed doubles: #22 DHRUV KAPILA / Tanisha CRASTO.",
    "producer": "badminton_bwf_world_ranking_indians_by_discipline"
   },
   {
    "key": "badminton_bwf_best_indian_world_rank",
    "sport": "Badminton",
-   "title": "Best-ranked Indian in each BWF discipline (week 44, 2026)",
+   "title": "Best-ranked Indian in each BWF discipline (week 45, 2026)",
    "description": "World ranking position of the highest-ranked Indian singles player or doubles pair in each discipline.",
    "labels": [
     "Men's singles (Lakshya SEN)",
@@ -148,18 +148,18 @@
     {
      "label": "World rank",
      "values": [
-      14,
-      8,
+      13,
       6,
-      19,
-      21
+      6,
+      20,
+      22
      ]
     }
    ],
    "chart": "bar",
    "source_url": "https://extranet-lv.bwfbadminton.com/api/vue-rankingtable?rankId=2&catId=6..10&publicationId=0&pageKey=100&page=1",
    "publisher": "Badminton World Federation (BWF)",
-   "as_of": "2026-10-27",
+   "as_of": "2026-11-03",
    "notes": "Lower is better.",
    "producer": "badminton_bwf_best_indian_world_rank"
   },
@@ -215,7 +215,7 @@
    "chart": "line",
    "source_url": "https://bwfthomasubercups.bwfbadminton.com/results/ (/podium of each edition 2008-2026)",
    "publisher": "Badminton World Federation (BWF)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Lower is better; value is the top of the published band (1 = champion, 3 = semi-final 3/4, 5 = quarter-final 5/8, 9 = 9/12, 13 = 13/16). Published bands - Thomas: 2008 not listed, 2010 5/8, 2012 not listed, 2014 9/12, 2016 13/16, 2018 9/12, 2020 5/8, 2022 1, 2024 5/8, 2026 3/4; Uber: 2008 not listed, 2010 5/8, 2012 not listed, 2014 3/4, 2016 3/4, 2018 9/12, 2020 5/8, 2022 5/8, 2024 5/8, 2026 9/12. null = India not among teams listed on the page (2008 page lists only the top 4; India did not appear among the 12 finalists in 2012). India won the Thomas Cup in 2022.",
    "producer": "badminton_thomas_uber_cup_india_finish"
   },
@@ -256,21 +256,22 @@
    "chart": "line",
    "source_url": "https://bwfsudirmancup.bwfbadminton.com/results/ (/podium of each edition 2007-2025)",
    "publisher": "Badminton World Federation (BWF)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Lower is better. Published placings: 2007 18, 2009 17, 2011 5/8, 2013 9/12, 2015 9/12, 2017 5/8, 2019 9/12, 2021 9/12, 2023 not listed, 2025 9/12. 2023 page lists only the top 8 (India not among them). 2007/2009 used tiered levels (overall position shown).",
    "producer": "badminton_sudirman_cup_india_finish"
   },
   {
    "key": "shooting_issf_world_championships_medals",
    "sport": "Shooting",
-   "title": "India at ISSF World Championships (2022-2025)",
+   "title": "India at ISSF World Championships (2022-2026)",
    "description": "India's gold, silver and bronze medals at each ISSF World Championship since 2022, from the ISSF official medal standings (senior and junior events combined as published).",
    "labels": [
     "2022 Osijek (Shotgun)",
     "2022 Cairo (Rifle / Pistol)",
     "2023 Baku (All Events)",
     "2025 Athens (Shotgun)",
-    "2025 Cairo (Rifle / Pistol)"
+    "2025 Cairo (Rifle / Pistol)",
+    "2026 Doha (Rifle / Pistol / Shotgun)"
    ],
    "datasets": [
     {
@@ -280,7 +281,8 @@
       12,
       6,
       0,
-      3
+      3,
+      1
      ]
     },
     {
@@ -290,7 +292,8 @@
       9,
       0,
       0,
-      6
+      6,
+      1
      ]
     },
     {
@@ -300,15 +303,16 @@
       13,
       8,
       1,
-      4
+      4,
+      0
      ]
     }
    ],
    "chart": "bar",
    "source_url": "https://www.issf-sports.org/competitions/{id} (medalStanding block); list via https://api.issf-sports.org/api/v01/competitions?year=YYYY",
    "publisher": "ISSF (International Shooting Sport Federation)",
-   "as_of": "2026-11-01",
-   "notes": "ISSF publishes medal standings online only from 2022; World Championships with zero India medals omitted. ISSF medal standings at World Championships include junior events. Totals G22 S16 B28 = 66. 2022 Chateauroux id 3081: IND rank None, event total medals 36; 2022 Osijek id 3073: IND rank 5, event total medals 64; 2022 Cairo id 3074: IND rank 2, event total medals 209; 2023 Baku id 3085: IND rank 3, event total medals 192; 2025 Athens id 3332: IND rank 9, event total medals 27; 2025 Cairo id 3275: IND rank 3, event total medals 114; 2026 Tallinn id 3499: IND rank None, event total medals 51; 2026 Cairo id 3576: IND rank None, event total medals 15; 2026 Doha id 3421: no standing published yet",
+   "as_of": "2026-11-03",
+   "notes": "ISSF publishes medal standings online only from 2022; World Championships with zero India medals omitted. ISSF medal standings at World Championships include junior events. Totals G23 S17 B28 = 68. 2022 Chateauroux id 3081: IND rank None, event total medals 36; 2022 Osijek id 3073: IND rank 5, event total medals 64; 2022 Cairo id 3074: IND rank 2, event total medals 209; 2023 Baku id 3085: IND rank 3, event total medals 192; 2025 Athens id 3332: IND rank 9, event total medals 27; 2025 Cairo id 3275: IND rank 3, event total medals 114; 2026 Tallinn id 3499: IND rank None, event total medals 51; 2026 Cairo id 3576: IND rank None, event total medals 15; 2026 Doha id 3421: IND rank 2, event total medals 15",
    "producer": "shooting_issf_world_championships_medals"
   },
   {
@@ -358,7 +362,7 @@
    "chart": "bar",
    "source_url": "https://www.issf-sports.org/competitions/{id} medal standings for each World Cup stage; stage list from https://api.issf-sports.org/api/v01/competitions?year=YYYY",
    "publisher": "ISSF",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Sum of ISSF medal standings for India per World Cup stage (Junior World Cups, Target Sprint and World Cup Finals excluded). Stages counted per year: 2022: 7 stages with standings - Cairo(3024):4-2-1, Nicosia(3023):0-1-0, Lima(3026):0-0-1, Rio de Janeiro(3080):0-0-0, Lonato(3028):0-1-0, Baku(3032):2-3-0, Changwon(3034):5-6-4 | 2023: 12 stages with standings - Rabat(3105):0-0-0, Jakarta(3104):0-0-0, Cairo(3107):4-0-3, Doha(3108):0-0-1, Bhopal(3112):1-1-5, Larnaca(3110):0-0-0, Las Palmas, Lima(3120):0-0-0, Cairo(3113):1-0-0, Baku(3114):1-2-1, Almaty(3119):0-1-1, Lonato(3115):0-0-1, Rio de Janeiro(3123):1-1-0 | 2024: 5 stages with standings - Cairo(3207):2-3-1, Rabat(3166):0-0-0, Baku(3203):0-0-0, Munich(3201):1-0-1, Lonato(3204):0-0-0 | 2025: 6 stages with standings - Buenos Aires(3268):4-2-2, Lima(3274):2-4-1, Nicosia(3269):0-0-1, Munich(3271):2-0-2, Lonato(3272):0-0-0, Ningbo(3273):1-0-1 | 2026: 7 stages with standings - Tangier(3279):0-0-0, Granada(3280):1-0-0, Almaty(3281):0-0-1, Munich(3284):2-2-0, Lonato(3285):1-0-0, Hangzhou(3574):1-1-2, Cairo(3289):1-0-0. 2026 season counts stages completed by Nov 2026. World Cup Final: 2023: Doha(3202):0-0-1 | 2024: New Delhi(3326):0-2-2 | 2025: Doha(3393):2-3-1",
    "producer": "shooting_issf_world_cup_medals_by_year"
   },
@@ -397,8 +401,8 @@
    "chart": "bar",
    "source_url": "https://uww.org/events/senior-world-championships (Zagreb 2025, athena id 1002) and https://uww.org/events/senior-world-championships-0 (Astana 2026, athena id 1050) - Medal Summary tab (fetchRanking server action per weight category)",
    "publisher": "United World Wrestling (UWW)",
-   "as_of": "2026-11-01",
-   "notes": "Counted ranks 1-3 for team IND in all senior weight categories (FS, GR, WW) per edition; wrestling awards two bronzes per category. Totals G1 S2 B2 = 5. 2025 Zagreb: Bronze - Antim ANTIM (Senior Ww 53Kg); 2026 Astana: Silver - Neelam NEELAM (Senior Ww 50Kg); 2026 Astana: Gold - Manisha MANISHA (Senior Ww 59Kg); 2026 Astana: Bronze - Tanu SHARMA (Senior Ww 72Kg); 2026 Astana: Silver - Kajal KAJAL (Senior Ww 76Kg); 2026 Astana snapshot: 4 categories not yet completed when fetched (SENIOR FS 57kg, SENIOR FS 74kg, SENIOR FS 79kg, SENIOR FS 92kg). Earlier editions are not exposed on the new uww.org results platform.",
+   "as_of": "2026-11-03",
+   "notes": "Counted ranks 1-3 for team IND in all senior weight categories (FS, GR, WW) per edition; wrestling awards two bronzes per category. Totals G1 S2 B2 = 5. 2025 Zagreb: Bronze - Antim ANTIM (Senior Ww 53Kg); 2026 Astana: Silver - Neelam NEELAM (Senior Ww 50Kg); 2026 Astana: Gold - Manisha MANISHA (Senior Ww 59Kg); 2026 Astana: Bronze - Tanu SHARMA (Senior Ww 72Kg); 2026 Astana: Silver - Kajal KAJAL (Senior Ww 76Kg). Earlier editions are not exposed on the new uww.org results platform.",
    "producer": "wrestling_uww_senior_world_championships_medals"
   },
   {
@@ -440,7 +444,7 @@
    "chart": "bar",
    "source_url": "https://worldathletics.org/competitions/world-athletics-championships/budapest23/medaltable ; World Athletics GraphQL API https://graphql-prod-4897.edge.aws.worldathletics.org/graphql (getEvents, getMedals countryCode=IND, getWawMedalDetails)",
    "publisher": "World Athletics",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Only editions with an India medal shown; editions checked: 1983, 1987, 1991, 1993, 1995, 1997, 1999, 2001, 2003, 2005, 2007, 2009, 2011, 2013, 2015, 2017, 2019, 2022, 2023, 2025. Totals G1 S1 B1 = 3. Medallists: 2003: Bronze - Anju Bobby George (W) Long Jump 6.70; 2022: Silver - Neeraj CHOPRA (M) Javelin Throw 88.13; 2023: Gold - Neeraj CHOPRA (M) Javelin Throw 88.17",
    "medallists": [
     "2003: Bronze - Anju Bobby George (W) Long Jump 6.70",
@@ -508,7 +512,7 @@
    "chart": "bar",
    "source_url": "https://worldathletics.org/competitions/world-athletics-u20-championships ; World Athletics GraphQL API https://graphql-prod-4897.edge.aws.worldathletics.org/graphql (getEvents, getMedals countryCode=IND, getWawMedalDetails)",
    "publisher": "World Athletics",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Only editions with an India medal shown; editions checked: 1986, 1988, 1990, 1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2021, 2022, 2024, 2026. Totals G2 S6 B6 = 14. Medallists: 2002: Bronze - Seema PUNIA (W) Discus Throw 55.83; 2014: Bronze - Navjeet Kaur Dhillon (W) Discus Throw 56.36; 2016: Gold - Neeraj CHOPRA (M) Javelin Throw 86.48; 2018: Gold - Hima DAS (W) 400 Metres 51.46; 2021: Silver - . AMIT (M) 10,000 Metres Race Walk 42:17.94; 2021: Silver - Shaili SINGH (W) Long Jump 6.59; 2021: Bronze - India U20 (X) 4x400 Metres Relay 3:20.60; 2022: Silver - Selva P. THIRUMARAN (M) Triple Jump 16.15; 2022: Silver - India U20 (X) 4x400 Metres Relay 3:17.76; 2022: Bronze - RUPAL (W) 400 Metres 51.85; 2024: Bronze - . AARTI (W) 10,000 Metres Race Walk 44:39.39; 2026: Silver - . BASANT (M) High Jump 2.21; 2026: Silver - Ashish YADAV (M) Javelin Throw 74.09; 2026: Bronze - Shahnavaz KHAN (M) Long Jump 7.84",
    "medallists": [
     "2002: Bronze - Seema PUNIA (W) Discus Throw 55.83",
@@ -989,7 +993,7 @@
    "chart": "bar",
    "source_url": "https://chess-results.com/tnr967173.aspx?lan=1&art=63 ; https://chess-results.com/tnr967172.aspx?lan=1&art=63 ; https://chess-results.com/tnr653631.aspx?lan=1&art=63 ; https://chess-results.com/tnr653632.aspx?lan=1&art=63",
    "publisher": "Chess-Results.com (official results server for the FIDE Chess Olympiad, linked from chessolympiad2024.fide.com)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "W/D/L derived from each round match score on the final ranking crosstable (4 boards: >2 win, 2 draw, <2 loss); verified that 2W+D equals the published match points (21,19,17,18,14,17,16,15). Final rank 1 = gold. Game points: 2024 Budapest Open (India): 35.0, 2024 Budapest Women (India): 31.0, 2022 Chennai Open (India 1): 29.0, 2022 Chennai Open (India 2): 32.5, 2022 Chennai Open (India 3): 26.0, 2022 Chennai Women (India 1): 29.0, 2022 Chennai Women (India 2): 30.0, 2022 Chennai Women (India 3): 27.0.",
    "producer": "chess_olympiad_india_match_record"
   },
@@ -1211,7 +1215,7 @@
    "chart": "bar",
    "source_url": "https://api.worldarchery.sport/v3/MEDALSTABLE/?CompId=<competitionId> (India row of each competition's medal table); competitions from https://api.worldarchery.sport/v3/COMPETITIONS/?Featured=1",
    "publisher": "World Archery Federation (worldarchery.sport results API)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Totals G4 S10 B3; only editions with an Indian medal are listed; 53 editions checked (1931-2025). Team medals count once, as in the official medal table. Per edition (G-S-B): 2005: Madrid 2005 World Archery Championships 0-1-0 | 2011: Turin 2011 World Archery Championships 0-1-0 | 2015: Copenhagen 2015 World Archery Championships 0-2-0 | 2017: Mexico City 2017 Hyundai World Archery Championships 0-1-0 | 2019: ’s-Hertogenbosch 2019 Hyundai World Archery Championships + OG QT World Ranking Event 0-1-2 | 2021: Yankton 2021 Hyundai World Archery Championships 0-3-0 | 2023: Berlin 2023 Hyundai World Archery Championships 3-0-1 | 2025: Gwangju 2025 Hyundai World Archery Championships 1-1-0",
    "producer": "archery_world_championships_medals"
   },
@@ -1326,7 +1330,7 @@
    "chart": "bar",
    "source_url": "https://api.worldarchery.sport/v3/MEDALSTABLE/?CompId=<competitionId> (India row of each competition's medal table); competitions from https://api.worldarchery.sport/v3/COMPETITIONS/?Featured=1",
    "publisher": "World Archery Federation (worldarchery.sport results API)",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-03",
    "notes": "Totals 2006-2026: G50 S52 B54 (of which World Cup Final: G2 S9 B3). Recurve and compound, individual/team/mixed; team medals count once, as in each competition's official medal table. No World Cup stage or Final is listed by World Archery for 2020.",
    "producer": "archery_world_cup_medals_by_year"
   }
@@ -1397,6 +1401,48 @@
    "error": "RuntimeError: iwf.sport refuses non-browser clients (https://iwf.sport/results/results-by-events/?event_id=700: HTTP Error 403: Forbidden); kept from snapshot",
    "kept_series": [
     "weightlifting_world_championships_total_medals"
+   ]
+  },
+  {
+   "producer": "chess_top10_indian_open_ratings",
+   "error": "RuntimeError: https://ratings.fide.com/a_top_var.php?continent=0&country=IND&rating=standard&gender=&age1=0&age2=0&period=1&period2=1: <urlopen error timed out>",
+   "kept_series": [
+    "chess_top10_indian_open_ratings"
+   ]
+  },
+  {
+   "producer": "chess_top10_indian_women_ratings",
+   "error": "RuntimeError: https://ratings.fide.com/a_top_var.php?continent=0&country=IND&rating=standard&gender=F&age1=0&age2=0&period=1&period2=1: <urlopen error timed out>",
+   "kept_series": [
+    "chess_top10_indian_women_ratings"
+   ]
+  },
+  {
+   "producer": "chess_india_titled_players",
+   "error": "RuntimeError: https://ratings.fide.com/download/players_list.zip: <urlopen error [Errno 110] Connection timed out>",
+   "kept_series": [
+    "chess_india_titled_players"
+   ]
+  },
+  {
+   "producer": "chess_india_federation_rank_top10_average",
+   "error": "RuntimeError: https://ratings.fide.com/a_top_var.php?continent=0&country=IND&rating=standard&gender=&age1=0&age2=0&period=1&period2=1: <urlopen error timed out>",
+   "kept_series": [
+    "chess_india_federation_rank_top10_average"
+   ]
+  },
+  {
+   "producer": "tennis_davis_cup_ties_by_decade",
+   "error": "RuntimeError: https://api.itf-production.sports-data.stadion.io/custom/nationPageWcot/babe228c-fe49-424a-a7fc-03c6439b019e/dc: HTTP Error 403: Forbidden",
+   "kept_series": [
+    "tennis_davis_cup_ties_by_decade"
+   ]
+  },
+  {
+   "producer": "tennis_bjk_cup_ties_by_decade",
+   "error": "RuntimeError: https://api.itf-production.sports-data.stadion.io/custom/nationPageWcot/babe228c-fe49-424a-a7fc-03c6439b019e/bjkc: HTTP Error 403: Forbidden",
+   "kept_series": [
+    "tennis_bjk_cup_ties_by_decade"
    ]
   }
  ]

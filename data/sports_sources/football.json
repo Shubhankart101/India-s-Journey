@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-01T13:41:28+00:00",
+ "fetched_at_utc": "2026-11-03T12:01:54+00:00",
  "fetcher": "scripts/sports_fetch/football.py",
  "series": [
   {
@@ -169,7 +169,7 @@
    "chart": "line",
    "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=men",
    "publisher": "FIFA (inside.fifa.com)",
-   "as_of": "ranking updated 2026-07-20; fetched 2026-11-01",
+   "as_of": "ranking updated 2026-07-20; fetched 2026-11-03",
    "notes": "Current rank 138 with 1084.93 points (previous rank 138). Lower number is better. 2026 row is year-to-date. Page highlights: Current rank 138th; Highest Ranking 94th; Lowest Rank 173rd; Average Rank 129th",
    "producer": "fifa_rank_history_india_men"
   },
@@ -296,7 +296,7 @@
    "chart": "line",
    "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=women",
    "publisher": "FIFA (inside.fifa.com)",
-   "as_of": "ranking updated 2026-06-16; fetched 2026-11-01",
+   "as_of": "ranking updated 2026-06-16; fetched 2026-11-03",
    "notes": "Current rank 69 with 1368.699 points (previous rank 69). Lower number is better. 2026 row is year-to-date. Page highlights: Current rank 69th; Highest Ranking 49th; Lowest Rank 70th; Average Rank 57th",
    "producer": "fifa_rank_history_india_women"
   },
@@ -405,7 +405,7 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "59 completed matches returned by the FIFA calendar; regular-time scores. The feed does not list every match India men played, so treat as FIFA-listed matches only. 'Asian Nations Cup 2027 Prel. Comp.' is FIFA's label for the AFC Asian Cup 2027 qualifiers.",
    "producer": "fifa_india_men_results_by_competition"
   },
@@ -570,7 +570,7 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=1885024&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "71 completed matches returned by the FIFA calendar; regular-time scores. The feed does not list every match India women played, so treat as FIFA-listed matches only.",
    "producer": "fifa_india_women_results_by_competition"
   },
@@ -735,7 +735,7 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "103 completed matches in 17 calendar years; years with no FIFA-listed match are omitted. Regular-time scores. FIFA's feed does not list every match, so early years are incomplete.",
    "producer": "fifa_india_men_results_by_year"
   },
@@ -858,7 +858,7 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=1885024&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "71 completed matches in 11 calendar years; years with no FIFA-listed match are omitted. Regular-time scores. FIFA's feed does not list every match, so early years are incomplete.",
    "producer": "fifa_india_women_results_by_year"
   },
@@ -917,7 +917,7 @@
    "chart": "bar",
    "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=men",
    "publisher": "FIFA (inside.fifa.com ranking-overview)",
-   "as_of": "ranking update of 2025-09-18; fetched 2026-11-01",
+   "as_of": "ranking update of 2025-09-18; fetched 2026-11-03",
    "notes": "AFC members only, ordered by FIFA rank; India is 134 in the world and 24 of 46 ranked AFC teams. This is the latest full table FIFA's ranking-overview feed serves (id id14870, listed 2025-09-18); newer updates return an empty table.",
    "producer": "fifa_current_rank_asia_top10_men"
   },
@@ -976,7 +976,7 @@
    "chart": "bar",
    "source_url": "https://inside.fifa.com/fifa-rankings/world-ranking/IND?gender=women",
    "publisher": "FIFA (inside.fifa.com ranking-overview)",
-   "as_of": "ranking update of 2025-08-07; fetched 2026-11-01",
+   "as_of": "ranking update of 2025-08-07; fetched 2026-11-03",
    "notes": "AFC members only, ordered by FIFA rank; India is 63 in the world and 12 of 40 ranked AFC teams. This is the latest full table FIFA's ranking-overview feed serves (id ranking_20250807, listed 2025-08-07); newer updates return an empty table.",
    "producer": "fifa_current_rank_asia_top10_women"
   },
@@ -1032,8 +1032,8 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z + https://api.fifa.com/api/v3/live/football/{idCompetition}/{idSeason}/{idStage}/{idMatch}?language=en",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-01); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-03); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
    "producer": "football_players_men_top_scorers"
   },
   {
@@ -1088,8 +1088,8 @@
    "chart": "bar",
    "source_url": "https://api.fifa.com/api/v3/calendar/matches?idTeam=43815&count=500&language=en&from=1990-01-01T00:00:00Z&to=2026-12-31T23:59:59Z + https://api.fifa.com/api/v3/live/football/{idCompetition}/{idSeason}/{idStage}/{idMatch}?language=en",
    "publisher": "FIFA (api.fifa.com v3 calendar and match data; data source of inside.fifa.com)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-01); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Counted from the line-ups and goal events of 100 of the 103 completed India men matches in FIFA's feed (1993 onwards); a player counts as an appearance if he or she started or came on as a substitute. Own goals and shoot-out penalties are excluded. 'Current' means the player featured in a FIFA-listed match in the last 2 years (since 2024-11-03); everyone else is 'past'. Goal events matched the final score in 91 of those matches. These are totals within FIFA's coverage, not official career caps, so players who also played earlier or in unlisted matches have higher career figures.",
    "producer": "football_players_men_most_appearances"
   }
  ],

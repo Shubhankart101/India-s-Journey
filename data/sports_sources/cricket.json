@@ -1,5 +1,5 @@
 {
- "fetched_at_utc": "2026-11-01T13:34:56+00:00",
+ "fetched_at_utc": "2026-11-03T11:58:19+00:00",
  "fetcher": "scripts/sports_fetch/cricket.py",
  "series": [
   {
@@ -65,7 +65,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/team/6.html?class=1;template=results;type=team | https://stats.espncricinfo.com/ci/engine/team/6.html?class=2;template=results;type=team | https://stats.espncricinfo.com/ci/engine/team/6.html?class=3;template=results;type=team",
    "publisher": "ESPNcricinfo Statsguru (ESPN; cricket record-of-match database)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Spans: Test: 1932-2026, ODI: 1974-2026, T20I: 2006-2026. Consistency (matches vs W+L+T+Draw/NR): [(601, 601), (1084, 1084), (303, 303)].",
    "producer": "cricket_men_alltime_results"
   },
@@ -132,7 +132,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/team/1812.html?class=8;template=results;type=team | https://stats.espncricinfo.com/ci/engine/team/1812.html?class=9;template=results;type=team | https://stats.espncricinfo.com/ci/engine/team/1812.html?class=10;template=results;type=team",
    "publisher": "ESPNcricinfo Statsguru (ESPN; cricket record-of-match database)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Spans: Test: 1976-2026, ODI: 1978-2026, T20I: 2006-2026. Consistency (matches vs W+L+T+Draw/NR): [(43, 43), (348, 348), (236, 236)].",
    "producer": "cricket_women_alltime_results"
   },
@@ -233,7 +233,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/team/6.html?class=1;template=results;type=team",
    "publisher": "ESPNcricinfo Statsguru",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Spans per opponent: England 1932-2025; Australia 1947-2025; West Indies 1948-2025; New Zealand 1955-2024; Pakistan 1952-2007; Sri Lanka 1982-2026; South Africa 1992-2025; Bangladesh 2000-2024; Zimbabwe 1992-2005; Afghanistan 2018-2026. Rows failing played=W+L+T+Draw: none.",
    "producer": "cricket_men_test_by_opposition"
   },
@@ -334,7 +334,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/team/6.html?class=2;template=results;type=team",
    "publisher": "ESPNcricinfo Statsguru",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Spans per opponent: Sri Lanka 1979-2024; Australia 1980-2025; West Indies 1979-2026; Pakistan 1978-2025; New Zealand 1975-2026; England 1974-2026; South Africa 1991-2025; Zimbabwe 1983-2022; Bangladesh 1988-2025; Kenya 1996-2004. Rows failing played=W+L+T+No result: none.",
    "producer": "cricket_men_odi_by_opposition"
   },
@@ -435,7 +435,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/team/6.html?class=3;template=results;type=team",
    "publisher": "ESPNcricinfo Statsguru",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Spans per opponent: Australia 2007-2025; New Zealand 2007-2026; South Africa 2006-2026; West Indies 2009-2026; England 2007-2026; Sri Lanka 2009-2026; Bangladesh 2009-2025; Pakistan 2007-2026; Zimbabwe 2010-2026; Afghanistan 2010-2026. Rows failing played=W+L+T+No result: none.",
    "producer": "cricket_men_t20i_by_opposition"
   },
@@ -577,7 +577,7 @@
    "chart": "bar",
    "source_url": "https://assets-icc.sportz.io/cricket/v1/ranking?comp_type=odi&type=team (feed behind https://www.icc-cricket.com/rankings/team-rankings/mens/odi)",
    "publisher": "ICC (International Cricket Council) rankings feed",
-   "as_of": "2026-11-01",
+   "as_of": "2026-11-02",
    "notes": "India: rank 1, rating 115, points 4122, matches 36.",
    "producer": "icc_rank_men_odi_top10"
   },
@@ -611,7 +611,7 @@
       236,
       222,
       221,
-      219
+      220
      ]
     },
     {
@@ -626,7 +626,7 @@
       14155,
       12220,
       11489,
-      9428
+      9679
      ]
     },
     {
@@ -641,7 +641,7 @@
       60,
       55,
       52,
-      43
+      44
      ]
     }
    ],
@@ -851,7 +851,7 @@
    "chart": "bar",
    "source_url": "https://www.icc-cricket.com/rankings/team-rankings/{mens|womens}/{test|odi|t20i}",
    "publisher": "ICC",
-   "as_of": "Men Test 2026-10-31; Men ODI 2026-11-01; Men T20I 2026-11-01; Women ODI 2026-10-28; Women T20I 2026-10-25",
+   "as_of": "Men Test 2026-10-31; Men ODI 2026-11-02; Men T20I 2026-11-01; Women ODI 2026-10-28; Women T20I 2026-10-25",
    "notes": "Data from the ICC rankings widget feed (assets-icc.sportz.io) used by icc-cricket.com.",
    "producer": "icc_rank_india_summary"
   },
@@ -970,7 +970,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?class=2;id=12;type=trophy",
    "publisher": "ESPNcricinfo Statsguru (match results by tournament)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Titles (final won): ['1983', '2011'] (2). Finish by edition, derived from whether India played/won the last match of the edition in the source: 1975: Did not play the final; 1979: Did not play the final; 1983: Champions; 1987: Did not play the final; 1992: Did not play the final; 1996: Did not play the final; 1999: Did not play the final; 2003: Runner-up; 2007: Did not play the final; 2011: Champions; 2015: Did not play the final; 2019: Did not play the final; 2023: Runner-up. Exact exit round for non-finalists not read. Totals: {'m': 96, 'w': 63, 'l': 30, 't': 1, 'nr': 2}. Editions grouped by calendar year of match date; each edition checked played=W+L+T+NR.",
    "producer": "icc_mens_odi_world_cup_india"
   },
@@ -1065,7 +1065,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?class=2;id=44;type=trophy",
    "publisher": "ESPNcricinfo Statsguru (match results by tournament)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Titles (final won): ['2013', '2025'] (2). Finish by edition, derived from whether India played/won the last match of the edition in the source: 1998: Did not play the final; 2000: Runner-up; 2002: Final: no result; 2004: Did not play the final; 2006: Did not play the final; 2009: Did not play the final; 2013: Champions; 2017: Runner-up; 2025: Champions. Exact exit round for non-finalists not read. Totals: {'m': 34, 'w': 23, 'l': 8, 't': 0, 'nr': 3}. Editions grouped by calendar year of match date; each edition checked played=W+L+T+NR.",
    "producer": "icc_champions_trophy_india"
   },
@@ -1166,7 +1166,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?class=3;id=89;type=trophy",
    "publisher": "ESPNcricinfo Statsguru (match results by tournament)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Titles (final won): ['2007', '2024', '2026'] (3). Finish by edition, derived from whether India played/won the last match of the edition in the source: 2007: Champions; 2009: Did not play the final; 2010: Did not play the final; 2012: Did not play the final; 2014: Runner-up; 2016: Did not play the final; 2021: Did not play the final; 2022: Did not play the final; 2024: Champions; 2026: Champions. Exact exit round for non-finalists not read. Totals: {'m': 62, 'w': 43, 'l': 16, 't': 1, 'nr': 2}. Editions grouped by calendar year of match date; each edition checked played=W+L+T+NR.",
    "producer": "icc_mens_t20_world_cup_india"
   },
@@ -1273,7 +1273,7 @@
    "chart": "bar",
    "source_url": "https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?class=9;id=68;type=trophy",
    "publisher": "ESPNcricinfo Statsguru (match results by tournament)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Titles (final won): ['2025'] (1). Finish by edition, derived from whether India played/won the last match of the edition in the source: 1978: Did not play the final; 1982: Did not play the final; 1993: Did not play the final; 1997: Did not play the final; 2000: Did not play the final; 2005: Runner-up; 2009: Did not play the final; 2013: Did not play the final; 2017: Runner-up; 2022: Did not play the final; 2025: Champions. Exact exit round for non-finalists not read. Totals: {'m': 81, 'w': 42, 'l': 34, 't': 1, 'nr': 4}. Editions grouped by calendar year of match date; each edition checked played=W+L+T+NR.",
    "producer": "icc_womens_odi_world_cup_india"
   },
@@ -2635,15 +2635,15 @@
      "values": [
       762,
       676,
-      622,
-      598,
+      616,
+      613,
       587,
-      627,
-      535,
-      531,
-      489,
-      368,
-      140,
+      638,
+      530,
+      526,
+      505,
+      374,
+      137,
       759,
       753,
       660,
@@ -2658,13 +2658,13 @@
      "values": [
       2,
       8,
-      15,
-      21,
+      16,
+      18,
       23,
       8,
       21,
       22,
-      25,
+      24,
       4,
       23,
       3,
@@ -2680,8 +2680,8 @@
    "chart": "bar",
    "source_url": "https://assets-icc.sportz.io/cricket/v1/ranking?comp_type=odiw&type={bat|bowl|allrounder} | https://assets-icc.sportz.io/cricket/v1/ranking?comp_type=t20w&type={bat|bowl|allrounder} (feed behind https://www.icc-cricket.com/rankings/womens)",
    "publisher": "ICC (International Cricket Council) rankings feed",
-   "as_of": "ODI batting 2026-10-26; ODI bowling 2026-10-26; ODI all-rounder 2026-10-26; T20I batting 2026-10-26; T20I bowling 2026-10-26; T20I all-rounder 2026-10-26",
-   "notes": "Only players ranked 25 or better are shown (18 of 48 Indian entries in the published top 100 lists). Tied ranks ('=') take the rank of the player above. The ICC publishes no women's Test player rankings.",
+   "as_of": "ODI batting 2026-11-02; ODI bowling 2026-11-02; ODI all-rounder 2026-11-02; T20I batting 2026-10-26; T20I bowling 2026-10-26; T20I all-rounder 2026-10-26",
+   "notes": "Only players ranked 25 or better are shown (18 of 52 Indian entries in the published top 100 lists). Tied ranks ('=') take the rank of the player above. The ICC publishes no women's Test player rankings.",
    "producer": "cricket_icc_player_rankings_india_women"
   }
  ],
@@ -2699,5 +2699,97 @@
    "reason": "The ICC rankings feed returns 404 for women's Test batting, bowling and all-rounder rankings."
   }
  ],
- "stale": []
+ "stale": [
+  {
+   "producer": "icc_womens_t20_world_cup_india",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/records/team/match_results.html?class=10;id=136;type=trophy: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "icc_womens_t20_world_cup_india"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_test_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=1;team=6;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_test_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_test_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=1;team=6;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_test_bowling"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_odi_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=2;team=6;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_odi_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_odi_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=2;team=6;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_odi_bowling"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_t20i_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=3;team=6;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_t20i_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_men_t20i_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=3;team=6;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_men_t20i_bowling"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_test_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=8;team=1863;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_test_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_test_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=8;team=1863;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_test_bowling"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_odi_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=9;team=1863;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_odi_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_odi_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=9;team=1863;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_odi_bowling"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_t20i_batting",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=10;team=1863;template=results;type=batting;orderby=runs: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_t20i_batting"
+   ]
+  },
+  {
+   "producer": "cricket_players_women_t20i_bowling",
+   "error": "RuntimeError: https://stats.espncricinfo.com/ci/engine/stats/index.html?class=10;team=1863;template=results;type=bowling;orderby=wickets: HTTP Error 429: Too Many Requests",
+   "kept_series": [
+    "cricket_players_women_t20i_bowling"
+   ]
+  }
+ ]
 }

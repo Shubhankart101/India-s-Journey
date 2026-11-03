@@ -1,12 +1,12 @@
 {
- "fetched_at_utc": "2026-11-01T13:40:29+00:00",
+ "fetched_at_utc": "2026-11-03T12:01:09+00:00",
  "fetcher": "scripts/sports_fetch/hockey.py",
  "series": [
   {
    "key": "fih_rank_men_top10",
    "sport": "Hockey",
    "title": "FIH Outdoor World Ranking - men's top 10",
-   "description": "FIH outdoor world ranking points for the top 10 men's teams; India is 8th with 3150.36 points.",
+   "description": "FIH outdoor world ranking points for the top 10 men's teams; India is 8th with 3158.51 points.",
    "labels": [
     "Germany",
     "Belgium",
@@ -30,7 +30,7 @@
       3481.3,
       3473.06,
       3431.57,
-      3150.36,
+      3158.51,
       2965.89,
       2841.88
      ]
@@ -39,8 +39,8 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/outdoor-rankings/india-men-hockey-rankings-35",
    "publisher": "FIH (International Hockey Federation)",
-   "as_of": "11/1/2026 6:53:14 PM",
-   "notes": "India: rank 8, 3150.36 points (last match Oct 30, 2026). Data embedded in the official page as window.outdoorRanking.",
+   "as_of": "11/3/2026 5:16:56 PM",
+   "notes": "India: rank 8, 3158.51 points (last match Nov 02, 2026). Data embedded in the official page as window.outdoorRanking.",
    "producer": "fih_rank_men_top10"
   },
   {
@@ -80,7 +80,7 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/outdoor-rankings/india-women-hockey-rankings-35",
    "publisher": "FIH (International Hockey Federation)",
-   "as_of": "11/1/2026 6:53:18 PM",
+   "as_of": "11/3/2026 5:17:00 PM",
    "notes": "India: rank 7, 3053.44 points (last match Oct 02, 2026). Data embedded in the official page as window.outdoorRanking.",
    "producer": "fih_rank_women_top10"
   },
@@ -217,7 +217,7 @@
    "chart": "line",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/standings/{series_id}_standings.json (final_standings); ids from https://www.fih.hockey/datafeeds/static/json/en/8_series_listing.json",
    "publisher": "FIH (official data feeds on fih.hockey)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Lower position is better. W/D/L as in final_standings. Series ids: 1971=13, 1973=16, 1975=18, 1978=22, 1981=31, 1986=41, 1990=49, 1994=61, 1998=69, 2002=84, 2006=107, 2010=136, 2014=285, 2018=798, 2023=1389, 2026=1866. Rows failing GP=W+D+L: [('2002', 9, 8)].",
    "producer": "fih_world_cup_india_men_positions"
   },
@@ -312,7 +312,7 @@
    "chart": "line",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/standings/{series_id}_standings.json (final_standings); ids from https://www.fih.hockey/datafeeds/static/json/en/8_series_listing.json",
    "publisher": "FIH (official data feeds on fih.hockey)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Lower position is better. W/D/L as in final_standings. Series ids: 1974=17, 1978=23, 1983=33, 1998=70, 2006=108, 2010=139, 2018=869, 2022=1388, 2026=1867. Rows failing GP=W+D+L: none. 2026 women: final_standings has no played/won/drawn/lost, so they are counted from FIH match records (shootouts count as draws).",
    "producer": "fih_world_cup_india_women_positions"
   },
@@ -467,7 +467,7 @@
    "chart": "line",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/standings/{series_id}_standings.json (final_standings); ids from https://www.fih.hockey/datafeeds/static/json/en/6_series_listing.json",
    "publisher": "FIH (official data feeds on fih.hockey)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Lower position is better. W/D/L as in final_standings. Series ids: 1928=3, 1936=5, 1948=6, 1956=8, 1960=9, 1964=10, 1968=11, 1972=15, 1976=21, 1984=35, 1988=45, 1992=56, 1996=64, 2000=78, 2004=98, 2012=155, 2016=433, 2021=1175, 2024=1530. Rows failing GP=W+D+L: none. 2024 Olympic men: the FIH final_standings feed is empty; position 3 (bronze) is inferred from the FIH match results (India won the bronze-medal match against Spain 2-1), and played/won/drawn/lost are counted from FIH match records (shootouts count as draws). Editions with India in the listing but no standings data from the feed: ['1932 (1932 Mens Olympic Games)', '1952 (1952 Mens Olympic Games)', '1980 (1980 Mens Olympic Games)'].",
    "producer": "fih_olympics_india_men_positions"
   },
@@ -520,7 +520,7 @@
    "chart": "line",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/standings/{series_id}_standings.json (final_standings); ids from https://www.fih.hockey/datafeeds/static/json/en/6_series_listing.json",
    "publisher": "FIH (official data feeds on fih.hockey)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Lower position is better. W/D/L as in final_standings. Series ids: 2016=432, 2021=1176. Rows failing GP=W+D+L: none. Editions with India in the listing but no standings data from the feed: ['1980 (1980 Womens Olympic Games)'].",
    "producer": "fih_olympics_india_women_positions"
   },
@@ -630,7 +630,7 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/standings/{series_id}_standings.json; series 2020-21=1163, 2021-22=1295, 2022-23=1416, 2023-24=1560, 2024-25=1694, 2025-26=1820",
    "publisher": "FIH (official Pro League standings feed)",
-   "as_of": "2020-21: feed updated 2/23/2024 9:53:08 PM; 2021-22: feed updated 10/25/2023 5:12:45 PM; 2022-23: feed updated 6/10/2024 6:25:49 PM; 2023-24: feed updated 10/1/2024 4:43:43 AM; 2024-25: feed updated 2/25/2026 2:13:39 PM; 2025-26: feed updated 11/01/2026 06:17:52 PM",
+   "as_of": "2020-21: feed updated 2/23/2024 9:53:08 PM; 2021-22: feed updated 10/25/2023 5:12:45 PM; 2022-23: feed updated 6/10/2024 6:25:49 PM; 2023-24: feed updated 10/1/2024 4:43:43 AM; 2024-25: feed updated 2/25/2026 2:13:39 PM; 2025-26: feed updated 11/03/2026 04:25:03 PM",
    "notes": "Lower position is better (9 teams, 16 matches each in a full season). Pro League points: 3 regulation win, 2 shootout win, 1 shootout loss. The feed's Won/Drawn/Lost and shootout columns are not consistent across seasons (e.g. men 2025-26: 4W+5D+7L=16 with 2 shootout wins and 19 pts; men 2023-24: 5W+0D+5L plus 3 SO wins and 3 SO losses), so Position/Played/Points are authoritative. 2020-21 men played only 8 matches (COVID-affected). Seasons in which India is absent from the FIH feed are skipped.",
    "producer": "fih_pro_league_india_men_standings"
   },
@@ -721,7 +721,7 @@
    "key": "fih_india_men_head_to_head_2020_2026",
    "sport": "Hockey",
    "title": "India men vs major opponents: head-to-head (FIH match records, 2020-2026)",
-   "description": "India men's W/D/L and goals against the ten most-played opponents in FIH's ranking match history (2020 - 11/1/2026).",
+   "description": "India men's W/D/L and goals against the ten most-played opponents in FIH's ranking match history (2020 - 11/3/2026).",
    "labels": [
     "Australia",
     "Belgium",
@@ -730,8 +730,8 @@
     "Netherlands",
     "Germany",
     "Spain",
-    "Pakistan",
     "Korea",
+    "Pakistan",
     "England"
    ],
    "datasets": [
@@ -745,7 +745,7 @@
       15,
       14,
       14,
-      10,
+      11,
       10,
       10
      ]
@@ -760,8 +760,8 @@
       3,
       9,
       6,
+      8,
       9,
-      7,
       2
      ]
     },
@@ -775,8 +775,8 @@
       5,
       0,
       3,
-      1,
       3,
+      1,
       6
      ]
     },
@@ -806,7 +806,7 @@
       38,
       30,
       44,
-      36,
+      44,
       20
      ]
     },
@@ -829,7 +829,7 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/outdoor-rankings/india-men-hockey-rankings-35",
    "publisher": "FIH (match history embedded in official ranking page)",
-   "as_of": "11/1/2026 6:53:14 PM",
+   "as_of": "11/3/2026 5:16:56 PM",
    "notes": "Not an all-time table: aggregated from the match history FIH lists for India's ranking window (2020 to the latest match; Pro League, Olympics, World Cups, Asian events, Test series). Drawn includes matches decided by shootout (regulation score level).",
    "producer": "fih_india_men_head_to_head_2020_2026"
   },
@@ -843,12 +843,12 @@
     "Mandeep Singh (current)",
     "Rupinder Pal Singh (past)",
     "Akashdeep Singh (past)",
-    "Abhishek (current)",
     "Dilpreet Singh (current)",
+    "Abhishek (current)",
     "Ramandeep Singh (past)",
-    "Maninder Singh (current)",
-    "Raghunath Vokkaliga (past)",
     "Sukhjeet Singh (current)",
+    "Jugraj Singh (current)",
+    "Raghunath Vokkaliga (past)",
     "Varun Kumar (past)",
     "Sowmarpet Vitalacharya Sunil (past)"
    ],
@@ -856,16 +856,16 @@
     {
      "label": "Goals",
      "values": [
-      245,
+      249,
       129,
       100,
       91,
+      68,
       67,
-      66,
       60,
+      47,
       46,
       46,
-      45,
       44,
       29
      ]
@@ -873,16 +873,16 @@
     {
      "label": "Caps",
      "values": [
-      280,
-      303,
+      282,
+      305,
       223,
       246,
+      140,
       150,
       138,
-      138,
-      22,
+      142,
+      127,
       228,
-      140,
       142,
       271
      ]
@@ -891,8 +891,8 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/players/{player_id}_player.json; players from https://www.fih.hockey/datafeeds/static/json/en/squads/{series_id}_{team_id}_squad.json",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-01); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by goals; the second dataset is shown for context.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-03); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by goals; the second dataset is shown for context.",
    "producer": "hockey_players_men_top_scorers"
   },
   {
@@ -953,8 +953,8 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/players/{player_id}_player.json; players from https://www.fih.hockey/datafeeds/static/json/en/squads/{series_id}_{team_id}_squad.json",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-01); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by goals; the second dataset is shown for context.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-03); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by goals; the second dataset is shown for context.",
    "producer": "hockey_players_women_top_scorers"
   },
   {
@@ -983,15 +983,15 @@
       429,
       328,
       314,
-      303,
-      280,
+      305,
+      282,
       271,
-      260,
+      262,
       246,
       228,
       223,
-      206,
-      197
+      208,
+      198
      ]
     },
     {
@@ -1001,7 +1001,7 @@
       0,
       6,
       129,
-      245,
+      249,
       29,
       39,
       91,
@@ -1015,8 +1015,8 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/players/{player_id}_player.json; players from https://www.fih.hockey/datafeeds/static/json/en/squads/{series_id}_{team_id}_squad.json",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-01); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by international caps; the second dataset is shown for context.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-03); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by international caps; the second dataset is shown for context.",
    "producer": "hockey_players_men_most_capped"
   },
   {
@@ -1077,8 +1077,8 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/players/{player_id}_player.json; players from https://www.fih.hockey/datafeeds/static/json/en/squads/{series_id}_{team_id}_squad.json",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
-   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-01); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by international caps; the second dataset is shown for context.",
+   "as_of": "fetched 2026-11-03",
+   "notes": "Current = the player has India appearances recorded in an FIH competition that ended in the last 24 months (since 2024-11-03); past = anyone else who was in an India squad for a Pro League, World Cup, Olympic Games or 2026 Asian/qualifier event listed in the FIH feeds. Goals are the career total on the FIH player profile (competitions FIH has recorded, mainly since the 2010s) so they understate the full careers of older players. Caps are senior caps from the same profile. Only players who appeared in squads of those FIH events are considered, so players who retired before the FIH squad feeds start are not covered. Ranked by international caps; the second dataset is shown for context.",
    "producer": "hockey_players_women_most_capped"
   },
   {
@@ -1108,7 +1108,7 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/stats/{series_id}_allstats.json (Players Goals); series 2020-21=1163, 2021-22=1295, 2022-23=1416, 2023-24=1560, 2025-26=1820",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Goals by the highest-scoring India player in the FIH Pro League player-goals leaderboard of each season in the FIH feed. Seasons where India is absent from the feed, or where FIH published no player leaderboard (e.g. men 2024-25), are skipped.",
    "producer": "hockey_pro_league_india_men_top_scorers_by_season"
   },
@@ -1133,7 +1133,7 @@
    "chart": "bar",
    "source_url": "https://www.fih.hockey/datafeeds/static/json/en/stats/{series_id}_allstats.json (Players Goals); series 2021-22=1296, 2023-24=1561",
    "publisher": "International Hockey Federation (FIH)",
-   "as_of": "fetched 2026-11-01",
+   "as_of": "fetched 2026-11-03",
    "notes": "Goals by the highest-scoring India player in the FIH Pro League player-goals leaderboard of each season in the FIH feed. Seasons where India is absent from the feed, or where FIH published no player leaderboard (e.g. men 2024-25), are skipped.",
    "producer": "hockey_pro_league_india_women_top_scorers_by_season"
   }
