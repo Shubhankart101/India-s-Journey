@@ -167,7 +167,7 @@ class DashboardEndpointTests(unittest.TestCase):
         self.assertGreaterEqual(len(rbi_keys), 100)
         expected.update(rbi_keys)
         # Innovation, expansion and derived-group layers build their key sets from live API data.
-        layer_keys = {key for key in payload["series"] if key.startswith(("innov_", "xp_", "dg_", "jud_"))}
+        layer_keys = {key for key in payload["series"] if key.startswith(("innov_", "xp_", "dg_", "jud_", "air_", "rail_")) and key != "rail_freight"}
         self.assertGreaterEqual(len([key for key in layer_keys if key.startswith("innov_")]), 100)
         expected.update(layer_keys)
         self.assertEqual(set(payload["series"]), expected)

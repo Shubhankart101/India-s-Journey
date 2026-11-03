@@ -785,6 +785,8 @@ async function main() {
     "Elections": "assets/elections.svg",
     "U.S. Elections": "assets/us-elections.svg",
     "Tourism & Heritage": "assets/tourism.svg",
+    "Air Travel & Civil Aviation": "assets/air-group.svg",
+    "Indian Railways": "assets/rail-group.svg",
     "Sports": "assets/sports.svg",
     "Cricket": "assets/cricket.svg",
     "Hockey": "assets/hockey.svg",
@@ -837,7 +839,7 @@ async function main() {
   const compareStore = window.IndiaCompare || { has: () => false, full: () => false, toggle: () => {}, subscribe: () => {} };
   const compareButtonSyncers = [];
   compareStore.subscribe(() => compareButtonSyncers.forEach(sync => sync()));
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5, 'Air Travel & Civil Aviation': 12.2, 'Indian Railways': 12.3 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -1544,6 +1546,18 @@ async function main() {
       badge1: "World Bank annual indicators",
       badge2: "UNESCO property records"
     },
+    "Air Travel & Civil Aviation": {
+      title: "✈️ Air Travel & Civil Aviation",
+      desc: "Passenger, aircraft-movement, freight, airport and UDAN regional-connectivity figures from the Airports Authority of India Annual Report 2023-24 and the Ministry of Civil Aviation, set against ICAO-based World Bank comparisons with other large aviation markets. AAI counts passengers as arrivals plus departures; the Ministry counts passengers carried by scheduled airlines, so the two are not interchangeable.",
+      badge1: "AAI Annual Report 2023-24",
+      badge2: "Ministry of Civil Aviation · World Bank / ICAO"
+    },
+    "Indian Railways": {
+      title: "🚆 Indian Railways",
+      desc: "Network, electrification, passenger, freight, rolling-stock, safety and financial figures from the Railway Board's Year Book 2023-24 and PIB releases, with World Bank comparisons of rail freight, passenger-km and route length against other large networks. Year Book series run to 2023-24; World Bank rail data end around 2019 for most countries.",
+      badge1: "Railway Board Year Book 2023-24",
+      badge2: "PIB · World Bank"
+    },
     "Sports": {
       title: "🏅 Sports: Medals, Wins & Records",
       desc: "India's medals at the Olympics, Paralympics, Asian Games and Commonwealth Games, Games by Games and sport by sport, and the results and rankings of India's athletes, shooters, archers, wrestlers, boxers, lifters, shuttlers, tennis players, chess players and kabaddi teams, all taken from the official governing bodies.",
@@ -1647,6 +1661,19 @@ async function main() {
     "International Visitor Trends": "assets/visitor-trends.svg",
     "World Heritage Sites": "assets/heritage-sites.svg",
     "Global Tourism Comparison": "assets/global-tourism.svg",
+    "Air Passenger Growth": "assets/air-growth.svg",
+    "Global Aviation Comparison": "assets/air-global.svg",
+    "Domestic vs International": "assets/air-traffic.svg",
+    "Airports & UDAN": "assets/air-airports.svg",
+    "Air Cargo": "assets/air-cargo.svg",
+    "AAI Finance & Investment": "assets/air-finance.svg",
+    "Network & Electrification": "assets/rail-network.svg",
+    "Passenger Services": "assets/rail-passenger.svg",
+    "Freight Operations": "assets/rail-freight.svg",
+    "Rolling Stock & Operations": "assets/rail-fleet.svg",
+    "Railway Safety": "assets/rail-safety.svg",
+    "Finance & Efficiency": "assets/rail-finance.svg",
+    "Global Rail Comparison": "assets/rail-global.svg",
     "Climate & Weather": "assets/climate-weather.svg",
     "Forests & Land": "assets/forests-land.svg",
     "Pollution & Waste": "assets/pollution-waste.svg",
@@ -1840,6 +1867,84 @@ async function main() {
       desc: "FAO undernourishment estimates and modelled child-stunting rates, the outcomes targeted by the National Food Security Act and POSHAN Abhiyaan.",
       badge1: "FAO / UNICEF / WHO via World Bank",
       badge2: "SDG 2"
+    },
+    "Air Passenger Growth": {
+      title: "📈 Air Passenger Growth",
+      desc: "Aircraft movements since 2018-19 from AAI, and annual passengers carried by Indian airlines from World Bank/ICAO data, showing the COVID-19 collapse and the recovery.",
+      badge1: "AAI · World Bank / ICAO",
+      badge2: "Official data"
+    },
+    "Global Aviation Comparison": {
+      title: "🌍 India vs the World's Aviation Markets",
+      desc: "Passengers carried and aircraft departures for India against China, the United States, Japan, the UK, Germany, France, Brazil, Australia, the UAE and Russia, from ICAO figures republished by the World Bank.",
+      badge1: "World Bank / ICAO",
+      badge2: "Official data"
+    },
+    "Domestic vs International": {
+      title: "🛫 Domestic vs International Traffic",
+      desc: "AAI traffic at all Indian airports for 2022-23 and 2023-24 split into domestic and international passengers and movements, plus scheduled passengers carried to 2024-25 from the Ministry of Civil Aviation. The AAI and Ministry bases differ.",
+      badge1: "AAI · Ministry of Civil Aviation",
+      badge2: "Official data"
+    },
+    "Airports & UDAN": {
+      title: "🛬 Airports & UDAN Connectivity",
+      desc: "The number of operational airports, how AAI's 133 airports are operated, and cumulative UDAN routes, flights and passengers under the Regional Connectivity Scheme.",
+      badge1: "AAI · Ministry of Civil Aviation",
+      badge2: "Official data"
+    },
+    "Air Cargo": {
+      title: "📦 Air Cargo",
+      desc: "Air freight at Indian airports in 2022-23 and 2023-24, the decade of cargo growth to 2024-25, and World Bank freight comparisons in million tonne-kilometres.",
+      badge1: "AAI · World Bank / ICAO",
+      badge2: "Official data"
+    },
+    "AAI Finance & Investment": {
+      title: "💰 AAI Finance & Investment",
+      desc: "Revenue, profit before and after tax, and planned against actual capital expenditure of the Airports Authority of India, 2018-19 to 2023-24, in Rs crore.",
+      badge1: "AAI Annual Report 2023-24",
+      badge2: "Official data"
+    },
+    "Network & Electrification": {
+      title: "🛤️ Network & Electrification",
+      desc: "Route kilometres since 1950-51, track length, electrified route, route by gauge, and the largest zones and States by route length, from the Railway Board Year Book 2023-24.",
+      badge1: "Railway Board Year Book",
+      badge2: "Official data"
+    },
+    "Passenger Services": {
+      title: "🧑‍🤝‍🧑 Passenger Services",
+      desc: "Passengers originating, passenger-kilometres, average lead and suburban versus non-suburban traffic, from the Railway Board Year Book 2023-24.",
+      badge1: "Railway Board Year Book",
+      badge2: "Official data"
+    },
+    "Freight Operations": {
+      title: "🚛 Freight Operations",
+      desc: "Revenue-earning freight loading, net tonne-kilometres, the commodity mix led by coal, and loading to 2024-25 from PIB.",
+      badge1: "Railway Board · PIB",
+      badge2: "Official data"
+    },
+    "Rolling Stock & Operations": {
+      title: "🚂 Rolling Stock & Operations",
+      desc: "Locomotive, coach and wagon fleets by type and year, from the Railway Board Year Book 2023-24.",
+      badge1: "Railway Board Year Book",
+      badge2: "Official data"
+    },
+    "Railway Safety": {
+      title: "🛑 Railway Safety",
+      desc: "Consequential train accidents by type for 2019-20 to 2023-24, from the Railway Board Year Book 2023-24.",
+      badge1: "Railway Board Year Book",
+      badge2: "Official data"
+    },
+    "Finance & Efficiency": {
+      title: "🏦 Finance & Efficiency",
+      desc: "Gross traffic earnings, revenue, working expenses, the operating ratio (98.43% in 2023-24) and yield per passenger-km and tonne-km, from the Railway Board Year Book 2023-24.",
+      badge1: "Railway Board Year Book",
+      badge2: "Official data"
+    },
+    "Global Rail Comparison": {
+      title: "🌍 India vs the World's Rail Networks",
+      desc: "Rail freight, passenger-kilometres and route length for India against China, the United States, Russia, Japan, Germany, France, the UK, Brazil and Australia, from World Bank data that for most countries end around 2019.",
+      badge1: "World Bank",
+      badge2: "Official data"
     },
     "Global Tourism Comparison": {
       title: "🌍 India vs the World's Top Destinations",

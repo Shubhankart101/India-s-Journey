@@ -1431,151 +1431,6 @@
       ],
       "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
-    "rail_freight": {
-      "labels": [
-        "2020-04",
-        "2020-05",
-        "2020-06",
-        "2020-07",
-        "2020-08",
-        "2020-09",
-        "2020-10",
-        "2020-11",
-        "2020-12",
-        "2021-01",
-        "2021-02",
-        "2021-03",
-        "2021-04",
-        "2021-05",
-        "2021-06",
-        "2021-07",
-        "2021-08",
-        "2021-09",
-        "2021-10",
-        "2021-11",
-        "2021-12",
-        "2022-01",
-        "2022-02",
-        "2022-03",
-        "2022-04",
-        "2022-05",
-        "2022-06",
-        "2022-07",
-        "2022-08",
-        "2022-09",
-        "2022-10",
-        "2022-11",
-        "2022-12",
-        "2023-01",
-        "2023-02",
-        "2023-03",
-        "2023-04",
-        "2023-05",
-        "2023-06",
-        "2023-07",
-        "2023-08",
-        "2023-09",
-        "2023-10",
-        "2023-11",
-        "2023-12",
-        "2024-01",
-        "2024-02",
-        "2024-03",
-        "2024-04",
-        "2024-05",
-        "2024-06",
-        "2024-07",
-        "2024-08",
-        "2024-09",
-        "2024-10",
-        "2024-11",
-        "2024-12",
-        "2025-01",
-        "2025-02",
-        "2025-03",
-        "2025-04",
-        "2025-05",
-        "2025-06",
-        "2025-07",
-        "2025-08",
-        "2025-09",
-        "2025-10",
-        "2025-11",
-        "2025-12"
-      ],
-      "values": [
-        654.0,
-        825.8,
-        934.5,
-        950.1,
-        945.0,
-        1020.8,
-        1080.1,
-        1098.7,
-        1180.3,
-        1195.2,
-        1121.0,
-        1303.0,
-        1114.9,
-        1147.6,
-        1125.6,
-        1128.0,
-        1104.0,
-        1058.3,
-        1171.4,
-        1168.0,
-        1265.8,
-        1289.2,
-        1196.2,
-        1390.8,
-        1219.9,
-        1315.0,
-        1253.1,
-        1218.9,
-        1191.2,
-        1156.2,
-        1186.5,
-        1228.1,
-        1303.3,
-        1337.6,
-        1238.0,
-        1443.1,
-        1262.9,
-        1340.1,
-        1228.5,
-        1237.7,
-        1267.2,
-        1234.3,
-        1288.3,
-        1281.9,
-        1387.7,
-        1424.3,
-        1363.6,
-        1563.7,
-        1281.0,
-        1389.4,
-        1352.6,
-        1294.3,
-        1204.1,
-        1226.0,
-        1307.1,
-        1299.9,
-        1412.0,
-        1449.0,
-        1322.7,
-        1610.8,
-        1331.4,
-        1428.0,
-        1365.7,
-        1295.3,
-        1307.4,
-        1273.1,
-        1336.5,
-        1354.8,
-        1457.51
-      ],
-      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
-    },
     "port_cargo": {
       "labels": [
         "2020-04",
@@ -159715,6 +159570,4323 @@
         "category": "Industry Trends & Performance",
         "subgroup": "Manufacturing & Industrial Growth"
       }
+    },
+    "air_aai_passengers": {
+      "labels": [
+        "Domestic",
+        "International",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            270.34,
+            56.94,
+            327.28
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            306.79,
+            69.64,
+            376.43
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "million",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, traffic handled at all Indian airports. Passengers are counted as movements, arrivals plus departures.",
+      "meta": {
+        "title": "Passengers Handled: Domestic vs International",
+        "subtitle": "All Indian airports, 2022-23 and 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Domestic vs International",
+        "explain": {
+          "what": "Passenger traffic handled at all Indian airports, split between domestic and international.",
+          "read": "Total traffic grew 15.0% to 376.43 million; international grew 22.3% against 13.5% for domestic.",
+          "why": "International traffic was still catching up after COVID-19, so it grew faster."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_movements": {
+      "labels": [
+        "Domestic",
+        "International",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            2143.27,
+            365.05,
+            2508.32
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            2252.42,
+            425.17,
+            2677.59
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, aircraft movements at all Indian airports.",
+      "meta": {
+        "title": "Aircraft Movements: Domestic vs International",
+        "subtitle": "Takeoffs and landings, thousands",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " thousand",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Domestic vs International",
+        "explain": {
+          "what": "Aircraft movements (takeoffs and landings) at all Indian airports.",
+          "read": "Movements grew 6.7% to 2,677.59 thousand, slower than passengers: international movements rose 16.5%, domestic 5.1%.",
+          "why": "Passengers growing faster than movements means aircraft are flying fuller or larger."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_passenger_mix": {
+      "labels": [
+        "Domestic",
+        "International"
+      ],
+      "values": [
+        306.79,
+        69.64
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "million",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, 2023-24 passengers at all Indian airports.",
+      "meta": {
+        "title": "Domestic vs International Passengers (2023-24)",
+        "subtitle": "Share of 376.43 million passengers",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Domestic vs International",
+        "explain": {
+          "what": "Domestic and international share of 2023-24 airport passenger traffic.",
+          "read": "Domestic is 81.5% and international 18.5%.",
+          "why": "India's air market is predominantly domestic."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_aai_movement_mix": {
+      "labels": [
+        "Domestic",
+        "International"
+      ],
+      "values": [
+        2252.42,
+        425.17
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, 2023-24 aircraft movements at all Indian airports.",
+      "meta": {
+        "title": "Domestic vs International Movements (2023-24)",
+        "subtitle": "Share of 2,677.59 thousand movements",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " thousand",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Domestic vs International",
+        "explain": {
+          "what": "Domestic and international share of 2023-24 aircraft movements.",
+          "read": "Domestic is 84.1% and international 15.9%.",
+          "why": "International flights carry more passengers per movement than domestic ones."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_scheduled_carried": {
+      "labels": [
+        "Scheduled domestic",
+        "Scheduled international"
+      ],
+      "datasets": [
+        {
+          "label": "2023-24",
+          "values": [
+            153.7,
+            66.8
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2024-25",
+          "values": [
+            165.5,
+            74.14
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.civilaviation.gov.in/our-performance",
+      "unit": "million",
+      "note": "Ministry of Civil Aviation performance summary (https://www.civilaviation.gov.in/our-performance) and Lok Sabha reply of 4 December 2025 (https://www.sansad.in/getFile/loksabhaquestions/annex/186/AU861_6WIzEa.pdf?source=pqals): 165.5 million domestic and 74.14 million international passengers on scheduled flights in 2024-25, against 153.7 and 66.8 million in 2023-24. These count passengers carried by scheduled airlines, so they are lower than AAI's movement-based totals.",
+      "meta": {
+        "title": "Scheduled Passengers Carried to 2024-25",
+        "subtitle": "Passengers on scheduled airlines, Ministry of Civil Aviation",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Domestic vs International",
+        "explain": {
+          "what": "Passengers carried on scheduled domestic and international flights.",
+          "read": "Scheduled domestic passengers grew 7.7% to 165.5 million in 2024-25; international rose to 74.14 million.",
+          "why": "Brings the passenger series up to 2024-25, past the AAI report's year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_movements_trend": {
+      "labels": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        2605.96,
+        2587.05,
+        1196.74,
+        1757.11,
+        2508.32,
+        2677.59
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand",
+      "note": "Airports Authority of India, Annual Report 2023-24: Performance at a Glance, aircraft movements at AAI-reporting airports, six years.",
+      "meta": {
+        "title": "Aircraft Movements Since 2018-19",
+        "subtitle": "Aircraft movements, thousands",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " thousand",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Passenger Growth",
+        "explain": {
+          "what": "Aircraft movements reported by AAI each year.",
+          "read": "Movements fell to 1,196.74 thousand in 2020-21 and reached 2,677.59 thousand in 2023-24, above the 2018-19 level of 2,605.96 thousand.",
+          "why": "Shows the COVID-19 collapse and the full recovery of flying."
+        }
+      }
+    },
+    "air_operational_airports": {
+      "labels": [
+        "2014",
+        "2024 (AAI report)",
+        "2025 (Ministry)"
+      ],
+      "values": [
+        74,
+        157,
+        164
+      ],
+      "source": "https://www.sansad.in/getFile/loksabhaquestions/annex/186/AU861_6WIzEa.pdf?source=pqals",
+      "unit": "airports",
+      "note": "Operational airports including heliports and water aerodromes: 74 in 2014 and 164 in 2025 (Ministry of Civil Aviation, Lok Sabha reply of 4 December 2025); 157 as at the date of the AAI Annual Report 2023-24 Board's Report (https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf).",
+      "meta": {
+        "title": "Operational Airports",
+        "subtitle": "Airports, heliports and water aerodromes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " airports",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Airports & UDAN",
+        "explain": {
+          "what": "Number of operational airports, heliports and water aerodromes.",
+          "read": "The count more than doubled from 74 in 2014 to 164 in 2025.",
+          "why": "More airports bring air service to more districts."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_airport_network": {
+      "labels": [
+        "AAI-operated",
+        "PPP",
+        "Joint venture (Delhi, Mumbai)"
+      ],
+      "values": [
+        125,
+        6,
+        2
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "airports",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report: AAI manages 133 airports, of which 8 are under private control: DIAL and MIAL as joint ventures and Ahmedabad, Jaipur, Lucknow, Guwahati, Thiruvananthapuram and Mangalore as PPPs.",
+      "meta": {
+        "title": "Airports Managed by AAI",
+        "subtitle": "Operating model of AAI's 133 airports",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": " airports",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Airports & UDAN",
+        "explain": {
+          "what": "How the 133 airports under AAI's management are operated.",
+          "read": "125 are run directly by AAI, 6 by public-private partnerships and 2 by joint-venture companies (Delhi, Mumbai).",
+          "why": "Shows how much of airport operations has moved to private operators."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_udan_passengers": {
+      "labels": [
+        "31 Mar 2023",
+        "31 Mar 2024",
+        "31 Dec 2025"
+      ],
+      "values": [
+        117,
+        136,
+        159
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "lakh",
+      "note": "Cumulative passengers carried under RCS-UDAN: 117 lakh up to 31 March 2023 and 136 lakh up to 31 March 2024 (Airports Authority of India, Annual Report 2023-24); more than 159 lakh as at 31 December 2025 (Ministry of Civil Aviation, https://www.civilaviation.gov.in/our-performance).",
+      "meta": {
+        "title": "UDAN Passengers Carried (Cumulative)",
+        "subtitle": "Passengers on RCS-UDAN flights, lakh",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " lakh",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Airports & UDAN",
+        "explain": {
+          "what": "Cumulative passengers carried on flights under the Regional Connectivity Scheme (UDAN).",
+          "read": "The total passed 159 lakh by December 2025, up from 117 lakh in March 2023.",
+          "why": "Measures the reach of regional flying on subsidised routes."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_udan_routes": {
+      "labels": [
+        "31 Mar 2024",
+        "31 Dec 2025"
+      ],
+      "values": [
+        559,
+        657
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "routes",
+      "note": "RCS-UDAN routes operationalised: 559 connecting 84 airports at 31 March 2024 (Airports Authority of India, Annual Report 2023-24); 657 routes and 93 airports at 31 December 2025 (Ministry of Civil Aviation, https://www.civilaviation.gov.in/our-performance).",
+      "meta": {
+        "title": "UDAN Routes Operationalised",
+        "subtitle": "Cumulative RCS-UDAN routes",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " routes",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Airports & UDAN",
+        "explain": {
+          "what": "Cumulative routes started under the Regional Connectivity Scheme.",
+          "read": "Operational routes rose from 559 to 657 and the airports served from 84 to 93.",
+          "why": "UDAN is the policy lever for small-city connectivity."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_udan_flights": {
+      "labels": [
+        "31 Mar 2023",
+        "31 Mar 2024",
+        "31 Dec 2025"
+      ],
+      "values": [
+        2.24,
+        2.62,
+        3.34
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "lakh",
+      "note": "Cumulative RCS-UDAN flights operated: 2.24 lakh up to 31 March 2023 and 2.62 lakh up to 31 March 2024 (Airports Authority of India, Annual Report 2023-24); about 3.34 lakh at 31 December 2025 (Ministry of Civil Aviation, https://www.civilaviation.gov.in/our-performance).",
+      "meta": {
+        "title": "UDAN Flights Operated (Cumulative)",
+        "subtitle": "Flights under RCS-UDAN, lakh",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " lakh",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Airports & UDAN",
+        "explain": {
+          "what": "Cumulative flights operated under UDAN.",
+          "read": "Flights rose from 2.24 lakh to about 3.34 lakh between March 2023 and December 2025.",
+          "why": "Flights complement the passenger count to show service frequency."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_freight": {
+      "labels": [
+        "Domestic",
+        "International",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1282.26,
+            1864.54,
+            3146.8
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            1320.16,
+            2045.52,
+            3365.68
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, freight handled at all Indian airports.",
+      "meta": {
+        "title": "Air Freight: Domestic vs International",
+        "subtitle": "Freight handled, thousand tonnes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " thousand tonnes",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "Air freight handled at all Indian airports.",
+          "read": "Total freight grew 7.0% to 3,365.68 thousand tonnes; international freight grew 9.7% and domestic 3.0%.",
+          "why": "Air cargo carries high-value goods and links India to world trade."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_freight_mix": {
+      "labels": [
+        "International",
+        "Domestic"
+      ],
+      "values": [
+        2045.52,
+        1320.16
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "Airports Authority of India, Annual Report 2023-24: Board's Report, 2023-24 freight at all Indian airports.",
+      "meta": {
+        "title": "Air Freight Mix (2023-24)",
+        "subtitle": "Share of 3,365.68 thousand tonnes",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " thousand tonnes",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "International and domestic share of air freight in 2023-24.",
+          "read": "International freight is 60.8% and domestic 39.2%, the reverse of passenger traffic.",
+          "why": "Cargo is more export-driven than passenger flying."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_cargo_decade": {
+      "labels": [
+        "2014-15",
+        "2023-24 (AAI)",
+        "2024-25 (Ministry)"
+      ],
+      "values": [
+        2.53,
+        3.37,
+        3.72
+      ],
+      "source": "https://www.civilaviation.gov.in/our-performance",
+      "unit": "million tonnes",
+      "note": "Air cargo handled: 2.53 million tonnes in 2014-15 and 3.72 million tonnes in 2024-25 (Ministry of Civil Aviation, https://www.civilaviation.gov.in/our-performance); 3.37 million tonnes (3,365.68 thousand) in 2023-24 from the AAI Annual Report.",
+      "meta": {
+        "title": "Air Cargo Handled Over a Decade",
+        "subtitle": "Million tonnes",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " million tonnes",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "Air cargo handled at Indian airports.",
+          "read": "Cargo rose from 2.53 million tonnes in 2014-15 to 3.72 million tonnes in 2024-25, up 47%.",
+          "why": "A ten-year view shows structural growth beyond the COVID-19 swing."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_aai_profit": {
+      "labels": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Revenue",
+          "values": [
+            14132.96,
+            12837.44,
+            4867.04,
+            6841.29,
+            12172.35,
+            15979.83
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Profit before tax",
+          "values": [
+            3683.99,
+            3817.06,
+            -2767.01,
+            32.76,
+            3963.75,
+            6214.0
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Profit after tax",
+          "values": [
+            2271.44,
+            1985.09,
+            -1962.06,
+            8.76,
+            2972.05,
+            4651.31
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "Rs crore",
+      "note": "Airports Authority of India, Annual Report 2023-24: Performance at a Glance, income and profit.",
+      "meta": {
+        "title": "AAI Revenue and Profit",
+        "subtitle": "Rs crore, 2018-19 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " Rs crore",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "AAI Finance & Investment",
+        "explain": {
+          "what": "Revenue and profit of the Airports Authority of India.",
+          "read": "Revenue fell to Rs 4,867 crore and AAI lost Rs 1,962 crore after tax in 2020-21; in 2023-24 revenue was Rs 15,980 crore and profit after tax Rs 4,651 crore.",
+          "why": "AAI's finances track air traffic closely."
+        }
+      }
+    },
+    "air_aai_capex": {
+      "labels": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Plan outlay",
+          "values": [
+            4195.07,
+            4950.0,
+            4364.94,
+            4500.0,
+            5000.0,
+            4000.0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Actual capital expenditure",
+          "values": [
+            4297.44,
+            4713.49,
+            4350.0,
+            3724.34,
+            5175.0,
+            5335.0
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "Rs crore",
+      "note": "Airports Authority of India, Annual Report 2023-24: Performance at a Glance, annual plan outlay and actual capital expenditure.",
+      "meta": {
+        "title": "AAI Capital Expenditure vs Plan",
+        "subtitle": "Rs crore, 2018-19 to 2023-24",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " Rs crore",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "AAI Finance & Investment",
+        "explain": {
+          "what": "AAI's planned and actual capital expenditure.",
+          "read": "Actual spend was Rs 5,335 crore in 2023-24 against a plan outlay of Rs 4,000 crore.",
+          "why": "Capital expenditure builds terminals, runways and air navigation capacity."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "air_wb_india_passengers": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        10.862,
+        10.717,
+        11.127,
+        9.442,
+        11.518,
+        14.261,
+        13.395,
+        16.04,
+        16.521,
+        16.005,
+        17.299,
+        16.863,
+        17.633,
+        19.455,
+        23.934,
+        27.879,
+        40.289,
+        51.897,
+        49.878,
+        54.446,
+        64.374,
+        73.997,
+        72.152,
+        75.589,
+        82.719,
+        98.928,
+        119.578,
+        139.752,
+        164.036,
+        167.499,
+        68.96,
+        83.965,
+        139.996,
+        180.416
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.PSGR, compiled from ICAO civil-aviation statistics for Indian-registered carriers.",
+      "meta": {
+        "title": "Air Passengers Carried by Indian Carriers",
+        "subtitle": "Passengers on Indian-registered airlines",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Passenger Growth",
+        "explain": {
+          "what": "Passengers carried by air by carriers registered in India, domestic and international, in millions.",
+          "read": "From 10.9 in 1990 to 180.4 in 2023; the lowest point was 9.4 in 1993.",
+          "why": "A long annual series shows how quickly Indian aviation has grown and how COVID-19 disrupted it."
+        }
+      }
+    },
+    "air_wb_passengers_trend": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            10.862,
+            10.717,
+            11.127,
+            9.442,
+            11.518,
+            14.261,
+            13.395,
+            16.04,
+            16.521,
+            16.005,
+            17.299,
+            16.863,
+            17.633,
+            19.455,
+            23.934,
+            27.879,
+            40.289,
+            51.897,
+            49.878,
+            54.446,
+            64.374,
+            73.997,
+            72.152,
+            75.589,
+            82.719,
+            98.928,
+            119.578,
+            139.752,
+            164.036,
+            167.499,
+            68.96,
+            83.965,
+            139.996,
+            180.416
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            16.596,
+            19.52,
+            27.345,
+            31.312,
+            37.601,
+            47.565,
+            51.77,
+            52.277,
+            53.234,
+            55.853,
+            61.892,
+            72.661,
+            83.672,
+            86.041,
+            119.789,
+            136.722,
+            158.013,
+            183.613,
+            191.001,
+            229.062,
+            266.293,
+            292.16,
+            318.476,
+            352.795,
+            390.879,
+            436.184,
+            487.96,
+            551.235,
+            611.44,
+            659.629,
+            417.256,
+            440.301,
+            250.754,
+            619.216
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            464.574,
+            452.016,
+            466.965,
+            469.926,
+            514.924,
+            533.512,
+            571.072,
+            590.571,
+            588.171,
+            634.365,
+            665.327,
+            622.188,
+            598.41,
+            588.997,
+            678.111,
+            720.548,
+            725.531,
+            744.302,
+            701.78,
+            679.423,
+            720.497,
+            730.796,
+            736.699,
+            743.171,
+            762.71,
+            798.222,
+            824.039,
+            849.403,
+            889.024,
+            926.737,
+            369.501,
+            666.153,
+            852.828,
+            941.557
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#bc8cff",
+          "values": [
+            76.224,
+            78.72,
+            81.378,
+            80.064,
+            83.914,
+            91.797,
+            95.914,
+            94.998,
+            101.701,
+            105.994,
+            109.123,
+            107.823,
+            109.038,
+            103.989,
+            101.741,
+            102.279,
+            102.845,
+            99.842,
+            97.022,
+            86.897,
+            109.617,
+            89.789,
+            98.908,
+            107.573,
+            110.547,
+            114.128,
+            117.708,
+            123.898,
+            126.388,
+            130.233,
+            51.131,
+            45.41,
+            86.456,
+            120.306
+          ]
+        },
+        {
+          "label": "United Kingdom",
+          "color": "#3fb950",
+          "values": [
+            47.114,
+            42.861,
+            47.819,
+            50.188,
+            55.475,
+            59.689,
+            64.209,
+            62.763,
+            61.94,
+            65.738,
+            70.436,
+            70.332,
+            72.381,
+            76.389,
+            86.055,
+            93.603,
+            97.545,
+            101.623,
+            104.714,
+            102.465,
+            101.516,
+            111.599,
+            115.42,
+            118.606,
+            124.902,
+            131.513,
+            143.782,
+            151.159,
+            165.389,
+            142.393,
+            30.238,
+            26.632,
+            95.908,
+            118.946
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.PSGR, compiled from ICAO civil-aviation statistics for carriers registered in each country. Gaps are years a country did not report.",
+      "meta": {
+        "title": "Air Passengers: India vs Peers",
+        "subtitle": "Passengers carried by registered carriers",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Passenger Growth",
+        "explain": {
+          "what": "Air passengers carried by each country's airlines, in millions.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Compares India's growth path with the largest aviation markets."
+        }
+      }
+    },
+    "air_wb_departures_trend": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            0.126,
+            0.117,
+            0.12,
+            0.105,
+            0.13,
+            0.168,
+            0.151,
+            0.182,
+            0.196,
+            0.18,
+            0.198,
+            0.207,
+            0.231,
+            0.264,
+            0.303,
+            0.33,
+            0.454,
+            0.569,
+            0.592,
+            0.602,
+            0.623,
+            0.696,
+            0.678,
+            0.689,
+            0.725,
+            0.788,
+            0.918,
+            1.029,
+            1.2,
+            1.21,
+            0.583,
+            0.739,
+            1.055,
+            1.235
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            0.196,
+            0.19,
+            0.2,
+            0.262,
+            0.326,
+            0.398,
+            0.493,
+            0.47,
+            0.51,
+            0.548,
+            0.573,
+            0.841,
+            0.932,
+            0.946,
+            1.21,
+            1.349,
+            1.543,
+            1.754,
+            1.853,
+            2.14,
+            2.378,
+            2.539,
+            2.78,
+            3.073,
+            3.357,
+            3.616,
+            3.952,
+            4.359,
+            4.692,
+            4.964,
+            3.668,
+            3.906,
+            2.513,
+            4.909
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            6.849,
+            6.624,
+            6.578,
+            6.428,
+            7.25,
+            7.682,
+            8.032,
+            7.943,
+            7.824,
+            8.511,
+            8.821,
+            8.535,
+            8.039,
+            7.789,
+            9.566,
+            9.97,
+            9.739,
+            9.816,
+            9.054,
+            9.182,
+            10.095,
+            10.058,
+            9.864,
+            9.745,
+            9.556,
+            9.499,
+            9.641,
+            9.639,
+            9.881,
+            10.099,
+            6.176,
+            8.006,
+            8.844,
+            9.267
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#bc8cff",
+          "values": [
+            0.476,
+            0.496,
+            0.473,
+            0.474,
+            0.489,
+            0.536,
+            0.564,
+            0.573,
+            0.636,
+            0.662,
+            0.645,
+            0.64,
+            0.648,
+            0.64,
+            0.638,
+            0.652,
+            0.67,
+            0.657,
+            0.655,
+            0.642,
+            0.934,
+            0.813,
+            0.875,
+            0.916,
+            0.928,
+            0.956,
+            0.984,
+            1.036,
+            1.0,
+            1.018,
+            0.66,
+            0.657,
+            0.906,
+            0.976
+          ]
+        },
+        {
+          "label": "United Kingdom",
+          "color": "#3fb950",
+          "values": [
+            0.671,
+            0.616,
+            0.655,
+            0.659,
+            0.685,
+            0.725,
+            0.772,
+            0.789,
+            0.802,
+            0.841,
+            0.876,
+            0.926,
+            0.925,
+            0.891,
+            0.97,
+            1.018,
+            1.037,
+            1.045,
+            1.056,
+            1.004,
+            0.985,
+            1.063,
+            1.051,
+            1.053,
+            1.064,
+            1.104,
+            1.18,
+            1.183,
+            1.243,
+            1.061,
+            0.303,
+            0.29,
+            0.714,
+            0.839
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.DPRT?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.DPRT, compiled from ICAO civil-aviation statistics for carriers registered in each country. Gaps are years a country did not report.",
+      "meta": {
+        "title": "Aircraft Departures: India vs Peers",
+        "subtitle": "Departures by registered carriers",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Passenger Growth",
+        "explain": {
+          "what": "Take-offs by each country's registered carriers, in millions.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Departures measure how often aircraft fly, not just how many people travel."
+        }
+      }
+    },
+    "air_wb_passengers_per_100": {
+      "labels": [
+        "United Arab Emirates",
+        "United States",
+        "Australia",
+        "United Kingdom",
+        "Japan",
+        "Germany",
+        "France",
+        "Russia",
+        "Brazil",
+        "China",
+        "India"
+      ],
+      "values": [
+        868.6,
+        279.6,
+        258.66,
+        173.58,
+        96.62,
+        96.29,
+        94.55,
+        68.74,
+        45.18,
+        43.89,
+        12.55
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN",
+      "unit": "per 100 people",
+      "note": "World Bank indicator IS.AIR.PSGR, 2023. India ranks 11 of 11 countries shown.",
+      "meta": {
+        "title": "Air Passengers per 100 People (2023)",
+        "subtitle": "Passengers carried relative to population",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " per 100 people",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Passenger Growth",
+        "explain": {
+          "what": "Air passengers carried divided by population.",
+          "read": "India ranks 11 of 11 countries in this comparison.",
+          "why": "Per-person figures show how far air travel has spread beyond big markets."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "air_wb_passengers_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "India",
+        "Japan",
+        "United Kingdom",
+        "Russia",
+        "Brazil",
+        "United Arab Emirates",
+        "Germany",
+        "Australia",
+        "France"
+      ],
+      "values": [
+        941.56,
+        619.22,
+        180.42,
+        120.31,
+        118.95,
+        98.87,
+        95.4,
+        91.06,
+        80.2,
+        68.96,
+        64.64
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.PSGR, 2023. India ranks 3 of 11 countries shown.",
+      "meta": {
+        "title": "Air Passengers Ranking (2023)",
+        "subtitle": "Passengers carried by registered carriers",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Global Aviation Comparison",
+        "explain": {
+          "what": "Passengers carried by each country's airlines, in millions.",
+          "read": "India ranks 3 of 11 countries in this comparison.",
+          "why": "Ranks India among major aviation markets."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "air_wb_passengers_share": {
+      "labels": [
+        "United States",
+        "China",
+        "India",
+        "Japan",
+        "United Kingdom",
+        "Russia",
+        "Brazil",
+        "United Arab Emirates",
+        "Germany",
+        "Australia",
+        "France"
+      ],
+      "values": [
+        941.56,
+        619.22,
+        180.42,
+        120.31,
+        118.95,
+        98.87,
+        95.4,
+        91.06,
+        80.2,
+        68.96,
+        64.64
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.PSGR, 2023. India ranks 3 of 11 countries shown.",
+      "meta": {
+        "title": "Share of Air Passengers Among Peers (2023)",
+        "subtitle": "Peer share of passengers carried",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Global Aviation Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's air passengers.",
+          "read": "India ranks 3 of 11 countries in this comparison.",
+          "why": "Shows India's weight in global air travel."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_wb_departures_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "India",
+        "Japan",
+        "United Kingdom",
+        "Brazil",
+        "Russia",
+        "Australia",
+        "Germany",
+        "France",
+        "United Arab Emirates"
+      ],
+      "values": [
+        9.27,
+        4.91,
+        1.23,
+        0.98,
+        0.84,
+        0.79,
+        0.78,
+        0.68,
+        0.66,
+        0.5,
+        0.44
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.DPRT?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.DPRT, 2023. India ranks 3 of 11 countries shown.",
+      "meta": {
+        "title": "Aircraft Departures Ranking (2023)",
+        "subtitle": "Departures by registered carriers",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Global Aviation Comparison",
+        "explain": {
+          "what": "Take-offs by each country's airlines, in millions.",
+          "read": "India ranks 3 of 11 countries in this comparison.",
+          "why": "Ranks India on flight frequency."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "air_wb_departures_share": {
+      "labels": [
+        "United States",
+        "China",
+        "India",
+        "Japan",
+        "United Kingdom",
+        "Brazil",
+        "Russia",
+        "Australia",
+        "Germany",
+        "France",
+        "United Arab Emirates"
+      ],
+      "values": [
+        9.27,
+        4.91,
+        1.23,
+        0.98,
+        0.84,
+        0.79,
+        0.78,
+        0.68,
+        0.66,
+        0.5,
+        0.44
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.DPRT?locations=IN",
+      "unit": "million",
+      "note": "World Bank indicator IS.AIR.DPRT, 2023. India ranks 3 of 11 countries shown.",
+      "meta": {
+        "title": "Share of Aircraft Departures Among Peers (2023)",
+        "subtitle": "Peer share of departures",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Global Aviation Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's departures.",
+          "read": "India ranks 3 of 11 countries in this comparison.",
+          "why": "Shows India's weight in global flying."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "air_wb_freight_trend": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            0.001,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.003,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.002
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.003,
+            0.004,
+            0.004,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.008,
+            0.011,
+            0.011,
+            0.012,
+            0.017,
+            0.017,
+            0.016,
+            0.016,
+            0.018,
+            0.02,
+            0.021,
+            0.023,
+            0.025,
+            0.025,
+            0.019,
+            0.021,
+            0.019,
+            0.026
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            0.015,
+            0.014,
+            0.016,
+            0.016,
+            0.019,
+            0.02,
+            0.022,
+            0.025,
+            0.026,
+            0.027,
+            0.03,
+            0.028,
+            0.03,
+            0.034,
+            0.037,
+            0.037,
+            0.04,
+            0.041,
+            0.039,
+            0.035,
+            0.039,
+            0.04,
+            0.039,
+            0.037,
+            0.038,
+            0.038,
+            0.039,
+            0.042,
+            0.043,
+            0.042,
+            0.041,
+            0.046,
+            0.046,
+            0.043
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#bc8cff",
+          "values": [
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.006,
+            0.007,
+            0.007,
+            0.008,
+            0.008,
+            0.008,
+            0.009,
+            0.008,
+            0.008,
+            0.008,
+            0.009,
+            0.009,
+            0.008,
+            0.008,
+            0.008,
+            0.01,
+            0.008,
+            0.007,
+            0.007,
+            0.008,
+            0.009,
+            0.009,
+            0.009,
+            0.011,
+            0.009,
+            0.009,
+            0.008,
+            0.011,
+            0.01,
+            0.008
+          ]
+        },
+        {
+          "label": "United Kingdom",
+          "color": "#3fb950",
+          "values": [
+            0.004,
+            0.004,
+            0.005,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.006,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.007,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.005,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.004,
+            0.004,
+            0.004,
+            0.004
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.AIR.GOOD.MT.K1, compiled from ICAO civil-aviation statistics for carriers registered in each country. Gaps are years a country did not report.",
+      "meta": {
+        "title": "Air Freight: India vs Peers",
+        "subtitle": "Freight carried by registered carriers",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million tonne-km",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "Air freight in million tonne-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Air freight tracks high-value trade."
+        }
+      }
+    },
+    "air_wb_freight_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "United Arab Emirates",
+        "Germany",
+        "Japan",
+        "United Kingdom",
+        "France",
+        "India",
+        "Brazil",
+        "Russia",
+        "Australia"
+      ],
+      "values": [
+        0.04,
+        0.03,
+        0.01,
+        0.01,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.AIR.GOOD.MT.K1, 2023. India ranks 8 of 11 countries shown.",
+      "meta": {
+        "title": "Air Freight Ranking (2023)",
+        "subtitle": "Freight carried by registered carriers",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million tonne-km",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "Air freight in million tonne-kilometres.",
+          "read": "India ranks 8 of 11 countries in this comparison.",
+          "why": "Ranks India's air cargo output."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "air_wb_freight_share": {
+      "labels": [
+        "United States",
+        "China",
+        "United Arab Emirates",
+        "Germany",
+        "Japan",
+        "United Kingdom",
+        "France",
+        "India",
+        "Brazil",
+        "Russia",
+        "Australia"
+      ],
+      "values": [
+        0.04,
+        0.03,
+        0.01,
+        0.01,
+        0.01,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.AIR.GOOD.MT.K1, 2023. India ranks 8 of 11 countries shown.",
+      "meta": {
+        "title": "Share of Air Freight Among Peers (2023)",
+        "subtitle": "Peer share of air freight",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million tonne-km",
+        "category": "Air Travel & Civil Aviation",
+        "subgroup": "Air Cargo",
+        "explain": {
+          "what": "Each country's share of the peer group's air freight.",
+          "read": "India ranks 8 of 11 countries in this comparison.",
+          "why": "Shows India's weight in global air cargo."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_route_km": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        53596,
+        56247,
+        59790,
+        61240,
+        62367,
+        63028,
+        64173,
+        68103,
+        68043,
+        68584,
+        69181
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres since 1950-51.",
+      "meta": {
+        "title": "Route Length Since Independence",
+        "subtitle": "Route kilometres of Indian Railways",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Total route kilometres across all gauges, 1950-51 to 2023-24.",
+          "read": "The network grew by about 15,600 km over 73 years and stood at 69,181 km on 31 March 2024.",
+          "why": "Route length is the physical reach of the railway."
+        }
+      }
+    },
+    "rail_track_km": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Total track km",
+          "values": [
+            77609,
+            83706,
+            98546,
+            104480,
+            108858,
+            108706,
+            114037,
+            126611,
+            128305,
+            132310,
+            135207
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Running track km",
+          "values": [
+            59315,
+            63602,
+            71669,
+            75860,
+            78607,
+            81865,
+            87114,
+            100866,
+            102831,
+            106493,
+            109748
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Route km",
+          "values": [
+            53596,
+            56247,
+            59790,
+            61240,
+            62367,
+            63028,
+            64173,
+            68103,
+            68043,
+            68584,
+            69181
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route, running track and total track kilometres.",
+      "meta": {
+        "title": "Route vs Track Kilometres",
+        "subtitle": "Doubling and multi-tracking since 1950-51",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route, running-track and total-track kilometres.",
+          "read": "Running track grew about 85% since 1950-51 against 29% for route length, which points to doubling and extra lines on existing corridors.",
+          "why": "Track length divided by route length shows how much of the network has more than one line."
+        }
+      }
+    },
+    "rail_electrified_km": {
+      "labels": [
+        "1951",
+        "1961",
+        "1971",
+        "1981",
+        "1991",
+        "2001",
+        "2011",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        388,
+        748,
+        3706,
+        5345,
+        9968,
+        14856,
+        19607,
+        45772,
+        51804,
+        58074,
+        62253
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'Electrification', cumulative electrified route kilometres.",
+      "meta": {
+        "title": "Cumulative Electrified Route",
+        "subtitle": "Electrified route kilometres, 1951 to 2024",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Cumulative electrified route kilometres in each year shown.",
+          "read": "Electrification more than tripled after 2011; a record 4,644 km was electrified in 2023-24, taking the total to 62,253 km, about 90% of the broad-gauge network.",
+          "why": "The Mission 100% Electrification policy aims to cut diesel imports and running costs."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_gauge_mix": {
+      "labels": [
+        "Broad gauge (1,676 mm)",
+        "Metre gauge",
+        "Narrow gauge"
+      ],
+      "values": [
+        66820,
+        1159,
+        1202
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route length by gauge on 31 March 2024.",
+      "meta": {
+        "title": "Route Length by Gauge (2023-24)",
+        "subtitle": "Broad, metre and narrow gauge route kilometres",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route kilometres by track gauge on 31 March 2024.",
+          "read": "Broad gauge is 96.59% of the route and carried 100% of freight output and 99.96% of passenger-km.",
+          "why": "A single dominant gauge lets trains run end to end across the country."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_zone_route_km": {
+      "labels": [
+        "Northern",
+        "South Central",
+        "Western",
+        "North Western",
+        "Southern",
+        "East Central",
+        "Northeast Frontier",
+        "Central",
+        "South Western",
+        "North Central",
+        "North Eastern",
+        "West Central",
+        "East Coast",
+        "Eastern",
+        "South Eastern",
+        "South East Central",
+        "Metro Railway Kolkata"
+      ],
+      "values": [
+        7406,
+        6610,
+        6284,
+        5712,
+        5092,
+        4377,
+        4348,
+        4275,
+        3692,
+        3522,
+        3492,
+        3124,
+        3071,
+        2841,
+        2749,
+        2541,
+        45
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres by zonal railway, 2023-24.",
+      "meta": {
+        "title": "Route Kilometres by Zonal Railway (2023-24)",
+        "subtitle": "Route length of the 16 zones plus Kolkata Metro",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route kilometres under each of the 16 zonal railways and Metro Railway Kolkata.",
+          "read": "Northern Railway (7,406 km), South Central (6,610) and Western (6,284) run the longest networks.",
+          "why": "Zones are the operating units of Indian Railways."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_state_route_km": {
+      "labels": [
+        "Uttar Pradesh",
+        "Rajasthan",
+        "Maharashtra",
+        "Madhya Pradesh",
+        "Gujarat",
+        "West Bengal",
+        "Tamil Nadu",
+        "Andhra Pradesh",
+        "Bihar",
+        "Karnataka",
+        "Odisha",
+        "Jharkhand",
+        "Assam",
+        "Punjab",
+        "Telangana",
+        "Haryana",
+        "Chhattisgarh",
+        "Kerala",
+        "Uttarakhand",
+        "Himachal Pradesh",
+        "Jammu & Kashmir",
+        "Tripura",
+        "Delhi",
+        "Goa",
+        "Manipur",
+        "Nagaland",
+        "Puducherry",
+        "Chandigarh",
+        "Arunachal Pradesh",
+        "Meghalaya",
+        "Mizoram"
+      ],
+      "values": [
+        8823,
+        6135,
+        5930,
+        5263,
+        5051,
+        4161,
+        4038,
+        4016,
+        3959,
+        3647,
+        2985,
+        2651,
+        2571,
+        2265,
+        2015,
+        1780,
+        1222,
+        1048,
+        346,
+        313,
+        298,
+        265,
+        188,
+        69,
+        56,
+        25,
+        23,
+        16,
+        12,
+        9,
+        1
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', state-wise route kilometres, 2023-24. States and territories not listed have no railway line.",
+      "meta": {
+        "title": "Route Kilometres by State (2023-24)",
+        "subtitle": "Railway route length in each state and union territory",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route kilometres within each state or union territory at the end of 2023-24.",
+          "read": "Uttar Pradesh (8,823 km), Rajasthan (6,135) and Maharashtra (5,930) have the longest networks; Mizoram has 1 km.",
+          "why": "State-wise length shows where rail access is deepest."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_passengers_originating": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        1284,
+        1594,
+        2431,
+        3613,
+        3858,
+        4833,
+        7651,
+        1250,
+        3519,
+        6396,
+        6905
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I (passengers originating, suburban plus non-suburban).",
+      "meta": {
+        "title": "Passengers Originating",
+        "subtitle": "Annual passenger journeys on Indian Railways",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Passenger journeys that began on Indian Railways, in millions.",
+          "read": "Journeys fell to 1,250 million in 2020-21 (COVID-19) and recovered to 6,905 million in 2023-24, still below the 7,651 million of 2010-11.",
+          "why": "It is the headline demand measure for Indian Railways."
+        }
+      }
+    },
+    "rail_passenger_split": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Suburban",
+          "values": [
+            412,
+            680,
+            1219,
+            2000,
+            2259,
+            2861,
+            4061,
+            917,
+            2169,
+            3792,
+            3981
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Non-suburban",
+          "values": [
+            872,
+            914,
+            1212,
+            1613,
+            1599,
+            1972,
+            3590,
+            333,
+            1350,
+            2604,
+            2924
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, suburban versus non-suburban journeys.",
+      "meta": {
+        "title": "Suburban vs Non-Suburban Journeys",
+        "subtitle": "Passengers originating by service type",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Suburban (city commuter) and non-suburban (long-distance) passenger journeys.",
+          "read": "Suburban journeys were 3,981 million in 2023-24, 58% of the total.",
+          "why": "Commuter and long-distance services need different capacity."
+        }
+      }
+    },
+    "rail_passenger_km": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        66517,
+        77665,
+        118120,
+        208558,
+        295644,
+        457022,
+        978508,
+        231126,
+        590217,
+        958919,
+        1064700
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million passenger-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table II (passenger kilometres).",
+      "meta": {
+        "title": "Passenger Kilometres",
+        "subtitle": "Total distance travelled by rail passengers",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " million passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Passenger-kilometres: each passenger multiplied by the distance travelled.",
+          "read": "Output reached 1,064,700 million passenger-km in 2023-24, about 16 times the 1950-51 level and above 2010-11.",
+          "why": "Passenger-km measures output; counting journeys alone ignores how far people travel."
+        }
+      }
+    },
+    "rail_passenger_lead": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        51.8,
+        48.7,
+        48.6,
+        57.7,
+        76.6,
+        94.6,
+        127.9,
+        184.8,
+        167.7,
+        149.9,
+        154.2
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table III (average lead of all passengers).",
+      "meta": {
+        "title": "Average Passenger Journey Length",
+        "subtitle": "Average lead per passenger",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Average distance of a passenger journey, in kilometres.",
+          "read": "It rose from 51.8 km in 1950-51 to 154.2 km in 2023-24, with a peak of 184.8 km in 2020-21.",
+          "why": "A longer lead means a bigger share of travel is intercity rather than suburban."
+        }
+      }
+    },
+    "rail_passenger_mix": {
+      "labels": [
+        "Suburban",
+        "Second class mail/express",
+        "Second class ordinary",
+        "Upper class"
+      ],
+      "values": [
+        3981,
+        1871,
+        734,
+        319
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, 2023-24 journeys by service and class.",
+      "meta": {
+        "title": "Passenger Journeys by Service (2023-24)",
+        "subtitle": "Split of 6,905 million journeys",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "How 2023-24 passenger journeys split across suburban and non-suburban classes.",
+          "read": "Suburban is 57.7% of journeys, second-class mail/express 27.1%, second-class ordinary 10.6% and upper class 4.6%.",
+          "why": "Most journeys are suburban or second class."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_trains_daily": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Passenger trains run daily",
+          "values": [
+            12541,
+            13198
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Goods trains run daily",
+          "values": [
+            10388,
+            11724
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "trains",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Train Utilisation.",
+      "meta": {
+        "title": "Trains Run Daily",
+        "subtitle": "Passenger and goods trains on an average day",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " trains",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Average number of passenger and goods trains run each day.",
+          "read": "Passenger trains per day grew 5.2% and goods trains 12.9% between 2022-23 and 2023-24.",
+          "why": "Train counts show how intensively the track is used."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_freight_tonnes": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        73.2,
+        119.8,
+        167.9,
+        195.9,
+        318.4,
+        473.5,
+        921.73,
+        1230.94,
+        1415.87,
+        1509.1,
+        1588.06
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (revenue-earning freight, tonnes originating, excluding Konkan Railway).",
+      "meta": {
+        "title": "Freight Originating",
+        "subtitle": "Revenue-earning tonnes loaded by Indian Railways",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Revenue-earning freight originating on Indian Railways, in million tonnes.",
+          "read": "From 73 million tonnes in 1950-51 to 1,588 million tonnes in 2023-24, about 21.7 times higher.",
+          "why": "Rail carries the bulk commodities (coal, ore, cement, foodgrains) that supply industry."
+        }
+      }
+    },
+    "rail_freight_ntkm": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        37565,
+        72333,
+        110696,
+        147652,
+        235785,
+        312371,
+        625723,
+        719762,
+        871816,
+        959566,
+        973968
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million net tonne-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (net tonne kilometres).",
+      "meta": {
+        "title": "Freight Output (Net Tonne-Km)",
+        "subtitle": "Tonnes moved multiplied by distance",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million NTKM",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Net tonne-kilometres: freight tonnage multiplied by distance moved.",
+          "read": "Output reached 973,968 million NTKM in 2023-24, about 26 times 1950-51.",
+          "why": "NTKM measures transport work; tonnes alone ignore haul length."
+        }
+      }
+    },
+    "rail_freight_lead": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        513,
+        603,
+        659,
+        754,
+        741,
+        660,
+        679,
+        585,
+        616,
+        636,
+        613
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (average lead of freight).",
+      "meta": {
+        "title": "Average Freight Haul",
+        "subtitle": "Average lead of a tonne of freight",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Average distance a tonne of freight is carried.",
+          "read": "Average haul peaked at 754 km in 1980-81 and was 613 km in 2023-24.",
+          "why": "Haul length affects wagon use and freight earnings per tonne."
+        }
+      }
+    },
+    "rail_freight_commodity_mix": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
+      ],
+      "values": [
+        786.84,
+        180.95,
+        152.72,
+        84.76,
+        75.77,
+        58.92,
+        51.44,
+        49.88,
+        29.17,
+        117.61
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2023-24.",
+      "meta": {
+        "title": "Freight by Commodity (2023-24)",
+        "subtitle": "Share of 1,588 million tonnes loaded",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Revenue-earning freight by commodity group in 2023-24.",
+          "read": "Coal is 49.55% of loading (thermal power houses alone 38.19%), then iron ore 11.39%, cement 9.62% and containers 5.34%.",
+          "why": "Rail freight depends heavily on bulk coal."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_freight_commodity_change": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            727.24,
+            160.14,
+            143.93,
+            79.22,
+            69.86,
+            56.34,
+            70.92,
+            48.22,
+            28.15,
+            125.08
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            786.84,
+            180.95,
+            152.72,
+            84.76,
+            75.77,
+            58.92,
+            51.44,
+            49.88,
+            29.17,
+            117.61
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2022-23 vs 2023-24.",
+      "meta": {
+        "title": "Commodity Loading: 2022-23 vs 2023-24",
+        "subtitle": "Tonnes loaded by commodity group",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Tonnes carried for each commodity group in the last two years.",
+          "read": "Coal added 59.6 million tonnes and iron ore 20.8 million; foodgrains fell by 19.5 million.",
+          "why": "Year-on-year changes show which commodities drove growth."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_freight_loading_pib": {
+      "labels": [
+        "2020-21",
+        "2023-24",
+        "2024-25"
+      ],
+      "values": [
+        1233,
+        1590.68,
+        1617.38
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2117417",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways via PIB: originating freight loading was 1,233 MT in 2020-21 (Lok Sabha reply, PIB release 2201815), 1,590.68 MT in 2023-24 and 1,617.38 MT in 2024-25, up 1.68% (PIB release 2117417, 1 April 2025). These cover all originating loading, so they differ slightly from the Year Book's revenue-earning series.",
+      "meta": {
+        "title": "Freight Loading to 2024-25",
+        "subtitle": "Originating loading, latest Ministry figures",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
+        "explain": {
+          "what": "Total originating freight loading, from Ministry of Railways statements.",
+          "read": "Loading reached 1,617.38 million tonnes in 2024-25; the Ministry says this makes Indian Railways the second-largest freight carrier in the world.",
+          "why": "It extends the series past the Year Book's 2023-24 end year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_locomotive_mix": {
+      "labels": [
+        "Electric",
+        "Diesel",
+        "Steam"
+      ],
+      "values": [
+        10675,
+        4397,
+        38
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "locomotives",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, locomotives on 31 March 2024.",
+      "meta": {
+        "title": "Locomotives by Traction (2023-24)",
+        "subtitle": "15,110 locomotives by type",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " locomotives",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Locomotive fleet by traction type on 31 March 2024.",
+          "read": "Electric locomotives are 70.7% of the fleet; 38 steam locomotives remain.",
+          "why": "Fleet mix follows the electrification of the route."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_locomotive_change": {
+      "labels": [
+        "Electric",
+        "Diesel",
+        "Steam"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            9565,
+            4730,
+            39
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            10675,
+            4397,
+            38
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "locomotives",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of locomotives (2022-23 revised).",
+      "meta": {
+        "title": "Locomotive Fleet: 2022-23 vs 2023-24",
+        "subtitle": "Locomotives by traction type",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " locomotives",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Number of electric, diesel and steam locomotives in the last two years.",
+          "read": "Electric locomotives grew by 1,110 while diesel fell by 333.",
+          "why": "Shows the shift from diesel to electric traction year by year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_coach_fleet": {
+      "labels": [
+        "Passenger carriages",
+        "Other coaching vehicles",
+        "EMU/MEMU coaches"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            66369,
+            11419,
+            11913
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            66687,
+            13022,
+            12229
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "coaches",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of coaches (2022-23 revised).",
+      "meta": {
+        "title": "Coach Fleet: 2022-23 vs 2023-24",
+        "subtitle": "Passenger and other coaching vehicles",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " coaches",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Coaches by type; the total was 91,948 in 2023-24 including rail cars.",
+          "read": "Other coaching vehicles grew fastest, by 14%; passenger carriages grew 0.5%.",
+          "why": "Coach numbers limit how many passengers can be carried."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_wagon_fleet": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        315103,
+        327991
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "wagons",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of wagons (2022-23 revised).",
+      "meta": {
+        "title": "Wagon Fleet",
+        "subtitle": "Freight wagons owned by Indian Railways",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " wagons",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Total wagons owned by Indian Railways.",
+          "read": "The fleet grew by 12,888 wagons (4.1%) to 327,991.",
+          "why": "Wagon availability caps freight loading."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_wagon_turnround": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        4.7,
+        5.11
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "days",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Wagon Utilisation (broad gauge).",
+      "meta": {
+        "title": "Wagon Turn-Round Time",
+        "subtitle": "Days for a wagon to complete a loading cycle",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " days",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Average days for a broad-gauge wagon to complete one loading cycle.",
+          "read": "Turn-round lengthened from 4.70 to 5.11 days.",
+          "why": "A shorter turn-round lets the same fleet carry more freight."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_goods_load": {
+      "labels": [
+        "Average net load",
+        "Average gross load"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1738,
+            2918
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            1899,
+            3085
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, goods train utilisation (broad gauge, all traction). Average goods-train speed fell from 30.8 to 25.0 km/h over the same year.",
+      "meta": {
+        "title": "Average Goods Train Load",
+        "subtitle": "Net and gross load per goods train",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Average net and gross load of a broad-gauge goods train.",
+          "read": "Net load per train rose 9.3% to 1,899 tonnes, while average goods-train speed fell to 25.0 km/h.",
+          "why": "Heavier trains move more per path, but slower speeds lengthen transit times."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accidents_by_type": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Derailments",
+          "values": [
+            40,
+            17,
+            27,
+            36,
+            25
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Collisions",
+          "values": [
+            5,
+            1,
+            2,
+            6,
+            6
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Fire in trains",
+          "values": [
+            8,
+            3,
+            4,
+            4,
+            9
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Level-crossing accidents",
+          "values": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Miscellaneous",
+          "values": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "color": "#8b949e"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents by type, including Konkan Railway.",
+      "meta": {
+        "title": "Consequential Train Accidents by Type",
+        "subtitle": "Accidents per year, 2019-20 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Consequential train accidents split into derailments, collisions, fires, level-crossing and other accidents.",
+          "read": "Derailments are the largest category (25 of 40 in 2023-24); fire accidents rose to 9.",
+          "why": "Type-wise counts show where safety work matters most."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accidents_total": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        55,
+        22,
+        35,
+        48,
+        40
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, total consequential train accidents including Konkan Railway.",
+      "meta": {
+        "title": "Total Consequential Train Accidents",
+        "subtitle": "Accidents per year",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Total consequential train accidents.",
+          "read": "40 in 2023-24, against 55 in 2019-20 and 48 in 2022-23.",
+          "why": "Raw counts show how many serious incidents occurred."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accident_rate": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        0.05,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "per million train-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, accidents per million train kilometres, the Year Book's principal safety index.",
+      "meta": {
+        "title": "Accidents per Million Train-Km",
+        "subtitle": "Accident rate normalised for traffic",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " per million train-km",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Consequential accidents divided by million train-kilometres run.",
+          "read": "The rate has held at 0.03 since 2020-21, against 0.05 in 2019-20.",
+          "why": "A rate shows safety per unit of traffic, unlike a raw count."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accident_mix": {
+      "labels": [
+        "Derailments",
+        "Fire in trains",
+        "Collisions"
+      ],
+      "values": [
+        25,
+        9,
+        6
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, 2023-24: 40 consequential accidents; none at level crossings or miscellaneous.",
+      "meta": {
+        "title": "Accident Types (2023-24)",
+        "subtitle": "Composition of 40 consequential accidents",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Share of each accident type among the 40 consequential accidents in 2023-24.",
+          "read": "Derailments are 62.5%, fires 22.5% and collisions 15%.",
+          "why": "Shows which accident types dominate."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_revenue_expenses": {
+      "labels": [
+        "Revenue",
+        "Expenses",
+        "Net revenue (before dividend)"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            239982.56,
+            235655.78,
+            2517.38
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            255272.63,
+            250893.61,
+            3259.68
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "Rs crore",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results.",
+      "meta": {
+        "title": "Railway Revenue and Expenses",
+        "subtitle": "Rs crore, 2022-23 and 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " Rs crore",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Total revenue, expenses and net revenue of Indian Railways.",
+          "read": "Revenue rose 6.4% to Rs 2.55 lakh crore; expenses rose 6.5%, leaving Rs 3,260 crore of net revenue.",
+          "why": "Net revenue is small relative to turnover."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_earnings": {
+      "labels": [
+        "Passenger earnings",
+        "Freight earnings"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            63416.85,
+            160158.48
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            70693.32,
+            165880.58
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "Rs crore",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business and Freight Operation, earnings (freight excludes demurrage and wharfage).",
+      "meta": {
+        "title": "Passenger vs Freight Earnings",
+        "subtitle": "Earnings by business, Rs crore",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " Rs crore",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Earnings from passenger and freight services.",
+          "read": "Passenger earnings grew 11.5% and freight 3.6%; freight is 70% of the two combined.",
+          "why": "Freight is the larger earner."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_financial_ratios": {
+      "labels": [
+        "Operating ratio",
+        "Working ratio",
+        "Operating ratio with subsidy",
+        "Goods operating ratio",
+        "Coaching operating ratio"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            98.1,
+            90.92,
+            80.4,
+            66.97,
+            180.82
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            98.43,
+            91.31,
+            81.1,
+            67.55,
+            177.69
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "%",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio.",
+      "meta": {
+        "title": "Operating and Working Ratios",
+        "subtitle": "Expenses as a percentage of earnings",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Operating ratio is expenditure as a share of earnings; lower is better.",
+          "read": "The overall ratio was 98.43%. Goods runs at 67.55% while coaching is 177.69%, meaning Rs 1.78 is spent for every Re 1 earned from passengers.",
+          "why": "The ratio shows how much of each rupee earned is left for investment."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_yield": {
+      "labels": [
+        "Passenger yield (paise per passenger-km)",
+        "Freight yield (paise per net tonne-km)"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            66.13,
+            166.91
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            66.4,
+            170.31
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "paise",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio, earning/yield ratios based on apportioned earning.",
+      "meta": {
+        "title": "Passenger and Freight Yield",
+        "subtitle": "Average revenue per unit of traffic",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " paise",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Average revenue per passenger-km and per net tonne-km.",
+          "read": "Passenger yield was 66.40 paise per passenger-km and freight 170.31 paise per net tonne-km.",
+          "why": "Yield compares what the railway earns on each unit of traffic."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_wb_freight_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            249.564,
+            270.489,
+            277.567,
+            284.249,
+            281.513,
+            305.201,
+            312.371,
+            333.228,
+            353.194,
+            381.241,
+            407.398,
+            439.596,
+            480.993,
+            521.371,
+            551.448,
+            600.548,
+            625.723,
+            667.607,
+            649.645,
+            665.81,
+            681.696,
+            654.481,
+            620.175,
+            692.916,
+            738.523,
+            707.665,
+            719.762
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            1304.95,
+            1310.62,
+            1326.99,
+            1256.01,
+            1291.03,
+            1377.05,
+            1469.41,
+            1565.84,
+            1724.67,
+            1928.88,
+            2072.6,
+            2195.441,
+            2379.7,
+            2510.628,
+            2523.917,
+            2764.413,
+            2946.579,
+            2918.709,
+            2917.39,
+            2753.02,
+            2375.43,
+            2379.23,
+            2696.22,
+            2882.1,
+            3018.2,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            1906.206,
+            1979.622,
+            1969.331,
+            2010.027,
+            2092.745,
+            2140.191,
+            2183.277,
+            2200.123,
+            2264.983,
+            2427.268,
+            2476.653,
+            2586.836,
+            2584.94,
+            2594.631,
+            2236.917,
+            2468.738,
+            2524.585,
+            2500.3,
+            2541.354,
+            2702.736,
+            2547.253,
+            2314.693,
+            2445.132,
+            2525.217,
+            2357.117,
+            2102.084,
+            2239.401
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            1213.711,
+            1131.251,
+            1100.289,
+            1019.547,
+            1204.547,
+            1373.178,
+            1433.617,
+            1510.2,
+            1664.3,
+            1797.326,
+            1852.913,
+            1950.83,
+            2090.337,
+            2116.24,
+            1865.305,
+            2011.308,
+            2127.835,
+            2222.388,
+            2172.685,
+            2298.564,
+            2304.759,
+            2342.59,
+            2491.876,
+            2596.88,
+            2601.928,
+            2544.828,
+            2638.562
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            25.101,
+            24.968,
+            24.617,
+            22.92,
+            22.541,
+            22.136,
+            22.193,
+            22.131,
+            22.794,
+            22.476,
+            22.813,
+            23.192,
+            23.334,
+            22.256,
+            20.562,
+            20.398,
+            19.998,
+            20.471,
+            21.071,
+            21.029,
+            21.519,
+            21.265,
+            21.663,
+            19.369,
+            19.993,
+            18.34,
+            null
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "meta": {
+        "title": "Rail Freight: India vs Peers",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, in billion tonne-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Rail freight volume is a core measure of industrial transport capacity."
+        }
+      }
+    },
+    "rail_wb_passenger_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            319.365,
+            341.999,
+            357.013,
+            379.897,
+            403.884,
+            430.666,
+            457.022,
+            493.489,
+            515.044,
+            541.208,
+            575.702,
+            615.634,
+            694.764,
+            769.956,
+            838.032,
+            903.465,
+            978.508,
+            1046.522,
+            1046.522,
+            1140.412,
+            1147.19,
+            1143.039,
+            1149.835,
+            1177.699,
+            1157.174,
+            1050.738,
+            231.126
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            354.261,
+            332.202,
+            354.353,
+            369.097,
+            404.627,
+            441.468,
+            463.655,
+            480.305,
+            462.279,
+            551.196,
+            583.32,
+            635.327,
+            689.618,
+            777.86,
+            787.89,
+            791.158,
+            921.541,
+            940.249,
+            1008.172,
+            1089.56,
+            1109.312,
+            1160.059,
+            1266.681,
+            1361.715,
+            1438.606,
+            328.251,
+            946.499
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            22.079,
+            21.866,
+            22.746,
+            23.49,
+            23.911,
+            25.977,
+            25.198,
+            24.41,
+            25.044,
+            24.777,
+            25.394,
+            27.296,
+            30.358,
+            32.143,
+            30.907,
+            31.872,
+            32.58,
+            34.126,
+            36.047,
+            36.393,
+            36.044,
+            35.892,
+            33.256,
+            31.963,
+            32.483,
+            12.46,
+            null
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            192.217,
+            181.213,
+            170.318,
+            125.625,
+            141.042,
+            167.054,
+            157.901,
+            152.9,
+            157.1,
+            150.8,
+            170.9,
+            177.639,
+            173.411,
+            175.871,
+            153.575,
+            139.028,
+            139.842,
+            144.612,
+            138.517,
+            128.82,
+            120.413,
+            124.461,
+            122.92,
+            129.371,
+            133.381,
+            78.135,
+            103.447
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            400.084,
+            402.156,
+            395.278,
+            388.917,
+            385.098,
+            384.287,
+            385.402,
+            382.239,
+            385.012,
+            385.163,
+            391.215,
+            395.908,
+            405.544,
+            404.585,
+            393.765,
+            393.466,
+            395.067,
+            404.396,
+            414.387,
+            413.97,
+            427.486,
+            431.799,
+            437.363,
+            441.614,
+            435.063,
+            263.211,
+            null
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "meta": {
+        "title": "Rail Passengers: India vs Peers",
+        "subtitle": "Passenger-kilometres carried by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Passengers carried by rail, in billion passenger-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Passenger-km shows how much a country relies on rail for travel."
+        }
+      }
+    },
+    "rail_wb_route_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            62.66,
+            62.915,
+            62.725,
+            62.495,
+            62.81,
+            62.759,
+            63.028,
+            63.14,
+            63.122,
+            63.221,
+            63.485,
+            63.332,
+            63.327,
+            63.273,
+            64.015,
+            63.974,
+            64.46,
+            64.6,
+            65.436,
+            65.808,
+            66.03,
+            66.687,
+            67.368,
+            69.249,
+            67.414,
+            67.956,
+            68.103
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            54.616,
+            56.678,
+            57.566,
+            57.583,
+            57.394,
+            58.656,
+            59.079,
+            59.53,
+            60.446,
+            61.015,
+            62.2,
+            63.412,
+            63.636,
+            60.809,
+            65.491,
+            66.239,
+            72.487,
+            85.843,
+            79.306,
+            85.32,
+            89.966,
+            91.675,
+            93.742,
+            96.353,
+            102.462,
+            106.235,
+            109.767
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            201.284,
+            203.875,
+            195.804,
+            192.815,
+            194.708,
+            194.077,
+            194.746,
+            198.057,
+            196.806,
+            195.369,
+            194.025,
+            191.771,
+            192.508,
+            192.123,
+            191.785,
+            194.431,
+            194.136,
+            153.517,
+            154.321,
+            152.933,
+            151.735,
+            151.27,
+            150.966,
+            150.462,
+            149.489,
+            148.75,
+            148.553
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            87.388,
+            87.086,
+            86.66,
+            86.151,
+            86.031,
+            86.075,
+            85.835,
+            85.542,
+            85.394,
+            85.286,
+            85.542,
+            85.253,
+            84.158,
+            85.194,
+            85.281,
+            85.292,
+            85.166,
+            85.248,
+            85.266,
+            84.581,
+            85.262,
+            85.375,
+            85.545,
+            85.626,
+            85.494,
+            85.555,
+            85.544
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20.14,
+            20.087,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "meta": {
+        "title": "Rail Network Length: India vs Peers",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail lines in operation, in thousand route-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Network length measures physical reach."
+        }
+      }
+    },
+    "rail_wb_freight_rank": {
+      "labels": [
+        "China",
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France",
+        "Japan",
+        "United Kingdom"
+      ],
+      "values": [
+        3018.2,
+        2601.93,
+        2357.12,
+        738.52,
+        443.0,
+        129.16,
+        33.89,
+        19.99,
+        16.88
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
+      "meta": {
+        "title": "Rail Freight Ranking (2019)",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, billion tonne-km.",
+          "read": "India ranks 4 of 9 countries in this comparison.",
+          "why": "Ranks India's freight output against large rail systems."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_freight_share": {
+      "labels": [
+        "China",
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France",
+        "Japan",
+        "United Kingdom"
+      ],
+      "values": [
+        3018.2,
+        2601.93,
+        2357.12,
+        738.52,
+        443.0,
+        129.16,
+        33.89,
+        19.99,
+        16.88
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
+      "meta": {
+        "title": "Share of Rail Freight Among Peers (2019)",
+        "subtitle": "Peer share of rail freight",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's rail freight.",
+          "read": "India ranks 4 of 9 countries in this comparison.",
+          "why": "Shows India's weight in global rail freight."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_wb_passenger_rank": {
+      "labels": [
+        "China",
+        "India",
+        "Japan",
+        "Russia",
+        "France",
+        "Germany",
+        "United Kingdom",
+        "United States",
+        "Australia",
+        "Brazil"
+      ],
+      "values": [
+        1438.61,
+        1157.17,
+        435.06,
+        133.38,
+        112.38,
+        102.03,
+        82.55,
+        32.48,
+        18.84,
+        16.49
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
+      "meta": {
+        "title": "Rail Passenger-Km Ranking (2019)",
+        "subtitle": "Passenger-km carried by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Rail passenger-kilometres.",
+          "read": "India ranks 2 of 10 countries in this comparison.",
+          "why": "Ranks India's rail passenger output."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_passenger_share": {
+      "labels": [
+        "China",
+        "India",
+        "Japan",
+        "Russia",
+        "France",
+        "Germany",
+        "United Kingdom",
+        "United States",
+        "Australia",
+        "Brazil"
+      ],
+      "values": [
+        1438.61,
+        1157.17,
+        435.06,
+        133.38,
+        112.38,
+        102.03,
+        82.55,
+        32.48,
+        18.84,
+        16.49
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
+      "meta": {
+        "title": "Share of Rail Passenger-Km Among Peers (2019)",
+        "subtitle": "Peer share of rail passenger-km",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's rail passenger-km.",
+          "read": "India ranks 2 of 10 countries in this comparison.",
+          "why": "Shows India's weight in passenger rail."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_wb_route_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "Russia",
+        "India",
+        "Germany",
+        "France",
+        "United Kingdom"
+      ],
+      "values": [
+        149.49,
+        102.46,
+        85.49,
+        67.41,
+        33.42,
+        28.16,
+        16.3
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM, 2019 (latest year most compared countries report). India ranks 4 of 7 countries shown.",
+      "meta": {
+        "title": "Rail Network Ranking (2019)",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail route length, thousand km.",
+          "read": "India ranks 4 of 7 countries in this comparison.",
+          "why": "Ranks the size of India's network."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_freight": {
+      "labels": [
+        "2020-04",
+        "2020-05",
+        "2020-06",
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "values": [
+        654.0,
+        825.8,
+        934.5,
+        950.1,
+        945.0,
+        1020.8,
+        1080.1,
+        1098.7,
+        1180.3,
+        1195.2,
+        1121.0,
+        1303.0,
+        1114.9,
+        1147.6,
+        1125.6,
+        1128.0,
+        1104.0,
+        1058.3,
+        1171.4,
+        1168.0,
+        1265.8,
+        1289.2,
+        1196.2,
+        1390.8,
+        1219.9,
+        1315.0,
+        1253.1,
+        1218.9,
+        1191.2,
+        1156.2,
+        1186.5,
+        1228.1,
+        1303.3,
+        1337.6,
+        1238.0,
+        1443.1,
+        1262.9,
+        1340.1,
+        1228.5,
+        1237.7,
+        1267.2,
+        1234.3,
+        1288.3,
+        1281.9,
+        1387.7,
+        1424.3,
+        1363.6,
+        1563.7,
+        1281.0,
+        1389.4,
+        1352.6,
+        1294.3,
+        1204.1,
+        1226.0,
+        1307.1,
+        1299.9,
+        1412.0,
+        1449.0,
+        1322.7,
+        1610.8,
+        1331.4,
+        1428.0,
+        1365.7,
+        1295.3,
+        1307.4,
+        1273.1,
+        1336.5,
+        1354.8,
+        1457.51
+      ],
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     }
   },
   "indian_matrix_articles": [

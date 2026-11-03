@@ -1362,6 +1362,156 @@ def _(r, p):
     return on_ground(p, 'nutri', 530) + place(plate(p), 420, 520, 1.3) + place(family(p, r), 900, 530, .9) + place(crop_field(p, r, 8, 300), 140, 540, .7)
 
 
+
+# ---------- Air travel and railways: India-specific motifs ----------
+
+def tricolor(p, w=150, h=100):
+    band = h / 3
+    flag = rect(0, 0, w, band, '#ff9933') + rect(0, band, w, band, '#ffffff') + rect(0, 2 * band, w, band, '#138808')
+    chakra = circle(w / 2, h / 2, band * .38, 'none', ' stroke="#000080" stroke-width="2"') + circle(w / 2, h / 2, 3, '#000080')
+    return rect(-5, -10, 6, h + 130, p[5]) + g(flag + chakra, 'translate(0 0)', cls='swing', style='transform-origin:0 0')
+
+
+def control_tower(p):
+    shaft = path('M-24 0 L-14 -260 H14 L24 0Z', p[5])
+    cab = path('M-70 -260 H70 L52 -320 H-52Z', p[3], p[6], 3) + rect(-48, -312, 96, 36, p[2], 2, ' opacity=".6"') + rect(-76, -266, 152, 10, p[5])
+    return shaft + cab + rect(-3, -380, 6, 60, p[5]) + circle(0, -384, 7, p[6], ' class="pulse"')
+
+
+def terminal(p, w=520):
+    roof = path(f'M{-w / 2} -90 Q{-w / 4} -150 0 -110 Q{w / 4} -70 {w / 2} -130 V-80 H{-w / 2}Z', p[5])
+    glass = ''.join(rect(-w / 2 + 10 + i * 40, -78, 30, 60, p[2], 2, ' opacity=".5"') for i in range(int((w - 20) // 40)))
+    return roof + rect(-w / 2, -20, w, 20, p[3]) + glass
+
+
+def india_gate(p):
+    out = rect(-110, -40, 220, 40, p[7]) + rect(-90, -230, 180, 190, p[7]) + rect(-110, -250, 220, 20, p[7])
+    out += path('M-40 -40 V-130 Q0 -190 40 -130 V-40Z', p[1], extra=' opacity=".8"') + rect(-100, -265, 200, 15, p[7])
+    return out + circle(0, -285, 12, p[6], ' class="pulse"')
+
+
+def vande_bharat(p, cars=3):
+    nose = path('M0 -96 H150 Q230 -92 250 -34 V-12 H0Z', '#f4f6f8') + path('M150 -80 Q205 -78 224 -46 H150Z', p[1])
+    nose += path('M0 -46 H245', stroke='#ff9933', width=8) + path('M0 -34 H248', stroke='#138808', width=4)
+    out = nose
+    for i in range(1, cars + 1):
+        x = -i * 200
+        out += rect(x, -96, 190, 84, '#f4f6f8', 8) + path(f'M{x} -46 H{x + 190}', stroke='#ff9933', width=8) + ''.join(rect(x + 14 + j * 44, -86, 32, 24, p[1], 3, ' opacity=".85"') for j in range(4))
+    return out + ''.join(circle(x, -8, 10, '#111') for x in range(-cars * 200 + 30, 240, 52))
+
+
+def csmt(p):
+    out = rect(-260, -120, 520, 120, p[7]) + rect(-70, -250, 140, 130, p[7])
+    out += path('M-70 -250 Q-70 -330 0 -380 Q70 -330 70 -250Z', p[7]) + rect(-3, -410, 6, 34, p[7])
+    for x in (-200, 200):
+        out += rect(x - 40, -190, 80, 70, p[7]) + path(f'M{x - 40} -190 L{x} -250 L{x + 40} -190Z', p[7])
+    out += ''.join(path(f'M{x} 0 V-70 Q{x + 18} -96 {x + 36} -70 V0Z', p[1], extra=' opacity=".55"') for x in range(-240, 220, 60))
+    return out
+
+
+def arch_bridge(p, span=640):
+    deck = rect(-span / 2, -150, span, 14, p[5])
+    arch = path(f'M{-span / 2} -20 Q0 -330 {span / 2} -20', stroke=p[6], width=12)
+    ribs = ''.join(path(f'M{x} {f(-150)} V{f(-20 - (1 - (x / (span / 2)) ** 2) * 230 + 20 * 0)}', stroke=p[2], width=2) for x in range(-int(span / 2) + 40, int(span / 2), 40))
+    return rect(-span / 2 - 30, -20, 60, 120, p[3]) + rect(span / 2 - 30, -20, 60, 120, p[3]) + arch + deck + ribs
+
+
+def pylon_line(p, n=5, gap=240):
+    out = ''
+    for i in range(n):
+        x = i * gap
+        out += path(f'M{x - 18} 0 L{x} -190 L{x + 18} 0 M{x - 40} -170 H{x + 40}', stroke=p[5], width=4)
+    return out + path(f'M-40 -170 Q{n * gap / 2} -140 {(n - 1) * gap + 40} -170', stroke=p[6], width=2)
+
+
+def signal(p):
+    return rect(-4, -220, 8, 220, p[5]) + rect(-22, -260, 44, 90, p[3], 6) + circle(0, -240, 10, '#ef4444', ' class="pulse"') + circle(0, -210, 10, '#22c55e', ' opacity=".4"')
+
+
+def wagon_row(p, n=5, color=None):
+    c = color or p[6]
+    return ''.join(rect(-i * 150, -80, 140, 60, c if i % 2 else p[5], 6) + circle(-i * 150 + 30, -12, 10, '#111') + circle(-i * 150 + 110, -12, 10, '#111') for i in range(n))
+
+
+# Air Travel & Civil Aviation
+@scene('air-group', 'saffron', 'city', (1000, 130, 50))
+def _(r, p):
+    return (on_ground(p, 'air', 520) + place(control_tower(p), 330, 520, .95) + place(terminal(p), 760, 520, .9)
+            + place(plane(p), 0, 150, .9) + place(tricolor(p), 1090, 400, .8))
+
+
+@scene('air-growth', 'gold', 'hills')
+def _(r, p):
+    return on_ground(p, 'ag', 520) + place(line_chart(p, r, 520), 500, 400, 1) + place(plane(p), 0, 130, .8) + place(india_gate(p), 1010, 520, .6)
+
+
+@scene('air-global', 'night', 'hills', (200, 110, 30))
+def _(r, p):
+    return place(globe(p, 170), 600, 300) + place(plane(p), 0, 120, .7) + place(tricolor(p), 960, 420, .8) + on_ground(p, 'agl', 540)
+
+
+@scene('air-traffic', 'steel', 'city')
+def _(r, p):
+    return on_ground(p, 'at', 520) + place(terminal(p, 560), 380, 520) + place(pie(p, [81, 19]), 900, 330, .8) + place(plane(p), 0, 140, .7)
+
+
+@scene('air-airports', 'emerald', 'hills')
+def _(r, p):
+    return on_ground(p, 'aa', 520) + place(control_tower(p), 300, 520) + place(map_pins(p, r, 7), 860, 400, .9)
+
+
+@scene('air-cargo', 'dusk', 'city')
+def _(r, p):
+    return on_ground(p, 'ac', 520) + place(vehicle(p, 'truck'), 400, 520, 1.1) + place(plane(p), 0, 170, .9) + place(bar_chart(p, r, 6, 360, 200), 820, 470, .8)
+
+
+@scene('air-finance', 'royal', 'city')
+def _(r, p):
+    return on_ground(p, 'af', 520) + place(coins(p, 5), 330, 520, 1) + place(bar_chart(p, r, 6, 380, 220), 820, 480, .85) + place(plane(p), 0, 150, .7)
+
+
+# Indian Railways
+@scene('rail-group', 'saffron', 'city', (1000, 130, 50))
+def _(r, p):
+    return on_ground(p, 'rail', 540) + rails(p, 540) + place(csmt(p), 300, 520, .9) + place(vande_bharat(p), 1040, 538, .9, 'drive') + place(tricolor(p), 80, 400, .6)
+
+
+@scene('rail-network', 'forest', 'mountains')
+def _(r, p):
+    return on_ground(p, 'rn', 540) + rails(p, 540) + place(arch_bridge(p), 540, 520, .9) + place(train(p, 3), 1000, 538, .8, 'drive')
+
+
+@scene('rail-passenger', 'gold', 'city')
+def _(r, p):
+    return on_ground(p, 'rp', 540) + rails(p, 540) + place(csmt(p), 320, 520, .85) + place(crowd(p, r, 8, 540), 760, 540, .8) + place(train(p, 3), 1100, 538, .7, 'drive')
+
+
+@scene('rail-freight', 'desert', 'hills')
+def _(r, p):
+    return on_ground(p, 'rf', 540) + rails(p, 540) + place(wagon_row(p, 6), 1000, 538, .9, 'drive') + place(headframe(p), 260, 520, .8)
+
+
+@scene('rail-fleet', 'steel', 'hills')
+def _(r, p):
+    return on_ground(p, 'rl', 540) + rails(p, 540) + place(pylon_line(p), 140, 520, 1) + place(vande_bharat(p, 2), 1000, 538, .9, 'drive')
+
+
+@scene('rail-safety', 'crimson', 'hills')
+def _(r, p):
+    return on_ground(p, 'rs', 540) + rails(p, 540) + place(signal(p), 330, 520, 1.1) + place(signal(p), 640, 520, .9) + place(train(p, 3), 1050, 538, .8, 'drive')
+
+
+@scene('rail-finance', 'royal', 'city')
+def _(r, p):
+    return on_ground(p, 'rfin', 540) + rails(p, 540) + place(coins(p, 5), 320, 520, 1) + place(line_chart(p, r, 460), 820, 400, .9) + place(train(p, 2), 1100, 538, .6, 'drive')
+
+
+@scene('rail-global', 'night', 'hills', (200, 110, 30))
+def _(r, p):
+    return place(globe(p, 170), 560, 300) + rails(p, 540) + place(vande_bharat(p, 2), 1060, 538, .8, 'drive') + on_ground(p, 'rg', 548)
+
+
+
 def main():
     for d in OUTPUT_DIRS:
         d.mkdir(parents=True, exist_ok=True)
