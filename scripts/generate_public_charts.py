@@ -24,6 +24,8 @@ try:
     from scripts.expansion_layer import build_expansion_layer
     from scripts.derived_groups_layer import build_derived_groups_layer
     from scripts.legal_layer import build_legal_layer
+    from scripts.air_travel_layer import build_air_travel_layer
+    from scripts.indian_railways_layer import build_indian_railways_layer
 except ImportError:  # executed directly as scripts/generate_public_charts.py
     from official_indicator_layer import build_official_layer
     from derived_pie_layer import build_derived_layer
@@ -36,6 +38,8 @@ except ImportError:  # executed directly as scripts/generate_public_charts.py
     from expansion_layer import build_expansion_layer
     from derived_groups_layer import build_derived_groups_layer
     from legal_layer import build_legal_layer
+    from air_travel_layer import build_air_travel_layer
+    from indian_railways_layer import build_indian_railways_layer
 
 ROOT = Path(__file__).resolve().parents[1]
 USER_AGENT = "PolityPolicyUpdate public data dashboard"
@@ -1508,6 +1512,8 @@ def main() -> None:
     result["series"].update(build_rbi_state_layer(get_text, previous_series))
     result["series"].update(build_innovation_layer(get_json, previous_series))
     result["series"].update(build_expansion_layer(get_json, previous_series))
+    result["series"].update(build_air_travel_layer(get_json, previous_series))
+    result["series"].update(build_indian_railways_layer(get_json, previous_series))
     result["series"].update(build_derived_groups_layer(ROOT))
     result["series"].update(build_legal_layer(ROOT))
     result["series"].update(build_terrorism_derived_series(
