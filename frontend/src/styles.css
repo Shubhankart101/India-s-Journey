@@ -95,6 +95,7 @@ button, input, select { font: inherit; color: inherit; }
 
 /* Heroes with the illustrated art in the background */
 .hero, .page-hero { position: relative; isolation: isolate; padding: 72px 0 40px; text-align: center; }
+.hero > .hero-art-backdrop { position: absolute; inset: 0 calc(50% - 50vw); width: auto; }
 /* The fixed art is a whole-page backdrop: no stacking context here, or it paints over later sections. */
 .page-hero.with-art { isolation: auto; }
 .hero h1, .page-hero h1, .hero .lead, .page-hero .lead { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75); }

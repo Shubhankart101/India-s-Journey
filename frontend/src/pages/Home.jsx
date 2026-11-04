@@ -53,7 +53,7 @@ export default function Home() {
         onFocus={() => setPaused(true)}
         onBlur={() => setPaused(false)}
       >
-        <ArtBackdrop art={current?.art || 'parliament.svg'} />
+        <ArtBackdrop art={current?.art || 'parliament.svg'} className="hero-art-backdrop" />
         <div className="hero-orbs" aria-hidden="true"><span /><span /><span /></div>
         <p className="eyebrow">A living atlas · 1947 to today</p>
         <h1>India, in <span className="gradient-text">perspective.</span></h1>
