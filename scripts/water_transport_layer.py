@@ -1,4 +1,4 @@
-﻿"""Water transport charts from MoPSW's 2023-24 Annual Report and World Bank WDI."""
+"""Water transport charts from official MoPSW, Sansad and World Bank sources."""
 from __future__ import annotations
 from typing import Callable
 try:
@@ -13,6 +13,18 @@ PORT, INLAND, COAST, PASSENGER, PERFORMANCE, GLOBAL = (
 SUBGROUPS = (PORT, INLAND, COAST, PASSENGER, PERFORMANCE, GLOBAL)
 REPORT = "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf"
 REPORT_NAME = "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24"
+IWT_STATS = "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf"
+IWT_STATS_NAME = "MoPSW, Statistics of Inland Water Transport 2022-23"
+SANSAD_PASSENGERS = "https://sansad.in/getFile/loksabhaquestions/annex/186/AU2182_FElOEb.pdf?source=pqals"
+PIB_CRUISE = "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1974552"
+IWT_PASSENGER_YEARS = ["2019", "2020", "2021", "2022", "2023"]
+IWT_STATE_PASSENGERS = {
+    "Assam": [8514.22, 6585.91, 1979.20, 4385.95, 3155.38],
+    "Karnataka": [2158.00, 1617.00, 916.25, 928.02, 1283.79],
+    "Kerala": [19739.08, 20535.31, 8874.78, 19224.53, 20262.39],
+    "Maharashtra": [19291.70, 15922.30, 9106.53, 13667.60, 18724.02],
+    "West Bengal": [106492.00, 116880.00, 126980.00, 136369.00, 29762.61],
+}
 CARGO_YEARS = ["2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24"]
 PORTS = ["Kolkata", "Haldia", "Paradip", "Visakhapatnam", "Chennai", "V.O. Chidambaranar", "Cochin",
          "New Mangalore", "Mormugao", "Jawaharlal Nehru", "Mumbai", "Deendayal (Kandla)", "Kamarajar (Ennore)"]
@@ -55,6 +67,11 @@ def _note(ref, basis=""):
 def _one(key, group, title, subtitle, labels, values, unit, ref, what, read, why, chart=None, basis=""):
     return single(key, labels, values, source=REPORT, unit=unit, chart=chart, note=_note(ref, basis),
                   meta_=_m(group, title, subtitle, unit, what, read, why))
+
+
+def _external_one(key, title, subtitle, labels, values, unit, source, note, what, read, why, chart=None):
+    return single(key, labels, values, source=source, unit=unit, chart=chart, note=note,
+                  meta_=_m(PASSENGER, title, subtitle, unit, what, read, why))
 
 
 def _static_builders():
@@ -180,26 +197,65 @@ def _static_builders():
         [22213,26412],"gross tonnes","Score Card—Shipping, printed p.3; No. of ships built in India (GT)",
         "Gross tonnage of ships built in India.","Reported output rose from 22,213 GT to 26,412 GT.",
         "GT provides a size-adjusted measure of domestic shipbuilding output."))
-    add("water_ocean_cruise_passengers",lambda k:multi(k,["2023-24"],[{"label":"Ocean cruise passengers","values":[471000],"color":"#58a6ff"}],
-        source=REPORT,unit="passengers",chart="bar",note=_note("report overview, printed p.2; 4.71 lakh passengers across 227 Ocean Cruise Calls; lakh converted to count"),
-        meta_=_m(PASSENGER,"Ocean Cruise Passengers (2023-24)","Passenger count converted from 4.71 lakh","passengers",
-                 "Passengers on ocean cruise calls in the Ministry snapshot.","The Ministry reports 4.71 lakh, or approximately 471,000 passengers.",
-                 "Provides the available annual total; no port-level split is reported.")))
-    add("water_ocean_cruise_calls",lambda k:multi(k,["2023-24"],[{"label":"Ocean cruise calls","values":[227],"color":"#ff9933"}],
-        source=REPORT,unit="calls",chart="bar",note=_note("report overview, printed p.2; Ocean Cruise Calls snapshot"),
-        meta_=_m(PASSENGER,"Ocean Cruise Calls (2023-24)","Calls reported in Ministry snapshot","calls",
-                 "Ocean cruise ship calls in 2023-24.","The snapshot reports 227 calls.","Complements the passenger total with vessel activity.")))
+    add("water_ocean_cruise_passengers",lambda k:multi(k,["Annual-report snapshot"],[{"label":"Ocean cruise passengers","values":[471000],"color":"#58a6ff"}],
+        source=REPORT,unit="passengers",chart="bar",note=_note("Year at a Glance overview, printed p.2; reports 4.71 lakh passengers and 227 calls, but does not state the observation period on this snapshot; lakh converted to count"),
+        meta_=_m(PASSENGER,"Ocean Cruise Passengers - Annual Report Snapshot","Reference period not separately stated","passengers",
+                 "Passengers on ocean cruise calls in the Ministry overview.","The snapshot reports 4.71 lakh passengers; it does not identify a separate observation period.",
+                 "Preserves the official reported count without assigning an unstated year.")))
+    add("water_ocean_cruise_calls",lambda k:multi(k,["Annual-report snapshot"],[{"label":"Ocean cruise calls","values":[227],"color":"#ff9933"}],
+        source=REPORT,unit="calls",chart="bar",note=_note("Year at a Glance overview, printed p.2; Ocean Cruise Calls snapshot; observation period not stated"),
+        meta_=_m(PASSENGER,"Ocean Cruise Calls - Annual Report Snapshot","Reference period not separately stated","calls",
+                 "Ocean cruise ship calls in the Ministry overview.","The snapshot reports 227 calls; it does not identify a separate observation period.",
+                 "Complements the passenger count without assigning an unstated year.")))
+    add("water_national_waterway_passenger_history", lambda k:_external_one(k,
+        "Passenger Traffic on National Waterways", "National total, 2023-24 and 2024-25", ["2023-24", "2024-25"],
+        [1.61, 7.64], "crore passengers", SANSAD_PASSENGERS,
+        "Lok Sabha Unstarred Question 2182, answered 12 December 2025, part (a); National Waterways passenger traffic reported as 1.61 crore and 7.64 crore.",
+        "Total passenger traffic recorded on India's National Waterways.",
+        "The Ministry's answer reports 1.61 crore in 2023-24 and 7.64 crore in 2024-25.",
+        "Adds the latest nationwide passenger movement figures directly reported to Parliament.", chart="bar"))
+    add("water_inland_passenger_state_trends", lambda k:multi(k,IWT_PASSENGER_YEARS,[
+        {"label":state,"values":values} for state,values in IWT_STATE_PASSENGERS.items()],source=IWT_STATS,
+        unit="thousand passengers",chart="line",
+        note=f"{IWT_STATS_NAME}, Table 3.2, printed p.62; state-government reports for table years 2019-2023; passenger totals in thousands. Bihar/other states with unavailable, zero, or repeated rows are excluded.",
+        meta_=_m(PASSENGER,"Inland-Waterway Passenger Trends by State","State-government reports, table years 2019-2023","thousand passengers",
+                 "Passenger totals carried by inland water vessels in the five states with usable annual series.",
+                 "West Bengal's table-reported count is highest among the displayed states in 2022; its 2023 entry is 29,762.61 thousand. The source labels the table year basis 'Year Ending 31st March 2023'.",
+                 "Shows state-reported passenger movement over time while omitting rows that are unavailable or marked as repeated.")))
+    for state,values in IWT_STATE_PASSENGERS.items():
+        slug=state.lower().replace(" ","_")
+        add(f"water_{slug}_inland_passengers",lambda k,s=state,v=values:_external_one(k,
+            f"{s} Inland-Waterway Passengers", "State-government reported totals, table years 2019-2023",
+            IWT_PASSENGER_YEARS, v, "thousand passengers", IWT_STATS,
+            f"{IWT_STATS_NAME}, Table 3.2, printed p.62; {s} row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+            f"Passengers carried by inland water vessels in {s}, as reported by the State Government.",
+            f"The source records {v[-1]:,.2f} thousand passengers for table year 2023.",
+            "Adds a state-level historical series while retaining the source's units and year labels."))
+    ranked_state_data={"West Bengal":29762.61,"Kerala":20262.39,"Maharashtra":18724.02,
+                       "Assam":3155.38,"Karnataka":1283.79,"Uttar Pradesh":23.86}
+    add("water_inland_passenger_state_rank_2023", lambda k:ranked(k,ranked_state_data,source=IWT_STATS,
+        unit="thousand passengers",note=f"{IWT_STATS_NAME}, Table 3.2, printed p.62; year 2023, i.e. latest table year; state-government reports. States with unavailable or previous-year-repeated data are omitted.",
+        meta_=_m(PASSENGER,"State-Reported Inland-Waterway Passengers","2023 table year; reporting states only","thousand passengers",
+                 "Passenger totals for states with a reported, non-repeated 2023 value.",
+                 "West Bengal reports 29,762.61 thousand and Uttar Pradesh 23.86 thousand; Bihar and Odisha are omitted because the table flags their FY2022-23 information as unavailable/repeated.",
+                 "Compares only state observations that the source reports for the latest table year.")))
+    add("water_ocean_cruise_passenger_history", lambda k:_external_one(k,
+        "Ocean Cruise Passengers", "Reported comparison years, 2013-14 and 2022-23", ["2013-14", "2022-23"],
+        [0.84, 4.72], "lakh passengers", PIB_CRUISE,
+        "PIB release PRID 1974552, 3 November 2023; reports 84,000 ocean-cruise passengers in 2013-14 and 4.72 lakh in 2022-23.",
+        "Passenger totals handled on ocean cruise calls at Indian ports.",
+        "The release reports growth from 84,000 in 2013-14 to 4.72 lakh in 2022-23.",
+        "Adds a year-separated cruise passenger comparison from the Ministry's official statement."))
+    add("water_ocean_cruise_call_history", lambda k:_external_one(k,
+        "Ocean Cruise Ship Calls", "Reported comparison years, 2013-14 and 2022-23", ["2013-14", "2022-23"],
+        [102, 227], "calls", PIB_CRUISE,
+        "PIB release PRID 1974552, 3 November 2023; reports 102 cruise ship calls in 2013-14 and 227 in 2022-23.",
+        "Ocean cruise ship port calls in the reported years.",
+        "The release reports 102 calls in 2013-14 and 227 in 2022-23.",
+        "Separates vessel calls from passenger volumes rather than inferring passenger counts per call."))
     add("water_river_cruise_passengers",lambda k:_one(k,PASSENGER,"Overnight River Cruise Passengers","MoPSW scorecard, 2022-23 to 2023-24",["2022-23","2023-24"],
         [9606,11431],"passengers","Score Card—Inland Waterways, printed p.3; Overnight River Cruise Passengers",
         "Overnight river-cruise passenger numbers.","Passengers rose from 9,606 to 11,431.","Tracks passenger activity on inland river-cruise services."))
-    add("water_river_ocean_cruise_comparison",lambda k:multi(k,["2023-24"],[
-        {"label":"Ocean cruise","values":[471000],"color":"#58a6ff"},
-        {"label":"Overnight river cruise","values":[11431],"color":"#ff9933"}],source=REPORT,unit="passengers",chart="bar",
-        note=_note("report overview and Score Card—Inland Waterways, printed pp.2-3; ocean passenger figure converted from 4.71 lakh"),
-        meta_=_m(PASSENGER,"Ocean and Overnight River Cruise Passengers","2023-24; distinct service categories","passengers",
-                 "Ocean cruise passenger count alongside overnight river-cruise count.",
-                 "The report shows about 471,000 ocean passengers and 11,431 overnight river-cruise passengers.",
-                 "Compares scale while retaining the Ministry's distinct service categories.")))
     add("water_international_ferry_route_launch",lambda k:multi(k,["2023-24"],[{"label":"Passenger ferry route launched","values":[1],"color":"#3fb950"}],
         source=REPORT,unit="route launch",chart="bar",note=_note("§1.8, ‘International Passenger Ferry Service (India and Sri Lanka)’, printed p.8; Nagapattinam–Kankesanthurai service flagged off 14 October 2023"),
         meta_=_m(PASSENGER,"International Passenger Ferry Service Launch","Nagapattinam–Kankesanthurai, 2023-24","route launch",

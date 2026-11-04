@@ -165703,6 +165703,4277 @@ window.INDIA_DASHBOARD_DATA = {
         }
       }
     },
+    "log_road_nh_length": {
+      "labels": [
+        "2014",
+        "2023-24"
+      ],
+      "values": [
+        91287,
+        146195
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
+      "unit": "km",
+      "note": "MoRTH Year End Review 2024 (PIB): National Highway network length was 91,287 km in 2014 and 146,195 km in 2024.",
+      "meta": {
+        "title": "National Highway Network",
+        "subtitle": "National Highway network length",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Length of India's National Highway network at the stated dates.",
+          "read": "The reported network expanded by about 60% from 2014 to 2024.",
+          "why": "National Highways form the long-distance road backbone for freight."
+        }
+      }
+    },
+    "log_road_multilane_nh": {
+      "labels": [
+        "2014",
+        "November 2023"
+      ],
+      "values": [
+        18387,
+        46179
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
+      "unit": "km",
+      "note": "MoRTH Year End Review 2023 (PIB): length of National Highways with four or more lanes.",
+      "meta": {
+        "title": "Four-Lane-and-Above National Highways",
+        "subtitle": "NH length with four or more lanes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Length of National Highways with four or more lanes.",
+          "read": "The reported extent increased from 18,387 km in 2014 to 46,179 km by November 2023.",
+          "why": "More divided-lane highway capacity can improve freight movement and reduce bottlenecks."
+        }
+      }
+    },
+    "log_road_bharatmala": {
+      "labels": [
+        "Awarded",
+        "Constructed"
+      ],
+      "datasets": [
+        {
+          "label": "28 February 2025",
+          "values": [
+            26425,
+            19826
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
+      "unit": "km",
+      "note": "MoRTH parliamentary reply / PIB, 13 March 2025: Bharatmala Phase I project lengths awarded and constructed as at 28 February 2025.",
+      "meta": {
+        "title": "Bharatmala Phase I Progress",
+        "subtitle": "Awarded versus constructed project length",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Cumulative lengths of Bharatmala Phase I projects awarded and constructed.",
+          "read": "26,425 km had been awarded and 19,826 km constructed by 28 February 2025.",
+          "why": "The gap distinguishes tendered projects from completed road capacity."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_highspeed": {
+      "labels": [
+        "Awarded",
+        "Constructed"
+      ],
+      "datasets": [
+        {
+          "label": "28 February 2025",
+          "values": [
+            6669,
+            4610
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
+      "unit": "km",
+      "note": "MoRTH PIB release, 13 March 2025: high-speed greenfield corridor length awarded and completed as at 28 February 2025.",
+      "meta": {
+        "title": "High-Speed Greenfield Corridors",
+        "subtitle": "Awarded versus constructed length",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Cumulative awarded and constructed lengths of high-speed greenfield corridors.",
+          "read": "Of 6,669 km awarded, 4,610 km was completed by 28 February 2025.",
+          "why": "Shows progress on high-capacity road links between economic centres."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_fastag_mix": {
+      "labels": [
+        "FASTag",
+        "Other payment"
+      ],
+      "values": [
+        98.5,
+        1.5
+      ],
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "% of toll payments",
+      "note": "NHAI Annual Report 2023-24: 98.5% of toll payments were collected through FASTag. Other-payment share is the arithmetic complement, not a separately reported statistic.",
+      "meta": {
+        "title": "FASTag Share of Toll Payments",
+        "subtitle": "NHAI toll transactions, FY 2023-24",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "% of toll payments",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Share of NHAI toll payments collected through FASTag; remainder is calculated.",
+          "read": "FASTag accounted for 98.5%; other methods make up the derived 1.5% remainder.",
+          "why": "Electronic collection measures payment digitisation, not freight tonnage."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_road_fastag_collection": {
+      "labels": [
+        "FY 2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "FASTag Collections",
+          "values": [
+            55000
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "Rs crore",
+      "note": "NHAI Annual Report 2023-24, Electronic Toll Collection: FASTag collection was around Rs 55,000 crore in FY 2023-24 (IHMCL source).",
+      "meta": {
+        "title": "FASTag Collections",
+        "subtitle": "FY 2023-24",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Approximate toll collection through FASTag during FY 2023-24.",
+          "read": "NHAI reports around Rs 55,000 crore collected through FASTag.",
+          "why": "User-fee collection for highway tolls, not road-freight operator turnover."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_nhai_build": {
+      "labels": [
+        "Awarded works",
+        "Constructed"
+      ],
+      "datasets": [
+        {
+          "label": "FY 2023-24",
+          "values": [
+            3339,
+            6644
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "km",
+      "note": "NHAI Annual Report 2023-24: NHAI awarded 3,339 km and constructed 6,644 km of National Highways during FY 2023-24.",
+      "meta": {
+        "title": "NHAI Awards and Construction",
+        "subtitle": "National Highway length in FY 2023-24",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "National Highway lengths awarded and constructed by NHAI during FY 2023-24.",
+          "read": "NHAI constructed 6,644 km, its highest annual construction achievement reported in the annual report.",
+          "why": "Annual delivery indicates the pace of road capacity being added."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_nh_index": {
+      "labels": [
+        "2023 (2014=100)"
+      ],
+      "datasets": [
+        {
+          "label": "National Highway Network Growth Index",
+          "values": [
+            160
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
+      "unit": "index (2014=100)",
+      "note": "MoRTH Year End Review 2023 reports NH length rose 60% from 91,287 km in 2014 to 146,145 km in 2023; displayed index expresses its rounded growth as 160.",
+      "meta": {
+        "title": "National Highway Network Growth Index",
+        "subtitle": "2023 (2014=100)",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "index (2014=100)",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Rounded NH network length index derived from MoRTH's reported 60% growth.",
+          "read": "The 2023 index is 160 when 2014 is 100; it is derived, not an observed km series.",
+          "why": "An index communicates proportional expansion without treating rounded endpoints as exact growth."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_rail_loading": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        73.2,
+        119.8,
+        167.9,
+        195.9,
+        318.4,
+        473.5,
+        921.73,
+        1230.94,
+        1415.87,
+        1509.1,
+        1588.06
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: revenue-earning freight tonnes originating (excluding Konkan Railway).",
+      "meta": {
+        "title": "Rail Freight Loading",
+        "subtitle": "Revenue-earning tonnes originating",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Revenue-earning freight originating on Indian Railways, in million tonnes.",
+          "read": "Loading reached 1,588.06 million tonnes in 2023-24; this is the Year Book revenue-earning series, not all-originating loading.",
+          "why": "Repeats railway output in the cross-mode dashboard without altering the rail group's chart."
+        }
+      }
+    },
+    "log_rail_ntkm": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        37565,
+        72333,
+        110696,
+        147652,
+        235785,
+        312371,
+        625723,
+        719762,
+        871816,
+        959566,
+        973968
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million net tonne-km",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I (net tonne-kilometres).",
+      "meta": {
+        "title": "Rail Freight Transport Work",
+        "subtitle": "Net tonne-kilometres",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million net tonne-km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Net tonne-kilometres: tonnes multiplied by distance carried.",
+          "read": "Indian Railways recorded 973,968 million net tonne-km in 2023-24.",
+          "why": "Tonne-km includes freight volume and haul distance, unlike tonnes alone."
+        }
+      }
+    },
+    "log_rail_commodity_mix": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
+      ],
+      "values": [
+        786.84,
+        180.95,
+        152.72,
+        84.76,
+        75.77,
+        58.92,
+        51.44,
+        49.88,
+        29.17,
+        117.61
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning loading in 2023-24.",
+      "meta": {
+        "title": "Rail Freight by Commodity",
+        "subtitle": "2023-24 originating loading",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Revenue-earning rail freight tonnes by commodity group in 2023-24.",
+          "read": "Coal loading was 786.84 million tonnes, 49.55% of the 1,588.06 million tonne total.",
+          "why": "The commodity mix shows dependence on bulk and industrial goods."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_rail_commodity_change": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            727.24,
+            160.14,
+            143.93,
+            79.22,
+            69.86,
+            56.34,
+            70.92,
+            48.22,
+            28.15,
+            125.08
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            786.84,
+            180.95,
+            152.72,
+            84.76,
+            75.77,
+            58.92,
+            51.44,
+            49.88,
+            29.17,
+            117.61
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning tonnes originating, 2022-23 and 2023-24.",
+      "meta": {
+        "title": "Rail Loading by Commodity: Year-on-Year",
+        "subtitle": "Commodity-wise revenue-earning loading",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Freight loading by commodity group in FY 2022-23 and FY 2023-24.",
+          "read": "Coal rose from 727.24 to 786.84 million tonnes; foodgrains fell from 70.92 to 51.44 million tonnes.",
+          "why": "A same-commodity comparison helps identify sources of freight growth."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_rail_average_lead": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        513,
+        603,
+        659,
+        754,
+        741,
+        660,
+        679,
+        585,
+        616,
+        636,
+        613
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km per tonne",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: average lead of freight.",
+      "meta": {
+        "title": "Rail Freight Average Lead",
+        "subtitle": "Average distance per tonne",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "km per tonne",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Average distance carried for each tonne of railway freight.",
+          "read": "Average freight lead was 613 km in 2023-24.",
+          "why": "Average lead puts freight tonnes in the context of distance moved."
+        }
+      }
+    },
+    "log_rail_dfc_progress": {
+      "labels": [
+        "Operational",
+        "Total EDFC + WDFC"
+      ],
+      "datasets": [
+        {
+          "label": "March 2025",
+          "values": [
+            2741,
+            2843
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2112843&reg=48&lang=2",
+      "unit": "route km",
+      "note": "Ministry of Railways reply, PIB 19 March 2025: 2,741 of 2,843 route-km on the Eastern and Western Dedicated Freight Corridors was commissioned and operational (96.4%).",
+      "meta": {
+        "title": "Dedicated Freight Corridor Progress",
+        "subtitle": "EDFC and WDFC route kilometres",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "route km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Operational route kilometres compared with combined EDFC and WDFC length.",
+          "read": "2,741 of 2,843 route-km (96.4%) was operational in March 2025.",
+          "why": "Dedicated corridors add freight capacity separate from much of the passenger network."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_major_port_traffic": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        679.37,
+        699.1,
+        704.93,
+        672.68,
+        720.05,
+        784.31,
+        819.23
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: annual cargo throughput at the 12 major ports.",
+      "meta": {
+        "title": "Cargo Handled at Major Ports",
+        "subtitle": "12 major ports, annual cargo throughput",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Annual cargo throughput at India's 12 major ports.",
+          "read": "Major-port cargo reached 819.23 million tonnes in 2023-24, up from 784.31 million tonnes in 2022-23.",
+          "why": "Ports handle international and coastal cargo at India's maritime gateways."
+        }
+      }
+    },
+    "log_sea_container_teu": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        9.14,
+        9.88,
+        8.79,
+        9.61,
+        11.22,
+        11.45,
+        12.31
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million TEU",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port container traffic (the table reports TEUs in parentheses).",
+      "meta": {
+        "title": "Major-Port Container Throughput",
+        "subtitle": "Container traffic in million TEU",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "million TEU",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Twenty-foot equivalent units handled by the 12 major ports.",
+          "read": "Container throughput rose from 11.45 million TEU in 2022-23 to 12.31 million TEU in 2023-24.",
+          "why": "TEUs measure containerised freight separately from bulk cargo tonnes."
+        }
+      }
+    },
+    "log_sea_commodity_mix": {
+      "labels": [
+        "POL",
+        "Iron ore",
+        "Fertilizers & raw materials",
+        "Coal",
+        "Containers",
+        "Other cargo"
+      ],
+      "values": [
+        245.99,
+        61.03,
+        17.68,
+        191.98,
+        181.57,
+        120.98
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: commodity-wise cargo traffic at major ports, FY 2023-24.",
+      "meta": {
+        "title": "Major-Port Cargo by Commodity",
+        "subtitle": "FY 2023-24, 12 major ports",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Major-port cargo in the six commodity groups reported by the Ministry.",
+          "read": "POL was the largest reported group at 245.99 million tonnes; containers were 181.57 million tonnes.",
+          "why": "The breakdown distinguishes liquid and dry bulk from containerised cargo."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_sea_overseas_coastal": {
+      "labels": [
+        "Overseas",
+        "Coastal",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1125.613,
+            309.708,
+            1435.322
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24 provisional",
+          "values": [
+            1209.675,
+            332.74,
+            1542.415
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): overseas and coastal traffic at major and non-major ports combined. Converted from '000 tonnes; 2023-24 provisional. Rounded components may differ from total by 0.001.",
+      "meta": {
+        "title": "Overseas and Coastal Port Traffic",
+        "subtitle": "All major and non-major ports",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Overseas, coastal and total cargo handled by all Indian ports.",
+          "read": "Provisional 2023-24 total was 1,542.415 million tonnes, including 332.740 million coastal tonnes.",
+          "why": "The split avoids treating all port throughput as international freight."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_port_classes": {
+      "labels": [
+        "Major ports",
+        "Non-major ports",
+        "All ports"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            784.305,
+            651.017,
+            1435.322
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24 provisional",
+          "values": [
+            819.004,
+            723.411,
+            1542.415
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): major, non-major and all-port traffic, converted from '000 tonnes. Provisional major-port value 819.004 differs from the annual report's later revised 819.23 MMT; revisions are not combined.",
+      "meta": {
+        "title": "Major vs Non-Major Port Cargo",
+        "subtitle": "Port traffic by administrative class",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Cargo traffic at major ports, non-major ports and all ports.",
+          "read": "The provisional 2023-24 update reports 819.004 million tonnes at major ports and 723.411 million tonnes at non-major ports.",
+          "why": "Non-major ports carry a substantial share of Indian port traffic."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_port_extremes": {
+      "labels": [
+        "SMP Kolkata (lowest)",
+        "Paradip (highest)"
+      ],
+      "values": [
+        16.63,
+        145.38
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024: provisional 2023-24 cargo by major port; SMP Kolkata (16.63 MMT) and Paradip (145.38 MMT) were lowest and highest respectively.",
+      "meta": {
+        "title": "Major-Port Traffic: Reported Extremes",
+        "subtitle": "Lowest and highest port totals",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Cargo handled by the lowest- and highest-throughput major ports in the 2023-24 table.",
+          "read": "Paradip handled 145.38 million tonnes, while SMP Kolkata handled 16.63 million tonnes.",
+          "why": "Port-level variation shows why the national total can conceal concentrated throughput."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_major_yoy": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        784.31,
+        819.23
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.11: revised 12 major-port traffic for 2022-23 and 2023-24.",
+      "meta": {
+        "title": "Major-Port Cargo: Latest Annual Change",
+        "subtitle": "Revised major-port totals",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "The two latest annual totals for the 12 major ports.",
+          "read": "Cargo increased from 784.31 to 819.23 million tonnes.",
+          "why": "A short comparison highlights the latest annual change."
+        }
+      }
+    },
+    "log_air_aai_freight": {
+      "labels": [
+        "Domestic",
+        "International",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1282.26,
+            1864.54,
+            3146.8
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            1320.16,
+            2045.52,
+            3365.68
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: freight handled at all Indian airports, domestic/international. This airport-handled basis differs from airline tonne-kilometres.",
+      "meta": {
+        "title": "Air Cargo: Domestic and International",
+        "subtitle": "Freight handled at all Indian airports",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Air freight handled at Indian airports, in thousands of metric tonnes.",
+          "read": "Total was 3,365.68 thousand tonnes in 2023-24: 1,320.16 domestic and 2,045.52 international.",
+          "why": "This airport-handled cargo measure differs from airline tonne-kilometres."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_air_aai_mix": {
+      "labels": [
+        "Domestic",
+        "International"
+      ],
+      "values": [
+        1320.16,
+        2045.52
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: FY 2023-24 freight at all Indian airports.",
+      "meta": {
+        "title": "Air Freight: Domestic vs International",
+        "subtitle": "Share of 3,365.68 thousand tonnes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Domestic and international share of air freight handled at Indian airports in FY 2023-24.",
+          "read": "International freight was 2,045.52 thousand tonnes; domestic freight was 1,320.16 thousand tonnes.",
+          "why": "The split shows the relative scale of cross-border and domestic airport cargo."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_air_cargo_growth": {
+      "labels": [
+        "2014-15",
+        "2024-25"
+      ],
+      "values": [
+        2.53,
+        3.72
+      ],
+      "source": "https://www.civilaviation.gov.in/our-performance",
+      "unit": "million tonnes",
+      "note": "Ministry of Civil Aviation, Our Performance page, Supporting Passenger and Cargo Movement: national air-cargo figure 2.53 Mt in 2014-15 and 3.72 Mt in 2024-25. This differs in basis from AAI's airport-handled FY 2023-24 table.",
+      "meta": {
+        "title": "National Air Cargo Growth",
+        "subtitle": "Ministry-reported total air cargo",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Ministry-reported national air cargo volume at two endpoints.",
+          "read": "Reported volume rose from 2.53 million tonnes in 2014-15 to 3.72 million tonnes in 2024-25.",
+          "why": "The longer national series provides context beyond AAI's airport traffic table."
+        }
+      }
+    },
+    "log_modal_niti_share": {
+      "labels": [
+        "Road",
+        "Rail",
+        "Other modes (residual)"
+      ],
+      "values": [
+        71,
+        18,
+        11
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
+      "unit": "% of freight traffic",
+      "note": "MoPSW reply published 28 March 2025 quotes NITI Aayog's 2021 Fast Tracking Freight in India: road 71%, rail 18%. Other modes (11%) is the arithmetic residual to 100%, not an independently reported estimate.",
+      "meta": {
+        "title": "Freight Modal Split: NITI Aayog 2021",
+        "subtitle": "Reported road/rail shares; other modes are residual",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "% of freight traffic",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "NITI Aayog's reported road and rail shares, with an arithmetic residual for unlisted modes.",
+          "read": "Reported road and rail shares are 71% and 18%; the residual to 100% is 11%.",
+          "why": "A single labelled base avoids mixing road/rail estimates with later waterway figures."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_modal_inland_water": {
+      "labels": [
+        "Inland water transport",
+        "All other modes (residual)"
+      ],
+      "values": [
+        2,
+        98
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
+      "unit": "% of freight traffic",
+      "note": "MoPSW reply, 28 March 2025: current inland water transport freight share is approximately 2%. The 98% remainder is a calculated complement, not a separate modal estimate.",
+      "meta": {
+        "title": "Inland Waterway Freight Share",
+        "subtitle": "Approximate current share in the 2025 reply",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "% of freight traffic",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Reported approximate inland-waterway share plus calculated remainder.",
+          "read": "The Ministry reports inland water transport at approximately 2% of freight traffic.",
+          "why": "The official reply identifies IWT's share separately from the NITI 2021 road/rail basis."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_modal_lpi_rank": {
+      "labels": [
+        "2007",
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2023"
+      ],
+      "values": [
+        39,
+        47,
+        46,
+        54,
+        35,
+        44,
+        38
+      ],
+      "source": "https://databank.worldbank.org/embed/LPI/id/154e8630",
+      "unit": "rank (1=highest performance)",
+      "note": "World Bank Logistics Performance Index DataBank, India overall rank series. LPI ranks are perception-based international benchmarking, not physical freight quantities.",
+      "meta": {
+        "title": "India Logistics Performance Index Rank",
+        "subtitle": "World Bank overall rank",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "rank (1=highest performance)",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "India's overall rank in each reported World Bank LPI edition.",
+          "read": "India ranked 38th in 2023, compared with 44th in 2018.",
+          "why": "The LPI captures logistics service and infrastructure perceptions across six dimensions."
+        }
+      }
+    },
+    "log_modal_cost_bases": {
+      "labels": [
+        "Share of GDP",
+        "Share of non-services output"
+      ],
+      "values": [
+        7.97,
+        9.09
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
+      "unit": "% (FY 2023-24)",
+      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): logistics cost was estimated at 7.97% of GDP and 9.09% of non-services output in FY 2023-24. Denominators differ and are labelled.",
+      "meta": {
+        "title": "Logistics Costs: Published Denominator Comparison",
+        "subtitle": "NCAER estimate, FY 2023-24",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "% (FY 2023-24)",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Same estimated logistics-cost numerator relative to GDP and non-services output.",
+          "read": "The estimate is 7.97% of GDP or 9.09% of non-services output; these are two denominator views, not years.",
+          "why": "Explicit denominator labels avoid perpetuating unverified 13-14% GDP estimates."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_leads_reach": {
+      "labels": [
+        "Survey responses",
+        "Stakeholder consultations"
+      ],
+      "datasets": [
+        {
+          "label": "LEADS 2023",
+          "values": [
+            7321,
+            750
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
+      "unit": "count",
+      "note": "DPIIT LEADS 2023: 7,321 responses across 36 States/UTs and more than 750 stakeholder consultations. Chart uses 750 as a minimum count for 'more than 750'.",
+      "meta": {
+        "title": "LEADS 2023 Survey Reach",
+        "subtitle": "Responses and stakeholder consultations",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "count",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Counts of survey responses and stakeholder consultations reported in LEADS 2023.",
+          "read": "The report records 7,321 responses across 36 States/UTs and more than 750 consultations.",
+          "why": "Sample size gives context for the state-level logistics assessment."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_leads_states": {
+      "labels": [
+        "LEADS 2023"
+      ],
+      "datasets": [
+        {
+          "label": "LEADS 2023 Coverage",
+          "values": [
+            36
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
+      "unit": "States / UTs",
+      "note": "DPIIT LEADS 2023: 7,321 survey responses were received across 36 States and Union Territories.",
+      "meta": {
+        "title": "LEADS 2023 Coverage",
+        "subtitle": "LEADS 2023",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "States / UTs",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Number of States and Union Territories covered.",
+          "read": "LEADS 2023 reports responses from all 36 States and Union Territories.",
+          "why": "Coverage contextualises the national state-level comparison."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_iwt_growth": {
+      "labels": [
+        "2013-14",
+        "2023-24"
+      ],
+      "values": [
+        18.1,
+        133.03
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2082758",
+      "unit": "million tonnes",
+      "note": "MoPSW reply, PIB 10 December 2024: cargo moved on National Waterways rose from 18.10 Mt in 2013-14 to 133.03 Mt in 2023-24. Inland waterways are not seaport cargo.",
+      "meta": {
+        "title": "National Waterway Cargo Movement",
+        "subtitle": "Inland water freight, not sea-port cargo",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Cargo moved on India's National Waterways at the two reported endpoints.",
+          "read": "Cargo movement rose from 18.10 to 133.03 million tonnes.",
+          "why": "The inland-water series adds a distinct water mode to the logistics comparison."
+        }
+      }
+    },
+    "log_revenue_railway_mix": {
+      "labels": [
+        "Passenger earnings",
+        "Freight earnings"
+      ],
+      "values": [
+        70693.32,
+        165880.58
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "Rs crore",
+      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings for FY 2023-24; freight excludes demurrage and wharfage.",
+      "meta": {
+        "title": "Indian Railways Earnings Mix",
+        "subtitle": "Passenger and freight earnings, FY 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Passenger-service and freight-service earnings of Indian Railways.",
+          "read": "Freight earnings were Rs 1,65,880.58 crore versus Rs 70,693.32 crore from passenger services.",
+          "why": "The split shows the financial weight of freight on rail operations."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_revenue_rail_earnings": {
+      "labels": [
+        "Passenger earnings",
+        "Freight earnings"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            63416.85,
+            160158.48
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            70693.32,
+            165880.58
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "Rs crore",
+      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings; freight excludes demurrage and wharfage.",
+      "meta": {
+        "title": "Railway Freight and Passenger Earnings",
+        "subtitle": "Earnings by service",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Indian Railways earnings from passenger and freight services.",
+          "read": "FY 2023-24 freight earnings were Rs 1,65,880.58 crore, versus passenger earnings of Rs 70,693.32 crore.",
+          "why": "The comparison shows the financial weight of freight on the railway system."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_revenue_rail_yield": {
+      "labels": [
+        "Passenger yield (paise/passenger-km)",
+        "Freight yield (paise/NTKM)"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            66.13,
+            166.91
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            66.4,
+            170.31
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "paise per traffic unit",
+      "note": "Railway Board Year Book 2023-24, Selected Financial Ratios: earnings/yield ratios based on apportioned earnings.",
+      "meta": {
+        "title": "Rail Passenger and Freight Yield",
+        "subtitle": "Revenue per traffic unit",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "paise per traffic unit",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Passenger earnings per passenger-km and freight earnings per net tonne-km.",
+          "read": "Freight yield was 170.31 paise per NTKM in 2023-24; passenger yield was 66.40 paise per passenger-km.",
+          "why": "Different traffic bases are explicitly named for comparison."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_revenue_fastag": {
+      "labels": [
+        "FY 2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "FASTag Toll Collections",
+          "values": [
+            55000
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "Rs crore (approx.)",
+      "note": "NHAI Annual Report 2023-24, citing IHMCL: FASTag collection was around Rs 55,000 crore in FY 2023-24.",
+      "meta": {
+        "title": "FASTag Toll Collections",
+        "subtitle": "FY 2023-24",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "Rs crore (approx.)",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Approximate toll fees collected through FASTag.",
+          "read": "Around Rs 55,000 crore was collected through FASTag in FY 2023-24.",
+          "why": "Toll-user-fee collection is not freight-operator revenue."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_revenue_nhai_tot": {
+      "labels": [
+        "FY 2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "NHAI Toll-Operate-Transfer Proceeds",
+          "values": [
+            15968
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
+      "unit": "Rs crore",
+      "note": "MoRTH Year End Review 2024: NHAI monetised four Toll-Operate-Transfer bundles, realising Rs 15,968 crore in FY 2023-24. These asset proceeds are not recurring toll collections.",
+      "meta": {
+        "title": "NHAI Toll-Operate-Transfer Proceeds",
+        "subtitle": "FY 2023-24",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Asset monetisation, FY 2023-24",
+          "read": "NHAI realised Rs 15,968 crore from four TOT bundles.",
+          "why": "Asset monetisation is shown separately from recurring toll receipts."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_revenue_rail_five_year": {
+      "labels": [
+        "2019-2024"
+      ],
+      "datasets": [
+        {
+          "label": "Railway Freight Earnings over Five Years",
+          "values": [
+            702372.29
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2113222",
+      "unit": "Rs crore",
+      "note": "Ministry of Railways Lok Sabha reply / PIB, March 2025: cumulative goods earnings reported for the five-year period 2019-2024.",
+      "meta": {
+        "title": "Railway Freight Earnings over Five Years",
+        "subtitle": "2019-2024",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "Cumulative goods earnings",
+          "read": "The Ministry reported Rs 7,02,372.29 crore in goods earnings during 2019-2024.",
+          "why": "The multiyear total provides a separate scale reference from annual earnings."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_revenue_ncaer_cost": {
+      "labels": [
+        "FY 2023-24 estimate"
+      ],
+      "datasets": [
+        {
+          "label": "Current-price estimate",
+          "values": [
+            24.01
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
+      "unit": "Rs lakh crore",
+      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): total logistics cost estimated at Rs 24.01 lakh crore at current prices for FY 2023-24. This is cost, not revenue or market size.",
+      "meta": {
+        "title": "Estimated National Logistics Cost",
+        "subtitle": "Current-price estimate, FY 2023-24",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "Rs lakh crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
+        "explain": {
+          "what": "NCAER's estimated aggregate logistics cost at current prices.",
+          "read": "The report estimates Rs 24.01 lakh crore, equal to 7.97% of GDP in FY 2023-24.",
+          "why": "Distinguishes a documented cost estimate from unsupported market-size claims."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_rail_latest_loading": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        1509.1,
+        1588.06
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Railway Board Year Book 2023-24, Freight Operation Table I: latest two annual revenue-earning freight loading figures.",
+      "meta": {
+        "title": "Latest Railway Freight Loading",
+        "subtitle": "Year Book revenue-earning basis",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Revenue-earning freight tonnes originating in the last two Year Book years.",
+          "read": "Loading rose from 1,509.10 to 1,588.06 million tonnes.",
+          "why": "The short view makes the latest annual change easier to read."
+        }
+      }
+    },
+    "log_sea_commodity_compare": {
+      "labels": [
+        "POL",
+        "Iron ore",
+        "Fertilizers & raw materials",
+        "Coal",
+        "Containers",
+        "Other cargo"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            234.17,
+            46.51,
+            16.68,
+            188.24,
+            170.29,
+            128.42
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            245.99,
+            61.03,
+            17.68,
+            191.98,
+            181.57,
+            120.98
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port commodity totals, FY 2022-23 and FY 2023-24.",
+      "meta": {
+        "title": "Major-Port Commodity Traffic: Annual Comparison",
+        "subtitle": "12 major ports",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Major-port cargo by the published commodity groups for the two latest years.",
+          "read": "POL rose from 234.17 to 245.99 million tonnes; iron ore increased from 46.51 to 61.03 million tonnes.",
+          "why": "Year comparison shows which commodities account for changes in port throughput."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_air_aai_total_trend": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        3146.8,
+        3365.68
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: total freight handled at all Indian airports, domestic plus international.",
+      "meta": {
+        "title": "Airport-Handled Air Cargo Growth",
+        "subtitle": "All Indian airports",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Total freight handled at all Indian airports in AAI's reported years.",
+          "read": "Handled freight rose from 3,146.80 to 3,365.68 thousand tonnes.",
+          "why": "This airport-handled measure complements the national MoCA series."
+        }
+      }
+    },
+    "log_sea_container_wb": {
+      "labels": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        9235765.0,
+        9878067.0,
+        10017480.0,
+        10571320.0,
+        11652174.0,
+        12318610.0,
+        13724110.0,
+        15450523.0,
+        16996593.0,
+        17487621.0,
+        17597062.0,
+        19561769.0,
+        19717168.0,
+        22208000.0,
+        23898000.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.SHP.GOOD.TU?locations=IN",
+      "unit": "TEU",
+      "note": "World Bank indicator IS.SHP.GOOD.TU; annual observations may lag the latest reporting year.",
+      "meta": {
+        "title": "World Bank Container Port Traffic",
+        "subtitle": "Container port traffic",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "TEU",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Container port traffic measured in twenty-foot equivalent units.",
+          "read": "The series runs from 9,235,765.000 in 2010 to 23,898,000.000 in 2024.",
+          "why": "This country series complements the Ministry's major-port container figures."
+        }
+      }
+    },
+    "log_rail_wb_freight": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        249564.0,
+        270489.0,
+        277567.0,
+        284249.0,
+        281513.0,
+        305201.0,
+        312371.0,
+        333228.0,
+        353194.0,
+        381241.0,
+        407398.0,
+        439596.0,
+        480993.0,
+        521371.0,
+        551448.0,
+        600548.0,
+        625723.0,
+        667607.0,
+        649645.0,
+        665810.0,
+        681696.0,
+        654481.0,
+        620175.0,
+        692916.0,
+        738523.0,
+        707665.0,
+        719762.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; annual observations may lag the latest reporting year.",
+      "meta": {
+        "title": "Rail Freight Transport Work",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million tonne-km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Goods moved by rail, measured in million metric tonnes times kilometres.",
+          "read": "The series runs from 249,564.000 in 1995 to 719,762.000 in 2021.",
+          "why": "This independent World Bank series provides a cross-mode data point."
+        }
+      }
+    },
+    "water_major_port_cargo_rank": {
+      "labels": [
+        "Paradip",
+        "Deendayal (Kandla)",
+        "Jawaharlal Nehru",
+        "Visakhapatnam",
+        "Mumbai",
+        "Chennai",
+        "Haldia",
+        "New Mangalore",
+        "Kamarajar (Ennore)",
+        "V.O. Chidambaranar",
+        "Cochin",
+        "Mormugao",
+        "Kolkata"
+      ],
+      "values": [
+        145.38,
+        132.37,
+        85.82,
+        81.09,
+        67.26,
+        51.6,
+        49.54,
+        45.71,
+        45.28,
+        41.4,
+        36.31,
+        20.61,
+        16.86
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; provisional 2023-24.",
+      "meta": {
+        "title": "Cargo Handled by Major Port (2023-24)",
+        "subtitle": "Ranked port throughput; provisional values",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Total cargo handled at each of the 13 major ports in 2023-24.",
+          "read": "Deendayal handled 132.374 million tonnes; Kolkata handled 16.856 million tonnes.",
+          "why": "Shows where major-port freight activity is concentrated."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_major_port_cargo_two_years": {
+      "labels": [
+        "Kolkata",
+        "Haldia",
+        "Paradip",
+        "Visakhapatnam",
+        "Chennai",
+        "V.O. Chidambaranar",
+        "Cochin",
+        "New Mangalore",
+        "Mormugao",
+        "Jawaharlal Nehru",
+        "Mumbai",
+        "Deendayal (Kandla)",
+        "Kamarajar (Ennore)"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23 actual",
+          "values": [
+            17.052,
+            48.608,
+            135.362,
+            73.75,
+            48.949,
+            38.041,
+            35.255,
+            41.417,
+            17.334,
+            83.861,
+            63.608,
+            137.561,
+            43.507
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24 provisional",
+          "values": [
+            16.856,
+            49.536,
+            145.379,
+            81.09,
+            51.598,
+            41.402,
+            36.315,
+            45.707,
+            20.615,
+            85.817,
+            67.261,
+            132.374,
+            45.277
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; 2022-23 actual and 2023-24 provisional.",
+      "meta": {
+        "title": "Major Port Cargo: Year-on-Year",
+        "subtitle": "Million tonnes by port",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Actual 2022-23 and provisional 2023-24 cargo handled by each major port.",
+          "read": "The 13 port values sum to 819.227 million tonnes in 2023-24.",
+          "why": "Compares port-level traffic year over year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_major_port_cargo_share": {
+      "labels": [
+        "Kolkata",
+        "Haldia",
+        "Paradip",
+        "Visakhapatnam",
+        "Chennai",
+        "V.O. Chidambaranar",
+        "Cochin",
+        "New Mangalore",
+        "Mormugao",
+        "Jawaharlal Nehru",
+        "Mumbai",
+        "Deendayal (Kandla)",
+        "Kamarajar (Ennore)"
+      ],
+      "values": [
+        16.856,
+        49.536,
+        145.379,
+        81.09,
+        51.598,
+        41.402,
+        36.315,
+        45.707,
+        20.615,
+        85.817,
+        67.261,
+        132.374,
+        45.277
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; 2023-24 provisional values; shares are within the 13 listed ports.",
+      "meta": {
+        "title": "Major-Port Cargo Share by Port",
+        "subtitle": "2023-24 composition",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Each port's contribution to major-port cargo.",
+          "read": "Port values sum to 819.227 million tonnes.",
+          "why": "Shows relative contribution of each major port."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "water_major_port_cargo_history": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        679.37,
+        699.1,
+        704.93,
+        672.68,
+        720.05,
+        784.31,
+        819.23
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Major-Port Cargo Throughput",
+        "subtitle": "All major ports, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Annual total cargo handled at major ports.",
+          "read": "Throughput reached 819.23 MMT in 2023-24, up from 784.31 MMT.",
+          "why": "Puts the latest year in long-run context."
+        }
+      }
+    },
+    "water_major_nonmajor_cargo": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Major ports",
+          "values": [
+            784.31,
+            819.23
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Non-major ports (derived)",
+          "values": [
+            649.88,
+            720.77
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "All ports",
+          "values": [
+            1434.19,
+            1540.0
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.11, \u2018Cargo Traffic at Indian Ports\u2019, printed p.16; non-major values are derived as all-port less major-port traffic; 2023-24 all-port traffic is approximate 1,540 MMT.",
+      "meta": {
+        "title": "Major and Non-Major Port Cargo",
+        "subtitle": "All-port, major-port and derived residuals",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "All-port traffic and reported major-port totals; non-major values are residuals.",
+          "read": "Derived non-major traffic is 649.88 MMT in 2022-23 and approximately 720.77 MMT in 2023-24; the latter inherits rounding from 1,540 MMT.",
+          "why": "Separates the major-port system without presenting the residual as a directly reported statistic."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_major_nonmajor_share": {
+      "labels": [
+        "Major ports",
+        "Non-major ports (derived)"
+      ],
+      "values": [
+        819.23,
+        720.77
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.11, printed p.16; non-major ports = approximate 1,540 MMT all-port total less 819.23 MMT major-port total.",
+      "meta": {
+        "title": "Major vs Non-Major Port Share",
+        "subtitle": "Approximate 2023-24 composition",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Reported major-port cargo and a derived non-major-port residual.",
+          "read": "Approximately 819.23 MMT major and 720.77 MMT non-major; the latter is derived from rounded all-port data.",
+          "why": "Shows a transparent estimate of cargo distribution across port categories."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "water_commodity_trends": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "POL",
+          "values": [
+            224.82,
+            233.7,
+            234.86,
+            206.77,
+            221.27,
+            234.17,
+            245.99
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Iron ore",
+          "values": [
+            41.17,
+            38.81,
+            55.68,
+            64.28,
+            51.71,
+            46.51,
+            61.03
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Fertilisers & raw materials",
+          "values": [
+            15.05,
+            15.41,
+            16.15,
+            17.67,
+            15.93,
+            16.68,
+            17.68
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Coal",
+          "values": [
+            141.23,
+            163.67,
+            149.04,
+            126.75,
+            146.8,
+            188.24,
+            191.98
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "Containerised cargo",
+          "values": [
+            133.73,
+            145.52,
+            146.86,
+            143.77,
+            166.9,
+            170.29,
+            181.57
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Other cargo",
+          "values": [
+            123.37,
+            101.99,
+            102.34,
+            113.44,
+            117.44,
+            128.42,
+            120.98
+          ],
+          "color": "#f6c344"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Major-Port Cargo by Commodity",
+        "subtitle": "Six groups, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "POL, iron ore, fertilisers/raw materials, coal, containerised cargo, and other cargo.",
+          "read": "2023-24 totals: POL 245.99 MMT, coal 191.98 MMT, containerised cargo 181.57 MMT.",
+          "why": "Shows how port freight composition changes over time."
+        }
+      }
+    },
+    "water_commodity_mix": {
+      "labels": [
+        "POL",
+        "Iron ore",
+        "Fertilisers & raw materials",
+        "Coal",
+        "Containerised cargo",
+        "Other cargo"
+      ],
+      "values": [
+        245.99,
+        61.03,
+        17.68,
+        191.98,
+        181.57,
+        120.98
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16. 2023-24 column.",
+      "meta": {
+        "title": "Major-Port Commodity Mix (2023-24)",
+        "subtitle": "Share of reported 819.23 MMT",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Six reported major-port cargo groups.",
+          "read": "The six groups sum to 819.23 MMT.",
+          "why": "Compares the latest commodity composition."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "water_pol_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        224.82,
+        233.7,
+        234.86,
+        206.77,
+        221.27,
+        234.17,
+        245.99
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "POL at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for POL.",
+          "read": "POL reached 245.99 MMT in 2023-24. POL includes crude, products and LPG/LNG.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_coal_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        141.23,
+        163.67,
+        149.04,
+        126.75,
+        146.8,
+        188.24,
+        191.98
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Coal Cargo at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for Coal.",
+          "read": "Coal reached 191.98 MMT in 2023-24. Coal includes thermal, coking and other coal.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_iron_ore_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        41.17,
+        38.81,
+        55.68,
+        64.28,
+        51.71,
+        46.51,
+        61.03
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Iron Ore Cargo at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for Iron ore.",
+          "read": "Iron ore reached 61.03 MMT in 2023-24. Iron ore includes fines and pellets.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_fertilisers_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        15.05,
+        15.41,
+        16.15,
+        17.67,
+        15.93,
+        16.68,
+        17.68
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Fertilisers and Raw Materials at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for Fertilisers & raw materials.",
+          "read": "Fertilisers & raw materials reached 17.68 MMT in 2023-24. F&FRM includes dry and liquid fertilisers and raw materials.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_containerised_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        133.73,
+        145.52,
+        146.86,
+        143.77,
+        166.9,
+        170.29,
+        181.57
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Containerised Cargo at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for Containerised cargo.",
+          "read": "Containerised cargo reached 181.57 MMT in 2023-24. Cargo weight is in million tonnes; TEUs are charted separately.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_other_cargo": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        123.37,
+        101.99,
+        102.34,
+        113.44,
+        117.44,
+        128.42,
+        120.98
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Other Cargo at Major Ports",
+        "subtitle": "Million tonnes, 2017-18 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Major-port cargo volume for Other cargo.",
+          "read": "Other cargo reached 120.98 MMT in 2023-24. Other cargo is the report's residual commodity group.",
+          "why": "Tracks this freight stream over time."
+        }
+      }
+    },
+    "water_container_teu_trend": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        9.14,
+        9.88,
+        8.79,
+        9.61,
+        11.22,
+        11.45,
+        12.31
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million TEUs",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "meta": {
+        "title": "Major-Port Container Throughput",
+        "subtitle": "Container traffic, million TEUs",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million TEUs",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Container throughput at major ports in million TEUs.",
+          "read": "Major ports handled 12.31 million TEUs in 2023-24, compared with 11.45 million in 2022-23.",
+          "why": "TEUs measure container traffic independently of container cargo weight."
+        }
+      }
+    },
+    "water_major_port_capacity_traffic": {
+      "labels": [
+        "2001-02",
+        "2002-03",
+        "2003-04",
+        "2004-05",
+        "2005-06",
+        "2006-07",
+        "2007-08",
+        "2008-09",
+        "2009-10",
+        "2010-11",
+        "2011-12",
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Rated capacity",
+          "values": [
+            343.95,
+            362.75,
+            389.5,
+            397.5,
+            456.2,
+            504.75,
+            532.07,
+            574.77,
+            616.73,
+            670.13,
+            689.83,
+            744.91,
+            800.52,
+            871.52,
+            965.36,
+            1065.83,
+            1451.19,
+            1514.09,
+            1534.91,
+            1560.61,
+            1597.59,
+            1617.39,
+            1629.86
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Traffic handled",
+          "values": [
+            287.58,
+            313.55,
+            344.8,
+            383.75,
+            423.41,
+            463.78,
+            519.31,
+            530.53,
+            561.09,
+            570.03,
+            560.14,
+            545.68,
+            555.5,
+            581.34,
+            606.47,
+            648.4,
+            679.37,
+            699.1,
+            704.93,
+            672.68,
+            720.05,
+            784.31,
+            819.23
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Capacity at Major Ports\u2019, printed p.52; 2016-17 uses reported capacity, excluding the separately footnoted re-rated figure.",
+      "meta": {
+        "title": "Major-Port Capacity vs Traffic",
+        "subtitle": "2001-02 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Rated annual capacity alongside major-port cargo handled.",
+          "read": "Reported 2023-24 capacity was 1,629.86 MMT versus traffic of 819.23 MMT.",
+          "why": "Shows installed capacity relative to freight volume."
+        }
+      }
+    },
+    "water_major_port_capacity_utilization": {
+      "labels": [
+        "2001-02",
+        "2002-03",
+        "2003-04",
+        "2004-05",
+        "2005-06",
+        "2006-07",
+        "2007-08",
+        "2008-09",
+        "2009-10",
+        "2010-11",
+        "2011-12",
+        "2012-13",
+        "2013-14",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        83.61,
+        86.44,
+        88.52,
+        96.54,
+        92.81,
+        91.88,
+        97.6,
+        92.3,
+        90.98,
+        85.06,
+        81.2,
+        73.25,
+        69.39,
+        66.7,
+        62.82,
+        60.84,
+        46.81,
+        46.17,
+        45.93,
+        43.1,
+        45.07,
+        48.49,
+        50.26
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "percent",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Capacity at Major Ports\u2019, printed p.52; ratio calculated as traffic / capacity \u00d7 100.",
+      "meta": {
+        "title": "Major-Port Capacity Utilisation",
+        "subtitle": "Traffic as a share of rated capacity",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "percent",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Port Cargo Traffic",
+        "explain": {
+          "what": "Annual major-port traffic divided by rated capacity.",
+          "read": "Calculated utilisation was 50.26% in 2023-24.",
+          "why": "A derived ratio compares actual throughput with rated capacity."
+        }
+      }
+    },
+    "water_inland_waterways_cargo": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        126,
+        133
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; values are rounded; overview reports 133 MMTPA.",
+      "meta": {
+        "title": "Cargo on National Waterways",
+        "subtitle": "Rounded annual traffic, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Inland Waterways",
+        "explain": {
+          "what": "Cargo handled on National Waterways, as rounded in the MoPSW scorecard.",
+          "read": "The scorecard shows 126 MMT in 2022-23 and 133 MMT in 2023-24.",
+          "why": "Tracks inland freight using Ministry-published rounded totals."
+        }
+      }
+    },
+    "water_national_waterways_status": {
+      "labels": [
+        "Notified",
+        "Operational"
+      ],
+      "values": [
+        111,
+        24
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "waterways",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, MoPSW report overview, printed p.2; national waterways snapshot.",
+      "meta": {
+        "title": "National Waterways: Notified and Operational",
+        "subtitle": "Status reported for 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "waterways",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Inland Waterways",
+        "explain": {
+          "what": "Counts of notified National Waterways and those described as operational.",
+          "read": "The snapshot lists 111 notified and 24 operational National Waterways.",
+          "why": "Distinguishes statutory notification from operational service."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_nw_investment": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        1010,
+        544
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "INR crore",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Investment (CAPEX) in NWs.",
+      "meta": {
+        "title": "Capital Expenditure in National Waterways",
+        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "INR crore",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Inland Waterways",
+        "explain": {
+          "what": "Capital expenditure in National Waterways.",
+          "read": "The scorecard shows INR 1,010 crore and INR 544 crore, respectively.",
+          "why": "Tracks annual public capital investment in inland-waterway development."
+        }
+      }
+    },
+    "water_river_cruise_operational_nws": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        10,
+        9
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "waterways",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Operational NWs for river cruise.",
+      "meta": {
+        "title": "Operational NWs for River Cruise",
+        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "waterways",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Inland Waterways",
+        "explain": {
+          "what": "National Waterways reported operational for river-cruise service.",
+          "read": "The count was 10 in 2022-23 and 9 in 2023-24.",
+          "why": "Tracks the report's river-cruise operational category."
+        }
+      }
+    },
+    "water_iwai_network_cargo_growth": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        100.0,
+        105.6
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "index",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; derived index with 2022-23 as base.",
+      "meta": {
+        "title": "National Waterways Cargo Index",
+        "subtitle": "2022-23 = 100; derived from rounded totals",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "index",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Inland Waterways",
+        "explain": {
+          "what": "Index of rounded cargo handled on National Waterways, with 2022-23 set to 100.",
+          "read": "The index is 105.6 in 2023-24 from rounded values 133 and 126 MMT.",
+          "why": "Makes the relative change in inland cargo easier to compare."
+        }
+      }
+    },
+    "water_coastal_cargo": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        151,
+        162
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Ports, printed p.3; Coastal Cargo Handled (MMTPA).",
+      "meta": {
+        "title": "Coastal Cargo Handled",
+        "subtitle": "Rounded scorecard totals, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Coastal Shipping",
+        "explain": {
+          "what": "Coastal cargo handled, as rounded in the Ministry Ports scorecard.",
+          "read": "The scorecard reports 151 MMT in 2022-23 and 162 MMT in 2023-24.",
+          "why": "Tracks domestic coastal freight handled by ports."
+        }
+      }
+    },
+    "water_coastal_cargo_share": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        10.53,
+        10.52
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "percent",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Ports, printed p.3 and \u00a72.11, printed p.16; ratio of rounded coastal and all-port figures.",
+      "meta": {
+        "title": "Coastal Cargo Relative to All-Port Throughput",
+        "subtitle": "Calculated from rounded scorecard totals",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "percent",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Coastal Shipping",
+        "explain": {
+          "what": "Rounded coastal cargo divided by all-port cargo throughput.",
+          "read": "Calculated ratio: 10.53% and 10.52%; the 2023-24 all-port figure is approximately 1,540 MMT.",
+          "why": "Provides context for coastal cargo relative to total port cargo; source totals differ in precision."
+        }
+      }
+    },
+    "water_flagged_vessels": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        1523,
+        1526
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "vessels",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; No. of Indian Flagged Ships / Vessels.",
+      "meta": {
+        "title": "Indian-Flagged Ships and Vessels",
+        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "vessels",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Coastal Shipping",
+        "explain": {
+          "what": "Number of ships and vessels under the Indian flag.",
+          "read": "The reported count increased from 1,523 to 1,526.",
+          "why": "Tracks the Indian-flagged vessel register; this is a count, not gross tonnage."
+        }
+      }
+    },
+    "water_seafarers": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        2.58,
+        2.85
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "lakh seafarers",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; Employed Indian Seafarers (in Lakhs).",
+      "meta": {
+        "title": "Employed Indian Seafarers",
+        "subtitle": "Rounded scorecard figures",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "lakh seafarers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Coastal Shipping",
+        "explain": {
+          "what": "Employed Indian seafarers, in lakhs.",
+          "read": "The scorecard shows 2.58 lakh and 2.85 lakh.",
+          "why": "Indicates the workforce supporting India's maritime sector."
+        }
+      }
+    },
+    "water_shipbuilding_tonnage": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        22213,
+        26412
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "gross tonnes",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; No. of ships built in India (GT).",
+      "meta": {
+        "title": "Ships Built in India: Gross Tonnage",
+        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "gross tonnes",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Coastal Shipping",
+        "explain": {
+          "what": "Gross tonnage of ships built in India.",
+          "read": "Reported output rose from 22,213 GT to 26,412 GT.",
+          "why": "GT provides a size-adjusted measure of domestic shipbuilding output."
+        }
+      }
+    },
+    "water_ocean_cruise_passengers": {
+      "labels": [
+        "Annual-report snapshot"
+      ],
+      "datasets": [
+        {
+          "label": "Ocean cruise passengers",
+          "values": [
+            471000
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "passengers",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Year at a Glance overview, printed p.2; reports 4.71 lakh passengers and 227 calls, but does not state the observation period on this snapshot; lakh converted to count.",
+      "meta": {
+        "title": "Ocean Cruise Passengers - Annual Report Snapshot",
+        "subtitle": "Reference period not separately stated",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers on ocean cruise calls in the Ministry overview.",
+          "read": "The snapshot reports 4.71 lakh passengers; it does not identify a separate observation period.",
+          "why": "Preserves the official reported count without assigning an unstated year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_ocean_cruise_calls": {
+      "labels": [
+        "Annual-report snapshot"
+      ],
+      "datasets": [
+        {
+          "label": "Ocean cruise calls",
+          "values": [
+            227
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "calls",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Year at a Glance overview, printed p.2; Ocean Cruise Calls snapshot; observation period not stated.",
+      "meta": {
+        "title": "Ocean Cruise Calls - Annual Report Snapshot",
+        "subtitle": "Reference period not separately stated",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "calls",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Ocean cruise ship calls in the Ministry overview.",
+          "read": "The snapshot reports 227 calls; it does not identify a separate observation period.",
+          "why": "Complements the passenger count without assigning an unstated year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_national_waterway_passenger_history": {
+      "labels": [
+        "2023-24",
+        "2024-25"
+      ],
+      "values": [
+        1.61,
+        7.64
+      ],
+      "source": "https://sansad.in/getFile/loksabhaquestions/annex/186/AU2182_FElOEb.pdf?source=pqals",
+      "unit": "crore passengers",
+      "note": "Lok Sabha Unstarred Question 2182, answered 12 December 2025, part (a); National Waterways passenger traffic reported as 1.61 crore and 7.64 crore.",
+      "meta": {
+        "title": "Passenger Traffic on National Waterways",
+        "subtitle": "National total, 2023-24 and 2024-25",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "crore passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Total passenger traffic recorded on India's National Waterways.",
+          "read": "The Ministry's answer reports 1.61 crore in 2023-24 and 7.64 crore in 2024-25.",
+          "why": "Adds the latest nationwide passenger movement figures directly reported to Parliament."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_inland_passenger_state_trends": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "datasets": [
+        {
+          "label": "Assam",
+          "values": [
+            8514.22,
+            6585.91,
+            1979.2,
+            4385.95,
+            3155.38
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Karnataka",
+          "values": [
+            2158.0,
+            1617.0,
+            916.25,
+            928.02,
+            1283.79
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Kerala",
+          "values": [
+            19739.08,
+            20535.31,
+            8874.78,
+            19224.53,
+            20262.39
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Maharashtra",
+          "values": [
+            19291.7,
+            15922.3,
+            9106.53,
+            13667.6,
+            18724.02
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "West Bengal",
+          "values": [
+            106492.0,
+            116880.0,
+            126980.0,
+            136369.0,
+            29762.61
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; state-government reports for table years 2019-2023; passenger totals in thousands. Bihar/other states with unavailable, zero, or repeated rows are excluded.",
+      "meta": {
+        "title": "Inland-Waterway Passenger Trends by State",
+        "subtitle": "State-government reports, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passenger totals carried by inland water vessels in the five states with usable annual series.",
+          "read": "West Bengal's table-reported count is highest among the displayed states in 2022; its 2023 entry is 29,762.61 thousand. The source labels the table year basis 'Year Ending 31st March 2023'.",
+          "why": "Shows state-reported passenger movement over time while omitting rows that are unavailable or marked as repeated."
+        }
+      }
+    },
+    "water_assam_inland_passengers": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        8514.22,
+        6585.91,
+        1979.2,
+        4385.95,
+        3155.38
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; Assam row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+      "meta": {
+        "title": "Assam Inland-Waterway Passengers",
+        "subtitle": "State-government reported totals, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers carried by inland water vessels in Assam, as reported by the State Government.",
+          "read": "The source records 3,155.38 thousand passengers for table year 2023.",
+          "why": "Adds a state-level historical series while retaining the source's units and year labels."
+        }
+      }
+    },
+    "water_karnataka_inland_passengers": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        2158.0,
+        1617.0,
+        916.25,
+        928.02,
+        1283.79
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; Karnataka row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+      "meta": {
+        "title": "Karnataka Inland-Waterway Passengers",
+        "subtitle": "State-government reported totals, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers carried by inland water vessels in Karnataka, as reported by the State Government.",
+          "read": "The source records 1,283.79 thousand passengers for table year 2023.",
+          "why": "Adds a state-level historical series while retaining the source's units and year labels."
+        }
+      }
+    },
+    "water_kerala_inland_passengers": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        19739.08,
+        20535.31,
+        8874.78,
+        19224.53,
+        20262.39
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; Kerala row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+      "meta": {
+        "title": "Kerala Inland-Waterway Passengers",
+        "subtitle": "State-government reported totals, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers carried by inland water vessels in Kerala, as reported by the State Government.",
+          "read": "The source records 20,262.39 thousand passengers for table year 2023.",
+          "why": "Adds a state-level historical series while retaining the source's units and year labels."
+        }
+      }
+    },
+    "water_maharashtra_inland_passengers": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        19291.7,
+        15922.3,
+        9106.53,
+        13667.6,
+        18724.02
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; Maharashtra row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+      "meta": {
+        "title": "Maharashtra Inland-Waterway Passengers",
+        "subtitle": "State-government reported totals, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers carried by inland water vessels in Maharashtra, as reported by the State Government.",
+          "read": "The source records 18,724.02 thousand passengers for table year 2023.",
+          "why": "Adds a state-level historical series while retaining the source's units and year labels."
+        }
+      }
+    },
+    "water_west_bengal_inland_passengers": {
+      "labels": [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        106492.0,
+        116880.0,
+        126980.0,
+        136369.0,
+        29762.61
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; West Bengal row; passenger totals in thousands. The table labels its year basis 'Year Ending 31st March 2023'.",
+      "meta": {
+        "title": "West Bengal Inland-Waterway Passengers",
+        "subtitle": "State-government reported totals, table years 2019-2023",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passengers carried by inland water vessels in West Bengal, as reported by the State Government.",
+          "read": "The source records 29,762.61 thousand passengers for table year 2023.",
+          "why": "Adds a state-level historical series while retaining the source's units and year labels."
+        }
+      }
+    },
+    "water_inland_passenger_state_rank_2023": {
+      "labels": [
+        "West Bengal",
+        "Kerala",
+        "Maharashtra",
+        "Assam",
+        "Karnataka",
+        "Uttar Pradesh"
+      ],
+      "values": [
+        29762.61,
+        20262.39,
+        18724.02,
+        3155.38,
+        1283.79,
+        23.86
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/IWT%202022%2023%20APPROVED.pdf",
+      "unit": "thousand passengers",
+      "note": "MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; year 2023, i.e. latest table year; state-government reports. States with unavailable or previous-year-repeated data are omitted.",
+      "meta": {
+        "title": "State-Reported Inland-Waterway Passengers",
+        "subtitle": "2023 table year; reporting states only",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passenger totals for states with a reported, non-repeated 2023 value.",
+          "read": "West Bengal reports 29,762.61 thousand and Uttar Pradesh 23.86 thousand; Bihar and Odisha are omitted because the table flags their FY2022-23 information as unavailable/repeated.",
+          "why": "Compares only state observations that the source reports for the latest table year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_ocean_cruise_passenger_history": {
+      "labels": [
+        "2013-14",
+        "2022-23"
+      ],
+      "values": [
+        0.84,
+        4.72
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1974552",
+      "unit": "lakh passengers",
+      "note": "PIB release PRID 1974552, 3 November 2023; reports 84,000 ocean-cruise passengers in 2013-14 and 4.72 lakh in 2022-23.",
+      "meta": {
+        "title": "Ocean Cruise Passengers",
+        "subtitle": "Reported comparison years, 2013-14 and 2022-23",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "lakh passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Passenger totals handled on ocean cruise calls at Indian ports.",
+          "read": "The release reports growth from 84,000 in 2013-14 to 4.72 lakh in 2022-23.",
+          "why": "Adds a year-separated cruise passenger comparison from the Ministry's official statement."
+        }
+      }
+    },
+    "water_ocean_cruise_call_history": {
+      "labels": [
+        "2013-14",
+        "2022-23"
+      ],
+      "values": [
+        102,
+        227
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1974552",
+      "unit": "calls",
+      "note": "PIB release PRID 1974552, 3 November 2023; reports 102 cruise ship calls in 2013-14 and 227 in 2022-23.",
+      "meta": {
+        "title": "Ocean Cruise Ship Calls",
+        "subtitle": "Reported comparison years, 2013-14 and 2022-23",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "calls",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Ocean cruise ship port calls in the reported years.",
+          "read": "The release reports 102 calls in 2013-14 and 227 in 2022-23.",
+          "why": "Separates vessel calls from passenger volumes rather than inferring passenger counts per call."
+        }
+      }
+    },
+    "water_river_cruise_passengers": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        9606,
+        11431
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "passengers",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Overnight River Cruise Passengers.",
+      "meta": {
+        "title": "Overnight River Cruise Passengers",
+        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "passengers",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "Overnight river-cruise passenger numbers.",
+          "read": "Passengers rose from 9,606 to 11,431.",
+          "why": "Tracks passenger activity on inland river-cruise services."
+        }
+      }
+    },
+    "water_international_ferry_route_launch": {
+      "labels": [
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Passenger ferry route launched",
+          "values": [
+            1
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "route launch",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a71.8, \u2018International Passenger Ferry Service (India and Sri Lanka)\u2019, printed p.8; Nagapattinam\u2013Kankesanthurai service flagged off 14 October 2023.",
+      "meta": {
+        "title": "International Passenger Ferry Service Launch",
+        "subtitle": "Nagapattinam\u2013Kankesanthurai, 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "route launch",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Water Passenger Traffic",
+        "explain": {
+          "what": "One international passenger ferry route inauguration reported for 2023-24.",
+          "read": "The service was flagged off on 14 October 2023; value counts the launch, not passengers or sailings.",
+          "why": "Documents the reported international passenger-ferry service."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "water_port_turnaround_rank": {
+      "labels": [
+        "Kolkata",
+        "Visakhapatnam",
+        "Mormugao",
+        "Mumbai",
+        "Deendayal (Kandla)",
+        "V.O. Chidambaranar",
+        "Haldia",
+        "Chennai",
+        "Kamarajar (Ennore)",
+        "Paradip",
+        "New Mangalore",
+        "Cochin",
+        "Jawaharlal Nehru"
+      ],
+      "values": [
+        82.61,
+        65.86,
+        65.61,
+        62.97,
+        54.24,
+        51.36,
+        50.12,
+        44.92,
+        44.37,
+        41.61,
+        40.44,
+        33.4,
+        26.0
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "hours",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed p.52; 2023-24 provisional; time measured from pilot boarding to deboarding.",
+      "meta": {
+        "title": "Average Vessel Turnaround by Major Port",
+        "subtitle": "2023-24 provisional",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "hours",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Container & Port Performance",
+        "explain": {
+          "what": "Average vessel turnaround time for each major port.",
+          "read": "Jawaharlal Nehru recorded 26.00 hours; Kolkata 82.61; all-ports average 48.06.",
+          "why": "Measures vessel time in port from pilot boarding to deboarding."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_port_turnaround_history": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        52.9,
+        48.06
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "hours",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed pp.52-53; all-ports total, 2023-24 provisional.",
+      "meta": {
+        "title": "Average Vessel Turnaround Time",
+        "subtitle": "All major ports, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "hours",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Container & Port Performance",
+        "explain": {
+          "what": "Average vessel turnaround at all major ports.",
+          "read": "The average fell from 52.90 to 48.06 hours.",
+          "why": "Lower turnaround means less time spent by vessels in port."
+        }
+      }
+    },
+    "water_container_ship_turnaround": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        30.1,
+        30.12
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "hours",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed p.53; container ships.",
+      "meta": {
+        "title": "Container-Ship Turnaround Time",
+        "subtitle": "Major sea ports, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "hours",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Container & Port Performance",
+        "explain": {
+          "what": "Average turnaround of container ships at major sea ports.",
+          "read": "Container ship turnaround was 30.10 and 30.12 hours.",
+          "why": "Separates container-vessel turnaround from the all-vessel average."
+        }
+      }
+    },
+    "water_ship_berth_output_rank": {
+      "labels": [
+        "Paradip",
+        "Jawaharlal Nehru",
+        "Kamarajar (Ennore)",
+        "Cochin",
+        "New Mangalore",
+        "Chennai",
+        "Deendayal (Kandla)",
+        "Mormugao",
+        "V.O. Chidambaranar",
+        "Haldia",
+        "Visakhapatnam",
+        "Mumbai",
+        "Kolkata"
+      ],
+      "values": [
+        33014,
+        28648,
+        27197,
+        25963,
+        19218,
+        18728,
+        18217,
+        17772,
+        15401,
+        13698,
+        13687,
+        11152,
+        5365
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "tonnes per ship berth day",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Output per Ship Berth Day\u2019, printed p.53; 2023-24 provisional.",
+      "meta": {
+        "title": "Cargo Output per Ship Berth Day by Port",
+        "subtitle": "2023-24 provisional",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "tonnes per berth day",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Container & Port Performance",
+        "explain": {
+          "what": "Cargo tonnes per ship berth day at each major port.",
+          "read": "Paradip recorded 33,014 tonnes; all-ports total was 18,925.",
+          "why": "Normalizes cargo-handling productivity by vessel berth time."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_ship_berth_output_history": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        17605,
+        18925
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "tonnes per ship berth day",
+      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Output per Ship Berth Day\u2019, printed p.53; all-ports total.",
+      "meta": {
+        "title": "Average Output per Ship Berth Day",
+        "subtitle": "All major ports, 2022-23 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "tonnes per ship berth day",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Container & Port Performance",
+        "explain": {
+          "what": "Average cargo output per ship berth day.",
+          "read": "The all-ports average rose from 17,605 to 18,925 tonnes.",
+          "why": "Higher output indicates greater average cargo-handling productivity."
+        }
+      }
+    },
+    "water_wb_container_trend": {
+      "labels": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "values": [
+            9235765.0,
+            9878067.0,
+            10017480.0,
+            10571320.0,
+            11652174.0,
+            12318610.0,
+            13724110.0,
+            15450523.0,
+            16996593.0,
+            17487621.0,
+            17597062.0,
+            19561769.0,
+            19717168.0,
+            22208000.0,
+            23898000.0
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "China",
+          "values": [
+            136044183.0,
+            151800937.0,
+            165939400.0,
+            176607144.0,
+            187291913.0,
+            195509165.0,
+            202830580.0,
+            218712874.0,
+            229127700.0,
+            237570000.0,
+            240480000.0,
+            256945700.0,
+            268790000.0,
+            278759834.0,
+            299703800.0
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Singapore",
+          "values": [
+            28431100.0,
+            29937700.0,
+            31649400.0,
+            32578700.0,
+            33869300.0,
+            30922300.0,
+            30903600.0,
+            33666600.0,
+            36599200.0,
+            37195000.0,
+            36870900.0,
+            37571200.0,
+            37289600.0,
+            39010000.0,
+            41124100.0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "United States",
+          "values": [
+            40266221.0,
+            40813311.0,
+            41880574.0,
+            42842995.0,
+            44635035.0,
+            46496985.0,
+            46940227.0,
+            50196165.0,
+            52994177.0,
+            54236516.0,
+            53059014.0,
+            60874671.0,
+            61191458.0,
+            54618858.0,
+            59707490.0
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "United Arab Emirates",
+          "values": [
+            15140524.0,
+            17028713.0,
+            18063296.0,
+            18657222.0,
+            20186679.0,
+            21238293.0,
+            20652200.0,
+            19089706.0,
+            18696000.0,
+            18802000.0,
+            18720000.0,
+            19236164.0,
+            20391675.0,
+            21531172.0,
+            23466906.0
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Korea, Rep.",
+          "values": [
+            19202172.0,
+            21610491.0,
+            22559272.0,
+            23463109.0,
+            24798794.0,
+            25477299.0,
+            25945418.0,
+            27420698.0,
+            28874930.0,
+            28959959.0,
+            28834192.0,
+            29786900.0,
+            28502044.0,
+            30003141.0,
+            31850924.0
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Netherlands",
+          "values": [
+            11334566.0,
+            12024928.0,
+            12034495.0,
+            11751977.0,
+            12456588.0,
+            12400607.0,
+            12612142.0,
+            13992474.0,
+            14802257.0,
+            15198050.0,
+            14757227.0,
+            15781756.0,
+            14929333.0,
+            14111298.0,
+            14517179.0
+          ],
+          "color": "#39c5bb"
+        },
+        {
+          "label": "Germany",
+          "values": [
+            13037702.0,
+            15199723.0,
+            15269690.0,
+            15401010.0,
+            15842604.0,
+            14988243.0,
+            15126366.0,
+            15163474.0,
+            15123221.0,
+            15022386.0,
+            13946212.0,
+            14710963.0,
+            13733867.0,
+            12608856.0,
+            13294081.0
+          ],
+          "color": "#f778ba"
+        },
+        {
+          "label": "Japan",
+          "values": [
+            20016486.0,
+            20631007.0,
+            21167525.0,
+            21442040.0,
+            21662814.0,
+            21094824.0,
+            21678076.0,
+            22795433.0,
+            23424446.0,
+            23276482.0,
+            21568959.0,
+            22353354.0,
+            22462583.0,
+            21499023.0,
+            21886683.0
+          ],
+          "color": "#a5d6ff"
+        },
+        {
+          "label": "Malaysia",
+          "values": [
+            18133368.0,
+            20009479.0,
+            20491118.0,
+            20876442.0,
+            22366426.0,
+            24012959.0,
+            24569452.0,
+            23719787.0,
+            24955994.0,
+            26215322.0,
+            26669483.0,
+            28261849.0,
+            27293935.0,
+            28246849.0,
+            30659850.0
+          ],
+          "color": "#ffa657"
+        },
+        {
+          "label": "Vietnam",
+          "values": [
+            6431032.0,
+            6885023.0,
+            7505641.0,
+            8035812.0,
+            9473429.0,
+            10615391.0,
+            11282230.0,
+            12382524.0,
+            13394390.0,
+            15297028.0,
+            16394723.0,
+            19821048.0,
+            20519284.0,
+            21069746.0,
+            24423183.0
+          ],
+          "color": "#d2a8ff"
+        },
+        {
+          "label": "Brazil",
+          "values": [
+            7223103.0,
+            8037427.0,
+            8455525.0,
+            9214483.0,
+            9436275.0,
+            9263315.0,
+            8804079.0,
+            9380502.0,
+            10061925.0,
+            10704669.0,
+            10450632.0,
+            11801530.0,
+            11683239.0,
+            11613563.0,
+            13893906.0
+          ],
+          "color": "#7ee787"
+        },
+        {
+          "label": "Australia",
+          "values": [
+            6451689.0,
+            6865295.0,
+            7197262.0,
+            7304610.0,
+            7442016.0,
+            7731627.0,
+            7830344.0,
+            7991508.0,
+            8667914.0,
+            8778913.0,
+            8470466.0,
+            9254828.0,
+            9377619.0,
+            9283435.0,
+            9579396.0
+          ],
+          "color": "#ff9bce"
+        }
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
+      "unit": "TEUs",
+      "note": "World Bank World Development Indicators API, indicator IS.SHP.GOOD.TU; annual peer-country observations.",
+      "meta": {
+        "title": "Container port traffic: India and Peers",
+        "subtitle": "Annual observations",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "TEUs",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Container port traffic for India and the listed maritime comparison economies.",
+          "read": "Trend includes 13 reporting peers; absent years remain blank, not imputed.",
+          "why": "Compares India's long-run maritime performance with peer economies."
+        }
+      }
+    },
+    "water_wb_container_rank": {
+      "labels": [
+        "China",
+        "United States",
+        "Singapore",
+        "Korea, Rep.",
+        "Malaysia",
+        "Vietnam",
+        "India",
+        "United Arab Emirates",
+        "Japan",
+        "Netherlands",
+        "Brazil",
+        "Germany",
+        "Australia"
+      ],
+      "values": [
+        299703800.0,
+        59707490.0,
+        41124100.0,
+        31850924.0,
+        30659850.0,
+        24423183.0,
+        23898000.0,
+        23466906.0,
+        21886683.0,
+        14517179.0,
+        13893906.0,
+        13294081.0,
+        9579396.0
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
+      "unit": "TEUs",
+      "note": "World Bank WDI API, IS.SHP.GOOD.TU; ranked values use widest-coverage year 2024, including only countries reporting that year.",
+      "meta": {
+        "title": "Container port traffic: Peer Ranking",
+        "subtitle": "2024, descending",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "TEUs",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Country ranking by Container port traffic for the year with the widest peer coverage.",
+          "read": "At the widest-coverage year 2024, India ranks 7 of 13 available countries.",
+          "why": "Uses one common year to avoid comparing different reporting periods."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_wb_container_share": {
+      "labels": [
+        "China",
+        "United States",
+        "Singapore",
+        "Korea, Rep.",
+        "Malaysia",
+        "Vietnam",
+        "India",
+        "United Arab Emirates",
+        "Japan",
+        "Netherlands",
+        "Brazil",
+        "Germany",
+        "Australia"
+      ],
+      "values": [
+        299703800.0,
+        59707490.0,
+        41124100.0,
+        31850924.0,
+        30659850.0,
+        24423183.0,
+        23898000.0,
+        23466906.0,
+        21886683.0,
+        14517179.0,
+        13893906.0,
+        13294081.0,
+        9579396.0
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
+      "unit": "TEUs",
+      "note": "World Bank WDI API, IS.SHP.GOOD.TU; 2024 values; doughnut normalises only the listed countries, not the entire world.",
+      "meta": {
+        "title": "Container port traffic: Peer-Set Composition",
+        "subtitle": "2024; peer-set share, not global share",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "TEUs",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Container port traffic for peer countries with values in 2024.",
+          "read": "India is 3.9% of the displayed peer-set values in 2024; this is peer-set share, not global share.",
+          "why": "Shows relative distribution among listed countries without implying a global total."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "water_wb_connectivity_trend": {
+      "labels": [
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "values": [
+            39.0319504897,
+            43.3477343764,
+            46.4804993561,
+            45.0627826373,
+            43.7687318545,
+            48.5826548538,
+            43.0775042637,
+            46.1884209014,
+            47.3162410299,
+            50.3519709842,
+            56.5217413481,
+            55.3798260922,
+            55.5425275349,
+            54.2830927592,
+            57.2185409309,
+            58.8891957075
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "China",
+          "values": [
+            106.7126567958,
+            117.9017761774,
+            118.4558760366,
+            118.6376554664,
+            129.556949515,
+            132.4579758986,
+            133.8154206143,
+            136.0112695419,
+            137.1612175342,
+            141.2827640334,
+            138.8543553807,
+            148.6562163354,
+            153.3767454106,
+            158.6153205517,
+            162.3664733057,
+            171.1774765271
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Singapore",
+          "values": [
+            84.278424343,
+            85.1021041711,
+            87.5425148978,
+            90.6669739009,
+            93.9991620741,
+            94.7584850843,
+            95.4198917645,
+            100.4242293369,
+            98.0985209602,
+            99.9240520934,
+            97.9873783538,
+            107.8204664979,
+            109.4661871753,
+            105.6283388223,
+            113.7749796022,
+            110.6756480462
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "United States",
+          "values": [
+            79.7430886401,
+            76.2482120313,
+            75.4273431808,
+            74.8860409869,
+            79.088463573,
+            76.8960878468,
+            86.2018362474,
+            88.8347867502,
+            85.5823390349,
+            87.1968295944,
+            82.0461664838,
+            85.6698777328,
+            92.0496648498,
+            95.6156319109,
+            103.852253372,
+            102.6129324202
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "United Arab Emirates",
+          "values": [
+            48.4759793784,
+            50.7514177572,
+            58.3127645188,
+            62.3635843518,
+            61.0506946881,
+            61.2757581724,
+            65.2144604598,
+            63.7287040707,
+            64.034032589,
+            69.0497396167,
+            70.0950961659,
+            71.8084905504,
+            71.6990324675,
+            72.1336403449,
+            76.4964988805,
+            73.942853845
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Korea, Rep.",
+          "values": [
+            69.1184431583,
+            72.6842639641,
+            71.9001710119,
+            73.1873120662,
+            85.4194919545,
+            89.7127316751,
+            90.4608300704,
+            94.3610839325,
+            93.0412812348,
+            95.5424143311,
+            96.9975096315,
+            101.0652427361,
+            103.0228698375,
+            108.5679373102,
+            108.54693534,
+            111.2528687777
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Netherlands",
+          "values": [
+            75.0490606897,
+            80.3726162187,
+            77.0966128851,
+            79.8499203413,
+            80.5287929187,
+            79.5092929677,
+            79.0659809313,
+            82.1849599548,
+            79.7034750222,
+            82.7395084202,
+            82.1084528016,
+            86.8417647145,
+            88.0620238044,
+            91.9299234884,
+            90.7878926955,
+            90.7426763023
+          ],
+          "color": "#39c5bb"
+        },
+        {
+          "label": "Germany",
+          "values": [
+            79.4567531445,
+            82.347862591,
+            82.6514208167,
+            79.0059296737,
+            78.2609640364,
+            79.7782707275,
+            78.8292260979,
+            83.2739235729,
+            81.0408218424,
+            85.1239726416,
+            82.9015582716,
+            84.0411527099,
+            82.5809926954,
+            85.5307710286,
+            83.3399373636,
+            85.07903368
+          ],
+          "color": "#f778ba"
+        },
+        {
+          "label": "Japan",
+          "values": [
+            80.3686115632,
+            72.6329901662,
+            74.8510434871,
+            70.8800225641,
+            72.6212934224,
+            74.8968898934,
+            69.0019333229,
+            67.1818971208,
+            73.9488923191,
+            76.6609866879,
+            69.898348894,
+            71.263747931,
+            78.3593442452,
+            81.8719745046,
+            87.4639453571,
+            69.663527743
+          ],
+          "color": "#a5d6ff"
+        },
+        {
+          "label": "Malaysia",
+          "values": [
+            69.5864249693,
+            77.2297030006,
+            76.8098710975,
+            72.0344575485,
+            79.2695365183,
+            88.3767401614,
+            86.9966737015,
+            89.8119428857,
+            88.846569291,
+            91.9699559937,
+            90.9429842287,
+            92.892826081,
+            93.9117056901,
+            98.1785160836,
+            99.5042950989,
+            98.6806336759
+          ],
+          "color": "#ffa657"
+        },
+        {
+          "label": "Vietnam",
+          "values": [
+            20.9302541322,
+            22.0404183503,
+            23.1841216562,
+            33.6598645886,
+            43.3204531899,
+            48.5436340789,
+            42.3013614123,
+            42.5745303429,
+            44.0579415987,
+            57.532561233,
+            59.0761976148,
+            59.4176421947,
+            66.7544342974,
+            61.3911660153,
+            79.7780778121,
+            77.4735324778
+          ],
+          "color": "#d2a8ff"
+        },
+        {
+          "label": "Brazil",
+          "values": [
+            32.1479533553,
+            33.1066462927,
+            34.3241460021,
+            30.9489918691,
+            32.5248578449,
+            33.6927649007,
+            33.8492400942,
+            35.7414886178,
+            36.5000823136,
+            35.2271001245,
+            34.3248847961,
+            35.316179019,
+            34.9561709531,
+            36.2423406857,
+            36.813579733,
+            39.7428613638
+          ],
+          "color": "#7ee787"
+        },
+        {
+          "label": "Australia",
+          "values": [
+            26.2165948181,
+            27.9033221826,
+            29.2907757234,
+            28.9702964267,
+            30.8698537772,
+            29.3097066829,
+            29.0216146654,
+            31.0187482866,
+            33.3886128847,
+            32.406980102,
+            34.2468472929,
+            32.5961142706,
+            34.1643048892,
+            35.6691751858,
+            37.242980096,
+            35.7426324651
+          ],
+          "color": "#ff9bce"
+        }
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
+      "unit": "index points",
+      "note": "World Bank World Development Indicators API, indicator IS.SHP.GCNW.XQ; annual peer-country observations.",
+      "meta": {
+        "title": "Liner shipping connectivity index: India and Peers",
+        "subtitle": "Annual observations",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "index points",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Liner shipping connectivity index for India and the listed maritime comparison economies.",
+          "read": "Trend includes 13 reporting peers; absent years remain blank, not imputed.",
+          "why": "Compares India's long-run maritime performance with peer economies."
+        }
+      }
+    },
+    "water_wb_connectivity_rank": {
+      "labels": [
+        "China",
+        "Korea, Rep.",
+        "Singapore",
+        "United States",
+        "Malaysia",
+        "Netherlands",
+        "Germany",
+        "Vietnam",
+        "United Arab Emirates",
+        "Japan",
+        "India",
+        "Brazil",
+        "Australia"
+      ],
+      "values": [
+        171.1774765271,
+        111.2528687777,
+        110.6756480462,
+        102.6129324202,
+        98.6806336759,
+        90.7426763023,
+        85.07903368,
+        77.4735324778,
+        73.942853845,
+        69.663527743,
+        58.8891957075,
+        39.7428613638,
+        35.7426324651
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
+      "unit": "index points",
+      "note": "World Bank WDI API, IS.SHP.GCNW.XQ; ranked values use widest-coverage year 2021, including only countries reporting that year.",
+      "meta": {
+        "title": "Liner shipping connectivity index: Peer Ranking",
+        "subtitle": "2021, descending",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "index points",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Country ranking by Liner shipping connectivity index for the year with the widest peer coverage.",
+          "read": "At the widest-coverage year 2021, India ranks 11 of 13 available countries.",
+          "why": "Uses one common year to avoid comparing different reporting periods."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "water_wb_connectivity_share": {
+      "labels": [
+        "China",
+        "Korea, Rep.",
+        "Singapore",
+        "United States",
+        "Malaysia",
+        "Netherlands",
+        "Germany",
+        "Vietnam",
+        "United Arab Emirates",
+        "Japan",
+        "India",
+        "Brazil",
+        "Australia"
+      ],
+      "values": [
+        171.1774765271,
+        111.2528687777,
+        110.6756480462,
+        102.6129324202,
+        98.6806336759,
+        90.7426763023,
+        85.07903368,
+        77.4735324778,
+        73.942853845,
+        69.663527743,
+        58.8891957075,
+        39.7428613638,
+        35.7426324651
+      ],
+      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
+      "unit": "index points",
+      "note": "World Bank WDI API, IS.SHP.GCNW.XQ; 2021 values; doughnut normalises only the listed countries, not the entire world.",
+      "meta": {
+        "title": "Liner shipping connectivity index: Peer-Set Composition",
+        "subtitle": "2021; peer-set index composition, not market share",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "index points",
+        "category": "Water Transport & Shipping",
+        "subgroup": "Global Maritime Comparison",
+        "explain": {
+          "what": "Liner shipping connectivity index for peer countries with values in 2021.",
+          "read": "India is 5.2% of the displayed peer-set values in 2021; this is peer-set index composition, not market share.",
+          "why": "Shows relative distribution among listed countries without implying a global total."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
     "rail_route_km": {
       "labels": [
         "1950-51",
@@ -168120,7 +172391,7 @@ window.INDIA_DASHBOARD_DATA = {
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_wb_passenger_trend": {
+    "rail_wb_freight_trend": {
       "labels": [
         "1995",
         "1996",
@@ -168155,183 +172426,183 @@ window.INDIA_DASHBOARD_DATA = {
           "label": "India",
           "color": "#ff9933",
           "values": [
-            319.365,
-            341.999,
-            357.013,
-            379.897,
-            403.884,
-            430.666,
-            457.022,
-            493.489,
-            515.044,
-            541.208,
-            575.702,
-            615.634,
-            694.764,
-            769.956,
-            838.032,
-            903.465,
-            978.508,
-            1046.522,
-            1046.522,
-            1140.412,
-            1147.19,
-            1143.039,
-            1149.835,
-            1177.699,
-            1157.174,
-            1050.738,
-            231.126
+            249.564,
+            270.489,
+            277.567,
+            284.249,
+            281.513,
+            305.201,
+            312.371,
+            333.228,
+            353.194,
+            381.241,
+            407.398,
+            439.596,
+            480.993,
+            521.371,
+            551.448,
+            600.548,
+            625.723,
+            667.607,
+            649.645,
+            665.81,
+            681.696,
+            654.481,
+            620.175,
+            692.916,
+            738.523,
+            707.665,
+            719.762
           ]
         },
         {
           "label": "China",
           "color": "#ff7b72",
           "values": [
-            354.261,
-            332.202,
-            354.353,
-            369.097,
-            404.627,
-            441.468,
-            463.655,
-            480.305,
-            462.279,
-            551.196,
-            583.32,
-            635.327,
-            689.618,
-            777.86,
-            787.89,
-            791.158,
-            921.541,
-            940.249,
-            1008.172,
-            1089.56,
-            1109.312,
-            1160.059,
-            1266.681,
-            1361.715,
-            1438.606,
-            328.251,
-            946.499
+            1304.95,
+            1310.62,
+            1326.99,
+            1256.01,
+            1291.03,
+            1377.05,
+            1469.41,
+            1565.84,
+            1724.67,
+            1928.88,
+            2072.6,
+            2195.441,
+            2379.7,
+            2510.628,
+            2523.917,
+            2764.413,
+            2946.579,
+            2918.709,
+            2917.39,
+            2753.02,
+            2375.43,
+            2379.23,
+            2696.22,
+            2882.1,
+            3018.2,
+            null,
+            null
           ]
         },
         {
           "label": "United States",
           "color": "#58a6ff",
           "values": [
-            22.079,
-            21.866,
-            22.746,
-            23.49,
-            23.911,
-            25.977,
-            25.198,
-            24.41,
-            25.044,
-            24.777,
-            25.394,
-            27.296,
-            30.358,
-            32.143,
-            30.907,
-            31.872,
-            32.58,
-            34.126,
-            36.047,
-            36.393,
-            36.044,
-            35.892,
-            33.256,
-            31.963,
-            32.483,
-            12.46,
-            null
+            1906.206,
+            1979.622,
+            1969.331,
+            2010.027,
+            2092.745,
+            2140.191,
+            2183.277,
+            2200.123,
+            2264.983,
+            2427.268,
+            2476.653,
+            2586.836,
+            2584.94,
+            2594.631,
+            2236.917,
+            2468.738,
+            2524.585,
+            2500.3,
+            2541.354,
+            2702.736,
+            2547.253,
+            2314.693,
+            2445.132,
+            2525.217,
+            2357.117,
+            2102.084,
+            2239.401
           ]
         },
         {
           "label": "Russia",
           "color": "#bc8cff",
           "values": [
-            192.217,
-            181.213,
-            170.318,
-            125.625,
-            141.042,
-            167.054,
-            157.901,
-            152.9,
-            157.1,
-            150.8,
-            170.9,
-            177.639,
-            173.411,
-            175.871,
-            153.575,
-            139.028,
-            139.842,
-            144.612,
-            138.517,
-            128.82,
-            120.413,
-            124.461,
-            122.92,
-            129.371,
-            133.381,
-            78.135,
-            103.447
+            1213.711,
+            1131.251,
+            1100.289,
+            1019.547,
+            1204.547,
+            1373.178,
+            1433.617,
+            1510.2,
+            1664.3,
+            1797.326,
+            1852.913,
+            1950.83,
+            2090.337,
+            2116.24,
+            1865.305,
+            2011.308,
+            2127.835,
+            2222.388,
+            2172.685,
+            2298.564,
+            2304.759,
+            2342.59,
+            2491.876,
+            2596.88,
+            2601.928,
+            2544.828,
+            2638.562
           ]
         },
         {
           "label": "Japan",
           "color": "#3fb950",
           "values": [
-            400.084,
-            402.156,
-            395.278,
-            388.917,
-            385.098,
-            384.287,
-            385.402,
-            382.239,
-            385.012,
-            385.163,
-            391.215,
-            395.908,
-            405.544,
-            404.585,
-            393.765,
-            393.466,
-            395.067,
-            404.396,
-            414.387,
-            413.97,
-            427.486,
-            431.799,
-            437.363,
-            441.614,
-            435.063,
-            263.211,
+            25.101,
+            24.968,
+            24.617,
+            22.92,
+            22.541,
+            22.136,
+            22.193,
+            22.131,
+            22.794,
+            22.476,
+            22.813,
+            23.192,
+            23.334,
+            22.256,
+            20.562,
+            20.398,
+            19.998,
+            20.471,
+            21.071,
+            21.029,
+            21.519,
+            21.265,
+            21.663,
+            19.369,
+            19.993,
+            18.34,
             null
           ]
         }
       ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
       "meta": {
-        "title": "Rail Passengers: India vs Peers",
-        "subtitle": "Passenger-kilometres carried by railway",
+        "title": "Rail Freight: India vs Peers",
+        "subtitle": "Goods transported by railway",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": " billion passenger-km",
+        "suffix": " billion tonne-km",
         "category": "Indian Railways",
         "subgroup": "Global Rail Comparison",
         "explain": {
-          "what": "Passengers carried by rail, in billion passenger-kilometres.",
+          "what": "Freight moved by rail, in billion tonne-kilometres.",
           "read": "India is the orange line; compare its trajectory with each peer.",
-          "why": "Passenger-km shows how much a country relies on rail for travel."
+          "why": "Rail freight volume is a core measure of industrial transport capacity."
         }
       }
     },
@@ -168549,6 +172820,50 @@ window.INDIA_DASHBOARD_DATA = {
           "why": "Network length measures physical reach."
         }
       }
+    },
+    "rail_wb_freight_rank": {
+      "labels": [
+        "China",
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France",
+        "Japan",
+        "United Kingdom"
+      ],
+      "values": [
+        3018.2,
+        2601.93,
+        2357.12,
+        738.52,
+        443.0,
+        129.16,
+        33.89,
+        19.99,
+        16.88
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
+      "meta": {
+        "title": "Rail Freight Ranking (2019)",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, billion tonne-km.",
+          "read": "India ranks 4 of 9 countries in this comparison.",
+          "why": "Ranks India's freight output against large rail systems."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
     },
     "rail_wb_freight_share": {
       "labels": [
@@ -169945,1241 +174260,218 @@ window.INDIA_DASHBOARD_DATA = {
       "scope": "category",
       "indexAxis": "y"
     },
-    "water_major_port_cargo_rank": {
+    "rail_wb_passenger_trend": {
       "labels": [
-        "Paradip",
-        "Deendayal (Kandla)",
-        "Jawaharlal Nehru",
-        "Visakhapatnam",
-        "Mumbai",
-        "Chennai",
-        "Haldia",
-        "New Mangalore",
-        "Kamarajar (Ennore)",
-        "V.O. Chidambaranar",
-        "Cochin",
-        "Mormugao",
-        "Kolkata"
-      ],
-      "values": [
-        145.38,
-        132.37,
-        85.82,
-        81.09,
-        67.26,
-        51.6,
-        49.54,
-        45.71,
-        45.28,
-        41.4,
-        36.31,
-        20.61,
-        16.86
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; provisional 2023-24.",
-      "meta": {
-        "title": "Cargo Handled by Major Port (2023-24)",
-        "subtitle": "Ranked port throughput; provisional values",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Total cargo handled at each of the 13 major ports in 2023-24.",
-          "read": "Deendayal handled 132.374 million tonnes; Kolkata handled 16.856 million tonnes.",
-          "why": "Shows where major-port freight activity is concentrated."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "water_major_port_cargo_two_years": {
-      "labels": [
-        "Kolkata",
-        "Haldia",
-        "Paradip",
-        "Visakhapatnam",
-        "Chennai",
-        "V.O. Chidambaranar",
-        "Cochin",
-        "New Mangalore",
-        "Mormugao",
-        "Jawaharlal Nehru",
-        "Mumbai",
-        "Deendayal (Kandla)",
-        "Kamarajar (Ennore)"
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
       ],
       "datasets": [
         {
-          "label": "2022-23 actual",
+          "label": "India",
+          "color": "#ff9933",
           "values": [
-            17.052,
-            48.608,
-            135.362,
-            73.75,
-            48.949,
-            38.041,
-            35.255,
-            41.417,
-            17.334,
-            83.861,
-            63.608,
-            137.561,
-            43.507
-          ],
-          "color": "#58a6ff"
+            319.365,
+            341.999,
+            357.013,
+            379.897,
+            403.884,
+            430.666,
+            457.022,
+            493.489,
+            515.044,
+            541.208,
+            575.702,
+            615.634,
+            694.764,
+            769.956,
+            838.032,
+            903.465,
+            978.508,
+            1046.522,
+            1046.522,
+            1140.412,
+            1147.19,
+            1143.039,
+            1149.835,
+            1177.699,
+            1157.174,
+            1050.738,
+            231.126
+          ]
         },
         {
-          "label": "2023-24 provisional",
+          "label": "China",
+          "color": "#ff7b72",
           "values": [
-            16.856,
-            49.536,
-            145.379,
-            81.09,
-            51.598,
-            41.402,
-            36.315,
-            45.707,
-            20.615,
-            85.817,
-            67.261,
-            132.374,
-            45.277
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; 2022-23 actual and 2023-24 provisional.",
-      "meta": {
-        "title": "Major Port Cargo: Year-on-Year",
-        "subtitle": "Million tonnes by port",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Actual 2022-23 and provisional 2023-24 cargo handled by each major port.",
-          "read": "The 13 port values sum to 819.227 million tonnes in 2023-24.",
-          "why": "Compares port-level traffic year over year."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_major_port_cargo_share": {
-      "labels": [
-        "Kolkata",
-        "Haldia",
-        "Paradip",
-        "Visakhapatnam",
-        "Chennai",
-        "V.O. Chidambaranar",
-        "Cochin",
-        "New Mangalore",
-        "Mormugao",
-        "Jawaharlal Nehru",
-        "Mumbai",
-        "Deendayal (Kandla)",
-        "Kamarajar (Ennore)"
-      ],
-      "values": [
-        16.856,
-        49.536,
-        145.379,
-        81.09,
-        51.598,
-        41.402,
-        36.315,
-        45.707,
-        20.615,
-        85.817,
-        67.261,
-        132.374,
-        45.277
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Performance of Major Ports\u2019, printed p.51; 2023-24 provisional values; shares are within the 13 listed ports.",
-      "meta": {
-        "title": "Major-Port Cargo Share by Port",
-        "subtitle": "2023-24 composition",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Each port's contribution to major-port cargo.",
-          "read": "Port values sum to 819.227 million tonnes.",
-          "why": "Shows relative contribution of each major port."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "water_major_port_cargo_history": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        679.37,
-        699.1,
-        704.93,
-        672.68,
-        720.05,
-        784.31,
-        819.23
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Major-Port Cargo Throughput",
-        "subtitle": "All major ports, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Annual total cargo handled at major ports.",
-          "read": "Throughput reached 819.23 MMT in 2023-24, up from 784.31 MMT.",
-          "why": "Puts the latest year in long-run context."
-        }
-      }
-    },
-    "water_major_nonmajor_cargo": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Major ports",
-          "values": [
-            784.31,
-            819.23
-          ],
-          "color": "#ff9933"
+            354.261,
+            332.202,
+            354.353,
+            369.097,
+            404.627,
+            441.468,
+            463.655,
+            480.305,
+            462.279,
+            551.196,
+            583.32,
+            635.327,
+            689.618,
+            777.86,
+            787.89,
+            791.158,
+            921.541,
+            940.249,
+            1008.172,
+            1089.56,
+            1109.312,
+            1160.059,
+            1266.681,
+            1361.715,
+            1438.606,
+            328.251,
+            946.499
+          ]
         },
         {
-          "label": "Non-major ports (derived)",
+          "label": "United States",
+          "color": "#58a6ff",
           "values": [
-            649.88,
-            720.77
-          ],
-          "color": "#58a6ff"
+            22.079,
+            21.866,
+            22.746,
+            23.49,
+            23.911,
+            25.977,
+            25.198,
+            24.41,
+            25.044,
+            24.777,
+            25.394,
+            27.296,
+            30.358,
+            32.143,
+            30.907,
+            31.872,
+            32.58,
+            34.126,
+            36.047,
+            36.393,
+            36.044,
+            35.892,
+            33.256,
+            31.963,
+            32.483,
+            12.46,
+            null
+          ]
         },
         {
-          "label": "All ports",
+          "label": "Russia",
+          "color": "#bc8cff",
           "values": [
-            1434.19,
-            1540.0
-          ],
-          "color": "#3fb950"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.11, \u2018Cargo Traffic at Indian Ports\u2019, printed p.16; non-major values are derived as all-port less major-port traffic; 2023-24 all-port traffic is approximate 1,540 MMT.",
-      "meta": {
-        "title": "Major and Non-Major Port Cargo",
-        "subtitle": "All-port, major-port and derived residuals",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "All-port traffic and reported major-port totals; non-major values are residuals.",
-          "read": "Derived non-major traffic is 649.88 MMT in 2022-23 and approximately 720.77 MMT in 2023-24; the latter inherits rounding from 1,540 MMT.",
-          "why": "Separates the major-port system without presenting the residual as a directly reported statistic."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_major_nonmajor_share": {
-      "labels": [
-        "Major ports",
-        "Non-major ports (derived)"
-      ],
-      "values": [
-        819.23,
-        720.77
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.11, printed p.16; non-major ports = approximate 1,540 MMT all-port total less 819.23 MMT major-port total.",
-      "meta": {
-        "title": "Major vs Non-Major Port Share",
-        "subtitle": "Approximate 2023-24 composition",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Reported major-port cargo and a derived non-major-port residual.",
-          "read": "Approximately 819.23 MMT major and 720.77 MMT non-major; the latter is derived from rounded all-port data.",
-          "why": "Shows a transparent estimate of cargo distribution across port categories."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "water_commodity_trends": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "POL",
-          "values": [
-            224.82,
-            233.7,
-            234.86,
-            206.77,
-            221.27,
-            234.17,
-            245.99
-          ],
-          "color": "#ff9933"
+            192.217,
+            181.213,
+            170.318,
+            125.625,
+            141.042,
+            167.054,
+            157.901,
+            152.9,
+            157.1,
+            150.8,
+            170.9,
+            177.639,
+            173.411,
+            175.871,
+            153.575,
+            139.028,
+            139.842,
+            144.612,
+            138.517,
+            128.82,
+            120.413,
+            124.461,
+            122.92,
+            129.371,
+            133.381,
+            78.135,
+            103.447
+          ]
         },
         {
-          "label": "Iron ore",
+          "label": "Japan",
+          "color": "#3fb950",
           "values": [
-            41.17,
-            38.81,
-            55.68,
-            64.28,
-            51.71,
-            46.51,
-            61.03
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Fertilisers & raw materials",
-          "values": [
-            15.05,
-            15.41,
-            16.15,
-            17.67,
-            15.93,
-            16.68,
-            17.68
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Coal",
-          "values": [
-            141.23,
-            163.67,
-            149.04,
-            126.75,
-            146.8,
-            188.24,
-            191.98
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "Containerised cargo",
-          "values": [
-            133.73,
-            145.52,
-            146.86,
-            143.77,
-            166.9,
-            170.29,
-            181.57
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Other cargo",
-          "values": [
-            123.37,
-            101.99,
-            102.34,
-            113.44,
-            117.44,
-            128.42,
-            120.98
-          ],
-          "color": "#f6c344"
+            400.084,
+            402.156,
+            395.278,
+            388.917,
+            385.098,
+            384.287,
+            385.402,
+            382.239,
+            385.012,
+            385.163,
+            391.215,
+            395.908,
+            405.544,
+            404.585,
+            393.765,
+            393.466,
+            395.067,
+            404.396,
+            414.387,
+            413.97,
+            427.486,
+            431.799,
+            437.363,
+            441.614,
+            435.063,
+            263.211,
+            null
+          ]
         }
       ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
       "meta": {
-        "title": "Major-Port Cargo by Commodity",
-        "subtitle": "Six groups, 2017-18 to 2023-24",
+        "title": "Rail Passengers: India vs Peers",
+        "subtitle": "Passenger-kilometres carried by railway",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
         "explain": {
-          "what": "POL, iron ore, fertilisers/raw materials, coal, containerised cargo, and other cargo.",
-          "read": "2023-24 totals: POL 245.99 MMT, coal 191.98 MMT, containerised cargo 181.57 MMT.",
-          "why": "Shows how port freight composition changes over time."
-        }
-      }
-    },
-    "water_commodity_mix": {
-      "labels": [
-        "POL",
-        "Iron ore",
-        "Fertilisers & raw materials",
-        "Coal",
-        "Containerised cargo",
-        "Other cargo"
-      ],
-      "values": [
-        245.99,
-        61.03,
-        17.68,
-        191.98,
-        181.57,
-        120.98
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16. 2023-24 column.",
-      "meta": {
-        "title": "Major-Port Commodity Mix (2023-24)",
-        "subtitle": "Share of reported 819.23 MMT",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Six reported major-port cargo groups.",
-          "read": "The six groups sum to 819.23 MMT.",
-          "why": "Compares the latest commodity composition."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "water_pol_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        224.82,
-        233.7,
-        234.86,
-        206.77,
-        221.27,
-        234.17,
-        245.99
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "POL at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for POL.",
-          "read": "POL reached 245.99 MMT in 2023-24. POL includes crude, products and LPG/LNG.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_coal_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        141.23,
-        163.67,
-        149.04,
-        126.75,
-        146.8,
-        188.24,
-        191.98
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Coal Cargo at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for Coal.",
-          "read": "Coal reached 191.98 MMT in 2023-24. Coal includes thermal, coking and other coal.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_iron_ore_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        41.17,
-        38.81,
-        55.68,
-        64.28,
-        51.71,
-        46.51,
-        61.03
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Iron Ore Cargo at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for Iron ore.",
-          "read": "Iron ore reached 61.03 MMT in 2023-24. Iron ore includes fines and pellets.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_fertilisers_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        15.05,
-        15.41,
-        16.15,
-        17.67,
-        15.93,
-        16.68,
-        17.68
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Fertilisers and Raw Materials at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for Fertilisers & raw materials.",
-          "read": "Fertilisers & raw materials reached 17.68 MMT in 2023-24. F&FRM includes dry and liquid fertilisers and raw materials.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_containerised_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        133.73,
-        145.52,
-        146.86,
-        143.77,
-        166.9,
-        170.29,
-        181.57
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Containerised Cargo at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for Containerised cargo.",
-          "read": "Containerised cargo reached 181.57 MMT in 2023-24. Cargo weight is in million tonnes; TEUs are charted separately.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_other_cargo": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        123.37,
-        101.99,
-        102.34,
-        113.44,
-        117.44,
-        128.42,
-        120.98
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Other Cargo at Major Ports",
-        "subtitle": "Million tonnes, 2017-18 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Major-port cargo volume for Other cargo.",
-          "read": "Other cargo reached 120.98 MMT in 2023-24. Other cargo is the report's residual commodity group.",
-          "why": "Tracks this freight stream over time."
-        }
-      }
-    },
-    "water_container_teu_trend": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        9.14,
-        9.88,
-        8.79,
-        9.61,
-        11.22,
-        11.45,
-        12.31
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million TEUs",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a72.12 and Table \u2018Commodity-wise Cargo Traffic at Major Ports\u2019, printed p.16.",
-      "meta": {
-        "title": "Major-Port Container Throughput",
-        "subtitle": "Container traffic, million TEUs",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million TEUs",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Container throughput at major ports in million TEUs.",
-          "read": "Major ports handled 12.31 million TEUs in 2023-24, compared with 11.45 million in 2022-23.",
-          "why": "TEUs measure container traffic independently of container cargo weight."
-        }
-      }
-    },
-    "water_major_port_capacity_traffic": {
-      "labels": [
-        "2001-02",
-        "2002-03",
-        "2003-04",
-        "2004-05",
-        "2005-06",
-        "2006-07",
-        "2007-08",
-        "2008-09",
-        "2009-10",
-        "2010-11",
-        "2011-12",
-        "2012-13",
-        "2013-14",
-        "2014-15",
-        "2015-16",
-        "2016-17",
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Rated capacity",
-          "values": [
-            343.95,
-            362.75,
-            389.5,
-            397.5,
-            456.2,
-            504.75,
-            532.07,
-            574.77,
-            616.73,
-            670.13,
-            689.83,
-            744.91,
-            800.52,
-            871.52,
-            965.36,
-            1065.83,
-            1451.19,
-            1514.09,
-            1534.91,
-            1560.61,
-            1597.59,
-            1617.39,
-            1629.86
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Traffic handled",
-          "values": [
-            287.58,
-            313.55,
-            344.8,
-            383.75,
-            423.41,
-            463.78,
-            519.31,
-            530.53,
-            561.09,
-            570.03,
-            560.14,
-            545.68,
-            555.5,
-            581.34,
-            606.47,
-            648.4,
-            679.37,
-            699.1,
-            704.93,
-            672.68,
-            720.05,
-            784.31,
-            819.23
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Capacity at Major Ports\u2019, printed p.52; 2016-17 uses reported capacity, excluding the separately footnoted re-rated figure.",
-      "meta": {
-        "title": "Major-Port Capacity vs Traffic",
-        "subtitle": "2001-02 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Rated annual capacity alongside major-port cargo handled.",
-          "read": "Reported 2023-24 capacity was 1,629.86 MMT versus traffic of 819.23 MMT.",
-          "why": "Shows installed capacity relative to freight volume."
-        }
-      }
-    },
-    "water_major_port_capacity_utilization": {
-      "labels": [
-        "2001-02",
-        "2002-03",
-        "2003-04",
-        "2004-05",
-        "2005-06",
-        "2006-07",
-        "2007-08",
-        "2008-09",
-        "2009-10",
-        "2010-11",
-        "2011-12",
-        "2012-13",
-        "2013-14",
-        "2014-15",
-        "2015-16",
-        "2016-17",
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        83.61,
-        86.44,
-        88.52,
-        96.54,
-        92.81,
-        91.88,
-        97.6,
-        92.3,
-        90.98,
-        85.06,
-        81.2,
-        73.25,
-        69.39,
-        66.7,
-        62.82,
-        60.84,
-        46.81,
-        46.17,
-        45.93,
-        43.1,
-        45.07,
-        48.49,
-        50.26
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "percent",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Capacity at Major Ports\u2019, printed p.52; ratio calculated as traffic / capacity \u00d7 100.",
-      "meta": {
-        "title": "Major-Port Capacity Utilisation",
-        "subtitle": "Traffic as a share of rated capacity",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "percent",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Port Cargo Traffic",
-        "explain": {
-          "what": "Annual major-port traffic divided by rated capacity.",
-          "read": "Calculated utilisation was 50.26% in 2023-24.",
-          "why": "A derived ratio compares actual throughput with rated capacity."
-        }
-      }
-    },
-    "water_inland_waterways_cargo": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        126,
-        133
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; values are rounded; overview reports 133 MMTPA.",
-      "meta": {
-        "title": "Cargo on National Waterways",
-        "subtitle": "Rounded annual traffic, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Inland Waterways",
-        "explain": {
-          "what": "Cargo handled on National Waterways, as rounded in the MoPSW scorecard.",
-          "read": "The scorecard shows 126 MMT in 2022-23 and 133 MMT in 2023-24.",
-          "why": "Tracks inland freight using Ministry-published rounded totals."
-        }
-      }
-    },
-    "water_national_waterways_status": {
-      "labels": [
-        "Notified",
-        "Operational"
-      ],
-      "values": [
-        111,
-        24
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "waterways",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, MoPSW report overview, printed p.2; national waterways snapshot.",
-      "meta": {
-        "title": "National Waterways: Notified and Operational",
-        "subtitle": "Status reported for 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "waterways",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Inland Waterways",
-        "explain": {
-          "what": "Counts of notified National Waterways and those described as operational.",
-          "read": "The snapshot lists 111 notified and 24 operational National Waterways.",
-          "why": "Distinguishes statutory notification from operational service."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_nw_investment": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        1010,
-        544
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "INR crore",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Investment (CAPEX) in NWs.",
-      "meta": {
-        "title": "Capital Expenditure in National Waterways",
-        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "INR crore",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Inland Waterways",
-        "explain": {
-          "what": "Capital expenditure in National Waterways.",
-          "read": "The scorecard shows INR 1,010 crore and INR 544 crore, respectively.",
-          "why": "Tracks annual public capital investment in inland-waterway development."
-        }
-      }
-    },
-    "water_river_cruise_operational_nws": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        10,
-        9
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "waterways",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Operational NWs for river cruise.",
-      "meta": {
-        "title": "Operational NWs for River Cruise",
-        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "waterways",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Inland Waterways",
-        "explain": {
-          "what": "National Waterways reported operational for river-cruise service.",
-          "read": "The count was 10 in 2022-23 and 9 in 2023-24.",
-          "why": "Tracks the report's river-cruise operational category."
-        }
-      }
-    },
-    "water_iwai_network_cargo_growth": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        100.0,
-        105.6
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "index",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; derived index with 2022-23 as base.",
-      "meta": {
-        "title": "National Waterways Cargo Index",
-        "subtitle": "2022-23 = 100; derived from rounded totals",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "index",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Inland Waterways",
-        "explain": {
-          "what": "Index of rounded cargo handled on National Waterways, with 2022-23 set to 100.",
-          "read": "The index is 105.6 in 2023-24 from rounded values 133 and 126 MMT.",
-          "why": "Makes the relative change in inland cargo easier to compare."
-        }
-      }
-    },
-    "water_coastal_cargo": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        151,
-        162
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Ports, printed p.3; Coastal Cargo Handled (MMTPA).",
-      "meta": {
-        "title": "Coastal Cargo Handled",
-        "subtitle": "Rounded scorecard totals, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Coastal Shipping",
-        "explain": {
-          "what": "Coastal cargo handled, as rounded in the Ministry Ports scorecard.",
-          "read": "The scorecard reports 151 MMT in 2022-23 and 162 MMT in 2023-24.",
-          "why": "Tracks domestic coastal freight handled by ports."
-        }
-      }
-    },
-    "water_coastal_cargo_share": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        10.53,
-        10.52
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "percent",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Ports, printed p.3 and \u00a72.11, printed p.16; ratio of rounded coastal and all-port figures.",
-      "meta": {
-        "title": "Coastal Cargo Relative to All-Port Throughput",
-        "subtitle": "Calculated from rounded scorecard totals",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "percent",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Coastal Shipping",
-        "explain": {
-          "what": "Rounded coastal cargo divided by all-port cargo throughput.",
-          "read": "Calculated ratio: 10.53% and 10.52%; the 2023-24 all-port figure is approximately 1,540 MMT.",
-          "why": "Provides context for coastal cargo relative to total port cargo; source totals differ in precision."
-        }
-      }
-    },
-    "water_flagged_vessels": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        1523,
-        1526
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "vessels",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; No. of Indian Flagged Ships / Vessels.",
-      "meta": {
-        "title": "Indian-Flagged Ships and Vessels",
-        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "vessels",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Coastal Shipping",
-        "explain": {
-          "what": "Number of ships and vessels under the Indian flag.",
-          "read": "The reported count increased from 1,523 to 1,526.",
-          "why": "Tracks the Indian-flagged vessel register; this is a count, not gross tonnage."
-        }
-      }
-    },
-    "water_seafarers": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        2.58,
-        2.85
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "lakh seafarers",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; Employed Indian Seafarers (in Lakhs).",
-      "meta": {
-        "title": "Employed Indian Seafarers",
-        "subtitle": "Rounded scorecard figures",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "lakh seafarers",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Coastal Shipping",
-        "explain": {
-          "what": "Employed Indian seafarers, in lakhs.",
-          "read": "The scorecard shows 2.58 lakh and 2.85 lakh.",
-          "why": "Indicates the workforce supporting India's maritime sector."
-        }
-      }
-    },
-    "water_shipbuilding_tonnage": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        22213,
-        26412
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "gross tonnes",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Shipping, printed p.3; No. of ships built in India (GT).",
-      "meta": {
-        "title": "Ships Built in India: Gross Tonnage",
-        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "gross tonnes",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Coastal Shipping",
-        "explain": {
-          "what": "Gross tonnage of ships built in India.",
-          "read": "Reported output rose from 22,213 GT to 26,412 GT.",
-          "why": "GT provides a size-adjusted measure of domestic shipbuilding output."
-        }
-      }
-    },
-    "water_ocean_cruise_passengers": {
-      "labels": [
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Ocean cruise passengers",
-          "values": [
-            471000
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "passengers",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, report overview, printed p.2; 4.71 lakh passengers across 227 Ocean Cruise Calls; lakh converted to count.",
-      "meta": {
-        "title": "Ocean Cruise Passengers (2023-24)",
-        "subtitle": "Passenger count converted from 4.71 lakh",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "passengers",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Water Passenger Traffic",
-        "explain": {
-          "what": "Passengers on ocean cruise calls in the Ministry snapshot.",
-          "read": "The Ministry reports 4.71 lakh, or approximately 471,000 passengers.",
-          "why": "Provides the available annual total; no port-level split is reported."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_ocean_cruise_calls": {
-      "labels": [
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Ocean cruise calls",
-          "values": [
-            227
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "calls",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, report overview, printed p.2; Ocean Cruise Calls snapshot.",
-      "meta": {
-        "title": "Ocean Cruise Calls (2023-24)",
-        "subtitle": "Calls reported in Ministry snapshot",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "calls",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Water Passenger Traffic",
-        "explain": {
-          "what": "Ocean cruise ship calls in 2023-24.",
-          "read": "The snapshot reports 227 calls.",
-          "why": "Complements the passenger total with vessel activity."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_river_cruise_passengers": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        9606,
-        11431
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "passengers",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Score Card\u2014Inland Waterways, printed p.3; Overnight River Cruise Passengers.",
-      "meta": {
-        "title": "Overnight River Cruise Passengers",
-        "subtitle": "MoPSW scorecard, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "passengers",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Water Passenger Traffic",
-        "explain": {
-          "what": "Overnight river-cruise passenger numbers.",
-          "read": "Passengers rose from 9,606 to 11,431.",
-          "why": "Tracks passenger activity on inland river-cruise services."
+          "what": "Passengers carried by rail, in billion passenger-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Passenger-km shows how much a country relies on rail for travel."
         }
       }
     },
@@ -171222,2670 +174514,6 @@ window.INDIA_DASHBOARD_DATA = {
       },
       "chartType": "bar",
       "scope": "category"
-    },
-    "water_international_ferry_route_launch": {
-      "labels": [
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Passenger ferry route launched",
-          "values": [
-            1
-          ],
-          "color": "#3fb950"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "route launch",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, \u00a71.8, \u2018International Passenger Ferry Service (India and Sri Lanka)\u2019, printed p.8; Nagapattinam\u2013Kankesanthurai service flagged off 14 October 2023.",
-      "meta": {
-        "title": "International Passenger Ferry Service Launch",
-        "subtitle": "Nagapattinam\u2013Kankesanthurai, 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "route launch",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Water Passenger Traffic",
-        "explain": {
-          "what": "One international passenger ferry route inauguration reported for 2023-24.",
-          "read": "The service was flagged off on 14 October 2023; value counts the launch, not passengers or sailings.",
-          "why": "Documents the reported international passenger-ferry service."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "water_port_turnaround_rank": {
-      "labels": [
-        "Kolkata",
-        "Visakhapatnam",
-        "Mormugao",
-        "Mumbai",
-        "Deendayal (Kandla)",
-        "V.O. Chidambaranar",
-        "Haldia",
-        "Chennai",
-        "Kamarajar (Ennore)",
-        "Paradip",
-        "New Mangalore",
-        "Cochin",
-        "Jawaharlal Nehru"
-      ],
-      "values": [
-        82.61,
-        65.86,
-        65.61,
-        62.97,
-        54.24,
-        51.36,
-        50.12,
-        44.92,
-        44.37,
-        41.61,
-        40.44,
-        33.4,
-        26.0
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "hours",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed p.52; 2023-24 provisional; time measured from pilot boarding to deboarding.",
-      "meta": {
-        "title": "Average Vessel Turnaround by Major Port",
-        "subtitle": "2023-24 provisional",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "hours",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Container & Port Performance",
-        "explain": {
-          "what": "Average vessel turnaround time for each major port.",
-          "read": "Jawaharlal Nehru recorded 26.00 hours; Kolkata 82.61; all-ports average 48.06.",
-          "why": "Measures vessel time in port from pilot boarding to deboarding."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "water_port_turnaround_history": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        52.9,
-        48.06
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "hours",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed pp.52-53; all-ports total, 2023-24 provisional.",
-      "meta": {
-        "title": "Average Vessel Turnaround Time",
-        "subtitle": "All major ports, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "hours",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Container & Port Performance",
-        "explain": {
-          "what": "Average vessel turnaround at all major ports.",
-          "read": "The average fell from 52.90 to 48.06 hours.",
-          "why": "Lower turnaround means less time spent by vessels in port."
-        }
-      }
-    },
-    "water_container_ship_turnaround": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        30.1,
-        30.12
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "hours",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Turn Round Time\u2019, printed p.53; container ships.",
-      "meta": {
-        "title": "Container-Ship Turnaround Time",
-        "subtitle": "Major sea ports, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "hours",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Container & Port Performance",
-        "explain": {
-          "what": "Average turnaround of container ships at major sea ports.",
-          "read": "Container ship turnaround was 30.10 and 30.12 hours.",
-          "why": "Separates container-vessel turnaround from the all-vessel average."
-        }
-      }
-    },
-    "water_ship_berth_output_rank": {
-      "labels": [
-        "Paradip",
-        "Jawaharlal Nehru",
-        "Kamarajar (Ennore)",
-        "Cochin",
-        "New Mangalore",
-        "Chennai",
-        "Deendayal (Kandla)",
-        "Mormugao",
-        "V.O. Chidambaranar",
-        "Haldia",
-        "Visakhapatnam",
-        "Mumbai",
-        "Kolkata"
-      ],
-      "values": [
-        33014,
-        28648,
-        27197,
-        25963,
-        19218,
-        18728,
-        18217,
-        17772,
-        15401,
-        13698,
-        13687,
-        11152,
-        5365
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "tonnes per ship berth day",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Output per Ship Berth Day\u2019, printed p.53; 2023-24 provisional.",
-      "meta": {
-        "title": "Cargo Output per Ship Berth Day by Port",
-        "subtitle": "2023-24 provisional",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "tonnes per berth day",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Container & Port Performance",
-        "explain": {
-          "what": "Cargo tonnes per ship berth day at each major port.",
-          "read": "Paradip recorded 33,014 tonnes; all-ports total was 18,925.",
-          "why": "Normalizes cargo-handling productivity by vessel berth time."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "water_ship_berth_output_history": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        17605,
-        18925
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "tonnes per ship berth day",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, Table \u2018Average Output per Ship Berth Day\u2019, printed p.53; all-ports total.",
-      "meta": {
-        "title": "Average Output per Ship Berth Day",
-        "subtitle": "All major ports, 2022-23 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "tonnes per ship berth day",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Container & Port Performance",
-        "explain": {
-          "what": "Average cargo output per ship berth day.",
-          "read": "The all-ports average rose from 17,605 to 18,925 tonnes.",
-          "why": "Higher output indicates greater average cargo-handling productivity."
-        }
-      }
-    },
-    "water_wb_container_trend": {
-      "labels": [
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "values": [
-            9235765.0,
-            9878067.0,
-            10017480.0,
-            10571320.0,
-            11652174.0,
-            12318610.0,
-            13724110.0,
-            15450523.0,
-            16996593.0,
-            17487621.0,
-            17597062.0,
-            19561769.0,
-            19717168.0,
-            22208000.0,
-            23898000.0
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "China",
-          "values": [
-            136044183.0,
-            151800937.0,
-            165939400.0,
-            176607144.0,
-            187291913.0,
-            195509165.0,
-            202830580.0,
-            218712874.0,
-            229127700.0,
-            237570000.0,
-            240480000.0,
-            256945700.0,
-            268790000.0,
-            278759834.0,
-            299703800.0
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Singapore",
-          "values": [
-            28431100.0,
-            29937700.0,
-            31649400.0,
-            32578700.0,
-            33869300.0,
-            30922300.0,
-            30903600.0,
-            33666600.0,
-            36599200.0,
-            37195000.0,
-            36870900.0,
-            37571200.0,
-            37289600.0,
-            39010000.0,
-            41124100.0
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "United States",
-          "values": [
-            40266221.0,
-            40813311.0,
-            41880574.0,
-            42842995.0,
-            44635035.0,
-            46496985.0,
-            46940227.0,
-            50196165.0,
-            52994177.0,
-            54236516.0,
-            53059014.0,
-            60874671.0,
-            61191458.0,
-            54618858.0,
-            59707490.0
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "United Arab Emirates",
-          "values": [
-            15140524.0,
-            17028713.0,
-            18063296.0,
-            18657222.0,
-            20186679.0,
-            21238293.0,
-            20652200.0,
-            19089706.0,
-            18696000.0,
-            18802000.0,
-            18720000.0,
-            19236164.0,
-            20391675.0,
-            21531172.0,
-            23466906.0
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Korea, Rep.",
-          "values": [
-            19202172.0,
-            21610491.0,
-            22559272.0,
-            23463109.0,
-            24798794.0,
-            25477299.0,
-            25945418.0,
-            27420698.0,
-            28874930.0,
-            28959959.0,
-            28834192.0,
-            29786900.0,
-            28502044.0,
-            30003141.0,
-            31850924.0
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "Netherlands",
-          "values": [
-            11334566.0,
-            12024928.0,
-            12034495.0,
-            11751977.0,
-            12456588.0,
-            12400607.0,
-            12612142.0,
-            13992474.0,
-            14802257.0,
-            15198050.0,
-            14757227.0,
-            15781756.0,
-            14929333.0,
-            14111298.0,
-            14517179.0
-          ],
-          "color": "#39c5bb"
-        },
-        {
-          "label": "Germany",
-          "values": [
-            13037702.0,
-            15199723.0,
-            15269690.0,
-            15401010.0,
-            15842604.0,
-            14988243.0,
-            15126366.0,
-            15163474.0,
-            15123221.0,
-            15022386.0,
-            13946212.0,
-            14710963.0,
-            13733867.0,
-            12608856.0,
-            13294081.0
-          ],
-          "color": "#f778ba"
-        },
-        {
-          "label": "Japan",
-          "values": [
-            20016486.0,
-            20631007.0,
-            21167525.0,
-            21442040.0,
-            21662814.0,
-            21094824.0,
-            21678076.0,
-            22795433.0,
-            23424446.0,
-            23276482.0,
-            21568959.0,
-            22353354.0,
-            22462583.0,
-            21499023.0,
-            21886683.0
-          ],
-          "color": "#a5d6ff"
-        },
-        {
-          "label": "Malaysia",
-          "values": [
-            18133368.0,
-            20009479.0,
-            20491118.0,
-            20876442.0,
-            22366426.0,
-            24012959.0,
-            24569452.0,
-            23719787.0,
-            24955994.0,
-            26215322.0,
-            26669483.0,
-            28261849.0,
-            27293935.0,
-            28246849.0,
-            30659850.0
-          ],
-          "color": "#ffa657"
-        },
-        {
-          "label": "Vietnam",
-          "values": [
-            6431032.0,
-            6885023.0,
-            7505641.0,
-            8035812.0,
-            9473429.0,
-            10615391.0,
-            11282230.0,
-            12382524.0,
-            13394390.0,
-            15297028.0,
-            16394723.0,
-            19821048.0,
-            20519284.0,
-            21069746.0,
-            24423183.0
-          ],
-          "color": "#d2a8ff"
-        },
-        {
-          "label": "Brazil",
-          "values": [
-            7223103.0,
-            8037427.0,
-            8455525.0,
-            9214483.0,
-            9436275.0,
-            9263315.0,
-            8804079.0,
-            9380502.0,
-            10061925.0,
-            10704669.0,
-            10450632.0,
-            11801530.0,
-            11683239.0,
-            11613563.0,
-            13893906.0
-          ],
-          "color": "#7ee787"
-        },
-        {
-          "label": "Australia",
-          "values": [
-            6451689.0,
-            6865295.0,
-            7197262.0,
-            7304610.0,
-            7442016.0,
-            7731627.0,
-            7830344.0,
-            7991508.0,
-            8667914.0,
-            8778913.0,
-            8470466.0,
-            9254828.0,
-            9377619.0,
-            9283435.0,
-            9579396.0
-          ],
-          "color": "#ff9bce"
-        }
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
-      "unit": "TEUs",
-      "note": "World Bank World Development Indicators API, indicator IS.SHP.GOOD.TU; annual peer-country observations.",
-      "meta": {
-        "title": "Container port traffic: India and Peers",
-        "subtitle": "Annual observations",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "TEUs",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Container port traffic for India and the listed maritime comparison economies.",
-          "read": "Trend includes 13 reporting peers; absent years remain blank, not imputed.",
-          "why": "Compares India's long-run maritime performance with peer economies."
-        }
-      }
-    },
-    "water_wb_container_rank": {
-      "labels": [
-        "China",
-        "United States",
-        "Singapore",
-        "Korea, Rep.",
-        "Malaysia",
-        "Vietnam",
-        "India",
-        "United Arab Emirates",
-        "Japan",
-        "Netherlands",
-        "Brazil",
-        "Germany",
-        "Australia"
-      ],
-      "values": [
-        299703800.0,
-        59707490.0,
-        41124100.0,
-        31850924.0,
-        30659850.0,
-        24423183.0,
-        23898000.0,
-        23466906.0,
-        21886683.0,
-        14517179.0,
-        13893906.0,
-        13294081.0,
-        9579396.0
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
-      "unit": "TEUs",
-      "note": "World Bank WDI API, IS.SHP.GOOD.TU; ranked values use widest-coverage year 2024, including only countries reporting that year.",
-      "meta": {
-        "title": "Container port traffic: Peer Ranking",
-        "subtitle": "2024, descending",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "TEUs",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Country ranking by Container port traffic for the year with the widest peer coverage.",
-          "read": "At the widest-coverage year 2024, India ranks 7 of 13 available countries.",
-          "why": "Uses one common year to avoid comparing different reporting periods."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "water_wb_container_share": {
-      "labels": [
-        "China",
-        "United States",
-        "Singapore",
-        "Korea, Rep.",
-        "Malaysia",
-        "Vietnam",
-        "India",
-        "United Arab Emirates",
-        "Japan",
-        "Netherlands",
-        "Brazil",
-        "Germany",
-        "Australia"
-      ],
-      "values": [
-        299703800.0,
-        59707490.0,
-        41124100.0,
-        31850924.0,
-        30659850.0,
-        24423183.0,
-        23898000.0,
-        23466906.0,
-        21886683.0,
-        14517179.0,
-        13893906.0,
-        13294081.0,
-        9579396.0
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GOOD.TU?format=json&per_page=5000&date=1990:2025",
-      "unit": "TEUs",
-      "note": "World Bank WDI API, IS.SHP.GOOD.TU; 2024 values; doughnut normalises only the listed countries, not the entire world.",
-      "meta": {
-        "title": "Container port traffic: Peer-Set Composition",
-        "subtitle": "2024; peer-set share, not global share",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "TEUs",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Container port traffic for peer countries with values in 2024.",
-          "read": "India is 3.9% of the displayed peer-set values in 2024; this is peer-set share, not global share.",
-          "why": "Shows relative distribution among listed countries without implying a global total."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "water_wb_connectivity_trend": {
-      "labels": [
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "values": [
-            39.0319504897,
-            43.3477343764,
-            46.4804993561,
-            45.0627826373,
-            43.7687318545,
-            48.5826548538,
-            43.0775042637,
-            46.1884209014,
-            47.3162410299,
-            50.3519709842,
-            56.5217413481,
-            55.3798260922,
-            55.5425275349,
-            54.2830927592,
-            57.2185409309,
-            58.8891957075
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "China",
-          "values": [
-            106.7126567958,
-            117.9017761774,
-            118.4558760366,
-            118.6376554664,
-            129.556949515,
-            132.4579758986,
-            133.8154206143,
-            136.0112695419,
-            137.1612175342,
-            141.2827640334,
-            138.8543553807,
-            148.6562163354,
-            153.3767454106,
-            158.6153205517,
-            162.3664733057,
-            171.1774765271
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Singapore",
-          "values": [
-            84.278424343,
-            85.1021041711,
-            87.5425148978,
-            90.6669739009,
-            93.9991620741,
-            94.7584850843,
-            95.4198917645,
-            100.4242293369,
-            98.0985209602,
-            99.9240520934,
-            97.9873783538,
-            107.8204664979,
-            109.4661871753,
-            105.6283388223,
-            113.7749796022,
-            110.6756480462
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "United States",
-          "values": [
-            79.7430886401,
-            76.2482120313,
-            75.4273431808,
-            74.8860409869,
-            79.088463573,
-            76.8960878468,
-            86.2018362474,
-            88.8347867502,
-            85.5823390349,
-            87.1968295944,
-            82.0461664838,
-            85.6698777328,
-            92.0496648498,
-            95.6156319109,
-            103.852253372,
-            102.6129324202
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "United Arab Emirates",
-          "values": [
-            48.4759793784,
-            50.7514177572,
-            58.3127645188,
-            62.3635843518,
-            61.0506946881,
-            61.2757581724,
-            65.2144604598,
-            63.7287040707,
-            64.034032589,
-            69.0497396167,
-            70.0950961659,
-            71.8084905504,
-            71.6990324675,
-            72.1336403449,
-            76.4964988805,
-            73.942853845
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Korea, Rep.",
-          "values": [
-            69.1184431583,
-            72.6842639641,
-            71.9001710119,
-            73.1873120662,
-            85.4194919545,
-            89.7127316751,
-            90.4608300704,
-            94.3610839325,
-            93.0412812348,
-            95.5424143311,
-            96.9975096315,
-            101.0652427361,
-            103.0228698375,
-            108.5679373102,
-            108.54693534,
-            111.2528687777
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "Netherlands",
-          "values": [
-            75.0490606897,
-            80.3726162187,
-            77.0966128851,
-            79.8499203413,
-            80.5287929187,
-            79.5092929677,
-            79.0659809313,
-            82.1849599548,
-            79.7034750222,
-            82.7395084202,
-            82.1084528016,
-            86.8417647145,
-            88.0620238044,
-            91.9299234884,
-            90.7878926955,
-            90.7426763023
-          ],
-          "color": "#39c5bb"
-        },
-        {
-          "label": "Germany",
-          "values": [
-            79.4567531445,
-            82.347862591,
-            82.6514208167,
-            79.0059296737,
-            78.2609640364,
-            79.7782707275,
-            78.8292260979,
-            83.2739235729,
-            81.0408218424,
-            85.1239726416,
-            82.9015582716,
-            84.0411527099,
-            82.5809926954,
-            85.5307710286,
-            83.3399373636,
-            85.07903368
-          ],
-          "color": "#f778ba"
-        },
-        {
-          "label": "Japan",
-          "values": [
-            80.3686115632,
-            72.6329901662,
-            74.8510434871,
-            70.8800225641,
-            72.6212934224,
-            74.8968898934,
-            69.0019333229,
-            67.1818971208,
-            73.9488923191,
-            76.6609866879,
-            69.898348894,
-            71.263747931,
-            78.3593442452,
-            81.8719745046,
-            87.4639453571,
-            69.663527743
-          ],
-          "color": "#a5d6ff"
-        },
-        {
-          "label": "Malaysia",
-          "values": [
-            69.5864249693,
-            77.2297030006,
-            76.8098710975,
-            72.0344575485,
-            79.2695365183,
-            88.3767401614,
-            86.9966737015,
-            89.8119428857,
-            88.846569291,
-            91.9699559937,
-            90.9429842287,
-            92.892826081,
-            93.9117056901,
-            98.1785160836,
-            99.5042950989,
-            98.6806336759
-          ],
-          "color": "#ffa657"
-        },
-        {
-          "label": "Vietnam",
-          "values": [
-            20.9302541322,
-            22.0404183503,
-            23.1841216562,
-            33.6598645886,
-            43.3204531899,
-            48.5436340789,
-            42.3013614123,
-            42.5745303429,
-            44.0579415987,
-            57.532561233,
-            59.0761976148,
-            59.4176421947,
-            66.7544342974,
-            61.3911660153,
-            79.7780778121,
-            77.4735324778
-          ],
-          "color": "#d2a8ff"
-        },
-        {
-          "label": "Brazil",
-          "values": [
-            32.1479533553,
-            33.1066462927,
-            34.3241460021,
-            30.9489918691,
-            32.5248578449,
-            33.6927649007,
-            33.8492400942,
-            35.7414886178,
-            36.5000823136,
-            35.2271001245,
-            34.3248847961,
-            35.316179019,
-            34.9561709531,
-            36.2423406857,
-            36.813579733,
-            39.7428613638
-          ],
-          "color": "#7ee787"
-        },
-        {
-          "label": "Australia",
-          "values": [
-            26.2165948181,
-            27.9033221826,
-            29.2907757234,
-            28.9702964267,
-            30.8698537772,
-            29.3097066829,
-            29.0216146654,
-            31.0187482866,
-            33.3886128847,
-            32.406980102,
-            34.2468472929,
-            32.5961142706,
-            34.1643048892,
-            35.6691751858,
-            37.242980096,
-            35.7426324651
-          ],
-          "color": "#ff9bce"
-        }
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
-      "unit": "index points",
-      "note": "World Bank World Development Indicators API, indicator IS.SHP.GCNW.XQ; annual peer-country observations.",
-      "meta": {
-        "title": "Liner shipping connectivity index: India and Peers",
-        "subtitle": "Annual observations",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "index points",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Liner shipping connectivity index for India and the listed maritime comparison economies.",
-          "read": "Trend includes 13 reporting peers; absent years remain blank, not imputed.",
-          "why": "Compares India's long-run maritime performance with peer economies."
-        }
-      }
-    },
-    "water_wb_connectivity_rank": {
-      "labels": [
-        "China",
-        "Korea, Rep.",
-        "Singapore",
-        "United States",
-        "Malaysia",
-        "Netherlands",
-        "Germany",
-        "Vietnam",
-        "United Arab Emirates",
-        "Japan",
-        "India",
-        "Brazil",
-        "Australia"
-      ],
-      "values": [
-        171.1774765271,
-        111.2528687777,
-        110.6756480462,
-        102.6129324202,
-        98.6806336759,
-        90.7426763023,
-        85.07903368,
-        77.4735324778,
-        73.942853845,
-        69.663527743,
-        58.8891957075,
-        39.7428613638,
-        35.7426324651
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
-      "unit": "index points",
-      "note": "World Bank WDI API, IS.SHP.GCNW.XQ; ranked values use widest-coverage year 2021, including only countries reporting that year.",
-      "meta": {
-        "title": "Liner shipping connectivity index: Peer Ranking",
-        "subtitle": "2021, descending",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "index points",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Country ranking by Liner shipping connectivity index for the year with the widest peer coverage.",
-          "read": "At the widest-coverage year 2021, India ranks 11 of 13 available countries.",
-          "why": "Uses one common year to avoid comparing different reporting periods."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "water_wb_connectivity_share": {
-      "labels": [
-        "China",
-        "Korea, Rep.",
-        "Singapore",
-        "United States",
-        "Malaysia",
-        "Netherlands",
-        "Germany",
-        "Vietnam",
-        "United Arab Emirates",
-        "Japan",
-        "India",
-        "Brazil",
-        "Australia"
-      ],
-      "values": [
-        171.1774765271,
-        111.2528687777,
-        110.6756480462,
-        102.6129324202,
-        98.6806336759,
-        90.7426763023,
-        85.07903368,
-        77.4735324778,
-        73.942853845,
-        69.663527743,
-        58.8891957075,
-        39.7428613638,
-        35.7426324651
-      ],
-      "source": "https://api.worldbank.org/v2/country/IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS/indicator/IS.SHP.GCNW.XQ?format=json&per_page=5000&date=1990:2025",
-      "unit": "index points",
-      "note": "World Bank WDI API, IS.SHP.GCNW.XQ; 2021 values; doughnut normalises only the listed countries, not the entire world.",
-      "meta": {
-        "title": "Liner shipping connectivity index: Peer-Set Composition",
-        "subtitle": "2021; peer-set index composition, not market share",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "index points",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Global Maritime Comparison",
-        "explain": {
-          "what": "Liner shipping connectivity index for peer countries with values in 2021.",
-          "read": "India is 5.2% of the displayed peer-set values in 2021; this is peer-set index composition, not market share.",
-          "why": "Shows relative distribution among listed countries without implying a global total."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_road_nh_length": {
-      "labels": [
-        "2014",
-        "2023-24"
-      ],
-      "values": [
-        91287,
-        146195
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
-      "unit": "km",
-      "note": "MoRTH Year End Review 2024 (PIB): National Highway network length was 91,287 km in 2014 and 146,195 km in 2024.",
-      "meta": {
-        "title": "National Highway Network",
-        "subtitle": "National Highway network length",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Length of India's National Highway network at the stated dates.",
-          "read": "The reported network expanded by about 60% from 2014 to 2024.",
-          "why": "National Highways form the long-distance road backbone for freight."
-        }
-      }
-    },
-    "log_road_multilane_nh": {
-      "labels": [
-        "2014",
-        "November 2023"
-      ],
-      "values": [
-        18387,
-        46179
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
-      "unit": "km",
-      "note": "MoRTH Year End Review 2023 (PIB): length of National Highways with four or more lanes.",
-      "meta": {
-        "title": "Four-Lane-and-Above National Highways",
-        "subtitle": "NH length with four or more lanes",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Length of National Highways with four or more lanes.",
-          "read": "The reported extent increased from 18,387 km in 2014 to 46,179 km by November 2023.",
-          "why": "More divided-lane highway capacity can improve freight movement and reduce bottlenecks."
-        }
-      }
-    },
-    "log_road_bharatmala": {
-      "labels": [
-        "Awarded",
-        "Constructed"
-      ],
-      "datasets": [
-        {
-          "label": "28 February 2025",
-          "values": [
-            26425,
-            19826
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
-      "unit": "km",
-      "note": "MoRTH parliamentary reply / PIB, 13 March 2025: Bharatmala Phase I project lengths awarded and constructed as at 28 February 2025.",
-      "meta": {
-        "title": "Bharatmala Phase I Progress",
-        "subtitle": "Awarded versus constructed project length",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Cumulative lengths of Bharatmala Phase I projects awarded and constructed.",
-          "read": "26,425 km had been awarded and 19,826 km constructed by 28 February 2025.",
-          "why": "The gap distinguishes tendered projects from completed road capacity."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_highspeed": {
-      "labels": [
-        "Awarded",
-        "Constructed"
-      ],
-      "datasets": [
-        {
-          "label": "28 February 2025",
-          "values": [
-            6669,
-            4610
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
-      "unit": "km",
-      "note": "MoRTH PIB release, 13 March 2025: high-speed greenfield corridor length awarded and completed as at 28 February 2025.",
-      "meta": {
-        "title": "High-Speed Greenfield Corridors",
-        "subtitle": "Awarded versus constructed length",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Cumulative awarded and constructed lengths of high-speed greenfield corridors.",
-          "read": "Of 6,669 km awarded, 4,610 km was completed by 28 February 2025.",
-          "why": "Shows progress on high-capacity road links between economic centres."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_fastag_mix": {
-      "labels": [
-        "FASTag",
-        "Other payment"
-      ],
-      "values": [
-        98.5,
-        1.5
-      ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "% of toll payments",
-      "note": "NHAI Annual Report 2023-24: 98.5% of toll payments were collected through FASTag. Other-payment share is the arithmetic complement, not a separately reported statistic.",
-      "meta": {
-        "title": "FASTag Share of Toll Payments",
-        "subtitle": "NHAI toll transactions, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "% of toll payments",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Share of NHAI toll payments collected through FASTag; remainder is calculated.",
-          "read": "FASTag accounted for 98.5%; other methods make up the derived 1.5% remainder.",
-          "why": "Electronic collection measures payment digitisation, not freight tonnage."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_road_fastag_collection": {
-      "labels": [
-        "FY 2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "FASTag Collections",
-          "values": [
-            55000
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "Rs crore",
-      "note": "NHAI Annual Report 2023-24, Electronic Toll Collection: FASTag collection was around Rs 55,000 crore in FY 2023-24 (IHMCL source).",
-      "meta": {
-        "title": "FASTag Collections",
-        "subtitle": "FY 2023-24",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Approximate toll collection through FASTag during FY 2023-24.",
-          "read": "NHAI reports around Rs 55,000 crore collected through FASTag.",
-          "why": "User-fee collection for highway tolls, not road-freight operator turnover."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_nhai_build": {
-      "labels": [
-        "Awarded works",
-        "Constructed"
-      ],
-      "datasets": [
-        {
-          "label": "FY 2023-24",
-          "values": [
-            3339,
-            6644
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "km",
-      "note": "NHAI Annual Report 2023-24: NHAI awarded 3,339 km and constructed 6,644 km of National Highways during FY 2023-24.",
-      "meta": {
-        "title": "NHAI Awards and Construction",
-        "subtitle": "National Highway length in FY 2023-24",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "National Highway lengths awarded and constructed by NHAI during FY 2023-24.",
-          "read": "NHAI constructed 6,644 km, its highest annual construction achievement reported in the annual report.",
-          "why": "Annual delivery indicates the pace of road capacity being added."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_nh_index": {
-      "labels": [
-        "2023 (2014=100)"
-      ],
-      "datasets": [
-        {
-          "label": "National Highway Network Growth Index",
-          "values": [
-            160
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
-      "unit": "index (2014=100)",
-      "note": "MoRTH Year End Review 2023 reports NH length rose 60% from 91,287 km in 2014 to 146,145 km in 2023; displayed index expresses its rounded growth as 160.",
-      "meta": {
-        "title": "National Highway Network Growth Index",
-        "subtitle": "2023 (2014=100)",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "index (2014=100)",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Rounded NH network length index derived from MoRTH's reported 60% growth.",
-          "read": "The 2023 index is 160 when 2014 is 100; it is derived, not an observed km series.",
-          "why": "An index communicates proportional expansion without treating rounded endpoints as exact growth."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_rail_loading": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        73.2,
-        119.8,
-        167.9,
-        195.9,
-        318.4,
-        473.5,
-        921.73,
-        1230.94,
-        1415.87,
-        1509.1,
-        1588.06
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: revenue-earning freight tonnes originating (excluding Konkan Railway).",
-      "meta": {
-        "title": "Rail Freight Loading",
-        "subtitle": "Revenue-earning tonnes originating",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Revenue-earning freight originating on Indian Railways, in million tonnes.",
-          "read": "Loading reached 1,588.06 million tonnes in 2023-24; this is the Year Book revenue-earning series, not all-originating loading.",
-          "why": "Repeats railway output in the cross-mode dashboard without altering the rail group's chart."
-        }
-      }
-    },
-    "log_rail_ntkm": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        37565,
-        72333,
-        110696,
-        147652,
-        235785,
-        312371,
-        625723,
-        719762,
-        871816,
-        959566,
-        973968
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million net tonne-km",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I (net tonne-kilometres).",
-      "meta": {
-        "title": "Rail Freight Transport Work",
-        "subtitle": "Net tonne-kilometres",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million net tonne-km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Net tonne-kilometres: tonnes multiplied by distance carried.",
-          "read": "Indian Railways recorded 973,968 million net tonne-km in 2023-24.",
-          "why": "Tonne-km includes freight volume and haul distance, unlike tonnes alone."
-        }
-      }
-    },
-    "log_rail_commodity_mix": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "values": [
-        786.84,
-        180.95,
-        152.72,
-        84.76,
-        75.77,
-        58.92,
-        51.44,
-        49.88,
-        29.17,
-        117.61
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning loading in 2023-24.",
-      "meta": {
-        "title": "Rail Freight by Commodity",
-        "subtitle": "2023-24 originating loading",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Revenue-earning rail freight tonnes by commodity group in 2023-24.",
-          "read": "Coal loading was 786.84 million tonnes, 49.55% of the 1,588.06 million tonne total.",
-          "why": "The commodity mix shows dependence on bulk and industrial goods."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_rail_commodity_change": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            727.24,
-            160.14,
-            143.93,
-            79.22,
-            69.86,
-            56.34,
-            70.92,
-            48.22,
-            28.15,
-            125.08
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            786.84,
-            180.95,
-            152.72,
-            84.76,
-            75.77,
-            58.92,
-            51.44,
-            49.88,
-            29.17,
-            117.61
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning tonnes originating, 2022-23 and 2023-24.",
-      "meta": {
-        "title": "Rail Loading by Commodity: Year-on-Year",
-        "subtitle": "Commodity-wise revenue-earning loading",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Freight loading by commodity group in FY 2022-23 and FY 2023-24.",
-          "read": "Coal rose from 727.24 to 786.84 million tonnes; foodgrains fell from 70.92 to 51.44 million tonnes.",
-          "why": "A same-commodity comparison helps identify sources of freight growth."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_rail_average_lead": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        513,
-        603,
-        659,
-        754,
-        741,
-        660,
-        679,
-        585,
-        616,
-        636,
-        613
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km per tonne",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: average lead of freight.",
-      "meta": {
-        "title": "Rail Freight Average Lead",
-        "subtitle": "Average distance per tonne",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "km per tonne",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Average distance carried for each tonne of railway freight.",
-          "read": "Average freight lead was 613 km in 2023-24.",
-          "why": "Average lead puts freight tonnes in the context of distance moved."
-        }
-      }
-    },
-    "log_rail_dfc_progress": {
-      "labels": [
-        "Operational",
-        "Total EDFC + WDFC"
-      ],
-      "datasets": [
-        {
-          "label": "March 2025",
-          "values": [
-            2741,
-            2843
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2112843&reg=48&lang=2",
-      "unit": "route km",
-      "note": "Ministry of Railways reply, PIB 19 March 2025: 2,741 of 2,843 route-km on the Eastern and Western Dedicated Freight Corridors was commissioned and operational (96.4%).",
-      "meta": {
-        "title": "Dedicated Freight Corridor Progress",
-        "subtitle": "EDFC and WDFC route kilometres",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "route km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Operational route kilometres compared with combined EDFC and WDFC length.",
-          "read": "2,741 of 2,843 route-km (96.4%) was operational in March 2025.",
-          "why": "Dedicated corridors add freight capacity separate from much of the passenger network."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_major_port_traffic": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        679.37,
-        699.1,
-        704.93,
-        672.68,
-        720.05,
-        784.31,
-        819.23
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: annual cargo throughput at the 12 major ports.",
-      "meta": {
-        "title": "Cargo Handled at Major Ports",
-        "subtitle": "12 major ports, annual cargo throughput",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Annual cargo throughput at India's 12 major ports.",
-          "read": "Major-port cargo reached 819.23 million tonnes in 2023-24, up from 784.31 million tonnes in 2022-23.",
-          "why": "Ports handle international and coastal cargo at India's maritime gateways."
-        }
-      }
-    },
-    "log_sea_container_teu": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        9.14,
-        9.88,
-        8.79,
-        9.61,
-        11.22,
-        11.45,
-        12.31
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million TEU",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port container traffic (the table reports TEUs in parentheses).",
-      "meta": {
-        "title": "Major-Port Container Throughput",
-        "subtitle": "Container traffic in million TEU",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "million TEU",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Twenty-foot equivalent units handled by the 12 major ports.",
-          "read": "Container throughput rose from 11.45 million TEU in 2022-23 to 12.31 million TEU in 2023-24.",
-          "why": "TEUs measure containerised freight separately from bulk cargo tonnes."
-        }
-      }
-    },
-    "log_sea_commodity_mix": {
-      "labels": [
-        "POL",
-        "Iron ore",
-        "Fertilizers & raw materials",
-        "Coal",
-        "Containers",
-        "Other cargo"
-      ],
-      "values": [
-        245.99,
-        61.03,
-        17.68,
-        191.98,
-        181.57,
-        120.98
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: commodity-wise cargo traffic at major ports, FY 2023-24.",
-      "meta": {
-        "title": "Major-Port Cargo by Commodity",
-        "subtitle": "FY 2023-24, 12 major ports",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Major-port cargo in the six commodity groups reported by the Ministry.",
-          "read": "POL was the largest reported group at 245.99 million tonnes; containers were 181.57 million tonnes.",
-          "why": "The breakdown distinguishes liquid and dry bulk from containerised cargo."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_sea_overseas_coastal": {
-      "labels": [
-        "Overseas",
-        "Coastal",
-        "Total"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            1125.613,
-            309.708,
-            1435.322
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24 provisional",
-          "values": [
-            1209.675,
-            332.74,
-            1542.415
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): overseas and coastal traffic at major and non-major ports combined. Converted from '000 tonnes; 2023-24 provisional. Rounded components may differ from total by 0.001.",
-      "meta": {
-        "title": "Overseas and Coastal Port Traffic",
-        "subtitle": "All major and non-major ports",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Overseas, coastal and total cargo handled by all Indian ports.",
-          "read": "Provisional 2023-24 total was 1,542.415 million tonnes, including 332.740 million coastal tonnes.",
-          "why": "The split avoids treating all port throughput as international freight."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_port_classes": {
-      "labels": [
-        "Major ports",
-        "Non-major ports",
-        "All ports"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            784.305,
-            651.017,
-            1435.322
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24 provisional",
-          "values": [
-            819.004,
-            723.411,
-            1542.415
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): major, non-major and all-port traffic, converted from '000 tonnes. Provisional major-port value 819.004 differs from the annual report's later revised 819.23 MMT; revisions are not combined.",
-      "meta": {
-        "title": "Major vs Non-Major Port Cargo",
-        "subtitle": "Port traffic by administrative class",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Cargo traffic at major ports, non-major ports and all ports.",
-          "read": "The provisional 2023-24 update reports 819.004 million tonnes at major ports and 723.411 million tonnes at non-major ports.",
-          "why": "Non-major ports carry a substantial share of Indian port traffic."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_port_extremes": {
-      "labels": [
-        "SMP Kolkata (lowest)",
-        "Paradip (highest)"
-      ],
-      "values": [
-        16.63,
-        145.38
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024: provisional 2023-24 cargo by major port; SMP Kolkata (16.63 MMT) and Paradip (145.38 MMT) were lowest and highest respectively.",
-      "meta": {
-        "title": "Major-Port Traffic: Reported Extremes",
-        "subtitle": "Lowest and highest port totals",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Cargo handled by the lowest- and highest-throughput major ports in the 2023-24 table.",
-          "read": "Paradip handled 145.38 million tonnes, while SMP Kolkata handled 16.63 million tonnes.",
-          "why": "Port-level variation shows why the national total can conceal concentrated throughput."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_major_yoy": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        784.31,
-        819.23
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.11: revised 12 major-port traffic for 2022-23 and 2023-24.",
-      "meta": {
-        "title": "Major-Port Cargo: Latest Annual Change",
-        "subtitle": "Revised major-port totals",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "The two latest annual totals for the 12 major ports.",
-          "read": "Cargo increased from 784.31 to 819.23 million tonnes.",
-          "why": "A short comparison highlights the latest annual change."
-        }
-      }
-    },
-    "log_air_aai_freight": {
-      "labels": [
-        "Domestic",
-        "International",
-        "Total"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            1282.26,
-            1864.54,
-            3146.8
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            1320.16,
-            2045.52,
-            3365.68
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: freight handled at all Indian airports, domestic/international. This airport-handled basis differs from airline tonne-kilometres.",
-      "meta": {
-        "title": "Air Cargo: Domestic and International",
-        "subtitle": "Freight handled at all Indian airports",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
-        "explain": {
-          "what": "Air freight handled at Indian airports, in thousands of metric tonnes.",
-          "read": "Total was 3,365.68 thousand tonnes in 2023-24: 1,320.16 domestic and 2,045.52 international.",
-          "why": "This airport-handled cargo measure differs from airline tonne-kilometres."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_air_aai_mix": {
-      "labels": [
-        "Domestic",
-        "International"
-      ],
-      "values": [
-        1320.16,
-        2045.52
-      ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: FY 2023-24 freight at all Indian airports.",
-      "meta": {
-        "title": "Air Freight: Domestic vs International",
-        "subtitle": "Share of 3,365.68 thousand tonnes",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
-        "explain": {
-          "what": "Domestic and international share of air freight handled at Indian airports in FY 2023-24.",
-          "read": "International freight was 2,045.52 thousand tonnes; domestic freight was 1,320.16 thousand tonnes.",
-          "why": "The split shows the relative scale of cross-border and domestic airport cargo."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_air_cargo_growth": {
-      "labels": [
-        "2014-15",
-        "2024-25"
-      ],
-      "values": [
-        2.53,
-        3.72
-      ],
-      "source": "https://www.civilaviation.gov.in/our-performance",
-      "unit": "million tonnes",
-      "note": "Ministry of Civil Aviation, Our Performance page, Supporting Passenger and Cargo Movement: national air-cargo figure 2.53 Mt in 2014-15 and 3.72 Mt in 2024-25. This differs in basis from AAI's airport-handled FY 2023-24 table.",
-      "meta": {
-        "title": "National Air Cargo Growth",
-        "subtitle": "Ministry-reported total air cargo",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
-        "explain": {
-          "what": "Ministry-reported national air cargo volume at two endpoints.",
-          "read": "Reported volume rose from 2.53 million tonnes in 2014-15 to 3.72 million tonnes in 2024-25.",
-          "why": "The longer national series provides context beyond AAI's airport traffic table."
-        }
-      }
-    },
-    "log_modal_niti_share": {
-      "labels": [
-        "Road",
-        "Rail",
-        "Other modes (residual)"
-      ],
-      "values": [
-        71,
-        18,
-        11
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
-      "unit": "% of freight traffic",
-      "note": "MoPSW reply published 28 March 2025 quotes NITI Aayog's 2021 Fast Tracking Freight in India: road 71%, rail 18%. Other modes (11%) is the arithmetic residual to 100%, not an independently reported estimate.",
-      "meta": {
-        "title": "Freight Modal Split: NITI Aayog 2021",
-        "subtitle": "Reported road/rail shares; other modes are residual",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "% of freight traffic",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "NITI Aayog's reported road and rail shares, with an arithmetic residual for unlisted modes.",
-          "read": "Reported road and rail shares are 71% and 18%; the residual to 100% is 11%.",
-          "why": "A single labelled base avoids mixing road/rail estimates with later waterway figures."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_modal_inland_water": {
-      "labels": [
-        "Inland water transport",
-        "All other modes (residual)"
-      ],
-      "values": [
-        2,
-        98
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
-      "unit": "% of freight traffic",
-      "note": "MoPSW reply, 28 March 2025: current inland water transport freight share is approximately 2%. The 98% remainder is a calculated complement, not a separate modal estimate.",
-      "meta": {
-        "title": "Inland Waterway Freight Share",
-        "subtitle": "Approximate current share in the 2025 reply",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "% of freight traffic",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Reported approximate inland-waterway share plus calculated remainder.",
-          "read": "The Ministry reports inland water transport at approximately 2% of freight traffic.",
-          "why": "The official reply identifies IWT's share separately from the NITI 2021 road/rail basis."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_modal_lpi_rank": {
-      "labels": [
-        "2007",
-        "2010",
-        "2012",
-        "2014",
-        "2016",
-        "2018",
-        "2023"
-      ],
-      "values": [
-        39,
-        47,
-        46,
-        54,
-        35,
-        44,
-        38
-      ],
-      "source": "https://databank.worldbank.org/embed/LPI/id/154e8630",
-      "unit": "rank (1=highest performance)",
-      "note": "World Bank Logistics Performance Index DataBank, India overall rank series. LPI ranks are perception-based international benchmarking, not physical freight quantities.",
-      "meta": {
-        "title": "India Logistics Performance Index Rank",
-        "subtitle": "World Bank overall rank",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "rank (1=highest performance)",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "India's overall rank in each reported World Bank LPI edition.",
-          "read": "India ranked 38th in 2023, compared with 44th in 2018.",
-          "why": "The LPI captures logistics service and infrastructure perceptions across six dimensions."
-        }
-      }
-    },
-    "log_modal_cost_bases": {
-      "labels": [
-        "Share of GDP",
-        "Share of non-services output"
-      ],
-      "values": [
-        7.97,
-        9.09
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
-      "unit": "% (FY 2023-24)",
-      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): logistics cost was estimated at 7.97% of GDP and 9.09% of non-services output in FY 2023-24. Denominators differ and are labelled.",
-      "meta": {
-        "title": "Logistics Costs: Published Denominator Comparison",
-        "subtitle": "NCAER estimate, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "% (FY 2023-24)",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Same estimated logistics-cost numerator relative to GDP and non-services output.",
-          "read": "The estimate is 7.97% of GDP or 9.09% of non-services output; these are two denominator views, not years.",
-          "why": "Explicit denominator labels avoid perpetuating unverified 13-14% GDP estimates."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_modal_leads_reach": {
-      "labels": [
-        "Survey responses",
-        "Stakeholder consultations"
-      ],
-      "datasets": [
-        {
-          "label": "LEADS 2023",
-          "values": [
-            7321,
-            750
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
-      "unit": "count",
-      "note": "DPIIT LEADS 2023: 7,321 responses across 36 States/UTs and more than 750 stakeholder consultations. Chart uses 750 as a minimum count for 'more than 750'.",
-      "meta": {
-        "title": "LEADS 2023 Survey Reach",
-        "subtitle": "Responses and stakeholder consultations",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "count",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Counts of survey responses and stakeholder consultations reported in LEADS 2023.",
-          "read": "The report records 7,321 responses across 36 States/UTs and more than 750 consultations.",
-          "why": "Sample size gives context for the state-level logistics assessment."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_modal_leads_states": {
-      "labels": [
-        "LEADS 2023"
-      ],
-      "datasets": [
-        {
-          "label": "LEADS 2023 Coverage",
-          "values": [
-            36
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
-      "unit": "States / UTs",
-      "note": "DPIIT LEADS 2023: 7,321 survey responses were received across 36 States and Union Territories.",
-      "meta": {
-        "title": "LEADS 2023 Coverage",
-        "subtitle": "LEADS 2023",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "States / UTs",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Number of States and Union Territories covered.",
-          "read": "LEADS 2023 reports responses from all 36 States and Union Territories.",
-          "why": "Coverage contextualises the national state-level comparison."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_modal_iwt_growth": {
-      "labels": [
-        "2013-14",
-        "2023-24"
-      ],
-      "values": [
-        18.1,
-        133.03
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2082758",
-      "unit": "million tonnes",
-      "note": "MoPSW reply, PIB 10 December 2024: cargo moved on National Waterways rose from 18.10 Mt in 2013-14 to 133.03 Mt in 2023-24. Inland waterways are not seaport cargo.",
-      "meta": {
-        "title": "National Waterway Cargo Movement",
-        "subtitle": "Inland water freight, not sea-port cargo",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Cargo moved on India's National Waterways at the two reported endpoints.",
-          "read": "Cargo movement rose from 18.10 to 133.03 million tonnes.",
-          "why": "The inland-water series adds a distinct water mode to the logistics comparison."
-        }
-      }
-    },
-    "log_revenue_railway_mix": {
-      "labels": [
-        "Passenger earnings",
-        "Freight earnings"
-      ],
-      "values": [
-        70693.32,
-        165880.58
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "Rs crore",
-      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings for FY 2023-24; freight excludes demurrage and wharfage.",
-      "meta": {
-        "title": "Indian Railways Earnings Mix",
-        "subtitle": "Passenger and freight earnings, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Passenger-service and freight-service earnings of Indian Railways.",
-          "read": "Freight earnings were Rs 1,65,880.58 crore versus Rs 70,693.32 crore from passenger services.",
-          "why": "The split shows the financial weight of freight on rail operations."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_revenue_rail_earnings": {
-      "labels": [
-        "Passenger earnings",
-        "Freight earnings"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            63416.85,
-            160158.48
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            70693.32,
-            165880.58
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "Rs crore",
-      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings; freight excludes demurrage and wharfage.",
-      "meta": {
-        "title": "Railway Freight and Passenger Earnings",
-        "subtitle": "Earnings by service",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Indian Railways earnings from passenger and freight services.",
-          "read": "FY 2023-24 freight earnings were Rs 1,65,880.58 crore, versus passenger earnings of Rs 70,693.32 crore.",
-          "why": "The comparison shows the financial weight of freight on the railway system."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_rail_yield": {
-      "labels": [
-        "Passenger yield (paise/passenger-km)",
-        "Freight yield (paise/NTKM)"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            66.13,
-            166.91
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            66.4,
-            170.31
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "paise per traffic unit",
-      "note": "Railway Board Year Book 2023-24, Selected Financial Ratios: earnings/yield ratios based on apportioned earnings.",
-      "meta": {
-        "title": "Rail Passenger and Freight Yield",
-        "subtitle": "Revenue per traffic unit",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "paise per traffic unit",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Passenger earnings per passenger-km and freight earnings per net tonne-km.",
-          "read": "Freight yield was 170.31 paise per NTKM in 2023-24; passenger yield was 66.40 paise per passenger-km.",
-          "why": "Different traffic bases are explicitly named for comparison."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_fastag": {
-      "labels": [
-        "FY 2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "FASTag Toll Collections",
-          "values": [
-            55000
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "Rs crore (approx.)",
-      "note": "NHAI Annual Report 2023-24, citing IHMCL: FASTag collection was around Rs 55,000 crore in FY 2023-24.",
-      "meta": {
-        "title": "FASTag Toll Collections",
-        "subtitle": "FY 2023-24",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "Rs crore (approx.)",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Approximate toll fees collected through FASTag.",
-          "read": "Around Rs 55,000 crore was collected through FASTag in FY 2023-24.",
-          "why": "Toll-user-fee collection is not freight-operator revenue."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_nhai_tot": {
-      "labels": [
-        "FY 2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "NHAI Toll-Operate-Transfer Proceeds",
-          "values": [
-            15968
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
-      "unit": "Rs crore",
-      "note": "MoRTH Year End Review 2024: NHAI monetised four Toll-Operate-Transfer bundles, realising Rs 15,968 crore in FY 2023-24. These asset proceeds are not recurring toll collections.",
-      "meta": {
-        "title": "NHAI Toll-Operate-Transfer Proceeds",
-        "subtitle": "FY 2023-24",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Asset monetisation, FY 2023-24",
-          "read": "NHAI realised Rs 15,968 crore from four TOT bundles.",
-          "why": "Asset monetisation is shown separately from recurring toll receipts."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_rail_five_year": {
-      "labels": [
-        "2019-2024"
-      ],
-      "datasets": [
-        {
-          "label": "Railway Freight Earnings over Five Years",
-          "values": [
-            702372.29
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2113222",
-      "unit": "Rs crore",
-      "note": "Ministry of Railways Lok Sabha reply / PIB, March 2025: cumulative goods earnings reported for the five-year period 2019-2024.",
-      "meta": {
-        "title": "Railway Freight Earnings over Five Years",
-        "subtitle": "2019-2024",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Cumulative goods earnings",
-          "read": "The Ministry reported Rs 7,02,372.29 crore in goods earnings during 2019-2024.",
-          "why": "The multiyear total provides a separate scale reference from annual earnings."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_ncaer_cost": {
-      "labels": [
-        "FY 2023-24 estimate"
-      ],
-      "datasets": [
-        {
-          "label": "Current-price estimate",
-          "values": [
-            24.01
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
-      "unit": "Rs lakh crore",
-      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): total logistics cost estimated at Rs 24.01 lakh crore at current prices for FY 2023-24. This is cost, not revenue or market size.",
-      "meta": {
-        "title": "Estimated National Logistics Cost",
-        "subtitle": "Current-price estimate, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "Rs lakh crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "NCAER's estimated aggregate logistics cost at current prices.",
-          "read": "The report estimates Rs 24.01 lakh crore, equal to 7.97% of GDP in FY 2023-24.",
-          "why": "Distinguishes a documented cost estimate from unsupported market-size claims."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_rail_latest_loading": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        1509.1,
-        1588.06
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board Year Book 2023-24, Freight Operation Table I: latest two annual revenue-earning freight loading figures.",
-      "meta": {
-        "title": "Latest Railway Freight Loading",
-        "subtitle": "Year Book revenue-earning basis",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Revenue-earning freight tonnes originating in the last two Year Book years.",
-          "read": "Loading rose from 1,509.10 to 1,588.06 million tonnes.",
-          "why": "The short view makes the latest annual change easier to read."
-        }
-      }
-    },
-    "log_sea_commodity_compare": {
-      "labels": [
-        "POL",
-        "Iron ore",
-        "Fertilizers & raw materials",
-        "Coal",
-        "Containers",
-        "Other cargo"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            234.17,
-            46.51,
-            16.68,
-            188.24,
-            170.29,
-            128.42
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            245.99,
-            61.03,
-            17.68,
-            191.98,
-            181.57,
-            120.98
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port commodity totals, FY 2022-23 and FY 2023-24.",
-      "meta": {
-        "title": "Major-Port Commodity Traffic: Annual Comparison",
-        "subtitle": "12 major ports",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Major-port cargo by the published commodity groups for the two latest years.",
-          "read": "POL rose from 234.17 to 245.99 million tonnes; iron ore increased from 46.51 to 61.03 million tonnes.",
-          "why": "Year comparison shows which commodities account for changes in port throughput."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_air_aai_total_trend": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        3146.8,
-        3365.68
-      ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: total freight handled at all Indian airports, domestic plus international.",
-      "meta": {
-        "title": "Airport-Handled Air Cargo Growth",
-        "subtitle": "All Indian airports",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
-        "explain": {
-          "what": "Total freight handled at all Indian airports in AAI's reported years.",
-          "read": "Handled freight rose from 3,146.80 to 3,365.68 thousand tonnes.",
-          "why": "This airport-handled measure complements the national MoCA series."
-        }
-      }
-    },
-    "log_sea_container_wb": {
-      "labels": [
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
-      ],
-      "values": [
-        9235765.0,
-        9878067.0,
-        10017480.0,
-        10571320.0,
-        11652174.0,
-        12318610.0,
-        13724110.0,
-        15450523.0,
-        16996593.0,
-        17487621.0,
-        17597062.0,
-        19561769.0,
-        19717168.0,
-        22208000.0,
-        23898000.0
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.SHP.GOOD.TU?locations=IN",
-      "unit": "TEU",
-      "note": "World Bank indicator IS.SHP.GOOD.TU; annual observations may lag the latest reporting year.",
-      "meta": {
-        "title": "World Bank Container Port Traffic",
-        "subtitle": "Container port traffic",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "TEU",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Container port traffic measured in twenty-foot equivalent units.",
-          "read": "The series runs from 9,235,765.000 in 2010 to 23,898,000.000 in 2024.",
-          "why": "This country series complements the Ministry's major-port container figures."
-        }
-      }
-    },
-    "log_rail_wb_freight": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "values": [
-        249564.0,
-        270489.0,
-        277567.0,
-        284249.0,
-        281513.0,
-        305201.0,
-        312371.0,
-        333228.0,
-        353194.0,
-        381241.0,
-        407398.0,
-        439596.0,
-        480993.0,
-        521371.0,
-        551448.0,
-        600548.0,
-        625723.0,
-        667607.0,
-        649645.0,
-        665810.0,
-        681696.0,
-        654481.0,
-        620175.0,
-        692916.0,
-        738523.0,
-        707665.0,
-        719762.0
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "million tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; annual observations may lag the latest reporting year.",
-      "meta": {
-        "title": "Rail Freight Transport Work",
-        "subtitle": "Goods transported by railway",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million tonne-km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Goods moved by rail, measured in million metric tonnes times kilometres.",
-          "read": "The series runs from 249,564.000 in 1995 to 719,762.000 in 2021.",
-          "why": "This independent World Bank series provides a cross-mode data point."
-        }
-      }
     }
   },
   "indian_matrix_articles": [

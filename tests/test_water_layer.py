@@ -1,4 +1,4 @@
-﻿"""Offline contract tests for the Water Transport dashboard layer."""
+"""Offline contract tests for the Water Transport dashboard layer."""
 from urllib.parse import unquote
 import pytest
 from scripts import water_transport_layer as water
@@ -126,10 +126,20 @@ def test_partial_payload_without_common_year_does_not_invent_rank():
     assert "water_wb_container_rank" not in result
 
 
-def test_report_charts_cite_annual_report():
-    for key,item in build().items():
-        if key.startswith("water_wb_"): assert "World Bank" in item["note"]
-        else: assert "Annual Report 2023-24" in item["note"]
+def test_series_notes_match_their_official_source_documents():
+    for item in build().values():
+        if item["source"] == water.REPORT:
+            assert "Annual Report 2023-24" in item["note"]
+        elif item["source"] == water.IWT_STATS:
+            assert "Statistics of Inland Water Transport 2022-23" in item["note"]
+        elif item["source"] == water.SANSAD_PASSENGERS:
+            assert "Lok Sabha" in item["note"]
+        elif item["source"] == water.PIB_CRUISE:
+            assert "PIB release" in item["note"]
+        elif item["source"].startswith("https://api.worldbank.org/"):
+            assert "World Bank" in item["note"]
+        else:
+            pytest.fail(f"Unrecognized source on series: {item['source']}")
 
 
 def test_turnaround_and_berth_values_match_report():
@@ -151,3 +161,83 @@ def test_world_bank_sources_point_to_requested_indicator_api():
                      ("water_wb_connectivity_trend",water.WB_CODES["connectivity"])):
         assert f"/indicator/{code}?" in result[key]["source"]
         assert "IND;CHN;SGP;USA;ARE;KOR;NLD;DEU;JPN;MYS;VNM;BRA;AUS" in unquote(result[key]["source"])
+
+
+NEW_PASSENGER_SERIES = (
+    "water_national_waterway_passenger_history",
+    "water_inland_passenger_state_trends",
+    "water_assam_inland_passengers",
+    "water_karnataka_inland_passengers",
+    "water_kerala_inland_passengers",
+    "water_maharashtra_inland_passengers",
+    "water_west_bengal_inland_passengers",
+    "water_inland_passenger_state_rank_2023",
+    "water_ocean_cruise_passenger_history",
+    "water_ocean_cruise_call_history",
+)
+
+
+def test_at_least_eight_new_verified_passenger_series_are_present():
+    result = build()
+    assert len(NEW_PASSENGER_SERIES) >= 8
+    assert set(NEW_PASSENGER_SERIES) <= result.keys()
+    assert all(result[key]["meta"]["subgroup"] == water.PASSENGER for key in NEW_PASSENGER_SERIES)
+
+
+def test_parliamentary_national_waterway_passenger_totals_and_basis():
+    item = build()["water_national_waterway_passenger_history"]
+    assert item["labels"] == ["2023-24", "2024-25"]
+    assert item["values"] == [1.61, 7.64]
+    assert item["unit"] == "crore passengers"
+    assert item["source"] == water.SANSAD_PASSENGERS
+    assert "12 December 2025" in item["note"]
+    assert "National Waterways" in item["note"]
+
+
+def test_state_passenger_histories_match_mopsw_table_3_2():
+    result = build()
+    chart = result["water_inland_passenger_state_trends"]
+    assert chart["labels"] == ["2019", "2020", "2021", "2022", "2023"]
+    assert chart["source"] == water.IWT_STATS
+    actual = {dataset["label"]: dataset["values"] for dataset in chart["datasets"]}
+    assert actual == water.IWT_STATE_PASSENGERS
+    for state, slug in (("Assam", "assam"), ("Karnataka", "karnataka"), ("Kerala", "kerala"),
+                        ("Maharashtra", "maharashtra"), ("West Bengal", "west_bengal")):
+        item = result[f"water_{slug}_inland_passengers"]
+        assert item["labels"] == chart["labels"]
+        assert item["values"] == water.IWT_STATE_PASSENGERS[state]
+        assert item["unit"] == "thousand passengers"
+        assert item["source"] == water.IWT_STATS
+        assert "Table 3.2" in item["note"] and "printed p.62" in item["note"]
+
+
+def test_state_rank_omits_rows_marked_unavailable_or_repeated():
+    item = build()["water_inland_passenger_state_rank_2023"]
+    assert item["source"] == water.IWT_STATS
+    assert "Bihar" not in item["labels"] and "Odisha" not in item["labels"]
+    assert item["labels"][0] == "West Bengal"
+    assert item["values"][0] == pytest.approx(29762.61)
+    assert item["labels"][-1] == "Uttar Pradesh"
+    assert item["values"][-1] == pytest.approx(23.86)
+    assert "previous-year-repeated" in item["note"]
+
+
+def test_cruise_history_uses_exact_pib_years_and_separate_units():
+    result = build()
+    passengers = result["water_ocean_cruise_passenger_history"]
+    calls = result["water_ocean_cruise_call_history"]
+    assert passengers["labels"] == calls["labels"] == ["2013-14", "2022-23"]
+    assert passengers["values"] == [0.84, 4.72]
+    assert passengers["unit"] == "lakh passengers"
+    assert calls["values"] == [102, 227]
+    assert calls["unit"] == "calls"
+    assert passengers["source"] == calls["source"] == water.PIB_CRUISE
+
+
+def test_mopsw_cruise_snapshot_does_not_infer_an_unreported_year():
+    result = build()
+    for key, value in (("water_ocean_cruise_passengers", 471000), ("water_ocean_cruise_calls", 227)):
+        item = result[key]
+        assert item["datasets"][0]["values"] == [value]
+        assert item["labels"] == ["Annual-report snapshot"]
+        assert "does not state the observation period" in item["note"] or "observation period not stated" in item["note"]
