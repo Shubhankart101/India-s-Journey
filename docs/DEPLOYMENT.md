@@ -34,11 +34,14 @@ To deploy without the blueprint: **New → Web Service**, choose the repo, runti
 
 ### Fly.io
 
-1. Install `flyctl` (`iwr https://fly.io/install.ps1 -useb | iex` on Windows, or `curl -L https://fly.io/install.sh | sh`) and run `fly auth login`.
-2. From the repository root, create the app from [`fly.toml`](../fly.toml): `fly launch --no-deploy --copy-config --name <app-name>`. If the name differs from `indias-journey`, keep the one `fly launch` writes into `fly.toml`.
-3. Set the secret: `fly secrets set DJANGO_SECRET_KEY=$(python -c "import secrets; print(secrets.token_urlsafe(50))")`.
-4. Deploy: `fly deploy`. The app runs in Mumbai (`bom`) at `https://<app-name>.fly.dev`.
-5. For automatic deploys, run `fly tokens create deploy` and save the token as the repository secret `FLY_API_TOKEN`. [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) then deploys on the same paths as Render, and skips itself while the secret is missing.
+The Django + React app is deployed at <https://india-s-journey.fly.dev> on the existing `india-s-journey` app in Singapore (`sin`). Its machine is `shared-cpu-1x` with 512 MB RAM; `fly.toml` is configured to match.
+
+1. Install `flyctl` (`iwr https://fly.io/install.ps1 -useb | iex` on Windows, or `curl -L https://fly.io/install.sh | sh`) and authenticate with `fly auth login`.
+2. From the repository root, verify access to the existing app with `fly status --app india-s-journey`. Do not run `fly launch`; that would create a different app.
+3. Ensure the app has a `DJANGO_SECRET_KEY` secret. If needed, generate a value with `python -c "import secrets; print(secrets.token_urlsafe(50))"`, then set it with `fly secrets set DJANGO_SECRET_KEY=<generated-value> --app india-s-journey`. Never commit or publish the value.
+4. Deploy with `fly deploy --app india-s-journey`. The configuration keeps the machine in `sin` and at 512 MB.
+5. The `/api/health/` check sends `Host = "india-s-journey.fly.dev"`. Fly runs service checks over the private network using the machine IP as the host; setting the public hostname lets Django validate the request without allowing arbitrary hosts.
+6. For automatic deploys, run `fly tokens create deploy` and save the token as the repository secret `FLY_API_TOKEN`. [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) then deploys on the same paths as Render, and skips itself while the secret is missing.
 
 ### Netlify
 
