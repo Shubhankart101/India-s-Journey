@@ -1,9 +1,15 @@
 {
-  "generated_at_utc": "2026-11-01T13:30:00+00:00",
+  "generated_at_utc": "2026-11-04T13:48:42+00:00",
   "feed_url": "https://indianmatrix.substack.com/feed",
   "feed_title": "The Indian Matrix\u2019s Substack",
   "article_count": 20,
   "articles": [
+    {
+      "title": "How IDBI Embalmed Nehruvian Socialism, and Why India Had to Move On",
+      "link": "https://indianmatrix.substack.com/p/how-idbi-embalmed-nehruvian-socialism",
+      "published": "Mon, 02 Nov 2026 12:05:30 GMT",
+      "date": "2026-11-02"
+    },
     {
       "title": "From \u2018Gunda Raj\u2019 to Industrial Engine: How Uttar Pradesh\u2019s Law & Order Turnaround Paved the Way for \u20b912 Lakh Crore+ in Investments",
       "link": "https://indianmatrix.substack.com/p/from-gunda-raj-to-industrial-engine",
@@ -117,12 +123,6 @@
       "link": "https://indianmatrix.substack.com/p/the-aggressor-who-never-left",
       "published": "Sat, 11 Jul 2026 13:08:43 GMT",
       "date": "2026-07-11"
-    },
-    {
-      "title": "India's Economic Shield in the West Asia Crisis",
-      "link": "https://indianmatrix.substack.com/p/indias-economic-shield-in-the-west",
-      "published": "Tue, 07 Jul 2026 12:45:07 GMT",
-      "date": "2026-07-07"
     }
   ],
   "cadence": {
@@ -140,20 +140,22 @@
       "2026-W41",
       "2026-W42",
       "2026-W43",
-      "2026-W44"
+      "2026-W44",
+      "2026-W45"
     ],
     "values": [
-      2,
-      1,
-      2,
       1,
       1,
       2,
       1,
+      1,
+      2,
+      1,
       2,
       1,
       2,
       2,
+      1,
       1,
       1,
       1

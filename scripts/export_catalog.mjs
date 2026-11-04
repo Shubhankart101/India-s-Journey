@@ -102,6 +102,7 @@ for (const [key, item] of Object.entries(series)) {
 }
 
 const indianMatrix = readJson('indian-matrix-latest.json', { cadence: {}, articles: [] });
+const polityPolicy = readJson('substack-latest.json', { articles: [] });
 const pewReports = readJson('pew-india-reports.json', { cadence: {}, reports: [] });
 const cadence = (key, fallback, source) => {
   const current = series[key]?.values?.length ? series[key] : fallback || {};
@@ -202,9 +203,9 @@ const article = (item, publisher, kind) => ({
   kind,
 });
 const articles = [
-  ...(payload.indian_matrix_articles || indianMatrix.articles || []).map(item => article(item, 'Indian Matrix', 'indian_matrix')),
-  ...(payload.polity_policy_articles || readJson('substack-latest.json', {}).articles || []).map(item => article(item, 'Polity and Policy', 'polity_policy')),
-  ...(payload.pew_reports || pewReports.reports || []).map(item => article(item, 'Pew Research Center', 'pew')),
+  ...(indianMatrix.articles?.length ? indianMatrix.articles : payload.indian_matrix_articles || []).map(item => article(item, 'Indian Matrix', 'indian_matrix')),
+  ...(polityPolicy.articles?.length ? polityPolicy.articles : payload.polity_policy_articles || []).map(item => article(item, 'Polity and Policy', 'polity_policy')),
+  ...(pewReports.reports?.length ? pewReports.reports : payload.pew_reports || []).map(item => article(item, 'Pew Research Center', 'pew')),
 ].filter(item => item.url.startsWith('http'));
 
 const catalog = {

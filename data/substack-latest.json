@@ -1,10 +1,16 @@
 {
-  "generated_at_utc": "2026-11-01T13:30:00+00:00",
+  "generated_at_utc": "2026-11-04T13:49:04+00:00",
   "feed_url": "https://politypolicy.substack.com/feed",
   "feed_title": "Polity and Policy by Tushar Gupta",
-  "feed_last_build_date": "Sun, 01 Nov 2026 13:30:01 GMT",
+  "feed_last_build_date": "Wed, 04 Nov 2026 13:49:04 GMT",
   "article_count": 20,
   "articles": [
+    {
+      "title": "What\u2019s Next for Modi After the Midterms?",
+      "link": "https://politypolicy.substack.com/p/whats-next-for-modi-after-the-midterms",
+      "published": "Wed, 04 Nov 2026 11:57:46 GMT",
+      "description": "The people have spoken. The mandate is against the incumbent. Endgame Modi?"
+    },
     {
       "title": "Delhi Police And Virtue Of A Disproportionate Response",
       "link": "https://politypolicy.substack.com/p/delhi-police-and-virtue-of-a-disproportionate",
@@ -118,12 +124,6 @@
       "link": "https://politypolicy.substack.com/p/why-state-governments-cash-transfers",
       "published": "Wed, 24 Jun 2026 13:51:58 GMT",
       "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets"
-    },
-    {
-      "title": "Cabinet Reshuffle On The Cards",
-      "link": "https://politypolicy.substack.com/p/cabinet-reshuffle-on-the-cards",
-      "published": "Tue, 23 Jun 2026 18:55:35 GMT",
-      "description": "Not fatigue of faces, but fatigue of ideas is what Modi must care for"
     }
   ]
 }
