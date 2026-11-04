@@ -34,4 +34,4 @@ Major releases of India's Journey, oldest first. Each note is generated from the
 | 28 | Judiciary, Innovation and Sports groups | 2026-11-01 | `b9b871c` | [28-b9b871c-judiciary-innovation-and-sports-groups.md](./28-b9b871c-judiciary-innovation-and-sports-groups.md) |
 | 29 | Docker and Render/Fly.io CI | 2026-11-01 | `b9a560e` | [29-b9a560e-docker-and-render-fly-io-ci.md](./29-b9a560e-docker-and-render-fly-io-ci.md) |
 | 30 | Air Travel and Indian Railways groups | 2026-11-04 | `2285139` | [30-2285139-air-travel-and-indian-railways-groups.md](./30-2285139-air-travel-and-indian-railways-groups.md) |
-| 31 | Water, Logistics, expanded air and rail data, interactive charts | 2026-11-04 | `500ac00` | [31-500ac00-water-logistics-and-interactive-charts.md](./31-500ac00-water-logistics-and-interactive-charts.md) |
+| 31 | Water, Logistics, expanded air and rail data, interactive charts | 2026-11-04 | `aeb4153` | [31-aeb4153-water-logistics-and-interactive-charts.md](./31-aeb4153-water-logistics-and-interactive-charts.md) |

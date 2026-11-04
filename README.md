@@ -203,7 +203,7 @@ Each major release has its own note in [docs/releases/](docs/releases/README.md)
 28. [Judiciary, Innovation and Sports groups](docs/releases/28-b9b871c-judiciary-innovation-and-sports-groups.md) (`b9b871c`, 2026-11-01)
 29. [Docker and Render/Fly.io CI](docs/releases/29-b9a560e-docker-and-render-fly-io-ci.md) (`b9a560e`, 2026-11-01)
 30. [Air Travel and Indian Railways groups](docs/releases/30-2285139-air-travel-and-indian-railways-groups.md) (`2285139`, 2026-11-04)
-31. [Water, Logistics, expanded air and rail data, interactive charts](docs/releases/31-500ac00-water-logistics-and-interactive-charts.md) (`500ac00`, 2026-11-04)
+31. [Water, Logistics, expanded air and rail data, interactive charts](docs/releases/31-aeb4153-water-logistics-and-interactive-charts.md) (`aeb4153`, 2026-11-04)
 
 ## 🔗 References
 
