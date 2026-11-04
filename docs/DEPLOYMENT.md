@@ -34,6 +34,8 @@ To deploy without the blueprint: **New → Web Service**, choose the repo, runti
 
 ### Fly.io
 
+<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/Open%20the%20web%20app%20on%20Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Open the web app on Fly.io"></a>
+
 The Django + React app is deployed at <https://india-s-journey.fly.dev> on the existing `india-s-journey` app in Singapore (`sin`). Its machine is `shared-cpu-1x` with 512 MB RAM; `fly.toml` is configured to match.
 
 1. Install `flyctl` (`iwr https://fly.io/install.ps1 -useb | iex` on Windows, or `curl -L https://fly.io/install.sh | sh`) and authenticate with `fly auth login`.

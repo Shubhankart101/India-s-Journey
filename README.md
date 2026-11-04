@@ -2,6 +2,7 @@
 
 <p align="center">
 	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live dashboard on Netlify"></a>
+	<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20Web%20app-Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Django and React web app on Fly.io"></a>
 	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages backup"></a>
 	<a href="https://github.com/Shubhankart101/India-s-Journey/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
 	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
@@ -57,7 +58,9 @@ An interactive mixed-frequency dashboard built from original public-source data.
 
 <a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Open interactive dashboard"></a>
 
-The static dashboard is live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API explorer](https://indiasjourney.netlify.app/api.html)). GitHub Pages keeps an identical backup copy at <https://shubhankart101.github.io/India-s-Journey/> in case Netlify is unavailable.
+<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/Open%20the%20web%20app%20on%20Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Open the web app on Fly.io"></a>
+
+The static dashboard is live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API explorer](https://indiasjourney.netlify.app/api.html)). GitHub Pages keeps an identical backup copy at <https://shubhankart101.github.io/India-s-Journey/> in case Netlify is unavailable. The full Django + React web app, with the API, is live on Fly.io: **<https://india-s-journey.fly.dev>** (served from Singapore; see [Deployment](docs/DEPLOYMENT.md#flyio)).
 
 The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, subgroup filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
 

@@ -6,7 +6,7 @@ India's Journey has two deployments:
 | --- | --- | --- |
 | **Static dashboard** (`docs/`) | **Netlify: <https://indiasjourney.netlify.app>** | The public site, and the fallback when the web app is down |
 | Backup mirror of the static dashboard | GitHub Pages: <https://shubhankart101.github.io/India-s-Journey/> | An identical copy of the Netlify site, used if Netlify is unavailable |
-| Django + React web app | Runs locally (or on any Docker host) | Explore, Compare, Sources, API and Swagger |
+| Django + React web app | **Fly.io: <https://india-s-journey.fly.dev>** (also runs locally or on any Docker host) | Explore, Compare, Sources, API and Swagger |
 
 Netlify publishes `docs/` as-is ([`netlify.toml`](../netlify.toml)). [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` folder to GitHub Pages. Both copies are built from the same collectors and `docs/data/*.json` files, so they always show the same data as the app.
 
