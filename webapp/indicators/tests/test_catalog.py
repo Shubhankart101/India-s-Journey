@@ -67,6 +67,20 @@ class CatalogImportTests(TestCase):
         self.assertEqual(set(Indicator.objects.values_list('key', flat=True)), {'gdp_growth', 'exports_usd'})
         self.assertFalse(Category.objects.filter(name='Elections').exists())
 
+    def test_reimport_prunes_articles_dropped_from_the_feed(self):
+        load_sample()
+        catalog = sample_catalog()
+        catalog['articles'] = [item for item in catalog['articles'] if item['title'] == 'Newer article']
+        import_catalog(catalog)
+        self.assertEqual(list(Article.objects.values_list('title', flat=True)), ['Newer article'])
+
+    def test_empty_article_feed_keeps_existing_articles(self):
+        load_sample()
+        catalog = sample_catalog()
+        catalog['articles'] = []
+        import_catalog(catalog)
+        self.assertEqual(Article.objects.count(), 2, 'a failed feed fetch must not blank "Latest analysis"')
+
     def test_duplicate_keys_fail_atomically(self):
         catalog = sample_catalog()
         catalog['indicators'].append(dict(catalog['indicators'][0]))
@@ -113,6 +127,24 @@ class ManagementCommandTests(TestCase):
             call_command('import_catalog', path=str(path), stdout=out)
         self.assertIn('Imported 4 indicators (3 live)', out.getvalue())
         self.assertEqual(DataRefresh.objects.filter(status='success').count(), 1)
+
+    def test_import_catalog_if_changed_skips_an_already_loaded_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'catalog.json'
+            path.write_text(json.dumps(sample_catalog()), encoding='utf-8')
+            call_command('import_catalog', path=str(path), stdout=StringIO())
+            out = StringIO()
+            call_command('import_catalog', path=str(path), if_changed=True, stdout=out)
+            self.assertIn('skipping import', out.getvalue())
+            self.assertEqual(DataRefresh.objects.count(), 1)
+            catalog = sample_catalog()
+            catalog['articles'] = catalog['articles'][:1]
+            path.write_text(json.dumps(catalog), encoding='utf-8')
+            out = StringIO()
+            call_command('import_catalog', path=str(path), if_changed=True, stdout=out)
+        self.assertIn('Imported 4 indicators', out.getvalue())
+        self.assertEqual(DataRefresh.objects.filter(status='success').count(), 2)
+        self.assertEqual(len(DataRefresh.objects.first().fingerprint), 64)
 
     def test_import_catalog_command_missing_file(self):
         with self.assertRaises(CommandError):

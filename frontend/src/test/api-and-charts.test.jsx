@@ -66,6 +66,34 @@ describe('api client', () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+  it('retries transient read failures (a waking server) before giving up', async () => {
+    let attempts = 0;
+    const seen = [];
+    const listener = () => seen.push('down');
+    window.addEventListener('api:unreachable', listener);
+    mockApi({ 'GET /api/articles/': () => (++attempts < 3 ? json({ detail: 'Bad gateway' }, 502) : { count: 1, results: [{ title: 'Fresh' }] }) });
+    await expect(api.latestArticles()).resolves.toMatchObject({ results: [{ title: 'Fresh' }] });
+    expect(attempts).toBe(3);
+    expect(seen).toEqual([]);
+    window.removeEventListener('api:unreachable', listener);
+  });
+
+  it('does not retry writes or client errors', async () => {
+    document.cookie = 'csrftoken=t';
+    const { fetchMock } = mockApi({ 'POST /api/saved/': json({ detail: 'Down' }, 503), 'GET /api/articles/': json({ detail: 'Nope' }, 404) });
+    await expect(request('/api/saved/', { method: 'POST', body: {} })).rejects.toMatchObject({ status: 503 });
+    await expect(request('/api/articles/')).rejects.toMatchObject({ status: 404 });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('caches the home page article feed', async () => {
+    const { fetchMock } = mockApi({ 'GET /api/articles/': { count: 0, results: [] } });
+    await api.latestArticles();
+    await api.latestArticles();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(String(fetchMock.mock.calls[0][0])).toBe('/api/articles/?page_size=6');
+  });
+
   it('builds download links', () => {
     expect(api.downloadUrl('gdp_growth', 'csv')).toBe('/api/indicators/gdp_growth/download/?format=csv');
   });

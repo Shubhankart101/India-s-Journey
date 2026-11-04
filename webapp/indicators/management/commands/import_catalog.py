@@ -1,10 +1,12 @@
+import hashlib
+import json
 from pathlib import Path
 
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.utils import timezone
 
-from indicators.catalog import import_catalog, load_catalog
+from indicators.catalog import import_catalog
 from indicators.models import DataRefresh
 
 
@@ -14,13 +16,23 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--path', default=str(settings.CATALOG_PATH), help='Catalogue JSON file to import.')
         parser.add_argument('--keep-stale', action='store_true', help='Keep indicators that are missing from the catalogue.')
+        parser.add_argument(
+            '--if-changed', action='store_true',
+            help='Skip the import when the last successful refresh already loaded this exact file (fast container boots).')
 
     def handle(self, *args, **options):
         path = Path(options['path'])
         if not path.exists():
             raise CommandError(f'Catalogue not found: {path}. Run `node scripts/export_catalog.mjs` first.')
+        raw = path.read_bytes()
+        fingerprint = hashlib.sha256(raw).hexdigest()
+        if options['if_changed']:
+            last = DataRefresh.objects.filter(status='success').first()
+            if last and last.fingerprint == fingerprint:
+                self.stdout.write(f'Catalogue unchanged since {last.started_at:%Y-%m-%d %H:%M}; skipping import.')
+                return
         try:
-            refresh = import_catalog(load_catalog(path), prune=not options['keep_stale'])
+            refresh = import_catalog(json.loads(raw.decode('utf-8')), prune=not options['keep_stale'], fingerprint=fingerprint)
         except Exception as exc:
             DataRefresh.objects.create(status='failed', finished_at=timezone.now(), message=f'{type(exc).__name__}: {exc}')
             raise CommandError(f'Catalogue import failed: {exc}') from exc

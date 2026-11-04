@@ -5,7 +5,7 @@ import threading
 
 from django.conf import settings
 from django.contrib.auth import logout
-from django.db.models import Count, Prefetch, Q
+from django.db.models import Count, F, Prefetch, Q
 from django.http import FileResponse, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.decorators import method_decorator
@@ -226,7 +226,8 @@ class ArticleListView(generics.ListAPIView):
         query = self.request.query_params.get('q', '').strip()
         if query:
             queryset = queryset.filter(title__icontains=query)
-        return queryset.order_by('-is_featured', '-published_at', 'title')
+        # Undated items sort last on every backend and `url` (unique) breaks ties so pages never reshuffle.
+        return queryset.order_by('-is_featured', F('published_at').desc(nulls_last=True), 'title', 'url')
 
 
 class StatsView(APIView):

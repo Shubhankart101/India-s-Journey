@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api.js';
 import { formatDate } from '../format.js';
 import { useAsync, useDocumentTitle } from '../hooks.js';
-import { ErrorState, Loading } from '../components/States.jsx';
+import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import MiniIndices from '../components/MiniIndices.jsx';
 import { CountUp, Marquee, Typewriter } from '../components/Motion.jsx';
@@ -26,7 +26,7 @@ export default function Home() {
   useDocumentTitle('');
   const stats = useAsync(signal => api.stats(signal), []);
   const categories = useAsync(signal => api.categories(signal), []);
-  const articles = useAsync(signal => api.articles({ page_size: 6 }, signal), []);
+  const articles = useAsync(signal => api.latestArticles(signal), []);
   const s = stats.data;
   const slides = (categories.data || []).filter(category => category.art);
   const [slide, setSlide] = useState(0);
@@ -132,9 +132,10 @@ export default function Home() {
           <h2>Latest analysis</h2>
           <Link to="/about#articles">All articles →</Link>
         </div>
-        {articles.loading && <Loading label="Loading articles…" />}
+        {articles.loading && !articles.data && <Loading label="Loading articles…" />}
         {articles.error && <ErrorState error={articles.error} onRetry={articles.reload} />}
-        <ul className="article-list">
+        {articles.data && !articles.data.results?.length && <Empty>No articles yet — check back after the next data refresh.</Empty>}
+        <ul className="article-list" aria-busy={articles.loading}>
           {(articles.data?.results || []).map(article => (
             <li key={article.url}>
               <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>

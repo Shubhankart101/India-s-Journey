@@ -26,7 +26,20 @@ export const toQuery = params => {
   return text ? `?${text}` : '';
 };
 
-export async function request(path, { method = 'GET', body, signal } = {}) {
+const TRANSIENT = new Set([0, 502, 503, 504]);
+// A stopped Fly.io machine answers the first requests with gateway errors while it wakes; retry reads before failing.
+export const RETRY_DELAYS_MS = import.meta.env?.MODE === 'test' ? [0, 0] : [700, 2000];
+
+const wait = (ms, signal) => new Promise((resolve, reject) => {
+  if (signal?.aborted) return reject(new DOMException('Aborted', 'AbortError'));
+  const timer = setTimeout(resolve, ms);
+  signal?.addEventListener('abort', () => {
+    clearTimeout(timer);
+    reject(new DOMException('Aborted', 'AbortError'));
+  }, { once: true });
+});
+
+async function attempt(path, { method, body, signal }) {
   const headers = { Accept: 'application/json' };
   if (body !== undefined) headers['Content-Type'] = 'application/json';
   if (method !== 'GET') {
@@ -40,14 +53,28 @@ export async function request(path, { method = 'GET', body, signal } = {}) {
     });
   } catch (error) {
     if (error.name === 'AbortError') throw error;
-    window.dispatchEvent(new Event('api:unreachable'));
     throw new ApiError(0, null);
   }
   if (response.status === 204) return null;
-  if ([502, 503, 504].includes(response.status)) window.dispatchEvent(new Event('api:unreachable'));
   const data = await response.json().catch(() => null);
   if (!response.ok) throw new ApiError(response.status, data);
   return data;
+}
+
+export async function request(path, { method = 'GET', body, signal } = {}) {
+  const delays = method === 'GET' ? RETRY_DELAYS_MS : [];
+  for (let tries = 0; ; tries += 1) {
+    try {
+      return await attempt(path, { method, body, signal });
+    } catch (error) {
+      const transient = error instanceof ApiError && TRANSIENT.has(error.status);
+      if (!transient || tries >= delays.length) {
+        if (transient) window.dispatchEvent(new Event('api:unreachable'));
+        throw error;
+      }
+      await wait(delays[tries], signal);
+    }
+  }
 }
 
 const cache = new Map();
@@ -77,5 +104,6 @@ export const api = {
   indicator: (key, signal) => request(`/api/indicators/${encodeURIComponent(key)}/`, { signal }),
   compare: (keys, signal) => request(`/api/compare/${toQuery({ keys: keys.join(',') })}`, { signal }),
   articles: (params, signal) => request(`/api/articles/${toQuery(params)}`, { signal }),
+  latestArticles: signal => cached(`/api/articles/${toQuery({ page_size: 6 })}`, signal),
   downloadUrl: (key, format) => `/api/indicators/${encodeURIComponent(key)}/download/?format=${format}`,
 };

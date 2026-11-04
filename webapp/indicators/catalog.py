@@ -94,8 +94,9 @@ def load_catalog(path):
 
 
 @transaction.atomic
-def import_catalog(catalog, prune=True):
-    refresh = DataRefresh.objects.create(source_generated_at=str(catalog.get('generated_at_utc') or ''))
+def import_catalog(catalog, prune=True, fingerprint=''):
+    refresh = DataRefresh.objects.create(
+        source_generated_at=str(catalog.get('generated_at_utc') or ''), fingerprint=fingerprint[:64])
     categories = {}
     subgroups = {}
     for category_order, item in enumerate(catalog.get('categories') or []):
@@ -190,6 +191,7 @@ def import_catalog(catalog, prune=True):
         )
 
     article_count = 0
+    seen_urls = set()
     for item in catalog.get('articles') or []:
         url = (item.get('url') or '').strip()
         if not url.startswith(('http://', 'https://')):
@@ -205,12 +207,16 @@ def import_catalog(catalog, prune=True):
                 'kind': kind,
             },
         )
+        seen_urls.add(url[:700])
         article_count += 1
 
     if prune:
         Indicator.objects.exclude(key__in=seen_keys).delete()
         Subgroup.objects.filter(indicators__isnull=True).delete()
         Category.objects.filter(indicators__isnull=True).delete()
+        # A catalogue whose feeds all failed must not wipe the "Latest analysis" list.
+        if seen_urls:
+            Article.objects.exclude(url__in=seen_urls).delete()
 
     refresh.status = 'success'
     refresh.finished_at = dj_timezone.now()

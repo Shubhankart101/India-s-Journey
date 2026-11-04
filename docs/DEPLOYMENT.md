@@ -69,8 +69,8 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 ## The container
 
 - **Stage 1:** `node:22-slim` builds the React app with `npm ci` and `npm run build`.
-- **Stage 2:** `python:3.12-slim` installs the Django requirements and runs `collectstatic` (whitenoise, compressed and hashed).
-- **On start:** `migrate`, then `import_catalog`, then gunicorn with `$WEB_CONCURRENCY` workers (default 2; Render and Fly.io set 1) on `$PORT`.
+- **Stage 2:** `python:3.12-slim` installs the Django requirements, runs `collectstatic` (whitenoise, compressed and hashed), and bakes `data/catalog.json` into the image's SQLite database (`migrate` + `import_catalog`).
+- **On start:** `migrate`, then `import_catalog --if-changed` (skipped when the baked catalogue is already loaded, so a stopped Fly.io machine wakes in seconds instead of re-importing thousands of rows before gunicorn listens), then gunicorn with `$WEB_CONCURRENCY` workers (default 2; Render and Fly.io set 1) on `$PORT`.
 
 ## Environment variables
 

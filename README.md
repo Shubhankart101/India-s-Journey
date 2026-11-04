@@ -149,7 +149,7 @@ These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/we
 
 **Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile): [`render.yaml`](render.yaml) is a ready Render blueprint (free plan), [`fly.toml`](fly.toml) sets up Fly.io, and any other container host works too. See [Deployment](docs/DEPLOYMENT.md#hosting-the-web-app-optional). The container:
 1. builds the frontend;
-2. runs `migrate` and `import_catalog`;
+2. bakes the catalogue into SQLite at build time and, on start, runs `migrate` and `import_catalog --if-changed` (a no-op unless the data changed, so cold starts are fast);
 3. serves everything with gunicorn and whitenoise.
 
 Configuration:

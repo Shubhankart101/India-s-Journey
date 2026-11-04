@@ -124,6 +124,17 @@ class PublicApiTests(ApiTestCase):
         data = self.client.get('/api/compare/', {'keys': 'gdp_growth,gdp_growth'}).json()
         self.assertEqual(len(data['series']), 1)
 
+    def test_article_order_is_deterministic_with_undated_items_last(self):
+        from indicators.models import Article
+        Article.objects.create(title='Undated', url='https://example.com/undated')
+        same = Article.objects.get(title='Newer article').published_at
+        Article.objects.create(title='Newer article', url='https://example.com/newer-mirror', published_at=same)
+        titles = [[item['url'] for item in self.client.get('/api/articles/').json()['results']] for _ in range(3)]
+        self.assertEqual(titles[0], [
+            'https://example.com/newer', 'https://example.com/newer-mirror', 'https://example.com/older',
+            'https://example.com/undated'])
+        self.assertTrue(all(run == titles[0] for run in titles))
+
     def test_articles_are_newest_first_and_filterable(self):
         data = self.client.get('/api/articles/').json()
         self.assertEqual([item['title'] for item in data['results']], ['Newer article', 'Older article'])

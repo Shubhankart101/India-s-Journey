@@ -95,7 +95,7 @@ class Article(models.Model):
     is_featured = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-published_at', 'title']
+        ordering = [models.F('published_at').desc(nulls_last=True), 'title', 'url']
 
     def __str__(self):
         return self.title
@@ -122,6 +122,7 @@ class DataRefresh(models.Model):
     finished_at = models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='running')
     source_generated_at = models.CharField(max_length=60, blank=True)
+    fingerprint = models.CharField(max_length=64, blank=True, db_index=True)
     indicators_count = models.PositiveIntegerField(default=0)
     live_count = models.PositiveIntegerField(default=0)
     articles_count = models.PositiveIntegerField(default=0)
