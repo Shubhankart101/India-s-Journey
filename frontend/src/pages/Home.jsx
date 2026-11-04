@@ -43,6 +43,15 @@ export default function Home() {
     art: sub.art || category.art,
   })));
   const half = Math.ceil(subgroupLinks.length / 2);
+  const articleResults = articles.data?.results || [];
+  const articleGroups = [
+    { key: 'indian-matrix', title: 'Indian Matrix', kinds: ['indian_matrix'] },
+    { key: 'polity-policy', title: 'PolityPolicy', kinds: ['polity_policy'] },
+    { key: 'other', title: 'Other articles', kinds: [] },
+  ].map(group => ({
+    ...group,
+    items: articleResults.filter(article => group.kinds.length ? group.kinds.includes(article.kind) : !['indian_matrix', 'polity_policy'].includes(article.kind)),
+  }));
 
   return (
     <>
@@ -53,7 +62,7 @@ export default function Home() {
         onFocus={() => setPaused(true)}
         onBlur={() => setPaused(false)}
       >
-        <ArtBackdrop art={current?.art || 'parliament.svg'} className="hero-art-backdrop" />
+        <ArtBackdrop art={current?.art || 'parliament.svg'} />
         <div className="hero-orbs" aria-hidden="true"><span /><span /><span /></div>
         <p className="eyebrow">A living atlas · 1947 to today</p>
         <h1>India, in <span className="gradient-text">perspective.</span></h1>
@@ -135,14 +144,25 @@ export default function Home() {
         {articles.loading && !articles.data && <Loading label="Loading articles…" />}
         {articles.error && <ErrorState error={articles.error} onRetry={articles.reload} />}
         {articles.data && !articles.data.results?.length && <Empty>No articles yet — check back after the next data refresh.</Empty>}
-        <ul className="article-list" aria-busy={articles.loading}>
-          {(articles.data?.results || []).map(article => (
-            <li key={article.url}>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
-              <small className="muted">{article.publisher} · {formatDate(article.published_at || article.published)}</small>
-            </li>
-          ))}
-        </ul>
+        {articles.data && (
+          <div className="latest-analysis-grid" aria-busy={articles.loading}>
+            {articleGroups.map(group => (
+              <article className="latest-source-box" key={group.key}>
+                <h3>{group.title}</h3>
+                {group.items.length ? (
+                  <ul className="article-list" aria-label={`${group.title} articles`}>
+                    {group.items.map(article => (
+                      <li key={article.url}>
+                        <a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a>
+                        <small className="muted">{article.publisher} · {formatDate(article.published_at || article.published)}</small>
+                      </li>
+                    ))}
+                  </ul>
+                ) : <p className="muted small">No recent articles.</p>}
+              </article>
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

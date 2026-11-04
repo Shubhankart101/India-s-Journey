@@ -95,7 +95,6 @@ button, input, select { font: inherit; color: inherit; }
 
 /* Heroes with the illustrated art in the background */
 .hero, .page-hero { position: relative; isolation: isolate; padding: 72px 0 40px; text-align: center; }
-.hero > .hero-art-backdrop { position: absolute; inset: 0 calc(50% - 50vw); width: auto; }
 /* The fixed art is a whole-page backdrop: no stacking context here, or it paints over later sections. */
 .page-hero.with-art { isolation: auto; }
 .hero h1, .page-hero h1, .hero .lead, .page-hero .lead { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75); }
@@ -281,6 +280,15 @@ th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--li
 thead th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--surface); }
 .article-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
 .article-list li { display: flex; flex-direction: column; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.latest-analysis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+.latest-source-box { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: rgba(16, 18, 22, 0.96); }
+.latest-source-box h3 { margin: 0 0 8px; color: var(--ink); font-size: 0.96rem; }
+.latest-source-box:nth-child(1) h3 { color: var(--saffron); }
+.latest-source-box:nth-child(2) h3 { color: #7cc4ff; }
+.latest-source-box:nth-child(3) h3 { color: #82d89a; }
+.latest-source-box .article-list li { padding: 12px 0; }
+.latest-source-box .article-list li:first-child { padding-top: 4px; }
+.latest-source-box .article-list li:last-child { padding-bottom: 0; border-bottom: 0; }
 
 /* Interactive motion (Motion.jsx): progress bar, orbs, typewriter, marquee, reveal, back-to-top */
 .scroll-progress { position: fixed; z-index: 60; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--saffron), var(--accent) 50%, var(--green)); transform: scaleX(var(--progress, 0)); transform-origin: left; pointer-events: none; }

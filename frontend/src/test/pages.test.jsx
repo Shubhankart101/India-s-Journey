@@ -18,6 +18,21 @@ describe('Layout and Home', () => {
     expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
+  it('separates latest articles by Indian Matrix, PolityPolicy, and other sources', async () => {
+    const articlesBySource = page([
+      { title: 'Matrix article', url: 'https://example.com/matrix', publisher: 'Indian Matrix', kind: 'indian_matrix', published_at: '2026-11-02T00:00:00Z' },
+      { title: 'Policy article', url: 'https://example.com/policy', publisher: 'Polity and Policy', kind: 'polity_policy', published_at: '2026-11-03T00:00:00Z' },
+      { title: 'Pew article', url: 'https://example.com/pew', publisher: 'Pew Research Center', kind: 'pew', published_at: '2026-11-04T00:00:00Z' },
+    ]);
+    mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articlesBySource });
+    renderApp('/');
+
+    for (const [source, title] of [['Indian Matrix', 'Matrix article'], ['PolityPolicy', 'Policy article'], ['Other articles', 'Pew article']]) {
+      const heading = await screen.findByRole('heading', { name: source });
+      expect(heading.closest('.latest-source-box')).toContainElement(screen.getByRole('link', { name: title }));
+    }
+  });
+
   it('shows the intro shared with the static site without repeating the Sources acknowledgement', async () => {
     mockApi({
       '/api/stats/': stats,
