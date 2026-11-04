@@ -53,7 +53,7 @@
 .india-map-status { margin: auto; color: var(--muted); text-align: center; }
 :root[data-theme="light"] { --map-low: #e3ebf5; --map-high: #c2410c; --map-empty: rgba(0, 0, 0, 0.05); --map-stroke: #fff; }
 :root[data-theme="newspaper"] { --map-low: #ebe5d6; --map-high: #111; --map-empty: #e2dccb; --map-stroke: #f4f0e6; --switch-active: #7a1010; }
-:root[data-theme="pamphlet"] { --map-low: #fff6d5; --map-high: #d62828; --map-empty: #f1e3b0; --map-stroke: #1b1b1b; --switch-active: #d62828; }
+:root[data-theme="pamphlet"] { --map-low: #fff3d6; --map-high: #c2185b; --map-empty: #f3dfb0; --map-stroke: #2b1708; --switch-active: #c2185b; }
 
 :root[data-theme="light"] {
   --bg: #f5f5f7; --surface: #fff; --surface-2: #e8e8ed; --line: rgba(0, 0, 0, 0.12);
@@ -74,16 +74,20 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 :root[data-theme="pamphlet"] {
-  --bg: #fff1c1; --surface: #fffaf0; --surface-2: #ffe28a; --line: #1b1b1b;
-  --ink: #1b1b1b; --muted: #2f2f2f; --accent: #d62828; --saffron: #c2410c; --green: #2b7a0b; --danger: #b3001b; --radius: 6px;
-  --glass: #fffaf0; --bar-bg: #ffd23f; --fill: rgba(27, 27, 27, 0.07); --fill-hover: rgba(214, 40, 40, 0.14);
-  --on-accent: #fff; --shadow: 6px 6px 0 #1b1b1b; --shadow-lift: 9px 9px 0 #1b1b1b;
-  --overlay: linear-gradient(rgba(255, 241, 193, 0.3), rgba(255, 241, 193, 0.5));
-  --font-display: Impact, "Arial Black", "Franklin Gothic Heavy", Haettenschweiler, sans-serif;
+  --bg: #fff4dc; --surface: #fffaf0; --surface-2: #ffe0a3; --line: #2b1708;
+  --ink: #2b1708; --muted: #4a2f1a; --accent: #c2185b; --saffron: #c45100; --green: #138808; --danger: #b3001b; --radius: 8px;
+  --glass: #fffaf0; --bar-bg: #ffb300; --fill: rgba(43, 23, 8, 0.07); --fill-hover: rgba(194, 24, 91, 0.14);
+  --on-accent: #fff; --shadow: 6px 6px 0 #2b1708; --shadow-lift: 9px 9px 0 #2b1708;
+  --overlay: linear-gradient(rgba(255, 244, 220, 0.3), rgba(255, 244, 220, 0.5));
+  --font-display: "Rozha One", "Yatra One", Impact, "Arial Black", "Franklin Gothic Heavy", sans-serif;
   color-scheme: light;
-  font-family: "Trebuchet MS", Verdana, "Segoe UI", sans-serif;
+  font-family: "Trebuchet MS", "Nirmala UI", Verdana, "Segoe UI", sans-serif;
 }
-:root[data-theme="pamphlet"] body { background: var(--bg) radial-gradient(rgba(27, 27, 27, 0.09) 1px, transparent 1.6px) 0 0 / 12px 12px; }
+/* Bandhani-dot paper in rani pink and leaf green. */
+:root[data-theme="pamphlet"] body {
+  background: radial-gradient(circle, rgba(194, 24, 91, 0.16) 2px, transparent 2.6px) 0 0 / 26px 26px,
+    radial-gradient(circle, rgba(19, 136, 8, 0.13) 2px, transparent 2.6px) 13px 13px / 26px 26px, var(--bg);
+}
 
 /* Shared light-paper overrides */
 :root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"]) {
@@ -151,20 +155,30 @@
   & .group-tile .chip { color: #f4f0e6; border-color: #f4f0e6; }
   & .site-footer { border: 0; border-top: 4px double var(--ink); }
   & .site-footer .footer-btn { background: var(--ink); color: var(--bg); }
+  /* An Indian daily: Devanagari tagline under the nameplate and a tricolour rule below the double rule. */
+  & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 3px; background: linear-gradient(90deg, #ff9933 0 33.3%, #f4f0e6 0 66.6%, #138808 0); pointer-events: none; }
+  & .brand { position: relative; }
+  & .brand::after { content: "भारत की यात्रा · सार्वजनिक आँकड़े"; position: absolute; left: 0; top: 100%; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", "Kohinoor Devanagari", serif; font-size: 0.6rem; color: #7a1010; }
+  & .hero .eyebrow::before { content: "समाचार · "; font-family: "Nirmala UI", "Mangal", serif; font-style: normal; }
 }
 
-/* Pamphlet: bold printed flyer with heavy outlines, offset shadows and a halftone paper. */
+/* Pamphlet: an Indian printed handbill in marigold, rani pink and leaf green, with a toran garland, tricolour bands and rangoli dots. */
 :root[data-theme="pamphlet"] {
   & * { -webkit-backdrop-filter: none; backdrop-filter: none; }
-  & .art-layer img { opacity: 0.75; filter: sepia(0.6) saturate(1.3) contrast(1.1); mix-blend-mode: multiply; }
+  & .art-layer img { opacity: 0.75; filter: sepia(0.45) saturate(1.5) contrast(1.1); mix-blend-mode: multiply; }
   & h1, & h2, & h3 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.01em; }
   & .site-header { border-bottom: 3px solid var(--ink); }
-  & .brand { font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
+  & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; pointer-events: none;
+    background: radial-gradient(circle at 50% 0, #c2185b 0 6px, transparent 6.5px) 0 0 / 28px 14px repeat-x,
+      radial-gradient(circle at 50% 0, #ff6f00 0 6px, transparent 6.5px) 14px 0 / 28px 14px repeat-x; }
+  & .brand { position: relative; font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
+  & .brand::after { content: "भारत की यात्रा"; position: absolute; left: 0; top: 100%; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: none; color: #a3104d; }
+  & .brand-dot { color: #138808; }
   & .desktop-nav a { color: var(--ink); font-weight: 700; text-transform: uppercase; }
   & .desktop-nav a::after { background: var(--accent); height: 3px; }
-  & .eyebrow { display: inline-block; padding: 2px 10px; background: var(--ink); color: #ffd23f; transform: rotate(-1.5deg); }
-  & .gradient-text { display: inline-block; padding: 0 0.2em; background: #ffd23f; -webkit-background-clip: border-box; background-clip: border-box;
-    color: var(--accent); -webkit-text-fill-color: currentColor; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink); transform: rotate(-2deg); animation: none; }
+  & .eyebrow { display: inline-block; padding: 2px 12px; background: var(--accent); color: #fff4dc; border-radius: 999px; transform: rotate(-1.5deg); }
+  & .gradient-text { display: inline-block; padding: 0 0.2em; background: #ffb300; -webkit-background-clip: border-box; background-clip: border-box;
+    color: #a3104d; -webkit-text-fill-color: currentColor; border: 3px solid var(--ink); border-radius: 10px; box-shadow: 5px 5px 0 var(--green); transform: rotate(-2deg); animation: none; }
   & .hero .lead, & .page-hero .lead { color: var(--ink); font-weight: 600; }
   & .btn { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); text-transform: uppercase; font-weight: 800; }
   & .btn-ghost { background: var(--surface); }
@@ -172,7 +186,8 @@
   & .card, & .stat-row div, & .mini-index, & .group-tile, & .explore-tile, & .compare-tray, & .latest-source-box, & .reference-panel,
   & .explainer-tile, & .stat-grid div, & .thanks-card, & .site-footer { border: 2.5px solid var(--ink); box-shadow: var(--shadow); }
   & .card:hover, & .group-tile:hover, & .explore-tile:hover, & .stat-row div:hover, & .mini-index:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-lift); border-color: var(--ink); }
-  & .chip { background: #ffd23f; color: var(--ink); border: 2px solid var(--ink); font-weight: 700; }
+  & .card, & .site-footer { background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
+  & .chip { background: #ffb300; color: var(--ink); border: 2px solid var(--ink); font-weight: 700; }
   & .chip-button.active { background: var(--accent); color: #fff; border-color: var(--ink); }
   & .segmented { border: 2px solid var(--ink); }
   & .segmented button.active { background: var(--accent); color: #fff; }

@@ -906,7 +906,7 @@ async function main() {
       data.series[key] = item;
       extraChartPlacement[key] = { category: item.meta.category, subgroup: item.meta.subgroup };
       definitions.push([key, item.meta.title, item.meta.subtitle, item.meta.frequency, item.meta.color, item.meta.suffix, definitionByKey.get(item.meta.sourceKey)[6], item.note]);
-      if (!mapGroups.includes(item.meta.sourceGroup)) mapGroups.push(item.meta.sourceGroup);
+      if (!mapGroups.includes(item.meta.mapTheme)) mapGroups.push(item.meta.mapTheme);
     });
   }
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -3053,9 +3053,9 @@ async function main() {
     headings.forEach(heading => { heading.hidden = true; });
     subHeadings.forEach(subHeading => { subHeading.hidden = true; });
 
-    // Same paging as the web app's Explore: 24 cards at a time with a "Load more" button.
+    // Same paging as the web app's Explore: 24 cards at a time with a "Load more" button; maps lazy-draw, so India in Maps shows them all.
     const filterKey = [groupFilter.value, subgroupFilter.value, query, stateFilter, chartTypeFilter?.value, sortMode, savedToggle?.getAttribute('aria-pressed')].join('|');
-    if (filterKey !== lastFilterKey) { pageLimit = PAGE_SIZE; lastFilterKey = filterKey; }
+    if (filterKey !== lastFilterKey) { pageLimit = groupFilter.value === window.IndiaMaps?.GROUP ? Infinity : PAGE_SIZE; lastFilterKey = filterKey; }
     const matchedInOrder = (sortedCards || cards).filter(card => !card.hidden);
     matchedInOrder.forEach((card, index) => { if (index >= pageLimit && card !== expandedChart) card.hidden = true; });
     const remaining = Math.max(0, matchedInOrder.length - pageLimit);

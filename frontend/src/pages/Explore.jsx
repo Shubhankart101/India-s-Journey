@@ -8,6 +8,9 @@ import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import { AMBIENT_ART } from '../art.js';
 
 const PAGE_SIZE = 24;
+// Maps draw lazily, so the India in Maps group loads every card (100 per request, the API maximum).
+const MAP_CATEGORY = 'india-in-maps';
+const MAP_PAGE_SIZE = 100;
 const FILTER_KEYS = ['q', 'category', 'subgroup', 'live', 'chart', 'sort'];
 
 export default function Explore() {
@@ -41,23 +44,30 @@ export default function Explore() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [moreError, setMoreError] = useState(null);
   const filterKey = JSON.stringify(filters);
-  const first = useAsync(signal => api.indicators({ ...filters, page_size: PAGE_SIZE }, signal), [filterKey]);
+  const showAll = filters.category === MAP_CATEGORY;
+  const pageSize = showAll ? MAP_PAGE_SIZE : PAGE_SIZE;
+  const first = useAsync(signal => api.indicators({ ...filters, page_size: pageSize }, signal), [filterKey]);
   useEffect(() => {
-    if (first.data) setPages({ items: first.data.results, next: first.data.next, count: first.data.count, page: 1 });
+    if (first.data) setPages({ items: first.data.results, next: first.data.next, count: first.data.count, page: 1, key: filterKey });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [first.data]);
 
   const loadMore = async () => {
     setLoadingMore(true);
     setMoreError(null);
     try {
-      const data = await api.indicators({ ...filters, page_size: PAGE_SIZE, page: pages.page + 1 });
-      setPages(current => ({ items: [...current.items, ...data.results], next: data.next, count: data.count, page: current.page + 1 }));
+      const data = await api.indicators({ ...filters, page_size: pageSize, page: pages.page + 1 });
+      setPages(current => ({ ...current, items: [...current.items, ...data.results], next: data.next, count: data.count, page: current.page + 1 }));
     } catch (error) {
       setMoreError(error);
     } finally {
       setLoadingMore(false);
     }
   };
+  useEffect(() => {
+    if (showAll && pages.key === filterKey && pages.next && !loadingMore && !moreError) loadMore();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showAll, pages.key, pages.next, loadingMore, moreError]);
 
   const heroArt = useMemo(() => {
     if (subgroup?.art) return subgroup.art;

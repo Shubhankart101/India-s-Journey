@@ -18,9 +18,9 @@
     :root[data-theme="newspaper"] { color-scheme: light; --bg: #f4f0e6; --surface: #fbf8f1; --surface-2: #fbf8f1; --line: rgba(17, 17, 17, .35); --line-strong: #111;
       --ink: #111; --muted: #3b3b3b; --faint: #3b3b3b; --link: #7a1010; --accent: #111; --on-accent: #f4f0e6; --eyebrow: #7a1010; --radius: 0px;
       --font: Georgia, "Times New Roman", Times, serif; --font-display: "Playfair Display", "Bodoni MT", Didot, Georgia, serif; }
-    :root[data-theme="pamphlet"] { color-scheme: light; --bg: #fff1c1; --surface: #fffaf0; --surface-2: #fffaf0; --line: #1b1b1b; --line-strong: #1b1b1b;
-      --ink: #1b1b1b; --muted: #2f2f2f; --faint: #2f2f2f; --link: #b3001b; --accent: #d62828; --on-accent: #fff; --eyebrow: #c2410c; --radius: 6px;
-      --font: "Trebuchet MS", Verdana, "Segoe UI", sans-serif; --font-display: Impact, "Arial Black", "Franklin Gothic Heavy", sans-serif; }
+    :root[data-theme="pamphlet"] { color-scheme: light; --bg: #fff4dc; --surface: #fffaf0; --surface-2: #fffaf0; --line: #2b1708; --line-strong: #2b1708;
+      --ink: #2b1708; --muted: #4a2f1a; --faint: #4a2f1a; --link: #a3104d; --accent: #c2185b; --on-accent: #fff; --eyebrow: #c45100; --radius: 8px;
+      --font: "Trebuchet MS", "Nirmala UI", Verdana, "Segoe UI", sans-serif; --font-display: "Rozha One", "Yatra One", Impact, "Arial Black", sans-serif; }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink);
       font: 17px/1.5 var(--font); }
@@ -54,12 +54,16 @@
     .contact-link svg { width: 16px; height: 16px; fill: currentColor; }
     .contact-link:hover { background: #9b1b30; border-color: #9b1b30; color: #fff; }
     :root[data-theme="newspaper"] .theme-switch { --switch-active: #7a1010; }
-    :root[data-theme="pamphlet"] .theme-switch { --switch-active: #d62828; }
-    :root[data-theme="newspaper"] header { border-bottom: 4px double var(--ink); }
+    :root[data-theme="pamphlet"] .theme-switch { --switch-active: #c2185b; }
+    :root[data-theme="newspaper"] header { border-bottom: 4px double var(--ink); background: linear-gradient(90deg, #ff9933 0 33.3%, #f4f0e6 0 66.6%, #138808 0) bottom / 100% 3px no-repeat; }
     :root[data-theme="newspaper"] header > a { font-family: "Old English Text MT", "UnifrakturMaguntia", Georgia, serif; font-size: 1.4rem; font-weight: 400; }
+    :root:is([data-theme="newspaper"], [data-theme="pamphlet"]) header > a::after { content: "भारत की यात्रा"; display: block; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: .7rem; font-weight: 700; color: var(--link); }
     :root[data-theme="newspaper"] :is(.btn, main button, input, select, ul.messages li) { border-radius: 0; }
-    :root[data-theme="pamphlet"] body { background: var(--bg) radial-gradient(rgba(27, 27, 27, .09) 1px, transparent 1.6px) 0 0 / 12px 12px; }
-    :root[data-theme="pamphlet"] header { background: #ffd23f; border-bottom: 3px solid var(--ink); }
+    :root[data-theme="pamphlet"] body { background: radial-gradient(circle, rgba(194, 24, 91, .16) 2px, transparent 2.6px) 0 0 / 26px 26px, radial-gradient(circle, rgba(19, 136, 8, .13) 2px, transparent 2.6px) 13px 13px / 26px 26px, var(--bg); }
+    :root[data-theme="pamphlet"] header { position: relative; background: #ffb300; border-bottom: 3px solid var(--ink); }
+    :root[data-theme="pamphlet"] header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; pointer-events: none;
+      background: radial-gradient(circle at 50% 0, #c2185b 0 6px, transparent 6.5px) 0 0 / 28px 14px repeat-x, radial-gradient(circle at 50% 0, #ff6f00 0 6px, transparent 6.5px) 14px 0 / 28px 14px repeat-x; }
+    :root[data-theme="pamphlet"] .backup { background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
     :root[data-theme="pamphlet"] h1 { text-transform: uppercase; font-weight: 400; letter-spacing: .01em; }
     :root[data-theme="pamphlet"] :is(.btn, main button, .backup, .theme-switch, .contact-link) { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-weight: 700; }
     :root[data-theme="pamphlet"] .backup { box-shadow: 6px 6px 0 var(--ink); }

@@ -3,6 +3,7 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
+from xml.etree import ElementTree
 
 import pytest
 
@@ -34,6 +35,7 @@ def test_group_and_subgroup_artwork_exists_for_both_sites():
         for folder in (ROOT / "docs" / "assets", ROOT / "frontend" / "public" / "art"):
             svg = (folder / f"{name}.svg").read_text(encoding="utf-8")
             assert svg.startswith("<svg") and "prefers-reduced-motion" in svg
+            ElementTree.fromstring(svg)  # browsers refuse to draw malformed SVG backgrounds
 
 
 def run_node(script: str):
@@ -81,8 +83,34 @@ console.log(JSON.stringify(out));
 def test_catalog_exports_the_india_in_maps_group():
     catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
     maps = [item for item in catalog["indicators"] if item["category"] == "India in Maps"]
-    assert len(maps) >= 100
+    assert len(maps) >= 200
     assert all(item["series"]["chart_type"] == "map" and len(item["series"]["labels"]) >= 5 for item in maps)
     group = next(item for item in catalog["categories"] if item["name"] == "India in Maps")
     assert group["art"] == "india-maps.svg" and len(group["subgroups"]) >= 5
     assert all(sub["art"].startswith("maps-") for sub in group["subgroups"])
+    assert "Lower Courts on the map" in {sub["name"] for sub in group["subgroups"]}
+
+
+@pytest.mark.skipif(NODE is None, reason="Node.js is not installed")
+def test_per_state_breakdowns_become_one_map_per_category_plus_a_total():
+    script = """
+require('./docs/india-maps.js');
+const states = ['Kerala', 'Goa', 'Bihar', 'Assam', 'Punjab', 'Delhi', 'Sikkim', 'Odisha', 'Tripura', 'Haryana'];
+const series = Object.fromEntries(states.map((state, i) => [`jud_${i}`, {
+  scope: `jurisdiction:${state}`, labels: ['Original', 'Appeal', '2024'], values: [i + 1, 10, 99],
+  meta: { title: `${state}: Total cases case-category breakdown pending`, category: 'Judiciary & Pending Cases', subgroup: 'Lower Courts' },
+}]));
+series.hc = { scope: 'jurisdiction:Allahabad High Court', labels: ['Original'], values: [5], meta: { title: 'Allahabad High Court: x' } };
+const out = globalThis.IndiaMaps.deriveMapSeries(series, () => ({ group: 'Judiciary & Pending Cases', subgroup: 'Lower Courts' }));
+console.log(JSON.stringify(out));
+"""
+    out = run_node(script)
+    assert sorted(out) == [
+        "map__jur__judiciary-pending-cases__total-cases-case-category-breakdown-pending__appeal",
+        "map__jur__judiciary-pending-cases__total-cases-case-category-breakdown-pending__original",
+        "map__jur__judiciary-pending-cases__total-cases-case-category-breakdown-pending__total",
+    ]
+    total = out["map__jur__judiciary-pending-cases__total-cases-case-category-breakdown-pending__total"]
+    assert total["values"] == [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    assert total["meta"]["subgroup"] == "Lower Courts on the map" and total["meta"]["mapTheme"] == "Lower Courts"
+    assert total["meta"]["title"] == "Total cases case-category breakdown pending: total by State/UT — map"

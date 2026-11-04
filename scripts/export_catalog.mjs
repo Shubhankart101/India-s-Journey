@@ -115,7 +115,7 @@ Object.entries(IndiaMaps.deriveMapSeries(series, key => {
     series[key] = item;
     app.extraChartPlacement[key] = { category: item.meta.category, subgroup: item.meta.subgroup };
     definitions.push([key, item.meta.title, item.meta.subtitle, item.meta.frequency, item.meta.color, item.meta.suffix, definitionByKey.get(item.meta.sourceKey)[6], item.note]);
-    if (!mapGroups.includes(item.meta.sourceGroup)) mapGroups.push(item.meta.sourceGroup);
+    if (!mapGroups.includes(item.meta.mapTheme)) mapGroups.push(item.meta.mapTheme);
   });
 IndiaMaps.decorate(app, mapGroups);
 

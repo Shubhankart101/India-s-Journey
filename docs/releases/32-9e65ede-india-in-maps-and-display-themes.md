@@ -10,7 +10,7 @@
 - **Art:** 26 new retro map scenes, one for the group and one per source group, with spinning sunbursts, ripples and drifting waves. All motion stops under reduced-motion settings.
 - **Display themes:** Light, Dark, Newspaper and Pamphlet, chosen from a segmented switch in the top-right corner of the static site, the React app and the Django pages. The choice is shared across all three. Charts and maps change colour with the theme, and background artwork stays visible in every theme.
 - **Contact:** LinkedIn and GitHub buttons next to the theme switch.
-- **Fix:** repairs double-encoded characters ("Â·", "â€º") on the published static pages and adds a regression test for them.
+- **Fix:** repairs double-encoded characters (garbled middle dots and arrows) on the published static pages and adds a regression test for them.
 - **Tests:** 250 Python tests (new map, name-parity and encoding suites), 117 Django tests and 85 frontend tests.
 
 Previous: [Water, Logistics, expanded air and rail data, interactive charts](./31-aeb4153-water-logistics-and-interactive-charts.md)
