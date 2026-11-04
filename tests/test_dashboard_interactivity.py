@@ -187,6 +187,8 @@ def test_static_home_prefers_refreshed_article_feed_snapshots():
     assert "safeFetchJson('substack-latest.json', polityPolicy)" in APP_TEXT
     assert "indianMatrix?.articles?.length ? indianMatrix.articles" in APP_TEXT
     assert "polityPolicy?.articles?.length ? polityPolicy.articles" in APP_TEXT
+    css = (ROOT / "docs" / "product-theme.css").read_text(encoding="utf-8")
+    assert "latest-analysis-grid { display: grid; grid-template-columns: minmax(0, 1fr)" in css
 
 
 def test_static_home_groups_latest_articles_by_source():
