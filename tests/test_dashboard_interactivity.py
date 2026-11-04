@@ -182,6 +182,22 @@ def test_title_search_remains_accessible():
     assert "aria-pressed" in APP_TEXT
 
 
+def test_static_home_prefers_refreshed_article_feed_snapshots():
+    assert "safeFetchJson('indian-matrix-latest.json', indianMatrix)" in APP_TEXT
+    assert "safeFetchJson('substack-latest.json', polityPolicy)" in APP_TEXT
+    assert "indianMatrix?.articles?.length ? indianMatrix.articles" in APP_TEXT
+    assert "polityPolicy?.articles?.length ? polityPolicy.articles" in APP_TEXT
+
+
+def test_static_home_groups_latest_articles_by_source():
+    assert "const latestGroups = [" in APP_TEXT
+    assert "Indian Matrix" in APP_TEXT and "PolityPolicy" in APP_TEXT and "Other articles" in APP_TEXT
+    assert 'class="latest-source-box"' in APP_TEXT
+    css = (ROOT / "docs" / "product-theme.css").read_text(encoding="utf-8")
+    assert "body.product-theme .latest-analysis-grid" in css
+    assert "body.product-theme .latest-source-box" in css
+
+
 def test_interactive_controls_have_labels_and_mobile_styles():
     assert 'aria-label="Download chart as PNG"' in APP_TEXT
     assert "aria-label=" in APP_TEXT

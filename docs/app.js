@@ -661,7 +661,21 @@ function renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroDat
     .sort((left, right) => (Date.parse(right.published) || 0) - (Date.parse(left.published) || 0));
   const articleItem = article => `<li><a href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a><small>${escapeHtml(article.publisher)} · ${escapeHtml(formatDay(article.published))}</small></li>`;
   const latest = document.querySelector('#latest-articles');
-  if (latest) latest.innerHTML = articles.slice(0, 6).map(articleItem).join('') || '<li class="article-loading">No articles yet.</li>';
+  if (latest) {
+    const latestGroups = [
+      { kind: 'indian_matrix', title: 'Indian Matrix' },
+      { kind: 'polity_policy', title: 'PolityPolicy' },
+      { kind: 'other', title: 'Other articles' },
+    ].map(group => ({
+      ...group,
+      items: articles.slice(0, 6).filter(article => group.kind === 'other'
+        ? !['indian_matrix', 'polity_policy'].includes(article.kind)
+        : article.kind === group.kind),
+    }));
+    latest.innerHTML = latestGroups.map(group => `<article class="latest-source-box"><h3>${group.title}</h3>${group.items.length
+      ? `<ul class="article-list" aria-label="${group.title} articles">${group.items.map(articleItem).join('')}</ul>`
+      : '<p class="muted small">No recent articles.</p>'}</article>`).join('');
+  }
 
   const articleList = document.querySelector('#article-list');
   if (articleList) {
@@ -689,17 +703,21 @@ async function main() {
   let dataPayload = window.INDIA_DASHBOARD_DATA;
   let economicSurvey = { series: {} };
   let indianMatrix = { cadence: { labels: [], values: [] }, articles: [] };
+  let polityPolicy = { articles: [] };
   let pewReports = { cadence: { labels: [], values: [] }, reports: [] };
   let ncrbeAnalyses = { series: {} };
   let pewSnapshots = { series: {} };
 
   if (!dataPayload || !dataPayload.series || Object.keys(dataPayload.series).length === 0) {
-    [dataPayload, indianMatrix, pewReports] = await Promise.all([
+    [dataPayload, pewReports] = await Promise.all([
       safeFetchJson('chart-latest.json', { series: {} }),
-      safeFetchJson('indian-matrix-latest.json', { cadence: { labels: [], values: [] }, articles: [] }),
       safeFetchJson('pew-india-reports.json', { cadence: { labels: [], values: [] }, reports: [] }),
     ]);
   }
+  [indianMatrix, polityPolicy] = await Promise.all([
+    safeFetchJson('indian-matrix-latest.json', indianMatrix),
+    safeFetchJson('substack-latest.json', polityPolicy),
+  ]);
 
   // These overlays refresh more often than data.js, so they are always applied (as the web app's catalog export does).
   const [electionResults, usCampaignFinance, electionIndices, surveyOverlay, ncrbOverlay, pewOverlay, sportsOverlay] = await Promise.all([
@@ -2682,8 +2700,8 @@ async function main() {
   });
 
   renderHomeAndAbout({ charts, categoryOrder, categoryBgMap, groupHeroData, subgroupArtMap, setEraBackground, generatedAt: data.generated_at_utc, articleSources: [
-    ['indian_matrix', 'Indian Matrix', (dataPayload && dataPayload.indian_matrix_articles) || indianMatrix?.articles || []],
-    ['polity_policy', 'Polity and Policy', (dataPayload && dataPayload.polity_policy_articles) || []],
+    ['indian_matrix', 'Indian Matrix', indianMatrix?.articles?.length ? indianMatrix.articles : dataPayload?.indian_matrix_articles || []],
+    ['polity_policy', 'Polity and Policy', polityPolicy?.articles?.length ? polityPolicy.articles : dataPayload?.polity_policy_articles || []],
     ['pew', 'Pew Research Center', pewReportItems],
   ] });
 
