@@ -33,6 +33,59 @@ window.IndiaCompare = (() => {
   };
 })();
 
+/* Display theme shared with the web app (same localStorage key): dark, light, newspaper or pamphlet. */
+window.IndiaTheme = (() => {
+  const KEY = 'ij-theme';
+  const THEMES = [
+    { id: 'dark', label: 'Dark', meta: '#000000' },
+    { id: 'light', label: 'Light', meta: '#f5f5f7' },
+    { id: 'newspaper', label: 'Newspaper', meta: '#f4f0e6' },
+    { id: 'pamphlet', label: 'Pamphlet', meta: '#fff1c1' }
+  ];
+  const CHART_COLORS = {
+    dark: { ink: '#f5f5f7', muted: '#a1a1a6', grid: 'rgba(255, 255, 255, 0.08)', legend: '#d2d2d7', sliceBorder: '#1c1c1e' },
+    light: { ink: '#1d1d1f', muted: '#515154', grid: 'rgba(0, 0, 0, 0.08)', legend: '#3a3a3c', sliceBorder: '#ffffff' },
+    newspaper: { ink: '#111111', muted: '#3b3b3b', grid: 'rgba(0, 0, 0, 0.12)', legend: '#222222', sliceBorder: '#fbf8f1' },
+    pamphlet: { ink: '#1b1b1b', muted: '#2f2f2f', grid: 'rgba(27, 27, 27, 0.14)', legend: '#1b1b1b', sliceBorder: '#1b1b1b' }
+  };
+  const valid = value => THEMES.some(theme => theme.id === value);
+  const read = () => {
+    try { const saved = localStorage.getItem(KEY); return valid(saved) ? saved : 'dark'; } catch { return 'dark'; }
+  };
+  let current = read();
+  const apply = () => {
+    document.documentElement.dataset.theme = current;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEMES.find(theme => theme.id === current).meta);
+  };
+  const chartColors = () => CHART_COLORS[current];
+  const restyleCharts = () => {
+    if (!window.Chart?.instances) return;
+    const colors = chartColors();
+    Object.values(window.Chart.instances).forEach(chart => {
+      Object.values(chart.options.scales || {}).forEach(scale => {
+        if (scale.ticks) scale.ticks.color = colors.muted;
+        if (scale.grid && scale.grid.display !== false) scale.grid.color = colors.grid;
+      });
+      const legendLabels = chart.options.plugins?.legend?.labels;
+      if (legendLabels) legendLabels.color = colors.legend;
+      chart.update('none');
+    });
+  };
+  apply();
+  return {
+    THEMES,
+    get: () => current,
+    chartColors,
+    set: theme => {
+      if (!valid(theme) || theme === current) return;
+      current = theme;
+      apply();
+      try { localStorage.setItem(KEY, theme); } catch { /* private mode: keep for this visit */ }
+      restyleCharts();
+    }
+  };
+})();
+
 (() => {
   const page = document.body.dataset.page || 'home';
   const links = [
@@ -54,9 +107,13 @@ window.IndiaCompare = (() => {
       ${links.map(link => `<a href="${link.href}"${current(link.id)} data-nav="${link.id}">${link.label}${badge(link.id)}</a>`).join('')}
     </nav>
     <a class="nav-cta" href="explore.html">Explore data</a>
+    <select class="theme-select" aria-label="Display theme">
+      ${window.IndiaTheme.THEMES.map(theme => `<option value="${theme.id}"${theme.id === window.IndiaTheme.get() ? ' selected' : ''}>${theme.label}</option>`).join('')}
+    </select>
   </header>`;
   const script = document.currentScript;
   if (script) script.insertAdjacentHTML('beforebegin', header);
+  document.querySelector('.masthead .theme-select')?.addEventListener('change', event => window.IndiaTheme.set(event.target.value));
 
   const renderCompareChrome = () => {
     const count = compareCount();

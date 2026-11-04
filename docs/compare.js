@@ -127,6 +127,7 @@
       return { label: item.title, data: normalised ? normalise(values) : values, borderColor: color, backgroundColor: `${color}33`, borderWidth: 2, pointRadius: 0, pointHoverRadius: 4, tension: 0.25, spanGaps: true };
     });
     chart?.destroy();
+    const colors = window.IndiaTheme?.chartColors() || { legend: '#f5f5f7', muted: '#a1a1a6', grid: 'rgba(255,255,255,.06)' };
     chart = new window.Chart($('#compare-chart'), {
       type: 'line',
       data: { labels, datasets },
@@ -135,12 +136,12 @@
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: { labels: { color: '#f5f5f7', boxWidth: 12 } },
+          legend: { labels: { color: colors.legend, boxWidth: 12 } },
           tooltip: { callbacks: { label: context => `${context.dataset.label}: ${normalised ? Number(context.parsed.y).toFixed(1) : formatValue(context.parsed.y, chosen[context.datasetIndex].suffix)}` } },
         },
         scales: {
-          x: { ticks: { color: '#a1a1a6', maxRotation: 0, autoSkip: true, maxTicksLimit: 10 }, grid: { color: 'rgba(255,255,255,.06)' } },
-          y: { ticks: { color: '#a1a1a6', callback: value => (normalised ? value : formatValue(value, suffix)) }, grid: { color: 'rgba(255,255,255,.06)' } },
+          x: { ticks: { color: colors.muted, maxRotation: 0, autoSkip: true, maxTicksLimit: 10 }, grid: { color: colors.grid } },
+          y: { ticks: { color: colors.muted, callback: value => (normalised ? value : formatValue(value, suffix)) }, grid: { color: colors.grid } },
         },
       },
     });

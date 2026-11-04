@@ -4,6 +4,7 @@ import {
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import { formatAxis, formatMagnitude, isRadial } from '../format.js';
+import { CHART_COLORS, useTheme } from '../theme.js';
 
 ChartJS.register(
   ArcElement, BarController, BarElement, CategoryScale, DoughnutController, Filler, Legend, LinearScale,
@@ -16,7 +17,6 @@ const PALETTE = [
   '#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344', '#39c5bb', '#f778ba', '#a5d6ff', '#d2a8ff',
   '#ffa657', '#7ee787', '#e3b341', '#79c0ff', '#db61a2', '#56d364', '#ff6b6b', '#8b949e', '#d29922', '#a371f7',
 ];
-const GRID = 'rgba(255, 255, 255, 0.08)';
 
 // Pie slices: positive values only, largest first, with the long tail folded into "Other".
 export function radialPoints(labels, values, maxSlices = 12) {
@@ -29,7 +29,7 @@ export function radialPoints(labels, values, maxSlices = 12) {
   return [...points.slice(0, maxSlices - 1), { label: `Other (${rest.length})`, value: rest.reduce((sum, point) => sum + point.value, 0) }];
 }
 
-export function buildChartData({ labels, datasets, type, color }) {
+export function buildChartData({ labels, datasets, type, color, colors = CHART_COLORS.dark }) {
   if (isRadial(type)) {
     const points = radialPoints(labels, datasets[0]?.values || []);
     return {
@@ -38,7 +38,7 @@ export function buildChartData({ labels, datasets, type, color }) {
         label: datasets[0]?.label || '',
         data: points.map(point => point.value),
         backgroundColor: points.map((_, index) => PALETTE[index % PALETTE.length]),
-        borderColor: '#1c1c1e',
+        borderColor: colors.sliceBorder,
         borderWidth: 2,
         hoverOffset: 12,
       }],
@@ -50,7 +50,7 @@ export function buildChartData({ labels, datasets, type, color }) {
     datasets: datasets.map((dataset, index) => {
       if (dataset.trend) {
         return {
-          type: 'line', label: dataset.label, data: dataset.values, borderColor: '#f5f5f7', borderDash: [6, 5], borderWidth: 1.8,
+          type: 'line', label: dataset.label, data: dataset.values, borderColor: colors.ink, borderDash: [6, 5], borderWidth: 1.8,
           pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1,
         };
       }
@@ -72,7 +72,7 @@ export function buildChartData({ labels, datasets, type, color }) {
   };
 }
 
-export function buildOptions({ type, suffix, compact, horizontal, multi }) {
+export function buildOptions({ type, suffix, compact, horizontal, multi, colors = CHART_COLORS.dark }) {
   const radial = isRadial(type);
   const tooltip = {
     enabled: !compact,
@@ -101,7 +101,7 @@ export function buildOptions({ type, suffix, compact, horizontal, multi }) {
       legend: {
         display: !compact && (radial || multi),
         position: radial ? 'right' : 'bottom',
-        labels: { color: '#d2d2d7', boxWidth: 10, boxHeight: 10, usePointStyle: true, padding: 12 },
+        labels: { color: colors.legend, boxWidth: 10, boxHeight: 10, usePointStyle: true, padding: 12 },
       },
       tooltip,
     },
@@ -111,14 +111,14 @@ export function buildOptions({ type, suffix, compact, horizontal, multi }) {
     return options;
   }
   const valueAxis = {
-    grid: { color: GRID },
+    grid: { color: colors.grid },
     border: { display: false },
-    ticks: { display: !compact, callback: value => formatAxis(value, suffix), maxTicksLimit: 6 },
+    ticks: { display: !compact, color: colors.muted, callback: value => formatAxis(value, suffix), maxTicksLimit: 6 },
   };
   const labelAxis = {
     grid: { display: false },
     border: { display: false },
-    ticks: { display: !compact, maxRotation: 0, autoSkip: true, maxTicksLimit: horizontal ? 20 : 8 },
+    ticks: { display: !compact, color: colors.muted, maxRotation: 0, autoSkip: true, maxTicksLimit: horizontal ? 20 : 8 },
   };
   options.indexAxis = horizontal ? 'y' : 'x';
   options.scales = horizontal ? { x: valueAxis, y: labelAxis } : { x: labelAxis, y: valueAxis };
@@ -128,8 +128,9 @@ export function buildOptions({ type, suffix, compact, horizontal, multi }) {
 
 export default function ChartView({ labels = [], datasets = [], type = 'line', indexAxis = 'x', suffix = '', color = '#58a6ff', compact = false, title = 'Chart' }) {
   const horizontal = type === 'bar' && indexAxis === 'y';
-  const data = buildChartData({ labels, datasets, type, color });
-  const options = buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1 });
+  const colors = CHART_COLORS[useTheme()];
+  const data = buildChartData({ labels, datasets, type, color, colors });
+  const options = buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1, colors });
   return (
     <div className={`chart-canvas${compact ? ' compact' : ''}`} role="img" aria-label={`${title} (${type} chart)`}>
       <Chart type={type === 'pie' ? 'pie' : type} data={data} options={options} />

@@ -6,35 +6,66 @@
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="noindex">
   <title>{% block head_title %}India's Journey{% endblock head_title %} · India's Journey</title>
+  <script>
+    try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <style>
-    :root { color-scheme: dark; }
+    :root { color-scheme: dark; --bg: #000; --surface: #0b0b0c; --surface-2: #1d1d1f; --line: #1d1d1f; --line-strong: #424245;
+      --ink: #f5f5f7; --muted: #a1a1a6; --faint: #86868b; --link: #2997ff; --accent: #0071e3; --on-accent: #fff; --eyebrow: #ff9f0a; --radius: 18px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; --font-display: var(--font); }
+    :root[data-theme="light"] { color-scheme: light; --bg: #f5f5f7; --surface: #fff; --surface-2: #fff; --line: rgba(0, 0, 0, .12); --line-strong: rgba(0, 0, 0, .25);
+      --ink: #1d1d1f; --muted: #515154; --faint: #6e6e73; --link: #0066cc; --eyebrow: #b35900; }
+    :root[data-theme="newspaper"] { color-scheme: light; --bg: #f4f0e6; --surface: #fbf8f1; --surface-2: #fbf8f1; --line: rgba(17, 17, 17, .35); --line-strong: #111;
+      --ink: #111; --muted: #3b3b3b; --faint: #3b3b3b; --link: #7a1010; --accent: #111; --on-accent: #f4f0e6; --eyebrow: #7a1010; --radius: 0px;
+      --font: Georgia, "Times New Roman", Times, serif; --font-display: "Playfair Display", "Bodoni MT", Didot, Georgia, serif; }
+    :root[data-theme="pamphlet"] { color-scheme: light; --bg: #fff1c1; --surface: #fffaf0; --surface-2: #fffaf0; --line: #1b1b1b; --line-strong: #1b1b1b;
+      --ink: #1b1b1b; --muted: #2f2f2f; --faint: #2f2f2f; --link: #b3001b; --accent: #d62828; --on-accent: #fff; --eyebrow: #c2410c; --radius: 6px;
+      --font: "Trebuchet MS", Verdana, "Segoe UI", sans-serif; --font-display: Impact, "Arial Black", "Franklin Gothic Heavy", sans-serif; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: #000; color: #f5f5f7;
-      font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    header, footer { padding: 16px max(20px, env(safe-area-inset-left)); border-bottom: 1px solid #1d1d1f; }
-    footer { border: 0; border-top: 1px solid #1d1d1f; color: #86868b; font-size: 14px; margin-top: auto; }
-    header a { color: #f5f5f7; font-weight: 600; text-decoration: none; }
+    body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink);
+      font: 17px/1.5 var(--font); }
+    header, footer { padding: 16px max(20px, env(safe-area-inset-left)); border-bottom: 1px solid var(--line); }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    footer { border: 0; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; margin-top: auto; }
+    header a { color: var(--ink); font-weight: 600; text-decoration: none; }
     main { width: min(640px, 100% - 40px); margin: 0 auto; padding: 64px 0; }
-    h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
-    p { color: #a1a1a6; }
-    a { color: #2997ff; }
-    .eyebrow { color: #ff9f0a; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 14px; }
+    h1 { font-family: var(--font-display); font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.02em; }
+    p { color: var(--muted); }
+    a { color: var(--link); }
+    .eyebrow { color: var(--eyebrow); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: 14px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .btn, button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px;
-      border-radius: 980px; border: 1px solid #424245; background: transparent; color: #f5f5f7; font: inherit; text-decoration: none; cursor: pointer; }
-    .btn-primary, button[type=submit] { background: #0071e3; border-color: #0071e3; color: #fff; }
-    .backup { margin-top: 40px; padding: 20px; border: 1px solid #1d1d1f; border-radius: 18px; background: #0b0b0c; }
-    .backup strong { color: #f5f5f7; }
+      border-radius: 980px; border: 1px solid var(--line-strong); background: transparent; color: var(--ink); font: inherit; text-decoration: none; cursor: pointer; }
+    .btn-primary, button[type=submit] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+    .backup { margin-top: 40px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .backup strong { color: var(--ink); }
     .backup .btn { margin: 4px 8px 0 0; }
     ul.messages { padding: 0; list-style: none; }
-    ul.messages li { padding: 12px 16px; border-radius: 12px; background: #1d1d1f; margin-bottom: 8px; }
-    input, select { width: 100%; min-height: 44px; padding: 10px 14px; border-radius: 12px; border: 1px solid #424245; background: #1d1d1f; color: #f5f5f7; font: inherit; }
+    ul.messages li { padding: 12px 16px; border-radius: 12px; background: var(--surface-2); margin-bottom: 8px; }
+    input, select { width: 100%; min-height: 44px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font: inherit; }
     label { display: block; margin: 16px 0 6px; }
+    header .theme-select { width: auto; min-height: 32px; padding: 4px 10px; border-radius: 999px; font-size: 14px; cursor: pointer; }
+    :root[data-theme="newspaper"] header { border-bottom: 4px double var(--ink); }
+    :root[data-theme="newspaper"] header > a { font-family: "Old English Text MT", "UnifrakturMaguntia", Georgia, serif; font-size: 1.4rem; font-weight: 400; }
+    :root[data-theme="newspaper"] :is(.btn, button, input, select, ul.messages li) { border-radius: 0; }
+    :root[data-theme="pamphlet"] body { background: var(--bg) radial-gradient(rgba(27, 27, 27, .09) 1px, transparent 1.6px) 0 0 / 12px 12px; }
+    :root[data-theme="pamphlet"] header { background: #ffd23f; border-bottom: 3px solid var(--ink); }
+    :root[data-theme="pamphlet"] h1 { text-transform: uppercase; font-weight: 400; letter-spacing: .01em; }
+    :root[data-theme="pamphlet"] :is(.btn, button, .backup, header .theme-select) { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-weight: 700; }
+    :root[data-theme="pamphlet"] .backup { box-shadow: 6px 6px 0 var(--ink); }
   </style>
   {% block extra_head %}{% endblock extra_head %}
 </head>
 <body>
-  <header><a href="/">India's Journey</a></header>
+  <header>
+    <a href="/">India's Journey</a>
+    <select class="theme-select" id="theme-select" aria-label="Display theme">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+      <option value="newspaper">Newspaper</option>
+      <option value="pamphlet">Pamphlet</option>
+    </select>
+  </header>
   <main id="main">
     {% if messages %}<ul class="messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}
     {% block content %}{% endblock content %}
@@ -49,5 +80,15 @@
     <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more.</p>
   </footer>
   {% block extra_body %}{% endblock extra_body %}
+  <script>
+    (function () {
+      var select = document.getElementById('theme-select');
+      select.value = document.documentElement.dataset.theme || 'dark';
+      select.addEventListener('change', function () {
+        document.documentElement.dataset.theme = select.value;
+        try { localStorage.setItem('ij-theme', select.value); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 import { API_DOCS_URL, BACKUP_URL } from '../config.js';
 import { useDocumentTitle } from '../hooks.js';
+import ThemeSelect from '../components/ThemeSelect.jsx';
 
 const ENDPOINTS = [
   ['/api/health/', 'Health', 'Check the API service and catalogue status.'],
@@ -17,6 +18,7 @@ export default function Api() {
 
   return (
     <main className="api-page">
+      <ThemeSelect className="theme-select-floating" />
       <section className="api-intro">
         <p className="eyebrow">Public data access</p>
         <h1>API &amp; endpoint explorer</h1>

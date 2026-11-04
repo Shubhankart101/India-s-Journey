@@ -1,0 +1,183 @@
+/* Display themes picked from the header selector (site.js sets html[data-theme]). Dark is the default
+   product theme; light, newspaper and pamphlet override it here. Loaded after product-theme.css. */
+
+/* Theme selector (all themes) */
+body.product-theme .theme-select {
+  width: auto; min-height: 30px; margin-left: 12px; padding: 3px 10px; font: inherit; font-size: .78rem;
+  color: var(--ink); background: var(--fill, rgba(255, 255, 255, .1)); border: 1px solid var(--line); border-radius: 980px; cursor: pointer;
+}
+body.product-theme .theme-select option { color: var(--ink); background: var(--solid, #1c1c1e); }
+body.product-theme .theme-select:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+@media (max-width: 840px) { body.product-theme .theme-select { margin-left: 8px; } }
+
+/* Tokens */
+html[data-theme="light"]:has(body.product-theme) { background: #f5f5f7; color-scheme: light; }
+html[data-theme="newspaper"]:has(body.product-theme) { background: #f4f0e6; color-scheme: light; }
+html[data-theme="pamphlet"]:has(body.product-theme) { background: #fff1c1 radial-gradient(rgba(27, 27, 27, .09) 1px, transparent 1.6px) 0 0 / 12px 12px; color-scheme: light; }
+
+html[data-theme="light"] body.product-theme {
+  --ink: #1d1d1f; --muted: #515154; --canvas: #f5f5f7; --panel: rgba(255, 255, 255, .88); --panel-hover: #fff;
+  --line: rgba(0, 0, 0, .14); --blue: #0071e3; --link: #0066cc; --soft: rgba(0, 0, 0, .05); --card-border: rgba(0, 0, 0, .1);
+  --shadow-tile: 0 6px 24px rgba(0, 0, 0, .08); --shadow-lift: 0 18px 44px rgba(0, 0, 0, .14); --glass: rgba(255, 255, 255, .84);
+  --bar-bg: rgba(255, 255, 255, .82); --solid: #fff; --fill: rgba(0, 0, 0, .05); --fill-hover: rgba(0, 0, 0, .1);
+  --accent-ink: #fff; --saffron-ink: #b35900; --green-ink: #1a7f37;
+  --overlay: linear-gradient(180deg, rgba(245, 245, 247, .3) 0%, rgba(245, 245, 247, .45) 55%, rgba(245, 245, 247, .6) 100%);
+}
+html[data-theme="newspaper"] body.product-theme {
+  --ink: #111; --muted: #3b3b3b; --canvas: #f4f0e6; --panel: #fbf8f1; --panel-hover: #fffdf7;
+  --line: rgba(17, 17, 17, .35); --blue: #111; --link: #7a1010; --soft: rgba(17, 17, 17, .05); --card-border: rgba(17, 17, 17, .4);
+  --radius-xl: 0; --radius-lg: 0; --shadow-tile: none; --shadow-lift: none; --glass: #fbf8f1;
+  --font-display: "Playfair Display", "Bodoni MT", Didot, Georgia, "Times New Roman", serif;
+  --font-text: Georgia, "Times New Roman", Times, serif;
+  --bar-bg: #f4f0e6; --solid: #fbf8f1; --fill: rgba(17, 17, 17, .06); --fill-hover: rgba(17, 17, 17, .12);
+  --accent-ink: #f4f0e6; --saffron-ink: #7a1010; --green-ink: #1f4d1f;
+  --overlay: linear-gradient(rgba(244, 240, 230, .35), rgba(244, 240, 230, .55));
+  letter-spacing: 0;
+}
+html[data-theme="pamphlet"] body.product-theme {
+  --ink: #1b1b1b; --muted: #2f2f2f; --canvas: #fff1c1; --panel: #fffaf0; --panel-hover: #fff;
+  --line: #1b1b1b; --blue: #d62828; --link: #b3001b; --soft: rgba(27, 27, 27, .06); --card-border: #1b1b1b;
+  --radius-xl: 6px; --radius-lg: 6px; --shadow-tile: 6px 6px 0 #1b1b1b; --shadow-lift: 9px 9px 0 #1b1b1b; --glass: #fffaf0;
+  --font-display: Impact, "Arial Black", "Franklin Gothic Heavy", Haettenschweiler, sans-serif;
+  --font-text: "Trebuchet MS", Verdana, "Segoe UI", sans-serif;
+  --bar-bg: #ffd23f; --solid: #fffaf0; --fill: rgba(27, 27, 27, .07); --fill-hover: rgba(214, 40, 40, .14);
+  --accent-ink: #fff; --saffron-ink: #c2410c; --green-ink: #2b7a0b;
+  --overlay: linear-gradient(rgba(255, 241, 193, .3), rgba(255, 241, 193, .5));
+  letter-spacing: 0;
+}
+
+/* Shared light-paper overrides for the dark-only colours in product-theme.css */
+html:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"]) body.product-theme {
+  & .era-bg-layer { opacity: .85 !important; filter: saturate(.95); }
+  & .era-overlay { background: var(--overlay); }
+  & .era-overlay::after { display: none; }
+  & .eyebrow, & .card-eyebrow { color: var(--saffron-ink) !important; }
+
+  & .masthead, & .masthead.is-scrolled { background: var(--bar-bg); border-bottom-color: var(--line); box-shadow: none; }
+  & .site-nav a:hover, & .masthead .site-nav a[aria-current="page"] { color: var(--ink); }
+  & .nav-cta, & .nav-cta:hover { background: var(--blue); color: var(--accent-ink) !important; }
+
+  & .product-hero h1 span, & .page-title h1 span { background-image: linear-gradient(90deg, var(--saffron-ink), var(--link) 50%, var(--green-ink)); }
+  & .product-hero .lede { color: var(--muted); }
+  & .button, & a.button, & .button:hover { color: var(--accent-ink); }
+  & .button:hover { background: var(--blue); filter: brightness(1.12); box-shadow: var(--shadow-tile); }
+  & .text-link:hover { border-color: var(--ink); }
+  & .hero-metrics strong { background: none; color: var(--ink); -webkit-text-fill-color: currentColor; }
+  & .hero-metrics div { background: var(--glass); }
+  & .hero-metrics div:hover { box-shadow: var(--shadow-lift); }
+  & .hero-caption { background: var(--glass); }
+  & .hero-caption:hover { border-color: var(--ink); }
+  & .slide-dot::before { background: rgba(0, 0, 0, .25); }
+  & .typewriter-text, & .mini-change.up { color: var(--saffron-ink); }
+  & .caret { background: var(--green-ink); }
+
+  & .chart-controls { background: var(--bar-bg); border-bottom-color: var(--line); }
+  & .chart-controls input, & .chart-controls select, & .chart-range-controls select, & .chart-source-index-search input,
+  & .pew-library-heading input, & .historical-election-controls select, & .filter-row select, & .filter-row input { background: var(--solid); color: var(--ink); }
+  & .group-pill, & .saved-toggle, & .clear-filters, & .hero-badge, & .frequency, & .status-pill, & .legend-chip,
+  & .value-cruncher-bar, & .custom-legend, & .history-metric, & .pew-report-item, & .history-chart-wrap,
+  & .modal-stat-card, & .modal-close, & .chart-focus-close, & .tray-chip button, & .article-button, & .article-links a { background: var(--fill); }
+  & .group-pill:hover { background: var(--fill-hover); color: var(--ink); }
+  & .group-pill.active, & .chart-type-toggle button[aria-pressed="true"], & .chart-type-toggle button.active { background: var(--ink); color: var(--solid); }
+  & .deep-dive-btn, & .reset, & .save-chart-btn, & .expand-chart-btn, & .chart-type-toggle, & .button.secondary { background: var(--fill); color: var(--link); }
+  & .deep-dive-btn:hover, & .reset:hover, & .save-chart-btn:hover, & .expand-chart-btn:hover, & .chart-type-toggle:hover { background: var(--fill-hover); color: var(--link); }
+  & .hero-badge.saffron { color: var(--saffron-ink); }
+  & .hero-badge.green, & .status-pill.live { color: var(--green-ink); }
+
+  & .chart-card, & .feature-card { background: var(--glass); }
+  & .chart-card:hover, & a.feature-card:hover { background: var(--panel-hover); }
+  & #charts > .chart-card:hover { border-color: var(--ink); box-shadow: var(--shadow-lift); }
+  & .modal-overlay, & .chart-focus-overlay { background: rgba(0, 0, 0, .35); }
+  & .indicator-modal-dialog, & .chart-focus-dialog, & .modal-content { background: var(--solid); box-shadow: var(--shadow-lift); }
+
+  /* Illustrated tiles keep their dark scrim, so their text stays light. */
+  & .group-tile, & .group-tile:hover, & .explore-tile { color: #f5f5f7; }
+
+  & .mini-index, & .marquee-item, & .compare-tray, & .latest-source-box { background: var(--glass); }
+  & .latest-source-box:nth-child(1) h3 { color: var(--saffron-ink); }
+  & .latest-source-box:nth-child(2) h3 { color: var(--link); }
+  & .latest-source-box:nth-child(3) h3 { color: var(--green-ink); }
+  & .article-list a:hover, & footer a:hover { color: var(--saffron-ink); }
+  & .compare-tray { box-shadow: var(--shadow-lift); }
+  & .compare-toggle { background: var(--solid); }
+  & .compare-toggle:hover:not(:disabled) { border-color: var(--ink); background: var(--fill-hover); }
+  & .nav-badge, & .tray-btn.tray-primary, & .scroll-top { color: var(--accent-ink); }
+  & .nav-badge, & .tray-btn.tray-primary, & .scroll-top { background: var(--link); }
+
+  & footer { color: var(--muted); background: var(--glass); border-color: var(--line); }
+  & footer a { color: var(--link); }
+  & .tabbar { background: var(--bar-bg); border-top-color: var(--line); }
+  & .tabbar a[aria-current="page"] { color: var(--ink); }
+}
+
+/* Newspaper: newsprint, serif type, hairline rules, no glass or rounded corners. */
+html[data-theme="newspaper"] body.product-theme {
+  & * { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  & .era-bg-layer { opacity: .7 !important; filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+  & .tricolor-bar { background: #111; }
+  & .scroll-progress { background: #111; }
+  & h1, & h2, & h3 { font-weight: 700; letter-spacing: 0; }
+  & .masthead { border-bottom: 4px double #111; }
+  & .brand-mark { font-family: "Old English Text MT", "UnifrakturMaguntia", "Engravers MT", Georgia, serif; font-size: 1.55rem; font-weight: 400; }
+  & .brand-emblem { background: #111; color: #f4f0e6; font-family: var(--font-text); }
+  & .site-nav a { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; }
+  & .site-nav a::after { background: #111; height: 1px; }
+  & .eyebrow { letter-spacing: .14em; text-transform: uppercase; font-style: italic; }
+  & .product-hero .eyebrow { border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 6px 0; }
+  & .product-hero h1, & .page-title h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
+  & .product-hero h1 span, & .page-title h1 span { background: none; color: var(--link); -webkit-text-fill-color: currentColor; font-style: italic; }
+  & .hero-typed { font-family: var(--font-text); font-style: italic; }
+  & .hero-metrics div { border: 0; border-left: 1px solid #111; background: none; }
+  & .hero-metrics div:first-child { border-left: 0; }
+  & .hero-metrics div:hover { transform: none; box-shadow: none; }
+  & .intro p:first-of-type::first-letter, & .source-note p:first-of-type::first-letter { float: left; font-family: var(--font-display); font-size: 3.4em; line-height: .82; padding: 4px 8px 0 0; color: var(--ink); }
+  & .chart-card, & .feature-card, & .group-hero, & .intro, & .source-note, & .status div { border: 1px solid #111; border-top: 3px solid #111; }
+  & .chart-card:hover, & a.feature-card:hover { transform: none; }
+  & .group-tile::before, & .explore-tile::before, & .marquee-item img, & .group-hero-art img { filter: grayscale(1) contrast(1.1); }
+  & :is(.button, .text-link, .nav-cta, .group-pill, .frequency, .status-pill, .legend-chip, .hero-badge, .saved-toggle, .clear-filters,
+    .deep-dive-btn, .reset, .save-chart-btn, .expand-chart-btn, .chart-type-toggle, .chart-type-toggle button, .marquee-item, .marquee-item img,
+    .hero-caption, .compare-toggle, .compare-tray, .tray-btn, .tray-chip, .chip, .mini-index, .hero-metrics div, .explore-tile, .group-tile,
+    .chart-controls input, .chart-controls select, .filter-row input, .filter-row select, .theme-select, .scroll-top, .footer-btn, .latest-source-box, #charts > .chart-card) { border-radius: 0; }
+  & .button, & .nav-cta { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
+  & .group-pill { border: 1px solid #111; }
+  & .chip { background: none; color: #f4f0e6; border-color: #f4f0e6; }
+  & .footer-btn { background: #111; color: #f4f0e6; }
+  & footer { border: 0; border-top: 4px double #111; }
+}
+
+/* Pamphlet: bold printed flyer with heavy outlines, offset shadows and a halftone paper. */
+html[data-theme="pamphlet"] body.product-theme {
+  & * { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  & .era-bg-layer { opacity: .75 !important; filter: sepia(.6) saturate(1.3) contrast(1.1); mix-blend-mode: multiply; }
+  & h1, & h2, & h3 { text-transform: uppercase; letter-spacing: .01em; font-weight: 400; }
+  & .masthead { border-bottom: 3px solid #1b1b1b; }
+  & .brand-mark { font-family: var(--font-display); text-transform: uppercase; font-weight: 400; }
+  & .brand-emblem { background: #d62828; border: 2px solid #1b1b1b; }
+  & .site-nav a { font-weight: 700; text-transform: uppercase; opacity: 1; }
+  & .site-nav a::after { background: #d62828; height: 3px; }
+  & .eyebrow { display: inline-block; padding: 2px 10px; background: #1b1b1b; color: #ffd23f !important; transform: rotate(-1.5deg); }
+  & .product-hero h1 span, & .page-title h1 span { display: inline-block; padding: 0 .2em; background: #ffd23f; -webkit-background-clip: border-box; background-clip: border-box;
+    color: #d62828; -webkit-text-fill-color: currentColor; border: 3px solid #1b1b1b; box-shadow: 5px 5px 0 #1b1b1b; transform: rotate(-2deg); animation: none; }
+  & .product-hero .lede { color: var(--ink); font-weight: 600; }
+  & .button, & a.button, & .nav-cta, & .tray-btn.tray-primary, & .footer-btn { border: 2px solid #1b1b1b; box-shadow: 3px 3px 0 #1b1b1b; text-transform: uppercase; font-weight: 800; }
+  & .button:hover, & .nav-cta:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 #1b1b1b; filter: none; }
+  & .text-link { border: 2px solid #1b1b1b; font-weight: 700; background: var(--solid); }
+  & .chart-card, & .feature-card, & .group-hero, & .intro, & .source-note, & .status div, & .hero-metrics div, & .mini-index,
+  & .group-tile, & .explore-tile, & .compare-tray, & .latest-source-box, & .chart-prompt, & .references details, & footer,
+  & .indicator-modal-dialog, & .chart-focus-dialog, & .modal-content { border: 2.5px solid #1b1b1b; box-shadow: var(--shadow-tile); }
+  & .chart-card:hover, & a.feature-card:hover, & .group-tile:hover, & .explore-tile:hover, & .hero-metrics div:hover, & .mini-index:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-lift); border-color: #1b1b1b; }
+  & #charts > .chart-card { border: 2.5px solid #1b1b1b; }
+  & #charts > .chart-card:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-lift); border-color: #1b1b1b; }
+  & .hero-metrics strong { color: #d62828; }
+  & .group-pill { border: 2px solid #1b1b1b; font-weight: 700; }
+  & .group-pill.active { background: #d62828; color: #fff; }
+  & .group-pill:hover { transform: rotate(-2deg); }
+  & .chip { background: #ffd23f; color: #1b1b1b; border: 2px solid #1b1b1b; font-weight: 700; }
+  & .theme-select { border: 2px solid #1b1b1b; font-weight: 700; background: #fffaf0; }
+  & .tricolor-bar { height: 6px; }
+  & .scroll-top { border: 2px solid #1b1b1b; box-shadow: 3px 3px 0 #1b1b1b; background: #d62828; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="pamphlet"] body.product-theme :is(.chart-card, .feature-card, .group-tile, .explore-tile, .group-pill):hover { transform: none; }
+}

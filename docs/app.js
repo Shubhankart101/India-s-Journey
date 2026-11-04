@@ -301,12 +301,16 @@ const seriesToCsv = series => {
   return rows.map(row => row.map(cell).join(',')).join('\n');
 };
 
-const CHART_THEME = {
+const CHART_THEME_BASE = {
   ink: '#f5f5f7', muted: '#a1a1a6', grid: 'rgba(255, 255, 255, 0.08)', legend: '#d2d2d7',
   tooltipBg: 'rgba(28, 28, 30, 0.96)', tooltipTitle: '#f5f5f7', tooltipBody: '#d2d2d7',
   tooltipBorder: 'rgba(255, 255, 255, 0.14)', sliceBorder: '#1c1c1e',
   font: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif'
 };
+// Theme-dependent colours are read at use time so charts drawn after a theme switch match it.
+const CHART_THEME = new Proxy(CHART_THEME_BASE, {
+  get: (base, key) => window.IndiaTheme?.chartColors()?.[key] ?? base[key]
+});
 
 const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line', showShare = false, logScale = false, onDatumClick = null, onVisibilityChange = null) => {
   const isRadialChart = chartType === 'pie' || chartType === 'doughnut';
@@ -1275,7 +1279,7 @@ async function main() {
         if (fit) {
           chart.data.datasets.push({
             isTrend: true, type: 'line', label: 'Linear trend', data: fit.line.map(value => Math.round(value * 1000) / 1000),
-            borderColor: '#f5f5f7', borderDash: [6, 5], borderWidth: 1.8, pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1
+            borderColor: CHART_THEME.ink, borderDash: [6, 5], borderWidth: 1.8, pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1
           });
           const unit = viewMode === 'change' ? (changeInPoints ? ' pp' : '%') : suffix;
           toolNote.textContent = `Trend ${fit.slope >= 0 ? '+' : '−'}${formatMagnitude(Math.abs(fit.slope), unit)} per period · fit R² ${fit.r2.toFixed(2)}`;

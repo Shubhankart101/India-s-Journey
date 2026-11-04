@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <meta name="description" content="Compare up to four India's Journey indicators side by side, optionally rebased to 100.">
-  <title>Compare — India's Journey</title>
+  <title>Compare â€” India's Journey</title>
   <link rel="stylesheet" href="styles.css?v=data-v25">
   <link rel="stylesheet" href="product-theme.css?v=data-v27">
+  <link rel="stylesheet" href="themes.css?v=data-v2">
 </head>
 <body class="product-theme" data-page="compare">
   <div id="era-bg-layer" class="era-bg-layer"></div>
   <div id="era-overlay" class="era-overlay"></div>
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=data-v25"></script>
+  <script src="site.js?v=data-v26"></script>
 
   <main class="compare-page">
     <section class="page-title">
@@ -40,11 +41,11 @@
     </section>
 
     <section class="compare-section">
-      <p id="compare-empty" class="compare-empty">Loading indicators…</p>
+      <p id="compare-empty" class="compare-empty">Loading indicatorsâ€¦</p>
       <div id="compare-card" class="compare-card" hidden>
         <div class="chart-toolbar">
           <label class="switch"><input id="compare-normalise" type="checkbox"> <span>Rebase to 100</span></label>
-          <span id="compare-units-note" class="muted small" hidden>Units differ — rebasing makes trends comparable.</span>
+          <span id="compare-units-note" class="muted small" hidden>Units differ â€” rebasing makes trends comparable.</span>
         </div>
         <div class="detail-chart"><canvas id="compare-chart" role="img" aria-label="Comparison chart"></canvas></div>
         <div class="table-wrap">
@@ -63,6 +64,6 @@
     if (!window.Chart) document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"><\/script>');
   </script>
   <script src="compare-data.js?v=data-v25"></script>
-  <script src="compare.js?v=data-v25"></script>
+  <script src="compare.js?v=data-v26"></script>
 </body>
 </html>
