@@ -1,4 +1,18 @@
-# 📊 India's Journey | Public Data Dashboard
+<div align="center">
+
+<a href="https://shubhankart101.github.io/India-s-Journey/explore.html?group=India%20in%20Maps"><img src="docs/assets/india-maps.svg" width="100%" alt="Animated India in Maps artwork"></a>
+
+# 📊 India's Journey
+
+**भारत की यात्रा · India, in perspective.** A living atlas of public data, 1947 to today.
+
+<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/indicators-2%2C918-ff9933?style=flat-square" alt="2,918 indicators"></a>
+<a href="#-explore-by-group"><img src="https://img.shields.io/badge/groups-26-138808?style=flat-square" alt="26 groups"></a>
+<a href="#%EF%B8%8F-india-in-maps"><img src="https://img.shields.io/badge/state%20maps-218-000080?style=flat-square" alt="218 state maps"></a>
+<a href="#-four-display-themes"><img src="https://img.shields.io/badge/themes-Light%20%C2%B7%20Dark%20%C2%B7%20Newspaper%20%C2%B7%20Pamphlet-9b1b30?style=flat-square" alt="Four display themes"></a>
+<a href="docs/releases/README.md"><img src="https://img.shields.io/badge/release-32-c2185b?style=flat-square" alt="Release 32"></a>
+
+</div>
 
 <p align="center">
 	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live dashboard on Netlify"></a>
