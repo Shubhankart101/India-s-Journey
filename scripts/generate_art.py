@@ -1512,6 +1512,270 @@ def _(r, p):
 
 
 
+# ---------- Waterways, ports and logistics: India-specific motifs ----------
+
+BOX_COLORS = ('#e4572e', '#17bebb', '#ffc914', '#2e86ab', '#76b041', '#f4f6f8', '#ff9933')
+
+
+def box_stack(p, cols, rows, bw=34, bh=20, seed=0):
+    out = ''
+    for c in range(cols):
+        for rw in range(rows):
+            out += rect(c * (bw + 2), -(rw + 1) * (bh + 2), bw, bh, BOX_COLORS[(c * 3 + rw * 2 + seed) % len(BOX_COLORS)], 2)
+    return out
+
+
+def container_ship(p, rows=3, cols=12):
+    hull = path('M-290 -34 H290 L250 20 H-250Z', p[5]) + rect(-290, -34, 580, 8, p[6])
+    deck = g(box_stack(p, cols, rows), 'translate(-210 -34)')
+    bridge_ = rect(-280, -120, 56, 86, '#f4f6f8', 3) + rect(-290, -134, 76, 16, p[3]) + ''.join(rect(-272 + i * 16, -108, 10, 10, p[1]) for i in range(3))
+    return hull + deck + bridge_ + rect(-250, -160, 8, 28, p[6]) + smoke_puffs(-246, -164, p[7], 3, 9)
+
+
+def gantry_crane(p, h=240):
+    legs = path(f'M-50 0 V{-h} M50 0 V{-h} M-50 {-h * .5} H50 M-50 0 L50 {-h * .5} M50 0 L-50 {-h * .5}', stroke=p[6], width=7)
+    boom = path(f'M-210 {-h} H190 M-210 {-h} L-50 {-h - 60} L190 {-h}', stroke=p[6], width=6)
+    trolley = g(rect(-12, -h + 2, 24, 16, p[5], 2) + path(f'M0 {-h + 18} V{-h + 62}', stroke=p[5], width=2) + rect(-14, -h + 62, 28, 12, BOX_COLORS[0], 1),
+                cls='scroll', style='animation-duration:9s;animation-direction:alternate;animation-timing-function:ease-in-out')
+    return legs + boom + trolley + circle(-50, -h - 60, 5, '#ef4444', ' class="pulse"')
+
+
+def port_yard(p, n=4):
+    return ''.join(g(box_stack(p, 3, 3 - i % 2, seed=i), f'translate({i * 118} 0)') for i in range(n))
+
+
+def kettuvallam(p):
+    hull = path('M-190 -16 Q-170 20 0 22 Q170 20 190 -16 Q150 -4 0 -2 Q-150 -4 -190 -16Z', p[3], p[5], 2)
+    roof = path('M-150 -20 Q-150 -112 0 -116 Q150 -112 150 -20Z', '#b8863b') + ''.join(path(f'M{x} -24 Q{x} -92 {x * .8} -108', stroke='#7a5320', width=2) for x in range(-120, 130, 30))
+    door = path('M-30 -20 V-60 Q0 -84 30 -60 V-20Z', p[1]) + rect(-150, -26, 300, 8, '#7a5320')
+    return roof + door + hull + path('M-190 -16 q-14 -30 4 -44 M190 -16 q14 -30 -4 -44', stroke=p[6], width=4)
+
+
+def water_metro(p):
+    hull = path('M-150 -30 H140 Q170 -26 180 -6 L150 14 H-130Z', '#f4f6f8') + rect(-150, -30, 300, 6, p[6])
+    cabin = path('M-120 -30 V-70 Q-118 -84 -100 -84 H90 Q112 -80 120 -30Z', p[6]) + ''.join(rect(-104 + i * 40, -72, 30, 22, p[1], 3, ' opacity=".85"') for i in range(5))
+    return hull + cabin + rect(-100, -92, 190, 8, p[5]) + path('M-170 14 q-30 4 -60 10 M-180 24 q-40 4 -70 12', stroke=p[7], width=3, extra=' opacity=".4"')
+
+
+def dhow(p):
+    hull = path('M-150 -30 Q-130 22 0 22 Q120 22 170 -50 L150 -30Z', p[3], p[5], 3) + path('M-150 -30 H150', stroke=p[6], width=5)
+    sail = path('M-10 -34 L-90 -50 L40 -250 Q70 -150 90 -52Z', '#f1e3c2') + path('M40 -250 V-34', stroke=p[3], width=4)
+    return sail + hull + path('M40 -250 L-130 -30', stroke=p[5], width=3)
+
+
+def lighthouse(p, h=250):
+    tower = path(f'M-34 0 L-20 {-h} H20 L34 0Z', '#f4f6f8') + ''.join(path(f'M{-33 + i * 3} {-i * h / 4 - 20} H{33 - i * 3}', stroke='#e4572e', width=h / 9) for i in range(3))
+    lamp = rect(-24, -h - 36, 48, 36, p[2], 3, ' class="pulse"') + path(f'M-32 {-h - 36} H32 L0 {-h - 74}Z', p[5]) + rect(-30, -h - 4, 60, 8, p[5])
+    beam = path(f'M0 {-h - 18} L520 {-h - 70} V{-h + 34}Z', p[2], extra=' class="tw" opacity=".25"') + path(f'M0 {-h - 18} L-520 {-h - 70} V{-h + 34}Z', p[2], extra=' class="tw" opacity=".25"')
+    return beam + tower + lamp
+
+
+def gateway_india(p):
+    base = rect(-130, -30, 260, 30, '#d7b98a') + rect(-120, -190, 240, 160, '#d7b98a')
+    arch = path('M-40 -30 V-110 Q0 -170 40 -110 V-30Z', p[1]) + path('M-120 -190 H120 L106 -206 H-106Z', '#c9a572')
+    domes = ''.join(path(f'M{x - 26} -206 Q{x} -250 {x + 26} -206Z', '#c9a572') + rect(x - 3, -262, 6, 14, '#c9a572') for x in (-90, -30, 30, 90))
+    cap = path('M-60 -206 Q0 -290 60 -206Z', '#d7b98a')
+    return base + arch + domes + cap + ''.join(rect(x, -170, 16, 40, p[1], 2, ' opacity=".6"') for x in (-100, 84))
+
+
+def howrah_bridge(p, span=720):
+    h = 230
+    tow = path(f'M{-span / 2} 0 L{-span / 2 + 40} {-h} M{span / 2} 0 L{span / 2 - 40} {-h}', stroke=p[5], width=10)
+    truss = path(f'M{-span / 2 - 60} -70 L{-span / 2 + 40} {-h} L0 -120 L{span / 2 - 40} {-h} L{span / 2 + 60} -70', stroke=p[5], width=8)
+    web = ''.join(path(f'M{x} -64 L{x + 30} {-120 - 100 * (1 - abs(x) / (span / 2)) ** 1.2}', stroke=p[6], width=2, extra=' opacity=".7"') for x in range(-int(span / 2) + 60, int(span / 2) - 40, 40))
+    deck = rect(-span / 2 - 80, -70, span + 160, 14, p[5]) + rect(-span / 2 - 80, -56, span + 160, 6, p[6], 0, ' opacity=".7"')
+    return tow + truss + web + deck + g(rect(-span / 2 + 30, -88, 26, 18, '#f4c20d', 2), cls='drive', style='animation-duration:22s')
+
+
+def ghat(p, n=6):
+    out = ''.join(rect(i * 22, -(n - i) * 12, 210 - i * 22 + 10, 12, '#d7b98a' if i % 2 else '#b99668') for i in range(n))
+    return out + rect(0, -n * 12 - 80, 40, 80, '#c9a572') + path(f'M-6 {-n * 12 - 80} Q20 {-n * 12 - 126} 46 {-n * 12 - 80}Z', p[6])
+
+
+def cruise_ship(p):
+    hull = path('M-260 -50 H280 L240 20 H-220Z', '#f4f6f8') + rect(-250, -40, 510, 8, p[6])
+    decks = ''.join(rect(-220 + i * 12, -50 - (i + 1) * 28, 480 - i * 40, 26, '#f4f6f8', 3) + ''.join(rect(-210 + i * 12 + k * 28, -44 - (i + 1) * 28, 14, 10, p[1], 2, ' opacity=".8"') for k in range(int((460 - i * 40) // 28))) for i in range(3))
+    return hull + decks + rect(-30, -190, 40, 34, p[6], 3) + smoke_puffs(-10, -194, p[7], 3, 10)
+
+
+def ferry(p):
+    hull = path('M-130 -24 H130 L104 14 H-110Z', p[6]) + rect(-100, -64, 190, 40, '#f4f6f8', 4) + ''.join(rect(-90 + i * 34, -54, 22, 18, p[1], 3) for i in range(5))
+    return hull + rect(-70, -92, 90, 28, p[5], 3) + rect(-2, -120, 4, 28, p[5]) + path('M-60 -90 H10', stroke=p[3], width=3)
+
+
+def indian_truck(p, color=None):
+    c = color or '#e4572e'
+    body = rect(-150, -120, 220, 100, '#2e86ab', 4) + ''.join(rect(-150 + i * 44, -120, 6, 100, '#ffc914') for i in range(1, 5))
+    body += path('M-150 -108 H70 M-150 -30 H70', stroke='#ffc914', width=5)
+    cab = path('M70 -100 H132 L156 -56 V-20 H70Z', c) + rect(96, -92, 30, 26, p[1], 3) + path('M70 -100 H132', stroke='#ffc914', width=5)
+    deco = ''.join(path(f'M{x} -122 v-12', stroke='#ff9933', width=4) + circle(x, -136, 5, '#ffc914') for x in range(-130, 60, 28))
+    tassels = ''.join(path(f'M{70 + i * 8} -20 v12', stroke='#ef4444', width=3) for i in range(5))
+    wheels = ''.join(g(g(circle(0, 0, 18, '#111') + circle(0, 0, 7, p[5]), cls='rot'), f'translate({x} -16)') for x in (-110, -66, 40, 112))
+    return body + cab + deco + tassels + wheels + text(-40, -70, 'HORN OK PLEASE', 14, '#ffc914') + tricolor_mini(120, -60)
+
+
+def tricolor_mini(x, y):
+    return rect(x - 9, y - 6, 18, 4, '#ff9933') + rect(x - 9, y - 2, 18, 4, '#ffffff') + rect(x - 9, y + 2, 18, 4, '#138808')
+
+
+def toll_gantry(p, w=380):
+    post = rect(-w / 2, -250, 16, 250, p[5]) + rect(w / 2 - 16, -250, 16, 250, p[5])
+    beam = rect(-w / 2, -260, w, 36, '#138808', 4) + text(0, -242, 'NH 48 · TOLL PLAZA', 20, '#ffffff')
+    lanes = ''.join(rect(-w / 2 + 40 + i * 90, -200, 52, 26, p[3], 3) + text(-w / 2 + 66 + i * 90, -187, 'FASTag', 11, p[2]) + circle(-w / 2 + 66 + i * 90, -168, 5, '#22c55e', ' class="pulse"') for i in range(4))
+    return post + beam + lanes + rect(-w / 2 - 6, -6, w + 12, 8, p[3])
+
+
+def nh_sign(p):
+    return rect(-3, -140, 6, 140, p[5]) + path('M-42 -140 H42 V-196 H-42Z', '#2563eb', p[7], 2) + text(0, -178, 'NH', 18, '#ffffff') + text(0, -156, '44', 22, '#ffffff')
+
+
+def freight_train(p, n=6):
+    loco = path('M0 -96 H110 L130 -60 V-14 H0Z', '#1d4ed8') + rect(80, -86, 28, 24, p[1]) + rect(0, -96, 110, 8, '#ff9933')
+    out = loco
+    for i in range(1, n + 1):
+        x = -i * 150
+        out += rect(x, -80, 140, 64, BOX_COLORS[i % 5] if i % 2 else p[5], 4) + path(f'M{x} -50 H{x + 140}', stroke=p[0], width=2, extra=' opacity=".4"')
+    return out + ''.join(circle(x, -10, 9, '#111') for x in range(-n * 150 + 20, 130, 46))
+
+
+def cargo_plane(p):
+    body = path('M-190 -50 Q-200 -86 -150 -90 H120 Q200 -90 220 -50 Q200 -14 110 -14 H-150Z', '#f4f6f8') + path('M-190 -50 L-216 -150 H-176 L-130 -88Z', p[6])
+    wing = path('M-20 -50 L-70 20 H-10 L60 -50Z', p[5]) + ''.join(path(f'M{x} -50 V-90', stroke=p[3], width=2) for x in range(-100, 100, 40))
+    nose = path('M200 -70 Q214 -50 190 -26 L170 -26 L184 -70Z', p[3]) + rect(150, -76, 26, 18, p[1], 3)
+    ramp = path('M-120 -14 H-60 V-86 H-120Z', p[3], extra=' opacity=".4"')
+    return body + ramp + wing + nose + circle(-10, 4, 14, p[3]) + circle(100, -6, 8, '#111') + circle(-120, -6, 8, '#111')
+
+
+def india_map(p, s=1.0):
+    d = ('M-20 -340 L25 -335 L45 -300 L40 -270 L90 -255 L150 -245 L140 -215 L100 -210 L85 -190 L60 -185 L40 -150 L30 -110 L5 -40 '
+         'L-15 0 L-35 -50 L-60 -110 L-95 -150 L-110 -195 L-100 -230 L-135 -250 L-125 -280 L-70 -290 L-40 -310Z')
+    return g(path(d, p[3], p[6], 3, ' opacity=".95"'), f'scale({f(s)})')
+
+
+CITIES = {'DEL': (-25, -270), 'MUM': (-90, -170), 'KOL': (60, -200), 'CHE': (0, -60), 'BLR': (-30, -80), 'HYD': (-25, -135), 'AMD': (-95, -215), 'GAU': (115, -230)}
+
+
+def route_net(p, pairs, color=None, cls='flow'):
+    out = ''
+    for a, b in pairs:
+        (x1, y1), (x2, y2) = CITIES[a], CITIES[b]
+        out += path(f'M{x1} {y1} Q{f((x1 + x2) / 2)} {f(min(y1, y2) - 60)} {x2} {y2}', stroke=color or p[2], width=2.5, extra=f' class="{cls}" opacity=".85"')
+    return out + ''.join(circle(x, y, 6, p[6], ' class="pulse"') for x, y in CITIES.values())
+
+
+def modal_icons(p):
+    return (place(vehicle(p, 'truck'), -230, 0, .55) + place(wagon_row(p, 2), 30, 0, .45) + place(container_ship(p, 2, 5), 290, 20, .3)
+            + place(cargo_plane(p), 520, 0, .3))
+
+
+def rupee_bars(p, rng):
+    return place(coins(p, 5), 0, 0, .9) + place(bar_chart(p, rng, 6, 360, 220), 340, -10, .8)
+
+
+# Water transport
+@scene('water-group', 'ocean', 'sea', (900, 120, 50))
+def _(r, p):
+    return (water(p, 440) + place(lighthouse(p), 130, 450, .9) + g(place(container_ship(p), 520, 450, .8), cls='bob')
+            + g(place(dhow(p), 930, 470, .6), cls='bob', style=delay(-2)) + place(tricolor(p), 1100, 380, .7))
+
+
+@scene('water-ports', 'steel', 'city')
+def _(r, p):
+    return (on_ground(p, 'wp', 500) + water(p, 520, 80) + place(gantry_crane(p), 250, 500) + place(gantry_crane(p, 200), 450, 500, .9)
+            + place(port_yard(p), 640, 500) + g(place(container_ship(p, 3, 8), 300, 540, .6), cls='bob'))
+
+
+@scene('water-inland', 'forest', 'hills')
+def _(r, p):
+    return (water(p, 440) + place(howrah_bridge(p), 520, 440, .8) + place(ghat(p), 940, 470, 1) + g(place(ferry(p), 200, 490, .7), cls='bob')
+            + place(tricolor(p), 1130, 330, .6))
+
+
+@scene('water-coastal', 'dusk', 'sea', (300, 150, 60))
+def _(r, p):
+    return (water(p, 450) + place(lighthouse(p, 280), 1000, 460) + place(gateway_india(p), 280, 460, .85) + g(place(dhow(p), 650, 480, .65), cls='bob'))
+
+
+@scene('water-passenger', 'teal', 'sea', (1000, 130, 50))
+def _(r, p):
+    return (water(p, 440) + g(place(kettuvallam(p), 280, 475, .9), cls='bob') + g(place(water_metro(p), 700, 485, .9), cls='bob', style=delay(-3))
+            + place(crowd(p, r, 4, 160), 1060, 440, .5) + place(ferry(p), 1050, 500, .5))
+
+
+@scene('water-container', 'night', 'sea', (200, 110, 30))
+def _(r, p):
+    return (water(p, 450) + g(place(container_ship(p, 4, 14), 560, 470, 1.05), cls='bob') + place(gantry_crane(p, 220), 1060, 450, .8)
+            + place(port_yard(p, 2), 960, 450, .6))
+
+
+@scene('water-global', 'night', 'sea', (200, 110, 30))
+def _(r, p):
+    return place(globe(p, 170), 600, 300) + water(p, 480) + g(place(cruise_ship(p), 250, 500, .55), cls='bob') + g(place(container_ship(p), 950, 500, .5), cls='bob', style=delay(-2))
+
+
+# Logistics
+@scene('logistics-group', 'saffron', 'city', (1000, 130, 50))
+def _(r, p):
+    return (on_ground(p, 'lg', 520) + road(p, 520) + g(place(indian_truck(p), 300, 556, .9), cls='drive') + place(india_map(p), 900, 520, .9)
+            + place(route_net(p, [('DEL', 'MUM'), ('DEL', 'KOL'), ('MUM', 'CHE')]), 900, 520, .9) + g(place(cargo_plane(p), 0, 150, .5), cls='fly'))
+
+
+@scene('logistics-road', 'desert', 'hills')
+def _(r, p):
+    return (on_ground(p, 'lr', 500) + road(p, 520) + place(toll_gantry(p), 560, 520, .9) + place(nh_sign(p), 130, 520) + g(place(indian_truck(p, '#138808'), 200, 556, .85), cls='drive')
+            + g(place(indian_truck(p), 200, 556, .75), cls='drive-r', style=delay(-6)))
+
+
+@scene('logistics-rail', 'steel', 'hills')
+def _(r, p):
+    return on_ground(p, 'lrl', 540) + rails(p, 540) + place(pylon_line(p, 6, 220), 60, 520) + g(place(freight_train(p, 7), 900, 538, .85), cls='drive')
+
+
+@scene('logistics-sea', 'ocean', 'sea')
+def _(r, p):
+    return (water(p, 460) + place(gantry_crane(p), 220, 460, .9) + place(port_yard(p, 2), 330, 460, .8) + g(place(container_ship(p, 3, 10), 760, 480, .85), cls='bob')
+            + place(lighthouse(p, 200), 1130, 460, .6))
+
+
+@scene('logistics-air', 'dusk', 'city')
+def _(r, p):
+    return (on_ground(p, 'la', 500) + place(control_tower(p), 220, 520, .9) + place(cargo_plane(p), 700, 520, .85) + place(vehicle(p, 'truck'), 1050, 540, .6)
+            + g(place(jet(p), 0, 130, .6), cls='fly'))
+
+
+@scene('logistics-modal', 'emerald', 'hills')
+def _(r, p):
+    return (on_ground(p, 'lm', 500) + place(india_map(p, 1.15), 420, 540) + place(route_net(p, [('DEL', 'MUM'), ('DEL', 'KOL'), ('MUM', 'CHE'), ('KOL', 'CHE'), ('DEL', 'GAU'), ('HYD', 'AMD')]), 420, 540, 1.15)
+            + place(modal_icons(p), 740, 540, .55) + place(tricolor(p), 1130, 380, .6))
+
+
+@scene('logistics-revenue', 'gold', 'city')
+def _(r, p):
+    return on_ground(p, 'lv', 520) + place(rupee_bars(p, r), 280, 520, 1) + place(freight_train(p, 4), 1050, 538, .55, 'drive') + place(line_chart(p, r, 420), 820, 250, .6)
+
+
+# Dashboard expansion scenes
+@scene('air-airports-top', 'emerald', 'city')
+def _(r, p):
+    return on_ground(p, 'aat', 520) + place(terminal(p, 560), 330, 520) + place(control_tower(p), 760, 520, .85) + place(bar_chart(p, r, 6, 300, 200), 960, 470, .6) + place(tricolor(p), 1130, 420, .6)
+
+
+@scene('rail-zones', 'forest', 'hills')
+def _(r, p):
+    return on_ground(p, 'rz', 540) + rails(p, 540) + place(india_map(p, 1.2), 280, 520) + place(route_net(p, [('DEL', 'KOL'), ('DEL', 'MUM'), ('MUM', 'CHE'), ('KOL', 'CHE')]), 280, 520, 1.2) + place(vande_bharat(p, 2), 1000, 538, .8, 'drive')
+
+
+@scene('rail-electrification', 'gold', 'hills', (1000, 130, 50))
+def _(r, p):
+    return on_ground(p, 're', 540) + rails(p, 540) + place(pylon_line(p, 6, 200), 80, 520, 1.05) + place(vande_bharat(p, 2), 900, 538, .85, 'drive') + place(tricolor(p), 1130, 410, .6)
+
+
+@scene('air-routes', 'night', 'hills', (200, 110, 30))
+def _(r, p):
+    return (place(india_map(p, 1.2), 600, 560) + place(route_net(p, [('DEL', 'MUM'), ('DEL', 'KOL'), ('DEL', 'BLR'), ('MUM', 'CHE'), ('KOL', 'HYD'), ('GAU', 'DEL'), ('AMD', 'BLR')]), 600, 560, 1.2)
+            + place(plane(p), 0, 130, .7) + on_ground(p, 'ar', 570))
+
+
 def main():
     for d in OUTPUT_DIRS:
         d.mkdir(parents=True, exist_ok=True)

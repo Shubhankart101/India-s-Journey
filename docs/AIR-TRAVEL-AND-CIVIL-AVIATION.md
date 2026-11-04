@@ -1,17 +1,33 @@
-﻿# Air Travel & Civil Aviation
+# Air Travel & Civil Aviation
 
-Top-level dashboard group built by `scripts/air_travel_layer.py`. Static series are transcribed from official documents; the global comparisons are live World Bank pulls (ICAO data). If a live pull fails, the previous value is kept.
+Top-level dashboard group. Built by `scripts/air_travel_layer.py` from AAI Annual Reports (2019-20 to 2024-25), AAI Traffic News annexures, Ministry of Civil Aviation and Parliament replies (sansad.in), plus live World Bank/ICAO series. AAI counts passengers handled (arrivals plus departures); the Ministry and DGCA count passengers carried by airlines, so the bases are never mixed within one chart. Not available from official text and therefore left out: DGCA load factors and market share, airport-wise history, AAI Annual Report 2018-19 (scanned). If a live pull fails, the previous value is kept.
 
-## Sources and what they say
+## Subgroups (108 charts)
 
-| Source | Used for |
+| Subgroup | Charts |
 |---|---|
-| [AAI Annual Report 2023-24](https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf) | Traffic at all Indian airports: 376.43 million passengers (domestic 306.79, international 69.64), 2,677.59 thousand aircraft movements, 3,365.68 thousand tonnes of freight in 2023-24 (2022-23: 327.28 million, 2,508.32 thousand, 3,146.80 thousand). AAI manages 133 airports (8 privately run). Revenue Rs 15,979.83 crore, profit after tax Rs 4,651.31 crore, capital expenditure Rs 5,335 crore in 2023-24. UDAN: 559 routes, 84 airports, 136 lakh passengers at 31 March 2024. |
-| [Ministry of Civil Aviation](https://www.civilaviation.gov.in/our-performance) and Lok Sabha reply of 4 December 2025 | 164 operational airports in 2025 (74 in 2014); scheduled passengers carried 165.5 million domestic and 74.14 million international in 2024-25 (153.7 and 66.8 million in 2023-24); cargo 3.72 million tonnes in 2024-25 (2.53 in 2014-15); UDAN 657 routes, 93 airports, 159 lakh passengers at 31 December 2025. |
-| [World Bank](https://data.worldbank.org/indicator/IS.AIR.PSGR) (ICAO) | `IS.AIR.PSGR` passengers, `IS.AIR.DPRT` departures, `IS.AIR.GOOD.MT.K1` freight, `SP.POP.TOTL` population, for India and ten peers. Benchmark year 2023. |
+| Domestic vs International | 22 |
+| Air Passenger Growth | 21 |
+| Airports & UDAN | 16 |
+| Air Cargo | 22 |
+| AAI Finance & Investment | 19 |
+| Global Aviation Comparison | 8 |
 
-**Basis caution:** AAI counts passengers handled at airports (arrivals plus departures); the Ministry counts passengers carried by scheduled airlines. They are shown on separate charts and are not comparable.
+## Source documents used
 
-## Subgroups
-
-Air Passenger Growth, Global Aviation Comparison, Domestic vs International, Airports & UDAN, Air Cargo, AAI Finance & Investment (27 charts). Art: `scripts/generate_art.py` scenes `air-*`.
+| Source | Charts |
+|---|---|
+| <https://www.aai.aero/en/business-opportunities/aai-traffic-news> | 29 |
+| <https://www.aai.aero/sites/default/files/Final_AAi_Annual%20Report_English_29%20jan.pdf> | 17 |
+| <https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf> | 13 |
+| <https://www.aai.aero/sites/default/files/AAI_AR_2023_ENG_LARGE.pdf> | 12 |
+| <https://data.worldbank.org/indicator/IS.AIR.PSGR?locations=IN> | 10 |
+| <https://data.worldbank.org/indicator/IS.AIR.DPRT?locations=IN> | 6 |
+| <https://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1?locations=IN> | 5 |
+| <https://sansad.in/getFile/loksabhaquestions/annex/184/AU4389_JWASE8.pdf?source=pqals> | 4 |
+| <https://sansad.in/getFile/annex/268/AU2419_Xi4vXl.pdf?source=pqars> | 4 |
+| <https://www.sansad.in/getFile/loksabhaquestions/annex/182/AU2858_wclCg4.pdf?source=pqals> | 3 |
+| <https://www.civilaviation.gov.in/our-performance> | 2 |
+| <https://www.sansad.in/getFile/annex/266/AU2260_TGQhJU.pdf?source=pqars> | 1 |
+| <https://www.sansad.in/getFile/loksabhaquestions/annex/186/AU861_6WIzEa.pdf?source=pqals> | 1 |
+| <https://www.aai.aero/en/business-opportunities/investors-annual-reports> | 1 |

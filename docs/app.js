@@ -275,6 +275,20 @@ const linearTrend = values => {
   return { slope, line: values.map((_, x) => intercept + slope * x), r2: total ? 1 - residual / total : 1 };
 };
 
+const DASHBOARD_PREFS_KEY = 'indiaDashboard.interactivity.v1';
+const readDashboardPrefs = () => {
+  try { return JSON.parse(localStorage.getItem(DASHBOARD_PREFS_KEY) || '{}'); } catch { return {}; }
+};
+const writeDashboardPrefs = prefs => {
+  try { localStorage.setItem(DASHBOARD_PREFS_KEY, JSON.stringify(prefs)); } catch { /* Storage may be disabled. */ }
+};
+const readChartPrefs = key => readDashboardPrefs().charts?.[key] || {};
+const writeChartPrefs = (key, values) => {
+  const prefs = readDashboardPrefs();
+  prefs.charts = { ...(prefs.charts || {}), [key]: { ...(prefs.charts?.[key] || {}), ...values } };
+  writeDashboardPrefs(prefs);
+};
+
 const seriesToCsv = series => {
   const cell = value => {
     const text = value === null || value === undefined ? '' : String(value);
@@ -294,7 +308,7 @@ const CHART_THEME = {
   font: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif'
 };
 
-const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line') => {
+const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = false, chartType = 'line', showShare = false, logScale = false, onDatumClick = null, onVisibilityChange = null) => {
   const isRadialChart = chartType === 'pie' || chartType === 'doughnut';
   const pluginsConfig = {
     legend: {
@@ -329,14 +343,10 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
         label: context => {
           const value = isRadialChart ? context.raw : horizontalBars ? context.parsed.x : context.parsed.y;
           const label = isRadialChart ? context.label : context.dataset.label || 'Value';
-          if (isRadialChart) {
-            const chart = context.chart;
-            const dataset = context.dataset.data || [];
-            const total = dataset.reduce((sum, amount, index) => sum + (chart.getDataVisibility(index) ? Math.max(0, Number(amount) || 0) : 0), 0);
-            const share = total ? ` (${(Number(value) / total * 100).toFixed(1)}%)` : '';
-            return ` ${label}: ${formatMagnitude(value, suffix)}${share}`;
-          }
-          return ` ${label}: ${formatMagnitude(value, suffix)}`;
+          const dataset = context.dataset.data || [];
+          const total = dataset.reduce((sum, amount) => sum + Math.max(0, Number(amount) || 0), 0);
+          const share = (isRadialChart || showShare) && total ? ` ? ${(Number(value) / total * 100).toFixed(1)}% of total` : '';
+          return ` ${label}: ${formatMagnitude(value, suffix)}${share}`;
         }
       }
     }
@@ -354,17 +364,23 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
     animation: { duration: 600, easing: 'easeOutQuart' },
     interaction: { mode: 'index', intersect: isRadialChart },
     plugins: pluginsConfig,
-    onClick: isRadialChart ? (event, elements, chart) => {
+    onClick: (event, elements, chart) => {
       if (!elements.length) return;
-      chart.toggleDataVisibility(elements[0].index);
-      chart.update();
-    } : undefined
+      const point = elements[0];
+      onDatumClick?.(chart, point.datasetIndex, point.index);
+      if (isRadialChart) {
+        chart.toggleDataVisibility(point.index);
+        chart.update();
+        onVisibilityChange?.(chart);
+      }
+    }
   };
   if (!isRadialChart) {
     const axisTicks = { color: CHART_THEME.muted, font: { size: 11, family: CHART_THEME.font } };
     const axisGrid = { color: CHART_THEME.grid, drawBorder: false };
     options.scales = horizontalBars ? {
       x: {
+        type: logScale ? 'logarithmic' : 'linear',
         grid: axisGrid,
         ticks: { ...axisTicks, callback: value => formatMagnitude(value, suffix) }
       },
@@ -378,6 +394,7 @@ const chartOptions = (suffix, hasMultipleDatasets = false, horizontalBars = fals
         ticks: { ...axisTicks }
       },
       y: {
+        type: logScale ? 'logarithmic' : 'linear',
         grid: axisGrid,
         ticks: { ...axisTicks, maxTicksLimit: 6, padding: 10, callback: value => formatMagnitude(value, suffix) }
       }
@@ -786,6 +803,8 @@ async function main() {
     "U.S. Elections": "assets/us-elections.svg",
     "Tourism & Heritage": "assets/tourism.svg",
     "Air Travel & Civil Aviation": "assets/air-group.svg",
+    "Water Transport & Shipping": "assets/water-group.svg",
+    "Logistics & Freight": "assets/logistics-group.svg",
     "Indian Railways": "assets/rail-group.svg",
     "Sports": "assets/sports.svg",
     "Cricket": "assets/cricket.svg",
@@ -809,7 +828,7 @@ async function main() {
 
   const grid = document.querySelector('#charts');
   const charts = [];
-  const savedChartKeys = new Set();
+  const savedChartKeys = new Set(readDashboardPrefs().savedCharts || []);
   const focusOverlay = document.querySelector('#chart-focus-overlay');
   const focusContent = document.querySelector('#chart-focus-content');
   const focusClose = document.querySelector('#chart-focus-close');
@@ -835,11 +854,19 @@ async function main() {
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') closeExpandedChart();
+    if (event.key === 'Tab' && expandedChart && focusOverlay) {
+      const focusables = [...focusOverlay.querySelectorAll('button:not([disabled]), a[href], select:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
   });
   const compareStore = window.IndiaCompare || { has: () => false, full: () => false, toggle: () => {}, subscribe: () => {} };
   const compareButtonSyncers = [];
   compareStore.subscribe(() => compareButtonSyncers.forEach(sync => sync()));
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5, 'Air Travel & Civil Aviation': 12.2, 'Indian Railways': 12.3 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5, 'Air Travel & Civil Aviation': 12.2, 'Indian Railways': 12.3, 'Water Transport & Shipping': 12.4, 'Logistics & Freight': 12.45 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
@@ -877,6 +904,7 @@ async function main() {
     card.id = `indicator-${key}`;
     card.dataset.key = key;
     card.dataset.title = `${title} ${subtitle} ${details} ${category} ${dashboardSubgroupFor(key)}`.toLowerCase();
+    card.dataset.chartTitle = title.toLowerCase();
     card.dataset.state = live ? 'live' : 'pending';
     card.dataset.category = category;
     card.dataset.subgroup = dashboardSubgroupFor(key);
@@ -951,7 +979,7 @@ async function main() {
     }
     const footValue = live ? (['state', 'category'].includes(series.scope) ? `${labels.length} ${series.scopeLabel ? escapeHtml(series.scopeLabel.toLowerCase()) : 'categories'}` : `<strong>${latestValStr}</strong>${latestLabel ? ` <span class="muted">· ${escapeHtml(String(latestLabel))}</span>` : ''}`) : '<span class="muted">Source-linked</span>';
     const cardFootHtml = `<div class="card-foot"><span class="card-foot-value">${footValue}</span><span class="chip">${escapeHtml(frequency)}</span></div>`;
-    card.innerHTML = `<button class="compare-toggle" type="button" aria-pressed="false" aria-label="Add ${escapeHtml(title)} to compare"${live ? '' : ' disabled'}>+ Compare</button><p class="card-eyebrow">${escapeHtml(dashboardSubgroupFor(key))}</p><header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${explainerHtml}${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>${cardFootHtml}`;
+    card.innerHTML = `<button class="compare-toggle" type="button" aria-pressed="false" aria-label="Add ${escapeHtml(title)} to compare"${live ? '' : ' disabled'}>+ Compare</button><p class="card-eyebrow">${escapeHtml(dashboardSubgroupFor(key))}</p><header><div><h2>${title}</h2><p class="chart-meta">${subtitle} <span class="frequency">${frequency}</span><span class="subgroup">${dashboardSubgroupFor(key)}</span></p></div><div class="card-actions"><span class="status-pill ${live ? 'live' : ''}">${live ? 'Data available' : 'Source-linked'}</span><button class="save-chart-btn" type="button" aria-pressed="false" aria-label="Save ${title}">☆ Save</button><button class="expand-chart-btn" type="button" aria-label="Expand ${title}">⛶ Expand</button><button class="deep-dive-btn" type="button" aria-label="Deep dive into ${escapeHtml(title)}">Deep dive <span aria-hidden="true">↗</span></button><button class="reset" type="button" aria-label="Reset chart zoom">Reset</button></div></header><p class="chart-story"><span>THE STORY</span>${summary}</p>${explainerHtml}${live ? valueCruncherHtml : ''}<div class="chart-wrap"><canvas id="chart-${index}" aria-label="${title}: ${subtitle}" role="img"></canvas>${live ? '' : '<p class="empty-state">The cited source is available. Values will appear when a verifiable data export is added.</p>'}</div><details class="insight"><summary>Method, context &amp; limitations</summary><div>${paragraphs}<p><strong>Data context:</strong> ${context}</p></div></details><a class="source-link" href="${source}" target="_blank" rel="noreferrer">Explore the cited source <span aria-hidden="true">↗</span></a>${cardFootHtml}`;
     grid.append(card);
     let chart = null;
     const openExpanded = opener => {
@@ -964,6 +992,7 @@ async function main() {
       expandOpener = opener || card;
       card.hidden = false;
       focusContent.append(card);
+      focusOverlay.setAttribute('aria-label', `Expanded chart: ${card.querySelector('h2')?.textContent || 'chart'}`);
       focusOverlay.hidden = false;
       setTimeout(() => charts.find(item => item.card === card)?.chart?.resize(), 0);
       focusClose?.focus();
@@ -1006,19 +1035,25 @@ async function main() {
     if (years.length > 1) {
       const range = document.createElement('div');
       range.className = 'chart-range-controls';
-      range.innerHTML = `<span>PERIOD</span><label>From <select class="chart-range-start" aria-label="Start year for ${title}"></select></label><label>To <select class="chart-range-end" aria-label="End year for ${title}"></select></label>`;
+      range.innerHTML = `<span>PERIOD</span><div class="chart-range-presets" role="group" aria-label="Time range presets for ${title}"><button type="button" data-range="5" aria-label="Show the last 5 years for ${title}">5Y</button><button type="button" data-range="10" aria-label="Show the last 10 years for ${title}">10Y</button><button type="button" data-range="all" aria-label="Show all years for ${title}">All</button></div><label>From <select class="chart-range-start" aria-label="Start year for ${title}"></select></label><label>To <select class="chart-range-end" aria-label="End year for ${title}"></select></label>`;
       const startSelect = range.querySelector('.chart-range-start');
       const endSelect = range.querySelector('.chart-range-end');
       for (const year of years) {
         startSelect.add(new Option(year, year));
         endSelect.add(new Option(year, year));
       }
-      startSelect.value = years[0];
-      endSelect.value = years[years.length - 1];
+      const chartPrefs = readChartPrefs(key);
+      const rangeSize = chartPrefs.range === '5' ? 5 : chartPrefs.range === '10' ? 10 : years.length;
+      startSelect.value = years.includes(chartPrefs.rangeStart) ? chartPrefs.rangeStart : years[Math.max(0, years.length - rangeSize)];
+      endSelect.value = years.includes(chartPrefs.rangeEnd) ? chartPrefs.rangeEnd : years[years.length - 1];
       card.querySelector('.chart-wrap').before(range);
-      card._range = { startSelect, endSelect };
+      card._range = { startSelect, endSelect, presetButtons: range.querySelectorAll("[data-range]") };
     }
     const saveButton = card.querySelector('.save-chart-btn');
+    if (savedChartKeys.has(key)) {
+      saveButton.textContent = 'Saved';
+      saveButton.setAttribute('aria-pressed', 'true');
+    }
     saveButton.addEventListener('click', event => {
       event.stopPropagation();
       if (savedChartKeys.has(key)) {
@@ -1030,6 +1065,9 @@ async function main() {
         saveButton.textContent = '★ Saved';
         saveButton.setAttribute('aria-pressed', 'true');
       }
+      const currentPrefs = readDashboardPrefs();
+      currentPrefs.savedCharts = [...savedChartKeys];
+      writeDashboardPrefs(currentPrefs);
       updateCards();
     });
     const deepDiveBtn = card.querySelector('.deep-dive-btn');
@@ -1047,6 +1085,7 @@ async function main() {
     if (chartBuilt) return;
     chartBuilt = true;
     const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
+    const chartPrefs = readChartPrefs(key);
 
     const canvas = card.querySelector('canvas');
     const ctx = canvas.getContext('2d');
@@ -1069,7 +1108,13 @@ async function main() {
     const canTogglePie = nativeRadial || additiveCategorical;
     const preferPie = additiveCategorical && ['Elections', 'U.S. Elections'].includes(category);
     const barType = nativeRadial ? 'bar' : (series.chartType || 'line');
-    let activeType = nativeRadial ? series.chartType : preferPie ? 'doughnut' : barType;
+    const availableTypes = nativeRadial ? [series.chartType, 'bar'] : ['line', 'bar'];
+    if (canTogglePie && !nativeRadial) availableTypes.push('doughnut');
+    let activeType = availableTypes.includes(chartPrefs.type) ? chartPrefs.type : nativeRadial ? series.chartType : preferPie ? 'doughnut' : barType;
+    let logScaleOn = chartPrefs.logScale === true;
+    const allNumericValues = [...values, ...(series.datasets || []).flatMap(dataset => dataset.values || dataset.data || [])].map(Number).filter(Number.isFinite);
+    const canLogScale = allNumericValues.length > 1 && allNumericValues.every(value => value > 0);
+    if (!canLogScale) logScaleOn = false;
     const radialColors = [
       '#ff9933', '#3fb950', '#58a6ff', '#bc8cff', '#ff7b72', '#f6c344',
       '#39c5bb', '#f778ba', '#a5d6ff', '#d2a8ff', '#ffa657', '#7ee787',
@@ -1086,14 +1131,14 @@ async function main() {
     };
     const isTimeSeries = years.length > 1 && !nativeRadial;
     const changeInPoints = /%/.test(suffix);
-    let viewMode = 'levels';
-    let trendOn = false;
+    let viewMode = chartPrefs.viewMode === 'change' ? 'change' : 'levels';
+    let trendOn = chartPrefs.trendOn === true;
     const shownValues = (array, isRadialChart) => (!isRadialChart && viewMode === 'change') ? changeSeries(array, changeInPoints) : array;
-    const buildDatasets = isRadialChart => {
+    const buildDatasets = (isRadialChart, chartType = activeType) => {
       if (series.datasets && series.datasets.length > 0) {
         return { labels, datasets: series.datasets.map((dataset, i) => {
           const dsColor = dataset.borderColor || dataset.color || ['#ff9933', '#58a6ff', '#3fb950', '#a371f7', '#ff7b72', '#f6c344'][i % 6];
-          const solidBars = series.chartType === 'bar';
+          const solidBars = chartType === 'bar';
           return {
             label: dataset.label,
             data: shownValues(dataset.values || dataset.data, isRadialChart),
@@ -1129,18 +1174,50 @@ async function main() {
         tension: isRadialChart ? 0 : 0.32
       }] };
     };
-    let chartDatasets = buildDatasets(nativeRadial || preferPie).datasets;
+    let chartDatasets = buildDatasets(nativeRadial || preferPie, activeType).datasets;
 
+    const detailPanel = document.createElement('div');
+    detailPanel.className = 'chart-point-detail';
+    detailPanel.hidden = true;
+    detailPanel.setAttribute('role', 'status');
+    detailPanel.setAttribute('aria-live', 'polite');
+    canvas.parentElement.after(detailPanel);
+    const showDatumDetails = (activeChart, datasetIndex, dataIndex) => {
+      const dataset = activeChart.data.datasets[datasetIndex];
+      const pointValue = Number(dataset?.data?.[dataIndex]);
+      if (!Number.isFinite(pointValue)) return;
+      const seriesValues = (dataset.data || []).map(Number).filter(Number.isFinite);
+      const rank = [...seriesValues].sort((a, b) => b - a).findIndex(value => value === pointValue) + 1;
+      const total = seriesValues.reduce((sum, value) => sum + Math.max(0, value), 0);
+      const previous = Number(dataset.data[dataIndex - 1]);
+      const detailSuffix = viewMode === 'change' && !['pie', 'doughnut'].includes(activeChart.config.type) ? (changeInPoints ? ' pp' : '%') : suffix;
+      const delta = Number.isFinite(previous) ? `Change vs previous: ${formatMagnitude(pointValue - previous, detailSuffix)}${previous ? ` (${((pointValue - previous) / Math.abs(previous) * 100).toFixed(1)}%)` : ''}` : 'Change vs previous: not available';
+      const share = total ? `Share of visible series: ${(pointValue / total * 100).toFixed(1)}%` : 'Share: not available';
+      const pointLabel = activeChart.data.labels?.[dataIndex] ?? '';
+      detailPanel.textContent = `${pointLabel} - ${dataset.label || title}: ${formatMagnitude(pointValue, detailSuffix)} | Rank ${rank} of ${seriesValues.length} | ${delta} | ${share}`;
+      detailPanel.hidden = false;
+    };
     const createChart = type => {
       const isRadialChart = type === 'pie' || type === 'doughnut';
-      const built = buildDatasets(isRadialChart);
+      const built = buildDatasets(isRadialChart, type);
       chartDatasets = built.datasets;
       const shownSuffix = !isRadialChart && viewMode === 'change' ? (changeInPoints ? ' pp' : '%') : suffix;
-      return new Chart(canvas, {
+      const showShare = (type === 'bar' && allNumericValues.every(value => value >= 0)) || !isTimeSeries;
+      const nextChart = new Chart(canvas, {
         type,
         data: built,
-        options: chartOptions(shownSuffix, hasMultipleDatasets, !isRadialChart && series.chartType === 'bar' && series.indexAxis === 'y', type),
+        options: chartOptions(shownSuffix, hasMultipleDatasets, !isRadialChart && series.chartType === 'bar' && series.indexAxis === 'y', type, showShare, logScaleOn, showDatumDetails, activeChart => {
+          writeChartPrefs(key, { hiddenPoints: activeChart.data.labels.flatMap((_, index) => activeChart.getDataVisibility(index) ? [] : [index]) });
+        }),
       });
+      const currentChartPrefs = readChartPrefs(key);
+      (currentChartPrefs.hiddenDatasets || []).forEach(index => {
+        if (index >= 0 && index < nextChart.data.datasets.length) nextChart.setDatasetVisibility(index, false);
+      });
+      (currentChartPrefs.hiddenPoints || []).forEach(index => {
+        if (index >= 0 && index < nextChart.data.labels.length && nextChart.getDataVisibility(index)) nextChart.toggleDataVisibility(index);
+      });
+      return nextChart;
     };
     let fullLabels = [];
     let fullData = [];
@@ -1204,53 +1281,86 @@ async function main() {
       chart = createChart(activeType);
       fullLabels = [...chart.data.labels];
       fullData = chart.data.datasets.map(dataset => [...dataset.data]);
+      applyView();
       canvas.addEventListener('dblclick', () => card.querySelector('.expand-chart-btn')?.click());
     }
-    if (chart && canTogglePie) {
+    if (chart && availableTypes.length > 1) {
       const toggle = document.createElement('div');
       toggle.className = 'chart-type-toggle';
       toggle.setAttribute('role', 'group');
       toggle.setAttribute('aria-label', `Chart type for ${title}`);
-      toggle.innerHTML = `<button type="button" data-type="doughnut">◔ Pie</button><button type="button" data-type="${barType}">▥ ${barType === 'line' ? 'Line' : 'Bar'}</button>`;
+      toggle.innerHTML = availableTypes.map(type => `<button type="button" data-type="${type}" aria-label="Show ${type} chart for ${title}">${type === 'doughnut' || type === 'pie' ? 'Pie' : type === 'bar' ? 'Bar' : 'Line'}</button>`).join('');
       const syncToggle = () => toggle.querySelectorAll('button').forEach(button => {
-        const active = (button.dataset.type === 'doughnut') === (activeType === 'pie' || activeType === 'doughnut');
+        const active = button.dataset.type === activeType;
         button.classList.toggle('active', active);
         button.setAttribute('aria-pressed', String(active));
       });
       toggle.addEventListener('click', event => {
         const button = event.target.closest('button');
-        if (!button) return;
+        if (!button || !availableTypes.includes(button.dataset.type)) return;
         event.stopPropagation();
-        const nextType = button.dataset.type === 'doughnut' ? (nativeRadial ? series.chartType : 'doughnut') : barType;
-        if (nextType === activeType) return;
-        activeType = nextType;
+        if (button.dataset.type === activeType) return;
+        activeType = button.dataset.type;
+        writeChartPrefs(key, { type: activeType });
         rebuildChart();
         syncToggle();
+        const logButton = card.querySelector('[data-tool="log"]');
+        if (logButton) logButton.hidden = ['pie', 'doughnut'].includes(activeType);
       });
       syncToggle();
       card.querySelector('.chart-wrap').prepend(toggle);
     }
     if (chart && card._range) {
-      card._range.startSelect.addEventListener('change', applyView);
-      card._range.endSelect.addEventListener('change', applyView);
+      const syncRangePresets = active => card._range.presetButtons.forEach(button => {
+        const pressed = button.dataset.range === active;
+        button.setAttribute('aria-pressed', String(pressed));
+        button.classList.toggle('active', pressed);
+      });
+      card._range.startSelect.addEventListener('change', () => {
+        writeChartPrefs(key, { range: 'custom', rangeStart: card._range.startSelect.value, rangeEnd: card._range.endSelect.value });
+        syncRangePresets('custom');
+        applyView();
+      });
+      card._range.endSelect.addEventListener('change', () => {
+        writeChartPrefs(key, { range: 'custom', rangeStart: card._range.startSelect.value, rangeEnd: card._range.endSelect.value });
+        syncRangePresets('custom');
+        applyView();
+      });
+      card._range.presetButtons.forEach(button => button.addEventListener('click', () => {
+        const preset = button.dataset.range;
+        const size = preset === 'all' ? years.length : Number(preset);
+        card._range.startSelect.value = years[Math.max(0, years.length - size)];
+        card._range.endSelect.value = years[years.length - 1];
+        writeChartPrefs(key, { range: preset, rangeStart: card._range.startSelect.value, rangeEnd: card._range.endSelect.value });
+        syncRangePresets(preset);
+        applyView();
+      }));
+      syncRangePresets(chartPrefs.range || 'all');
       card.querySelector('.reset').addEventListener('click', () => {
         card._range.startSelect.value = years[0];
         card._range.endSelect.value = years[years.length - 1];
+        writeChartPrefs(key, { range: 'all', rangeStart: years[0], rangeEnd: years[years.length - 1] });
+        syncRangePresets('all');
         applyView();
       });
     }
     if (chart) {
       const tools = document.createElement('div');
       tools.className = 'chart-tools';
+      tools.style.setProperty('display', 'flex', 'important');
       tools.setAttribute('role', 'toolbar');
       tools.setAttribute('aria-label', `Tools for ${title}`);
       const canTrend = isTimeSeries && !hasMultipleDatasets && !(series.datasets?.length > 1);
       tools.innerHTML = [
-        isTimeSeries ? `<button type="button" data-tool="change" aria-pressed="false" title="Show the change from one period to the         next">Δ ${changeInPoints ? 'Change (pp)' : '% Change'}</button>` : '',
-                canTrend ? '<button type="button" data-tool="trend" aria-pressed="false" title="Overlay a straight-line trend fitted to the visible range">↗ Trend line</button>' : '',
-                '<button type="button" data-tool="table" aria-pressed="false" title="Show the numbers behind the chart">▦ Data table</button>',
-                '<button type="button" data-tool="csv" title="Download the series as CSV">⇩ CSV</button>',
-                '<button type="button" data-tool="link" title="Copy a link straight to this chart">🔗 Share</button>'
+        isTimeSeries ? `<button type="button" data-tool="change" aria-pressed="${viewMode === 'change'}" aria-label="Toggle period-on-period change for ${title}">Change</button>` : '',
+        canTrend ? `<button type="button" data-tool="trend" aria-pressed="${trendOn}" aria-label="Toggle trend line for ${title}">Trend line</button>` : '',
+        canLogScale ? `<button type="button" data-tool="log" aria-pressed="${logScaleOn}" aria-label="Toggle logarithmic scale for ${title}"${['pie', 'doughnut'].includes(activeType) ? ' hidden' : ''}>Log scale</button>` : '',
+        `<button type="button" data-tool="table" aria-pressed="false" aria-label="Toggle data table for ${title}">Data table</button>`,
+        `<button type="button" data-tool="show-all" aria-label="Show all datasets and data points for ${title}">Show all</button>`,
+        '<button type="button" data-tool="csv" aria-label="Download chart data as CSV">CSV</button>',
+        '<button type="button" data-tool="png" aria-label="Download chart as PNG">PNG</button>',
+        `<button type="button" data-tool="expand" aria-label="Expand ${title} to full screen">Expand</button>`,
+        `<button type="button" data-tool="link" aria-label="Share a link to ${title}">Share</button>`
       ].join('');
       tools.append(toolNote);
       const tablePanel = document.createElement('div');
@@ -1269,14 +1379,37 @@ async function main() {
         const tool = button.dataset.tool;
         if (tool === 'change') {
           viewMode = viewMode === 'change' ? 'levels' : 'change';
+          writeChartPrefs(key, { viewMode });
           button.setAttribute('aria-pressed', String(viewMode === 'change'));
           button.classList.toggle('active', viewMode === 'change');
           rebuildChart();
         } else if (tool === 'trend') {
           trendOn = !trendOn;
+          writeChartPrefs(key, { trendOn });
           button.setAttribute('aria-pressed', String(trendOn));
           button.classList.toggle('active', trendOn);
           applyView();
+        } else if (tool === 'log') {
+          logScaleOn = !logScaleOn;
+          button.setAttribute('aria-pressed', String(logScaleOn));
+          button.classList.toggle('active', logScaleOn);
+          writeChartPrefs(key, { logScale: logScaleOn });
+          rebuildChart();
+        } else if (tool === 'png') {
+          const link = document.createElement('a');
+          link.href = chart.toBase64Image ? chart.toBase64Image() : canvas.toDataURL('image/png');
+          link.download = `${key}.png`;
+          document.body.append(link);
+          link.click();
+          link.remove();
+        } else if (tool === 'expand') {
+          openExpanded(button);
+        } else if (tool === 'show-all') {
+          chart.data.datasets.forEach((_, index) => chart.setDatasetVisibility(index, true));
+          chart.data.labels?.forEach((_, index) => { if (!chart.getDataVisibility(index)) chart.toggleDataVisibility(index); });
+          chart.update();
+          card.querySelectorAll('.legend-chip').forEach(chip => { chip.classList.remove('muted'); chip.setAttribute('aria-pressed', 'true'); });
+          writeChartPrefs(key, { hiddenDatasets: [], hiddenPoints: [] });
         } else if (tool === 'table') {
           tablePanel.hidden = !tablePanel.hidden;
           if (!tablePanel.hidden && !tablePanel.firstChild) renderTable();
@@ -1302,46 +1435,62 @@ async function main() {
         }
       });
       card.querySelector('.chart-wrap').after(tools, tablePanel);
+      const syncLogControl = () => {
+        const logButton = tools.querySelector('[data-tool="log"]');
+        if (logButton) logButton.hidden = ['pie', 'doughnut'].includes(activeType);
+      };
+      syncLogControl();
     }
 
     if (hasMultipleDatasets) {
       const chartWrap = card.querySelector('.chart-wrap');
       const legendBar = document.createElement('div');
       legendBar.className = 'custom-legend';
+      legendBar.setAttribute('role', 'group');
+      legendBar.setAttribute('aria-label', `Datasets for ${title}`);
+      const syncLegend = () => legendBar.querySelectorAll('.legend-chip').forEach((chip, index) => {
+        const visible = chart.isDatasetVisible(index);
+        chip.classList.toggle('muted', !visible);
+        chip.setAttribute('aria-pressed', String(visible));
+      });
       chartDatasets.forEach((dataset, datasetIdx) => {
         const chip = document.createElement('button');
         chip.type = 'button';
         chip.className = 'legend-chip';
+        chip.setAttribute('aria-label', `Toggle ${dataset.label} dataset`);
         chip.innerHTML = `<span class="legend-dot" style="background-color:${dataset.borderColor}"></span> ${dataset.label}`;
-        
-        chip.addEventListener('mouseenter', () => {
-          if (!chart) return;
-          chart.data.datasets.forEach((ds, idx) => {
-            if (idx !== datasetIdx) {
-              chart.getDatasetMeta(idx).hidden = true;
-            }
-          });
-          chart.update('none');
-        });
-        chip.addEventListener('mouseleave', () => {
-          if (!chart) return;
-          chart.data.datasets.forEach((ds, idx) => {
-            chip.classList.contains('muted') ? chart.getDatasetMeta(idx).hidden = true : chart.getDatasetMeta(idx).hidden = false;
-          });
-          chart.update('none');
-        });
-        chip.addEventListener('click', () => {
-          if (!chart) return;
-          const isVisible = chart.isDatasetVisible(datasetIdx);
-          chart.setDatasetVisibility(datasetIdx, !isVisible);
-          chip.classList.toggle('muted', isVisible);
+        chip.addEventListener('click', event => {
+          event.stopPropagation();
+          chart.setDatasetVisibility(datasetIdx, !chart.isDatasetVisible(datasetIdx));
           chart.update();
+          writeChartPrefs(key, { hiddenDatasets: chart.data.datasets.flatMap((_, index) => chart.isDatasetVisible(index) ? [] : [index]) });
+          syncLegend();
+        });
+        chip.addEventListener('dblclick', event => {
+          event.stopPropagation();
+          chart.data.datasets.forEach((_, index) => chart.setDatasetVisibility(index, index === datasetIdx));
+          chart.update();
+          writeChartPrefs(key, { hiddenDatasets: chart.data.datasets.flatMap((_, index) => index === datasetIdx ? [] : [index]) });
+          syncLegend();
         });
         legendBar.appendChild(chip);
       });
+      const showAll = document.createElement('button');
+      showAll.type = 'button';
+      showAll.className = 'legend-show-all';
+      showAll.textContent = 'Show all';
+      showAll.setAttribute('aria-label', `Show all datasets for ${title}`);
+      showAll.addEventListener('click', event => {
+        event.stopPropagation();
+        chart.data.datasets.forEach((_, index) => chart.setDatasetVisibility(index, true));
+        chart.update();
+        writeChartPrefs(key, { hiddenDatasets: [] });
+        syncLegend();
+      });
+      legendBar.appendChild(showAll);
       chartWrap.insertBefore(legendBar, canvas);
+      syncLegend();
     }
-
     card.addEventListener('click', () => {
       document.querySelectorAll('.chart-card').forEach(c => c.classList.remove('selected-card'));
       card.classList.add('selected-card');
@@ -1400,6 +1549,66 @@ async function main() {
       .filter(([, groups]) => groups.size === 1)
       .map(([subgroup, groups]) => [subgroup, groups.values().next().value])
   );
+  const quickJumpNav = document.createElement('nav');
+  quickJumpNav.className = 'chart-quick-jumps';
+  quickJumpNav.setAttribute('aria-label', 'Quick jump to dashboard groups and subgroups');
+  const quickGroupRow = document.createElement('div');
+  quickGroupRow.className = 'quick-jump-row';
+  quickGroupRow.setAttribute('aria-label', 'Dashboard groups');
+  const quickSubgroupRow = document.createElement('div');
+  quickSubgroupRow.className = 'quick-jump-row';
+  quickSubgroupRow.setAttribute('aria-label', 'Subgroups in selected group');
+  quickJumpNav.append(quickGroupRow, quickSubgroupRow);
+  if (grid) grid.before(quickJumpNav);
+  const renderQuickJumps = () => {
+    quickGroupRow.replaceChildren();
+    quickSubgroupRow.replaceChildren();
+    const groups = Object.keys(groupToSubgroups).filter(group => group !== 'all').sort((a, b) => (categoryOrder[a] ?? 99) - (categoryOrder[b] ?? 99));
+    const addChip = (row, label, selected, action) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'quick-jump-chip';
+      button.textContent = label;
+      button.setAttribute('aria-label', `Jump to ${label}`);
+      button.setAttribute('aria-pressed', String(selected));
+      if (selected) button.classList.add('active');
+      button.addEventListener('click', action);
+      row.append(button);
+    };
+    addChip(quickGroupRow, 'All groups', groupFilter.value === 'all', () => {
+      groupFilter.value = 'all';
+      subgroupFilter.value = 'all';
+      updateSubgroupFilter();
+      syncGroupPills('all');
+      renderQuickJumps();
+      updateCards();
+    });
+    groups.forEach(group => addChip(quickGroupRow, group, groupFilter.value === group, () => {
+      groupFilter.value = group;
+      subgroupFilter.value = 'all';
+      updateSubgroupFilter();
+      syncGroupPills(group);
+      if (categoryBgMap[group]) setEraBackground(categoryBgMap[group]);
+      renderQuickJumps();
+      updateCards();
+    }));
+    const selectedGroup = groupFilter.value;
+    const subgroups = selectedGroup === 'all' ? groupToSubgroups.all : (groupToSubgroups[selectedGroup] || []);
+    addChip(quickSubgroupRow, selectedGroup === 'all' ? 'All subgroups' : `All ${selectedGroup} subgroups`, subgroupFilter.value === 'all', () => {
+      subgroupFilter.value = 'all';
+      updateSubgroupFilter();
+      updateCards();
+    });
+    subgroups.forEach(subgroup => addChip(quickSubgroupRow, subgroup, subgroupFilter.value === subgroup, () => {
+      const owner = selectedGroup === 'all' ? subgroupGroups[subgroup] : selectedGroup;
+      if (owner) groupFilter.value = owner;
+      updateSubgroupFilter();
+      subgroupFilter.value = subgroup;
+      syncGroupPills(groupFilter.value);
+      renderQuickJumps();
+      updateCards();
+    }));
+  };
 
   const updateSubgroupFilter = () => {
     const selectedGroup = groupFilter.value;
@@ -1558,6 +1767,18 @@ async function main() {
       badge1: "Railway Board Year Book 2023-24",
       badge2: "PIB · World Bank"
     },
+    "Water Transport & Shipping": {
+      title: "\uD83C\uDF0A Water Transport & Shipping",
+      desc: "Port cargo and performance, inland waterways, coastal shipping, passenger traffic and container activity summarized from the Ministry of Ports, Shipping & Waterways, Indian Ports Association, IWAI and DG Shipping. UNCTAD and World Bank indicators provide the international maritime and logistics context; reporting definitions and periods vary by source.",
+      badge1: "MoPSW / IPA / IWAI / DG Shipping",
+      badge2: "UNCTAD / World Bank"
+    },
+    "Logistics & Freight": {
+      title: "\uD83D\uDE9A Logistics & Freight",
+      desc: "Freight and logistics measures from MoRTH, the Railway Board, AAI and MoPSW, alongside policy context from DPIIT, NITI Aayog and World Bank LPI. Freight figures intentionally repeat figures featured in the rail, sea and air groups; each mode uses distinct reporting units, coverage and reference periods and should not be read as a single directly comparable total.",
+      badge1: "MoRTH / Railway Board / AAI / MoPSW",
+      badge2: "DPIIT / NITI Aayog / World Bank LPI"
+    },
     "Sports": {
       title: "🏅 Sports: Medals, Wins & Records",
       desc: "India's medals at the Olympics, Paralympics, Asian Games and Commonwealth Games, Games by Games and sport by sport, and the results and rankings of India's athletes, shooters, archers, wrestlers, boxers, lifters, shuttlers, tennis players, chess players and kabaddi teams, all taken from the official governing bodies.",
@@ -1673,6 +1894,18 @@ async function main() {
     "Rolling Stock & Operations": "assets/rail-fleet.svg",
     "Railway Safety": "assets/rail-safety.svg",
     "Finance & Efficiency": "assets/rail-finance.svg",
+    "Port Cargo Traffic": "assets/water-ports.svg",
+    "Inland Waterways": "assets/water-inland.svg",
+    "Coastal Shipping": "assets/water-coastal.svg",
+    "Water Passenger Traffic": "assets/water-passenger.svg",
+    "Container & Port Performance": "assets/water-container.svg",
+    "Global Maritime Comparison": "assets/water-global.svg",
+    "Road Freight": "assets/logistics-road.svg",
+    "Rail Freight": "assets/logistics-rail.svg",
+    "Sea Freight": "assets/logistics-sea.svg",
+    "Air Freight": "assets/logistics-air.svg",
+    "Modal Split & Comparison": "assets/logistics-modal.svg",
+    "Logistics Revenue": "assets/logistics-revenue.svg",
     "Global Rail Comparison": "assets/rail-global.svg",
     "Climate & Weather": "assets/climate-weather.svg",
     "Forests & Land": "assets/forests-land.svg",
@@ -1802,6 +2035,18 @@ async function main() {
       badge1: "Monthly MOSPI data",
       badge2: "Growth Rankings"
     },
+    "Port Cargo Traffic": { title: "Port Cargo Traffic", desc: "Cargo handled at Indian ports using official MoPSW and IPA reporting, with the reporting period and port coverage stated by each series.", badge1: "MoPSW / Indian Ports Association", badge2: "Port throughput" },
+    "Inland Waterways": { title: "Inland Waterways", desc: "National waterways, cargo movement and development measures reported by IWAI and the Ministry of Ports, Shipping & Waterways.", badge1: "IWAI / MoPSW", badge2: "National waterways" },
+    "Coastal Shipping": { title: "Coastal Shipping", desc: "Coastal shipping and related maritime indicators from government and port-sector publications; definitions and reference periods are retained with each series.", badge1: "MoPSW / DG Shipping", badge2: "Coastal movement" },
+    "Water Passenger Traffic": { title: "Water Passenger Traffic", desc: "Passenger services and movement reported for ports, ferries and inland waterways by the responsible government agencies.", badge1: "IWAI / MoPSW", badge2: "Passenger services" },
+    "Container & Port Performance": { title: "Container & Port Performance", desc: "Container throughput and port performance measures from IPA and MoPSW publications, presented with their original units and reporting bases.", badge1: "Indian Ports Association", badge2: "Throughput / performance" },
+    "Global Maritime Comparison": { title: "Global Maritime Comparison", desc: "International shipping, fleet and maritime indicators from UNCTAD and relevant World Bank datasets; country coverage and reference years differ by measure.", badge1: "UNCTAD", badge2: "World Bank comparisons" },
+    "Road Freight": { title: "Road Freight", desc: "Road transport and freight indicators from MoRTH, preserving the source's units, scope and reporting period.", badge1: "Ministry of Road Transport & Highways", badge2: "Road freight" },
+    "Rail Freight": { title: "Rail Freight", desc: "Rail freight and operating measures from the Railway Board, repeated here intentionally for cross-modal navigation; rail reporting bases differ from other modes.", badge1: "Railway Board", badge2: "Repeated from rail group" },
+    "Sea Freight": { title: "Sea Freight", desc: "Port and maritime cargo indicators from MoPSW and IPA, included alongside other modal freight figures with their own reporting bases.", badge1: "MoPSW / Indian Ports Association", badge2: "Repeated from shipping group" },
+    "Air Freight": { title: "Air Freight", desc: "Air cargo and freight measures from AAI and official aviation reporting, distinct in scope and units from road, rail and sea freight.", badge1: "Airports Authority of India", badge2: "Repeated from aviation group" },
+    "Modal Split & Comparison": { title: "Modal Split & Comparison", desc: "Policy and modal-comparison indicators from DPIIT, NITI Aayog and World Bank LPI sources. Available measures use differing definitions and are not assumed to be directly additive.", badge1: "DPIIT ? NITI Aayog", badge2: "World Bank LPI" },
+    "Logistics Revenue": { title: "Logistics Revenue", desc: "Logistics-related revenue and economic indicators from the cited official agencies, accompanied by the specific reporting basis and time period.", badge1: "Official agency reporting", badge2: "Revenue / logistics" },
     "Climate & Weather": {
       title: "🌦️ Temperature, Rainfall, Cyclones & Heat",
       desc: "IMD's all-India seasonal temperature since 2001, annual and monsoon rainfall, cyclonic storms over the Bay of Bengal and Arabian Sea, State heat-wave days, and World Bank CO2 and greenhouse-gas emissions.",
@@ -2752,6 +2997,13 @@ async function main() {
 
   const updateCards = () => {
     const query = search.value.trim().toLowerCase();
+    if (search) {
+      search.setAttribute('aria-label', groupFilter.value === 'all' ? 'Search chart titles across all groups' : `Search chart titles in ${groupFilter.value}`);
+      search.placeholder = groupFilter.value === 'all' ? 'Search chart titles across all groups' : `Search chart titles in ${groupFilter.value}`;
+    }
+    const currentPrefs = readDashboardPrefs();
+    currentPrefs.filters = { group: groupFilter.value, subgroup: subgroupFilter.value, query: search.value };
+    writeDashboardPrefs(currentPrefs);
     updateGroupHero();
     const stateFilter = filter ? filter.value : 'all';
     const hasSelectedScope = groupFilter.value !== 'all' || subgroupFilter.value !== 'all';
@@ -2767,13 +3019,12 @@ async function main() {
       const cardCategory = card.dataset.category;
       const cardSubgroup = card.dataset.subgroup;
       const cardState = card.dataset.state;
-      const cardTitle = card.dataset.title;
       const isSaved = savedChartKeys.has(card.dataset.key);
 
       const matchesGroup = (groupFilter.value === 'all' || cardCategory === groupFilter.value);
       const matchesSubgroup = (subgroupFilter.value === 'all' || cardSubgroup === subgroupFilter.value);
       const matchesState = (stateFilter === 'all' || cardState === stateFilter);
-      const matchesSearch = (!query || cardTitle.includes(query));
+      const matchesSearch = (!query || card.dataset.chartTitle.includes(query));
       const matchesSaved = (!savedToggle?.getAttribute('aria-pressed') || savedToggle.getAttribute('aria-pressed') !== 'true' || isSaved);
       const matchesChart = (!chartTypeFilter?.value || card.dataset.chartKind === chartTypeFilter.value);
 
@@ -2842,6 +3093,7 @@ async function main() {
     savedToggle?.classList.remove('active');
     syncGroupPills('all');
     updateSubgroupFilter();
+    renderQuickJumps();
     updateCards();
   });
   if (filter) filter.addEventListener('change', updateCards);
@@ -2850,7 +3102,8 @@ async function main() {
     syncGroupPills(grp);
     if (categoryBgMap[grp]) setEraBackground(categoryBgMap[grp]);
     subgroupFilter.value = 'all';
-    updateSubgroupFilter(); 
+    updateSubgroupFilter();
+    renderQuickJumps();
     updateGroupHero();
     updateCards(); 
   });
@@ -2860,19 +3113,23 @@ async function main() {
       syncGroupPills(groupFilter.value);
       if (categoryBgMap[groupFilter.value]) setEraBackground(categoryBgMap[groupFilter.value]);
     }
-    updateSubgroupFilter(); 
+    updateSubgroupFilter();
+    renderQuickJumps();
     renderExploreGrid();
     updateGroupHero(); 
     updateCards(); 
   });
   search.addEventListener('input', updateCards);
   // Force form controls to default state on startup so browser autocomplete desync is avoided
-  if (groupFilter) groupFilter.value = 'all';
+  const savedFilters = readDashboardPrefs().filters || {};
+  if (groupFilter) groupFilter.value = Object.prototype.hasOwnProperty.call(groupToSubgroups, savedFilters.group) ? savedFilters.group : 'all';
   if (subgroupFilter) subgroupFilter.value = 'all';
-  if (search) search.value = '';
+  if (search) search.value = savedFilters.query || '';
   if (filter) filter.value = 'all';
-  syncGroupPills('all');
+  syncGroupPills(groupFilter.value);
   updateSubgroupFilter();
+  if ((groupToSubgroups[groupFilter.value] || []).includes(savedFilters.subgroup)) subgroupFilter.value = savedFilters.subgroup;
+  renderQuickJumps();
   updateCards();
 
   // Deep links such as explore.html?group=Economic&subgroup=...&q=gdp, kept in sync as filters change.

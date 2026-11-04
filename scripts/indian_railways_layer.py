@@ -84,7 +84,28 @@ def _m(subgroup, title, subtitle, suffix, color="#ff9933", **explain):
 
 
 def _yb(table: str) -> str:
-    return f"{YB}: {table}."
+    text = table.lower()
+    if "electrification" in text and "network" in text:
+        pages = "Year Book 2023-24, pp. 60-62 and 74-78"
+    elif "network" in text:
+        pages = "Year Book 2023-24, pp. 60-62"
+    elif "electrification" in text:
+        pages = "Year Book 2023-24, pp. 74-78"
+    elif "passenger business" in text and "freight operation" in text:
+        pages = "Year Book 2023-24, pp. 22-45"
+    elif "passenger business" in text:
+        pages = "Year Book 2023-24, pp. 22-37"
+    elif "freight operation" in text:
+        pages = "Year Book 2023-24, pp. 38-45"
+    elif "safety" in text:
+        pages = "Year Book 2023-24, pp. 52-59"
+    elif "selected financial ratio" in text:
+        pages = "Year Book 2023-24, pp. 7-8"
+    elif "key statistics" in text:
+        pages = "Year Book 2023-24, p. 3"
+    else:
+        pages = "Year Book 2023-24, pp. 4-6"
+    return f"{YB}: {table}; {pages}."
 
 
 def _static() -> dict[str, Callable]:
@@ -92,6 +113,9 @@ def _static() -> dict[str, Callable]:
 
     def add(key, fn):
         b[key] = lambda: fn(key)
+
+    def share(part, whole):
+        return [round(100 * value / total, 2) for value, total in zip(part, whole)]
 
     # ---- Network & Electrification
     add("rail_route_km", lambda k: single(k, DECADES, ROUTE_KM, source=YEAR_BOOK, unit="km",
@@ -133,6 +157,35 @@ def _static() -> dict[str, Callable]:
                  what="Route kilometres within each state or union territory at the end of 2023-24.",
                  read="Uttar Pradesh (8,823 km), Rajasthan (6,135) and Maharashtra (5,930) have the longest networks; Mizoram has 1 km.",
                  why="State-wise length shows where rail access is deepest.")))
+
+    add("rail_multiple_track_index", lambda k: single(k, DECADES,
+        [round(track / route * 100, 2) for track, route in zip(RUNNING_TRACK_KM, ROUTE_KM)],
+        source=YEAR_BOOK, unit="running-track km per 100 route-km", note=_yb("'The Network', route and running track kilometres"),
+        meta_=_m(NETWORK, "Running Track per 100 Route-Km", "Running-track length relative to route length", " track km / 100 route-km", "#58a6ff",
+                 what="Running-track kilometres for every 100 route-kilometres, calculated from the Year Book series.",
+                 read=f"The ratio was {RUNNING_TRACK_KM[-1] / ROUTE_KM[-1] * 100:.2f} in 2023-24, versus {RUNNING_TRACK_KM[0] / ROUTE_KM[0] * 100:.2f} in 1950-51.",
+                 why="It indicates how much additional track exists beyond a single route line.")))
+    add("rail_route_net_additions", lambda k: single(k, DECADES[1:],
+        [later - earlier for earlier, later in zip(ROUTE_KM, ROUTE_KM[1:])],
+        source=YEAR_BOOK, unit="km", chart="bar", note=_yb("'The Network', route kilometres by benchmark year; each bar is the change from the preceding listed benchmark"),
+        meta_=_m(NETWORK, "Route-Km Added Between Benchmarks", "Change in route length since the prior listed year", " km", "#3fb950",
+                 what="Difference between each adjacent published route-kilometre benchmark.",
+                 read=f"The listed route length increased by {ROUTE_KM[-1] - ROUTE_KM[0]:,} km from 1950-51 to 2023-24; the last interval added {ROUTE_KM[-1] - ROUTE_KM[-2]:,} km.",
+                 why="The differences show when network expansion accelerated or slowed.")))
+    add("rail_route_growth_index", lambda k: single(k, DECADES,
+        [round(value / ROUTE_KM[0] * 100, 2) for value in ROUTE_KM],
+        source=YEAR_BOOK, unit="1950-51 = 100", note=_yb("'The Network', route kilometres since 1950-51; index calculated from the published values"),
+        meta_=_m(NETWORK, "Route Length Index", "Route kilometres indexed to 1950-51", " index", "#bc8cff",
+                 what="Route kilometres as an index, with 1950-51 set to 100.",
+                 read=f"The index reached {ROUTE_KM[-1] / ROUTE_KM[0] * 100:.1f} in 2023-24.",
+                 why="An index makes long-run growth easier to compare.")))
+    add("rail_electrified_route_share", lambda k: single(k, DECADES,
+        share(ELECTRIFIED_KM, ROUTE_KM), source=YEAR_BOOK, unit="%", chart="bar",
+        note=_yb("'Electrification' cumulative electrified route and 'The Network' route kilometres; share calculated for matching benchmark years"),
+        meta_=_m(NETWORK, "Electrified Route Share", "Electrified kilometres as a share of route kilometres", "%", "#f6c344",
+                 what="Cumulative electrified route kilometres divided by total route kilometres.",
+                 read=f"The ratio was {ELECTRIFIED_KM[-1] / ROUTE_KM[-1] * 100:.2f}% in the 2023-24 benchmark.",
+                 why="It tracks the reach of electrification across the network.")))
 
     # ---- Passenger Services
     add("rail_passengers_originating", lambda k: single(k, DECADES, PASSENGERS_TOTAL, source=YEAR_BOOK, unit="million",
@@ -177,6 +230,35 @@ def _static() -> dict[str, Callable]:
                  read="Passenger trains per day grew 5.2% and goods trains 12.9% between 2022-23 and 2023-24.",
                  why="Train counts show how intensively the track is used.")))
 
+    add("rail_passenger_suburban_share", lambda k: single(k, DECADES,
+        share(PASSENGERS_SUBURBAN, PASSENGERS_TOTAL), source=YEAR_BOOK, unit="%", chart="bar",
+        note=_yb("Passenger Business, Table I, suburban journeys divided by total journeys"),
+        meta_=_m(PASSENGERS, "Suburban Share of Journeys", "Suburban journeys as a share of all passenger journeys", "%", "#ff9933",
+                 what="Suburban passenger journeys divided by total passenger journeys for each year.",
+                 read=f"Suburban journeys were {PASSENGERS_SUBURBAN[-1] / PASSENGERS_TOTAL[-1] * 100:.2f}% of the 2023-24 total.",
+                 why="The share distinguishes commuter traffic from long-distance demand.")))
+    add("rail_passenger_non_suburban_share", lambda k: single(k, DECADES,
+        share(PASSENGERS_NON_SUBURBAN, PASSENGERS_TOTAL), source=YEAR_BOOK, unit="%", chart="bar",
+        note=_yb("Passenger Business, Table I, non-suburban journeys divided by total journeys"),
+        meta_=_m(PASSENGERS, "Non-Suburban Share of Journeys", "Non-suburban journeys as a share of all passenger journeys", "%", "#58a6ff",
+                 what="Non-suburban passenger journeys divided by total passenger journeys for each year.",
+                 read=f"Non-suburban journeys were {PASSENGERS_NON_SUBURBAN[-1] / PASSENGERS_TOTAL[-1] * 100:.2f}% of the 2023-24 total.",
+                 why="This share tracks the long-distance portion of passenger traffic.")))
+    add("rail_passenger_average_lead_calculated", lambda k: single(k, DECADES,
+        [round(km / passengers, 2) for km, passengers in zip(PASSENGER_KM, PASSENGERS_TOTAL)],
+        source=YEAR_BOOK, unit="km per journey", note=_yb("Passenger Business, Tables I and II; passenger-km divided by passengers originating"),
+        meta_=_m(PASSENGERS, "Calculated Average Passenger Journey", "Passenger-km divided by passenger journeys", " km", "#3fb950",
+                 what="Average journey length calculated from passenger-kilometres and journeys originating.",
+                 read=f"The ratio was {PASSENGER_KM[-1] / PASSENGERS_TOTAL[-1]:.2f} km per journey in 2023-24; it is calculated independently of the reported average lead.",
+                 why="It cross-checks the relationship between passenger volume and distance travelled.")))
+    add("rail_passenger_km_index", lambda k: single(k, DECADES,
+        [round(value / PASSENGER_KM[0] * 100, 2) for value in PASSENGER_KM],
+        source=YEAR_BOOK, unit="1950-51 = 100", note=_yb("Passenger Business, Table II; passenger-kilometres indexed to 1950-51"),
+        meta_=_m(PASSENGERS, "Passenger-Km Index", "Passenger-kilometres indexed to 1950-51", " index", "#bc8cff",
+                 what="Passenger-kilometres as an index with 1950-51 set to 100.",
+                 read=f"The index reached {PASSENGER_KM[-1] / PASSENGER_KM[0] * 100:.1f} in 2023-24.",
+                 why="The index shows long-run growth in passenger transport work.")))
+
     # ---- Freight Operations
     add("rail_freight_tonnes", lambda k: single(k, DECADES, FREIGHT_TONNES, source=YEAR_BOOK, unit="million tonnes",
         note=_yb("Freight Operation, Table I (revenue-earning freight, tonnes originating, excluding Konkan Railway)"),
@@ -213,12 +295,44 @@ def _static() -> dict[str, Callable]:
     add("rail_freight_loading_pib", lambda k: single(k, ["2020-21", "2023-24", "2024-25"], [1233, 1590.68, 1617.38],
         source=PIB_FREIGHT, unit="million tonnes", chart="bar",
         note=("Ministry of Railways via PIB: originating freight loading was 1,233 MT in 2020-21 (Lok Sabha reply, PIB release 2201815), "
-              "1,590.68 MT in 2023-24 and 1,617.38 MT in 2024-25, up 1.68% (PIB release 2117417, 1 April 2025). "
+              "1,590.68 MT in 2023-24 and 1,617.38 MT in 2024-25, up 1.68% (PIB release 2117417, 1 April 2025, opening freight-loading paragraph). "
               "These cover all originating loading, so they differ slightly from the Year Book's revenue-earning series."),
         meta_=_m(FREIGHT, "Freight Loading to 2024-25", "Originating loading, latest Ministry figures", " million tonnes", "#f6c344",
                  what="Total originating freight loading, from Ministry of Railways statements.",
                  read="Loading reached 1,617.38 million tonnes in 2024-25; the Ministry says this makes Indian Railways the second-largest freight carrier in the world.",
                  why="It extends the series past the Year Book's 2023-24 end year.")))
+
+    add("rail_freight_commodity_share", lambda k: single(k, list(COMMODITIES),
+        [round(values[1] / FREIGHT_TONNES[-1] * 100, 2) for values in COMMODITIES.values()],
+        source=YEAR_BOOK, unit="% of revenue-earning tonnes", chart="doughnut",
+        note=_yb("Freight Operation commodity table, 2023-24 loading as a share of the 1,588.06 million tonnes reported in Table I"),
+        meta_=_m(FREIGHT, "Commodity Shares of Loading", "Commodity tonnes as a share of 2023-24 revenue-earning loading", "%", "#f6c344",
+                 what="Each commodity group's reported loading divided by total revenue-earning tonnes originating.",
+                 read=f"Coal accounted for {COMMODITIES['Coal'][1] / FREIGHT_TONNES[-1] * 100:.2f}% of 2023-24 revenue-earning loading.",
+                 why="The shares show the commodity concentration of rail freight.")))
+    add("rail_freight_commodity_growth_pct", lambda k: single(k, list(COMMODITIES),
+        [round((current - prior) / prior * 100, 2) for prior, current in COMMODITIES.values()],
+        source=YEAR_BOOK, unit="% change", chart="bar",
+        note=_yb("Freight Operation commodity-wise loading table, 2022-23 to 2023-24; percentage changes calculated from table values"),
+        meta_=_m(FREIGHT, "Commodity Loading Growth", "Percent change in tonnes loaded by commodity", "%", "#ff7b72",
+                 what="Year-on-year percentage change in commodity loading between 2022-23 and 2023-24.",
+                 read=f"Coal loading rose {((COMMODITIES['Coal'][1] - COMMODITIES['Coal'][0]) / COMMODITIES['Coal'][0] * 100):.2f}%; foodgrains changed by {((COMMODITIES['Foodgrains'][1] - COMMODITIES['Foodgrains'][0]) / COMMODITIES['Foodgrains'][0] * 100):.2f}%.",
+                 why="Growth by commodity identifies which goods gained or lost loading.")))
+    add("rail_freight_average_haul_calculated", lambda k: single(k, DECADES,
+        [round(ntkm / tonnes, 2) for ntkm, tonnes in zip(FREIGHT_NTKM, FREIGHT_TONNES)],
+        source=YEAR_BOOK, unit="km", note=_yb("Freight Operation, Table I; net tonne-kilometres divided by revenue-earning tonnes"),
+        meta_=_m(FREIGHT, "Calculated Average Freight Haul", "Net tonne-km divided by originating tonnes", " km", "#3fb950",
+                 what="Average freight haul calculated by dividing net tonne-kilometres by tonnes originating.",
+                 read=f"The calculated average haul was {FREIGHT_NTKM[-1] / FREIGHT_TONNES[-1]:.2f} km in 2023-24.",
+                 why="The quotient ties freight volume to the distance moved.")))
+    add("rail_freight_loading_benchmark_change", lambda k: single(k, DECADES[1:],
+        [current - previous for previous, current in zip(FREIGHT_TONNES, FREIGHT_TONNES[1:])],
+        source=YEAR_BOOK, unit="million tonnes", chart="bar",
+        note=_yb("Freight Operation, Table I; change between adjacent listed originating-tonnage benchmarks"),
+        meta_=_m(FREIGHT, "Freight Loading Change Between Benchmarks", "Change in originating tonnes since the prior listed year", " million tonnes", "#58a6ff",
+                 what="Difference in revenue-earning tonnes originating between adjacent listed benchmark years.",
+                 read=f"Loading increased by {FREIGHT_TONNES[-1] - FREIGHT_TONNES[-2]:.2f} million tonnes between 2022-23 and 2023-24.",
+                 why="The changes reveal the varying scale of long-run growth.")))
 
     # ---- Rolling Stock & Operations
     add("rail_locomotive_mix", lambda k: single(k, ["Electric", "Diesel", "Steam"], [10675, 4397, 38],
@@ -264,6 +378,45 @@ def _static() -> dict[str, Callable]:
                  read="Net load per train rose 9.3% to 1,899 tonnes, while average goods-train speed fell to 25.0 km/h.",
                  why="Heavier trains move more per path, but slower speeds lengthen transit times.")))
 
+    add("rail_locomotive_traction_share", lambda k: multi(k, FY, [
+        {"label": kind, "values": [round(value / total * 100, 2) for value, total in zip(values, [15334, 15110])],
+         "color": color} for kind, values, color in (
+             ("Electric", [9565, 10675], "#ff9933"), ("Diesel", [4730, 4397], "#58a6ff"),
+             ("Steam", [39, 38], "#8b949e"))], source=YEAR_BOOK, unit="% of locomotive fleet", chart="bar",
+        note=_yb("Other Important Statistics, locomotive counts by traction on 31 March 2023 and 31 March 2024; shares calculated from category totals"),
+        meta_=_m(FLEET, "Locomotive Fleet by Traction Share", "Electric, diesel and steam shares", "%", "#f6c344",
+                 what="Locomotive counts by traction as a share of all reported electric, diesel and steam locomotives.",
+                 read=f"Electric locomotives were {10675 / (10675 + 4397 + 38) * 100:.2f}% of the listed fleet in 2023-24.",
+                 why="Shares make the traction transition comparable despite fleet growth.")))
+    add("rail_coach_category_share", lambda k: multi(k, FY, [
+        {"label": kind, "values": [round(values[i] / (66369 + 11419 + 11913 if i == 0 else 66687 + 13022 + 12229) * 100, 2)
+                                    for i in range(2)], "color": color}
+        for kind, values, color in (("Passenger carriages", [66369, 66687], "#ff9933"),
+                                    ("Other coaching vehicles", [11419, 13022], "#58a6ff"),
+                                    ("EMU/MEMU coaches", [11913, 12229], "#3fb950"))],
+        source=YEAR_BOOK, unit="% of listed coach categories", chart="bar",
+        note=_yb("Other Important Statistics, number of coaches by category, 2022-23 revised and 2023-24; shares calculated over the three listed categories"),
+        meta_=_m(FLEET, "Share of Listed Coach Categories", "Composition of the three reported coach groups", "%", "#58a6ff",
+                 what="Share of passenger carriages, other coaching vehicles and EMU/MEMU coaches among those listed categories.",
+                 read=f"Passenger carriages were {66687 / (66687 + 13022 + 12229) * 100:.2f}% of the listed 2023-24 categories.",
+                 why="Category shares show how the reported coaching fleet is composed.")))
+    add("rail_daily_goods_train_share", lambda k: single(k, FY,
+        [round(goods / (goods + passenger) * 100, 2) for goods, passenger in zip([10388, 11724], [12541, 13198])],
+        source=YEAR_BOOK, unit="% of passenger and goods trains", chart="bar",
+        note=_yb("Other Important Statistics, daily passenger and goods trains run; goods share calculated from the two reported totals"),
+        meta_=_m(FLEET, "Goods Trains as Share of Daily Trains", "Goods trains among reported passenger and goods trains", "%", "#3fb950",
+                 what="Goods trains run daily divided by the combined daily passenger and goods train counts.",
+                 read=f"Goods trains made up {11724 / (11724 + 13198) * 100:.2f}% of the two reported train groups in 2023-24.",
+                 why="The mix compares passenger and freight operating intensity.")))
+    add("rail_goods_load_utilisation_pct", lambda k: single(k, FY,
+        [round(net / gross * 100, 2) for net, gross in zip([1738, 1899], [2918, 3085])],
+        source=YEAR_BOOK, unit="% of gross tonnes", chart="bar",
+        note=_yb("Other Important Statistics, average net and gross goods-train loads; net-to-gross ratios calculated from the reported values"),
+        meta_=_m(FLEET, "Average Net Load as Share of Gross Load", "Net tonnes per goods train relative to gross tonnes", "%", "#bc8cff",
+                 what="Average net goods-train load divided by average gross load.",
+                 read=f"The net-to-gross ratio was {1899 / 3085 * 100:.2f}% in 2023-24.",
+                 why="The ratio shows the share of average gross train weight represented by payload.")))
+
     # ---- Safety
     add("rail_accidents_by_type", lambda k: multi(k, ACCIDENT_YEARS, [
         {"label": label, "values": values, "color": color} for (label, values), color in zip(ACCIDENTS.items(), ("#ff7b72", "#ff9933", "#f6c344", "#58a6ff", "#8b949e"))],
@@ -290,6 +443,31 @@ def _static() -> dict[str, Callable]:
                  what="Share of each accident type among the 40 consequential accidents in 2023-24.",
                  read="Derailments are 62.5%, fires 22.5% and collisions 15%.",
                  why="Shows which accident types dominate.")))
+
+    add("rail_derailment_collision_trend", lambda k: single(k, ACCIDENT_YEARS,
+        [derailments + collisions for derailments, collisions in zip(ACCIDENTS["Derailments"], ACCIDENTS["Collisions"])],
+        source=YEAR_BOOK, unit="accidents", chart="bar",
+        note=_yb("Safety, consequential train accidents table; derailments plus collisions calculated from the listed types"),
+        meta_=_m(SAFETY, "Derailments and Collisions", "Combined derailment and collision counts", " accidents", "#ff7b72",
+                 what="Yearly derailment and collision counts added together from the consequential-accident table.",
+                 read=f"There were {ACCIDENTS['Derailments'][-1] + ACCIDENTS['Collisions'][-1]} derailments and collisions in 2023-24.",
+                 why="These two accident types together account for a large share of consequential incidents.")))
+    add("rail_derailment_share_pct", lambda k: single(k, ACCIDENT_YEARS,
+        share(ACCIDENTS["Derailments"], [sum(values[i] for values in ACCIDENTS.values()) for i in range(len(ACCIDENT_YEARS))]),
+        source=YEAR_BOOK, unit="% of consequential accidents", chart="bar",
+        note=_yb("Safety, consequential train accidents table; derailments divided by each year's total"),
+        meta_=_m(SAFETY, "Derailments as Share of Consequential Accidents", "Derailments divided by all listed consequential accidents", "%", "#f6c344",
+                 what="Derailments as a percentage of all consequential train accidents listed for each year.",
+                 read=f"Derailments accounted for {ACCIDENTS['Derailments'][-1] / sum(values[-1] for values in ACCIDENTS.values()) * 100:.2f}% of consequential accidents in 2023-24.",
+                 why="The share distinguishes the leading accident type from the overall count.")))
+    add("rail_accident_yoy_change_pct", lambda k: single(k, ACCIDENT_YEARS[1:],
+        [round((current - previous) / previous * 100, 2) for previous, current in zip([sum(v[i] for v in ACCIDENTS.values()) for i in range(5)], [sum(v[i] for v in ACCIDENTS.values()) for i in range(5)][1:])],
+        source=YEAR_BOOK, unit="% change", chart="bar",
+        note=_yb("Safety, consequential train accidents table; year-on-year changes calculated from the sum of listed accident types"),
+        meta_=_m(SAFETY, "Year-on-Year Accident Count Change", "Percent change in consequential accident totals", "%", "#58a6ff",
+                 what="Year-on-year percentage change in the sum of the five reported accident categories.",
+                 read=f"The total changed by {(sum(v[-1] for v in ACCIDENTS.values()) - sum(v[-2] for v in ACCIDENTS.values())) / sum(v[-2] for v in ACCIDENTS.values()) * 100:.2f}% between 2022-23 and 2023-24.",
+                 why="Year-on-year change shows direction as well as scale.")))
 
     # ---- Finance & Efficiency
     add("rail_revenue_expenses", lambda k: multi(k, ["Revenue", "Expenses", "Net revenue (before dividend)"], [
@@ -324,6 +502,34 @@ def _static() -> dict[str, Callable]:
                  what="Average revenue per passenger-km and per net tonne-km.",
                  read="Passenger yield was 66.40 paise per passenger-km and freight 170.31 paise per net tonne-km.",
                  why="Yield compares what the railway earns on each unit of traffic.")))
+    add("rail_earnings_mix_share", lambda k: multi(k, FY, [
+        {"label": "Passenger earnings", "values": [round(value / total * 100, 2) for value, total in
+            zip([63416.85, 70693.32], [63416.85 + 160158.48, 70693.32 + 165880.58])], "color": "#58a6ff"},
+        {"label": "Freight earnings", "values": [round(value / total * 100, 2) for value, total in
+            zip([160158.48, 165880.58], [63416.85 + 160158.48, 70693.32 + 165880.58])], "color": "#ff9933"}],
+        source=YEAR_BOOK, unit="% of passenger and freight earnings", chart="bar",
+        note=_yb("Passenger Business and Freight Operation earnings table; shares calculated over those two earning streams"),
+        meta_=_m(FINANCE, "Passenger and Freight Earnings Shares", "Share of combined passenger and freight earnings", "%", "#58a6ff",
+                 what="Passenger and freight earnings as percentages of the two categories' combined earnings.",
+                 read=f"Freight represented {165880.58 / (70693.32 + 165880.58) * 100:.2f}% of combined passenger and freight earnings in 2023-24.",
+                 why="The shares show the relative contribution of the two main traffic earnings streams.")))
+    add("rail_net_revenue_margin_pct", lambda k: single(k, FY,
+        [round(net / revenue * 100, 2) for net, revenue in zip([2517.38, 3259.68], [239982.56, 255272.63])],
+        source=YEAR_BOOK, unit="% of total revenue", chart="bar",
+        note=_yb("Key Statistics, financial results; net revenue divided by total revenue"),
+        meta_=_m(FINANCE, "Net Revenue Margin", "Net revenue as a share of total revenue", "%", "#3fb950",
+                 what="Reported net revenue divided by total railway revenue for each year.",
+                 read=f"Net revenue was {3259.68 / 255272.63 * 100:.2f}% of total revenue in 2023-24.",
+                 why="The margin shows the net result relative to the scale of railway earnings.")))
+    add("rail_financial_growth_rates", lambda k: single(k, ["Revenue", "Expenses"],
+        [round((255272.63 / 239982.56 - 1) * 100, 2), round((250893.61 / 235655.78 - 1) * 100, 2)],
+        source=YEAR_BOOK, unit="% change, 2022-23 to 2023-24", chart="bar",
+        note=_yb("Key Statistics, financial results; growth rates calculated from reported total revenue and expenses"),
+        meta_=_m(FINANCE, "Revenue and Expense Growth", "Year-on-year change in railway revenue and expenses", "%", "#f6c344",
+                 what="Percentage change in reported total revenue and total expenses from 2022-23 to 2023-24.",
+                 read=f"Revenue increased {(255272.63 / 239982.56 - 1) * 100:.2f}%; expenses increased {(250893.61 / 235655.78 - 1) * 100:.2f}%.",
+                 why="Comparing the two growth rates shows whether expenses grew faster than revenue.")))
+
     return b
 
 
@@ -346,6 +552,41 @@ def _global(get_json: Callable[[str], object]) -> dict[str, Callable]:
                          note=f"World Bank indicator {code}, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
                          meta_=_m(GLOBAL, title, subtitle, suffix, "#ff9933", what=what, why=why,
                                   read="India is the orange line; compare its trajectory with each peer."))
+        return key, build
+
+    def line_all(key, code, title, subtitle, suffix, scale, what, why):
+        def build():
+            observed = fetch(code)
+            years = sorted({year for iso in PEERS for year in observed.get(iso, {})}, key=int)
+            datasets = [{"label": NAMES[iso], "values": [
+                round(observed[iso][year] / scale, 3) if year in observed[iso] else None for year in years]}
+                for iso in PEERS if observed.get(iso)]
+            return multi(key, years, datasets, source=WB_PAGE.format(code=code), unit=suffix,
+                         note=f"World Bank indicator {code}, all requested countries, annual observations; gaps indicate unreported country-years.",
+                         meta_=_m(GLOBAL, title, subtitle, suffix,
+                                  what=what, read="Compare the indexed annual series across the ten selected rail systems.", why=why))
+        return key, build
+
+    def common_cross(key, code, title, subtitle, suffix, scale, chart, what, why):
+        def build():
+            observed = fetch(code)
+            years = sorted({year for rows in observed.values() for year in rows}, key=int, reverse=True)
+            benchmark = None
+            at = {}
+            for year in years:
+                current = {NAMES[iso]: rows[year] / scale for iso, rows in observed.items()
+                           if iso in NAMES and year in rows}
+                if "India" in current and len(current) >= 4:
+                    benchmark, at = year, current
+                    break
+            if benchmark is None:
+                raise ValueError(f"too few countries with a common year for {key}")
+            order = [name for name, _ in sorted(at.items(), key=lambda item: -item[1])]
+            rank = order.index("India") + 1
+            return ranked(key, at, source=WB_PAGE.format(code=code), unit=suffix, chart=chart,
+                          note=f"World Bank indicator {code}; {benchmark} is the latest year with India and at least three peers reporting.",
+                          meta_=_m(GLOBAL, f"{title} ({benchmark})", subtitle, suffix, "#58a6ff",
+                                   what=what, read=f"India ranks {rank} of {len(at)} countries in {benchmark}.", why=why))
         return key, build
 
     def cross(key, code, title, subtitle, suffix, scale, chart, what, why):
@@ -379,6 +620,18 @@ def _global(get_json: Callable[[str], object]) -> dict[str, Callable]:
               "Each country's share of the peer group's rail passenger-km.", "Shows India's weight in passenger rail."),
         cross("rail_wb_route_rank", "IS.RRS.TOTL.KM", "Rail Network Ranking", "Total rail route", " thousand km", 1e3, "bar",
               "Total rail route length, thousand km.", "Ranks the size of India's network."),
+        line_all("rail_wb_freight_all_peer_trend", "IS.RRS.GOOD.MT.K6", "Rail Freight: Ten-System Trend", "Goods transported by railway", " billion tonne-km", 1e3,
+                 "Freight moved by rail, billion tonne-kilometres for all ten selected countries.", "The wider peer set provides context beyond the five largest systems."),
+        line_all("rail_wb_passenger_all_peer_trend", "IS.RRS.PASG.KM", "Rail Passenger-Km: Ten-System Trend", "Passenger-kilometres carried by railway", " billion passenger-km", 1e3,
+                 "Passenger-kilometres moved by rail for all ten selected countries.", "The wider peer set provides context beyond the five largest systems."),
+        line_all("rail_wb_route_all_peer_trend", "IS.RRS.TOTL.KM", "Rail Network: Ten-System Trend", "Total rail route", " thousand km", 1e3,
+                 "Total rail route length for all ten selected countries, in thousand kilometres.", "The wider peer set provides context beyond the five largest systems."),
+        common_cross("rail_wb_freight_latest_common_rank", "IS.RRS.GOOD.MT.K6", "Latest Common-Year Rail Freight Ranking", "Goods transported by railway", " billion tonne-km", 1e3, "bar",
+                     "Freight moved by rail, billion tonne-kilometres.", "Ranks India against peers for the latest common year with sufficient reports."),
+        common_cross("rail_wb_passenger_latest_common_rank", "IS.RRS.PASG.KM", "Latest Common-Year Rail Passenger Ranking", "Passenger-kilometres carried by railway", " billion passenger-km", 1e3, "bar",
+                     "Rail passenger-kilometres.", "Ranks India against peers for the latest common year with sufficient reports."),
+        common_cross("rail_wb_route_latest_common_rank", "IS.RRS.TOTL.KM", "Latest Common-Year Rail Network Ranking", "Total rail route", " thousand km", 1e3, "bar",
+                     "Total rail route length, thousand km.", "Ranks India against peers for the latest common year with sufficient reports."),
     ]
     return dict(specs)
 

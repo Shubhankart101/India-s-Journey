@@ -169,6 +169,41 @@ On free container hosts SQLite is ephemeral, so accounts and saved charts reset 
 
 Data commits pushed by the scheduled workflows trigger a redeploy, which re-imports the catalogue. On the free plan SQLite is ephemeral, so user accounts reset on redeploy. To keep them, attach a persistent disk and set `DJANGO_SQLITE_PATH` to a file on that disk.
 
+## 📜 Release notes
+
+Each major release has its own note in [docs/releases/](docs/releases/README.md), generated from the release commit. Oldest first:
+
+1. [Daily GitHub metrics dashboard](docs/releases/01-10d65b6-daily-github-metrics-dashboard.md) (`10d65b6`, 2026-08-21)
+2. [Interactive public data dashboard](docs/releases/02-a18bf59-interactive-public-data-dashboard.md) (`a18bf59`, 2026-08-21)
+3. [Rename to India's Journey](docs/releases/03-9ac7c75-rename-to-india-s-journey.md) (`9ac7c75`, 2026-08-21)
+4. [Economic Survey monthly indicators](docs/releases/04-af4a27e-economic-survey-monthly-indicators.md) (`af4a27e`, 2026-08-21)
+5. [India security data dashboards](docs/releases/05-b0f9caa-india-security-data-dashboards.md) (`b0f9caa`, 2026-08-21)
+6. [Grouped dashboards and market indices](docs/releases/06-bafe02f-grouped-dashboards-and-market-indices.md) (`bafe02f`, 2026-08-21)
+7. [Pew India subgroups and references](docs/releases/07-a4968b7-pew-india-subgroups-and-references.md) (`a4968b7`, 2026-08-22)
+8. [Group and subgroup selection, Pew group](docs/releases/08-1467414-group-and-subgroup-selection-pew-group.md) (`1467414`, 2026-08-22)
+9. [Vibrant UI and global market comparisons](docs/releases/09-b13e3ed-vibrant-ui-and-global-market-comparisons.md) (`b13e3ed`, 2026-09-17)
+10. [Mining and natural resources group](docs/releases/10-ef1b8de-mining-and-natural-resources-group.md) (`ef1b8de`, 2026-09-17)
+11. [Mining, Industry and Payments become top-level groups](docs/releases/11-e85efc5-mining-industry-and-payments-become-top-level-gr.md) (`e85efc5`, 2026-09-17)
+12. [Public Health overhaul](docs/releases/12-e351417-public-health-overhaul.md) (`e351417`, 2026-09-17)
+13. [152 indicators across 10 groups](docs/releases/13-b12f2ea-152-indicators-across-10-groups.md) (`b12f2ea`, 2026-09-18)
+14. [Economic growth and trade charts](docs/releases/14-c1df326-economic-growth-and-trade-charts.md) (`c1df326`, 2026-10-23)
+15. [State and UT charts](docs/releases/15-6d6431e-state-and-ut-charts.md) (`6d6431e`, 2026-10-24)
+16. [Election and public-service indicators](docs/releases/16-bc99f42-election-and-public-service-indicators.md) (`bc99f42`, 2026-10-25)
+17. [U.S. election finance indicators](docs/releases/17-fe046f3-u-s-election-finance-indicators.md) (`fe046f3`, 2026-10-25)
+18. [Interactive composition charts](docs/releases/18-0d94fdf-interactive-composition-charts.md) (`0d94fdf`, 2026-10-25)
+19. [Pipelines split by cadence](docs/releases/19-ff4055f-pipelines-split-by-cadence.md) (`ff4055f`, 2026-10-31)
+20. [Global Tourism Comparison](docs/releases/20-5705d85-global-tourism-comparison.md) (`5705d85`, 2026-10-31)
+21. [Dark product theme with artwork](docs/releases/21-23100fc-dark-product-theme-with-artwork.md) (`23100fc`, 2026-10-31)
+22. [MOSPI mining layer](docs/releases/22-6868f73-mospi-mining-layer.md) (`6868f73`, 2026-10-31)
+23. [Django + React web app](docs/releases/23-67d111c-django-react-web-app.md) (`67d111c`, 2026-10-31)
+24. [All States and UTs via RBI handbook](docs/releases/24-617d61c-all-states-and-uts-via-rbi-handbook.md) (`617d61c`, 2026-10-31)
+25. [78 animated illustrations](docs/releases/25-a9e9e18-78-animated-illustrations.md) (`a9e9e18`, 2026-10-31)
+26. [63 explained official datasets](docs/releases/26-5d9dbd5-63-explained-official-datasets.md) (`5d9dbd5`, 2026-10-31)
+27. [Netlify primary site](docs/releases/27-cc83baf-netlify-primary-site.md) (`cc83baf`, 2026-10-31)
+28. [Judiciary, Innovation and Sports groups](docs/releases/28-b9b871c-judiciary-innovation-and-sports-groups.md) (`b9b871c`, 2026-11-01)
+29. [Docker and Render/Fly.io CI](docs/releases/29-b9a560e-docker-and-render-fly-io-ci.md) (`b9a560e`, 2026-11-01)
+30. [Air Travel and Indian Railways groups](docs/releases/30-2285139-air-travel-and-indian-railways-groups.md) (`2285139`, 2026-11-04)
+
 ## 🔗 References
 
 <details>
