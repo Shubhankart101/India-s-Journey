@@ -67,6 +67,11 @@ button, input, select { font: inherit; color: inherit; }
 .site-footer p { margin: 4px 0; }
 .site-footer a { color: #7cc4ff; font-weight: 600; }
 .site-footer a:hover { color: #ffb366; }
+.site-footer .footer-thanks { margin-top: 10px; line-height: 2.2; }
+.site-footer .footer-btn { display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px; min-height: 36px; padding: 6px 16px; border-radius: 999px; background: #ff9933; color: #111; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; }
+.site-footer .footer-btn:hover { background: #ffb366; color: #111; transform: translateY(-1px); }
+.site-footer .footer-btn:focus-visible { outline: 2px solid #7cc4ff; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .site-footer .footer-btn { transition: none; } .site-footer .footer-btn:hover { transform: none; } }
 .api-page { max-width: 1180px; min-height: 100vh; margin: 0 auto; padding: 40px 20px 48px; }
 .api-intro { padding: 38px 0 24px; text-align: center; }
 .api-intro h1 { font-size: clamp(2rem, 6vw, 3.4rem); }

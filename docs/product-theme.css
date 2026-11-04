@@ -199,6 +199,11 @@ body.product-theme footer { position: relative; z-index: 2; color: #d7dce3; font
 body.product-theme footer p { margin: 4px 0; }
 body.product-theme footer a { color: #7cc4ff; font-weight: 600; }
 body.product-theme footer a:hover { color: #ffb366; }
+body.product-theme footer .footer-thanks { margin-top: 10px; line-height: 2.2; }
+body.product-theme footer .footer-btn { display: inline-flex; align-items: center; vertical-align: middle; margin-left: 10px; min-height: 36px; padding: 6px 16px; border-radius: 999px; background: #ff9933; color: #111; font-weight: 700; text-decoration: none; transition: background .2s, transform .2s; }
+body.product-theme footer .footer-btn:hover { background: #ffb366; color: #111; transform: translateY(-1px); }
+body.product-theme footer .footer-btn:focus-visible { outline: 2px solid #7cc4ff; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { body.product-theme footer .footer-btn { transition: none; } body.product-theme footer .footer-btn:hover { transform: none; } }
 
 /* Multi-page additions */
 @view-transition { navigation: auto; }

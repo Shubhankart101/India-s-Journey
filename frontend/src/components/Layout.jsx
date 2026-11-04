@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { MAX_COMPARE, useCompare } from '../compare.jsx';
 import { PALETTE_COMPARE } from '../palette.js';
-import { BACKUP_MIRROR_URL, BACKUP_URL } from '../config.js';
+import { BACKUP_MIRROR_URL, BACKUP_URL, FLY_APP_URL, POLITYPOLICY_CONTACT_URL } from '../config.js';
 import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
 import ArtBackdrop from './ArtBackdrop.jsx';
 import { AMBIENT_ART } from '../art.js';
@@ -81,6 +81,12 @@ export default function Layout() {
           <Link to="/api">API</Link> · <Link to="/sources">Sources</Link>
           {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_MIRROR_URL} rel="noopener">Mirror</a>
           {' · '}<a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a>
+          {' · '}<a href={FLY_APP_URL} rel="noopener">Web app (Fly.io)</a>
+        </p>
+        <p className="footer-thanks">
+          With thanks to <a href="https://politypolicy.com/" target="_blank" rel="noopener noreferrer">Tushar Gupta of PolityPolicy</a>{' '}
+          for clear, visual explanations of policy and public data.
+          <a className="footer-btn" href={POLITYPOLICY_CONTACT_URL} target="_blank" rel="noopener noreferrer" aria-label="Contact Tushar Gupta on PolityPolicy (opens in a new tab)">Contact Tushar on PolityPolicy →</a>
         </p>
       </footer>
 
