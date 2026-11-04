@@ -86,7 +86,7 @@ def test_catalog_exports_the_india_in_maps_group():
     assert len(maps) >= 200
     assert all(item["series"]["chart_type"] == "map" and len(item["series"]["labels"]) >= 5 for item in maps)
     group = next(item for item in catalog["categories"] if item["name"] == "India in Maps")
-    assert group["art"] == "india-maps.svg" and len(group["subgroups"]) >= 5
+    assert group["art"].startswith("india-maps.svg") and len(group["subgroups"]) >= 5
     assert all(sub["art"].startswith("maps-") for sub in group["subgroups"])
     assert "Lower Courts on the map" in {sub["name"] for sub in group["subgroups"]}
 

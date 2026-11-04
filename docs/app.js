@@ -835,7 +835,7 @@ async function main() {
     "Football": "assets/football.svg",
     "Innovation & Technology": "assets/innovation.svg",
     "Judiciary & Pending Cases": "assets/judiciary.svg",
-    "India in Maps": "assets/india-maps.svg"
+    "India in Maps": "assets/india-maps.svg?v=3"
   };
 
   const setEraBackground = (imgUrl) => {

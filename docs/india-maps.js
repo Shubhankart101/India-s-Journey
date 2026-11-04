@@ -35,7 +35,9 @@
   };
   const slug = name => String(name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const subgroupFor = group => `${group} on the map`;
-  const artFor = group => `assets/maps-${slug(group)}.svg`;
+  // Bump when scripts/build_india_maps.py output changes; earlier broken SVGs may sit in browser caches.
+  const ART_VERSION = '3';
+  const artFor = group => `assets/maps-${slug(group)}.svg?v=${ART_VERSION}`;
   const finite = value => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
 
   const statePoints = (labels, values) => {
