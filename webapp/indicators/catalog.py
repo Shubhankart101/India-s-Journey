@@ -36,7 +36,7 @@ def _latest_point(labels, datasets):
 
 def build_preview(labels, datasets, chart_type, max_points=PREVIEW_POINTS):
     """Downsamples ordered time series for list cards; categorical charts keep every label."""
-    if chart_type in RADIAL_TYPES or chart_type == 'bar' or len(labels) <= max_points:
+    if chart_type in RADIAL_TYPES or chart_type in {'bar', 'map'} or len(labels) <= max_points:
         indexes = list(range(len(labels)))
     else:
         step = (len(labels) - 1) / (max_points - 1)

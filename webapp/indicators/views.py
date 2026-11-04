@@ -35,7 +35,7 @@ INDICATOR_FILTERS = [
     OpenApiParameter('category', str, description='Category slug, e.g. `macroeconomics`.'),
     OpenApiParameter('subgroup', str, description='Subgroup slug.'),
     OpenApiParameter('live', bool, description='Only live (or only non-live) indicators.'),
-    OpenApiParameter('chart', str, enum=['radial', 'line', 'bar'], description='Chart family.'),
+    OpenApiParameter('chart', str, enum=['radial', 'line', 'bar', 'map'], description='Chart family.'),
     OpenApiParameter('sort', str, enum=['position', 'title', 'recent', 'points'], default='position'),
 ]
 
@@ -75,7 +75,7 @@ class CategoryListView(generics.ListAPIView):
 class IndicatorListView(generics.ListAPIView):
     """Searchable, filterable, paginated indicator list.
 
-    Query params: q, category, subgroup (slugs), live (true/false), chart (radial|line|bar), sort (position|title|recent|points).
+    Query params: q, category, subgroup (slugs), live (true/false), chart (radial|line|bar|map), sort (position|title|recent|points).
     """
     serializer_class = IndicatorSummarySerializer
     sort_options = {'position': 'position', 'title': 'title', 'recent': '-updated_at', 'points': '-point_count'}
@@ -94,7 +94,7 @@ class IndicatorListView(generics.ListAPIView):
         chart = params.get('chart')
         if chart == 'radial':
             queryset = queryset.filter(chart_type__in=['pie', 'doughnut'])
-        elif chart in {'line', 'bar'}:
+        elif chart in {'line', 'bar', 'map'}:
             queryset = queryset.filter(chart_type=chart)
         sort = params.get('sort', 'position')
         if sort not in self.sort_options:

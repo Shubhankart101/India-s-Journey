@@ -5,6 +5,7 @@ import {
 import { Chart } from 'react-chartjs-2';
 import { formatAxis, formatMagnitude, isRadial } from '../format.js';
 import { CHART_COLORS, useTheme } from '../theme.js';
+import IndiaMap from './IndiaMap.jsx';
 
 ChartJS.register(
   ArcElement, BarController, BarElement, CategoryScale, DoughnutController, Filler, Legend, LinearScale,
@@ -129,6 +130,13 @@ export function buildOptions({ type, suffix, compact, horizontal, multi, colors 
 export default function ChartView({ labels = [], datasets = [], type = 'line', indexAxis = 'x', suffix = '', color = '#58a6ff', compact = false, title = 'Chart' }) {
   const horizontal = type === 'bar' && indexAxis === 'y';
   const colors = CHART_COLORS[useTheme()];
+  if (type === 'map') {
+    return (
+      <div className={`chart-canvas${compact ? ' compact' : ''}`}>
+        <IndiaMap labels={labels} values={datasets[0]?.values || []} suffix={suffix} title={title} compact={compact} />
+      </div>
+    );
+  }
   const data = buildChartData({ labels, datasets, type, color, colors });
   const options = buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1, colors });
   return (

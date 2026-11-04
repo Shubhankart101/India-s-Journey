@@ -9,7 +9,7 @@ import { ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 
 const ChartView = lazy(() => import('../components/ChartView.jsx'));
-const MODE_LABEL = { doughnut: '◔ Pie', pie: '◔ Pie', bar: '▥ Bar', line: '⌇ Line' };
+const MODE_LABEL = { doughnut: '◔ Pie', pie: '◔ Pie', bar: '▥ Bar', line: '⌇ Line', map: '▦ Map' };
 const TABLE_LIMIT = 120;
 
 export default function Indicator() {

@@ -834,7 +834,8 @@ async function main() {
     "Hockey": "assets/hockey.svg",
     "Football": "assets/football.svg",
     "Innovation & Technology": "assets/innovation.svg",
-    "Judiciary & Pending Cases": "assets/judiciary.svg"
+    "Judiciary & Pending Cases": "assets/judiciary.svg",
+    "India in Maps": "assets/india-maps.svg"
   };
 
   const setEraBackground = (imgUrl) => {
@@ -889,9 +890,25 @@ async function main() {
   const compareStore = window.IndiaCompare || { has: () => false, full: () => false, toggle: () => {}, subscribe: () => {} };
   const compareButtonSyncers = [];
   compareStore.subscribe(() => compareButtonSyncers.forEach(sync => sync()));
-  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5, 'Air Travel & Civil Aviation': 12.2, 'Indian Railways': 12.3, 'Water Transport & Shipping': 12.4, 'Logistics & Freight': 12.45 };
+  const categoryOrder = { Economic: 0, 'Industry Trends & Performance': 1, 'Mining & Natural Resources': 2, 'Payments & Digital Banking': 3, 'State Performance & Regional Health': 4, 'India in Maps': 4.5, 'Public Health & Epidemiology': 5, Social: 6, 'Environment & Climate': 6.3, 'Agriculture & Food': 6.6, 'Defence & Strategic': 7, 'Crime & Security': 8, 'Pew Research': 9, Elections: 10, 'U.S. Elections': 11, 'Tourism & Heritage': 12, Sports: 13, Cricket: 14, Hockey: 15, Football: 16, 'Innovation & Technology': 12.5, 'Judiciary & Pending Cases': 8.5, 'Air Travel & Civil Aviation': 12.2, 'Indian Railways': 12.3, 'Water Transport & Shipping': 12.4, 'Logistics & Freight': 12.45 };
   const dashboardCategoryFor = key => extraChartPlacement[key]?.category || (['gdp_growth', 'merchandise_trade_balance', 'auto_production_volume', 'auto_domestic_sales', 'private_consumption_pc', 'crude_oil', 'fuel_consumption', 'iip', 'core_industries'].includes(key) ? 'Economic' : ['state_gsdp_comparison', 'state_per_capita_income', 'state_power_per_capita'].includes(key) ? 'State Performance & Regional Health' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Crime & Security' : categoryFor(key));
   const dashboardSubgroupFor = key => extraChartPlacement[key]?.subgroup || (['merchandise_trade_balance', 'bilateral_trade_balance'].includes(key) ? 'Trade & External' : ['auto_domestic_sales', 'iip', 'core_industries'].includes(key) ? 'Manufacturing & Industrial Growth' : ['private_consumption_pc'].includes(key) ? 'Per Capita Income & Wealth' : ['crude_oil', 'fuel_consumption'].includes(key) ? 'Production & Commodities' : key === 'state_power_per_capita' ? 'State Infrastructure & Services' : ['terror_attacks_per_million', 'terror_fatalities_per_million', 'terror_fatalities_per_attack'].includes(key) ? 'Terrorism' : subgroupFor(key));
+  const mapGroups = [];
+  if (window.IndiaMaps) {
+    const definitionByKey = new Map(definitions.map(definition => [definition[0], definition]));
+    const mapSeries = window.IndiaMaps.deriveMapSeries(data.series, key => {
+      const definition = definitionByKey.get(key);
+      return definition && { group: dashboardCategoryFor(key), subgroup: dashboardSubgroupFor(key), title: definition[1], subtitle: definition[2], frequency: definition[3], color: definition[4], suffix: definition[5] };
+    });
+    Object.entries(mapSeries)
+      .sort(([, left], [, right]) => (categoryOrder[left.meta.sourceGroup] ?? 99) - (categoryOrder[right.meta.sourceGroup] ?? 99))
+      .forEach(([key, item]) => {
+      data.series[key] = item;
+      extraChartPlacement[key] = { category: item.meta.category, subgroup: item.meta.subgroup };
+      definitions.push([key, item.meta.title, item.meta.subtitle, item.meta.frequency, item.meta.color, item.meta.suffix, definitionByKey.get(item.meta.sourceKey)[6], item.note]);
+      if (!mapGroups.includes(item.meta.sourceGroup)) mapGroups.push(item.meta.sourceGroup);
+    });
+  }
   const orderedDefinitions = [...definitions].sort((left, right) => (categoryOrder[dashboardCategoryFor(left[0])] ?? 99) - (categoryOrder[dashboardCategoryFor(right[0])] ?? 99));
   // Building 900+ Chart.js instances up front froze the page for minutes; each chart is now created
   // only when its card comes near the viewport (hidden, filtered-out cards never build).
@@ -920,6 +937,7 @@ async function main() {
     const card = document.createElement('article');
     card.className = 'chart-card';
     if (series.chartType === 'bar' && series.indexAxis === 'y') card.classList.add('state-rank-chart');
+    if (series.chartType === 'map') card.classList.add('map-chart');
     const paragraphs = details.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
     const explain = series?.meta?.explain;
     const summary = explain?.what || details.split('\n\n')[0] || subtitle;
@@ -1107,6 +1125,12 @@ async function main() {
     const ensureChart = () => {
     if (chartBuilt) return;
     chartBuilt = true;
+    if (series.chartType === 'map' && window.IndiaMaps) {
+      const wrap = card.querySelector('.chart-wrap');
+      wrap.querySelector('canvas')?.remove();
+      window.IndiaMaps.render(wrap, { labels, values, title, suffix, format: formatMagnitude });
+      return;
+    }
     const hasMultipleDatasets = series.datasets && series.datasets.length > 1;
     const chartPrefs = readChartPrefs(key);
 
@@ -1793,6 +1817,12 @@ async function main() {
       desc: "How many cases are waiting for a verdict in India's courts: pendency in the Supreme Court, all 25 High Courts and the district and subordinate courts, split by civil and criminal matters, case age, case type and state, with monthly institution and disposal, all taken from the National Judicial Data Grid.",
       badge1: "NJDG · Supreme Court · eCourts",
       badge2: "Supreme Court · High Courts · Lower Courts"
+    },
+    "India in Maps": {
+      title: "🗺️ India in Maps",
+      desc: "Every statistic on the dashboard that is reported by State or Union Territory, drawn as a map of India. Each subgroup collects the maps from one group, from bank deposits and hospital beds to pending court cases and voter turnout. Darker shading means a higher value.",
+      badge1: "State & UT choropleths",
+      badge2: "One subgroup per group"
     }
   };
 
@@ -2615,6 +2645,7 @@ async function main() {
       badge2: "Peer comparison"
     }
   };
+  window.IndiaMaps?.decorate({ subgroupArtMap, subgroupHeroData }, mapGroups);
 
   const exploreHeadingDefaults = (() => {
     const heading = document.querySelector('#explore');

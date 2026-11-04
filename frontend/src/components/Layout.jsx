@@ -7,7 +7,7 @@ import { ErrorBoundary, OfflineBanner } from './Resilience.jsx';
 import ArtBackdrop from './ArtBackdrop.jsx';
 import { AMBIENT_ART } from '../art.js';
 import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
-import ThemeSelect from './ThemeSelect.jsx';
+import ThemeSelect, { ContactLinks } from './ThemeSelect.jsx';
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
@@ -49,6 +49,7 @@ export default function Layout() {
           </nav>
           <Link to="/explore" className="btn btn-primary header-cta">Explore data</Link>
           <ThemeSelect />
+          <ContactLinks />
         </div>
       </header>
 

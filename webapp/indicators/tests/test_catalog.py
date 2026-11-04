@@ -104,6 +104,7 @@ class CatalogImportTests(TestCase):
         self.assertEqual(preview['labels'][-1], '1999')
         self.assertEqual(len(build_preview(labels, datasets, 'bar')['labels']), 100)
         self.assertEqual(len(build_preview(labels, datasets, 'doughnut')['labels']), 100)
+        self.assertEqual(len(build_preview(labels, datasets, 'map')['labels']), 100)
 
     def test_parse_published_handles_rss_iso_and_garbage(self):
         self.assertEqual(parse_published('Mon, 01 Jan 2024 10:00:00 GMT').year, 2024)

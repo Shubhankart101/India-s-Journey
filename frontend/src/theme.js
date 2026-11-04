@@ -4,8 +4,8 @@ import { useSyncExternalStore } from 'react';
 const KEY = 'ij-theme';
 
 export const THEMES = [
-  { id: 'dark', label: 'Dark', meta: '#000000' },
   { id: 'light', label: 'Light', meta: '#f5f5f7' },
+  { id: 'dark', label: 'Dark', meta: '#000000' },
   { id: 'newspaper', label: 'Newspaper', meta: '#f4f0e6' },
   { id: 'pamphlet', label: 'Pamphlet', meta: '#fff1c1' },
 ];

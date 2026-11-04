@@ -101,6 +101,24 @@ for (const [key, item] of Object.entries(series)) {
   definedKeys.add(key);
 }
 
+// "India in Maps": same derivation as the static site (docs/india-maps.js).
+vm.runInContext(read('india-maps.js'), context);
+const { IndiaMaps } = context.window;
+const definitionByKey = new Map(definitions.map(definition => [definition[0], definition]));
+const mapGroups = [];
+Object.entries(IndiaMaps.deriveMapSeries(series, key => {
+  const definition = definitionByKey.get(key);
+  return definition && { group: app.dashboardCategoryFor(key), subgroup: app.dashboardSubgroupFor(key), title: definition[1], subtitle: definition[2], frequency: definition[3], color: definition[4], suffix: definition[5] };
+}))
+  .sort(([, left], [, right]) => (app.categoryOrder[left.meta.sourceGroup] ?? 99) - (app.categoryOrder[right.meta.sourceGroup] ?? 99))
+  .forEach(([key, item]) => {
+    series[key] = item;
+    app.extraChartPlacement[key] = { category: item.meta.category, subgroup: item.meta.subgroup };
+    definitions.push([key, item.meta.title, item.meta.subtitle, item.meta.frequency, item.meta.color, item.meta.suffix, definitionByKey.get(item.meta.sourceKey)[6], item.note]);
+    if (!mapGroups.includes(item.meta.sourceGroup)) mapGroups.push(item.meta.sourceGroup);
+  });
+IndiaMaps.decorate(app, mapGroups);
+
 const indianMatrix = readJson('indian-matrix-latest.json', { cadence: {}, articles: [] });
 const polityPolicy = readJson('substack-latest.json', { articles: [] });
 const pewReports = readJson('pew-india-reports.json', { cadence: {}, reports: [] });

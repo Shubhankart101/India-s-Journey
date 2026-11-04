@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>API explorer â€” India's Journey</title>
+  <title>API explorer — India's Journey</title>
   <link rel="stylesheet" href="styles.css?v=data-v25">
   <link rel="stylesheet" href="product-theme.css?v=data-v27">
-  <link rel="stylesheet" href="themes.css?v=data-v2">
+  <link rel="stylesheet" href="themes.css?v=data-v4">
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css">
   <style>
     .api-page { width: min(1180px, calc(100% - 32px)); margin: 40px auto; }
@@ -22,7 +22,7 @@
 </head>
 <body class="product-theme" data-page="api">
   <div class="tricolor-bar"></div>
-  <script src="site.js?v=data-v26"></script>
+  <script src="site.js?v=data-v27"></script>
   <main class="api-page">
     <section class="api-intro">
       <p class="eyebrow">Read-only public data</p>
@@ -56,7 +56,7 @@
       const body = document.querySelector('#endpoint-check-results');
       button.disabled = true;
       body.replaceChildren();
-      status.textContent = 'Checking all published JSON resourcesâ€¦';
+      status.textContent = 'Checking all published JSON resources…';
       const results = await Promise.all(apiResources.map(async resource => {
         const row = document.createElement('tr');
         const name = document.createElement('td');

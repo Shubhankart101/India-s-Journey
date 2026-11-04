@@ -44,9 +44,9 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
 
 | Path | Handled by |
 | --- | --- |
-| `/api/â€¦` | DRF views. Unknown `/api/*` paths return a JSON 404 even when `DEBUG` is on |
+| `/api/…` | DRF views. Unknown `/api/*` paths return a JSON 404 even when `DEBUG` is on |
 | `/api/docs/`, `/api/redoc/`, `/api/schema/` | Swagger UI, ReDoc, OpenAPI 3 schema. The UI assets come from `drf-spectacular-sidecar`, with no CDN |
-| `/accounts/â€¦` | django-allauth. `/accounts/login/` and `/accounts/signup/` redirect to the SPA's `/login` |
+| `/accounts/…` | django-allauth. `/accounts/login/` and `/accounts/signup/` redirect to the SPA's `/login` |
 | `/admin/` | Django admin |
 | anything else | `frontend/dist/index.html`. React Router renders the page, or its own 404 |
 
