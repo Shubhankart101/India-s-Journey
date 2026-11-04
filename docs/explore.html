@@ -7,7 +7,7 @@
   <meta name="description" content="Explore India's changing economy, society, health, infrastructure and public life through interactive, source-linked public data.">
   <title>Explore — India's Journey</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="styles.css?v=data-v25">
+  <link rel="stylesheet" href="styles.css?v=data-v26">
   <link rel="stylesheet" href="product-theme.css?v=data-v25">
 </head>
 <body class="product-theme" data-page="explore">
@@ -67,166 +67,9 @@
       <label class="search"><span class="visually-hidden">Search indicators</span><input id="chart-search" type="search" aria-label="Search indicators" placeholder="Search e.g. coal, GDP, Lok Sabha, tourism"></label>
       <label><span class="visually-hidden">Group</span><select id="group-filter" aria-label="Group">
         <option value="all" selected>All groups</option>
-        <option value="Economic">Economic</option>
-        <option value="Industry Trends &amp; Performance">Industry Trends &amp; Performance</option>
-        <option value="Mining &amp; Natural Resources">Mining &amp; Natural Resources</option>
-        <option value="Payments &amp; Digital Banking">Payments &amp; Digital Banking</option>
-        <option value="State Performance &amp; Regional Health">State Performance &amp; Regional Health</option>
-        <option value="Public Health &amp; Epidemiology">Public Health &amp; Epidemiology</option>
-        <option value="Social">Social</option>
-        <option value="Environment &amp; Climate">Environment &amp; Climate</option>
-        <option value="Agriculture &amp; Food">Agriculture &amp; Food</option>
-        <option value="Defence &amp; Strategic">Defence &amp; Strategic</option>
-        <option value="Crime &amp; Security">Crime &amp; Security</option>
-        <option value="Judiciary &amp; Pending Cases">Judiciary &amp; Pending Cases</option>
-        <option value="Pew Research">Pew Research</option>
-        <option value="Elections">Elections</option>
-        <option value="U.S. Elections">U.S. Elections</option>
-        <option value="Tourism &amp; Heritage">Tourism &amp; Heritage</option>
-        <option value="Innovation &amp; Technology">Innovation &amp; Technology</option>
-        <option value="Sports">Sports</option>
-        <option value="Cricket">Cricket</option>
-        <option value="Hockey">Hockey</option>
-        <option value="Football">Football</option>
       </select></label>
       <label><span class="visually-hidden">Subgroup</span><select id="subgroup-filter" aria-label="Subgroup">
         <option value="all" selected>All subgroups</option>
-        <optgroup label="📈 Economic">
-          <option>Macroeconomics</option>
-          <option>Per Capita Income &amp; Wealth</option>
-          <option>Monetary Policy</option>
-          <option>Trade &amp; External</option>
-          <option>Markets</option>
-          <option>Fiscal &amp; Union Budget</option>
-          <option>Media &amp; Publications</option>
-        </optgroup>
-        <optgroup label="🏭 Industry Trends &amp; Performance">
-          <option>Manufacturing &amp; Industrial Growth</option>
-          <option>Infrastructure Development</option>
-          <option>Production &amp; Commodities</option>
-        </optgroup>
-        <optgroup label="⛏️ Mining &amp; Natural Resources">
-          <option>Metallic Minerals &amp; Ores</option>
-          <option>Energy Minerals &amp; Fuel</option>
-          <option>Non-Metallic &amp; Industrial Minerals</option>
-          <option>Mineral Exports &amp; Trade</option>
-          <option>Mineral Price Monitor (WPI)</option>
-          <option>Mining Output Monitor (IIP)</option>
-        </optgroup>
-        <optgroup label="💳 Payments &amp; Digital Banking">
-          <option>UPI &amp; Digital Payments</option>
-          <option>Card Spends &amp; Ecosystem</option>
-          <option>Digital Financial Index</option>
-        </optgroup>
-        <optgroup label="🏛️ State Performance &amp; Regional Health">
-          <option>State Financial Health &amp; GSDP</option>
-          <option>State Infrastructure &amp; Services</option>
-          <option>State Industrial &amp; Manufacturing Hubs</option>
-          <option>State Welfare &amp; Scheme Coverage</option>
-        </optgroup>
-        <optgroup label="🩺 Public Health &amp; Epidemiology">
-          <option>Mortality &amp; Lifespan Milestones</option>
-          <option>Disease Burden &amp; Epidemiology</option>
-          <option>Health Infrastructure &amp; Spending</option>
-          <option>Nutrition &amp; Food Security</option>
-        </optgroup>
-        <optgroup label="👥 Social">
-          <option>Demographics</option>
-          <option>Gender &amp; Population</option>
-          <option>Education</option>
-          <option>Higher Education</option>
-          <option>Employment &amp; Poverty</option>
-          <option>Welfare</option>
-        </optgroup>
-        <optgroup label="🌿 Environment &amp; Climate">
-          <option>Climate &amp; Weather</option>
-          <option>Forests &amp; Land</option>
-          <option>Pollution &amp; Waste</option>
-          <option>Disasters &amp; Extremes</option>
-          <option>Energy Transition</option>
-        </optgroup>
-        <optgroup label="🌾 Agriculture &amp; Food">
-          <option>Crop Production</option>
-          <option>Farm Inputs</option>
-          <option>Livestock &amp; Fisheries</option>
-        </optgroup>
-        <optgroup label="🛡️ Defence &amp; Strategic">
-          <option>Defence Exports &amp; Production</option>
-          <option>Defence Budget &amp; Modernization</option>
-          <option>Strategic Stockpiles &amp; Capabilities</option>
-        </optgroup>
-        <optgroup label="⚖️ Crime &amp; Security">
-          <option>Maoism / LWE</option>
-          <option>Jammu &amp; Kashmir Insurgency</option>
-          <option>North East Insurgency</option>
-          <option>Punjab Militancy &amp; Security</option>
-          <option>Violence &amp; Crime</option>
-          <option>Terrorism</option>
-        </optgroup>
-        <optgroup label="📊 Pew Research">
-          <option>Public opinion</option>
-        </optgroup>
-        <optgroup label="🗳️ Elections">
-          <option>Indian Elections</option>
-          <option>Lok Sabha 2024 — National</option>
-          <option>Lok Sabha 2024 — States</option>
-          <option>State Assembly Results 2022–2026</option>
-        </optgroup>
-        <optgroup label="🇺🇸 U.S. Elections">
-          <option>U.S. Presidential Elections</option>
-          <option>U.S. Presidential Campaign Finance</option>
-          <option>U.S. Congressional Campaign Finance</option>
-          <option>U.S. Campaign Funding Composition</option>
-        </optgroup>
-        <optgroup label="🏛️ Tourism &amp; Heritage">
-          <option>International Visitor Trends</option>
-          <option>World Heritage Sites</option>
-        </optgroup>
-        <optgroup label="⚖️ Judiciary &amp; Pending Cases">
-          <option>Supreme Court</option>
-          <option>High Courts</option>
-          <option>Lower Courts</option>
-        </optgroup>
-        <optgroup label="💡 Innovation &amp; Technology">
-          <option>Patents &amp; Intellectual Property</option>
-          <option>Industrial Designs &amp; IP Filings</option>
-          <option>Research &amp; Development</option>
-          <option>Scientific Publications &amp; Talent</option>
-          <option>High-Tech Trade &amp; Manufacturing</option>
-          <option>IP Royalties &amp; Technology Payments</option>
-          <option>Digital Technology Adoption</option>
-          <option>Startups &amp; New Business</option>
-          <option>Global Innovation Benchmarks</option>
-        </optgroup>
-        <optgroup label="🏅 Sports">
-          <option>Olympic &amp; Paralympic Medals</option>
-          <option>Asian &amp; Commonwealth Games</option>
-          <option>Athletics</option>
-          <option>Shooting &amp; Archery</option>
-          <option>Combat &amp; Strength</option>
-          <option>Racket Sports</option>
-          <option>Chess &amp; Kabaddi</option>
-        </optgroup>
-        <optgroup label="🏏 Cricket">
-          <option>Men's Cricket</option>
-          <option>Women's Cricket</option>
-          <option>ICC Tournaments</option>
-          <option>ICC Rankings</option>
-          <option>Batting: Past vs Current</option>
-          <option>Bowling: Past vs Current</option>
-        </optgroup>
-        <optgroup label="🏑 Hockey">
-          <option>Men's Hockey</option>
-          <option>Women's Hockey</option>
-          <option>FIH Rankings &amp; Pro League</option>
-          <option>Hockey Players: Past vs Current</option>
-        </optgroup>
-        <optgroup label="⚽ Football">
-          <option>Men's Football</option>
-          <option>Women's Football</option>
-          <option>FIFA Rankings</option>
-          <option>Footballers: Past vs Current</option>
-        </optgroup>
       </select></label>
       <label><span class="visually-hidden">Chart type</span><select id="chart-type-filter" aria-label="Chart type">
         <option value="">All chart types</option>
@@ -390,6 +233,6 @@
     }
   </script>
   <script src="additional-chart-definitions.js?v=data-v25"></script>
-  <script src="app.js?v=data-v25"></script>
+  <script src="app.js?v=data-v26"></script>
 </body>
 </html>

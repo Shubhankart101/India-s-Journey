@@ -128,6 +128,7 @@ class SportsDataTests(unittest.TestCase):
     def test_sports_groups_reach_static_site_and_web_app_with_art(self):
         catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
         explore = (ROOT / "docs" / "explore.html").read_text(encoding="utf-8")
+        app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
         for name, subgroups in GROUPS.items():
             with self.subTest(group=name):
                 group = next(category for category in catalog["categories"] if category["name"] == name)
@@ -138,9 +139,9 @@ class SportsDataTests(unittest.TestCase):
                     for folder in ("docs/assets", "frontend/public/art"):
                         self.assertTrue((ROOT / folder / art).is_file(), f"{folder}/{art}")
                 self.assertIn(f'data-group="{name}"', explore)
-                for subgroup in subgroups:
-                    self.assertIn(f"<option>{subgroup.replace('&', '&amp;')}</option>", explore)
-        self.assertIn("sports.json", (ROOT / "docs" / "app.js").read_text(encoding="utf-8"))
+        self.assertIn("groupFilter.replaceChildren(allGroups", app)
+        self.assertIn("subgroupFilter.appendChild(optgroup)", app)
+        self.assertIn("sports.json", app)
         self.assertIn("data/sports.json", (ROOT / ".github" / "workflows" / "deploy-dashboard.yml").read_text(encoding="utf-8"))
         for page in ("docs/sources.html", "frontend/src/pages/Sources.jsx"):
             self.assertIn("Official sports data sources", (ROOT / page).read_text(encoding="utf-8"))

@@ -4,6 +4,7 @@ import re
 import ssl
 import time
 import unittest
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -478,23 +479,28 @@ class DashboardEndpointTests(unittest.TestCase):
     def test_page_exposes_all_subgroups(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
-        text = body.decode("utf-8")
-        for subgroup in (
+        root = Path(__file__).resolve().parents[1]
+        app = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        catalog = json.loads((root / "data" / "catalog.json").read_text(encoding="utf-8"))
+        subgroup_names = {subgroup["name"] for group in catalog["categories"] for subgroup in group["subgroups"]}
+        expected = {name.replace("&amp;", "&") for name in {
             "Macroeconomics", "Monetary Policy", "Trade &amp; External", "Markets",
-            "Infrastructure", "Production &amp; Commodities", "Media &amp; Publications",
+            "Infrastructure Development", "Production &amp; Commodities", "Media &amp; Publications",
             "Demographics", "Welfare", "Public opinion",
             "Violence &amp; Crime", "Terrorism", "Maoism / LWE",
             "Defence Exports &amp; Production", "Defence Budget &amp; Modernization",
             "Strategic Stockpiles &amp; Capabilities", "State Infrastructure &amp; Services",
-        ):
-            self.assertIn(subgroup, text, subgroup)
+        }}
+        self.assertTrue(expected.issubset(subgroup_names))
+        self.assertIn("groupToSubgroups[group].push(subgroup)", app)
+        self.assertIn("subgroupFilter.appendChild(optgroup)", app)
 
     def test_page_has_dedicated_pew_research_group(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/explore.html")
         self.assertEqual(status, 200)
         text = body.decode("utf-8")
-        self.assertIn('value="Pew Research"', text)
-        self.assertIn(">Pew Research<", text)
+        self.assertIn('data-group="Pew Research"', text)
+        self.assertIn("groupFilter.replaceChildren(allGroups", (Path(__file__).resolve().parents[1] / "docs" / "app.js").read_text(encoding="utf-8"))
 
     def test_site_js_renders_both_thanks_columns_from_distinct_feeds(self):
         status, body = self.fetch(f"{DASHBOARD_URL}/site.js")

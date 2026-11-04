@@ -733,10 +733,11 @@ async function main() {
   const definedKeys = new Set(definitions.map(definition => definition[0]));
   Object.entries(data.series).forEach(([key, series]) => {
     const meta = series?.meta;
-    if (!meta || definedKeys.has(key)) return;
+    if (!meta) return;
+    if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
+    if (definedKeys.has(key)) return;
     definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', series.source || '', explainDetails(meta.explain) || series.note || meta.subtitle || '']);
     definedKeys.add(key);
-    if (meta.category) extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
   });
   renderChartSourceIndex();
   const matrixCadence = (data.series.indian_matrix && data.series.indian_matrix.values && data.series.indian_matrix.values.length) ? data.series.indian_matrix : (indianMatrix?.cadence || { labels: [], values: [] });
@@ -1544,71 +1545,27 @@ async function main() {
     if (!subgroupOwners.has(subgroup)) subgroupOwners.set(subgroup, new Set());
     subgroupOwners.get(subgroup).add(group);
   });
+  const groups = Object.keys(groupToSubgroups)
+    .filter(group => group !== 'all')
+    .sort((left, right) => (categoryOrder[left] ?? 99) - (categoryOrder[right] ?? 99) || left.localeCompare(right));
+  if (groupFilter) {
+    const selectedGroup = groupFilter.value;
+    const allGroups = document.createElement('option');
+    allGroups.value = 'all';
+    allGroups.textContent = 'All groups';
+    groupFilter.replaceChildren(allGroups, ...groups.map(group => {
+      const option = document.createElement('option');
+      option.value = group;
+      option.textContent = group;
+      return option;
+    }));
+    groupFilter.value = groups.includes(selectedGroup) ? selectedGroup : 'all';
+  }
   const subgroupGroups = Object.fromEntries(
     [...subgroupOwners]
       .filter(([, groups]) => groups.size === 1)
       .map(([subgroup, groups]) => [subgroup, groups.values().next().value])
   );
-  const quickJumpNav = document.createElement('nav');
-  quickJumpNav.className = 'chart-quick-jumps';
-  quickJumpNav.setAttribute('aria-label', 'Quick jump to dashboard groups and subgroups');
-  const quickGroupRow = document.createElement('div');
-  quickGroupRow.className = 'quick-jump-row';
-  quickGroupRow.setAttribute('aria-label', 'Dashboard groups');
-  const quickSubgroupRow = document.createElement('div');
-  quickSubgroupRow.className = 'quick-jump-row';
-  quickSubgroupRow.setAttribute('aria-label', 'Subgroups in selected group');
-  quickJumpNav.append(quickGroupRow, quickSubgroupRow);
-  if (grid) grid.before(quickJumpNav);
-  const renderQuickJumps = () => {
-    quickGroupRow.replaceChildren();
-    quickSubgroupRow.replaceChildren();
-    const groups = Object.keys(groupToSubgroups).filter(group => group !== 'all').sort((a, b) => (categoryOrder[a] ?? 99) - (categoryOrder[b] ?? 99));
-    const addChip = (row, label, selected, action) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'quick-jump-chip';
-      button.textContent = label;
-      button.setAttribute('aria-label', `Jump to ${label}`);
-      button.setAttribute('aria-pressed', String(selected));
-      if (selected) button.classList.add('active');
-      button.addEventListener('click', action);
-      row.append(button);
-    };
-    addChip(quickGroupRow, 'All groups', groupFilter.value === 'all', () => {
-      groupFilter.value = 'all';
-      subgroupFilter.value = 'all';
-      updateSubgroupFilter();
-      syncGroupPills('all');
-      renderQuickJumps();
-      updateCards();
-    });
-    groups.forEach(group => addChip(quickGroupRow, group, groupFilter.value === group, () => {
-      groupFilter.value = group;
-      subgroupFilter.value = 'all';
-      updateSubgroupFilter();
-      syncGroupPills(group);
-      if (categoryBgMap[group]) setEraBackground(categoryBgMap[group]);
-      renderQuickJumps();
-      updateCards();
-    }));
-    const selectedGroup = groupFilter.value;
-    const subgroups = selectedGroup === 'all' ? groupToSubgroups.all : (groupToSubgroups[selectedGroup] || []);
-    addChip(quickSubgroupRow, selectedGroup === 'all' ? 'All subgroups' : `All ${selectedGroup} subgroups`, subgroupFilter.value === 'all', () => {
-      subgroupFilter.value = 'all';
-      updateSubgroupFilter();
-      updateCards();
-    });
-    subgroups.forEach(subgroup => addChip(quickSubgroupRow, subgroup, subgroupFilter.value === subgroup, () => {
-      const owner = selectedGroup === 'all' ? subgroupGroups[subgroup] : selectedGroup;
-      if (owner) groupFilter.value = owner;
-      updateSubgroupFilter();
-      subgroupFilter.value = subgroup;
-      syncGroupPills(groupFilter.value);
-      renderQuickJumps();
-      updateCards();
-    }));
-  };
 
   const updateSubgroupFilter = () => {
     const selectedGroup = groupFilter.value;
@@ -3093,7 +3050,6 @@ async function main() {
     savedToggle?.classList.remove('active');
     syncGroupPills('all');
     updateSubgroupFilter();
-    renderQuickJumps();
     updateCards();
   });
   if (filter) filter.addEventListener('change', updateCards);
@@ -3103,7 +3059,6 @@ async function main() {
     if (categoryBgMap[grp]) setEraBackground(categoryBgMap[grp]);
     subgroupFilter.value = 'all';
     updateSubgroupFilter();
-    renderQuickJumps();
     updateGroupHero();
     updateCards(); 
   });
@@ -3114,7 +3069,6 @@ async function main() {
       if (categoryBgMap[groupFilter.value]) setEraBackground(categoryBgMap[groupFilter.value]);
     }
     updateSubgroupFilter();
-    renderQuickJumps();
     renderExploreGrid();
     updateGroupHero(); 
     updateCards(); 
@@ -3129,7 +3083,6 @@ async function main() {
   syncGroupPills(groupFilter.value);
   updateSubgroupFilter();
   if ((groupToSubgroups[groupFilter.value] || []).includes(savedFilters.subgroup)) subgroupFilter.value = savedFilters.subgroup;
-  renderQuickJumps();
   updateCards();
 
   // Deep links such as explore.html?group=Economic&subgroup=...&q=gdp, kept in sync as filters change.

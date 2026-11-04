@@ -12,10 +12,14 @@ class ElectionGroupTests(unittest.TestCase):
         app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
         definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         self.assertIn('data-group="U.S. Elections"', page)
-        self.assertIn('<option value="U.S. Elections">U.S. Elections</option>', page)
-        self.assertIn("<option>U.S. Presidential Elections</option>", page)
-        self.assertIn("<option>U.S. Presidential Campaign Finance</option>", page)
-        self.assertIn("<option>U.S. Congressional Campaign Finance</option>", page)
+        self.assertIn("groupFilter.replaceChildren(allGroups", app)
+        catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
+        group = next(category for category in catalog["categories"] if category["name"] == "U.S. Elections")
+        self.assertTrue({
+            "U.S. Presidential Elections",
+            "U.S. Presidential Campaign Finance",
+            "U.S. Congressional Campaign Finance",
+        }.issubset({subgroup["name"] for subgroup in group["subgroups"]}))
         self.assertIn("place(['us_presidential_electoral_votes'], 'U.S. Elections'", definitions)
         self.assertIn("subgroup: 'U.S. Presidential Campaign Finance'", definitions)
         self.assertIn("subgroup: 'U.S. Congressional Campaign Finance'", definitions)

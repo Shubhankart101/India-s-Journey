@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 import re
 
 import pytest
@@ -166,8 +167,16 @@ def test_dashboard_and_chart_choices_are_saved_in_local_storage():
     assert "writeChartPrefs(key" in APP_TEXT
 
 
-def test_quick_jump_navigation_and_title_search_are_accessible():
-    assert "Quick jump to dashboard groups and subgroups" in APP_TEXT
+def test_group_navigation_uses_tiles_and_dynamic_filter_options():
+    assert "quickJumpNav" not in APP_TEXT
+    assert "groupFilter.replaceChildren(allGroups" in APP_TEXT
+    assert "Browse by group" in (ROOT / "docs" / "explore.html").read_text(encoding="utf-8")
+    catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
+    group_names = {group["name"] for group in catalog["categories"]}
+    assert set(TRANSPORT_CATEGORIES).issubset(group_names)
+
+
+def test_title_search_remains_accessible():
     assert "Search chart titles in ${groupFilter.value}" in APP_TEXT
     assert "card.dataset.chartTitle.includes(query)" in APP_TEXT
     assert "aria-pressed" in APP_TEXT
@@ -179,7 +188,8 @@ def test_interactive_controls_have_labels_and_mobile_styles():
     css = (ROOT / "docs" / "styles.css").read_text(encoding="utf-8")
     assert "@media (max-width: 600px)" in css
     assert "@media (prefers-reduced-motion: reduce)" in css
-    assert ".quick-jump-chip:focus-visible" in css
+    assert ".quick-jump-row" not in css
+    assert ".quick-jump-chip" not in css
 
 
 def test_new_group_and_subgroup_titles_have_no_mangled_question_marks():

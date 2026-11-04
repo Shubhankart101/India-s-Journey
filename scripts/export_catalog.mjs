@@ -94,10 +94,11 @@ const explainDetails = explain => explain ? [['what', 'What it shows'], ['read',
   .filter(([part]) => explain[part]).map(([part, heading]) => `${heading} — ${explain[part]}`).join('\n\n') : '';
 for (const [key, item] of Object.entries(series)) {
   const meta = item?.meta;
-  if (!meta || definedKeys.has(key)) continue;
+  if (!meta) continue;
+  if (meta.category) app.extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
+  if (definedKeys.has(key)) continue;
   definitions.push([key, meta.title, meta.subtitle || '', meta.frequency || 'Periodic', meta.color || '#58a6ff', meta.suffix || '', item.source || '', explainDetails(meta.explain) || item.note || meta.subtitle || '']);
   definedKeys.add(key);
-  if (meta.category) app.extraChartPlacement[key] = { category: meta.category, subgroup: meta.subgroup || meta.category };
 }
 
 const indianMatrix = readJson('indian-matrix-latest.json', { cadence: {}, articles: [] });

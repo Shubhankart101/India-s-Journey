@@ -240,6 +240,7 @@ describe('Explore', () => {
     await screen.findByRole('heading', { name: 'Real GDP growth' });
     await userEvent.type(screen.getByRole('searchbox', { name: 'Search indicators' }), 'coal');
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?q=coal'));
+    await waitFor(() => expect(calls.some(call => call.path === '/api/indicators/' && call.params.get('q') === 'coal')).toBe(true));
     const searches = calls.filter(call => call.path === '/api/indicators/' && call.params.get('q'));
     expect(searches.map(call => call.params.get('q'))).toEqual(['coal']);
   });

@@ -141,5 +141,16 @@ class ManagementCommandTests(TestCase):
         call_command('import_catalog', stdout=StringIO())
         self.assertGreater(Indicator.objects.count(), 500)
         self.assertGreaterEqual(Category.objects.count(), 13)
+        expected_groups = {
+            'Air Travel & Civil Aviation',
+            'Indian Railways',
+            'Water Transport & Shipping',
+            'Logistics & Freight',
+        }
+        imported_groups = set(Category.objects.values_list('name', flat=True))
+        self.assertTrue(expected_groups.issubset(imported_groups))
+        response = self.client.get('/api/categories/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(expected_groups.issubset({item['name'] for item in response.json()}))
         self.assertGreater(Indicator.objects.filter(chart_type__in=['pie', 'doughnut']).count(), 100)
         self.assertGreater(Article.objects.count(), 0)
