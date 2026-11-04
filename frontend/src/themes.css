@@ -157,8 +157,8 @@
   & .site-footer .footer-btn { background: var(--ink); color: var(--bg); }
   /* An Indian daily: Devanagari tagline under the nameplate and a tricolour rule below the double rule. */
   & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 3px; background: linear-gradient(90deg, #ff9933 0 33.3%, #f4f0e6 0 66.6%, #138808 0); pointer-events: none; }
-  & .brand { position: relative; }
-  & .brand::after { content: "भारत की यात्रा · सार्वजनिक आँकड़े"; position: absolute; left: 0; top: 100%; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", "Kohinoor Devanagari", serif; font-size: 0.6rem; color: #7a1010; }
+  & .brand { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; }
+  & .brand::after { content: "भारत की यात्रा · सार्वजनिक आँकड़े"; grid-column: 1 / -1; margin-top: 2px; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", "Kohinoor Devanagari", serif; font-size: 0.6rem; color: #7a1010; }
   & .hero .eyebrow::before { content: "समाचार · "; font-family: "Nirmala UI", "Mangal", serif; font-style: normal; }
 }
 
@@ -171,8 +171,8 @@
   & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; pointer-events: none;
     background: radial-gradient(circle at 50% 0, #c2185b 0 6px, transparent 6.5px) 0 0 / 28px 14px repeat-x,
       radial-gradient(circle at 50% 0, #ff6f00 0 6px, transparent 6.5px) 14px 0 / 28px 14px repeat-x; }
-  & .brand { position: relative; font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
-  & .brand::after { content: "भारत की यात्रा"; position: absolute; left: 0; top: 100%; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: none; color: #a3104d; }
+  & .brand { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
+  & .brand::after { content: "भारत की यात्रा"; grid-column: 1 / -1; margin-top: 1px; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: 0.68rem; font-weight: 700; line-height: 1.2; text-transform: none; color: #a3104d; }
   & .brand-dot { color: #138808; }
   & .desktop-nav a { color: var(--ink); font-weight: 700; text-transform: uppercase; }
   & .desktop-nav a::after { background: var(--accent); height: 3px; }
