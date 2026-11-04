@@ -10,7 +10,7 @@
   --green: #3fb950;
   --danger: #ff6b6b;
   --radius: 18px;
-  --header-h: 52px;
+  --header-h: 64px;
   --tab-h: 62px;
   color-scheme: dark;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -45,7 +45,7 @@ button, input, select { font: inherit; color: inherit; }
 
 /* Header and navigation */
 .site-header { position: sticky; top: 0; z-index: 20; height: var(--header-h); background: rgba(22, 22, 23, 0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--line); }
-.header-inner { max-width: 1180px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 24px; }
+.header-inner { max-width: 1360px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 24px; }
 .brand { color: var(--ink); font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; }
 .brand:hover { text-decoration: none; }
 .brand-dot { color: var(--saffron); display: inline-block; transition: transform 0.3s; }
