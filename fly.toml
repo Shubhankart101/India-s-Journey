@@ -1,8 +1,8 @@
 # Fly.io config for the Django + React web app. First deploy: `fly launch --no-deploy --copy-config`,
 # then `fly secrets set DJANGO_SECRET_KEY=<random>` and `fly deploy`. Fly injects FLY_APP_NAME, which
 # settings.py turns into <app>.fly.dev for ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS.
-app = "indias-journey"
-primary_region = "bom"
+app = "india-s-journey"
+primary_region = "sin"
 
 [build]
   dockerfile = "Dockerfile"
@@ -31,6 +31,9 @@ primary_region = "bom"
     interval = "30s"
     timeout = "5s"
     grace_period = "60s"
+
+    [http_service.checks.headers]
+      Host = "india-s-journey.fly.dev"
 
 [[vm]]
   size = "shared-cpu-1x"
