@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-11-03T09:48:18+00:00",
+  "generated_at_utc": "2026-11-05T09:42:07+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -1428,6 +1428,151 @@ window.INDIA_DASHBOARD_DATA = {
         12.7,
         13.0,
         13.8
+      ],
+      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
+    },
+    "rail_freight": {
+      "labels": [
+        "2020-04",
+        "2020-05",
+        "2020-06",
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "values": [
+        654.0,
+        825.8,
+        934.5,
+        950.1,
+        945.0,
+        1020.8,
+        1080.1,
+        1098.7,
+        1180.3,
+        1195.2,
+        1121.0,
+        1303.0,
+        1114.9,
+        1147.6,
+        1125.6,
+        1128.0,
+        1104.0,
+        1058.3,
+        1171.4,
+        1168.0,
+        1265.8,
+        1289.2,
+        1196.2,
+        1390.8,
+        1219.9,
+        1315.0,
+        1253.1,
+        1218.9,
+        1191.2,
+        1156.2,
+        1186.5,
+        1228.1,
+        1303.3,
+        1337.6,
+        1238.0,
+        1443.1,
+        1262.9,
+        1340.1,
+        1228.5,
+        1237.7,
+        1267.2,
+        1234.3,
+        1288.3,
+        1281.9,
+        1387.7,
+        1424.3,
+        1363.6,
+        1563.7,
+        1281.0,
+        1389.4,
+        1352.6,
+        1294.3,
+        1204.1,
+        1226.0,
+        1307.1,
+        1299.9,
+        1412.0,
+        1449.0,
+        1322.7,
+        1610.8,
+        1331.4,
+        1428.0,
+        1365.7,
+        1295.3,
+        1307.4,
+        1273.1,
+        1336.5,
+        1354.8,
+        1457.51
       ],
       "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
     },
@@ -5857,48 +6002,48 @@ window.INDIA_DASHBOARD_DATA = {
         "Lakshadweep"
       ],
       "values": [
-        10.702475,
-        7.0758175,
-        5.7898961,
-        4.795447,
-        3.9012171,
-        3.8907301,
-        2.6126291,
-        2.4403551,
-        2.2294855,
-        2.0842819,
-        2.0233346,
-        1.9649185,
-        1.8938442,
-        1.7456381,
-        1.3568681,
-        1.1372462,
-        1.0188919,
-        0.7811298,
-        0.7196111,
-        0.4187784,
-        0.2549674,
-        0.2029122,
-        0.1180904,
-        0.1099478,
-        0.0934725,
-        0.0472105,
-        0.0456072,
-        0.0410693,
-        0.0346746,
-        0.0300006,
-        0.0249794,
-        0.024215,
-        0.0112278,
-        0.0066537,
-        0.0022654,
-        0.0011048
+        10.7150186,
+        7.0781388,
+        5.791414,
+        4.7974918,
+        3.9010747,
+        3.8963415,
+        2.6155254,
+        2.4413726,
+        2.2317607,
+        2.0850889,
+        2.0230694,
+        1.9672903,
+        1.8959094,
+        1.7462117,
+        1.3584378,
+        1.137946,
+        1.0193738,
+        0.7821662,
+        0.7198493,
+        0.4190765,
+        0.2545993,
+        0.2005619,
+        0.1181474,
+        0.1099988,
+        0.0936043,
+        0.0472067,
+        0.0456704,
+        0.0410688,
+        0.0346941,
+        0.0300976,
+        0.0249775,
+        0.0242422,
+        0.0112319,
+        0.0066602,
+        0.0022628,
+        0.0011051
       ],
       "chartType": "bar",
       "indexAxis": "y",
       "scope": "state",
       "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
-      "note": "Report dated 21/10/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore."
+      "note": "Report dated 28/10/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore."
     },
     "state_pmjay_health_cards": {
       "labels": [
@@ -6299,20 +6444,22 @@ window.INDIA_DASHBOARD_DATA = {
         "2026-W41",
         "2026-W42",
         "2026-W43",
-        "2026-W44"
+        "2026-W44",
+        "2026-W45"
       ],
       "values": [
-        2,
-        1,
-        2,
         1,
         1,
         2,
         1,
+        1,
+        2,
+        1,
         2,
         1,
         2,
         2,
+        1,
         1,
         1,
         1
@@ -7426,6 +7573,47 @@ window.INDIA_DASHBOARD_DATA = {
     },
     "current_account": {
       "labels": [
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
         "2016",
         "2017",
         "2018",
@@ -7438,6 +7626,47 @@ window.INDIA_DASHBOARD_DATA = {
         "2025"
       ],
       "values": [
+        -0.149803050596716,
+        1.53711247656257,
+        1.7444258081725,
+        0.504272542122817,
+        0.0329009656250522,
+        -0.958052563978002,
+        -1.39454916709874,
+        -1.25727324301823,
+        -0.887438187991853,
+        -1.08931724045169,
+        -1.78080747473129,
+        -1.83452055951269,
+        -1.85324243711684,
+        -2.40845625496789,
+        -2.3012843286246,
+        -2.19193586906134,
+        -1.58891131223691,
+        -1.55624498023457,
+        -0.67161886953087,
+        -0.512193818555587,
+        -1.54413181166043,
+        -1.51595497295367,
+        -0.713014326393887,
+        -1.63832533358649,
+        -0.70354723219324,
+        -0.982342580017137,
+        0.290495460210206,
+        1.37093793900847,
+        1.44355773291234,
+        0.110018010197154,
+        -1.25350400207393,
+        -0.988988302952292,
+        -0.663717648772608,
+        -2.58337749259837,
+        -1.95146209111801,
+        -3.25348368945179,
+        -3.42928468606061,
+        -5.00488971805303,
+        -2.64566711733892,
+        -1.33950896483452,
+        -1.06754907167964,
         -0.527880606037518,
         -1.43948820320988,
         -2.42697545810527,
@@ -103590,9121 +103819,6 @@ window.INDIA_DASHBOARD_DATA = {
         }
       }
     },
-    "dg_pew_reports_per_year": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Pew India Reports Published per Year",
-        "subtitle": "Dated catalogue entries by publication year",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Number of dated catalogue reports published in each year.",
-          "read": "A higher count means more dated entries in the collected catalogue.",
-          "why": "Shows the publication cadence represented in Pew's India report catalogue."
-        }
-      }
-    },
-    "dg_pew_reports_cumulative": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        9.0,
-        29.0,
-        34.0,
-        57.0,
-        117.0,
-        156.0,
-        205.0,
-        256.0,
-        310.0,
-        360.0,
-        460.0,
-        509.0,
-        611.0,
-        690.0,
-        747.0,
-        806.0,
-        857.0,
-        921.0,
-        988.0,
-        1050.0,
-        1095.0,
-        1160.0,
-        1239.0,
-        1354.0,
-        1418.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Cumulative Pew India Reports in Catalogue",
-        "subtitle": "Dated catalogue entries accumulated over time",
-        "frequency": "Cumulative by publication year",
-        "color": "#58a6ff",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Running total of catalogue entries through each publication year.",
-          "read": "This cumulative total only rises and is not an annual publication count.",
-          "why": "Makes growth of the collected catalogue visible over its dated coverage."
-        }
-      }
-    },
-    "dg_pew_publications_by_quarter": {
-      "labels": [
-        "Q1",
-        "Q2",
-        "Q3",
-        "Q4"
-      ],
-      "values": [
-        282.0,
-        369.0,
-        424.0,
-        343.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Pew India Reports by Publication Quarter",
-        "subtitle": "Catalogue dates grouped by calendar quarter",
-        "frequency": "Pooled catalogue",
-        "color": "#3fb950",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Counts dated catalogue entries in each calendar quarter across all available years.",
-          "read": "These pooled quarter totals are not a single-year seasonal comparison.",
-          "why": "Summarizes when dated reports appear within the calendar year."
-        }
-      }
-    },
-    "dg_pew_publications_by_weekday": {
-      "labels": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "values": [
-        223.0,
-        389.0,
-        310.0,
-        399.0,
-        84.0,
-        3.0,
-        10.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Pew India Reports by Publication Weekday",
-        "subtitle": "Catalogue dates grouped by weekday",
-        "frequency": "Pooled catalogue",
-        "color": "#bc8cff",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Counts dated catalogue entries by weekday of publication.",
-          "read": "Totals pool all years and are not adjusted for archive coverage.",
-          "why": "Describes the weekday pattern in the catalogue dates."
-        }
-      }
-    },
-    "dg_pew_publications_by_month": {
-      "labels": [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ],
-      "values": [
-        76.0,
-        91.0,
-        115.0,
-        93.0,
-        58.0,
-        218.0,
-        177.0,
-        109.0,
-        138.0,
-        103.0,
-        108.0,
-        132.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Pew India Reports by Publication Month",
-        "subtitle": "Catalogue dates grouped by calendar month",
-        "frequency": "Pooled catalogue",
-        "color": "#f6c344",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Counts dated catalogue entries in each month, pooling all years.",
-          "read": "Pooled totals reflect the collected archive and changing yearly volume.",
-          "why": "Highlights the month distribution in the currently collected catalogue."
-        }
-      }
-    },
-    "dg_pew_publications_by_decade": {
-      "labels": [
-        "2000s",
-        "2010s",
-        "2020s"
-      ],
-      "values": [
-        256.0,
-        665.0,
-        497.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
-      "meta": {
-        "title": "Pew India Reports by Publication Decade",
-        "subtitle": "Catalogue entries grouped into calendar decades",
-        "frequency": "By publication decade",
-        "color": "#f778ba",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Publication Activity",
-        "explain": {
-          "what": "Counts dated catalogue entries by publication decade.",
-          "read": "Totals depend on archive coverage; the current decade may be incomplete.",
-          "why": "Offers a coarse view of the archive's publication history."
-        }
-      }
-    },
-    "dg_pew_theme_economy_livelihoods": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: econom(?:y|ic), jobs?, poverty, income, business. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Economy & livelihoods",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for economy & livelihoods.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_religion_society": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: religio(?:n|us), hindus?, muslims?, christians?, caste, marriage, family. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Religion & society",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for religion & society.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_politics_governance": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: politic(?:s|al), democra(?:cy|tic), government, election, leader(?:ship)?, parliament, modi. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Politics & governance",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for politics & governance.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_international_affairs": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: foreign, global, china, pakistan, u\\.s\\., world, international. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching International affairs",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for international affairs.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_technology_media": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: internet, social media, news, technology, smartphone, \\bai\\b. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Technology & media",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for technology & media.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_climate_environment": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: climate, environment, pollution, energy, water. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Climate & environment",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#f778ba",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for climate & environment.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_theme_gender_demographics": {
-      "labels": [
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
-      "unit": "title matches",
-      "note": "Counts dated catalogue titles containing at least one of these keywords: gender, women, men, population, young, age. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
-      "meta": {
-        "title": "Pew India Report Titles Matching Gender & demographics",
-        "subtitle": "Annual count of catalogue titles matching theme keywords",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": " title matches",
-        "category": "Pew Research",
-        "subgroup": "Report Themes",
-        "explain": {
-          "what": "Number of dated catalogue titles matching at least one keyword for gender & demographics.",
-          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
-          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
-        }
-      }
-    },
-    "dg_pew_smartphone_ownership_trend": {
-      "labels": [
-        "2013: owns a smartphone",
-        "2015: owns a smartphone",
-        "2018: owns a smartphone",
-        "2023: owns a smartphone"
-      ],
-      "values": [
-        7.0,
-        17.0,
-        24.0,
-        59.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/topic/india/",
-      "unit": "% of respondents",
-      "note": "Selects only snapshot entries whose label says respondents owned a smartphone; figures are copied from the committed snapshot catalogue. Wording and survey populations are source-defined.",
-      "meta": {
-        "title": "Smartphone Ownership in Pew India Snapshots",
-        "subtitle": "Reported adult smartphone ownership across listed survey years",
-        "frequency": "Pew survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Published shares of respondents reported as owning a smartphone in each listed year.",
-          "read": "Read each point as the source-reported percentage; do not extend beyond the listed snapshots.",
-          "why": "Provides a limited view of reported smartphone ownership over time."
-        }
-      }
-    },
-    "dg_pew_economy_rating_trend": {
-      "labels": [
-        "2007: rated national economy good",
-        "2008: rated national economy good"
-      ],
-      "values": [
-        74.0,
-        62.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/2008/12/04/india/",
-      "unit": "% of respondents",
-      "note": "Selects only labels stating respondents rated the national economy good; no interpolation is used.",
-      "meta": {
-        "title": "Pew Snapshot: National Economy Rated Good",
-        "subtitle": "Repeated survey item on views of India's national economy",
-        "frequency": "Pew survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Reported respondent share rating the national economy good in each listed year.",
-          "read": "Compare published survey-year points; unreported years are not filled.",
-          "why": "Tracks the available repeated Pew item."
-        }
-      }
-    },
-    "dg_pew_leadership_favorability_trend": {
-      "labels": [
-        "2017: favorable view of national leadership",
-        "2023: favorable view of national leadership"
-      ],
-      "values": [
-        88.0,
-        79.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/",
-      "unit": "% of respondents",
-      "note": "Selects labels explicitly describing a favorable view of national leadership; distinct confidence and global-influence items are excluded.",
-      "meta": {
-        "title": "Pew Snapshot: Favorable View of National Leadership",
-        "subtitle": "Repeated favorability item in available survey years",
-        "frequency": "Pew survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Reported respondent share with a favorable view of national leadership in selected years.",
-          "read": "Only years with matching item wording are shown; values are source-published percentages.",
-          "why": "Makes available repeated leadership-favorability observations easier to compare."
-        }
-      }
-    },
-    "dg_pew_religion_respect_groups": {
-      "labels": [
-        "Hindus",
-        "Muslims"
-      ],
-      "values": [
-        85.0,
-        78.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "unit": "% of respondents",
-      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
-      "meta": {
-        "title": "Pew Snapshot: Respect for All Religions",
-        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
-        "frequency": "2021 survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
-          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
-          "why": "Makes available subgroup figures for the same question directly readable."
-        }
-      }
-    },
-    "dg_pew_religion_diversity_groups": {
-      "labels": [
-        "Hindus",
-        "Muslims"
-      ],
-      "values": [
-        56.0,
-        53.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "unit": "% of respondents",
-      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
-      "meta": {
-        "title": "Pew Snapshot: Views on Religious Diversity",
-        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
-        "frequency": "2021 survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
-          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
-          "why": "Makes available subgroup figures for the same question directly readable."
-        }
-      }
-    },
-    "dg_pew_interfaith_marriage_groups": {
-      "labels": [
-        "Hindus",
-        "Muslims"
-      ],
-      "values": [
-        67.0,
-        73.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "unit": "% of respondents",
-      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
-      "meta": {
-        "title": "Pew Snapshot: Views on Inter-religious Marriage",
-        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
-        "frequency": "2021 survey snapshot",
-        "color": "#ff9933",
-        "suffix": " % of respondents",
-        "category": "Pew Research",
-        "subgroup": "Survey Snapshot Comparisons",
-        "explain": {
-          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
-          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
-          "why": "Makes available subgroup figures for the same question directly readable."
-        }
-      }
-    },
-    "dg_elections_effective_candidates_2022_state_assembly": {
-      "labels": [
-        "Goa",
-        "Punjab",
-        "Manipur",
-        "Uttar Pradesh",
-        "Uttarakhand"
-      ],
-      "values": [
-        3.4613482632203008,
-        3.204913934263541,
-        2.8426396321457776,
-        2.741968599568915,
-        2.606723530451022
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2022 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
-      "meta": {
-        "title": "2022 State Assembly: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "State Assembly 2022",
-        "color": "#ff9933",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_effective_candidates_2023_state_assembly": {
-      "labels": [
-        "Meghalaya",
-        "Tripura",
-        "Karnataka",
-        "Nagaland"
-      ],
-      "values": [
-        3.3224059411529767,
-        2.481106373698331,
-        2.4605321600488352,
-        2.202765151970171
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2023 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
-      "meta": {
-        "title": "2023 State Assembly: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "State Assembly 2023",
-        "color": "#58a6ff",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_effective_candidates_2024_lok_sabha": {
-      "labels": [
-        "Punjab",
-        "Sikkim",
-        "Mizoram",
-        "Tamil Nadu",
-        "Arunachal Pradesh",
-        "Telangana",
-        "Ladakh",
-        "Kerala",
-        "Jammu and Kashmir",
-        "Manipur",
-        "Odisha",
-        "West Bengal",
-        "Jharkhand",
-        "Maharashtra",
-        "Uttar Pradesh",
-        "Bihar",
-        "Meghalaya",
-        "Andaman & Nicobar Islands",
-        "Puducherry",
-        "Assam",
-        "Dadra & Nagar Haveli and Daman & Diu",
-        "Goa",
-        "Haryana",
-        "Uttarakhand",
-        "Chhattisgarh",
-        "Andhra Pradesh",
-        "Chandigarh",
-        "Rajasthan",
-        "Madhya Pradesh",
-        "Karnataka",
-        "NCT OF Delhi",
-        "Nagaland",
-        "Lakshadweep",
-        "Himachal Pradesh",
-        "Gujarat",
-        "Tripura"
-      ],
-      "values": [
-        4.345185087610883,
-        3.5804272110618105,
-        3.2350410174680495,
-        2.9902104636819686,
-        2.8532793380165913,
-        2.748443295807996,
-        2.7132593849507813,
-        2.709668351143876,
-        2.689464848865782,
-        2.6434060744868706,
-        2.6040734838274497,
-        2.5464755201653415,
-        2.4862874721261385,
-        2.460396767836887,
-        2.460065916812654,
-        2.4336472093720287,
-        2.4131317668868535,
-        2.4128697391197105,
-        2.3815813131231756,
-        2.3599910618827296,
-        2.3528395648577787,
-        2.2542148490036755,
-        2.2252440005057545,
-        2.2079790883424746,
-        2.194826030335977,
-        2.1924285735833493,
-        2.145652138946311,
-        2.1439957304542903,
-        2.0879292931145286,
-        2.0688163978560508,
-        2.054680593846992,
-        2.0236889302845,
-        2.015527361559239,
-        2.0013860262007186,
-        1.911817538805167,
-        1.7439907259718863
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2024 Lok Sabha results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
-      "meta": {
-        "title": "2024 Lok Sabha: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "Lok Sabha 2024",
-        "color": "#3fb950",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_effective_candidates_2024_state_assembly": {
-      "labels": [
-        "Jammu & Kashmir",
-        "Jharkhand",
-        "Haryana",
-        "Maharashtra"
-      ],
-      "values": [
-        3.078874668493002,
-        2.710548844495782,
-        2.659378073268128,
-        2.5205918525770574
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2024 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
-      "meta": {
-        "title": "2024 State Assembly: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "State Assembly 2024",
-        "color": "#bc8cff",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_effective_candidates_2025_state_assembly": {
-      "labels": [
-        "Bihar",
-        "NCT of Delhi"
-      ],
-      "values": [
-        2.5828950663530046,
-        2.305245004264642
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2025 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
-      "meta": {
-        "title": "2025 State Assembly: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "State Assembly 2025",
-        "color": "#f6c344",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_effective_candidates_2026_state_assembly": {
-      "labels": [
-        "Tamil Nadu",
-        "Puducherry",
-        "Kerala",
-        "West Bengal",
-        "Assam"
-      ],
-      "values": [
-        3.1915775836229834,
-        2.9579278318911766,
-        2.526783186527512,
-        2.430297918234119,
-        2.1707103482137047
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
-      "unit": "effective candidates",
-      "note": "For each state/UT in the 2026 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices. 2026 assembly reporting is ongoing and incomplete.",
-      "meta": {
-        "title": "2026 State Assembly: Effective Candidates per Seat by State",
-        "subtitle": "Mean constituency effective number of candidates",
-        "frequency": "State Assembly 2026",
-        "color": "#f778ba",
-        "suffix": " effective candidates",
-        "category": "Elections",
-        "subgroup": "Recent Effective Candidate Field",
-        "explain": {
-          "what": "Mean constituency-level effective number of candidates for each state/UT.",
-          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
-          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_elections_candidate_field_2021_assam": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        7.0,
-        49.0,
-        41.0,
-        29.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Assam 2021: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2021",
-        "color": "#ff9933",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Assam Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2021_assam": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        682.0,
-        264.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Assam 2021: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2021",
-        "color": "#58a6ff",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2021_assam": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        4.0,
-        15.0,
-        22.0,
-        35.0,
-        50.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Assam 2021: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2021",
-        "color": "#3fb950",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2021_kerala": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        1.0,
-        66.0,
-        58.0,
-        15.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Kerala 2021: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2021",
-        "color": "#58a6ff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Kerala Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2021_kerala": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        644.0,
-        313.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Kerala 2021: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2021",
-        "color": "#3fb950",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2021_kerala": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        8.0,
-        34.0,
-        32.0,
-        48.0,
-        18.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Kerala 2021: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2021",
-        "color": "#bc8cff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2021_puducherry": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        2.0,
-        9.0,
-        19.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Puducherry 2021: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2021",
-        "color": "#3fb950",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Puducherry Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2021_puducherry": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        260.0,
-        64.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Puducherry 2021: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2021",
-        "color": "#bc8cff",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2021_puducherry": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        2.0,
-        5.0,
-        7.0,
-        6.0,
-        10.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Puducherry 2021: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2021",
-        "color": "#f6c344",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2021_tamil_nadu": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        2.0,
-        9.0,
-        223.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Tamil Nadu 2021: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2021",
-        "color": "#bc8cff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Tamil Nadu Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2021_tamil_nadu": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        3520.0,
-        478.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Tamil Nadu 2021: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2021",
-        "color": "#f6c344",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2021_tamil_nadu": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        16.0,
-        50.0,
-        55.0,
-        76.0,
-        37.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Tamil Nadu 2021: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2021",
-        "color": "#f778ba",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2021_west_bengal": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        3.0,
-        118.0,
-        123.0,
-        50.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "West Bengal 2021: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2021",
-        "color": "#f6c344",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived West Bengal Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2021_west_bengal": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        1514.0,
-        623.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "West Bengal 2021: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2021",
-        "color": "#f778ba",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2021_west_bengal": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        14.0,
-        55.0,
-        67.0,
-        92.0,
-        66.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "West Bengal 2021: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2021",
-        "color": "#39c5bb",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_goa": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        10.0,
-        27.0,
-        3.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Goa 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#f778ba",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Goa Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_goa": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        206.0,
-        95.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Goa 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#39c5bb",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_goa": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        4.0,
-        7.0,
-        11.0,
-        10.0,
-        8.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Goa 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#ff9933",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_gujarat": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        3.0,
-        48.0,
-        67.0,
-        64.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Gujarat 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#39c5bb",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Gujarat Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_gujarat": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        1231.0,
-        390.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Gujarat 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#ff9933",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_gujarat": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        4.0,
-        22.0,
-        19.0,
-        52.0,
-        85.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Gujarat 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#58a6ff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_himachal_pradesh": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        3.0,
-        46.0,
-        18.0,
-        1.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Himachal Pradesh 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#ff9933",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Himachal Pradesh Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_himachal_pradesh": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        261.0,
-        151.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Himachal Pradesh 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#58a6ff",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_himachal_pradesh": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        7.0,
-        13.0,
-        21.0,
-        18.0,
-        9.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Himachal Pradesh 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#3fb950",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_manipur": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        19.0,
-        34.0,
-        7.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Manipur 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#58a6ff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Manipur Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_manipur": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        114.0,
-        151.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Manipur 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#3fb950",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_manipur": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        4.0,
-        25.0,
-        13.0,
-        9.0,
-        9.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Manipur 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#bc8cff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_punjab": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        3.0,
-        29.0,
-        85.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Punjab 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#3fb950",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Punjab Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_punjab": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        1003.0,
-        301.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Punjab 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#bc8cff",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_punjab": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        5.0,
-        19.0,
-        19.0,
-        29.0,
-        45.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Punjab 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#f6c344",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_uttar_pradesh": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        1.0,
-        12.0,
-        96.0,
-        294.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Uttar Pradesh 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#bc8cff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Uttar Pradesh Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_uttar_pradesh": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        3522.0,
-        920.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Uttar Pradesh 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#f6c344",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_uttar_pradesh": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        29.0,
-        102.0,
-        90.0,
-        118.0,
-        64.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Uttar Pradesh 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#f778ba",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2022_uttarakhand": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        12.0,
-        30.0,
-        28.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Uttarakhand 2022: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2022",
-        "color": "#f6c344",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Uttarakhand Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2022_uttarakhand": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        477.0,
-        155.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Uttarakhand 2022: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2022",
-        "color": "#f778ba",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2022_uttarakhand": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        4.0,
-        11.0,
-        18.0,
-        28.0,
-        9.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Uttarakhand 2022: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2022",
-        "color": "#39c5bb",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2023_meghalaya": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        0.0,
-        36.0,
-        24.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Meghalaya 2023: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2023",
-        "color": "#f778ba",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Meghalaya Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2023_meghalaya": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        222.0,
-        153.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Meghalaya 2023: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2023",
-        "color": "#39c5bb",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2023_meghalaya": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        9.0,
-        13.0,
-        11.0,
-        22.0,
-        5.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Meghalaya 2023: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2023",
-        "color": "#ff9933",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2023_nagaland": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        43.0,
-        17.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Nagaland 2023: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2023",
-        "color": "#39c5bb",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Nagaland Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2023_nagaland": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        57.0,
-        127.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Nagaland 2023: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2023",
-        "color": "#ff9933",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2023_nagaland": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        5.0,
-        14.0,
-        10.0,
-        16.0,
-        14.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Nagaland 2023: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2023",
-        "color": "#58a6ff",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_elections_candidate_field_2023_tripura": {
-      "labels": [
-        "1\u20133",
-        "4\u20136",
-        "7\u20139",
-        "10+"
-      ],
-      "values": [
-        10.0,
-        50.0,
-        0.0,
-        0.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
-      "meta": {
-        "title": "Tripura 2023: Candidates per Assembly Constituency",
-        "subtitle": "Contested seats grouped by listed candidate count",
-        "frequency": "State Assembly 2023",
-        "color": "#ff9933",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Distribution of constituency candidate counts in archived Tripura Assembly results.",
-          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
-          "why": "Shows how candidate-field size varied across this archived election."
-        }
-      }
-    },
-    "dg_elections_vote_share_threshold_2023_tripura": {
-      "labels": [
-        "At or below 1/6",
-        "Above 1/6"
-      ],
-      "values": [
-        121.0,
-        138.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "candidates",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
-      "meta": {
-        "title": "Tripura 2023: Candidate Vote Shares Around One-Sixth",
-        "subtitle": "Candidates grouped by reported vote share",
-        "frequency": "State Assembly 2023",
-        "color": "#58a6ff",
-        "suffix": " candidates",
-        "category": "Elections",
-        "subgroup": "Historical Candidate Field & Competition",
-        "explain": {
-          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
-          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
-          "why": "Shows the candidate vote-share distribution for this archived election."
-        }
-      }
-    },
-    "dg_elections_victory_margins_2023_tripura": {
-      "labels": [
-        "Under 1 point",
-        "1\u20135 points",
-        "5\u201310 points",
-        "10\u201320 points",
-        "20+ points"
-      ],
-      "values": [
-        5.0,
-        21.0,
-        9.0,
-        15.0,
-        10.0
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
-      "unit": "constituencies",
-      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
-      "meta": {
-        "title": "Tripura 2023: Victory Margin Distribution",
-        "subtitle": "Contested seats grouped by winner's share lead",
-        "frequency": "State Assembly 2023",
-        "color": "#3fb950",
-        "suffix": " constituencies",
-        "category": "Elections",
-        "subgroup": "Historical Victory Margins",
-        "explain": {
-          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
-          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
-          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
-        }
-      }
-    },
-    "dg_us_finance_p_receipts_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        86969007.75999999,
-        9460873892.05,
-        407366738.54,
-        2718134792.01,
-        40782271.31
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC presidential receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Presidential Campaign Receipts by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
-        "frequency": "FEC election cycle",
-        "color": "#ff9933",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed receipts for Presidential candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_p_receipts_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        10778.442948502143,
-        -95.69419544972149,
-        567.2451466587034,
-        -98.49962292415077
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Presidential Campaign Receipts Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#58a6ff",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_p_disbursements_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        78393053.39999999,
-        8486228057.83,
-        406818691.65,
-        3038350897.2599998,
-        794667636.48
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC presidential disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Presidential Campaign Disbursements by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
-        "frequency": "FEC election cycle",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed disbursements for Presidential candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_p_disbursements_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        10725.229646980431,
-        -95.20613058148207,
-        646.8562678221277,
-        -73.84542920316954
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Presidential Campaign Disbursements Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#bc8cff",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_p_cash_on_hand_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        27787310.07,
-        9812760200.699999,
-        12185967.5,
-        794150951.42,
-        -690686086.66
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC presidential cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Presidential Campaign Cash on Hand by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
-        "frequency": "FEC election cycle",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed cash on hand for Presidential candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_p_cash_on_hand_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        35213.81834362637,
-        -99.87581508922301,
-        6416.929832776921,
-        -186.9716374985137
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Presidential Campaign Cash on Hand Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#f778ba",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_p_debts_owed_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        31021070.11,
-        82153383.09,
-        18637586.91,
-        66113653.51,
-        36780501.78
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC presidential debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Presidential Campaign Debts Owed by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
-        "frequency": "FEC election cycle",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed debts owed for Presidential candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_p_debts_owed_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        164.83091266254192,
-        -77.31367083254221,
-        254.7329052267314,
-        -44.36776697806183
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Presidential Campaign Debts Owed Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#ff9933",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_s_receipts_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        1149999415.42,
-        2231191105.79,
-        1908577489.68,
-        1724212300.11,
-        1618281782.46
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC senate receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Senate Campaign Receipts by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for senate office",
-        "frequency": "FEC election cycle",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed receipts for Senate candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_s_receipts_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        94.01671651938446,
-        -14.459255205563027,
-        -9.659822069939194,
-        -6.143705020735657
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Senate Campaign Receipts Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#3fb950",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_s_disbursements_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        1099838194.34,
-        2128606214.15,
-        1892409507.4,
-        1748776542.07,
-        1484608761.87
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC senate disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Senate Campaign Disbursements by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for senate office",
-        "frequency": "FEC election cycle",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed disbursements for Senate candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_s_disbursements_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        93.53812452634016,
-        -11.096308240569453,
-        -7.589951581216637,
-        -15.105862518450108
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Senate Campaign Disbursements Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#f6c344",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_s_cash_on_hand_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        244615499.71,
-        411070470.17,
-        351621949.35,
-        345944955.96,
-        478602205.16
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC senate cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Senate Campaign Cash on Hand by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for senate office",
-        "frequency": "FEC election cycle",
-        "color": "#f778ba",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed cash on hand for Senate candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_s_cash_on_hand_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        68.0475974160828,
-        -14.461880658908633,
-        -1.6145162156385284,
-        38.34634583177405
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Senate Campaign Cash on Hand Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#39c5bb",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_s_debts_owed_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        39916242.34,
-        42378991.41,
-        186319299.15,
-        306327394.78000003,
-        285417715.57
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC senate debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "Senate Campaign Debts Owed by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for senate office",
-        "frequency": "FEC election cycle",
-        "color": "#ff9933",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed debts owed for Senate candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_s_debts_owed_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        6.169791858218265,
-        339.6501496400289,
-        64.40991146783198,
-        -6.825925322486115
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "Senate Campaign Debts Owed Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#58a6ff",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_h_receipts_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        1974388756.86,
-        2200558746.96,
-        2228957388.96,
-        2397812439.48,
-        2578208283.46
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC house receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "House Campaign Receipts by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for house office",
-        "frequency": "FEC election cycle",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed receipts for House candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_h_receipts_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        11.455190337474018,
-        1.2905196027705124,
-        7.575517206221027,
-        7.5233509097617945
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "House Campaign Receipts Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#bc8cff",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_h_disbursements_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        1948331030.36,
-        2050402223.99,
-        2199331713.83,
-        2269973431.55,
-        2364967330.76
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC house disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "House Campaign Disbursements by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for house office",
-        "frequency": "FEC election cycle",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed disbursements for House candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_h_disbursements_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        5.238904069147843,
-        7.263428028779106,
-        3.211962855615913,
-        4.184802248770625
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "House Campaign Disbursements Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#f778ba",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_h_cash_on_hand_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        321205982.99,
-        509710666.66,
-        471118036.52,
-        576364651.87,
-        771755813.53
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC house cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "House Campaign Cash on Hand by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for house office",
-        "frequency": "FEC election cycle",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed cash on hand for House candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_h_cash_on_hand_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        58.68654186178988,
-        -7.571477833274987,
-        22.339755048951957,
-        33.90061500580552
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "House Campaign Cash on Hand Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#ff9933",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_finance_h_debts_owed_by_cycle": {
-      "labels": [
-        "2018",
-        "2020",
-        "2022",
-        "2024",
-        "2026"
-      ],
-      "values": [
-        117645547.86,
-        121252536.74,
-        195874572.73,
-        342281012.4,
-        466908430.41
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "For each cycle, sums the values in the committed FEC house debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
-      "meta": {
-        "title": "House Campaign Debts Owed by FEC Cycle",
-        "subtitle": "Sum of listed candidate/state aggregates for house office",
-        "frequency": "FEC election cycle",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Total listed debts owed for House candidate summaries in each FEC cycle.",
-          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
-          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
-        }
-      }
-    },
-    "dg_us_finance_h_debts_owed_growth": {
-      "labels": [
-        "2018\u20132020",
-        "2020\u20132022",
-        "2022\u20132024",
-        "2024\u20132026"
-      ],
-      "values": [
-        3.065979924962714,
-        61.54265963936978,
-        74.74499503915268,
-        36.41084766465417
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "% change",
-      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
-      "meta": {
-        "title": "House Campaign Debts Owed Cycle Growth",
-        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
-        "frequency": "Adjacent FEC cycles",
-        "color": "#3fb950",
-        "suffix": " % change",
-        "category": "U.S. Elections",
-        "subgroup": "Cycle-over-Cycle Finance Trends",
-        "explain": {
-          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
-          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
-          "why": "Provides a relative comparison alongside nominal dollar totals."
-        }
-      }
-    },
-    "dg_us_state_s_receipts_2018": {
-      "labels": [
-        "TX",
-        "FL",
-        "NJ",
-        "AZ",
-        "MO",
-        "NV",
-        "OH",
-        "MA",
-        "IN",
-        "TN",
-        "AL",
-        "WI",
-        "ND",
-        "MI",
-        "CA"
-      ],
-      "values": [
-        121604139.99,
-        121552759.02,
-        55175543.96,
-        53785776.91,
-        53190523.25,
-        46573605.15,
-        45809185.4,
-        44300513.84,
-        42355030.56,
-        39341774.13,
-        38962711.08,
-        38484852.07,
-        35933249.58,
-        35768377.53,
-        31201347.88
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 Senate Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_receipts_2020": {
-      "labels": [
-        "GA",
-        "SC",
-        "AZ",
-        "KY",
-        "ME",
-        "MI",
-        "IA",
-        "MT",
-        "CO",
-        "NC",
-        "TX",
-        "AL",
-        "KS",
-        "MA",
-        "TN"
-      ],
-      "values": [
-        488012084.15,
-        250123963.7,
-        178923368.35,
-        168538856.53,
-        106244123.42,
-        100737778.96,
-        94859882.37,
-        88261996.06,
-        81992281.0,
-        81450134.99,
-        77633190.47,
-        49877977.86,
-        44986148.72,
-        36571517.79,
-        34444946.84
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 Senate Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_receipts_2022": {
-      "labels": [
-        "GA",
-        "PA",
-        "AZ",
-        "FL",
-        "OH",
-        "WI",
-        "NV",
-        "NC",
-        "MO",
-        "SC",
-        "NH",
-        "NY",
-        "LA",
-        "KY",
-        "WA"
-      ],
-      "values": [
-        323511469.63,
-        183308421.16,
-        142493576.08,
-        135452267.05,
-        122704166.8,
-        103468218.04,
-        85687211.98,
-        71055692.88,
-        57063503.13,
-        55437375.07,
-        48259803.93,
-        43076236.48,
-        41218237.39,
-        38135822.74,
-        38094887.43
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 Senate Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_receipts_2024": {
-      "labels": [
-        "TX",
-        "OH",
-        "MT",
-        "WI",
-        "MD",
-        "CA",
-        "AZ",
-        "PA",
-        "FL",
-        "MI",
-        "NV",
-        "VA",
-        "NJ",
-        "NE",
-        "TN"
-      ],
-      "values": [
-        174230990.59,
-        141447506.04,
-        126448276.96,
-        119747948.52,
-        113461072.51,
-        110096123.6,
-        109402581.16,
-        102330784.34,
-        83582600.33,
-        81432867.52,
-        75728228.52,
-        35774821.22,
-        34843503.64,
-        27920988.08,
-        27852048.48
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 Senate Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_receipts_2026": {
-      "labels": [
-        "TX",
-        "GA",
-        "MI",
-        "OH",
-        "FL",
-        "NC",
-        "ME",
-        "IL",
-        "LA",
-        "AZ",
-        "SC",
-        "AK",
-        "IA",
-        "MN",
-        "NH"
-      ],
-      "values": [
-        211501035.51,
-        138147905.76,
-        108331359.42,
-        97052109.65,
-        81450345.4,
-        70731381.93,
-        64194454.13,
-        56280188.99,
-        53549673.71,
-        52936978.17,
-        52843206.02,
-        49809079.14,
-        43566600.42,
-        42991666.67,
-        35708391.84
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 Senate Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_disbursements_2018": {
-      "labels": [
-        "TX",
-        "FL",
-        "AZ",
-        "NJ",
-        "MO",
-        "NV",
-        "IN",
-        "OH",
-        "TN",
-        "WI",
-        "AL",
-        "MA",
-        "MI",
-        "CA",
-        "PA"
-      ],
-      "values": [
-        122872686.55,
-        119668446.03,
-        54462354.33,
-        53757585.3,
-        52802031.42,
-        47120575.49,
-        45313737.07,
-        45127394.99,
-        42194776.37,
-        39054112.21,
-        37634642.68,
-        37233050.52,
-        35872529.52,
-        33277894.64,
-        31128933.2
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 Senate Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_disbursements_2020": {
-      "labels": [
-        "GA",
-        "SC",
-        "AZ",
-        "KY",
-        "MI",
-        "ME",
-        "IA",
-        "MT",
-        "NC",
-        "CO",
-        "TX",
-        "AL",
-        "MA",
-        "KS",
-        "TN"
-      ],
-      "values": [
-        429491239.82,
-        236724539.26,
-        176133813.71,
-        160593673.93,
-        98675706.29,
-        96000083.01,
-        94724867.9,
-        88104921.8,
-        82560002.86,
-        80730004.66,
-        78524886.46,
-        53238495.62,
-        51594442.18,
-        44334736.16,
-        33294788.72
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 Senate Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_disbursements_2022": {
-      "labels": [
-        "GA",
-        "PA",
-        "FL",
-        "AZ",
-        "OH",
-        "WI",
-        "NV",
-        "NC",
-        "MO",
-        "NH",
-        "WA",
-        "NY",
-        "SC",
-        "AL",
-        "CO"
-      ],
-      "values": [
-        370590155.41,
-        180501486.6,
-        137926467.81,
-        136793833.28,
-        127622830.45,
-        101762926.82,
-        82759173.13,
-        72572522.51,
-        56053272.26,
-        50105484.74,
-        41030769.85,
-        40198497.56,
-        38189037.91,
-        37151340.4,
-        36286834.92
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 Senate Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_disbursements_2024": {
-      "labels": [
-        "TX",
-        "OH",
-        "MT",
-        "CA",
-        "WI",
-        "MD",
-        "AZ",
-        "PA",
-        "FL",
-        "MI",
-        "NV",
-        "SC",
-        "NJ",
-        "VA",
-        "NE"
-      ],
-      "values": [
-        173129195.73,
-        144607138.18,
-        126510073.06,
-        123640118.96,
-        122457173.81,
-        114152324.88,
-        111372561.81,
-        104045863.63,
-        85370093.35,
-        83053172.3,
-        77863846.61,
-        40235300.37,
-        36521091.87,
-        33473678.08,
-        28981338.71
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 Senate Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_disbursements_2026": {
-      "labels": [
-        "TX",
-        "GA",
-        "MI",
-        "OH",
-        "FL",
-        "SC",
-        "ME",
-        "NC",
-        "IL",
-        "LA",
-        "AK",
-        "IA",
-        "MN",
-        "KY",
-        "AZ"
-      ],
-      "values": [
-        201426729.16,
-        131093130.95,
-        99899914.03,
-        87979623.72,
-        72006315.06,
-        67918833.06,
-        64292644.43,
-        59612723.32,
-        53539048.91,
-        52262477.13,
-        44012938.54,
-        40588088.47,
-        40295340.75,
-        36721133.66,
-        32825403.86
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 Senate Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_cash_on_hand_2018": {
-      "labels": [
-        "NY",
-        "MD",
-        "AL",
-        "MA",
-        "SD",
-        "VT",
-        "ND",
-        "TN",
-        "CT",
-        "SC",
-        "MN",
-        "OH",
-        "TX",
-        "NJ",
-        "LA"
-      ],
-      "values": [
-        19832386.63,
-        16583411.05,
-        15288316.16,
-        14084107.44,
-        12613714.4,
-        10750319.66,
-        8510113.99,
-        8340275.76,
-        8124249.1,
-        7109797.14,
-        7043034.62,
-        6711259.57,
-        6233169.48,
-        6099385.45,
-        5832273.96
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 Senate Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_cash_on_hand_2020": {
-      "labels": [
-        "GA",
-        "CA",
-        "SC",
-        "MD",
-        "SD",
-        "ME",
-        "NY",
-        "AL",
-        "KY",
-        "OH",
-        "TN",
-        "CT",
-        "VT",
-        "NJ",
-        "LA"
-      ],
-      "values": [
-        61606626.58,
-        60344480.84,
-        20509526.22,
-        17474326.61,
-        15114936.91,
-        13314733.34,
-        12047331.33,
-        11927654.32,
-        11901122.98,
-        11557043.48,
-        9496334.93,
-        8679138.15,
-        8507252.89,
-        8504741.4,
-        7476034.29
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 Senate Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_cash_on_hand_2022": {
-      "labels": [
-        "SC",
-        "SD",
-        "NJ",
-        "NY",
-        "GA",
-        "WV",
-        "KY",
-        "LA",
-        "VT",
-        "TN",
-        "AZ",
-        "MI",
-        "AR",
-        "NV",
-        "CA"
-      ],
-      "values": [
-        37741520.13,
-        18791352.21,
-        14926731.33,
-        14904560.1,
-        14482314.36,
-        13505544.33,
-        13339600.85,
-        13205299.6,
-        13021918.32,
-        12522548.7,
-        10659398.93,
-        9619199.95,
-        8681251.96,
-        7945323.13,
-        7670802.78
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 Senate Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_cash_on_hand_2024": {
-      "labels": [
-        "LA",
-        "SC",
-        "SD",
-        "TN",
-        "CA",
-        "KY",
-        "GA",
-        "NJ",
-        "VT",
-        "WV",
-        "NY",
-        "AZ",
-        "IN",
-        "VA",
-        "AR"
-      ],
-      "values": [
-        22551937.06,
-        22055175.11,
-        17267937.61,
-        16365007.09,
-        15117184.54,
-        14807023.26,
-        14041523.8,
-        13487223.08,
-        12487084.33,
-        11588714.8,
-        10180179.79,
-        9965990.67,
-        9173253.62,
-        8777913.88,
-        8563922.34
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 Senate Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_cash_on_hand_2026": {
-      "labels": [
-        "AZ",
-        "NJ",
-        "LA",
-        "VT",
-        "GA",
-        "SD",
-        "CA",
-        "TX",
-        "MI",
-        "KY",
-        "NC",
-        "CT",
-        "FL",
-        "TN",
-        "IN"
-      ],
-      "values": [
-        30077553.18,
-        25733226.21,
-        23805562.48,
-        23308440.55,
-        20413762.18,
-        19283102.98,
-        18897584.05,
-        18512169.81,
-        16791548.31,
-        16475767.2,
-        14354494.0,
-        13051450.73,
-        12237412.35,
-        11173454.06,
-        11137873.74
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 Senate Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_debts_owed_2018": {
-      "labels": [
-        "CA",
-        "FL",
-        "NJ",
-        "WA",
-        "WV",
-        "IL",
-        "MA",
-        "LA",
-        "CO",
-        "GA",
-        "NM",
-        "MS",
-        "AZ",
-        "NY",
-        "MT"
-      ],
-      "values": [
-        10636293.46,
-        2822308.38,
-        2527973.39,
-        2196873.72,
-        1721414.0,
-        1188097.18,
-        1153703.67,
-        1144003.0,
-        1142705.68,
-        1052465.19,
-        1050695.09,
-        1032711.93,
-        904812.55,
-        830063.68,
-        795104.31
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 Senate Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_debts_owed_2020": {
-      "labels": [
-        "TN",
-        "KS",
-        "GA",
-        "FL",
-        "CA",
-        "NJ",
-        "WA",
-        "IA",
-        "AZ",
-        "WV",
-        "MA",
-        "LA",
-        "NH",
-        "NY",
-        "CO"
-      ],
-      "values": [
-        6287199.18,
-        3838471.65,
-        3185884.31,
-        2799935.3,
-        2686770.09,
-        2378717.1,
-        2224297.59,
-        2011891.28,
-        1969164.4,
-        1755014.79,
-        1576726.9,
-        867583.41,
-        800930.12,
-        793064.16,
-        733887.67
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 Senate Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_debts_owed_2022": {
-      "labels": [
-        "PA",
-        "OH",
-        "WI",
-        "AZ",
-        "MO",
-        "FL",
-        "CA",
-        "TN",
-        "CO",
-        "WA",
-        "OK",
-        "NH",
-        "NJ",
-        "CT",
-        "UT"
-      ],
-      "values": [
-        42988406.47,
-        26994587.47,
-        25615857.33,
-        22189344.58,
-        16032952.34,
-        11258773.92,
-        8864882.49,
-        4691545.81,
-        4579499.68,
-        3193079.23,
-        2899688.22,
-        2769061.87,
-        2190590.98,
-        1148215.22,
-        950043.19
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 Senate Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_debts_owed_2024": {
-      "labels": [
-        "MD",
-        "WI",
-        "PA",
-        "FL",
-        "OH",
-        "AZ",
-        "CO",
-        "NJ",
-        "NM",
-        "TN",
-        "NV",
-        "WA",
-        "MT",
-        "NH",
-        "NY"
-      ],
-      "values": [
-        74537709.03,
-        62370799.7,
-        46689738.36,
-        36232973.21,
-        26042928.36,
-        21400947.26,
-        4361687.42,
-        4051546.06,
-        2915312.17,
-        2887921.21,
-        2821070.92,
-        2451911.18,
-        2058183.08,
-        2056477.5,
-        1613402.52
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 Senate Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_s_debts_owed_2026": {
-      "labels": [
-        "WI",
-        "PA",
-        "FL",
-        "MD",
-        "OH",
-        "AZ",
-        "SC",
-        "KY",
-        "LA",
-        "IL",
-        "CO",
-        "GA",
-        "TN",
-        "NM",
-        "NV"
-      ],
-      "values": [
-        62370799.7,
-        46082230.48,
-        40307481.95,
-        25037318.25,
-        24211485.17,
-        21196208.04,
-        7787979.89,
-        7715761.5,
-        7455992.2,
-        5552396.39,
-        4817265.2,
-        3530000.0,
-        2879152.83,
-        2819312.17,
-        2797924.77
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 Senate Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_receipts_2018": {
-      "labels": [
-        "CA",
-        "TX",
-        "NY",
-        "PA",
-        "FL",
-        "GA",
-        "IL",
-        "OH",
-        "AZ",
-        "NJ",
-        "VA",
-        "MI",
-        "WA",
-        "WI",
-        "MN"
-      ],
-      "values": [
-        251187590.48,
-        208635665.78,
-        108706548.05,
-        101504291.21,
-        97838045.89,
-        75626713.45,
-        74846947.92,
-        71626960.94,
-        62984627.12,
-        61961689.18,
-        61562289.31,
-        55275066.25,
-        47935258.62,
-        43579414.51,
-        43362215.65
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 House Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_receipts_2020": {
-      "labels": [
-        "CA",
-        "TX",
-        "NY",
-        "MI",
-        "FL",
-        "IL",
-        "PA",
-        "NJ",
-        "OH",
-        "MN",
-        "NC",
-        "GA",
-        "VA",
-        "MD",
-        "CO"
-      ],
-      "values": [
-        338691543.96,
-        222922511.74,
-        191455946.02,
-        114052504.07,
-        109044776.82,
-        77522822.09,
-        66304986.01,
-        65221532.64,
-        60883838.6,
-        58810398.91,
-        57530076.2,
-        57408050.04,
-        53428068.82,
-        50740305.37,
-        47468820.25
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 House Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_receipts_2022": {
-      "labels": [
-        "CA",
-        "FL",
-        "NY",
-        "TX",
-        "MI",
-        "PA",
-        "IL",
-        "GA",
-        "OH",
-        "NC",
-        "NJ",
-        "VA",
-        "AZ",
-        "WA",
-        "CO"
-      ],
-      "values": [
-        310120602.29,
-        206251196.12,
-        164107080.9,
-        144425676.1,
-        87580500.21,
-        83153007.06,
-        82006810.23,
-        79713244.21,
-        77875543.93,
-        76822507.98,
-        64562463.47,
-        56169971.33,
-        55157363.92,
-        52249435.45,
-        42563076.75
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 House Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_receipts_2024": {
-      "labels": [
-        "CA",
-        "NY",
-        "AZ",
-        "TX",
-        "MI",
-        "FL",
-        "MD",
-        "PA",
-        "NV",
-        "VA",
-        "OH",
-        "NJ",
-        "NC",
-        "IL",
-        "CO"
-      ],
-      "values": [
-        332318068.85,
-        210085429.8,
-        143079481.49,
-        123451301.67,
-        94175339.74,
-        92408247.16,
-        91971356.67,
-        83891377.81,
-        79446265.94,
-        74490713.98,
-        67439885.95,
-        65323393.76,
-        65191609.98,
-        59970921.88,
-        56720446.35
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 House Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_receipts_2026": {
-      "labels": [
-        "CA",
-        "NY",
-        "FL",
-        "TX",
-        "PA",
-        "MI",
-        "AZ",
-        "VA",
-        "IL",
-        "MD",
-        "NJ",
-        "CO",
-        "GA",
-        "OH",
-        "WI"
-      ],
-      "values": [
-        267560892.43,
-        249351178.6,
-        216134987.34,
-        180747810.33,
-        92705483.01,
-        88918794.96,
-        82960719.72,
-        79981249.47,
-        79827478.21,
-        69608325.88,
-        68603220.1,
-        65368220.25,
-        64452586.54,
-        60669930.02,
-        60464011.67
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 House Campaign Receipts by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_disbursements_2018": {
-      "labels": [
-        "CA",
-        "TX",
-        "NY",
-        "PA",
-        "FL",
-        "OH",
-        "GA",
-        "IL",
-        "AZ",
-        "VA",
-        "NJ",
-        "MI",
-        "WA",
-        "WI",
-        "MN"
-      ],
-      "values": [
-        239627884.27,
-        208178971.98,
-        113071575.69,
-        101351460.71,
-        99195041.27,
-        73549050.65,
-        70840560.13,
-        69397476.31,
-        64238882.67,
-        61781608.72,
-        55480799.06,
-        54691495.4,
-        45666678.13,
-        44962844.8,
-        43966001.02
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 House Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_disbursements_2020": {
-      "labels": [
-        "CA",
-        "TX",
-        "NY",
-        "MI",
-        "FL",
-        "IL",
-        "PA",
-        "MN",
-        "NJ",
-        "GA",
-        "NC",
-        "OH",
-        "VA",
-        "MA",
-        "MD"
-      ],
-      "values": [
-        289965957.23,
-        220948703.49,
-        179195384.57,
-        108891897.26,
-        104523800.7,
-        69649866.02,
-        58615125.08,
-        57545528.23,
-        55415134.88,
-        55297216.12,
-        53824186.92,
-        51644694.58,
-        50269932.58,
-        49298255.89,
-        48852638.61
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 House Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_disbursements_2022": {
-      "labels": [
-        "CA",
-        "FL",
-        "NY",
-        "TX",
-        "MI",
-        "IL",
-        "PA",
-        "GA",
-        "OH",
-        "NC",
-        "NJ",
-        "VA",
-        "WA",
-        "AZ",
-        "MN"
-      ],
-      "values": [
-        311800175.91,
-        203566199.01,
-        167113165.39,
-        138350754.08,
-        85048185.06,
-        81987146.22,
-        81868775.15,
-        79432133.11,
-        78172813.48,
-        75041119.89,
-        64165216.63,
-        57363214.92,
-        56292723.89,
-        51349341.43,
-        42802543.36
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 House Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_disbursements_2024": {
-      "labels": [
-        "CA",
-        "NY",
-        "AZ",
-        "TX",
-        "MD",
-        "FL",
-        "NV",
-        "MI",
-        "PA",
-        "VA",
-        "OH",
-        "NC",
-        "CO",
-        "NJ",
-        "WA"
-      ],
-      "values": [
-        339158907.46,
-        181408553.32,
-        146328434.22,
-        112956750.24,
-        91130412.3,
-        87381009.39,
-        81888901.66,
-        79529986.7,
-        76199880.03,
-        73845526.45,
-        66188631.35,
-        64920328.64,
-        56708695.71,
-        56444033.29,
-        51952434.78
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 House Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_disbursements_2026": {
-      "labels": [
-        "CA",
-        "NY",
-        "FL",
-        "TX",
-        "IL",
-        "PA",
-        "MI",
-        "AZ",
-        "VA",
-        "NJ",
-        "MD",
-        "GA",
-        "OH",
-        "WI",
-        "CO"
-      ],
-      "values": [
-        229885928.73,
-        212873832.83,
-        196807381.02,
-        171854075.09,
-        90772619.57,
-        84418112.21,
-        81157510.07,
-        79798649.08,
-        71641402.25,
-        68976226.1,
-        65598945.54,
-        61669104.13,
-        60972116.84,
-        58956005.65,
-        56684717.96
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 House Campaign Disbursements by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_cash_on_hand_2018": {
-      "labels": [
-        "CA",
-        "TX",
-        "IL",
-        "OH",
-        "MA",
-        "NY",
-        "WI",
-        "NJ",
-        "FL",
-        "GA",
-        "PA",
-        "NC",
-        "VA",
-        "TN",
-        "WA"
-      ],
-      "values": [
-        52141194.71,
-        24638699.88,
-        18237308.14,
-        15919732.93,
-        15833920.55,
-        12196526.98,
-        12024664.29,
-        11972720.73,
-        11909482.93,
-        10630231.1,
-        9032716.29,
-        8246500.44,
-        7363229.29,
-        7127433.17,
-        7039452.16
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 House Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_cash_on_hand_2020": {
-      "labels": [
-        "CA",
-        "IL",
-        "TX",
-        "OH",
-        "NY",
-        "NJ",
-        "FL",
-        "PA",
-        "GA",
-        "WA",
-        "NC",
-        "LA",
-        "TN",
-        "MA",
-        "MI"
-      ],
-      "values": [
-        158248135.94,
-        26088079.74,
-        24837863.89,
-        24833537.85,
-        24337668.78,
-        21709956.85,
-        16491460.89,
-        12879650.68,
-        12515392.43,
-        11489094.73,
-        11064029.44,
-        10694960.29,
-        10326040.11,
-        9586592.67,
-        9419626.31
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 House Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_cash_on_hand_2022": {
-      "labels": [
-        "CA",
-        "TX",
-        "IL",
-        "OH",
-        "NJ",
-        "NY",
-        "FL",
-        "PA",
-        "AZ",
-        "TN",
-        "AR",
-        "NC",
-        "MA",
-        "MI",
-        "IN"
-      ],
-      "values": [
-        96314144.95,
-        28965508.5,
-        26057418.24,
-        24576320.97,
-        21763161.41,
-        20884743.96,
-        18619518.11,
-        14059999.58,
-        14054220.13,
-        13971823.55,
-        12716482.09,
-        12704780.72,
-        12648516.44,
-        11866812.83,
-        10571973.23
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 House Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_cash_on_hand_2024": {
-      "labels": [
-        "CA",
-        "NY",
-        "TX",
-        "IL",
-        "NJ",
-        "MI",
-        "OH",
-        "FL",
-        "PA",
-        "TN",
-        "MA",
-        "AR",
-        "NC",
-        "MO",
-        "LA"
-      ],
-      "values": [
-        87442050.39,
-        47700104.14,
-        39010730.01,
-        35775274.71,
-        30635661.41,
-        25963671.32,
-        24580447.67,
-        21760969.05,
-        21013452.68,
-        17889832.41,
-        16879531.72,
-        14425843.57,
-        12694005.5,
-        12062936.13,
-        11417195.85
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 House Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_cash_on_hand_2026": {
-      "labels": [
-        "CA",
-        "NY",
-        "TX",
-        "FL",
-        "MI",
-        "NJ",
-        "PA",
-        "IL",
-        "OH",
-        "LA",
-        "NC",
-        "TN",
-        "IN",
-        "MA",
-        "VA"
-      ],
-      "values": [
-        125104490.6,
-        83932987.07,
-        46379536.3,
-        40798040.44,
-        33353927.45,
-        29745717.94,
-        29426068.36,
-        24749790.47,
-        24124951.46,
-        18790085.81,
-        18776408.05,
-        18263952.44,
-        17532860.01,
-        17027275.2,
-        15856809.32
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 House Campaign Cash on Hand by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_debts_owed_2018": {
-      "labels": [
-        "FL",
-        "CA",
-        "MD",
-        "PA",
-        "NY",
-        "TX",
-        "IL",
-        "GA",
-        "AZ",
-        "TN",
-        "NC",
-        "NJ",
-        "NH",
-        "OH",
-        "LA"
-      ],
-      "values": [
-        12334979.82,
-        9181760.68,
-        8565744.77,
-        8543291.72,
-        8485975.47,
-        8333212.88,
-        5389457.77,
-        4530165.88,
-        4040269.12,
-        3803007.79,
-        3793617.37,
-        2942975.73,
-        2884905.86,
-        2576401.87,
-        2556331.31
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2018 House Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2018",
-        "color": "#3fb950",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_debts_owed_2020": {
-      "labels": [
-        "FL",
-        "TX",
-        "NY",
-        "CA",
-        "GA",
-        "IL",
-        "PA",
-        "TN",
-        "NC",
-        "MD",
-        "AZ",
-        "NJ",
-        "MA",
-        "MI",
-        "IN"
-      ],
-      "values": [
-        15505010.0,
-        11258753.75,
-        10510557.27,
-        9721290.92,
-        6834648.49,
-        6029140.88,
-        5441692.83,
-        3831952.06,
-        3776071.49,
-        3497440.33,
-        3318131.4,
-        3284749.17,
-        3140213.67,
-        3057265.96,
-        2616829.13
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2020 House Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2020",
-        "color": "#f6c344",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_debts_owed_2022": {
-      "labels": [
-        "FL",
-        "CA",
-        "NY",
-        "MD",
-        "MI",
-        "TX",
-        "PA",
-        "AZ",
-        "NC",
-        "IL",
-        "GA",
-        "OR",
-        "TN",
-        "NJ",
-        "OK"
-      ],
-      "values": [
-        22943615.43,
-        18054537.87,
-        17076836.61,
-        13721711.26,
-        11755511.75,
-        9789151.51,
-        9668304.69,
-        9521457.76,
-        8736749.99,
-        7619803.52,
-        7397540.57,
-        6140359.18,
-        6032876.6,
-        5966774.74,
-        4472378.66
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2022 House Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2022",
-        "color": "#39c5bb",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_debts_owed_2024": {
-      "labels": [
-        "MD",
-        "FL",
-        "CA",
-        "MI",
-        "NY",
-        "NC",
-        "IN",
-        "AZ",
-        "NV",
-        "PA",
-        "OH",
-        "OK",
-        "TX",
-        "GA",
-        "NJ"
-      ],
-      "values": [
-        80611617.82,
-        29855365.22,
-        27754589.43,
-        20470765.32,
-        19629187.74,
-        18733392.32,
-        17210903.78,
-        15612234.17,
-        12882213.64,
-        8459221.37,
-        8068972.7,
-        8012291.94,
-        7494267.85,
-        6495288.71,
-        6425651.32
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
-      "meta": {
-        "title": "2024 House Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2024",
-        "color": "#58a6ff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "dg_us_state_h_debts_owed_2026": {
-      "labels": [
-        "FL",
-        "MD",
-        "CA",
-        "NY",
-        "TX",
-        "NV",
-        "MI",
-        "NC",
-        "AZ",
-        "IN",
-        "GA",
-        "IL",
-        "OK",
-        "OH",
-        "LA"
-      ],
-      "values": [
-        76851655.26,
-        50998590.18,
-        40547504.53,
-        36306202.35,
-        27335815.94,
-        21939070.0,
-        20244699.61,
-        19417051.18,
-        17222796.13,
-        17016249.51,
-        13903677.92,
-        13465179.9,
-        10788859.44,
-        9506224.38,
-        7714440.65
-      ],
-      "chartType": "bar",
-      "scope": "category",
-      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
-      "unit": "USD",
-      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
-      "meta": {
-        "title": "2026 House Campaign Debts Owed by State",
-        "subtitle": "Top state aggregates in the FEC cycle data",
-        "frequency": "FEC cycle 2026",
-        "color": "#bc8cff",
-        "suffix": " USD",
-        "category": "U.S. Elections",
-        "subgroup": "State Finance Rankings",
-        "explain": {
-          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
-          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
-          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
-        }
-      },
-      "indexAxis": "y"
-    },
-    "terror_attacks_per_million": {
-      "labels": [
-        "1970",
-        "1971",
-        "1972",
-        "1973",
-        "1974",
-        "1975",
-        "1976",
-        "1977",
-        "1978",
-        "1979",
-        "1980",
-        "1981",
-        "1982",
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0018,
-        0.0,
-        0.0,
-        0.0016,
-        0.0016,
-        0.0016,
-        0.0,
-        0.0298,
-        0.0145,
-        0.0227,
-        0.018,
-        0.0637,
-        0.2106,
-        0.0505,
-        0.1214,
-        0.2052,
-        0.4327,
-        0.383,
-        0.4035,
-        0.3835,
-        0.2625,
-        0.1137,
-        0.1864,
-        0.2174,
-        0.1932,
-        0.0599,
-        0.1079,
-        0.1701,
-        0.2171,
-        0.1676,
-        0.1755,
-        0.0951,
-        0.1264,
-        0.1424,
-        0.126,
-        0.4429,
-        0.5483,
-        0.5332,
-        0.5114,
-        0.4794,
-        0.5356,
-        0.6553,
-        0.6664,
-        0.7642,
-        0.7112,
-        0.6467,
-        0.4478,
-        0.3208,
-        0.1662
-      ],
-      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
-    },
-    "terror_fatalities_per_million": {
-      "labels": [
-        "1970",
-        "1971",
-        "1972",
-        "1973",
-        "1974",
-        "1975",
-        "1976",
-        "1977",
-        "1978",
-        "1979",
-        "1980",
-        "1981",
-        "1982",
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "values": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0065,
-        0.0,
-        0.0,
-        0.0,
-        0.0462,
-        0.0247,
-        0.0341,
-        0.0889,
-        0.08,
-        0.2583,
-        0.066,
-        0.43,
-        0.6255,
-        1.1676,
-        1.033,
-        1.0486,
-        1.2592,
-        1.2758,
-        0.4133,
-        0.3759,
-        0.5808,
-        0.8537,
-        0.3907,
-        0.4517,
-        0.6343,
-        0.6123,
-        0.5457,
-        0.4226,
-        0.294,
-        0.4053,
-        0.6156,
-        0.5258,
-        0.7484,
-        0.6316,
-        0.653,
-        0.3956,
-        0.2065,
-        0.3604,
-        0.3734,
-        0.2914,
-        0.3475,
-        0.342,
-        0.3004,
-        0.2232,
-        0.1511,
-        0.0955
-      ],
-      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
-    },
-    "terror_fatalities_per_attack": {
-      "labels": [
-        "1970",
-        "1971",
-        "1972",
-        "1973",
-        "1974",
-        "1975",
-        "1976",
-        "1977",
-        "1978",
-        "1979",
-        "1980",
-        "1981",
-        "1982",
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "values": [
-        null,
-        null,
-        0.0,
-        null,
-        null,
-        4.0,
-        0.0,
-        0.0,
-        null,
-        1.55,
-        1.7,
-        1.5,
-        4.923,
-        1.255,
-        1.226,
-        1.308,
-        3.542,
-        3.048,
-        2.698,
-        2.698,
-        2.599,
-        3.283,
-        4.861,
-        3.636,
-        2.017,
-        2.671,
-        4.42,
-        6.525,
-        4.188,
-        3.728,
-        2.821,
-        3.255,
-        2.408,
-        3.093,
-        3.205,
-        4.323,
-        4.173,
-        1.69,
-        1.152,
-        1.225,
-        0.774,
-        0.431,
-        0.673,
-        0.57,
-        0.437,
-        0.455,
-        0.481,
-        0.465,
-        0.498,
-        0.471,
-        0.574
-      ],
-      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
-    },
-    "unesco_india_sites_cumulative": {
-      "labels": [
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        4,
-        6,
-        9,
-        13,
-        17,
-        18,
-        19,
-        19,
-        19,
-        19,
-        21,
-        21,
-        21,
-        21,
-        21,
-        21,
-        22,
-        22,
-        22,
-        23,
-        24,
-        26,
-        26,
-        26,
-        27,
-        27,
-        27,
-        28,
-        28,
-        29,
-        30,
-        32,
-        32,
-        35,
-        36,
-        37,
-        38,
-        38,
-        40,
-        40,
-        42,
-        43,
-        44,
-        45
-      ],
-      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
-      "note": "Annual additions and cumulative totals are reconstructed from inscription dates on the current official list, not an archived yearly snapshot; site boundaries or classifications may change."
-    },
-    "unesco_india_new_inscriptions": {
-      "labels": [
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        4,
-        2,
-        3,
-        4,
-        4,
-        1,
-        1,
-        0,
-        0,
-        0,
-        2,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        1,
-        2,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        1,
-        1,
-        2,
-        0,
-        3,
-        1,
-        1,
-        1,
-        0,
-        2,
-        0,
-        2,
-        1,
-        1,
-        1
-      ],
-      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
-      "note": "Annual additions and cumulative totals are reconstructed from inscription dates on the current official list, not an archived yearly snapshot; site boundaries or classifications may change."
-    },
-    "unesco_india_current_categories": {
-      "labels": [
-        "Cultural",
-        "Natural",
-        "Mixed"
-      ],
-      "values": [
-        37,
-        7,
-        1
-      ],
-      "chartType": "doughnut",
-      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
-      "note": "Current property classifications on the official UNESCO World Heritage List."
-    },
-    "state_gsdp_share": {
-      "labels": [
-        "Maharashtra",
-        "Tamil Nadu",
-        "Karnataka",
-        "Uttar Pradesh",
-        "Gujarat",
-        "West Bengal",
-        "Rajasthan",
-        "Telangana",
-        "Andhra Pradesh",
-        "Madhya Pradesh",
-        "Kerala",
-        "Delhi",
-        "Haryana",
-        "Bihar",
-        "Odisha",
-        "Punjab",
-        "Assam",
-        "Chhattisgarh",
-        "Jharkhand",
-        "Uttarakhand",
-        "Jammu & Kashmir",
-        "Himachal Pradesh",
-        "Goa",
-        "Tripura",
-        "Chandigarh",
-        "Meghalaya",
-        "Sikkim",
-        "Puducherry",
-        "Manipur",
-        "Arunachal Pradesh",
-        "Nagaland",
-        "Mizoram",
-        "Andaman & Nicobar Islands",
-        "Ladakh"
-      ],
-      "values": [
-        13.34168514816347,
-        8.692122787852705,
-        8.498775818360341,
-        8.411091222433912,
-        8.07276557066804,
-        5.552642090453965,
-        4.969796548425041,
-        4.802146501234373,
-        4.797542272700996,
-        4.476409624362925,
-        3.805656877252096,
-        3.6628269815106362,
-        3.5711708492012475,
-        2.7960410435989456,
-        2.6205393340839165,
-        2.5372140453274086,
-        1.7768611864119737,
-        1.681260849258464,
-        1.5179177543194846,
-        1.0722680740111268,
-        0.7687105943577364,
-        0.7035348029760428,
-        0.34319172816531274,
-        0.25878292341735026,
-        0.20503321740587863,
-        0.17158710773174146,
-        0.15635930056638603,
-        0.15503243862189023,
-        0.14114325402297068,
-        0.13083783502005145,
-        0.13053422045924856,
-        0.11058714316272171,
-        0.043879503295239625,
-        0.024051351166368858
-      ],
-      "chartType": "bar",
-      "indexAxis": "y",
-      "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
-      "unit": "% of reported total",
-      "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
-    },
-    "state_per_capita_income_index": {
-      "labels": [
-        "Goa",
-        "Sikkim",
-        "Delhi",
-        "Chandigarh",
-        "Telangana",
-        "Karnataka",
-        "Haryana",
-        "Tamil Nadu",
-        "Gujarat",
-        "Andaman & Nicobar Islands",
-        "Kerala",
-        "Maharashtra",
-        "Puducherry",
-        "Andhra Pradesh",
-        "Uttarakhand",
-        "Himachal Pradesh",
-        "Mizoram",
-        "Arunachal Pradesh",
-        "Ladakh",
-        "Punjab",
-        "Tripura",
-        "Rajasthan",
-        "Nagaland",
-        "West Bengal",
-        "Chhattisgarh",
-        "Odisha",
-        "Madhya Pradesh",
-        "Meghalaya",
-        "Jammu & Kashmir",
-        "Assam",
-        "Manipur",
-        "Jharkhand",
-        "Uttar Pradesh",
-        "Bihar"
-      ],
-      "values": [
-        254.87236149177056,
-        248.94698828605178,
-        199.5613846278944,
-        195.39764764405666,
-        149.25645845590168,
-        148.43327737041236,
-        138.33507918514158,
-        131.6668819086704,
-        130.3175537028799,
-        126.26765582325281,
-        123.07394280302486,
-        120.6737553033238,
-        110.60138615850421,
-        105.18972386842495,
-        105.15767672564297,
-        102.81488709361113,
-        102.19929496285877,
-        97.8007050371412,
-        89.43066098427775,
-        88.87198840563072,
-        73.46161756757402,
-        71.7569008977983,
-        66.4327703559146,
-        65.96402110328266,
-        64.57068786561246,
-        64.38701468907095,
-        61.19904145560993,
-        59.633036299368136,
-        59.126500117187305,
-        58.150258051246716,
-        51.243381308384386,
-        45.84128532958333,
-        40.484629329353744,
-        26.133727465357993
-      ],
-      "chartType": "bar",
-      "indexAxis": "y",
-      "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States; indexed to the State/UT median = 100",
-      "unit": "index (median = 100)",
-      "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
-    },
-    "state_power_availability_index": {
-      "labels": [
-        "Dadra & Nagar Haveli and Daman & Diu",
-        "Goa",
-        "Punjab",
-        "Telangana",
-        "Haryana",
-        "Puducherry",
-        "Gujarat",
-        "Himachal Pradesh",
-        "Delhi",
-        "Tamil Nadu",
-        "Maharashtra",
-        "Chandigarh",
-        "Andhra Pradesh",
-        "Jammu & Kashmir",
-        "Uttarakhand",
-        "Chhattisgarh",
-        "Rajasthan",
-        "Karnataka",
-        "Madhya Pradesh",
-        "Andaman & Nicobar Islands",
-        "Lakshadweep",
-        "Odisha",
-        "Kerala",
-        "Sikkim",
-        "West Bengal",
-        "Uttar Pradesh",
-        "Arunachal Pradesh",
-        "Meghalaya",
-        "Mizoram",
-        "Tripura",
-        "Nagaland",
-        "Jharkhand",
-        "Assam",
-        "Bihar",
-        "Manipur"
-      ],
-      "values": [
-        1072.9978634052898,
-        251.7940027996758,
-        184.4396964561998,
-        169.90348485964785,
-        168.9751712959552,
-        155.40411110292493,
-        154.62314889854858,
-        132.82251528770354,
-        129.52184483901866,
-        124.63714727768365,
-        116.71701171443307,
-        115.58240624769765,
-        109.15788698150739,
-        109.054741029986,
-        104.85522728947174,
-        104.22161644441171,
-        102.1365947100862,
-        100.0,
-        87.71826420098725,
-        74.7734472850512,
-        74.74397701318794,
-        67.81109555735651,
-        64.85670080306491,
-        60.42142488764459,
-        52.60443527591542,
-        50.99830545936786,
-        49.082737788256104,
-        44.69903484859648,
-        41.847786045826275,
-        34.163412657481764,
-        30.73749355337803,
-        27.89361231857364,
-        26.243277094231193,
-        25.337066234436012,
-        24.23193103956384
-      ],
-      "chartType": "bar",
-      "indexAxis": "y",
-      "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States and CEA; indexed to the State/UT median = 100",
-      "unit": "index (median = 100)",
-      "note": "Calculated from the RBI snapshot for FY2024-25 covering all 28 States and every Union Territory the source reports. 35 of 36 States/UTs reported. Not published for: Ladakh."
-    },
-    "cyber_crime_rate": {
-      "labels": [
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023"
-      ],
-      "values": [
-        0.7332292343409328,
-        0.8728754640789766,
-        0.9164814372633789,
-        1.6030508862011859,
-        1.9821642117365037,
-        3.220592064372459,
-        3.5672585750459964,
-        3.7458530661550378,
-        4.622697276519445,
-        5.9665401618017375
-      ],
-      "source": "NCRB Cyber Crime statistics (IT Act & IPC cyber offences); rates calculated using World Bank population estimates",
-      "unit": "cases per 100,000 people"
-    },
-    "ndps_case_rate": {
-      "labels": [
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023"
-      ],
-      "values": [
-        3.5755403143328732,
-        3.825080040052092,
-        3.6649584470575407,
-        4.692358530906389,
-        4.592920648723123,
-        5.236530792137242,
-        4.263599426499463,
-        5.538875986804664,
-        6.422092697056486,
-        7.53927350258784
-      ],
-      "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act); rates calculated using World Bank population estimates",
-      "unit": "cases per 100,000 people"
-    },
-    "road_fatality_rate": {
-      "labels": [
-        "2010",
-        "2012",
-        "2014",
-        "2016",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
-      ],
-      "values": [
-        10.817450285897444,
-        10.812603190549897,
-        10.643406816631929,
-        11.219587035622197,
-        11.014876631257566,
-        10.879028246865213,
-        9.390584509915227,
-        10.887538949334079,
-        11.820419267874248,
-        12.030989354148058,
-        12.281728874934066
-      ],
-      "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI); rates calculated using World Bank population estimates",
-      "unit": "cases per 100,000 people"
-    },
-    "pew_india_religious_pluralism": {
-      "labels": [
-        "2021: Hindus say respecting all religions is very important",
-        "2021: Muslims say respecting all religions is very important",
-        "2021: Hindus say India is better off with religious diversity",
-        "2021: Muslims say India is better off with religious diversity"
-      ],
-      "values": [
-        85,
-        78,
-        56,
-        53
-      ],
-      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "note": "A thematic view of the same separately labelled Pew survey observations; values are not combined or interpolated.",
-      "unit": "% of respondents"
-    },
-    "pew_india_religious_practice": {
-      "labels": [
-        "2021: considers religion very important in life",
-        "2021: prays daily (Indian adults)",
-        "2021: believes in karma (Indian adults)"
-      ],
-      "values": [
-        84,
-        60,
-        77
-      ],
-      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "note": "A thematic view of the same separately labelled Pew survey observations; values are not combined or interpolated.",
-      "unit": "% of respondents"
-    },
-    "card_spend_total": {
-      "labels": [
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        5.0,
-        7.1,
-        10.5,
-        12.7,
-        13.7,
-        12.7,
-        17.7,
-        21.700000000000003,
-        25.4,
-        29.1,
-        32.6
-      ],
-      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
-      "unit": "INR lakh crore"
-    },
-    "credit_card_spend_share": {
-      "labels": [
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        54.0,
-        53.52112676056338,
-        43.8095238095238,
-        47.24409448818898,
-        51.82481751824818,
-        49.60629921259843,
-        59.32203389830508,
-        65.89861751152073,
-        72.04724409448819,
-        75.94501718213058,
-        79.14110429447852
-      ],
-      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
-      "unit": "% of credit and debit card spends"
-    },
-    "upi_value_growth": {
-      "labels": [
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025",
-        "2026"
-      ],
-      "values": [
-        75.43859649122808,
-        777.0,
-        143.10148232611175,
-        92.4953095684803,
-        84.23489278752437,
-        66.57849490808094,
-        45.16871774513696,
-        26.066506234959526,
-        14.967462039045554
-      ],
-      "source": "NPCI & Reserve Bank of India (UPI Annual Transaction Value in INR Lakh Crores); annual growth calculated from reported values",
-      "unit": "% year-over-year"
-    },
-    "military_expenditure_per_capita": {
-      "labels": [
-        "1960",
-        "1961",
-        "1962",
-        "1963",
-        "1964",
-        "1965",
-        "1966",
-        "1967",
-        "1968",
-        "1969",
-        "1970",
-        "1971",
-        "1972",
-        "1973",
-        "1974",
-        "1975",
-        "1976",
-        "1977",
-        "1978",
-        "1979",
-        "1980",
-        "1981",
-        "1982",
-        "1983",
-        "1984",
-        "1985",
-        "1986",
-        "1987",
-        "1988",
-        "1989",
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ],
-      "values": [
-        1.5637174091818566,
-        1.6758785452315648,
-        2.329926666293455,
-        3.835294486145048,
-        4.145517086059634,
-        4.337513756707515,
-        3.3173984243574295,
-        2.9079648236541704,
-        3.035805232355272,
-        3.168186876900556,
-        3.3579165629992658,
-        4.040981155532118,
-        4.377428357235344,
-        4.336024374138164,
-        4.849606348903103,
-        5.4369294280991545,
-        5.264597033063299,
-        5.426146940482528,
-        6.063211791167801,
-        6.838559264537029,
-        7.8864883625083015,
-        8.354466910750853,
-        8.749118533022372,
-        9.263658491276436,
-        9.215669232129697,
-        9.793626654815709,
-        12.064606041597203,
-        13.44663825940367,
-        13.71428692882936,
-        12.516905607366722,
-        12.181935089049409,
-        9.754728646763095,
-        8.95195538998307,
-        8.950632259201562,
-        9.435713036780026,
-        10.157715323584403,
-        10.110126088231095,
-        11.474823317833593,
-        11.702188533235281,
-        13.38394995920555,
-        13.505253072866429,
-        13.545469568970995,
-        13.438103266318748,
-        14.625665005849742,
-        17.815772648770746,
-        19.98162817195978,
-        20.421484402496322,
-        23.730026431820367,
-        27.32140967567721,
-        31.596387014946163,
-        37.06564455064193,
-        39.35365823225116,
-        36.926457807951266,
-        36.58160923101758,
-        38.798278767830084,
-        38.62540475058586,
-        42.142834944458215,
-        47.54106954184392,
-        48.17787170585208,
-        51.42216394418943,
-        51.91395772997239,
-        53.919735821811926,
-        56.044415859444065,
-        57.20319224602938,
-        58.99439771908535,
-        62.886250147984114
-      ],
-      "source": "World Bank API MS.MIL.XPND.CD; calculated per person using World Bank population estimates",
-      "unit": "USD/person"
-    },
-    "market_indices": {
-      "labels": [
-        "2020-04",
-        "2020-05",
-        "2020-06",
-        "2020-07",
-        "2020-08",
-        "2020-09",
-        "2020-10",
-        "2020-11",
-        "2020-12",
-        "2021-01",
-        "2021-02",
-        "2021-03",
-        "2021-04",
-        "2021-05",
-        "2021-06",
-        "2021-07",
-        "2021-08",
-        "2021-09",
-        "2021-10",
-        "2021-11",
-        "2021-12",
-        "2022-01",
-        "2022-02",
-        "2022-03",
-        "2022-04",
-        "2022-05",
-        "2022-06",
-        "2022-07",
-        "2022-08",
-        "2022-09",
-        "2022-10",
-        "2022-11",
-        "2022-12",
-        "2023-01",
-        "2023-02",
-        "2023-03",
-        "2023-04",
-        "2023-05",
-        "2023-06",
-        "2023-07",
-        "2023-08",
-        "2023-09",
-        "2023-10",
-        "2023-11",
-        "2023-12",
-        "2024-01",
-        "2024-02",
-        "2024-03",
-        "2024-04",
-        "2024-05",
-        "2024-06",
-        "2024-07",
-        "2024-08",
-        "2024-09",
-        "2024-10",
-        "2024-11",
-        "2024-12",
-        "2025-01",
-        "2025-02",
-        "2025-03",
-        "2025-04",
-        "2025-05",
-        "2025-06",
-        "2025-07",
-        "2025-08",
-        "2025-09",
-        "2025-10",
-        "2025-11",
-        "2025-12"
-      ],
-      "datasets": [
-        {
-          "label": "Sensex",
-          "values": [
-            100.0,
-            96.1637245830071,
-            103.55363371058439,
-            111.53492538021688,
-            114.56420385792585,
-            112.90216385507865,
-            117.48789949462595,
-            130.93962796877594,
-            141.621289771514,
-            137.27489501032105,
-            145.62127790827344,
-            146.83488741784706,
-            144.67933660758774,
-            154.03646760149005,
-            155.65372387121266,
-            155.96246470685935,
-            170.68949154150948,
-            175.3576767029682,
-            175.89300543336418,
-            169.24365909791922,
-            172.7697107741951,
-            172.05910266448385,
-            166.81881272688452,
-            173.70305122547276,
-            169.23179585735642,
-            164.7993926020832,
-            157.24399126865495,
-            170.74257954302797,
-            176.57573492775288,
-            170.3172823688519,
-            180.16288229292715,
-            187.14173013500368,
-            180.44196502716682,
-            176.6136972975538,
-            174.8703940968515,
-            174.95758891498804,
-            181.2477756423945,
-            185.7255557928204,
-            191.9430801717797,
-            197.30852729731654,
-            192.27762355565048,
-            195.2345362659264,
-            189.4408261560728,
-            198.67487602913613,
-            214.25101430706812,
-            212.80310579637938,
-            215.0221249436496,
-            218.43606899660713,
-            220.9018435475835,
-            219.35517355920945,
-            234.39598310674543,
-            242.42917645384017,
-            244.28132488670607,
-            250.01720169881608,
-            235.45299784089028,
-            236.679953496097,
-            231.7454385840036,
-            229.85197641587777,
-            217.09166725982874,
-            229.59795477732698,
-            237.98324910432535,
-            241.5682314280969,
-            247.9608868958645,
-            240.78101644245146,
-            236.7002692955608,
-            238.05846204949347,
-            248.94624765701,
-            254.18979998576413,
-            252.74811967637083
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Nifty",
-          "values": [
-            100.0,
-            97.16427144291524,
-            104.48483250337226,
-            112.30844126208177,
-            115.49305773892232,
-            114.07417925131087,
-            118.07827665594985,
-            131.5327741660666,
-            141.80468361748092,
-            138.2833497297133,
-            147.35646406150164,
-            148.99441170802953,
-            148.38994310287123,
-            158.0421708130914,
-            159.44887879187417,
-            159.8707897646021,
-            173.75632612906827,
-            178.68538220468767,
-            179.22798405663346,
-            172.2451546161726,
-            176.00685605330682,
-            175.8628383655007,
-            170.32525684844674,
-            177.12958549275348,
-            173.45612024462721,
-            168.2025172669094,
-            160.04523372447997,
-            174.02103469609224,
-            180.1164312011278,
-            173.37295510096453,
-            182.68136593677423,
-            190.24939401008126,
-            183.62559458006672,
-            179.131634195073,
-            175.49873730970904,
-            176.0646659702431,
-            183.2168683252366,
-            187.97756569539249,
-            194.61759247051188,
-            200.34483108347953,
-            195.27378573819206,
-            199.17341960871815,
-            193.5070335398939,
-            204.1927402914837,
-            220.4018296331606,
-            220.3440197162243,
-            222.9515512327711,
-            226.441444639398,
-            229.2609458513778,
-            228.50840272213716,
-            243.517682735119,
-            253.05733323867386,
-            255.94478645828053,
-            261.7764886053611,
-            245.49336200164302,
-            244.7398046633333,
-            239.8077059605067,
-            238.4243247903123,
-            224.39071390176372,
-            238.53588778790865,
-            246.7996632825891,
-            251.02384405521354,
-            258.7967423604702,
-            251.20335906043672,
-            247.7398350896054,
-            249.6080081948093,
-            260.87587095203804,
-            265.75320236513556,
-            265.0087729084473
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Nifty VIX",
-          "values": [
-            100.0,
-            88.75739644970415,
-            85.50295857988166,
-            73.07692307692308,
-            71.59763313609467,
-            67.45562130177515,
-            57.6923076923077,
-            73.37278106508876,
-            58.579881656804744,
-            74.85207100591717,
-            83.13609467455623,
-            61.24260355029586,
-            68.04733727810651,
-            50.0,
-            38.757396449704146,
-            37.8698224852071,
-            42.89940828402367,
-            54.437869822485204,
-            51.4792899408284,
-            62.721893491124256,
-            47.928994082840234,
-            65.08875739644971,
-            84.61538461538463,
-            60.94674556213019,
-            57.396449704142015,
-            60.65088757396451,
-            64.49704142011835,
-            49.11242603550296,
-            55.325443786982255,
-            59.171597633136095,
-            46.74556213017752,
-            40.828402366863905,
-            44.082840236686394,
-            50.0,
-            41.42011834319527,
-            38.16568047337279,
-            32.544378698224854,
-            35.502958579881664,
-            31.952662721893493,
-            30.76923076923077,
-            35.798816568047336,
-            34.023668639053255,
-            34.9112426035503,
-            37.57396449704142,
-            42.89940828402367,
-            47.63313609467457,
-            46.15384615384615,
-            37.8698224852071,
-            38.16568047337279,
-            72.7810650887574,
-            40.828402366863905,
-            39.34911242603551,
-            39.64497041420118,
-            37.8698224852071,
-            46.15384615384615,
-            42.60355029585799,
-            42.89940828402367,
-            48.22485207100593,
-            41.12426035502959,
-            37.57396449704142,
-            53.84615384615385,
-            47.63313609467457,
-            37.8698224852071,
-            34.023668639053255,
-            34.9112426035503,
-            32.84023668639053,
-            36.09467455621302,
-            34.31952662721894,
-            28.10650887573965
-          ],
-          "color": "#f2cc60"
-        }
-      ],
-      "source": "Economic Survey Statistical Appendix table 9.3; rebased to 100"
-    },
-    "gdp_world_comparison": {
-      "labels": [
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "India \ud83c\uddee\ud83c\uddf3",
-          "values": [
-            0.321,
-            0.27,
-            0.288,
-            0.279,
-            0.327,
-            0.36,
-            0.393,
-            0.416,
-            0.421,
-            0.459,
-            0.468,
-            0.485,
-            0.515,
-            0.608,
-            0.709,
-            0.82,
-            0.94,
-            1.217,
-            1.199,
-            1.342,
-            1.676,
-            1.823,
-            1.828,
-            1.857,
-            2.039,
-            2.104,
-            2.295,
-            2.651,
-            2.703,
-            2.836,
-            2.675,
-            3.167,
-            3.25,
-            3.501,
-            3.761,
-            3.956
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "United States \ud83c\uddfa\ud83c\uddf8",
-          "values": [
-            5.963,
-            6.158,
-            6.52,
-            6.859,
-            7.287,
-            7.64,
-            8.073,
-            8.578,
-            9.063,
-            9.631,
-            10.251,
-            10.582,
-            10.929,
-            11.456,
-            12.217,
-            13.039,
-            13.816,
-            14.474,
-            14.77,
-            14.478,
-            15.049,
-            15.6,
-            16.254,
-            16.881,
-            17.608,
-            18.295,
-            18.805,
-            19.612,
-            20.657,
-            21.54,
-            21.375,
-            23.726,
-            26.055,
-            27.812,
-            29.298,
-            30.77
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "China \ud83c\udde8\ud83c\uddf3",
-          "values": [
-            0.362,
-            0.385,
-            0.429,
-            0.447,
-            0.567,
-            0.738,
-            0.869,
-            0.968,
-            1.037,
-            1.104,
-            1.224,
-            1.355,
-            1.49,
-            1.684,
-            1.984,
-            2.318,
-            2.791,
-            3.604,
-            4.667,
-            5.19,
-            6.193,
-            7.672,
-            8.674,
-            9.743,
-            10.675,
-            11.281,
-            11.456,
-            12.538,
-            14.148,
-            14.56,
-            14.996,
-            18.202,
-            18.317,
-            18.27,
-            18.73,
-            19.498
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Germany \ud83c\udde9\ud83c\uddea",
-          "values": [
-            1.778,
-            1.876,
-            2.141,
-            2.079,
-            2.215,
-            2.593,
-            2.507,
-            2.219,
-            2.248,
-            2.214,
-            1.967,
-            1.966,
-            2.102,
-            2.535,
-            2.852,
-            2.893,
-            3.046,
-            3.484,
-            3.808,
-            3.479,
-            3.467,
-            3.824,
-            3.596,
-            3.807,
-            3.965,
-            3.425,
-            3.537,
-            3.765,
-            4.055,
-            3.96,
-            3.941,
-            4.355,
-            4.201,
-            4.562,
-            4.686,
-            5.051
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "Japan \ud83c\uddef\ud83c\uddf5",
-          "values": [
-            3.253,
-            3.725,
-            4.065,
-            4.632,
-            5.104,
-            5.64,
-            5.021,
-            4.58,
-            4.15,
-            4.689,
-            5.042,
-            4.439,
-            4.246,
-            4.573,
-            4.941,
-            4.876,
-            4.648,
-            4.625,
-            5.16,
-            5.337,
-            5.812,
-            6.279,
-            6.334,
-            5.272,
-            4.986,
-            4.534,
-            5.11,
-            5.038,
-            5.154,
-            5.246,
-            5.189,
-            5.226,
-            4.448,
-            4.385,
-            4.19,
-            4.435
-          ],
-          "color": "#a371f7"
-        },
-        {
-          "label": "United Kingdom \ud83c\uddec\ud83c\udde7",
-          "values": [
-            1.093,
-            1.143,
-            1.18,
-            1.061,
-            1.14,
-            1.349,
-            1.425,
-            1.569,
-            1.661,
-            1.693,
-            1.672,
-            1.656,
-            1.791,
-            2.061,
-            2.43,
-            2.551,
-            2.72,
-            3.105,
-            2.945,
-            2.429,
-            2.497,
-            2.676,
-            2.72,
-            2.797,
-            3.085,
-            2.946,
-            2.707,
-            2.699,
-            2.897,
-            2.876,
-            2.724,
-            3.195,
-            3.181,
-            3.421,
-            3.696,
-            4.003
-          ],
-          "color": "#3fb950"
-        }
-      ],
-      "source": "World Bank API NY.GDP.MKTP.CD (GDP in current USD Trillion)"
-    },
-    "global_inflation_comparison": {
-      "labels": [
-        "1990",
-        "1991",
-        "1992",
-        "1993",
-        "1994",
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "India \ud83c\uddee\ud83c\uddf3",
-          "values": [
-            8.97,
-            13.87,
-            11.79,
-            6.33,
-            10.25,
-            10.22,
-            8.98,
-            7.16,
-            13.23,
-            4.67,
-            4.01,
-            3.78,
-            4.3,
-            3.81,
-            3.77,
-            4.25,
-            5.8,
-            6.37,
-            8.35,
-            10.88,
-            11.99,
-            8.91,
-            9.48,
-            10.02,
-            6.67,
-            4.91,
-            4.95,
-            3.33,
-            3.94,
-            3.73,
-            6.62,
-            5.13,
-            6.7,
-            5.65,
-            4.95,
-            2.4
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "United States \ud83c\uddfa\ud83c\uddf8",
-          "values": [
-            5.4,
-            4.23,
-            3.03,
-            2.95,
-            2.61,
-            2.81,
-            2.93,
-            2.34,
-            1.55,
-            2.19,
-            3.38,
-            2.83,
-            1.59,
-            2.27,
-            2.68,
-            3.39,
-            3.23,
-            2.85,
-            3.84,
-            -0.36,
-            1.64,
-            3.16,
-            2.07,
-            1.46,
-            1.62,
-            0.12,
-            1.26,
-            2.13,
-            2.44,
-            1.81,
-            1.23,
-            4.7,
-            8.0,
-            4.12,
-            2.95,
-            null
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Euro Area \ud83c\uddea\ud83c\uddfa",
-          "values": [
-            4.5,
-            4.31,
-            5.6,
-            4.63,
-            4.7,
-            4.22,
-            3.07,
-            2.34,
-            2.39,
-            2.13,
-            3.04,
-            2.93,
-            2.47,
-            2.1,
-            2.23,
-            2.56,
-            2.77,
-            2.51,
-            4.15,
-            0.51,
-            1.53,
-            3.29,
-            2.6,
-            1.22,
-            0.2,
-            -0.1,
-            0.15,
-            1.38,
-            1.7,
-            1.45,
-            0.22,
-            2.53,
-            8.55,
-            5.95,
-            2.26,
-            2.47
-          ],
-          "color": "#3fb950"
-        }
-      ],
-      "source": "World Bank API FP.CPI.TOTL.ZG (Annual CPI inflation %)"
-    },
-    "global_equity_indices": {
-      "labels": [
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "India BSE Sensex \ud83c\uddee\ud83c\uddf3",
-          "values": [
-            100.0,
-            81.5,
-            84.2,
-            146.8,
-            166.1,
-            236.4,
-            345.2,
-            510.6,
-            245.8,
-            444.6,
-            522.1,
-            396.4,
-            497.8,
-            542.1,
-            712.5,
-            663.2,
-            678.9,
-            868.5,
-            920.4,
-            1056.2,
-            1206.8,
-            1495.2,
-            1558.9,
-            1852.4,
-            2145.6,
-            2260.0
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "US S&P 500 \ud83c\uddfa\ud83c\uddf8",
-          "values": [
-            100.0,
-            88.1,
-            68.6,
-            86.7,
-            94.5,
-            97.4,
-            110.7,
-            114.6,
-            68.8,
-            86.9,
-            98.1,
-            98.2,
-            111.4,
-            144.4,
-            161.0,
-            159.8,
-            175.1,
-            209.1,
-            196.1,
-            252.7,
-            291.5,
-            368.4,
-            303.1,
-            376.5,
-            467.2,
-            512.0
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "UK FTSE 100 \ud83c\uddec\ud83c\udde7",
-          "values": [
-            100.0,
-            83.8,
-            63.3,
-            71.9,
-            77.3,
-            89.2,
-            98.8,
-            102.5,
-            69.8,
-            85.3,
-            93.0,
-            87.8,
-            93.0,
-            106.4,
-            105.1,
-            100.0,
-            105.7,
-            113.8,
-            103.8,
-            116.4,
-            100.0,
-            114.2,
-            116.8,
-            119.5,
-            128.4,
-            134.2
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Japan Nikkei 225 \ud83c\uddef\ud83c\uddf5",
-          "values": [
-            100.0,
-            74.3,
-            61.2,
-            76.5,
-            84.1,
-            118.0,
-            126.1,
-            112.0,
-            64.9,
-            77.2,
-            74.9,
-            61.9,
-            74.2,
-            116.3,
-            124.6,
-            136.0,
-            137.2,
-            163.5,
-            144.1,
-            170.4,
-            197.6,
-            207.2,
-            187.7,
-            239.5,
-            278.4,
-            289.0
-          ],
-          "color": "#a371f7"
-        },
-        {
-          "label": "China Shanghai Comp \ud83c\udde8\ud83c\uddf3",
-          "values": [
-            100.0,
-            80.4,
-            66.3,
-            63.2,
-            60.1,
-            55.0,
-            129.5,
-            254.8,
-            88.6,
-            159.2,
-            136.5,
-            107.1,
-            110.2,
-            103.4,
-            158.0,
-            176.4,
-            154.6,
-            164.5,
-            124.0,
-            151.8,
-            172.8,
-            179.4,
-            152.0,
-            148.6,
-            154.2,
-            161.0
-          ],
-          "color": "#ff7b72"
-        }
-      ],
-      "source": "BSE India, S&P Dow Jones, FTSE Russell, Nikkei Inc., SSE; Base 100 = 2000"
-    },
-    "sectoral_market_indices": {
-      "labels": [
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ],
-      "datasets": [
-        {
-          "label": "Nifty IT",
-          "values": [
-            100.0,
-            108.2,
-            98.4,
-            145.6,
-            182.1,
-            185.4,
-            169.2,
-            188.5,
-            265.4,
-            278.1,
-            442.1,
-            672.4,
-            524.8,
-            620.5,
-            695.2,
-            720.0
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Nifty Bank",
-          "values": [
-            100.0,
-            95.4,
-            128.6,
-            114.2,
-            188.4,
-            172.1,
-            198.5,
-            268.4,
-            289.1,
-            335.2,
-            328.4,
-            388.2,
-            452.1,
-            498.4,
-            545.6,
-            575.0
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Nifty Auto",
-          "values": [
-            100.0,
-            92.1,
-            122.4,
-            142.1,
-            218.4,
-            215.2,
-            252.1,
-            308.2,
-            248.5,
-            210.4,
-            242.1,
-            305.4,
-            338.2,
-            485.1,
-            620.4,
-            650.0
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Nifty Energy",
-          "values": [
-            100.0,
-            85.2,
-            92.4,
-            98.1,
-            115.4,
-            108.2,
-            142.1,
-            195.4,
-            188.2,
-            192.4,
-            210.5,
-            305.2,
-            358.4,
-            465.2,
-            592.1,
-            625.0
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "BSE Sensex Benchmark",
-          "values": [
-            100.0,
-            75.9,
-            95.3,
-            103.8,
-            136.5,
-            127.0,
-            130.0,
-            166.4,
-            176.3,
-            202.3,
-            231.2,
-            286.4,
-            298.6,
-            354.9,
-            411.0,
-            432.9
-          ],
-          "color": "#a371f7"
-        }
-      ],
-      "source": "NSE India, BSE India; Base 100 = 2010"
-    },
-    "gdp_sector_composition": {
-      "labels": [
-        "Agriculture",
-        "Industry",
-        "Services",
-        "Other GDP components"
-      ],
-      "values": [
-        16.23,
-        25.2,
-        49.34,
-        9.23
-      ],
-      "chartType": "doughnut",
-      "source": "World Bank API NV.AGR.TOTL.ZS; World Bank API NV.IND.TOTL.ZS; World Bank API NV.SRV.TOTL.ZS",
-      "note": "Value-added shares for the latest common World Bank observation (2025). Other GDP components are the residual to 100%, including net product taxes and rounding differences; this is not a directly reported sector.",
-      "unit": "% of GDP"
-    },
-    "state_gsdp_composition": {
-      "labels": [
-        "Maharashtra",
-        "Tamil Nadu",
-        "Karnataka",
-        "Uttar Pradesh",
-        "Gujarat",
-        "West Bengal",
-        "Rajasthan",
-        "Telangana",
-        "Other 26 States/UTs"
-      ],
-      "values": [
-        13.34,
-        8.69,
-        8.5,
-        8.41,
-        8.07,
-        5.55,
-        4.97,
-        4.8,
-        37.66
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
-      "note": "Share of reported GSDP across every State and Union Territory in the cited RBI snapshot. The eight largest shares are shown individually; the remaining States/UTs are combined.",
-      "unit": "% of reported State GSDP"
-    },
-    "urban_rural_population_composition": {
-      "labels": [
-        "Urban population",
-        "Rural population"
-      ],
-      "values": [
-        35.69,
-        64.31
-      ],
-      "chartType": "doughnut",
-      "source": "World Bank API SP.URB.TOTL.IN.ZS",
-      "note": "Urban/rural population shares for 2025; rural population is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
-      "unit": "% of population"
-    },
-    "energy_supply_composition": {
-      "labels": [
-        "Net energy imports",
-        "Domestic energy supply"
-      ],
-      "values": [
-        36.03,
-        63.97
-      ],
-      "chartType": "doughnut",
-      "source": "World Bank API EG.IMP.CONS.ZS",
-      "note": "Net energy-import dependence for 2024; domestic energy supply is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
-      "unit": "% of energy use"
-    },
-    "defence_budget_composition": {
-      "labels": [
-        "Defence allocation",
-        "Other Union expenditure"
-      ],
-      "values": [
-        12.9,
-        87.1
-      ],
-      "chartType": "doughnut",
-      "source": "Union Budget of India Documents & Ministry of Finance Budget Allocation Data (% of Total Central Expenditure)",
-      "note": "Defence allocation as a share of total Union expenditure for 2025; other union expenditure is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
-      "unit": "% of Union expenditure"
-    },
-    "card_spending_composition": {
-      "labels": [
-        "Credit card spends",
-        "Debit card POS spends"
-      ],
-      "values": [
-        25.8,
-        6.8
-      ],
-      "chartType": "doughnut",
-      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
-      "note": "Credit-card and debit-card POS/e-commerce expenditure for the latest common reported year (2026), in INR lakh crore. Debit-card ATM withdrawals are excluded.",
-      "unit": "INR lakh crore"
-    },
-    "lwe_casualties_cumulative": {
-      "labels": [
-        "Civilians",
-        "Security forces",
-        "Extremists"
-      ],
-      "values": [
-        4136.0,
-        2722.0,
-        5001.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
-      "unit": "casualties",
-      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
-      "meta": {
-        "title": "Left-Wing Extremism Casualties by Group (2000\u20132025)",
-        "subtitle": "Who bore the casualties of the Maoist insurgency",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " casualties",
-        "category": "Crime & Security",
-        "subgroup": "Maoism / LWE"
-      }
-    },
-    "insurgency_fatalities_by_theatre": {
-      "labels": [
-        "Jammu & Kashmir",
-        "North East",
-        "Left-wing extremism"
-      ],
-      "values": [
-        22970.0,
-        10652.0,
-        11859.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database; MHA North East Division & SATP North East Insurgency Database; https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
-      "unit": "fatalities",
-      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
-      "meta": {
-        "title": "Insurgency Fatalities by Theatre (2000\u20132025)",
-        "subtitle": "Fatalities in the three major internal-security theatres",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " fatalities",
-        "category": "Crime & Security",
-        "subgroup": "Terrorism"
-      }
-    },
-    "insurgency_incidents_by_theatre": {
-      "labels": [
-        "Jammu & Kashmir",
-        "North East",
-        "Left-wing extremism"
-      ],
-      "values": [
-        32.0,
-        142.0,
-        168.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Ministry of Home Affairs J&K Division Performance Reports; Ministry of Home Affairs Annual Reports (North East Division); Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
-      "unit": "incidents",
-      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Insurgency Incidents by Theatre (2025)",
-        "subtitle": "Incidents in the three major internal-security theatres",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " incidents",
-        "category": "Crime & Security",
-        "subgroup": "Terrorism"
-      }
-    },
-    "specialised_crime_cases_mix": {
-      "labels": [
-        "Crimes against children (POCSO)",
-        "Narcotics (NDPS)",
-        "Cyber crime"
-      ],
-      "values": [
-        177435.0,
-        108420.0,
-        85803.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "NCRB Crime in India (Crimes against Children & POCSO Act); NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act); NCRB Cyber Crime statistics (IT Act & IPC cyber offences)",
-      "unit": "cases",
-      "note": "Latest year reported for every slice (2023). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Registered Cases by Specialised Crime Head (2023)",
-        "subtitle": "NCRB cases under three specialised heads",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " cases",
-        "category": "Crime & Security",
-        "subgroup": "Violence & Crime"
-      }
-    },
-    "lwe_casualties_latest": {
-      "labels": [
-        "Civilians",
-        "Security forces",
-        "Extremists"
-      ],
-      "values": [
-        54.0,
-        33.0,
-        390.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
-      "unit": "casualties",
-      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Left-Wing Extremism Casualties, Latest Year (2025)",
-        "subtitle": "Casualties by group in the most recent reported year",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " casualties",
-        "category": "Crime & Security",
-        "subgroup": "Maoism / LWE"
-      }
-    },
-    "cards_in_circulation_mix": {
-      "labels": [
-        "Debit cards",
-        "Credit cards"
-      ],
-      "values": [
-        101.5,
-        12.8
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Reserve Bank of India Payment System Statistics (Active Debit Cards in Circulation in Crore Cards); Reserve Bank of India Payment System Statistics (Active Credit Cards in Circulation in Crore Cards)",
-      "unit": "crore cards",
-      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Cards in Circulation: Debit vs Credit (2026)",
-        "subtitle": "RBI payment-card stock",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " crore cards",
-        "category": "Payments & Digital Banking",
-        "subgroup": "Card Spends & Ecosystem"
-      }
-    },
-    "mineral_output_mix": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Limestone",
-        "Lignite"
-      ],
-      "values": [
-        1140.0,
-        315.0,
-        505.0,
-        54.8
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes); Indian Bureau of Mines (IBM) & Ministry of Mines (Iron Ore Production Output in Million Tonnes); Indian Bureau of Mines & Cement Manufacturers Association (Limestone Production in Million Tonnes); NLC India & Ministry of Coal (Lignite Production Output in Million Tonnes)",
-      "unit": "Million Tonnes",
-      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Major Mineral Output Mix (2026)",
-        "subtitle": "Coal, lignite, iron ore and limestone output",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " Million Tonnes",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Metallic Minerals & Ores"
-      }
-    },
-    "tourist_flows_mix": {
-      "labels": [
-        "Inbound arrivals",
-        "Outbound departures"
-      ],
-      "values": [
-        17914000.0,
-        26915000.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "World Bank API ST.INT.ARVL; World Bank API ST.INT.DPRT",
-      "unit": "visitors",
-      "note": "Latest year reported for every slice (2019). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Inbound vs Outbound Tourists (2019)",
-        "subtitle": "International tourist arrivals and departures",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " visitors",
-        "category": "Tourism & Heritage",
-        "subgroup": "International Visitor Trends"
-      }
-    },
-    "connectivity_mix": {
-      "labels": [
-        "Mobile",
-        "Fixed broadband"
-      ],
-      "values": [
-        79.35,
-        3.15
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "World Bank API IT.CEL.SETS.P2; World Bank API IT.NET.BBND.P2",
-      "unit": "per 100 people",
-      "note": "Latest year reported for every slice (2024). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Mobile vs Fixed Broadband Subscriptions (2024)",
-        "subtitle": "Subscriptions per 100 people",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " per 100 people",
-        "category": "Payments & Digital Banking",
-        "subgroup": "Digital Financial Index"
-      }
-    },
-    "sector_export_value_mix": {
-      "labels": [
-        "Pharmaceuticals",
-        "Textiles & apparel",
-        "Minerals & metals"
-      ],
-      "values": [
-        35.5,
-        44.2,
-        38.5
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Pharmexcil & Ministry of Commerce (Pharmaceutical & Biotech Exports Trajectory in USD Billion); Ministry of Textiles & DGFT (Textiles, Garments & Technical Textiles Export Trajectory in USD Billion); Directorate General of Foreign Trade (DGFT) & Ministry of Mines (Mineral & Ore Exports Value in USD Billion)",
-      "unit": "USD bn",
-      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
-      "meta": {
-        "title": "Sector Export Value Mix (2026)",
-        "subtitle": "Pharmaceutical, textile and mineral & metal exports",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " USD bn",
-        "category": "Industry Trends & Performance",
-        "subgroup": "Production & Commodities"
-      }
-    },
-    "terror_attacks_by_decade": {
-      "labels": [
-        "1970\u20131979",
-        "1980\u20131989",
-        "1990\u20131999",
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132021"
-      ],
-      "values": [
-        24.0,
-        1228.0,
-        1790.0,
-        2572.0,
-        7865.0,
-        685.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Our World in Data; Global Terrorism Database-derived series",
-      "unit": "attacks",
-      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Terrorist Attacks by Decade",
-        "subtitle": "Attacks recorded in the Global Terrorism Database, 10-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " attacks",
-        "category": "Crime & Security",
-        "subgroup": "Terrorism"
-      }
-    },
-    "terror_fatalities_by_decade": {
-      "labels": [
-        "1970\u20131979",
-        "1980\u20131989",
-        "1990\u20131999",
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132021"
-      ],
-      "values": [
-        35.0,
-        3096.0,
-        6211.0,
-        6230.0,
-        4574.0,
-        347.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Our World in Data; Global Terrorism Database-derived fatalities",
-      "unit": "fatalities",
-      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Terrorism Fatalities by Decade",
-        "subtitle": "Fatalities recorded in the Global Terrorism Database, 10-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " fatalities",
-        "category": "Crime & Security",
-        "subgroup": "Terrorism"
-      }
-    },
-    "kashmir_fatalities_by_period": {
-      "labels": [
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132025"
-      ],
-      "values": [
-        19209.0,
-        2582.0,
-        1179.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
-      "unit": "fatalities",
-      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Jammu & Kashmir Fatalities by Period",
-        "subtitle": "Insurgency-related fatalities, 10-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " fatalities",
-        "category": "Crime & Security",
-        "subgroup": "Jammu & Kashmir Insurgency"
-      }
-    },
-    "northeast_fatalities_by_period": {
-      "labels": [
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132025"
-      ],
-      "values": [
-        8253.0,
-        2070.0,
-        329.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "MHA North East Division & SATP North East Insurgency Database",
-      "unit": "fatalities",
-      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
-      "meta": {
-        "title": "North East Fatalities by Period",
-        "subtitle": "Insurgency-related fatalities, 10-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " fatalities",
-        "category": "Crime & Security",
-        "subgroup": "North East Insurgency"
-      }
-    },
-    "lwe_civilian_casualties_by_period": {
-      "labels": [
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132025"
-      ],
-      "values": [
-        1907.0,
-        1862.0,
-        367.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
-      "unit": "casualties",
-      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Maoist Violence: Civilian Casualties by Period",
-        "subtitle": "Civilian casualties, 10-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " casualties",
-        "category": "Crime & Security",
-        "subgroup": "Maoism / LWE"
-      }
-    },
-    "khalistan_fatalities_by_period": {
-      "labels": [
-        "1981\u20131984",
-        "1985\u20131989",
-        "1990\u20131994",
-        "1995"
-      ],
-      "values": [
-        1323.0,
-        6388.0,
-        13854.0,
-        172.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
-      "unit": "",
-      "note": "Annual values summed into 5-year periods between 1981 and 1995; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Punjab Militancy by Period",
-        "subtitle": "Annual series summed over 5-year periods",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": "",
-        "category": "Crime & Security",
-        "subgroup": "Punjab Militancy & Security"
-      }
-    },
-    "coal_output_by_period": {
-      "labels": [
-        "2010\u20132014",
-        "2015\u20132019",
-        "2020\u20132024",
-        "2025\u20132026"
-      ],
-      "values": [
-        2759.0,
-        3310.0,
-        4424.0,
-        2230.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes)",
-      "unit": "Million Tonnes",
-      "note": "Annual values summed into 5-year periods between 2010 and 2026; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Coal Output by Period",
-        "subtitle": "Domestic coal output, five-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " Million Tonnes",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Energy Minerals & Fuel"
-      }
-    },
-    "pew_reports_by_period": {
-      "labels": [
-        "2002\u20132004",
-        "2005\u20132009",
-        "2010\u20132014",
-        "2015\u20132019",
-        "2020\u20132024",
-        "2025\u20132026"
-      ],
-      "values": [
-        34.0,
-        222.0,
-        355.0,
-        310.0,
-        318.0,
-        179.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Pew Research Center India public report catalog",
-      "unit": "reports",
-      "note": "Annual values summed into 5-year periods between 2002 and 2026; the first and last periods may be shorter.",
-      "meta": {
-        "title": "Pew India Publications by Period",
-        "subtitle": "Number of Pew Research Center reports mentioning India, five-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " reports",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "unesco_inscriptions_by_period": {
-      "labels": [
-        "1983\u20131989",
-        "1990\u20131999",
-        "2000\u20132009",
-        "2010\u20132019",
-        "2020\u20132026"
-      ],
-      "values": [
-        19.0,
-        3.0,
-        5.0,
-        11.0,
-        7.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
-      "unit": "sites",
-      "note": "Annual values summed into 10-year periods between 1983 and 2026; the first and last periods may be shorter.",
-      "meta": {
-        "title": "UNESCO Inscriptions in India by Period",
-        "subtitle": "New World Heritage inscriptions, ten-year totals",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " sites",
-        "category": "Tourism & Heritage",
-        "subgroup": "World Heritage Sites"
-      }
-    },
-    "state_pmjdy_region_share": {
-      "labels": [
-        "Central",
-        "East",
-        "West",
-        "South",
-        "North",
-        "North-East"
-      ],
-      "values": [
-        17.39,
-        17.39,
-        9.86,
-        8.12,
-        3.79,
-        3.08
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
-      "unit": "accounts",
-      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
-      "meta": {
-        "title": "Jan Dhan Accounts by Region",
-        "subtitle": "PMJDY bank accounts grouped by region",
-        "frequency": "Derived from State snapshot",
-        "color": "#ff9933",
-        "suffix": " accounts",
-        "category": "State Performance & Regional Health",
-        "subgroup": "State Welfare & Scheme Coverage"
-      }
-    },
-    "state_gsdp_region_share": {
-      "labels": [
-        "South",
-        "West",
-        "Central",
-        "North",
-        "East",
-        "North-East"
-      ],
-      "values": [
-        84.05,
-        72.95,
-        39.76,
-        34.24,
-        34.08,
-        7.85
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2022-23, INR lakh crore)",
-      "unit": "INR",
-      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
-      "meta": {
-        "title": "GSDP by Region",
-        "subtitle": "Gross State Domestic Product grouped by region",
-        "frequency": "Derived from State snapshot",
-        "color": "#ff9933",
-        "suffix": " INR",
-        "category": "State Performance & Regional Health",
-        "subgroup": "State Financial Health & GSDP"
-      }
-    },
-    "pew_smartphone_ownership": {
-      "labels": [
-        "Own a smartphone",
-        "Do not own one"
-      ],
-      "values": [
-        7.0,
-        93.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/india/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Smartphone Ownership (2013)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_social_media_use": {
-      "labels": [
-        "Use social media",
-        "Do not use it"
-      ],
-      "values": [
-        54.0,
-        46.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/india/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Social Media Use (2023)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_internet_use": {
-      "labels": [
-        "Use the internet",
-        "Do not use it"
-      ],
-      "values": [
-        45.0,
-        55.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/india/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Internet Use (2021)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_whatsapp_use": {
-      "labels": [
-        "Use WhatsApp regularly",
-        "Do not"
-      ],
-      "values": [
-        51.0,
-        49.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "WhatsApp Use (2023)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_fake_news_concern": {
-      "labels": [
-        "Concerned",
-        "Not concerned / no answer"
-      ],
-      "values": [
-        77.0,
-        23.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Concern About Fake News (2022)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_social_media_democracy": {
-      "labels": [
-        "Good for democracy",
-        "Other views"
-      ],
-      "values": [
-        71.0,
-        29.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Social Media and Democracy (2022)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_leadership_favorability": {
-      "labels": [
-        "Favorable",
-        "Other views"
-      ],
-      "values": [
-        88.0,
-        12.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "View of National Leadership (2017)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_climate_threat": {
-      "labels": [
-        "Major threat",
-        "Other views"
-      ],
-      "values": [
-        73.0,
-        27.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/global/topic/climate-change-energy/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Climate Change as a Major Threat (2023)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_equal_rights": {
-      "labels": [
-        "Should have equal rights",
-        "Other views"
-      ],
-      "values": [
-        88.0,
-        12.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Equal Rights for Men and Women (2022)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_daily_prayer": {
-      "labels": [
-        "Pray daily",
-        "Do not"
-      ],
-      "values": [
-        60.0,
-        40.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Daily Prayer (2021)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "pew_religious_freedom": {
-      "labels": [
-        "Very free",
-        "Less than very free"
-      ],
-      "values": [
-        91.0,
-        9.0
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
-      "unit": "%",
-      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
-      "meta": {
-        "title": "Freedom to Practise Religion (2021)",
-        "subtitle": "Indian adults",
-        "frequency": "Survey wave",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Pew Research",
-        "subgroup": "Public opinion"
-      }
-    },
-    "auto_domestic_sales_mix": {
-      "labels": [
-        "Passenger vehicles",
-        "Commercial vehicles",
-        "Three-wheelers",
-        "Two-wheelers"
-      ],
-      "values": [
-        2.5,
-        0.63,
-        0.48,
-        14.81
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "SIAM Automobile Domestic Sales Trends (FY2008-09 to FY2013-14); annual domestic sales by vehicle category, million units",
-      "unit": "million vehicles",
-      "note": "Latest reported value for each segment of the dashboard series (2013-14).",
-      "meta": {
-        "title": "Automobile Domestic Sales by Segment",
-        "subtitle": "Passenger, commercial, three- and two-wheeler sales",
-        "frequency": "Derived from annual data",
-        "color": "#ff9933",
-        "suffix": " million vehicles",
-        "category": "Industry Trends & Performance",
-        "subgroup": "Manufacturing & Industrial Growth"
-      }
-    },
-    "rail_freight": {
-      "labels": [
-        "2020-04",
-        "2020-05",
-        "2020-06",
-        "2020-07",
-        "2020-08",
-        "2020-09",
-        "2020-10",
-        "2020-11",
-        "2020-12",
-        "2021-01",
-        "2021-02",
-        "2021-03",
-        "2021-04",
-        "2021-05",
-        "2021-06",
-        "2021-07",
-        "2021-08",
-        "2021-09",
-        "2021-10",
-        "2021-11",
-        "2021-12",
-        "2022-01",
-        "2022-02",
-        "2022-03",
-        "2022-04",
-        "2022-05",
-        "2022-06",
-        "2022-07",
-        "2022-08",
-        "2022-09",
-        "2022-10",
-        "2022-11",
-        "2022-12",
-        "2023-01",
-        "2023-02",
-        "2023-03",
-        "2023-04",
-        "2023-05",
-        "2023-06",
-        "2023-07",
-        "2023-08",
-        "2023-09",
-        "2023-10",
-        "2023-11",
-        "2023-12",
-        "2024-01",
-        "2024-02",
-        "2024-03",
-        "2024-04",
-        "2024-05",
-        "2024-06",
-        "2024-07",
-        "2024-08",
-        "2024-09",
-        "2024-10",
-        "2024-11",
-        "2024-12",
-        "2025-01",
-        "2025-02",
-        "2025-03",
-        "2025-04",
-        "2025-05",
-        "2025-06",
-        "2025-07",
-        "2025-08",
-        "2025-09",
-        "2025-10",
-        "2025-11",
-        "2025-12"
-      ],
-      "values": [
-        654.0,
-        825.8,
-        934.5,
-        950.1,
-        945.0,
-        1020.8,
-        1080.1,
-        1098.7,
-        1180.3,
-        1195.2,
-        1121.0,
-        1303.0,
-        1114.9,
-        1147.6,
-        1125.6,
-        1128.0,
-        1104.0,
-        1058.3,
-        1171.4,
-        1168.0,
-        1265.8,
-        1289.2,
-        1196.2,
-        1390.8,
-        1219.9,
-        1315.0,
-        1253.1,
-        1218.9,
-        1191.2,
-        1156.2,
-        1186.5,
-        1228.1,
-        1303.3,
-        1337.6,
-        1238.0,
-        1443.1,
-        1262.9,
-        1340.1,
-        1228.5,
-        1237.7,
-        1267.2,
-        1234.3,
-        1288.3,
-        1281.9,
-        1387.7,
-        1424.3,
-        1363.6,
-        1563.7,
-        1281.0,
-        1389.4,
-        1352.6,
-        1294.3,
-        1204.1,
-        1226.0,
-        1307.1,
-        1299.9,
-        1412.0,
-        1449.0,
-        1322.7,
-        1610.8,
-        1331.4,
-        1428.0,
-        1365.7,
-        1295.3,
-        1307.4,
-        1273.1,
-        1336.5,
-        1354.8,
-        1457.51
-      ],
-      "source": "Economic Survey Statistical Appendix tables 9.1-9.4 across 2022-23 to latest edition"
-    },
     "air_aai_passengers": {
       "labels": [
         "Domestic",
@@ -118692,261 +109806,1008 @@ window.INDIA_DASHBOARD_DATA = {
         }
       }
     },
-    "log_road_nh_length": {
+    "rail_route_km": {
       "labels": [
-        "2014",
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
         "2023-24"
       ],
       "values": [
-        91287,
-        146195
+        53596,
+        56247,
+        59790,
+        61240,
+        62367,
+        63028,
+        64173,
+        68103,
+        68043,
+        68584,
+        69181
       ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "km",
-      "note": "MoRTH Year End Review 2024 (PIB): National Highway network length was 91,287 km in 2014 and 146,195 km in 2024.",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres since 1950-51; Year Book 2023-24, pp. 60-62.",
       "meta": {
-        "title": "National Highway Network",
-        "subtitle": "National Highway network length",
+        "title": "Route Length Since Independence",
+        "subtitle": "Route kilometres of Indian Railways",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
         "explain": {
-          "what": "Length of India's National Highway network at the stated dates.",
-          "read": "The reported network expanded by about 60% from 2014 to 2024.",
-          "why": "National Highways form the long-distance road backbone for freight."
+          "what": "Total route kilometres across all gauges, 1950-51 to 2023-24.",
+          "read": "The network grew by about 15,600 km over 73 years and stood at 69,181 km on 31 March 2024.",
+          "why": "Route length is the physical reach of the railway."
         }
       }
     },
-    "log_road_multilane_nh": {
+    "rail_track_km": {
       "labels": [
-        "2014",
-        "November 2023"
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
       ],
-      "values": [
-        18387,
-        46179
+      "datasets": [
+        {
+          "label": "Total track km",
+          "values": [
+            77609,
+            83706,
+            98546,
+            104480,
+            108858,
+            108706,
+            114037,
+            126611,
+            128305,
+            132310,
+            135207
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Running track km",
+          "values": [
+            59315,
+            63602,
+            71669,
+            75860,
+            78607,
+            81865,
+            87114,
+            100866,
+            102831,
+            106493,
+            109748
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Route km",
+          "values": [
+            53596,
+            56247,
+            59790,
+            61240,
+            62367,
+            63028,
+            64173,
+            68103,
+            68043,
+            68584,
+            69181
+          ],
+          "color": "#3fb950"
+        }
       ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "km",
-      "note": "MoRTH Year End Review 2023 (PIB): length of National Highways with four or more lanes.",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route, running track and total track kilometres; Year Book 2023-24, pp. 60-62.",
       "meta": {
-        "title": "Four-Lane-and-Above National Highways",
-        "subtitle": "NH length with four or more lanes",
+        "title": "Route vs Track Kilometres",
+        "subtitle": "Doubling and multi-tracking since 1950-51",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
         "explain": {
-          "what": "Length of National Highways with four or more lanes.",
-          "read": "The reported extent increased from 18,387 km in 2014 to 46,179 km by November 2023.",
-          "why": "More divided-lane highway capacity can improve freight movement and reduce bottlenecks."
+          "what": "Route, running-track and total-track kilometres.",
+          "read": "Running track grew about 85% since 1950-51 against 29% for route length, which points to doubling and extra lines on existing corridors.",
+          "why": "Track length divided by route length shows how much of the network has more than one line."
         }
       }
     },
-    "log_road_bharatmala": {
+    "rail_electrified_km": {
       "labels": [
-        "Awarded",
-        "Constructed"
-      ],
-      "datasets": [
-        {
-          "label": "28 February 2025",
-          "values": [
-            26425,
-            19826
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
-      "unit": "km",
-      "note": "MoRTH parliamentary reply / PIB, 13 March 2025: Bharatmala Phase I project lengths awarded and constructed as at 28 February 2025.",
-      "meta": {
-        "title": "Bharatmala Phase I Progress",
-        "subtitle": "Awarded versus constructed project length",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Cumulative lengths of Bharatmala Phase I projects awarded and constructed.",
-          "read": "26,425 km had been awarded and 19,826 km constructed by 28 February 2025.",
-          "why": "The gap distinguishes tendered projects from completed road capacity."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_highspeed": {
-      "labels": [
-        "Awarded",
-        "Constructed"
-      ],
-      "datasets": [
-        {
-          "label": "28 February 2025",
-          "values": [
-            6669,
-            4610
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
-      "unit": "km",
-      "note": "MoRTH PIB release, 13 March 2025: high-speed greenfield corridor length awarded and completed as at 28 February 2025.",
-      "meta": {
-        "title": "High-Speed Greenfield Corridors",
-        "subtitle": "Awarded versus constructed length",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
-        "explain": {
-          "what": "Cumulative awarded and constructed lengths of high-speed greenfield corridors.",
-          "read": "Of 6,669 km awarded, 4,610 km was completed by 28 February 2025.",
-          "why": "Shows progress on high-capacity road links between economic centres."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_road_fastag_mix": {
-      "labels": [
-        "FASTag",
-        "Other payment"
+        "1951",
+        "1961",
+        "1971",
+        "1981",
+        "1991",
+        "2001",
+        "2011",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
       ],
       "values": [
-        98.5,
-        1.5
+        388,
+        748,
+        3706,
+        5345,
+        9968,
+        14856,
+        19607,
+        45772,
+        51804,
+        58074,
+        62253
       ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "% of toll payments",
-      "note": "NHAI Annual Report 2023-24: 98.5% of toll payments were collected through FASTag. Other-payment share is the arithmetic complement, not a separately reported statistic.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'Electrification', cumulative electrified route kilometres; Year Book 2023-24, pp. 74-78.",
       "meta": {
-        "title": "FASTag Share of Toll Payments",
-        "subtitle": "NHAI toll transactions, FY 2023-24",
+        "title": "Cumulative Electrified Route",
+        "subtitle": "Electrified route kilometres, 1951 to 2024",
         "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "% of toll payments",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "color": "#f6c344",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
         "explain": {
-          "what": "Share of NHAI toll payments collected through FASTag; remainder is calculated.",
-          "read": "FASTag accounted for 98.5%; other methods make up the derived 1.5% remainder.",
-          "why": "Electronic collection measures payment digitisation, not freight tonnage."
+          "what": "Cumulative electrified route kilometres in each year shown.",
+          "read": "Electrification more than tripled after 2011; a record 4,644 km was electrified in 2023-24, taking the total to 62,253 km, about 90% of the broad-gauge network.",
+          "why": "The Mission 100% Electrification policy aims to cut diesel imports and running costs."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_gauge_mix": {
+      "labels": [
+        "Broad gauge (1,676 mm)",
+        "Metre gauge",
+        "Narrow gauge"
+      ],
+      "values": [
+        66820,
+        1159,
+        1202
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route length by gauge on 31 March 2024; Year Book 2023-24, pp. 60-62.",
+      "meta": {
+        "title": "Route Length by Gauge (2023-24)",
+        "subtitle": "Broad, metre and narrow gauge route kilometres",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route kilometres by track gauge on 31 March 2024.",
+          "read": "Broad gauge is 96.59% of the route and carried 100% of freight output and 99.96% of passenger-km.",
+          "why": "A single dominant gauge lets trains run end to end across the country."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "log_road_fastag_collection": {
+    "rail_zone_route_km": {
       "labels": [
-        "FY 2023-24"
+        "Northern",
+        "South Central",
+        "Western",
+        "North Western",
+        "Southern",
+        "East Central",
+        "Northeast Frontier",
+        "Central",
+        "South Western",
+        "North Central",
+        "North Eastern",
+        "West Central",
+        "East Coast",
+        "Eastern",
+        "South Eastern",
+        "South East Central",
+        "Metro Railway Kolkata"
       ],
-      "datasets": [
-        {
-          "label": "FASTag Collections",
-          "values": [
-            55000
-          ],
-          "color": "#ff9933"
-        }
+      "values": [
+        7406,
+        6610,
+        6284,
+        5712,
+        5092,
+        4377,
+        4348,
+        4275,
+        3692,
+        3522,
+        3492,
+        3124,
+        3071,
+        2841,
+        2749,
+        2541,
+        45
       ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "Rs crore",
-      "note": "NHAI Annual Report 2023-24, Electronic Toll Collection: FASTag collection was around Rs 55,000 crore in FY 2023-24 (IHMCL source).",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres by zonal railway, 2023-24; Year Book 2023-24, pp. 60-62.",
       "meta": {
-        "title": "FASTag Collections",
-        "subtitle": "FY 2023-24",
+        "title": "Route Kilometres by Zonal Railway (2023-24)",
+        "subtitle": "Route length of the 16 zones plus Kolkata Metro",
         "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
         "explain": {
-          "what": "Approximate toll collection through FASTag during FY 2023-24.",
-          "read": "NHAI reports around Rs 55,000 crore collected through FASTag.",
-          "why": "User-fee collection for highway tolls, not road-freight operator turnover."
+          "what": "Route kilometres under each of the 16 zonal railways and Metro Railway Kolkata.",
+          "read": "Northern Railway (7,406 km), South Central (6,610) and Western (6,284) run the longest networks.",
+          "why": "Zones are the operating units of Indian Railways."
         }
       },
       "chartType": "bar",
-      "scope": "category"
+      "scope": "category",
+      "indexAxis": "y"
     },
-    "log_road_nhai_build": {
+    "rail_state_route_km": {
       "labels": [
-        "Awarded works",
-        "Constructed"
+        "Uttar Pradesh",
+        "Rajasthan",
+        "Maharashtra",
+        "Madhya Pradesh",
+        "Gujarat",
+        "West Bengal",
+        "Tamil Nadu",
+        "Andhra Pradesh",
+        "Bihar",
+        "Karnataka",
+        "Odisha",
+        "Jharkhand",
+        "Assam",
+        "Punjab",
+        "Telangana",
+        "Haryana",
+        "Chhattisgarh",
+        "Kerala",
+        "Uttarakhand",
+        "Himachal Pradesh",
+        "Jammu & Kashmir",
+        "Tripura",
+        "Delhi",
+        "Goa",
+        "Manipur",
+        "Nagaland",
+        "Puducherry",
+        "Chandigarh",
+        "Arunachal Pradesh",
+        "Meghalaya",
+        "Mizoram"
       ],
-      "datasets": [
-        {
-          "label": "FY 2023-24",
-          "values": [
-            3339,
-            6644
-          ],
-          "color": "#ff9933"
-        }
+      "values": [
+        8823,
+        6135,
+        5930,
+        5263,
+        5051,
+        4161,
+        4038,
+        4016,
+        3959,
+        3647,
+        2985,
+        2651,
+        2571,
+        2265,
+        2015,
+        1780,
+        1222,
+        1048,
+        346,
+        313,
+        298,
+        265,
+        188,
+        69,
+        56,
+        25,
+        23,
+        16,
+        12,
+        9,
+        1
       ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "km",
-      "note": "NHAI Annual Report 2023-24: NHAI awarded 3,339 km and constructed 6,644 km of National Highways during FY 2023-24.",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', state-wise route kilometres, 2023-24. States and territories not listed have no railway line; Year Book 2023-24, pp. 60-62.",
       "meta": {
-        "title": "NHAI Awards and Construction",
-        "subtitle": "National Highway length in FY 2023-24",
+        "title": "Route Kilometres by State (2023-24)",
+        "subtitle": "Railway route length in each state and union territory",
         "frequency": "Annual",
         "color": "#bc8cff",
-        "suffix": "km",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
         "explain": {
-          "what": "National Highway lengths awarded and constructed by NHAI during FY 2023-24.",
-          "read": "NHAI constructed 6,644 km, its highest annual construction achievement reported in the annual report.",
-          "why": "Annual delivery indicates the pace of road capacity being added."
+          "what": "Route kilometres within each state or union territory at the end of 2023-24.",
+          "read": "Uttar Pradesh (8,823 km), Rajasthan (6,135) and Maharashtra (5,930) have the longest networks; Mizoram has 1 km.",
+          "why": "State-wise length shows where rail access is deepest."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_multiple_track_index": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        110.67,
+        113.08,
+        119.87,
+        123.87,
+        126.04,
+        129.89,
+        135.75,
+        148.11,
+        151.13,
+        155.27,
+        158.64
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "running-track km per 100 route-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route and running track kilometres; Year Book 2023-24, pp. 60-62.",
+      "meta": {
+        "title": "Running Track per 100 Route-Km",
+        "subtitle": "Running-track length relative to route length",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " track km / 100 route-km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Running-track kilometres for every 100 route-kilometres, calculated from the Year Book series.",
+          "read": "The ratio was 158.64 in 2023-24, versus 110.67 in 1950-51.",
+          "why": "It indicates how much additional track exists beyond a single route line."
+        }
+      }
+    },
+    "rail_route_net_additions": {
+      "labels": [
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        2651,
+        3543,
+        1450,
+        1127,
+        661,
+        1145,
+        3930,
+        -60,
+        541,
+        597
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres by benchmark year; each bar is the change from the preceding listed benchmark; Year Book 2023-24, pp. 60-62.",
+      "meta": {
+        "title": "Route-Km Added Between Benchmarks",
+        "subtitle": "Change in route length since the prior listed year",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Difference between each adjacent published route-kilometre benchmark.",
+          "read": "The listed route length increased by 15,585 km from 1950-51 to 2023-24; the last interval added 597 km.",
+          "why": "The differences show when network expansion accelerated or slowed."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_road_nh_index": {
+    "rail_route_growth_index": {
       "labels": [
-        "2023 (2014=100)"
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        100.0,
+        104.95,
+        111.56,
+        114.26,
+        116.37,
+        117.6,
+        119.73,
+        127.07,
+        126.96,
+        127.96,
+        129.08
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "1950-51 = 100",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres since 1950-51; index calculated from the published values; Year Book 2023-24, pp. 60-62.",
+      "meta": {
+        "title": "Route Length Index",
+        "subtitle": "Route kilometres indexed to 1950-51",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": " index",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Route kilometres as an index, with 1950-51 set to 100.",
+          "read": "The index reached 129.1 in 2023-24.",
+          "why": "An index makes long-run growth easier to compare."
+        }
+      }
+    },
+    "rail_electrified_route_share": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        0.72,
+        1.33,
+        6.2,
+        8.73,
+        15.98,
+        23.57,
+        30.55,
+        67.21,
+        76.13,
+        84.68,
+        89.99
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "%",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'Electrification' cumulative electrified route and 'The Network' route kilometres; share calculated for matching benchmark years; Year Book 2023-24, pp. 60-62 and 74-78.",
+      "meta": {
+        "title": "Electrified Route Share",
+        "subtitle": "Electrified kilometres as a share of route kilometres",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Network & Electrification",
+        "explain": {
+          "what": "Cumulative electrified route kilometres divided by total route kilometres.",
+          "read": "The ratio was 89.99% in the 2023-24 benchmark.",
+          "why": "It tracks the reach of electrification across the network."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_passengers_originating": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        1284,
+        1594,
+        2431,
+        3613,
+        3858,
+        4833,
+        7651,
+        1250,
+        3519,
+        6396,
+        6905
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I (passengers originating, suburban plus non-suburban); Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Passengers Originating",
+        "subtitle": "Annual passenger journeys on Indian Railways",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Passenger journeys that began on Indian Railways, in millions.",
+          "read": "Journeys fell to 1,250 million in 2020-21 (COVID-19) and recovered to 6,905 million in 2023-24, still below the 7,651 million of 2010-11.",
+          "why": "It is the headline demand measure for Indian Railways."
+        }
+      }
+    },
+    "rail_passenger_split": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
       ],
       "datasets": [
         {
-          "label": "National Highway Network Growth Index",
+          "label": "Suburban",
           "values": [
-            160
+            412,
+            680,
+            1219,
+            2000,
+            2259,
+            2861,
+            4061,
+            917,
+            2169,
+            3792,
+            3981
           ],
           "color": "#ff9933"
+        },
+        {
+          "label": "Non-suburban",
+          "values": [
+            872,
+            914,
+            1212,
+            1613,
+            1599,
+            1972,
+            3590,
+            333,
+            1350,
+            2604,
+            2924
+          ],
+          "color": "#58a6ff"
         }
       ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
-      "unit": "index (2014=100)",
-      "note": "MoRTH Year End Review 2023 reports NH length rose 60% from 91,287 km in 2014 to 146,145 km in 2023; displayed index expresses its rounded growth as 160.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, suburban versus non-suburban journeys; Year Book 2023-24, pp. 22-37.",
       "meta": {
-        "title": "National Highway Network Growth Index",
-        "subtitle": "2023 (2014=100)",
+        "title": "Suburban vs Non-Suburban Journeys",
+        "subtitle": "Passengers originating by service type",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Suburban (city commuter) and non-suburban (long-distance) passenger journeys.",
+          "read": "Suburban journeys were 3,981 million in 2023-24, 58% of the total.",
+          "why": "Commuter and long-distance services need different capacity."
+        }
+      }
+    },
+    "rail_passenger_km": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        66517,
+        77665,
+        118120,
+        208558,
+        295644,
+        457022,
+        978508,
+        231126,
+        590217,
+        958919,
+        1064700
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million passenger-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table II (passenger kilometres); Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Passenger Kilometres",
+        "subtitle": "Total distance travelled by rail passengers",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " million passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Passenger-kilometres: each passenger multiplied by the distance travelled.",
+          "read": "Output reached 1,064,700 million passenger-km in 2023-24, about 16 times the 1950-51 level and above 2010-11.",
+          "why": "Passenger-km measures output; counting journeys alone ignores how far people travel."
+        }
+      }
+    },
+    "rail_passenger_lead": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        51.8,
+        48.7,
+        48.6,
+        57.7,
+        76.6,
+        94.6,
+        127.9,
+        184.8,
+        167.7,
+        149.9,
+        154.2
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table III (average lead of all passengers); Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Average Passenger Journey Length",
+        "subtitle": "Average lead per passenger",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Average distance of a passenger journey, in kilometres.",
+          "read": "It rose from 51.8 km in 1950-51 to 154.2 km in 2023-24, with a peak of 184.8 km in 2020-21.",
+          "why": "A longer lead means a bigger share of travel is intercity rather than suburban."
+        }
+      }
+    },
+    "rail_passenger_mix": {
+      "labels": [
+        "Suburban",
+        "Second class mail/express",
+        "Second class ordinary",
+        "Upper class"
+      ],
+      "values": [
+        3981,
+        1871,
+        734,
+        319
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, 2023-24 journeys by service and class; Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Passenger Journeys by Service (2023-24)",
+        "subtitle": "Split of 6,905 million journeys",
         "frequency": "Annual",
         "color": "#ff7b72",
-        "suffix": "index (2014=100)",
-        "category": "Logistics & Freight",
-        "subgroup": "Road Freight",
+        "suffix": " million",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
         "explain": {
-          "what": "Rounded NH network length index derived from MoRTH's reported 60% growth.",
-          "read": "The 2023 index is 160 when 2014 is 100; it is derived, not an observed km series.",
-          "why": "An index communicates proportional expansion without treating rounded endpoints as exact growth."
+          "what": "How 2023-24 passenger journeys split across suburban and non-suburban classes.",
+          "read": "Suburban is 57.7% of journeys, second-class mail/express 27.1%, second-class ordinary 10.6% and upper class 4.6%.",
+          "why": "Most journeys are suburban or second class."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_trains_daily": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Passenger trains run daily",
+          "values": [
+            12541,
+            13198
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Goods trains run daily",
+          "values": [
+            10388,
+            11724
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "trains",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Train Utilisation; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Trains Run Daily",
+        "subtitle": "Passenger and goods trains on an average day",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " trains",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Average number of passenger and goods trains run each day.",
+          "read": "Passenger trains per day grew 5.2% and goods trains 12.9% between 2022-23 and 2023-24.",
+          "why": "Train counts show how intensively the track is used."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_rail_loading": {
+    "rail_passenger_suburban_share": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        32.09,
+        42.66,
+        50.14,
+        55.36,
+        58.55,
+        59.2,
+        53.08,
+        73.36,
+        61.64,
+        59.29,
+        57.65
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "%",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, suburban journeys divided by total journeys; Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Suburban Share of Journeys",
+        "subtitle": "Suburban journeys as a share of all passenger journeys",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Suburban passenger journeys divided by total passenger journeys for each year.",
+          "read": "Suburban journeys were 57.65% of the 2023-24 total.",
+          "why": "The share distinguishes commuter traffic from long-distance demand."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_passenger_non_suburban_share": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        67.91,
+        57.34,
+        49.86,
+        44.64,
+        41.45,
+        40.8,
+        46.92,
+        26.64,
+        38.36,
+        40.71,
+        42.35
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "%",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, non-suburban journeys divided by total journeys; Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Non-Suburban Share of Journeys",
+        "subtitle": "Non-suburban journeys as a share of all passenger journeys",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Non-suburban passenger journeys divided by total passenger journeys for each year.",
+          "read": "Non-suburban journeys were 42.35% of the 2023-24 total.",
+          "why": "This share tracks the long-distance portion of passenger traffic."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_passenger_average_lead_calculated": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        51.8,
+        48.72,
+        48.59,
+        57.72,
+        76.63,
+        94.56,
+        127.89,
+        184.9,
+        167.72,
+        149.92,
+        154.19
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km per journey",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Tables I and II; passenger-km divided by passengers originating; Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Calculated Average Passenger Journey",
+        "subtitle": "Passenger-km divided by passenger journeys",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Average journey length calculated from passenger-kilometres and journeys originating.",
+          "read": "The ratio was 154.19 km per journey in 2023-24; it is calculated independently of the reported average lead.",
+          "why": "It cross-checks the relationship between passenger volume and distance travelled."
+        }
+      }
+    },
+    "rail_passenger_km_index": {
+      "labels": [
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        100.0,
+        116.76,
+        177.58,
+        313.54,
+        444.46,
+        687.08,
+        1471.06,
+        347.47,
+        887.32,
+        1441.61,
+        1600.64
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "1950-51 = 100",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table II; passenger-kilometres indexed to 1950-51; Year Book 2023-24, pp. 22-37.",
+      "meta": {
+        "title": "Passenger-Km Index",
+        "subtitle": "Passenger-kilometres indexed to 1950-51",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": " index",
+        "category": "Indian Railways",
+        "subgroup": "Passenger Services",
+        "explain": {
+          "what": "Passenger-kilometres as an index with 1950-51 set to 100.",
+          "read": "The index reached 1600.6 in 2023-24.",
+          "why": "The index shows long-run growth in passenger transport work."
+        }
+      }
+    },
+    "rail_freight_tonnes": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -118975,23 +110836,23 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: revenue-earning freight tonnes originating (excluding Konkan Railway).",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (revenue-earning freight, tonnes originating, excluding Konkan Railway); Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Rail Freight Loading",
-        "subtitle": "Revenue-earning tonnes originating",
+        "title": "Freight Originating",
+        "subtitle": "Revenue-earning tonnes loaded by Indian Railways",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
           "what": "Revenue-earning freight originating on Indian Railways, in million tonnes.",
-          "read": "Loading reached 1,588.06 million tonnes in 2023-24; this is the Year Book revenue-earning series, not all-originating loading.",
-          "why": "Repeats railway output in the cross-mode dashboard without altering the rail group's chart."
+          "read": "From 73 million tonnes in 1950-51 to 1,588 million tonnes in 2023-24, about 21.7 times higher.",
+          "why": "Rail carries the bulk commodities (coal, ore, cement, foodgrains) that supply industry."
         }
       }
     },
-    "log_rail_ntkm": {
+    "rail_freight_ntkm": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -119020,135 +110881,23 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million net tonne-km",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I (net tonne-kilometres).",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (net tonne kilometres); Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Rail Freight Transport Work",
-        "subtitle": "Net tonne-kilometres",
+        "title": "Freight Output (Net Tonne-Km)",
+        "subtitle": "Tonnes moved multiplied by distance",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": "million net tonne-km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
+        "suffix": " million NTKM",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Net tonne-kilometres: tonnes multiplied by distance carried.",
-          "read": "Indian Railways recorded 973,968 million net tonne-km in 2023-24.",
-          "why": "Tonne-km includes freight volume and haul distance, unlike tonnes alone."
+          "what": "Net tonne-kilometres: freight tonnage multiplied by distance moved.",
+          "read": "Output reached 973,968 million NTKM in 2023-24, about 26 times 1950-51.",
+          "why": "NTKM measures transport work; tonnes alone ignore haul length."
         }
       }
     },
-    "log_rail_commodity_mix": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "values": [
-        786.84,
-        180.95,
-        152.72,
-        84.76,
-        75.77,
-        58.92,
-        51.44,
-        49.88,
-        29.17,
-        117.61
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning loading in 2023-24.",
-      "meta": {
-        "title": "Rail Freight by Commodity",
-        "subtitle": "2023-24 originating loading",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Revenue-earning rail freight tonnes by commodity group in 2023-24.",
-          "read": "Coal loading was 786.84 million tonnes, 49.55% of the 1,588.06 million tonne total.",
-          "why": "The commodity mix shows dependence on bulk and industrial goods."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_rail_commodity_change": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            727.24,
-            160.14,
-            143.93,
-            79.22,
-            69.86,
-            56.34,
-            70.92,
-            48.22,
-            28.15,
-            125.08
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            786.84,
-            180.95,
-            152.72,
-            84.76,
-            75.77,
-            58.92,
-            51.44,
-            49.88,
-            29.17,
-            117.61
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning tonnes originating, 2022-23 and 2023-24.",
-      "meta": {
-        "title": "Rail Loading by Commodity: Year-on-Year",
-        "subtitle": "Commodity-wise revenue-earning loading",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Freight loading by commodity group in FY 2022-23 and FY 2023-24.",
-          "read": "Coal rose from 727.24 to 786.84 million tonnes; foodgrains fell from 70.92 to 51.44 million tonnes.",
-          "why": "A same-commodity comparison helps identify sources of freight growth."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_rail_average_lead": {
+    "rail_freight_lead": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -119176,670 +110925,1066 @@ window.INDIA_DASHBOARD_DATA = {
         613
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km per tonne",
-      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: average lead of freight.",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (average lead of freight); Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Rail Freight Average Lead",
-        "subtitle": "Average distance per tonne",
+        "title": "Average Freight Haul",
+        "subtitle": "Average lead of a tonne of freight",
         "frequency": "Annual",
         "color": "#3fb950",
-        "suffix": "km per tonne",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Average distance carried for each tonne of railway freight.",
-          "read": "Average freight lead was 613 km in 2023-24.",
-          "why": "Average lead puts freight tonnes in the context of distance moved."
+          "what": "Average distance a tonne of freight is carried.",
+          "read": "Average haul peaked at 754 km in 1980-81 and was 613 km in 2023-24.",
+          "why": "Haul length affects wagon use and freight earnings per tonne."
         }
       }
     },
-    "log_rail_dfc_progress": {
+    "rail_freight_commodity_mix": {
       "labels": [
-        "Operational",
-        "Total EDFC + WDFC"
-      ],
-      "datasets": [
-        {
-          "label": "March 2025",
-          "values": [
-            2741,
-            2843
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2112843&reg=48&lang=2",
-      "unit": "route km",
-      "note": "Ministry of Railways reply, PIB 19 March 2025: 2,741 of 2,843 route-km on the Eastern and Western Dedicated Freight Corridors was commissioned and operational (96.4%).",
-      "meta": {
-        "title": "Dedicated Freight Corridor Progress",
-        "subtitle": "EDFC and WDFC route kilometres",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "route km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Operational route kilometres compared with combined EDFC and WDFC length.",
-          "read": "2,741 of 2,843 route-km (96.4%) was operational in March 2025.",
-          "why": "Dedicated corridors add freight capacity separate from much of the passenger network."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_major_port_traffic": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        679.37,
-        699.1,
-        704.93,
-        672.68,
-        720.05,
-        784.31,
-        819.23
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: annual cargo throughput at the 12 major ports.",
-      "meta": {
-        "title": "Cargo Handled at Major Ports",
-        "subtitle": "12 major ports, annual cargo throughput",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Annual cargo throughput at India's 12 major ports.",
-          "read": "Major-port cargo reached 819.23 million tonnes in 2023-24, up from 784.31 million tonnes in 2022-23.",
-          "why": "Ports handle international and coastal cargo at India's maritime gateways."
-        }
-      }
-    },
-    "log_sea_container_teu": {
-      "labels": [
-        "2017-18",
-        "2018-19",
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        9.14,
-        9.88,
-        8.79,
-        9.61,
-        11.22,
-        11.45,
-        12.31
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million TEU",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port container traffic (the table reports TEUs in parentheses).",
-      "meta": {
-        "title": "Major-Port Container Throughput",
-        "subtitle": "Container traffic in million TEU",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "million TEU",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Twenty-foot equivalent units handled by the 12 major ports.",
-          "read": "Container throughput rose from 11.45 million TEU in 2022-23 to 12.31 million TEU in 2023-24.",
-          "why": "TEUs measure containerised freight separately from bulk cargo tonnes."
-        }
-      }
-    },
-    "log_sea_commodity_mix": {
-      "labels": [
-        "POL",
-        "Iron ore",
-        "Fertilizers & raw materials",
         "Coal",
+        "Iron ore",
+        "Cement",
         "Containers",
-        "Other cargo"
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
       ],
       "values": [
-        245.99,
-        61.03,
-        17.68,
-        191.98,
-        181.57,
-        120.98
+        786.84,
+        180.95,
+        152.72,
+        84.76,
+        75.77,
+        58.92,
+        51.44,
+        49.88,
+        29.17,
+        117.61
       ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: commodity-wise cargo traffic at major ports, FY 2023-24.",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2023-24; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Major-Port Cargo by Commodity",
-        "subtitle": "FY 2023-24, 12 major ports",
+        "title": "Freight by Commodity (2023-24)",
+        "subtitle": "Share of 1,588 million tonnes loaded",
         "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
+        "color": "#ff7b72",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Major-port cargo in the six commodity groups reported by the Ministry.",
-          "read": "POL was the largest reported group at 245.99 million tonnes; containers were 181.57 million tonnes.",
-          "why": "The breakdown distinguishes liquid and dry bulk from containerised cargo."
+          "what": "Revenue-earning freight by commodity group in 2023-24.",
+          "read": "Coal is 49.55% of loading (thermal power houses alone 38.19%), then iron ore 11.39%, cement 9.62% and containers 5.34%.",
+          "why": "Rail freight depends heavily on bulk coal."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "log_sea_overseas_coastal": {
+    "rail_freight_commodity_change": {
       "labels": [
-        "Overseas",
-        "Coastal",
-        "Total"
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
       ],
       "datasets": [
         {
           "label": "2022-23",
           "values": [
-            1125.613,
-            309.708,
-            1435.322
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24 provisional",
-          "values": [
-            1209.675,
-            332.74,
-            1542.415
+            727.24,
+            160.14,
+            143.93,
+            79.22,
+            69.86,
+            56.34,
+            70.92,
+            48.22,
+            28.15,
+            125.08
           ],
           "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): overseas and coastal traffic at major and non-major ports combined. Converted from '000 tonnes; 2023-24 provisional. Rounded components may differ from total by 0.001.",
-      "meta": {
-        "title": "Overseas and Coastal Port Traffic",
-        "subtitle": "All major and non-major ports",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Overseas, coastal and total cargo handled by all Indian ports.",
-          "read": "Provisional 2023-24 total was 1,542.415 million tonnes, including 332.740 million coastal tonnes.",
-          "why": "The split avoids treating all port throughput as international freight."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_port_classes": {
-      "labels": [
-        "Major ports",
-        "Non-major ports",
-        "All ports"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            784.305,
-            651.017,
-            1435.322
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "2023-24 provisional",
-          "values": [
-            819.004,
-            723.411,
-            1542.415
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): major, non-major and all-port traffic, converted from '000 tonnes. Provisional major-port value 819.004 differs from the annual report's later revised 819.23 MMT; revisions are not combined.",
-      "meta": {
-        "title": "Major vs Non-Major Port Cargo",
-        "subtitle": "Port traffic by administrative class",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Cargo traffic at major ports, non-major ports and all ports.",
-          "read": "The provisional 2023-24 update reports 819.004 million tonnes at major ports and 723.411 million tonnes at non-major ports.",
-          "why": "Non-major ports carry a substantial share of Indian port traffic."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_port_extremes": {
-      "labels": [
-        "SMP Kolkata (lowest)",
-        "Paradip (highest)"
-      ],
-      "values": [
-        16.63,
-        145.38
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024: provisional 2023-24 cargo by major port; SMP Kolkata (16.63 MMT) and Paradip (145.38 MMT) were lowest and highest respectively.",
-      "meta": {
-        "title": "Major-Port Traffic: Reported Extremes",
-        "subtitle": "Lowest and highest port totals",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "Cargo handled by the lowest- and highest-throughput major ports in the 2023-24 table.",
-          "read": "Paradip handled 145.38 million tonnes, while SMP Kolkata handled 16.63 million tonnes.",
-          "why": "Port-level variation shows why the national total can conceal concentrated throughput."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_sea_major_yoy": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        784.31,
-        819.23
-      ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.11: revised 12 major-port traffic for 2022-23 and 2023-24.",
-      "meta": {
-        "title": "Major-Port Cargo: Latest Annual Change",
-        "subtitle": "Revised major-port totals",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
-        "explain": {
-          "what": "The two latest annual totals for the 12 major ports.",
-          "read": "Cargo increased from 784.31 to 819.23 million tonnes.",
-          "why": "A short comparison highlights the latest annual change."
-        }
-      }
-    },
-    "log_air_aai_freight": {
-      "labels": [
-        "Domestic",
-        "International",
-        "Total"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            1282.26,
-            1864.54,
-            3146.8
-          ],
-          "color": "#ff9933"
         },
         {
           "label": "2023-24",
           "values": [
-            1320.16,
-            2045.52,
-            3365.68
+            786.84,
+            180.95,
+            152.72,
+            84.76,
+            75.77,
+            58.92,
+            51.44,
+            49.88,
+            29.17,
+            117.61
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         }
       ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: freight handled at all Indian airports, domestic/international. This airport-handled basis differs from airline tonne-kilometres.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2022-23 vs 2023-24; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Air Cargo: Domestic and International",
-        "subtitle": "Freight handled at all Indian airports",
+        "title": "Commodity Loading: 2022-23 vs 2023-24",
+        "subtitle": "Tonnes loaded by commodity group",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Air freight handled at Indian airports, in thousands of metric tonnes.",
-          "read": "Total was 3,365.68 thousand tonnes in 2023-24: 1,320.16 domestic and 2,045.52 international.",
-          "why": "This airport-handled cargo measure differs from airline tonne-kilometres."
+          "what": "Tonnes carried for each commodity group in the last two years.",
+          "read": "Coal added 59.6 million tonnes and iron ore 20.8 million; foodgrains fell by 19.5 million.",
+          "why": "Year-on-year changes show which commodities drove growth."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_air_aai_mix": {
+    "rail_freight_loading_pib": {
       "labels": [
-        "Domestic",
-        "International"
-      ],
-      "values": [
-        1320.16,
-        2045.52
-      ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: FY 2023-24 freight at all Indian airports.",
-      "meta": {
-        "title": "Air Freight: Domestic vs International",
-        "subtitle": "Share of 3,365.68 thousand tonnes",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
-        "explain": {
-          "what": "Domestic and international share of air freight handled at Indian airports in FY 2023-24.",
-          "read": "International freight was 2,045.52 thousand tonnes; domestic freight was 1,320.16 thousand tonnes.",
-          "why": "The split shows the relative scale of cross-border and domestic airport cargo."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_air_cargo_growth": {
-      "labels": [
-        "2014-15",
+        "2020-21",
+        "2023-24",
         "2024-25"
       ],
       "values": [
-        2.53,
-        3.72
+        1233,
+        1590.68,
+        1617.38
       ],
-      "source": "https://www.civilaviation.gov.in/our-performance",
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2117417",
       "unit": "million tonnes",
-      "note": "Ministry of Civil Aviation, Our Performance page, Supporting Passenger and Cargo Movement: national air-cargo figure 2.53 Mt in 2014-15 and 3.72 Mt in 2024-25. This differs in basis from AAI's airport-handled FY 2023-24 table.",
+      "note": "Ministry of Railways via PIB: originating freight loading was 1,233 MT in 2020-21 (Lok Sabha reply, PIB release 2201815), 1,590.68 MT in 2023-24 and 1,617.38 MT in 2024-25, up 1.68% (PIB release 2117417, 1 April 2025, opening freight-loading paragraph). These cover all originating loading, so they differ slightly from the Year Book's revenue-earning series.",
       "meta": {
-        "title": "National Air Cargo Growth",
-        "subtitle": "Ministry-reported total air cargo",
+        "title": "Freight Loading to 2024-25",
+        "subtitle": "Originating loading, latest Ministry figures",
         "frequency": "Annual",
         "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Ministry-reported national air cargo volume at two endpoints.",
-          "read": "Reported volume rose from 2.53 million tonnes in 2014-15 to 3.72 million tonnes in 2024-25.",
-          "why": "The longer national series provides context beyond AAI's airport traffic table."
+          "what": "Total originating freight loading, from Ministry of Railways statements.",
+          "read": "Loading reached 1,617.38 million tonnes in 2024-25; the Ministry says this makes Indian Railways the second-largest freight carrier in the world.",
+          "why": "It extends the series past the Year Book's 2023-24 end year."
         }
-      }
+      },
+      "chartType": "bar",
+      "scope": "category"
     },
-    "log_modal_niti_share": {
+    "rail_freight_commodity_share": {
       "labels": [
-        "Road",
-        "Rail",
-        "Other modes (residual)"
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
       ],
       "values": [
-        71,
-        18,
-        11
+        49.55,
+        11.39,
+        9.62,
+        5.34,
+        4.77,
+        3.71,
+        3.24,
+        3.14,
+        1.84,
+        7.41
       ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
-      "unit": "% of freight traffic",
-      "note": "MoPSW reply published 28 March 2025 quotes NITI Aayog's 2021 Fast Tracking Freight in India: road 71%, rail 18%. Other modes (11%) is the arithmetic residual to 100%, not an independently reported estimate.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of revenue-earning tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation commodity table, 2023-24 loading as a share of the 1,588.06 million tonnes reported in Table I; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Freight Modal Split: NITI Aayog 2021",
-        "subtitle": "Reported road/rail shares; other modes are residual",
+        "title": "Commodity Shares of Loading",
+        "subtitle": "Commodity tonnes as a share of 2023-24 revenue-earning loading",
         "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "% of freight traffic",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "NITI Aayog's reported road and rail shares, with an arithmetic residual for unlisted modes.",
-          "read": "Reported road and rail shares are 71% and 18%; the residual to 100% is 11%.",
-          "why": "A single labelled base avoids mixing road/rail estimates with later waterway figures."
+          "what": "Each commodity group's reported loading divided by total revenue-earning tonnes originating.",
+          "read": "Coal accounted for 49.55% of 2023-24 revenue-earning loading.",
+          "why": "The shares show the commodity concentration of rail freight."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "log_modal_inland_water": {
+    "rail_freight_commodity_growth_pct": {
       "labels": [
-        "Inland water transport",
-        "All other modes (residual)"
+        "Coal",
+        "Iron ore",
+        "Cement",
+        "Containers",
+        "Pig iron & finished steel",
+        "Fertilizers",
+        "Foodgrains",
+        "Mineral oil (POL)",
+        "Raw material for steel",
+        "Other goods"
       ],
       "values": [
-        2,
-        98
+        8.2,
+        12.99,
+        6.11,
+        6.99,
+        8.46,
+        4.58,
+        -27.47,
+        3.44,
+        3.62,
+        -5.97
       ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
-      "unit": "% of freight traffic",
-      "note": "MoPSW reply, 28 March 2025: current inland water transport freight share is approximately 2%. The 98% remainder is a calculated complement, not a separate modal estimate.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% change",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation commodity-wise loading table, 2022-23 to 2023-24; percentage changes calculated from table values; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Inland Waterway Freight Share",
-        "subtitle": "Approximate current share in the 2025 reply",
+        "title": "Commodity Loading Growth",
+        "subtitle": "Percent change in tonnes loaded by commodity",
         "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "% of freight traffic",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
+        "color": "#ff7b72",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Reported approximate inland-waterway share plus calculated remainder.",
-          "read": "The Ministry reports inland water transport at approximately 2% of freight traffic.",
-          "why": "The official reply identifies IWT's share separately from the NITI 2021 road/rail basis."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "log_modal_lpi_rank": {
-      "labels": [
-        "2007",
-        "2010",
-        "2012",
-        "2014",
-        "2016",
-        "2018",
-        "2023"
-      ],
-      "values": [
-        39,
-        47,
-        46,
-        54,
-        35,
-        44,
-        38
-      ],
-      "source": "https://databank.worldbank.org/embed/LPI/id/154e8630",
-      "unit": "rank (1=highest performance)",
-      "note": "World Bank Logistics Performance Index DataBank, India overall rank series. LPI ranks are perception-based international benchmarking, not physical freight quantities.",
-      "meta": {
-        "title": "India Logistics Performance Index Rank",
-        "subtitle": "World Bank overall rank",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "rank (1=highest performance)",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "India's overall rank in each reported World Bank LPI edition.",
-          "read": "India ranked 38th in 2023, compared with 44th in 2018.",
-          "why": "The LPI captures logistics service and infrastructure perceptions across six dimensions."
-        }
-      }
-    },
-    "log_modal_cost_bases": {
-      "labels": [
-        "Share of GDP",
-        "Share of non-services output"
-      ],
-      "values": [
-        7.97,
-        9.09
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
-      "unit": "% (FY 2023-24)",
-      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): logistics cost was estimated at 7.97% of GDP and 9.09% of non-services output in FY 2023-24. Denominators differ and are labelled.",
-      "meta": {
-        "title": "Logistics Costs: Published Denominator Comparison",
-        "subtitle": "NCAER estimate, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "% (FY 2023-24)",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Same estimated logistics-cost numerator relative to GDP and non-services output.",
-          "read": "The estimate is 7.97% of GDP or 9.09% of non-services output; these are two denominator views, not years.",
-          "why": "Explicit denominator labels avoid perpetuating unverified 13-14% GDP estimates."
+          "what": "Year-on-year percentage change in commodity loading between 2022-23 and 2023-24.",
+          "read": "Coal loading rose 8.20%; foodgrains changed by -27.47%.",
+          "why": "Growth by commodity identifies which goods gained or lost loading."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_modal_leads_reach": {
+    "rail_freight_average_haul_calculated": {
       "labels": [
-        "Survey responses",
-        "Stakeholder consultations"
-      ],
-      "datasets": [
-        {
-          "label": "LEADS 2023",
-          "values": [
-            7321,
-            750
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
-      "unit": "count",
-      "note": "DPIIT LEADS 2023: 7,321 responses across 36 States/UTs and more than 750 stakeholder consultations. Chart uses 750 as a minimum count for 'more than 750'.",
-      "meta": {
-        "title": "LEADS 2023 Survey Reach",
-        "subtitle": "Responses and stakeholder consultations",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "count",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Counts of survey responses and stakeholder consultations reported in LEADS 2023.",
-          "read": "The report records 7,321 responses across 36 States/UTs and more than 750 consultations.",
-          "why": "Sample size gives context for the state-level logistics assessment."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_modal_leads_states": {
-      "labels": [
-        "LEADS 2023"
-      ],
-      "datasets": [
-        {
-          "label": "LEADS 2023 Coverage",
-          "values": [
-            36
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
-      "unit": "States / UTs",
-      "note": "DPIIT LEADS 2023: 7,321 survey responses were received across 36 States and Union Territories.",
-      "meta": {
-        "title": "LEADS 2023 Coverage",
-        "subtitle": "LEADS 2023",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "States / UTs",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
-        "explain": {
-          "what": "Number of States and Union Territories covered.",
-          "read": "LEADS 2023 reports responses from all 36 States and Union Territories.",
-          "why": "Coverage contextualises the national state-level comparison."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_modal_iwt_growth": {
-      "labels": [
-        "2013-14",
+        "1950-51",
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
         "2023-24"
       ],
       "values": [
-        18.1,
-        133.03
+        513.18,
+        603.78,
+        659.3,
+        753.71,
+        740.53,
+        659.71,
+        678.86,
+        584.73,
+        615.75,
+        635.85,
+        613.31
       ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2082758",
-      "unit": "million tonnes",
-      "note": "MoPSW reply, PIB 10 December 2024: cargo moved on National Waterways rose from 18.10 Mt in 2013-14 to 133.03 Mt in 2023-24. Inland waterways are not seaport cargo.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I; net tonne-kilometres divided by revenue-earning tonnes; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "National Waterway Cargo Movement",
-        "subtitle": "Inland water freight, not sea-port cargo",
+        "title": "Calculated Average Freight Haul",
+        "subtitle": "Net tonne-km divided by originating tonnes",
         "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Modal Split & Comparison",
+        "color": "#3fb950",
+        "suffix": " km",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Cargo moved on India's National Waterways at the two reported endpoints.",
-          "read": "Cargo movement rose from 18.10 to 133.03 million tonnes.",
-          "why": "The inland-water series adds a distinct water mode to the logistics comparison."
+          "what": "Average freight haul calculated by dividing net tonne-kilometres by tonnes originating.",
+          "read": "The calculated average haul was 613.31 km in 2023-24.",
+          "why": "The quotient ties freight volume to the distance moved."
         }
       }
     },
-    "log_revenue_railway_mix": {
+    "rail_freight_loading_benchmark_change": {
       "labels": [
-        "Passenger earnings",
-        "Freight earnings"
+        "1960-61",
+        "1970-71",
+        "1980-81",
+        "1990-91",
+        "2000-01",
+        "2010-11",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
       ],
       "values": [
-        70693.32,
-        165880.58
+        46.599999999999994,
+        48.10000000000001,
+        28.0,
+        122.49999999999997,
+        155.10000000000002,
+        448.23,
+        309.21000000000004,
+        184.92999999999984,
+        93.23000000000002,
+        78.96000000000004
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "Rs crore",
-      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings for FY 2023-24; freight excludes demurrage and wharfage.",
+      "unit": "million tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I; change between adjacent listed originating-tonnage benchmarks; Year Book 2023-24, pp. 38-45.",
       "meta": {
-        "title": "Indian Railways Earnings Mix",
-        "subtitle": "Passenger and freight earnings, FY 2023-24",
+        "title": "Freight Loading Change Between Benchmarks",
+        "subtitle": "Change in originating tonnes since the prior listed year",
         "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
+        "color": "#58a6ff",
+        "suffix": " million tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Freight Operations",
         "explain": {
-          "what": "Passenger-service and freight-service earnings of Indian Railways.",
-          "read": "Freight earnings were Rs 1,65,880.58 crore versus Rs 70,693.32 crore from passenger services.",
-          "why": "The split shows the financial weight of freight on rail operations."
+          "what": "Difference in revenue-earning tonnes originating between adjacent listed benchmark years.",
+          "read": "Loading increased by 78.96 million tonnes between 2022-23 and 2023-24.",
+          "why": "The changes reveal the varying scale of long-run growth."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_locomotive_mix": {
+      "labels": [
+        "Electric",
+        "Diesel",
+        "Steam"
+      ],
+      "values": [
+        10675,
+        4397,
+        38
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "locomotives",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, locomotives on 31 March 2024; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Locomotives by Traction (2023-24)",
+        "subtitle": "15,110 locomotives by type",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " locomotives",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Locomotive fleet by traction type on 31 March 2024.",
+          "read": "Electric locomotives are 70.7% of the fleet; 38 steam locomotives remain.",
+          "why": "Fleet mix follows the electrification of the route."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "log_revenue_rail_earnings": {
+    "rail_locomotive_change": {
+      "labels": [
+        "Electric",
+        "Diesel",
+        "Steam"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            9565,
+            4730,
+            39
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            10675,
+            4397,
+            38
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "locomotives",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of locomotives (2022-23 revised); Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Locomotive Fleet: 2022-23 vs 2023-24",
+        "subtitle": "Locomotives by traction type",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " locomotives",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Number of electric, diesel and steam locomotives in the last two years.",
+          "read": "Electric locomotives grew by 1,110 while diesel fell by 333.",
+          "why": "Shows the shift from diesel to electric traction year by year."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_coach_fleet": {
+      "labels": [
+        "Passenger carriages",
+        "Other coaching vehicles",
+        "EMU/MEMU coaches"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            66369,
+            11419,
+            11913
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            66687,
+            13022,
+            12229
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "coaches",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of coaches (2022-23 revised); Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Coach Fleet: 2022-23 vs 2023-24",
+        "subtitle": "Passenger and other coaching vehicles",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " coaches",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Coaches by type; the total was 91,948 in 2023-24 including rail cars.",
+          "read": "Other coaching vehicles grew fastest, by 14%; passenger carriages grew 0.5%.",
+          "why": "Coach numbers limit how many passengers can be carried."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_wagon_fleet": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        315103,
+        327991
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "wagons",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of wagons (2022-23 revised); Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Wagon Fleet",
+        "subtitle": "Freight wagons owned by Indian Railways",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " wagons",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Total wagons owned by Indian Railways.",
+          "read": "The fleet grew by 12,888 wagons (4.1%) to 327,991.",
+          "why": "Wagon availability caps freight loading."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_wagon_turnround": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        4.7,
+        5.11
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "days",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Wagon Utilisation (broad gauge); Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Wagon Turn-Round Time",
+        "subtitle": "Days for a wagon to complete a loading cycle",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " days",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Average days for a broad-gauge wagon to complete one loading cycle.",
+          "read": "Turn-round lengthened from 4.70 to 5.11 days.",
+          "why": "A shorter turn-round lets the same fleet carry more freight."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_goods_load": {
+      "labels": [
+        "Average net load",
+        "Average gross load"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1738,
+            2918
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            1899,
+            3085
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, goods train utilisation (broad gauge, all traction). Average goods-train speed fell from 30.8 to 25.0 km/h over the same year; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Average Goods Train Load",
+        "subtitle": "Net and gross load per goods train",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " tonnes",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Average net and gross load of a broad-gauge goods train.",
+          "read": "Net load per train rose 9.3% to 1,899 tonnes, while average goods-train speed fell to 25.0 km/h.",
+          "why": "Heavier trains move more per path, but slower speeds lengthen transit times."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_locomotive_traction_share": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Electric",
+          "values": [
+            62.38,
+            70.65
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Diesel",
+          "values": [
+            30.85,
+            29.1
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Steam",
+          "values": [
+            0.25,
+            0.25
+          ],
+          "color": "#8b949e"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of locomotive fleet",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, locomotive counts by traction on 31 March 2023 and 31 March 2024; shares calculated from category totals; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Locomotive Fleet by Traction Share",
+        "subtitle": "Electric, diesel and steam shares",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Locomotive counts by traction as a share of all reported electric, diesel and steam locomotives.",
+          "read": "Electric locomotives were 70.65% of the listed fleet in 2023-24.",
+          "why": "Shares make the traction transition comparable despite fleet growth."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_coach_category_share": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Passenger carriages",
+          "values": [
+            73.99,
+            72.53
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Other coaching vehicles",
+          "values": [
+            12.73,
+            14.16
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "EMU/MEMU coaches",
+          "values": [
+            13.28,
+            13.3
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of listed coach categories",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of coaches by category, 2022-23 revised and 2023-24; shares calculated over the three listed categories; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Share of Listed Coach Categories",
+        "subtitle": "Composition of the three reported coach groups",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Share of passenger carriages, other coaching vehicles and EMU/MEMU coaches among those listed categories.",
+          "read": "Passenger carriages were 72.53% of the listed 2023-24 categories.",
+          "why": "Category shares show how the reported coaching fleet is composed."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_daily_goods_train_share": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        45.31,
+        47.04
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of passenger and goods trains",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, daily passenger and goods trains run; goods share calculated from the two reported totals; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Goods Trains as Share of Daily Trains",
+        "subtitle": "Goods trains among reported passenger and goods trains",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Goods trains run daily divided by the combined daily passenger and goods train counts.",
+          "read": "Goods trains made up 47.04% of the two reported train groups in 2023-24.",
+          "why": "The mix compares passenger and freight operating intensity."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_goods_load_utilisation_pct": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        59.56,
+        61.56
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of gross tonnes",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, average net and gross goods-train loads; net-to-gross ratios calculated from the reported values; Year Book 2023-24, pp. 4-6.",
+      "meta": {
+        "title": "Average Net Load as Share of Gross Load",
+        "subtitle": "Net tonnes per goods train relative to gross tonnes",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Rolling Stock & Operations",
+        "explain": {
+          "what": "Average net goods-train load divided by average gross load.",
+          "read": "The net-to-gross ratio was 61.56% in 2023-24.",
+          "why": "The ratio shows the share of average gross train weight represented by payload."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accidents_by_type": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "datasets": [
+        {
+          "label": "Derailments",
+          "values": [
+            40,
+            17,
+            27,
+            36,
+            25
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Collisions",
+          "values": [
+            5,
+            1,
+            2,
+            6,
+            6
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Fire in trains",
+          "values": [
+            8,
+            3,
+            4,
+            4,
+            9
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Level-crossing accidents",
+          "values": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Miscellaneous",
+          "values": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "color": "#8b949e"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents by type, including Konkan Railway; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Consequential Train Accidents by Type",
+        "subtitle": "Accidents per year, 2019-20 to 2023-24",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Consequential train accidents split into derailments, collisions, fires, level-crossing and other accidents.",
+          "read": "Derailments are the largest category (25 of 40 in 2023-24); fire accidents rose to 9.",
+          "why": "Type-wise counts show where safety work matters most."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accidents_total": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        55,
+        22,
+        35,
+        48,
+        40
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, total consequential train accidents including Konkan Railway; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Total Consequential Train Accidents",
+        "subtitle": "Accidents per year",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Total consequential train accidents.",
+          "read": "40 in 2023-24, against 55 in 2019-20 and 48 in 2022-23.",
+          "why": "Raw counts show how many serious incidents occurred."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accident_rate": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        0.05,
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "per million train-km",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, accidents per million train kilometres, the Year Book's principal safety index; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Accidents per Million Train-Km",
+        "subtitle": "Accident rate normalised for traffic",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " per million train-km",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Consequential accidents divided by million train-kilometres run.",
+          "read": "The rate has held at 0.03 since 2020-21, against 0.05 in 2019-20.",
+          "why": "A rate shows safety per unit of traffic, unlike a raw count."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accident_mix": {
+      "labels": [
+        "Derailments",
+        "Fire in trains",
+        "Collisions"
+      ],
+      "values": [
+        25,
+        9,
+        6
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, 2023-24: 40 consequential accidents; none at level crossings or miscellaneous; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Accident Types (2023-24)",
+        "subtitle": "Composition of 40 consequential accidents",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Share of each accident type among the 40 consequential accidents in 2023-24.",
+          "read": "Derailments are 62.5%, fires 22.5% and collisions 15%.",
+          "why": "Shows which accident types dominate."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_derailment_collision_trend": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        45,
+        18,
+        29,
+        42,
+        31
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; derailments plus collisions calculated from the listed types; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Derailments and Collisions",
+        "subtitle": "Combined derailment and collision counts",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": " accidents",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Yearly derailment and collision counts added together from the consequential-accident table.",
+          "read": "There were 31 derailments and collisions in 2023-24.",
+          "why": "These two accident types together account for a large share of consequential incidents."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_derailment_share_pct": {
+      "labels": [
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        72.73,
+        77.27,
+        77.14,
+        75.0,
+        62.5
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of consequential accidents",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; derailments divided by each year's total; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Derailments as Share of Consequential Accidents",
+        "subtitle": "Derailments divided by all listed consequential accidents",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Derailments as a percentage of all consequential train accidents listed for each year.",
+          "read": "Derailments accounted for 62.50% of consequential accidents in 2023-24.",
+          "why": "The share distinguishes the leading accident type from the overall count."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_accident_yoy_change_pct": {
+      "labels": [
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        -60.0,
+        59.09,
+        37.14,
+        -16.67
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% change",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; year-on-year changes calculated from the sum of listed accident types; Year Book 2023-24, pp. 52-59.",
+      "meta": {
+        "title": "Year-on-Year Accident Count Change",
+        "subtitle": "Percent change in consequential accident totals",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Railway Safety",
+        "explain": {
+          "what": "Year-on-year percentage change in the sum of the five reported accident categories.",
+          "read": "The total changed by -16.67% between 2022-23 and 2023-24.",
+          "why": "Year-on-year change shows direction as well as scale."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_revenue_expenses": {
+      "labels": [
+        "Revenue",
+        "Expenses",
+        "Net revenue (before dividend)"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            239982.56,
+            235655.78,
+            2517.38
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            255272.63,
+            250893.61,
+            3259.68
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "Rs crore",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; Year Book 2023-24, p. 3.",
+      "meta": {
+        "title": "Railway Revenue and Expenses",
+        "subtitle": "Rs crore, 2022-23 and 2023-24",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " Rs crore",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Total revenue, expenses and net revenue of Indian Railways.",
+          "read": "Revenue rose 6.4% to Rs 2.55 lakh crore; expenses rose 6.5%, leaving Rs 3,260 crore of net revenue.",
+          "why": "Net revenue is small relative to turnover."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_earnings": {
       "labels": [
         "Passenger earnings",
         "Freight earnings"
@@ -119851,7 +111996,7 @@ window.INDIA_DASHBOARD_DATA = {
             63416.85,
             160158.48
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         },
         {
           "label": "2023-24",
@@ -119859,33 +112004,85 @@ window.INDIA_DASHBOARD_DATA = {
             70693.32,
             165880.58
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         }
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "Rs crore",
-      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings; freight excludes demurrage and wharfage.",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business and Freight Operation, earnings (freight excludes demurrage and wharfage); Year Book 2023-24, pp. 22-45.",
       "meta": {
-        "title": "Railway Freight and Passenger Earnings",
-        "subtitle": "Earnings by service",
+        "title": "Passenger vs Freight Earnings",
+        "subtitle": "Earnings by business, Rs crore",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
+        "suffix": " Rs crore",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
         "explain": {
-          "what": "Indian Railways earnings from passenger and freight services.",
-          "read": "FY 2023-24 freight earnings were Rs 1,65,880.58 crore, versus passenger earnings of Rs 70,693.32 crore.",
-          "why": "The comparison shows the financial weight of freight on the railway system."
+          "what": "Earnings from passenger and freight services.",
+          "read": "Passenger earnings grew 11.5% and freight 3.6%; freight is 70% of the two combined.",
+          "why": "Freight is the larger earner."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_revenue_rail_yield": {
+    "rail_financial_ratios": {
       "labels": [
-        "Passenger yield (paise/passenger-km)",
-        "Freight yield (paise/NTKM)"
+        "Operating ratio",
+        "Working ratio",
+        "Operating ratio with subsidy",
+        "Goods operating ratio",
+        "Coaching operating ratio"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            98.1,
+            90.92,
+            80.4,
+            66.97,
+            180.82
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            98.43,
+            91.31,
+            81.1,
+            67.55,
+            177.69
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "%",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio; Year Book 2023-24, pp. 7-8.",
+      "meta": {
+        "title": "Operating and Working Ratios",
+        "subtitle": "Expenses as a percentage of earnings",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
+        "explain": {
+          "what": "Operating ratio is expenditure as a share of earnings; lower is better.",
+          "read": "The overall ratio was 98.43%. Goods runs at 67.55% while coaching is 177.69%, meaning Rs 1.78 is spent for every Re 1 earned from passengers.",
+          "why": "The ratio shows how much of each rupee earned is left for investment."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "rail_yield": {
+      "labels": [
+        "Passenger yield (paise per passenger-km)",
+        "Freight yield (paise per net tonne-km)"
       ],
       "datasets": [
         {
@@ -119894,7 +112091,7 @@ window.INDIA_DASHBOARD_DATA = {
             66.13,
             166.91
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         },
         {
           "label": "2023-24",
@@ -119902,324 +112099,131 @@ window.INDIA_DASHBOARD_DATA = {
             66.4,
             170.31
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         }
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "paise per traffic unit",
-      "note": "Railway Board Year Book 2023-24, Selected Financial Ratios: earnings/yield ratios based on apportioned earnings.",
+      "unit": "paise",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio, earning/yield ratios based on apportioned earning; Year Book 2023-24, pp. 7-8.",
       "meta": {
-        "title": "Rail Passenger and Freight Yield",
-        "subtitle": "Revenue per traffic unit",
+        "title": "Passenger and Freight Yield",
+        "subtitle": "Average revenue per unit of traffic",
         "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": "paise per traffic unit",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
+        "color": "#3fb950",
+        "suffix": " paise",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
         "explain": {
-          "what": "Passenger earnings per passenger-km and freight earnings per net tonne-km.",
-          "read": "Freight yield was 170.31 paise per NTKM in 2023-24; passenger yield was 66.40 paise per passenger-km.",
-          "why": "Different traffic bases are explicitly named for comparison."
+          "what": "Average revenue per passenger-km and per net tonne-km.",
+          "read": "Passenger yield was 66.40 paise per passenger-km and freight 170.31 paise per net tonne-km.",
+          "why": "Yield compares what the railway earns on each unit of traffic."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_revenue_fastag": {
-      "labels": [
-        "FY 2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "FASTag Toll Collections",
-          "values": [
-            55000
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
-      "unit": "Rs crore (approx.)",
-      "note": "NHAI Annual Report 2023-24, citing IHMCL: FASTag collection was around Rs 55,000 crore in FY 2023-24.",
-      "meta": {
-        "title": "FASTag Toll Collections",
-        "subtitle": "FY 2023-24",
-        "frequency": "Annual",
-        "color": "#39c5bb",
-        "suffix": "Rs crore (approx.)",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Approximate toll fees collected through FASTag.",
-          "read": "Around Rs 55,000 crore was collected through FASTag in FY 2023-24.",
-          "why": "Toll-user-fee collection is not freight-operator revenue."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_nhai_tot": {
-      "labels": [
-        "FY 2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "NHAI Toll-Operate-Transfer Proceeds",
-          "values": [
-            15968
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
-      "unit": "Rs crore",
-      "note": "MoRTH Year End Review 2024: NHAI monetised four Toll-Operate-Transfer bundles, realising Rs 15,968 crore in FY 2023-24. These asset proceeds are not recurring toll collections.",
-      "meta": {
-        "title": "NHAI Toll-Operate-Transfer Proceeds",
-        "subtitle": "FY 2023-24",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Asset monetisation, FY 2023-24",
-          "read": "NHAI realised Rs 15,968 crore from four TOT bundles.",
-          "why": "Asset monetisation is shown separately from recurring toll receipts."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_rail_five_year": {
-      "labels": [
-        "2019-2024"
-      ],
-      "datasets": [
-        {
-          "label": "Railway Freight Earnings over Five Years",
-          "values": [
-            702372.29
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2113222",
-      "unit": "Rs crore",
-      "note": "Ministry of Railways Lok Sabha reply / PIB, March 2025: cumulative goods earnings reported for the five-year period 2019-2024.",
-      "meta": {
-        "title": "Railway Freight Earnings over Five Years",
-        "subtitle": "2019-2024",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "Rs crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "Cumulative goods earnings",
-          "read": "The Ministry reported Rs 7,02,372.29 crore in goods earnings during 2019-2024.",
-          "why": "The multiyear total provides a separate scale reference from annual earnings."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_revenue_ncaer_cost": {
-      "labels": [
-        "FY 2023-24 estimate"
-      ],
-      "datasets": [
-        {
-          "label": "Current-price estimate",
-          "values": [
-            24.01
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
-      "unit": "Rs lakh crore",
-      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): total logistics cost estimated at Rs 24.01 lakh crore at current prices for FY 2023-24. This is cost, not revenue or market size.",
-      "meta": {
-        "title": "Estimated National Logistics Cost",
-        "subtitle": "Current-price estimate, FY 2023-24",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "Rs lakh crore",
-        "category": "Logistics & Freight",
-        "subgroup": "Logistics Revenue",
-        "explain": {
-          "what": "NCAER's estimated aggregate logistics cost at current prices.",
-          "read": "The report estimates Rs 24.01 lakh crore, equal to 7.97% of GDP in FY 2023-24.",
-          "why": "Distinguishes a documented cost estimate from unsupported market-size claims."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "log_rail_latest_loading": {
+    "rail_earnings_mix_share": {
       "labels": [
         "2022-23",
         "2023-24"
       ],
-      "values": [
-        1509.1,
-        1588.06
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million tonnes",
-      "note": "Railway Board Year Book 2023-24, Freight Operation Table I: latest two annual revenue-earning freight loading figures.",
-      "meta": {
-        "title": "Latest Railway Freight Loading",
-        "subtitle": "Year Book revenue-earning basis",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
-        "explain": {
-          "what": "Revenue-earning freight tonnes originating in the last two Year Book years.",
-          "read": "Loading rose from 1,509.10 to 1,588.06 million tonnes.",
-          "why": "The short view makes the latest annual change easier to read."
-        }
-      }
-    },
-    "log_sea_commodity_compare": {
-      "labels": [
-        "POL",
-        "Iron ore",
-        "Fertilizers & raw materials",
-        "Coal",
-        "Containers",
-        "Other cargo"
-      ],
       "datasets": [
         {
-          "label": "2022-23",
+          "label": "Passenger earnings",
           "values": [
-            234.17,
-            46.51,
-            16.68,
-            188.24,
-            170.29,
-            128.42
+            28.36,
+            29.88
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         },
         {
-          "label": "2023-24",
+          "label": "Freight earnings",
           "values": [
-            245.99,
-            61.03,
-            17.68,
-            191.98,
-            181.57,
-            120.98
+            71.64,
+            70.12
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         }
       ],
-      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "million tonnes",
-      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port commodity totals, FY 2022-23 and FY 2023-24.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of passenger and freight earnings",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business and Freight Operation earnings table; shares calculated over those two earning streams; Year Book 2023-24, pp. 22-45.",
       "meta": {
-        "title": "Major-Port Commodity Traffic: Annual Comparison",
-        "subtitle": "12 major ports",
+        "title": "Passenger and Freight Earnings Shares",
+        "subtitle": "Share of combined passenger and freight earnings",
         "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "million tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
+        "color": "#58a6ff",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
         "explain": {
-          "what": "Major-port cargo by the published commodity groups for the two latest years.",
-          "read": "POL rose from 234.17 to 245.99 million tonnes; iron ore increased from 46.51 to 61.03 million tonnes.",
-          "why": "Year comparison shows which commodities account for changes in port throughput."
+          "what": "Passenger and freight earnings as percentages of the two categories' combined earnings.",
+          "read": "Freight represented 70.12% of combined passenger and freight earnings in 2023-24.",
+          "why": "The shares show the relative contribution of the two main traffic earnings streams."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "log_air_aai_total_trend": {
+    "rail_net_revenue_margin_pct": {
       "labels": [
         "2022-23",
         "2023-24"
       ],
       "values": [
-        3146.8,
-        3365.68
+        1.05,
+        1.28
       ],
-      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
-      "unit": "thousand tonnes",
-      "note": "AAI Annual Report 2023-24, Board's Report traffic table: total freight handled at all Indian airports, domestic plus international.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% of total revenue",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; net revenue divided by total revenue; Year Book 2023-24, p. 3.",
       "meta": {
-        "title": "Airport-Handled Air Cargo Growth",
-        "subtitle": "All Indian airports",
+        "title": "Net Revenue Margin",
+        "subtitle": "Net revenue as a share of total revenue",
         "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "thousand tonnes",
-        "category": "Logistics & Freight",
-        "subgroup": "Air Freight",
+        "color": "#3fb950",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
         "explain": {
-          "what": "Total freight handled at all Indian airports in AAI's reported years.",
-          "read": "Handled freight rose from 3,146.80 to 3,365.68 thousand tonnes.",
-          "why": "This airport-handled measure complements the national MoCA series."
+          "what": "Reported net revenue divided by total railway revenue for each year.",
+          "read": "Net revenue was 1.28% of total revenue in 2023-24.",
+          "why": "The margin shows the net result relative to the scale of railway earnings."
         }
-      }
+      },
+      "chartType": "bar",
+      "scope": "category"
     },
-    "log_sea_container_wb": {
+    "rail_financial_growth_rates": {
       "labels": [
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
+        "Revenue",
+        "Expenses"
       ],
       "values": [
-        9235765.0,
-        9878067.0,
-        10017480.0,
-        10571320.0,
-        11652174.0,
-        12318610.0,
-        13724110.0,
-        15450523.0,
-        16996593.0,
-        17487621.0,
-        17597062.0,
-        19561769.0,
-        19717168.0,
-        22208000.0,
-        23898000.0
+        6.37,
+        6.47
       ],
-      "source": "https://data.worldbank.org/indicator/IS.SHP.GOOD.TU?locations=IN",
-      "unit": "TEU",
-      "note": "World Bank indicator IS.SHP.GOOD.TU; annual observations may lag the latest reporting year.",
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "% change, 2022-23 to 2023-24",
+      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; growth rates calculated from reported total revenue and expenses; Year Book 2023-24, p. 3.",
       "meta": {
-        "title": "World Bank Container Port Traffic",
-        "subtitle": "Container port traffic",
+        "title": "Revenue and Expense Growth",
+        "subtitle": "Year-on-year change in railway revenue and expenses",
         "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "TEU",
-        "category": "Logistics & Freight",
-        "subgroup": "Sea Freight",
+        "color": "#f6c344",
+        "suffix": "%",
+        "category": "Indian Railways",
+        "subgroup": "Finance & Efficiency",
         "explain": {
-          "what": "Container port traffic measured in twenty-foot equivalent units.",
-          "read": "The series runs from 9,235,765.000 in 2010 to 23,898,000.000 in 2024.",
-          "why": "This country series complements the Ministry's major-port container figures."
+          "what": "Percentage change in reported total revenue and total expenses from 2022-23 to 2023-24.",
+          "read": "Revenue increased 6.37%; expenses increased 6.47%.",
+          "why": "Comparing the two growth rates shows whether expenses grew faster than revenue."
         }
-      }
+      },
+      "chartType": "bar",
+      "scope": "category"
     },
-    "log_rail_wb_freight": {
+    "rail_wb_freight_trend": {
       "labels": [
         "1995",
         "1996",
@@ -120249,52 +112253,2059 @@ window.INDIA_DASHBOARD_DATA = {
         "2020",
         "2021"
       ],
-      "values": [
-        249564.0,
-        270489.0,
-        277567.0,
-        284249.0,
-        281513.0,
-        305201.0,
-        312371.0,
-        333228.0,
-        353194.0,
-        381241.0,
-        407398.0,
-        439596.0,
-        480993.0,
-        521371.0,
-        551448.0,
-        600548.0,
-        625723.0,
-        667607.0,
-        649645.0,
-        665810.0,
-        681696.0,
-        654481.0,
-        620175.0,
-        692916.0,
-        738523.0,
-        707665.0,
-        719762.0
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            249.564,
+            270.489,
+            277.567,
+            284.249,
+            281.513,
+            305.201,
+            312.371,
+            333.228,
+            353.194,
+            381.241,
+            407.398,
+            439.596,
+            480.993,
+            521.371,
+            551.448,
+            600.548,
+            625.723,
+            667.607,
+            649.645,
+            665.81,
+            681.696,
+            654.481,
+            620.175,
+            692.916,
+            738.523,
+            707.665,
+            719.762
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            1304.95,
+            1310.62,
+            1326.99,
+            1256.01,
+            1291.03,
+            1377.05,
+            1469.41,
+            1565.84,
+            1724.67,
+            1928.88,
+            2072.6,
+            2195.441,
+            2379.7,
+            2510.628,
+            2523.917,
+            2764.413,
+            2946.579,
+            2918.709,
+            2917.39,
+            2753.02,
+            2375.43,
+            2379.23,
+            2696.22,
+            2882.1,
+            3018.2,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            1906.206,
+            1979.622,
+            1969.331,
+            2010.027,
+            2092.745,
+            2140.191,
+            2183.277,
+            2200.123,
+            2264.983,
+            2427.268,
+            2476.653,
+            2586.836,
+            2584.94,
+            2594.631,
+            2236.917,
+            2468.738,
+            2524.585,
+            2500.3,
+            2541.354,
+            2702.736,
+            2547.253,
+            2314.693,
+            2445.132,
+            2525.217,
+            2357.117,
+            2102.084,
+            2239.401
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            1213.711,
+            1131.251,
+            1100.289,
+            1019.547,
+            1204.547,
+            1373.178,
+            1433.617,
+            1510.2,
+            1664.3,
+            1797.326,
+            1852.913,
+            1950.83,
+            2090.337,
+            2116.24,
+            1865.305,
+            2011.308,
+            2127.835,
+            2222.388,
+            2172.685,
+            2298.564,
+            2304.759,
+            2342.59,
+            2491.876,
+            2596.88,
+            2601.928,
+            2544.828,
+            2638.562
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            25.101,
+            24.968,
+            24.617,
+            22.92,
+            22.541,
+            22.136,
+            22.193,
+            22.131,
+            22.794,
+            22.476,
+            22.813,
+            23.192,
+            23.334,
+            22.256,
+            20.562,
+            20.398,
+            19.998,
+            20.471,
+            21.071,
+            21.029,
+            21.519,
+            21.265,
+            21.663,
+            19.369,
+            19.993,
+            18.34,
+            null
+          ]
+        }
       ],
       "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "million tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; annual observations may lag the latest reporting year.",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
       "meta": {
-        "title": "Rail Freight Transport Work",
+        "title": "Rail Freight: India vs Peers",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, in billion tonne-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Rail freight volume is a core measure of industrial transport capacity."
+        }
+      }
+    },
+    "rail_wb_passenger_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            319.365,
+            341.999,
+            357.013,
+            379.897,
+            403.884,
+            430.666,
+            457.022,
+            493.489,
+            515.044,
+            541.208,
+            575.702,
+            615.634,
+            694.764,
+            769.956,
+            838.032,
+            903.465,
+            978.508,
+            1046.522,
+            1046.522,
+            1140.412,
+            1147.19,
+            1143.039,
+            1149.835,
+            1177.699,
+            1157.174,
+            1050.738,
+            231.126
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            354.261,
+            332.202,
+            354.353,
+            369.097,
+            404.627,
+            441.468,
+            463.655,
+            480.305,
+            462.279,
+            551.196,
+            583.32,
+            635.327,
+            689.618,
+            777.86,
+            787.89,
+            791.158,
+            921.541,
+            940.249,
+            1008.172,
+            1089.56,
+            1109.312,
+            1160.059,
+            1266.681,
+            1361.715,
+            1438.606,
+            328.251,
+            946.499
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            22.079,
+            21.866,
+            22.746,
+            23.49,
+            23.911,
+            25.977,
+            25.198,
+            24.41,
+            25.044,
+            24.777,
+            25.394,
+            27.296,
+            30.358,
+            32.143,
+            30.907,
+            31.872,
+            32.58,
+            34.126,
+            36.047,
+            36.393,
+            36.044,
+            35.892,
+            33.256,
+            31.963,
+            32.483,
+            12.46,
+            null
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            192.217,
+            181.213,
+            170.318,
+            125.625,
+            141.042,
+            167.054,
+            157.901,
+            152.9,
+            157.1,
+            150.8,
+            170.9,
+            177.639,
+            173.411,
+            175.871,
+            153.575,
+            139.028,
+            139.842,
+            144.612,
+            138.517,
+            128.82,
+            120.413,
+            124.461,
+            122.92,
+            129.371,
+            133.381,
+            78.135,
+            103.447
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            400.084,
+            402.156,
+            395.278,
+            388.917,
+            385.098,
+            384.287,
+            385.402,
+            382.239,
+            385.012,
+            385.163,
+            391.215,
+            395.908,
+            405.544,
+            404.585,
+            393.765,
+            393.466,
+            395.067,
+            404.396,
+            414.387,
+            413.97,
+            427.486,
+            431.799,
+            437.363,
+            441.614,
+            435.063,
+            263.211,
+            null
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "meta": {
+        "title": "Rail Passengers: India vs Peers",
+        "subtitle": "Passenger-kilometres carried by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Passengers carried by rail, in billion passenger-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Passenger-km shows how much a country relies on rail for travel."
+        }
+      }
+    },
+    "rail_wb_route_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            62.66,
+            62.915,
+            62.725,
+            62.495,
+            62.81,
+            62.759,
+            63.028,
+            63.14,
+            63.122,
+            63.221,
+            63.485,
+            63.332,
+            63.327,
+            63.273,
+            64.015,
+            63.974,
+            64.46,
+            64.6,
+            65.436,
+            65.808,
+            66.03,
+            66.687,
+            67.368,
+            69.249,
+            67.414,
+            67.956,
+            68.103
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            54.616,
+            56.678,
+            57.566,
+            57.583,
+            57.394,
+            58.656,
+            59.079,
+            59.53,
+            60.446,
+            61.015,
+            62.2,
+            63.412,
+            63.636,
+            60.809,
+            65.491,
+            66.239,
+            72.487,
+            85.843,
+            79.306,
+            85.32,
+            89.966,
+            91.675,
+            93.742,
+            96.353,
+            102.462,
+            106.235,
+            109.767
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            201.284,
+            203.875,
+            195.804,
+            192.815,
+            194.708,
+            194.077,
+            194.746,
+            198.057,
+            196.806,
+            195.369,
+            194.025,
+            191.771,
+            192.508,
+            192.123,
+            191.785,
+            194.431,
+            194.136,
+            153.517,
+            154.321,
+            152.933,
+            151.735,
+            151.27,
+            150.966,
+            150.462,
+            149.489,
+            148.75,
+            148.553
+          ]
+        },
+        {
+          "label": "Russia",
+          "color": "#bc8cff",
+          "values": [
+            87.388,
+            87.086,
+            86.66,
+            86.151,
+            86.031,
+            86.075,
+            85.835,
+            85.542,
+            85.394,
+            85.286,
+            85.542,
+            85.253,
+            84.158,
+            85.194,
+            85.281,
+            85.292,
+            85.166,
+            85.248,
+            85.266,
+            84.581,
+            85.262,
+            85.375,
+            85.545,
+            85.626,
+            85.494,
+            85.555,
+            85.544
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#3fb950",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20.14,
+            20.087,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "meta": {
+        "title": "Rail Network Length: India vs Peers",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail lines in operation, in thousand route-kilometres.",
+          "read": "India is the orange line; compare its trajectory with each peer.",
+          "why": "Network length measures physical reach."
+        }
+      }
+    },
+    "rail_wb_freight_rank": {
+      "labels": [
+        "China",
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France",
+        "Japan",
+        "United Kingdom"
+      ],
+      "values": [
+        3018.2,
+        2601.93,
+        2357.12,
+        738.52,
+        443.0,
+        129.16,
+        33.89,
+        19.99,
+        16.88
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
+      "meta": {
+        "title": "Rail Freight Ranking (2019)",
         "subtitle": "Goods transported by railway",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": "million tonne-km",
-        "category": "Logistics & Freight",
-        "subgroup": "Rail Freight",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
         "explain": {
-          "what": "Goods moved by rail, measured in million metric tonnes times kilometres.",
-          "read": "The series runs from 249,564.000 in 1995 to 719,762.000 in 2021.",
-          "why": "This independent World Bank series provides a cross-mode data point."
+          "what": "Freight moved by rail, billion tonne-km.",
+          "read": "India ranks 4 of 9 countries in this comparison.",
+          "why": "Ranks India's freight output against large rail systems."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_freight_share": {
+      "labels": [
+        "China",
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France",
+        "Japan",
+        "United Kingdom"
+      ],
+      "values": [
+        3018.2,
+        2601.93,
+        2357.12,
+        738.52,
+        443.0,
+        129.16,
+        33.89,
+        19.99,
+        16.88
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
+      "meta": {
+        "title": "Share of Rail Freight Among Peers (2019)",
+        "subtitle": "Peer share of rail freight",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's rail freight.",
+          "read": "India ranks 4 of 9 countries in this comparison.",
+          "why": "Shows India's weight in global rail freight."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_wb_passenger_rank": {
+      "labels": [
+        "China",
+        "India",
+        "Japan",
+        "Russia",
+        "France",
+        "Germany",
+        "United Kingdom",
+        "United States",
+        "Australia",
+        "Brazil"
+      ],
+      "values": [
+        1438.61,
+        1157.17,
+        435.06,
+        133.38,
+        112.38,
+        102.03,
+        82.55,
+        32.48,
+        18.84,
+        16.49
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
+      "meta": {
+        "title": "Rail Passenger-Km Ranking (2019)",
+        "subtitle": "Passenger-km carried by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Rail passenger-kilometres.",
+          "read": "India ranks 2 of 10 countries in this comparison.",
+          "why": "Ranks India's rail passenger output."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_passenger_share": {
+      "labels": [
+        "China",
+        "India",
+        "Japan",
+        "Russia",
+        "France",
+        "Germany",
+        "United Kingdom",
+        "United States",
+        "Australia",
+        "Brazil"
+      ],
+      "values": [
+        1438.61,
+        1157.17,
+        435.06,
+        133.38,
+        112.38,
+        102.03,
+        82.55,
+        32.48,
+        18.84,
+        16.49
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
+      "meta": {
+        "title": "Share of Rail Passenger-Km Among Peers (2019)",
+        "subtitle": "Peer share of rail passenger-km",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Each country's share of the peer group's rail passenger-km.",
+          "read": "India ranks 2 of 10 countries in this comparison.",
+          "why": "Shows India's weight in passenger rail."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "rail_wb_route_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "Russia",
+        "India",
+        "Germany",
+        "France",
+        "United Kingdom"
+      ],
+      "values": [
+        149.49,
+        102.46,
+        85.49,
+        67.41,
+        33.42,
+        28.16,
+        16.3
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM, 2019 (latest year most compared countries report). India ranks 4 of 7 countries shown.",
+      "meta": {
+        "title": "Rail Network Ranking (2019)",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail route length, thousand km.",
+          "read": "India ranks 4 of 7 countries in this comparison.",
+          "why": "Ranks the size of India's network."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_freight_all_peer_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "values": [
+            249.564,
+            270.489,
+            277.567,
+            284.249,
+            281.513,
+            305.201,
+            312.371,
+            333.228,
+            353.194,
+            381.241,
+            407.398,
+            439.596,
+            480.993,
+            521.371,
+            551.448,
+            600.548,
+            625.723,
+            667.607,
+            649.645,
+            665.81,
+            681.696,
+            654.481,
+            620.175,
+            692.916,
+            738.523,
+            707.665,
+            719.762
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "China",
+          "values": [
+            1304.95,
+            1310.62,
+            1326.99,
+            1256.01,
+            1291.03,
+            1377.05,
+            1469.41,
+            1565.84,
+            1724.67,
+            1928.88,
+            2072.6,
+            2195.441,
+            2379.7,
+            2510.628,
+            2523.917,
+            2764.413,
+            2946.579,
+            2918.709,
+            2917.39,
+            2753.02,
+            2375.43,
+            2379.23,
+            2696.22,
+            2882.1,
+            3018.2,
+            null,
+            null
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "United States",
+          "values": [
+            1906.206,
+            1979.622,
+            1969.331,
+            2010.027,
+            2092.745,
+            2140.191,
+            2183.277,
+            2200.123,
+            2264.983,
+            2427.268,
+            2476.653,
+            2586.836,
+            2584.94,
+            2594.631,
+            2236.917,
+            2468.738,
+            2524.585,
+            2500.3,
+            2541.354,
+            2702.736,
+            2547.253,
+            2314.693,
+            2445.132,
+            2525.217,
+            2357.117,
+            2102.084,
+            2239.401
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Russia",
+          "values": [
+            1213.711,
+            1131.251,
+            1100.289,
+            1019.547,
+            1204.547,
+            1373.178,
+            1433.617,
+            1510.2,
+            1664.3,
+            1797.326,
+            1852.913,
+            1950.83,
+            2090.337,
+            2116.24,
+            1865.305,
+            2011.308,
+            2127.835,
+            2222.388,
+            2172.685,
+            2298.564,
+            2304.759,
+            2342.59,
+            2491.876,
+            2596.88,
+            2601.928,
+            2544.828,
+            2638.562
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "Japan",
+          "values": [
+            25.101,
+            24.968,
+            24.617,
+            22.92,
+            22.541,
+            22.136,
+            22.193,
+            22.131,
+            22.794,
+            22.476,
+            22.813,
+            23.192,
+            23.334,
+            22.256,
+            20.562,
+            20.398,
+            19.998,
+            20.471,
+            21.071,
+            21.029,
+            21.519,
+            21.265,
+            21.663,
+            19.369,
+            19.993,
+            18.34,
+            null
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Germany",
+          "values": [
+            70.5,
+            70.0,
+            73.9,
+            74.2,
+            71.9,
+            77.5,
+            76.165,
+            76.283,
+            79.841,
+            86.409,
+            95.421,
+            107.008,
+            114.615,
+            115.652,
+            95.834,
+            107.317,
+            113.317,
+            110.065,
+            112.613,
+            112.629,
+            116.632,
+            128.866,
+            131.204,
+            129.991,
+            129.161,
+            108.406,
+            123.067
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "France",
+          "values": [
+            46.56,
+            48.32,
+            52.63,
+            52.66,
+            52.12,
+            55.35,
+            50.344,
+            49.977,
+            46.758,
+            45.035,
+            39.659,
+            41.179,
+            42.612,
+            40.436,
+            32.129,
+            29.965,
+            34.202,
+            32.539,
+            32.23,
+            32.596,
+            36.328,
+            34.7,
+            35.465,
+            33.836,
+            33.893,
+            31.282,
+            35.751
+          ],
+          "color": "#39c5bb"
+        },
+        {
+          "label": "United Kingdom",
+          "values": [
+            13.3,
+            15.1,
+            16.9,
+            17.34,
+            18.05,
+            18.17,
+            19.2,
+            18.634,
+            18.745,
+            20.137,
+            21.427,
+            21.919,
+            21.265,
+            21.077,
+            19.171,
+            18.576,
+            20.974,
+            21.467,
+            22.401,
+            22.143,
+            19.342,
+            17.053,
+            17.167,
+            17.206,
+            16.884,
+            15.212,
+            null
+          ],
+          "color": "#f778ba"
+        },
+        {
+          "label": "Brazil",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            7.446,
+            9.393,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Australia",
+          "values": [
+            106.195,
+            110.255,
+            119.619,
+            125.587,
+            127.963,
+            133.568,
+            137.534,
+            150.513,
+            160.58,
+            168.7,
+            183.944,
+            189.425,
+            198.961,
+            218.684,
+            237.163,
+            258.624,
+            261.42,
+            290.57,
+            319.0,
+            367.7,
+            401.6,
+            413.49,
+            431.307,
+            441.273,
+            443.005,
+            447.435,
+            453.091
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, all requested countries, annual observations; gaps indicate unreported country-years.",
+      "meta": {
+        "title": "Rail Freight: Ten-System Trend",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, billion tonne-kilometres for all ten selected countries.",
+          "read": "Compare the indexed annual series across the ten selected rail systems.",
+          "why": "The wider peer set provides context beyond the five largest systems."
         }
       }
+    },
+    "rail_wb_passenger_all_peer_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "values": [
+            319.365,
+            341.999,
+            357.013,
+            379.897,
+            403.884,
+            430.666,
+            457.022,
+            493.489,
+            515.044,
+            541.208,
+            575.702,
+            615.634,
+            694.764,
+            769.956,
+            838.032,
+            903.465,
+            978.508,
+            1046.522,
+            1046.522,
+            1140.412,
+            1147.19,
+            1143.039,
+            1149.835,
+            1177.699,
+            1157.174,
+            1050.738,
+            231.126
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "China",
+          "values": [
+            354.261,
+            332.202,
+            354.353,
+            369.097,
+            404.627,
+            441.468,
+            463.655,
+            480.305,
+            462.279,
+            551.196,
+            583.32,
+            635.327,
+            689.618,
+            777.86,
+            787.89,
+            791.158,
+            921.541,
+            940.249,
+            1008.172,
+            1089.56,
+            1109.312,
+            1160.059,
+            1266.681,
+            1361.715,
+            1438.606,
+            328.251,
+            946.499
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "United States",
+          "values": [
+            22.079,
+            21.866,
+            22.746,
+            23.49,
+            23.911,
+            25.977,
+            25.198,
+            24.41,
+            25.044,
+            24.777,
+            25.394,
+            27.296,
+            30.358,
+            32.143,
+            30.907,
+            31.872,
+            32.58,
+            34.126,
+            36.047,
+            36.393,
+            36.044,
+            35.892,
+            33.256,
+            31.963,
+            32.483,
+            12.46,
+            null
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Russia",
+          "values": [
+            192.217,
+            181.213,
+            170.318,
+            125.625,
+            141.042,
+            167.054,
+            157.901,
+            152.9,
+            157.1,
+            150.8,
+            170.9,
+            177.639,
+            173.411,
+            175.871,
+            153.575,
+            139.028,
+            139.842,
+            144.612,
+            138.517,
+            128.82,
+            120.413,
+            124.461,
+            122.92,
+            129.371,
+            133.381,
+            78.135,
+            103.447
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "Japan",
+          "values": [
+            400.084,
+            402.156,
+            395.278,
+            388.917,
+            385.098,
+            384.287,
+            385.402,
+            382.239,
+            385.012,
+            385.163,
+            391.215,
+            395.908,
+            405.544,
+            404.585,
+            393.765,
+            393.466,
+            395.067,
+            404.396,
+            414.387,
+            413.97,
+            427.486,
+            431.799,
+            437.363,
+            441.614,
+            435.063,
+            263.211,
+            null
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Germany",
+          "values": [
+            70.977,
+            71.73,
+            72.403,
+            72.666,
+            73.796,
+            75.404,
+            75.754,
+            71.366,
+            71.293,
+            72.879,
+            76.824,
+            78.995,
+            79.107,
+            82.539,
+            82.253,
+            83.886,
+            85.414,
+            88.796,
+            89.615,
+            90.976,
+            91.603,
+            94.197,
+            95.53,
+            98.17,
+            102.026,
+            58.822,
+            null
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "France",
+          "values": [
+            64.444,
+            69.183,
+            71.016,
+            75.175,
+            77.111,
+            82.253,
+            84.18,
+            86.186,
+            84.151,
+            88.567,
+            90.859,
+            94.59,
+            96.709,
+            102.721,
+            101.821,
+            102.167,
+            105.596,
+            105.956,
+            105.215,
+            104.589,
+            104.849,
+            104.207,
+            110.568,
+            107.958,
+            112.384,
+            64.859,
+            86.853
+          ],
+          "color": "#39c5bb"
+        },
+        {
+          "label": "United Kingdom",
+          "values": [
+            37.2,
+            39.2,
+            42.2,
+            44.1,
+            46.8,
+            46.506,
+            47.472,
+            47.993,
+            49.224,
+            50.018,
+            51.362,
+            53.9,
+            57.405,
+            60.221,
+            60.336,
+            63.048,
+            66.099,
+            69.015,
+            70.704,
+            73.715,
+            76.06,
+            78.229,
+            79.496,
+            80.98,
+            82.55,
+            24.188,
+            null
+          ],
+          "color": "#f778ba"
+        },
+        {
+          "label": "Brazil",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            15.191,
+            15.901,
+            15.877,
+            15.648,
+            15.807,
+            16.422,
+            16.486,
+            null,
+            null
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Australia",
+          "values": [
+            10.345,
+            10.696,
+            10.977,
+            10.951,
+            11.165,
+            11.552,
+            12.15,
+            12.006,
+            12.022,
+            12.087,
+            12.063,
+            12.591,
+            13.213,
+            14.276,
+            15.004,
+            14.993,
+            15.276,
+            15.569,
+            15.544,
+            15.571,
+            16.017,
+            16.504,
+            17.039,
+            18.021,
+            18.842,
+            15.053,
+            9.328
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM, all requested countries, annual observations; gaps indicate unreported country-years.",
+      "meta": {
+        "title": "Rail Passenger-Km: Ten-System Trend",
+        "subtitle": "Passenger-kilometres carried by railway",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Passenger-kilometres moved by rail for all ten selected countries.",
+          "read": "Compare the indexed annual series across the ten selected rail systems.",
+          "why": "The wider peer set provides context beyond the five largest systems."
+        }
+      }
+    },
+    "rail_wb_route_all_peer_trend": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "values": [
+            62.66,
+            62.915,
+            62.725,
+            62.495,
+            62.81,
+            62.759,
+            63.028,
+            63.14,
+            63.122,
+            63.221,
+            63.485,
+            63.332,
+            63.327,
+            63.273,
+            64.015,
+            63.974,
+            64.46,
+            64.6,
+            65.436,
+            65.808,
+            66.03,
+            66.687,
+            67.368,
+            69.249,
+            67.414,
+            67.956,
+            68.103
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "China",
+          "values": [
+            54.616,
+            56.678,
+            57.566,
+            57.583,
+            57.394,
+            58.656,
+            59.079,
+            59.53,
+            60.446,
+            61.015,
+            62.2,
+            63.412,
+            63.636,
+            60.809,
+            65.491,
+            66.239,
+            72.487,
+            85.843,
+            79.306,
+            85.32,
+            89.966,
+            91.675,
+            93.742,
+            96.353,
+            102.462,
+            106.235,
+            109.767
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "United States",
+          "values": [
+            201.284,
+            203.875,
+            195.804,
+            192.815,
+            194.708,
+            194.077,
+            194.746,
+            198.057,
+            196.806,
+            195.369,
+            194.025,
+            191.771,
+            192.508,
+            192.123,
+            191.785,
+            194.431,
+            194.136,
+            153.517,
+            154.321,
+            152.933,
+            151.735,
+            151.27,
+            150.966,
+            150.462,
+            149.489,
+            148.75,
+            148.553
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Russia",
+          "values": [
+            87.388,
+            87.086,
+            86.66,
+            86.151,
+            86.031,
+            86.075,
+            85.835,
+            85.542,
+            85.394,
+            85.286,
+            85.542,
+            85.253,
+            84.158,
+            85.194,
+            85.281,
+            85.292,
+            85.166,
+            85.248,
+            85.266,
+            84.581,
+            85.262,
+            85.375,
+            85.545,
+            85.626,
+            85.494,
+            85.555,
+            85.544
+          ],
+          "color": "#bc8cff"
+        },
+        {
+          "label": "Japan",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            20.14,
+            20.087,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Germany",
+          "values": [
+            41.718,
+            40.826,
+            38.45,
+            38.15,
+            37.589,
+            36.642,
+            36.05,
+            35.868,
+            36.054,
+            34.725,
+            34.228,
+            34.128,
+            33.978,
+            33.862,
+            33.721,
+            33.714,
+            33.576,
+            33.506,
+            33.449,
+            33.426,
+            33.332,
+            33.38,
+            33.488,
+            33.44,
+            33.423,
+            33.399,
+            33.401
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "France",
+          "values": [
+            31.997,
+            31.91,
+            31.879,
+            31.793,
+            29.171,
+            29.33,
+            29.503,
+            29.41,
+            29.327,
+            29.304,
+            28.47,
+            29.62,
+            29.976,
+            29.959,
+            33.698,
+            29.929,
+            30.071,
+            29.406,
+            29.979,
+            null,
+            28.866,
+            29.237,
+            29.248,
+            28.241,
+            28.157,
+            27.872,
+            27.716
+          ],
+          "color": "#39c5bb"
+        },
+        {
+          "label": "United Kingdom",
+          "values": [
+            17.001,
+            17.001,
+            16.991,
+            16.999,
+            16.989,
+            16.992,
+            16.992,
+            17.01,
+            16.833,
+            16.53,
+            null,
+            null,
+            16.263,
+            16.273,
+            16.239,
+            15.888,
+            16.21,
+            15.847,
+            15.861,
+            16.532,
+            16.245,
+            16.257,
+            16.294,
+            16.295,
+            16.295,
+            16.351,
+            16.179
+          ],
+          "color": "#f778ba"
+        },
+        {
+          "label": "Brazil",
+          "values": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            0.512,
+            null,
+            null,
+            32.622,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM, all requested countries, annual observations; gaps indicate unreported country-years.",
+      "meta": {
+        "title": "Rail Network: Ten-System Trend",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail route length for all ten selected countries, in thousand kilometres.",
+          "read": "Compare the indexed annual series across the ten selected rail systems.",
+          "why": "The wider peer set provides context beyond the five largest systems."
+        }
+      }
+    },
+    "rail_wb_freight_latest_common_rank": {
+      "labels": [
+        "Russia",
+        "United States",
+        "India",
+        "Australia",
+        "Germany",
+        "France"
+      ],
+      "values": [
+        2638.56,
+        2239.4,
+        719.76,
+        453.09,
+        123.07,
+        35.75
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "billion tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; 2021 is the latest year with India and at least three peers reporting.",
+      "meta": {
+        "title": "Latest Common-Year Rail Freight Ranking (2021)",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion tonne-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Freight moved by rail, billion tonne-kilometres.",
+          "read": "India ranks 3 of 6 countries in 2021.",
+          "why": "Ranks India against peers for the latest common year with sufficient reports."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_passenger_latest_common_rank": {
+      "labels": [
+        "China",
+        "India",
+        "Russia",
+        "France",
+        "Australia"
+      ],
+      "values": [
+        946.5,
+        231.13,
+        103.45,
+        86.85,
+        9.33
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
+      "unit": "billion passenger-km",
+      "note": "World Bank indicator IS.RRS.PASG.KM; 2021 is the latest year with India and at least three peers reporting.",
+      "meta": {
+        "title": "Latest Common-Year Rail Passenger Ranking (2021)",
+        "subtitle": "Passenger-kilometres carried by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " billion passenger-km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Rail passenger-kilometres.",
+          "read": "India ranks 2 of 5 countries in 2021.",
+          "why": "Ranks India against peers for the latest common year with sufficient reports."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
+    },
+    "rail_wb_route_latest_common_rank": {
+      "labels": [
+        "United States",
+        "China",
+        "Russia",
+        "India",
+        "Germany",
+        "France",
+        "United Kingdom"
+      ],
+      "values": [
+        148.55,
+        109.77,
+        85.54,
+        68.1,
+        33.4,
+        27.72,
+        16.18
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
+      "unit": "thousand km",
+      "note": "World Bank indicator IS.RRS.TOTL.KM; 2021 is the latest year with India and at least three peers reporting.",
+      "meta": {
+        "title": "Latest Common-Year Rail Network Ranking (2021)",
+        "subtitle": "Total rail route",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " thousand km",
+        "category": "Indian Railways",
+        "subgroup": "Global Rail Comparison",
+        "explain": {
+          "what": "Total rail route length, thousand km.",
+          "read": "India ranks 4 of 7 countries in 2021.",
+          "why": "Ranks India against peers for the latest common year with sufficient reports."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category",
+      "indexAxis": "y"
     },
     "water_major_port_cargo_rank": {
       "labels": [
@@ -122963,1008 +116974,261 @@ window.INDIA_DASHBOARD_DATA = {
       "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_route_km": {
+    "log_road_nh_length": {
       "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
+        "2014",
         "2023-24"
       ],
       "values": [
-        53596,
-        56247,
-        59790,
-        61240,
-        62367,
-        63028,
-        64173,
-        68103,
-        68043,
-        68584,
-        69181
+        91287,
+        146195
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
       "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres since 1950-51; Year Book 2023-24, pp. 60-62.",
+      "note": "MoRTH Year End Review 2024 (PIB): National Highway network length was 91,287 km in 2014 and 146,195 km in 2024.",
       "meta": {
-        "title": "Route Length Since Independence",
-        "subtitle": "Route kilometres of Indian Railways",
+        "title": "National Highway Network",
+        "subtitle": "National Highway network length",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
         "explain": {
-          "what": "Total route kilometres across all gauges, 1950-51 to 2023-24.",
-          "read": "The network grew by about 15,600 km over 73 years and stood at 69,181 km on 31 March 2024.",
-          "why": "Route length is the physical reach of the railway."
+          "what": "Length of India's National Highway network at the stated dates.",
+          "read": "The reported network expanded by about 60% from 2014 to 2024.",
+          "why": "National Highways form the long-distance road backbone for freight."
         }
       }
     },
-    "rail_track_km": {
+    "log_road_multilane_nh": {
       "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
+        "2014",
+        "November 2023"
+      ],
+      "values": [
+        18387,
+        46179
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
+      "unit": "km",
+      "note": "MoRTH Year End Review 2023 (PIB): length of National Highways with four or more lanes.",
+      "meta": {
+        "title": "Four-Lane-and-Above National Highways",
+        "subtitle": "NH length with four or more lanes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Length of National Highways with four or more lanes.",
+          "read": "The reported extent increased from 18,387 km in 2014 to 46,179 km by November 2023.",
+          "why": "More divided-lane highway capacity can improve freight movement and reduce bottlenecks."
+        }
+      }
+    },
+    "log_road_bharatmala": {
+      "labels": [
+        "Awarded",
+        "Constructed"
       ],
       "datasets": [
         {
-          "label": "Total track km",
+          "label": "28 February 2025",
           "values": [
-            77609,
-            83706,
-            98546,
-            104480,
-            108858,
-            108706,
-            114037,
-            126611,
-            128305,
-            132310,
-            135207
+            26425,
+            19826
           ],
           "color": "#ff9933"
-        },
-        {
-          "label": "Running track km",
-          "values": [
-            59315,
-            63602,
-            71669,
-            75860,
-            78607,
-            81865,
-            87114,
-            100866,
-            102831,
-            106493,
-            109748
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Route km",
-          "values": [
-            53596,
-            56247,
-            59790,
-            61240,
-            62367,
-            63028,
-            64173,
-            68103,
-            68043,
-            68584,
-            69181
-          ],
-          "color": "#3fb950"
         }
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
       "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route, running track and total track kilometres; Year Book 2023-24, pp. 60-62.",
+      "note": "MoRTH parliamentary reply / PIB, 13 March 2025: Bharatmala Phase I project lengths awarded and constructed as at 28 February 2025.",
       "meta": {
-        "title": "Route vs Track Kilometres",
-        "subtitle": "Doubling and multi-tracking since 1950-51",
+        "title": "Bharatmala Phase I Progress",
+        "subtitle": "Awarded versus constructed project length",
         "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
+        "color": "#3fb950",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
         "explain": {
-          "what": "Route, running-track and total-track kilometres.",
-          "read": "Running track grew about 85% since 1950-51 against 29% for route length, which points to doubling and extra lines on existing corridors.",
-          "why": "Track length divided by route length shows how much of the network has more than one line."
-        }
-      }
-    },
-    "rail_electrified_km": {
-      "labels": [
-        "1951",
-        "1961",
-        "1971",
-        "1981",
-        "1991",
-        "2001",
-        "2011",
-        "2021",
-        "2022",
-        "2023",
-        "2024"
-      ],
-      "values": [
-        388,
-        748,
-        3706,
-        5345,
-        9968,
-        14856,
-        19607,
-        45772,
-        51804,
-        58074,
-        62253
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'Electrification', cumulative electrified route kilometres; Year Book 2023-24, pp. 74-78.",
-      "meta": {
-        "title": "Cumulative Electrified Route",
-        "subtitle": "Electrified route kilometres, 1951 to 2024",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Cumulative electrified route kilometres in each year shown.",
-          "read": "Electrification more than tripled after 2011; a record 4,644 km was electrified in 2023-24, taking the total to 62,253 km, about 90% of the broad-gauge network.",
-          "why": "The Mission 100% Electrification policy aims to cut diesel imports and running costs."
+          "what": "Cumulative lengths of Bharatmala Phase I projects awarded and constructed.",
+          "read": "26,425 km had been awarded and 19,826 km constructed by 28 February 2025.",
+          "why": "The gap distinguishes tendered projects from completed road capacity."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_gauge_mix": {
+    "log_road_highspeed": {
       "labels": [
-        "Broad gauge (1,676 mm)",
-        "Metre gauge",
-        "Narrow gauge"
+        "Awarded",
+        "Constructed"
+      ],
+      "datasets": [
+        {
+          "label": "28 February 2025",
+          "values": [
+            6669,
+            4610
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2111286&reg=48&lang=2",
+      "unit": "km",
+      "note": "MoRTH PIB release, 13 March 2025: high-speed greenfield corridor length awarded and completed as at 28 February 2025.",
+      "meta": {
+        "title": "High-Speed Greenfield Corridors",
+        "subtitle": "Awarded versus constructed length",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Cumulative awarded and constructed lengths of high-speed greenfield corridors.",
+          "read": "Of 6,669 km awarded, 4,610 km was completed by 28 February 2025.",
+          "why": "Shows progress on high-capacity road links between economic centres."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_fastag_mix": {
+      "labels": [
+        "FASTag",
+        "Other payment"
       ],
       "values": [
-        66820,
-        1159,
-        1202
+        98.5,
+        1.5
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route length by gauge on 31 March 2024; Year Book 2023-24, pp. 60-62.",
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "% of toll payments",
+      "note": "NHAI Annual Report 2023-24: 98.5% of toll payments were collected through FASTag. Other-payment share is the arithmetic complement, not a separately reported statistic.",
       "meta": {
-        "title": "Route Length by Gauge (2023-24)",
-        "subtitle": "Broad, metre and narrow gauge route kilometres",
+        "title": "FASTag Share of Toll Payments",
+        "subtitle": "NHAI toll transactions, FY 2023-24",
         "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
+        "color": "#39c5bb",
+        "suffix": "% of toll payments",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
         "explain": {
-          "what": "Route kilometres by track gauge on 31 March 2024.",
-          "read": "Broad gauge is 96.59% of the route and carried 100% of freight output and 99.96% of passenger-km.",
-          "why": "A single dominant gauge lets trains run end to end across the country."
+          "what": "Share of NHAI toll payments collected through FASTag; remainder is calculated.",
+          "read": "FASTag accounted for 98.5%; other methods make up the derived 1.5% remainder.",
+          "why": "Electronic collection measures payment digitisation, not freight tonnage."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_zone_route_km": {
+    "log_road_fastag_collection": {
       "labels": [
-        "Northern",
-        "South Central",
-        "Western",
-        "North Western",
-        "Southern",
-        "East Central",
-        "Northeast Frontier",
-        "Central",
-        "South Western",
-        "North Central",
-        "North Eastern",
-        "West Central",
-        "East Coast",
-        "Eastern",
-        "South Eastern",
-        "South East Central",
-        "Metro Railway Kolkata"
-      ],
-      "values": [
-        7406,
-        6610,
-        6284,
-        5712,
-        5092,
-        4377,
-        4348,
-        4275,
-        3692,
-        3522,
-        3492,
-        3124,
-        3071,
-        2841,
-        2749,
-        2541,
-        45
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres by zonal railway, 2023-24; Year Book 2023-24, pp. 60-62.",
-      "meta": {
-        "title": "Route Kilometres by Zonal Railway (2023-24)",
-        "subtitle": "Route length of the 16 zones plus Kolkata Metro",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Route kilometres under each of the 16 zonal railways and Metro Railway Kolkata.",
-          "read": "Northern Railway (7,406 km), South Central (6,610) and Western (6,284) run the longest networks.",
-          "why": "Zones are the operating units of Indian Railways."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_state_route_km": {
-      "labels": [
-        "Uttar Pradesh",
-        "Rajasthan",
-        "Maharashtra",
-        "Madhya Pradesh",
-        "Gujarat",
-        "West Bengal",
-        "Tamil Nadu",
-        "Andhra Pradesh",
-        "Bihar",
-        "Karnataka",
-        "Odisha",
-        "Jharkhand",
-        "Assam",
-        "Punjab",
-        "Telangana",
-        "Haryana",
-        "Chhattisgarh",
-        "Kerala",
-        "Uttarakhand",
-        "Himachal Pradesh",
-        "Jammu & Kashmir",
-        "Tripura",
-        "Delhi",
-        "Goa",
-        "Manipur",
-        "Nagaland",
-        "Puducherry",
-        "Chandigarh",
-        "Arunachal Pradesh",
-        "Meghalaya",
-        "Mizoram"
-      ],
-      "values": [
-        8823,
-        6135,
-        5930,
-        5263,
-        5051,
-        4161,
-        4038,
-        4016,
-        3959,
-        3647,
-        2985,
-        2651,
-        2571,
-        2265,
-        2015,
-        1780,
-        1222,
-        1048,
-        346,
-        313,
-        298,
-        265,
-        188,
-        69,
-        56,
-        25,
-        23,
-        16,
-        12,
-        9,
-        1
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', state-wise route kilometres, 2023-24. States and territories not listed have no railway line; Year Book 2023-24, pp. 60-62.",
-      "meta": {
-        "title": "Route Kilometres by State (2023-24)",
-        "subtitle": "Railway route length in each state and union territory",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Route kilometres within each state or union territory at the end of 2023-24.",
-          "read": "Uttar Pradesh (8,823 km), Rajasthan (6,135) and Maharashtra (5,930) have the longest networks; Mizoram has 1 km.",
-          "why": "State-wise length shows where rail access is deepest."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_multiple_track_index": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        110.67,
-        113.08,
-        119.87,
-        123.87,
-        126.04,
-        129.89,
-        135.75,
-        148.11,
-        151.13,
-        155.27,
-        158.64
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "running-track km per 100 route-km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route and running track kilometres; Year Book 2023-24, pp. 60-62.",
-      "meta": {
-        "title": "Running Track per 100 Route-Km",
-        "subtitle": "Running-track length relative to route length",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " track km / 100 route-km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Running-track kilometres for every 100 route-kilometres, calculated from the Year Book series.",
-          "read": "The ratio was 158.64 in 2023-24, versus 110.67 in 1950-51.",
-          "why": "It indicates how much additional track exists beyond a single route line."
-        }
-      }
-    },
-    "rail_route_net_additions": {
-      "labels": [
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        2651,
-        3543,
-        1450,
-        1127,
-        661,
-        1145,
-        3930,
-        -60,
-        541,
-        597
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres by benchmark year; each bar is the change from the preceding listed benchmark; Year Book 2023-24, pp. 60-62.",
-      "meta": {
-        "title": "Route-Km Added Between Benchmarks",
-        "subtitle": "Change in route length since the prior listed year",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Difference between each adjacent published route-kilometre benchmark.",
-          "read": "The listed route length increased by 15,585 km from 1950-51 to 2023-24; the last interval added 597 km.",
-          "why": "The differences show when network expansion accelerated or slowed."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_route_growth_index": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        100.0,
-        104.95,
-        111.56,
-        114.26,
-        116.37,
-        117.6,
-        119.73,
-        127.07,
-        126.96,
-        127.96,
-        129.08
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "1950-51 = 100",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', route kilometres since 1950-51; index calculated from the published values; Year Book 2023-24, pp. 60-62.",
-      "meta": {
-        "title": "Route Length Index",
-        "subtitle": "Route kilometres indexed to 1950-51",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": " index",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Route kilometres as an index, with 1950-51 set to 100.",
-          "read": "The index reached 129.1 in 2023-24.",
-          "why": "An index makes long-run growth easier to compare."
-        }
-      }
-    },
-    "rail_electrified_route_share": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        0.72,
-        1.33,
-        6.2,
-        8.73,
-        15.98,
-        23.57,
-        30.55,
-        67.21,
-        76.13,
-        84.68,
-        89.99
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "%",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'Electrification' cumulative electrified route and 'The Network' route kilometres; share calculated for matching benchmark years; Year Book 2023-24, pp. 60-62 and 74-78.",
-      "meta": {
-        "title": "Electrified Route Share",
-        "subtitle": "Electrified kilometres as a share of route kilometres",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Network & Electrification",
-        "explain": {
-          "what": "Cumulative electrified route kilometres divided by total route kilometres.",
-          "read": "The ratio was 89.99% in the 2023-24 benchmark.",
-          "why": "It tracks the reach of electrification across the network."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_passengers_originating": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        1284,
-        1594,
-        2431,
-        3613,
-        3858,
-        4833,
-        7651,
-        1250,
-        3519,
-        6396,
-        6905
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I (passengers originating, suburban plus non-suburban); Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Passengers Originating",
-        "subtitle": "Annual passenger journeys on Indian Railways",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " million",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Passenger journeys that began on Indian Railways, in millions.",
-          "read": "Journeys fell to 1,250 million in 2020-21 (COVID-19) and recovered to 6,905 million in 2023-24, still below the 7,651 million of 2010-11.",
-          "why": "It is the headline demand measure for Indian Railways."
-        }
-      }
-    },
-    "rail_passenger_split": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
+        "FY 2023-24"
       ],
       "datasets": [
         {
-          "label": "Suburban",
+          "label": "FASTag Collections",
           "values": [
-            412,
-            680,
-            1219,
-            2000,
-            2259,
-            2861,
-            4061,
-            917,
-            2169,
-            3792,
-            3981
+            55000
           ],
           "color": "#ff9933"
-        },
+        }
+      ],
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "Rs crore",
+      "note": "NHAI Annual Report 2023-24, Electronic Toll Collection: FASTag collection was around Rs 55,000 crore in FY 2023-24 (IHMCL source).",
+      "meta": {
+        "title": "FASTag Collections",
+        "subtitle": "FY 2023-24",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
+        "explain": {
+          "what": "Approximate toll collection through FASTag during FY 2023-24.",
+          "read": "NHAI reports around Rs 55,000 crore collected through FASTag.",
+          "why": "User-fee collection for highway tolls, not road-freight operator turnover."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_road_nhai_build": {
+      "labels": [
+        "Awarded works",
+        "Constructed"
+      ],
+      "datasets": [
         {
-          "label": "Non-suburban",
+          "label": "FY 2023-24",
           "values": [
-            872,
-            914,
-            1212,
-            1613,
-            1599,
-            1972,
-            3590,
-            333,
-            1350,
-            2604,
-            2924
+            3339,
+            6644
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         }
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, suburban versus non-suburban journeys; Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Suburban vs Non-Suburban Journeys",
-        "subtitle": "Passengers originating by service type",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " million",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Suburban (city commuter) and non-suburban (long-distance) passenger journeys.",
-          "read": "Suburban journeys were 3,981 million in 2023-24, 58% of the total.",
-          "why": "Commuter and long-distance services need different capacity."
-        }
-      }
-    },
-    "rail_passenger_km": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        66517,
-        77665,
-        118120,
-        208558,
-        295644,
-        457022,
-        978508,
-        231126,
-        590217,
-        958919,
-        1064700
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million passenger-km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table II (passenger kilometres); Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Passenger Kilometres",
-        "subtitle": "Total distance travelled by rail passengers",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " million passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Passenger-kilometres: each passenger multiplied by the distance travelled.",
-          "read": "Output reached 1,064,700 million passenger-km in 2023-24, about 16 times the 1950-51 level and above 2010-11.",
-          "why": "Passenger-km measures output; counting journeys alone ignores how far people travel."
-        }
-      }
-    },
-    "rail_passenger_lead": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        51.8,
-        48.7,
-        48.6,
-        57.7,
-        76.6,
-        94.6,
-        127.9,
-        184.8,
-        167.7,
-        149.9,
-        154.2
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
       "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table III (average lead of all passengers); Year Book 2023-24, pp. 22-37.",
+      "note": "NHAI Annual Report 2023-24: NHAI awarded 3,339 km and constructed 6,644 km of National Highways during FY 2023-24.",
       "meta": {
-        "title": "Average Passenger Journey Length",
-        "subtitle": "Average lead per passenger",
+        "title": "NHAI Awards and Construction",
+        "subtitle": "National Highway length in FY 2023-24",
         "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
+        "color": "#bc8cff",
+        "suffix": "km",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
         "explain": {
-          "what": "Average distance of a passenger journey, in kilometres.",
-          "read": "It rose from 51.8 km in 1950-51 to 154.2 km in 2023-24, with a peak of 184.8 km in 2020-21.",
-          "why": "A longer lead means a bigger share of travel is intercity rather than suburban."
+          "what": "National Highway lengths awarded and constructed by NHAI during FY 2023-24.",
+          "read": "NHAI constructed 6,644 km, its highest annual construction achievement reported in the annual report.",
+          "why": "Annual delivery indicates the pace of road capacity being added."
         }
-      }
+      },
+      "chartType": "bar",
+      "scope": "category"
     },
-    "rail_passenger_mix": {
+    "log_road_nh_index": {
       "labels": [
-        "Suburban",
-        "Second class mail/express",
-        "Second class ordinary",
-        "Upper class"
+        "2023 (2014=100)"
       ],
-      "values": [
-        3981,
-        1871,
-        734,
-        319
+      "datasets": [
+        {
+          "label": "National Highway Network Growth Index",
+          "values": [
+            160
+          ],
+          "color": "#ff9933"
+        }
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "million",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, 2023-24 journeys by service and class; Year Book 2023-24, pp. 22-37.",
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=1993425&reg=3&lang=2",
+      "unit": "index (2014=100)",
+      "note": "MoRTH Year End Review 2023 reports NH length rose 60% from 91,287 km in 2014 to 146,145 km in 2023; displayed index expresses its rounded growth as 160.",
       "meta": {
-        "title": "Passenger Journeys by Service (2023-24)",
-        "subtitle": "Split of 6,905 million journeys",
+        "title": "National Highway Network Growth Index",
+        "subtitle": "2023 (2014=100)",
         "frequency": "Annual",
         "color": "#ff7b72",
-        "suffix": " million",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
+        "suffix": "index (2014=100)",
+        "category": "Logistics & Freight",
+        "subgroup": "Road Freight",
         "explain": {
-          "what": "How 2023-24 passenger journeys split across suburban and non-suburban classes.",
-          "read": "Suburban is 57.7% of journeys, second-class mail/express 27.1%, second-class ordinary 10.6% and upper class 4.6%.",
-          "why": "Most journeys are suburban or second class."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "rail_trains_daily": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Passenger trains run daily",
-          "values": [
-            12541,
-            13198
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Goods trains run daily",
-          "values": [
-            10388,
-            11724
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "trains",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Train Utilisation; Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Trains Run Daily",
-        "subtitle": "Passenger and goods trains on an average day",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " trains",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Average number of passenger and goods trains run each day.",
-          "read": "Passenger trains per day grew 5.2% and goods trains 12.9% between 2022-23 and 2023-24.",
-          "why": "Train counts show how intensively the track is used."
+          "what": "Rounded NH network length index derived from MoRTH's reported 60% growth.",
+          "read": "The 2023 index is 160 when 2014 is 100; it is derived, not an observed km series.",
+          "why": "An index communicates proportional expansion without treating rounded endpoints as exact growth."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_passenger_suburban_share": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        32.09,
-        42.66,
-        50.14,
-        55.36,
-        58.55,
-        59.2,
-        53.08,
-        73.36,
-        61.64,
-        59.29,
-        57.65
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "%",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, suburban journeys divided by total journeys; Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Suburban Share of Journeys",
-        "subtitle": "Suburban journeys as a share of all passenger journeys",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Suburban passenger journeys divided by total passenger journeys for each year.",
-          "read": "Suburban journeys were 57.65% of the 2023-24 total.",
-          "why": "The share distinguishes commuter traffic from long-distance demand."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_passenger_non_suburban_share": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        67.91,
-        57.34,
-        49.86,
-        44.64,
-        41.45,
-        40.8,
-        46.92,
-        26.64,
-        38.36,
-        40.71,
-        42.35
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "%",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table I, non-suburban journeys divided by total journeys; Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Non-Suburban Share of Journeys",
-        "subtitle": "Non-suburban journeys as a share of all passenger journeys",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Non-suburban passenger journeys divided by total passenger journeys for each year.",
-          "read": "Non-suburban journeys were 42.35% of the 2023-24 total.",
-          "why": "This share tracks the long-distance portion of passenger traffic."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_passenger_average_lead_calculated": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        51.8,
-        48.72,
-        48.59,
-        57.72,
-        76.63,
-        94.56,
-        127.89,
-        184.9,
-        167.72,
-        149.92,
-        154.19
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km per journey",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Tables I and II; passenger-km divided by passengers originating; Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Calculated Average Passenger Journey",
-        "subtitle": "Passenger-km divided by passenger journeys",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Average journey length calculated from passenger-kilometres and journeys originating.",
-          "read": "The ratio was 154.19 km per journey in 2023-24; it is calculated independently of the reported average lead.",
-          "why": "It cross-checks the relationship between passenger volume and distance travelled."
-        }
-      }
-    },
-    "rail_passenger_km_index": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        100.0,
-        116.76,
-        177.58,
-        313.54,
-        444.46,
-        687.08,
-        1471.06,
-        347.47,
-        887.32,
-        1441.61,
-        1600.64
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "1950-51 = 100",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business, Table II; passenger-kilometres indexed to 1950-51; Year Book 2023-24, pp. 22-37.",
-      "meta": {
-        "title": "Passenger-Km Index",
-        "subtitle": "Passenger-kilometres indexed to 1950-51",
-        "frequency": "Annual",
-        "color": "#bc8cff",
-        "suffix": " index",
-        "category": "Indian Railways",
-        "subgroup": "Passenger Services",
-        "explain": {
-          "what": "Passenger-kilometres as an index with 1950-51 set to 100.",
-          "read": "The index reached 1600.6 in 2023-24.",
-          "why": "The index shows long-run growth in passenger transport work."
-        }
-      }
-    },
-    "rail_freight_tonnes": {
+    "log_rail_loading": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -123993,23 +117257,23 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (revenue-earning freight, tonnes originating, excluding Konkan Railway); Year Book 2023-24, pp. 38-45.",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: revenue-earning freight tonnes originating (excluding Konkan Railway).",
       "meta": {
-        "title": "Freight Originating",
-        "subtitle": "Revenue-earning tonnes loaded by Indian Railways",
+        "title": "Rail Freight Loading",
+        "subtitle": "Revenue-earning tonnes originating",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": " million tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
         "explain": {
           "what": "Revenue-earning freight originating on Indian Railways, in million tonnes.",
-          "read": "From 73 million tonnes in 1950-51 to 1,588 million tonnes in 2023-24, about 21.7 times higher.",
-          "why": "Rail carries the bulk commodities (coal, ore, cement, foodgrains) that supply industry."
+          "read": "Loading reached 1,588.06 million tonnes in 2023-24; this is the Year Book revenue-earning series, not all-originating loading.",
+          "why": "Repeats railway output in the cross-mode dashboard without altering the rail group's chart."
         }
       }
     },
-    "rail_freight_ntkm": {
+    "log_rail_ntkm": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -124038,68 +117302,23 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million net tonne-km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (net tonne kilometres); Year Book 2023-24, pp. 38-45.",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I (net tonne-kilometres).",
       "meta": {
-        "title": "Freight Output (Net Tonne-Km)",
-        "subtitle": "Tonnes moved multiplied by distance",
+        "title": "Rail Freight Transport Work",
+        "subtitle": "Net tonne-kilometres",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": " million NTKM",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "suffix": "million net tonne-km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
         "explain": {
-          "what": "Net tonne-kilometres: freight tonnage multiplied by distance moved.",
-          "read": "Output reached 973,968 million NTKM in 2023-24, about 26 times 1950-51.",
-          "why": "NTKM measures transport work; tonnes alone ignore haul length."
+          "what": "Net tonne-kilometres: tonnes multiplied by distance carried.",
+          "read": "Indian Railways recorded 973,968 million net tonne-km in 2023-24.",
+          "why": "Tonne-km includes freight volume and haul distance, unlike tonnes alone."
         }
       }
     },
-    "rail_freight_lead": {
-      "labels": [
-        "1950-51",
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        513,
-        603,
-        659,
-        754,
-        741,
-        660,
-        679,
-        585,
-        616,
-        636,
-        613
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I (average lead of freight); Year Book 2023-24, pp. 38-45.",
-      "meta": {
-        "title": "Average Freight Haul",
-        "subtitle": "Average lead of a tonne of freight",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
-        "explain": {
-          "what": "Average distance a tonne of freight is carried.",
-          "read": "Average haul peaked at 754 km in 1980-81 and was 613 km in 2023-24.",
-          "why": "Haul length affects wagon use and freight earnings per tonne."
-        }
-      }
-    },
-    "rail_freight_commodity_mix": {
+    "log_rail_commodity_mix": {
       "labels": [
         "Coal",
         "Iron ore",
@@ -124126,25 +117345,25 @@ window.INDIA_DASHBOARD_DATA = {
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2023-24; Year Book 2023-24, pp. 38-45.",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning loading in 2023-24.",
       "meta": {
-        "title": "Freight by Commodity (2023-24)",
-        "subtitle": "Share of 1,588 million tonnes loaded",
+        "title": "Rail Freight by Commodity",
+        "subtitle": "2023-24 originating loading",
         "frequency": "Annual",
         "color": "#ff7b72",
-        "suffix": " million tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
         "explain": {
-          "what": "Revenue-earning freight by commodity group in 2023-24.",
-          "read": "Coal is 49.55% of loading (thermal power houses alone 38.19%), then iron ore 11.39%, cement 9.62% and containers 5.34%.",
-          "why": "Rail freight depends heavily on bulk coal."
+          "what": "Revenue-earning rail freight tonnes by commodity group in 2023-24.",
+          "read": "Coal loading was 786.84 million tonnes, 49.55% of the 1,588.06 million tonne total.",
+          "why": "The commodity mix shows dependence on bulk and industrial goods."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_freight_commodity_change": {
+    "log_rail_commodity_change": {
       "labels": [
         "Coal",
         "Iron ore",
@@ -124172,7 +117391,7 @@ window.INDIA_DASHBOARD_DATA = {
             28.15,
             125.08
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         },
         {
           "label": "2023-24",
@@ -124188,151 +117407,30 @@ window.INDIA_DASHBOARD_DATA = {
             29.17,
             117.61
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         }
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "million tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, commodity-wise loading 2022-23 vs 2023-24; Year Book 2023-24, pp. 38-45.",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation: commodity-wise revenue-earning tonnes originating, 2022-23 and 2023-24.",
       "meta": {
-        "title": "Commodity Loading: 2022-23 vs 2023-24",
-        "subtitle": "Tonnes loaded by commodity group",
+        "title": "Rail Loading by Commodity: Year-on-Year",
+        "subtitle": "Commodity-wise revenue-earning loading",
         "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " million tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "color": "#bc8cff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
         "explain": {
-          "what": "Tonnes carried for each commodity group in the last two years.",
-          "read": "Coal added 59.6 million tonnes and iron ore 20.8 million; foodgrains fell by 19.5 million.",
-          "why": "Year-on-year changes show which commodities drove growth."
+          "what": "Freight loading by commodity group in FY 2022-23 and FY 2023-24.",
+          "read": "Coal rose from 727.24 to 786.84 million tonnes; foodgrains fell from 70.92 to 51.44 million tonnes.",
+          "why": "A same-commodity comparison helps identify sources of freight growth."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_freight_loading_pib": {
-      "labels": [
-        "2020-21",
-        "2023-24",
-        "2024-25"
-      ],
-      "values": [
-        1233,
-        1590.68,
-        1617.38
-      ],
-      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2117417",
-      "unit": "million tonnes",
-      "note": "Ministry of Railways via PIB: originating freight loading was 1,233 MT in 2020-21 (Lok Sabha reply, PIB release 2201815), 1,590.68 MT in 2023-24 and 1,617.38 MT in 2024-25, up 1.68% (PIB release 2117417, 1 April 2025, opening freight-loading paragraph). These cover all originating loading, so they differ slightly from the Year Book's revenue-earning series.",
-      "meta": {
-        "title": "Freight Loading to 2024-25",
-        "subtitle": "Originating loading, latest Ministry figures",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": " million tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
-        "explain": {
-          "what": "Total originating freight loading, from Ministry of Railways statements.",
-          "read": "Loading reached 1,617.38 million tonnes in 2024-25; the Ministry says this makes Indian Railways the second-largest freight carrier in the world.",
-          "why": "It extends the series past the Year Book's 2023-24 end year."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_freight_commodity_share": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "values": [
-        49.55,
-        11.39,
-        9.62,
-        5.34,
-        4.77,
-        3.71,
-        3.24,
-        3.14,
-        1.84,
-        7.41
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of revenue-earning tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation commodity table, 2023-24 loading as a share of the 1,588.06 million tonnes reported in Table I; Year Book 2023-24, pp. 38-45.",
-      "meta": {
-        "title": "Commodity Shares of Loading",
-        "subtitle": "Commodity tonnes as a share of 2023-24 revenue-earning loading",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
-        "explain": {
-          "what": "Each commodity group's reported loading divided by total revenue-earning tonnes originating.",
-          "read": "Coal accounted for 49.55% of 2023-24 revenue-earning loading.",
-          "why": "The shares show the commodity concentration of rail freight."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "rail_freight_commodity_growth_pct": {
-      "labels": [
-        "Coal",
-        "Iron ore",
-        "Cement",
-        "Containers",
-        "Pig iron & finished steel",
-        "Fertilizers",
-        "Foodgrains",
-        "Mineral oil (POL)",
-        "Raw material for steel",
-        "Other goods"
-      ],
-      "values": [
-        8.2,
-        12.99,
-        6.11,
-        6.99,
-        8.46,
-        4.58,
-        -27.47,
-        3.44,
-        3.62,
-        -5.97
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% change",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation commodity-wise loading table, 2022-23 to 2023-24; percentage changes calculated from table values; Year Book 2023-24, pp. 38-45.",
-      "meta": {
-        "title": "Commodity Loading Growth",
-        "subtitle": "Percent change in tonnes loaded by commodity",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
-        "explain": {
-          "what": "Year-on-year percentage change in commodity loading between 2022-23 and 2023-24.",
-          "read": "Coal loading rose 8.20%; foodgrains changed by -27.47%.",
-          "why": "Growth by commodity identifies which goods gained or lost loading."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_freight_average_haul_calculated": {
+    "log_rail_average_lead": {
       "labels": [
         "1950-51",
         "1960-61",
@@ -124347,801 +117445,683 @@ window.INDIA_DASHBOARD_DATA = {
         "2023-24"
       ],
       "values": [
-        513.18,
-        603.78,
-        659.3,
-        753.71,
-        740.53,
-        659.71,
-        678.86,
-        584.73,
-        615.75,
-        635.85,
-        613.31
+        513,
+        603,
+        659,
+        754,
+        741,
+        660,
+        679,
+        585,
+        616,
+        636,
+        613
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I; net tonne-kilometres divided by revenue-earning tonnes; Year Book 2023-24, pp. 38-45.",
+      "unit": "km per tonne",
+      "note": "Railway Board, Indian Railways Year Book 2023-24, Freight Operation Table I: average lead of freight.",
       "meta": {
-        "title": "Calculated Average Freight Haul",
-        "subtitle": "Net tonne-km divided by originating tonnes",
+        "title": "Rail Freight Average Lead",
+        "subtitle": "Average distance per tonne",
         "frequency": "Annual",
         "color": "#3fb950",
-        "suffix": " km",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "suffix": "km per tonne",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
         "explain": {
-          "what": "Average freight haul calculated by dividing net tonne-kilometres by tonnes originating.",
-          "read": "The calculated average haul was 613.31 km in 2023-24.",
-          "why": "The quotient ties freight volume to the distance moved."
+          "what": "Average distance carried for each tonne of railway freight.",
+          "read": "Average freight lead was 613 km in 2023-24.",
+          "why": "Average lead puts freight tonnes in the context of distance moved."
         }
       }
     },
-    "rail_freight_loading_benchmark_change": {
+    "log_rail_dfc_progress": {
       "labels": [
-        "1960-61",
-        "1970-71",
-        "1980-81",
-        "1990-91",
-        "2000-01",
-        "2010-11",
+        "Operational",
+        "Total EDFC + WDFC"
+      ],
+      "datasets": [
+        {
+          "label": "March 2025",
+          "values": [
+            2741,
+            2843
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2112843&reg=48&lang=2",
+      "unit": "route km",
+      "note": "Ministry of Railways reply, PIB 19 March 2025: 2,741 of 2,843 route-km on the Eastern and Western Dedicated Freight Corridors was commissioned and operational (96.4%).",
+      "meta": {
+        "title": "Dedicated Freight Corridor Progress",
+        "subtitle": "EDFC and WDFC route kilometres",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "route km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Operational route kilometres compared with combined EDFC and WDFC length.",
+          "read": "2,741 of 2,843 route-km (96.4%) was operational in March 2025.",
+          "why": "Dedicated corridors add freight capacity separate from much of the passenger network."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_major_port_traffic": {
+      "labels": [
+        "2017-18",
+        "2018-19",
+        "2019-20",
         "2020-21",
         "2021-22",
         "2022-23",
         "2023-24"
       ],
       "values": [
-        46.599999999999994,
-        48.10000000000001,
-        28.0,
-        122.49999999999997,
-        155.10000000000002,
-        448.23,
-        309.21000000000004,
-        184.92999999999984,
-        93.23000000000002,
-        78.96000000000004
+        679.37,
+        699.1,
+        704.93,
+        672.68,
+        720.05,
+        784.31,
+        819.23
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
       "unit": "million tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Freight Operation, Table I; change between adjacent listed originating-tonnage benchmarks; Year Book 2023-24, pp. 38-45.",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: annual cargo throughput at the 12 major ports.",
       "meta": {
-        "title": "Freight Loading Change Between Benchmarks",
-        "subtitle": "Change in originating tonnes since the prior listed year",
+        "title": "Cargo Handled at Major Ports",
+        "subtitle": "12 major ports, annual cargo throughput",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": " million tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Freight Operations",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
         "explain": {
-          "what": "Difference in revenue-earning tonnes originating between adjacent listed benchmark years.",
-          "read": "Loading increased by 78.96 million tonnes between 2022-23 and 2023-24.",
-          "why": "The changes reveal the varying scale of long-run growth."
+          "what": "Annual cargo throughput at India's 12 major ports.",
+          "read": "Major-port cargo reached 819.23 million tonnes in 2023-24, up from 784.31 million tonnes in 2022-23.",
+          "why": "Ports handle international and coastal cargo at India's maritime gateways."
         }
-      },
-      "chartType": "bar",
-      "scope": "category"
+      }
     },
-    "rail_locomotive_mix": {
+    "log_sea_container_teu": {
       "labels": [
-        "Electric",
-        "Diesel",
-        "Steam"
+        "2017-18",
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "2021-22",
+        "2022-23",
+        "2023-24"
       ],
       "values": [
-        10675,
-        4397,
-        38
+        9.14,
+        9.88,
+        8.79,
+        9.61,
+        11.22,
+        11.45,
+        12.31
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "locomotives",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, locomotives on 31 March 2024; Year Book 2023-24, pp. 4-6.",
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million TEU",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port container traffic (the table reports TEUs in parentheses).",
       "meta": {
-        "title": "Locomotives by Traction (2023-24)",
-        "subtitle": "15,110 locomotives by type",
+        "title": "Major-Port Container Throughput",
+        "subtitle": "Container traffic in million TEU",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "million TEU",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Twenty-foot equivalent units handled by the 12 major ports.",
+          "read": "Container throughput rose from 11.45 million TEU in 2022-23 to 12.31 million TEU in 2023-24.",
+          "why": "TEUs measure containerised freight separately from bulk cargo tonnes."
+        }
+      }
+    },
+    "log_sea_commodity_mix": {
+      "labels": [
+        "POL",
+        "Iron ore",
+        "Fertilizers & raw materials",
+        "Coal",
+        "Containers",
+        "Other cargo"
+      ],
+      "values": [
+        245.99,
+        61.03,
+        17.68,
+        191.98,
+        181.57,
+        120.98
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: commodity-wise cargo traffic at major ports, FY 2023-24.",
+      "meta": {
+        "title": "Major-Port Cargo by Commodity",
+        "subtitle": "FY 2023-24, 12 major ports",
         "frequency": "Annual",
         "color": "#f6c344",
-        "suffix": " locomotives",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
         "explain": {
-          "what": "Locomotive fleet by traction type on 31 March 2024.",
-          "read": "Electric locomotives are 70.7% of the fleet; 38 steam locomotives remain.",
-          "why": "Fleet mix follows the electrification of the route."
+          "what": "Major-port cargo in the six commodity groups reported by the Ministry.",
+          "read": "POL was the largest reported group at 245.99 million tonnes; containers were 181.57 million tonnes.",
+          "why": "The breakdown distinguishes liquid and dry bulk from containerised cargo."
         }
       },
       "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_locomotive_change": {
+    "log_sea_overseas_coastal": {
       "labels": [
-        "Electric",
-        "Diesel",
-        "Steam"
+        "Overseas",
+        "Coastal",
+        "Total"
       ],
       "datasets": [
         {
           "label": "2022-23",
           "values": [
-            9565,
-            4730,
-            39
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            10675,
-            4397,
-            38
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "locomotives",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of locomotives (2022-23 revised); Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Locomotive Fleet: 2022-23 vs 2023-24",
-        "subtitle": "Locomotives by traction type",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " locomotives",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Number of electric, diesel and steam locomotives in the last two years.",
-          "read": "Electric locomotives grew by 1,110 while diesel fell by 333.",
-          "why": "Shows the shift from diesel to electric traction year by year."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_coach_fleet": {
-      "labels": [
-        "Passenger carriages",
-        "Other coaching vehicles",
-        "EMU/MEMU coaches"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            66369,
-            11419,
-            11913
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            66687,
-            13022,
-            12229
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "coaches",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of coaches (2022-23 revised); Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Coach Fleet: 2022-23 vs 2023-24",
-        "subtitle": "Passenger and other coaching vehicles",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " coaches",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Coaches by type; the total was 91,948 in 2023-24 including rail cars.",
-          "read": "Other coaching vehicles grew fastest, by 14%; passenger carriages grew 0.5%.",
-          "why": "Coach numbers limit how many passengers can be carried."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_wagon_fleet": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        315103,
-        327991
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "wagons",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of wagons (2022-23 revised); Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Wagon Fleet",
-        "subtitle": "Freight wagons owned by Indian Railways",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " wagons",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Total wagons owned by Indian Railways.",
-          "read": "The fleet grew by 12,888 wagons (4.1%) to 327,991.",
-          "why": "Wagon availability caps freight loading."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_wagon_turnround": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        4.7,
-        5.11
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "days",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, Wagon Utilisation (broad gauge); Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Wagon Turn-Round Time",
-        "subtitle": "Days for a wagon to complete a loading cycle",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": " days",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Average days for a broad-gauge wagon to complete one loading cycle.",
-          "read": "Turn-round lengthened from 4.70 to 5.11 days.",
-          "why": "A shorter turn-round lets the same fleet carry more freight."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_goods_load": {
-      "labels": [
-        "Average net load",
-        "Average gross load"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            1738,
-            2918
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            1899,
-            3085
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, goods train utilisation (broad gauge, all traction). Average goods-train speed fell from 30.8 to 25.0 km/h over the same year; Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Average Goods Train Load",
-        "subtitle": "Net and gross load per goods train",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " tonnes",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Average net and gross load of a broad-gauge goods train.",
-          "read": "Net load per train rose 9.3% to 1,899 tonnes, while average goods-train speed fell to 25.0 km/h.",
-          "why": "Heavier trains move more per path, but slower speeds lengthen transit times."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_locomotive_traction_share": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Electric",
-          "values": [
-            62.38,
-            70.65
+            1125.613,
+            309.708,
+            1435.322
           ],
           "color": "#ff9933"
         },
         {
-          "label": "Diesel",
+          "label": "2023-24 provisional",
           "values": [
-            30.85,
-            29.1
+            1209.675,
+            332.74,
+            1542.415
           ],
           "color": "#58a6ff"
-        },
-        {
-          "label": "Steam",
-          "values": [
-            0.25,
-            0.25
-          ],
-          "color": "#8b949e"
         }
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of locomotive fleet",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, locomotive counts by traction on 31 March 2023 and 31 March 2024; shares calculated from category totals; Year Book 2023-24, pp. 4-6.",
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): overseas and coastal traffic at major and non-major ports combined. Converted from '000 tonnes; 2023-24 provisional. Rounded components may differ from total by 0.001.",
       "meta": {
-        "title": "Locomotive Fleet by Traction Share",
-        "subtitle": "Electric, diesel and steam shares",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Locomotive counts by traction as a share of all reported electric, diesel and steam locomotives.",
-          "read": "Electric locomotives were 70.65% of the listed fleet in 2023-24.",
-          "why": "Shares make the traction transition comparable despite fleet growth."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_coach_category_share": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Passenger carriages",
-          "values": [
-            73.99,
-            72.53
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Other coaching vehicles",
-          "values": [
-            12.73,
-            14.16
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "EMU/MEMU coaches",
-          "values": [
-            13.28,
-            13.3
-          ],
-          "color": "#3fb950"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of listed coach categories",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, number of coaches by category, 2022-23 revised and 2023-24; shares calculated over the three listed categories; Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Share of Listed Coach Categories",
-        "subtitle": "Composition of the three reported coach groups",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Share of passenger carriages, other coaching vehicles and EMU/MEMU coaches among those listed categories.",
-          "read": "Passenger carriages were 72.53% of the listed 2023-24 categories.",
-          "why": "Category shares show how the reported coaching fleet is composed."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_daily_goods_train_share": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        45.31,
-        47.04
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of passenger and goods trains",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, daily passenger and goods trains run; goods share calculated from the two reported totals; Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Goods Trains as Share of Daily Trains",
-        "subtitle": "Goods trains among reported passenger and goods trains",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
-        "explain": {
-          "what": "Goods trains run daily divided by the combined daily passenger and goods train counts.",
-          "read": "Goods trains made up 47.04% of the two reported train groups in 2023-24.",
-          "why": "The mix compares passenger and freight operating intensity."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_goods_load_utilisation_pct": {
-      "labels": [
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        59.56,
-        61.56
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of gross tonnes",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Other Important Statistics, average net and gross goods-train loads; net-to-gross ratios calculated from the reported values; Year Book 2023-24, pp. 4-6.",
-      "meta": {
-        "title": "Average Net Load as Share of Gross Load",
-        "subtitle": "Net tonnes per goods train relative to gross tonnes",
+        "title": "Overseas and Coastal Port Traffic",
+        "subtitle": "All major and non-major ports",
         "frequency": "Annual",
         "color": "#bc8cff",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Rolling Stock & Operations",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
         "explain": {
-          "what": "Average net goods-train load divided by average gross load.",
-          "read": "The net-to-gross ratio was 61.56% in 2023-24.",
-          "why": "The ratio shows the share of average gross train weight represented by payload."
+          "what": "Overseas, coastal and total cargo handled by all Indian ports.",
+          "read": "Provisional 2023-24 total was 1,542.415 million tonnes, including 332.740 million coastal tonnes.",
+          "why": "The split avoids treating all port throughput as international freight."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_accidents_by_type": {
+    "log_sea_port_classes": {
       "labels": [
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "datasets": [
-        {
-          "label": "Derailments",
-          "values": [
-            40,
-            17,
-            27,
-            36,
-            25
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Collisions",
-          "values": [
-            5,
-            1,
-            2,
-            6,
-            6
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Fire in trains",
-          "values": [
-            8,
-            3,
-            4,
-            4,
-            9
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "Level-crossing accidents",
-          "values": [
-            1,
-            1,
-            1,
-            1,
-            0
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Miscellaneous",
-          "values": [
-            1,
-            0,
-            1,
-            1,
-            0
-          ],
-          "color": "#8b949e"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "accidents",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents by type, including Konkan Railway; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Consequential Train Accidents by Type",
-        "subtitle": "Accidents per year, 2019-20 to 2023-24",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": " accidents",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Consequential train accidents split into derailments, collisions, fires, level-crossing and other accidents.",
-          "read": "Derailments are the largest category (25 of 40 in 2023-24); fire accidents rose to 9.",
-          "why": "Type-wise counts show where safety work matters most."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_accidents_total": {
-      "labels": [
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        55,
-        22,
-        35,
-        48,
-        40
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "accidents",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, total consequential train accidents including Konkan Railway; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Total Consequential Train Accidents",
-        "subtitle": "Accidents per year",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": " accidents",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Total consequential train accidents.",
-          "read": "40 in 2023-24, against 55 in 2019-20 and 48 in 2022-23.",
-          "why": "Raw counts show how many serious incidents occurred."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_accident_rate": {
-      "labels": [
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        0.05,
-        0.03,
-        0.03,
-        0.03,
-        0.03
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "per million train-km",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, accidents per million train kilometres, the Year Book's principal safety index; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Accidents per Million Train-Km",
-        "subtitle": "Accident rate normalised for traffic",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": " per million train-km",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Consequential accidents divided by million train-kilometres run.",
-          "read": "The rate has held at 0.03 since 2020-21, against 0.05 in 2019-20.",
-          "why": "A rate shows safety per unit of traffic, unlike a raw count."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_accident_mix": {
-      "labels": [
-        "Derailments",
-        "Fire in trains",
-        "Collisions"
-      ],
-      "values": [
-        25,
-        9,
-        6
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "accidents",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, 2023-24: 40 consequential accidents; none at level crossings or miscellaneous; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Accident Types (2023-24)",
-        "subtitle": "Composition of 40 consequential accidents",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": " accidents",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Share of each accident type among the 40 consequential accidents in 2023-24.",
-          "read": "Derailments are 62.5%, fires 22.5% and collisions 15%.",
-          "why": "Shows which accident types dominate."
-        }
-      },
-      "chartType": "doughnut",
-      "scope": "category"
-    },
-    "rail_derailment_collision_trend": {
-      "labels": [
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        45,
-        18,
-        29,
-        42,
-        31
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "accidents",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; derailments plus collisions calculated from the listed types; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Derailments and Collisions",
-        "subtitle": "Combined derailment and collision counts",
-        "frequency": "Annual",
-        "color": "#ff7b72",
-        "suffix": " accidents",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Yearly derailment and collision counts added together from the consequential-accident table.",
-          "read": "There were 31 derailments and collisions in 2023-24.",
-          "why": "These two accident types together account for a large share of consequential incidents."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_derailment_share_pct": {
-      "labels": [
-        "2019-20",
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        72.73,
-        77.27,
-        77.14,
-        75.0,
-        62.5
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of consequential accidents",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; derailments divided by each year's total; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Derailments as Share of Consequential Accidents",
-        "subtitle": "Derailments divided by all listed consequential accidents",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Derailments as a percentage of all consequential train accidents listed for each year.",
-          "read": "Derailments accounted for 62.50% of consequential accidents in 2023-24.",
-          "why": "The share distinguishes the leading accident type from the overall count."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_accident_yoy_change_pct": {
-      "labels": [
-        "2020-21",
-        "2021-22",
-        "2022-23",
-        "2023-24"
-      ],
-      "values": [
-        -60.0,
-        59.09,
-        37.14,
-        -16.67
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% change",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Safety, consequential train accidents table; year-on-year changes calculated from the sum of listed accident types; Year Book 2023-24, pp. 52-59.",
-      "meta": {
-        "title": "Year-on-Year Accident Count Change",
-        "subtitle": "Percent change in consequential accident totals",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Railway Safety",
-        "explain": {
-          "what": "Year-on-year percentage change in the sum of the five reported accident categories.",
-          "read": "The total changed by -16.67% between 2022-23 and 2023-24.",
-          "why": "Year-on-year change shows direction as well as scale."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_revenue_expenses": {
-      "labels": [
-        "Revenue",
-        "Expenses",
-        "Net revenue (before dividend)"
+        "Major ports",
+        "Non-major ports",
+        "All ports"
       ],
       "datasets": [
         {
           "label": "2022-23",
           "values": [
-            239982.56,
-            235655.78,
-            2517.38
+            784.305,
+            651.017,
+            1435.322
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "2023-24 provisional",
+          "values": [
+            819.004,
+            723.411,
+            1542.415
           ],
           "color": "#58a6ff"
+        }
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024, Table 1(b): major, non-major and all-port traffic, converted from '000 tonnes. Provisional major-port value 819.004 differs from the annual report's later revised 819.23 MMT; revisions are not combined.",
+      "meta": {
+        "title": "Major vs Non-Major Port Cargo",
+        "subtitle": "Port traffic by administrative class",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Cargo traffic at major ports, non-major ports and all ports.",
+          "read": "The provisional 2023-24 update reports 819.004 million tonnes at major ports and 723.411 million tonnes at non-major ports.",
+          "why": "Non-major ports carry a substantial share of Indian port traffic."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_port_extremes": {
+      "labels": [
+        "SMP Kolkata (lowest)",
+        "Paradip (highest)"
+      ],
+      "values": [
+        16.63,
+        145.38
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/UPDATE%20ON%20INDIAN%20PORT%20SECTOR%2031.03.2024.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW, Update on Indian Port Sector as at 31 March 2024: provisional 2023-24 cargo by major port; SMP Kolkata (16.63 MMT) and Paradip (145.38 MMT) were lowest and highest respectively.",
+      "meta": {
+        "title": "Major-Port Traffic: Reported Extremes",
+        "subtitle": "Lowest and highest port totals",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Cargo handled by the lowest- and highest-throughput major ports in the 2023-24 table.",
+          "read": "Paradip handled 145.38 million tonnes, while SMP Kolkata handled 16.63 million tonnes.",
+          "why": "Port-level variation shows why the national total can conceal concentrated throughput."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_sea_major_yoy": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        784.31,
+        819.23
+      ],
+      "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.11: revised 12 major-port traffic for 2022-23 and 2023-24.",
+      "meta": {
+        "title": "Major-Port Cargo: Latest Annual Change",
+        "subtitle": "Revised major-port totals",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "The two latest annual totals for the 12 major ports.",
+          "read": "Cargo increased from 784.31 to 819.23 million tonnes.",
+          "why": "A short comparison highlights the latest annual change."
+        }
+      }
+    },
+    "log_air_aai_freight": {
+      "labels": [
+        "Domestic",
+        "International",
+        "Total"
+      ],
+      "datasets": [
+        {
+          "label": "2022-23",
+          "values": [
+            1282.26,
+            1864.54,
+            3146.8
+          ],
+          "color": "#ff9933"
         },
         {
           "label": "2023-24",
           "values": [
-            255272.63,
-            250893.61,
-            3259.68
+            1320.16,
+            2045.52,
+            3365.68
+          ],
+          "color": "#58a6ff"
+        }
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: freight handled at all Indian airports, domestic/international. This airport-handled basis differs from airline tonne-kilometres.",
+      "meta": {
+        "title": "Air Cargo: Domestic and International",
+        "subtitle": "Freight handled at all Indian airports",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Air freight handled at Indian airports, in thousands of metric tonnes.",
+          "read": "Total was 3,365.68 thousand tonnes in 2023-24: 1,320.16 domestic and 2,045.52 international.",
+          "why": "This airport-handled cargo measure differs from airline tonne-kilometres."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_air_aai_mix": {
+      "labels": [
+        "Domestic",
+        "International"
+      ],
+      "values": [
+        1320.16,
+        2045.52
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: FY 2023-24 freight at all Indian airports.",
+      "meta": {
+        "title": "Air Freight: Domestic vs International",
+        "subtitle": "Share of 3,365.68 thousand tonnes",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Domestic and international share of air freight handled at Indian airports in FY 2023-24.",
+          "read": "International freight was 2,045.52 thousand tonnes; domestic freight was 1,320.16 thousand tonnes.",
+          "why": "The split shows the relative scale of cross-border and domestic airport cargo."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_air_cargo_growth": {
+      "labels": [
+        "2014-15",
+        "2024-25"
+      ],
+      "values": [
+        2.53,
+        3.72
+      ],
+      "source": "https://www.civilaviation.gov.in/our-performance",
+      "unit": "million tonnes",
+      "note": "Ministry of Civil Aviation, Our Performance page, Supporting Passenger and Cargo Movement: national air-cargo figure 2.53 Mt in 2014-15 and 3.72 Mt in 2024-25. This differs in basis from AAI's airport-handled FY 2023-24 table.",
+      "meta": {
+        "title": "National Air Cargo Growth",
+        "subtitle": "Ministry-reported total air cargo",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Ministry-reported national air cargo volume at two endpoints.",
+          "read": "Reported volume rose from 2.53 million tonnes in 2014-15 to 3.72 million tonnes in 2024-25.",
+          "why": "The longer national series provides context beyond AAI's airport traffic table."
+        }
+      }
+    },
+    "log_modal_niti_share": {
+      "labels": [
+        "Road",
+        "Rail",
+        "Other modes (residual)"
+      ],
+      "values": [
+        71,
+        18,
+        11
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
+      "unit": "% of freight traffic",
+      "note": "MoPSW reply published 28 March 2025 quotes NITI Aayog's 2021 Fast Tracking Freight in India: road 71%, rail 18%. Other modes (11%) is the arithmetic residual to 100%, not an independently reported estimate.",
+      "meta": {
+        "title": "Freight Modal Split: NITI Aayog 2021",
+        "subtitle": "Reported road/rail shares; other modes are residual",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "% of freight traffic",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "NITI Aayog's reported road and rail shares, with an arithmetic residual for unlisted modes.",
+          "read": "Reported road and rail shares are 71% and 18%; the residual to 100% is 11%.",
+          "why": "A single labelled base avoids mixing road/rail estimates with later waterway figures."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_modal_inland_water": {
+      "labels": [
+        "Inland water transport",
+        "All other modes (residual)"
+      ],
+      "values": [
+        2,
+        98
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2116158",
+      "unit": "% of freight traffic",
+      "note": "MoPSW reply, 28 March 2025: current inland water transport freight share is approximately 2%. The 98% remainder is a calculated complement, not a separate modal estimate.",
+      "meta": {
+        "title": "Inland Waterway Freight Share",
+        "subtitle": "Approximate current share in the 2025 reply",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "% of freight traffic",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Reported approximate inland-waterway share plus calculated remainder.",
+          "read": "The Ministry reports inland water transport at approximately 2% of freight traffic.",
+          "why": "The official reply identifies IWT's share separately from the NITI 2021 road/rail basis."
+        }
+      },
+      "chartType": "doughnut",
+      "scope": "category"
+    },
+    "log_modal_lpi_rank": {
+      "labels": [
+        "2007",
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2023"
+      ],
+      "values": [
+        39,
+        47,
+        46,
+        54,
+        35,
+        44,
+        38
+      ],
+      "source": "https://databank.worldbank.org/embed/LPI/id/154e8630",
+      "unit": "rank (1=highest performance)",
+      "note": "World Bank Logistics Performance Index DataBank, India overall rank series. LPI ranks are perception-based international benchmarking, not physical freight quantities.",
+      "meta": {
+        "title": "India Logistics Performance Index Rank",
+        "subtitle": "World Bank overall rank",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "rank (1=highest performance)",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "India's overall rank in each reported World Bank LPI edition.",
+          "read": "India ranked 38th in 2023, compared with 44th in 2018.",
+          "why": "The LPI captures logistics service and infrastructure perceptions across six dimensions."
+        }
+      }
+    },
+    "log_modal_cost_bases": {
+      "labels": [
+        "Share of GDP",
+        "Share of non-services output"
+      ],
+      "values": [
+        7.97,
+        9.09
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
+      "unit": "% (FY 2023-24)",
+      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): logistics cost was estimated at 7.97% of GDP and 9.09% of non-services output in FY 2023-24. Denominators differ and are labelled.",
+      "meta": {
+        "title": "Logistics Costs: Published Denominator Comparison",
+        "subtitle": "NCAER estimate, FY 2023-24",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": "% (FY 2023-24)",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Same estimated logistics-cost numerator relative to GDP and non-services output.",
+          "read": "The estimate is 7.97% of GDP or 9.09% of non-services output; these are two denominator views, not years.",
+          "why": "Explicit denominator labels avoid perpetuating unverified 13-14% GDP estimates."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_leads_reach": {
+      "labels": [
+        "Survey responses",
+        "Stakeholder consultations"
+      ],
+      "datasets": [
+        {
+          "label": "LEADS 2023",
+          "values": [
+            7321,
+            750
           ],
           "color": "#ff9933"
         }
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
+      "unit": "count",
+      "note": "DPIIT LEADS 2023: 7,321 responses across 36 States/UTs and more than 750 stakeholder consultations. Chart uses 750 as a minimum count for 'more than 750'.",
+      "meta": {
+        "title": "LEADS 2023 Survey Reach",
+        "subtitle": "Responses and stakeholder consultations",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "count",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Counts of survey responses and stakeholder consultations reported in LEADS 2023.",
+          "read": "The report records 7,321 responses across 36 States/UTs and more than 750 consultations.",
+          "why": "Sample size gives context for the state-level logistics assessment."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_leads_states": {
+      "labels": [
+        "LEADS 2023"
+      ],
+      "datasets": [
+        {
+          "label": "LEADS 2023 Coverage",
+          "values": [
+            36
+          ],
+          "color": "#ff9933"
+        }
+      ],
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/07/54df328bcdceeff75188644557d2dacb.pdf",
+      "unit": "States / UTs",
+      "note": "DPIIT LEADS 2023: 7,321 survey responses were received across 36 States and Union Territories.",
+      "meta": {
+        "title": "LEADS 2023 Coverage",
+        "subtitle": "LEADS 2023",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": "States / UTs",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Number of States and Union Territories covered.",
+          "read": "LEADS 2023 reports responses from all 36 States and Union Territories.",
+          "why": "Coverage contextualises the national state-level comparison."
+        }
+      },
+      "chartType": "bar",
+      "scope": "category"
+    },
+    "log_modal_iwt_growth": {
+      "labels": [
+        "2013-14",
+        "2023-24"
+      ],
+      "values": [
+        18.1,
+        133.03
+      ],
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2082758",
+      "unit": "million tonnes",
+      "note": "MoPSW reply, PIB 10 December 2024: cargo moved on National Waterways rose from 18.10 Mt in 2013-14 to 133.03 Mt in 2023-24. Inland waterways are not seaport cargo.",
+      "meta": {
+        "title": "National Waterway Cargo Movement",
+        "subtitle": "Inland water freight, not sea-port cargo",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Modal Split & Comparison",
+        "explain": {
+          "what": "Cargo moved on India's National Waterways at the two reported endpoints.",
+          "read": "Cargo movement rose from 18.10 to 133.03 million tonnes.",
+          "why": "The inland-water series adds a distinct water mode to the logistics comparison."
+        }
+      }
+    },
+    "log_revenue_railway_mix": {
+      "labels": [
+        "Passenger earnings",
+        "Freight earnings"
+      ],
+      "values": [
+        70693.32,
+        165880.58
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "Rs crore",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; Year Book 2023-24, p. 3.",
+      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings for FY 2023-24; freight excludes demurrage and wharfage.",
       "meta": {
-        "title": "Railway Revenue and Expenses",
-        "subtitle": "Rs crore, 2022-23 and 2023-24",
+        "title": "Indian Railways Earnings Mix",
+        "subtitle": "Passenger and freight earnings, FY 2023-24",
         "frequency": "Annual",
         "color": "#ff9933",
-        "suffix": " Rs crore",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Total revenue, expenses and net revenue of Indian Railways.",
-          "read": "Revenue rose 6.4% to Rs 2.55 lakh crore; expenses rose 6.5%, leaving Rs 3,260 crore of net revenue.",
-          "why": "Net revenue is small relative to turnover."
+          "what": "Passenger-service and freight-service earnings of Indian Railways.",
+          "read": "Freight earnings were Rs 1,65,880.58 crore versus Rs 70,693.32 crore from passenger services.",
+          "why": "The split shows the financial weight of freight on rail operations."
         }
       },
-      "chartType": "bar",
+      "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_earnings": {
+    "log_revenue_rail_earnings": {
       "labels": [
         "Passenger earnings",
         "Freight earnings"
@@ -125153,7 +118133,7 @@ window.INDIA_DASHBOARD_DATA = {
             63416.85,
             160158.48
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         },
         {
           "label": "2023-24",
@@ -125161,85 +118141,33 @@ window.INDIA_DASHBOARD_DATA = {
             70693.32,
             165880.58
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         }
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
       "unit": "Rs crore",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business and Freight Operation, earnings (freight excludes demurrage and wharfage); Year Book 2023-24, pp. 22-45.",
+      "note": "Railway Board Year Book 2023-24, Passenger Business and Freight Operation earnings; freight excludes demurrage and wharfage.",
       "meta": {
-        "title": "Passenger vs Freight Earnings",
-        "subtitle": "Earnings by business, Rs crore",
+        "title": "Railway Freight and Passenger Earnings",
+        "subtitle": "Earnings by service",
         "frequency": "Annual",
         "color": "#58a6ff",
-        "suffix": " Rs crore",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Earnings from passenger and freight services.",
-          "read": "Passenger earnings grew 11.5% and freight 3.6%; freight is 70% of the two combined.",
-          "why": "Freight is the larger earner."
+          "what": "Indian Railways earnings from passenger and freight services.",
+          "read": "FY 2023-24 freight earnings were Rs 1,65,880.58 crore, versus passenger earnings of Rs 70,693.32 crore.",
+          "why": "The comparison shows the financial weight of freight on the railway system."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_financial_ratios": {
+    "log_revenue_rail_yield": {
       "labels": [
-        "Operating ratio",
-        "Working ratio",
-        "Operating ratio with subsidy",
-        "Goods operating ratio",
-        "Coaching operating ratio"
-      ],
-      "datasets": [
-        {
-          "label": "2022-23",
-          "values": [
-            98.1,
-            90.92,
-            80.4,
-            66.97,
-            180.82
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "2023-24",
-          "values": [
-            98.43,
-            91.31,
-            81.1,
-            67.55,
-            177.69
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "%",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio; Year Book 2023-24, pp. 7-8.",
-      "meta": {
-        "title": "Operating and Working Ratios",
-        "subtitle": "Expenses as a percentage of earnings",
-        "frequency": "Annual",
-        "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
-        "explain": {
-          "what": "Operating ratio is expenditure as a share of earnings; lower is better.",
-          "read": "The overall ratio was 98.43%. Goods runs at 67.55% while coaching is 177.69%, meaning Rs 1.78 is spent for every Re 1 earned from passengers.",
-          "why": "The ratio shows how much of each rupee earned is left for investment."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_yield": {
-      "labels": [
-        "Passenger yield (paise per passenger-km)",
-        "Freight yield (paise per net tonne-km)"
+        "Passenger yield (paise/passenger-km)",
+        "Freight yield (paise/NTKM)"
       ],
       "datasets": [
         {
@@ -125248,7 +118176,7 @@ window.INDIA_DASHBOARD_DATA = {
             66.13,
             166.91
           ],
-          "color": "#58a6ff"
+          "color": "#ff9933"
         },
         {
           "label": "2023-24",
@@ -125256,2253 +118184,6440 @@ window.INDIA_DASHBOARD_DATA = {
             66.4,
             170.31
           ],
-          "color": "#ff9933"
+          "color": "#58a6ff"
         }
       ],
       "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "paise",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Some Selected Financial Ratio, earning/yield ratios based on apportioned earning; Year Book 2023-24, pp. 7-8.",
+      "unit": "paise per traffic unit",
+      "note": "Railway Board Year Book 2023-24, Selected Financial Ratios: earnings/yield ratios based on apportioned earnings.",
       "meta": {
-        "title": "Passenger and Freight Yield",
-        "subtitle": "Average revenue per unit of traffic",
+        "title": "Rail Passenger and Freight Yield",
+        "subtitle": "Revenue per traffic unit",
         "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": " paise",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
+        "color": "#bc8cff",
+        "suffix": "paise per traffic unit",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Average revenue per passenger-km and per net tonne-km.",
-          "read": "Passenger yield was 66.40 paise per passenger-km and freight 170.31 paise per net tonne-km.",
-          "why": "Yield compares what the railway earns on each unit of traffic."
+          "what": "Passenger earnings per passenger-km and freight earnings per net tonne-km.",
+          "read": "Freight yield was 170.31 paise per NTKM in 2023-24; passenger yield was 66.40 paise per passenger-km.",
+          "why": "Different traffic bases are explicitly named for comparison."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_earnings_mix_share": {
+    "log_revenue_fastag": {
       "labels": [
-        "2022-23",
-        "2023-24"
+        "FY 2023-24"
       ],
       "datasets": [
         {
-          "label": "Passenger earnings",
+          "label": "FASTag Toll Collections",
           "values": [
-            28.36,
-            29.88
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Freight earnings",
-          "values": [
-            71.64,
-            70.12
+            55000
           ],
           "color": "#ff9933"
         }
       ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of passenger and freight earnings",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Passenger Business and Freight Operation earnings table; shares calculated over those two earning streams; Year Book 2023-24, pp. 22-45.",
+      "source": "https://nhai.gov.in/nhai/sites/default/files/2025-09/NHAI-Annual_Report_2023-24_English.pdf",
+      "unit": "Rs crore (approx.)",
+      "note": "NHAI Annual Report 2023-24, citing IHMCL: FASTag collection was around Rs 55,000 crore in FY 2023-24.",
       "meta": {
-        "title": "Passenger and Freight Earnings Shares",
-        "subtitle": "Share of combined passenger and freight earnings",
+        "title": "FASTag Toll Collections",
+        "subtitle": "FY 2023-24",
         "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
+        "color": "#39c5bb",
+        "suffix": "Rs crore (approx.)",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Passenger and freight earnings as percentages of the two categories' combined earnings.",
-          "read": "Freight represented 70.12% of combined passenger and freight earnings in 2023-24.",
-          "why": "The shares show the relative contribution of the two main traffic earnings streams."
+          "what": "Approximate toll fees collected through FASTag.",
+          "read": "Around Rs 55,000 crore was collected through FASTag in FY 2023-24.",
+          "why": "Toll-user-fee collection is not freight-operator revenue."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_net_revenue_margin_pct": {
+    "log_revenue_nhai_tot": {
       "labels": [
-        "2022-23",
-        "2023-24"
+        "FY 2023-24"
       ],
-      "values": [
-        1.05,
-        1.28
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% of total revenue",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; net revenue divided by total revenue; Year Book 2023-24, p. 3.",
-      "meta": {
-        "title": "Net Revenue Margin",
-        "subtitle": "Net revenue as a share of total revenue",
-        "frequency": "Annual",
-        "color": "#3fb950",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
-        "explain": {
-          "what": "Reported net revenue divided by total railway revenue for each year.",
-          "read": "Net revenue was 1.28% of total revenue in 2023-24.",
-          "why": "The margin shows the net result relative to the scale of railway earnings."
+      "datasets": [
+        {
+          "label": "NHAI Toll-Operate-Transfer Proceeds",
+          "values": [
+            15968
+          ],
+          "color": "#ff9933"
         }
-      },
-      "chartType": "bar",
-      "scope": "category"
-    },
-    "rail_financial_growth_rates": {
-      "labels": [
-        "Revenue",
-        "Expenses"
       ],
-      "values": [
-        6.37,
-        6.47
-      ],
-      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
-      "unit": "% change, 2022-23 to 2023-24",
-      "note": "Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): Key Statistics, financial results; growth rates calculated from reported total revenue and expenses; Year Book 2023-24, p. 3.",
+      "source": "https://pib.gov.in/PressReleasePage.aspx?PRID=2091508",
+      "unit": "Rs crore",
+      "note": "MoRTH Year End Review 2024: NHAI monetised four Toll-Operate-Transfer bundles, realising Rs 15,968 crore in FY 2023-24. These asset proceeds are not recurring toll collections.",
       "meta": {
-        "title": "Revenue and Expense Growth",
-        "subtitle": "Year-on-year change in railway revenue and expenses",
+        "title": "NHAI Toll-Operate-Transfer Proceeds",
+        "subtitle": "FY 2023-24",
         "frequency": "Annual",
         "color": "#f6c344",
-        "suffix": "%",
-        "category": "Indian Railways",
-        "subgroup": "Finance & Efficiency",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Percentage change in reported total revenue and total expenses from 2022-23 to 2023-24.",
-          "read": "Revenue increased 6.37%; expenses increased 6.47%.",
-          "why": "Comparing the two growth rates shows whether expenses grew faster than revenue."
+          "what": "Asset monetisation, FY 2023-24",
+          "read": "NHAI realised Rs 15,968 crore from four TOT bundles.",
+          "why": "Asset monetisation is shown separately from recurring toll receipts."
         }
       },
       "chartType": "bar",
       "scope": "category"
     },
-    "rail_wb_freight_trend": {
+    "log_revenue_rail_five_year": {
       "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
+        "2019-2024"
       ],
       "datasets": [
         {
-          "label": "India",
-          "color": "#ff9933",
+          "label": "Railway Freight Earnings over Five Years",
           "values": [
-            249.564,
-            270.489,
-            277.567,
-            284.249,
-            281.513,
-            305.201,
-            312.371,
-            333.228,
-            353.194,
-            381.241,
-            407.398,
-            439.596,
-            480.993,
-            521.371,
-            551.448,
-            600.548,
-            625.723,
-            667.607,
-            649.645,
-            665.81,
-            681.696,
-            654.481,
-            620.175,
-            692.916,
-            738.523,
-            707.665,
-            719.762
-          ]
-        },
-        {
-          "label": "China",
-          "color": "#ff7b72",
-          "values": [
-            1304.95,
-            1310.62,
-            1326.99,
-            1256.01,
-            1291.03,
-            1377.05,
-            1469.41,
-            1565.84,
-            1724.67,
-            1928.88,
-            2072.6,
-            2195.441,
-            2379.7,
-            2510.628,
-            2523.917,
-            2764.413,
-            2946.579,
-            2918.709,
-            2917.39,
-            2753.02,
-            2375.43,
-            2379.23,
-            2696.22,
-            2882.1,
-            3018.2,
-            null,
-            null
-          ]
-        },
-        {
-          "label": "United States",
-          "color": "#58a6ff",
-          "values": [
-            1906.206,
-            1979.622,
-            1969.331,
-            2010.027,
-            2092.745,
-            2140.191,
-            2183.277,
-            2200.123,
-            2264.983,
-            2427.268,
-            2476.653,
-            2586.836,
-            2584.94,
-            2594.631,
-            2236.917,
-            2468.738,
-            2524.585,
-            2500.3,
-            2541.354,
-            2702.736,
-            2547.253,
-            2314.693,
-            2445.132,
-            2525.217,
-            2357.117,
-            2102.084,
-            2239.401
-          ]
-        },
-        {
-          "label": "Russia",
-          "color": "#bc8cff",
-          "values": [
-            1213.711,
-            1131.251,
-            1100.289,
-            1019.547,
-            1204.547,
-            1373.178,
-            1433.617,
-            1510.2,
-            1664.3,
-            1797.326,
-            1852.913,
-            1950.83,
-            2090.337,
-            2116.24,
-            1865.305,
-            2011.308,
-            2127.835,
-            2222.388,
-            2172.685,
-            2298.564,
-            2304.759,
-            2342.59,
-            2491.876,
-            2596.88,
-            2601.928,
-            2544.828,
-            2638.562
-          ]
-        },
-        {
-          "label": "Japan",
-          "color": "#3fb950",
-          "values": [
-            25.101,
-            24.968,
-            24.617,
-            22.92,
-            22.541,
-            22.136,
-            22.193,
-            22.131,
-            22.794,
-            22.476,
-            22.813,
-            23.192,
-            23.334,
-            22.256,
-            20.562,
-            20.398,
-            19.998,
-            20.471,
-            21.071,
-            21.029,
-            21.519,
-            21.265,
-            21.663,
-            19.369,
-            19.993,
-            18.34,
-            null
-          ]
+            702372.29
+          ],
+          "color": "#ff9933"
         }
       ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "billion tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
+      "source": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2113222",
+      "unit": "Rs crore",
+      "note": "Ministry of Railways Lok Sabha reply / PIB, March 2025: cumulative goods earnings reported for the five-year period 2019-2024.",
       "meta": {
-        "title": "Rail Freight: India vs Peers",
-        "subtitle": "Goods transported by railway",
+        "title": "Railway Freight Earnings over Five Years",
+        "subtitle": "2019-2024",
         "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " billion tonne-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
+        "color": "#f6c344",
+        "suffix": "Rs crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Freight moved by rail, in billion tonne-kilometres.",
-          "read": "India is the orange line; compare its trajectory with each peer.",
-          "why": "Rail freight volume is a core measure of industrial transport capacity."
-        }
-      }
-    },
-    "rail_wb_route_trend": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "color": "#ff9933",
-          "values": [
-            62.66,
-            62.915,
-            62.725,
-            62.495,
-            62.81,
-            62.759,
-            63.028,
-            63.14,
-            63.122,
-            63.221,
-            63.485,
-            63.332,
-            63.327,
-            63.273,
-            64.015,
-            63.974,
-            64.46,
-            64.6,
-            65.436,
-            65.808,
-            66.03,
-            66.687,
-            67.368,
-            69.249,
-            67.414,
-            67.956,
-            68.103
-          ]
-        },
-        {
-          "label": "China",
-          "color": "#ff7b72",
-          "values": [
-            54.616,
-            56.678,
-            57.566,
-            57.583,
-            57.394,
-            58.656,
-            59.079,
-            59.53,
-            60.446,
-            61.015,
-            62.2,
-            63.412,
-            63.636,
-            60.809,
-            65.491,
-            66.239,
-            72.487,
-            85.843,
-            79.306,
-            85.32,
-            89.966,
-            91.675,
-            93.742,
-            96.353,
-            102.462,
-            106.235,
-            109.767
-          ]
-        },
-        {
-          "label": "United States",
-          "color": "#58a6ff",
-          "values": [
-            201.284,
-            203.875,
-            195.804,
-            192.815,
-            194.708,
-            194.077,
-            194.746,
-            198.057,
-            196.806,
-            195.369,
-            194.025,
-            191.771,
-            192.508,
-            192.123,
-            191.785,
-            194.431,
-            194.136,
-            153.517,
-            154.321,
-            152.933,
-            151.735,
-            151.27,
-            150.966,
-            150.462,
-            149.489,
-            148.75,
-            148.553
-          ]
-        },
-        {
-          "label": "Russia",
-          "color": "#bc8cff",
-          "values": [
-            87.388,
-            87.086,
-            86.66,
-            86.151,
-            86.031,
-            86.075,
-            85.835,
-            85.542,
-            85.394,
-            85.286,
-            85.542,
-            85.253,
-            84.158,
-            85.194,
-            85.281,
-            85.292,
-            85.166,
-            85.248,
-            85.266,
-            84.581,
-            85.262,
-            85.375,
-            85.545,
-            85.626,
-            85.494,
-            85.555,
-            85.544
-          ]
-        },
-        {
-          "label": "Japan",
-          "color": "#3fb950",
-          "values": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            20.14,
-            20.087,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ]
-        }
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
-      "unit": "thousand km",
-      "note": "World Bank indicator IS.RRS.TOTL.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
-      "meta": {
-        "title": "Rail Network Length: India vs Peers",
-        "subtitle": "Total rail route",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " thousand km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Total rail lines in operation, in thousand route-kilometres.",
-          "read": "India is the orange line; compare its trajectory with each peer.",
-          "why": "Network length measures physical reach."
-        }
-      }
-    },
-    "rail_wb_freight_rank": {
-      "labels": [
-        "China",
-        "Russia",
-        "United States",
-        "India",
-        "Australia",
-        "Germany",
-        "France",
-        "Japan",
-        "United Kingdom"
-      ],
-      "values": [
-        3018.2,
-        2601.93,
-        2357.12,
-        738.52,
-        443.0,
-        129.16,
-        33.89,
-        19.99,
-        16.88
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "billion tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
-      "meta": {
-        "title": "Rail Freight Ranking (2019)",
-        "subtitle": "Goods transported by railway",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion tonne-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Freight moved by rail, billion tonne-km.",
-          "read": "India ranks 4 of 9 countries in this comparison.",
-          "why": "Ranks India's freight output against large rail systems."
+          "what": "Cumulative goods earnings",
+          "read": "The Ministry reported Rs 7,02,372.29 crore in goods earnings during 2019-2024.",
+          "why": "The multiyear total provides a separate scale reference from annual earnings."
         }
       },
       "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_freight_share": {
-      "labels": [
-        "China",
-        "Russia",
-        "United States",
-        "India",
-        "Australia",
-        "Germany",
-        "France",
-        "Japan",
-        "United Kingdom"
-      ],
-      "values": [
-        3018.2,
-        2601.93,
-        2357.12,
-        738.52,
-        443.0,
-        129.16,
-        33.89,
-        19.99,
-        16.88
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "billion tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, 2019 (latest year most compared countries report). India ranks 4 of 9 countries shown.",
-      "meta": {
-        "title": "Share of Rail Freight Among Peers (2019)",
-        "subtitle": "Peer share of rail freight",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion tonne-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Each country's share of the peer group's rail freight.",
-          "read": "India ranks 4 of 9 countries in this comparison.",
-          "why": "Shows India's weight in global rail freight."
-        }
-      },
-      "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_wb_passenger_rank": {
+    "log_revenue_ncaer_cost": {
       "labels": [
-        "China",
-        "India",
-        "Japan",
-        "Russia",
-        "France",
-        "Germany",
-        "United Kingdom",
-        "United States",
-        "Australia",
-        "Brazil"
+        "FY 2023-24 estimate"
       ],
-      "values": [
-        1438.61,
-        1157.17,
-        435.06,
-        133.38,
-        112.38,
-        102.03,
-        82.55,
-        32.48,
-        18.84,
-        16.49
+      "datasets": [
+        {
+          "label": "Current-price estimate",
+          "values": [
+            24.01
+          ],
+          "color": "#ff9933"
+        }
       ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
+      "source": "https://www.dpiit.gov.in/static/uploads/2025/09/c0d7c33f0b737ed71728ff6c2a35f1e7.pdf",
+      "unit": "Rs lakh crore",
+      "note": "DPIIT / NCAER Report on Logistics Cost Assessment in India (2025): total logistics cost estimated at Rs 24.01 lakh crore at current prices for FY 2023-24. This is cost, not revenue or market size.",
       "meta": {
-        "title": "Rail Passenger-Km Ranking (2019)",
-        "subtitle": "Passenger-km carried by railway",
+        "title": "Estimated National Logistics Cost",
+        "subtitle": "Current-price estimate, FY 2023-24",
         "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
+        "color": "#ff7b72",
+        "suffix": "Rs lakh crore",
+        "category": "Logistics & Freight",
+        "subgroup": "Logistics Revenue",
         "explain": {
-          "what": "Rail passenger-kilometres.",
-          "read": "India ranks 2 of 10 countries in this comparison.",
-          "why": "Ranks India's rail passenger output."
+          "what": "NCAER's estimated aggregate logistics cost at current prices.",
+          "read": "The report estimates Rs 24.01 lakh crore, equal to 7.97% of GDP in FY 2023-24.",
+          "why": "Distinguishes a documented cost estimate from unsupported market-size claims."
         }
       },
       "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_passenger_share": {
-      "labels": [
-        "China",
-        "India",
-        "Japan",
-        "Russia",
-        "France",
-        "Germany",
-        "United Kingdom",
-        "United States",
-        "Australia",
-        "Brazil"
-      ],
-      "values": [
-        1438.61,
-        1157.17,
-        435.06,
-        133.38,
-        112.38,
-        102.03,
-        82.55,
-        32.48,
-        18.84,
-        16.49
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM, 2019 (latest year most compared countries report). India ranks 2 of 10 countries shown.",
-      "meta": {
-        "title": "Share of Rail Passenger-Km Among Peers (2019)",
-        "subtitle": "Peer share of rail passenger-km",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Each country's share of the peer group's rail passenger-km.",
-          "read": "India ranks 2 of 10 countries in this comparison.",
-          "why": "Shows India's weight in passenger rail."
-        }
-      },
-      "chartType": "doughnut",
       "scope": "category"
     },
-    "rail_wb_route_rank": {
+    "log_rail_latest_loading": {
       "labels": [
-        "United States",
-        "China",
-        "Russia",
-        "India",
-        "Germany",
-        "France",
-        "United Kingdom"
-      ],
-      "values": [
-        149.49,
-        102.46,
-        85.49,
-        67.41,
-        33.42,
-        28.16,
-        16.3
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
-      "unit": "thousand km",
-      "note": "World Bank indicator IS.RRS.TOTL.KM, 2019 (latest year most compared countries report). India ranks 4 of 7 countries shown.",
-      "meta": {
-        "title": "Rail Network Ranking (2019)",
-        "subtitle": "Total rail route",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " thousand km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Total rail route length, thousand km.",
-          "read": "India ranks 4 of 7 countries in this comparison.",
-          "why": "Ranks the size of India's network."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_freight_all_peer_trend": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "values": [
-            249.564,
-            270.489,
-            277.567,
-            284.249,
-            281.513,
-            305.201,
-            312.371,
-            333.228,
-            353.194,
-            381.241,
-            407.398,
-            439.596,
-            480.993,
-            521.371,
-            551.448,
-            600.548,
-            625.723,
-            667.607,
-            649.645,
-            665.81,
-            681.696,
-            654.481,
-            620.175,
-            692.916,
-            738.523,
-            707.665,
-            719.762
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "China",
-          "values": [
-            1304.95,
-            1310.62,
-            1326.99,
-            1256.01,
-            1291.03,
-            1377.05,
-            1469.41,
-            1565.84,
-            1724.67,
-            1928.88,
-            2072.6,
-            2195.441,
-            2379.7,
-            2510.628,
-            2523.917,
-            2764.413,
-            2946.579,
-            2918.709,
-            2917.39,
-            2753.02,
-            2375.43,
-            2379.23,
-            2696.22,
-            2882.1,
-            3018.2,
-            null,
-            null
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "United States",
-          "values": [
-            1906.206,
-            1979.622,
-            1969.331,
-            2010.027,
-            2092.745,
-            2140.191,
-            2183.277,
-            2200.123,
-            2264.983,
-            2427.268,
-            2476.653,
-            2586.836,
-            2584.94,
-            2594.631,
-            2236.917,
-            2468.738,
-            2524.585,
-            2500.3,
-            2541.354,
-            2702.736,
-            2547.253,
-            2314.693,
-            2445.132,
-            2525.217,
-            2357.117,
-            2102.084,
-            2239.401
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Russia",
-          "values": [
-            1213.711,
-            1131.251,
-            1100.289,
-            1019.547,
-            1204.547,
-            1373.178,
-            1433.617,
-            1510.2,
-            1664.3,
-            1797.326,
-            1852.913,
-            1950.83,
-            2090.337,
-            2116.24,
-            1865.305,
-            2011.308,
-            2127.835,
-            2222.388,
-            2172.685,
-            2298.564,
-            2304.759,
-            2342.59,
-            2491.876,
-            2596.88,
-            2601.928,
-            2544.828,
-            2638.562
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "Japan",
-          "values": [
-            25.101,
-            24.968,
-            24.617,
-            22.92,
-            22.541,
-            22.136,
-            22.193,
-            22.131,
-            22.794,
-            22.476,
-            22.813,
-            23.192,
-            23.334,
-            22.256,
-            20.562,
-            20.398,
-            19.998,
-            20.471,
-            21.071,
-            21.029,
-            21.519,
-            21.265,
-            21.663,
-            19.369,
-            19.993,
-            18.34,
-            null
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Germany",
-          "values": [
-            70.5,
-            70.0,
-            73.9,
-            74.2,
-            71.9,
-            77.5,
-            76.165,
-            76.283,
-            79.841,
-            86.409,
-            95.421,
-            107.008,
-            114.615,
-            115.652,
-            95.834,
-            107.317,
-            113.317,
-            110.065,
-            112.613,
-            112.629,
-            116.632,
-            128.866,
-            131.204,
-            129.991,
-            129.161,
-            108.406,
-            123.067
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "France",
-          "values": [
-            46.56,
-            48.32,
-            52.63,
-            52.66,
-            52.12,
-            55.35,
-            50.344,
-            49.977,
-            46.758,
-            45.035,
-            39.659,
-            41.179,
-            42.612,
-            40.436,
-            32.129,
-            29.965,
-            34.202,
-            32.539,
-            32.23,
-            32.596,
-            36.328,
-            34.7,
-            35.465,
-            33.836,
-            33.893,
-            31.282,
-            35.751
-          ],
-          "color": "#39c5bb"
-        },
-        {
-          "label": "United Kingdom",
-          "values": [
-            13.3,
-            15.1,
-            16.9,
-            17.34,
-            18.05,
-            18.17,
-            19.2,
-            18.634,
-            18.745,
-            20.137,
-            21.427,
-            21.919,
-            21.265,
-            21.077,
-            19.171,
-            18.576,
-            20.974,
-            21.467,
-            22.401,
-            22.143,
-            19.342,
-            17.053,
-            17.167,
-            17.206,
-            16.884,
-            15.212,
-            null
-          ],
-          "color": "#f778ba"
-        },
-        {
-          "label": "Brazil",
-          "values": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            7.446,
-            9.393,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Australia",
-          "values": [
-            106.195,
-            110.255,
-            119.619,
-            125.587,
-            127.963,
-            133.568,
-            137.534,
-            150.513,
-            160.58,
-            168.7,
-            183.944,
-            189.425,
-            198.961,
-            218.684,
-            237.163,
-            258.624,
-            261.42,
-            290.57,
-            319.0,
-            367.7,
-            401.6,
-            413.49,
-            431.307,
-            441.273,
-            443.005,
-            447.435,
-            453.091
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "billion tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6, all requested countries, annual observations; gaps indicate unreported country-years.",
-      "meta": {
-        "title": "Rail Freight: Ten-System Trend",
-        "subtitle": "Goods transported by railway",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " billion tonne-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Freight moved by rail, billion tonne-kilometres for all ten selected countries.",
-          "read": "Compare the indexed annual series across the ten selected rail systems.",
-          "why": "The wider peer set provides context beyond the five largest systems."
-        }
-      }
-    },
-    "rail_wb_passenger_all_peer_trend": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "values": [
-            319.365,
-            341.999,
-            357.013,
-            379.897,
-            403.884,
-            430.666,
-            457.022,
-            493.489,
-            515.044,
-            541.208,
-            575.702,
-            615.634,
-            694.764,
-            769.956,
-            838.032,
-            903.465,
-            978.508,
-            1046.522,
-            1046.522,
-            1140.412,
-            1147.19,
-            1143.039,
-            1149.835,
-            1177.699,
-            1157.174,
-            1050.738,
-            231.126
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "China",
-          "values": [
-            354.261,
-            332.202,
-            354.353,
-            369.097,
-            404.627,
-            441.468,
-            463.655,
-            480.305,
-            462.279,
-            551.196,
-            583.32,
-            635.327,
-            689.618,
-            777.86,
-            787.89,
-            791.158,
-            921.541,
-            940.249,
-            1008.172,
-            1089.56,
-            1109.312,
-            1160.059,
-            1266.681,
-            1361.715,
-            1438.606,
-            328.251,
-            946.499
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "United States",
-          "values": [
-            22.079,
-            21.866,
-            22.746,
-            23.49,
-            23.911,
-            25.977,
-            25.198,
-            24.41,
-            25.044,
-            24.777,
-            25.394,
-            27.296,
-            30.358,
-            32.143,
-            30.907,
-            31.872,
-            32.58,
-            34.126,
-            36.047,
-            36.393,
-            36.044,
-            35.892,
-            33.256,
-            31.963,
-            32.483,
-            12.46,
-            null
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Russia",
-          "values": [
-            192.217,
-            181.213,
-            170.318,
-            125.625,
-            141.042,
-            167.054,
-            157.901,
-            152.9,
-            157.1,
-            150.8,
-            170.9,
-            177.639,
-            173.411,
-            175.871,
-            153.575,
-            139.028,
-            139.842,
-            144.612,
-            138.517,
-            128.82,
-            120.413,
-            124.461,
-            122.92,
-            129.371,
-            133.381,
-            78.135,
-            103.447
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "Japan",
-          "values": [
-            400.084,
-            402.156,
-            395.278,
-            388.917,
-            385.098,
-            384.287,
-            385.402,
-            382.239,
-            385.012,
-            385.163,
-            391.215,
-            395.908,
-            405.544,
-            404.585,
-            393.765,
-            393.466,
-            395.067,
-            404.396,
-            414.387,
-            413.97,
-            427.486,
-            431.799,
-            437.363,
-            441.614,
-            435.063,
-            263.211,
-            null
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Germany",
-          "values": [
-            70.977,
-            71.73,
-            72.403,
-            72.666,
-            73.796,
-            75.404,
-            75.754,
-            71.366,
-            71.293,
-            72.879,
-            76.824,
-            78.995,
-            79.107,
-            82.539,
-            82.253,
-            83.886,
-            85.414,
-            88.796,
-            89.615,
-            90.976,
-            91.603,
-            94.197,
-            95.53,
-            98.17,
-            102.026,
-            58.822,
-            null
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "France",
-          "values": [
-            64.444,
-            69.183,
-            71.016,
-            75.175,
-            77.111,
-            82.253,
-            84.18,
-            86.186,
-            84.151,
-            88.567,
-            90.859,
-            94.59,
-            96.709,
-            102.721,
-            101.821,
-            102.167,
-            105.596,
-            105.956,
-            105.215,
-            104.589,
-            104.849,
-            104.207,
-            110.568,
-            107.958,
-            112.384,
-            64.859,
-            86.853
-          ],
-          "color": "#39c5bb"
-        },
-        {
-          "label": "United Kingdom",
-          "values": [
-            37.2,
-            39.2,
-            42.2,
-            44.1,
-            46.8,
-            46.506,
-            47.472,
-            47.993,
-            49.224,
-            50.018,
-            51.362,
-            53.9,
-            57.405,
-            60.221,
-            60.336,
-            63.048,
-            66.099,
-            69.015,
-            70.704,
-            73.715,
-            76.06,
-            78.229,
-            79.496,
-            80.98,
-            82.55,
-            24.188,
-            null
-          ],
-          "color": "#f778ba"
-        },
-        {
-          "label": "Brazil",
-          "values": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            15.191,
-            15.901,
-            15.877,
-            15.648,
-            15.807,
-            16.422,
-            16.486,
-            null,
-            null
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "Australia",
-          "values": [
-            10.345,
-            10.696,
-            10.977,
-            10.951,
-            11.165,
-            11.552,
-            12.15,
-            12.006,
-            12.022,
-            12.087,
-            12.063,
-            12.591,
-            13.213,
-            14.276,
-            15.004,
-            14.993,
-            15.276,
-            15.569,
-            15.544,
-            15.571,
-            16.017,
-            16.504,
-            17.039,
-            18.021,
-            18.842,
-            15.053,
-            9.328
-          ],
-          "color": "#58a6ff"
-        }
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM, all requested countries, annual observations; gaps indicate unreported country-years.",
-      "meta": {
-        "title": "Rail Passenger-Km: Ten-System Trend",
-        "subtitle": "Passenger-kilometres carried by railway",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " billion passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Passenger-kilometres moved by rail for all ten selected countries.",
-          "read": "Compare the indexed annual series across the ten selected rail systems.",
-          "why": "The wider peer set provides context beyond the five largest systems."
-        }
-      }
-    },
-    "rail_wb_route_all_peer_trend": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "values": [
-            62.66,
-            62.915,
-            62.725,
-            62.495,
-            62.81,
-            62.759,
-            63.028,
-            63.14,
-            63.122,
-            63.221,
-            63.485,
-            63.332,
-            63.327,
-            63.273,
-            64.015,
-            63.974,
-            64.46,
-            64.6,
-            65.436,
-            65.808,
-            66.03,
-            66.687,
-            67.368,
-            69.249,
-            67.414,
-            67.956,
-            68.103
-          ],
-          "color": "#ff9933"
-        },
-        {
-          "label": "China",
-          "values": [
-            54.616,
-            56.678,
-            57.566,
-            57.583,
-            57.394,
-            58.656,
-            59.079,
-            59.53,
-            60.446,
-            61.015,
-            62.2,
-            63.412,
-            63.636,
-            60.809,
-            65.491,
-            66.239,
-            72.487,
-            85.843,
-            79.306,
-            85.32,
-            89.966,
-            91.675,
-            93.742,
-            96.353,
-            102.462,
-            106.235,
-            109.767
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "United States",
-          "values": [
-            201.284,
-            203.875,
-            195.804,
-            192.815,
-            194.708,
-            194.077,
-            194.746,
-            198.057,
-            196.806,
-            195.369,
-            194.025,
-            191.771,
-            192.508,
-            192.123,
-            191.785,
-            194.431,
-            194.136,
-            153.517,
-            154.321,
-            152.933,
-            151.735,
-            151.27,
-            150.966,
-            150.462,
-            149.489,
-            148.75,
-            148.553
-          ],
-          "color": "#3fb950"
-        },
-        {
-          "label": "Russia",
-          "values": [
-            87.388,
-            87.086,
-            86.66,
-            86.151,
-            86.031,
-            86.075,
-            85.835,
-            85.542,
-            85.394,
-            85.286,
-            85.542,
-            85.253,
-            84.158,
-            85.194,
-            85.281,
-            85.292,
-            85.166,
-            85.248,
-            85.266,
-            84.581,
-            85.262,
-            85.375,
-            85.545,
-            85.626,
-            85.494,
-            85.555,
-            85.544
-          ],
-          "color": "#bc8cff"
-        },
-        {
-          "label": "Japan",
-          "values": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            20.14,
-            20.087,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "color": "#ff7b72"
-        },
-        {
-          "label": "Germany",
-          "values": [
-            41.718,
-            40.826,
-            38.45,
-            38.15,
-            37.589,
-            36.642,
-            36.05,
-            35.868,
-            36.054,
-            34.725,
-            34.228,
-            34.128,
-            33.978,
-            33.862,
-            33.721,
-            33.714,
-            33.576,
-            33.506,
-            33.449,
-            33.426,
-            33.332,
-            33.38,
-            33.488,
-            33.44,
-            33.423,
-            33.399,
-            33.401
-          ],
-          "color": "#f6c344"
-        },
-        {
-          "label": "France",
-          "values": [
-            31.997,
-            31.91,
-            31.879,
-            31.793,
-            29.171,
-            29.33,
-            29.503,
-            29.41,
-            29.327,
-            29.304,
-            28.47,
-            29.62,
-            29.976,
-            29.959,
-            33.698,
-            29.929,
-            30.071,
-            29.406,
-            29.979,
-            null,
-            28.866,
-            29.237,
-            29.248,
-            28.241,
-            28.157,
-            27.872,
-            27.716
-          ],
-          "color": "#39c5bb"
-        },
-        {
-          "label": "United Kingdom",
-          "values": [
-            17.001,
-            17.001,
-            16.991,
-            16.999,
-            16.989,
-            16.992,
-            16.992,
-            17.01,
-            16.833,
-            16.53,
-            null,
-            null,
-            16.263,
-            16.273,
-            16.239,
-            15.888,
-            16.21,
-            15.847,
-            15.861,
-            16.532,
-            16.245,
-            16.257,
-            16.294,
-            16.295,
-            16.295,
-            16.351,
-            16.179
-          ],
-          "color": "#f778ba"
-        },
-        {
-          "label": "Brazil",
-          "values": [
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            0.512,
-            null,
-            null,
-            32.622,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-          ],
-          "color": "#ff9933"
-        }
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
-      "unit": "thousand km",
-      "note": "World Bank indicator IS.RRS.TOTL.KM, all requested countries, annual observations; gaps indicate unreported country-years.",
-      "meta": {
-        "title": "Rail Network: Ten-System Trend",
-        "subtitle": "Total rail route",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " thousand km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Total rail route length for all ten selected countries, in thousand kilometres.",
-          "read": "Compare the indexed annual series across the ten selected rail systems.",
-          "why": "The wider peer set provides context beyond the five largest systems."
-        }
-      }
-    },
-    "rail_wb_freight_latest_common_rank": {
-      "labels": [
-        "Russia",
-        "United States",
-        "India",
-        "Australia",
-        "Germany",
-        "France"
-      ],
-      "values": [
-        2638.56,
-        2239.4,
-        719.76,
-        453.09,
-        123.07,
-        35.75
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
-      "unit": "billion tonne-km",
-      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; 2021 is the latest year with India and at least three peers reporting.",
-      "meta": {
-        "title": "Latest Common-Year Rail Freight Ranking (2021)",
-        "subtitle": "Goods transported by railway",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion tonne-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Freight moved by rail, billion tonne-kilometres.",
-          "read": "India ranks 3 of 6 countries in 2021.",
-          "why": "Ranks India against peers for the latest common year with sufficient reports."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_passenger_latest_common_rank": {
-      "labels": [
-        "China",
-        "India",
-        "Russia",
-        "France",
-        "Australia"
-      ],
-      "values": [
-        946.5,
-        231.13,
-        103.45,
-        86.85,
-        9.33
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM; 2021 is the latest year with India and at least three peers reporting.",
-      "meta": {
-        "title": "Latest Common-Year Rail Passenger Ranking (2021)",
-        "subtitle": "Passenger-kilometres carried by railway",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " billion passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Rail passenger-kilometres.",
-          "read": "India ranks 2 of 5 countries in 2021.",
-          "why": "Ranks India against peers for the latest common year with sufficient reports."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_route_latest_common_rank": {
-      "labels": [
-        "United States",
-        "China",
-        "Russia",
-        "India",
-        "Germany",
-        "France",
-        "United Kingdom"
-      ],
-      "values": [
-        148.55,
-        109.77,
-        85.54,
-        68.1,
-        33.4,
-        27.72,
-        16.18
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.TOTL.KM?locations=IN",
-      "unit": "thousand km",
-      "note": "World Bank indicator IS.RRS.TOTL.KM; 2021 is the latest year with India and at least three peers reporting.",
-      "meta": {
-        "title": "Latest Common-Year Rail Network Ranking (2021)",
-        "subtitle": "Total rail route",
-        "frequency": "Annual",
-        "color": "#58a6ff",
-        "suffix": " thousand km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Total rail route length, thousand km.",
-          "read": "India ranks 4 of 7 countries in 2021.",
-          "why": "Ranks India against peers for the latest common year with sufficient reports."
-        }
-      },
-      "chartType": "bar",
-      "scope": "category",
-      "indexAxis": "y"
-    },
-    "rail_wb_passenger_trend": {
-      "labels": [
-        "1995",
-        "1996",
-        "1997",
-        "1998",
-        "1999",
-        "2000",
-        "2001",
-        "2002",
-        "2003",
-        "2004",
-        "2005",
-        "2006",
-        "2007",
-        "2008",
-        "2009",
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021"
-      ],
-      "datasets": [
-        {
-          "label": "India",
-          "color": "#ff9933",
-          "values": [
-            319.365,
-            341.999,
-            357.013,
-            379.897,
-            403.884,
-            430.666,
-            457.022,
-            493.489,
-            515.044,
-            541.208,
-            575.702,
-            615.634,
-            694.764,
-            769.956,
-            838.032,
-            903.465,
-            978.508,
-            1046.522,
-            1046.522,
-            1140.412,
-            1147.19,
-            1143.039,
-            1149.835,
-            1177.699,
-            1157.174,
-            1050.738,
-            231.126
-          ]
-        },
-        {
-          "label": "China",
-          "color": "#ff7b72",
-          "values": [
-            354.261,
-            332.202,
-            354.353,
-            369.097,
-            404.627,
-            441.468,
-            463.655,
-            480.305,
-            462.279,
-            551.196,
-            583.32,
-            635.327,
-            689.618,
-            777.86,
-            787.89,
-            791.158,
-            921.541,
-            940.249,
-            1008.172,
-            1089.56,
-            1109.312,
-            1160.059,
-            1266.681,
-            1361.715,
-            1438.606,
-            328.251,
-            946.499
-          ]
-        },
-        {
-          "label": "United States",
-          "color": "#58a6ff",
-          "values": [
-            22.079,
-            21.866,
-            22.746,
-            23.49,
-            23.911,
-            25.977,
-            25.198,
-            24.41,
-            25.044,
-            24.777,
-            25.394,
-            27.296,
-            30.358,
-            32.143,
-            30.907,
-            31.872,
-            32.58,
-            34.126,
-            36.047,
-            36.393,
-            36.044,
-            35.892,
-            33.256,
-            31.963,
-            32.483,
-            12.46,
-            null
-          ]
-        },
-        {
-          "label": "Russia",
-          "color": "#bc8cff",
-          "values": [
-            192.217,
-            181.213,
-            170.318,
-            125.625,
-            141.042,
-            167.054,
-            157.901,
-            152.9,
-            157.1,
-            150.8,
-            170.9,
-            177.639,
-            173.411,
-            175.871,
-            153.575,
-            139.028,
-            139.842,
-            144.612,
-            138.517,
-            128.82,
-            120.413,
-            124.461,
-            122.92,
-            129.371,
-            133.381,
-            78.135,
-            103.447
-          ]
-        },
-        {
-          "label": "Japan",
-          "color": "#3fb950",
-          "values": [
-            400.084,
-            402.156,
-            395.278,
-            388.917,
-            385.098,
-            384.287,
-            385.402,
-            382.239,
-            385.012,
-            385.163,
-            391.215,
-            395.908,
-            405.544,
-            404.585,
-            393.765,
-            393.466,
-            395.067,
-            404.396,
-            414.387,
-            413.97,
-            427.486,
-            431.799,
-            437.363,
-            441.614,
-            435.063,
-            263.211,
-            null
-          ]
-        }
-      ],
-      "source": "https://data.worldbank.org/indicator/IS.RRS.PASG.KM?locations=IN",
-      "unit": "billion passenger-km",
-      "note": "World Bank indicator IS.RRS.PASG.KM, compiled from national railway data (UIC / ITF). Gaps are years a country did not report.",
-      "meta": {
-        "title": "Rail Passengers: India vs Peers",
-        "subtitle": "Passenger-kilometres carried by railway",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " billion passenger-km",
-        "category": "Indian Railways",
-        "subgroup": "Global Rail Comparison",
-        "explain": {
-          "what": "Passengers carried by rail, in billion passenger-kilometres.",
-          "read": "India is the orange line; compare its trajectory with each peer.",
-          "why": "Passenger-km shows how much a country relies on rail for travel."
-        }
-      }
-    },
-    "water_river_ocean_cruise_comparison": {
-      "labels": [
+        "2022-23",
         "2023-24"
       ],
+      "values": [
+        1509.1,
+        1588.06
+      ],
+      "source": "https://rb.indianrailways.gov.in/public/ourOrganization/public/pdf/IR%20Year%20Book%202023-24-English_f937bf20_1762054799339.pdf",
+      "unit": "million tonnes",
+      "note": "Railway Board Year Book 2023-24, Freight Operation Table I: latest two annual revenue-earning freight loading figures.",
+      "meta": {
+        "title": "Latest Railway Freight Loading",
+        "subtitle": "Year Book revenue-earning basis",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Revenue-earning freight tonnes originating in the last two Year Book years.",
+          "read": "Loading rose from 1,509.10 to 1,588.06 million tonnes.",
+          "why": "The short view makes the latest annual change easier to read."
+        }
+      }
+    },
+    "log_sea_commodity_compare": {
+      "labels": [
+        "POL",
+        "Iron ore",
+        "Fertilizers & raw materials",
+        "Coal",
+        "Containers",
+        "Other cargo"
+      ],
       "datasets": [
         {
-          "label": "Ocean cruise",
+          "label": "2022-23",
           "values": [
-            471000
-          ],
-          "color": "#58a6ff"
-        },
-        {
-          "label": "Overnight river cruise",
-          "values": [
-            11431
+            234.17,
+            46.51,
+            16.68,
+            188.24,
+            170.29,
+            128.42
           ],
           "color": "#ff9933"
+        },
+        {
+          "label": "2023-24",
+          "values": [
+            245.99,
+            61.03,
+            17.68,
+            191.98,
+            181.57,
+            120.98
+          ],
+          "color": "#58a6ff"
         }
       ],
       "source": "https://shipmin.gov.in/sites/default/files/Annual%20Report%202023-24_English.pdf",
-      "unit": "passengers",
-      "note": "Ministry of Ports, Shipping and Waterways, Annual Report 2023-24, report overview and Score Card\u2014Inland Waterways, printed pp.2-3; ocean passenger figure converted from 4.71 lakh.",
+      "unit": "million tonnes",
+      "note": "MoPSW Annual Report 2023-24, section 2.12: major-port commodity totals, FY 2022-23 and FY 2023-24.",
       "meta": {
-        "title": "Ocean and Overnight River Cruise Passengers",
-        "subtitle": "2023-24; distinct service categories",
+        "title": "Major-Port Commodity Traffic: Annual Comparison",
+        "subtitle": "12 major ports",
         "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": "passengers",
-        "category": "Water Transport & Shipping",
-        "subgroup": "Water Passenger Traffic",
+        "color": "#f6c344",
+        "suffix": "million tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
         "explain": {
-          "what": "Ocean cruise passenger count alongside overnight river-cruise count.",
-          "read": "The report shows about 471,000 ocean passengers and 11,431 overnight river-cruise passengers.",
-          "why": "Compares scale while retaining the Ministry's distinct service categories."
+          "what": "Major-port cargo by the published commodity groups for the two latest years.",
+          "read": "POL rose from 234.17 to 245.99 million tonnes; iron ore increased from 46.51 to 61.03 million tonnes.",
+          "why": "Year comparison shows which commodities account for changes in port throughput."
         }
       },
       "chartType": "bar",
       "scope": "category"
+    },
+    "log_air_aai_total_trend": {
+      "labels": [
+        "2022-23",
+        "2023-24"
+      ],
+      "values": [
+        3146.8,
+        3365.68
+      ],
+      "source": "https://www.aai.aero/sites/default/files/AAI%20AR_2024_ENG_05.12.2024.pdf",
+      "unit": "thousand tonnes",
+      "note": "AAI Annual Report 2023-24, Board's Report traffic table: total freight handled at all Indian airports, domestic plus international.",
+      "meta": {
+        "title": "Airport-Handled Air Cargo Growth",
+        "subtitle": "All Indian airports",
+        "frequency": "Annual",
+        "color": "#ff7b72",
+        "suffix": "thousand tonnes",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Total freight handled at all Indian airports in AAI's reported years.",
+          "read": "Handled freight rose from 3,146.80 to 3,365.68 thousand tonnes.",
+          "why": "This airport-handled measure complements the national MoCA series."
+        }
+      }
+    },
+    "log_sea_container_wb": {
+      "labels": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        9235765.0,
+        9878067.0,
+        10017480.0,
+        10571320.0,
+        11652174.0,
+        12318610.0,
+        13724110.0,
+        15450523.0,
+        16996593.0,
+        17487621.0,
+        17597062.0,
+        19561769.0,
+        19717168.0,
+        22208000.0,
+        23898000.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.SHP.GOOD.TU?locations=IN",
+      "unit": "TEU",
+      "note": "World Bank indicator IS.SHP.GOOD.TU; annual observations may lag the latest reporting year.",
+      "meta": {
+        "title": "World Bank Container Port Traffic",
+        "subtitle": "Container port traffic",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "TEU",
+        "category": "Logistics & Freight",
+        "subgroup": "Sea Freight",
+        "explain": {
+          "what": "Container port traffic measured in twenty-foot equivalent units.",
+          "read": "The series runs from 9,235,765.000 in 2010 to 23,898,000.000 in 2024.",
+          "why": "This country series complements the Ministry's major-port container figures."
+        }
+      }
+    },
+    "log_rail_wb_freight": {
+      "labels": [
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        249564.0,
+        270489.0,
+        277567.0,
+        284249.0,
+        281513.0,
+        305201.0,
+        312371.0,
+        333228.0,
+        353194.0,
+        381241.0,
+        407398.0,
+        439596.0,
+        480993.0,
+        521371.0,
+        551448.0,
+        600548.0,
+        625723.0,
+        667607.0,
+        649645.0,
+        665810.0,
+        681696.0,
+        654481.0,
+        620175.0,
+        692916.0,
+        738523.0,
+        707665.0,
+        719762.0
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.RRS.GOOD.MT.K6?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.RRS.GOOD.MT.K6; annual observations may lag the latest reporting year.",
+      "meta": {
+        "title": "Rail Freight Transport Work",
+        "subtitle": "Goods transported by railway",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": "million tonne-km",
+        "category": "Logistics & Freight",
+        "subgroup": "Rail Freight",
+        "explain": {
+          "what": "Goods moved by rail, measured in million metric tonnes times kilometres.",
+          "read": "The series runs from 249,564.000 in 1995 to 719,762.000 in 2021.",
+          "why": "This independent World Bank series provides a cross-mode data point."
+        }
+      }
+    },
+    "log_air_wb_freight": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "datasets": [
+        {
+          "label": "India",
+          "color": "#ff9933",
+          "values": [
+            0.001,
+            0.0,
+            0.0,
+            0.0,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.003,
+            0.002,
+            0.001,
+            0.001,
+            0.001,
+            0.002
+          ]
+        },
+        {
+          "label": "China",
+          "color": "#ff7b72",
+          "values": [
+            0.001,
+            0.001,
+            0.001,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.002,
+            0.003,
+            0.004,
+            0.004,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.008,
+            0.011,
+            0.011,
+            0.012,
+            0.017,
+            0.017,
+            0.016,
+            0.016,
+            0.018,
+            0.02,
+            0.021,
+            0.023,
+            0.025,
+            0.025,
+            0.019,
+            0.021,
+            0.019,
+            0.026
+          ]
+        },
+        {
+          "label": "United States",
+          "color": "#58a6ff",
+          "values": [
+            0.015,
+            0.014,
+            0.016,
+            0.016,
+            0.019,
+            0.02,
+            0.022,
+            0.025,
+            0.026,
+            0.027,
+            0.03,
+            0.028,
+            0.03,
+            0.034,
+            0.037,
+            0.037,
+            0.04,
+            0.041,
+            0.039,
+            0.035,
+            0.039,
+            0.04,
+            0.039,
+            0.037,
+            0.038,
+            0.038,
+            0.039,
+            0.042,
+            0.043,
+            0.042,
+            0.041,
+            0.046,
+            0.046,
+            0.043
+          ]
+        },
+        {
+          "label": "Japan",
+          "color": "#bc8cff",
+          "values": [
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.006,
+            0.007,
+            0.007,
+            0.008,
+            0.008,
+            0.008,
+            0.009,
+            0.008,
+            0.008,
+            0.008,
+            0.009,
+            0.009,
+            0.008,
+            0.008,
+            0.008,
+            0.01,
+            0.008,
+            0.007,
+            0.007,
+            0.008,
+            0.009,
+            0.009,
+            0.009,
+            0.011,
+            0.009,
+            0.009,
+            0.008,
+            0.011,
+            0.01,
+            0.008
+          ]
+        },
+        {
+          "label": "United Kingdom",
+          "color": "#3fb950",
+          "values": [
+            0.004,
+            0.004,
+            0.005,
+            0.005,
+            0.006,
+            0.007,
+            0.008,
+            0.006,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.005,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.007,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.005,
+            0.006,
+            0.006,
+            0.006,
+            0.006,
+            0.004,
+            0.004,
+            0.004,
+            0.004
+          ]
+        }
+      ],
+      "source": "https://data.worldbank.org/indicator/IS.AIR.GOOD.MT.K1?locations=IN",
+      "unit": "million tonne-km",
+      "note": "World Bank indicator IS.AIR.GOOD.MT.K1, compiled from national statistical sources (air freight uses ICAO data). Missing years/countries are gaps, not zeros.",
+      "meta": {
+        "title": "Air Freight: India and Peers",
+        "subtitle": "Freight transported by registered carriers",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": "million tonne-km",
+        "category": "Logistics & Freight",
+        "subgroup": "Air Freight",
+        "explain": {
+          "what": "Air freight in tonne-kilometres reported to the World Bank/ICAO.",
+          "read": "India is shown with selected peer economies; missing reports are gaps, not zeros.",
+          "why": "Tonne-kilometres add distance moved to cargo weight."
+        }
+      }
+    },
+    "dg_pew_reports_per_year": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Pew India Reports Published per Year",
+        "subtitle": "Dated catalogue entries by publication year",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Number of dated catalogue reports published in each year.",
+          "read": "A higher count means more dated entries in the collected catalogue.",
+          "why": "Shows the publication cadence represented in Pew's India report catalogue."
+        }
+      }
+    },
+    "dg_pew_reports_cumulative": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        9.0,
+        29.0,
+        34.0,
+        57.0,
+        117.0,
+        156.0,
+        205.0,
+        256.0,
+        310.0,
+        360.0,
+        460.0,
+        509.0,
+        611.0,
+        690.0,
+        747.0,
+        806.0,
+        857.0,
+        921.0,
+        988.0,
+        1050.0,
+        1095.0,
+        1160.0,
+        1239.0,
+        1354.0,
+        1418.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Cumulative Pew India Reports in Catalogue",
+        "subtitle": "Dated catalogue entries accumulated over time",
+        "frequency": "Cumulative by publication year",
+        "color": "#58a6ff",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Running total of catalogue entries through each publication year.",
+          "read": "This cumulative total only rises and is not an annual publication count.",
+          "why": "Makes growth of the collected catalogue visible over its dated coverage."
+        }
+      }
+    },
+    "dg_pew_publications_by_quarter": {
+      "labels": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "values": [
+        282.0,
+        369.0,
+        424.0,
+        343.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Pew India Reports by Publication Quarter",
+        "subtitle": "Catalogue dates grouped by calendar quarter",
+        "frequency": "Pooled catalogue",
+        "color": "#3fb950",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Counts dated catalogue entries in each calendar quarter across all available years.",
+          "read": "These pooled quarter totals are not a single-year seasonal comparison.",
+          "why": "Summarizes when dated reports appear within the calendar year."
+        }
+      }
+    },
+    "dg_pew_publications_by_weekday": {
+      "labels": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "values": [
+        223.0,
+        389.0,
+        310.0,
+        399.0,
+        84.0,
+        3.0,
+        10.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Pew India Reports by Publication Weekday",
+        "subtitle": "Catalogue dates grouped by weekday",
+        "frequency": "Pooled catalogue",
+        "color": "#bc8cff",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Counts dated catalogue entries by weekday of publication.",
+          "read": "Totals pool all years and are not adjusted for archive coverage.",
+          "why": "Describes the weekday pattern in the catalogue dates."
+        }
+      }
+    },
+    "dg_pew_publications_by_month": {
+      "labels": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "values": [
+        76.0,
+        91.0,
+        115.0,
+        93.0,
+        58.0,
+        218.0,
+        177.0,
+        109.0,
+        138.0,
+        103.0,
+        108.0,
+        132.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Pew India Reports by Publication Month",
+        "subtitle": "Catalogue dates grouped by calendar month",
+        "frequency": "Pooled catalogue",
+        "color": "#f6c344",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Counts dated catalogue entries in each month, pooling all years.",
+          "read": "Pooled totals reflect the collected archive and changing yearly volume.",
+          "why": "Highlights the month distribution in the currently collected catalogue."
+        }
+      }
+    },
+    "dg_pew_publications_by_decade": {
+      "labels": [
+        "2000s",
+        "2010s",
+        "2020s"
+      ],
+      "values": [
+        256.0,
+        665.0,
+        497.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "reports",
+      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "meta": {
+        "title": "Pew India Reports by Publication Decade",
+        "subtitle": "Catalogue entries grouped into calendar decades",
+        "frequency": "By publication decade",
+        "color": "#f778ba",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Publication Activity",
+        "explain": {
+          "what": "Counts dated catalogue entries by publication decade.",
+          "read": "Totals depend on archive coverage; the current decade may be incomplete.",
+          "why": "Offers a coarse view of the archive's publication history."
+        }
+      }
+    },
+    "dg_pew_theme_economy_livelihoods": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: econom(?:y|ic), jobs?, poverty, income, business. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Economy & livelihoods",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for economy & livelihoods.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_religion_society": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: religio(?:n|us), hindus?, muslims?, christians?, caste, marriage, family. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Religion & society",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#58a6ff",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for religion & society.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_politics_governance": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: politic(?:s|al), democra(?:cy|tic), government, election, leader(?:ship)?, parliament, modi. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Politics & governance",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#3fb950",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for politics & governance.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_international_affairs": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: foreign, global, china, pakistan, u\\.s\\., world, international. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching International affairs",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#bc8cff",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for international affairs.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_technology_media": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: internet, social media, news, technology, smartphone, \\bai\\b. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Technology & media",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#f6c344",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for technology & media.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_climate_environment": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: climate, environment, pollution, energy, water. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Climate & environment",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#f778ba",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for climate & environment.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_theme_gender_demographics": {
+      "labels": [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
+      "unit": "title matches",
+      "note": "Counts dated catalogue titles containing at least one of these keywords: gender, women, men, population, young, age. A title may match multiple themes; this descriptive filter is not Pew's taxonomy.",
+      "meta": {
+        "title": "Pew India Report Titles Matching Gender & demographics",
+        "subtitle": "Annual count of catalogue titles matching theme keywords",
+        "frequency": "Annual",
+        "color": "#39c5bb",
+        "suffix": " title matches",
+        "category": "Pew Research",
+        "subgroup": "Report Themes",
+        "explain": {
+          "what": "Number of dated catalogue titles matching at least one keyword for gender & demographics.",
+          "read": "Compare years within this keyword filter; themes overlap and a match does not imply a report is solely about that topic.",
+          "why": "Shows how represented subject matter changes in the collected Pew India catalogue."
+        }
+      }
+    },
+    "dg_pew_smartphone_ownership_trend": {
+      "labels": [
+        "2013: owns a smartphone",
+        "2015: owns a smartphone",
+        "2018: owns a smartphone",
+        "2023: owns a smartphone"
+      ],
+      "values": [
+        7.0,
+        17.0,
+        24.0,
+        59.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/topic/india/",
+      "unit": "% of respondents",
+      "note": "Selects only snapshot entries whose label says respondents owned a smartphone; figures are copied from the committed snapshot catalogue. Wording and survey populations are source-defined.",
+      "meta": {
+        "title": "Smartphone Ownership in Pew India Snapshots",
+        "subtitle": "Reported adult smartphone ownership across listed survey years",
+        "frequency": "Pew survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Published shares of respondents reported as owning a smartphone in each listed year.",
+          "read": "Read each point as the source-reported percentage; do not extend beyond the listed snapshots.",
+          "why": "Provides a limited view of reported smartphone ownership over time."
+        }
+      }
+    },
+    "dg_pew_economy_rating_trend": {
+      "labels": [
+        "2007: rated national economy good",
+        "2008: rated national economy good"
+      ],
+      "values": [
+        74.0,
+        62.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/2008/12/04/india/",
+      "unit": "% of respondents",
+      "note": "Selects only labels stating respondents rated the national economy good; no interpolation is used.",
+      "meta": {
+        "title": "Pew Snapshot: National Economy Rated Good",
+        "subtitle": "Repeated survey item on views of India's national economy",
+        "frequency": "Pew survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Reported respondent share rating the national economy good in each listed year.",
+          "read": "Compare published survey-year points; unreported years are not filled.",
+          "why": "Tracks the available repeated Pew item."
+        }
+      }
+    },
+    "dg_pew_leadership_favorability_trend": {
+      "labels": [
+        "2017: favorable view of national leadership",
+        "2023: favorable view of national leadership"
+      ],
+      "values": [
+        88.0,
+        79.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/global/",
+      "unit": "% of respondents",
+      "note": "Selects labels explicitly describing a favorable view of national leadership; distinct confidence and global-influence items are excluded.",
+      "meta": {
+        "title": "Pew Snapshot: Favorable View of National Leadership",
+        "subtitle": "Repeated favorability item in available survey years",
+        "frequency": "Pew survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Reported respondent share with a favorable view of national leadership in selected years.",
+          "read": "Only years with matching item wording are shown; values are source-published percentages.",
+          "why": "Makes available repeated leadership-favorability observations easier to compare."
+        }
+      }
+    },
+    "dg_pew_religion_respect_groups": {
+      "labels": [
+        "Hindus",
+        "Muslims"
+      ],
+      "values": [
+        85.0,
+        78.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "% of respondents",
+      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
+      "meta": {
+        "title": "Pew Snapshot: Respect for All Religions",
+        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
+        "frequency": "2021 survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
+          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
+          "why": "Makes available subgroup figures for the same question directly readable."
+        }
+      }
+    },
+    "dg_pew_religion_diversity_groups": {
+      "labels": [
+        "Hindus",
+        "Muslims"
+      ],
+      "values": [
+        56.0,
+        53.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "% of respondents",
+      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
+      "meta": {
+        "title": "Pew Snapshot: Views on Religious Diversity",
+        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
+        "frequency": "2021 survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
+          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
+          "why": "Makes available subgroup figures for the same question directly readable."
+        }
+      }
+    },
+    "dg_pew_interfaith_marriage_groups": {
+      "labels": [
+        "Hindus",
+        "Muslims"
+      ],
+      "values": [
+        67.0,
+        73.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Pew Research Center India survey snapshots (data/pew-snapshots.json); report source: https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "% of respondents",
+      "note": "Compares only the source-listed Hindu and Muslim respondent percentages for the same survey item. The figures are published snapshots, not estimates or legal classifications.",
+      "meta": {
+        "title": "Pew Snapshot: Views on Inter-religious Marriage",
+        "subtitle": "Hindu and Muslim respondents on the same 2021 item",
+        "frequency": "2021 survey snapshot",
+        "color": "#ff9933",
+        "suffix": " % of respondents",
+        "category": "Pew Research",
+        "subgroup": "Survey Snapshot Comparisons",
+        "explain": {
+          "what": "Pew's reported shares for the same item, shown separately for Hindu and Muslim respondents.",
+          "read": "The labels identify respondent groups; this is a within-survey descriptive comparison.",
+          "why": "Makes available subgroup figures for the same question directly readable."
+        }
+      }
+    },
+    "dg_elections_effective_candidates_2022_state_assembly": {
+      "labels": [
+        "Goa",
+        "Punjab",
+        "Manipur",
+        "Uttar Pradesh",
+        "Uttarakhand"
+      ],
+      "values": [
+        3.4613482632203008,
+        3.204913934263541,
+        2.8426396321457776,
+        2.741968599568915,
+        2.606723530451022
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2022 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
+      "meta": {
+        "title": "2022 State Assembly: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "State Assembly 2022",
+        "color": "#ff9933",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_effective_candidates_2023_state_assembly": {
+      "labels": [
+        "Meghalaya",
+        "Tripura",
+        "Karnataka",
+        "Nagaland"
+      ],
+      "values": [
+        3.3224059411529767,
+        2.481106373698331,
+        2.4605321600488352,
+        2.202765151970171
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2023 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
+      "meta": {
+        "title": "2023 State Assembly: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "State Assembly 2023",
+        "color": "#58a6ff",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_effective_candidates_2024_lok_sabha": {
+      "labels": [
+        "Punjab",
+        "Sikkim",
+        "Mizoram",
+        "Tamil Nadu",
+        "Arunachal Pradesh",
+        "Telangana",
+        "Ladakh",
+        "Kerala",
+        "Jammu and Kashmir",
+        "Manipur",
+        "Odisha",
+        "West Bengal",
+        "Jharkhand",
+        "Maharashtra",
+        "Uttar Pradesh",
+        "Bihar",
+        "Meghalaya",
+        "Andaman & Nicobar Islands",
+        "Puducherry",
+        "Assam",
+        "Dadra & Nagar Haveli and Daman & Diu",
+        "Goa",
+        "Haryana",
+        "Uttarakhand",
+        "Chhattisgarh",
+        "Andhra Pradesh",
+        "Chandigarh",
+        "Rajasthan",
+        "Madhya Pradesh",
+        "Karnataka",
+        "NCT OF Delhi",
+        "Nagaland",
+        "Lakshadweep",
+        "Himachal Pradesh",
+        "Gujarat",
+        "Tripura"
+      ],
+      "values": [
+        4.345185087610883,
+        3.5804272110618105,
+        3.2350410174680495,
+        2.9902104636819686,
+        2.8532793380165913,
+        2.748443295807996,
+        2.7132593849507813,
+        2.709668351143876,
+        2.689464848865782,
+        2.6434060744868706,
+        2.6040734838274497,
+        2.5464755201653415,
+        2.4862874721261385,
+        2.460396767836887,
+        2.460065916812654,
+        2.4336472093720287,
+        2.4131317668868535,
+        2.4128697391197105,
+        2.3815813131231756,
+        2.3599910618827296,
+        2.3528395648577787,
+        2.2542148490036755,
+        2.2252440005057545,
+        2.2079790883424746,
+        2.194826030335977,
+        2.1924285735833493,
+        2.145652138946311,
+        2.1439957304542903,
+        2.0879292931145286,
+        2.0688163978560508,
+        2.054680593846992,
+        2.0236889302845,
+        2.015527361559239,
+        2.0013860262007186,
+        1.911817538805167,
+        1.7439907259718863
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2024 Lok Sabha results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
+      "meta": {
+        "title": "2024 Lok Sabha: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "Lok Sabha 2024",
+        "color": "#3fb950",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_effective_candidates_2024_state_assembly": {
+      "labels": [
+        "Jammu & Kashmir",
+        "Jharkhand",
+        "Haryana",
+        "Maharashtra"
+      ],
+      "values": [
+        3.078874668493002,
+        2.710548844495782,
+        2.659378073268128,
+        2.5205918525770574
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2024 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
+      "meta": {
+        "title": "2024 State Assembly: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "State Assembly 2024",
+        "color": "#bc8cff",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_effective_candidates_2025_state_assembly": {
+      "labels": [
+        "Bihar",
+        "NCT of Delhi"
+      ],
+      "values": [
+        2.5828950663530046,
+        2.305245004264642
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2025 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
+      "meta": {
+        "title": "2025 State Assembly: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "State Assembly 2025",
+        "color": "#f6c344",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_effective_candidates_2026_state_assembly": {
+      "labels": [
+        "Tamil Nadu",
+        "Puducherry",
+        "Kerala",
+        "West Bengal",
+        "Assam"
+      ],
+      "values": [
+        3.1915775836229834,
+        2.9579278318911766,
+        2.526783186527512,
+        2.430297918234119,
+        2.1707103482137047
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India candidate results (data/recent-indian-elections.json)",
+      "unit": "effective candidates",
+      "note": "For each state/UT in the 2026 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices. 2026 assembly reporting is ongoing and incomplete.",
+      "meta": {
+        "title": "2026 State Assembly: Effective Candidates per Seat by State",
+        "subtitle": "Mean constituency effective number of candidates",
+        "frequency": "State Assembly 2026",
+        "color": "#f778ba",
+        "suffix": " effective candidates",
+        "category": "Elections",
+        "subgroup": "Recent Effective Candidate Field",
+        "explain": {
+          "what": "Mean constituency-level effective number of candidates for each state/UT.",
+          "read": "A seat's value is 1 divided by the sum of squared candidate vote shares; larger values indicate votes are spread across more candidates.",
+          "why": "Complements raw candidate-count charts with a vote-weighted measure of electoral competition."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_elections_candidate_field_2021_assam": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        7.0,
+        49.0,
+        41.0,
+        29.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Assam 2021: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2021",
+        "color": "#ff9933",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Assam Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2021_assam": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        682.0,
+        264.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Assam 2021: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2021",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2021_assam": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        4.0,
+        15.0,
+        22.0,
+        35.0,
+        50.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Assam (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Assam 2021: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2021",
+        "color": "#3fb950",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2021_kerala": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        1.0,
+        66.0,
+        58.0,
+        15.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Kerala 2021: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2021",
+        "color": "#58a6ff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Kerala Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2021_kerala": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        644.0,
+        313.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Kerala 2021: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2021",
+        "color": "#3fb950",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2021_kerala": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        8.0,
+        34.0,
+        32.0,
+        48.0,
+        18.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Kerala (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Kerala 2021: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2021",
+        "color": "#bc8cff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2021_puducherry": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        2.0,
+        9.0,
+        19.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Puducherry 2021: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2021",
+        "color": "#3fb950",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Puducherry Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2021_puducherry": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        260.0,
+        64.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Puducherry 2021: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2021",
+        "color": "#bc8cff",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2021_puducherry": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        2.0,
+        5.0,
+        7.0,
+        6.0,
+        10.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Puducherry (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Puducherry 2021: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2021",
+        "color": "#f6c344",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2021_tamil_nadu": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        2.0,
+        9.0,
+        223.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Tamil Nadu 2021: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2021",
+        "color": "#bc8cff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Tamil Nadu Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2021_tamil_nadu": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        3520.0,
+        478.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Tamil Nadu 2021: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2021",
+        "color": "#f6c344",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2021_tamil_nadu": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        16.0,
+        50.0,
+        55.0,
+        76.0,
+        37.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tamil Nadu (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Tamil Nadu 2021: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2021",
+        "color": "#f778ba",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2021_west_bengal": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        3.0,
+        118.0,
+        123.0,
+        50.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "West Bengal 2021: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2021",
+        "color": "#f6c344",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived West Bengal Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2021_west_bengal": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        1514.0,
+        623.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "West Bengal 2021: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2021",
+        "color": "#f778ba",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2021_west_bengal": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        14.0,
+        55.0,
+        67.0,
+        92.0,
+        66.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for West Bengal (2021). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "West Bengal 2021: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2021",
+        "color": "#39c5bb",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_goa": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        10.0,
+        27.0,
+        3.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Goa 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#f778ba",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Goa Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_goa": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        206.0,
+        95.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Goa 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#39c5bb",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_goa": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        4.0,
+        7.0,
+        11.0,
+        10.0,
+        8.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Goa (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Goa 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#ff9933",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_gujarat": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        3.0,
+        48.0,
+        67.0,
+        64.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Gujarat 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#39c5bb",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Gujarat Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_gujarat": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        1231.0,
+        390.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Gujarat 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#ff9933",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_gujarat": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        4.0,
+        22.0,
+        19.0,
+        52.0,
+        85.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Gujarat (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Gujarat 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#58a6ff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_himachal_pradesh": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        3.0,
+        46.0,
+        18.0,
+        1.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Himachal Pradesh 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#ff9933",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Himachal Pradesh Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_himachal_pradesh": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        261.0,
+        151.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Himachal Pradesh 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_himachal_pradesh": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        7.0,
+        13.0,
+        21.0,
+        18.0,
+        9.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Himachal Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Himachal Pradesh 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#3fb950",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_manipur": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        19.0,
+        34.0,
+        7.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Manipur 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#58a6ff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Manipur Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_manipur": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        114.0,
+        151.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Manipur 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#3fb950",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_manipur": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        4.0,
+        25.0,
+        13.0,
+        9.0,
+        9.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Manipur (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Manipur 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#bc8cff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_punjab": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        3.0,
+        29.0,
+        85.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Punjab 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#3fb950",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Punjab Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_punjab": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        1003.0,
+        301.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Punjab 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#bc8cff",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_punjab": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        5.0,
+        19.0,
+        19.0,
+        29.0,
+        45.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Punjab (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Punjab 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#f6c344",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_uttar_pradesh": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        1.0,
+        12.0,
+        96.0,
+        294.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Uttar Pradesh 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#bc8cff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Uttar Pradesh Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_uttar_pradesh": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        3522.0,
+        920.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Uttar Pradesh 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#f6c344",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_uttar_pradesh": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        29.0,
+        102.0,
+        90.0,
+        118.0,
+        64.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttar Pradesh (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Uttar Pradesh 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#f778ba",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2022_uttarakhand": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        12.0,
+        30.0,
+        28.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Uttarakhand 2022: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2022",
+        "color": "#f6c344",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Uttarakhand Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2022_uttarakhand": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        477.0,
+        155.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Uttarakhand 2022: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2022",
+        "color": "#f778ba",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2022_uttarakhand": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        4.0,
+        11.0,
+        18.0,
+        28.0,
+        9.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Uttarakhand (2022). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Uttarakhand 2022: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2022",
+        "color": "#39c5bb",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2023_meghalaya": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        0.0,
+        36.0,
+        24.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Meghalaya 2023: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2023",
+        "color": "#f778ba",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Meghalaya Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2023_meghalaya": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        222.0,
+        153.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Meghalaya 2023: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2023",
+        "color": "#39c5bb",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2023_meghalaya": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        9.0,
+        13.0,
+        11.0,
+        22.0,
+        5.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Meghalaya (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Meghalaya 2023: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2023",
+        "color": "#ff9933",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2023_nagaland": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        43.0,
+        17.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Nagaland 2023: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2023",
+        "color": "#39c5bb",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Nagaland Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2023_nagaland": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        57.0,
+        127.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Nagaland 2023: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2023",
+        "color": "#ff9933",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2023_nagaland": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        5.0,
+        14.0,
+        10.0,
+        16.0,
+        14.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Nagaland (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Nagaland 2023: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2023",
+        "color": "#58a6ff",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_elections_candidate_field_2023_tripura": {
+      "labels": [
+        "1\u20133",
+        "4\u20136",
+        "7\u20139",
+        "10+"
+      ],
+      "values": [
+        10.0,
+        50.0,
+        0.0,
+        0.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Counts listed candidates and excludes NOTA.",
+      "meta": {
+        "title": "Tripura 2023: Candidates per Assembly Constituency",
+        "subtitle": "Contested seats grouped by listed candidate count",
+        "frequency": "State Assembly 2023",
+        "color": "#ff9933",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Distribution of constituency candidate counts in archived Tripura Assembly results.",
+          "read": "NOTA entries are excluded; candidate totals are grouped into the displayed count bands.",
+          "why": "Shows how candidate-field size varied across this archived election."
+        }
+      }
+    },
+    "dg_elections_vote_share_threshold_2023_tripura": {
+      "labels": [
+        "At or below 1/6",
+        "Above 1/6"
+      ],
+      "values": [
+        121.0,
+        138.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "candidates",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Uses each row's reported vote_share_percent and excludes NOTA; one-sixth is a descriptive threshold only, not a determination of deposit forfeiture.",
+      "meta": {
+        "title": "Tripura 2023: Candidate Vote Shares Around One-Sixth",
+        "subtitle": "Candidates grouped by reported vote share",
+        "frequency": "State Assembly 2023",
+        "color": "#58a6ff",
+        "suffix": " candidates",
+        "category": "Elections",
+        "subgroup": "Historical Candidate Field & Competition",
+        "explain": {
+          "what": "Counts candidates with reported vote share at or below one-sixth versus above one-sixth.",
+          "read": "Shares are taken as published; this descriptive grouping does not establish a candidate's legal deposit status.",
+          "why": "Shows the candidate vote-share distribution for this archived election."
+        }
+      }
+    },
+    "dg_elections_victory_margins_2023_tripura": {
+      "labels": [
+        "Under 1 point",
+        "1\u20135 points",
+        "5\u201310 points",
+        "10\u201320 points",
+        "20+ points"
+      ],
+      "values": [
+        5.0,
+        21.0,
+        9.0,
+        15.0,
+        10.0
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Election Commission of India statistical reports and detailed-result XLSX downloads (data/historical-elections.json)",
+      "unit": "constituencies",
+      "note": "Uses candidate-level rows in the partial ECI historical archive for Tripura (2023). Available reports are selected downloads, not a complete national or state-time series. Margin is (winner votes minus runner-up votes) divided by listed non-NOTA candidate votes; seats without two reported candidate vote totals are excluded.",
+      "meta": {
+        "title": "Tripura 2023: Victory Margin Distribution",
+        "subtitle": "Contested seats grouped by winner's share lead",
+        "frequency": "State Assembly 2023",
+        "color": "#3fb950",
+        "suffix": " constituencies",
+        "category": "Elections",
+        "subgroup": "Historical Victory Margins",
+        "explain": {
+          "what": "Distribution of winning candidates' vote leads over the runner-up by constituency.",
+          "read": "The denominator is the sum of listed non-NOTA candidate votes; values are grouped in percentage-point bands.",
+          "why": "Shows how often archived contests were close or decisive without reusing the 2024/2022\u20132026 index charts."
+        }
+      }
+    },
+    "dg_us_finance_p_receipts_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        86969007.75999999,
+        9460873892.05,
+        407366738.54,
+        2718134792.01,
+        40787321.46
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC presidential receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Presidential Campaign Receipts by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
+        "frequency": "FEC election cycle",
+        "color": "#ff9933",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed receipts for Presidential candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_p_receipts_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        10778.442948502143,
+        -95.69419544972149,
+        567.2451466587034,
+        -98.49943712946485
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Presidential Campaign Receipts Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#58a6ff",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_p_disbursements_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        78393053.39999999,
+        8486228057.83,
+        406818691.65,
+        3038350897.2599998,
+        794668041.44
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC presidential disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Presidential Campaign Disbursements by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
+        "frequency": "FEC election cycle",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed disbursements for Presidential candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_p_disbursements_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        10725.229646980431,
+        -95.20613058148207,
+        646.8562678221277,
+        -73.84541587488674
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Presidential Campaign Disbursements Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#bc8cff",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_p_cash_on_hand_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        27787310.07,
+        9812760200.699999,
+        12185967.5,
+        794150951.42,
+        -690681441.47
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC presidential cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Presidential Campaign Cash on Hand by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
+        "frequency": "FEC election cycle",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed cash on hand for Presidential candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_p_cash_on_hand_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        35213.81834362637,
+        -99.87581508922301,
+        6416.929832776921,
+        -186.97105257319294
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Presidential Campaign Cash on Hand Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#f778ba",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_p_debts_owed_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        31021070.11,
+        82153383.09,
+        18637586.91,
+        66113653.51,
+        36780545.74
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC presidential debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Presidential Campaign Debts Owed by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for presidential office",
+        "frequency": "FEC election cycle",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed debts owed for Presidential candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_p_debts_owed_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        164.83091266254192,
+        -77.31367083254221,
+        254.7329052267314,
+        -44.367700486501214
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Presidential Campaign Debts Owed Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#ff9933",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_s_receipts_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        1149999415.42,
+        2231191105.79,
+        1908577489.68,
+        1724212300.11,
+        1618281812.46
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC senate receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Senate Campaign Receipts by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for senate office",
+        "frequency": "FEC election cycle",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed receipts for Senate candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_s_receipts_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        94.01671651938446,
+        -14.459255205563027,
+        -9.659822069939194,
+        -6.143703280810708
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Senate Campaign Receipts Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#3fb950",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_s_disbursements_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        1099838194.34,
+        2128606214.15,
+        1892409507.4,
+        1748776542.07,
+        1484609261.87
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC senate disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Senate Campaign Disbursements by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for senate office",
+        "frequency": "FEC election cycle",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed disbursements for Senate candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_s_disbursements_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        93.53812452634016,
+        -11.096308240569453,
+        -7.589951581216637,
+        -15.10583392703274
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Senate Campaign Disbursements Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#f6c344",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_s_cash_on_hand_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        244615499.71,
+        411070470.17,
+        351621949.35,
+        345944955.96,
+        478601735.16
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC senate cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Senate Campaign Cash on Hand by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for senate office",
+        "frequency": "FEC election cycle",
+        "color": "#f778ba",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed cash on hand for Senate candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_s_cash_on_hand_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        68.0475974160828,
+        -14.461880658908633,
+        -1.6145162156385284,
+        38.34620997201026
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Senate Campaign Cash on Hand Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#39c5bb",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_s_debts_owed_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        39916242.34,
+        42378991.41,
+        186319299.15,
+        306327394.78000003,
+        285417745.57
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC senate debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "Senate Campaign Debts Owed by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for senate office",
+        "frequency": "FEC election cycle",
+        "color": "#ff9933",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed debts owed for Senate candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_s_debts_owed_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        6.169791858218265,
+        339.6501496400289,
+        64.40991146783198,
+        -6.825915529042725
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "Senate Campaign Debts Owed Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#58a6ff",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_h_receipts_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        1974388756.86,
+        2200558746.96,
+        2228957388.96,
+        2397812439.48,
+        2578229619.06
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC house receipts series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "House Campaign Receipts by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for house office",
+        "frequency": "FEC election cycle",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed receipts for House candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_h_receipts_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        11.455190337474018,
+        1.2905196027705124,
+        7.575517206221027,
+        7.524240704128049
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "House Campaign Receipts Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#bc8cff",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_h_disbursements_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        1948331030.36,
+        2050402223.99,
+        2199331713.83,
+        2269973431.55,
+        2365004518.96
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC house disbursements series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "House Campaign Disbursements by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for house office",
+        "frequency": "FEC election cycle",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed disbursements for House candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_h_disbursements_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        5.238904069147843,
+        7.263428028779106,
+        3.211962855615913,
+        4.186440514641188
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "House Campaign Disbursements Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#f778ba",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_h_cash_on_hand_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        321205982.99,
+        509710666.66,
+        471118036.52,
+        576364651.87,
+        771739660.93
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC house cash_on_hand series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "House Campaign Cash on Hand by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for house office",
+        "frequency": "FEC election cycle",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed cash on hand for House candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_h_cash_on_hand_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        58.68654186178988,
+        -7.571477833274987,
+        22.339755048951957,
+        33.897812509165995
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "House Campaign Cash on Hand Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#ff9933",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_finance_h_debts_owed_by_cycle": {
+      "labels": [
+        "2018",
+        "2020",
+        "2022",
+        "2024",
+        "2026"
+      ],
+      "values": [
+        117645547.86,
+        121252536.74,
+        195874572.73,
+        342281012.4,
+        466826503.90000004
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "For each cycle, sums the values in the committed FEC house debts_owed series. Nominal amounts are not inflation-adjusted; cycle length and candidate coverage differ. The 2026 election cycle is ongoing and reporting is incomplete.",
+      "meta": {
+        "title": "House Campaign Debts Owed by FEC Cycle",
+        "subtitle": "Sum of listed candidate/state aggregates for house office",
+        "frequency": "FEC election cycle",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Total listed debts owed for House candidate summaries in each FEC cycle.",
+          "read": "Compare displayed nominal totals only; candidate/state coverage and election type differ between cycles.",
+          "why": "Shows the scale and direction of campaign-finance aggregates across the available FEC cycles."
+        }
+      }
+    },
+    "dg_us_finance_h_debts_owed_growth": {
+      "labels": [
+        "2018\u20132020",
+        "2020\u20132022",
+        "2022\u20132024",
+        "2024\u20132026"
+      ],
+      "values": [
+        3.065979924962714,
+        61.54265963936978,
+        74.74499503915268,
+        36.386912211902775
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "% change",
+      "note": "Calculated as (later cycle total / prior available cycle total \u2212 1) \u00d7 100. No inflation adjustment is applied; cycles differ in coverage and duration, and a zero or missing baseline is omitted.",
+      "meta": {
+        "title": "House Campaign Debts Owed Cycle Growth",
+        "subtitle": "Nominal percentage change between adjacent available FEC cycles",
+        "frequency": "Adjacent FEC cycles",
+        "color": "#3fb950",
+        "suffix": " % change",
+        "category": "U.S. Elections",
+        "subgroup": "Cycle-over-Cycle Finance Trends",
+        "explain": {
+          "what": "Percentage change in the listed nominal aggregate between adjacent FEC cycles.",
+          "read": "Positive values indicate a higher later-cycle total; negative values indicate a lower total.",
+          "why": "Provides a relative comparison alongside nominal dollar totals."
+        }
+      }
+    },
+    "dg_us_state_s_receipts_2018": {
+      "labels": [
+        "TX",
+        "FL",
+        "NJ",
+        "AZ",
+        "MO",
+        "NV",
+        "OH",
+        "MA",
+        "IN",
+        "TN",
+        "AL",
+        "WI",
+        "ND",
+        "MI",
+        "CA"
+      ],
+      "values": [
+        121604139.99,
+        121552759.02,
+        55175543.96,
+        53785776.91,
+        53190523.25,
+        46573605.15,
+        45809185.4,
+        44300513.84,
+        42355030.56,
+        39341774.13,
+        38962711.08,
+        38484852.07,
+        35933249.58,
+        35768377.53,
+        31201347.88
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 Senate Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_receipts_2020": {
+      "labels": [
+        "GA",
+        "SC",
+        "AZ",
+        "KY",
+        "ME",
+        "MI",
+        "IA",
+        "MT",
+        "CO",
+        "NC",
+        "TX",
+        "AL",
+        "KS",
+        "MA",
+        "TN"
+      ],
+      "values": [
+        488012084.15,
+        250123963.7,
+        178923368.35,
+        168538856.53,
+        106244123.42,
+        100737778.96,
+        94859882.37,
+        88261996.06,
+        81992281.0,
+        81450134.99,
+        77633190.47,
+        49877977.86,
+        44986148.72,
+        36571517.79,
+        34444946.84
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 Senate Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_receipts_2022": {
+      "labels": [
+        "GA",
+        "PA",
+        "AZ",
+        "FL",
+        "OH",
+        "WI",
+        "NV",
+        "NC",
+        "MO",
+        "SC",
+        "NH",
+        "NY",
+        "LA",
+        "KY",
+        "WA"
+      ],
+      "values": [
+        323511469.63,
+        183308421.16,
+        142493576.08,
+        135452267.05,
+        122704166.8,
+        103468218.04,
+        85687211.98,
+        71055692.88,
+        57063503.13,
+        55437375.07,
+        48259803.93,
+        43076236.48,
+        41218237.39,
+        38135822.74,
+        38094887.43
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 Senate Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_receipts_2024": {
+      "labels": [
+        "TX",
+        "OH",
+        "MT",
+        "WI",
+        "MD",
+        "CA",
+        "AZ",
+        "PA",
+        "FL",
+        "MI",
+        "NV",
+        "VA",
+        "NJ",
+        "NE",
+        "TN"
+      ],
+      "values": [
+        174230990.59,
+        141447506.04,
+        126448276.96,
+        119747948.52,
+        113461072.51,
+        110096123.6,
+        109402581.16,
+        102330784.34,
+        83582600.33,
+        81432867.52,
+        75728228.52,
+        35774821.22,
+        34843503.64,
+        27920988.08,
+        27852048.48
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 Senate Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_receipts_2026": {
+      "labels": [
+        "TX",
+        "GA",
+        "MI",
+        "OH",
+        "FL",
+        "NC",
+        "ME",
+        "IL",
+        "LA",
+        "AZ",
+        "SC",
+        "AK",
+        "IA",
+        "MN",
+        "NH"
+      ],
+      "values": [
+        211501035.51,
+        138147905.76,
+        108331359.42,
+        97052109.65,
+        81450345.4,
+        70731381.93,
+        64194454.13,
+        56280188.99,
+        53549673.71,
+        52936978.17,
+        52843206.02,
+        49809079.14,
+        43566600.42,
+        42991666.67,
+        35708391.84
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate receipts series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 Senate Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_disbursements_2018": {
+      "labels": [
+        "TX",
+        "FL",
+        "AZ",
+        "NJ",
+        "MO",
+        "NV",
+        "IN",
+        "OH",
+        "TN",
+        "WI",
+        "AL",
+        "MA",
+        "MI",
+        "CA",
+        "PA"
+      ],
+      "values": [
+        122872686.55,
+        119668446.03,
+        54462354.33,
+        53757585.3,
+        52802031.42,
+        47120575.49,
+        45313737.07,
+        45127394.99,
+        42194776.37,
+        39054112.21,
+        37634642.68,
+        37233050.52,
+        35872529.52,
+        33277894.64,
+        31128933.2
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 Senate Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_disbursements_2020": {
+      "labels": [
+        "GA",
+        "SC",
+        "AZ",
+        "KY",
+        "MI",
+        "ME",
+        "IA",
+        "MT",
+        "NC",
+        "CO",
+        "TX",
+        "AL",
+        "MA",
+        "KS",
+        "TN"
+      ],
+      "values": [
+        429491239.82,
+        236724539.26,
+        176133813.71,
+        160593673.93,
+        98675706.29,
+        96000083.01,
+        94724867.9,
+        88104921.8,
+        82560002.86,
+        80730004.66,
+        78524886.46,
+        53238495.62,
+        51594442.18,
+        44334736.16,
+        33294788.72
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 Senate Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_disbursements_2022": {
+      "labels": [
+        "GA",
+        "PA",
+        "FL",
+        "AZ",
+        "OH",
+        "WI",
+        "NV",
+        "NC",
+        "MO",
+        "NH",
+        "WA",
+        "NY",
+        "SC",
+        "AL",
+        "CO"
+      ],
+      "values": [
+        370590155.41,
+        180501486.6,
+        137926467.81,
+        136793833.28,
+        127622830.45,
+        101762926.82,
+        82759173.13,
+        72572522.51,
+        56053272.26,
+        50105484.74,
+        41030769.85,
+        40198497.56,
+        38189037.91,
+        37151340.4,
+        36286834.92
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 Senate Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_disbursements_2024": {
+      "labels": [
+        "TX",
+        "OH",
+        "MT",
+        "CA",
+        "WI",
+        "MD",
+        "AZ",
+        "PA",
+        "FL",
+        "MI",
+        "NV",
+        "SC",
+        "NJ",
+        "VA",
+        "NE"
+      ],
+      "values": [
+        173129195.73,
+        144607138.18,
+        126510073.06,
+        123640118.96,
+        122457173.81,
+        114152324.88,
+        111372561.81,
+        104045863.63,
+        85370093.35,
+        83053172.3,
+        77863846.61,
+        40235300.37,
+        36521091.87,
+        33473678.08,
+        28981338.71
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 Senate Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_disbursements_2026": {
+      "labels": [
+        "TX",
+        "GA",
+        "MI",
+        "OH",
+        "FL",
+        "SC",
+        "ME",
+        "NC",
+        "IL",
+        "LA",
+        "AK",
+        "IA",
+        "MN",
+        "KY",
+        "AZ"
+      ],
+      "values": [
+        201426729.16,
+        131093130.95,
+        99899914.03,
+        87979623.72,
+        72006315.06,
+        67918833.06,
+        64292644.43,
+        59612723.32,
+        53539048.91,
+        52262477.13,
+        44012938.54,
+        40588088.47,
+        40295340.75,
+        36721133.66,
+        32825403.86
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate disbursements series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 Senate Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_cash_on_hand_2018": {
+      "labels": [
+        "NY",
+        "MD",
+        "AL",
+        "MA",
+        "SD",
+        "VT",
+        "ND",
+        "TN",
+        "CT",
+        "SC",
+        "MN",
+        "OH",
+        "TX",
+        "NJ",
+        "LA"
+      ],
+      "values": [
+        19832386.63,
+        16583411.05,
+        15288316.16,
+        14084107.44,
+        12613714.4,
+        10750319.66,
+        8510113.99,
+        8340275.76,
+        8124249.1,
+        7109797.14,
+        7043034.62,
+        6711259.57,
+        6233169.48,
+        6099385.45,
+        5832273.96
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 Senate Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_cash_on_hand_2020": {
+      "labels": [
+        "GA",
+        "CA",
+        "SC",
+        "MD",
+        "SD",
+        "ME",
+        "NY",
+        "AL",
+        "KY",
+        "OH",
+        "TN",
+        "CT",
+        "VT",
+        "NJ",
+        "LA"
+      ],
+      "values": [
+        61606626.58,
+        60344480.84,
+        20509526.22,
+        17474326.61,
+        15114936.91,
+        13314733.34,
+        12047331.33,
+        11927654.32,
+        11901122.98,
+        11557043.48,
+        9496334.93,
+        8679138.15,
+        8507252.89,
+        8504741.4,
+        7476034.29
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 Senate Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_cash_on_hand_2022": {
+      "labels": [
+        "SC",
+        "SD",
+        "NJ",
+        "NY",
+        "GA",
+        "WV",
+        "KY",
+        "LA",
+        "VT",
+        "TN",
+        "AZ",
+        "MI",
+        "AR",
+        "NV",
+        "CA"
+      ],
+      "values": [
+        37741520.13,
+        18791352.21,
+        14926731.33,
+        14904560.1,
+        14482314.36,
+        13505544.33,
+        13339600.85,
+        13205299.6,
+        13021918.32,
+        12522548.7,
+        10659398.93,
+        9619199.95,
+        8681251.96,
+        7945323.13,
+        7670802.78
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 Senate Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_cash_on_hand_2024": {
+      "labels": [
+        "LA",
+        "SC",
+        "SD",
+        "TN",
+        "CA",
+        "KY",
+        "GA",
+        "NJ",
+        "VT",
+        "WV",
+        "NY",
+        "AZ",
+        "IN",
+        "VA",
+        "AR"
+      ],
+      "values": [
+        22551937.06,
+        22055175.11,
+        17267937.61,
+        16365007.09,
+        15117184.54,
+        14807023.26,
+        14041523.8,
+        13487223.08,
+        12487084.33,
+        11588714.8,
+        10180179.79,
+        9965990.67,
+        9173253.62,
+        8777913.88,
+        8563922.34
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 Senate Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_cash_on_hand_2026": {
+      "labels": [
+        "AZ",
+        "NJ",
+        "LA",
+        "VT",
+        "GA",
+        "SD",
+        "CA",
+        "TX",
+        "MI",
+        "KY",
+        "NC",
+        "CT",
+        "FL",
+        "TN",
+        "IN"
+      ],
+      "values": [
+        30077553.18,
+        25733226.21,
+        23805562.48,
+        23308440.55,
+        20413762.18,
+        19283102.98,
+        18897584.05,
+        18512169.81,
+        16791548.31,
+        16475767.2,
+        14354494.0,
+        13051450.73,
+        12237412.35,
+        11173454.06,
+        11137873.74
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 Senate Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_debts_owed_2018": {
+      "labels": [
+        "CA",
+        "FL",
+        "NJ",
+        "WA",
+        "WV",
+        "IL",
+        "MA",
+        "LA",
+        "CO",
+        "GA",
+        "NM",
+        "MS",
+        "AZ",
+        "NY",
+        "MT"
+      ],
+      "values": [
+        10636293.46,
+        2822308.38,
+        2527973.39,
+        2196873.72,
+        1721414.0,
+        1188097.18,
+        1153703.67,
+        1144003.0,
+        1142705.68,
+        1052465.19,
+        1050695.09,
+        1032711.93,
+        904812.55,
+        830063.68,
+        795104.31
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 Senate Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_debts_owed_2020": {
+      "labels": [
+        "TN",
+        "KS",
+        "GA",
+        "FL",
+        "CA",
+        "NJ",
+        "WA",
+        "IA",
+        "AZ",
+        "WV",
+        "MA",
+        "LA",
+        "NH",
+        "NY",
+        "CO"
+      ],
+      "values": [
+        6287199.18,
+        3838471.65,
+        3185884.31,
+        2799935.3,
+        2686770.09,
+        2378717.1,
+        2224297.59,
+        2011891.28,
+        1969164.4,
+        1755014.79,
+        1576726.9,
+        867583.41,
+        800930.12,
+        793064.16,
+        733887.67
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 Senate Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_debts_owed_2022": {
+      "labels": [
+        "PA",
+        "OH",
+        "WI",
+        "AZ",
+        "MO",
+        "FL",
+        "CA",
+        "TN",
+        "CO",
+        "WA",
+        "OK",
+        "NH",
+        "NJ",
+        "CT",
+        "UT"
+      ],
+      "values": [
+        42988406.47,
+        26994587.47,
+        25615857.33,
+        22189344.58,
+        16032952.34,
+        11258773.92,
+        8864882.49,
+        4691545.81,
+        4579499.68,
+        3193079.23,
+        2899688.22,
+        2769061.87,
+        2190590.98,
+        1148215.22,
+        950043.19
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 Senate Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_debts_owed_2024": {
+      "labels": [
+        "MD",
+        "WI",
+        "PA",
+        "FL",
+        "OH",
+        "AZ",
+        "CO",
+        "NJ",
+        "NM",
+        "TN",
+        "NV",
+        "WA",
+        "MT",
+        "NH",
+        "NY"
+      ],
+      "values": [
+        74537709.03,
+        62370799.7,
+        46689738.36,
+        36232973.21,
+        26042928.36,
+        21400947.26,
+        4361687.42,
+        4051546.06,
+        2915312.17,
+        2887921.21,
+        2821070.92,
+        2451911.18,
+        2058183.08,
+        2056477.5,
+        1613402.52
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 Senate Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_s_debts_owed_2026": {
+      "labels": [
+        "WI",
+        "PA",
+        "FL",
+        "MD",
+        "OH",
+        "AZ",
+        "SC",
+        "KY",
+        "LA",
+        "IL",
+        "CO",
+        "GA",
+        "TN",
+        "NM",
+        "NV"
+      ],
+      "values": [
+        62370799.7,
+        46082230.48,
+        40307481.95,
+        25037318.25,
+        24211485.17,
+        21196208.04,
+        7787979.89,
+        7715761.5,
+        7455992.2,
+        5552396.39,
+        4817265.2,
+        3530000.0,
+        2879152.83,
+        2819312.17,
+        2797924.77
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 senate debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 Senate Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for senate campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_receipts_2018": {
+      "labels": [
+        "CA",
+        "TX",
+        "NY",
+        "PA",
+        "FL",
+        "GA",
+        "IL",
+        "OH",
+        "AZ",
+        "NJ",
+        "VA",
+        "MI",
+        "WA",
+        "WI",
+        "MN"
+      ],
+      "values": [
+        251187590.48,
+        208635665.78,
+        108706548.05,
+        101504291.21,
+        97838045.89,
+        75626713.45,
+        74846947.92,
+        71626960.94,
+        62984627.12,
+        61961689.18,
+        61562289.31,
+        55275066.25,
+        47935258.62,
+        43579414.51,
+        43362215.65
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 House Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_receipts_2020": {
+      "labels": [
+        "CA",
+        "TX",
+        "NY",
+        "MI",
+        "FL",
+        "IL",
+        "PA",
+        "NJ",
+        "OH",
+        "MN",
+        "NC",
+        "GA",
+        "VA",
+        "MD",
+        "CO"
+      ],
+      "values": [
+        338691543.96,
+        222922511.74,
+        191455946.02,
+        114052504.07,
+        109044776.82,
+        77522822.09,
+        66304986.01,
+        65221532.64,
+        60883838.6,
+        58810398.91,
+        57530076.2,
+        57408050.04,
+        53428068.82,
+        50740305.37,
+        47468820.25
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 House Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_receipts_2022": {
+      "labels": [
+        "CA",
+        "FL",
+        "NY",
+        "TX",
+        "MI",
+        "PA",
+        "IL",
+        "GA",
+        "OH",
+        "NC",
+        "NJ",
+        "VA",
+        "AZ",
+        "WA",
+        "CO"
+      ],
+      "values": [
+        310120602.29,
+        206251196.12,
+        164107080.9,
+        144425676.1,
+        87580500.21,
+        83153007.06,
+        82006810.23,
+        79713244.21,
+        77875543.93,
+        76822507.98,
+        64562463.47,
+        56169971.33,
+        55157363.92,
+        52249435.45,
+        42563076.75
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 House Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_receipts_2024": {
+      "labels": [
+        "CA",
+        "NY",
+        "AZ",
+        "TX",
+        "MI",
+        "FL",
+        "MD",
+        "PA",
+        "NV",
+        "VA",
+        "OH",
+        "NJ",
+        "NC",
+        "IL",
+        "CO"
+      ],
+      "values": [
+        332318068.85,
+        210085429.8,
+        143079481.49,
+        123451301.67,
+        94175339.74,
+        92408247.16,
+        91971356.67,
+        83891377.81,
+        79446265.94,
+        74490713.98,
+        67439885.95,
+        65323393.76,
+        65191609.98,
+        59970921.88,
+        56720446.35
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 House Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_receipts_2026": {
+      "labels": [
+        "CA",
+        "NY",
+        "FL",
+        "TX",
+        "PA",
+        "MI",
+        "AZ",
+        "VA",
+        "IL",
+        "MD",
+        "NJ",
+        "CO",
+        "GA",
+        "OH",
+        "WI"
+      ],
+      "values": [
+        267561135.03,
+        249351178.6,
+        216134987.34,
+        180748110.33,
+        92705483.01,
+        88918794.96,
+        82960719.72,
+        79986558.47,
+        79827478.21,
+        69608325.88,
+        68608529.1,
+        65368220.25,
+        64452586.54,
+        60669930.02,
+        60464011.67
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house receipts series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 House Campaign Receipts by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign receipts in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_disbursements_2018": {
+      "labels": [
+        "CA",
+        "TX",
+        "NY",
+        "PA",
+        "FL",
+        "OH",
+        "GA",
+        "IL",
+        "AZ",
+        "VA",
+        "NJ",
+        "MI",
+        "WA",
+        "WI",
+        "MN"
+      ],
+      "values": [
+        239627884.27,
+        208178971.98,
+        113071575.69,
+        101351460.71,
+        99195041.27,
+        73549050.65,
+        70840560.13,
+        69397476.31,
+        64238882.67,
+        61781608.72,
+        55480799.06,
+        54691495.4,
+        45666678.13,
+        44962844.8,
+        43966001.02
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 House Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_disbursements_2020": {
+      "labels": [
+        "CA",
+        "TX",
+        "NY",
+        "MI",
+        "FL",
+        "IL",
+        "PA",
+        "MN",
+        "NJ",
+        "GA",
+        "NC",
+        "OH",
+        "VA",
+        "MA",
+        "MD"
+      ],
+      "values": [
+        289965957.23,
+        220948703.49,
+        179195384.57,
+        108891897.26,
+        104523800.7,
+        69649866.02,
+        58615125.08,
+        57545528.23,
+        55415134.88,
+        55297216.12,
+        53824186.92,
+        51644694.58,
+        50269932.58,
+        49298255.89,
+        48852638.61
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 House Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_disbursements_2022": {
+      "labels": [
+        "CA",
+        "FL",
+        "NY",
+        "TX",
+        "MI",
+        "IL",
+        "PA",
+        "GA",
+        "OH",
+        "NC",
+        "NJ",
+        "VA",
+        "WA",
+        "AZ",
+        "MN"
+      ],
+      "values": [
+        311800175.91,
+        203566199.01,
+        167113165.39,
+        138350754.08,
+        85048185.06,
+        81987146.22,
+        81868775.15,
+        79432133.11,
+        78172813.48,
+        75041119.89,
+        64165216.63,
+        57363214.92,
+        56292723.89,
+        51349341.43,
+        42802543.36
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 House Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_disbursements_2024": {
+      "labels": [
+        "CA",
+        "NY",
+        "AZ",
+        "TX",
+        "MD",
+        "FL",
+        "NV",
+        "MI",
+        "PA",
+        "VA",
+        "OH",
+        "NC",
+        "CO",
+        "NJ",
+        "WA"
+      ],
+      "values": [
+        339158907.46,
+        181408553.32,
+        146328434.22,
+        112956750.24,
+        91130412.3,
+        87381009.39,
+        81888901.66,
+        79529986.7,
+        76199880.03,
+        73845526.45,
+        66188631.35,
+        64920328.64,
+        56708695.71,
+        56444033.29,
+        51952434.78
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 House Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_disbursements_2026": {
+      "labels": [
+        "CA",
+        "NY",
+        "FL",
+        "TX",
+        "IL",
+        "PA",
+        "MI",
+        "AZ",
+        "VA",
+        "NJ",
+        "MD",
+        "GA",
+        "OH",
+        "WI",
+        "CO"
+      ],
+      "values": [
+        229885974.16,
+        212873832.83,
+        196807381.02,
+        171854075.09,
+        90772619.57,
+        84418112.21,
+        81157510.07,
+        79798649.08,
+        71641402.25,
+        68976226.1,
+        65598945.54,
+        61671241.36,
+        60972116.84,
+        58956005.65,
+        56684717.96
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house disbursements series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 House Campaign Disbursements by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign disbursements in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_cash_on_hand_2018": {
+      "labels": [
+        "CA",
+        "TX",
+        "IL",
+        "OH",
+        "MA",
+        "NY",
+        "WI",
+        "NJ",
+        "FL",
+        "GA",
+        "PA",
+        "NC",
+        "VA",
+        "TN",
+        "WA"
+      ],
+      "values": [
+        52141194.71,
+        24638699.88,
+        18237308.14,
+        15919732.93,
+        15833920.55,
+        12196526.98,
+        12024664.29,
+        11972720.73,
+        11909482.93,
+        10630231.1,
+        9032716.29,
+        8246500.44,
+        7363229.29,
+        7127433.17,
+        7039452.16
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 House Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_cash_on_hand_2020": {
+      "labels": [
+        "CA",
+        "IL",
+        "TX",
+        "OH",
+        "NY",
+        "NJ",
+        "FL",
+        "PA",
+        "GA",
+        "WA",
+        "NC",
+        "LA",
+        "TN",
+        "MA",
+        "MI"
+      ],
+      "values": [
+        158248135.94,
+        26088079.74,
+        24837863.89,
+        24833537.85,
+        24337668.78,
+        21709956.85,
+        16491460.89,
+        12879650.68,
+        12515392.43,
+        11489094.73,
+        11064029.44,
+        10694960.29,
+        10326040.11,
+        9586592.67,
+        9419626.31
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 House Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_cash_on_hand_2022": {
+      "labels": [
+        "CA",
+        "TX",
+        "IL",
+        "OH",
+        "NJ",
+        "NY",
+        "FL",
+        "PA",
+        "AZ",
+        "TN",
+        "AR",
+        "NC",
+        "MA",
+        "MI",
+        "IN"
+      ],
+      "values": [
+        96314144.95,
+        28965508.5,
+        26057418.24,
+        24576320.97,
+        21763161.41,
+        20884743.96,
+        18619518.11,
+        14059999.58,
+        14054220.13,
+        13971823.55,
+        12716482.09,
+        12704780.72,
+        12648516.44,
+        11866812.83,
+        10571973.23
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 House Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_cash_on_hand_2024": {
+      "labels": [
+        "CA",
+        "NY",
+        "TX",
+        "IL",
+        "NJ",
+        "MI",
+        "OH",
+        "FL",
+        "PA",
+        "TN",
+        "MA",
+        "AR",
+        "NC",
+        "MO",
+        "LA"
+      ],
+      "values": [
+        87442050.39,
+        47700104.14,
+        39010730.01,
+        35775274.71,
+        30635661.41,
+        25963671.32,
+        24580447.67,
+        21760969.05,
+        21013452.68,
+        17889832.41,
+        16879531.72,
+        14425843.57,
+        12694005.5,
+        12062936.13,
+        11417195.85
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 House Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_cash_on_hand_2026": {
+      "labels": [
+        "CA",
+        "NY",
+        "TX",
+        "FL",
+        "MI",
+        "NJ",
+        "PA",
+        "IL",
+        "OH",
+        "LA",
+        "NC",
+        "TN",
+        "IN",
+        "MA",
+        "VA"
+      ],
+      "values": [
+        125104687.77,
+        83932987.07,
+        46379536.3,
+        40798040.44,
+        33353927.45,
+        29751026.94,
+        29426068.36,
+        24749790.47,
+        24124951.46,
+        18790145.81,
+        18776408.05,
+        18263952.44,
+        17531720.96,
+        17027275.2,
+        15862118.32
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house cash_on_hand series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 House Campaign Cash on Hand by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign cash on hand in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_debts_owed_2018": {
+      "labels": [
+        "FL",
+        "CA",
+        "MD",
+        "PA",
+        "NY",
+        "TX",
+        "IL",
+        "GA",
+        "AZ",
+        "TN",
+        "NC",
+        "NJ",
+        "NH",
+        "OH",
+        "LA"
+      ],
+      "values": [
+        12334979.82,
+        9181760.68,
+        8565744.77,
+        8543291.72,
+        8485975.47,
+        8333212.88,
+        5389457.77,
+        4530165.88,
+        4040269.12,
+        3803007.79,
+        3793617.37,
+        2942975.73,
+        2884905.86,
+        2576401.87,
+        2556331.31
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2018 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2018 House Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2018",
+        "color": "#3fb950",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_debts_owed_2020": {
+      "labels": [
+        "FL",
+        "TX",
+        "NY",
+        "CA",
+        "GA",
+        "IL",
+        "PA",
+        "TN",
+        "NC",
+        "MD",
+        "AZ",
+        "NJ",
+        "MA",
+        "MI",
+        "IN"
+      ],
+      "values": [
+        15505010.0,
+        11258753.75,
+        10510557.27,
+        9721290.92,
+        6834648.49,
+        6029140.88,
+        5441692.83,
+        3831952.06,
+        3776071.49,
+        3497440.33,
+        3318131.4,
+        3284749.17,
+        3140213.67,
+        3057265.96,
+        2616829.13
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2020 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2020 House Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2020",
+        "color": "#f6c344",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_debts_owed_2022": {
+      "labels": [
+        "FL",
+        "CA",
+        "NY",
+        "MD",
+        "MI",
+        "TX",
+        "PA",
+        "AZ",
+        "NC",
+        "IL",
+        "GA",
+        "OR",
+        "TN",
+        "NJ",
+        "OK"
+      ],
+      "values": [
+        22943615.43,
+        18054537.87,
+        17076836.61,
+        13721711.26,
+        11755511.75,
+        9789151.51,
+        9668304.69,
+        9521457.76,
+        8736749.99,
+        7619803.52,
+        7397540.57,
+        6140359.18,
+        6032876.6,
+        5966774.74,
+        4472378.66
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2022 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2022 House Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2022",
+        "color": "#39c5bb",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_debts_owed_2024": {
+      "labels": [
+        "MD",
+        "FL",
+        "CA",
+        "MI",
+        "NY",
+        "NC",
+        "IN",
+        "AZ",
+        "NV",
+        "PA",
+        "OH",
+        "OK",
+        "TX",
+        "GA",
+        "NJ"
+      ],
+      "values": [
+        80611617.82,
+        29855365.22,
+        27754589.43,
+        20470765.32,
+        19629187.74,
+        18733392.32,
+        17210903.78,
+        15612234.17,
+        12882213.64,
+        8459221.37,
+        8068972.7,
+        8012291.94,
+        7494267.85,
+        6495288.71,
+        6425651.32
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2024 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage.",
+      "meta": {
+        "title": "2024 House Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2024",
+        "color": "#58a6ff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
+    },
+    "dg_us_state_h_debts_owed_2026": {
+      "labels": [
+        "FL",
+        "MD",
+        "CA",
+        "NY",
+        "TX",
+        "NV",
+        "MI",
+        "NC",
+        "AZ",
+        "IN",
+        "GA",
+        "IL",
+        "OK",
+        "OH",
+        "LA"
+      ],
+      "values": [
+        76851655.26,
+        50998590.18,
+        40562547.03,
+        36306202.35,
+        27335815.94,
+        21939070.0,
+        20244699.61,
+        19417051.18,
+        17222796.13,
+        17016249.51,
+        13903677.92,
+        13465179.9,
+        10788859.44,
+        9506224.38,
+        7714440.65
+      ],
+      "chartType": "bar",
+      "scope": "category",
+      "source": "Federal Election Commission candidate summary bulk files (data/us-campaign-finance.json)",
+      "unit": "USD",
+      "note": "Ranks the 15 largest state/territory aggregate values in the FEC 2026 house debts_owed series. Amounts are nominal and inherit that cycle's reporting coverage. 2026 is ongoing and coverage is incomplete.",
+      "meta": {
+        "title": "2026 House Campaign Debts Owed by State",
+        "subtitle": "Top state aggregates in the FEC cycle data",
+        "frequency": "FEC cycle 2026",
+        "color": "#bc8cff",
+        "suffix": " USD",
+        "category": "U.S. Elections",
+        "subgroup": "State Finance Rankings",
+        "explain": {
+          "what": "Top state/territory totals for house campaign debts owed in this FEC cycle.",
+          "read": "States are sorted from the largest to smallest listed aggregate; only the 15 largest are shown.",
+          "why": "Highlights the geographic distribution of campaign-finance totals in this cycle."
+        }
+      },
+      "indexAxis": "y"
     },
     "jud_supreme_court_pending_case_mix": {
       "labels": [
@@ -174580,9 +171695,3201 @@ window.INDIA_DASHBOARD_DATA = {
           "color": "#58a6ff"
         }
       ]
+    },
+    "terror_attacks_per_million": {
+      "labels": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0018,
+        0.0,
+        0.0,
+        0.0016,
+        0.0016,
+        0.0016,
+        0.0,
+        0.0298,
+        0.0145,
+        0.0227,
+        0.018,
+        0.0637,
+        0.2106,
+        0.0505,
+        0.1214,
+        0.2052,
+        0.4327,
+        0.383,
+        0.4035,
+        0.3835,
+        0.2625,
+        0.1137,
+        0.1864,
+        0.2174,
+        0.1932,
+        0.0599,
+        0.1079,
+        0.1701,
+        0.2171,
+        0.1676,
+        0.1755,
+        0.0951,
+        0.1264,
+        0.1424,
+        0.126,
+        0.4429,
+        0.5483,
+        0.5332,
+        0.5114,
+        0.4794,
+        0.5356,
+        0.6553,
+        0.6664,
+        0.7642,
+        0.7112,
+        0.6467,
+        0.4478,
+        0.3208,
+        0.1662
+      ],
+      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
+    },
+    "terror_fatalities_per_million": {
+      "labels": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0065,
+        0.0,
+        0.0,
+        0.0,
+        0.0462,
+        0.0247,
+        0.0341,
+        0.0889,
+        0.08,
+        0.2583,
+        0.066,
+        0.43,
+        0.6255,
+        1.1676,
+        1.033,
+        1.0486,
+        1.2592,
+        1.2758,
+        0.4133,
+        0.3759,
+        0.5808,
+        0.8537,
+        0.3907,
+        0.4517,
+        0.6343,
+        0.6123,
+        0.5457,
+        0.4226,
+        0.294,
+        0.4053,
+        0.6156,
+        0.5258,
+        0.7484,
+        0.6316,
+        0.653,
+        0.3956,
+        0.2065,
+        0.3604,
+        0.3734,
+        0.2914,
+        0.3475,
+        0.342,
+        0.3004,
+        0.2232,
+        0.1511,
+        0.0955
+      ],
+      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
+    },
+    "terror_fatalities_per_attack": {
+      "labels": [
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021"
+      ],
+      "values": [
+        null,
+        null,
+        0.0,
+        null,
+        null,
+        4.0,
+        0.0,
+        0.0,
+        null,
+        1.55,
+        1.7,
+        1.5,
+        4.923,
+        1.255,
+        1.226,
+        1.308,
+        3.542,
+        3.048,
+        2.698,
+        2.698,
+        2.599,
+        3.283,
+        4.861,
+        3.636,
+        2.017,
+        2.671,
+        4.42,
+        6.525,
+        4.188,
+        3.728,
+        2.821,
+        3.255,
+        2.408,
+        3.093,
+        3.205,
+        4.323,
+        4.173,
+        1.69,
+        1.152,
+        1.225,
+        0.774,
+        0.431,
+        0.673,
+        0.57,
+        0.437,
+        0.455,
+        0.481,
+        0.465,
+        0.498,
+        0.471,
+        0.574
+      ],
+      "source": "Derived from Our World in Data GTD-derived India attack/fatality series and World Bank population series; coverage is limited to shared years"
+    },
+    "unesco_india_sites_cumulative": {
+      "labels": [
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        4,
+        6,
+        9,
+        13,
+        17,
+        18,
+        19,
+        19,
+        19,
+        19,
+        21,
+        21,
+        21,
+        21,
+        21,
+        21,
+        22,
+        22,
+        22,
+        23,
+        24,
+        26,
+        26,
+        26,
+        27,
+        27,
+        27,
+        28,
+        28,
+        29,
+        30,
+        32,
+        32,
+        35,
+        36,
+        37,
+        38,
+        38,
+        40,
+        40,
+        42,
+        43,
+        44,
+        45
+      ],
+      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
+      "note": "Annual additions and cumulative totals are reconstructed from inscription dates on the current official list, not an archived yearly snapshot; site boundaries or classifications may change."
+    },
+    "unesco_india_new_inscriptions": {
+      "labels": [
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        4,
+        2,
+        3,
+        4,
+        4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        3,
+        1,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        1,
+        1,
+        1
+      ],
+      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
+      "note": "Annual additions and cumulative totals are reconstructed from inscription dates on the current official list, not an archived yearly snapshot; site boundaries or classifications may change."
+    },
+    "unesco_india_current_categories": {
+      "labels": [
+        "Cultural",
+        "Natural",
+        "Mixed"
+      ],
+      "values": [
+        37,
+        7,
+        1
+      ],
+      "chartType": "doughnut",
+      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
+      "note": "Current property classifications on the official UNESCO World Heritage List."
+    },
+    "state_gsdp_share": {
+      "labels": [
+        "Maharashtra",
+        "Tamil Nadu",
+        "Karnataka",
+        "Uttar Pradesh",
+        "Gujarat",
+        "West Bengal",
+        "Rajasthan",
+        "Telangana",
+        "Andhra Pradesh",
+        "Madhya Pradesh",
+        "Kerala",
+        "Delhi",
+        "Haryana",
+        "Bihar",
+        "Odisha",
+        "Punjab",
+        "Assam",
+        "Chhattisgarh",
+        "Jharkhand",
+        "Uttarakhand",
+        "Jammu & Kashmir",
+        "Himachal Pradesh",
+        "Goa",
+        "Tripura",
+        "Chandigarh",
+        "Meghalaya",
+        "Sikkim",
+        "Puducherry",
+        "Manipur",
+        "Arunachal Pradesh",
+        "Nagaland",
+        "Mizoram",
+        "Andaman & Nicobar Islands",
+        "Ladakh"
+      ],
+      "values": [
+        13.34168514816347,
+        8.692122787852705,
+        8.498775818360341,
+        8.411091222433912,
+        8.07276557066804,
+        5.552642090453965,
+        4.969796548425041,
+        4.802146501234373,
+        4.797542272700996,
+        4.476409624362925,
+        3.805656877252096,
+        3.6628269815106362,
+        3.5711708492012475,
+        2.7960410435989456,
+        2.6205393340839165,
+        2.5372140453274086,
+        1.7768611864119737,
+        1.681260849258464,
+        1.5179177543194846,
+        1.0722680740111268,
+        0.7687105943577364,
+        0.7035348029760428,
+        0.34319172816531274,
+        0.25878292341735026,
+        0.20503321740587863,
+        0.17158710773174146,
+        0.15635930056638603,
+        0.15503243862189023,
+        0.14114325402297068,
+        0.13083783502005145,
+        0.13053422045924856,
+        0.11058714316272171,
+        0.043879503295239625,
+        0.024051351166368858
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "scope": "state",
+      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
+      "unit": "% of reported total",
+      "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
+    },
+    "state_per_capita_income_index": {
+      "labels": [
+        "Goa",
+        "Sikkim",
+        "Delhi",
+        "Chandigarh",
+        "Telangana",
+        "Karnataka",
+        "Haryana",
+        "Tamil Nadu",
+        "Gujarat",
+        "Andaman & Nicobar Islands",
+        "Kerala",
+        "Maharashtra",
+        "Puducherry",
+        "Andhra Pradesh",
+        "Uttarakhand",
+        "Himachal Pradesh",
+        "Mizoram",
+        "Arunachal Pradesh",
+        "Ladakh",
+        "Punjab",
+        "Tripura",
+        "Rajasthan",
+        "Nagaland",
+        "West Bengal",
+        "Chhattisgarh",
+        "Odisha",
+        "Madhya Pradesh",
+        "Meghalaya",
+        "Jammu & Kashmir",
+        "Assam",
+        "Manipur",
+        "Jharkhand",
+        "Uttar Pradesh",
+        "Bihar"
+      ],
+      "values": [
+        254.87236149177056,
+        248.94698828605178,
+        199.5613846278944,
+        195.39764764405666,
+        149.25645845590168,
+        148.43327737041236,
+        138.33507918514158,
+        131.6668819086704,
+        130.3175537028799,
+        126.26765582325281,
+        123.07394280302486,
+        120.6737553033238,
+        110.60138615850421,
+        105.18972386842495,
+        105.15767672564297,
+        102.81488709361113,
+        102.19929496285877,
+        97.8007050371412,
+        89.43066098427775,
+        88.87198840563072,
+        73.46161756757402,
+        71.7569008977983,
+        66.4327703559146,
+        65.96402110328266,
+        64.57068786561246,
+        64.38701468907095,
+        61.19904145560993,
+        59.633036299368136,
+        59.126500117187305,
+        58.150258051246716,
+        51.243381308384386,
+        45.84128532958333,
+        40.484629329353744,
+        26.133727465357993
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "scope": "state",
+      "source": "RBI Handbook of Statistics on Indian States; indexed to the State/UT median = 100",
+      "unit": "index (median = 100)",
+      "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
+    },
+    "state_power_availability_index": {
+      "labels": [
+        "Dadra & Nagar Haveli and Daman & Diu",
+        "Goa",
+        "Punjab",
+        "Telangana",
+        "Haryana",
+        "Puducherry",
+        "Gujarat",
+        "Himachal Pradesh",
+        "Delhi",
+        "Tamil Nadu",
+        "Maharashtra",
+        "Chandigarh",
+        "Andhra Pradesh",
+        "Jammu & Kashmir",
+        "Uttarakhand",
+        "Chhattisgarh",
+        "Rajasthan",
+        "Karnataka",
+        "Madhya Pradesh",
+        "Andaman & Nicobar Islands",
+        "Lakshadweep",
+        "Odisha",
+        "Kerala",
+        "Sikkim",
+        "West Bengal",
+        "Uttar Pradesh",
+        "Arunachal Pradesh",
+        "Meghalaya",
+        "Mizoram",
+        "Tripura",
+        "Nagaland",
+        "Jharkhand",
+        "Assam",
+        "Bihar",
+        "Manipur"
+      ],
+      "values": [
+        1072.9978634052898,
+        251.7940027996758,
+        184.4396964561998,
+        169.90348485964785,
+        168.9751712959552,
+        155.40411110292493,
+        154.62314889854858,
+        132.82251528770354,
+        129.52184483901866,
+        124.63714727768365,
+        116.71701171443307,
+        115.58240624769765,
+        109.15788698150739,
+        109.054741029986,
+        104.85522728947174,
+        104.22161644441171,
+        102.1365947100862,
+        100.0,
+        87.71826420098725,
+        74.7734472850512,
+        74.74397701318794,
+        67.81109555735651,
+        64.85670080306491,
+        60.42142488764459,
+        52.60443527591542,
+        50.99830545936786,
+        49.082737788256104,
+        44.69903484859648,
+        41.847786045826275,
+        34.163412657481764,
+        30.73749355337803,
+        27.89361231857364,
+        26.243277094231193,
+        25.337066234436012,
+        24.23193103956384
+      ],
+      "chartType": "bar",
+      "indexAxis": "y",
+      "scope": "state",
+      "source": "RBI Handbook of Statistics on Indian States and CEA; indexed to the State/UT median = 100",
+      "unit": "index (median = 100)",
+      "note": "Calculated from the RBI snapshot for FY2024-25 covering all 28 States and every Union Territory the source reports. 35 of 36 States/UTs reported. Not published for: Ladakh."
+    },
+    "cyber_crime_rate": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        0.7332292343409328,
+        0.8728754640789766,
+        0.9164814372633789,
+        1.6030508862011859,
+        1.9821642117365037,
+        3.220592064372459,
+        3.5672585750459964,
+        3.7458530661550378,
+        4.622697276519445,
+        5.9665401618017375
+      ],
+      "source": "NCRB Cyber Crime statistics (IT Act & IPC cyber offences); rates calculated using World Bank population estimates",
+      "unit": "cases per 100,000 people"
+    },
+    "ndps_case_rate": {
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023"
+      ],
+      "values": [
+        3.5755403143328732,
+        3.825080040052092,
+        3.6649584470575407,
+        4.692358530906389,
+        4.592920648723123,
+        5.236530792137242,
+        4.263599426499463,
+        5.538875986804664,
+        6.422092697056486,
+        7.53927350258784
+      ],
+      "source": "NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act); rates calculated using World Bank population estimates",
+      "unit": "cases per 100,000 people"
+    },
+    "road_fatality_rate": {
+      "labels": [
+        "2010",
+        "2012",
+        "2014",
+        "2016",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "values": [
+        10.817450285897444,
+        10.812603190549897,
+        10.643406816631929,
+        11.219587035622197,
+        11.014876631257566,
+        10.879028246865213,
+        9.390584509915227,
+        10.887538949334079,
+        11.820419267874248,
+        12.030989354148058,
+        12.281728874934066
+      ],
+      "source": "MoRTH Road Accidents in India & NCRB Accidental Deaths and Suicides in India (ADSI); rates calculated using World Bank population estimates",
+      "unit": "cases per 100,000 people"
+    },
+    "pew_india_religious_pluralism": {
+      "labels": [
+        "2021: Hindus say respecting all religions is very important",
+        "2021: Muslims say respecting all religions is very important",
+        "2021: Hindus say India is better off with religious diversity",
+        "2021: Muslims say India is better off with religious diversity"
+      ],
+      "values": [
+        85,
+        78,
+        56,
+        53
+      ],
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "note": "A thematic view of the same separately labelled Pew survey observations; values are not combined or interpolated.",
+      "unit": "% of respondents"
+    },
+    "pew_india_religious_practice": {
+      "labels": [
+        "2021: considers religion very important in life",
+        "2021: prays daily (Indian adults)",
+        "2021: believes in karma (Indian adults)"
+      ],
+      "values": [
+        84,
+        60,
+        77
+      ],
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "note": "A thematic view of the same separately labelled Pew survey observations; values are not combined or interpolated.",
+      "unit": "% of respondents"
+    },
+    "card_spend_total": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        5.0,
+        7.1,
+        10.5,
+        12.7,
+        13.7,
+        12.7,
+        17.7,
+        21.700000000000003,
+        25.4,
+        29.1,
+        32.6
+      ],
+      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
+      "unit": "INR lakh crore"
+    },
+    "credit_card_spend_share": {
+      "labels": [
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        54.0,
+        53.52112676056338,
+        43.8095238095238,
+        47.24409448818898,
+        51.82481751824818,
+        49.60629921259843,
+        59.32203389830508,
+        65.89861751152073,
+        72.04724409448819,
+        75.94501718213058,
+        79.14110429447852
+      ],
+      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
+      "unit": "% of credit and debit card spends"
+    },
+    "upi_value_growth": {
+      "labels": [
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026"
+      ],
+      "values": [
+        75.43859649122808,
+        777.0,
+        143.10148232611175,
+        92.4953095684803,
+        84.23489278752437,
+        66.57849490808094,
+        45.16871774513696,
+        26.066506234959526,
+        14.967462039045554
+      ],
+      "source": "NPCI & Reserve Bank of India (UPI Annual Transaction Value in INR Lakh Crores); annual growth calculated from reported values",
+      "unit": "% year-over-year"
+    },
+    "military_expenditure_per_capita": {
+      "labels": [
+        "1960",
+        "1961",
+        "1962",
+        "1963",
+        "1964",
+        "1965",
+        "1966",
+        "1967",
+        "1968",
+        "1969",
+        "1970",
+        "1971",
+        "1972",
+        "1973",
+        "1974",
+        "1975",
+        "1976",
+        "1977",
+        "1978",
+        "1979",
+        "1980",
+        "1981",
+        "1982",
+        "1983",
+        "1984",
+        "1985",
+        "1986",
+        "1987",
+        "1988",
+        "1989",
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        1.5637174091818566,
+        1.6758785452315648,
+        2.329926666293455,
+        3.835294486145048,
+        4.145517086059634,
+        4.337513756707515,
+        3.3173984243574295,
+        2.9079648236541704,
+        3.035805232355272,
+        3.168186876900556,
+        3.3579165629992658,
+        4.040981155532118,
+        4.377428357235344,
+        4.336024374138164,
+        4.849606348903103,
+        5.4369294280991545,
+        5.264597033063299,
+        5.426146940482528,
+        6.063211791167801,
+        6.838559264537029,
+        7.8864883625083015,
+        8.354466910750853,
+        8.749118533022372,
+        9.263658491276436,
+        9.215669232129697,
+        9.793626654815709,
+        12.064606041597203,
+        13.44663825940367,
+        13.71428692882936,
+        12.516905607366722,
+        12.181935089049409,
+        9.754728646763095,
+        8.95195538998307,
+        8.950632259201562,
+        9.435713036780026,
+        10.157715323584403,
+        10.110126088231095,
+        11.474823317833593,
+        11.702188533235281,
+        13.38394995920555,
+        13.505253072866429,
+        13.545469568970995,
+        13.438103266318748,
+        14.625665005849742,
+        17.815772648770746,
+        19.98162817195978,
+        20.421484402496322,
+        23.730026431820367,
+        27.32140967567721,
+        31.596387014946163,
+        37.06564455064193,
+        39.35365823225116,
+        36.926457807951266,
+        36.58160923101758,
+        38.798278767830084,
+        38.62540475058586,
+        42.142834944458215,
+        47.54106954184392,
+        48.17787170585208,
+        51.42216394418943,
+        51.91395772997239,
+        53.919735821811926,
+        56.044415859444065,
+        57.20319224602938,
+        58.99439771908535,
+        62.886250147984114
+      ],
+      "source": "World Bank API MS.MIL.XPND.CD; calculated per person using World Bank population estimates",
+      "unit": "USD/person"
+    },
+    "market_indices": {
+      "labels": [
+        "2020-04",
+        "2020-05",
+        "2020-06",
+        "2020-07",
+        "2020-08",
+        "2020-09",
+        "2020-10",
+        "2020-11",
+        "2020-12",
+        "2021-01",
+        "2021-02",
+        "2021-03",
+        "2021-04",
+        "2021-05",
+        "2021-06",
+        "2021-07",
+        "2021-08",
+        "2021-09",
+        "2021-10",
+        "2021-11",
+        "2021-12",
+        "2022-01",
+        "2022-02",
+        "2022-03",
+        "2022-04",
+        "2022-05",
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10",
+        "2022-11",
+        "2022-12",
+        "2023-01",
+        "2023-02",
+        "2023-03",
+        "2023-04",
+        "2023-05",
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10",
+        "2023-11",
+        "2023-12",
+        "2024-01",
+        "2024-02",
+        "2024-03",
+        "2024-04",
+        "2024-05",
+        "2024-06",
+        "2024-07",
+        "2024-08",
+        "2024-09",
+        "2024-10",
+        "2024-11",
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08",
+        "2025-09",
+        "2025-10",
+        "2025-11",
+        "2025-12"
+      ],
+      "datasets": [
+        {
+          "label": "Sensex",
+          "values": [
+            100.0,
+            96.1637245830071,
+            103.55363371058439,
+            111.53492538021688,
+            114.56420385792585,
+            112.90216385507865,
+            117.48789949462595,
+            130.93962796877594,
+            141.621289771514,
+            137.27489501032105,
+            145.62127790827344,
+            146.83488741784706,
+            144.67933660758774,
+            154.03646760149005,
+            155.65372387121266,
+            155.96246470685935,
+            170.68949154150948,
+            175.3576767029682,
+            175.89300543336418,
+            169.24365909791922,
+            172.7697107741951,
+            172.05910266448385,
+            166.81881272688452,
+            173.70305122547276,
+            169.23179585735642,
+            164.7993926020832,
+            157.24399126865495,
+            170.74257954302797,
+            176.57573492775288,
+            170.3172823688519,
+            180.16288229292715,
+            187.14173013500368,
+            180.44196502716682,
+            176.6136972975538,
+            174.8703940968515,
+            174.95758891498804,
+            181.2477756423945,
+            185.7255557928204,
+            191.9430801717797,
+            197.30852729731654,
+            192.27762355565048,
+            195.2345362659264,
+            189.4408261560728,
+            198.67487602913613,
+            214.25101430706812,
+            212.80310579637938,
+            215.0221249436496,
+            218.43606899660713,
+            220.9018435475835,
+            219.35517355920945,
+            234.39598310674543,
+            242.42917645384017,
+            244.28132488670607,
+            250.01720169881608,
+            235.45299784089028,
+            236.679953496097,
+            231.7454385840036,
+            229.85197641587777,
+            217.09166725982874,
+            229.59795477732698,
+            237.98324910432535,
+            241.5682314280969,
+            247.9608868958645,
+            240.78101644245146,
+            236.7002692955608,
+            238.05846204949347,
+            248.94624765701,
+            254.18979998576413,
+            252.74811967637083
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Nifty",
+          "values": [
+            100.0,
+            97.16427144291524,
+            104.48483250337226,
+            112.30844126208177,
+            115.49305773892232,
+            114.07417925131087,
+            118.07827665594985,
+            131.5327741660666,
+            141.80468361748092,
+            138.2833497297133,
+            147.35646406150164,
+            148.99441170802953,
+            148.38994310287123,
+            158.0421708130914,
+            159.44887879187417,
+            159.8707897646021,
+            173.75632612906827,
+            178.68538220468767,
+            179.22798405663346,
+            172.2451546161726,
+            176.00685605330682,
+            175.8628383655007,
+            170.32525684844674,
+            177.12958549275348,
+            173.45612024462721,
+            168.2025172669094,
+            160.04523372447997,
+            174.02103469609224,
+            180.1164312011278,
+            173.37295510096453,
+            182.68136593677423,
+            190.24939401008126,
+            183.62559458006672,
+            179.131634195073,
+            175.49873730970904,
+            176.0646659702431,
+            183.2168683252366,
+            187.97756569539249,
+            194.61759247051188,
+            200.34483108347953,
+            195.27378573819206,
+            199.17341960871815,
+            193.5070335398939,
+            204.1927402914837,
+            220.4018296331606,
+            220.3440197162243,
+            222.9515512327711,
+            226.441444639398,
+            229.2609458513778,
+            228.50840272213716,
+            243.517682735119,
+            253.05733323867386,
+            255.94478645828053,
+            261.7764886053611,
+            245.49336200164302,
+            244.7398046633333,
+            239.8077059605067,
+            238.4243247903123,
+            224.39071390176372,
+            238.53588778790865,
+            246.7996632825891,
+            251.02384405521354,
+            258.7967423604702,
+            251.20335906043672,
+            247.7398350896054,
+            249.6080081948093,
+            260.87587095203804,
+            265.75320236513556,
+            265.0087729084473
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Nifty VIX",
+          "values": [
+            100.0,
+            88.75739644970415,
+            85.50295857988166,
+            73.07692307692308,
+            71.59763313609467,
+            67.45562130177515,
+            57.6923076923077,
+            73.37278106508876,
+            58.579881656804744,
+            74.85207100591717,
+            83.13609467455623,
+            61.24260355029586,
+            68.04733727810651,
+            50.0,
+            38.757396449704146,
+            37.8698224852071,
+            42.89940828402367,
+            54.437869822485204,
+            51.4792899408284,
+            62.721893491124256,
+            47.928994082840234,
+            65.08875739644971,
+            84.61538461538463,
+            60.94674556213019,
+            57.396449704142015,
+            60.65088757396451,
+            64.49704142011835,
+            49.11242603550296,
+            55.325443786982255,
+            59.171597633136095,
+            46.74556213017752,
+            40.828402366863905,
+            44.082840236686394,
+            50.0,
+            41.42011834319527,
+            38.16568047337279,
+            32.544378698224854,
+            35.502958579881664,
+            31.952662721893493,
+            30.76923076923077,
+            35.798816568047336,
+            34.023668639053255,
+            34.9112426035503,
+            37.57396449704142,
+            42.89940828402367,
+            47.63313609467457,
+            46.15384615384615,
+            37.8698224852071,
+            38.16568047337279,
+            72.7810650887574,
+            40.828402366863905,
+            39.34911242603551,
+            39.64497041420118,
+            37.8698224852071,
+            46.15384615384615,
+            42.60355029585799,
+            42.89940828402367,
+            48.22485207100593,
+            41.12426035502959,
+            37.57396449704142,
+            53.84615384615385,
+            47.63313609467457,
+            37.8698224852071,
+            34.023668639053255,
+            34.9112426035503,
+            32.84023668639053,
+            36.09467455621302,
+            34.31952662721894,
+            28.10650887573965
+          ],
+          "color": "#f2cc60"
+        }
+      ],
+      "source": "Economic Survey Statistical Appendix table 9.3; rebased to 100"
+    },
+    "gdp_world_comparison": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "India \ud83c\uddee\ud83c\uddf3",
+          "values": [
+            0.321,
+            0.27,
+            0.288,
+            0.279,
+            0.327,
+            0.36,
+            0.393,
+            0.416,
+            0.421,
+            0.459,
+            0.468,
+            0.485,
+            0.515,
+            0.608,
+            0.709,
+            0.82,
+            0.94,
+            1.217,
+            1.199,
+            1.342,
+            1.676,
+            1.823,
+            1.828,
+            1.857,
+            2.039,
+            2.104,
+            2.295,
+            2.651,
+            2.703,
+            2.836,
+            2.675,
+            3.167,
+            3.25,
+            3.501,
+            3.761,
+            3.956
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "United States \ud83c\uddfa\ud83c\uddf8",
+          "values": [
+            5.963,
+            6.158,
+            6.52,
+            6.859,
+            7.287,
+            7.64,
+            8.073,
+            8.578,
+            9.063,
+            9.631,
+            10.251,
+            10.582,
+            10.929,
+            11.456,
+            12.217,
+            13.039,
+            13.816,
+            14.474,
+            14.77,
+            14.478,
+            15.049,
+            15.6,
+            16.254,
+            16.881,
+            17.608,
+            18.295,
+            18.805,
+            19.612,
+            20.657,
+            21.54,
+            21.375,
+            23.726,
+            26.055,
+            27.812,
+            29.298,
+            30.77
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "China \ud83c\udde8\ud83c\uddf3",
+          "values": [
+            0.362,
+            0.385,
+            0.429,
+            0.447,
+            0.567,
+            0.738,
+            0.869,
+            0.968,
+            1.037,
+            1.104,
+            1.224,
+            1.355,
+            1.49,
+            1.684,
+            1.984,
+            2.318,
+            2.791,
+            3.604,
+            4.667,
+            5.19,
+            6.193,
+            7.672,
+            8.674,
+            9.743,
+            10.675,
+            11.281,
+            11.456,
+            12.538,
+            14.148,
+            14.56,
+            14.996,
+            18.202,
+            18.317,
+            18.27,
+            18.73,
+            19.498
+          ],
+          "color": "#ff7b72"
+        },
+        {
+          "label": "Germany \ud83c\udde9\ud83c\uddea",
+          "values": [
+            1.778,
+            1.876,
+            2.141,
+            2.079,
+            2.215,
+            2.593,
+            2.507,
+            2.219,
+            2.248,
+            2.214,
+            1.967,
+            1.966,
+            2.102,
+            2.535,
+            2.852,
+            2.893,
+            3.046,
+            3.484,
+            3.808,
+            3.479,
+            3.467,
+            3.824,
+            3.596,
+            3.807,
+            3.965,
+            3.425,
+            3.537,
+            3.765,
+            4.055,
+            3.96,
+            3.941,
+            4.355,
+            4.201,
+            4.562,
+            4.686,
+            5.051
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "Japan \ud83c\uddef\ud83c\uddf5",
+          "values": [
+            3.253,
+            3.725,
+            4.065,
+            4.632,
+            5.104,
+            5.64,
+            5.021,
+            4.58,
+            4.15,
+            4.689,
+            5.042,
+            4.439,
+            4.246,
+            4.573,
+            4.941,
+            4.876,
+            4.648,
+            4.625,
+            5.16,
+            5.337,
+            5.812,
+            6.279,
+            6.334,
+            5.272,
+            4.986,
+            4.534,
+            5.11,
+            5.038,
+            5.154,
+            5.246,
+            5.189,
+            5.226,
+            4.448,
+            4.385,
+            4.19,
+            4.435
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "United Kingdom \ud83c\uddec\ud83c\udde7",
+          "values": [
+            1.093,
+            1.143,
+            1.18,
+            1.061,
+            1.14,
+            1.349,
+            1.425,
+            1.569,
+            1.661,
+            1.693,
+            1.672,
+            1.656,
+            1.791,
+            2.061,
+            2.43,
+            2.551,
+            2.72,
+            3.105,
+            2.945,
+            2.429,
+            2.497,
+            2.676,
+            2.72,
+            2.797,
+            3.085,
+            2.946,
+            2.707,
+            2.699,
+            2.897,
+            2.876,
+            2.724,
+            3.195,
+            3.181,
+            3.421,
+            3.696,
+            4.003
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "World Bank API NY.GDP.MKTP.CD (GDP in current USD Trillion)"
+    },
+    "global_inflation_comparison": {
+      "labels": [
+        "1990",
+        "1991",
+        "1992",
+        "1993",
+        "1994",
+        "1995",
+        "1996",
+        "1997",
+        "1998",
+        "1999",
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "India \ud83c\uddee\ud83c\uddf3",
+          "values": [
+            8.97,
+            13.87,
+            11.79,
+            6.33,
+            10.25,
+            10.22,
+            8.98,
+            7.16,
+            13.23,
+            4.67,
+            4.01,
+            3.78,
+            4.3,
+            3.81,
+            3.77,
+            4.25,
+            5.8,
+            6.37,
+            8.35,
+            10.88,
+            11.99,
+            8.91,
+            9.48,
+            10.02,
+            6.67,
+            4.91,
+            4.95,
+            3.33,
+            3.94,
+            3.73,
+            6.62,
+            5.13,
+            6.7,
+            5.65,
+            4.95,
+            2.4
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "United States \ud83c\uddfa\ud83c\uddf8",
+          "values": [
+            5.4,
+            4.23,
+            3.03,
+            2.95,
+            2.61,
+            2.81,
+            2.93,
+            2.34,
+            1.55,
+            2.19,
+            3.38,
+            2.83,
+            1.59,
+            2.27,
+            2.68,
+            3.39,
+            3.23,
+            2.85,
+            3.84,
+            -0.36,
+            1.64,
+            3.16,
+            2.07,
+            1.46,
+            1.62,
+            0.12,
+            1.26,
+            2.13,
+            2.44,
+            1.81,
+            1.23,
+            4.7,
+            8.0,
+            4.12,
+            2.95,
+            null
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Euro Area \ud83c\uddea\ud83c\uddfa",
+          "values": [
+            4.5,
+            4.31,
+            5.6,
+            4.63,
+            4.7,
+            4.22,
+            3.07,
+            2.34,
+            2.39,
+            2.13,
+            3.04,
+            2.93,
+            2.47,
+            2.1,
+            2.23,
+            2.56,
+            2.77,
+            2.51,
+            4.15,
+            0.51,
+            1.53,
+            3.29,
+            2.6,
+            1.22,
+            0.2,
+            -0.1,
+            0.15,
+            1.38,
+            1.7,
+            1.45,
+            0.22,
+            2.53,
+            8.55,
+            5.95,
+            2.26,
+            2.47
+          ],
+          "color": "#3fb950"
+        }
+      ],
+      "source": "World Bank API FP.CPI.TOTL.ZG (Annual CPI inflation %)"
+    },
+    "global_equity_indices": {
+      "labels": [
+        "2000",
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "India BSE Sensex \ud83c\uddee\ud83c\uddf3",
+          "values": [
+            100.0,
+            81.5,
+            84.2,
+            146.8,
+            166.1,
+            236.4,
+            345.2,
+            510.6,
+            245.8,
+            444.6,
+            522.1,
+            396.4,
+            497.8,
+            542.1,
+            712.5,
+            663.2,
+            678.9,
+            868.5,
+            920.4,
+            1056.2,
+            1206.8,
+            1495.2,
+            1558.9,
+            1852.4,
+            2145.6,
+            2260.0
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "US S&P 500 \ud83c\uddfa\ud83c\uddf8",
+          "values": [
+            100.0,
+            88.1,
+            68.6,
+            86.7,
+            94.5,
+            97.4,
+            110.7,
+            114.6,
+            68.8,
+            86.9,
+            98.1,
+            98.2,
+            111.4,
+            144.4,
+            161.0,
+            159.8,
+            175.1,
+            209.1,
+            196.1,
+            252.7,
+            291.5,
+            368.4,
+            303.1,
+            376.5,
+            467.2,
+            512.0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "UK FTSE 100 \ud83c\uddec\ud83c\udde7",
+          "values": [
+            100.0,
+            83.8,
+            63.3,
+            71.9,
+            77.3,
+            89.2,
+            98.8,
+            102.5,
+            69.8,
+            85.3,
+            93.0,
+            87.8,
+            93.0,
+            106.4,
+            105.1,
+            100.0,
+            105.7,
+            113.8,
+            103.8,
+            116.4,
+            100.0,
+            114.2,
+            116.8,
+            119.5,
+            128.4,
+            134.2
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Japan Nikkei 225 \ud83c\uddef\ud83c\uddf5",
+          "values": [
+            100.0,
+            74.3,
+            61.2,
+            76.5,
+            84.1,
+            118.0,
+            126.1,
+            112.0,
+            64.9,
+            77.2,
+            74.9,
+            61.9,
+            74.2,
+            116.3,
+            124.6,
+            136.0,
+            137.2,
+            163.5,
+            144.1,
+            170.4,
+            197.6,
+            207.2,
+            187.7,
+            239.5,
+            278.4,
+            289.0
+          ],
+          "color": "#a371f7"
+        },
+        {
+          "label": "China Shanghai Comp \ud83c\udde8\ud83c\uddf3",
+          "values": [
+            100.0,
+            80.4,
+            66.3,
+            63.2,
+            60.1,
+            55.0,
+            129.5,
+            254.8,
+            88.6,
+            159.2,
+            136.5,
+            107.1,
+            110.2,
+            103.4,
+            158.0,
+            176.4,
+            154.6,
+            164.5,
+            124.0,
+            151.8,
+            172.8,
+            179.4,
+            152.0,
+            148.6,
+            154.2,
+            161.0
+          ],
+          "color": "#ff7b72"
+        }
+      ],
+      "source": "BSE India, S&P Dow Jones, FTSE Russell, Nikkei Inc., SSE; Base 100 = 2000"
+    },
+    "sectoral_market_indices": {
+      "labels": [
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "datasets": [
+        {
+          "label": "Nifty IT",
+          "values": [
+            100.0,
+            108.2,
+            98.4,
+            145.6,
+            182.1,
+            185.4,
+            169.2,
+            188.5,
+            265.4,
+            278.1,
+            442.1,
+            672.4,
+            524.8,
+            620.5,
+            695.2,
+            720.0
+          ],
+          "color": "#3fb950"
+        },
+        {
+          "label": "Nifty Bank",
+          "values": [
+            100.0,
+            95.4,
+            128.6,
+            114.2,
+            188.4,
+            172.1,
+            198.5,
+            268.4,
+            289.1,
+            335.2,
+            328.4,
+            388.2,
+            452.1,
+            498.4,
+            545.6,
+            575.0
+          ],
+          "color": "#58a6ff"
+        },
+        {
+          "label": "Nifty Auto",
+          "values": [
+            100.0,
+            92.1,
+            122.4,
+            142.1,
+            218.4,
+            215.2,
+            252.1,
+            308.2,
+            248.5,
+            210.4,
+            242.1,
+            305.4,
+            338.2,
+            485.1,
+            620.4,
+            650.0
+          ],
+          "color": "#ff9933"
+        },
+        {
+          "label": "Nifty Energy",
+          "values": [
+            100.0,
+            85.2,
+            92.4,
+            98.1,
+            115.4,
+            108.2,
+            142.1,
+            195.4,
+            188.2,
+            192.4,
+            210.5,
+            305.2,
+            358.4,
+            465.2,
+            592.1,
+            625.0
+          ],
+          "color": "#f6c344"
+        },
+        {
+          "label": "BSE Sensex Benchmark",
+          "values": [
+            100.0,
+            75.9,
+            95.3,
+            103.8,
+            136.5,
+            127.0,
+            130.0,
+            166.4,
+            176.3,
+            202.3,
+            231.2,
+            286.4,
+            298.6,
+            354.9,
+            411.0,
+            432.9
+          ],
+          "color": "#a371f7"
+        }
+      ],
+      "source": "NSE India, BSE India; Base 100 = 2010"
+    },
+    "gdp_sector_composition": {
+      "labels": [
+        "Agriculture",
+        "Industry",
+        "Services",
+        "Other GDP components"
+      ],
+      "values": [
+        16.23,
+        25.2,
+        49.34,
+        9.23
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API NV.AGR.TOTL.ZS; World Bank API NV.IND.TOTL.ZS; World Bank API NV.SRV.TOTL.ZS",
+      "note": "Value-added shares for the latest common World Bank observation (2025). Other GDP components are the residual to 100%, including net product taxes and rounding differences; this is not a directly reported sector.",
+      "unit": "% of GDP"
+    },
+    "state_gsdp_composition": {
+      "labels": [
+        "Maharashtra",
+        "Tamil Nadu",
+        "Karnataka",
+        "Uttar Pradesh",
+        "Gujarat",
+        "West Bengal",
+        "Rajasthan",
+        "Telangana",
+        "Other 26 States/UTs"
+      ],
+      "values": [
+        13.34,
+        8.69,
+        8.5,
+        8.41,
+        8.07,
+        5.55,
+        4.97,
+        4.8,
+        37.66
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
+      "note": "Share of reported GSDP across every State and Union Territory in the cited RBI snapshot. The eight largest shares are shown individually; the remaining States/UTs are combined.",
+      "unit": "% of reported State GSDP"
+    },
+    "urban_rural_population_composition": {
+      "labels": [
+        "Urban population",
+        "Rural population"
+      ],
+      "values": [
+        35.69,
+        64.31
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API SP.URB.TOTL.IN.ZS",
+      "note": "Urban/rural population shares for 2025; rural population is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of population"
+    },
+    "energy_supply_composition": {
+      "labels": [
+        "Net energy imports",
+        "Domestic energy supply"
+      ],
+      "values": [
+        36.03,
+        63.97
+      ],
+      "chartType": "doughnut",
+      "source": "World Bank API EG.IMP.CONS.ZS",
+      "note": "Net energy-import dependence for 2024; domestic energy supply is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of energy use"
+    },
+    "defence_budget_composition": {
+      "labels": [
+        "Defence allocation",
+        "Other Union expenditure"
+      ],
+      "values": [
+        12.9,
+        87.1
+      ],
+      "chartType": "doughnut",
+      "source": "Union Budget of India Documents & Ministry of Finance Budget Allocation Data (% of Total Central Expenditure)",
+      "note": "Defence allocation as a share of total Union expenditure for 2025; other union expenditure is calculated as the complement. For energy, this is net imports as a share of energy use, not gross import volumes.",
+      "unit": "% of Union expenditure"
+    },
+    "card_spending_composition": {
+      "labels": [
+        "Credit card spends",
+        "Debit card POS spends"
+      ],
+      "values": [
+        25.8,
+        6.8
+      ],
+      "chartType": "doughnut",
+      "source": "Reserve Bank of India Payment System Indicators (Annual Credit Card Transaction Spends in INR Lakh Crores); Reserve Bank of India Payment System Data (Annual Debit Card POS Transaction Spends in INR Lakh Crores)",
+      "note": "Credit-card and debit-card POS/e-commerce expenditure for the latest common reported year (2026), in INR lakh crore. Debit-card ATM withdrawals are excluded.",
+      "unit": "INR lakh crore"
+    },
+    "lwe_casualties_cumulative": {
+      "labels": [
+        "Civilians",
+        "Security forces",
+        "Extremists"
+      ],
+      "values": [
+        4136.0,
+        2722.0,
+        5001.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
+      "meta": {
+        "title": "Left-Wing Extremism Casualties by Group (2000\u20132025)",
+        "subtitle": "Who bore the casualties of the Maoist insurgency",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "insurgency_fatalities_by_theatre": {
+      "labels": [
+        "Jammu & Kashmir",
+        "North East",
+        "Left-wing extremism"
+      ],
+      "values": [
+        22970.0,
+        10652.0,
+        11859.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database; MHA North East Division & SATP North East Insurgency Database; https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "fatalities",
+      "note": "Sum of annual values for 2000\u20132025, using only years reported for every slice. Each slice is the corresponding dashboard series; no values are estimated.",
+      "meta": {
+        "title": "Insurgency Fatalities by Theatre (2000\u20132025)",
+        "subtitle": "Fatalities in the three major internal-security theatres",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "insurgency_incidents_by_theatre": {
+      "labels": [
+        "Jammu & Kashmir",
+        "North East",
+        "Left-wing extremism"
+      ],
+      "values": [
+        32.0,
+        142.0,
+        168.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division Performance Reports; Ministry of Home Affairs Annual Reports (North East Division); Ministry of Home Affairs LWE Division Annual Reports & SATP Fatalities Database",
+      "unit": "incidents",
+      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Insurgency Incidents by Theatre (2025)",
+        "subtitle": "Incidents in the three major internal-security theatres",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " incidents",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "specialised_crime_cases_mix": {
+      "labels": [
+        "Crimes against children (POCSO)",
+        "Narcotics (NDPS)",
+        "Cyber crime"
+      ],
+      "values": [
+        177435.0,
+        108420.0,
+        85803.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "NCRB Crime in India (Crimes against Children & POCSO Act); NCRB Crime in India (Narcotic Drugs & Psychotropic Substances Act); NCRB Cyber Crime statistics (IT Act & IPC cyber offences)",
+      "unit": "cases",
+      "note": "Latest year reported for every slice (2023). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Registered Cases by Specialised Crime Head (2023)",
+        "subtitle": "NCRB cases under three specialised heads",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " cases",
+        "category": "Crime & Security",
+        "subgroup": "Violence & Crime"
+      }
+    },
+    "lwe_casualties_latest": {
+      "labels": [
+        "Civilians",
+        "Security forces",
+        "Extremists"
+      ],
+      "values": [
+        54.0,
+        33.0,
+        390.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Latest year reported for every slice (2025). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Left-Wing Extremism Casualties, Latest Year (2025)",
+        "subtitle": "Casualties by group in the most recent reported year",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "cards_in_circulation_mix": {
+      "labels": [
+        "Debit cards",
+        "Credit cards"
+      ],
+      "values": [
+        101.5,
+        12.8
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Reserve Bank of India Payment System Statistics (Active Debit Cards in Circulation in Crore Cards); Reserve Bank of India Payment System Statistics (Active Credit Cards in Circulation in Crore Cards)",
+      "unit": "crore cards",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Cards in Circulation: Debit vs Credit (2026)",
+        "subtitle": "RBI payment-card stock",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " crore cards",
+        "category": "Payments & Digital Banking",
+        "subgroup": "Card Spends & Ecosystem"
+      }
+    },
+    "mineral_output_mix": {
+      "labels": [
+        "Coal",
+        "Iron ore",
+        "Limestone",
+        "Lignite"
+      ],
+      "values": [
+        1140.0,
+        315.0,
+        505.0,
+        54.8
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes); Indian Bureau of Mines (IBM) & Ministry of Mines (Iron Ore Production Output in Million Tonnes); Indian Bureau of Mines & Cement Manufacturers Association (Limestone Production in Million Tonnes); NLC India & Ministry of Coal (Lignite Production Output in Million Tonnes)",
+      "unit": "Million Tonnes",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Major Mineral Output Mix (2026)",
+        "subtitle": "Coal, lignite, iron ore and limestone output",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " Million Tonnes",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Metallic Minerals & Ores"
+      }
+    },
+    "tourist_flows_mix": {
+      "labels": [
+        "Inbound arrivals",
+        "Outbound departures"
+      ],
+      "values": [
+        17914000.0,
+        26915000.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API ST.INT.ARVL; World Bank API ST.INT.DPRT",
+      "unit": "visitors",
+      "note": "Latest year reported for every slice (2019). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Inbound vs Outbound Tourists (2019)",
+        "subtitle": "International tourist arrivals and departures",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " visitors",
+        "category": "Tourism & Heritage",
+        "subgroup": "International Visitor Trends"
+      }
+    },
+    "connectivity_mix": {
+      "labels": [
+        "Mobile",
+        "Fixed broadband"
+      ],
+      "values": [
+        79.35,
+        3.15
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "World Bank API IT.CEL.SETS.P2; World Bank API IT.NET.BBND.P2",
+      "unit": "per 100 people",
+      "note": "Latest year reported for every slice (2024). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Mobile vs Fixed Broadband Subscriptions (2024)",
+        "subtitle": "Subscriptions per 100 people",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " per 100 people",
+        "category": "Payments & Digital Banking",
+        "subgroup": "Digital Financial Index"
+      }
+    },
+    "sector_export_value_mix": {
+      "labels": [
+        "Pharmaceuticals",
+        "Textiles & apparel",
+        "Minerals & metals"
+      ],
+      "values": [
+        35.5,
+        44.2,
+        38.5
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pharmexcil & Ministry of Commerce (Pharmaceutical & Biotech Exports Trajectory in USD Billion); Ministry of Textiles & DGFT (Textiles, Garments & Technical Textiles Export Trajectory in USD Billion); Directorate General of Foreign Trade (DGFT) & Ministry of Mines (Mineral & Ore Exports Value in USD Billion)",
+      "unit": "USD bn",
+      "note": "Latest year reported for every slice (2026). Each slice is the corresponding dashboard series.",
+      "meta": {
+        "title": "Sector Export Value Mix (2026)",
+        "subtitle": "Pharmaceutical, textile and mineral & metal exports",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " USD bn",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Production & Commodities"
+      }
+    },
+    "terror_attacks_by_decade": {
+      "labels": [
+        "1970\u20131979",
+        "1980\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132021"
+      ],
+      "values": [
+        24.0,
+        1228.0,
+        1790.0,
+        2572.0,
+        7865.0,
+        685.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Our World in Data; Global Terrorism Database-derived series",
+      "unit": "attacks",
+      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Terrorist Attacks by Decade",
+        "subtitle": "Attacks recorded in the Global Terrorism Database, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " attacks",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "terror_fatalities_by_decade": {
+      "labels": [
+        "1970\u20131979",
+        "1980\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132021"
+      ],
+      "values": [
+        35.0,
+        3096.0,
+        6211.0,
+        6230.0,
+        4574.0,
+        347.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Our World in Data; Global Terrorism Database-derived fatalities",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 1970 and 2021; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Terrorism Fatalities by Decade",
+        "subtitle": "Fatalities recorded in the Global Terrorism Database, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Terrorism"
+      }
+    },
+    "kashmir_fatalities_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        19209.0,
+        2582.0,
+        1179.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Ministry of Home Affairs J&K Division & SATP Jammu & Kashmir Casualty Database",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Jammu & Kashmir Fatalities by Period",
+        "subtitle": "Insurgency-related fatalities, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "Jammu & Kashmir Insurgency"
+      }
+    },
+    "northeast_fatalities_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        8253.0,
+        2070.0,
+        329.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "MHA North East Division & SATP North East Insurgency Database",
+      "unit": "fatalities",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "North East Fatalities by Period",
+        "subtitle": "Insurgency-related fatalities, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " fatalities",
+        "category": "Crime & Security",
+        "subgroup": "North East Insurgency"
+      }
+    },
+    "lwe_civilian_casualties_by_period": {
+      "labels": [
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132025"
+      ],
+      "values": [
+        1907.0,
+        1862.0,
+        367.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency",
+      "unit": "casualties",
+      "note": "Annual values summed into 10-year periods between 2000 and 2025; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Maoist Violence: Civilian Casualties by Period",
+        "subtitle": "Civilian casualties, 10-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " casualties",
+        "category": "Crime & Security",
+        "subgroup": "Maoism / LWE"
+      }
+    },
+    "khalistan_fatalities_by_period": {
+      "labels": [
+        "1981\u20131984",
+        "1985\u20131989",
+        "1990\u20131994",
+        "1995"
+      ],
+      "values": [
+        1323.0,
+        6388.0,
+        13854.0,
+        172.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "SATP Punjab Militancy Database & MHA Historical Security Reports",
+      "unit": "",
+      "note": "Annual values summed into 5-year periods between 1981 and 1995; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Punjab Militancy by Period",
+        "subtitle": "Annual series summed over 5-year periods",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": "",
+        "category": "Crime & Security",
+        "subgroup": "Punjab Militancy & Security"
+      }
+    },
+    "coal_output_by_period": {
+      "labels": [
+        "2010\u20132014",
+        "2015\u20132019",
+        "2020\u20132024",
+        "2025\u20132026"
+      ],
+      "values": [
+        2759.0,
+        3310.0,
+        4424.0,
+        2230.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Coal Controller's Organisation & Ministry of Coal (Total Domestic Coal Production in Million Tonnes)",
+      "unit": "Million Tonnes",
+      "note": "Annual values summed into 5-year periods between 2010 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Coal Output by Period",
+        "subtitle": "Domestic coal output, five-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " Million Tonnes",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Energy Minerals & Fuel"
+      }
+    },
+    "pew_reports_by_period": {
+      "labels": [
+        "2002\u20132004",
+        "2005\u20132009",
+        "2010\u20132014",
+        "2015\u20132019",
+        "2020\u20132024",
+        "2025\u20132026"
+      ],
+      "values": [
+        34.0,
+        222.0,
+        355.0,
+        310.0,
+        318.0,
+        179.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Pew Research Center India public report catalog",
+      "unit": "reports",
+      "note": "Annual values summed into 5-year periods between 2002 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "Pew India Publications by Period",
+        "subtitle": "Number of Pew Research Center reports mentioning India, five-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " reports",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "unesco_inscriptions_by_period": {
+      "labels": [
+        "1983\u20131989",
+        "1990\u20131999",
+        "2000\u20132009",
+        "2010\u20132019",
+        "2020\u20132026"
+      ],
+      "values": [
+        19.0,
+        3.0,
+        5.0,
+        11.0,
+        7.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "UNESCO World Heritage Centre; current India-listed property pages (45 sites)",
+      "unit": "sites",
+      "note": "Annual values summed into 10-year periods between 1983 and 2026; the first and last periods may be shorter.",
+      "meta": {
+        "title": "UNESCO Inscriptions in India by Period",
+        "subtitle": "New World Heritage inscriptions, ten-year totals",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " sites",
+        "category": "Tourism & Heritage",
+        "subgroup": "World Heritage Sites"
+      }
+    },
+    "state_pmjdy_region_share": {
+      "labels": [
+        "Central",
+        "East",
+        "West",
+        "South",
+        "North",
+        "North-East"
+      ],
+      "values": [
+        17.41,
+        17.4,
+        9.87,
+        8.12,
+        3.79,
+        3.08
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
+      "unit": "accounts",
+      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
+      "meta": {
+        "title": "Jan Dhan Accounts by Region",
+        "subtitle": "PMJDY bank accounts grouped by region",
+        "frequency": "Derived from State snapshot",
+        "color": "#ff9933",
+        "suffix": " accounts",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Welfare & Scheme Coverage"
+      }
+    },
+    "state_gsdp_region_share": {
+      "labels": [
+        "South",
+        "West",
+        "Central",
+        "North",
+        "East",
+        "North-East"
+      ],
+      "values": [
+        84.05,
+        72.95,
+        39.76,
+        34.24,
+        34.08,
+        7.85
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21 (GSDP at current prices; FY2022-23, INR lakh crore)",
+      "unit": "INR",
+      "note": "States grouped into six regions (North, Central, West, South, East, North-East) by the dashboard; regional totals are sums of the listed States, so Union Territories not in the source are excluded.",
+      "meta": {
+        "title": "GSDP by Region",
+        "subtitle": "Gross State Domestic Product grouped by region",
+        "frequency": "Derived from State snapshot",
+        "color": "#ff9933",
+        "suffix": " INR",
+        "category": "State Performance & Regional Health",
+        "subgroup": "State Financial Health & GSDP"
+      }
+    },
+    "pew_smartphone_ownership": {
+      "labels": [
+        "Own a smartphone",
+        "Do not own one"
+      ],
+      "values": [
+        7.0,
+        93.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Smartphone Ownership (2013)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_social_media_use": {
+      "labels": [
+        "Use social media",
+        "Do not use it"
+      ],
+      "values": [
+        54.0,
+        46.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Social Media Use (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_internet_use": {
+      "labels": [
+        "Use the internet",
+        "Do not use it"
+      ],
+      "values": [
+        45.0,
+        55.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/india/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Internet Use (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_whatsapp_use": {
+      "labels": [
+        "Use WhatsApp regularly",
+        "Do not"
+      ],
+      "values": [
+        51.0,
+        49.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "WhatsApp Use (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_fake_news_concern": {
+      "labels": [
+        "Concerned",
+        "Not concerned / no answer"
+      ],
+      "values": [
+        77.0,
+        23.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Concern About Fake News (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_social_media_democracy": {
+      "labels": [
+        "Good for democracy",
+        "Other views"
+      ],
+      "values": [
+        71.0,
+        29.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/media-and-technology/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Social Media and Democracy (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_leadership_favorability": {
+      "labels": [
+        "Favorable",
+        "Other views"
+      ],
+      "values": [
+        88.0,
+        12.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "View of National Leadership (2017)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_climate_threat": {
+      "labels": [
+        "Major threat",
+        "Other views"
+      ],
+      "values": [
+        73.0,
+        27.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/global/topic/climate-change-energy/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Climate Change as a Major Threat (2023)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_equal_rights": {
+      "labels": [
+        "Should have equal rights",
+        "Other views"
+      ],
+      "values": [
+        88.0,
+        12.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2022/03/02/how-indians-view-gender-roles-in-families-and-society/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Equal Rights for Men and Women (2022)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_daily_prayer": {
+      "labels": [
+        "Pray daily",
+        "Do not"
+      ],
+      "values": [
+        60.0,
+        40.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Daily Prayer (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "pew_religious_freedom": {
+      "labels": [
+        "Very free",
+        "Less than very free"
+      ],
+      "values": [
+        91.0,
+        9.0
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.pewresearch.org/religion/2021/06/29/religion-in-india-tolerance-and-segregation/",
+      "unit": "%",
+      "note": "Pew publishes the share giving the answer shown; the remainder is every other response, including 'no', 'neither' and don't know/refused, calculated as 100 minus the published share.",
+      "meta": {
+        "title": "Freedom to Practise Religion (2021)",
+        "subtitle": "Indian adults",
+        "frequency": "Survey wave",
+        "color": "#ff9933",
+        "suffix": "%",
+        "category": "Pew Research",
+        "subgroup": "Public opinion"
+      }
+    },
+    "auto_domestic_sales_mix": {
+      "labels": [
+        "Passenger vehicles",
+        "Commercial vehicles",
+        "Three-wheelers",
+        "Two-wheelers"
+      ],
+      "values": [
+        2.5,
+        0.63,
+        0.48,
+        14.81
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "SIAM Automobile Domestic Sales Trends (FY2008-09 to FY2013-14); annual domestic sales by vehicle category, million units",
+      "unit": "million vehicles",
+      "note": "Latest reported value for each segment of the dashboard series (2013-14).",
+      "meta": {
+        "title": "Automobile Domestic Sales by Segment",
+        "subtitle": "Passenger, commercial, three- and two-wheeler sales",
+        "frequency": "Derived from annual data",
+        "color": "#ff9933",
+        "suffix": " million vehicles",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Manufacturing & Industrial Growth"
+      }
     }
   },
   "indian_matrix_articles": [
+    {
+      "title": "How IDBI Embalmed Nehruvian Socialism, and Why India Had to Move On",
+      "link": "https://indianmatrix.substack.com/p/how-idbi-embalmed-nehruvian-socialism",
+      "published": "Mon, 02 Nov 2026 12:05:30 GMT",
+      "date": "2026-11-02"
+    },
     {
       "title": "From \u2018Gunda Raj\u2019 to Industrial Engine: How Uttar Pradesh\u2019s Law & Order Turnaround Paved the Way for \u20b912 Lakh Crore+ in Investments",
       "link": "https://indianmatrix.substack.com/p/from-gunda-raj-to-industrial-engine",
@@ -174696,12 +175003,6 @@ window.INDIA_DASHBOARD_DATA = {
       "link": "https://indianmatrix.substack.com/p/the-aggressor-who-never-left",
       "published": "Sat, 11 Jul 2026 13:08:43 GMT",
       "date": "2026-07-11"
-    },
-    {
-      "title": "India's Economic Shield in the West Asia Crisis",
-      "link": "https://indianmatrix.substack.com/p/indias-economic-shield-in-the-west",
-      "published": "Tue, 07 Jul 2026 12:45:07 GMT",
-      "date": "2026-07-07"
     }
   ],
   "pew_reports": [
@@ -181798,6 +182099,12 @@ window.INDIA_DASHBOARD_DATA = {
   ],
   "polity_policy_articles": [
     {
+      "title": "What\u2019s Next for Modi After the Midterms?",
+      "link": "https://politypolicy.substack.com/p/whats-next-for-modi-after-the-midterms",
+      "published": "Wed, 04 Nov 2026 11:57:46 GMT",
+      "description": "The people have spoken. The mandate is against the incumbent. Endgame Modi?"
+    },
+    {
       "title": "Delhi Police And Virtue Of A Disproportionate Response",
       "link": "https://politypolicy.substack.com/p/delhi-police-and-virtue-of-a-disproportionate",
       "published": "Mon, 12 Oct 2026 14:09:58 GMT",
@@ -181910,12 +182217,6 @@ window.INDIA_DASHBOARD_DATA = {
       "link": "https://politypolicy.substack.com/p/why-state-governments-cash-transfers",
       "published": "Wed, 24 Jun 2026 13:51:58 GMT",
       "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets"
-    },
-    {
-      "title": "Cabinet Reshuffle On The Cards",
-      "link": "https://politypolicy.substack.com/p/cabinet-reshuffle-on-the-cards",
-      "published": "Tue, 23 Jun 2026 18:55:35 GMT",
-      "description": "Not fatigue of faces, but fatigue of ideas is what Modi must care for"
     }
   ]
 };
