@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-09T10:01:24+00:00",
+  "generated_at_utc": "2026-11-09T12:35:41+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -6409,7 +6409,7 @@
         "2026"
       ],
       "values": [
-        9,
+        8,
         20,
         5,
         23,
@@ -118808,7 +118808,7 @@
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports Published per Year",
         "subtitle": "Dated catalogue entries by publication year",
@@ -118853,37 +118853,37 @@
         "2026"
       ],
       "values": [
-        9.0,
-        29.0,
-        34.0,
-        57.0,
-        117.0,
-        156.0,
-        205.0,
-        256.0,
-        310.0,
-        360.0,
-        460.0,
-        509.0,
-        611.0,
-        690.0,
-        747.0,
-        806.0,
-        857.0,
-        921.0,
-        988.0,
-        1050.0,
-        1095.0,
-        1160.0,
-        1239.0,
-        1354.0,
-        1418.0
+        8.0,
+        28.0,
+        33.0,
+        56.0,
+        116.0,
+        155.0,
+        204.0,
+        255.0,
+        309.0,
+        359.0,
+        459.0,
+        508.0,
+        610.0,
+        689.0,
+        746.0,
+        805.0,
+        856.0,
+        920.0,
+        987.0,
+        1049.0,
+        1094.0,
+        1159.0,
+        1238.0,
+        1353.0,
+        1417.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Cumulative Pew India Reports in Catalogue",
         "subtitle": "Dated catalogue entries accumulated over time",
@@ -118907,7 +118907,7 @@
         "Q4"
       ],
       "values": [
-        282.0,
+        281.0,
         369.0,
         424.0,
         343.0
@@ -118916,7 +118916,7 @@
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Quarter",
         "subtitle": "Catalogue dates grouped by calendar quarter",
@@ -118946,7 +118946,7 @@
         223.0,
         389.0,
         310.0,
-        399.0,
+        398.0,
         84.0,
         3.0,
         10.0
@@ -118955,7 +118955,7 @@
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Weekday",
         "subtitle": "Catalogue dates grouped by weekday",
@@ -118987,7 +118987,7 @@
         "Dec"
       ],
       "values": [
-        76.0,
+        75.0,
         91.0,
         115.0,
         93.0,
@@ -119004,7 +119004,7 @@
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Month",
         "subtitle": "Catalogue dates grouped by calendar month",
@@ -119027,7 +119027,7 @@
         "2020s"
       ],
       "values": [
-        256.0,
+        255.0,
         665.0,
         497.0
       ],
@@ -119035,7 +119035,7 @@
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1418 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Decade",
         "subtitle": "Catalogue entries grouped into calendar decades",
@@ -174388,7 +174388,7 @@
         "2025\u20132026"
       ],
       "values": [
-        34.0,
+        33.0,
         222.0,
         355.0,
         310.0,
@@ -182004,11 +182004,6 @@
       "title": "The Face of Evening News",
       "link": "https://www.pewresearch.org/journalism/2002/05/23/the-face-of-evening-news/",
       "date": "2002-05-23"
-    },
-    {
-      "title": "Unusually High Interest In Bush\u2019s State Of The Union",
-      "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
-      "date": "2002-01-17"
     }
   ],
   "polity_policy_articles": [
