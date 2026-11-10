@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { api } from '../api.js';
 import { formatDate } from '../format.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
@@ -79,7 +80,16 @@ export default function About() {
           <h2>Using the data</h2>
           <p>Every indicator has its own page with a CSV and JSON download. The same data is available from the <a href="/api">API explorer</a>.</p>
           <p>Compare indicators side by side without an account.</p>
+          <p>For project details and documentation, read the <a href="https://github.com/Shubhankart101/India-s-Journey/blob/main/README.md" target="_blank" rel="noopener noreferrer">project README</a>.</p>
         </div>
+      </section>
+
+      <section className="section" id="pew-research">
+        <span className="eyebrow">Pew Research indices</span>
+        <h2>Browse the Pew collections</h2>
+        <p className="muted">The Pew indicators are grouped under People, Health &amp; Society. Open either subgroup to see its indices and survey snapshots.</p>
+        <p><Link to="/explore/people-health-society/pew-research-public-opinion-on-india">Public opinion on India</Link></p>
+        <p><Link to="/explore/people-health-society/pew-research-reports-survey-snapshots">Reports and survey snapshots</Link></p>
       </section>
 
       <section className="section" id="articles">
