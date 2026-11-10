@@ -1,17 +1,18 @@
 // Exports the dashboard's indicator catalogue (definitions, groups, subgroups, chart data and articles)
 // to data/catalog.json so the Django app can import exactly what the static site shows.
-// It evaluates the definition code from docs/app.js in a sandbox, so docs/app.js stays the single source of truth.
+// It evaluates the definition code from scripts/catalog_sources/app.js in a sandbox, so scripts/catalog_sources/app.js stays the single source of truth.
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
+import { resolveSourceUrl } from './source_urls.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const docs = path.join(root, 'docs');
-const read = file => fs.readFileSync(path.join(docs, file), 'utf8');
+const catalogSources = path.join(root, 'scripts', 'catalog_sources');
+const read = file => fs.readFileSync(path.join(catalogSources, file), 'utf8');
 const readJson = (file, fallback) => {
   try {
-    return JSON.parse(read(path.join('data', file)));
+    return JSON.parse(fs.readFileSync(path.join(root, 'data', file), 'utf8'));
   } catch {
     return fallback;
   }
@@ -22,7 +23,7 @@ const appSource = read('app.js');
 // Returns the source of `const NAME = {...};` (or `[...]`) using bracket matching that skips strings.
 const extractLiteral = name => {
   const start = appSource.search(new RegExp(`const ${name} = [\\[{]`));
-  if (start < 0) throw new Error(`Could not find ${name} in docs/app.js`);
+  if (start < 0) throw new Error(`Could not find ${name} in scripts/catalog_sources/app.js`);
   const open = appSource.indexOf('=', start) + 1;
   let index = appSource.slice(open).search(/[[{]/) + open;
   let depth = 0;
@@ -45,7 +46,7 @@ const extractLiteral = name => {
 };
 const extractLine = name => {
   const match = appSource.match(new RegExp(`^\\s*const ${name} = .*$`, 'm'));
-  if (!match) throw new Error(`Could not find ${name} in docs/app.js`);
+  if (!match) throw new Error(`Could not find ${name} in scripts/catalog_sources/app.js`);
   return match[0].trim();
 };
 
@@ -79,10 +80,31 @@ const series = {
   ...(readJson('us-campaign-finance.json', {}).series || {}),
   ...(readJson('election-indices.json', {}).series || {}),
   ...(readJson('sports.json', {}).series || {}),
+  ...(readJson('atlas-series.json', {}).series || {}),
+  ...(readJson('fiscal-series.json', {}).series || {}),
+  ...(readJson('niti-reports.json', {}).series || {}),
+  ...(readJson('lwe-insurgency.json', {}).series || {}),
 };
 
 const definitions = [...app.definitions];
-(electionResults.india_constituencies || []).forEach((record, index) => {
+const voterRoll = readJson('voter-roll.json', null);
+if (voterRoll?.elections?.length) {
+  const electionKey = 'india_lok_sabha_registered_electors';
+  const atlasKey = 'india_voter_roll_ssr_sir_atlas';
+  series[electionKey] = {
+    labels: voterRoll.elections.map(row => row.label),
+    values: voterRoll.elections.map(row => row.electors),
+    chartType: 'bar',
+    source: voterRoll.sources.electors.url,
+    note: 'ECI totals from Annexure I, with turnout and population context in the accompanying voter-roll atlas.',
+    meta: { title: 'Electors by Lok Sabha election', subtitle: 'Registered electors, 1951–52 to 2024', frequency: 'Per Lok Sabha election', color: '#ff9933', suffix: ' electors', category: 'India in Maps', subgroup: 'Electoral Rolls' },
+  };
+  series[atlasKey] = {
+    labels: ['Interactive atlas'], values: [1], chartType: 'voter-roll', scope: 'module', source: 'https://www.eci.gov.in',
+    note: 'An interactive, source-linked guide to Special Summary Revision (SSR), Special Intensive Revision (SIR), roll changes and voter forms.',
+    meta: { title: 'Electoral rolls: SSR and SIR', subtitle: 'How rolls are revised, checked and corrected', frequency: 'Interactive explainer', color: '#ff9933', category: 'India in Maps', subgroup: 'Electoral Rolls' },
+  };
+}(electionResults.india_constituencies || []).forEach((record, index) => {
   const key = `india_live_constituency_vote_composition_${index + 1}`;
   definitions.push([key, `${record.constituency} candidate vote composition`, `Reported candidate votes in ${record.constituency}, ${record.state_or_ut}`,
     'Live ECI snapshot', '#ff9933', ' votes', record.source || 'https://results.eci.gov.in/',
@@ -101,7 +123,7 @@ for (const [key, item] of Object.entries(series)) {
   definedKeys.add(key);
 }
 
-// "India in Maps": same derivation as the static site (docs/india-maps.js).
+// "India in Maps": same derivation as the static site (scripts/catalog_sources/india-maps.js).
 vm.runInContext(read('india-maps.js'), context);
 const { IndiaMaps } = context.window;
 const definitionByKey = new Map(definitions.map(definition => [definition[0], definition]));
@@ -118,6 +140,19 @@ Object.entries(IndiaMaps.deriveMapSeries(series, key => {
     if (!mapGroups.includes(item.meta.mapTheme)) mapGroups.push(item.meta.mapTheme);
   });
 IndiaMaps.decorate(app, mapGroups);
+
+// Final step: remap everything onto the 10 catalogue groups (scripts/catalog_sources/regroup.js is shared with the static site).
+vm.runInContext(read('regroup.js'), context);
+const { IndiaRegroup } = context.window;
+const regroupState = IndiaRegroup.applyPlacement({
+  definitions,
+  categoryFor: app.dashboardCategoryFor,
+  subgroupFor: app.dashboardSubgroupFor,
+  extraChartPlacement: app.extraChartPlacement,
+  categoryOrder: app.categoryOrder,
+});
+IndiaRegroup.applyMeta(app);
+const legacyAliases = regroupState.aliases;
 
 const indianMatrix = readJson('indian-matrix-latest.json', { cadence: {}, articles: [] });
 const polityPolicy = readJson('substack-latest.json', { articles: [] });
@@ -175,14 +210,15 @@ const indicators = definitions
     frequency: frequency || '',
     color: color || '#58a6ff',
     suffix: suffix || '',
-    source_url: sourceUrl || '',
+    source_url: resolveSourceUrl(sourceUrl, series[key]?.source),
     details: details || '',
     category: app.dashboardCategoryFor(key),
     subgroup: app.dashboardSubgroupFor(key),
     position: index,
     series: normaliseSeries(series[key], title, color || '#58a6ff'),
   }))
-  .sort((left, right) => (app.categoryOrder[left.category] ?? 99) - (app.categoryOrder[right.category] ?? 99) || left.position - right.position)
+  .sort((left, right) => (app.categoryOrder[left.category] ?? 99) - (app.categoryOrder[right.category] ?? 99)
+    || IndiaRegroup.subgroupRank(left.key) - IndiaRegroup.subgroupRank(right.key) || left.position - right.position)
   .map((indicator, position) => ({ ...indicator, position }));
 
 const seen = new Set();
@@ -199,6 +235,8 @@ const categories = [...new Set([...categoryNames, ...indicators.map(indicator =>
     title: hero.title || name,
     description: hero.desc || '',
     badges: [hero.badge1, hero.badge2].filter(Boolean),
+    color: IndiaRegroup.GROUPS.find(group => group.name === name)?.color || '',
+    icon: IndiaRegroup.GROUPS.find(group => group.name === name)?.icon || '',
     art: artName(app.categoryBgMap[name]),
     subgroups: subgroupNames.map((subgroupName, subgroupOrder) => {
       const subHero = app.subgroupHeroData[subgroupName] || {};
@@ -229,32 +267,16 @@ const articles = [
 const catalog = {
   generated_at_utc: payload.generated_at_utc || new Date().toISOString(),
   categories,
+  legacy_aliases: legacyAliases,
   indicators,
   articles,
 };
 const outFile = process.argv[2] ? path.resolve(process.argv[2]) : path.join(root, 'data', 'catalog.json');
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, `${JSON.stringify(catalog)}\n`);
-// The static Compare page needs the same catalogue but must also work from file://, where fetch() is
-// blocked, so the default run writes a compact script with just the comparable time series.
 if (!process.argv[2]) {
-  const comparable = indicators
-    .filter(item => !['state', 'category'].includes(item.series.scope) && item.series.labels.length > 1 && item.series.datasets.length)
-    .map(item => [item.key, item.title, item.category, item.subgroup, item.suffix || '', item.series.labels, item.series.datasets[0].values]);
-  fs.writeFileSync(path.join(root, 'docs', 'compare-data.js'), `window.INDIA_COMPARE_DATA = ${JSON.stringify(comparable)};\n`);
-  // Same reason for the overlay JSONs app.js merges in (sports, election indices, ...): bundle them so
-  // every group also shows up when the static pages are opened straight from disk.
-  const overlayFiles = [
-    'indian-matrix-latest.json', 'pew-india-reports.json', 'substack-latest.json', 'election-results.json',
-    'us-campaign-finance.json', 'election-indices.json', 'economic-survey-monthly.json',
-    'ncrb-and-analyses.json', 'pew-snapshots.json', 'sports.json'
-  ];
-  const overlays = {};
-  for (const file of overlayFiles) {
-    const full = path.join(root, 'docs', 'data', file);
-    if (fs.existsSync(full)) overlays[file] = JSON.parse(fs.readFileSync(full, 'utf8'));
-  }
-  fs.writeFileSync(path.join(root, 'docs', 'overlays.js'), `window.INDIA_OVERLAY_DATA = ${JSON.stringify(overlays)};\n`);
+  const aliasFile = path.join(root, 'frontend', 'src', 'data', 'legacy-aliases.json');
+  fs.writeFileSync(aliasFile, `${JSON.stringify(legacyAliases)}\n`);
 }
 const live = indicators.filter(indicator => indicator.series.datasets.length).length;
 console.log(`Exported ${indicators.length} indicators (${live} with data), ${categories.length} groups and ${articles.length} articles to ${path.relative(root, outFile)}`);

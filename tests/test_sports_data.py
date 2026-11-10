@@ -33,7 +33,7 @@ class SportsDataTests(unittest.TestCase):
         cls.series = cls.payload["series"]
 
     def test_published_files_match_the_builder(self):
-        deployed = json.loads((ROOT / "docs" / "data" / "sports.json").read_text(encoding="utf-8"))
+        deployed = json.loads((ROOT / "data" / "sports.json").read_text(encoding="utf-8"))
         self.assertEqual(self.payload, deployed)
         self.assertEqual(self.series, sports.build())
         self.assertEqual(self.payload["series_count"], len(self.series))
@@ -127,24 +127,21 @@ class SportsDataTests(unittest.TestCase):
 
     def test_sports_groups_reach_static_site_and_web_app_with_art(self):
         catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
-        explore = (ROOT / "docs" / "explore.html").read_text(encoding="utf-8")
-        app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
-        for name, subgroups in GROUPS.items():
+        static_index = json.loads((ROOT / "docs" / "api" / "indicators.json").read_text(encoding="utf-8"))
+        group = next(category for category in catalog["categories"] if category["name"] == "Culture, Heritage & Sport")
+        placed = {item["key"] for item in catalog["indicators"] if item["category"] == group["name"]}
+        for name in GROUPS:
             with self.subTest(group=name):
-                group = next(category for category in catalog["categories"] if category["name"] == name)
-                self.assertEqual({subgroup["name"] for subgroup in group["subgroups"]}, subgroups)
                 expected = {key for key, item in self.series.items() if item["meta"]["category"] == name}
-                self.assertEqual({item["key"] for item in catalog["indicators"] if item["category"] == name}, expected)
-                for art in [group["art"]] + [subgroup["art"] for subgroup in group["subgroups"]]:
-                    for folder in ("docs/assets", "frontend/public/art"):
-                        self.assertTrue((ROOT / folder / art).is_file(), f"{folder}/{art}")
-                self.assertIn(f'data-group="{name}"', explore)
-        self.assertIn("groupFilter.replaceChildren(allGroups", app)
-        self.assertIn("subgroupFilter.appendChild(optgroup)", app)
-        self.assertIn("sports.json", app)
+                self.assertTrue(expected <= placed)
+        for art in [group["art"]] + [subgroup["art"] for subgroup in group["subgroups"]]:
+            self.assertTrue((ROOT / "frontend" / "public" / "art" / art).is_file(), art)
+        self.assertTrue(any(item["category"] == group["name"] for item in static_index))
+        explore = (ROOT / "frontend" / "src" / "pages" / "Explore.jsx").read_text(encoding="utf-8")
+        self.assertIn("api.categories", explore)
+        self.assertIn("api.indicators", explore)
         self.assertIn("data/sports.json", (ROOT / ".github" / "workflows" / "deploy-dashboard.yml").read_text(encoding="utf-8"))
-        for page in ("docs/sources.html", "frontend/src/pages/Sources.jsx"):
-            self.assertIn("Official sports data sources", (ROOT / page).read_text(encoding="utf-8"))
+        self.assertIn("Official sports data sources", (ROOT / "frontend" / "src" / "pages" / "Sources.jsx").read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

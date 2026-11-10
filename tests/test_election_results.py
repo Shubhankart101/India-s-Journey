@@ -132,10 +132,10 @@ class ElectionResultsTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1]
         workflow = (root / ".github" / "workflows" / "election-results-update.yml").read_text(encoding="utf-8")
         deploy = (root / ".github" / "workflows" / "deploy-dashboard.yml").read_text(encoding="utf-8")
-        app = (root / "docs" / "app.js").read_text(encoding="utf-8")
+        app = (root / "scripts" / "catalog_sources" / "app.js").read_text(encoding="utf-8")
         data_file = root / "data" / "election-results.json"
         payload = json.loads(data_file.read_text(encoding="utf-8"))
-        deployed_payload = json.loads((root / "docs" / "data" / "election-results.json").read_text(encoding="utf-8"))
+        deployed_payload = json.loads((root / "data" / "election-results.json").read_text(encoding="utf-8"))
         self.assertIn("0 */3 * * *", workflow)
         self.assertIn("scripts/collect_election_results.py", workflow)
         self.assertIn("data/election-results.json", deploy)

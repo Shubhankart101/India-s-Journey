@@ -17,3 +17,18 @@ webapp/openapi-schema.yml
 .env
 .env.*
 !.env.example
+
+# Scratch downloads for the NITI / LWE report extraction
+.research-niti-lwe/
+
+# Regenerable raw source caches (re-fetched by scripts/update_all_data.py)
+data/raw/
+data/raw_fiscal/
+data/epic-sources/
+data/faith-sources/
+data/journey-sources/
+
+# Local scratch
+/*.txt
+frontend/_*
+*.log

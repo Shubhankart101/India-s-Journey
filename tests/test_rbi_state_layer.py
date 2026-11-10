@@ -66,7 +66,7 @@ class ParseRbiTableTests(unittest.TestCase):
 
 class GeneratedStateCoverageTests(unittest.TestCase):
     def test_state_charts_include_union_territories(self):
-        series = json.loads((ROOT / "docs" / "data" / "chart-latest.json").read_text(encoding="utf-8"))["series"]
+        series = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))["series"]
         rbi_keys = [key for key in series if key.startswith("rbi_state_")]
         self.assertGreaterEqual(len(rbi_keys), 100)
         for key in ("state_gsdp_comparison", "state_per_capita_income", "state_infant_mortality_rate"):

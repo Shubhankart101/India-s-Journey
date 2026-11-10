@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
@@ -56,7 +56,7 @@ export function ScrollTopButton() {
   );
 }
 
-const REVEAL_SELECTOR = '.section, .page-hero, .group-tile, .card, .explore-tile, .article-list li, .stat-row > div, .marquee';
+const REVEAL_SELECTOR = '.section, .page-hero, .card, .explore-tile, .article-list li, .stat-row > div';
 
 /**
  * Fades and lifts content into view as it scrolls in, for every page. Elements are tagged automatically
@@ -103,7 +103,7 @@ export function usePointerSpotlight() {
   useEffect(() => {
     if (prefersReducedMotion() || !window.matchMedia?.('(hover: hover)').matches) return undefined;
     const onMove = event => {
-      const card = event.target.closest?.('.card, .group-tile, .explore-tile, .glass');
+      const card = event.target.closest?.('.card, .explore-tile, .glass');
       if (!card) return;
       const box = card.getBoundingClientRect();
       card.style.setProperty('--mx', `${event.clientX - box.left}px`);
@@ -168,24 +168,5 @@ export function Typewriter({ phrases, typeMs = 70, holdMs = 1800 }) {
         <span className="caret" />
       </span>
     </span>
-  );
-}
-
-/** Endless scrolling strip of links; pauses on hover/focus. The duplicate copy is hidden from assistive tech. */
-export function Marquee({ items, reverse = false, label }) {
-  if (!items.length) return null;
-  const row = hidden => items.map(item => (
-    <Link key={`${hidden ? 'b' : 'a'}-${item.to}`} to={item.to} className="marquee-item" tabIndex={hidden ? -1 : undefined}>
-      {item.art && <img src={`/art/${item.art}`} alt="" loading="lazy" />}
-      <span>{item.label}</span>
-    </Link>
-  ));
-  return (
-    <nav className={`marquee${reverse ? ' reverse' : ''}`} aria-label={label}>
-      <div className="marquee-track">
-        <div className="marquee-group">{row(false)}</div>
-        <div className="marquee-group" aria-hidden="true">{row(true)}</div>
-      </div>
-    </nav>
   );
 }

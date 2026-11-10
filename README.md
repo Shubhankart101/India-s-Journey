@@ -1,342 +1,186 @@
 <div align="center">
 
-<a href="https://shubhankart101.github.io/India-s-Journey/explore.html?group=India%20in%20Maps"><img src="docs/assets/india-maps.svg" width="100%" alt="Animated India in Maps artwork"></a>
+# India's Journey
 
-# 📊 India's Journey
+**India, in perspective.** A public-data atlas of India, from 1947 to today.
 
-**भारत की यात्रा · India, in perspective.** A living atlas of public data, 1947 to today.
+[![11 groups](https://img.shields.io/badge/groups-11-138808?style=flat-square)](#groups)
+[![3,031 indicators](https://img.shields.io/badge/indicators-3%2C031-ff9933?style=flat-square)](#groups)
+[![5 themes](https://img.shields.io/badge/themes-Light%20%7C%20Dark%20%7C%20Newspaper%20%7C%20Pamphlet%20%7C%20Military-9b1b30?style=flat-square)](#themes)
+[![Release 32](https://img.shields.io/badge/release-32-c2185b?style=flat-square)](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md)
 
-<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/indicators-2%2C918-ff9933?style=flat-square" alt="2,918 indicators"></a>
-<a href="#-explore-by-group"><img src="https://img.shields.io/badge/groups-26-138808?style=flat-square" alt="26 groups"></a>
-<a href="#%EF%B8%8F-india-in-maps"><img src="https://img.shields.io/badge/state%20maps-218-000080?style=flat-square" alt="218 state maps"></a>
-<a href="#-four-display-themes"><img src="https://img.shields.io/badge/themes-Light%20%C2%B7%20Dark%20%C2%B7%20Newspaper%20%C2%B7%20Pamphlet-9b1b30?style=flat-square" alt="Four display themes"></a>
-<a href="docs/releases/README.md"><img src="https://img.shields.io/badge/release-32-c2185b?style=flat-square" alt="Release 32"></a>
+[![Static dashboard](https://img.shields.io/badge/Explore-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://indiasjourney.netlify.app)
+[![Web app](https://img.shields.io/badge/Web%20app-Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white)](https://india-s-journey.fly.dev)
+[![GitHub Pages mirror](https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white)](https://shubhankart101.github.io/India-s-Journey/)
+[![Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Shubhankart101/India-s-Journey/actions)
 
 </div>
 
-<p align="center">
-	<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/🚀%20Live%20dashboard-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Live dashboard on Netlify"></a>
-	<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/%F0%9F%9A%80%20Web%20app-Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Django and React web app on Fly.io"></a>
-	<a href="https://shubhankart101.github.io/India-s-Journey/"><img src="https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages backup"></a>
-	<a href="https://github.com/Shubhankart101/India-s-Journey/actions"><img src="https://img.shields.io/badge/✅%20Build%20and%20tests-success-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="Build and tests"></a>
-	<a href="https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"><img src="https://img.shields.io/badge/🌍%20Public%20data-World%20Bank-6f42c1?style=for-the-badge" alt="Public data sources"></a>
-</p>
-
-## 🧭 About This Dashboard
-
-This independent project was created to make India’s economic, social, and infrastructure signals easier to explore through long-run interactive graphs. It brings together public APIs and official portals, keeps each indicator’s frequency and limitations visible, and gives every live value a traceable source.
-
-The Sources page contains a dedicated acknowledgement of [PolityPolicy](https://politypolicy.com/), [Tushar Gupta’s Polity and Policy Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix), including their latest public articles. The Home and About introductions use identical copy on the static site and in the React app.
-
-Special appreciation to Indian Matrix for the work that helped motivate the market-and-public-indicators view. The dashboard separates Economic, Social, Pew Research, Crime & Security, Defence & Strategic, state-performance, public-health, Environment & Climate, Agriculture & Food, Indian Elections, and U.S. Elections data into contextual groups and subgroups. Selecting a group narrows the subgroup dropdown to only the subgroups that belong to it.
-
-**Explained official datasets.** 46 series come straight from the Ministry of Statistics' open API platform (EnviStats India, Women & Men in India, AISHE and PLFS), plus 17 more World Bank indicators. Together they cover climate and rainfall, forests, pollution and waste, disasters, energy transition, crops, farm inputs, livestock and fisheries, labour-force participation by sex, higher education and nutrition. Every one of these charts carries a three-part explainer: **What it shows**, **How to read it** and **Why it matters**.
-
-**Chart tools.** Every live static chart has a toolbar:
-- **Δ Change**: period-on-period change, in percentage points when the series is already a %;
-- **Trend line**: a least-squares fit with its slope and R² for the visible range;
-- **Data table** and **CSV download**;
-- **Share**: copies a deep link like `explore.html?chart=mospi_foodgrain_production` that opens the right group and highlights the chart.
-
-The React indicator page offers the same Δ Change and Trend controls and the explainer tiles.
-
-The **Markets Subgroup** under Economic includes rich global comparisons celebrating India's growth trajectory alongside the world's largest economies:
-- **Indian Market Indices**: Sensex, Nifty 50, and Nifty VIX rebased to 100.
-- **Global Equity Market Comparison**: BSE Sensex 🇮🇳 rebased against US S&P 500 🇺🇸, UK FTSE 100 🇬🇧, Japan Nikkei 225 🇯🇵, and China Shanghai Composite 🇨🇳.
-- **World Top Economies GDP Comparison**: Historical GDP trajectory of India alongside the US, China, Germany, Japan, and UK in USD Trillion from 1990 to present.
-- **India Sectoral Market Engines**: Nifty IT, Nifty Bank, Nifty Auto, Nifty Energy, and Sensex rebased to 100.
-- **Global Inflation Benchmark Comparison**: Annual CPI inflation comparison across India, the United States, and the Euro Area.
-
-**Enhanced Visual UI & Plotting Experience**:
-- **India 1947–2026 Vibrant Theme**: Saffron, White, and Emerald Tricolor aesthetic accents, dynamic Group Hero Banners, and interactive Quick-Group Pills for 1-click group switching.
-- **Interactive Legend Chips**: Interactive legend badges above multi-dataset charts allow hovering to highlight specific datasets and clicking to toggle series visibility.
-- **Canvas Gradient Fills & Smooth Curves**: Smooth Bezier curves (`tension: 0.32`) with custom translucent linear canvas gradients under chart lines.
-
-**All indicators are shown by default**, 24 compact cards at a time with a "Load more" button; choosing a group and subgroup narrows the grid, and the From/To date-range dropdowns are scoped to the indices currently in view.
-
-Indian Matrix is now represented by a weekly publication-cadence graph and a right-side article rail sourced from its public RSS feed. It lives under Economic → Media & Publications, distinct from the Pew Research group.
-
-Pew Research Center India has its own dedicated top-level group (subgroup: Public opinion) and is represented three ways: a dated public-report catalog and yearly report-cadence graph, and three **survey-snapshot** cards (global power, US-India relations, economic confidence) that plot individually-verified, dated percentages from a single cited Pew report as discrete labelled points rather than a fabricated continuous trend. Two Pew cards (leadership, technology adoption) remain intentionally pending because no comparable verified India percentages were found for those topics.
-
-The About panel's right-side reading rail is populated from Indian Matrix's public RSS feed. The dedicated Inspiration section further down has its own separate reading rail populated from the public Polity and Policy RSS snapshot, so the two attributions are never mixed in the same list. The weekly pipeline refreshes article titles, dates, and URLs for both feeds; the Pages deployment copies those snapshots into the dashboard so the buttons stay linked to the latest available public articles.
-
-An interactive mixed-frequency dashboard built from original public-source data. It does not copy or mirror PolityPolicy's interactive chart rendering.
-
-**Groups (21).** Economic, Industry Trends & Performance, Mining & Natural Resources, Payments & Digital Banking, State Performance & Regional Health, Public Health & Epidemiology, Social, Environment & Climate, Agriculture & Food, Defence & Strategic, Crime & Security, Pew Research, Elections, U.S. Elections, Tourism & Heritage, **Innovation & Technology** (131 charts in 9 subgroups: patents, designs, R&D, publications, high-tech trade, IP royalties, digital adoption, startups and global benchmarks), **Judiciary & Pending Cases** (Supreme Court, High Courts and Lower Courts), Sports, Cricket, Hockey and Football. The static Explore page mirrors the web app: group tiles, a compact card grid paged 24 at a time, and a full-detail overlay when a card is opened.
-
-**Compare.** Every chart card has a **+ Compare** toggle (up to four series, colour-coded by slot). A floating tray lists the picks, and `compare.html` (static) or `/compare` (web app) overlays them on one chart with an optional rebase-to-100 and a shareable link.
-
-**Opening from disk.** The static pages work from `file://` as well as over http: `export_catalog.mjs` writes `docs/overlays.js` and `docs/compare-data.js` so no `fetch()` is needed. See [docs/PIPELINES.md](docs/PIPELINES.md).
-
-## 🚀 Open Dashboard
-
-<a href="https://indiasjourney.netlify.app"><img src="https://img.shields.io/badge/Open%20interactive%20dashboard-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Open interactive dashboard"></a>
-
-<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/Open%20the%20web%20app%20on%20Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Open the web app on Fly.io"></a>
-
-The static dashboard is live on Netlify: **<https://indiasjourney.netlify.app>** ([Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API explorer](https://indiasjourney.netlify.app/api.html)). GitHub Pages keeps an identical backup copy at <https://shubhankart101.github.io/India-s-Journey/> in case Netlify is unavailable. The full Django + React web app, with the API, is live on Fly.io: **<https://india-s-journey.fly.dev>** (served from Singapore; see [Deployment](docs/DEPLOYMENT.md#flyio)).
-
-The static dashboard reads the complete available history for each live series and presents charts in a full-width vertical sequence. It supports chart tooltips, zoom, pan, reset, indicator search, Economic/Social/Crime & Security group filtering, subgroup filtering, live/pending filters, data-driven From/To period controls, frequency labels, and expandable three-paragraph indicator context.
-
-The From/To controls are populated from the actual observations returned by the APIs. Economic Survey Statistical Appendix tables 9.1–9.4 now provide collated monthly GST, UPI, IIP, forex, exchange-rate, power, e-way bill, rail freight, port cargo, core-industry, crude-oil, fuel-consumption, export, and import observations through the daily pipeline. The extractor checks the 2022-23, 2023-24, 2024-25, and latest Survey editions, merges overlapping `YYYY-MM` observations, and keeps the official Survey tables as provenance. The dashboard does not fabricate monthly points by interpolation.
-
-Economic charts now include annual real GDP growth, monthly national merchandise balance, and annual merchandise balances with leading trading partners. Partner balances use UN Comtrade's latest matching year and report exports FOB minus imports CIF; automobile output is production data, not vehicle sales.
-
-The Economic group also includes SIAM domestic automobile sales by vehicle class (FY2008-09 to FY2013-14, the full range currently published in its public table) and World Bank real household consumption per capita in constant 2015 US dollars. The latter is an average consumption proxy, not a distributional measure of household welfare.
-
-The fuel graph is a **fuel consumption** activity series, not a retail fuel price index. **Indian crude oil basket price** is provided separately as the available Economic Survey fuel-price indicator. WPI is sourced from the official OEA monthly workbook and cached by the daily pipeline.
-
-Fiscal deficit is now populated as an annual percentage-of-GDP series from Economic Survey table 2.4 Excel editions. It is not presented as a monthly rupee series because the official table does not provide that frequency cleanly.
-
-World Bank series generally reach back to 1960, so the live charts now include data before 2011 where observations exist. The modern API does not provide a consistent pre-1947 India history; pre-independence charts would require separate historical datasets with different definitions and sources.
-
-Security context is represented separately: the live homicide-rate series uses the World Bank indicator, the MHA LWE card uses the official 2004-2025 aggregate deaths figure, and the terrorism chart uses India rows from Our World in Data with Global Terrorism Database provenance. These are not combined into a fabricated 1947-present incident count.
-
-The Crime & Security group also includes an NCRB source-status card. NCRB Crime in India editions are available, but a consistent all-time machine-readable series has not been identified; definitions and classifications must be reconciled before plotting historical totals. `data.gov.in`'s NCRB catalog pages were checked and did not return a stable dataset at time of writing.
-
-The LWE civilian/security-force/perpetrator casualty breakdown is now populated (2000-2025) from the South Asia Terrorism Portal's (SATP) "Maoist Insurgency" fatality tables, a clean, consistently-formatted, clearly-labelled secondary source. MHA's own public page only publishes the 2004-2025 aggregate (8,956 killed) without this breakdown, and SATP uses a different classification and provisional news-based tally, so the two figures are not summed or treated as the same series; the MHA aggregate card and the three SATP breakdown cards are both retained, separately sourced and labelled.
-
-## 🧪 Testing
-
-[`tests/test_dashboard_endpoints.py`](tests/test_dashboard_endpoints.py) is a live-endpoint test suite (no mocks) that verifies, against the deployed `DASHBOARD_URL`:
-
-- Every data JSON file (`chart-latest`, `economic-survey-monthly`, `substack-latest`, `indian-matrix-latest`, `pew-india-reports`, `pew-snapshots`, `ncrb-and-analyses`) is served with HTTP 200 and contains its expected top-level keys.
-- Every live World Bank indicator API used by the dashboard returns at least 2 usable observations.
-- Official source portals (GST, CGA, MOSPI, RBI, OEA) are reachable or return an expected auth-gated status.
-- The HTML page includes the expected filter controls, group/subgroup options, and references section.
-- The current cache-busted `app.js` bundle is served and contains `updateCards`.
-
-Run it locally against the live site with:
-
-```bash
-python -m unittest tests/test_dashboard_endpoints.py -v
-```
-
-Or point it at a local preview server with `DASHBOARD_URL=http://localhost:8000 python -m unittest tests/test_dashboard_endpoints.py -v`.
-
-## 🧩 Web app (Django + React)
-
-The repository also contains a full web app, alongside the static Netlify site in `docs/`. It is a Django REST API ([`webapp/`](webapp)) with a React + Vite single-page frontend ([`frontend/`](frontend)). It loads the same indicators, but much faster: the API returns paginated summaries with downsampled previews, and the chart library loads lazily only when a chart scrolls into view.
-
-**Features**
-- A dedicated URL for each indicator (`/indicator/<key>`), with:
-  - a pie/bar toggle and a year-range filter;
-  - a data table;
-  - CSV and JSON downloads.
-- Server-side search and filters by group, subgroup, chart type and sort order.
-- Side-by-side comparison of up to four indicators, with an optional "rebase to 100" view.
-- **Account sign-in and saved charts are currently disabled in the web app.** The backend authentication integration is retained for a future release; see [Authentication](docs/AUTHENTICATION.md).
-- **An API overview at `/api`** links to Swagger UI, ReDoc, the OpenAPI schema and public endpoints. See the [API guide](docs/API.md).
-- **A static backup.** Every error page, the offline banner and the footer link to the [Netlify dashboard](https://indiasjourney.netlify.app) and its [GitHub Pages mirror](https://shubhankart101.github.io/India-s-Journey/). An [uptime monitor](.github/workflows/uptime-monitor.yml) checks both copies every 30 minutes and opens and closes `outage` issues. See [Static site and backup](docs/BACKUP.md).
-- The Django admin at `/admin/` (staff only).
-- A mobile layout with a bottom tab bar.
-
-**Data flow:** the collectors and `generate_public_charts.py` update `docs/`. Then [`scripts/export_catalog.mjs`](scripts/export_catalog.mjs) writes `data/catalog.json`, and `manage.py import_catalog` loads it into SQLite. Every scheduled workflow that regenerates charts also re-exports the catalogue. To run the whole chain locally, use `python webapp/manage.py refresh_data`.
-
-**Illustrations:** every group and subgroup has its own animated SVG scene. Animations stop when the user has reduced motion turned on. Both sites also add a scroll-progress bar, a header that turns glassy on scroll, a typewriter line in the hero, count-up stats, cards that rise in and glow under the cursor, and a back-to-top button ([`Motion.jsx`](frontend/src/components/Motion.jsx) in the app, the end of [`docs/site.js`](docs/site.js) for the static site). The app's home page also has scrolling strips of subgroup links. [`scripts/generate_art.py`](scripts/generate_art.py) generates these scenes into `docs/assets/` and `frontend/public/art/`. The scenes are mapped to subgroups in `categoryBgMap` and `subgroupArtMap` in `docs/app.js`. After changing the art, run `python scripts/generate_art.py`, then re-export the catalogue and import it.
-
-**Local development**
-
-```bash
-pip install -r webapp/requirements.txt
-python webapp/manage.py migrate
-python webapp/manage.py import_catalog
-python webapp/manage.py createsuperuser   # optional, for /admin/
-# optional: copy .env.example to .env and add Google/Microsoft OAuth credentials to enable sign-in
-python webapp/manage.py runserver 8000
-
-cd frontend
-npm install
-npm run dev        # http://localhost:5173, proxies /api and /accounts to Django
-npm run build      # Django then serves frontend/dist at http://localhost:8000
-```
-
-**Tests** ([full guide](docs/TESTING.md))
-
-```bash
-cd webapp && python manage.py test indicators   # API, catalogue import, OAuth, Swagger/schema, error pages, hardening
-cd frontend && npm test                         # Vitest + Testing Library: pages, flows, OAuth UI, resilience, formatting
-cd frontend && npm run build && npm run test:e2e  # Playwright: desktop + mobile, OAuth redirects, Swagger, backup links
-```
-
-These run in CI through [`.github/workflows/webapp-ci.yml`](.github/workflows/webapp-ci.yml), together with OpenAPI validation and a Docker build.
-
-**Deploy (optional):** the app runs locally by default. To host it, deploy the [`Dockerfile`](Dockerfile): [`render.yaml`](render.yaml) is a ready Render blueprint (free plan), [`fly.toml`](fly.toml) sets up Fly.io, and any other container host works too. See [Deployment](docs/DEPLOYMENT.md#hosting-the-web-app-optional). The container:
-1. builds the frontend;
-2. bakes the catalogue into SQLite at build time and, on start, runs `migrate` and `import_catalog --if-changed` (a no-op unless the data changed, so cold starts are fast);
-3. serves everything with gunicorn and whitenoise.
-
-Configuration:
-- `DJANGO_SECRET_KEY` must be a long random value.
-- `GOOGLE_CLIENT_ID`/`_SECRET` and `MICROSOFT_CLIENT_ID`/`_SECRET` enable sign-in.
-- `BACKUP_SITE_URL` (Netlify) and `BACKUP_MIRROR_URL` (GitHub Pages) set the backup links.
-- `DJANGO_ALLOWED_HOSTS` and `DJANGO_CSRF_TRUSTED_ORIGINS` list your host names.
-
-See [Deployment](docs/DEPLOYMENT.md) for every variable.
-
-**Hosting** (details in [Deployment](docs/DEPLOYMENT.md)):
-
-| Option | Hosts | Notes |
-| --- | --- | --- |
-| Netlify | Static dashboard (`docs/`) | **Primary site**, live at <https://indiasjourney.netlify.app>. Configured by [`netlify.toml`](netlify.toml): publish `docs/`, no build command |
-| GitHub Pages | Static dashboard (`docs/`) | Backup mirror of Netlify, published by [`deploy-dashboard.yml`](.github/workflows/deploy-dashboard.yml) |
-| Django + React app | Full app (`Dockerfile`) | Runs locally; deploy to Render ([`render.yaml`](render.yaml)), Fly.io ([`fly.toml`](fly.toml)) or any container host such as Google Cloud Run |
-
-On free container hosts SQLite is ephemeral, so accounts and saved charts reset on redeploy; dashboards are unaffected because the catalogue is re-imported on start.
-
-Data commits pushed by the scheduled workflows trigger a redeploy, which re-imports the catalogue. On the free plan SQLite is ephemeral, so user accounts reset on redeploy. To keep them, attach a persistent disk and set `DJANGO_SQLITE_PATH` to a file on that disk.
-
-## 📜 Release notes
-
-Each major release has its own note in [docs/releases/](docs/releases/README.md), generated from the release commit. Oldest first:
-
-1. [Daily GitHub metrics dashboard](docs/releases/01-10d65b6-daily-github-metrics-dashboard.md) (`10d65b6`, 2026-08-21)
-2. [Interactive public data dashboard](docs/releases/02-a18bf59-interactive-public-data-dashboard.md) (`a18bf59`, 2026-08-21)
-3. [Rename to India's Journey](docs/releases/03-9ac7c75-rename-to-india-s-journey.md) (`9ac7c75`, 2026-08-21)
-4. [Economic Survey monthly indicators](docs/releases/04-af4a27e-economic-survey-monthly-indicators.md) (`af4a27e`, 2026-08-21)
-5. [India security data dashboards](docs/releases/05-b0f9caa-india-security-data-dashboards.md) (`b0f9caa`, 2026-08-21)
-6. [Grouped dashboards and market indices](docs/releases/06-bafe02f-grouped-dashboards-and-market-indices.md) (`bafe02f`, 2026-08-21)
-7. [Pew India subgroups and references](docs/releases/07-a4968b7-pew-india-subgroups-and-references.md) (`a4968b7`, 2026-08-22)
-8. [Group and subgroup selection, Pew group](docs/releases/08-1467414-group-and-subgroup-selection-pew-group.md) (`1467414`, 2026-08-22)
-9. [Vibrant UI and global market comparisons](docs/releases/09-b13e3ed-vibrant-ui-and-global-market-comparisons.md) (`b13e3ed`, 2026-09-17)
-10. [Mining and natural resources group](docs/releases/10-ef1b8de-mining-and-natural-resources-group.md) (`ef1b8de`, 2026-09-17)
-11. [Mining, Industry and Payments become top-level groups](docs/releases/11-e85efc5-mining-industry-and-payments-become-top-level-gr.md) (`e85efc5`, 2026-09-17)
-12. [Public Health overhaul](docs/releases/12-e351417-public-health-overhaul.md) (`e351417`, 2026-09-17)
-13. [152 indicators across 10 groups](docs/releases/13-b12f2ea-152-indicators-across-10-groups.md) (`b12f2ea`, 2026-09-18)
-14. [Economic growth and trade charts](docs/releases/14-c1df326-economic-growth-and-trade-charts.md) (`c1df326`, 2026-10-23)
-15. [State and UT charts](docs/releases/15-6d6431e-state-and-ut-charts.md) (`6d6431e`, 2026-10-24)
-16. [Election and public-service indicators](docs/releases/16-bc99f42-election-and-public-service-indicators.md) (`bc99f42`, 2026-10-25)
-17. [U.S. election finance indicators](docs/releases/17-fe046f3-u-s-election-finance-indicators.md) (`fe046f3`, 2026-10-25)
-18. [Interactive composition charts](docs/releases/18-0d94fdf-interactive-composition-charts.md) (`0d94fdf`, 2026-10-25)
-19. [Pipelines split by cadence](docs/releases/19-ff4055f-pipelines-split-by-cadence.md) (`ff4055f`, 2026-10-31)
-20. [Global Tourism Comparison](docs/releases/20-5705d85-global-tourism-comparison.md) (`5705d85`, 2026-10-31)
-21. [Dark product theme with artwork](docs/releases/21-23100fc-dark-product-theme-with-artwork.md) (`23100fc`, 2026-10-31)
-22. [MOSPI mining layer](docs/releases/22-6868f73-mospi-mining-layer.md) (`6868f73`, 2026-10-31)
-23. [Django + React web app](docs/releases/23-67d111c-django-react-web-app.md) (`67d111c`, 2026-10-31)
-24. [All States and UTs via RBI handbook](docs/releases/24-617d61c-all-states-and-uts-via-rbi-handbook.md) (`617d61c`, 2026-10-31)
-25. [78 animated illustrations](docs/releases/25-a9e9e18-78-animated-illustrations.md) (`a9e9e18`, 2026-10-31)
-26. [63 explained official datasets](docs/releases/26-5d9dbd5-63-explained-official-datasets.md) (`5d9dbd5`, 2026-10-31)
-27. [Netlify primary site](docs/releases/27-cc83baf-netlify-primary-site.md) (`cc83baf`, 2026-10-31)
-28. [Judiciary, Innovation and Sports groups](docs/releases/28-b9b871c-judiciary-innovation-and-sports-groups.md) (`b9b871c`, 2026-11-01)
-29. [Docker and Render/Fly.io CI](docs/releases/29-b9a560e-docker-and-render-fly-io-ci.md) (`b9a560e`, 2026-11-01)
-30. [Air Travel and Indian Railways groups](docs/releases/30-2285139-air-travel-and-indian-railways-groups.md) (`2285139`, 2026-11-04)
-31. [Water, Logistics, expanded air and rail data, interactive charts](docs/releases/31-aeb4153-water-logistics-and-interactive-charts.md) (`aeb4153`, 2026-11-04)
-
-## 🔗 References
-
-<details>
-<summary>Open data sources, APIs, and official portals</summary>
-
-### Live data APIs
-
-- [World Bank API documentation](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392)
-- [CPI inflation API](https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&per_page=100)
-- [Real GDP growth API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=100)
-- [Household consumption per capita API](https://api.worldbank.org/v2/country/IND/indicator/NE.CON.PRVT.PC.KD?format=json&per_page=100)
-- [Trade share of GDP API](https://api.worldbank.org/v2/country/IND/indicator/NE.TRD.GNFS.ZS?format=json&per_page=100)
-- [Foreign reserves API](https://api.worldbank.org/v2/country/IND/indicator/FI.RES.TOTL.CD?format=json&per_page=100)
-- [Private-sector credit API](https://api.worldbank.org/v2/country/IND/indicator/FS.AST.PRVT.GD.ZS?format=json&per_page=100)
-- [Industrial value-added API](https://api.worldbank.org/v2/country/IND/indicator/NV.IND.TOTL.KD.ZG?format=json&per_page=100)
-- [Official exchange-rate API](https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&per_page=100)
-- [GDP per capita API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.PCAP.CD?format=json&per_page=100)
-- [Population API](https://api.worldbank.org/v2/country/IND/indicator/SP.POP.TOTL?format=json&per_page=100)
-- [Unemployment API](https://api.worldbank.org/v2/country/IND/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100)
-- [Current-account balance API](https://api.worldbank.org/v2/country/IND/indicator/BN.CAB.XOKA.GD.ZS?format=json&per_page=100)
-- [Broad-money API](https://api.worldbank.org/v2/country/IND/indicator/FM.LBL.BMNY.GD.ZS?format=json&per_page=100)
-- [Tax-revenue API](https://api.worldbank.org/v2/country/IND/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=100)
-- [Government-consumption API](https://api.worldbank.org/v2/country/IND/indicator/NE.CON.GOVT.ZS?format=json&per_page=100)
-- [Foreign-direct-investment API](https://api.worldbank.org/v2/country/IND/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&per_page=100)
-- [Domestic-savings API](https://api.worldbank.org/v2/country/IND/indicator/NY.GDS.TOTL.ZS?format=json&per_page=100)
-- [Electricity-access API](https://api.worldbank.org/v2/country/IND/indicator/EG.ELC.ACCS.ZS?format=json&per_page=100)
-- [Clean cooking fuel access API](https://api.worldbank.org/v2/country/IND/indicator/EG.CFT.ACCS.ZS?format=json&per_page=100)
-- [Crude birth-rate API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.CBRT.IN?format=json&per_page=100)
-- [Crude death-rate API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.CDRT.IN?format=json&per_page=100)
-- [Internet-users API](https://api.worldbank.org/v2/country/IND/indicator/IT.NET.USER.ZS?format=json&per_page=100)
-- [Life-expectancy API](https://api.worldbank.org/v2/country/IND/indicator/SP.DYN.LE00.IN?format=json&per_page=100)
-- [Intentional homicide rate API](https://api.worldbank.org/v2/country/IND/indicator/VC.IHR.PSRC.P5?format=json&per_page=100)
-- [MHA Left-Wing Extremism Division](https://www.mha.gov.in/en/divisionofmha/left-wing-extremism-division)
-- [Global Terrorism Database](https://www.start.umd.edu/gtd/)
-- [Pew Research Center Global Attitudes](https://www.pewresearch.org/global/) for India public-opinion research and survey findings.
-- [Pew Research Center: India, Global Optimism, Local Fears (2008)](https://www.pewresearch.org/global/2008/12/04/india/) for the cited survey-snapshot percentages used in the Pew economy-confidence, US-relations, and global-power cards.
-- [South Asia Terrorism Portal - Maoist Insurgency fatalities](https://www.satp.org/datasheet-terrorist-attack/fatalities/india-maoistinsurgency) for the civilian/security-force/perpetrator breakdown used by the three SATP-sourced LWE casualty cards; a secondary, non-official source with its own classification, distinct from the MHA aggregate.
-- [NCRB Crime in India](https://ncrb.gov.in/crime-in-india.html) for official crime statistics and year-wise table references.
-- [Economic Survey statistical appendix](https://www.indiabudget.gov.in/economicsurvey/doc/Statistical-Appendix-in-English.pdf) for collated monthly HFI tables.
-- [Economic Survey table 9.1](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.1.pdf) for monthly GST and related high-frequency indicators.
-- [Economic Survey table 9.2](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.2.pdf) for monthly UPI and IIP indicators.
-- [Economic Survey table 9.3](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.3.pdf) for monthly forex reserves.
-- [Economic Survey table 9.4](https://www.indiabudget.gov.in/economicsurvey/doc/stat/tab9.4.pdf) for monthly exchange rate and external indicators.
-- [UN Comtrade API](https://comtradeapi.un.org/) for annual India merchandise exports and imports by trading partner.
-
-### Indian government and public sources
-
-- [Election Commission of India results portal](https://results.eci.gov.in/) for currently published constituency-level election results.
-- [U.S. National Archives Electoral College results](https://www.archives.gov/electoral-college) for Presidential election outcomes.
-- [Federal Election Commission candidate summary files](https://www.fec.gov/campaign-finance-data/candidate-summary-file-description/) for federal candidate campaign-finance totals.
-- [PPAC retail selling prices](https://ppac.gov.in/prices/retail-selling-price-rsp-of-petrol-diesel-and-domestic-lpg) for the government reference archive; no verified open daily feed is currently consumed by this project.
-- [GST portal](https://www.gst.gov.in/) for GST collections.
-- [Controller General of Accounts](https://cga.nic.in/) for Union fiscal accounts.
-- [MOSPI](https://www.mospi.gov.in/) for IIP and official statistics.
-- [MoSPI eSankhyiki API platform](https://esankhyiki.mospi.gov.in/) (`api.mospi.gov.in`) for EnviStats India, Women & Men in India, AISHE and PLFS indicators.
-- [RBI DBIE](https://data.rbi.org.in/DBIE/#/dbie/home) for monetary, banking, and exchange-rate data.
-- [Office of the Economic Adviser](https://eaindustry.nic.in/) for WPI.
-- [NPCI UPI statistics](https://www.npci.org.in/what-we-do/upi/product-statistics) for UPI activity.
-- [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy RSS](https://politypolicy.substack.com/feed), and [Indian Matrix](https://substack.com/@indianmatrix) for attribution and public-data storytelling context.
-
-### Runtime libraries
-
-- [Chart.js 4.4.4](https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js)
-- [Hammer.js 2.0.8](https://cdn.jsdelivr.net/npm/hammerjs@2.0.8)
-- [chartjs-plugin-zoom 2.0.1](https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js)
+<a id="contents"></a>
+## Contents
+
+[About](#about) | [Groups](#groups) | [Features](#features) | [Themes](#themes) | [Sources and caveats](#sources-and-caveats) | [Architecture](#architecture) | [Run locally](#run-locally) | [Testing](#testing) | [Deployment](#deployment) | [Release notes](#release-notes) | [Credits and licence](#credits-and-licence)
+
+<a id="about"></a>
+## About
+
+India's Journey is an independent dashboard for exploring long-run public indicators, state comparisons, maps, elections, fiscal data and cultural journeys. Indicator cards retain their source links, units, frequency and caveats. The static site and Django + React application share the exported catalogue and generated data.
+
+<a id="groups"></a>
+## Groups
+
+The catalogue contains **3,031 indicators across 11 groups and 133 subgroups**. Counts below are computed from `data/catalog.json` (`indicators` assigned to each category; subgroups listed on that category).
+
+<details open>
+<summary>Show all 11 groups and catalogue counts</summary>
+
+| Group | Subgroups | Indicators |
+|---|---:|---:|
+| Economy & Markets | 8 | 180 |
+| Public Finance & States | 6 | 148 |
+| Industry, Energy & Technology | 12 | 308 |
+| Infrastructure & Mobility | 13 | 285 |
+| People, Health & Society | 11 | 251 |
+| Environment, Agriculture & Food | 4 | 79 |
+| Security, Justice & Defence | 35 | 874 |
+| Elections & Democracy | 19 | 461 |
+| Culture, Heritage & Sport | 9 | 176 |
+| Epics, Faiths & Journeys | 6 | 19 |
+| India in Maps | 10 | 250 |
+| **Total** | **133** | **3,031** |
 
 </details>
 
-## 🙏 Attribution
+<a id="features"></a>
+## Features
 
-Acknowledgements for [PolityPolicy.com](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/), and [Indian Matrix](https://substack.com/@indianmatrix) are consolidated on the Sources page. This is an independent dashboard using original charts generated from the public sources listed above.
+<details open>
+<summary>Atlases, explainers and data tools</summary>
 
-## 🗳️ Elections, public services, and data coverage
+- **India in Maps:** compact state maps on relevant indicator cards, with an interactive full map, accessible state readouts and map/bar views.
+- **Lok Sabha atlas (1952–2024):** explore election results by year and State/UT, including state-by-state political history.
+- **Electoral-roll explainer:** an interactive guide to SSR (Special Summary Revision) and SIR (Special Intensive Revision), timelines, eligibility and forms. It is an explainer, not an application.
+- **Fiscal views:** State Finances Matrix, GDP explorer, spending by function, state head-to-head comparisons, Union Budget anatomy and How India Borrows.
+- **Epic atlas:** switch between **Kingdoms**, **Allegiance** and **Route** for the Mahabharata and Ramayana.
+- **Faith and story journeys:** maps for the Vedas and Upanishads, Panchatantra, Buddha, Mahavira and the ten Sikh Gurus.
+- **Article-style explainers** add context, methodology and source notes to groups and subgroups. Publisher chips are concise, with additional sources expandable.
+- **Scripture verses:** Hindu, Buddhist, Jain and Sikh traditions are represented in original languages with English translations on indicator cards, maps and explainers.
+- **Sources audit:** `scripts/audit_sources.py` checks exported indicator attribution. The release-32 audit found **0 errors across 3,031 indicators**.
+- **Performance:** charts are loaded on demand, with lazy rendering for off-screen content; the home page uses group cards instead of the former scrolling chip marquee.
+- **Static/Django parity:** catalogue remapping and shared data builders keep group names, map and atlas datasets aligned between the static site and the Django-served React app. Legacy group and subgroup query parameters resolve through compatibility aliases.
 
-The Indian Elections group includes current candidate-level ECI results and a selectable archive of candidate returns parsed from public ECI statistical-report spreadsheets. ECI constituency-wide `Total` rows are excluded from candidate rankings and party-lead counts. Current ECI totals refresh every three hours and remain provisional until Form 20. The historical workbook snapshot currently covers 20,041 observations from 16 reports in 15 States/UTs for 2021–2023; it is partial. A daily-refreshed recent snapshot adds 41,465 candidate rows: all 543 constituencies from the 2024 Lok Sabha election (official ECI statistical report 33) and Assembly elections from 2022 through 2026, with calculated vote shares marked, plus 112 interactive seat/vote pie indices. It does not claim every historical Lok Sabha or State Assembly election. The separate U.S. Elections group presents National Archives Electoral College totals and 115 daily-refreshed FEC campaign-finance series (including 50 funding-composition pies) across five filing cycles, 2018–2026. Presidential results, Presidential candidate finances, and Congressional candidate finances are separately grouped; FEC financial totals are not votes. U.S. popular-vote, turnout and constituency-level House results are not included. Comparable SSR/SIR electoral-roll revision time series are also not currently included.
+</details>
 
-The dashboard includes annual World Bank national service and demographic indicators (including fertility, crude birth and death rates), an official-indicator layer of 50 further World Bank series and 29 composition pies, plus a derived layer (`scripts/derived_pie_layer.py`) of 30+ pies built from other dashboard series (insurgency and crime mixes, Pew agree-vs-other splits, regional shares, period totals) (trade mix, revenue mix, employment by sector, age structure, electricity mix, health financing, land use and more), plus specifically cited state snapshots. Additive cards have a Bar/Pie toggle. State-wise annual TFR and birth/death counts, and a public machine-readable daily Indian petrol/diesel retail-price feed, are not added where comparable open source data could not be verified. The fuel-consumption graph is not a fuel-price chart.
+<a id="themes"></a>
+## Themes
 
-The new **Tourism & Heritage** group separates World Bank international arrivals, departures and receipts from UNESCO World Heritage inscription counts. A **Global Tourism Comparison** subgroup (`scripts/tourism_comparison_layer.py`) benchmarks India against the ten most-visited countries (France, Spain, U.S., China, Italy, Turkiye, Mexico, Thailand, Germany, U.K.) plus Japan and the UAE: arrival, receipt and export-share trend lines, share-of-group pies for arrivals, receipts, outbound spending and departures, and 2019 rankings for receipts per arrival, arrivals per 100 residents, receipts as % of GDP and the tourism balance. The World Bank stopped updating these UN Tourism indicators after 2020, so 2019 is the pre-pandemic benchmark. It does not imply state-level tourist counts or monument attendance. The [API explorer](https://indiasjourney.netlify.app/api.html) documents static read-only JSON resources with Swagger UI and a check-all-endpoints control.
+<details>
+<summary>Four display themes</summary>
 
-Four sports groups (`scripts/build_sports_data.py`, 121 series) use only official sources, never wiki pages.
+Choose **Light**, **Dark**, **Newspaper**, **Pamphlet** or **Military** from the theme selector. The Newspaper and Pamphlet options use a 1947-inspired vintage treatment; Military is an Indian Army olive-drab and khaki edition with brass accents, stencil headings and the motto सेवा परमो धर्मः. The choice is shared across the static and web-app interfaces, and chart/map colours adapt with it.
 
-- **Sports**: Olympic, Paralympic, Asian Games and Commonwealth Games medals, plus athletics, shooting, archery, wrestling, boxing, weightlifting, badminton, tennis, chess and kabaddi.
-- **Cricket**: men's and women's results, ICC tournaments, ICC team and player rankings, and **past-vs-current batting and bowling indices** (Test, ODI and T20I, men and women).
-- **Hockey**: FIH records, rankings, the Pro League, and past-vs-current top scorers and most-capped players.
-- **Football**: FIFA ranking history, the current Asian top 10, men's and women's results by competition and by year, and past-vs-current footballers.
+</details>
 
-Fetchers in `scripts/sports_fetch/` refresh the official snapshots in `data/sports_sources/` every week through the [Sports Data Update](.github/workflows/sports-data-update.yml) workflow. If a source is down, its last good data is kept. [docs/SPORTS.md](docs/SPORTS.md) lists each publisher, the player-index rules and the known gaps.
+<a id="sources-and-caveats"></a>
+## Sources and caveats
 
-The **Industry Trends & Performance** group adds a manufacturing deep-dive (`scripts/manufacturing_layer.py`, 35 series) built from the official MOSPI Index of Industrial Production API (base 2011-12). It covers 23 industry indices (basic metals, fabricated metals, motor vehicles, other transport equipment incl. two-wheelers, food products, beverages, textiles, apparel, chemicals, pharmaceuticals, electronics, machinery, electrical equipment and more), with comparison charts, growth rankings, monthly use-based trends and interactive expanding-vs-contracting pies. The new subgroups are Heavy Industry & Metals, Automobiles & Transport Equipment, Food Processing & Consumer Goods, Chemicals, Pharma & Electronics, and the Industrial Output Monitor. The latest IIP year is provisional. SIAM's public vehicle-production tables stop at 2013-14, so the SIAM production-mix pies are historical and recent vehicle trends come from IIP. Two World Bank pies add the manufacturing value-added mix and the technology-intensity split.
+<details>
+<summary>Data sources and interpretation notes</summary>
 
-**State/UT coverage.** State charts previously used a 28-State whitelist and several hand-typed lists of 6?12 States, so Union Territories were dropped. `scripts/rbi_state_layer.py` now parses the RBI *Handbook of Statistics on Indian States* for all 28 States and 8 Union Territories and adds about 140 series (rankings, regional pies, band pies and All-India trends) to Payments & Digital Banking, Public Health, Social and State Performance. Each chart note lists any State/UT the source does not publish. The Elections group now has 208 derived indices, including cross-state comparisons of NOTA share, close contests, margins and party dominance.
+The catalogue combines public datasets and official releases, including World Bank indicators, RBI publications, MOSPI and its eSankhyiki APIs, Union and State budget documents, the Election Commission of India, and other source links shown with the relevant indicators. Scripture and epic quotations link to the consulted text pages; translations and place identifications are documented with the relevant content.
 
-The **Mining & Natural Resources** group adds `scripts/mining_layer.py` (31 series) from official MOSPI APIs. Monthly wholesale price indices since 2012 (base 2011-12) cover iron ore, bauxite, copper, zinc, lead, manganese, chromite, limestone, rock phosphate, garnet, sillimanite, crude oil, natural gas, coking and non-coking coal, and lignite. There are comparison charts, inflation rankings, an annual mineral-inflation trend and interactive pies: rising vs falling prices, and minerals by price change since 2011-12. Mining output comes from the IIP: annual and monthly indices, growth, a comparison with other sectors, an expanding-vs-contracting months pie and mining's official IIP weight. Two new subgroups, Mineral Price Monitor (WPI) and Mining Output Monitor (IIP), sit alongside ten World Bank resource indicators (coal, oil, gas and total resource rents, mineral and energy depletion, and ores/metals and fuel trade shares).
+- The Lok Sabha historical atlas uses a CC0 constituency dataset alongside sourced election data. The 1984/85 and 1991/92 polling periods are each represented as a merged year; turnout is unavailable for 2014–2024 in the atlas source. Seat totals for 1952 and 1957 are affected by two-member constituencies.
+- Epic shlokas were checked against cited online text pages, not the Bhandarkar Oriental Research Institute (BORI) Critical Edition. General epic verses are labelled as general rather than presented as place-specific quotations.
+- Coverage, update dates and definitions vary by publisher. A source's refresh schedule does not imply the underlying observations are equally frequent. Read the source and caveat on each card before comparing values.
+- NITI Aayog report indices (state and UT rankings, built by `scripts/build_niti_reports.py`): Health Index Round IV 2019-20, Fiscal Health Index 2025 (FY2023), National MPI Progress Review 2023, School Education Quality Index 2019, Export Preparedness Index 2022 and India Innovation Index 2021. Planning Commission Five-Year Plan series and the SDG India Index are not yet included.
+- Maoist / Left-Wing Extremism indices (`scripts/build_lwe_insurgency.py`) from the PIB backgrounder "Naxal-Free India" (Aug 2026), ORF's "Reclaiming the Heartland" and ICFS's "Closing the Red Corridor": affected districts, incidents, fatalities, civilians killed, attacks on infrastructure, surrenders, security build-up, roads, towers, banking, schooling and central funding. Unlabelled chart values and conflicting figures are omitted or flagged in each card's note.
 
-The interface uses a dark product-page design (`docs/product-theme.css`) with the group and subgroup artwork as a full-screen backdrop. It has a frosted sticky navigation bar, a large centred hero that mirrors the web app home (catalogue stats, a group carousel with three mini headline indices per group, subgroup marquees, "Browse by group" tiles and the latest articles), scroll reveals, and translucent rounded chart cards. Animations respect `prefers-reduced-motion`.
+</details>
 
-The site has four pages: `index.html` (Home), `explore.html` (charts, filters, sources), `about.html` and `api.html`. `docs/site.js` injects the shared header and a bottom tab bar on mobile. Group tiles link to `explore.html?group=...`, and the Explore filters sync to the URL (`?group=&subgroup=&q=`) so views can be shared.
+<a id="architecture"></a>
+## Architecture
 
-The requested 20,000-word article for every group and subgroup is not claimed as complete. Writing that volume responsibly requires source-by-source editorial research; the project does not inflate descriptions with repeated text. See the [documentation index](docs/README.md), [election coverage](docs/ELECTIONS.md), [tourism and heritage methods](docs/TOURISM-AND-HERITAGE.md), [API guide](docs/API.md), [sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), and [pipeline guide](docs/PIPELINES.md) for current implementation and known gaps.
-
-## 🗺️ Architecture diagrams
-
-[`docs/diagrams/architecture.drawio`](docs/diagrams/architecture.drawio) has five editable draw.io pages: system overview, data pipeline (workflows → scripts → JSON), static site, Django + React app, and deployment ([Netlify](https://indiasjourney.netlify.app) with the GitHub Pages backup). Open it at [app.diagrams.net](https://app.diagrams.net) or with the VS Code Draw.io Integration extension. See also [ARCHITECTURE.md](docs/ARCHITECTURE.md).
-
-## ⚙️ Automation
-
-Each dataset has its own workflow on a source-appropriate schedule: [daily](.github/workflows/daily-politypolicy-update.yml) (articles, FEC, World Bank and public charts), [weekly Substack](.github/workflows/weekly-substack-articles.yml), [weekly Pew](.github/workflows/weekly-pew-research-update.yml), [Monthly Economic Review](.github/workflows/monthly-economic-review-update.yml) (three checks a month), [NCRB](.github/workflows/ncrb-crime-data-update.yml) (monthly check for the annual release), [recent elections](.github/workflows/recent-indian-elections-update.yml) (daily, rebuilds election pies), and [live election results](.github/workflows/election-results-update.yml) (every three hours), and [sports](.github/workflows/sports-data-update.yml) (weekly, official sports fetchers). See the [pipeline guide](docs/PIPELINES.md) for the schedule table and a group-by-group map of which script and workflow refreshes each Explore group. Every data workflow also re-exports `data/catalog.json`, which the Django app imports when it starts. Each card displays its actual observation frequency; a more frequent source check does not imply that annual or election-cycle data changes at that interval. The web app is checked by [Web app CI](.github/workflows/webapp-ci.yml) and monitored by the [uptime monitor](.github/workflows/uptime-monitor.yml).
-
-Contributions: see [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
-
-## 🛠️ Local Preview
-
-```bash
-python -m http.server 8000 --directory docs
+```mermaid
+flowchart LR
+  S[Public and official sources] --> C[Collectors and dataset builders]
+  C --> D[Generated JSON and chart data]
+  D --> X[Catalog export and legacy URL remapping]
+  X --> J[data/catalog.json]
+  D --> W[Static site in docs/]
+  J --> I[Django catalog import]
+  I --> A[Read-only API]
+  A --> R[React web app]
+  G[GitHub Actions] --> C
+  G --> P[Pages and Netlify deployment]
+  G --> H[Web-app CI and deployment]
 ```
 
-Open `http://localhost:8000` in a browser.
+The static site reads generated assets under `docs/`. `scripts/export_catalog.mjs` produces the shared `data/catalog.json`; Django imports it for the API and React frontend. Scheduled workflows refresh data and re-export the catalogue. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PIPELINES.md](docs/PIPELINES.md) and [docs/diagrams/architecture.drawio](docs/diagrams/architecture.drawio).
+
+<a id="run-locally"></a>
+## Run locally
+
+### Static dashboard
+
+From the repository root:
+
+```powershell
+python -m http.server 8772 --directory docs
+```
+
+Open <http://localhost:8772>.
+
+### Django + React web app
+
+Install dependencies and build the frontend from the repository root, then migrate and import the catalogue:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r webapp\requirements.txt
+cd frontend
+npm install
+npm run build
+cd ..\webapp
+..\.venv\Scripts\python.exe manage.py migrate
+..\.venv\Scripts\python.exe manage.py import_catalog
+..\.venv\Scripts\python.exe manage.py runserver
+```
+
+Open <http://localhost:8000>. To work on the React frontend with its dev server instead, run `npm run dev` from `frontend` while Django is running; the frontend proxies API requests to Django. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for configuration.
+
+<a id="testing"></a>
+## Testing
+
+Release 32 validation included approximately **288 passing pytest tests**, approximately **117 passing Vitest tests**, the Django test suite, and Playwright checks. CI also validates the OpenAPI schema and builds/smoke-tests the container. Run the relevant suites locally:
+
+```powershell
+python -m pytest tests -q --ignore=tests\test_dashboard_endpoints.py
+cd webapp
+..\.venv\Scripts\python.exe manage.py test indicators
+cd ..\frontend
+npm test
+npm run test:e2e
+```
+
+See [docs/TESTING.md](docs/TESTING.md) and [Web app CI](.github/workflows/webapp-ci.yml).
+
+<a id="deployment"></a>
+## Deployment
+
+- **Static dashboard:** Netlify is configured for `docs/`; GitHub Pages provides a mirror. See [`netlify.toml`](netlify.toml) and [the Pages workflow](.github/workflows/deploy-dashboard.yml).
+- **Django + React:** [`render.yaml`](render.yaml) is the Render Blueprint. Select **New > Blueprint** in Render and point it at this repository; it builds the Docker app and has a health check at `/api/health/`.
+- **Fly.io:** used for this final release only. The Fly workflow has a push-to-main trigger for release 32; after that deployment, revert it to manual-only (`workflow_dispatch`). Render is the continuing Blueprint deployment target.
+
+Free-tier container filesystems may be ephemeral; configure persistent storage if application data must survive redeploys. The indicator catalogue is re-imported from source data at startup.
+
+<a id="release-notes"></a>
+## Release notes
+
+See the [release index](docs/releases/README.md) for the full history and [release 32](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md) for the maps, regrouping, fiscal and cultural atlases, themes and fixes in this release.
+
+<a id="credits-and-licence"></a>
+## Credits and licence
+
+This is an independent dashboard built from the public sources cited in the catalogue. Acknowledgements for [PolityPolicy](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/) and [Indian Matrix](https://substack.com/@indianmatrix) are provided for attribution and public-data storytelling context; the project does not reproduce their interactive chart rendering. Thanks also to the public agencies and data publishers linked throughout the site.
+
+No `LICENSE` or `LICENCE` file is currently present in the repository; no project-code reuse licence is asserted here. Third-party data and assets remain subject to their own terms. See [docs/SOURCES-AND-LIMITATIONS.md](docs/SOURCES-AND-LIMITATIONS.md) for source notes and limitations.

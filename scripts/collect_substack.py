@@ -37,9 +37,8 @@ def main() -> None:
         "articles": items,
     }
     snapshot_text = json.dumps(snapshot, indent=2) + "\n"
-    (ROOT / "data" / "substack-latest.json").write_text(snapshot_text)
-    (ROOT / "docs" / "data" / "substack-latest.json").write_text(snapshot_text)
-    print(f"Generated: data/substack-latest.json & docs/data/substack-latest.json ({len(items)} articles)")
+    (ROOT / "data" / "substack-latest.json").write_text(snapshot_text, encoding="utf-8")
+    print(f"Generated: data/substack-latest.json ({len(items)} articles)")
 
 
 if __name__ == "__main__":

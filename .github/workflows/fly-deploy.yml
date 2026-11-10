@@ -1,6 +1,8 @@
 name: Deploy web app to Fly.io
 
 # Runs only when the FLY_API_TOKEN secret exists (create it with `fly tokens create deploy`).
+# Final Fly.io release: this push to main deploys once more (release 32). Afterwards switch back to
+# manual-only (remove the push trigger); the live web app continues on Render (render.yaml).
 on:
   push:
     branches: [main]

@@ -1,0 +1,64 @@
+/* Scripture verse figure: shared by the static site and the React app. Colours come from the theme variables. */
+.scripture-verse {
+  --verse-dot: #ff9933;
+  margin: 0.75rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  border-left: 3px solid var(--verse-dot);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ink, #888) 5%, transparent);
+  color: var(--ink, inherit);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  text-align: left;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+.scripture-verse[data-tradition="Hindu"] { --verse-dot: #ff9933; }
+.scripture-verse[data-tradition="Buddhist"] { --verse-dot: #a3262a; }
+.scripture-verse[data-tradition="Jain"] { --verse-dot: #2e9b4a; }
+.scripture-verse[data-tradition="Sikh"] { --verse-dot: #2f7bf0; }
+.scripture-verse blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  font-weight: 600;
+  quotes: none;
+}
+.scripture-verse blockquote[lang="sa"] { font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", serif; }
+.scripture-verse blockquote[lang="pa"] { font-family: "Raavi", "Nirmala UI", "Noto Sans Gurmukhi", sans-serif; }
+.scripture-verse blockquote[lang="pi"],
+.scripture-verse blockquote[lang="pra"] { font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", Georgia, serif; font-style: italic; }
+.scripture-verse .scripture-english { margin: 0.2rem 0 0; color: var(--muted, inherit); font-style: italic; }
+.scripture-verse figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.6rem;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--muted, inherit);
+}
+.scripture-verse .scripture-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.scripture-verse .scripture-dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--verse-dot); display: inline-block; }
+.scripture-verse cite { font-style: normal; }
+.scripture-verse.compact { padding: 0.4rem 0.6rem; font-size: 0.74rem; }
+.scripture-verse.compact blockquote { font-size: 0.92rem; }
+.explainer-heading .scripture-verse { margin-top: 0.9rem; }
+
+html[data-theme="newspaper"] .scripture-verse { border-radius: 0; border-left-width: 4px; background: transparent; }
+html[data-theme="newspaper"] .scripture-verse blockquote { font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", Georgia, serif; }
+html[data-theme="newspaper"] .scripture-verse blockquote[lang="pa"] { font-family: "Raavi", "Nirmala UI", "Noto Sans Gurmukhi", sans-serif; }
+html[data-theme="pamphlet"] .scripture-verse { border-radius: 4px; border-width: 2px; border-left-width: 6px; background: color-mix(in srgb, var(--ink, #000) 4%, transparent); }
+html[data-theme="light"] .scripture-verse { background: color-mix(in srgb, var(--ink, #000) 4%, transparent); }
+
+@media (max-width: 480px) {
+  .scripture-verse { padding: 0.5rem 0.6rem; }
+  .scripture-verse blockquote { font-size: 0.98rem; }
+}

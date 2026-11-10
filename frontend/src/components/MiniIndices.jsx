@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api.js';
 import { formatMagnitude, isRadial } from '../format.js';
 import { useAsync } from '../hooks.js';
+import ScriptureVerse from './ScriptureVerse.jsx';
 
 const MAX_TILES = 3;
 const SNAPSHOT_PARTS = 4;
@@ -166,6 +167,7 @@ export default function MiniIndices({ category }) {
             {pick.kind === 'trend' ? <TrendTile {...pick} /> : <SnapshotTile {...pick} />}
           </Link>
           <MiniCitation item={pick.item} />
+          <ScriptureVerse verseKey={pick.item.key} group={category.name} className="compact" />
         </li>
       ))}
     </ul>

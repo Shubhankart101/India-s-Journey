@@ -8,6 +8,7 @@ from django.contrib.auth import logout
 from django.db.models import Count, F, Prefetch, Q
 from django.http import FileResponse, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
+from django.utils.dateparse import parse_datetime
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import ensure_csrf_cookie
 from drf_spectacular.types import OpenApiTypes
@@ -65,10 +66,10 @@ class CategoryListView(generics.ListAPIView):
     pagination_class = None
 
     def get_queryset(self):
-        subgroups = Subgroup.objects.annotate(indicator_count=Count('indicators'), live_count=LIVE_COUNT)
+        subgroups = Subgroup.objects.annotate(indicator_count=Count('indicators'), live_count=LIVE_COUNT).order_by('order', 'name')
         return Category.objects.annotate(indicator_count=Count('indicators', distinct=True)).annotate(
             live_count=Count('indicators', filter=Q(indicators__is_live=True), distinct=True),
-        ).prefetch_related(Prefetch('subgroups', queryset=subgroups, to_attr='annotated_subgroups'))
+        ).order_by('order', 'name').prefetch_related(Prefetch('subgroups', queryset=subgroups, to_attr='annotated_subgroups'))
 
 
 @extend_schema_view(get=extend_schema(summary='Search and filter indicators', parameters=INDICATOR_FILTERS))
@@ -230,6 +231,15 @@ class ArticleListView(generics.ListAPIView):
         return queryset.order_by('-is_featured', F('published_at').desc(nulls_last=True), 'title', 'url')
 
 
+def _last_refresh(refresh):
+    if not refresh:
+        return None
+    try:
+        return parse_datetime(refresh.source_generated_at) or refresh.finished_at
+    except (TypeError, ValueError):
+        return refresh.finished_at
+
+
 class StatsView(APIView):
     @extend_schema(summary='Catalogue totals and last refresh', responses=StatsSerializer)
     def get(self, request):
@@ -243,7 +253,7 @@ class StatsView(APIView):
             'articles': Article.objects.count(),
             'data_points': sum(Indicator.objects.values_list('point_count', flat=True)),
             'source_generated_at': last.source_generated_at if last else None,
-            'last_refresh': last.finished_at if last else None,
+            'last_refresh': _last_refresh(last),
         })
 
 

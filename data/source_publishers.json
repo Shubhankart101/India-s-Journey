@@ -1,0 +1,24 @@
+{
+  "publishers": [
+    {"pattern": "^Federal Election Commission", "url": "https://www.fec.gov/data/browse-data/?tab=bulk-data", "hosts": ["fec.gov"]},
+    {"pattern": "^Election Commission of India", "url": "https://www.eci.gov.in/statistical-reports", "hosts": ["eci.gov.in", "eci.nic.in", "ecisveep.nic.in", "results.eci.gov.in"]},
+    {"pattern": "^MOSPI", "url": "https://www.mospi.gov.in/", "hosts": ["mospi.gov.in", "mospi.nic.in"]},
+    {"pattern": "^Pew Research", "url": "https://www.pewresearch.org/global/topic/india/", "hosts": ["pewresearch.org"]},
+    {"pattern": "^Coal Controller", "url": "https://coal.nic.in/", "hosts": ["coal.nic.in", "coalindia.in", "ccoindia.gov.in"]},
+    {"pattern": "^Our World in Data", "url": "https://ourworldindata.org/terrorism", "hosts": ["ourworldindata.org"]},
+    {"pattern": "^Reserve Bank of India|^RBI", "url": "https://www.rbi.org.in/Scripts/PSIUserView.aspx", "hosts": ["rbi.org.in", "rbidocs.rbi.org.in", "dbie.rbi.org.in"]},
+    {"pattern": "^Pharmexcil", "url": "https://pharmexcil.com/", "hosts": ["pharmexcil.com", "commerce.gov.in"]},
+    {"pattern": "^SIAM", "url": "https://www.siam.in/", "hosts": ["siam.in", "siamindia.com"]},
+    {"pattern": "SATP", "url": "https://www.satp.org/", "hosts": ["satp.org", "mha.gov.in"]},
+    {"pattern": "^(Ministry of Home Affairs|MHA)", "url": "https://www.mha.gov.in/", "hosts": ["mha.gov.in", "satp.org"]},
+    {"pattern": "^NCRB", "url": "https://ncrb.gov.in/en/crime-in-india", "hosts": ["ncrb.gov.in", "data.gov.in"]},
+    {"pattern": "^UNESCO", "url": "https://whc.unesco.org/en/statesparties/in", "hosts": ["unesco.org"]},
+    {"pattern": "^World Bank", "hosts": ["worldbank.org"]},
+    {"pattern": "^National Judicial Data Grid", "hosts": ["sci.gov.in", "njdg.ecourts.gov.in", "ecourts.gov.in", "main.sci.gov.in"]},
+    {"pattern": "^NITI Aayog", "url": "https://www.niti.gov.in/", "hosts": ["niti.gov.in", "niti.nic.in"]},
+    {"pattern": "^Planning Commission", "url": "https://www.niti.gov.in/", "hosts": ["planningcommission.gov.in", "planningcommission.nic.in", "niti.gov.in"]},
+    {"pattern": "^Press Information Bureau", "url": "https://pib.gov.in/", "hosts": ["pib.gov.in", "static.pib.gov.in"]},
+    {"pattern": "^Observer Research Foundation", "url": "https://www.orfonline.org/", "hosts": ["orfonline.org"]},
+    {"pattern": "^International Centre for Sustainability", "url": "https://icfs.org.uk/", "hosts": ["icfs.org.uk"]}
+  ]
+}

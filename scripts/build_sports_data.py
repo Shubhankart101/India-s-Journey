@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUTS = (ROOT / "data" / "sports.json", ROOT / "docs" / "data" / "sports.json")
+OUTPUTS = (ROOT / "data" / "sports.json",)
 SNAPSHOTS = ROOT / "data" / "sports_sources"
 CATEGORY = "Sports"
 CRICKET, HOCKEY, FOOTBALL = "Cricket", "Hockey", "Football"
@@ -190,7 +190,11 @@ def load_snapshot(name: str) -> dict:
 
 def clean_url(raw: str, fallback: str) -> str:
     first = str(raw or "").split(" | ")[0].split("; ")[0].split(" (")[0].strip()
-    return fallback if not first.startswith("http") or "{" in first or "<" in first or "/api" in first or "graphql" in first else first
+    if not first.startswith("http") or "{" in first or "<" in first or "/api" in first or "graphql" in first:
+        return fallback
+    if "template=results" in first or "orderby=" in first:
+        first = first.split("?")[0]
+    return first
 
 
 def colour_for(label: str, index: int) -> str:

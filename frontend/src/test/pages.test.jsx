@@ -13,7 +13,7 @@ describe('Layout and Home', () => {
     expect(await screen.findByText('691')).toBeInTheDocument();
     const tile = await screen.findByRole('link', { name: /subgroups\s*Economic/ });
     expect(tile).toHaveAttribute('href', '/explore?category=economic');
-    expect(tile.style.getPropertyValue('--tile-art')).toContain('/art/parliament.svg');
+    expect(tile.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/art/parliament.svg'));
     const latest = (await screen.findByRole('heading', { name: 'Latest analysis' })).closest('section');
     expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
   });
@@ -143,16 +143,12 @@ describe('Layout and Home', () => {
     expect(await screen.findByRole('link', { name: /subgroups\s*Elections/ })).toBeInTheDocument();
   });
 
-  it('adds a subgroup marquee, typewriter topics and a back-to-top button', async () => {
+  it('shows editorial group cards, typewriter topics and a back-to-top button', async () => {
     mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
     const { container } = renderApp('/');
-    const featured = await screen.findByRole('navigation', { name: 'Featured subgroups' });
-    expect(within(featured).getByRole('link', { name: 'Macro Overview' })).toHaveAttribute('href', '/explore?category=economic&subgroup=macro-overview');
-    const more = screen.getByRole('navigation', { name: 'More subgroups' });
-    expect(within(more).getByRole('link', { name: 'Indian Elections' })).toHaveAttribute('href', '/explore?category=elections&subgroup=indian-elections');
-    // The looping duplicate copy is hidden from assistive tech and the tab order.
-    const copy = featured.querySelector('.marquee-group[aria-hidden="true"] a');
-    expect(copy).toHaveAttribute('tabindex', '-1');
+    expect(await screen.findByRole('link', { name: /subgroups\s*Economic/ })).toHaveTextContent('Explore');
+    expect(container.querySelector('.marquee-band')).toBeNull();
+    expect(container.querySelector('.group-card-kicker')).toBeInTheDocument();
     expect(screen.getByText(/GDP and inflation, UPI payments/)).toHaveClass('sr-only');
     expect(container.querySelector('.hero-orbs')).toHaveAttribute('aria-hidden', 'true');
     expect(container.querySelector('.scroll-progress')).toBeInTheDocument();
@@ -230,6 +226,28 @@ describe('Sources', () => {
 });
 
 describe('Explore', () => {
+  it('resolves pre-regroup group and subgroup slugs', async () => {
+    const currentGroups = [{
+      name: 'Economy & Markets', slug: 'economy-markets', title: 'Economy & Markets', description: '', badges: [], art: 'parliament.svg',
+      indicator_count: 1, live_count: 1,
+      subgroups: [{ name: 'Growth, Income & Monetary Policy', slug: 'growth-income-monetary-policy', order: 0, title: 'Growth', description: '', art: 'parliament.svg', indicator_count: 1, live_count: 1 }],
+    }];
+    mockApi({ '/api/categories/': currentGroups, '/api/indicators/': page([]) });
+    renderApp('/explore?category=economic&subgroup=macroeconomics');
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?category=economy-markets&subgroup=growth-income-monetary-policy'));
+  });
+
+  it('resolves the former epic-atlas URL to the faith journeys group', async () => {
+    const currentGroups = [{
+      name: 'Epics, Faiths & Journeys', slug: 'epics-faiths-journeys', title: 'Epics, Faiths & Journeys', description: '', badges: [], art: 'parliament.svg',
+      indicator_count: 1, live_count: 1,
+      subgroups: [{ name: 'Epics: Mahabharata & Ramayana', slug: 'epics-mahabharata-ramayana', order: 0, title: 'Epics', description: '', art: 'parliament.svg', indicator_count: 1, live_count: 1 }],
+    }];
+    mockApi({ '/api/categories/': currentGroups, '/api/indicators/': page([]) });
+    renderApp('/explore?category=tourism-heritage&subgroup=epic-geography');
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?category=epics-faiths-journeys&subgroup=epics-mahabharata-ramayana'));
+  });
+
   it('loads indicators and syncs filters with the URL', async () => {
     const { calls } = mockApi({
       '/api/categories/': categories,
@@ -260,37 +278,46 @@ describe('Explore', () => {
     expect(searches.map(call => call.params.get('q'))).toEqual(['coal']);
   });
 
-  it('shows an illustrated tile grid for groups and subgroups', async () => {
+  it('shows the home-style group cards and illustrated subgroup tiles', async () => {
     mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary()]) });
     const { container } = renderApp('/explore');
-    const groups = await screen.findByRole('list', { name: 'Groups' });
-    const electionsCard = within(groups).getByText('Elections').closest('button');
-    expect(electionsCard.style.getPropertyValue('--card-art')).toContain('/art/eci-building.svg');
-    await userEvent.click(within(groups).getByText('Economic').closest('button'));
+    const groups = await waitFor(() => {
+      const grid = container.querySelector('.group-cards');
+      expect(grid).not.toBeNull();
+      return grid;
+    });
+    const electionsCard = within(groups).getByText('Elections').closest('a');
+    expect(electionsCard.querySelector('.group-card-art img')).toHaveAttribute('src', '/art/eci-building.svg');
+    await userEvent.click(within(groups).getByText('Economic').closest('a'));
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore?category=economic'));
 
     const subgroups = await screen.findByRole('list', { name: 'Subgroups' });
-    const trade = within(subgroups).getByText('Trade').closest('button');
+    const trade = within(subgroups).getByText('Trade').closest('a');
     expect(trade.style.getPropertyValue('--card-art')).toContain('/art/rail-station.svg');
-    expect(trade).toHaveAttribute('aria-pressed', 'false');
+    expect(trade).toHaveAttribute('href', '/explore/economic/trade');
     await userEvent.click(trade);
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('subgroup=trade'));
-    expect(trade).toHaveAttribute('aria-pressed', 'true');
-    expect(container.querySelector('.page-hero .art-backdrop')).toHaveAttribute('data-art', 'rail-station.svg');
-    await userEvent.click(within(subgroups).getByText('← All groups').closest('button'));
-    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent(/^\/explore$/));
+    await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/explore/economic/trade'));
+    expect(await screen.findByRole('heading', { level: 1, name: 'Trade' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'All groups' })).toBeInTheDocument();
   });
 
-  it('reads filters from a deep link and can clear them', async () => {
-    mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary()]) });
-    renderApp('/explore?category=economic&subgroup=trade&q=gdp');
+  it('opens a subgroup deep link as an article and keeps group filters on the browser', async () => {
+    mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary({ subgroup: 'Trade', subgroup_slug: 'trade' })]) });
+    renderApp('/explore?category=economic&subgroup=trade');
     expect(await screen.findByRole('heading', { level: 1, name: 'Trade' })).toBeInTheDocument();
+    expect(await screen.findByText('All charts in this subgroup')).toBeInTheDocument();
+    expect(screen.queryByRole('searchbox', { name: 'Search indicators' })).not.toBeInTheDocument();
+  });
+
+  it('reads a group deep link and can clear its filters', async () => {
+    mockApi({ '/api/categories/': categories, '/api/indicators/': page([summary()]) });
+    renderApp('/explore?category=economic&q=gdp');
+    expect(await screen.findByRole('heading', { level: 1, name: 'Economic engine' })).toBeInTheDocument();
     expect(screen.getByRole('searchbox', { name: 'Search indicators' })).toHaveValue('gdp');
     await userEvent.click(screen.getByRole('button', { name: 'Clear filters' }));
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent(/^\/explore$/));
     expect(screen.getByRole('searchbox', { name: 'Search indicators' })).toHaveValue('');
   });
-
   it('appends the next page with load more', async () => {
     mockApi({
       '/api/categories/': categories,

@@ -44,8 +44,8 @@ def main() -> None:
         "cadence": {"labels": sorted(weekly), "values": [weekly[label] for label in sorted(weekly)]},
     }
     snapshot_text = json.dumps(snapshot, indent=2) + "\n"
-    (ROOT / "data" / "indian-matrix-latest.json").write_text(snapshot_text)
-    (ROOT / "docs" / "data" / "indian-matrix-latest.json").write_text(snapshot_text)
+    (ROOT / "data" / "indian-matrix-latest.json").write_text(snapshot_text, encoding="utf-8")
+    (ROOT / "docs" / "data" / "indian-matrix-latest.json").write_text(snapshot_text, encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,7 @@
-# Netlify serves the static dashboard in docs/ (the same files GitHub Pages uses as the backup site).
-# Without this file Netlify publishes the repository root, which has no index.html, so every URL 404s.
+# Build the static React app into docs/, the same publication root used by GitHub Pages.
 [build]
   publish = "docs"
-  command = ""
+  command = "npm ci --prefix frontend && npm --prefix frontend run build:static"
 
 [build.processing]
   skip_processing = true
@@ -21,6 +20,6 @@
     Access-Control-Allow-Origin = "*"
 
 [[headers]]
-  for = "/assets/*"
+  for = "/build/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"

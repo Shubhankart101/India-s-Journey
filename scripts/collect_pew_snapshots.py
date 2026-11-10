@@ -214,12 +214,9 @@ def main():
     path = Path("data/pew-snapshots.json")
     path.parent.mkdir(exist_ok=True)
     content = json.dumps(out, indent=2) + "\n"
-    path.write_text(content)
+    path.write_text(content, encoding="utf-8")
     
-    docs_path = Path("docs/data/pew-snapshots.json")
-    docs_path.parent.mkdir(parents=True, exist_ok=True)
-    docs_path.write_text(content)
-    print(f"Generated: {path.resolve()} and {docs_path.resolve()}")
+    print(f"Generated: {path.resolve()}")
 
 
 if __name__ == "__main__":

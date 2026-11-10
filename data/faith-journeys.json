@@ -1,0 +1,2367 @@
+{
+ "meta": {
+  "title": "Faith and epic journeys",
+  "methodology": [
+   "Every verse is copied verbatim from the public page named in its 'verified from' link (Wikisource, SuttaCentral, BaniDB or the Valmiki and Mahabharata pages already used for the epic atlas); English translations are our own.",
+   "Where a stage or stop has no verse we could check for that exact place, we show a verified verse from the same text and label it 'From the text (general)'.",
+   "Places for ancient and traditional events are approximate identifications, not surveyed sites; stops marked approximate are drawn with a dashed ring.",
+   "Borders are a cartographic convention for orientation; the basemap is Natural Earth (public domain) with India drawn from the Survey of India outline.",
+   "Prakrit Jain canonical texts could not be checked against an online edition, so Mahavira's stops use the Sanskrit Tattvartha Sutra."
+  ],
+  "basemap": "assets/maps/world-asia.json",
+  "basemap_k": 10
+ },
+ "journeys": [
+  {
+   "id": "vedas-upanishads",
+   "series_key": "india_journey_vedas_upanishads",
+   "subgroup": "Vedas & Upanishads: A Journey",
+   "title": "The Vedas and Upanishads: where the texts took shape",
+   "subtitle": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers",
+   "tradition": "Vedic",
+   "color": "#b8860b",
+   "intro": "Vedic geography is reconstructed from the texts themselves and from later tradition, so every pin is a scholarly or traditional identification, not a surveyed site.",
+   "routes": [
+    {
+     "id": "vedic",
+     "label": "Vedic heartlands",
+     "colour": "#b8860b",
+     "summary": "Seven places, from the Rigvedic rivers to the Upanishadic courts and the later commentarial seat.",
+     "stops": [
+      {
+       "id": "sapta-sindhu",
+       "name": "Sapta-Sindhu (Land of Seven Rivers)",
+       "lat": 31.5,
+       "lon": 74.3,
+       "when": "c. 1500–1000 BCE (traditional dating)",
+       "description": "The Rigveda keeps returning to the rivers of the north-west. One hymn lists them like a roll-call, from the Ganga and Yamuna to the Indus tributaries.",
+       "approximate": true,
+       "quote": {
+        "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या ।",
+        "lang": "sa",
+        "translation": "Gather, Ganga, Yamuna, Sarasvati, Shutudri, round this my song of praise, together with Parushni.",
+        "citation": "Rigveda 10.75.5 (Nadistuti)",
+        "work": "Rigveda",
+        "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "sarasvati",
+       "name": "Sarasvati valley and Kurukshetra",
+       "lat": 29.97,
+       "lon": 76.85,
+       "when": "c. 1200–800 BCE (traditional dating)",
+       "description": "Later Vedic ritual is placed along the Sarasvati and Drishadvati. The verse on one reality with many names comes from a long riddle-hymn of Dirghatamas.",
+       "approximate": true,
+       "quote": {
+        "text": "एकं सद्विप्रा बहुधा वदन्त्यग्निं यमं मातरिश्वानमाहुः",
+        "lang": "sa",
+        "translation": "What is real is one; the wise speak of it in many ways. They call it Agni, Yama, Matarishvan.",
+        "citation": "Rigveda 1.164.46",
+        "work": "Rigveda",
+        "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.१६४",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 297
+      },
+      {
+       "id": "kuru-panchala",
+       "name": "Kuru–Panchala country",
+       "lat": 28.0,
+       "lon": 78.8,
+       "when": "c. 800–600 BCE",
+       "description": "The Brahmanas treat this part of the Gangetic plain as the home of cultured speech. In the Chandogya, the teacher Uddalaka Aruni instructs his son with the famous ‘that you are’ teaching.",
+       "approximate": true,
+       "quote": {
+        "text": "स य एषोऽणिमैतदात्म्यमिदँ सर्वं तत्सत्यँ स आत्मा तत्त्वमसि श्वेतकेतो इति भूय एव मा भगवान्विज्ञापयत्विति तथा सोम्येति होवाच",
+        "lang": "sa",
+        "translation": "This subtle essence is the self of all that exists; that is the real, that is the self. That you are, Shvetaketu. “Please, sir, teach me more,” he said. “So be it, dear one,” the father replied.",
+        "citation": "Chandogya Upanishad 6.8.7",
+        "work": "Upanishads",
+        "verified_from": "https://sa.wikisource.org/wiki/छान्दोग्योपनिषद्/अध्यायः_६",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 290
+      },
+      {
+       "id": "videha",
+       "name": "Videha (Mithila)",
+       "lat": 26.7,
+       "lon": 85.9,
+       "when": "c. 700–500 BCE",
+       "description": "King Janaka’s court is where the Brihadaranyaka stages its great debates, with Yajnavalkya at the centre. Its prayer asks to be led from the unreal to the real.",
+       "approximate": false,
+       "quote": {
+        "text": "असतो मा सद्गमय, तमसो मा ज्योतिर्गमय, मृत्योर्मामृतं गमयेति ।",
+        "lang": "sa",
+        "translation": "Lead me from the unreal to the real; lead me from darkness to light; lead me from death to immortality.",
+        "citation": "Brihadaranyaka Upanishad 1.3.28",
+        "work": "Upanishads",
+        "verified_from": "https://sa.wikisource.org/wiki/बृहदारण्यक_उपनिषद्_1a",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 716
+      },
+      {
+       "id": "kashi",
+       "name": "Kashi",
+       "lat": 25.32,
+       "lon": 83.0,
+       "when": "c. 700–500 BCE",
+       "description": "Kashi appears in the Upanishads as a seat of learning; its king Ajatashatru is shown teaching a Brahmin in the Brihadaranyaka. The Isha verse shown here is from the same Upanishadic corpus.",
+       "approximate": false,
+       "quote": {
+        "text": "ॐ ईशावास्यमिदँ सर्वं यत्किञ्च जगत्यां जगत्।",
+        "lang": "sa",
+        "translation": "Om. All this, whatever moves in this moving world, is to be enveloped by the Lord.",
+        "citation": "Isha Upanishad 1",
+        "work": "Upanishads",
+        "verified_from": "https://sa.wikisource.org/wiki/ईशावास्‍योपनिषद्",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 328
+      },
+      {
+       "id": "badarikashrama",
+       "name": "Badarikashrama (Himalaya)",
+       "lat": 30.74,
+       "lon": 79.49,
+       "when": "Traditional",
+       "description": "Tradition places seers’ retreats in the high Himalaya. The Mundaka’s ‘truth alone prevails’ later became the motto printed on India’s national emblem.",
+       "approximate": true,
+       "quote": {
+        "text": "सत्यमेव जयते नानृतं सत्येन पन्था विततो देवयानः ।",
+        "lang": "sa",
+        "translation": "Truth alone prevails, not falsehood; by truth the path is laid out, the path the gods travel.",
+        "citation": "Mundaka Upanishad 3.1.6",
+        "work": "Upanishads",
+        "verified_from": "https://sa.wikisource.org/wiki/मुण्डकोपनिषद्",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 694
+      },
+      {
+       "id": "shringeri",
+       "name": "Shringeri",
+       "lat": 13.42,
+       "lon": 75.25,
+       "when": "8th century CE onward",
+       "description": "Tradition credits Adi Shankara with founding a monastery here. His commentaries on the principal Upanishads, including the Taittiriya, shaped how they were read for centuries.",
+       "approximate": false,
+       "quote": {
+        "text": "ॐ ब्रह्मविदाप्नोति परम् । तदेषाऽभ्युक्ता । सत्यं ज्ञानमनन्तं ब्रह्म । यो वेद निहितं गुहायां परमे व्योमन् ।",
+        "lang": "sa",
+        "translation": "Om. The knower of brahman reaches the highest. About this a verse is spoken: brahman is truth, knowledge, the infinite. Whoever knows it as set within the hidden cave, in the highest space…",
+        "citation": "Taittiriya Upanishad 2.1.1",
+        "work": "Upanishads",
+        "verified_from": "https://sa.wikisource.org/wiki/तैत्तिरीयोपनिषदत्/ब्रह्मानन्दवल्ली",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 1974
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "panchatantra",
+   "series_key": "india_journey_panchatantra",
+   "subgroup": "Panchatantra: From Kashmir to La Fontaine",
+   "title": "The Panchatantra: a book that travelled the world",
+   "subtitle": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine",
+   "tradition": "Panchatantra",
+   "color": "#2e8b57",
+   "intro": "Only the Sanskrit and French stages quote a verse we could check against an online text; for the Persian, Syriac, Arabic, Hebrew, Latin and Spanish stages we show a verified verse of the Sanskrit original, labelled as general.",
+   "routes": [
+    {
+     "id": "transmission",
+     "label": "Transmission route",
+     "colour": "#2e8b57",
+     "summary": "Sanskrit → Pahlavi → Syriac → Arabic → Hebrew → Latin → Spanish → French.",
+     "stops": [
+      {
+       "id": "kashmir",
+       "name": "Kashmir",
+       "lat": 34.08,
+       "lon": 74.8,
+       "when": "Traditionally c. 3rd century CE (date debated)",
+       "description": "Scholars have long linked the Sanskrit Panchatantra to Kashmir, where Vishnusharma is said to have framed the tales as lessons in statecraft for princes.",
+       "approximate": true,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "gundeshapur",
+       "name": "Gundeshapur (Persia)",
+       "lat": 32.28,
+       "lon": 48.4,
+       "when": "c. 570 CE",
+       "description": "The physician Burzoe is reported to have brought the book to the Sasanian court of Khosrow I, where it was put into Middle Persian (Pahlavi). That version is lost.",
+       "approximate": true,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 2458
+      },
+      {
+       "id": "edessa",
+       "name": "Edessa (Syriac)",
+       "lat": 37.16,
+       "lon": 38.79,
+       "when": "6th century CE",
+       "description": "A Syriac translation made from the Pahlavi carried the fables into the Christian world of the Near East.",
+       "approximate": true,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 1032
+      },
+      {
+       "id": "baghdad",
+       "name": "Baghdad (Arabic)",
+       "lat": 33.31,
+       "lon": 44.36,
+       "when": "c. 750 CE",
+       "description": "Ibn al-Muqaffa’ rendered the book into elegant Arabic as Kalila wa-Dimna, named for its two jackal heroes. Almost every later translation descends from this text.",
+       "approximate": false,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 662
+      },
+      {
+       "id": "hebrew",
+       "name": "Hebrew version (place uncertain)",
+       "lat": 43.2,
+       "lon": 3.0,
+       "when": "12th–13th century CE",
+       "description": "Hebrew translations from the Arabic circulated among Jewish scholars in southern Europe; where exactly the key version was made is not settled, so this pin is approximate.",
+       "approximate": true,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 3733
+      },
+      {
+       "id": "capua",
+       "name": "Capua (Latin)",
+       "lat": 41.08,
+       "lon": 14.33,
+       "when": "c. 1270",
+       "description": "John of Capua turned a Hebrew version into Latin as the Directorium vitae humanae, which opened the book to readers across Latin Europe.",
+       "approximate": false,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 963
+      },
+      {
+       "id": "zaragoza",
+       "name": "Zaragoza (Spanish)",
+       "lat": 41.65,
+       "lon": -0.88,
+       "when": "1493",
+       "description": "A Spanish version of the Latin text was printed here as the Exemplario contra los engaños y peligros del mundo, one of the earliest printed Panchatantra descendants in Spain.",
+       "approximate": false,
+       "quote": {
+        "text": "सकलार्थशास्त्रसारं जगति समालोक्य विष्णुशर्मेदम्।",
+        "lang": "sa",
+        "translation": "Having surveyed the whole world and drawn out the essence of every branch of learning, Vishnusharma (composed) this work.",
+        "citation": "Panchatantra, opening verse",
+        "work": "Panchatantra",
+        "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 1269
+      },
+      {
+       "id": "paris",
+       "name": "Paris (La Fontaine)",
+       "lat": 48.86,
+       "lon": 2.35,
+       "when": "1668 onward",
+       "description": "La Fontaine’s Fables made many of these stories French classics, and he later credited an Indian sage, ‘Pilpay’, as a source for some of them.",
+       "approximate": false,
+       "quote": {
+        "text": "Je me sers d’animaux pour instruire les hommes.",
+        "lang": "fr",
+        "translation": "I use animals to instruct human beings.",
+        "citation": "La Fontaine, Fables, dedication « À Monseigneur le Dauphin » (1668)",
+        "work": "Fables of La Fontaine",
+        "verified_from": "https://fr.wikisource.org/wiki/Fables_de_La_Fontaine_(%C3%A9d._1874)/%C3%80_Monseigneur_le_Dauphin",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 840
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "buddha",
+   "series_key": "india_journey_buddha",
+   "subgroup": "The Buddha’s Journey and the Spread of Buddhism",
+   "title": "The Buddha’s journey and the spread of Buddhism",
+   "subtitle": "From Lumbini to Kushinagar, then out across Asia",
+   "tradition": "Buddhist",
+   "color": "#e0a030",
+   "intro": "Dates for the Buddha are debated (usually placed in the 5th century BCE). Verses are root Pali from the SuttaCentral edition of the Pali canon.",
+   "routes": [
+    {
+     "id": "life",
+     "label": "The Buddha’s life",
+     "colour": "#e0a030",
+     "summary": "Nine places from birth to final nirvana.",
+     "stops": [
+      {
+       "id": "lumbini",
+       "name": "Lumbini",
+       "lat": 27.47,
+       "lon": 83.28,
+       "when": "Birth",
+       "description": "Born in the gardens of Lumbini, in today’s Nepal. The text pictures the infant taking seven steps and speaking.",
+       "approximate": false,
+       "quote": {
+        "text": "‘sampatijāto, ānanda, bodhisatto samehi pādehi pathaviyaṁ patiṭṭhahitvā uttarābhimukho sattapadavītihārena gacchati, setamhi chatte anudhāriyamāne, sabbā ca disā viloketi, āsabhiñca vācaṁ bhāsati—aggohamasmi lokassa, jeṭṭhohamasmi lokassa, seṭṭhohamasmi lokassa. Ayamantimā jāti, natthi dāni punabbhavo’ti.",
+        "lang": "pi",
+        "translation": "‘As soon as he was born, Ananda, the Bodhisatta stood firm on level feet, faced north, took seven strides with a white parasol held over him, looked in every direction and spoke these bull-like words: “I am the foremost in the world, I am the eldest in the world, I am the best in the world. This is my last birth; now there is no more rebirth.”’",
+        "citation": "Majjhima Nikaya 123 (Acchariyabbhutasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/mn123/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "kapilavastu",
+       "name": "Kapilavastu",
+       "lat": 27.57,
+       "lon": 83.05,
+       "when": "Youth",
+       "description": "The Sakyan capital where Siddhattha grew up, and a place the Buddha later returned to teach his own clan.",
+       "approximate": true,
+       "quote": {
+        "text": "ekaṁ samayaṁ bhagavā sakkesu viharati kapilavatthusmiṁ nigrodhārāme.",
+        "lang": "pi",
+        "translation": "At one time the Buddha was staying among the Sakyans at Kapilavatthu, in the Banyan Tree Monastery.",
+        "citation": "Majjhima Nikaya 53 (Sekhasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/mn53/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 25
+      },
+      {
+       "id": "bodh-gaya",
+       "name": "Bodh Gaya",
+       "lat": 24.695,
+       "lon": 84.99,
+       "when": "Awakening",
+       "description": "Beneath the bodhi tree he attained awakening. Tradition ascribes the verse of the ‘house-builder’ to that night.",
+       "approximate": false,
+       "quote": {
+        "text": "Anekajātisaṁsāraṁ, sandhāvissaṁ anibbisaṁ; Gahakāraṁ gavesanto, dukkhā jāti punappunaṁ.",
+        "lang": "pi",
+        "translation": "Through many births I wandered in samsara, seeking but not finding the builder of the house; painful is birth again and again.",
+        "citation": "Dhammapada 153",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp146-156/en/sujato",
+        "generic": false,
+        "label": "",
+        "note": "Tradition, not the text itself, places this verse at the awakening."
+       },
+       "leg_km": 374
+      },
+      {
+       "id": "sarnath",
+       "name": "Sarnath (Isipatana)",
+       "lat": 25.381,
+       "lon": 83.022,
+       "when": "First sermon",
+       "description": "In the deer park he set the wheel of Dhamma in motion, rejecting both indulgence and harsh asceticism.",
+       "approximate": false,
+       "quote": {
+        "text": "“Dveme, bhikkhave, antā pabbajitena na sevitabbā.",
+        "lang": "pi",
+        "translation": "These two extremes, monks, are not to be followed by one who has gone forth.",
+        "citation": "Samyutta Nikaya 56.11 (Dhammacakkappavattanasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/sn56.11/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 212
+      },
+      {
+       "id": "rajagriha",
+       "name": "Rajagriha",
+       "lat": 25.03,
+       "lon": 85.42,
+       "when": "Early ministry",
+       "description": "The capital of Magadha. The Pabbajja Sutta recalls the future Buddha’s meeting with King Bimbisara after he left home.",
+       "approximate": false,
+       "quote": {
+        "text": "“Pabbajjaṁ kittayissāmi, yathā pabbaji cakkhumā; Yathā vīmaṁsamāno so, pabbajjaṁ samarocayi.",
+        "lang": "pi",
+        "translation": "I shall tell of the going forth — how the one with vision went forth, how he reflected and came to approve of the going forth.",
+        "citation": "Sutta Nipata 3.1 (Pabbajjasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/snp3.1/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 244
+      },
+      {
+       "id": "nalanda",
+       "name": "Nalanda",
+       "lat": 25.136,
+       "lon": 85.443,
+       "when": "Ministry",
+       "description": "The road between Rajagriha and Nalanda frames the opening of the Brahmajala Sutta, a long discourse on views.",
+       "approximate": false,
+       "quote": {
+        "text": "ekaṁ samayaṁ bhagavā antarā ca rājagahaṁ antarā ca nāḷandaṁ addhānamaggappaṭipanno hoti mahatā bhikkhusaṅghena saddhiṁ pañcamattehi bhikkhusatehi.",
+        "lang": "pi",
+        "translation": "At one time the Buddha was travelling on the road between Rajagaha and Nalanda with a large Sangha of about five hundred monks.",
+        "citation": "Digha Nikaya 1 (Brahmajalasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dn1/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 12
+      },
+      {
+       "id": "shravasti",
+       "name": "Shravasti (Jetavana)",
+       "lat": 27.51,
+       "lon": 82.0,
+       "when": "Many rainy seasons",
+       "description": "Anathapindika’s Jetavana garden was the Buddha’s most frequent residence. The twin verses on mind are, by the commentary, set at Shravasti.",
+       "approximate": false,
+       "quote": {
+        "text": "Manopubbaṅgamā dhammā, manoseṭṭhā manomayā; Manasā ce paduṭṭhena, bhāsati vā karoti vā; Tato naṁ dukkhamanveti, cakkaṁva vahato padaṁ.",
+        "lang": "pi",
+        "translation": "Mind comes before all things; mind is their chief, they are made by mind. If one speaks or acts with a corrupt mind, suffering follows, as the wheel follows the foot of the ox.",
+        "citation": "Dhammapada 1",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp1-20/en/sujato",
+        "generic": true,
+        "label": "From the text (general)",
+        "note": "Placed here by the commentarial tradition."
+       },
+       "leg_km": 433
+      },
+      {
+       "id": "vaishali",
+       "name": "Vaishali",
+       "lat": 25.99,
+       "lon": 85.13,
+       "when": "Last year",
+       "description": "In his final year the Buddha called Vaishali delightful, and gave up the will to live on for long.",
+       "approximate": false,
+       "quote": {
+        "text": "“ramaṇīyā, ānanda, vesālī, ramaṇīyaṁ udenaṁ cetiyaṁ, ramaṇīyaṁ gotamakaṁ cetiyaṁ, ramaṇīyaṁ sattambaṁ cetiyaṁ, ramaṇīyaṁ bahuputtaṁ cetiyaṁ, ramaṇīyaṁ sārandadaṁ cetiyaṁ, ramaṇīyaṁ cāpālaṁ cetiyaṁ.",
+        "lang": "pi",
+        "translation": "“Delightful, Ananda, is Vesali; delightful are the Udena shrine, the Gotamaka shrine, the Sattamba shrine, the Bahuputta shrine, the Sarandada shrine and the Capala shrine.”",
+        "citation": "Digha Nikaya 16 (Mahaparinibbanasutta) 3.2",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dn16/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 354
+      },
+      {
+       "id": "kushinagar",
+       "name": "Kushinagar",
+       "lat": 26.74,
+       "lon": 83.89,
+       "when": "Final nirvana",
+       "description": "Between two sal trees he passed away, leaving the monks with a last reminder to keep striving.",
+       "approximate": false,
+       "quote": {
+        "text": "vayadhammā saṅkhārā, appamādena sampādetha.",
+        "lang": "pi",
+        "translation": "Conditioned things are bound to decay; strive on with diligence.",
+        "citation": "Digha Nikaya 16 (Mahaparinibbanasutta) 3.51",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dn16/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 149
+      }
+     ]
+    },
+    {
+     "id": "spread",
+     "label": "Spread of Buddhism",
+     "colour": "#c05a1b",
+     "summary": "Eight stages across Asia. Dates are approximate and some are traditional.",
+     "stops": [
+      {
+       "id": "pataliputra",
+       "name": "Pataliputra",
+       "lat": 25.61,
+       "lon": 85.14,
+       "when": "3rd century BCE",
+       "description": "Emperor Ashoka’s capital. Chronicles speak of a council here and of missions sent out from it.",
+       "approximate": false,
+       "quote": {
+        "text": "Tena kho pana samayena sunidhavassakārā magadhamahāmattā pāṭaligāme nagaraṁ māpenti vajjīnaṁ paṭibāhāya.",
+        "lang": "pi",
+        "translation": "Now at that time the Magadhan ministers Sunidha and Vassakara were building a city at Pataligama to hold back the Vajjis.",
+        "citation": "Digha Nikaya 16 (Mahaparinibbanasutta) 1.26",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dn16/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "anuradhapura",
+       "name": "Anuradhapura",
+       "lat": 8.35,
+       "lon": 80.4,
+       "when": "c. 250 BCE",
+       "description": "Sri Lankan chronicles say Mahinda brought the teaching here, starting a tradition that survives today.",
+       "approximate": false,
+       "quote": {
+        "text": "Caratha, bhikkhave, cārikaṁ bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ.",
+        "lang": "pi",
+        "translation": "Wander forth, monks, for the good of the many, for the happiness of the many, out of compassion for the world, for the benefit, good and happiness of gods and humans.",
+        "citation": "Samyutta Nikaya 4.5 (Pasasutta)",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/sn4.5/en/sujato",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 1984
+      },
+      {
+       "id": "taxila",
+       "name": "Taxila and Gandhara",
+       "lat": 33.75,
+       "lon": 72.83,
+       "when": "1st–5th century CE",
+       "description": "In Gandhara the Buddha was first shown in human form, in a style that mixed Indian and Mediterranean art.",
+       "approximate": false,
+       "quote": {
+        "text": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā; Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ.",
+        "lang": "pi",
+        "translation": "To avoid all evil, to undertake the good, to purify one’s own mind: this is the teaching of the Buddhas.",
+        "citation": "Dhammapada 183",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp179-196/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 2929
+      },
+      {
+       "id": "bamiyan",
+       "name": "Bamiyan",
+       "lat": 34.82,
+       "lon": 67.82,
+       "when": "c. 6th century CE",
+       "description": "Two colossal Buddhas were cut into the cliffs along the Silk Road; both were destroyed in 2001.",
+       "approximate": false,
+       "quote": {
+        "text": "Tumhehi kiccamātappaṁ, akkhātāro tathāgatā; Paṭipannā pamokkhanti, jhāyino mārabandhanā.",
+        "lang": "pi",
+        "translation": "You yourselves must make the effort; the Tathagatas only show the way. Those who walk it in meditation are freed from Mara’s bonds.",
+        "citation": "Dhammapada 276",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp273-289/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 475
+      },
+      {
+       "id": "luoyang",
+       "name": "Luoyang",
+       "lat": 34.7,
+       "lon": 112.5,
+       "when": "1st century CE onward",
+       "description": "Tradition dates the White Horse Temple to 68 CE; from here Chinese translations of Buddhist texts grew into a vast literature.",
+       "approximate": false,
+       "quote": {
+        "text": "Na hi verena verāni, sammantīdha kudācanaṁ; Averena ca sammanti, esa dhammo sanantano.",
+        "lang": "pi",
+        "translation": "Hatreds never cease through hatred in this world; through non-hatred they cease. This is an ancient law.",
+        "citation": "Dhammapada 5",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp1-20/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 4047
+      },
+      {
+       "id": "lhasa",
+       "name": "Lhasa",
+       "lat": 29.65,
+       "lon": 91.12,
+       "when": "7th–8th century CE",
+       "description": "Buddhism reached Tibet from India and Nepal and became central to its court and culture.",
+       "approximate": false,
+       "quote": {
+        "text": "Sabbadānaṁ dhammadānaṁ jināti, Sabbarasaṁ dhammaraso jināti; Sabbaratiṁ dhammarati jināti, Taṇhakkhayo sabbadukkhaṁ jināti.",
+        "lang": "pi",
+        "translation": "The gift of the Dhamma surpasses every gift; the taste of the Dhamma surpasses every taste; delight in the Dhamma surpasses every delight; the end of craving overcomes all suffering.",
+        "citation": "Dhammapada 354",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp334-359/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 2085
+      },
+      {
+       "id": "bagan",
+       "name": "Bagan",
+       "lat": 21.17,
+       "lon": 94.86,
+       "when": "11th–13th century CE",
+       "description": "Burmese kings filled the plain with thousands of temples for the Theravada school.",
+       "approximate": false,
+       "quote": {
+        "text": "Manopubbaṅgamā dhammā, manoseṭṭhā manomayā; Manasā ce paduṭṭhena, bhāsati vā karoti vā; Tato naṁ dukkhamanveti, cakkaṁva vahato padaṁ.",
+        "lang": "pi",
+        "translation": "Mind comes before all things; mind is their chief, they are made by mind. If one speaks or acts with a corrupt mind, suffering follows, as the wheel follows the foot of the ox.",
+        "citation": "Dhammapada 1",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp1-20/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 1015
+      },
+      {
+       "id": "nara",
+       "name": "Nara",
+       "lat": 34.69,
+       "lon": 135.84,
+       "when": "6th–8th century CE",
+       "description": "Buddhism came to Japan through Korea and China; Nara’s Todai-ji houses a giant bronze Buddha.",
+       "approximate": false,
+       "quote": {
+        "text": "Anekajātisaṁsāraṁ, sandhāvissaṁ anibbisaṁ; Gahakāraṁ gavesanto, dukkhā jāti punappunaṁ.",
+        "lang": "pi",
+        "translation": "Through many births I wandered in samsara, seeking but not finding the builder of the house; painful is birth again and again.",
+        "citation": "Dhammapada 153",
+        "work": "Pali Canon",
+        "verified_from": "https://suttacentral.net/dhp146-156/en/sujato",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 4263
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mahavira",
+   "series_key": "india_journey_mahavira",
+   "subgroup": "Mahavira: A Teacher on the Road",
+   "title": "Mahavira: a teacher on the road",
+   "subtitle": "The eastern Gangetic plain where the 24th Tirthankara taught",
+   "tradition": "Jain",
+   "color": "#8e44ad",
+   "intro": "Dates and sites follow Jain tradition (c. 6th century BCE) and several are disputed, so pins are approximate. We could not check any Prakrit canonical text against an online edition, so every verse here is from the Sanskrit Tattvartha Sutra and is labelled general.",
+   "routes": [
+    {
+     "id": "wanderings",
+     "label": "Mahavira’s wanderings",
+     "colour": "#8e44ad",
+     "summary": "Birth near Vaishali, years of wandering, omniscience on a riverbank, and nirvana at Pava.",
+     "stops": [
+      {
+       "id": "kundagrama",
+       "name": "Kundagrama (Vaishali area)",
+       "lat": 25.99,
+       "lon": 85.13,
+       "when": "Birth",
+       "description": "Born to a Kshatriya family of the Jnatri clan. The exact site is debated among Jain traditions.",
+       "approximate": true,
+       "quote": {
+        "text": "तत्त्वार्थश्रद्धानं सम्यग्दर्शनम्।।",
+        "lang": "sa",
+        "translation": "Faith in the realities as they are is right view.",
+        "citation": "Tattvartha Sutra 1.2",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/प्रथमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "jnatrkhanda",
+       "name": "Jnatrkhanda grove",
+       "lat": 26.05,
+       "lon": 85.2,
+       "when": "Renunciation, age 30",
+       "description": "At thirty he gave up royal life and began the life of a wandering ascetic.",
+       "approximate": true,
+       "quote": {
+        "text": "हिंसाऽनृतस्तेयाब्रह्मपरिग्रहेभ्यो विरतिर्व्रतम्",
+        "lang": "sa",
+        "translation": "Abstaining from violence, falsehood, theft, unchastity and possessiveness is the set of vows.",
+        "citation": "Tattvartha Sutra 7.1",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/सप्तमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 10
+      },
+      {
+       "id": "nalanda",
+       "name": "Nalanda",
+       "lat": 25.136,
+       "lon": 85.443,
+       "when": "Early wandering",
+       "description": "Tradition has him spend a rainy season near Nalanda, where he met the ascetic Goshala.",
+       "approximate": false,
+       "quote": {
+        "text": "प्रमत्तयोगात्प्राणव्यपरोपणं हिंसा",
+        "lang": "sa",
+        "translation": "Violence is the taking of life through careless activity.",
+        "citation": "Tattvartha Sutra 7.13",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/सप्तमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 105
+      },
+      {
+       "id": "champa",
+       "name": "Champa",
+       "lat": 25.24,
+       "lon": 87.0,
+       "when": "Rainy-season retreats",
+       "description": "Champa, capital of Anga, is named in Jain tradition as one of the places he spent the monsoon.",
+       "approximate": true,
+       "quote": {
+        "text": "परस्परोपग्रहो जीवानाम्।।",
+        "lang": "sa",
+        "translation": "Living beings render support to one another.",
+        "citation": "Tattvartha Sutra 5.21",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/पञ्चमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 157
+      },
+      {
+       "id": "jrimbhikagrama",
+       "name": "Jrimbhikagrama (Rijuvalika bank)",
+       "lat": 23.9,
+       "lon": 86.2,
+       "when": "Omniscience",
+       "description": "After years of austerity he is said to have attained omniscience (kevala jnana) on a riverbank. The site is disputed.",
+       "approximate": true,
+       "quote": {
+        "text": "मोहक्षयाज्ज्ञान दर्शनावरणान्तरायक्षयाच्च केवलम्।।",
+        "lang": "sa",
+        "translation": "From the destruction of delusion, and of the karmas that obscure knowledge and perception and that obstruct, omniscience (kevala) arises.",
+        "citation": "Tattvartha Sutra 10.1",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/दशमोऽध्यायः",
+        "generic": false,
+        "label": "",
+        "note": "Tattvartha Sutra 10.1 defines omniscience; it is not a text of this place."
+       },
+       "leg_km": 170
+      },
+      {
+       "id": "rajagriha",
+       "name": "Rajagriha",
+       "lat": 25.03,
+       "lon": 85.42,
+       "when": "Teaching years",
+       "description": "The Magadhan capital where King Shrenika (Bimbisara) is said to have heard him on the Vipulachala hill.",
+       "approximate": false,
+       "quote": {
+        "text": "मैत्री-प्रमोद-कारुण्य-माध्यस्थानि च सत्त्व-गुणाधिक-क्लिश्यमानाविनेयेषु",
+        "lang": "sa",
+        "translation": "Friendship, delight in the virtuous, compassion for the suffering, and equanimity toward the unruly — these are to be cultivated towards all beings.",
+        "citation": "Tattvartha Sutra 7.11",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/सप्तमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 148
+      },
+      {
+       "id": "shravasti",
+       "name": "Shravasti",
+       "lat": 27.51,
+       "lon": 82.0,
+       "when": "Teaching years",
+       "description": "Jain texts mention Shravasti among the cities where he and his monks taught.",
+       "approximate": false,
+       "quote": {
+        "text": "सम्यग्दर्शन ज्ञान चारित्राणि मोक्षमार्गः।।",
+        "lang": "sa",
+        "translation": "Right view, right knowledge and right conduct together are the path to liberation.",
+        "citation": "Tattvartha Sutra 1.1",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/प्रथमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 439
+      },
+      {
+       "id": "pavapuri",
+       "name": "Pavapuri",
+       "lat": 25.09,
+       "lon": 85.53,
+       "when": "Nirvana, c. 527 BCE (tradition)",
+       "description": "Tradition says he reached final liberation here; the lake temple at Pava is the pilgrimage site today.",
+       "approximate": true,
+       "quote": {
+        "text": "बन्धहेत्व भावनिर्जराभ्यां कृत्स्न कर्मविप्रमोक्षो मोक्षः।।",
+        "lang": "sa",
+        "translation": "With no new cause of bondage and with the shedding of the old, the total release from karma is liberation.",
+        "citation": "Tattvartha Sutra 10.2",
+        "work": "Tattvartha Sutra",
+        "verified_from": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/दशमोऽध्यायः",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 443
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sikh-gurus",
+   "series_key": "india_journey_sikh_gurus",
+   "subgroup": "The Ten Sikh Gurus’ Journeys",
+   "title": "The ten Sikh Gurus’ journeys",
+   "subtitle": "From Guru Nanak’s four udasis to Guru Gobind Singh at Nanded",
+   "tradition": "Sikh",
+   "color": "#e07b00",
+   "intro": "Verses are Gurmukhi text from the Guru Granth Sahib via BaniDB. Four Gurus (Hargobind, Har Rai, Har Krishan, Gobind Singh) have no hymn in it, so their stops use a verse by another author and say so.",
+   "routes": [
+    {
+     "id": "nanak",
+     "label": "Guru Nanak (1469–1539)",
+     "colour": "#e07b00",
+     "summary": "Four long journeys (udasis), traditionally east, south, north and west, ending at Kartarpur.",
+     "stops": [
+      {
+       "id": "talwandi",
+       "name": "Talwandi (Nankana Sahib)",
+       "lat": 31.45,
+       "lon": 73.7,
+       "when": "Born 1469",
+       "description": "Born at Talwandi, now Nankana Sahib in Pakistan.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੋਚੈ ਸੋਚਿ ਨ ਹੋਵਈ ਜੇ ਸੋਚੀ ਲਖ ਵਾਰ ॥",
+        "lang": "pa",
+        "translation": "By thinking, purity cannot be reached, though one think a hundred thousand times.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 1)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "sultanpur",
+       "name": "Sultanpur Lodhi",
+       "lat": 31.21,
+       "lon": 75.2,
+       "when": "c. 1499",
+       "description": "After an experience on the river Bein, tradition says he began teaching: ‘There is no Hindu, no Muslim’.",
+       "approximate": false,
+       "quote": {
+        "text": "ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥",
+        "lang": "pa",
+        "translation": "There is one Being: whose name is Truth, the Creator, without fear, without enmity, of timeless form, unborn, self-existent — known by the Guru’s grace.",
+        "citation": "Guru Granth Sahib, Ang 1 (Mool Mantar)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 145
+      },
+      {
+       "id": "kurukshetra",
+       "name": "Kurukshetra",
+       "lat": 29.97,
+       "lon": 76.85,
+       "when": "First udasi (east)",
+       "description": "He is said to have questioned empty ritual at the eclipse fair.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 210
+      },
+      {
+       "id": "haridwar",
+       "name": "Haridwar",
+       "lat": 29.95,
+       "lon": 78.16,
+       "when": "First udasi",
+       "description": "At the river ghats he is said to have asked pilgrims to look to the One rather than to the rite.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜਉ ਤਉ ਪ੍ਰੇਮ ਖੇਲਣ ਕਾ ਚਾਉ ॥ ਸਿਰੁ ਧਰਿ ਤਲੀ ਗਲੀ ਮੇਰੀ ਆਉ ॥",
+        "lang": "pa",
+        "translation": "If you long to play the game of love, then come to my path with your head on your palm.",
+        "citation": "Guru Granth Sahib, Ang 1412 (shalok)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1412&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 126
+      },
+      {
+       "id": "varanasi",
+       "name": "Varanasi",
+       "lat": 25.32,
+       "lon": 83.0,
+       "when": "First udasi",
+       "description": "Tradition places him in the city of scholars and pilgrims.",
+       "approximate": false,
+       "quote": {
+        "text": "ਕਰਮ ਖੰਡ ਕੀ ਬਾਣੀ ਜੋਰੁ ॥",
+        "lang": "pa",
+        "translation": "In the realm of grace, the word is power.",
+        "citation": "Guru Granth Sahib, Ang 8 (Japji, pauri 37)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=8&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 702
+      },
+      {
+       "id": "gaya",
+       "name": "Gaya",
+       "lat": 24.8,
+       "lon": 85.0,
+       "when": "First udasi",
+       "description": "A traditional stop on his eastern journey.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੋਚੈ ਸੋਚਿ ਨ ਹੋਵਈ ਜੇ ਸੋਚੀ ਲਖ ਵਾਰ ॥",
+        "lang": "pa",
+        "translation": "By thinking, purity cannot be reached, though one think a hundred thousand times.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 1)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 210
+      },
+      {
+       "id": "dhubri",
+       "name": "Dhubri (Assam)",
+       "lat": 26.02,
+       "lon": 89.98,
+       "when": "First udasi",
+       "description": "A gurdwara at Dhubri commemorates Guru Nanak’s visit to Assam, later joined by Guru Tegh Bahadur’s.",
+       "approximate": true,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 518
+      },
+      {
+       "id": "puri",
+       "name": "Jagannath Puri",
+       "lat": 19.8,
+       "lon": 85.83,
+       "when": "First udasi",
+       "description": "Tradition links the cosmic aarti hymn to the lamp-lit rituals of this temple town.",
+       "approximate": false,
+       "quote": {
+        "text": "ਗਗਨ ਮੈ ਥਾਲੁ ਰਵਿ ਚੰਦੁ ਦੀਪਕ ਬਨੇ ਤਾਰਿਕਾ ਮੰਡਲ ਜਨਕ ਮੋਤੀ ॥",
+        "lang": "pa",
+        "translation": "In the vast plate of the sky the sun and moon are the lamps, and the constellations of stars are the studded pearls.",
+        "citation": "Guru Granth Sahib, Ang 663 (Dhanasari, Aarti)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=663&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 812
+      },
+      {
+       "id": "rameswaram",
+       "name": "Rameswaram",
+       "lat": 9.29,
+       "lon": 79.31,
+       "when": "Second udasi (south)",
+       "description": "The southern journey is said to have reached the tip of the peninsula and Sri Lanka.",
+       "approximate": false,
+       "quote": {
+        "text": "ਪਾਤਾਲਾ ਪਾਤਾਲ ਲਖ ਆਗਾਸਾ ਆਗਾਸ ॥",
+        "lang": "pa",
+        "translation": "There are underworlds beneath underworlds, hundreds of thousands of skies above skies.",
+        "citation": "Guru Granth Sahib, Ang 5 (Japji, pauri 22)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=5&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 1363
+      },
+      {
+       "id": "kailash",
+       "name": "Mount Kailash region",
+       "lat": 31.07,
+       "lon": 81.31,
+       "when": "Third udasi (north)",
+       "description": "The Siddh Gosht, his dialogue with yogis, is traditionally tied to the northern Himalaya.",
+       "approximate": true,
+       "quote": {
+        "text": "ਸਿਧ ਸਭਾ ਕਰਿ ਆਸਣਿ ਬੈਠੇ ਸੰਤ ਸਭਾ ਜੈਕਾਰੋ ॥",
+        "lang": "pa",
+        "translation": "The Siddhas hold their assembly, seated in their postures; the assembly of the saints calls out in praise.",
+        "citation": "Guru Granth Sahib, Ang 938 (Ramkali, Siddh Gosht)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=938&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 2431
+      },
+      {
+       "id": "mecca",
+       "name": "Mecca",
+       "lat": 21.42,
+       "lon": 39.83,
+       "when": "Fourth udasi (west)",
+       "description": "Janamsakhi accounts have him travel as a pilgrim in blue garb to the Hijaz.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 4248
+      },
+      {
+       "id": "baghdad",
+       "name": "Baghdad",
+       "lat": 33.31,
+       "lon": 44.36,
+       "when": "Fourth udasi",
+       "description": "Tradition says he spoke here of countless worlds beyond this one.",
+       "approximate": false,
+       "quote": {
+        "text": "ਪਾਤਾਲਾ ਪਾਤਾਲ ਲਖ ਆਗਾਸਾ ਆਗਾਸ ॥",
+        "lang": "pa",
+        "translation": "There are underworlds beneath underworlds, hundreds of thousands of skies above skies.",
+        "citation": "Guru Granth Sahib, Ang 5 (Japji, pauri 22)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=5&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "Sites and order follow the Janamsakhi tradition; accounts differ."
+       },
+       "leg_km": 1395
+      },
+      {
+       "id": "kartarpur",
+       "name": "Kartarpur",
+       "lat": 32.09,
+       "lon": 75.0,
+       "when": "1522–1539",
+       "description": "He settled here to farm, with community meals, and spent his last years.",
+       "approximate": false,
+       "quote": {
+        "text": "ਘਾਲਿ ਖਾਇ ਕਿਛੁ ਹਥਹੁ ਦੇਇ ॥ ਨਾਨਕ ਰਾਹੁ ਪਛਾਣਹਿ ਸੇਇ ॥੧॥",
+        "lang": "pa",
+        "translation": "One who earns by honest labour and gives something away from his own hand — says Nanak, that person knows the way.",
+        "citation": "Guru Granth Sahib, Ang 1245 (Sarang, shalok)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1245&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Nanak Dev Ji"
+       },
+       "leg_km": 2860
+      }
+     ]
+    },
+    {
+     "id": "angad",
+     "label": "Guru Angad (1504–1552)",
+     "colour": "#d9531e",
+     "summary": "The second Guru gave the Gurmukhi script its standard form and led from Khadur Sahib.",
+     "stops": [
+      {
+       "id": "matte-di-sarai",
+       "name": "Matte di Sarai (Muktsar)",
+       "lat": 30.47,
+       "lon": 74.52,
+       "when": "Born 1504",
+       "description": "Born Lehna, in a Khatri family, at Matte di Sarai.",
+       "approximate": true,
+       "quote": {
+        "text": "ਨਾਨਕ ਆਸਕੁ ਕਾਂਢੀਐ ਸਦ ਹੀ ਰਹੈ ਸਮਾਇ ॥",
+        "lang": "pa",
+        "translation": "Says Nanak: call him a true lover who stays forever absorbed in the beloved.",
+        "citation": "Guru Granth Sahib, Ang 474 (Asa di Var, shalok of Guru Angad)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=474&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Angad Dev Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "khadur-sahib",
+       "name": "Khadur Sahib",
+       "lat": 31.37,
+       "lon": 74.96,
+       "when": "1539–1552",
+       "description": "Guru Nanak named Lehna his successor; Khadur became the seat of the second Guru, with a langar and wrestling ground.",
+       "approximate": false,
+       "quote": {
+        "text": "ਨਾਨਕ ਆਸਕੁ ਕਾਂਢੀਐ ਸਦ ਹੀ ਰਹੈ ਸਮਾਇ ॥",
+        "lang": "pa",
+        "translation": "Says Nanak: call him a true lover who stays forever absorbed in the beloved.",
+        "citation": "Guru Granth Sahib, Ang 474 (Asa di Var, shalok of Guru Angad)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=474&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Angad Dev Ji"
+       },
+       "leg_km": 109
+      }
+     ]
+    },
+    {
+     "id": "amar-das",
+     "label": "Guru Amar Das (1479–1574)",
+     "colour": "#c0392b",
+     "summary": "The third Guru built the baoli at Goindwal and spread the langar and the manji network.",
+     "stops": [
+      {
+       "id": "basarke",
+       "name": "Basarke",
+       "lat": 31.58,
+       "lon": 74.8,
+       "when": "Born 1479",
+       "description": "Born at Basarke Gillan near Amritsar.",
+       "approximate": false,
+       "quote": {
+        "text": "ਅਨੰਦੁ ਭਇਆ ਮੇਰੀ ਮਾਏ ਸਤਿਗੁਰੂ ਮੈ ਪਾਇਆ ॥",
+        "lang": "pa",
+        "translation": "There is bliss, O my mother, for I have found the True Guru.",
+        "citation": "Guru Granth Sahib, Ang 917 (Ramkali, Anand)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=917&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Amar Daas Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "goindwal",
+       "name": "Goindwal Sahib",
+       "lat": 31.44,
+       "lon": 75.07,
+       "when": "1552–1574",
+       "description": "He made Goindwal the Sikh centre, built the eighty-four-step baoli and insisted that all eat together in langar.",
+       "approximate": false,
+       "quote": {
+        "text": "ਅਨੰਦੁ ਭਇਆ ਮੇਰੀ ਮਾਏ ਸਤਿਗੁਰੂ ਮੈ ਪਾਇਆ ॥",
+        "lang": "pa",
+        "translation": "There is bliss, O my mother, for I have found the True Guru.",
+        "citation": "Guru Granth Sahib, Ang 917 (Ramkali, Anand)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=917&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Amar Daas Ji"
+       },
+       "leg_km": 30
+      }
+     ]
+    },
+    {
+     "id": "ram-das",
+     "label": "Guru Ram Das (1534–1581)",
+     "colour": "#a93226",
+     "summary": "The fourth Guru founded the town that became Amritsar and composed the Lavan.",
+     "stops": [
+      {
+       "id": "lahore",
+       "name": "Chuna Mandi, Lahore",
+       "lat": 31.58,
+       "lon": 74.33,
+       "when": "Born 1534",
+       "description": "Born in Lahore as Jetha.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹਰਿ ਪਹਿਲੜੀ ਲਾਵ ਪਰਵਿਰਤੀ ਕਰਮ ਦ੍ਰਿੜਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥",
+        "lang": "pa",
+        "translation": "In the first round of the wedding, the Lord sets before you the duty of right action in daily life.",
+        "citation": "Guru Granth Sahib, Ang 773 (Suhi, Lavan)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=773&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Raam Daas Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "goindwal",
+       "name": "Goindwal Sahib",
+       "lat": 31.44,
+       "lon": 75.07,
+       "when": "Years of service",
+       "description": "Served Guru Amar Das here and married his daughter Bibi Bhani.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹਰਿ ਪਹਿਲੜੀ ਲਾਵ ਪਰਵਿਰਤੀ ਕਰਮ ਦ੍ਰਿੜਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥",
+        "lang": "pa",
+        "translation": "In the first round of the wedding, the Lord sets before you the duty of right action in daily life.",
+        "citation": "Guru Granth Sahib, Ang 773 (Suhi, Lavan)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=773&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Raam Daas Ji"
+       },
+       "leg_km": 72
+      },
+      {
+       "id": "ramdaspur",
+       "name": "Ramdaspur (Amritsar)",
+       "lat": 31.62,
+       "lon": 74.88,
+       "when": "1574–1581",
+       "description": "Founded the pool and township that became Amritsar.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹਰਿ ਪਹਿਲੜੀ ਲਾਵ ਪਰਵਿਰਤੀ ਕਰਮ ਦ੍ਰਿੜਾਇਆ ਬਲਿ ਰਾਮ ਜੀਉ ॥",
+        "lang": "pa",
+        "translation": "In the first round of the wedding, the Lord sets before you the duty of right action in daily life.",
+        "citation": "Guru Granth Sahib, Ang 773 (Suhi, Lavan)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=773&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Raam Daas Ji"
+       },
+       "leg_km": 27
+      }
+     ]
+    },
+    {
+     "id": "arjan",
+     "label": "Guru Arjan (1563–1606)",
+     "colour": "#8e2b2b",
+     "summary": "The fifth Guru compiled the Adi Granth and built Harmandir Sahib; he was the first Sikh martyr.",
+     "stops": [
+      {
+       "id": "amritsar",
+       "name": "Amritsar",
+       "lat": 31.62,
+       "lon": 74.876,
+       "when": "1588–1604",
+       "description": "Laid the base of Harmandir Sahib and completed the Adi Granth in 1604.",
+       "approximate": false,
+       "quote": {
+        "text": "ਥਾਲ ਵਿਚਿ ਤਿੰਨਿ ਵਸਤੂ ਪਈਓ ਸਤੁ ਸੰਤੋਖੁ ਵੀਚਾਰੋ ॥",
+        "lang": "pa",
+        "translation": "Three things have been placed in the platter: truth, contentment and contemplation.",
+        "citation": "Guru Granth Sahib, Ang 1429 (Mundavani)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1429&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Arjan Dev Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "tarn-taran",
+       "name": "Tarn Taran",
+       "lat": 31.45,
+       "lon": 74.93,
+       "when": "1590",
+       "description": "Founded the sarovar at Tarn Taran as a pilgrimage and care centre.",
+       "approximate": false,
+       "quote": {
+        "text": "ਆਦਿ ਗੁਰਏ ਨਮਹ ॥",
+        "lang": "pa",
+        "translation": "I bow to the primal Guru.",
+        "citation": "Guru Granth Sahib, Ang 262 (Gauri, Sukhmani)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=262&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Arjan Dev Ji"
+       },
+       "leg_km": 20
+      },
+      {
+       "id": "lahore",
+       "name": "Lahore",
+       "lat": 31.58,
+       "lon": 74.31,
+       "when": "Martyred 1606",
+       "description": "Tortured and killed in Mughal custody; Sikh tradition recalls his acceptance of the divine will.",
+       "approximate": false,
+       "quote": {
+        "text": "ਤੇਰਾ ਕੀਆ ਮੀਠਾ ਲਾਗੈ ॥",
+        "lang": "pa",
+        "translation": "What You do is sweet to me.",
+        "citation": "Guru Granth Sahib, Ang 394 (Asa)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=394&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Arjan Dev Ji",
+        "note": "The verse is by Guru Arjan; its place in his martyrdom is traditional."
+       },
+       "leg_km": 61
+      }
+     ]
+    },
+    {
+     "id": "hargobind",
+     "label": "Guru Hargobind (1595–1644)",
+     "colour": "#6c3483",
+     "summary": "The sixth Guru joined spiritual and worldly authority (miri-piri) and armed the community.",
+     "stops": [
+      {
+       "id": "amritsar",
+       "name": "Amritsar (Akal Takht)",
+       "lat": 31.62,
+       "lon": 74.876,
+       "when": "1606",
+       "description": "Built the Akal Takht facing Harmandir Sahib.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ ਜੁ ਲਰੈ ਦੀਨ ਕੇ ਹੇਤ ॥",
+        "lang": "pa",
+        "translation": "He alone is known as a hero who fights for the oppressed.",
+        "citation": "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1105&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Bhagat Kabeer Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Bhagat Kabir and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "gwalior",
+       "name": "Gwalior Fort",
+       "lat": 26.23,
+       "lon": 78.17,
+       "when": "1609–1612",
+       "description": "Held at Gwalior; tradition says he secured the release of 52 hill rajas with him.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ ਜੁ ਲਰੈ ਦੀਨ ਕੇ ਹੇਤ ॥",
+        "lang": "pa",
+        "translation": "He alone is known as a hero who fights for the oppressed.",
+        "citation": "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1105&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Bhagat Kabeer Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Bhagat Kabir and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 680
+      },
+      {
+       "id": "kiratpur",
+       "name": "Kiratpur Sahib",
+       "lat": 31.17,
+       "lon": 76.5,
+       "when": "1635",
+       "description": "Founded Kiratpur and settled there after the battles with Mughal forces.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ ਜੁ ਲਰੈ ਦੀਨ ਕੇ ਹੇਤ ॥",
+        "lang": "pa",
+        "translation": "He alone is known as a hero who fights for the oppressed.",
+        "citation": "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1105&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Bhagat Kabeer Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Bhagat Kabir and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 573
+      }
+     ]
+    },
+    {
+     "id": "har-rai",
+     "label": "Guru Har Rai (1630–1661)",
+     "colour": "#2471a3",
+     "summary": "The seventh Guru was known for compassion and for the Kiratpur herbal garden and dispensary.",
+     "stops": [
+      {
+       "id": "kiratpur",
+       "name": "Kiratpur Sahib",
+       "lat": 31.17,
+       "lon": 76.5,
+       "when": "1644–1661",
+       "description": "Became Guru at fourteen; kept a gentle court with a large menagerie and herb garden.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Nanak and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "malwa",
+       "name": "Malwa (tour)",
+       "lat": 30.2,
+       "lon": 74.95,
+       "when": "c. 1650s",
+       "description": "Tradition has him tour the Malwa region and gather followers.",
+       "approximate": true,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Nanak and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 183
+      }
+     ]
+    },
+    {
+     "id": "har-krishan",
+     "label": "Guru Har Krishan (1656–1664)",
+     "colour": "#1f618d",
+     "summary": "The child Guru, who tended the sick in Delhi during a smallpox epidemic.",
+     "stops": [
+      {
+       "id": "kiratpur",
+       "name": "Kiratpur Sahib",
+       "lat": 31.17,
+       "lon": 76.5,
+       "when": "Born 1656",
+       "description": "Born at Kiratpur and named Guru at five.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Tegh Bahadur and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "panjokhra",
+       "name": "Panjokhra (Ambala)",
+       "lat": 30.37,
+       "lon": 76.78,
+       "when": "1664",
+       "description": "Tradition says he rested here on the way to Delhi.",
+       "approximate": true,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Tegh Bahadur and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 93
+      },
+      {
+       "id": "delhi",
+       "name": "Delhi (Bangla Sahib)",
+       "lat": 28.63,
+       "lon": 77.21,
+       "when": "Died 1664",
+       "description": "He cared for the sick of Delhi and died of smallpox; Gurdwara Bangla Sahib marks the site.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Tegh Bahadur and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 198
+      }
+     ]
+    },
+    {
+     "id": "tegh-bahadur",
+     "label": "Guru Tegh Bahadur (1621–1675)",
+     "colour": "#117864",
+     "summary": "The ninth Guru travelled widely before standing up for freedom of conscience in Delhi.",
+     "stops": [
+      {
+       "id": "bakala",
+       "name": "Bakala",
+       "lat": 31.61,
+       "lon": 75.26,
+       "when": "1664",
+       "description": "Recognised as Guru at Bakala after a long wait.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "anandpur",
+       "name": "Makhowal (Anandpur)",
+       "lat": 31.23,
+       "lon": 76.5,
+       "when": "1665",
+       "description": "Bought the land at Makhowal and founded the town later called Anandpur.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 125
+      },
+      {
+       "id": "patna",
+       "name": "Patna",
+       "lat": 25.6,
+       "lon": 85.14,
+       "when": "c. 1666",
+       "description": "Stayed at Patna, where his son Gobind Rai was born.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 1051
+      },
+      {
+       "id": "dhubri",
+       "name": "Dhubri (Assam)",
+       "lat": 26.02,
+       "lon": 89.98,
+       "when": "c. 1669",
+       "description": "Travelled east to Assam, where a gurdwara marks his visit.",
+       "approximate": true,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 487
+      },
+      {
+       "id": "delhi",
+       "name": "Chandni Chowk, Delhi",
+       "lat": 28.65,
+       "lon": 77.23,
+       "when": "1675",
+       "description": "Executed in Delhi after taking a stand for the right of Kashmiri Pandits to practise their faith; Sikhs remember him as ‘Hind di Chadar’.",
+       "approximate": false,
+       "quote": {
+        "text": "ਭੈ ਕਾਹੂ ਕਉ ਦੇਤ ਨਹਿ ਨਹਿ ਭੈ ਮਾਨਤ ਆਨ ॥ ਕਹੁ ਨਾਨਕ ਸੁਨਿ ਰੇ ਮਨਾ ਗਿਆਨੀ ਤਾਹਿ ਬਖਾਨਿ ॥੧੬॥",
+        "lang": "pa",
+        "translation": "One who neither frightens anyone nor is frightened by anyone — says Nanak, listen, O mind: call such a person wise.",
+        "citation": "Guru Granth Sahib, Ang 1427 (shalok of Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1427&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 1292
+      }
+     ]
+    },
+    {
+     "id": "gobind-singh",
+     "label": "Guru Gobind Singh (1666–1708)",
+     "colour": "#b9770e",
+     "summary": "The tenth Guru founded the Khalsa in 1699 and named the Guru Granth Sahib as his successor.",
+     "stops": [
+      {
+       "id": "patna",
+       "name": "Patna",
+       "lat": 25.6,
+       "lon": 85.14,
+       "when": "Born 1666",
+       "description": "Born at Patna Sahib as Gobind Rai.",
+       "approximate": false,
+       "quote": {
+        "text": "ਭੈ ਕਾਹੂ ਕਉ ਦੇਤ ਨਹਿ ਨਹਿ ਭੈ ਮਾਨਤ ਆਨ ॥ ਕਹੁ ਨਾਨਕ ਸੁਨਿ ਰੇ ਮਨਾ ਗਿਆਨੀ ਤਾਹਿ ਬਖਾਨਿ ॥੧੬॥",
+        "lang": "pa",
+        "translation": "One who neither frightens anyone nor is frightened by anyone — says Nanak, listen, O mind: call such a person wise.",
+        "citation": "Guru Granth Sahib, Ang 1427 (shalok of Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1427&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Tegh Bahadur and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "anandpur",
+       "name": "Anandpur Sahib",
+       "lat": 31.23,
+       "lon": 76.5,
+       "when": "1699",
+       "description": "Founded the Khalsa on Baisakhi 1699.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ ਜੁ ਲਰੈ ਦੀਨ ਕੇ ਹੇਤ ॥",
+        "lang": "pa",
+        "translation": "He alone is known as a hero who fights for the oppressed.",
+        "citation": "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1105&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Bhagat Kabeer Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Bhagat Kabir and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 1051
+      },
+      {
+       "id": "paonta",
+       "name": "Paonta Sahib",
+       "lat": 30.43,
+       "lon": 77.67,
+       "when": "1685–1688",
+       "description": "Lived on the Yamuna at Paonta, where poets gathered at his court.",
+       "approximate": false,
+       "quote": {
+        "text": "ਹੁਕਮੀ ਹੋਵਨਿ ਆਕਾਰ ਹੁਕਮੁ ਨ ਕਹਿਆ ਜਾਈ ॥",
+        "lang": "pa",
+        "translation": "By His Order forms come into being; His Order cannot be put into words.",
+        "citation": "Guru Granth Sahib, Ang 1 (Japji, pauri 2)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Nanak and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 143
+      },
+      {
+       "id": "chamkaur",
+       "name": "Chamkaur Sahib",
+       "lat": 30.9,
+       "lon": 76.4,
+       "when": "1704",
+       "description": "Two of his sons fell in the battle at the Chamkaur fort.",
+       "approximate": false,
+       "quote": {
+        "text": "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ ਜੁ ਲਰੈ ਦੀਨ ਕੇ ਹੇਤ ॥",
+        "lang": "pa",
+        "translation": "He alone is known as a hero who fights for the oppressed.",
+        "citation": "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1105&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Bhagat Kabeer Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Bhagat Kabir and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 132
+      },
+      {
+       "id": "muktsar",
+       "name": "Muktsar",
+       "lat": 30.47,
+       "lon": 74.52,
+       "when": "1705",
+       "description": "Site of the last battle; honours forty Sikhs who died there.",
+       "approximate": false,
+       "quote": {
+        "text": "ਭੈ ਕਾਹੂ ਕਉ ਦੇਤ ਨਹਿ ਨਹਿ ਭੈ ਮਾਨਤ ਆਨ ॥ ਕਹੁ ਨਾਨਕ ਸੁਨਿ ਰੇ ਮਨਾ ਗਿਆਨੀ ਤਾਹਿ ਬਖਾਨਿ ॥੧੬॥",
+        "lang": "pa",
+        "translation": "One who neither frightens anyone nor is frightened by anyone — says Nanak, listen, O mind: call such a person wise.",
+        "citation": "Guru Granth Sahib, Ang 1427 (shalok of Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1427&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Tegh Bahaadur Ji",
+        "note": "This Guru has no hymn in the Guru Granth Sahib; the verse is by Guru Tegh Bahadur and chosen to illustrate the theme, not attributed to this Guru."
+       },
+       "leg_km": 186
+      },
+      {
+       "id": "damdama",
+       "name": "Talwandi Sabo (Damdama Sahib)",
+       "lat": 29.99,
+       "lon": 75.08,
+       "when": "1705–1706",
+       "description": "Tradition says he re-dictated the Adi Granth here, adding the hymns of his father, Guru Tegh Bahadur.",
+       "approximate": false,
+       "quote": {
+        "text": "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ ਮਾਨੈ ॥",
+        "lang": "pa",
+        "translation": "The person who, amid pain, does not feel pain…",
+        "citation": "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=633&source=G",
+        "generic": false,
+        "label": "",
+        "writer": "Guru Tegh Bahaadur Ji"
+       },
+       "leg_km": 76
+      },
+      {
+       "id": "nanded",
+       "name": "Nanded",
+       "lat": 19.15,
+       "lon": 77.32,
+       "when": "1708",
+       "description": "Declared the Guru Granth Sahib the eternal Guru before his death.",
+       "approximate": false,
+       "quote": {
+        "text": "ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥",
+        "lang": "pa",
+        "translation": "There is one Being: whose name is Truth, the Creator, without fear, without enmity, of timeless form, unborn, self-existent — known by the Guru’s grace.",
+        "citation": "Guru Granth Sahib, Ang 1 (Mool Mantar)",
+        "work": "Guru Granth Sahib",
+        "verified_from": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+        "generic": true,
+        "label": "From the text (general)",
+        "writer": "Guru Nanak Dev Ji"
+       },
+       "leg_km": 1226
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pandavas",
+   "series_key": "india_journey_pandavas",
+   "subgroup": "Epics",
+   "title": "The Pandavas’ journey and battles",
+   "subtitle": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.",
+   "tradition": "Mahabharata",
+   "color": "#1e88e5",
+   "intro": "Stops are approximate modern identifications of places named in the epic; each verse is copied from the public text linked beside it.",
+   "routes": [
+    {
+     "id": "route",
+     "label": "The Pandavas’ route and battles",
+     "colour": "#1e88e5",
+     "summary": "From Hastinapura through exile and Indraprastha to the war at Kurukshetra and the final walk to the Himalaya.",
+     "stops": [
+      {
+       "id": "hastinapura",
+       "name": "Kuru Kingdom (Hastinapura)",
+       "lat": 29.16,
+       "lon": 78.01,
+       "when": "On the way",
+       "description": "The Pandavas grow up in the Kuru capital.",
+       "approximate": false,
+       "quote": {
+        "text": "धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ॥",
+        "lang": "sa",
+        "translation": "On the field of dharma, at Kurukshetra, assembled and eager for battle, what did my people and the sons of Pandu do, O Sanjaya?",
+        "citation": "Bhagavad Gita 1.1",
+        "work": "Mahabharata",
+        "verified_from": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "varanavata",
+       "name": "Varanavata",
+       "lat": 29.1,
+       "lon": 77.2,
+       "when": "On the way",
+       "description": "The house of lac is said to have been set alight here; the brothers escaped through a tunnel.",
+       "approximate": true,
+       "quote": {
+        "text": "ततस्तस्मिन्पुरे लोका नगरे वारणावते। दृष्ट्वा जतुगृहं दग्धमन्वशोचन्त दुःखिताः॥",
+        "lang": "sa",
+        "translation": "Then the people of the city of Varanavata, seeing the house of lac burnt, mourned in sorrow.",
+        "citation": "Mahabharata 1.154.13",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-01-आदिपर्व-154",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 79
+      },
+      {
+       "id": "ekachakra",
+       "name": "Ekachakra",
+       "lat": 26.75,
+       "lon": 79.0,
+       "when": "On the way",
+       "description": "Hiding as Brahmins, they live here until Bhima kills the demon Baka. The location is uncertain.",
+       "approximate": true,
+       "quote": {
+        "text": "जटाः कृत्वाऽऽत्मनः सर्वे वल्कलाजिनवाससः। कुन्त्या सह महात्मानो बिभ्रतस्तापसं वपुः॥",
+        "lang": "sa",
+        "translation": "They all took on matted locks and clothing of bark and deerskin, and with Kunti the great-souled brothers bore the look of ascetics.",
+        "citation": "Mahabharata 1.170.2",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-01-आदिपर्व-170",
+        "generic": true,
+        "label": "From the text (general)"
+       },
+       "leg_km": 316
+      },
+      {
+       "id": "panchala",
+       "name": "Panchala (Kampilya and Ahichchhatra)",
+       "lat": 27.2,
+       "lon": 79.45,
+       "when": "On the way",
+       "description": "At Draupadi’s svayamvara in Panchala, Arjuna wins her hand.",
+       "approximate": false,
+       "quote": {
+        "text": "तत्रेमे कुरुपाञ्चालाः शाल्वा माद्रेयजाङ्गलाः ।\nशूरसेनाः पुलिन्दाश्च बोधा मालास्तथैव च ।",
+        "lang": "sa",
+        "translation": "Here are these: the Kurus and Panchalas, the Shalvas, the Madreyas and Jangalas, the Shurasenas, Pulindas, Bodhas and Malas.",
+        "citation": "Mahabharata 6.9.39 (Bhishma Parva, Bhumi Parva; numbering as on sa.wikisource)",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-06-भीष्मपर्व-009",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 67
+      },
+      {
+       "id": "indraprastha",
+       "name": "Indraprastha",
+       "lat": 28.61,
+       "lon": 77.21,
+       "when": "On the way",
+       "description": "Yudhishthira founds a kingdom and performs the Rajasuya.",
+       "approximate": false,
+       "quote": {
+        "text": "इन्द्रप्रस्थे वसन्तस्ते त्रीणि वर्षाणि विंशतिम्। द्वादशाब्दानथैकं च बभूवुर्द्यूतनिर्जिताः॥",
+        "lang": "sa",
+        "translation": "They lived at Indraprastha for three and twenty years; then, beaten at dice, they spent twelve years and one more in exile.",
+        "citation": "Mahabharata 1.134.6",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-01-आदिपर्व-134",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 270
+      },
+      {
+       "id": "magadha",
+       "name": "Magadha",
+       "lat": 25.02,
+       "lon": 85.42,
+       "when": "Battle",
+       "description": "Bhima defeats Jarasandha in a duel lasting many days.",
+       "approximate": false,
+       "quote": {
+        "text": "वारवास्यायवाहाश्च चक्राश्चक्रातयः शकाः।\nविदेहा मगधाः स्वक्षा मलजा विजयास्तथा ।",
+        "lang": "sa",
+        "translation": "The Varavasyas, Ayavahas, Chakras, Chakratayas and Shakas; the Videhas, Magadhas, Svakshas, Malajas and Vijayas.",
+        "citation": "Mahabharata 6.9.45 (Bhishma Parva, Bhumi Parva; numbering as on sa.wikisource)",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-06-भीष्मपर्व-009",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 907
+      },
+      {
+       "id": "matsya",
+       "name": "Matsya (Virata Kingdom)",
+       "lat": 27.57,
+       "lon": 76.63,
+       "when": "Battle",
+       "description": "In their year in disguise, Arjuna drives off the Kaurava raid on Virata’s cattle.",
+       "approximate": false,
+       "quote": {
+        "text": "मत्स्याः कुशल्याः सौशल्याः कुंतयः कांतिकोसलाः ।\nचेदिमत्स्यकरूशाश्च भोजाः सिन्धुपुलिन्दकाः ।",
+        "lang": "sa",
+        "translation": "The Matsyas, Kushalyas, Saushalyas, Kuntis and Kanti-Kosalas; the Chedis, Matsyas and Karushas, the Bhojas, and the Sindhu-Pulindas.",
+        "citation": "Mahabharata 6.9.40 (Bhishma Parva, Bhumi Parva; numbering as on sa.wikisource)",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-06-भीष्मपर्व-009",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 921
+      },
+      {
+       "id": "kurukshetra",
+       "name": "Kurukshetra (Dharmakshetra)",
+       "lat": 29.97,
+       "lon": 76.85,
+       "when": "Battle",
+       "description": "The eighteen-day war between the Pandavas and Kauravas is fought here.",
+       "approximate": false,
+       "quote": {
+        "text": "धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ॥",
+        "lang": "sa",
+        "translation": "On the field of dharma, at Kurukshetra, assembled and eager for battle, what did my people and the sons of Pandu do, O Sanjaya?",
+        "citation": "Bhagavad Gita 1.1",
+        "work": "Mahabharata",
+        "verified_from": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 268
+      },
+      {
+       "id": "mahaprasthana",
+       "name": "Himalaya and Mount Meru (Mahaprasthana)",
+       "lat": 30.95,
+       "lon": 79.0,
+       "when": "On the way",
+       "description": "At the end, the brothers set out for the Himalaya on their final journey.",
+       "approximate": true,
+       "quote": {
+        "text": "तं चाप्यतिक्रमन्तस्ते ददृशुर्वालुकार्णवम्। अवैक्षन्त महाशैलं मेरुं शिखरिणां वरम्॥",
+        "lang": "sa",
+        "translation": "Passing beyond that, they saw an ocean of sand, and they beheld the great mountain Meru, best of peaked ranges.",
+        "citation": "Mahabharata 17.2.2",
+        "work": "Mahabharata",
+        "verified_from": "https://sa.wikisource.org/wiki/महाभारतम्-17-महाप्रस्थानिकपर्व-002",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 233
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rama",
+   "series_key": "india_journey_rama",
+   "subgroup": "Epics",
+   "title": "Rama’s route: Ayodhya to Lanka and back",
+   "subtitle": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.",
+   "tradition": "Ramayana",
+   "color": "#ff9933",
+   "intro": "Stops are approximate modern identifications of places named in the epic; each verse is copied from the public text linked beside it.",
+   "routes": [
+    {
+     "id": "route",
+     "label": "Rama’s route and battles",
+     "colour": "#ff9933",
+     "summary": "Exile from Ayodhya south through the forests to Lanka, and the return.",
+     "stops": [
+      {
+       "id": "ayodhya",
+       "name": "Ayodhya (Kosala)",
+       "lat": 26.8,
+       "lon": 82.2,
+       "when": "On the way",
+       "description": "Rama sets out into exile with Sita and Lakshmana.",
+       "approximate": false,
+       "quote": {
+        "text": "अयोध्या नाम नगरी तत्रासील्लोकविश्रुता |\n मनुना मानवेन्द्रेण या पुरी निर्मिता स्वयम् ||",
+        "lang": "sa",
+        "translation": "There was a city named Ayodhya, renowned throughout the world, which Manu, lord of humankind, had himself built.",
+        "citation": "Valmiki Ramayana 1.5.6",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 0
+      },
+      {
+       "id": "shringaverapura",
+       "name": "Shringaverapura (Nishada country)",
+       "lat": 25.55,
+       "lon": 81.75,
+       "when": "On the way",
+       "description": "They cross the Ganga with the help of the Nishada chief Guha.",
+       "approximate": false,
+       "quote": {
+        "text": "समुद्रमहीषीम् गङ्गाम् सारसक्रौञ्चनादिताम् | आससाद महाबाहुः शृङ्गिबेरपुरम् प्रति || २-५०-२६",
+        "lang": "sa",
+        "translation": "The mighty-armed Rama reached toward Shringaverapura, where Ganga, the ocean's queen, resounded with the calls of sarasa and krauncha birds.",
+        "citation": "Valmiki Ramayana 2.50.26",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/ayodhya/sarga50/ayodhyasans50.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 146
+      },
+      {
+       "id": "prayaga",
+       "name": "Prayaga (Bharadvaja Ashrama)",
+       "lat": 25.44,
+       "lon": 81.85,
+       "when": "On the way",
+       "description": "They visit the sage Bharadvaja.",
+       "approximate": false,
+       "quote": {
+        "text": "प्रयागम् अभितः पश्य सौमित्रे धूमम् उन्नतम् | अग्नेर् भगवतः केतुम् मन्ये सम्निहितः मुनिः || २-५४-५",
+        "lang": "sa",
+        "translation": "Look, Lakshmana, at the tall smoke near Prayaga, a sign of sacred fire; I think the sage is close by.",
+        "citation": "Valmiki Ramayana 2.54.5",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/ayodhya/sarga54/ayodhyasans54.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 16
+      },
+      {
+       "id": "chitrakuta",
+       "name": "Chitrakuta",
+       "lat": 25.2,
+       "lon": 80.9,
+       "when": "On the way",
+       "description": "They settle at Chitrakuta, where Bharata comes to beg Rama to return.",
+       "approximate": false,
+       "quote": {
+        "text": "अथ दाशरथिः चित्रम् चित्र कूटम् अदर्शयत् | भार्याम् अमर सम्काशः शचीम् इव पुरम् दरः",
+        "lang": "sa",
+        "translation": "Then Dasharatha’s son, radiant as a god, showed his wife the wondrous Chitrakuta, as Purandara shows Shachi his city.",
+        "citation": "Valmiki Ramayana 2.94.2",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/ayodhya/sarga94/ayodhyasans94.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 99
+      },
+      {
+       "id": "dandakaranya",
+       "name": "Dandakaranya",
+       "lat": 19.0,
+       "lon": 82.0,
+       "when": "On the way",
+       "description": "They enter the Dandaka forest and its hermitages.",
+       "approximate": false,
+       "quote": {
+        "text": "मानुषौ शस्त्र संपन्नौ चीर कृष्ण अजिन अंबरौ |\nप्रविष्टौ दण्डकारण्यम् घोरम् प्रमदया सह || ३-१९-२२",
+        "lang": "sa",
+        "translation": "Two armed men, clad in bark and black deerskin, have entered the dreadful Dandaka forest with a woman.",
+        "citation": "Valmiki Ramayana 3.19.22",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://sanskritdocuments.org/sites/valmikiramayan/aranya/sarga19/aranyasans19.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 699
+      },
+      {
+       "id": "panchavati",
+       "name": "Panchavati",
+       "lat": 20.01,
+       "lon": 73.79,
+       "when": "On the way",
+       "description": "Their hut at Panchavati is where Surpanakha and later Ravana’s plot begin.",
+       "approximate": false,
+       "quote": {
+        "text": "इतो द्वि योजने तात बहु मूल फल उदकः |\nदेशो बहु मृगः श्रीमान् पंचवटि अभिविश्रुतः || ३-१३-१३",
+        "lang": "sa",
+        "translation": "Two yojanas from here lies the famed, splendid place called Panchavati, rich in roots, fruit, water, and deer.",
+        "citation": "Valmiki Ramayana 3.13.13",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/aranya/sarga13/aranyasans13.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 868
+      },
+      {
+       "id": "janasthana",
+       "name": "Janasthana",
+       "lat": 20.0,
+       "lon": 73.8,
+       "when": "Battle",
+       "description": "Rama destroys the demon host of Khara and Dushana.",
+       "approximate": false,
+       "quote": {
+        "text": "जानीषे त्वं जनस्थानं भ्राता यत्र खरो मम ।\nदूषणश्च महाबाहुः स्वसा शूर्पणखा च मे ॥",
+        "lang": "sa",
+        "translation": "You know Janasthana, where my brother Khara lives, along with mighty Dushana and my sister Shurpanakha.",
+        "citation": "Valmiki Ramayana 3.34.2",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://ambuda.org/texts/ramayanam/3.34",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 2
+      },
+      {
+       "id": "kishkindha",
+       "name": "Kishkindha",
+       "lat": 15.33,
+       "lon": 76.46,
+       "when": "Battle",
+       "description": "Rama allies with Sugriva and defeats Vali.",
+       "approximate": false,
+       "quote": {
+        "text": "ते गत्वा दूरमध्वानं तस्मात्सप्तजनाश्रमात् ।\nददृशुस्तां दुराधर्षां किष्किन्धां वालिपालिताम् ॥",
+        "lang": "sa",
+        "translation": "After traveling far from the hermitage of the Seven Sages, they saw unconquerable Kishkindha, ruled by Vali.",
+        "citation": "Valmiki Ramayana 4.13.27",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://ambuda.org/texts/ramayanam/4.13",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 591
+      },
+      {
+       "id": "rameshwaram-setu",
+       "name": "Rameshwaram and the Setu",
+       "lat": 9.28,
+       "lon": 79.31,
+       "when": "On the way",
+       "description": "The vanara army builds the bridge to Lanka.",
+       "approximate": false,
+       "quote": {
+        "text": "एष सेतुम् महाउत्साहः करोतु मयि वानरः |\nतम् अहम् धारयिष्यामि तथा हि एष यथा पिता || ६-२२-४५",
+        "lang": "sa",
+        "translation": "Let this greatly energetic monkey build a bridge across me; I shall support it, for he is like his father.",
+        "citation": "Valmiki Ramayana 6.22.45",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://sanskritdocuments.org/sites/valmikiramayan/yuddha/sarga22/yuddhasans22.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 740
+      },
+      {
+       "id": "lanka",
+       "name": "Lanka",
+       "lat": 7.9,
+       "lon": 80.7,
+       "when": "Battle",
+       "description": "The war with Ravana ends with his defeat and Sita’s recovery.",
+       "approximate": false,
+       "quote": {
+        "text": "स सागरमनाधृष्यमतिक्रम्य महाबलः |\nत्रिकूटशिखरे लङ्कां स्थितां स्वस्थो ददर्श ह || ५-२-१",
+        "lang": "sa",
+        "translation": "Having crossed the impassable ocean, the mighty Hanuman saw Lanka situated on the summit of Trikuta, still in full strength.",
+        "citation": "Valmiki Ramayana 5.2.1",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://sanskritdocuments.org/sites/valmikiramayan/sundara/sarga2/sundarasans2.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 217
+      },
+      {
+       "id": "ayodhya-2",
+       "name": "Ayodhya (Kosala)",
+       "lat": 26.8,
+       "lon": 82.2,
+       "when": "On the way",
+       "description": "Rama returns to Ayodhya and is crowned.",
+       "approximate": false,
+       "quote": {
+        "text": "अयोध्या नाम नगरी तत्रासील्लोकविश्रुता |\n मनुना मानवेन्द्रेण या पुरी निर्मिता स्वयम् ||",
+        "lang": "sa",
+        "translation": "There was a city named Ayodhya, renowned throughout the world, which Manu, lord of humankind, had himself built.",
+        "citation": "Valmiki Ramayana 1.5.6",
+        "work": "Valmiki Ramayana",
+        "verified_from": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
+        "generic": false,
+        "label": ""
+       },
+       "leg_km": 2108
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -2,10 +2,21 @@ import {
   ArcElement, BarController, BarElement, CategoryScale, Chart as ChartJS, DoughnutController, Filler, Legend, LinearScale,
   LineController, LineElement, PieController, PointElement, Tooltip,
 } from 'chart.js';
+import { lazy, Suspense, useMemo } from 'react';
 import { Chart } from 'react-chartjs-2';
 import { formatAxis, formatMagnitude, isRadial } from '../format.js';
 import { CHART_COLORS, useTheme } from '../theme.js';
-import IndiaMap from './IndiaMap.jsx';
+const IndiaMap = lazy(() => import('./IndiaMap.jsx'));
+const LokSabhaAtlas = lazy(() => import('./LokSabhaAtlas.jsx'));
+const EpicAtlas = lazy(() => import('./EpicAtlas.jsx'));
+const VoterRollAtlas = lazy(() => import('./VoterRollAtlas.jsx'));
+const JourneyMap = lazy(() => import('./JourneyMap.jsx'));
+const FiscalView = lazy(() => import('./FiscalViews.jsx'));
+const FISCAL_TYPES = new Set(['fiscal-matrix', 'fiscal-compare', 'fiscal-spending', 'budget-anatomy']);
+
+function SpecialChartFallback() {
+  return <div className="chart-skeleton" aria-hidden="true" />;
+}
 
 ChartJS.register(
   ArcElement, BarController, BarElement, CategoryScale, DoughnutController, Filler, Legend, LinearScale,
@@ -130,15 +141,29 @@ export function buildOptions({ type, suffix, compact, horizontal, multi, colors 
 export default function ChartView({ labels = [], datasets = [], type = 'line', indexAxis = 'x', suffix = '', color = '#58a6ff', compact = false, title = 'Chart' }) {
   const horizontal = type === 'bar' && indexAxis === 'y';
   const colors = CHART_COLORS[useTheme()];
-  if (type === 'map') {
+  const data = useMemo(() => buildChartData({ labels, datasets, type, color, colors }), [labels, datasets, type, color, colors]);
+  const options = useMemo(() => buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1, colors }), [type, suffix, compact, horizontal, datasets.length, colors]);
+  if (FISCAL_TYPES.has(type)) return <Suspense fallback={<SpecialChartFallback />}><FiscalView type={type} compact={compact} /></Suspense>;
+  if (type === 'voter-roll') return <Suspense fallback={<SpecialChartFallback />}><VoterRollAtlas compact={compact} /></Suspense>;
+  if (type === 'journey-map') return <div className={`chart-canvas${compact ? ' compact' : ''}`}><Suspense fallback={<SpecialChartFallback />}><JourneyMap id={labels[0]} compact={compact} /></Suspense></div>;
+  if (type === 'categorical-map' || type === 'point-map') {
     return (
       <div className={`chart-canvas${compact ? ' compact' : ''}`}>
-        <IndiaMap labels={labels} values={datasets[0]?.values || []} suffix={suffix} title={title} compact={compact} />
+        <Suspense fallback={<SpecialChartFallback />}>
+          {type === 'point-map'
+          ? <EpicAtlas compact={compact} title={title} epic={/ramayana/i.test(title) ? 'ramayana' : 'mahabharata'} />
+          : <LokSabhaAtlas compact={compact} title={title} />}
+        </Suspense>
       </div>
     );
   }
-  const data = buildChartData({ labels, datasets, type, color, colors });
-  const options = buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1, colors });
+  if (type === 'map') {
+    return (
+      <div className={`chart-canvas${compact ? ' compact' : ''}`}>
+        <Suspense fallback={<SpecialChartFallback />}><IndiaMap labels={labels} values={datasets[0]?.values || []} datasets={datasets} suffix={suffix} title={title} compact={compact} /></Suspense>
+      </div>
+    );
+  }
   return (
     <div className={`chart-canvas${compact ? ' compact' : ''}`} role="img" aria-label={`${title} (${type} chart)`}>
       <Chart type={type === 'pie' ? 'pie' : type} data={data} options={options} />

@@ -1,12 +1,12 @@
 # Architecture
 
-Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams/architecture.drawio). Open the file at [app.diagrams.net](https://app.diagrams.net) (File ? Open from ? Device) or with the VS Code *Draw.io Integration* extension. It has five pages: System overview, Data pipeline, Static site, Django + React app, and Deployment.
+Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams/architecture.drawio). Open the file at [app.diagrams.net](https://app.diagrams.net) (File → Open from → Device) or with the VS Code *Draw.io Integration* extension. It has five pages: System overview, Data pipeline, Static site, Django + React app, and Deployment.
 
 ```
                  scheduled GitHub Actions collectors (see PIPELINES.md)
                                     |
                                     v
-            data/*.json  --->  docs/data/*.json  --->  Netlify (static dashboard) + GitHub Pages (backup mirror)
+            data/*.json  --->  data/catalog.json  --->  React static build + docs/api/*.json  --->  Netlify + GitHub Pages
                  |                                           ^
    scripts/export_catalog.mjs                                | links on every error page,
                  v                                           | footer, outage issues
@@ -29,12 +29,12 @@ Editable draw.io diagrams live in [`docs/diagrams/architecture.drawio`](diagrams
 | Path | Role |
 | --- | --- |
 | `scripts/`, `.github/workflows/*update*.yml` | Collectors that fetch official sources and write `data/` |
-| `docs/` | Static dashboard (Home, Explore, About, API) published on Netlify and mirrored on GitHub Pages. Also the backup site for the web app |
+| `docs/` | React static build with generated API snapshots, published on Netlify and mirrored on GitHub Pages; backup for the web app |
 | `scripts/export_catalog.mjs` | Evaluates the dashboard's chart definitions and writes `data/catalog.json` |
-| `scripts/generate_art.py` | Generates the animated per-group and per-subgroup SVG illustrations into `docs/assets/` and `frontend/public/art/` |
+| `scripts/generate_art.py` | Generates shared artwork into `frontend/public/art/`, copied into the static build |
 | `frontend/src/components/ArtBackdrop.jsx` | Cross-fading, parallax page backdrop used by the Home, Explore, Indicator and About pages |
 | `frontend/src/components/Motion.jsx` | Interaction layer: scroll progress, glassy header, scroll-in reveals, cursor spotlight, count-up stats, typewriter, subgroup marquee, back-to-top |
-| `netlify.toml` | Publishes `docs/` on Netlify at <https://indiasjourney.netlify.app> (no build step); `deploy-dashboard.yml` publishes the GitHub Pages backup |
+| `netlify.toml` | Builds the shared React static site and publishes `docs/` on Netlify; `deploy-dashboard.yml` builds the same output for GitHub Pages |
 | `webapp/journey/` | Django project: settings, root URLs, WSGI |
 | `webapp/indicators/` | Models (Group, Subgroup, Indicator, Article, SavedChart), import commands, API views, OAuth adapters, error handlers |
 | `webapp/templates/` | Server-rendered error pages and allauth overrides, all with backup links |

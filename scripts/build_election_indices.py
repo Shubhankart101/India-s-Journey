@@ -123,7 +123,10 @@ def _stats(summary: dict[str, Counter]) -> dict[str, float | None]:
 
 def build_indices(payload: dict) -> dict:
     observations = payload["observations"]
-    source = f"https://github.com/{payload.get('source_repository', 'thecont1/india-votes-data')}/tree/{payload.get('source_commit', 'main')}"
+    repository = str(payload.get("source_repository") or "https://github.com/thecont1/india-votes-data").rstrip("/")
+    if not repository.startswith("http"):
+        repository = f"https://github.com/{repository}"
+    source = f"{repository}/tree/{payload.get('source_commit', 'main')}"
     grouped = _contests(observations)
     series: dict[str, dict] = {}
 
@@ -220,13 +223,13 @@ def build_indices(payload: dict) -> dict:
     for (year, state), contests in assemblies.items():
         if state not in latest or year > latest[state][0]:
             latest[state] = (year, _election_summary(contests))
-    assembly_compare = dict(frequency="Latest Assembly election, 2022?2026", source=source, subgroup=SUBGROUP_COMPARE)
+    assembly_compare = dict(frequency="Latest Assembly election, 2022–2026", source=source, subgroup=SUBGROUP_COMPARE)
     seats_total = Counter()
     for _, summary in latest.values():
         seats_total.update(summary["seats"])
     add(_series("india_assembly_latest_party_seats", *_ranked(seats_total, 12), title="Latest Assembly Elections: Seats by Party",
                 subtitle=f"Seats won across the latest Assembly election in {len(latest)} States/UTs", unit=" seats", color="#ff9933",
-                note="Sums seat winners from each State/UT's most recent Assembly election in the 2022?2026 ECI-derived results.", **assembly_compare))
+                note="Sums seat winners from each State/UT's most recent Assembly election in the 2022–2026 ECI-derived results.", **assembly_compare))
     states_won = Counter(summary["seats"].most_common(1)[0][0] for _, summary in latest.values() if summary["seats"])
     add(_series("india_assembly_latest_largest_party_states", *_ranked(states_won, 10), title="Latest Assembly Elections: States Led by Party",
                 subtitle="Number of States/UTs where each party won the most seats", unit=" States/UTs", color="#39c5bb",

@@ -67,6 +67,7 @@ export function chartModes({ chart_type: chartType = 'line', labels = [], datase
   const numbers = values.filter(value => value !== null && Number.isFinite(Number(value))).map(Number);
   const nativeRadial = isRadial(chartType);
   if (chartType === 'map') return { modes: ['map', 'bar'], initial: 'map' };
+  if (chartType === 'categorical-map' || chartType === 'point-map' || chartType === 'journey-map') return { modes: [chartType], initial: chartType };
   const additive = datasets.length === 1 && labels.length >= 2 && labels.length <= 80
     && !labels.some(label => /^\d{4}/.test(String(label)))
     && (['state', 'category'].includes(scope) || chartType === 'bar')

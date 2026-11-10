@@ -429,7 +429,7 @@ def merge_chart_files(root: Path) -> int:
     additions = build_legal_layer(root)
     if not additions:
         raise RuntimeError("No Judiciary & Pending Cases series were built from data/legal/njdg_snapshot.json")
-    paths = (root / "data" / "chart-latest.json", root / "docs" / "data" / "chart-latest.json")
+    paths = (root / "data" / "chart-latest.json",)
     for path in paths:
         payload = json.loads(path.read_text(encoding="utf-8"))
         if not isinstance(payload, dict) or not isinstance(payload.get("series"), dict):
@@ -437,15 +437,14 @@ def merge_chart_files(root: Path) -> int:
         payload["series"] = {key: value for key, value in payload["series"].items() if not key.startswith("jud_")}
         payload["series"].update(additions)
         path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (root / "docs" / "data.js").write_text(f"window.INDIA_DASHBOARD_DATA = {json.dumps(payload, indent=2)};\n", encoding="utf-8")
-    return len(additions)
+        return len(additions)
 
 
 def main() -> int:
     import argparse
 
     parser = argparse.ArgumentParser(description="Build judiciary charts from a committed NJDG snapshot")
-    parser.add_argument("--merge", action="store_true", help="merge into data/chart-latest.json and docs/data/chart-latest.json")
+    parser.add_argument("--merge", action="store_true", help="merge into data/chart-latest.json")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
     if not args.merge:

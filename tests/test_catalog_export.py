@@ -1,6 +1,5 @@
 import json
 import subprocess
-import tempfile
 import unittest
 from pathlib import Path
 
@@ -11,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 class CatalogExportTests(unittest.TestCase):
     def test_export_prefers_refreshed_feeds_over_embedded_article_copies(self):
         feeds = (
-            (ROOT / "docs" / "data" / "indian-matrix-latest.json", "Indian Matrix"),
-            (ROOT / "docs" / "data" / "substack-latest.json", "Polity and Policy"),
+            (ROOT / "data" / "indian-matrix-latest.json", "Indian Matrix"),
+            (ROOT / "data" / "substack-latest.json", "Polity and Policy"),
         )
         expected_articles = []
         for path, publisher in feeds:
@@ -20,8 +19,8 @@ class CatalogExportTests(unittest.TestCase):
             newest = snapshot["articles"][0]
             expected_articles.append((publisher, newest["link"], newest["title"]))
 
-        with tempfile.TemporaryDirectory() as temporary_directory:
-            output = Path(temporary_directory) / "catalog.json"
+        output = ROOT / "tests" / ".catalog-export-test.json"
+        try:
             subprocess.run(
                 ["node", str(ROOT / "scripts" / "export_catalog.mjs"), str(output)],
                 cwd=ROOT,
@@ -30,6 +29,8 @@ class CatalogExportTests(unittest.TestCase):
                 text=True,
             )
             catalog = json.loads(output.read_text(encoding="utf-8"))
+        finally:
+            output.unlink(missing_ok=True)
 
         exported_articles = {
             (item["publisher"], item["url"], item["title"])

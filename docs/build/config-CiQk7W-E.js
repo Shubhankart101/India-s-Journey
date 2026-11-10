@@ -1,0 +1,1 @@
+var e=`https://indiasjourney.netlify.app/`,t=`https://shubhankart101.github.io/India-s-Journey/`,n=`/api/docs/`,r=`https://indias-journey.onrender.com/`,i=`https://politypolicy.substack.com/about`;export{r as a,i,t as n,e as r,n as t};

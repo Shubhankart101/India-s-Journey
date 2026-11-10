@@ -1,11 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
-import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
+import { useAsync, useBatchedCount, useDebounced, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import { AMBIENT_ART } from '../art.js';
+import ExplainerArticle from '../components/ExplainerArticle.jsx';
+import { SubgroupPage } from '../components/SubgroupPage.jsx';
+import GroupCards from '../components/GroupCards.jsx';
+import { articleFor } from '../subgroup.js';
+import { EXPLORE_KICKER, groupSanskrit } from '../sanskrit.js';
 
 const PAGE_SIZE = 24;
 // Maps draw lazily, so the India in Maps group loads every card (100 per request, the API maximum).
@@ -13,7 +18,26 @@ const MAP_CATEGORY = 'india-in-maps';
 const MAP_PAGE_SIZE = 100;
 const FILTER_KEYS = ['q', 'category', 'subgroup', 'live', 'chart', 'sort'];
 
-export default function Explore() {
+const toSlug = value => String(value || '').toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+function resolveLegacyFilters(categorySlug, subgroupSlug, categories, aliases) {
+  const legacyGroupAliases = new Map(Object.entries(aliases.groups).map(([name, target]) => [toSlug(name), target]));
+  const legacySubgroupAliases = new Map(Object.entries(aliases.subgroups).map(([key, target]) => {
+    const [group, subgroup] = key.split('|');
+    return [`${toSlug(group)}|${toSlug(subgroup)}`, target];
+  }));
+  const target = legacySubgroupAliases.get(`${categorySlug}|${subgroupSlug}`)
+    || legacyGroupAliases.get(categorySlug);
+  if (!target) return { category: categorySlug, subgroup: subgroupSlug };
+  const category = categories.find(item => item.slug === toSlug(target.group));
+  if (!category) return { category: categorySlug, subgroup: subgroupSlug };
+  const subgroup = target.subgroup
+    ? category.subgroups.find(item => item.slug === toSlug(target.subgroup))
+    : null;
+  return { category: category.slug, subgroup: subgroup?.slug || '' };
+}
+
+function ExploreBrowse() {
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState(params.get('q') || '');
   const debouncedQuery = useDebounced(query.trim(), 300);
@@ -28,6 +52,25 @@ export default function Explore() {
     Object.entries(changes).forEach(([key, value]) => (value ? next.set(key, value) : next.delete(key)));
     setParams(next, { replace: true });
   };
+
+  useEffect(() => {
+    if (!categories.data || !filters.category) return undefined;
+    const currentCategory = categories.data.find(item => item.slug === filters.category);
+    const currentSubgroup = currentCategory?.subgroups.some(item => item.slug === filters.subgroup);
+    if (currentCategory && (!filters.subgroup || currentSubgroup)) return undefined;
+    let active = true;
+    import('../data/legacy-aliases.json').then(({ default: aliases }) => {
+      if (!active) return;
+      const resolved = resolveLegacyFilters(filters.category, filters.subgroup, categories.data, aliases);
+      if (resolved.category === filters.category && resolved.subgroup === filters.subgroup) return;
+      const next = new URLSearchParams(params);
+      next.set('category', resolved.category);
+      if (resolved.subgroup) next.set('subgroup', resolved.subgroup);
+      else next.delete('subgroup');
+      setParams(next, { replace: true });
+    });
+    return () => { active = false; };
+  }, [categories.data, filters.category, filters.subgroup, params, setParams]);
 
   const urlQuery = params.get('q') || '';
   useEffect(() => {
@@ -52,6 +95,8 @@ export default function Explore() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [first.data]);
 
+  const [shown, sentinel, windowDone] = useBatchedCount(pages.items.length, filterKey);
+
   const loadMore = async () => {
     setLoadingMore(true);
     setMoreError(null);
@@ -70,7 +115,7 @@ export default function Explore() {
   }, [showAll, pages.key, pages.next, loadingMore, moreError]);
 
   const heroArt = useMemo(() => {
-    if (subgroup?.art) return subgroup.art;
+    if (subgroup) return subgroup.art || category?.art || AMBIENT_ART;
     if (category) return [...new Set([category.art, ...category.subgroups.map(item => item.art)].filter(Boolean))];
     return AMBIENT_ART;
   }, [category, subgroup]);
@@ -80,10 +125,13 @@ export default function Explore() {
     <>
       <section className="page-hero with-art">
         <ArtBackdrop art={heroArt} />
-        <p className="eyebrow">{category ? 'Group' : 'Explore'}</p>
+        <p className="eyebrow">{category ? 'Group' : 'Explore'}<span className="sa-kicker" lang="sa" aria-hidden="true">{category ? groupSanskrit(category.slug) : EXPLORE_KICKER}</span></p>
         <h1>{subgroup?.title || category?.title || 'Every indicator, one search away.'}</h1>
         <p className="lead">{subgroup?.description || category?.description || 'Filter by group and subgroup, search any keyword, then open an indicator for the full chart, data table and downloads.'}</p>
       </section>
+
+      {category && <ExplainerArticle category={category} subgroup={subgroup} indicators={first.data?.results || []} />}
+      {category?.slug === 'elections-democracy' && <p className="subgroup-callout">Looking for results by place? Open the <Link to="/elections">State and Union Territory election map</Link> for Lok Sabha and Assembly histories.</p>}
 
       <section className="explore-browse" aria-label="Browse">
         <div className="explore-browse-head">
@@ -96,40 +144,25 @@ export default function Explore() {
               <span className="explore-tile-name">← All groups</span>
               <span className="explore-tile-meta">Back to every group</span>
             </button>
-            {category.subgroups.map(item => (
-              <button
-                type="button"
-                role="listitem"
-                key={item.slug}
-                aria-pressed={item.slug === filters.subgroup}
-                className={`explore-tile${item.slug === filters.subgroup ? ' active' : ''}`}
-                style={{ '--card-art': `url(/art/${item.art || category.art})` }}
-                onClick={() => update({ subgroup: item.slug === filters.subgroup ? '' : item.slug })}
-              >
-                <span className="explore-tile-count">{item.indicator_count}</span>
-                <span className="explore-tile-name">{item.name}</span>
-                <span className="explore-tile-meta">{item.indicator_count} charts</span>
-              </button>
-            ))}
+            {category.subgroups.map(item => {
+              const info = articleFor(category.name, item.name).subgroup;
+              return (
+                <Link
+                  role="listitem"
+                  key={item.slug}
+                  to={`/explore/${category.slug}/${item.slug}`}
+                  className="explore-tile explore-article-card"
+                  style={{ '--card-art': `url(/art/${item.art || category.art})` }}
+                >
+                  <span className="explore-tile-count">{item.indicator_count}</span>
+                  <span className="explore-tile-name">{item.name}</span>
+                  {item.description && <span className="explore-tile-dek">{item.description}</span>}
+                  <span className="explore-tile-meta">{item.indicator_count} charts · {info?.format === 'map' ? 'Map + articles' : 'Long-form article'}</span>
+                </Link>
+              );
+            })}
           </div>
-        ) : (categories.data || []).length > 0 && (
-          <div className="explore-grid" role="list" aria-label="Groups">
-            {categories.data.map(item => (
-              <button
-                type="button"
-                role="listitem"
-                key={item.slug}
-                className="explore-tile"
-                style={{ '--card-art': `url(/art/${item.art || 'economy.svg'})` }}
-                onClick={() => update({ category: item.slug, subgroup: '' })}
-              >
-                <span className="explore-tile-count">{item.subgroups.reduce((sum, sub) => sum + (sub.indicator_count || 0), 0)}</span>
-                <span className="explore-tile-name">{item.name}</span>
-                <span className="explore-tile-meta">{item.subgroups.length} subgroups</span>
-              </button>
-            ))}
-          </div>
-        )}
+        ) : (categories.data || []).length > 0 && <GroupCards categories={categories.data} />}
       </section>
 
       <section className="filters" aria-label="Filters">
@@ -194,7 +227,8 @@ export default function Explore() {
           <>
             {pages.items.length === 0 ? <Empty>No indicators match. Try a broader search.</Empty> : (
               <div className="card-grid">
-                {pages.items.map(indicator => <IndicatorCard key={indicator.key} indicator={indicator} />)}
+                {pages.items.slice(0, shown).map(indicator => <IndicatorCard key={indicator.key} indicator={indicator} />)}
+                {!windowDone && <div ref={sentinel} className="card-sentinel" aria-hidden="true" />}
               </div>
             )}
             {moreError && <ErrorState error={moreError} />}
@@ -210,4 +244,16 @@ export default function Explore() {
       </section>
     </>
   );
+}
+
+// A group + subgroup URL opens that subgroup's article (or map selector); everything else is the browser above.
+export default function Explore() {
+  const [params] = useSearchParams();
+  const categories = useAsync(signal => api.categories(signal), []);
+  const categorySlug = params.get('category') || '';
+  const subgroupSlug = params.get('subgroup') || '';
+  if (categorySlug && subgroupSlug && categories.loading) return <Loading label="Loading the article…" />;
+  const category = (categories.data || []).find(item => item.slug === categorySlug);
+  if (category?.subgroups.some(item => item.slug === subgroupSlug)) return <SubgroupPage categorySlug={categorySlug} subgroupSlug={subgroupSlug} />;
+  return <ExploreBrowse />;
 }

@@ -109984,7 +109984,7 @@
       "chartType": "bar",
       "indexAxis": "y",
       "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21: Gross State Domestic Product (Current Prices); share of reported GSDP",
       "unit": "% of reported total",
       "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
     },
@@ -110064,7 +110064,7 @@
       "chartType": "bar",
       "indexAxis": "y",
       "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States; indexed to the State/UT median = 100",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 19: Per Capita Net State Domestic Product (Current Prices); indexed to the State/UT median = 100",
       "unit": "index (median = 100)",
       "note": "Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep."
     },
@@ -110146,7 +110146,7 @@
       "chartType": "bar",
       "indexAxis": "y",
       "scope": "state",
-      "source": "RBI Handbook of Statistics on Indian States and CEA; indexed to the State/UT median = 100",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 138; CEA per-capita power availability; indexed to the State/UT median = 100",
       "unit": "index (median = 100)",
       "note": "Calculated from the RBI snapshot for FY2024-25 covering all 28 States and every Union Territory the source reports. 35 of 36 States/UTs reported. Not published for: Ladakh."
     },
@@ -111628,7 +111628,7 @@
       ],
       "chartType": "doughnut",
       "scope": "category",
-      "source": "RBI Handbook of Statistics on Indian States; share of reported GSDP",
+      "source": "RBI Handbook of Statistics on Indian States 2024-25, Table 21: Gross State Domestic Product (Current Prices); share of reported GSDP",
       "note": "Share of reported GSDP across every State and Union Territory in the cited RBI snapshot. The eight largest shares are shown individually; the remaining States/UTs are combined.",
       "unit": "% of reported State GSDP"
     },

@@ -4,9 +4,9 @@ There are two deployments, plus a backup mirror:
 
 | Target | How | Trigger |
 | --- | --- | --- |
-| **Static dashboard on Netlify** (primary, <https://indiasjourney.netlify.app>) | [`netlify.toml`](../netlify.toml) publishes `docs/` as-is | Every push to `main` |
+| **Static dashboard on Netlify** (primary, <https://indiasjourney.netlify.app>) | [`netlify.toml`](../netlify.toml) builds the React static site and publishes `docs/` | Every push to `main` |
 | Backup mirror on GitHub Pages (<https://shubhankart101.github.io/India-s-Journey/>) | [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` | Push to `main`, or after any collector workflow |
-| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Render ([`render.yaml`](../render.yaml)), Fly.io ([`fly.toml`](../fly.toml)) or any container host | Render: auto on push. Fly.io: [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) once `FLY_API_TOKEN` is set |
+| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Render ([`render.yaml`](../render.yaml)), Fly.io ([`fly.toml`](../fly.toml)) or any container host | Render: auto on push (live host). Fly.io: paused; [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) is manual-only |
 
 See [BACKUP.md](BACKUP.md) for how the app and the two static copies point to each other.
 
@@ -24,15 +24,22 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 
 On Render and Fly.io you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$RENDER_EXTERNAL_HOSTNAME` and `$FLY_APP_NAME.fly.dev` automatically. Set them only for a custom domain.
 
-### Render
+### Render (live web app)
 
-1. In Render, choose **New → Blueprint**, connect this repository and pick `main`. Render reads [`render.yaml`](../render.yaml) and creates the `indias-journey` web service on the free plan, with a generated `DJANGO_SECRET_KEY`.
-2. Wait for the first build (about 5–8 minutes) and open `https://indias-journey.onrender.com` (Render adds a suffix if the name is taken).
+The live Django + React app runs on Render's free plan because the Fly.io trial credit ran out. One-click setup:
+
+<a href="https://render.com/deploy?repo=https://github.com/Shubhankart101/India-s-Journey"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"></a>
+
+1. In Render, choose **New → Blueprint** (or click the button above), connect this repository and pick `main`. Render reads [`render.yaml`](../render.yaml) and creates the `indias-journey` web service on the free plan, with a generated `DJANGO_SECRET_KEY`. No card is required.
+2. Wait for the first build (about 5–8 minutes) and open `https://indias-journey.onrender.com` (Render adds a suffix if the name is taken; update `WEB_APP_URL` in `frontend/src/config.js` and the static footers if so).
 3. Later pushes redeploy automatically, but only when `Dockerfile`, `webapp/`, `frontend/` or `data/catalog.json` change, so the frequent static-site and collector commits don't use up the free build minutes.
+4. The free service sleeps after 15 idle minutes; the React client retries gateway errors while it wakes, and the static site on Netlify/GitHub Pages stays up regardless.
 
 To deploy without the blueprint: **New → Web Service**, choose the repo, runtime **Docker**, plan **Free**, health check path `/api/health/`, and add `DJANGO_SECRET_KEY` and `WEB_CONCURRENCY=1`.
 
-### Fly.io
+### Fly.io (paused)
+
+Fly.io is no longer the live host: the trial credit is used up, so [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) now runs only when triggered manually. The steps below still work if the account is topped up.
 
 <a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/Open%20the%20web%20app%20on%20Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Open the web app on Fly.io"></a>
 
@@ -43,20 +50,13 @@ The Django + React app is deployed at <https://india-s-journey.fly.dev> on the e
 3. Ensure the app has a `DJANGO_SECRET_KEY` secret. If needed, generate a value with `python -c "import secrets; print(secrets.token_urlsafe(50))"`, then set it with `fly secrets set DJANGO_SECRET_KEY=<generated-value> --app india-s-journey`. Never commit or publish the value.
 4. Deploy with `fly deploy --app india-s-journey`. The configuration keeps the machine in `sin` and at 512 MB.
 5. The `/api/health/` check sends `Host = "india-s-journey.fly.dev"`. Fly runs service checks over the private network using the machine IP as the host; setting the public hostname lets Django validate the request without allowing arbitrary hosts.
-6. For automatic deploys, run `fly tokens create deploy` and save the token as the repository secret `FLY_API_TOKEN`. [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) then deploys on the same paths as Render, and skips itself while the secret is missing.
+6. To deploy from Actions, run `fly tokens create deploy`, save the token as the repository secret `FLY_API_TOKEN`, and trigger [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) manually (it no longer runs on push).
 
 ### Netlify
 
-The static dashboard is live at **<https://indiasjourney.netlify.app>** (Home, [Explore](https://indiasjourney.netlify.app/explore.html), [About](https://indiasjourney.netlify.app/about.html), [API](https://indiasjourney.netlify.app/api.html)). Every push to `main` redeploys it, and GitHub Pages mirrors it as the backup.
+The static React dashboard is live at **<https://indiasjourney.netlify.app>** and mirrored on GitHub Pages. It uses the same React application as Django, with static API snapshots generated into `docs/api/` during deployment. Internal routes use hash-based URLs, so both hosts can serve the site without route rewrites; the legacy `.html` pages redirect old bookmarks into the app.
 
-The repository root has no `index.html`, so Netlify needs to be told to publish `docs/`. Otherwise every URL shows Netlify's "Page not found". [`netlify.toml`](../netlify.toml) does this. It has no build command, adds a few security and cache headers, and `docs/404.html` serves as the not-found page.
-
-1. In Netlify, choose **Add new site → Import an existing project**, pick this repository and the `main` branch. Leave the build command empty; `netlify.toml` supplies `publish = "docs"`.
-2. If the site already exists, open **Site configuration → Build & deploy → Build settings** and make sure **Base directory** is empty and **Publish directory** is `docs`. Values set in the UI are overridden by `netlify.toml`. Then choose **Deploys → Trigger deploy → Clear cache and deploy site**.
-3. New sites can start as **Private**: visitors get a password page or a 401. Choose **Make public** (or **Site configuration → Access & security → Visitor access**) to open it to everyone.
-
-Netlify serves the static dashboard only. Compare, Swagger and the API need the Django app, so it runs locally or on a container host.
-
+[`netlify.toml`](../netlify.toml) runs `npm ci --prefix frontend` and `npm run build:static --prefix frontend`, then publishes `docs/`. Configure new Netlify sites with an empty base directory; the repository config supplies the build and publish settings. The Pages workflow runs the same static build before deployment.
 **Persistent data on free tiers.** None of these free plans keeps a disk, so SQLite (user accounts and saved charts) resets on redeploy or restart. The indicator catalogue is re-imported on every start, so the dashboards are unaffected.
 
 **Cloud Run example:**

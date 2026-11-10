@@ -42,36 +42,19 @@ Lists are paginated (`count`, `next`, `previous`, `results`), with at most 100 i
 
 `test_docs_and_errors.py` checks that the schema documents exactly these paths and that the documented response fields match the real payloads. CI also runs `manage.py spectacular --validate --fail-on-warn`.
 
-## Static JSON resources (Netlify and GitHub Pages)
+## Static API (Netlify and GitHub Pages)
 
-This section documents the static site, published on Netlify and mirrored on GitHub Pages; it has no backend. The Swagger UI at [`api.html`](api.html) documents read-only `GET` access to the project's JSON files. It does not expose mutation endpoints or guarantee an API service-level objective.
+The static site uses the same React API client as Django. During `npm run build:static`, `scripts/export_static_api.mjs` writes `categories.json`, `indicators.json`, `articles.json`, `search-index.json`, `stats.json`, and legacy group aliases under `docs/api/`. The client fetches these snapshots and applies search, filters, sorting, pagination, indicator detail, compare, and downloads in the browser. Results are derived from the same `data/catalog.json` used by Django; static snapshots update on deployment.
 
-## Interactive checks
-
-1. Open the [API explorer](api.html).
-2. Choose **Run all endpoint checks** to fetch every documented JSON file from the current deployment and validate its JSON response.
-3. Expand an operation in Swagger UI and choose **Try it out** for an individual resource.
-
-## Documented resources
-
-| Resource | Contents |
-| --- | --- |
-| `/data/chart-latest.json` | Generated chart series and provenance |
-| `/data/election-results.json` | Current ECI and U.S. election snapshots |
-| `/data/historical-elections.json` | Candidate-level records parsed from available ECI workbooks; partial coverage |
-| `/data/recent-indian-elections.json` | 2024 Lok Sabha results for all 543 seats plus recent Assembly elections, 2022?2026 |
-| `/data/us-campaign-finance.json` | FEC candidate-finance aggregates for Presidential and Congressional candidates across five filing cycles, 2018?2026 |
-| `/data/election-indices.json` | 112 Lok Sabha 2024 and State Assembly seat/vote doughnut indices derived from official ECI results, each with a `meta` block |
-| `/data/sports.json` | 22 Sports series: Olympic, Paralympic, Asian Games and Commonwealth Games medals by edition and sport, cricket results by format and tournament, and men's hockey and football head-to-heads, each with a `meta` block |
-| `/data/economic-survey-monthly.json` | Monthly indicators collated from Economic Survey tables |
-| `/data/ncrb-and-analyses.json` | NCRB and public-safety data |
-| `/data/pew-india-reports.json` | Public Pew India report catalog |
-| `/data/pew-snapshots.json` | Dated survey snapshots |
-| `/data/indian-matrix-latest.json` | Public Indian Matrix article feed |
-| `/data/substack-latest.json` | Public Polity and Policy article feed |
-
-The OpenAPI source is [`openapi.json`](openapi.json). Tests check that every specification path maps to a parseable source JSON file and that the deployment copy matches it. The automated daily endpoint workflow also exercises the deployed dashboard and live-source checks.
+Supporting source datasets and map assets remain available under `docs/data/`, `docs/maps/`, and `docs/art/`. The old `/api.html` and other legacy pages are small redirects; the React API page is at `/#/api` on the static hosts. The Django Swagger UI remains available only on the web app at `/api/docs/`.
 
 ## Local preview
 
-From the repository root, run `python -m http.server 8000 --directory docs`, then open `http://localhost:8000/api.html`. The Swagger specification lists the public Netlify deployment first and the GitHub Pages mirror second; the on-page all-resource check uses the local `data/` directory when served locally.
+From the repository root, build and serve the static site:
+
+```powershell
+npm.cmd --prefix frontend run build:static
+python -m http.server 8000 --directory docs
+```
+
+Open `http://localhost:8000/#/api`. Static-site tests verify that the generated snapshots and legacy redirect stubs are present.

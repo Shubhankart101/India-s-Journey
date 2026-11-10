@@ -4,10 +4,11 @@ import { useSyncExternalStore } from 'react';
 const KEY = 'ij-theme';
 
 export const THEMES = [
-  { id: 'light', label: 'Light', meta: '#f5f5f7' },
-  { id: 'dark', label: 'Dark', meta: '#000000' },
-  { id: 'newspaper', label: 'Newspaper', meta: '#f4f0e6' },
-  { id: 'pamphlet', label: 'Pamphlet', meta: '#fff1c1' },
+  { id: 'light', label: 'Light', short: 'Lt', meta: '#f5f5f7' },
+  { id: 'dark', label: 'Dark', short: 'Dk', meta: '#000000' },
+  { id: 'newspaper', label: 'Newspaper', short: 'News', meta: '#f4f0e6' },
+  { id: 'pamphlet', label: 'Pamphlet', short: 'Pmph', meta: '#fff1c1' },
+  { id: 'military', label: 'Military', short: 'Mil', meta: '#1f2414' },
 ];
 
 export const CHART_COLORS = {
@@ -15,6 +16,7 @@ export const CHART_COLORS = {
   light: { ink: '#1d1d1f', muted: '#515154', grid: 'rgba(0, 0, 0, 0.08)', legend: '#3a3a3c', sliceBorder: '#ffffff' },
   newspaper: { ink: '#111111', muted: '#3b3b3b', grid: 'rgba(0, 0, 0, 0.12)', legend: '#222222', sliceBorder: '#fbf8f1' },
   pamphlet: { ink: '#1b1b1b', muted: '#2f2f2f', grid: 'rgba(27, 27, 27, 0.14)', legend: '#1b1b1b', sliceBorder: '#1b1b1b' },
+  military: { ink: '#ece4c4', muted: '#b8b08a', grid: 'rgba(236, 228, 196, 0.1)', legend: '#d8cfa8', sliceBorder: '#1f2414' },
 };
 
 const isTheme = value => THEMES.some(theme => theme.id === value);
@@ -31,8 +33,26 @@ function readStored() {
 
 let current = readStored();
 
+const FONT_URL = 'https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Playfair+Display:wght@600;700;800&family=UnifrakturMaguntia&family=Special+Elite&family=Rozha+One&family=Stardos+Stencil:wght@400;700&family=Tiro+Devanagari+Hindi&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Serif+Devanagari:wght@500;700&display=swap';
+
+// Display and Devanagari fonts never block rendering (display=swap, injected after load).
+function loadEditionFonts() {
+  if (typeof document === 'undefined' || document.getElementById('ij-edition-fonts')) return;
+  const add = () => {
+    if (document.getElementById('ij-edition-fonts')) return;
+    const link = document.createElement('link');
+    link.id = 'ij-edition-fonts';
+    link.rel = 'stylesheet';
+    link.href = FONT_URL;
+    document.head.append(link);
+  };
+  if (document.readyState === 'complete') add();
+  else window.addEventListener('load', add, { once: true });
+}
+
 export function applyTheme(theme = current) {
   document.documentElement.dataset.theme = theme;
+  loadEditionFonts();
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', THEMES.find(item => item.id === theme).meta);
 }
 

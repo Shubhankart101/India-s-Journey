@@ -1,11 +1,15 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { MAX_COMPARE, useCompare } from '../compare.jsx';
 import { PALETTE_COMPARE } from '../palette.js';
 import { chartModes, formatMagnitude } from '../format.js';
+import { useInView } from '../hooks.js';
 import LazyChart from './LazyChart.jsx';
+import ScriptureVerse from './ScriptureVerse.jsx';
 
-export default function IndicatorCard({ indicator }) {
+function IndicatorCard({ indicator }) {
   const compare = useCompare();
+  const [verseRef, verseNear] = useInView('400px');
   const preview = indicator.preview || { labels: [], datasets: [] };
   const { initial } = chartModes({ ...indicator, labels: preview.labels, datasets: preview.datasets });
   const inCompare = compare.has(indicator.key);
@@ -39,6 +43,9 @@ export default function IndicatorCard({ indicator }) {
           <span className="chip">{indicator.frequency || indicator.chart_type}</span>
         </div>
       </Link>
+      <div ref={verseRef} className="scripture-slot">
+        {verseNear && <ScriptureVerse verseKey={indicator.key} group={indicator.category} />}
+      </div>
       <button
         type="button"
         className={`compare-toggle${inCompare ? ' active' : ''}`}
@@ -53,3 +60,5 @@ export default function IndicatorCard({ indicator }) {
     </article>
   );
 }
+
+export default memo(IndicatorCard);

@@ -148,6 +148,7 @@ class PublicApiTests(ApiTestCase):
         self.assertEqual(data['radial_indicators'], 1)
         self.assertEqual(data['categories'], 2)
         self.assertEqual(data['source_generated_at'], '2026-05-01T00:00:00+00:00')
+        self.assertEqual(data['last_refresh'], '2026-05-01T00:00:00Z')
 
     def test_list_endpoint_query_count_is_constant(self):
         with self.assertNumQueries(2):

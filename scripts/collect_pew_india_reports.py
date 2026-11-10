@@ -50,8 +50,8 @@ def main() -> None:
         "cadence": {"labels": sorted(counts), "values": [counts[label] for label in sorted(counts)]},
     }
     snapshot_text = json.dumps(snapshot, indent=2) + "\n"
-    (ROOT / "data" / "pew-india-reports.json").write_text(snapshot_text)
-    (ROOT / "docs" / "data" / "pew-india-reports.json").write_text(snapshot_text)
+    (ROOT / "data" / "pew-india-reports.json").write_text(snapshot_text, encoding="utf-8")
+    (ROOT / "docs" / "data" / "pew-india-reports.json").write_text(snapshot_text, encoding="utf-8")
 
 
 if __name__ == "__main__":

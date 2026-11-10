@@ -11,9 +11,10 @@ class ElectionIndicesTests(unittest.TestCase):
     def setUp(self):
         self.payload = json.loads((ROOT / "data" / "election-indices.json").read_text(encoding="utf-8"))
 
-    def test_published_mirror_matches(self):
-        deployed = json.loads((ROOT / "docs" / "data" / "election-indices.json").read_text(encoding="utf-8"))
-        self.assertEqual(self.payload, deployed)
+    def test_catalogue_contains_the_published_election_indices(self):
+        catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
+        catalog_keys = {item["key"] for item in catalog["indicators"]}
+        self.assertTrue({"india_ls2024_party_seats", "india_ls2024_state_close_contests"} <= catalog_keys)
 
     def test_every_index_is_a_self_described_sourced_pie(self):
         series = self.payload["series"]

@@ -19,6 +19,10 @@ on:
     branches: [main]
     paths:
       - docs/**
+      - frontend/**
+      - scripts/export_static_api.mjs
+      - data/catalog.json
+      - .github/workflows/deploy-dashboard.yml
       - data/chart-latest.json
       - data/economic-survey-monthly.json
       - data/indian-matrix-latest.json
@@ -52,24 +56,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci --prefix frontend
+      - run: npm --prefix frontend run build:static
       - uses: actions/configure-pages@v5
-      - name: Assemble dashboard artifact
+      - name: Assemble static React artifact
         run: |
-          mkdir -p site/data
+          mkdir -p site
           cp -R docs/. site/
-          cp data/chart-latest.json site/data/chart-latest.json
-          if [ -f data/economic-survey-monthly.json ]; then cp data/economic-survey-monthly.json site/data/economic-survey-monthly.json; fi
-          if [ -f data/indian-matrix-latest.json ]; then cp data/indian-matrix-latest.json site/data/indian-matrix-latest.json; fi
-          if [ -f data/pew-india-reports.json ]; then cp data/pew-india-reports.json site/data/pew-india-reports.json; fi
-          if [ -f data/substack-latest.json ]; then cp data/substack-latest.json site/data/substack-latest.json; fi
-          if [ -f data/ncrb-and-analyses.json ]; then cp data/ncrb-and-analyses.json site/data/ncrb-and-analyses.json; fi
-          if [ -f data/pew-snapshots.json ]; then cp data/pew-snapshots.json site/data/pew-snapshots.json; fi
-          if [ -f data/election-results.json ]; then cp data/election-results.json site/data/election-results.json; fi
-          if [ -f data/historical-elections.json ]; then cp data/historical-elections.json site/data/historical-elections.json; fi
-          if [ -f data/recent-indian-elections.json ]; then cp data/recent-indian-elections.json site/data/recent-indian-elections.json; fi
-          if [ -f data/us-campaign-finance.json ]; then cp data/us-campaign-finance.json site/data/us-campaign-finance.json; fi
-          if [ -f data/election-indices.json ]; then cp data/election-indices.json site/data/election-indices.json; fi
-          if [ -f data/sports.json ]; then cp data/sports.json site/data/sports.json; fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

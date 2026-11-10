@@ -9,26 +9,24 @@ ROOT = Path(__file__).resolve().parents[1]
 class ElectionGroupTests(unittest.TestCase):
     def test_us_elections_separates_results_from_presidential_and_congressional_finance(self):
         page = (ROOT / "docs" / "explore.html").read_text(encoding="utf-8")
-        app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
-        definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
-        self.assertIn('data-group="U.S. Elections"', page)
-        self.assertIn("groupFilter.replaceChildren(allGroups", app)
+        app = (ROOT / "frontend" / "src" / "pages" / "Explore.jsx").read_text(encoding="utf-8")
+        definitions = (ROOT / "scripts" / "catalog_sources" / "additional-chart-definitions.js").read_text(encoding="utf-8")
+        self.assertIn("legacy-redirect.js", page)
+        self.assertIn("category", app)
+        self.assertIn("resolveLegacyFilters", app)
         catalog = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
-        group = next(category for category in catalog["categories"] if category["name"] == "U.S. Elections")
-        self.assertTrue({
-            "U.S. Presidential Elections",
-            "U.S. Presidential Campaign Finance",
-            "U.S. Congressional Campaign Finance",
-        }.issubset({subgroup["name"] for subgroup in group["subgroups"]}))
+        group = next(category for category in catalog["categories"] if category["name"] == "Elections & Democracy")
+        names = {subgroup["name"] for subgroup in group["subgroups"]}
+        self.assertTrue({"U.S. Presidential Races & Fundraising", "U.S. House Candidate Finance", "U.S. Senate Candidate Finance"}.issubset(names))
         self.assertIn("place(['us_presidential_electoral_votes'], 'U.S. Elections'", definitions)
         self.assertIn("subgroup: 'U.S. Presidential Campaign Finance'", definitions)
         self.assertIn("subgroup: 'U.S. Congressional Campaign Finance'", definitions)
-        self.assertIn("U.S. Congressional Campaign Finance", app)
-        self.assertIn("const groupToSubgroups = { all: [] };", app)
+        self.assertIn("U.S. Presidential Races & Fundraising", names)
+        self.assertIn("resolveLegacyFilters", app)
 
     def test_new_world_bank_indicators_have_values_and_correct_placements(self):
         payload = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))
-        definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
+        definitions = (ROOT / "scripts" / "catalog_sources" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         keys = (
             "agricultural_employment_share",
             "urban_population_growth",
@@ -46,8 +44,8 @@ class ElectionGroupTests(unittest.TestCase):
 
     def test_us_campaign_finance_series_are_complete_and_separate_from_results(self):
         payload = json.loads((ROOT / "data" / "us-campaign-finance.json").read_text(encoding="utf-8"))
-        app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
-        definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
+        app = (ROOT / "scripts" / "catalog_sources" / "app.js").read_text(encoding="utf-8")
+        definitions = (ROOT / "scripts" / "catalog_sources" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         series = payload["series"]
         self.assertEqual(len(series), 115)
         for key, item in series.items():
@@ -97,12 +95,11 @@ class ElectionGroupTests(unittest.TestCase):
             self.assertEqual(sum(pie["values"]), 538)
 
     def test_subgroup_filters_are_derived_from_rendered_chart_placements(self):
-        app = (ROOT / "docs" / "app.js").read_text(encoding="utf-8")
-        self.assertIn("const groupToSubgroups = { all: [] };", app)
-        self.assertIn("const group = card.dataset.category;", app)
-        self.assertIn("const subgroup = card.dataset.subgroup;", app)
-        self.assertIn("groupToSubgroups[group].push(subgroup);", app)
-        self.assertIn(".filter(([, groups]) => groups.size === 1)", app)
+        app = (ROOT / "frontend" / "src" / "api.js").read_text(encoding="utf-8")
+        self.assertIn("query.get('category')", app)
+        self.assertIn("query.get('subgroup')", app)
+        self.assertIn("query.get('q')", app)
+        self.assertIn("apiPage(results, query)", app)
 
 
 if __name__ == "__main__":

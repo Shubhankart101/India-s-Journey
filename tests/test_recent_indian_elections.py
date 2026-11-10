@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import json
 import unittest
@@ -76,10 +76,6 @@ class RecentIndianElectionTests(unittest.TestCase):
         recent = json.loads(
             (ROOT / "data" / "recent-indian-elections.json").read_text(encoding="utf-8")
         )
-        deployed = json.loads(
-            (ROOT / "docs" / "data" / "recent-indian-elections.json").read_text(encoding="utf-8")
-        )
-        self.assertEqual(recent, deployed)
         self.assertEqual(recent["collection_status"], "ok")
         self.assertEqual(recent["lok_sabha_2024_constituency_count"], 543)
         self.assertGreaterEqual(len(recent["source_files"]), 20)

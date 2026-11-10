@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Playfair+Display:wght@600;700;800&family=UnifrakturMaguntia&family=Special+Elite&family=Rozha+One&family=Stardos+Stencil:wght@400;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <title>{% block head_title %}India's Journey{% endblock head_title %} · India's Journey</title>
   <script>
-    try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
+    try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet|military)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
   <style>
     :root { color-scheme: dark; --bg: #000; --surface: #0b0b0c; --surface-2: #1d1d1f; --line: #1d1d1f; --line-strong: #424245;
@@ -21,6 +24,16 @@
     :root[data-theme="pamphlet"] { color-scheme: light; --bg: #fff4dc; --surface: #fffaf0; --surface-2: #fffaf0; --line: #2b1708; --line-strong: #2b1708;
       --ink: #2b1708; --muted: #4a2f1a; --faint: #4a2f1a; --link: #a3104d; --accent: #c2185b; --on-accent: #fff; --eyebrow: #c45100; --radius: 8px;
       --font: "Trebuchet MS", "Nirmala UI", Verdana, "Segoe UI", sans-serif; --font-display: "Rozha One", "Yatra One", Impact, "Arial Black", sans-serif; }
+    :root[data-theme="military"] { color-scheme: dark; --bg: #1f2414; --surface: #282e1a; --surface-2: #343b23; --line: rgba(212, 199, 150, .22); --line-strong: #5b6b2a;
+      --ink: #ece4c4; --muted: #bcb48e; --faint: #a39c78; --link: #d4a72c; --accent: #d4a72c; --on-accent: #1a1e10; --eyebrow: #d4a72c; --radius: 4px;
+      --font-display: "Stardos Stencil", Impact, "Arial Narrow Bold", sans-serif; }
+    :root[data-theme="military"] header { background: #1b2011; border-bottom: 2px solid #d4a72c; }
+    :root[data-theme="military"] h1, :root[data-theme="military"] header > a { text-transform: uppercase; letter-spacing: .04em; }
+    :root[data-theme="military"] .backup { border-top: 3px solid #5b6b2a; }
+    :root[data-theme=military] .theme-pills { border-radius: 4px; border-color: #5b6b2a; background: #1a1e10; }
+    :root[data-theme=military] .theme-pills button[role=radio] { border-radius: 2px; color: #bcb48e; font-family: "Stardos Stencil", Impact, sans-serif; text-transform: uppercase; }
+    :root[data-theme=military] .theme-pills button[aria-checked=true] { background: #5b6b2a; color: #f2e7b8; box-shadow: inset 0 -2px 0 #d4a72c; }
+    :root[data-theme=military] .vintage-brand-tagline, :root[data-theme=military] .footer-motto { color: #d4a72c; }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink);
       font: 17px/1.5 var(--font); }
@@ -45,16 +58,17 @@
     input, select { width: 100%; min-height: 44px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink); font: inherit; }
     label { display: block; margin: 16px 0 6px; }
     header .controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .theme-switch { --switch-active: #9b1b30; display: inline-flex; gap: 2px; padding: 3px; border-radius: 13px;
-      background: color-mix(in srgb, var(--switch-active) 7%, transparent); border: 1px solid color-mix(in srgb, var(--switch-active) 22%, var(--line-strong)); }
-    .theme-switch button { min-height: 28px; padding: 4px 11px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font-family: Poppins, "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; box-shadow: none; }
-    .theme-switch button:hover { color: var(--ink); }
-    .theme-switch button[aria-checked="true"] { background: var(--switch-active); color: #fff; font-weight: 700; }
+    @media (max-width: 480px) {
+      header { gap: 8px; padding-inline: 12px; }
+      header > a { min-width: 0; font-size: .95rem; }
+      header .controls { flex-wrap: nowrap; gap: 4px; }
+    }
+    .theme-select { --switch-active: #9b1b30; }
     .contact-link { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; border: 1px solid var(--line-strong); color: var(--ink); }
     .contact-link svg { width: 16px; height: 16px; fill: currentColor; }
     .contact-link:hover { background: #9b1b30; border-color: #9b1b30; color: #fff; }
-    :root[data-theme="newspaper"] .theme-switch { --switch-active: #7a1010; }
-    :root[data-theme="pamphlet"] .theme-switch { --switch-active: #c2185b; }
+    :root[data-theme="newspaper"] .theme-select { --switch-active: #7a1010; }
+    :root[data-theme="pamphlet"] .theme-select { --switch-active: #c2185b; }
     :root[data-theme="newspaper"] header { border-bottom: 4px double var(--ink); background: linear-gradient(90deg, #ff9933 0 33.3%, #f4f0e6 0 66.6%, #138808 0) bottom / 100% 3px no-repeat; }
     :root[data-theme="newspaper"] header > a { font-family: "Old English Text MT", "UnifrakturMaguntia", Georgia, serif; font-size: 1.4rem; font-weight: 400; }
     :root:is([data-theme="newspaper"], [data-theme="pamphlet"]) header > a::after { content: "भारत की यात्रा"; display: block; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: .7rem; font-weight: 700; color: var(--link); }
@@ -65,24 +79,65 @@
       background: radial-gradient(circle at 50% 0, #c2185b 0 6px, transparent 6.5px) 0 0 / 28px 14px repeat-x, radial-gradient(circle at 50% 0, #ff6f00 0 6px, transparent 6.5px) 14px 0 / 28px 14px repeat-x; }
     :root[data-theme="pamphlet"] .backup { background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
     :root[data-theme="pamphlet"] h1 { text-transform: uppercase; font-weight: 400; letter-spacing: .01em; }
-    :root[data-theme="pamphlet"] :is(.btn, main button, .backup, .theme-switch, .contact-link) { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-weight: 700; }
+    :root[data-theme="pamphlet"] :is(.btn, main button, .backup, .theme-select select, .contact-link) { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-weight: 700; }
     :root[data-theme="pamphlet"] .backup { box-shadow: 6px 6px 0 var(--ink); }
+
+    /* Accessible segmented theme radios and vintage-edition chrome. */
+    .theme-pills { display: inline-flex; flex: none; align-items: center; gap: 1px; padding: 3px; border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--accent) 7%, var(--surface)); white-space: nowrap; }
+    .theme-pills button[role=radio] { display: inline-grid; place-items: center; min-height: 28px; min-width: 34px; padding: 0 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: 600 12px/1.1 inherit; cursor: pointer; }
+    .theme-pills button[aria-checked=true] { color: #fff; background: #9b1c2c; font-weight: 800; }
+    .theme-pills button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+    .theme-pills .theme-short { display: none; }
+    :root[data-theme=dark] .theme-pills { background: #1d1d1f; border-color: #424245; }
+    :root[data-theme=dark] .theme-pills button[role=radio] { color: #c4c4ca; }
+    :root[data-theme=dark] .theme-pills button[aria-checked=true] { color: #fff; background: #9b1c2c; }
+    :root[data-theme=newspaper] .theme-pills { border-radius: 3px; border-color: #342b1e; background: #e8dfcb; }
+    :root[data-theme=newspaper] .theme-pills button[role=radio] { border-radius: 1px; color: #342b1e; font-family: "Old Standard TT", Georgia, serif; text-transform: uppercase; }
+    :root[data-theme=newspaper] .theme-pills button[aria-checked=true] { color: #f4f0e6; background: #342b1e; }
+    :root[data-theme=pamphlet] .theme-pills { border: 2px solid #2b1708; background: #ffedc7; box-shadow: 2px 2px 0 #2b1708; }
+    :root[data-theme=pamphlet] .theme-pills button[role=radio] { color: #673914; font-family: "Special Elite", Georgia, serif; }
+    :root[data-theme=pamphlet] .theme-pills button[aria-checked=true] { background: #a3104d; color: #fff8e7; box-shadow: inset 0 0 0 2px #fff8e7, 0 0 0 1px #a3104d; }
+    .site-brand { display: block; min-width: 0; font-family: var(--font-display); }
+    .site-brand .vintage-brand-tagline { display: block; margin-top: 2px; color: var(--muted); font: 500 .65rem/1.3 "Noto Serif Devanagari", "Tiro Devanagari Hindi", "Nirmala UI", Mangal, serif; }
+    .footer-motto { margin: .4rem 0 0; color: var(--muted); font: 600 .95rem/1.4 "Noto Serif Devanagari", "Tiro Devanagari Hindi", "Nirmala UI", Mangal, serif; }
+    .vintage-dateline { width: min(100% - 32px, 960px); margin: 6px auto 0; padding: 3px 2px; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid currentColor; color: #3b2f22; font: 700 .66rem/1.3 "Old Standard TT", Georgia, serif; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .vintage-dateline span:last-child { font: 600 .72rem/1.3 "Noto Serif Devanagari", "Tiro Devanagari Hindi", Mangal, serif; letter-spacing: 0; text-transform: none; }
+    :root[data-theme=newspaper] body { background-color: #f4f0e6; background-image: radial-gradient(ellipse at 12% 18%, rgba(116,73,28,.1), transparent 28%), radial-gradient(ellipse at 84% 73%, rgba(133,83,37,.08), transparent 32%), repeating-linear-gradient(2deg, rgba(62,45,24,.018) 0 1px, transparent 1px 5px); font-family: "Old Standard TT", Georgia, serif; }
+    :root[data-theme=newspaper] .vintage-dateline { color: #17130f; }
+    :root[data-theme=newspaper] .vintage-brand-tagline, :root[data-theme=newspaper] .footer-motto { color: #6f1d1b; }
+    :root[data-theme=newspaper] h1, :root[data-theme=newspaper] h2 { font-family: "Playfair Display", Georgia, serif; }
+    :root[data-theme=pamphlet] body { background-color: #f4e5c4; background-image: repeating-linear-gradient(1deg, rgba(75,48,20,.035) 0 1px, transparent 1px 6px), radial-gradient(ellipse at 50% 10%, #fff8e7, #f3e2be); font-family: "Special Elite", Georgia, serif; }
+    :root[data-theme=pamphlet] .vintage-brand-tagline, :root[data-theme=pamphlet] .footer-motto { color: #8a1646; }
+    :root[data-theme=pamphlet] .backup { transform: rotate(-.35deg); border: 2px solid #2b1708; box-shadow: 5px 5px 0 rgba(43,23,8,.24); background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
+    :root[data-theme=pamphlet] .backup:hover, :root[data-theme=pamphlet] .backup:focus-within { transform: translateY(-3px) rotate(0); }
+    :root[data-theme=newspaper] .backup { border-radius: 0; border-top: 3px solid #17130f; box-shadow: none; }
+    @media (max-width: 1000px) { .theme-pills .theme-full { display: none; } .theme-pills .theme-short { display: inline; } }
+    @media (max-width: 480px) {
+      header { align-items: flex-start; }
+      header .controls { flex: none; gap: 5px; }
+      .theme-pills { gap: 0; padding: 2px; }
+      .theme-pills button[role=radio] { min-width: 27px; min-height: 27px; padding: 0 4px; font-size: 10px; }
+      .vintage-dateline span:last-child { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
   </style>
   {% block extra_head %}{% endblock extra_head %}
 </head>
 <body>
   <header>
-    <a href="/">India's Journey</a>
+    <a class="site-brand" href="/">India's Journey<span class="vintage-brand-tagline" aria-hidden="true"></span></a>
     <div class="controls">
-      <div class="theme-switch" id="theme-switch" role="radiogroup" aria-label="Display theme">
-        <button type="button" role="radio" data-theme-option="light">Light</button>
-        <button type="button" role="radio" data-theme-option="dark">Dark</button>
-        <button type="button" role="radio" data-theme-option="newspaper">Newspaper</button>
-        <button type="button" role="radio" data-theme-option="pamphlet">Pamphlet</button>
-      </div>
       <a class="contact-link" href="https://www.linkedin.com/in/shubhankarthapliyal/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Contact Shubhankar Thapliyal on LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a class="contact-link" href="https://github.com/Shubhankart101" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Shubhankar Thapliyal on GitHub (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-    </div>
+      <a class="contact-link" href="https://x.com/Shubhankar71721" target="_blank" rel="noopener noreferrer" title="X" aria-label="Shubhankar Thapliyal on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+            <div class="theme-pills" id="theme-select" role="radiogroup" aria-label="Display theme" title="Display theme">
+              <button type="button" role="radio" value="light" aria-label="Light" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Light</span><span class="theme-short" aria-hidden="true">Lt</span></button>
+              <button type="button" role="radio" value="dark" aria-label="Dark" aria-checked="true" tabindex="0"><span class="theme-full" aria-hidden="true">Dark</span><span class="theme-short" aria-hidden="true">Dk</span></button>
+              <button type="button" role="radio" value="newspaper" aria-label="Newspaper" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Newspaper</span><span class="theme-short" aria-hidden="true">News</span></button>
+              <button type="button" role="radio" value="pamphlet" aria-label="Pamphlet" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Pamphlet</span><span class="theme-short" aria-hidden="true">Pmph</span></button>
+              <button type="button" role="radio" value="military" aria-label="Military" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Military</span><span class="theme-short" aria-hidden="true">Mil</span></button>
+            </div>
+          </div>
   </header>
   <main id="main">
     {% if messages %}<ul class="messages">{% for message in messages %}<li>{{ message }}</li>{% endfor %}</ul>{% endif %}
@@ -95,36 +150,51 @@
     </section>
   </main>
   <footer>
-    <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more.</p>
+    <p>Official public data from MOSPI, RBI, World Bank, ECI, FEC, NCRB and more. <a href="https://x.com/Shubhankar71721" target="_blank" rel="noopener noreferrer" aria-label="Shubhankar Thapliyal on X">Follow on X</a></p>
+    <p class="footer-motto" lang="sa">सत्यमेव जयते</p>
   </footer>
   {% block extra_body %}{% endblock extra_body %}
   <script>
     (function () {
-      var buttons = Array.prototype.slice.call(document.querySelectorAll('#theme-switch [data-theme-option]'));
-      var sync = function (theme) {
-        buttons.forEach(function (button) {
-          var active = button.getAttribute('data-theme-option') === theme;
-          button.setAttribute('aria-checked', String(active));
-          button.tabIndex = active ? 0 : -1;
-        });
-      };
-      var choose = function (theme) {
-        document.documentElement.dataset.theme = theme;
+      var root = document.documentElement;
+      var group = document.getElementById('theme-select');
+      var radios = group ? Array.from(group.querySelectorAll('[role="radio"]')) : [];
+      var taglines = { light: 'ज्ञानम् · सार्वजनिकदत्तांशः', dark: 'तमसो मा ज्योतिर्गमय · ज्ञानम्', newspaper: 'भारतस्य यात्रा · सार्वजनिकदत्तांशः', pamphlet: 'जय हिन्द · जनगणमन', military: 'सेवा परमो धर्मः · जय हिन्द' };
+      function apply(theme) {
+        root.dataset.theme = theme;
         try { localStorage.setItem('ij-theme', theme); } catch (e) {}
-        sync(theme);
-      };
-      sync(document.documentElement.dataset.theme || 'dark');
-      buttons.forEach(function (button, index) {
-        button.addEventListener('click', function () { choose(button.getAttribute('data-theme-option')); });
-        button.addEventListener('keydown', function (event) {
-          var step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
-          if (!step) return;
-          event.preventDefault();
-          var next = buttons[(index + step + buttons.length) % buttons.length];
-          choose(next.getAttribute('data-theme-option'));
-          next.focus();
+        radios.forEach(function (radio) { var checked = radio.value === theme; radio.setAttribute('aria-checked', String(checked)); radio.tabIndex = checked ? 0 : -1; });
+        document.querySelectorAll('.vintage-brand-tagline').forEach(function (node) { node.textContent = taglines[theme] || ''; });
+        renderVintageChrome();
+      }
+      function renderVintageChrome() {
+        var theme = root.dataset.theme || 'dark';
+        var line = document.querySelector('.vintage-dateline');
+        if (theme === 'newspaper' || theme === 'pamphlet') {
+          if (!line) {
+            line = document.createElement('div');
+            line.className = 'vintage-dateline';
+            line.setAttribute('aria-hidden', 'true');
+            line.innerHTML = '<span>New Delhi · 15 August 1947 · Price one anna</span><span lang="hi">भारत स्वतंत्र हुआ</span>';
+            document.querySelector('header').insertAdjacentElement('afterend', line);
+          }
+        } else if (line) line.remove();
+      }
+      radios.forEach(function (radio, index) {
+        radio.addEventListener('click', function () { apply(radio.value); });
+        radio.addEventListener('keydown', function (event) {
+          var next = index;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % radios.length;
+          else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index + radios.length - 1) % radios.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = radios.length - 1;
+          else return;
+          event.preventDefault(); apply(radios[next].value); radios[next].focus();
         });
       });
+      var current = root.dataset.theme || 'dark';
+      try { var saved = localStorage.getItem('ij-theme'); if (/^(light|dark|newspaper|pamphlet|military)$/.test(saved)) current = saved; } catch (e) {}
+      apply(current);
     })();
   </script>
 </body>

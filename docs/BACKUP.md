@@ -6,9 +6,9 @@ India's Journey has two deployments:
 | --- | --- | --- |
 | **Static dashboard** (`docs/`) | **Netlify: <https://indiasjourney.netlify.app>** | The public site, and the fallback when the web app is down |
 | Backup mirror of the static dashboard | GitHub Pages: <https://shubhankart101.github.io/India-s-Journey/> | An identical copy of the Netlify site, used if Netlify is unavailable |
-| Django + React web app | **Fly.io: <https://india-s-journey.fly.dev>** (also runs locally or on any Docker host) | Explore, Compare, Sources, API and Swagger |
+| Django + React web app | **Render: <https://indias-journey.onrender.com>** (also runs locally or on any Docker host) | Explore, Compare, Sources, API and Swagger |
 
-Netlify publishes `docs/` as-is ([`netlify.toml`](../netlify.toml)). [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` folder to GitHub Pages. Both copies are built from the same collectors and `docs/data/*.json` files, so they always show the same data as the app.
+Netlify runs `npm run build:static` and publishes `docs/` ([`netlify.toml`](../netlify.toml)); [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) runs the same build before publishing to GitHub Pages. Both serve the shared React UI and API snapshots exported from `data/catalog.json`, alongside supporting public data and assets.
 
 ## Where the web app sends users
 

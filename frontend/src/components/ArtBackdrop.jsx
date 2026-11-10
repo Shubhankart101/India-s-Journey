@@ -29,6 +29,39 @@ function useArtCycle(art, interval) {
   return list[index % Math.max(list.length, 1)];
 }
 
+const textFreeCache = new Map();
+
+/** Art SVGs embed a title/caption; strip it so no text floats behind page content. */
+function useTextFreeArt(art) {
+  const url = art ? `/art/${art}` : '';
+  const [src, setSrc] = useState(() => textFreeCache.get(url) || url);
+  useEffect(() => {
+    if (!url) return undefined;
+    if (textFreeCache.has(url)) { setSrc(textFreeCache.get(url)); return undefined; }
+    if (!url.endsWith('.svg') || typeof fetch !== 'function' || typeof URL.createObjectURL !== 'function') {
+      setSrc(url);
+      return undefined;
+    }
+    let alive = true;
+    fetch(url)
+      .then(res => (res.ok ? res.text() : Promise.reject(new Error('art'))))
+      .then(text => {
+        const clean = text.replace(/<text\b[\s\S]*?<\/text>/g, '');
+        const blob = URL.createObjectURL(new Blob([clean], { type: 'image/svg+xml' }));
+        textFreeCache.set(url, blob);
+        if (alive) setSrc(blob);
+      })
+      .catch(() => { if (alive) setSrc(url); });
+    return () => { alive = false; };
+  }, [url]);
+  return src;
+}
+
+function ArtImage({ art }) {
+  const src = useTextFreeArt(art);
+  return <img src={src} alt="" decoding="async" draggable="false" />;
+}
+
 /**
  * Illustrated, animated page backdrop: the SVG scene cross-fades when `art` changes (or rotates when
  * `art` is a playlist), slowly zooms, carries drifting light motes, and shifts with the pointer and
@@ -79,7 +112,7 @@ export default function ArtBackdrop({ art: source, className = '', interval = AR
     <div ref={ref} className={`art-backdrop ${className}`.trim()} aria-hidden="true" data-art={art || ''}>
       {layers.map(layer => (
         <div key={layer.id} className="art-layer">
-          <img src={`/art/${layer.art}`} alt="" decoding="async" draggable="false" />
+          <ArtImage art={layer.art} />
         </div>
       ))}
       <div className="art-motes" />

@@ -353,8 +353,8 @@ def main() -> None:
     docs_output_file = ROOT / "docs" / "data" / "ncrb-and-analyses.json"
     docs_output_file.parent.mkdir(parents=True, exist_ok=True)
     content = json.dumps(result, indent=2) + "\n"
-    output_file.write_text(content)
-    docs_output_file.write_text(content)
+    output_file.write_text(content, encoding="utf-8")
+    docs_output_file.write_text(content, encoding="utf-8")
     print(f"Generated: {output_file} & {docs_output_file}")
     print(f"Indicators: {list(result['series'].keys())}")
 

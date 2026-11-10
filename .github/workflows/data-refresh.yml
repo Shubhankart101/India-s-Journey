@@ -1,0 +1,61 @@
+name: Monthly Data Refresh
+
+on:
+  workflow_dispatch:
+    inputs:
+      offline:
+        description: Use existing local caches only; do not make network requests
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: '0 4 2 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install build dependencies
+        run: python -m pip install --quiet -r scripts/requirements-build.txt pdfplumber pypdf
+      - name: Refresh registered datasets
+        run: |
+          if [ "${{ inputs.offline }}" = "true" ]; then
+            python scripts/update_all_data.py --offline
+          else
+            python scripts/update_all_data.py
+          fi
+      - name: Open data refresh pull request
+        if: always() && !cancelled()
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: bot/monthly-data-refresh
+          delete-branch: true
+          title: 'Refresh India data snapshots'
+          commit-message: 'Refresh registered India data snapshots'
+          add-paths: |
+            data/*.json
+            data/legal/**
+            data/sports_sources/**
+            frontend/src/data/**
+            frontend/public/data/**
+          body: |
+            Automated monthly refresh from `scripts/update_all_data.py`.
+            Each producer preserves its last good output if its source is unavailable.

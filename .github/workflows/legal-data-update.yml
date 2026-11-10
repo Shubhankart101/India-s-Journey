@@ -43,7 +43,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/legal data/chart-latest.json docs/data/chart-latest.json docs/data.js data/catalog.json docs/compare-data.js docs/overlays.js
+          git add data/legal data/chart-latest.json data/catalog.json frontend/src/data/legacy-aliases.json
           if git diff --cached --quiet; then
             echo "No NJDG data change to commit."
             exit 0

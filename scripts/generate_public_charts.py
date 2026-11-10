@@ -1544,9 +1544,9 @@ def main() -> None:
             result["series"]["unesco_india_sites_cumulative"] = {"error": str(error)}
     series = result["series"]
     for derived_key, base_key, title in (
-        ("state_gsdp_share", "state_gsdp_comparison", "RBI Handbook of Statistics on Indian States; share of reported GSDP"),
-        ("state_per_capita_income_index", "state_per_capita_income", "RBI Handbook of Statistics on Indian States; indexed to the State/UT median = 100"),
-        ("state_power_availability_index", "state_power_per_capita", "RBI Handbook of Statistics on Indian States and CEA; indexed to the State/UT median = 100"),
+        ("state_gsdp_share", "state_gsdp_comparison", "RBI Handbook of Statistics on Indian States 2024-25, Table 21: Gross State Domestic Product (Current Prices); share of reported GSDP"),
+        ("state_per_capita_income_index", "state_per_capita_income", "RBI Handbook of Statistics on Indian States 2024-25, Table 19: Per Capita Net State Domestic Product (Current Prices); indexed to the State/UT median = 100"),
+        ("state_power_availability_index", "state_power_per_capita", "RBI Handbook of Statistics on Indian States 2024-25, Table 138; CEA per-capita power availability; indexed to the State/UT median = 100"),
     ):
         base = series.get(base_key, {})
         labels = base.get("labels", [])
@@ -1686,11 +1686,8 @@ def main() -> None:
     result["series"].update(build_derived_layer(result["series"]))
     
     chart_json = json.dumps(result, indent=2) + "\n"
-    (ROOT / "data" / "chart-latest.json").write_text(chart_json)
-    (ROOT / "docs" / "data" / "chart-latest.json").write_text(chart_json)
+    (ROOT / "data" / "chart-latest.json").write_text(chart_json, encoding="utf-8")
     
-    chart_js = f"window.INDIA_DASHBOARD_DATA = {json.dumps(result, indent=2)};\n"
-    (ROOT / "docs" / "data.js").write_text(chart_js, encoding="utf-8")
 
 
 if __name__ == "__main__":

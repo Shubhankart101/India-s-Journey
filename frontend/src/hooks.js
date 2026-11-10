@@ -30,6 +30,40 @@ export function useInView(rootMargin = '200px') {
   return [ref, inView];
 }
 
+// Like useInView but tracks entering and leaving, so offscreen work (charts) can be torn down.
+export function useVisible(rootMargin = '600px') {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(typeof IntersectionObserver === 'undefined');
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined' || !ref.current) return undefined;
+    const observer = new IntersectionObserver(entries => {
+      const last = entries[entries.length - 1];
+      setVisible(last.isIntersecting);
+    }, { rootMargin });
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [rootMargin]);
+  return [ref, visible];
+}
+
+// Reveals a long list in batches as a sentinel nears the viewport; without IntersectionObserver everything shows at once.
+export function useBatchedCount(total, resetKey, batch = 12) {
+  const hasObserver = typeof IntersectionObserver !== 'undefined';
+  const [count, setCount] = useState(batch);
+  const sentinel = useRef(null);
+  useEffect(() => { setCount(batch); }, [resetKey, batch]);
+  const done = !hasObserver || count >= total;
+  useEffect(() => {
+    if (done || !sentinel.current) return undefined;
+    const observer = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) setCount(current => current + batch);
+    }, { rootMargin: '900px' });
+    observer.observe(sentinel.current);
+    return () => observer.disconnect();
+  }, [done, count, batch]);
+  return [hasObserver ? Math.min(count, total) : total, sentinel, done];
+}
+
 // Runs an async loader with abort handling; returns { data, error, loading, reload }.
 export function useAsync(loader, deps) {
   const [state, setState] = useState({ data: null, error: null, loading: true });

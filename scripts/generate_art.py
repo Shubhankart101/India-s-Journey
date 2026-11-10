@@ -2,16 +2,18 @@
 
 Each scene is a layered SVG (sky, glow, stars, far hills, a themed foreground) with gentle CSS animation:
 drifting smoke and clouds, turning gears, moving vehicles, sweeping radar, twinkling windows. Animations stop
-under prefers-reduced-motion. Output goes to docs/assets/ (static site) and frontend/public/art/ (React app).
+under prefers-reduced-motion. Output goes to frontend/public/art/, which is bundled into both hosted apps.
 
     python scripts/generate_art.py
 """
+import html
+import json
 import math
 import random
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_DIRS = [ROOT / 'docs' / 'assets', ROOT / 'frontend' / 'public' / 'art']
+OUTPUT_DIRS = [ROOT / 'frontend' / 'public' / 'art']
 W, H = 1200, 600
 
 STYLE = """<style>
@@ -129,7 +131,12 @@ def sky(p, uid):
             f'<radialGradient id="glow{uid}"><stop offset="0" stop-color="{p[2]}" stop-opacity=".95"/>'
             f'<stop offset=".35" stop-color="{p[2]}" stop-opacity=".35"/><stop offset="1" stop-color="{p[2]}" stop-opacity="0"/></radialGradient>'
             f'<linearGradient id="ground{uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{p[4]}" stop-opacity=".7"/>'
-            f'<stop offset="1" stop-color="{p[4]}"/></linearGradient></defs>'
+            f'<stop offset="1" stop-color="{p[4]}"/></linearGradient>'
+            f'<linearGradient id="lower{uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{p[4]}" stop-opacity="0"/>'
+            f'<stop offset=".42" stop-color="{p[4]}" stop-opacity=".72"/><stop offset="1" stop-color="{p[4]}" stop-opacity=".98"/></linearGradient>'
+            f'<radialGradient id="vignette{uid}"><stop offset=".48" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></radialGradient>'
+            f'<filter id="grain{uid}" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="{sum(map(ord, uid)) % 997}"/>'
+            f'<feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer></filter></defs>'
             f'<rect width="{W}" height="{H}" fill="url(#sky{uid})"/>')
 
 
@@ -739,7 +746,17 @@ def place(content, x, y, s=1.0, cls='', style='', opacity=None):
 
 # ---------- Scene assembly ----------
 
-def build(uid, pal, backdrop, fg, sun=(980, 130, 46)):
+def finish_overlay(uid, p, label):
+    safe_label = html.escape(label or uid.replace('-', ' ').title())
+    length = ' textLength="780" lengthAdjust="spacingAndGlyphs"' if len(safe_label) > 31 else ''
+    return (f'<rect width="{W}" height="{H}" fill="url(#lower{uid})"/>'
+            f'<rect width="{W}" height="{H}" fill="url(#vignette{uid})"/>'
+            f'<text x="600" y="488" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing=".3" fill="{p[7]}"{length}>{safe_label}</text>'
+            f'<text x="600" y="535" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600" letter-spacing="3.5" fill="{p[6]}" opacity=".94">INDIA  •  PUBLIC DATA ATLAS</text>'
+            f'<rect width="{W}" height="{H}" fill="#fff" filter="url(#grain{uid})" opacity=".16"/>')
+
+
+def build(uid, pal, backdrop, fg, sun=(980, 130, 46), label=''):
     p = PALETTES[pal]
     rng = random.Random(uid)
     CURRENT['uid'] = uid
@@ -758,8 +775,9 @@ def build(uid, pal, backdrop, fg, sun=(980, 130, 46)):
         out.append(hills(rng, 470, 60, p[4], .9))
     out.append(fg(rng, p))
     out.append(f'<rect width="{W}" height="{H}" fill="{p[0]}" opacity=".08"/>')
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice" '
-            f'role="img" aria-hidden="true">{STYLE}{"".join(out)}</svg>')
+    out.append(finish_overlay(uid, p, label))
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" '
+            f'role="img" aria-hidden="true">{STYLE}<g transform="scale(1.333333 1.5)">{"".join(out)}</g></svg>')
 
 
 CURRENT = {'uid': ''}
@@ -1187,6 +1205,104 @@ def _(r, p):
 @scene('global-tourism', 'night', 'hills', (200, 110, 30))
 def _(r, p):
     return place(globe(p, 170), 600, 300) + place(plane(p), 0, 120, .7) + on_ground(p, 'gt', 540)
+
+
+# ---------- Epics, faiths and journeys ----------
+
+def lotus(p, petals=7, r=70):
+    out = ''
+    for i in range(petals):
+        a = -90 + (i - (petals - 1) / 2) * 24
+        out += g(path(f'M0 0 Q{-r * .45} {-r * .7} 0 {-r * 1.5} Q{r * .45} {-r * .7} 0 0Z', p[6] if i % 2 else p[2], extra=' opacity=".9"'), f'rotate({f(a)})')
+    return out + circle(0, -6, 10, p[7])
+
+
+def dharma_wheel(p, r=110):
+    spokes = ''.join(path(f'M0 0 L{f(r * .86 * math.cos(math.radians(a)))} {f(r * .86 * math.sin(math.radians(a)))}', stroke=p[7], width=5) for a in range(0, 360, 30))
+    return g(circle(0, 0, r, 'none', f' stroke="{p[7]}" stroke-width="10"') + circle(0, 0, r * .2, p[7]) + spokes, cls='rot-slow')
+
+
+def khanda(p):
+    blade = path('M0 -300 L22 -190 L0 -10 L-22 -190Z', p[7])
+    ring = circle(0, -150, 62, 'none', f' stroke="{p[7]}" stroke-width="12"')
+    sabres = path('M-110 -250 Q-150 -150 -70 -70 M110 -250 Q150 -150 70 -70', stroke=p[7], width=14)
+    return blade + ring + sabres + rect(-34, -40, 68, 14, p[6], 4)
+
+
+def fire_altar(p):
+    flame = path('M0 0 Q-90 -70 -12 -220 Q-4 -140 24 -96 Q70 -200 88 -140 Q112 -62 0 0Z', '#ff8b38', '#ffd77b', 5)
+    return g(flame, cls='pulse') + path('M-140 0 L-100 -60 H100 L140 0Z', '#9d5930', '#edbd76', 5)
+
+
+def palm_leaf(p, lines=5):
+    return rect(-190, -60, 380, 74, '#c99a55', 8, f' stroke="{p[7]}" stroke-width="3"') + ''.join(path(f'M-165 {-42 + i * 14}H165', stroke='#5a3720', width=2.5, extra=' opacity=".8"') for i in range(lines - 1))
+
+
+def war_chariot(p):
+    wheel = lambda x: place(dharma_wheel(p, 36), x, -48)
+    horses = ''.join(path(f'M{-120 - i * 70} -96 q-26 -50 -54 -30 q-18 6 -10 24 l20 12 q28 4 44 -6Z', p[7], extra=' opacity=".9"') for i in range(2))
+    return path('M-110 -70 H70 L40 -170 H-90Z', '#b77736', p[7], 5) + wheel(-60) + wheel(20) + horses + path('M40 -170 V-300 L90 -270 L40 -245', stroke=p[6], width=6)
+
+
+def dotted_route(p, pts, color=None):
+    d = 'M' + ' L'.join(f'{x} {y}' for x, y in pts)
+    nodes = ''.join(circle(x, y, 11, color or p[6], f' stroke="{p[7]}" stroke-width="3"') for x, y in pts)
+    return path(d, stroke=color or p[6], width=5, extra=' stroke-dasharray="4 14" class="flow"') + nodes
+
+
+@scene('epics-faiths', 'saffron', 'mountains')
+def _(r, p):
+    return (on_ground(p, 'epics-faiths', 520) + place(stupa(p), 160, 520, .55) + place(temple(p), 450, 520, .7)
+            + place(khanda(p), 760, 520, .6) + place(dharma_wheel(p, 80), 980, 300, .9) + place(lotus(p), 1060, 520, .8)
+            + dotted_route(p, [(40, 560), (300, 470), (560, 540), (820, 450), (1120, 540)]))
+
+
+@scene('epic-routes', 'crimson', 'mountains')
+def _(r, p):
+    bow = path('M-90 -250 Q-10 -90 80 -250 M-90 -250 Q-12 -400 80 -250', stroke=p[6], width=8) + path('M-130 -250 H125 M95 -262 L125 -250 L95 -238', stroke=p[7], width=5)
+    return (on_ground(p, 'epic-routes', 520) + place(temple(p), 180, 520, .8) + place(war_chariot(p), 640, 520, .95)
+            + place(bow, 1040, 400, .8) + dotted_route(p, [(60, 570), (330, 500), (610, 560), (900, 480), (1150, 560)], p[2]))
+
+
+@scene('vedic-journeys', 'desert', 'hills')
+def _(r, p):
+    rivers = ''.join(path(f'M{-60 + i * 30} {60 + i * 40} Q{300 + i * 20} {-40 + i * 30} {640 + i * 10} {100 + i * 26} T{1260} {80 + i * 22}', stroke=(p[6], p[2])[i % 2], width=4, extra=' opacity=".7" class="flow"') for i in range(5))
+    return on_ground(p, 'vedic', 520) + place(fire_altar(p), 320, 520, .95) + place(palm_leaf(p), 840, 480, 1) + place(palm_leaf(p, 4), 880, 400, .9) + place(rivers, 0, 380, .8)
+
+
+@scene('buddhist-journeys', 'saffron', 'mountains')
+def _(r, p):
+    bodhi = ''.join(path(f'M{x} {-300 - i * 14} q-50 -40 -15 -88 q48 20 15 88Z', p[6], extra=f' opacity="{.5 + i * .1}"') for i, x in enumerate((-170, -70, 30, 120, 210)))
+    trunk = path('M0 0 Q-20 -120 -60 -250 M0 0 Q10 -150 40 -260 M0 -90 Q50 -170 130 -250', stroke=p[5], width=16)
+    return (on_ground(p, 'buddhist', 525) + place(stupa(p), 250, 520, .95) + place(trunk + bodhi, 720, 520, .9)
+            + place(dharma_wheel(p, 70), 1030, 300, .9) + dotted_route(p, [(80, 570), (420, 545), (760, 575), (1100, 548)]))
+
+
+@scene('jain-journeys', 'forest', 'hills')
+def _(r, p):
+    hand = (path('M-48 0 V-110 Q-48 -150 -20 -150 V-210 M-20 -150 H20 V-230 M20 -150 H52 V-215 M52 -150 H80 Q94 -150 94 -120 V-60 Q94 0 40 0Z', '#e6c59a', p[7], 4)
+            + circle(24, -72, 22, 'none', f' stroke="{p[6]}" stroke-width="8"'))
+    peaks = path('M-260 0 L-130 -170 L-40 -90 L60 -230 L190 -90 L260 0Z', p[3], p[7], 4)
+    return (on_ground(p, 'jain', 520) + place(peaks, 330, 520, 1.2) + place(temple(p), 760, 520, .75)
+            + place(hand, 1030, 520, .8) + place(lotus(p, 5, 50), 120, 540, .7) + dotted_route(p, [(60, 565), (400, 535), (780, 570), (1140, 540)]))
+
+
+@scene('sikh-journeys', 'royal', 'sea', (220, 120, 36))
+def _(r, p):
+    shrine = (rect(-190, -120, 380, 120, '#d3a847', 4, ' stroke="#fff0bb" stroke-width="5"')
+              + path('M-190 -120 Q-175 -200 -90 -180 Q-55 -255 0 -190 Q55 -255 90 -180 Q175 -200 190 -120Z', '#e3bd65', '#fff0bb', 5)
+              + circle(0, -212, 19, '#fff0bb') + rect(-25, -40, 50, 40, '#1d2345'))
+    ripples = ''.join(path(f'M{-210 + i * 34} {10 + i * 7} q22 -16 44 0 t44 0', stroke=p[6], width=3, extra=' opacity=".7"') for i in range(13))
+    return water(p, 455, 160) + place(shrine, 620, 480, 1.1) + place(ripples, 620, 500, 1.05) + place(khanda(p), 140, 500, .5) + place(khanda(p), 1080, 500, .5) + dotted_route(p, [(40, 580), (360, 560), (700, 585), (1150, 560)])
+
+
+@scene('folk-stories', 'dusk', 'hills')
+def _(r, p):
+    book = rect(-120, -150, 240, 150, '#8b4f2a', 10, f' stroke="{p[7]}" stroke-width="5"') + path('M0 -150 V0', stroke=p[7], width=4) + ''.join(path(f'M{-100 + i * 6} {-120 + i * 24}H-12 M12 {-120 + i * 24}H100', stroke=p[7], width=3, extra=' opacity=".6"') for i in range(4))
+    camel = (path('M-90 -70 q10 -70 40 -40 q20 -50 50 -10 q40 -10 70 20 l30 -40 l14 10 l-20 54 v60 h-18 v-60 h-80 v60 h-18 v-60Z', p[5], extra=' opacity=".9"'))
+    globe_art = place(globe(p, 90), 0, 0)
+    return (on_ground(p, 'folk', 520) + place(book, 220, 520, 1) + place(camel, 620, 520, .9) + place(globe_art, 1000, 330, 1)
+            + dotted_route(p, [(60, 575), (330, 520), (640, 575), (930, 500), (1140, 560)]))
 
 
 # ---------- Environment, agriculture and population motifs ----------
@@ -1776,7 +1892,128 @@ def _(r, p):
             + place(plane(p), 0, 130, .7) + on_ground(p, 'ar', 570))
 
 
+def catalog_artwork():
+    catalog_path = ROOT / 'data' / 'catalog.json'
+    if not catalog_path.exists():
+        return {}, set()
+    catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+    labels, files = {}, set()
+    for category in catalog.get('categories', []):
+        filename = str(category.get('art', '')).split('?', 1)[0].strip()
+        if filename:
+            files.add(filename)
+            labels.setdefault(filename, category.get('name', 'India'))
+        for subgroup in category.get('subgroups', []):
+            filename = str(subgroup.get('art', '')).split('?', 1)[0].strip()
+            if filename:
+                files.add(filename)
+                labels.setdefault(filename, subgroup.get('name', category.get('name', 'India')))
+    return labels, files
+
+
+def fallback_scene(uid, label):
+    topic = f'{uid} {label}'.lower()
+    if any(word in topic for word in ('election', 'ballot', 'evm', 'voter', 'vote', 'lok sabha', ' sir', ' ssr', 'sir-', 'ssr-')):
+        pal, backdrop = 'saffron', 'city'
+        def fg(r, p):
+            hand = (circle(0, -135, 44, '#d9a178') + rect(-20, -270, 40, 168, '#d9a178', 18)
+                    + path('M-16 -230 Q0 -255 16 -230', stroke='#5c2618', width=8) + circle(0, -255, 7, '#21130d'))
+            return (on_ground(p, uid, 510) + place(evm(p), 310, 520, .9) + place(ballot_box(p), 800, 520, .8)
+                    + place(hand, 1040, 490, .8) + place(tricolor(p), 105, 360, .48))
+    elif any(word in topic for word in ('budget', 'fiscal', 'capital', 'markets', 'income', 'wealth')):
+        pal, backdrop = 'gold', 'city'
+        def fg(r, p):
+            case = (rect(-155, -80, 310, 150, '#5b3a24', 22, ' stroke="#d5a856" stroke-width="8"')
+                    + rect(-70, -118, 140, 45, 'none', 10, ' stroke="#d5a856" stroke-width="12"')
+                    + circle(0, -6, 34, '#facc15') + text(0, -6, '₹', 38, '#32210e'))
+            ribbons = ''.join(path(f'M{-500+i*170} {-235+i*45} C{-300+i*120} {-310-i*20} {100+i*70} {-40+i*22} {500-i*100} {-175+i*30}',
+                                   stroke=(p[6], p[2], p[7])[i % 3], width=5, extra=' opacity=".8" class="flow"') for i in range(5))
+            return (on_ground(p, uid, 520) + place(bank(p), 220, 520, .6) + place(case, 650, 520, 1.15)
+                    + place(coins(p, 5), 980, 510, .7) + ribbons)
+    elif any(word in topic for word in ('epic', 'ramayana', 'mahabharata', 'journey', 'myth', 'geography')):
+        pal, backdrop = 'crimson', 'mountains'
+        def fg(r, p):
+            bow = path('M-145 -250 Q-15 -90 125 -250 M-145 -250 Q-18 -414 125 -250', stroke=p[6], width=8)
+            arrow = path('M-190 -250 H180 M145 -263 L180 -250 L145 -237', stroke=p[7], width=5)
+            chariot = (path('M-150 -90 H100 L60 -185 H-80Z', '#b77736', '#f4d28a', 5)
+                       + circle(-80, -70, 38, '#21130d', ' stroke="#d5a856" stroke-width="7"')
+                       + circle(55, -70, 38, '#21130d', ' stroke="#d5a856" stroke-width="7"')
+                       + path('M-175 -195 Q-225 -240 -265 -180 M-265 -180 L-220 -160', stroke=p[7], width=8))
+            river = ''.join(path(f'M{-520+i*95} {-60+i*26} Q{-150+i*90} {-140+i*24} {500-i*50} {-25+i*18}', stroke=(p[6], p[2])[i%2], width=3, extra=' opacity=".65"') for i in range(5))
+            return (on_ground(p, uid, 520) + place(mountains(r, 480, 150, p[3], p[7], .65), 0, 530, 1)
+                    + place(temple(p), 300, 520, .8) + place(chariot, 720, 520, .88) + place(bow + arrow, 1000, 340, .75) + river)
+    elif any(word in topic for word in ('buddha', 'buddhist', 'stupa')):
+        pal, backdrop = 'saffron', 'mountains'
+        def fg(r, p):
+            leaves = ''.join(path(f'M{x} {-330-i*20} q-50 -40 -15 -88 q48 20 15 88Z', p[6], extra=f' opacity="{.55+i*.1}"') for i, x in enumerate((-180, -80, 25, 115, 205)))
+            petals = ''.join(path(f'M0 -42 Q{x} -125 {x*1.35} -50 Q{x} -8 0 0Z', p[6], extra=' opacity=".85"') for x in (-48, -24, 24, 48))
+            return (on_ground(p, uid, 525) + place(stupa(p), 620, 520, 1.25) + place(temple(p), 250, 520, .7)
+                    + leaves + place(petals + circle(0, -48, 12, p[2]), 950, 490, .75))
+    elif any(word in topic for word in ('sikh', 'harmandir', 'golden temple')):
+        pal, backdrop = 'royal', 'sea'
+        def fg(r, p):
+            shrine = (rect(-190, -120, 380, 120, '#d3a847', 4, ' stroke="#fff0bb" stroke-width="5"')
+                      + path('M-190 -120 Q-175 -200 -90 -180 Q-55 -255 0 -190 Q55 -255 90 -180 Q175 -200 190 -120Z', '#e3bd65', '#fff0bb', 5)
+                      + circle(0, -212, 19, '#fff0bb') + rect(-25, -40, 50, 40, '#1d2345'))
+            reflection = ''.join(path(f'M{-200+i*34} {10+i*8} q22 -18 44 0 t44 0', stroke=p[6], width=3, extra=' opacity=".75"') for i in range(13))
+            return water(p, 455, 160) + place(shrine, 610, 480, 1.15) + place(reflection, 610, 500, 1.05) + place(temple(p), 250, 500, .55)
+    elif any(word in topic for word in ('veda', 'scripture', 'manuscript', 'verse', 'upanishad')):
+        pal, backdrop = 'desert', 'hills'
+        def fg(r, p):
+            flame = path('M0 0 Q-100 -75 -15 -230 Q-5 -145 25 -100 Q75 -210 96 -148 Q125 -66 0 0Z', '#ff8b38', '#ffd77b', 5)
+            altar = path('M-150 0 L-105 -120 H105 L150 0Z', '#9d5930', '#edbd76', 6)
+            leaves = ''.join(rect(-190, -150+i*28, 380, 22, '#b98749', 3, ' stroke="#f2d69a" stroke-width="2"') + path(f'M-160 {-139+i*28} H150', stroke='#6d4029', width=2) for i in range(5))
+            return on_ground(p, uid, 520) + place(altar + flame, 320, 520, .85) + place(leaves, 850, 500, .78) + place(books(p, r), 180, 520, .35)
+    elif any(word in topic for word in ('map', 'atlas', 'geography', 'state')):
+        pal, backdrop = 'teal', 'mountains'
+        def fg(r, p):
+            contours = ''.join(circle(0, 0, 185+i*26, 'none', f' stroke="{p[6]}" stroke-width="2" opacity=".4"') for i in range(5))
+            compass = circle(0, 0, 70, 'none', f' stroke="{p[7]}" stroke-width="3"') + path('M0 -62 L20 0 L0 62 L-20 0Z', p[6])
+            return (place(contours, 600, 330, .9) + place(india_map(p, 1.35), 610, 550, 1.0)
+                    + place(route_net(p, [('DEL', 'MUM'), ('DEL', 'KOL'), ('MUM', 'CHE'), ('KOL', 'CHE'), ('GAU', 'DEL')]), 610, 550, 1.25)
+                    + place(compass, 1010, 210, .55) + on_ground(p, uid, 565))
+    elif any(word in topic for word in ('cricket', 'football', 'hockey', 'sport', 'athlet', 'trophy', 'racket', 'chess', 'kabaddi')):
+        pal, backdrop = 'night', 'city'
+        def fg(r, p):
+            stands = path('M-590 -40 Q-510 -245 -300 -280 H300 Q510 -245 590 -40Z', p[3], p[6], 4)
+            seats = ''.join(circle(x, y, 4, p[2], ' opacity=".8"') for y in range(-235, -55, 22) for x in range(-470, 500, 32) if (x+y)%3)
+            beams = ''.join(path(f'M{x} -380 L{x+180} -78', stroke=p[2], width=3, extra=' opacity=".2"') for x in (-320, 40, 390))
+            field = path('M-470 0 Q0 -125 470 0Z', '#226341', '#8ee2a6', 4)
+            game = (path('M-220 -4 V-120 H-100 V-4 M100 -4 V-120 H220 V-4', stroke=p[7], width=8)
+                    + circle(0, -72, 12, '#f3f5dc') + path('M-5 -70 l18 -14', stroke=p[6], width=4))
+            floodlights = ''.join(g(rect(-12, -330, 24, 270, p[5]) + circle(0, -340, 26, p[2], ' class="pulse"'), f'translate({x} 0)') for x in (-420, 420))
+            return on_ground(p, uid, 525) + place(stands + seats + beams, 600, 520, .9) + place(field + game, 600, 520, .95) + place(floodlights, 600, 500, .8)
+    elif any(word in topic for word in ('court', 'judiciary', 'law', 'justice')):
+        pal, backdrop = 'royal', 'city'
+        def fg(r, p):
+            courthouse = (path('M-270 -245 L0 -380 L270 -245Z', p[5], p[6], 5) + rect(-270, -245, 540, 25, p[6])
+                         + ''.join(rect(-215+i*86, -220, 28, 205, p[5], 5) for i in range(6)) + rect(-285, -15, 570, 20, p[6]))
+            return on_ground(p, uid, 520) + place(courthouse, 550, 520, .9) + place(scales(p), 950, 410, .65)
+    else:
+        pal, backdrop = 'saffron', 'city'
+        def fg(r, p):
+            return (on_ground(p, uid, 525) + place(bank(p), 300, 520, .8) + place(line_chart(p, r, 440), 820, 400, .75)
+                    + place(tricolor(p), 1080, 380, .6))
+    return pal, backdrop, fg
+
+
 def main():
+    for d in OUTPUT_DIRS:
+        d.mkdir(parents=True, exist_ok=True)
+    labels, artwork_files = catalog_artwork()
+    names = set(SCENES) | {Path(filename).stem for filename in artwork_files}
+    for name in sorted(names):
+        filename = f'{name}.svg'
+        label = labels.get(filename, name.replace('-', ' ').title())
+        if name in SCENES:
+            pal, backdrop, fn, sun = SCENES[name]
+        else:
+            pal, backdrop, fn = fallback_scene(name, label)
+            sun = (980, 130, 46)
+        svg = build(name, pal, backdrop, fn, sun, label)
+        for d in OUTPUT_DIRS:
+            (d / filename).write_text(svg, encoding='utf-8')
+    print(f'Generated {len(names)} scenes into {", ".join(str(d.relative_to(ROOT)) for d in OUTPUT_DIRS)}')
     for d in OUTPUT_DIRS:
         d.mkdir(parents=True, exist_ok=True)
     for name, (pal, backdrop, fn, sun) in SCENES.items():

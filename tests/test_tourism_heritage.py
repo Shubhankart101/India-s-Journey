@@ -40,7 +40,7 @@ class TourismHeritageTests(unittest.TestCase):
 
     def test_published_tourism_series_have_sources_and_dashboard_placements(self):
         payload = json.loads((ROOT / "data" / "chart-latest.json").read_text(encoding="utf-8"))
-        definitions = (ROOT / "docs" / "additional-chart-definitions.js").read_text(encoding="utf-8")
+        definitions = (ROOT / "scripts" / "catalog_sources" / "additional-chart-definitions.js").read_text(encoding="utf-8")
         for key in (
             "tourism_arrivals",
             "tourism_departures",

@@ -10,7 +10,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "test:all": "vitest run && playwright test"
+    "test:all": "vitest run && playwright test",
+    "build:static": "node ../scripts/export_static_api.mjs && vite build --mode static",
+    "audit:layout": "node scripts/layout-audit.mjs"
   },
   "dependencies": {
     "chart.js": "^4.6.1",

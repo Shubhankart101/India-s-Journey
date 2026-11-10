@@ -1,6 +1,6 @@
 # Project documentation
 
-India's Journey has two parts: a static, source-linked dashboard on Netlify at <https://indiasjourney.netlify.app> (with a GitHub Pages backup mirror), and a Django + React web app built from the same data. The static site also serves as the backup when the app is down. This documentation distinguishes automatically refreshed observations from snapshots and from data that is not yet available as a reproducible public series.
+India's Journey is a React dashboard served in two ways: by Django with its REST API, and as a static build for Netlify and GitHub Pages. Both builds use the same React UI and data catalogue; the static build reads generated JSON snapshots from `docs/api/` and supporting data from `docs/data/`, `docs/maps/` and `docs/art/`.
 
 **Data**
 - [Election coverage](ELECTIONS.md): ECI results, the separate U.S. Elections group, FEC finance indicators, refreshes and coverage gaps.
@@ -11,29 +11,22 @@ India's Journey has two parts: a static, source-linked dashboard on Netlify at <
 
 **Web app**
 - [Architecture](ARCHITECTURE.md): components, request routing and design decisions.
-- [Architecture diagrams](diagrams/architecture.drawio): five-page editable draw.io file (overview, pipeline, static site, web app, deployment).
-- [APIs and Swagger](API.md): the Django REST API (Swagger at `/api/docs/`) and the static JSON resources.
-- [Authentication](AUTHENTICATION.md): Google and Microsoft (Outlook) sign-in only, and how to set up each provider.
-- [Static site and backup](BACKUP.md): Netlify as the primary static site, the GitHub Pages mirror, how the app links to them, and the uptime monitor.
-- [Deployment](DEPLOYMENT.md): Netlify, the GitHub Pages backup, optional app hosting, environment variables and post-deploy checks.
+- [Architecture diagrams](diagrams/architecture.drawio): five-page editable draw.io file.
+- [APIs and Swagger](API.md): Django REST endpoints and the static API snapshots.
+- [Authentication](AUTHENTICATION.md): Google and Microsoft sign-in setup.
+- [Static site and backup](BACKUP.md): Netlify, GitHub Pages, and uptime monitoring.
+- [Deployment](DEPLOYMENT.md): static and web-app deployment instructions.
 - [Testing](TESTING.md): Django, Vitest, Playwright and static-site suites.
 - [Contributing](../CONTRIBUTING.md), [Security](../SECURITY.md).
 
 ## Quick start
 
-From the repository root, preview the site with:
+Build and preview the static React site from the repository root:
 
 ```powershell
+npm.cmd --prefix frontend ci
+npm.cmd --prefix frontend run build:static
 python -m http.server 8000 --directory docs
 ```
 
-The live dashboard reads generated public data from `docs/data/` or the deployed `data/` directory. To refresh live or historical election data locally, run:
-
-```powershell
-python scripts/collect_election_results.py
-python scripts/collect_historical_elections.py
-```
-
-Both election collectors use only the Python standard library. The historical archive reader is deliberately limited to parseable, public ECI detailed-result XLSX workbooks; its observed coverage is published with the output.
-
-For a local API/UI preview, run `python -m http.server 8000 --directory docs` and open `http://localhost:8000/api.html`. The 20,000-word-per-group-and-subgroup article target is not represented as completed content: that volume requires a separate, source-by-source editorial process, and the dashboard does not generate repetitive filler to claim a word-count target.
+Open `http://localhost:8000/`. The build exports the static API snapshots from `data/catalog.json` into `docs/api/`. Legacy `.html` entry URLs redirect into the React app. To refresh live or historical election data locally, run the collectors documented in [Pipelines](PIPELINES.md).

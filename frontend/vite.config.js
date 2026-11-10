@@ -3,7 +3,11 @@ import react from '@vitejs/plugin-react';
 
 const backend = process.env.DJANGO_URL || 'http://127.0.0.1:8000';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const staticBuild = mode === 'static' || process.env.VITE_STATIC === '1';
+  return {
+    base: staticBuild ? './' : '/',
+    define: { 'import.meta.env.VITE_STATIC': JSON.stringify(staticBuild ? '1' : process.env.VITE_STATIC || '') },
   plugins: [react()],
   server: {
     port: 5173,
@@ -15,8 +19,9 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
-    emptyOutDir: true,
+    outDir: staticBuild ? '../docs' : 'dist',
+    assetsDir: staticBuild ? 'build' : 'assets',
+    emptyOutDir: staticBuild ? false : true,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -35,4 +40,5 @@ export default defineConfig({
     css: false,
     testTimeout: 20000,
   },
+  };
 });

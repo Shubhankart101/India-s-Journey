@@ -173,12 +173,13 @@ class ManagementCommandTests(TestCase):
             self.skipTest('data/catalog.json has not been exported')
         call_command('import_catalog', stdout=StringIO())
         self.assertGreater(Indicator.objects.count(), 500)
-        self.assertGreaterEqual(Category.objects.count(), 13)
+        catalog_categories = json.loads(settings.CATALOG_PATH.read_text(encoding="utf-8"))["categories"]
+        self.assertEqual(Category.objects.count(), len(catalog_categories))
         expected_groups = {
-            'Air Travel & Civil Aviation',
-            'Indian Railways',
-            'Water Transport & Shipping',
-            'Logistics & Freight',
+            'Economy & Markets',
+            'Infrastructure & Mobility',
+            'Security, Justice & Defence',
+            'Epics, Faiths & Journeys',
         }
         imported_groups = set(Category.objects.values_list('name', flat=True))
         self.assertTrue(expected_groups.issubset(imported_groups))

@@ -1,0 +1,96 @@
+/* Theme pill: Light | Dark | Newspaper | Pamphlet, always compact and fully visible. */
+.theme-select { display: inline-flex; flex: none; align-items: center; gap: 1px; padding: 2px; border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--switch-active) 7%, var(--surface, #fff)); white-space: nowrap; }
+.theme-select[role="radiogroup"] button[role="radio"] { display: inline-grid; place-items: center; min-height: 26px; padding: 0 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-family: inherit; font-size: .66rem; font-weight: 600; line-height: 1.1; cursor: pointer; transition: background .16s, color .16s, box-shadow .16s; }
+.theme-select button[role="radio"][aria-checked="true"] { background: #9b1c2c; color: #fff; font-weight: 800; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.theme-select button[role="radio"]:hover:not([aria-checked="true"]) { background: var(--fill-hover, rgba(0,0,0,.08)); color: var(--ink); }
+.theme-select button[role="radio"]:focus-visible { outline: 2px solid var(--accent, #9b1c2c); outline-offset: 2px; z-index: 1; }
+.theme-label-short { display: none; }
+html[data-theme="dark"] .theme-select { background: #1d1d1f; border-color: #424245; }
+html[data-theme="dark"] .theme-select button[role="radio"] { color: #c4c4ca; }
+html[data-theme="newspaper"] .theme-select { border: 1px solid #342b1e; background: #e8dfcb; border-radius: 3px; }
+html[data-theme="newspaper"] .theme-select button[role="radio"] { border-radius: 1px; color: #342b1e; font-family: "Old Standard TT", Georgia, serif; text-transform: uppercase; }
+html[data-theme="newspaper"] .theme-select button[role="radio"][aria-checked="true"] { color: #f4f0e6; background: #342b1e; }
+html[data-theme="pamphlet"] .theme-select { border: 2px solid #2b1708; background: #ffedc7; box-shadow: 2px 2px 0 #2b1708; }
+html[data-theme="pamphlet"] .theme-select button[role="radio"] { color: #673914; font-family: "Special Elite", Georgia, serif; }
+html[data-theme="pamphlet"] .theme-select button[role="radio"][aria-checked="true"] { background: #a3104d; color: #fff8e7; }
+html[data-theme="military"] .theme-select { border: 1px solid #5b6b2a; background: #1a1e10; border-radius: 4px; }
+html[data-theme="military"] .theme-select button[role="radio"] { border-radius: 2px; color: #bcb48e; font-family: "Stardos Stencil", Impact, sans-serif; text-transform: uppercase; letter-spacing: .05em; }
+html[data-theme="military"] .theme-select button[role="radio"][aria-checked="true"] { background: #5b6b2a; color: #f2e7b8; box-shadow: inset 0 -2px 0 #d4a72c; }
+
+/* Devanagari accents, used in every theme: kickers, hero motto and the nameplate tagline. */
+:root { --deva-sans: "Noto Sans Devanagari", "Nirmala UI", Mangal, sans-serif; --deva-serif: "Noto Serif Devanagari", "Tiro Devanagari Hindi", "Nirmala UI", Mangal, serif; }
+.sa-kicker { font-family: var(--deva-serif); font-weight: 500; font-style: normal; letter-spacing: 0; text-transform: none; color: var(--muted); }
+.eyebrow .sa-kicker { margin-left: .6em; font-size: 1.05em; color: inherit; opacity: .85; }
+.eyebrow .sa-kicker::before { content: "· "; }
+.section-head h2 .sa-kicker, .explore-browse-head h2 .sa-kicker { margin-left: .6em; font-size: .6em; font-weight: 500; }
+.hero-motto { margin: .9rem 0 0; font: 500 clamp(.95rem, 1.8vw, 1.1rem)/1.5 var(--deva-serif); letter-spacing: .02em; color: var(--muted); }
+.hero-motto::before, .hero-motto::after { content: "ॐ"; margin: 0 .6em; color: var(--saffron); font-size: .9em; opacity: .8; }
+.footer-motto { margin: .4rem 0 0; font: 600 .95rem/1.4 var(--deva-serif); color: var(--muted); text-align: center; }
+.vintage-brand-tagline { display: block; margin-top: 1px; white-space: nowrap; color: var(--muted); font: 500 .62rem/1.2 var(--deva-serif); }
+:root[data-theme="light"] .vintage-brand-tagline::after { content: "ज्ञानम् · सार्वजनिकदत्तांशः"; }
+:root[data-theme="dark"] .vintage-brand-tagline::after { content: "तमसो मा ज्योतिर्गमय · ज्ञानम्"; }
+:root[data-theme="newspaper"] .vintage-brand-tagline::after { content: "भारतस्य यात्रा · सार्वजनिकदत्तांशः"; }
+:root[data-theme="pamphlet"] .vintage-brand-tagline::after { content: "जय हिन्द · जनगणमन"; }
+:root[data-theme="military"] .vintage-brand-tagline::after { content: "सेवा परमो धर्मः · जय हिन्द"; }
+.brand-stack { display: inline-flex; flex-direction: column; justify-content: center; min-width: 0; line-height: 1.1; }
+.vintage-nav-sublabel { display: none; margin-top: 1px; color: var(--muted); font: 500 .56rem/1.2 var(--deva-serif); letter-spacing: 0; text-transform: none; text-align: center; opacity: .85; }
+.desktop-nav .vintage-nav-sublabel { display: block; }
+.desktop-nav a { flex-direction: column; align-items: center; gap: 0; }
+.desktop-nav .badge { position: absolute; top: -6px; right: -14px; }
+
+/* Printed editions: a single slim dateline; the 1947 look comes from type, paper, rules and colour only. */
+.vintage-dateline { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: min(1360px, calc(100% - 32px)); margin: 6px auto 0; padding: 3px 2px; border-bottom: 1px solid currentColor; color: #3b2f22; font: 700 .66rem/1.3 "Old Standard TT", Georgia, serif; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.vintage-dateline span:last-child { overflow: hidden; text-overflow: ellipsis; font: 600 .72rem/1.3 var(--deva-serif); letter-spacing: 0; text-transform: none; }
+html[data-theme="pamphlet"] .vintage-dateline { margin-top: 20px; color: #4a2f1a; font-family: "Special Elite", Georgia, serif; }
+
+html[data-theme="newspaper"] body { color: #17130f; background-color: #f4f0e6; background-image: radial-gradient(ellipse at 12% 18%, rgba(116,73,28,.08), transparent 30%), radial-gradient(ellipse at 84% 73%, rgba(133,83,37,.06), transparent 32%), repeating-linear-gradient(2deg, rgba(62,45,24,.016) 0 1px, transparent 1px 5px); font-family: "Old Standard TT", "Playfair Display", Georgia, serif; }
+html[data-theme="newspaper"] .vintage-nav-sublabel, html[data-theme="newspaper"] .vintage-brand-tagline, html[data-theme="newspaper"] .sa-kicker, html[data-theme="newspaper"] .footer-motto { color: #6f1d1b; }
+html[data-theme="newspaper"] .card img { filter: grayscale(1) sepia(.45) contrast(1.06); }
+html[data-theme="newspaper"] .card, html[data-theme="newspaper"] .explainer-tile, html[data-theme="newspaper"] .latest-source-box, html[data-theme="newspaper"] .group-card { border-color: #4a3a29; box-shadow: 2px 2px 0 rgba(43,31,17,.14); }
+html[data-theme="newspaper"] .group-card { border-radius: 0; border-top: 3px solid #17130f; background: #fbf8f1; }
+html[data-theme="newspaper"] .group-card-art, html[data-theme="newspaper"] .group-card-map, html[data-theme="newspaper"] .group-card-chips li { border-radius: 0; }
+html[data-theme="newspaper"] .group-card-art img { filter: grayscale(1) sepia(.35); }
+html[data-theme="newspaper"] .group-card-title { font-family: "Playfair Display", Georgia, serif; }
+html[data-theme="newspaper"] .group-card:hover, html[data-theme="newspaper"] .group-card:focus-visible { transform: none; box-shadow: 0 3px 0 rgba(43,31,17,.28); }
+html[data-theme="newspaper"] .group-explainer p:first-of-type::first-letter { float: left; padding: .05em .12em 0 0; color: #6f1d1b; font: 700 3.2em/.8 "Playfair Display", Georgia, serif; }
+
+html[data-theme="pamphlet"] body { color: #2b1708; background-color: #f4e5c4; background-image: repeating-linear-gradient(1deg, rgba(75,48,20,.03) 0 1px, transparent 1px 6px), radial-gradient(ellipse at 50% 10%, #fff8e7, #f3e2be); font-family: "Special Elite", "Noto Sans Devanagari", Georgia, serif; }
+html[data-theme="pamphlet"] .vintage-nav-sublabel, html[data-theme="pamphlet"] .vintage-brand-tagline, html[data-theme="pamphlet"] .sa-kicker, html[data-theme="pamphlet"] .footer-motto { color: #8a1646; }
+html[data-theme="pamphlet"] .eyebrow .sa-kicker { color: #fff8e7; }
+html[data-theme="pamphlet"] .card, html[data-theme="pamphlet"] .explainer-tile, html[data-theme="pamphlet"] .latest-source-box, html[data-theme="pamphlet"] .group-card { border: 2px solid #38200e; background-color: #fff8e7; box-shadow: 4px 4px 0 rgba(43,23,8,.25); }
+html[data-theme="pamphlet"] .group-card { border-radius: 8px; }
+html[data-theme="pamphlet"] .group-card-title { font-family: "Rozha One", Georgia, serif; font-weight: 400; }
+html[data-theme="pamphlet"] .card:hover, html[data-theme="pamphlet"] .card:focus-within, html[data-theme="pamphlet"] .group-card:hover, html[data-theme="pamphlet"] .group-card:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(43,23,8,.3); }
+:focus-visible { outline: 3px solid #7a1010; outline-offset: 3px; }
+html[data-theme="pamphlet"] :focus-visible { outline-color: #8a1646; }
+
+/* Header: the printed editions put the navigation on a second row, under the nameplate. */
+:is(:root[data-theme="newspaper"], :root[data-theme="pamphlet"]) {
+  & .site-header { height: auto; min-height: var(--header-h); }
+  & .header-inner { flex-wrap: wrap; row-gap: 2px; padding-block: 6px 4px; gap: 10px; }
+  & .brand { margin-right: auto; min-width: 0; }
+  & .desktop-nav { order: 10; flex: 1 0 100%; justify-content: center; gap: clamp(14px, 3vw, 40px); padding-bottom: 2px; }
+  & .header-inner .contact-links, & .header-inner .theme-select { margin-left: 0; }
+}
+@media (max-width: 1240px) {
+  .theme-label-full { display: none; }
+  .theme-label-short { display: inline; }
+  :is(:root[data-theme="newspaper"], :root[data-theme="pamphlet"]) .header-cta { display: none; }
+}
+@media (max-width: 1000px) { .theme-select button[role="radio"] { min-width: 34px; padding-inline: 5px; } }
+@media (max-width: 620px) {
+  .vintage-dateline { width: calc(100% - 20px); font-size: .58rem; letter-spacing: .04em; }
+  .vintage-dateline span:last-child { display: none; }
+  html[data-theme="pamphlet"] .card { transform: none; }
+}
+@media (max-width: 480px) {
+  .vintage-brand-tagline, .desktop-nav .vintage-nav-sublabel { display: none; }
+  .theme-select { max-width: 100%; }
+  .theme-select button[role="radio"] { min-height: 26px; min-width: 29px; padding-inline: 4px; font-size: .62rem; }
+  /* Shrink the nameplate so the theme pill stays on the first row, top-right. */
+  html[data-theme="newspaper"] .brand, html[data-theme="newspaper"] .brand-text { font-size: 19px !important; }
+  .header-inner .theme-select { margin-left: auto; order: 5; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

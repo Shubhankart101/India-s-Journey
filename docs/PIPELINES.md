@@ -1,5 +1,46 @@
 # Data pipelines and deployment
 
+## Dataset producer inventory
+
+`python scripts/update_all_data.py` runs the registered producers in dependency order, then exports the catalogue and builds explainers. Use `--only <producer-or-dataset> [<name> ...]` to select a pipeline; `--offline` or `--skip-network` disables all network producers and uses complete local caches; `--dry-run` prints the plan without changing files. A failed producer restores its previous output, and a summary lists changed, unchanged, skipped and failed steps. Dataset filenames and producer names are both accepted by `--only`.
+
+| Dataset | Source | Producer | Cadence | Command |
+| --- | --- | --- | --- | --- |
+| `atlas-series.json` | Lok Sabha, epic and faith atlas outputs | `build_atlas_series.py` | After atlas builds | `python scripts/build_atlas_series.py` |
+| `borrowing.json` | RBI Handbook of Statistics on the Indian Economy | `build_borrowing.py` | Annual | `python scripts/build_borrowing.py` |
+| `catalog.json` | Dashboard definitions and published snapshots | `export_catalog.mjs` | After data builds | `node scripts/export_catalog.mjs` |
+| `chart-latest.json` | World Bank, RBI, MoSPI, UNESCO, NJDG and other official sources | `generate_public_charts.py` | Daily | `python scripts/generate_public_charts.py` |
+| `economic-survey-monthly.json` | Ministry of Finance Economic Survey | `fetch_economic_survey_monthly.py` | Monthly | `python scripts/fetch_economic_survey_monthly.py` |
+| `election-indices.json` | Recent Indian election results | `build_election_indices.py` | On election data refresh | `python scripts/build_election_indices.py` |
+| `election-results.json` | ECI results and U.S. National Archives | `collect_election_results.py` | Every 3 hours on counting days | `python scripts/collect_election_results.py` |
+| `epic-kingdoms.json` | Curated epic places and verified public-text verses | `build_epic_atlas.py` | On content update | `python scripts/build_epic_atlas.py` |
+| `faith-journeys.json` | Curated journeys plus public text verse sources | `build_faith_journeys.py` | On source update | `python scripts/pull_faith_verses.py` then `python scripts/build_faith_journeys.py` |
+| `fiscal-series.json` | Union Budget and RBI fiscal datasets | `build_fiscal_layer.py` | After fiscal inputs | `python scripts/build_fiscal_layer.py` |
+| `historical-elections.json` | ECI statistical reports and detailed-result workbooks | `collect_historical_elections.py` | Monthly | `python scripts/collect_historical_elections.py` |
+| `indian-matrix-latest.json` | Indian Matrix public article feed | `collect_indian_matrix.py` | Daily | `python scripts/collect_indian_matrix.py` |
+| `latest.json` | PolityPolicy homepage status | `check_site_status.py` | Daily | `python scripts/check_site_status.py` |
+| `latest-status.json` | PolityPolicy homepage status | `check_site_status.py` | Daily | `python scripts/check_site_status.py` |
+| `lok-sabha-atlas.json` | ECI-derived constituency history and recent ECI results | `build_lok_sabha_atlas.py` | After election results | `python scripts/build_lok_sabha_atlas.py` |
+| `lwe-insurgency.json` | PIB, ORF and ICFS reports | `build_lwe_insurgency.py` | On report release | `python scripts/build_lwe_insurgency.py` |
+| `ncrb-and-analyses.json` | NCRB and Indian Matrix | `collect_ncrb_and_analyses.py` | Monthly | `python scripts/collect_ncrb_and_analyses.py` |
+| `niti-reports.json` | NITI Aayog reports and transcribed report tables | `build_niti_reports.py` | On report release | `python scripts/build_niti_reports.py` |
+| `pew-india-reports.json` | Pew Research Center India report catalogue | `collect_pew_india_reports.py` | Weekly | `python scripts/collect_pew_india_reports.py` |
+| `pew-snapshots.json` | Pew Research Center surveys | `collect_pew_snapshots.py` | Weekly | `python scripts/collect_pew_snapshots.py` |
+| `recent-indian-elections.json` | ECI results and India Votes Data | `collect_recent_indian_elections.py` | Daily | `python scripts/collect_recent_indian_elections.py` |
+| `scripture-verses.json` | Reviewed scripture corpus | No standalone producer; editorial input consumed by `build_scripture_verses.py` | As reviewed | `python scripts/build_scripture_verses.py` (builds site bundles; does not generate this corpus) |
+| `source_publishers.json` | Curated publisher/host mapping | No standalone producer; manually maintained and checked by `audit_sources.py` | As reviewed | `python scripts/audit_sources.py` (validation only) |
+| `sports.json` | Official sports federation and ranking snapshots | `refresh_sports_sources.py` / `build_sports_data.py` | Weekly | `python scripts/refresh_sports_sources.py`; offline: `python scripts/build_sports_data.py` |
+| `state_fiscal.json` | RBI Handbook of Statistics on Indian States and RBI State Finances | `build_state_fiscal.py` | Annual | `python scripts/build_state_fiscal.py` |
+| `substack-latest.json` | PolityPolicy public article feed | `collect_substack.py` | Weekly | `python scripts/collect_substack.py` |
+| `union_budget.json` | Union Budget: Budget at a Glance PDFs | `build_union_budget.py` | Annual | Network: `python scripts/build_union_budget.py --fetch`; cached: `python scripts/build_union_budget.py` |
+| `us-campaign-finance.json` | Federal Election Commission | `collect_us_campaign_finance.py` | Daily | `python scripts/collect_us_campaign_finance.py` |
+| `voter-roll.json` | ECI, Census and World Bank sources | `build_voter_roll.py` | On ECI revision | `python scripts/build_voter_roll.py` |
+
+The `data/raw/`, `data/raw_fiscal/`, `data/epic-sources/`, `data/faith-sources/` and `data/journey-sources/` directories are gitignored caches and are not included in the repository. Network-mode updates fetch missing raw election CSVs, Union Budget PDFs, RBI HTML tables and faith verses; journey source pages are fetched lazily into the ignored cache. `--offline` never fetches; it runs cache-backed builders only when their required inputs are present, otherwise it logs a skip and preserves published data. The curated `data/epic-sources/{mahabharata,ramayana}.json` inputs have no canonical downloadable mirror; those atlas steps are skipped if the local editorial cache is absent. `scripture-verses.json` and `source_publishers.json` are intentional hand-maintained inputs, not generated snapshots.
+
+The scheduled [Monthly Data Refresh](../.github/workflows/data-refresh.yml) workflow runs the orchestrator and proposes updates as a pull request; it can also be started manually in offline mode. The individual workflows below remain available for more frequent source-specific refreshes. The static site is built from the React frontend by `npm run build:static`; deployment workflows should not stage legacy `docs/data/` copies.
+
+
 ## Scheduled collectors
 
 | Workflow | Cron (UTC) | Cadence rationale | Main outputs |
@@ -40,6 +81,8 @@ Every workflow that changes chart data also runs `node scripts/export_catalog.mj
 | Extra subgroups in 12 groups | `expansion_layer.py` (World Bank WDI, `xp_*` keys), `derived_groups_layer.py` (Pew, Elections, U.S. Elections; derived from committed data, `dg_*` keys) | Daily PolityPolicy Update | Daily 02:30 |
 | Sports, Cricket, Hockey, Football | `refresh_sports_sources.py` → `sports_fetch/{individual,cricket,hockey,football}.py` → `build_sports_data.py` | Sports Data Update | Tuesday 04:15 |
 | Judiciary & Pending Cases | `legal_fetch/njdg.py` -> `legal_layer.py` (Supreme Court, High Courts, district and subordinate courts) | Weekly Legal Data Update | Wednesday 04:30 |
+| NITI Aayog report indices (health, fiscal health, MPI, SEQI, export preparedness, innovation) | `build_niti_reports.py` (reads `scripts/niti_report_tables.json` plus scores listed in the script) -> `data/niti-reports.json` | Manual, when NITI Aayog publishes a new edition | On release |
+| Maoist / LWE insurgency indices (PIB, ORF, ICFS) | `build_lwe_insurgency.py` -> `data/lwe-insurgency.json` | Manual, when a new report is published | On release |
 
 Each source has its own failure handling. If a source fails, the previous series or snapshot is kept, so a broken site never empties a chart.
 
@@ -51,17 +94,16 @@ Each source has its own failure handling. If a source fails, the previous series
 
 `scripts/legal_fetch/njdg.py` visits the official Supreme Court, High Courts and district/subordinate-courts NJDG portals, then uses their `home/fetchStateData`, `home/newPendDashboard` and `home/updateInstitutionDisp` AJAX actions. It writes normalized response tables and series arrays to `data/legal/njdg_snapshot.json`; `data/legal/njdg_history.json` appends dated portal pendency snapshots. `scripts/legal_layer.py` builds the three Judiciary & Pending Cases subgroups from that committed snapshot and can merge them into both chart JSON files without running the network-heavy public-chart generator (`python -m scripts.legal_layer --merge`). The weekly workflow validates the layer and refreshes the public catalog and static chart bundles.
 
-### Static bundles for `file://`
+### Static React API snapshots
 
-Browsers block `fetch()` when the static pages are opened straight from disk. `scripts/export_catalog.mjs` therefore also writes two script bundles next to `data.js`: `docs/compare-data.js` (time series for the Compare page) and `docs/overlays.js` (the overlay JSONs `app.js` merges in: sports, election results and indices, U.S. campaign finance, Economic Survey, NCRB, Pew and the article feeds). Online, `app.js` still fetches the JSON files and falls back to the bundle; on `file://` it uses the bundle directly, so all 21 groups appear either way. Re-run `node scripts/export_catalog.mjs` whenever an overlay JSON changes.
-
+The static deployment is built from the shared React frontend. `npm run build:static` runs `scripts/export_static_api.mjs`, which exports the Django-compatible category, indicator, article, search-index, stats, and legacy-alias payloads from `data/catalog.json` into `docs/api/`, then Vite builds the app into `docs/`. Client-side filtering and pagination preserve the API response shape without a server. Generated snapshots are rebuilt in both the Netlify build and GitHub Pages workflow.
 ### Sports pipeline
 
 `scripts/refresh_sports_sources.py` runs one fetcher module per sport family and writes `data/sports_sources/{cricket,hockey,football,individual_sports}.json`. Each producer runs on its own. If one fails, its previous series are kept and listed under `stale` in the snapshot. `scripts/build_sports_data.py` then builds `data/sports.json` from the snapshots only. The workflow runs `tests/test_sports_data.py` before committing, and the tests reject wiki sources, empty subgroups and player indices without both past and current players. See [SPORTS.md](SPORTS.md) and [`scripts/sports_fetch/README.md`](../scripts/sports_fetch/README.md).
 
 Workflows that rebuild `chart-latest.json` share the `daily-public-data` concurrency group, so they never race; each fetches and rebases before pushing. [Deploy Interactive Dashboard](../.github/workflows/deploy-dashboard.yml) runs after any of them succeeds.
 
-The Lok Sabha 2024 rows are read from the official ECI *Constituency-Wise Detailed Result* workbook (statistical report 33) with party names from report 3; the job installs `xlrd` and `openpyxl`. Rows are de-duplicated on year, type, state, seat, candidate, party and votes so that namesake candidates in one seat are not merged. `scripts/build_election_indices.py` then derives 208 series (`data/election-indices.json`): seat, vote, margin, winner-share, candidate-field and party/independent/NOTA doughnuts for Lok Sabha 2024 (national and per State/UT) and every 2022?2026 Assembly election, plus cross-state comparisons (NOTA share, close contests, median margin, candidates per seat, largest-party dominance, parties winning seats) and latest-Assembly seat and States-led-by-party pies, and validation tests require all 543 seats and the official party tallies before anything is committed.
+The Lok Sabha 2024 rows are read from the official ECI *Constituency-Wise Detailed Result* workbook (statistical report 33) with party names from report 3; the job installs `xlrd` and `openpyxl`. Rows are de-duplicated on year, type, state, seat, candidate, party and votes so that namesake candidates in one seat are not merged. `scripts/build_election_indices.py` then derives 208 series (`data/election-indices.json`): seat, vote, margin, winner-share, candidate-field and party/independent/NOTA doughnuts for Lok Sabha 2024 (national and per State/UT) and every 2022–2026 Assembly election, plus cross-state comparisons (NOTA share, close contests, median margin, candidates per seat, largest-party dominance, parties winning seats) and latest-Assembly seat and States-led-by-party pies, and validation tests require all 543 seats and the official party tallies before anything is committed.
 
 The election collector uses Python's standard library, stores source URLs and collection status, and records collection errors in the JSON metadata. If a source fails, prior cached records for that source are retained when available and the status is marked `partial`.
 
@@ -99,12 +141,10 @@ Substack blocks RSS requests from some GitHub-hosted runner IPs with HTTP 403. `
 
 ## Data flow
 
-1. A collector writes a JSON snapshot under `data/`.
-2. The Pages deployment copies the snapshot to `site/data/`.
-3. The browser merges `election-results.json`, `us-campaign-finance.json` and `election-indices.json` into dashboard chart data; any series with `meta` becomes a card in its stated group/subgroup. The historical-election explorer fetches its candidate-level archive and recent constituency snapshot only when Elections is selected.
-4. Source timestamps and notes remain attached to chart data. ECI's provisional-results caveat appears in the indicator description and generated series note.
-5. `docs/openapi.json` documents deployed static GET resources; `docs/api.html` offers Swagger UI and an all-resource JSON check.
-
+1. Collectors write source snapshots under `data/` and `scripts/export_catalog.mjs` produces the canonical `data/catalog.json`.
+2. Django imports that catalogue for the web app. The static deployment runs `npm run build:static` to generate React-compatible JSON responses under `docs/api/` and bundle the same React UI into `docs/`.
+3. Supporting datasets and assets are copied from `frontend/public/` into `docs/`; theme, maps, and atlas UI are shared with the web app.
+4. Netlify builds and publishes `docs/`; the Pages workflow publishes the same output as the backup mirror.
 ## Running and checking locally
 
 ```powershell

@@ -1,0 +1,1664 @@
+{
+ "years": [
+  "2014-15",
+  "2015-16",
+  "2016-17",
+  "2017-18",
+  "2018-19",
+  "2019-20",
+  "2020-21",
+  "2021-22",
+  "2022-23",
+  "2023-24",
+  "2024-25",
+  "2025-26",
+  "2026-27"
+ ],
+ "unit": "Rs crore",
+ "items": {
+  "revenue_receipts": {
+   "2014-15": {
+    "value": 1101472.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 1195025.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 1374203.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 1505428.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 1552916.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 1684059.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 1633920.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 2169905.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 2383206.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 2729036.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 3036619.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 3342323.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 3533150.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "non_tax_revenue": {
+   "2014-15": {
+    "value": 197857.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 251260.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 272831.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 235974.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 235705.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 327157.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 207633.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 365112.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 285421.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 401785.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 536580.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 667662.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 666228.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "total_expenditure": {
+   "2014-15": {
+    "value": 1663673.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 1790783.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 1975194.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 2217750.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 2315113.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 2686330.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 3509836.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 3793801.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 4193157.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 4443447.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 4652867.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 4964842.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 5347315.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "interest_payments": {
+   "2014-15": {
+    "value": 402444.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 441659.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 480714.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 530843.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 582648.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 612070.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 679869.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 805499.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 928517.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 1063872.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 1115575.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1274338.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1403972.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "fiscal_deficit": {
+   "2014-15": {
+    "value": 510725.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "pct_gdp": 4.1
+   },
+   "2015-16": {
+    "value": 532791.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "pct_gdp": 3.9
+   },
+   "2016-17": {
+    "value": 535618.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 3.5
+   },
+   "2017-18": {
+    "value": 594849.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 3.5
+   },
+   "2018-19": {
+    "value": 649418.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 3.4
+   },
+   "2019-20": {
+    "value": 933651.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 4.6
+   },
+   "2020-21": {
+    "value": 1818291.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 9.2
+   },
+   "2021-22": {
+    "value": 1584521.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 6.7
+   },
+   "2022-23": {
+    "value": 1737755.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 6.4
+   },
+   "2023-24": {
+    "value": 1654643.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 5.6
+   },
+   "2024-25": {
+    "value": 1574431.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 4.8
+   },
+   "2025-26": {
+    "value": 1558492.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 4.4
+   },
+   "2026-27": {
+    "value": 1695768.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 4.3
+   }
+  },
+  "revenue_deficit": {
+   "2014-15": {
+    "value": 365519.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "pct_gdp": 2.9
+   },
+   "2015-16": {
+    "value": 342736.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "pct_gdp": 2.5
+   },
+   "2016-17": {
+    "value": 316381.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 2.1
+   },
+   "2017-18": {
+    "value": 438877.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 2.6
+   },
+   "2018-19": {
+    "value": 454483.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 2.4
+   },
+   "2019-20": {
+    "value": 666545.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 3.3
+   },
+   "2020-21": {
+    "value": 1449599.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 7.3
+   },
+   "2021-22": {
+    "value": 1031021.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 4.4
+   },
+   "2022-23": {
+    "value": 1069926.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 4.0
+   },
+   "2023-24": {
+    "value": 765216.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 2.6
+   },
+   "2024-25": {
+    "value": 564296.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 1.7
+   },
+   "2025-26": {
+    "value": 526764.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 1.5
+   },
+   "2026-27": {
+    "value": 592344.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 1.5
+   }
+  },
+  "primary_deficit": {
+   "2014-15": {
+    "value": 108281.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "pct_gdp": 0.9
+   },
+   "2015-16": {
+    "value": 91132.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "pct_gdp": 0.7
+   },
+   "2016-17": {
+    "value": 54904.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 0.4
+   },
+   "2017-18": {
+    "value": 64006.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "pct_gdp": 0.4
+   },
+   "2018-19": {
+    "value": 66770.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 0.4
+   },
+   "2019-20": {
+    "value": 321581.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 1.6
+   },
+   "2020-21": {
+    "value": 1138422.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 5.8
+   },
+   "2021-22": {
+    "value": 779022.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 3.3
+   },
+   "2022-23": {
+    "value": 809238.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 3.0
+   },
+   "2023-24": {
+    "value": 590771.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "pct_gdp": 2.0
+   },
+   "2024-25": {
+    "value": 458856.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 1.4
+   },
+   "2025-26": {
+    "value": 284154.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 0.8
+   },
+   "2026-27": {
+    "value": 291796.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "pct_gdp": 0.7
+   }
+  },
+  "corporation_tax": {
+   "2014-15": {
+    "value": 428925.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 453228.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 484924.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 563745.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 663572.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 556876.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 457719.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 712037.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 825834.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 911055.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 986767.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1109000.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1231000.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "income_tax": {
+   "2014-15": {
+    "value": 265733.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 287637.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 364604.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 441255.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 473003.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 492654.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 487144.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 696243.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 833260.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 1044757.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 1235171.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1312000.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1466000.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "customs": {
+   "2014-15": {
+    "value": 188016.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 210338.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 225370.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 135242.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 117813.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 109283.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 134750.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 199728.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 213372.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 233119.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 233201.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 258290.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 271200.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "union_excise": {
+   "2014-15": {
+    "value": 189952.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 288073.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 382094.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 276995.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 231982.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 240615.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 391749.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 394644.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 319000.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 305362.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 300253.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 336550.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 388910.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "gross_tax_revenue": {
+   "2014-15": {
+    "value": 1244885.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf"
+   },
+   "2015-16": {
+    "value": 1455648.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 1715822.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 1946119.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 2080465.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 2010059.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 2027104.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 2709315.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 3054192.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 3465519.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 3796382.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 4077772.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 4404086.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "states_share_taxes": {
+   "2015-16": {
+    "value": 506193.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 608000.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 673005.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 761454.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 650678.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 594997.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 744785.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 948407.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 1129494.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 1286885.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1392971.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1526255.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "total_transfers_states": {
+   "2018-19": {
+    "value": 1195394.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 1145487.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 1313937.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 1705610.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 1864615.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 2064829.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 2225513.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 2336144.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 2620769.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_establishment": {
+   "2015-16": {
+    "value": 334870.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 423851.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 468914.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 521247.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 570244.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 594449.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 693272.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 714650.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 768961.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 829423.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 782701.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 824114.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_central_sector": {
+   "2015-16": {
+    "value": 521374.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 589471.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 634318.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 638495.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 757091.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 1356817.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 1209950.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 1445923.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 1423437.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 1494392.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1637156.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1771928.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_other_central_sector": {
+   "2015-16": {
+    "value": 592909.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 570377.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 638009.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 677403.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 727025.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 798274.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 1010748.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 1104590.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 1322216.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 1420966.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 1699445.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 1761387.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_centrally_sponsored": {
+   "2015-16": {
+    "value": 203741.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 241295.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 285582.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 296029.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 309553.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 383976.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 454366.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 437556.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 444547.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 402368.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 420078.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 548798.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_finance_commission": {
+   "2015-16": {
+    "value": 84579.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 95550.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 101490.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 93704.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 123710.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 184063.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 207435.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 172760.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 148522.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 120858.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 152953.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 129397.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "type_other_transfers": {
+   "2015-16": {
+    "value": 53310.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf"
+   },
+   "2016-17": {
+    "value": 54650.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2017-18": {
+    "value": 89437.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf"
+   },
+   "2018-19": {
+    "value": 88235.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2019-20": {
+    "value": 198707.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2020-21": {
+    "value": 192257.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2021-22": {
+    "value": 218031.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2022-23": {
+    "value": 317679.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2023-24": {
+    "value": 335764.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf"
+   },
+   "2024-25": {
+    "value": 384860.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2025-26": {
+    "value": 272510.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   },
+   "2026-27": {
+    "value": 311691.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf"
+   }
+  },
+  "revenue_expenditure": {
+   "2014-15": {
+    "value": 1466991.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "derived": true
+   },
+   "2015-16": {
+    "value": 1537761.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "derived": true
+   },
+   "2016-17": {
+    "value": 1690584.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2017-18": {
+    "value": 1944305.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2018-19": {
+    "value": 2007399.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2019-20": {
+    "value": 2350604.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2020-21": {
+    "value": 3083519.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2021-22": {
+    "value": 3200926.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2022-23": {
+    "value": 3453132.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2023-24": {
+    "value": 3494252.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2024-25": {
+    "value": 3600915.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2025-26": {
+    "value": 3869087.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2026-27": {
+    "value": 4125494.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   }
+  },
+  "capital_expenditure": {
+   "2014-15": {
+    "value": 196682.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "derived": true
+   },
+   "2015-16": {
+    "value": 253022.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "derived": true
+   },
+   "2016-17": {
+    "value": 284610.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2017-18": {
+    "value": 273445.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2018-19": {
+    "value": 307714.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2019-20": {
+    "value": 335726.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2020-21": {
+    "value": 426317.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2021-22": {
+    "value": 592875.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2022-23": {
+    "value": 740025.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2023-24": {
+    "value": 949195.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2024-25": {
+    "value": 1051952.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2025-26": {
+    "value": 1095755.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2026-27": {
+    "value": 1221821.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   }
+  },
+  "net_tax_revenue": {
+   "2014-15": {
+    "value": 903615.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "derived": true
+   },
+   "2015-16": {
+    "value": 943765.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "derived": true
+   },
+   "2016-17": {
+    "value": 1101372.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2017-18": {
+    "value": 1269454.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2018-19": {
+    "value": 1317211.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2019-20": {
+    "value": 1356902.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2020-21": {
+    "value": 1426287.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2021-22": {
+    "value": 1804793.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2022-23": {
+    "value": 2097785.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2023-24": {
+    "value": 2327251.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2024-25": {
+    "value": 2500039.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2025-26": {
+    "value": 2674661.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2026-27": {
+    "value": 2866922.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   }
+  },
+  "gst_other_taxes": {
+   "2014-15": {
+    "value": 172259.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2016-17/bag/bag1.pdf",
+    "derived": true
+   },
+   "2015-16": {
+    "value": 216372.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2017-18/bag/bag1.pdf",
+    "derived": true
+   },
+   "2016-17": {
+    "value": 258830.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2017-18": {
+    "value": 528882.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/ub2018-19/bag/bag1.pdf",
+    "derived": true
+   },
+   "2018-19": {
+    "value": 594095.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2020-21/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2019-20": {
+    "value": 610631.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2021-22/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2020-21": {
+    "value": 555742.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2022-23/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2021-22": {
+    "value": 706663.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2023-24/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2022-23": {
+    "value": 862726.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2024-25/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2023-24": {
+    "value": 971226.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/budget2025-26/doc/Budget_at_Glance/bag1.pdf",
+    "derived": true
+   },
+   "2024-25": {
+    "value": 1040990.0,
+    "basis": "Actuals",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2025-26": {
+    "value": 1061932.0,
+    "basis": "Revised Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   },
+   "2026-27": {
+    "value": 1046976.0,
+    "basis": "Budget Estimates",
+    "source_url": "https://www.indiabudget.gov.in/doc/Budget_at_Glance/budget_at_a_glance.pdf",
+    "derived": true
+   }
+  }
+ }
+}

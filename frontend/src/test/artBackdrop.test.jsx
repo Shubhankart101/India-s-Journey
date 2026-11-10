@@ -33,7 +33,7 @@ describe('ArtBackdrop', () => {
     const { resolve } = await import('node:path');
     AMBIENT_ART.forEach(file => {
       expect(existsSync(resolve(__dirname, '../../public/art', file))).toBe(true);
-      expect(existsSync(resolve(__dirname, '../../../docs/assets', file))).toBe(true);
+      expect(existsSync(resolve(__dirname, '../../../docs/art', file))).toBe(true);
     });
   });
 });

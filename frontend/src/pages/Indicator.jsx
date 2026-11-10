@@ -7,6 +7,7 @@ import { useAsync, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
 import { ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
+import ScriptureVerse from '../components/ScriptureVerse.jsx';
 
 const ChartView = lazy(() => import('../components/ChartView.jsx'));
 const MODE_LABEL = { doughnut: '◔ Pie', pie: '◔ Pie', bar: '▥ Bar', line: '⌇ Line', map: '▦ Map' };
@@ -62,7 +63,8 @@ function IndicatorView({ indicator }) {
     return { labels: visible.labels, datasets: trend ? [...datasets, { label: 'Linear trend', trend: true, values: trend.line }] : datasets };
   }, [analysable, view, visible, inPoints, trend]);
 
-  const stats = seriesStats(visible.datasets[0]?.values || []);
+  const specialModule = ['voter-roll', 'journey-map', 'fiscal-matrix', 'fiscal-compare', 'fiscal-spending', 'budget-anatomy'].includes(indicator.chart_type);
+  const stats = specialModule ? null : seriesStats(visible.datasets[0]?.values || []);
   const { explain, paragraphs } = parseExplainer(indicator.details);
   const inCompare = compare.has(indicator.key);
   const art = indicator.subgroup_art || indicator.category_art;
@@ -154,6 +156,7 @@ function IndicatorView({ indicator }) {
             </>
           ) : <p className="card-pending">{indicator.error || 'Awaiting the next official release.'}</p>}
         </div>
+        <ScriptureVerse verseKey={indicator.key} group={indicator.category} />
 
         {stats && (
           <dl className="stat-grid">
@@ -191,7 +194,7 @@ function IndicatorView({ indicator }) {
         </aside>
       </section>
 
-      {indicator.is_live && (
+      {indicator.is_live && !specialModule && (
         <section className="section">
           <button type="button" className="btn btn-ghost" onClick={() => setShowTable(value => !value)} aria-expanded={showTable}>
             {showTable ? 'Hide data table' : 'Show data table'}

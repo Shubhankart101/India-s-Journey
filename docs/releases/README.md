@@ -35,4 +35,4 @@ Major releases of India's Journey, oldest first. Each note is generated from the
 | 29 | Docker and Render/Fly.io CI | 2026-11-01 | `b9a560e` | [29-b9a560e-docker-and-render-fly-io-ci.md](./29-b9a560e-docker-and-render-fly-io-ci.md) |
 | 30 | Air Travel and Indian Railways groups | 2026-11-04 | `2285139` | [30-2285139-air-travel-and-indian-railways-groups.md](./30-2285139-air-travel-and-indian-railways-groups.md) |
 | 31 | Water, Logistics, expanded air and rail data, interactive charts | 2026-11-04 | `aeb4153` | [31-aeb4153-water-logistics-and-interactive-charts.md](./31-aeb4153-water-logistics-and-interactive-charts.md) |
-| 32 | India in Maps, display themes and contact links | 2026-11-05 | `9e65ede` | [32-9e65ede-india-in-maps-and-display-themes.md](./32-9e65ede-india-in-maps-and-display-themes.md) |
+| 32 | Maps, fiscal and faith atlases, four themes | 2026-11-05 | `9e65ede` | [Full release note: maps, regrouping, fiscal views, journeys and themes](./32-9e65ede-india-in-maps-and-display-themes.md) |

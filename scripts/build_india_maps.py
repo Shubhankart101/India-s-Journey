@@ -3,8 +3,7 @@
 Boundaries come from DataMeet's open States layer (CC BY 2.5 IN, https://github.com/datameet/maps), which
 follows the Survey of India outline including Ladakh and the merged Dadra & Nagar Haveli and Daman & Diu.
 The shapefile is downloaded, projected, simplified and written as compact SVG path strings to
-docs/assets/maps/ (static site) and frontend/public/maps/ (React app). The artwork goes to docs/assets/ and
-frontend/public/art/ next to the other scenes.
+frontend/public/maps/ (shared by both apps). The artwork goes to frontend/public/art/ next to the other scenes.
 
     python scripts/build_india_maps.py [path/to/Admin2]
 """
@@ -13,6 +12,7 @@ from __future__ import annotations
 import html
 import json
 import math
+import random
 import re
 import struct
 import sys
@@ -28,8 +28,8 @@ except ImportError:  # executed directly as scripts/build_india_maps.py
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE_URL = "https://raw.githubusercontent.com/datameet/maps/master/States/Admin2.{ext}"
 SOURCE_PAGE = "https://github.com/datameet/maps"
-MAP_DIRS = [ROOT / "docs" / "assets" / "maps", ROOT / "frontend" / "public" / "maps"]
-ART_DIRS = [ROOT / "docs" / "assets", ROOT / "frontend" / "public" / "art"]
+MAP_DIRS = [ROOT / "frontend" / "public" / "maps"]
+ART_DIRS = [ROOT / "frontend" / "public" / "art"]
 WIDTH = 1000
 TOLERANCE = 0.9  # output pixels
 MIN_RING_AREA = 6.0  # square output pixels; smaller islands are dropped unless they are a State/UT's only land
@@ -39,7 +39,7 @@ GROUPS = [
     "Agriculture & Food", "Defence & Strategic", "Crime & Security", "Judiciary & Pending Cases", "Pew Research",
     "Elections", "U.S. Elections", "Tourism & Heritage", "Air Travel & Civil Aviation", "Indian Railways",
     "Water Transport & Shipping", "Logistics & Freight", "Innovation & Technology", "Sports", "Cricket", "Hockey",
-    "Football", "Lower Courts",
+    "Football", "Lower Courts", "Union Budget",
 ]
 
 
@@ -309,7 +309,7 @@ def _crystal(a, b):
 
 
 MOTIFS = {
-    "India in Maps": _rupee, "Economic": _rupee, "Industry Trends & Performance": _gear, "Mining & Natural Resources": _crystal,
+    "India in Maps": _rupee, "Economic": _rupee, "Union Budget": _rupee, "Industry Trends & Performance": _gear, "Mining & Natural Resources": _crystal,
     "Payments & Digital Banking": _coins_phone, "State Performance & Regional Health": _bars,
     "Public Health & Epidemiology": _health, "Social": _people, "Environment & Climate": _leaf_sun,
     "Agriculture & Food": _wheat, "Defence & Strategic": _shield, "Crime & Security": _shield,
@@ -402,12 +402,264 @@ def groovy_art(outline: str, view_box: str, seed: int, title: str, theme: str = 
 """
 
 
+STYLE_NEW = """<style>
+.flow{stroke-dasharray:10 14;animation:flow 6s linear infinite}
+.drift{animation:drift 9s ease-in-out infinite alternate}
+.turn{transform-origin:600px 330px;animation:turn 120s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-96}}
+@keyframes drift{to{transform:translateY(-10px)}}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.flow,.drift,.turn{animation:none}}
+</style>"""
+
+# Main-land city positions as fractions of the outline's view box (x, y), used for the railway-line artwork.
+RAIL_CITIES = {
+    "Delhi": (0.31, 0.28), "Amritsar": (0.23, 0.18), "Jaipur": (0.26, 0.33), "Lucknow": (0.44, 0.34), "Patna": (0.58, 0.38),
+    "Guwahati": (0.80, 0.36), "Kolkata": (0.69, 0.475), "Ahmedabad": (0.16, 0.46), "Bhopal": (0.32, 0.45), "Nagpur": (0.38, 0.52),
+    "Raipur": (0.46, 0.52), "Bhubaneswar": (0.60, 0.55), "Mumbai": (0.16, 0.59), "Hyderabad": (0.36, 0.65), "Visakhapatnam": (0.52, 0.64),
+    "Goa": (0.20, 0.72), "Bengaluru": (0.33, 0.79), "Chennai": (0.42, 0.79), "Kochi": (0.28, 0.90),
+}
+RAIL_LINES = [
+    ("Amritsar", "Delhi", "Lucknow", "Patna", "Kolkata", "Guwahati"), ("Delhi", "Jaipur", "Ahmedabad", "Mumbai", "Goa", "Kochi"),
+    ("Delhi", "Bhopal", "Nagpur", "Hyderabad", "Bengaluru", "Chennai"), ("Kolkata", "Bhubaneswar", "Visakhapatnam", "Chennai"),
+    ("Mumbai", "Hyderabad", "Visakhapatnam"), ("Nagpur", "Raipur", "Bhubaneswar"), ("Bengaluru", "Kochi"),
+]
+NEW_PALETTES = {
+    "contour": [("#f2e8cf", "#a7c4a0", "#6a994e", "#386641", "#bc4749"), ("#e9edf2", "#c5d5e4", "#8da9c4", "#134074", "#e07a5f"),
+                ("#f4ecd8", "#d9c7a3", "#b08968", "#7f5539", "#2a9d8f")],
+    "river": [("#04202b", "#0b3a4d", "#2ec4b6", "#bdf3ff", "#ffbf69"), ("#101a2c", "#1d3354", "#4cc9f0", "#e0fbfc", "#f9c74f")],
+    "dots": [("#fbf7ef", "#ff9933", "#138808", "#1b2a49", "#c9c3b5"), ("#101820", "#ffb703", "#06d6a0", "#f1faee", "#33414f"),
+             ("#f5f0ff", "#7b2cbf", "#e85d75", "#240046", "#cfc3e6")],
+    "coast": [("#0a2a43", "#13557f", "#2ca6c8", "#e8f7fb", "#f2d492"), ("#06323a", "#0f6b6f", "#47c1b5", "#effffb", "#f4a261")],
+    "compass": [("#1b0f2e", "#e3b04b", "#f7e3a1", "#7a1f3d", "#3b2161"), ("#0d2230", "#d9b36c", "#fff1c9", "#1f6f78", "#16394a")],
+    "rail": [("#14181f", "#2b323d", "#f3efe4", "#ffb000", "#e5484d"), ("#f1ece0", "#d8d1c0", "#1d2430", "#d1495b", "#00798c")],
+}
+ART_STYLES = ("contour", "river", "dots", "coast", "compass", "rail")
+STYLE_BY_THEME = {
+    "India in Maps": "contour", "Indian Railways": "rail", "Logistics & Freight": "rail", "Air Travel & Civil Aviation": "compass",
+    "Water Transport & Shipping": "coast", "Environment & Climate": "river", "Agriculture & Food": "river", "Mining & Natural Resources": "contour",
+    "Economic": "dots", "Union Budget": "dots", "Payments & Digital Banking": "dots", "Industry Trends & Performance": "dots", "Innovation & Technology": "dots",
+    "Elections": "compass", "U.S. Elections": "compass", "Defence & Strategic": "compass", "Judiciary & Pending Cases": "compass",
+    "Lower Courts": "compass", "Tourism & Heritage": "coast", "Public Health & Epidemiology": "river", "Social": "dots",
+    "Pew Research": "contour", "Crime & Security": "rail", "State Performance & Regional Health": "contour",
+}
+
+
+def _frame(outline: str, view_box: str, seed: int, title: str, style: str, defs: str, back: str, front: str, land: str) -> str:
+    """Wraps the shared 1200x660 canvas, placing the India outline (`land` is drawn inside its clip) at the centre."""
+    _, _, map_w, map_h = (float(part) for part in view_box.split())
+    scale = 480 / map_h
+    tx, ty = 600 - map_w * scale / 2, 90
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" preserveAspectRatio="xMidYMid slice" role="img" aria-label="{html.escape(title)}" data-art="{style}">
+{STYLE_NEW}
+<defs><path id="o{seed}" d="{outline}"/><clipPath id="c{seed}"><use href="#o{seed}"/></clipPath>{defs}</defs>
+{back}
+<g transform="translate({tx:.1f} {ty:.1f}) scale({scale:.4f})" data-scale="{scale:.4f}">{land}</g>
+{front}
+</svg>
+"""
+
+
+def _geo(view_box: str) -> tuple[float, float, float]:
+    _, _, map_w, map_h = (float(part) for part in view_box.split())
+    scale = 480 / map_h
+    return map_w, map_h, scale
+
+
+def contour_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """Topographic map: banded offset coast lines around the land plus hand-wobbled elevation rings."""
+    rng = random.Random(seed)
+    paper, band, land, deep, accent = rng.choice(NEW_PALETTES["contour"])
+    map_w, map_h, scale = _geo(view_box)
+    bands = "".join(
+        f'<use href="#o{seed}" fill="none" stroke="{band if i % 2 else paper}" stroke-width="{(i + 1) * 26 / scale:.1f}" stroke-linejoin="round" opacity=".9"/>'
+        for i in reversed(range(7))
+    )
+    rings = ""
+    for _ in range(5):
+        cx, cy = rng.uniform(0.2, 0.8) * map_w, rng.uniform(0.2, 0.8) * map_h
+        phase = [rng.uniform(0, 6.28) for _ in range(3)]
+        for k in range(1, 9):
+            radius = k * map_w * 0.045
+            pts = []
+            for step in range(61):
+                a = step / 60 * 2 * math.pi
+                wobble = 1 + 0.18 * math.sin(3 * a + phase[0]) + 0.1 * math.sin(5 * a + phase[1]) + 0.06 * math.sin(7 * a + phase[2])
+                pts.append(f"{cx + radius * wobble * math.cos(a):.0f},{cy + radius * wobble * math.sin(a):.0f}")
+            rings += f'<polyline points="{" ".join(pts)}" fill="none" stroke="{deep if k % 4 == 0 else accent if k % 2 else land}" stroke-width="{(2.6 if k % 4 == 0 else 1.4) / scale:.1f}" opacity="{.75 if k % 4 == 0 else .5}"/>'
+    land_svg = (f'{bands}<use href="#o{seed}" fill="{land}" opacity=".55"/><g clip-path="url(#c{seed})">{rings}</g>'
+                f'<use href="#o{seed}" fill="none" stroke="{deep}" stroke-width="{2.2 / scale:.1f}" stroke-linejoin="round"/>')
+    grid = "".join(f'<path d="M{x} 0V660" stroke="{deep}" stroke-width=".6" opacity=".18"/>' for x in range(0, 1200, 80))
+    grid += "".join(f'<path d="M0 {y}H1200" stroke="{deep}" stroke-width=".6" opacity=".18"/>' for y in range(0, 660, 80))
+    back = f'<rect width="1200" height="660" fill="{paper}"/>{grid}'
+    front = f'<g font-family="Georgia,serif" fill="{deep}" opacity=".7" font-size="14"><text x="40" y="620">ELEVATION · CONTOUR INTERVAL 100 m</text><text x="1160" y="620" text-anchor="end">N ↑</text></g>'
+    return _frame(outline, view_box, seed, title, "contour", "", back, front, land_svg)
+
+
+def river_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """River network: recursive branching channels flowing from the northern ranges to both coasts."""
+    rng = random.Random(seed * 7 + 1)
+    night, land, river, glow, accent = rng.choice(NEW_PALETTES["river"])
+    map_w, map_h, scale = _geo(view_box)
+    paths = []
+
+    def flow(x: float, y: float, heading: float, width: float, depth: int) -> None:
+        pts = [(x, y)]
+        for _ in range(26):
+            heading += rng.uniform(-0.45, 0.45)
+            heading += (math.pi / 2 - heading) * 0.12
+            x += math.cos(heading) * map_h * 0.032
+            y += math.sin(heading) * map_h * 0.032
+            pts.append((x, y))
+            if depth < 3 and rng.random() < 0.13:
+                flow(x, y, heading + rng.choice((-1, 1)) * rng.uniform(0.5, 1.1), width * 0.62, depth + 1)
+        d = f"M{pts[0][0]:.0f} {pts[0][1]:.0f}" + "".join(f"L{px:.0f} {py:.0f}" for px, py in pts[1:])
+        paths.append((width, d))
+
+    for _ in range(9):
+        flow(rng.uniform(0.15, 0.85) * map_w, rng.uniform(0.02, 0.35) * map_h, math.pi / 2 + rng.uniform(-0.5, 0.5), 8.0, 0)
+    strokes = "".join(
+        f'<path d="{d}" fill="none" stroke="{river}" stroke-width="{w * 0.9 / scale * 1.6:.1f}" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>'
+        f'<path class="flow" d="{d}" fill="none" stroke="{glow}" stroke-width="{max(1.0, w * 0.22) / scale * 1.4:.1f}" stroke-linecap="round" opacity=".85"/>'
+        for w, d in paths
+    )
+    land_svg = (f'<use href="#o{seed}" fill="{land}"/><g clip-path="url(#c{seed})">{strokes}</g>'
+                f'<use href="#o{seed}" fill="none" stroke="{glow}" stroke-width="{1.6 / scale:.1f}" opacity=".7"/>')
+    stars = "".join(f'<circle cx="{rng.randint(10, 1190)}" cy="{rng.randint(10, 650)}" r="{rng.choice((.8, 1.2, 1.8))}" fill="{glow}" opacity=".35"/>' for _ in range(90))
+    back = f'<rect width="1200" height="660" fill="{night}"/>{stars}'
+    front = f'<g font-family="Georgia,serif" fill="{glow}" opacity=".75" font-size="16" letter-spacing="4"><text x="40" y="620">RIVER BASINS</text><circle cx="1130" cy="600" r="8" fill="{accent}"/></g>'
+    return _frame(outline, view_box, seed, title, "river", "", back, front, land_svg)
+
+
+def dots_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """Dot-matrix India: a halftone grid whose dots swell and change colour inside the outline."""
+    rng = random.Random(seed * 3 + 2)
+    paper, warm, cool, ink, faint = rng.choice(NEW_PALETTES["dots"])
+    map_w, map_h, scale = _geo(view_box)
+    step = 26 / scale
+    big = []
+    small = []
+    ny = int(map_h / step) + 1
+    for row in range(ny):
+        y = row * step
+        for col in range(int(map_w / step) + 1):
+            x = col * step + (step / 2 if row % 2 else 0)
+            t = y / map_h
+            mix = f"color-mix(in oklab, {cool} {t * 100:.0f}%, {warm})"
+            radius = step * (0.28 + 0.16 * math.sin(col * 0.5 + row * 0.35))
+            big.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{radius:.1f}" fill="{mix}"/>')
+    for x in range(-40, 1260, 24):
+        for y in range(-40, 700, 24):
+            small.append(f'<circle cx="{x + (12 if (y // 24) % 2 else 0)}" cy="{y}" r="1.6" fill="{faint}"/>')
+    land_svg = f'<g clip-path="url(#c{seed})">{"".join(big)}</g>'
+    back = f'<rect width="1200" height="660" fill="{paper}"/>{"".join(small)}'
+    front = f'<g font-family="Helvetica,Arial,sans-serif" fill="{ink}" font-size="15" letter-spacing="3"><text x="48" y="70" font-size="30" letter-spacing="1" font-weight="700">One dot, one place</text><text x="48" y="100" opacity=".7">A dot-grid map of India</text></g>'
+    return _frame(outline, view_box, seed, title, "dots", "", back, front, land_svg)
+
+
+def coast_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """Coastline waves: foam-white ripples radiate from the shoreline across a deep-blue sea."""
+    rng = random.Random(seed * 5 + 3)
+    sea, shallow, foam, white, sand = rng.choice(NEW_PALETTES["coast"])
+    _, _, scale = _geo(view_box)
+    # Each sea-coloured stroke sits just inside its foam stroke, leaving a thin foam ring at every distance from the shore.
+    rings = ""
+    for i in reversed(range(1, 9)):
+        rings += f'<use href="#o{seed}" fill="none" stroke="{foam}" stroke-width="{(i * 20 * 2) / scale:.1f}" stroke-linejoin="round" opacity=".5"/>'
+        rings += f'<use href="#o{seed}" fill="none" stroke="{sea if i % 2 else shallow}" stroke-width="{(i * 20 * 2 - 3) / scale:.1f}" stroke-linejoin="round"/>'
+    land_svg = (f'{rings}<use href="#o{seed}" fill="{sand}"/>'
+                f'<use href="#o{seed}" fill="none" stroke="{white}" stroke-width="{3 / scale:.1f}" stroke-linejoin="round"/>')
+    swell = "".join(
+        f'<path class="drift" style="animation-delay:-{i * 1.3:.1f}s" d="M-20 {470 + i * 36}' + "".join(" q50 -28 100 0 t100 0" for _ in range(7)) + f'" fill="none" stroke="{foam}" stroke-width="2.4" opacity="{.5 - i * .06:.2f}"/>'
+        for i in range(5)
+    )
+    back = f'<rect width="1200" height="660" fill="{sea}"/><rect width="1200" height="660" fill="{shallow}" opacity=".35"/>'
+    front = f'<g>{swell}</g><g font-family="Georgia,serif" fill="{white}" font-size="15" letter-spacing="5" opacity=".8"><text x="40" y="60">ARABIAN SEA</text><text x="820" y="640">BAY OF BENGAL</text></g>'
+    return _frame(outline, view_box, seed, title, "coast", "", back, front, land_svg)
+
+
+def compass_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """Compass-mandala: fine-line rose, tick rings and star points around a gold India."""
+    rng = random.Random(seed * 11 + 4)
+    night, gold, cream, rose, violet = rng.choice(NEW_PALETTES["compass"])
+    cx, cy = 600, 330
+    ticks = "".join(
+        f'<path d="M{cx} {cy - 300}v{18 if i % 5 == 0 else 8}" stroke="{cream if i % 5 == 0 else gold}" stroke-width="{2 if i % 5 == 0 else 1}" transform="rotate({i * 3} {cx} {cy})"/>'
+        for i in range(120)
+    )
+    rings = "".join(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{gold}" stroke-width="{w}" opacity="{o}"/>' for r, w, o in ((300, 2, .9), (270, 1, .6), (210, .8, .5), (150, 1.2, .5)))
+    points = ""
+    for i in range(16):
+        length = 262 if i % 4 == 0 else 220 if i % 2 == 0 else 170
+        half = 14 if i % 4 == 0 else 9
+        points += f'<path d="M{cx} {cy - length}L{cx + half} {cy}L{cx} {cy + 0}L{cx - half} {cy}Z" fill="{rose if i % 4 == 0 else violet}" stroke="{gold}" stroke-width="1.2" opacity=".9" transform="rotate({i * 22.5} {cx} {cy})"/>'
+    petals = "".join(f'<ellipse cx="{cx}" cy="{cy - 238}" rx="7" ry="22" fill="none" stroke="{cream}" stroke-width="1" opacity=".6" transform="rotate({i * 11.25} {cx} {cy})"/>' for i in range(32))
+    _, _, scale = _geo(view_box)
+    land_svg = (f'<use href="#o{seed}" fill="{night}" opacity=".78"/><use href="#o{seed}" fill="{gold}" opacity=".55"/>'
+                f'<use href="#o{seed}" fill="none" stroke="{cream}" stroke-width="{2.4 / scale:.1f}" stroke-linejoin="round"/>')
+    back = f'<rect width="1200" height="660" fill="{night}"/><g class="turn">{petals}</g>{rings}{ticks}{points}'
+    front = f'<g font-family="Georgia,serif" fill="{cream}" font-size="26" text-anchor="middle"><text x="{cx}" y="{cy - 306}" dy="-6">N</text><text x="{cx}" y="{cy + 322}">S</text><text x="{cx - 322}" y="{cy + 8}">W</text><text x="{cx + 322}" y="{cy + 8}">E</text></g>'
+    return _frame(outline, view_box, seed, title, "compass", "", back, front, land_svg)
+
+
+def rail_art(outline: str, view_box: str, seed: int, title: str) -> str:
+    """Railway-line map: dashed double-track corridors linking major junctions on a schematic board."""
+    rng = random.Random(seed * 13 + 5)
+    board, land, track, signal, alert = rng.choice(NEW_PALETTES["rail"])
+    map_w, map_h, scale = _geo(view_box)
+    pos = {name: (fx * map_w, fy * map_h) for name, (fx, fy) in RAIL_CITIES.items()}
+    lines = ""
+    for idx, route in enumerate(RAIL_LINES):
+        colour = signal if idx % 2 == 0 else alert
+        d = "M" + "L".join(f"{pos[name][0]:.0f} {pos[name][1]:.0f}" for name in route)
+        lines += (f'<path d="{d}" fill="none" stroke="{track}" stroke-width="{9 / scale:.1f}" stroke-linejoin="round" stroke-linecap="round" opacity=".9"/>'
+                  f'<path d="{d}" fill="none" stroke="{board}" stroke-width="{5.2 / scale:.1f}" stroke-linejoin="round" stroke-linecap="round"/>'
+                  f'<path class="flow" d="{d}" fill="none" stroke="{colour}" stroke-width="{3 / scale:.1f}" stroke-linejoin="round"/>')
+    stations = "".join(
+        f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{(8 if name in ("Delhi", "Mumbai", "Kolkata", "Chennai") else 5) / scale:.1f}" fill="{board}" stroke="{track}" stroke-width="{2.4 / scale:.1f}"/>'
+        for name, (x, y) in pos.items()
+    )
+    land_svg = (f'<use href="#o{seed}" fill="{land}"/><use href="#o{seed}" fill="none" stroke="{track}" stroke-width="{1.6 / scale:.1f}" opacity=".5" stroke-dasharray="{4 / scale:.1f} {5 / scale:.1f}"/>'
+                f'{lines}{stations}')
+    sleepers = "".join(f'<path d="M{x} 612v28" stroke="{track}" stroke-width="3" opacity=".7"/>' for x in range(0, 1200, 22))
+    back = f'<rect width="1200" height="660" fill="{board}"/>' + "".join(f'<path d="M0 {y}H1200" stroke="{track}" stroke-width=".6" opacity=".1"/>' for y in range(40, 660, 40))
+    front = f'<path d="M0 622H1200M0 636H1200" stroke="{track}" stroke-width="3" opacity=".8"/>{sleepers}<g font-family="Helvetica,Arial,sans-serif" fill="{track}" font-size="15" letter-spacing="4" opacity=".85"><text x="48" y="64" font-size="26" font-weight="700" letter-spacing="2">THE NETWORK</text><text x="48" y="90">JUNCTIONS · CORRIDORS · TERMINI</text></g>'
+    return _frame(outline, view_box, seed, title, "rail", "", back, front, land_svg)
+
+
+NEW_ARTISTS = {"contour": contour_art, "river": river_art, "dots": dots_art, "coast": coast_art, "compass": compass_art, "rail": rail_art}
+RETRO_THEMES = {"Sports", "Cricket", "Hockey", "Football"}
+
+
+def wide_canvas(svg: str, title: str) -> str:
+    svg = svg.replace('viewBox="0 0 1200 660"', 'viewBox="0 0 1600 900"', 1)
+    opening = svg.find('>') + 1
+    svg = svg[:opening] + '<g transform="scale(1.333333 1.363636)">' + svg[opening:]
+    label = html.escape(title)
+    overlay = ("<defs><linearGradient id=\"map-lower\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#07121b\" stop-opacity=\"0\"/><stop offset=\".45\" stop-color=\"#07121b\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#07121b\" stop-opacity=\".97\"/></linearGradient>"
+               "<radialGradient id=\"map-vignette\"><stop offset=\".48\" stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".34\"/></radialGradient>"
+               "<filter id=\"map-grain\"><feTurbulence type=\"fractalNoise\" baseFrequency=\".8\" numOctaves=\"2\" seed=\"11\"/><feColorMatrix type=\"saturate\" values=\"0\"/><feComponentTransfer><feFuncA type=\"table\" tableValues=\"0 .12\"/></feComponentTransfer></filter></defs>"
+               "<rect width=\"1200\" height=\"660\" fill=\"url(#map-lower)\"/><rect width=\"1200\" height=\"660\" fill=\"url(#map-vignette)\"/>"
+               f"<text x=\"48\" y=\"570\" font-family=\"Arial, Helvetica, sans-serif\" font-size=\"32\" font-weight=\"700\" fill=\"#fff8e8\">{label}</text>"
+               "<text x=\"50\" y=\"612\" font-family=\"Arial, Helvetica, sans-serif\" font-size=\"12\" font-weight=\"600\" letter-spacing=\"3\" fill=\"#f0c66f\">INDIA  •  PUBLIC DATA ATLAS</text>"
+               "<rect width=\"1200\" height=\"660\" fill=\"#fff\" filter=\"url(#map-grain)\" opacity=\".16\"/>")
+    return svg.replace('</svg>', overlay + '</g></svg>', 1)
+
 def write_art(geometry: dict) -> list[str]:
     outline = "".join(geometry["states"].values())
     written = []
-    scenes = [("india-maps", "India in Maps", "India in Maps")] + [(f"maps-{slug(name)}", f"{name} on the map", name) for name in GROUPS]
+    catalog_path = ROOT / "data" / "catalog.json"
+    # Old generator groups stay (subgroup art is keyed by them); the 10 regrouped catalog groups are added on top.
+    extra = [item["name"] for item in json.loads(catalog_path.read_text(encoding="utf-8")).get("categories", [])] if catalog_path.exists() else []
+    groups = GROUPS + [name for name in extra if name not in GROUPS]
+    scenes = [("india-maps", "India in Maps", "India in Maps")] + [(f"maps-{slug(name)}", f"{name} on the map", name) for name in groups]
     for seed, (name, title, theme) in enumerate(scenes):
-        svg = groovy_art(outline, geometry["viewBox"], seed, title, theme)
+        if theme in RETRO_THEMES:
+            svg = groovy_art(outline, geometry["viewBox"], seed, title, theme)
+        else:
+            style = STYLE_BY_THEME.get(theme, ART_STYLES[seed % len(ART_STYLES)])
+            svg = NEW_ARTISTS[style](outline, geometry["viewBox"], seed, title)
+        svg = wide_canvas(svg, title)
         for folder in ART_DIRS:
             folder.mkdir(parents=True, exist_ok=True)
             (folder / f"{name}.svg").write_text(svg, encoding="utf-8")
@@ -423,6 +675,10 @@ def download(folder: Path) -> Path:
 
 
 def main(argv: list[str]) -> None:
+    if "--art-only" in argv:  # redraw the artwork from the outline already in the repo, without downloading
+        geometry = json.loads((MAP_DIRS[0] / "india-states.json").read_text(encoding="utf-8"))
+        print(f"{len(write_art(geometry))} artworks")
+        return
     with tempfile.TemporaryDirectory() as temp:
         base = Path(argv[1]) if len(argv) > 1 else download(Path(temp))
         shp, dbf = base.with_suffix(".shp").read_bytes(), base.with_suffix(".dbf").read_bytes()

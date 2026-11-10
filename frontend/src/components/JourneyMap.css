@@ -1,0 +1,61 @@
+/* Journey maps (docs/journeys.js and frontend JourneyMap.jsx). Chrome uses theme variables so all themes work. */
+.journey { --jm-tint: color-mix(in srgb, var(--ink) 7%, transparent); --jm-line: var(--line, color-mix(in srgb, var(--ink) 25%, transparent)); --jm-panel: var(--solid, var(--panel, var(--surface, Canvas))); container-type: inline-size; display: flex; flex-direction: column; gap: 10px; margin: 0; min-width: 0; max-width: 100%; color: var(--ink); }
+.journey * { box-sizing: border-box; }
+.journey button { font: inherit; color: inherit; cursor: pointer; background: var(--jm-tint); border: 1px solid var(--jm-line); border-radius: 8px; padding: 4px 10px; }
+.journey button:disabled { opacity: .45; cursor: default; }
+.journey button[aria-pressed="true"] { background: var(--ink); color: var(--jm-panel); border-color: var(--ink); }
+.journey :is(button, input, summary, .jm-stop, .jm-bar-item):focus-visible { outline: 3px solid var(--switch-active, #ff9933); outline-offset: 2px; }
+.jm-status { padding: 24px 8px; text-align: center; color: var(--muted); }
+.jm-intro { margin: 0; font-size: .9rem; }
+.jm-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.jm-routes { display: flex; flex-wrap: wrap; gap: 4px; }
+.jm-routes:empty { display: none; }
+.jm-bar input[type="range"] { flex: 1 1 160px; min-width: 0; accent-color: var(--switch-active, #ff9933); }
+.jm-step { font-weight: 700; font-size: .85rem; }
+.jm-main { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 12px; min-width: 0; }
+.jm-stage { aspect-ratio: 4 / 3; min-width: 0; border: 1px solid var(--jm-line); border-radius: 10px; overflow: hidden; background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.jm-stage > svg { width: 100%; height: 100%; display: block; }
+.jm-land path { fill: var(--map-empty, color-mix(in srgb, var(--ink) 12%, transparent)); stroke: var(--map-stroke, rgb(0 0 0 / .35)); stroke-width: calc(var(--u, 1) * .12); }
+.jm-land path.jm-india { fill: color-mix(in srgb, #ff9933 22%, var(--map-empty, transparent)); }
+.jm-ghost, .jm-leg { fill: none; stroke-linecap: round; }
+.jm-ghost { stroke: var(--ink); opacity: .22; stroke-width: calc(var(--u, 1) * .3); stroke-dasharray: calc(var(--u, 1) * .8) calc(var(--u, 1) * .8); }
+.jm-leg { stroke-width: calc(var(--u, 1) * .55); stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset .9s ease; }
+.jm-leg.is-done { stroke-dashoffset: 0; }
+.jm-leg:not(.is-done) { opacity: 0; }
+.jm-stop { cursor: pointer; }
+.jm-stop circle { fill: var(--pin, #ff9933); stroke: var(--ink); stroke-width: calc(var(--u, 1) * .2); transition: opacity .2s; }
+.jm-stop.is-approx circle { fill: var(--jm-panel); stroke: var(--pin); stroke-width: calc(var(--u, 1) * .35); stroke-dasharray: calc(var(--u, 1) * .5) calc(var(--u, 1) * .3); }
+.jm-stop text { text-anchor: middle; fill: var(--ink); font-weight: 700; pointer-events: none; }
+.jm-stop.is-approx text { fill: var(--ink); }
+.jm-stop:not(.is-approx) text:not(.jm-label) { fill: #fff; paint-order: stroke; stroke: rgb(0 0 0 / .55); stroke-width: calc(var(--u, 1) * .12); }
+.jm-stop.is-future circle { opacity: .45; }
+.jm-label { display: none; paint-order: stroke; stroke: var(--jm-panel); stroke-width: calc(var(--u, 1) * .5); stroke-linejoin: round; }
+.jm-stop.is-current .jm-label { display: block; }
+.jm-stop.is-current circle { stroke-width: calc(var(--u, 1) * .5); }
+.jm-side { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.jm-detail { background: var(--jm-tint); border: 1px solid var(--jm-line); border-radius: 10px; padding: 10px 12px; font-size: .86rem; max-height: 520px; overflow: auto; overflow-wrap: anywhere; }
+.jm-detail h4 { margin: 0 0 6px; font-size: 1.05rem; }
+.jm-detail h4 small { color: var(--muted); font-weight: 400; }
+.jm-detail p { margin: 6px 0; }
+.jm-legline, .jm-approx { color: var(--muted); font-size: .8rem; }
+.jm-nav { display: flex; gap: 6px; justify-content: space-between; }
+.jm-generic { display: inline-block; margin-left: 6px; padding: 0 6px; border: 1px dashed var(--jm-line); border-radius: 6px; font-size: .74rem; color: var(--muted); }
+.jm-note { display: block; color: var(--muted); }
+.jm-chart h5 { margin: 0 0 4px; font-size: .9rem; }
+.jm-chart h5 small { color: var(--muted); font-weight: 400; }
+.jm-chart svg { width: 100%; max-height: 170px; }
+.jm-bar-item { cursor: pointer; }
+.jm-bar-item rect { opacity: .4; }
+.jm-bar-item.is-done rect { opacity: .75; }
+.jm-bar-item.is-current rect { opacity: 1; stroke: var(--ink); stroke-width: 2; }
+.jm-bar-item text { fill: var(--ink); font-size: 10px; }
+.jm-bar-item .jm-km { font-size: 9px; fill: var(--muted); }
+.jm-method { font-size: .8rem; color: var(--muted); }
+.jm-method ul { margin: 6px 0; padding-left: 18px; }
+@container (max-width: 640px) { .jm-main { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .jm-leg { transition: none; } }
+/* Card previews show the map only; controls, detail and methodology live on the full page. */
+.journey.is-compact :is(.jm-intro, .jm-bar, .jm-side, .jm-chart, .jm-method) { display: none; }
+.journey.is-compact { height: 100%; }
+.journey.is-compact .jm-main { grid-template-columns: minmax(0, 1fr); height: 100%; }
+.journey.is-compact .jm-stage { aspect-ratio: auto; height: 100%; min-height: 0; }

@@ -1,19 +1,9 @@
 /* Display themes picked from the header selector (theme.js sets html[data-theme]). Dark is the default in
    styles.css; light, newspaper and pamphlet override its tokens and dark-only colours here. */
 
-/* Segmented theme switch and contact links */
+/* Theme dropdown (always the last, top-right header control) and contact links */
 :root { --switch-active: #9b1b30; --map-low: #1f3550; --map-high: #ff9933; --map-empty: rgba(255, 255, 255, 0.07); --map-stroke: rgba(0, 0, 0, 0.55); }
-.theme-switch {
-  display: inline-flex; flex: none; align-items: center; gap: 2px; padding: 3px;
-  background: color-mix(in srgb, var(--switch-active) 7%, var(--fill, rgba(255, 255, 255, 0.06)));
-  border: 1px solid color-mix(in srgb, var(--switch-active) 22%, var(--line)); border-radius: 13px;
-}
-.theme-switch button {
-  min-height: 28px; padding: 4px 11px; border: 0; border-radius: 10px; background: transparent; cursor: pointer;
-  color: var(--muted); font-family: Poppins, "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 0.76rem; font-weight: 600; line-height: 1.2; text-transform: none; letter-spacing: 0; transition: background 0.2s, color 0.2s;
-}
-.theme-switch button:hover { color: var(--ink); }
-.theme-switch button[aria-checked="true"] { background: var(--switch-active); color: #fff; font-weight: 700; box-shadow: 0 2px 8px color-mix(in srgb, var(--switch-active) 35%, transparent); }
+.theme-select { position: relative; display: inline-flex; flex: none; align-items: center; margin: 0; }
 .contact-links { display: inline-flex; flex: none; gap: 6px; }
 .contact-link {
   display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; color: var(--ink);
@@ -28,15 +18,14 @@
   .desktop-nav { gap: 14px; }
   .site-header { height: auto; min-height: var(--header-h); }
   .header-inner { flex-wrap: wrap; row-gap: 4px; padding-block: 6px; }
-  .theme-switch { margin-left: auto; }
-}
-@media (max-width: 720px) {
-  .theme-switch { margin-left: auto; }
-  .theme-switch button { padding: 4px 8px; font-size: 0.7rem; }
+  .header-inner .contact-links { margin-left: auto; }
+  .desktop-nav { order: 10; flex-basis: 100%; justify-content: flex-start; }
 }
 @media (max-width: 480px) {
   .site-header { height: auto; }
   .header-inner { flex-wrap: wrap; row-gap: 6px; padding-block: 8px; }
+  .header-inner .theme-select { margin-left: auto; }
+  .header-inner .contact-links { order: 11; }
 }
 
 /* India in Maps choropleths (IndiaMap.jsx) */
@@ -54,6 +43,7 @@
 :root[data-theme="light"] { --map-low: #e3ebf5; --map-high: #c2410c; --map-empty: rgba(0, 0, 0, 0.05); --map-stroke: #fff; }
 :root[data-theme="newspaper"] { --map-low: #ebe5d6; --map-high: #111; --map-empty: #e2dccb; --map-stroke: #f4f0e6; --switch-active: #7a1010; }
 :root[data-theme="pamphlet"] { --map-low: #fff3d6; --map-high: #c2185b; --map-empty: #f3dfb0; --map-stroke: #2b1708; --switch-active: #c2185b; }
+:root[data-theme="military"] { --map-low: #2f3820; --map-high: #d4a72c; --map-empty: rgba(236, 228, 196, 0.06); --map-stroke: #141809; --switch-active: #5b6b2a; }
 
 :root[data-theme="light"] {
   --bg: #f5f5f7; --surface: #fff; --surface-2: #e8e8ed; --line: rgba(0, 0, 0, 0.12);
@@ -104,7 +94,7 @@
   & .btn-primary:hover:not(:disabled) { background: var(--accent); filter: brightness(1.12); box-shadow: var(--shadow); }
   & .btn-ghost:hover:not(:disabled) { background: var(--fill); border-color: var(--ink); }
 
-  & .hero-caption, & .stat-row div, & .mini-index, & .marquee-item, & .compare-tray, & .compare-toggle { background: var(--glass); }
+  & .hero-caption, & .stat-row div, & .mini-index, & .compare-tray, & .compare-toggle { background: var(--glass); }
   & .hero-caption:hover { border-color: var(--ink); }
   & .slide-dot::before { background: rgba(0, 0, 0, 0.25); }
   & .slide-dot.active::before { background: var(--saffron); }
@@ -121,7 +111,7 @@
   & .latest-source-box:nth-child(3) h3 { color: var(--green); }
 
   /* Illustrated tiles keep their dark scrim, so their text stays light. */
-  & .group-tile, & .explore-tile { color: #f5f5f7; }
+  & .explore-tile { color: #f5f5f7; }
 
   & .site-footer { color: var(--muted); background: var(--glass); border-color: var(--line); }
   & .site-footer a { color: var(--accent); }
@@ -132,7 +122,8 @@
 /* Newspaper: newsprint, serif type, hairline rules, no glass or rounded corners. */
 :root[data-theme="newspaper"] {
   & * { -webkit-backdrop-filter: none; backdrop-filter: none; }
-  & .art-layer img { opacity: 0.7; filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+  & .art-layer img { opacity: 0.09; filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; }
+  & .hero-orbs { display: none; }
   & h1, & h2, & h3 { font-family: var(--font-display); letter-spacing: 0; }
   & .scroll-progress { background: var(--ink); }
   & .site-header { border-bottom: 4px double var(--ink); }
@@ -147,32 +138,32 @@
   & .stat-row div:first-child { border-left: 0; }
   & .stat-row div:hover, & .indicator-card:hover { transform: none; }
   & .card, & .explainer-tile, & .stat-grid div, & .latest-source-box, & .reference-panel { border: 1px solid var(--ink); border-top: 3px solid var(--ink); }
-  & .group-tile::before, & .explore-tile::before, & .marquee-item img { filter: grayscale(1) contrast(1.1); }
-  & :is(.btn, .chip, .hero-caption, .mini-index, .marquee-item, .marquee-item img, .compare-toggle, .compare-tray, .tray-chip, .pill,
+  & .explore-tile::before { filter: grayscale(1) contrast(1.1); }
+  & :is(.btn, .chip, .hero-caption, .mini-index, .compare-toggle, .compare-tray, .tray-chip, .pill,
     .segmented, .segmented button, .stat-grid div, .explainer-tile, .explore-tile, .latest-source-box, .thanks-card,
     .scroll-top, .footer-btn, .site-footer, input, select) { border-radius: 0; }
   & .btn { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
-  & .group-tile .chip { color: #f4f0e6; border-color: #f4f0e6; }
   & .site-footer { border: 0; border-top: 4px double var(--ink); }
   & .site-footer .footer-btn { background: var(--ink); color: var(--bg); }
   /* An Indian daily: Devanagari tagline under the nameplate and a tricolour rule below the double rule. */
   & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 3px; background: linear-gradient(90deg, #ff9933 0 33.3%, #f4f0e6 0 66.6%, #138808 0); pointer-events: none; }
-  & .brand { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; }
-  & .brand::after { content: "भारत की यात्रा · सार्वजनिक आँकड़े"; grid-column: 1 / -1; margin-top: 2px; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Serif Devanagari", "Kohinoor Devanagari", serif; font-size: 0.6rem; color: #7a1010; }
-  & .hero .eyebrow::before { content: "समाचार · "; font-family: "Nirmala UI", "Mangal", serif; font-style: normal; }
+  & .brand-emblem { background: #111; color: #f4f0e6; border-radius: 0; font-family: Georgia, serif; }
+  & .brand-text { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; }
 }
 
 /* Pamphlet: an Indian printed handbill in marigold, rani pink and leaf green, with a toran garland, tricolour bands and rangoli dots. */
 :root[data-theme="pamphlet"] {
   & * { -webkit-backdrop-filter: none; backdrop-filter: none; }
-  & .art-layer img { opacity: 0.75; filter: sepia(0.45) saturate(1.5) contrast(1.1); mix-blend-mode: multiply; }
+  & .art-layer img { opacity: 0.1; filter: sepia(0.45) saturate(1.2); mix-blend-mode: multiply; }
+  & .hero-orbs { display: none; }
   & h1, & h2, & h3 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.01em; }
   & .site-header { border-bottom: 3px solid var(--ink); }
   & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; pointer-events: none;
     background: radial-gradient(circle at 50% 0, #c2185b 0 6px, transparent 6.5px) 0 0 / 28px 14px repeat-x,
       radial-gradient(circle at 50% 0, #ff6f00 0 6px, transparent 6.5px) 14px 0 / 28px 14px repeat-x; }
-  & .brand { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
-  & .brand::after { content: "भारत की यात्रा"; grid-column: 1 / -1; margin-top: 1px; white-space: nowrap; font-family: "Nirmala UI", "Mangal", "Noto Sans Devanagari", sans-serif; font-size: 0.68rem; font-weight: 700; line-height: 1.2; text-transform: none; color: #a3104d; }
+  & .brand { font-family: var(--font-display); text-transform: uppercase; font-weight: 400; font-size: 1.2rem; }
+  & .brand-emblem { background: conic-gradient(#ff9933 0 120deg, #fff 0 240deg, #138808 0); color: #000080; border: 2px solid #2b1708; border-radius: 50%; font-family: var(--font-text, sans-serif); text-transform: none; }
+  & .brand-text { display: inline-grid; grid-template-columns: auto auto; justify-content: start; align-items: baseline; line-height: 1.05; }
   & .brand-dot { color: #138808; }
   & .desktop-nav a { color: var(--ink); font-weight: 700; text-transform: uppercase; }
   & .desktop-nav a::after { background: var(--accent); height: 3px; }
@@ -183,21 +174,69 @@
   & .btn { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); text-transform: uppercase; font-weight: 800; }
   & .btn-ghost { background: var(--surface); }
   & .btn:hover:not(:disabled) { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); filter: none; }
-  & .card, & .stat-row div, & .mini-index, & .group-tile, & .explore-tile, & .compare-tray, & .latest-source-box, & .reference-panel,
+  & .card, & .stat-row div, & .mini-index, & .explore-tile, & .compare-tray, & .latest-source-box, & .reference-panel,
   & .explainer-tile, & .stat-grid div, & .thanks-card, & .site-footer { border: 2.5px solid var(--ink); box-shadow: var(--shadow); }
-  & .card:hover, & .group-tile:hover, & .explore-tile:hover, & .stat-row div:hover, & .mini-index:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-lift); border-color: var(--ink); }
+  & .card:hover, & .explore-tile:hover, & .stat-row div:hover, & .mini-index:hover { transform: translate(-3px, -3px); box-shadow: var(--shadow-lift); border-color: var(--ink); }
   & .card, & .site-footer { background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
   & .chip { background: #ffb300; color: var(--ink); border: 2px solid var(--ink); font-weight: 700; }
   & .chip-button.active { background: var(--accent); color: #fff; border-color: var(--ink); }
   & .segmented { border: 2px solid var(--ink); }
   & .segmented button.active { background: var(--accent); color: #fff; }
-  & .theme-switch, & .contact-link { border: 2px solid var(--ink); background: var(--surface); box-shadow: 2px 2px 0 var(--ink); }
-  & .theme-switch button { font-weight: 700; color: var(--ink); }
-  & .theme-switch button[aria-checked="true"] { color: #fff; }
+  & .contact-link { border: 2px solid var(--ink); background-color: var(--surface); box-shadow: 2px 2px 0 var(--ink); }
   & .scroll-top { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
   & .site-footer .footer-btn { border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  :root[data-theme="pamphlet"] :is(.card, .group-tile, .explore-tile, .btn):hover { transform: none; }
+  :root[data-theme="pamphlet"] :is(.card, .explore-tile, .btn):hover { transform: none; }
+}
+
+/* Military: Indian Army olive drab and khaki, brass accents, stencil headings and a faint woodland camouflage. */
+:root[data-theme="military"] {
+  --bg: #1f2414; --surface: #282e1a; --surface-2: #343b23; --line: rgba(212, 199, 150, 0.22);
+  --ink: #ece4c4; --muted: #bcb48e; --accent: #d4a72c; --saffron: #e08a2e; --green: #8db255; --danger: #d0483a; --radius: 4px;
+  --glass: rgba(40, 46, 26, 0.9); --bar-bg: rgba(27, 32, 17, 0.94); --fill: rgba(236, 228, 196, 0.07); --fill-hover: rgba(212, 167, 44, 0.16);
+  --on-accent: #1a1e10; --shadow: 0 4px 0 rgba(0, 0, 0, 0.35); --shadow-lift: 0 10px 26px rgba(0, 0, 0, 0.45);
+  --overlay: linear-gradient(180deg, rgba(31, 36, 20, 0.55), rgba(31, 36, 20, 0.85));
+  --font-display: "Stardos Stencil", "Black Ops One", Impact, "Arial Narrow Bold", sans-serif;
+  color-scheme: dark;
+  & body {
+    background:
+      radial-gradient(ellipse 220px 120px at 12% 18%, rgba(74, 86, 44, 0.35), transparent 70%),
+      radial-gradient(ellipse 260px 140px at 78% 32%, rgba(58, 46, 28, 0.32), transparent 70%),
+      radial-gradient(ellipse 200px 110px at 40% 72%, rgba(84, 98, 52, 0.28), transparent 70%),
+      radial-gradient(ellipse 240px 120px at 88% 86%, rgba(20, 24, 12, 0.45), transparent 70%),
+      repeating-linear-gradient(135deg, rgba(236, 228, 196, 0.018) 0 2px, transparent 2px 9px), var(--bg);
+    background-attachment: fixed;
+  }
+  & .hero-orbs, & .art-motes { display: none; }
+  & .art-backdrop::after { background: var(--overlay); }
+  & .art-layer img { opacity: 0.22; filter: sepia(0.6) hue-rotate(35deg) saturate(0.8) brightness(0.8); }
+  & h1, & h2, & h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  & .gradient-text { background-image: linear-gradient(90deg, #d4a72c, #ece4c4 50%, #8db255); }
+  & .site-header, & .site-header.scrolled { background: var(--bar-bg); border-bottom: 2px solid #d4a72c; box-shadow: none; }
+  & .site-header::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 3px; pointer-events: none; background: linear-gradient(90deg, #ff9933 0 33.3%, #f5f5f0 0 66.6%, #138808 0); }
+  & .brand { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; }
+  & .brand-emblem { background: #4b5a24; color: #d4a72c; border: 2px solid #d4a72c; border-radius: 4px; }
+  & .desktop-nav a { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.76rem; }
+  & .desktop-nav a::after { background: #d4a72c; height: 2px; }
+  & .eyebrow { color: #d4a72c; letter-spacing: 0.18em; text-transform: uppercase; }
+  & .btn { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+  & .btn-primary { background: #d4a72c; color: var(--on-accent); border-color: #d4a72c; }
+  & .btn-primary:hover:not(:disabled) { background: #e3b93d; }
+  & .btn-ghost { border-color: rgba(212, 167, 44, 0.55); }
+  & .card, & .stat-row div, & .mini-index, & .latest-source-box, & .reference-panel, & .explainer-tile, & .stat-grid div, & .group-card {
+    background: linear-gradient(180deg, rgba(212, 167, 44, 0.06), transparent 40%), var(--surface);
+    border: 1px solid var(--line); border-top: 3px solid #5b6b2a; box-shadow: var(--shadow);
+  }
+  & .card:hover, & .group-card:hover, & .group-card:focus-visible { border-top-color: #d4a72c; box-shadow: var(--shadow-lift); }
+  & .chip { background: rgba(91, 107, 42, 0.35); color: var(--ink); border: 1px solid rgba(212, 167, 44, 0.4); text-transform: uppercase; letter-spacing: 0.06em; }
+  & .chip-button.active, & .segmented button.active { background: #5b6b2a; color: #ece4c4; }
+  & .filters { background: var(--bar-bg); }
+  & .site-footer { background: #171b0e; border-top: 2px solid #d4a72c; }
+  & .group-card-art img { filter: sepia(0.55) hue-rotate(35deg) saturate(0.9); }
+  & .explore-tile::before { filter: sepia(0.5) hue-rotate(35deg) saturate(0.85) brightness(0.85); }
+  & .vintage-brand-tagline, & .sa-kicker, & .footer-motto { color: #d4a72c; }
+  & .hero-motto::before, & .hero-motto::after { content: "★"; color: #d4a72c; }
+  & .scroll-progress { background: #d4a72c; }
 }

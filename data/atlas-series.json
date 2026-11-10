@@ -1,0 +1,714 @@
+{
+ "series": {
+  "india_lok_sabha_atlas_1952_2024": {
+   "labels": [
+    "1951–52",
+    "1957",
+    "1962",
+    "1967",
+    "1971",
+    "1977",
+    "1980",
+    "1984",
+    "1989",
+    "1991",
+    "1996",
+    "1998",
+    "1999",
+    "2004",
+    "2009",
+    "2014",
+    "2019",
+    "2024"
+   ],
+   "values": [
+    401,
+    403,
+    494,
+    520,
+    518,
+    542,
+    529,
+    541,
+    529,
+    534,
+    543,
+    543,
+    543,
+    543,
+    542,
+    542,
+    541,
+    543
+   ],
+   "chartType": "categorical-map",
+   "scope": "module",
+   "source": "https://github.com/gitcheckoutnikhil/india-elections-data",
+   "note": "Each State/UT is shaded by the party that won the most Lok Sabha seats there, for 18 general elections (1951–52-2024). Click a State/UT for seats by party and seat-by-seat winners. Old states are mapped onto today's State/UT boundaries; see the methodology in the atlas.",
+   "meta": {
+    "title": "Lok Sabha elections by state, 1952–2024",
+    "subtitle": "Winning party by State/UT for every general election",
+    "frequency": "Per Lok Sabha election",
+    "color": "#ff9933",
+    "suffix": " seats",
+    "category": "Elections",
+    "subgroup": "Maps"
+   }
+  },
+  "india_epic_kingdoms_mahabharata": {
+   "labels": [
+    "Kuru Kingdom (Hastinapura)",
+    "Kurukshetra (Dharmakshetra)",
+    "Indraprastha",
+    "Panchala (Kampilya and Ahichchhatra)",
+    "Matsya (Virata Kingdom)",
+    "Dvaraka and Anarta (Yadava realm)",
+    "Mathura (Shurasena)",
+    "Magadha",
+    "Chedi",
+    "Kashi",
+    "Kosala",
+    "Videha",
+    "Anga",
+    "Vanga",
+    "Kalinga",
+    "Pragjyotisha",
+    "Gandhara",
+    "Madra",
+    "Kekaya",
+    "Sindhu-Sauvira",
+    "Trigarta",
+    "Avanti",
+    "Vidarbha",
+    "Pandya",
+    "Chola and Dravida regions",
+    "Kamboja",
+    "Shalva",
+    "Nishada peoples and realm",
+    "Kuntibhoja",
+    "Kashmira (Kashmir)",
+    "Manipura (Arjuna and Chitrangada's realm)",
+    "Bahlika (Vahlika)",
+    "Saurashtra"
+   ],
+   "values": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "chartType": "point-map",
+   "scope": "module",
+   "source": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
+   "note": "33 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (31 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+   "meta": {
+    "title": "Kingdoms of the Mahabharata",
+    "subtitle": "Pandava side, Kaurava side and neutral kingdoms pinned on the map of India",
+    "frequency": "Epic geography",
+    "color": "#1e88e5",
+    "suffix": " places",
+    "category": "Tourism & Heritage",
+    "subgroup": "Epic geography"
+   }
+  },
+  "india_epic_kingdoms_ramayana": {
+   "labels": [
+    "Ayodhya (Kosala)",
+    "Mithila (Videha)",
+    "Kekaya (Rajagriha)",
+    "Kishkindha",
+    "Lanka",
+    "Panchavati",
+    "Chitrakuta",
+    "Dandakaranya",
+    "Prayaga (Bharadvaja Ashrama)",
+    "Shringaverapura (Nishada country)",
+    "Rameshwaram and the Setu",
+    "Pampa Lake",
+    "Rishyamukha Hill",
+    "Kashi (Varanasi)",
+    "Kanyakubja (Kannauj)",
+    "Mahendra Hill",
+    "Janasthana",
+    "Matanga Ashrama",
+    "Agastya Ashrama",
+    "Siddhashrama",
+    "Sarayu River Bank",
+    "Tamasa River Bank"
+   ],
+   "values": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "chartType": "point-map",
+   "scope": "module",
+   "source": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
+   "note": "22 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (21 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+   "meta": {
+    "title": "Kingdoms and places of the Ramayana",
+    "subtitle": "Kosala, Kishkindha, Lanka and the ashramas of Rama's journey, pinned on the map",
+    "frequency": "Epic geography",
+    "color": "#ff9933",
+    "suffix": " places",
+    "category": "Tourism & Heritage",
+    "subgroup": "Epic geography"
+   }
+  },
+  "india_journey_vedas_upanishads": {
+   "labels": [
+    "vedas-upanishads"
+   ],
+   "values": [
+    7
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५",
+   "note": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers. 7 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (4 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "The Vedas and Upanishads: where the texts took shape",
+    "subtitle": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers",
+    "frequency": "Journey",
+    "color": "#b8860b",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Vedic & Upanishadic Journeys"
+   }
+  },
+  "india_journey_vedas_upanishads_leg_km": {
+   "labels": [
+    "Sarasvati valley and Kurukshetra",
+    "Kuru–Panchala country",
+    "Videha (Mithila)",
+    "Kashi",
+    "Badarikashrama (Himalaya)",
+    "Shringeri"
+   ],
+   "values": [
+    297,
+    290,
+    716,
+    328,
+    694,
+    1974
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The Vedas and Upanishads: where the texts took shape: kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Vedic heartlands",
+    "frequency": "Per leg",
+    "color": "#b8860b",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Vedic & Upanishadic Journeys"
+   }
+  },
+  "india_journey_panchatantra": {
+   "labels": [
+    "panchatantra"
+   ],
+   "values": [
+    8
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+   "note": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (6 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "The Panchatantra: a book that travelled the world",
+    "subtitle": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine",
+    "frequency": "Journey",
+    "color": "#2e8b57",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Folk & Story Traditions"
+   }
+  },
+  "india_journey_panchatantra_leg_km": {
+   "labels": [
+    "Gundeshapur (Persia)",
+    "Edessa (Syriac)",
+    "Baghdad (Arabic)",
+    "Hebrew version (place uncertain)",
+    "Capua (Latin)",
+    "Zaragoza (Spanish)",
+    "Paris (La Fontaine)"
+   ],
+   "values": [
+    2458,
+    1032,
+    662,
+    3733,
+    963,
+    1269,
+    840
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The Panchatantra: a book that travelled the world: kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Transmission route",
+    "frequency": "Per leg",
+    "color": "#2e8b57",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Folk & Story Traditions"
+   }
+  },
+  "india_journey_buddha": {
+   "labels": [
+    "buddha"
+   ],
+   "values": [
+    17
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://suttacentral.net/mn123/en/sujato",
+   "note": "From Lumbini to Kushinagar, then out across Asia. 17 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "The Buddha’s journey and the spread of Buddhism",
+    "subtitle": "From Lumbini to Kushinagar, then out across Asia",
+    "frequency": "Journey",
+    "color": "#e0a030",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Buddhist Journeys"
+   }
+  },
+  "india_journey_buddha_life_leg_km": {
+   "labels": [
+    "Kapilavastu",
+    "Bodh Gaya",
+    "Sarnath (Isipatana)",
+    "Rajagriha",
+    "Nalanda",
+    "Shravasti (Jetavana)",
+    "Vaishali",
+    "Kushinagar"
+   ],
+   "values": [
+    25,
+    374,
+    212,
+    244,
+    12,
+    433,
+    354,
+    149
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://suttacentral.net/mn123/en/sujato",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The Buddha’s journey and the spread of Buddhism (The Buddha’s life): kilometres per leg",
+    "subtitle": "Distance from each stop to the next, The Buddha’s life",
+    "frequency": "Per leg",
+    "color": "#e0a030",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Buddhist Journeys"
+   }
+  },
+  "india_journey_buddha_spread_leg_km": {
+   "labels": [
+    "Anuradhapura",
+    "Taxila and Gandhara",
+    "Bamiyan",
+    "Luoyang",
+    "Lhasa",
+    "Bagan",
+    "Nara"
+   ],
+   "values": [
+    1984,
+    2929,
+    475,
+    4047,
+    2085,
+    1015,
+    4263
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://suttacentral.net/dn16/en/sujato",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The Buddha’s journey and the spread of Buddhism (Spread of Buddhism): kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Spread of Buddhism",
+    "frequency": "Per leg",
+    "color": "#c05a1b",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Buddhist Journeys"
+   }
+  },
+  "india_journey_mahavira": {
+   "labels": [
+    "mahavira"
+   ],
+   "values": [
+    8
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/प्रथमोऽध्यायः",
+   "note": "The eastern Gangetic plain where the 24th Tirthankara taught. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "Mahavira: a teacher on the road",
+    "subtitle": "The eastern Gangetic plain where the 24th Tirthankara taught",
+    "frequency": "Journey",
+    "color": "#8e44ad",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Jain Journeys"
+   }
+  },
+  "india_journey_mahavira_leg_km": {
+   "labels": [
+    "Jnatrkhanda grove",
+    "Nalanda",
+    "Champa",
+    "Jrimbhikagrama (Rijuvalika bank)",
+    "Rajagriha",
+    "Shravasti",
+    "Pavapuri"
+   ],
+   "values": [
+    10,
+    105,
+    157,
+    170,
+    148,
+    439,
+    443
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/प्रथमोऽध्यायः",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "Mahavira: a teacher on the road: kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Mahavira’s wanderings",
+    "frequency": "Per leg",
+    "color": "#8e44ad",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Jain Journeys"
+   }
+  },
+  "india_journey_sikh_gurus": {
+   "labels": [
+    "sikh-gurus"
+   ],
+   "values": [
+    43
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+   "note": "From Guru Nanak’s four udasis to Guru Gobind Singh at Nanded. 43 stops across 10 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (32 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "The ten Sikh Gurus’ journeys",
+    "subtitle": "From Guru Nanak’s four udasis to Guru Gobind Singh at Nanded",
+    "frequency": "Journey",
+    "color": "#e07b00",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Sikh Journeys"
+   }
+  },
+  "india_journey_sikh_gurus_nanak_leg_km": {
+   "labels": [
+    "Sultanpur Lodhi",
+    "Kurukshetra",
+    "Haridwar",
+    "Varanasi",
+    "Gaya",
+    "Dhubri (Assam)",
+    "Jagannath Puri",
+    "Rameswaram",
+    "Mount Kailash region",
+    "Mecca",
+    "Baghdad",
+    "Kartarpur"
+   ],
+   "values": [
+    145,
+    210,
+    126,
+    702,
+    210,
+    518,
+    812,
+    1363,
+    2431,
+    4248,
+    1395,
+    2860
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The ten Sikh Gurus’ journeys (Guru Nanak (1469–1539)): kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Guru Nanak (1469–1539)",
+    "frequency": "Per leg",
+    "color": "#e07b00",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Sikh Journeys"
+   }
+  },
+  "india_journey_pandavas": {
+   "labels": [
+    "pandavas"
+   ],
+   "values": [
+    9
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
+   "note": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.. 9 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (1 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "The Pandavas’ journey and battles",
+    "subtitle": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.",
+    "frequency": "Journey",
+    "color": "#1e88e5",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Epics: Mahabharata & Ramayana"
+   }
+  },
+  "india_journey_pandavas_leg_km": {
+   "labels": [
+    "Varanavata",
+    "Ekachakra",
+    "Panchala (Kampilya and Ahichchhatra)",
+    "Indraprastha",
+    "Magadha",
+    "Matsya (Virata Kingdom)",
+    "Kurukshetra (Dharmakshetra)",
+    "Himalaya and Mount Meru (Mahaprasthana)"
+   ],
+   "values": [
+    79,
+    316,
+    67,
+    270,
+    907,
+    921,
+    268,
+    233
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "The Pandavas’ journey and battles: kilometres per leg",
+    "subtitle": "Distance from each stop to the next, The Pandavas’ route and battles",
+    "frequency": "Per leg",
+    "color": "#1e88e5",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Epics: Mahabharata & Ramayana"
+   }
+  },
+  "india_journey_rama": {
+   "labels": [
+    "rama"
+   ],
+   "values": [
+    11
+   ],
+   "chartType": "journey-map",
+   "scope": "module",
+   "source": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
+   "note": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.. 11 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (0 stops show a general verse of the text, labelled as such).",
+   "meta": {
+    "title": "Rama’s route: Ayodhya to Lanka and back",
+    "subtitle": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.",
+    "frequency": "Journey",
+    "color": "#ff9933",
+    "suffix": " stops",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Epics: Mahabharata & Ramayana"
+   }
+  },
+  "india_journey_rama_leg_km": {
+   "labels": [
+    "Shringaverapura (Nishada country)",
+    "Prayaga (Bharadvaja Ashrama)",
+    "Chitrakuta",
+    "Dandakaranya",
+    "Panchavati",
+    "Janasthana",
+    "Kishkindha",
+    "Rameshwaram and the Setu",
+    "Lanka",
+    "Ayodhya (Kosala)"
+   ],
+   "values": [
+    146,
+    16,
+    99,
+    699,
+    868,
+    2,
+    591,
+    740,
+    217,
+    2108
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
+   "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+   "meta": {
+    "title": "Rama’s route: Ayodhya to Lanka and back: kilometres per leg",
+    "subtitle": "Distance from each stop to the next, Rama’s route and battles",
+    "frequency": "Per leg",
+    "color": "#ff9933",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Epics: Mahabharata & Ramayana"
+   }
+  },
+  "india_journey_sikh_gurus_km_by_guru": {
+   "labels": [
+    "Guru Nanak",
+    "Guru Angad",
+    "Guru Amar Das",
+    "Guru Ram Das",
+    "Guru Arjan",
+    "Guru Hargobind",
+    "Guru Har Rai",
+    "Guru Har Krishan",
+    "Guru Tegh Bahadur",
+    "Guru Gobind Singh"
+   ],
+   "values": [
+    15020,
+    109,
+    30,
+    99,
+    81,
+    1253,
+    183,
+    291,
+    2955,
+    2814
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+   "note": "Total straight-line distance between the key places associated with each Guru; Guru Nanak’s four udasis dominate.",
+   "meta": {
+    "title": "The ten Sikh Gurus: distance covered between key places",
+    "subtitle": "Sum of leg distances per Guru",
+    "frequency": "Per Guru",
+    "color": "#e07b00",
+    "suffix": " km",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Sikh Journeys"
+   }
+  },
+  "india_journey_sikh_gurus_stops_by_guru": {
+   "labels": [
+    "Guru Nanak",
+    "Guru Angad",
+    "Guru Amar Das",
+    "Guru Ram Das",
+    "Guru Arjan",
+    "Guru Hargobind",
+    "Guru Har Rai",
+    "Guru Har Krishan",
+    "Guru Tegh Bahadur",
+    "Guru Gobind Singh"
+   ],
+   "values": [
+    13,
+    2,
+    2,
+    3,
+    3,
+    3,
+    2,
+    3,
+    5,
+    7
+   ],
+   "chartType": "bar",
+   "scope": "module",
+   "source": "https://www.sikhitothemax.org/ang?ang=1&source=G",
+   "note": "Number of key places mapped for each Guru.",
+   "meta": {
+    "title": "The ten Sikh Gurus: key places mapped",
+    "subtitle": "Stops per Guru",
+    "frequency": "Per Guru",
+    "color": "#e07b00",
+    "suffix": " places",
+    "category": "Epics, Faiths & Journeys",
+    "subgroup": "Sikh Journeys"
+   }
+  }
+ }
+}

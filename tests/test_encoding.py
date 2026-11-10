@@ -1,4 +1,5 @@
 """Guards against double-encoded UTF-8 (e.g. "Â·" for "·", "â€º" for "›") in published pages and source text."""
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,4 +21,4 @@ def test_text_files_have_no_double_encoded_characters():
 
 def test_html_pages_declare_utf8():
     for path in ROOT.glob("docs/*.html"):
-        assert '<meta charset="utf-8">' in path.read_text(encoding="utf-8").lower(), path.name
+        assert re.search(r"<meta\s+charset=['\"]utf-8['\"]\s*/?>", path.read_text(encoding="utf-8").lower()), path.name
