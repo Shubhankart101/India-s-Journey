@@ -365,6 +365,14 @@ thead th { color: var(--muted); font-weight: 500; position: sticky; top: 0; back
 .thanks-read { margin-top: auto; font-weight: 600; }
 .about-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
 .about-step { display: flex; flex-direction: column; gap: 6px; padding: 18px; }
+.about-readme { min-width: 0; overflow-wrap: anywhere; }
+.about-readme > div { max-width: 100%; }
+.about-readme table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
+.about-readme img { max-width: 100%; height: auto; }
+.about-readme pre { max-width: 100%; overflow: auto; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.about-readme blockquote { margin-inline: 0; padding-left: 14px; border-left: 3px solid var(--line); color: var(--muted); }
+.about-readme details { margin-block: 12px; }
+.about-readme details > summary { cursor: pointer; }
 @media (max-width: 760px) { .thanks-columns, .about-steps { grid-template-columns: 1fr; } }
 
 /* Indicator explainers and analysis */

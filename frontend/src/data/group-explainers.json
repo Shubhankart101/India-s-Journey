@@ -5995,7 +5995,7 @@
             "sections": [
               {
                 "title": "Pew India Reports Published per Year: the headline view",
-                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year stood at 0 reports in 2002 and 0 reports in 2026. Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year rose from 8 reports in 2002 to 64 reports in 2026, a change of 700%. Its high point was 115 reports in 2025. Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_reports_per_year",
                   "dg_pew_reports_cumulative",
@@ -6006,7 +6006,7 @@
               },
               {
                 "title": "Pew India Reports by Publication Decade and its neighbours",
-                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 255 reports in 2000s to 497 reports in 2020s, a change of 95%. Its high point was 665 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 2002 and 0 title matches in 2026. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 255 reports in 2000s to 497 reports in 2020s, a change of 95%. Its high point was 665 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 2002 and 6 title matches in 2026. Its high point was 10 title matches in 2025. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_publications_by_decade",
                   "dg_pew_theme_economy_livelihoods",
@@ -6017,7 +6017,7 @@
               },
               {
                 "title": "Reading Pew India Report Titles Matching Technology & media in context",
-                "text": "The 5 charts here follow Pew India Report Titles Matching Technology & media, Pew India Report Titles Matching Climate and Pew India Report Titles Matching Gender and 2 related series. Pew India Report Titles Matching Technology & media stood at 0 title matches in 2002 and 0 title matches in 2026. Pew India Report Titles Matching Climate stood at 0 title matches in 2002 and 0 title matches in 2026. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Report Titles Matching Technology & media, Pew India Report Titles Matching Climate and Pew India Report Titles Matching Gender and 2 related series. Pew India Report Titles Matching Technology & media rose from 1 title matches in 2002 to 8 title matches in 2026, a change of 700%. Its high point was 12 title matches in 2019. Pew India Report Titles Matching Climate stood at 0 title matches in 2002 and 2 title matches in 2026. Its high point was 5 title matches in 2015. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_theme_technology_media",
                   "dg_pew_theme_climate_environment",

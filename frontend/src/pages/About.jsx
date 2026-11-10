@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { marked } from 'marked';
+import readme from '../../../README.md?raw';
 import { api } from '../api.js';
 import { formatDate } from '../format.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
@@ -13,6 +15,19 @@ const KINDS = [
   ['polity_policy', 'Polity and Policy'],
   ['pew', 'Pew Research Center'],
 ];
+
+const README_HTML = marked.parse(readme)
+  .replace(/\sid="([^"]+)"/g, ' id="readme-$1"')
+  .replace(/href="#([^"]+)"/g, 'href="#readme-$1"')
+  .replace(/href="(?!https?:|mailto:|#)([^"]+)"/g, 'href="https://github.com/Shubhankart101/India-s-Journey/blob/main/$1"');
+
+function navigateReadmeAnchor(event) {
+  const link = event.target.closest?.('a[href^="#readme-"]');
+  const target = link && document.getElementById(link.hash.slice(1));
+  if (!target || !event.currentTarget.contains(target)) return;
+  event.preventDefault();
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 export default function About() {
   useDocumentTitle('About');
@@ -80,8 +95,13 @@ export default function About() {
           <h2>Using the data</h2>
           <p>Every indicator has its own page with a CSV and JSON download. The same data is available from the <a href="/api">API explorer</a>.</p>
           <p>Compare indicators side by side without an account.</p>
-          <p>For project details and documentation, read the <a href="https://github.com/Shubhankart101/India-s-Journey/blob/main/README.md" target="_blank" rel="noopener noreferrer">project README</a>.</p>
+          <p>The complete project README is included below.</p>
         </div>
+      </section>
+
+      <section className="section about-readme" id="project-readme" onClick={navigateReadmeAnchor}>
+        <h2>Project README</h2>
+        <div dangerouslySetInnerHTML={{ __html: README_HTML }} />
       </section>
 
       <section className="section" id="pew-research">

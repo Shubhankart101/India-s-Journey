@@ -77,7 +77,7 @@ def _publication_series(payload):
                 "The search-result catalogue may not include every Pew India publication.")
     output = {}
     key = "dg_pew_reports_per_year"
-    output[key] = _series(key, labels, _count_values(yearly, labels), title="Pew India Reports Published per Year",
+    output[key] = _series(key, labels, [float(yearly[int(label)]) for label in labels], title="Pew India Reports Published per Year",
         subtitle="Dated catalogue entries by publication year", category=category, subgroup=subgroup,
         source=source, unit="reports", note=coverage,
         explain=("Number of dated catalogue reports published in each year.", "A higher count means more dated entries in the collected catalogue.", "Shows the publication cadence represented in Pew's India report catalogue."), frequency="Annual")
@@ -143,7 +143,7 @@ def _theme_series(payload):
         patterns = [re.compile(rf"(?<!\w){term}(?!\w)", re.IGNORECASE) for term in terms]
         counts = Counter(year for title, year in dated if any(pattern.search(title) for pattern in patterns))
         key = "dg_pew_theme_" + re.sub(r"[^a-z0-9]+", "_", theme.lower()).strip("_")
-        output[key] = _series(key, labels, _count_values(counts, labels),
+        output[key] = _series(key, labels, [float(counts[int(label)]) for label in labels],
             title=f"Pew India Report Titles Matching {theme}", subtitle="Annual count of catalogue titles matching theme keywords",
             category="Pew Research", subgroup="Report Themes", source=source, unit="title matches",
             note=(f"Counts dated catalogue titles containing at least one of these keywords: {', '.join(terms)}. "
