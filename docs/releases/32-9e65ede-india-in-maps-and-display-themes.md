@@ -1,4 +1,4 @@
-# Release 32: India in Maps, fiscal and faith journeys, and four themes
+# Release 32: India in Maps, fiscal and faith journeys, and ten display modes
 
 - **Commit:** [`9e65ede`](https://github.com/Shubhankart101/India-s-Journey/commit/9e65ede799453b1e3092470c8653d8f1ff4fba4a)
 - **Date:** 2026-11-05
@@ -47,7 +47,7 @@ New views include the **State Finances Matrix**, GDP explorer, **Spending by fun
 
 ### Themes, explainers and performance
 
-- **Light**, **Dark**, **Newspaper**, **Pamphlet** and **Military** display themes are available in the static and Django/React experiences. Newspaper and Pamphlet use 1947-inspired vintage chrome; Military is an olive-drab, khaki and brass edition with stencil headings. All use theme-aware chart and map colours.
+- The initial five display modes were **Light**, **Dark**, **Newspaper**, **Pamphlet** and **Military** in both static and Django/React experiences. The [follow-up below](#follow-up) adds five more. Newspaper and Pamphlet use 1947-inspired vintage chrome; Military is an olive-drab, khaki and brass edition. All modes use theme-aware chart and map colours.
 - The Explore page's group grid now uses the same illustrated group cards (icons and India outline) as the home page.
 - Article-style group and subgroup explainers add context and interpretation. Source lists use concise publisher chips, with overflow sources expandable.
 - Off-screen charts and content load lazily to reduce initial work. Both site variants use the common catalogue export and shared data builders for feature and content parity.
@@ -74,13 +74,13 @@ Sources are linked on the cards and in the generated data. The release draws on 
 
 ## Validation
 
-Release QA recorded **276 passing pytest tests**, **127 passing Vitest tests** and **117 passing Django tests**, plus a Playwright sweep of both the Django app and the static build in all five themes at 1440px and 390px (no overflow, mojibake or page errors). The web-app CI also runs production Django checks, migration checks, OpenAPI validation, a frontend build, Docker smoke checks and memory checks. The source-attribution audit returned zero errors for the release catalogue.
+Release QA recorded **276 passing pytest tests**, **127 passing Vitest tests** and **117 passing Django tests**, plus a Playwright sweep of both the Django app and the static build in the five original modes at 1440px and 390px (no overflow, mojibake or page errors). The web-app CI also runs production Django checks, migration checks, OpenAPI validation, a frontend build, Docker smoke checks and memory checks. The source-attribution audit returned zero errors for the release catalogue.
 
 ## Deployment notes
 
 - The static dashboard is hosted on **Netlify**, with **GitHub Pages** as a mirror.
 - **Render** is configured as the continuing Django + React deployment through [`render.yaml`](../../render.yaml), a Render Blueprint.
-- **Fly.io** is used for this final release only. The Fly workflow's push-to-main trigger is for this release deployment; revert the workflow to manual-only (`workflow_dispatch`) afterward. No claim is made here that the Render service has already been created; configure it from the Blueprint when deploying there.
+- **Fly.io** is paused; its deployment workflow is manual-only (`workflow_dispatch`). Render is the continuing web-app deployment target. See [Deployment](../DEPLOYMENT.md) for current hosting details.
 
 ## Upgrade notes
 
@@ -88,7 +88,7 @@ Release QA recorded **276 passing pytest tests**, **127 passing Vitest tests** a
 2. For an existing Django deployment, install the current dependencies, run `manage.py migrate`, then `manage.py import_catalog` to load the 11-group catalogue.
 3. Rebuild the React frontend and static assets using the project build scripts before deploying. The static and Django versions should use matching generated data.
 4. Existing group/subgroup query URLs are handled by the legacy alias maps. Review application code that assumes the former category names or ordering before relying on database IDs or names.
-5. After the final Fly.io deployment, remove the Fly push-to-main trigger and keep manual dispatch if Fly is still needed. Use the Render Blueprint for the ongoing app deployment.
+5. Fly.io deployments are manual-only if needed; use the Render Blueprint for the ongoing app deployment.
 
 ## Known issues and interpretation limits
 

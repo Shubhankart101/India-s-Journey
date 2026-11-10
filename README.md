@@ -6,11 +6,11 @@
 
 [![11 groups](https://img.shields.io/badge/groups-11-138808?style=flat-square)](#groups)
 [![3,031 indicators](https://img.shields.io/badge/indicators-3%2C031-ff9933?style=flat-square)](#groups)
-[![5 themes](https://img.shields.io/badge/themes-Light%20%7C%20Dark%20%7C%20Newspaper%20%7C%20Pamphlet%20%7C%20Military-9b1b30?style=flat-square)](#themes)
+[![10 display modes](https://img.shields.io/badge/display%20modes-10-9b1b30?style=flat-square)](#themes)
 [![Release 32](https://img.shields.io/badge/release-32-c2185b?style=flat-square)](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md)
 
 [![Static dashboard](https://img.shields.io/badge/Explore-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://indiasjourney.netlify.app)
-[![Web app](https://img.shields.io/badge/Web%20app-Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white)](https://india-s-journey.fly.dev)
+[![Web app](https://img.shields.io/badge/Web%20app-Render-0c6b4f?style=for-the-badge)](https://indias-journey.onrender.com)
 [![GitHub Pages mirror](https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white)](https://shubhankart101.github.io/India-s-Journey/)
 [![Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Shubhankart101/India-s-Journey/actions)
 
@@ -19,7 +19,23 @@
 <a id="contents"></a>
 ## Contents
 
-[About](#about) | [Groups](#groups) | [Features](#features) | [Themes](#themes) | [Sources and caveats](#sources-and-caveats) | [Architecture](#architecture) | [Run locally](#run-locally) | [Testing](#testing) | [Deployment](#deployment) | [Release notes](#release-notes) | [Credits and licence](#credits-and-licence)
+[Explore live](#explore-live) | [About](#about) | [Groups](#groups) | [Features](#features) | [Themes](#themes) | [Sources and caveats](#sources-and-caveats) | [Architecture](#architecture) | [Documentation](#documentation) | [Run locally](#run-locally) | [Testing](#testing) | [Deployment](#deployment) | [Release notes](#release-notes) | [Credits and licence](#credits-and-licence)
+
+<a id="explore-live"></a>
+## Explore live
+
+<details>
+<summary>Choose a dashboard view</summary>
+
+| View | Open |
+|---|---|
+| Browse indicators | [Explore the catalogue](https://indiasjourney.netlify.app/#/explore) |
+| India in Maps | [Open the map atlas](https://indiasjourney.netlify.app/#/explore?category=india-in-maps) |
+| Lok Sabha elections | [Open election history](https://indiasjourney.netlify.app/#/elections) |
+| Voter-roll guide | [Open the SSR/SIR explainer](https://indiasjourney.netlify.app/#/voter-list-sir-ssr) |
+| Sources | [Browse data sources](https://indiasjourney.netlify.app/#/sources) |
+
+</details>
 
 <a id="about"></a>
 ## About
@@ -28,7 +44,6 @@ India's Journey is an independent dashboard for exploring long-run public indica
 
 <a id="groups"></a>
 ## Groups
-
 The catalogue contains **3,031 indicators across 11 groups and 133 subgroups**. Counts below are computed from `data/catalog.json` (`indicators` assigned to each category; subgroups listed on that category).
 
 <details open>
@@ -57,7 +72,7 @@ The catalogue contains **3,031 indicators across 11 groups and 133 subgroups**. 
 <details open>
 <summary>Atlases, explainers and data tools</summary>
 
-- **India in Maps:** compact state maps on relevant indicator cards, with an interactive full map, accessible state readouts and map/bar views.
+- **India in Maps:** compact state maps on relevant indicator cards and restored home-page mini maps, with an interactive full map, accessible state readouts and map/bar views.
 - **Lok Sabha atlas (1952–2024):** explore election results by year and State/UT, including state-by-state political history.
 - **Electoral-roll explainer:** an interactive guide to SSR (Special Summary Revision) and SIR (Special Intensive Revision), timelines, eligibility and forms. It is an explainer, not an application.
 - **Fiscal views:** State Finances Matrix, GDP explorer, spending by function, state head-to-head comparisons, Union Budget anatomy and How India Borrows.
@@ -75,9 +90,9 @@ The catalogue contains **3,031 indicators across 11 groups and 133 subgroups**. 
 ## Themes
 
 <details>
-<summary>Four display themes</summary>
+<summary>Ten display modes</summary>
 
-Choose **Light**, **Dark**, **Newspaper**, **Pamphlet** or **Military** from the theme selector. The Newspaper and Pamphlet options use a 1947-inspired vintage treatment; Military is an Indian Army olive-drab and khaki edition with brass accents, stencil headings and the motto सेवा परमो धर्मः. The choice is shared across the static and web-app interfaces, and chart/map colours adapt with it.
+Choose **Light**, **Dark**, **Newspaper**, **Pamphlet**, **Military**, **Parliamentary**, **Desi**, **Air Force**, **Navy** or **Police** from the theme selector. Newspaper and Pamphlet use a 1947-inspired vintage treatment; the other modes draw on their namesake Indian institutions and styles. All ten are available across the static and Django/React interfaces, and chart/map colours adapt with the selected mode.
 
 </details>
 
@@ -151,7 +166,7 @@ Open <http://localhost:8000>. To work on the React frontend with its dev server 
 <a id="testing"></a>
 ## Testing
 
-Release 32 validation included approximately **288 passing pytest tests**, approximately **117 passing Vitest tests**, the Django test suite, and Playwright checks. CI also validates the OpenAPI schema and builds/smoke-tests the container. Run the relevant suites locally:
+Release 32 validation included **276 passing pytest tests**, **127 passing Vitest tests**, **117 passing Django tests**, and Playwright checks. CI also validates the OpenAPI schema and builds/smoke-tests the container. Run the relevant suites locally:
 
 ```powershell
 python -m pytest tests -q --ignore=tests\test_dashboard_endpoints.py
@@ -169,7 +184,7 @@ See [docs/TESTING.md](docs/TESTING.md) and [Web app CI](.github/workflows/webapp
 
 - **Static dashboard:** Netlify is configured for `docs/`; GitHub Pages provides a mirror. See [`netlify.toml`](netlify.toml) and [the Pages workflow](.github/workflows/deploy-dashboard.yml).
 - **Django + React:** [`render.yaml`](render.yaml) is the Render Blueprint. Select **New > Blueprint** in Render and point it at this repository; it builds the Docker app and has a health check at `/api/health/`.
-- **Fly.io:** used for this final release only. The Fly workflow has a push-to-main trigger for release 32; after that deployment, revert it to manual-only (`workflow_dispatch`). Render is the continuing Blueprint deployment target.
+- **Fly.io:** paused; its deployment workflow is manual-only. Render is the continuing web-app deployment target. See [deployment options](docs/DEPLOYMENT.md).
 
 Free-tier container filesystems may be ephemeral; configure persistent storage if application data must survive redeploys. The indicator catalogue is re-imported from source data at startup.
 
@@ -178,6 +193,22 @@ Free-tier container filesystems may be ephemeral; configure persistent storage i
 
 See the [release index](docs/releases/README.md) for the full history and [release 32](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md) for the maps, regrouping, fiscal and cultural atlases, themes and fixes in this release.
 
+<a id="documentation"></a>
+## Documentation
+
+<details>
+<summary>Browse project guides</summary>
+
+Start with the [documentation index](docs/README.md), then open a focused guide:
+
+| Topic | Guides |
+|---|---|
+| Data and interpretation | [Sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), [Elections](docs/ELECTIONS.md), [India in Maps](docs/INDIA-IN-MAPS.md), [Tourism and heritage](docs/TOURISM-AND-HERITAGE.md), [Sports](docs/SPORTS.md) |
+| Transport and infrastructure | [Air travel](docs/AIR-TRAVEL-AND-CIVIL-AVIATION.md), [Indian Railways](docs/INDIAN-RAILWAYS.md), [Water transport](docs/WATER-TRANSPORT.md), [Logistics and freight](docs/LOGISTICS-AND-FREIGHT.md) |
+| Build and operate | [Architecture](docs/ARCHITECTURE.md), [API](docs/API.md), [Pipelines](docs/PIPELINES.md), [Testing](docs/TESTING.md), [Deployment](docs/DEPLOYMENT.md), [Static site and backup](docs/BACKUP.md), [Authentication](docs/AUTHENTICATION.md) |
+
+</details>
+
 <a id="credits-and-licence"></a>
 ## Credits and licence
 
@@ -185,4 +216,4 @@ This is an independent dashboard built from the public sources cited in the cata
 
 No `LICENSE` or `LICENCE` file is currently present in the repository; no project-code reuse licence is asserted here. Third-party data and assets remain subject to their own terms. See [docs/SOURCES-AND-LIMITATIONS.md](docs/SOURCES-AND-LIMITATIONS.md) for source notes and limitations.
 
-- **10 display modes** (pill selector, top right): Light, Dark, Newspaper, Pamphlet, Military, Parliamentary, Desi, Air Force, Navy, Police — identical on the Django app and the static site.
+[Back to top](#contents)

@@ -8,8 +8,8 @@ Every dashboard series with State/UT values can be rendered as a map; derived ma
 
 ## Interactions and themes
 
-Maps support hover details, keyboard navigation, ranked lists, search, period selection and shareable state. Colours use the shared theme tokens, so the four application themes apply in both Django and static builds.
+Maps support hover details, keyboard navigation, ranked lists, search, period selection and shareable state. Colours use shared theme tokens, so all ten display modes apply in both Django and static builds. The [home page](../README.md#explore-live) also features a compact India map; its asset path is built from the app base URL so it works on GitHub Pages.
 
 ## Artwork
 
-The map builder writes artwork to `frontend/public/art/`; Vite copies those assets into the static `docs/` build. Rebuild the static site with `npm.cmd --prefix frontend run build:static` after updating source data or artwork.
+The map builder writes artwork to `frontend/public/art/`; Vite copies those assets into the static `docs/` build. Rebuild the static site with `npm.cmd --prefix frontend run build:static` after updating source data or artwork. See [Architecture](ARCHITECTURE.md), [Pipelines](PIPELINES.md) and [Deployment](DEPLOYMENT.md) for the shared build and hosting flow.
