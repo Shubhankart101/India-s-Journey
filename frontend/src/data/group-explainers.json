@@ -427,7 +427,7 @@
             "sections": [
               {
                 "title": "Indian Matrix publication cadence: the headline view",
-                "text": "The 4 charts here follow Indian Matrix publication cadence, Scientific & Technical Journal Articles and Resident Patent Applications and 1 related series. Indian Matrix publication cadence fell from 2 articles in 2026-W28 to 1 articles in 2026-W44, a change of 50%. Scientific & Technical Journal Articles rose from 18,905 articles in 1996 to 228,174 articles in 2023, a change of 1,107%. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 4 charts here follow Indian Matrix publication cadence, Scientific & Technical Journal Articles and Resident Patent Applications and 1 related series. Indian Matrix publication cadence rose from 1 articles in 2026-W28 to 1 articles in 2026-W45, a change of 0%. Its high point was 2 articles in 2026-W31. Scientific & Technical Journal Articles rose from 18,905 articles in 1996 to 228,174 articles in 2023, a change of 1,107%. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "indian_matrix",
                   "wb_journal_articles",
@@ -981,8 +981,9 @@
           "indiabudget.gov.in",
           "World Bank (World Development Indicators)",
           "Reserve Bank of India",
-          "CEA per-capita power availability",
+          "RBI Handbook of Statistics on Indian States",
           "Department of Financial Services, PMJDY statewise account opening report",
+          "CEA per-capita power availability",
           "Controller General of Accounts (CGA) & Union Budget",
           "DPIIT Business Reform Action Plan",
           "GSTN Portal & Ministry of Finance",
@@ -997,6 +998,7 @@
           "NITI Aayog Export Preparedness Index",
           "PMMY MUDRA Portal & Department of Financial Services",
           "Press Information Bureau",
+          "RBI Handbook of Statistics on Indian States and CEA",
           "Union Budget Documents, Ministry of Finance",
           "Union Budget of India, Ministry of Finance"
         ],
@@ -1274,6 +1276,7 @@
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "RBI Handbook of Statistics on Indian States 2024-25",
+              "RBI Handbook of Statistics on Indian States",
               "GSTN Portal & Ministry of Finance",
               "NITI Aayog"
             ],
@@ -1373,7 +1376,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 3
+                "value": 4
               }
             ],
             "verse": {
@@ -1407,7 +1410,7 @@
             "sections": [
               {
                 "title": "PM Jan Dhan accounts by state: the headline view",
-                "text": "The 5 charts here follow PM Jan Dhan accounts by state, Ayushman Bharat cards by state and PM SVANidhi vendor credit by state and 2 related series. In PM Jan Dhan accounts by state, Uttar Pradesh leads at 10.7 Crore accounts, ahead of Bihar at 7.08 Crore accounts; Lakshadweep is lowest at 0 Crore accounts. In Ayushman Bharat cards by state, Uttar Pradesh leads at 4.85 Crore cards, ahead of Madhya Pradesh at 3.92 Crore cards; Assam is lowest at 1.62 Crore cards. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow PM Jan Dhan accounts by state, Ayushman Bharat cards by state and PM SVANidhi vendor credit by state and 2 related series. In PM Jan Dhan accounts by state, Uttar Pradesh leads at 10.72 Crore accounts, ahead of Bihar at 7.08 Crore accounts; Lakshadweep is lowest at 0 Crore accounts. In Ayushman Bharat cards by state, Uttar Pradesh leads at 4.85 Crore cards, ahead of Madhya Pradesh at 3.92 Crore cards; Assam is lowest at 1.62 Crore cards. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "state_pmjdy_bank_accounts",
                   "state_pmjay_health_cards",
@@ -1457,7 +1460,7 @@
                 ]
               }
             ],
-            "pullQuote": "In PM Jan Dhan accounts by state, Uttar Pradesh leads at 10.7 Crore accounts, ahead of Bihar at 7.08 Crore accounts; Lakshadweep is lowest at 0 Crore accounts.",
+            "pullQuote": "In PM Jan Dhan accounts by state, Uttar Pradesh leads at 10.72 Crore accounts, ahead of Bihar at 7.08 Crore accounts; Lakshadweep is lowest at 0 Crore accounts.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -1513,7 +1516,8 @@
               "World Bank (World Development Indicators)",
               "CEA per-capita power availability",
               "DPIIT Business Reform Action Plan",
-              "NITI Aayog Export Preparedness Index"
+              "NITI Aayog Export Preparedness Index",
+              "RBI Handbook of Statistics on Indian States and CEA"
             ],
             "indicatorCount": 20,
             "pattern": "annotated-captions",
@@ -1595,7 +1599,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 5
+                "value": 6
               }
             ],
             "verse": {
@@ -1811,7 +1815,6 @@
               "Directorate General of Foreign Trade (DGFT) & Ministry of Mines",
               "Ministry of Electronics and Information Technology (MeitY) & ICEA",
               "Ministry of Steel & Joint Plant Committee (JPC)",
-              "Office of Economic Adviser WPI monthly workbook",
               "Society of Indian Automobile Manufacturers (SIAM)"
             ],
             "indicatorCount": 30,
@@ -1819,64 +1822,63 @@
             "sections": [
               {
                 "title": "IIP growth: the headline view",
-                "text": "The 5 charts here follow IIP growth, WPI inflation and Eight-core industries and 2 related series. IIP growth rose from 54% in 2020-04 to 151% in 2025-10, a shift of 97.1 percentage points. Its high point was 166% in 2025-03. WPI inflation rose from 99% in 2023-04 to 111% in 2026-08, a shift of 11.8 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 5 charts here follow IIP growth, Eight-core industries and Automobile production and 2 related series. IIP growth rose from 54% in 2020-04 to 151% in 2025-10, a shift of 97.1 percentage points. Its high point was 166% in 2025-03. Eight-core industries rose from 81.2 index in 2020-04 to 162 index in 2025-10, a change of 100%. Its high point was 183 index in 2025-03. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "iip",
-                  "wpi",
                   "core_industries",
                   "auto_production_volume",
-                  "auto_domestic_sales"
+                  "auto_domestic_sales",
+                  "crude_steel_production"
                 ]
               },
               {
-                "title": "Crude steel production and its neighbours",
-                "text": "The 5 charts here follow Crude steel production, Electronics manufacturing output and Pharmaceutical exports and 2 related series. Crude steel production rose from 88.9 Million Tonnes in 2014 to 160 Million Tonnes in 2026, a change of 80%. Electronics manufacturing output rose from 1.9 INR Lakh Cr in 2015 to 15 INR Lakh Cr in 2026, a change of 689%. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Electronics manufacturing output and its neighbours",
+                "text": "The 5 charts here follow Electronics manufacturing output, Pharmaceutical exports and Textiles & apparel exports and 2 related series. Electronics manufacturing output rose from 1.9 INR Lakh Cr in 2015 to 15 INR Lakh Cr in 2026, a change of 689%. Pharmaceutical exports rose from 15.4 USD bn in 2014 to 35.5 USD bn in 2026, a change of 131%. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
-                  "crude_steel_production",
                   "electronics_manufacturing",
                   "pharma_exports_trajectory",
                   "textiles_apparel_exports",
-                  "agriculture_gdp_share"
+                  "agriculture_gdp_share",
+                  "industry_gdp_share"
                 ]
               },
               {
-                "title": "Reading Industry Value Added in context",
-                "text": "The 5 charts here follow Industry Value Added, Services Value Added and Manufacturing Value Added and 2 related series. Industry Value Added rose from 20.83% GDP in 1960 to 25.2% GDP in 2025, a shift of 4.37 percentage points. Its high point was 31.14% GDP in 2008. Services Value Added rose from 38.78% GDP in 1960 to 49.34% GDP in 2025, a shift of 10.56 percentage points. Its high point was 50.08% GDP in 2019. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Reading Services Value Added in context",
+                "text": "The 5 charts here follow Services Value Added, Manufacturing Value Added and Agricultural Land and 2 related series. Services Value Added rose from 38.78% GDP in 1960 to 49.34% GDP in 2025, a shift of 10.56 percentage points. Its high point was 50.08% GDP in 2019. Manufacturing Value Added fell from 14.75% GDP in 1960 to 13.47% GDP in 2025, a shift of 1.28 percentage points. Its high point was 17.87% GDP in 1995. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
-                  "industry_gdp_share",
                   "services_gdp_share",
                   "manufacturing_gdp_share",
                   "agricultural_land_share",
-                  "cereal_yield"
+                  "cereal_yield",
+                  "agricultural_employment_share"
                 ]
               },
               {
-                "title": "Employment in Agriculture: a closer look",
-                "text": "The 5 charts here follow Employment in Agriculture, Manufacturing Value-Added Growth and High-Technology Exports and 2 related series. Employment in Agriculture fell from 63.13% in 1991 to 41.63% in 2025, a shift of 21.5 percentage points. Manufacturing Value-Added Growth rose from 8.54% in 1961 to 11.53% in 2025, a shift of 2.99 percentage points. Its high point was 17.79% in 2006. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Manufacturing Value-Added Growth: a closer look",
+                "text": "The 5 charts here follow Manufacturing Value-Added Growth, High-Technology Exports and ICT Goods Exports and 2 related series. Manufacturing Value-Added Growth rose from 8.54% in 1961 to 11.53% in 2025, a shift of 2.99 percentage points. Its high point was 17.79% in 2006. High-Technology Exports rose from 9.57% in 2009 to 18.57% in 2024, a shift of 9 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
-                  "agricultural_employment_share",
                   "wb_manufacturing_growth",
                   "wb_high_tech_exports",
                   "wb_ict_goods_exports",
-                  "wb_employment_by_sector"
+                  "wb_employment_by_sector",
+                  "wb_female_employment_sector"
                 ]
               },
               {
-                "title": "More on Women's Employment by Sector",
-                "text": "The 5 charts here follow Women's Employment by Sector, Men's Employment by Sector and Manufacturing Growth by Industry and 2 related series. In Women's Employment by Sector, Agriculture leads at 59.83%, ahead of Services at 24.03%, and holds 60% of the total. In Men's Employment by Sector, Services leads at 35.93%, ahead of Agriculture at 34.43%, and holds 36% of the total. Slices are shares of one total, with the smallest folded into Other.",
+                "title": "More on Men's Employment by Sector",
+                "text": "The 5 charts here follow Men's Employment by Sector, Manufacturing Growth by Industry and Output Change Since 2011-12 by Industry and 2 related series. In Men's Employment by Sector, Services leads at 35.93%, ahead of Agriculture at 34.43%, and holds 36% of the total. In Manufacturing Growth by Industry, Motor vehicles (cars, trucks, trailers) leads at 12.5%, ahead of Basic metals (iron, steel, aluminium) at 10.9%; Other manufacturing (jewellery, toys, sports goods) is lowest at -14.9%. Slices are shares of one total, with the smallest folded into Other.",
                 "keys": [
-                  "wb_female_employment_sector",
                   "wb_male_employment_sector",
                   "iip_growth_ranking_latest",
                   "iip_growth_since_base",
-                  "iip_expanding_vs_contracting"
+                  "iip_expanding_vs_contracting",
+                  "iip_monthly_use_based"
                 ]
               },
               {
-                "title": "Monthly Output by Use: the wider picture",
-                "text": "The 5 charts here follow Monthly Output by Use, Monthly Output and Industries Expanding vs Contracting and 2 related series. Monthly Output by Use rose from 98.2 index in 2012-04 to 173 index in 2026-03, a change of 76%. Monthly Output rose from 99.3 index in 2012-04 to 173 index in 2026-03, a change of 74%. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Monthly Output: the wider picture",
+                "text": "The 4 charts here follow Monthly Output, Industries Expanding vs Contracting and Sector Export Value Mix and 1 related series. Monthly Output rose from 99.3 index in 2012-04 to 173 index in 2026-03, a change of 74%. In Industries Expanding vs Contracting, Expanding leads at 14 industries, ahead of Contracting at 9 industries, and holds 61% of the total. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
-                  "iip_monthly_use_based",
                   "iip_monthly_key_industries",
                   "iip_monthly_expanding_vs_contracting",
                   "sector_export_value_mix",
@@ -1926,7 +1928,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 11
+                "value": 10
               }
             ],
             "verse": {
@@ -1955,56 +1957,56 @@
             "sections": [
               {
                 "title": "Manufacturing Value Added by Industry: the headline view",
-                "text": "The 5 charts here follow Manufacturing Value Added by Industry, Registered Motor Vehicles and IIP. In Manufacturing Value Added by Industry, Other manufacturing (incl. metals) leads at 41.95%, ahead of Machinery & transport equipment at 23.38%, and holds 42% of the total. Registered Motor Vehicles rose from 248.6 million vehicles in 2018 to 324.6 million vehicles in 2022, a change of 31%. Slices are shares of one total, with the smallest folded into Other.",
+                "text": "The 5 charts here follow Manufacturing Value Added by Industry, Registered Motor Vehicles and Vehicle Production Mix and 2 related series. In Manufacturing Value Added by Industry, Other manufacturing (incl. metals) leads at 41.95%, ahead of Machinery & transport equipment at 23.38%, and holds 42% of the total. Registered Motor Vehicles rose from 248.6 million vehicles in 2018 to 324.6 million vehicles in 2022, a change of 31%. Slices are shares of one total, with the smallest folded into Other.",
                 "keys": [
                   "wb_manufacturing_value_added_mix",
                   "mospi_registered_vehicles",
-                  "iip_motor_vehicles",
-                  "iip_other_transport",
-                  "iip_food_products"
+                  "siam_production_mix",
+                  "siam_production_cumulative_mix",
+                  "iip_motor_vehicles"
                 ]
               },
               {
                 "title": "IIP and its neighbours",
-                "text": "The 5 charts here follow IIP. IIP rose from 107 index in 2012-13 to 111 index in 2025-26, a change of 4%. Its high point was 114 index in 2024-25. IIP fell from 108 index in 2012-13 to 89.8 index in 2025-26, a change of 16%. Its high point was 136 index in 2015-16. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 5 charts here follow IIP. IIP rose from 99.2 index in 2012-13 to 178 index in 2025-26, a change of 79%. IIP rose from 103 index in 2012-13 to 132 index in 2025-26, a change of 28%. Its high point was 134 index in 2023-24. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "iip_other_transport",
+                  "iip_food_products",
                   "iip_beverages",
                   "iip_tobacco",
-                  "iip_textiles",
-                  "iip_apparel",
-                  "iip_leather"
+                  "iip_textiles"
                 ]
               },
               {
                 "title": "Reading IIP in context",
-                "text": "The 5 charts here follow IIP. IIP rose from 97 index in 2012-13 to 111 index in 2025-26, a change of 15%. Its high point was 114 index in 2019-20. IIP fell from 103 index in 2012-13 to 78.9 index in 2025-26, a change of 24%. Its high point was 116 index in 2015-16. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 5 charts here follow IIP. IIP rose from 99 index in 2012-13 to 110 index in 2025-26, a change of 12%. Its high point was 155 index in 2019-20. IIP fell from 111 index in 2012-13 to 87.9 index in 2025-26, a change of 21%. Its high point was 125 index in 2018-19. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "iip_apparel",
+                  "iip_leather",
                   "iip_wood",
                   "iip_paper",
-                  "iip_printing",
-                  "iip_furniture",
-                  "iip_other_manufacturing"
+                  "iip_printing"
                 ]
               },
               {
                 "title": "IIP: a closer look",
-                "text": "The 5 charts here follow IIP and Vehicle Output Compared. IIP rose from 104 index in 2012-13 to 129 index in 2025-26, a change of 24%. Its high point was 129 index in 2022-23. IIP rose from 108 index in 2012-13 to 232 index in 2025-26, a change of 115%. Its high point was 234 index in 2023-24. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 5 charts here follow IIP. IIP rose from 113 index in 2012-13 to 234 index in 2025-26, a change of 107%. IIP fell from 113 index in 2012-13 to 69.3 index in 2025-26, a change of 39%. Its high point was 126 index in 2016-17. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "iip_furniture",
+                  "iip_other_manufacturing",
                   "iip_chemicals",
                   "iip_pharma",
-                  "iip_rubber_plastics",
-                  "iip_electronics",
-                  "iip_compare_vehicles"
+                  "iip_rubber_plastics"
                 ]
               },
               {
-                "title": "More on Food & Consumer Goods Output Compared",
-                "text": "The 4 charts here follow Food & Consumer Goods Output Compared, Chemicals, Pharma & Electronics Compared and Vehicle Production Mix and 1 related series. Food & Consumer Goods Output Compared rose from 103 index in 2012-13 to 132 index in 2025-26, a change of 28%. Its high point was 134 index in 2023-24. Chemicals, Pharma & Electronics Compared rose from 104 index in 2012-13 to 129 index in 2025-26, a change of 24%. Its high point was 129 index in 2022-23. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "More on IIP",
+                "text": "The 4 charts here follow IIP, Vehicle Output Compared and Food & Consumer Goods Output Compared and 1 related series. IIP rose from 101 index in 2012-13 to 142 index in 2025-26, a change of 41%. Its high point was 169 index in 2018-19. Vehicle Output Compared rose from 100 index in 2012-13 to 150 index in 2025-26, a change of 50%. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "iip_electronics",
+                  "iip_compare_vehicles",
                   "iip_compare_food_consumer",
-                  "iip_compare_chem_pharma_electronics",
-                  "siam_production_mix",
-                  "siam_production_cumulative_mix"
+                  "iip_compare_chem_pharma_electronics"
                 ]
               }
             ],
@@ -2014,6 +2016,8 @@
             "chartKeys": [
               "wb_manufacturing_value_added_mix",
               "mospi_registered_vehicles",
+              "siam_production_mix",
+              "siam_production_cumulative_mix",
               "iip_motor_vehicles",
               "iip_other_transport",
               "iip_food_products",
@@ -2033,9 +2037,7 @@
               "iip_electronics",
               "iip_compare_vehicles",
               "iip_compare_food_consumer",
-              "iip_compare_chem_pharma_electronics",
-              "siam_production_mix",
-              "siam_production_cumulative_mix"
+              "iip_compare_chem_pharma_electronics"
             ],
             "keyNumbers": [
               {
@@ -2500,11 +2502,11 @@
               },
               {
                 "title": "Reading Mineral Price Inflation by Commodity in context",
-                "text": "The 5 charts here follow Mineral Price Inflation by Commodity, Minerals with Rising vs Falling Prices and Mineral Price Change Since 2011-12 and 2 related series. In Mineral Price Inflation by Commodity, Crude petroleum leads at 88.1%, ahead of Zinc concentrate at 63%; Lignite is lowest at -7.9%. In Minerals with Rising vs Falling Prices, Prices rising leads at 12 minerals, ahead of Prices falling at 4 minerals, and holds 75% of the total. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Mineral Price Inflation by Commodity, Mineral Price Change Since 2011-12 and Minerals with Rising vs Falling Prices and 2 related series. In Mineral Price Inflation by Commodity, Crude petroleum leads at 88.1%, ahead of Zinc concentrate at 63%; Lignite is lowest at -7.9%. In Mineral Price Change Since 2011-12, Zinc concentrate leads at 534%, ahead of Garnet at 359%; Non-coking coal is lowest at 26.6%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "wpi_mineral_yoy_ranking",
-                  "wpi_mineral_rising_vs_falling",
                   "wpi_mineral_since_base",
+                  "wpi_mineral_rising_vs_falling",
                   "wpi_mineral_price_change_bands",
                   "wpi_mineral_fy_inflation"
                 ]
@@ -2536,8 +2538,8 @@
               "iip_sector_weights",
               "wpi_mineral_groups_monthly",
               "wpi_mineral_yoy_ranking",
-              "wpi_mineral_rising_vs_falling",
               "wpi_mineral_since_base",
+              "wpi_mineral_rising_vs_falling",
               "wpi_mineral_price_change_bands",
               "wpi_mineral_fy_inflation",
               "iip_mining_annual",
@@ -4274,7 +4276,7 @@
               "Press Information Bureau",
               "Parliament of India (Sansad)"
             ],
-            "indicatorCount": 25,
+            "indicatorCount": 24,
             "pattern": "lede-stat-strip",
             "sections": [
               {
@@ -4323,13 +4325,12 @@
               },
               {
                 "title": "More on Ocean Cruise Passengers",
-                "text": "The 5 charts here follow Ocean Cruise Passengers, Ocean Cruise Ship Calls and Overnight River Cruise Passengers and 2 related series. In Ocean Cruise Passengers, 2022-23 leads at 4.72 lakh passengers, ahead of 2013-14 at 0.84 lakh passengers. In Ocean Cruise Ship Calls, 2022-23 leads at 227 calls, ahead of 2013-14 at 102 calls. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 4 charts here follow Ocean Cruise Passengers, Ocean Cruise Ship Calls and Overnight River Cruise Passengers and 1 related series. In Ocean Cruise Passengers, 2022-23 leads at 4.72 lakh passengers, ahead of 2013-14 at 0.84 lakh passengers. In Ocean Cruise Ship Calls, 2022-23 leads at 227 calls, ahead of 2013-14 at 102 calls. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "water_ocean_cruise_passenger_history",
                   "water_ocean_cruise_call_history",
                   "water_river_cruise_passengers",
-                  "water_international_ferry_route_launch",
-                  "water_river_ocean_cruise_comparison"
+                  "water_international_ferry_route_launch"
                 ]
               }
             ],
@@ -4360,13 +4361,12 @@
               "water_ocean_cruise_passenger_history",
               "water_ocean_cruise_call_history",
               "water_river_cruise_passengers",
-              "water_international_ferry_route_launch",
-              "water_river_ocean_cruise_comparison"
+              "water_international_ferry_route_launch"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 25
+                "value": 24
               },
               {
                 "label": "Named publishers",
@@ -4407,28 +4407,17 @@
               },
               {
                 "title": "Passenger Recovery and its neighbours",
-                "text": "The 5 charts here follow Passenger Recovery, Passengers per Departure and Departures per Million People and 1 related series. In Passenger Recovery, India leads at 108% of 2019, ahead of United States at 102% of 2019; Germany is lowest at 73.15% of 2019. In Passengers per Departure, United Arab Emirates leads at 209 passengers, ahead of India at 146 passengers; Australia is lowest at 102 passengers. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Passenger Recovery, Passengers per Departure and Departures per Million People and 2 related series. In Passenger Recovery, India leads at 108% of 2019, ahead of United States at 102% of 2019; Germany is lowest at 73.15% of 2019. In Passengers per Departure, United Arab Emirates leads at 209 passengers, ahead of India at 146 passengers; Australia is lowest at 102 passengers. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "air_wb_recovery_2019",
                   "air_wb_passengers_per_departure",
                   "air_wb_departures_per_million",
-                  "water_wb_container_trend",
-                  "water_wb_container_rank"
+                  "rail_wb_freight_trend",
+                  "rail_wb_passenger_trend"
                 ]
               },
               {
-                "title": "Reading Container port traffic in context",
-                "text": "The 5 charts here follow Container port traffic, Liner shipping connectivity index and Rail Freight. In Container port traffic, China leads at 299.7 million TEUs, ahead of United States at 59.7 million TEUs, and holds 49% of the total. Liner shipping connectivity index rose from 39.03 index points in 2006 to 58.89 index points in 2021, a change of 51%. Slices are shares of one total, with the smallest folded into Other.",
-                "keys": [
-                  "water_wb_container_share",
-                  "water_wb_connectivity_trend",
-                  "water_wb_connectivity_rank",
-                  "water_wb_connectivity_share",
-                  "rail_wb_freight_trend"
-                ]
-              },
-              {
-                "title": "Rail Network Length: a closer look",
+                "title": "Reading Rail Network Length in context",
                 "text": "The 5 charts here follow Rail Network Length, Rail Freight Ranking and Share of Rail Freight Among Peers and 2 related series. Rail Network Length rose from 62.66 thousand km in 1995 to 68.1 thousand km in 2021, a change of 9%. Its high point was 69.25 thousand km in 2018. In Rail Freight Ranking, China leads at 3,018 billion tonne-km, ahead of Russia at 2,602 billion tonne-km; United Kingdom is lowest at 16.88 billion tonne-km. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "rail_wb_route_trend",
@@ -4439,23 +4428,34 @@
                 ]
               },
               {
-                "title": "More on Rail Network Ranking",
-                "text": "The 4 charts here follow Rail Network Ranking, Rail Freight and Rail Passenger-Km and 1 related series. In Rail Network Ranking, United States leads at 149 thousand km, ahead of China at 102 thousand km; United Kingdom is lowest at 16.3 thousand km. Rail Freight rose from 250 billion tonne-km in 1995 to 720 billion tonne-km in 2021, a change of 188%. Its high point was 739 billion tonne-km in 2019. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Rail Network Ranking: a closer look",
+                "text": "The 5 charts here follow Rail Network Ranking, Rail Freight and Rail Passenger-Km and 2 related series. In Rail Network Ranking, United States leads at 149 thousand km, ahead of China at 102 thousand km; United Kingdom is lowest at 16.3 thousand km. Rail Freight rose from 250 billion tonne-km in 1995 to 720 billion tonne-km in 2021, a change of 188%. Its high point was 739 billion tonne-km in 2019. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "rail_wb_route_rank",
                   "rail_wb_freight_all_peer_trend",
                   "rail_wb_passenger_all_peer_trend",
-                  "rail_wb_route_all_peer_trend"
+                  "rail_wb_route_all_peer_trend",
+                  "rail_wb_freight_latest_common_rank"
                 ]
               },
               {
-                "title": "Latest Common-Year Rail Freight Ranking: the wider picture",
-                "text": "The 4 charts here follow Latest Common-Year Rail Freight Ranking, Latest Common-Year Rail Passenger Ranking and Latest Common-Year Rail Network Ranking and 1 related series. In Latest Common-Year Rail Freight Ranking, Russia leads at 2,639 billion tonne-km, ahead of United States at 2,239 billion tonne-km; France is lowest at 35.75 billion tonne-km. In Latest Common-Year Rail Passenger Ranking, China leads at 946 billion passenger-km, ahead of India at 231 billion passenger-km; Australia is lowest at 9.33 billion passenger-km. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "More on Latest Common-Year Rail Passenger Ranking",
+                "text": "The 4 charts here follow Latest Common-Year Rail Passenger Ranking, Latest Common-Year Rail Network Ranking and Container port traffic. In Latest Common-Year Rail Passenger Ranking, China leads at 946 billion passenger-km, ahead of India at 231 billion passenger-km; Australia is lowest at 9.33 billion passenger-km. In Latest Common-Year Rail Network Ranking, United States leads at 149 thousand km, ahead of China at 110 thousand km; United Kingdom is lowest at 16.18 thousand km. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
-                  "rail_wb_freight_latest_common_rank",
                   "rail_wb_passenger_latest_common_rank",
                   "rail_wb_route_latest_common_rank",
-                  "rail_wb_passenger_trend"
+                  "water_wb_container_trend",
+                  "water_wb_container_rank"
+                ]
+              },
+              {
+                "title": "Container port traffic: the wider picture",
+                "text": "The 4 charts here follow Container port traffic and Liner shipping connectivity index. In Container port traffic, China leads at 299.7 million TEUs, ahead of United States at 59.7 million TEUs, and holds 49% of the total. Liner shipping connectivity index rose from 39.03 index points in 2006 to 58.89 index points in 2021, a change of 51%. Slices are shares of one total, with the smallest folded into Other.",
+                "keys": [
+                  "water_wb_container_share",
+                  "water_wb_connectivity_trend",
+                  "water_wb_connectivity_rank",
+                  "water_wb_connectivity_share"
                 ]
               }
             ],
@@ -4471,13 +4471,8 @@
               "air_wb_recovery_2019",
               "air_wb_passengers_per_departure",
               "air_wb_departures_per_million",
-              "water_wb_container_trend",
-              "water_wb_container_rank",
-              "water_wb_container_share",
-              "water_wb_connectivity_trend",
-              "water_wb_connectivity_rank",
-              "water_wb_connectivity_share",
               "rail_wb_freight_trend",
+              "rail_wb_passenger_trend",
               "rail_wb_route_trend",
               "rail_wb_freight_rank",
               "rail_wb_freight_share",
@@ -4490,7 +4485,12 @@
               "rail_wb_freight_latest_common_rank",
               "rail_wb_passenger_latest_common_rank",
               "rail_wb_route_latest_common_rank",
-              "rail_wb_passenger_trend"
+              "water_wb_container_trend",
+              "water_wb_container_rank",
+              "water_wb_container_share",
+              "water_wb_connectivity_trend",
+              "water_wb_connectivity_rank",
+              "water_wb_connectivity_share"
             ],
             "keyNumbers": [
               {
@@ -4662,7 +4662,7 @@
               "Ministry of Civil Aviation",
               "NHAI"
             ],
-            "indicatorCount": 27,
+            "indicatorCount": 28,
             "pattern": "two-lenses",
             "sections": [
               {
@@ -4700,32 +4700,33 @@
               },
               {
                 "title": "LEADS 2023 Coverage: a closer look",
-                "text": "The 4 charts here follow LEADS 2023 Coverage, National Waterway Cargo Movement and Indian Railways Earnings Mix and 1 related series. LEADS 2023 Coverage is 36 States / UTs (LEADS 2023). In National Waterway Cargo Movement, 2023-24 leads at 133 million tonnes, ahead of 2013-14 at 18.1 million tonnes. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow LEADS 2023 Coverage, National Waterway Cargo Movement and Indian Railways Earnings Mix and 2 related series. LEADS 2023 Coverage is 36 States / UTs (LEADS 2023). In National Waterway Cargo Movement, 2023-24 leads at 133 million tonnes, ahead of 2013-14 at 18.1 million tonnes. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "log_modal_leads_states",
                   "log_modal_iwt_growth",
                   "log_revenue_railway_mix",
-                  "log_revenue_rail_earnings"
+                  "log_revenue_rail_earnings",
+                  "log_revenue_rail_yield"
                 ]
               },
               {
-                "title": "More on Rail Passenger and Freight Yield",
-                "text": "The 4 charts here follow Rail Passenger and Freight Yield, FASTag Toll Collections and NHAI Toll-Operate-Transfer Proceeds and 1 related series. In Rail Passenger and Freight Yield, Freight yield (paise/NTKM) leads at 167 paise per traffic unit, ahead of Passenger yield (paise/passenger-km) at 66.13 paise per traffic unit. FASTag Toll Collections is 55,000 Rs crore (approx.) (FY 2023-24). Bars follow the published order; hover a bar for its exact figure.",
+                "title": "More on FASTag Toll Collections",
+                "text": "The 4 charts here follow FASTag Toll Collections, NHAI Toll-Operate-Transfer Proceeds and Railway Freight Earnings over Five Years and 1 related series. FASTag Toll Collections is 55,000 Rs crore (approx.) (FY 2023-24). NHAI Toll-Operate-Transfer Proceeds is 15,968 Rs crore (FY 2023-24). Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
-                  "log_revenue_rail_yield",
                   "log_revenue_fastag",
                   "log_revenue_nhai_tot",
-                  "log_revenue_rail_five_year"
+                  "log_revenue_rail_five_year",
+                  "log_revenue_ncaer_cost"
                 ]
               },
               {
-                "title": "Estimated National Logistics Cost: the wider picture",
-                "text": "The 4 charts here follow Estimated National Logistics Cost, Major-Port Commodity Traffic and Airport-Handled Air Cargo Growth and 1 related series. Estimated National Logistics Cost is 24.01 Rs lakh crore (FY 2023-24 estimate). In Major-Port Commodity Traffic, POL leads at 234 million tonnes, ahead of Coal at 188 million tonnes; Fertilizers & raw materials is lowest at 16.68 million tonnes. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Major-Port Commodity Traffic: the wider picture",
+                "text": "The 4 charts here follow Major-Port Commodity Traffic, Airport-Handled Air Cargo Growth and World Bank Container Port Traffic and 1 related series. In Major-Port Commodity Traffic, POL leads at 234 million tonnes, ahead of Coal at 188 million tonnes; Fertilizers & raw materials is lowest at 16.68 million tonnes. In Airport-Handled Air Cargo Growth, 2023-24 leads at 3,366 thousand tonnes, ahead of 2022-23 at 3,147 thousand tonnes. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
-                  "log_revenue_ncaer_cost",
                   "log_sea_commodity_compare",
                   "log_air_aai_total_trend",
-                  "log_sea_container_wb"
+                  "log_sea_container_wb",
+                  "log_air_wb_freight"
                 ]
               }
             ],
@@ -4759,12 +4760,13 @@
               "log_revenue_ncaer_cost",
               "log_sea_commodity_compare",
               "log_air_aai_total_trend",
-              "log_sea_container_wb"
+              "log_sea_container_wb",
+              "log_air_wb_freight"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 27
+                "value": 28
               },
               {
                 "label": "Named publishers",
@@ -5926,7 +5928,7 @@
                 ]
               }
             ],
-            "pullQuote": "Pew rose from 7 responses in 2013: owns a smartphone to 54 responses in 2023: uses social media, a change of 671%. Its high point was 59 responses in 2023: owns a smartphone.",
+            "pullQuote": "Pew India report cadence rose from 8 reports in 2002 to 64 reports in 2026, a change of 700%. Its high point was 115 reports in 2025.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -5995,7 +5997,7 @@
             "sections": [
               {
                 "title": "Pew India Reports Published per Year: the headline view",
-                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year stood at 0 reports in 2002 and 0 reports in 2026. Cumulative Pew India Reports in Catalogue rose from 9 reports in 2002 to 1,418 reports in 2026, a change of 15,656%. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year stood at 0 reports in 2002 and 0 reports in 2026. Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_reports_per_year",
                   "dg_pew_reports_cumulative",
@@ -6006,7 +6008,7 @@
               },
               {
                 "title": "Pew India Reports by Publication Decade and its neighbours",
-                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 256 reports in 2000s to 497 reports in 2020s, a change of 94%. Its high point was 665 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 2002 and 0 title matches in 2026. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 255 reports in 2000s to 497 reports in 2020s, a change of 95%. Its high point was 665 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 2002 and 0 title matches in 2026. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_publications_by_decade",
                   "dg_pew_theme_economy_livelihoods",
@@ -6037,7 +6039,7 @@
                 ]
               }
             ],
-            "pullQuote": "Cumulative Pew India Reports in Catalogue rose from 9 reports in 2002 to 1,418 reports in 2026, a change of 15,656%.",
+            "pullQuote": "Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -12164,7 +12166,7 @@
               },
               {
                 "title": "2026 Presidential Candidate Total Receipts: a closer look",
-                "text": "The 5 charts here follow 2026 Presidential Candidate Total Receipts, 2026 Presidential Candidate Total Disbursements and 2026 Presidential Candidate Cash on Hand and 2 related series. In 2026 Presidential Candidate Total Receipts, NNE leads at 25.1 million USD, ahead of REP at 7,506,810 USD; UNK is lowest at 0 USD. In 2026 Presidential Candidate Total Disbursements, REP leads at 785.5 million USD, ahead of IND at 5,517,686 USD; NON is lowest at 0 USD. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow 2026 Presidential Candidate Total Receipts, 2026 Presidential Candidate Total Disbursements and 2026 Presidential Candidate Cash on Hand and 2 related series. In 2026 Presidential Candidate Total Receipts, NNE leads at 25.1 million USD, ahead of REP at 7,511,860 USD; UNK is lowest at 0 USD. In 2026 Presidential Candidate Total Disbursements, REP leads at 785.8 million USD, ahead of IND at 5,517,686 USD; NON is lowest at 0 USD. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "us_fec_2026_p_receipts",
                   "us_fec_2026_p_disbursements",
@@ -12300,7 +12302,7 @@
               },
               {
                 "title": "2024 House Candidate Debt Owed: a closer look",
-                "text": "The 5 charts here follow 2024 House Candidate Debt Owed, 2026 House Candidate Total Receipts and 2026 House Candidate Total Disbursements and 2 related series. In 2024 House Candidate Debt Owed, MD leads at 80.6 million USD, ahead of FL at 29.9 million USD; WY is lowest at 1,460 USD. In 2026 House Candidate Total Receipts, CA leads at 267.6 million USD, ahead of NY at 249.4 million USD; VT is lowest at 1,404,110 USD. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow 2024 House Candidate Debt Owed, 2026 House Candidate Total Receipts and 2026 House Candidate Total Disbursements and 2 related series. In 2024 House Candidate Debt Owed, MD leads at 80.6 million USD, ahead of FL at 29.9 million USD; WY is lowest at 1,460 USD. In 2026 House Candidate Total Receipts, CA leads at 267.6 million USD, ahead of NY at 249.4 million USD; VT is lowest at 1,400,921 USD. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "us_fec_2024_h_debts_owed",
                   "us_fec_2026_h_receipts",
@@ -12401,7 +12403,7 @@
               },
               {
                 "title": "2024 Senate Candidate Debt Owed: a closer look",
-                "text": "The 5 charts here follow 2024 Senate Candidate Debt Owed, 2026 Senate Candidate Total Receipts and 2026 Senate Candidate Total Disbursements and 2 related series. In 2024 Senate Candidate Debt Owed, MD leads at 74.5 million USD, ahead of WI at 62.4 million USD; SD is lowest at 0 USD. In 2026 Senate Candidate Total Receipts, TX leads at 211.5 million USD, ahead of GA at 138.1 million USD; ND is lowest at 1,863,079 USD. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow 2024 Senate Candidate Debt Owed, 2026 Senate Candidate Total Receipts and 2026 Senate Candidate Total Disbursements and 2 related series. In 2024 Senate Candidate Debt Owed, MD leads at 74.5 million USD, ahead of WI at 62.4 million USD; SD is lowest at 0 USD. In 2026 Senate Candidate Total Receipts, TX leads at 211.5 million USD, ahead of GA at 138.2 million USD; ND is lowest at 1,863,079 USD. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "us_fec_2024_s_debts_owed",
                   "us_fec_2026_s_receipts",
@@ -12492,7 +12494,7 @@
               },
               {
                 "title": "Reading Senate Campaign Disbursements Cycle Growth in context",
-                "text": "The 5 charts here follow Senate Campaign Disbursements Cycle Growth, Senate Campaign Cash on Hand Cycle Growth and Senate Campaign Debts Owed by FEC Cycle and 2 related series. Senate Campaign Disbursements Cycle Growth fell from 93.54% change in 2018–2020 to -15.11% change in 2024–2026, a shift of 108.64 percentage points. Senate Campaign Cash on Hand Cycle Growth fell from 68.05% change in 2018–2020 to 38.35% change in 2024–2026, a shift of 29.7 percentage points. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Senate Campaign Disbursements Cycle Growth, Senate Campaign Cash on Hand Cycle Growth and Senate Campaign Debts Owed by FEC Cycle and 2 related series. Senate Campaign Disbursements Cycle Growth fell from 93.54% change in 2018–2020 to -15.1% change in 2024–2026, a shift of 108.64 percentage points. Senate Campaign Cash on Hand Cycle Growth fell from 68.05% change in 2018–2020 to 38.35% change in 2024–2026, a shift of 29.7 percentage points. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_us_finance_s_disbursements_growth",
                   "dg_us_finance_s_cash_on_hand_growth",
@@ -12503,7 +12505,7 @@
               },
               {
                 "title": "House Campaign Receipts Cycle Growth: a closer look",
-                "text": "The 5 charts here follow House Campaign Receipts Cycle Growth, House Campaign Disbursements by FEC Cycle and House Campaign Disbursements Cycle Growth and 2 related series. House Campaign Receipts Cycle Growth fell from 11.46% change in 2018–2020 to 7.52% change in 2024–2026, a shift of 3.93 percentage points. House Campaign Disbursements by FEC Cycle rose from 1.95 billion USD in 2018 to 2.36 billion USD in 2026, a change of 21%. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow House Campaign Receipts Cycle Growth, House Campaign Disbursements by FEC Cycle and House Campaign Disbursements Cycle Growth and 2 related series. House Campaign Receipts Cycle Growth fell from 11.46% change in 2018–2020 to 7.53% change in 2024–2026, a shift of 3.93 percentage points. House Campaign Disbursements by FEC Cycle rose from 1.95 billion USD in 2018 to 2.37 billion USD in 2026, a change of 21%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_us_finance_h_receipts_growth",
                   "dg_us_finance_h_disbursements_by_cycle",
@@ -13456,7 +13458,7 @@
             "sections": [
               {
                 "title": "India at the BWF World Championships - medals by: the headline view",
-                "text": "The 5 charts here follow India at the BWF World Championships - medals by, Indian players/pairs in the BWF World Rankings and Best-ranked Indian in each BWF discipline and 2 related series. India at the BWF World Championships - medals by stood at 0 medals in 2011 and 0 medals in 2026. Its high point was 1 medals in 2019. In Indian players/pairs in the BWF World Rankings, Men's singles leads at 2, ahead of Women's singles at 1; Mixed doubles is lowest at 0. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow India at the BWF World Championships - medals by, Indian players/pairs in the BWF World Rankings and Best-ranked Indian in each BWF discipline and 2 related series. India at the BWF World Championships - medals by stood at 0 medals in 2011 and 0 medals in 2026. Its high point was 1 medals in 2019. In Indian players/pairs in the BWF World Rankings, Men's singles leads at 1, ahead of Women's singles at 1; Mixed doubles is lowest at 0. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "sports_badminton_bwf_world_championships_medals",
                   "sports_badminton_bwf_world_ranking_indians_by_discipline",
@@ -13467,7 +13469,7 @@
               },
               {
                 "title": "India at ISSF World Championships and its neighbours",
-                "text": "The 5 charts here follow India at ISSF World Championships, India's ISSF World Cup medals by year and India at UWW Senior World Championships and 2 related series. India at ISSF World Championships rose from 1 medals in 2022 Osijek (Shotgun) to 1 medals in 2026 Doha (Rifle / Pistol / Shotgun), a change of 0%. Its high point was 12 medals in 2022 Cairo (Rifle / Pistol). India's ISSF World Cup medals by year fell from 11 medals in 2022 to 6 medals in 2026, a change of 45%. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow India at ISSF World Championships, India's ISSF World Cup medals by year and India at UWW Senior World Championships and 2 related series. India at ISSF World Championships rose from 1 medals in 2022 Osijek (Shotgun) to 2 medals in 2026 Doha (Rifle / Pistol / Shotgun), a change of 100%. Its high point was 12 medals in 2022 Cairo (Rifle / Pistol). India's ISSF World Cup medals by year fell from 11 medals in 2022 to 6 medals in 2026, a change of 45%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "sports_shooting_issf_world_championships_medals",
                   "sports_shooting_issf_world_cup_medals_by_year",
@@ -13568,7 +13570,7 @@
             "sections": [
               {
                 "title": "India men: the headline view",
-                "text": "The 5 charts here follow India men, India women and India men Test and 2 related series. In India men, ODI leads at 577 matches, ahead of T20I at 201 matches. In India women, ODI leads at 191 matches, ahead of T20I at 134 matches. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow India men, India women and India men Test and 2 related series. In India men, ODI leads at 579 matches, ahead of T20I at 201 matches. In India women, ODI leads at 191 matches, ahead of T20I at 134 matches. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "cricket_men_alltime_results",
                   "cricket_women_alltime_results",
@@ -13579,7 +13581,7 @@
               },
               {
                 "title": "ICC Men Test team rankings and its neighbours",
-                "text": "The 5 charts here follow ICC Men Test team rankings, ICC Men ODI team rankings and ICC Men T20I team rankings and 2 related series. In ICC Men Test team rankings, South Africa leads at 124, ahead of Australia at 122; Zimbabwe is lowest at 17. In ICC Men ODI team rankings, India leads at 115, ahead of New Zealand at 109; West Indies is lowest at 79. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow ICC Men Test team rankings, ICC Men ODI team rankings and ICC Men T20I team rankings and 2 related series. In ICC Men Test team rankings, South Africa leads at 124, ahead of Australia at 122; Zimbabwe is lowest at 17. In ICC Men ODI team rankings, India leads at 117, ahead of New Zealand at 106; West Indies is lowest at 79. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "cricket_icc_rank_men_test_top10",
                   "cricket_icc_rank_men_odi_top10",
@@ -13812,7 +13814,7 @@
               },
               {
                 "title": "India men vs major opponents: a closer look",
-                "text": "The 4 charts here follow India men vs major opponents and India men hockey. In India men vs major opponents, Japan leads at 12 matches, ahead of Germany at 9 matches; England is lowest at 2 matches. In India men vs major opponents, Japan leads at 56 goals, ahead of Australia at 53 goals; England is lowest at 20 goals. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 4 charts here follow India men vs major opponents and India men hockey. In India men vs major opponents, Japan leads at 13 matches, ahead of Germany at 9 matches; England is lowest at 2 matches. In India men vs major opponents, Japan leads at 60 goals, ahead of Australia at 53 goals; England is lowest at 20 goals. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "hockey_fih_india_men_head_to_head_2020_2026",
                   "hockey_fih_india_men_head_to_head_2020_2026_goals",
@@ -14380,8 +14382,9 @@
           "MoSPI",
           "Airports Authority of India",
           "Election Commission of India candidate results",
-          "CEA per-capita power availability",
+          "RBI Handbook of Statistics on Indian States",
           "Ministry of Ports, Shipping & Waterways",
+          "CEA per-capita power availability",
           "Department of Financial Services, PMJDY statewise account opening report",
           "DPIIT Business Reform Action Plan",
           "GSTN Portal & Ministry of Finance",
@@ -14393,7 +14396,8 @@
           "MOSPI Periodic Labour Force Survey & Census Estimates",
           "National Health Authority PM-JAY Open Dashboard",
           "NITI Aayog Export Preparedness Index",
-          "PMMY MUDRA Portal & Department of Financial Services"
+          "PMMY MUDRA Portal & Department of Financial Services",
+          "RBI Handbook of Statistics on Indian States and CEA"
         ],
         "indicatorCount": 261,
         "subgroupCount": 12,
@@ -14698,8 +14702,9 @@
             "sources": [
               "RBI Handbook of Statistics on Indian States 2024-25",
               "Reserve Bank of India",
-              "CEA per-capita power availability",
-              "NITI Aayog"
+              "RBI Handbook of Statistics on Indian States",
+              "NITI Aayog",
+              "RBI Handbook of Statistics on Indian States and CEA"
             ],
             "indicatorCount": 22,
             "pattern": "annotated-captions",
@@ -14814,7 +14819,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 4
+                "value": 5
               }
             ],
             "verse": {

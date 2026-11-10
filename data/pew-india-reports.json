@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-11-02T12:02:46+00:00",
+  "generated_at_utc": "2026-11-09T12:35:41+00:00",
   "source": "Pew Research Center public India search results",
   "search_url": "https://www.pewresearch.org/search/india/",
-  "report_count": 1418,
+  "report_count": 1417,
   "reports": [
     {
       "title": "What We Know About Eligible Voters Who Are Naturalized U.S. Citizens",
@@ -7088,11 +7088,6 @@
       "title": "The Face of Evening News",
       "link": "https://www.pewresearch.org/journalism/2002/05/23/the-face-of-evening-news/",
       "date": "2002-05-23"
-    },
-    {
-      "title": "Unusually High Interest In Bush\u2019s State Of The Union",
-      "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
-      "date": "2002-01-17"
     }
   ],
   "cadence": {
@@ -7124,7 +7119,7 @@
       "2026"
     ],
     "values": [
-      9,
+      8,
       20,
       5,
       23,
