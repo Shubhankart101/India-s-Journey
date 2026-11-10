@@ -13,6 +13,7 @@ const Sources = lazy(() => import('./pages/Sources.jsx'));
 const Indicator = lazy(() => import('./pages/Indicator.jsx'));
 const Compare = lazy(() => import('./pages/Compare.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
+const Articles = lazy(() => import('./pages/Articles.jsx'));
 const Api = lazy(() => import('./pages/Api.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
@@ -32,6 +33,7 @@ export function AppRoutes() {
           <Route path="sources" element={<Sources />} />
           <Route path="indicator/:key" element={<Indicator />} />
           <Route path="compare" element={<Compare />} />
+          <Route path="articles" element={<Articles />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>

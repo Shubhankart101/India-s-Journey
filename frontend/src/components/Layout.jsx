@@ -11,7 +11,7 @@ import ThemeSelect, { ContactLinks, X_URL } from './ThemeSelect.jsx';
 import VintageChrome from './VintageChrome.jsx';
 import { MOTTO } from '../sanskrit.js';
 
-const NAV_LABELS = { Home: 'गृहम्', Explore: 'अन्वेषणम्', Sources: 'स्रोतांसि', Compare: 'तुलना', About: 'परिचयः', API: 'अन्तरापृष्ठम्' };
+const NAV_LABELS = { Home: 'गृहम्', Explore: 'अन्वेषणम्', Sources: 'स्रोतांसि', Compare: 'तुलना', About: 'परिचयः', Articles: 'लेखाः', API: 'अन्तरापृष्ठम्' };
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
@@ -19,6 +19,7 @@ const NAV = [
   { to: '/sources', label: 'Sources', icon: '❡' },
   { to: '/compare', label: 'Compare', icon: '⇄' },
   { to: '/about', label: 'About', icon: 'ℹ' },
+  { to: '/articles', label: 'Articles', icon: '▤' },
   { to: '/api', label: 'API', icon: '{ }' },
 ];
 

@@ -102,7 +102,7 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Latest analysis<span className="sa-kicker" lang="sa" aria-hidden="true">{ANALYSIS_KICKER}</span></h2>
-          <Link to="/about#articles">All articles →</Link>
+          <Link to="/articles">All articles →</Link>
         </div>
         {articles.loading && !articles.data && <Loading label="Loading articles…" />}
         {articles.error && <ErrorState error={articles.error} onRetry={articles.reload} />}
