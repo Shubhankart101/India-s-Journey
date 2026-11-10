@@ -7,8 +7,8 @@ const MAP_SLUG = 'india-in-maps';
 const MAP_CHIPS = ['36 states & UTs', 'Lok Sabha 1952–2024', 'Primary ECI data'];
 
 let outlinePromise = null;
-const loadOutline = () => {
-  outlinePromise = outlinePromise || fetch('/maps/india-states.json').then(response => {
+export const loadOutline = () => {
+  outlinePromise = outlinePromise || fetch(import.meta.env.BASE_URL + 'maps/india-states.json').then(response => {
     if (!response.ok) throw new Error(`Map outline unavailable (HTTP ${response.status})`);
     return response.json();
   }).catch(error => {
@@ -47,7 +47,7 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
     <Link to={to} className={`group-card${featured ? ' featured' : ''}`}>
       {featured ? <IndiaOutline /> : (
         <span className="group-card-art" aria-hidden="true">
-          <img src={`/art/${category.art || 'parliament.svg'}`} alt="" loading="lazy" decoding="async" width="72" height="72" />
+          <img src={`${import.meta.env.BASE_URL}art/${category.art || 'parliament.svg'}`} alt="" loading="lazy" decoding="async" width="72" height="72" />
         </span>
       )}
       <div className="group-card-body">

@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../api.js';
 import { formatMagnitude, isRadial } from '../format.js';
 import { useAsync } from '../hooks.js';
+import { loadOutline } from './GroupCards.jsx';
 import ScriptureVerse from './ScriptureVerse.jsx';
 
 const MAX_TILES = 3;
@@ -45,7 +47,55 @@ function pickMiniIndices(results = [], limit = MAX_TILES) {
     .map(item => ({ kind: 'snapshot', item, parts: snapshotParts(item, isRadial(item.chart_type)) }))
     .filter(({ parts }) => parts.length >= 2)
     .slice(0, limit - trends.length);
-  return [...trends, ...snapshots];
+  const picked = [...trends, ...snapshots];
+  if (picked.length >= limit) return picked;
+  // Map-only groups (e.g. India in Maps) get mini choropleths of state-level indicators.
+  const maps = live.filter(item => item.scope === 'state')
+    .map(item => ({ kind: 'map', item, parts: snapshotParts(item, false), values: stateValues(item) }))
+    .filter(({ values }) => Object.keys(values).length >= 5)
+    .slice(0, limit - picked.length);
+  return [...picked, ...maps];
+}
+
+function stateValues(item) {
+  const labels = item.preview?.labels || [];
+  const values = item.preview?.datasets?.[0]?.values || [];
+  const out = {};
+  labels.forEach((label, index) => { if (numeric(values[index])) out[String(label)] = Number(values[index]); });
+  return out;
+}
+
+function MiniMap({ values, color }) {
+  const [geometry, setGeometry] = useState(null);
+  useEffect(() => {
+    let live = true;
+    loadOutline().then(data => live && setGeometry(data)).catch(() => {});
+    return () => { live = false; };
+  }, []);
+  if (!geometry) return <span className="mini-choropleth" aria-hidden="true" />;
+  const nums = Object.values(values);
+  const min = Math.min(...nums);
+  const span = Math.max(...nums) - min || 1;
+  return (
+    <svg className="mini-choropleth" viewBox={geometry.viewBox} aria-hidden="true" focusable="false">
+      {Object.entries(geometry.states).map(([name, d]) => {
+        const value = values[name];
+        const share = value === undefined ? null : 0.15 + 0.85 * ((value - min) / span);
+        return <path key={name} d={d} fill={share === null ? 'var(--mini-map-empty, rgba(128,128,128,.18))' : color} fillOpacity={share ?? 1} />;
+      })}
+    </svg>
+  );
+}
+
+function MapTile({ item, parts, values }) {
+  const [leader] = parts;
+  return (
+    <>
+      <span className="mini-row"><strong>{formatMagnitude(leader.value, item.suffix)}</strong></span>
+      <MiniMap values={values} color={item.color || '#ff9933'} />
+      <span className="mini-period" title={`Highest: ${leader.label}`}>Top: {leader.label}</span>
+    </>
+  );
 }
 
 function miniChange(points, suffix = '') {
@@ -164,7 +214,7 @@ export default function MiniIndices({ category }) {
         <li className={`mini-index mini-${pick.kind}`} key={pick.item.key}>
           <Link className="mini-index-main" to={`/indicator/${pick.item.key}`} title={pick.item.subtitle || pick.item.title}>
             <span className="mini-title">{pick.item.title}</span>
-            {pick.kind === 'trend' ? <TrendTile {...pick} /> : <SnapshotTile {...pick} />}
+            {pick.kind === 'trend' ? <TrendTile {...pick} /> : pick.kind === 'map' ? <MapTile {...pick} /> : <SnapshotTile {...pick} />}
           </Link>
           <MiniCitation item={pick.item} />
           <ScriptureVerse verseKey={pick.item.key} group={category.name} className="compact" />

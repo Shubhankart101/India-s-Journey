@@ -240,7 +240,7 @@ export default function Sources() {
           <ul className="illustration-list">
             {ILLUSTRATIONS.map(([file, label, href, source]) => (
               <li key={file}>
-                <a href={`/art/${file}`}>{label}</a> · <External href={href}>{source}</External>
+                <a href={`${import.meta.env.BASE_URL}art/${file}`}>{label}</a> · <External href={href}>{source}</External>
               </li>
             ))}
           </ul>

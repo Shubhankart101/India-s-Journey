@@ -4,7 +4,7 @@ import './Atlas.css';
 import { formatInt } from './atlasData.js';
 
 // Mirrors docs/state-elections.js: keep markup and class names in sync.
-const BASE = '/data/state-elections/';
+const BASE = import.meta.env.BASE_URL + 'data/state-elections/';
 const HOUSES = { GE: 'Lok Sabha', AE: 'Vidhan Sabha (Assembly)' };
 const cache = {};
 const getJSON = url => (cache[url] = cache[url] || fetch(url).then(r => {

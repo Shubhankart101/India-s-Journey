@@ -87,7 +87,7 @@ export default function JourneyMap({ id, compact = false }) {
 
   useEffect(() => {
     alive.current = true;
-    Promise.all([loadAtlasJson('/data/faith-journeys.json'), loadAtlasJson('/maps/world-asia.json')])
+    Promise.all([loadAtlasJson(import.meta.env.BASE_URL + 'data/faith-journeys.json'), loadAtlasJson(import.meta.env.BASE_URL + 'maps/world-asia.json')])
       .then(([journeys, base]) => { if (alive.current) { setData(journeys); setBasemap(base); } })
       .catch(err => { if (alive.current) setError(err.message); });
     return () => { alive.current = false; };

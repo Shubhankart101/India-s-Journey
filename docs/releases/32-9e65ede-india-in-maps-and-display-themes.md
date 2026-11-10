@@ -97,3 +97,7 @@ Release QA recorded **276 passing pytest tests**, **127 passing Vitest tests** a
 - Public data publishers update at different intervals, and historical values can be revised. A displayed series may have gaps or a different observation frequency from the workflow that checks its source.
 
 Previous: [Water, logistics, expanded air and rail data, interactive charts](./31-aeb4153-water-logistics-and-interactive-charts.md)
+
+## Follow-up
+- Added Parliamentary, Desi, Air Force, Navy and Police display modes (10 total) to the pill selector on both platforms.
+- Home page mini maps restored; asset paths now respect the GitHub Pages base path.

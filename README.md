@@ -184,3 +184,5 @@ See the [release index](docs/releases/README.md) for the full history and [relea
 This is an independent dashboard built from the public sources cited in the catalogue. Acknowledgements for [PolityPolicy](https://politypolicy.com/), [Polity and Policy on Substack](https://politypolicy.substack.com/) and [Indian Matrix](https://substack.com/@indianmatrix) are provided for attribution and public-data storytelling context; the project does not reproduce their interactive chart rendering. Thanks also to the public agencies and data publishers linked throughout the site.
 
 No `LICENSE` or `LICENCE` file is currently present in the repository; no project-code reuse licence is asserted here. Third-party data and assets remain subject to their own terms. See [docs/SOURCES-AND-LIMITATIONS.md](docs/SOURCES-AND-LIMITATIONS.md) for source notes and limitations.
+
+- **10 display modes** (pill selector, top right): Light, Dark, Newspaper, Pamphlet, Military, Parliamentary, Desi, Air Force, Navy, Police — identical on the Django app and the static site.

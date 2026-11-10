@@ -152,7 +152,7 @@ function ExploreBrowse() {
                   key={item.slug}
                   to={`/explore/${category.slug}/${item.slug}`}
                   className="explore-tile explore-article-card"
-                  style={{ '--card-art': `url(/art/${item.art || category.art})` }}
+                  style={{ '--card-art': `url(${import.meta.env.BASE_URL}art/${item.art || category.art})` }}
                 >
                   <span className="explore-tile-count">{item.indicator_count}</span>
                   <span className="explore-tile-name">{item.name}</span>

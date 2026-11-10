@@ -3,7 +3,7 @@ import { formatInt, loadAtlas, showTip } from './atlasData.js';
 import StateElections, { readStateHash } from './StateElections.jsx';
 import './Atlas.css';
 
-const DATA_URL = '/data/lok-sabha-atlas.json';
+const DATA_URL = import.meta.env.BASE_URL + 'data/lok-sabha-atlas.json';
 
 export default function LokSabhaAtlas({ compact = false, title = 'Lok Sabha elections by state' }) {
   const [loaded, setLoaded] = useState(null);

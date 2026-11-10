@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&family=Playfair+Display:wght@600;700;800&family=UnifrakturMaguntia&family=Special+Elite&family=Rozha+One&family=Stardos+Stencil:wght@400;700&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <title>{% block head_title %}India's Journey{% endblock head_title %} · India's Journey</title>
   <script>
-    try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet|military)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
+    try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet|military|parliamentary|desi|airforce|navy|police)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
   <style>
     :root { color-scheme: dark; --bg: #000; --surface: #0b0b0c; --surface-2: #1d1d1f; --line: #1d1d1f; --line-strong: #424245;
@@ -27,6 +27,21 @@
     :root[data-theme="military"] { color-scheme: dark; --bg: #1f2414; --surface: #282e1a; --surface-2: #343b23; --line: rgba(212, 199, 150, .22); --line-strong: #5b6b2a;
       --ink: #ece4c4; --muted: #bcb48e; --faint: #a39c78; --link: #d4a72c; --accent: #d4a72c; --on-accent: #1a1e10; --eyebrow: #d4a72c; --radius: 4px;
       --font-display: "Stardos Stencil", Impact, "Arial Narrow Bold", sans-serif; }
+    :root[data-theme="parliamentary"] { color-scheme: dark; --bg: #0f3b2e; --surface: #134535; --surface-2: #1a5240; --line: rgba(201, 162, 39, .28); --line-strong: #c9a227;
+      --ink: #f3ead2; --muted: #c9bf9f; --faint: #b3a986; --link: #c9a227; --accent: #c9a227; --on-accent: #0b2e24; --eyebrow: #c9a227; --radius: 6px; --font-display: "Playfair Display", Georgia, serif; }
+    :root[data-theme="desi"] { color-scheme: light; --bg: #fff3e0; --surface: #fffaf2; --surface-2: #fffaf2; --line: rgba(216, 27, 96, .28); --line-strong: #d81b60;
+      --ink: #3a1030; --muted: #6b2f55; --faint: #6b2f55; --link: #d81b60; --accent: #d81b60; --on-accent: #fff; --eyebrow: #ff8f00; --radius: 14px; --font-display: "Rozha One", Georgia, serif; }
+    :root[data-theme="airforce"] { color-scheme: dark; --bg: #0b1f3a; --surface: #102a4c; --surface-2: #16365f; --line: rgba(127, 179, 230, .24); --line-strong: #5aa0e6;
+      --ink: #e8f1fb; --muted: #a9c1dd; --faint: #8fa9c6; --link: #5aa0e6; --accent: #5aa0e6; --on-accent: #06172e; --eyebrow: #ff9933; --radius: 10px; }
+    :root[data-theme="navy"] { color-scheme: light; --bg: #f4f6fa; --surface: #fff; --surface-2: #fff; --line: rgba(10, 31, 68, .18); --line-strong: #0a1f44;
+      --ink: #0a1f44; --muted: #3c4d6e; --faint: #3c4d6e; --link: #0a1f44; --accent: #0a1f44; --on-accent: #fff; --eyebrow: #b8860b; --radius: 4px; }
+    :root[data-theme="police"] { color-scheme: light; --bg: #efe3c4; --surface: #f7efd9; --surface-2: #f7efd9; --line: rgba(29, 60, 120, .25); --line-strong: #1d3c78;
+      --ink: #1b2440; --muted: #4a4636; --faint: #4a4636; --link: #1d3c78; --accent: #1d3c78; --on-accent: #f7efd9; --eyebrow: #c62828; --radius: 4px; }
+    :root[data-theme=parliamentary] .theme-pills button[aria-checked=true] { background: #c9a227; color: #0b2e24; }
+    :root[data-theme=desi] .theme-pills button[aria-checked=true] { background: linear-gradient(90deg, #ff8f00, #d81b60); color: #fff; }
+    :root[data-theme=airforce] .theme-pills button[aria-checked=true] { background: #5aa0e6; color: #06172e; }
+    :root[data-theme=navy] .theme-pills button[aria-checked=true] { background: #0a1f44; color: #fff; }
+    :root[data-theme=police] .theme-pills button[aria-checked=true] { background: #1d3c78; color: #f7efd9; }
     :root[data-theme="military"] header { background: #1b2011; border-bottom: 2px solid #d4a72c; }
     :root[data-theme="military"] h1, :root[data-theme="military"] header > a { text-transform: uppercase; letter-spacing: .04em; }
     :root[data-theme="military"] .backup { border-top: 3px solid #5b6b2a; }
@@ -87,7 +102,7 @@
     .theme-pills button[role=radio] { display: inline-grid; place-items: center; min-height: 28px; min-width: 34px; padding: 0 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font: 600 12px/1.1 inherit; cursor: pointer; }
     .theme-pills button[aria-checked=true] { color: #fff; background: #9b1c2c; font-weight: 800; }
     .theme-pills button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
-    .theme-pills .theme-short { display: none; }
+    .theme-pills .theme-full { display: none; }
     :root[data-theme=dark] .theme-pills { background: #1d1d1f; border-color: #424245; }
     :root[data-theme=dark] .theme-pills button[role=radio] { color: #c4c4ca; }
     :root[data-theme=dark] .theme-pills button[aria-checked=true] { color: #fff; background: #9b1c2c; }
@@ -111,7 +126,8 @@
     :root[data-theme=pamphlet] .backup { transform: rotate(-.35deg); border: 2px solid #2b1708; box-shadow: 5px 5px 0 rgba(43,23,8,.24); background: linear-gradient(90deg, #ff9933 0 33.3%, #fff 0 66.6%, #138808 0) top / 100% 7px no-repeat, var(--surface); }
     :root[data-theme=pamphlet] .backup:hover, :root[data-theme=pamphlet] .backup:focus-within { transform: translateY(-3px) rotate(0); }
     :root[data-theme=newspaper] .backup { border-radius: 0; border-top: 3px solid #17130f; box-shadow: none; }
-    @media (max-width: 1000px) { .theme-pills .theme-full { display: none; } .theme-pills .theme-short { display: inline; } }
+    @media (min-width: 1880px) { .theme-pills .theme-full { display: inline; } .theme-pills .theme-short { display: none; } }
+    @media (max-width: 480px) { .theme-pills { display: grid; grid-template-columns: repeat(5, 1fr); border-radius: 12px; } }
     @media (max-width: 480px) {
       header { align-items: flex-start; }
       header .controls { flex: none; gap: 5px; }
@@ -130,12 +146,17 @@
       <a class="contact-link" href="https://www.linkedin.com/in/shubhankarthapliyal/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Contact Shubhankar Thapliyal on LinkedIn (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
       <a class="contact-link" href="https://github.com/Shubhankart101" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Shubhankar Thapliyal on GitHub (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
       <a class="contact-link" href="https://x.com/Shubhankar71721" target="_blank" rel="noopener noreferrer" title="X" aria-label="Shubhankar Thapliyal on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
-            <div class="theme-pills" id="theme-select" role="radiogroup" aria-label="Display theme" title="Display theme">
+            <div class="theme-pills" id="theme-select" role="radiogroup" aria-label="Display mode" title="Display mode">
               <button type="button" role="radio" value="light" aria-label="Light" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Light</span><span class="theme-short" aria-hidden="true">Lt</span></button>
               <button type="button" role="radio" value="dark" aria-label="Dark" aria-checked="true" tabindex="0"><span class="theme-full" aria-hidden="true">Dark</span><span class="theme-short" aria-hidden="true">Dk</span></button>
               <button type="button" role="radio" value="newspaper" aria-label="Newspaper" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Newspaper</span><span class="theme-short" aria-hidden="true">News</span></button>
               <button type="button" role="radio" value="pamphlet" aria-label="Pamphlet" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Pamphlet</span><span class="theme-short" aria-hidden="true">Pmph</span></button>
               <button type="button" role="radio" value="military" aria-label="Military" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Military</span><span class="theme-short" aria-hidden="true">Mil</span></button>
+              <button type="button" role="radio" value="parliamentary" aria-label="Parliamentary" title="Parliamentary" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Parliamentary</span><span class="theme-short" aria-hidden="true">Parl</span></button>
+              <button type="button" role="radio" value="desi" aria-label="Desi" title="Desi" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Desi</span><span class="theme-short" aria-hidden="true">Desi</span></button>
+              <button type="button" role="radio" value="airforce" aria-label="Air Force" title="Air Force" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Air Force</span><span class="theme-short" aria-hidden="true">IAF</span></button>
+              <button type="button" role="radio" value="navy" aria-label="Navy" title="Navy" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Navy</span><span class="theme-short" aria-hidden="true">Navy</span></button>
+              <button type="button" role="radio" value="police" aria-label="Police" title="Police" aria-checked="false" tabindex="-1"><span class="theme-full" aria-hidden="true">Police</span><span class="theme-short" aria-hidden="true">Pol</span></button>
             </div>
           </div>
   </header>
@@ -159,7 +180,7 @@
       var root = document.documentElement;
       var group = document.getElementById('theme-select');
       var radios = group ? Array.from(group.querySelectorAll('[role="radio"]')) : [];
-      var taglines = { light: 'ज्ञानम् · सार्वजनिकदत्तांशः', dark: 'तमसो मा ज्योतिर्गमय · ज्ञानम्', newspaper: 'भारतस्य यात्रा · सार्वजनिकदत्तांशः', pamphlet: 'जय हिन्द · जनगणमन', military: 'सेवा परमो धर्मः · जय हिन्द' };
+      var taglines = { light: 'ज्ञानम् · सार्वजनिकदत्तांशः', dark: 'तमसो मा ज्योतिर्गमय · ज्ञानम्', newspaper: 'भारतस्य यात्रा · सार्वजनिकदत्तांशः', pamphlet: 'जय हिन्द · जनगणमन', military: 'सेवा परमो धर्मः · जय हिन्द', parliamentary: 'धर्मचक्रप्रवर्तनाय · लोकसभा', desi: 'वसुधैव कुटुम्बकम्', airforce: 'नभः स्पृशं दीप्तम्', navy: 'शं नो वरुणः', police: 'शान्ति · सेवा · न्याय' };
       function apply(theme) {
         root.dataset.theme = theme;
         try { localStorage.setItem('ij-theme', theme); } catch (e) {}
@@ -193,7 +214,7 @@
         });
       });
       var current = root.dataset.theme || 'dark';
-      try { var saved = localStorage.getItem('ij-theme'); if (/^(light|dark|newspaper|pamphlet|military)$/.test(saved)) current = saved; } catch (e) {}
+      try { var saved = localStorage.getItem('ij-theme'); if (/^(light|dark|newspaper|pamphlet|military|parliamentary|desi|airforce|navy|police)$/.test(saved)) current = saved; } catch (e) {}
       apply(current);
     })();
   </script>

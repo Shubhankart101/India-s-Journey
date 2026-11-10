@@ -62,23 +62,25 @@ describe('India in Maps', () => {
 });
 
 describe('Header controls', () => {
-  it('switches theme with the segmented radio group and arrow keys', async () => {
+  it('switches between all ten modes with the pill radio group and arrow keys', async () => {
     render(<ThemeSelect />);
-    const group = screen.getByRole('radiogroup', { name: 'Display theme' });
+    const group = screen.getByRole('radiogroup', { name: 'Display mode' });
     const radios = within(group).getAllByRole('radio');
-    expect(radios.map(radio => radio.getAttribute('aria-label'))).toEqual(['Light', 'Dark', 'Newspaper', 'Pamphlet', 'Military']);
+    expect(radios.map(radio => radio.getAttribute('aria-label'))).toEqual(
+      ['Light', 'Dark', 'Newspaper', 'Pamphlet', 'Military', 'Parliamentary', 'Desi', 'Air Force', 'Navy', 'Police']);
     expect(radios.find(radio => radio.getAttribute('aria-checked') === 'true')).toHaveAttribute('value', getTheme());
-    await userEvent.click(screen.getByRole('radio', { name: 'Newspaper' }));
-    expect(document.documentElement.dataset.theme).toBe('newspaper');
-    expect(screen.getByRole('radio', { name: 'Newspaper' })).toHaveAttribute('tabindex', '0');
+    for (const name of ['Newspaper', 'Parliamentary', 'Desi', 'Air Force', 'Navy']) {
+      await userEvent.click(screen.getByRole('radio', { name }));
+      expect(screen.getByRole('radio', { name })).toHaveAttribute('aria-checked', 'true');
+    }
+    expect(document.documentElement.dataset.theme).toBe('navy');
     await userEvent.keyboard('{ArrowRight}');
-    expect(getTheme()).toBe('pamphlet');
-    expect(screen.getByRole('radio', { name: 'Pamphlet' })).toHaveAttribute('aria-checked', 'true');
-    await userEvent.keyboard('{End}');
-    expect(getTheme()).toBe('military');
-    expect(document.documentElement.dataset.theme).toBe('military');
-    await userEvent.keyboard('{Home}');
+    expect(getTheme()).toBe('police');
+    await userEvent.keyboard('{ArrowRight}');
     expect(getTheme()).toBe('light');
+    await userEvent.keyboard('{End}');
+    expect(document.documentElement.dataset.theme).toBe('police');
+    await userEvent.keyboard('{Home}');
     expect(screen.getByRole('radio', { name: 'Light' })).toHaveFocus();
   });
 
