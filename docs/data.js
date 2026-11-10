@@ -1,5 +1,5 @@
 window.INDIA_DASHBOARD_DATA = {
-  "generated_at_utc": "2026-11-09T12:35:41+00:00",
+  "generated_at_utc": "2026-11-10T10:11:52+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -26893,6 +26893,62 @@ window.INDIA_DASHBOARD_DATA = {
       "indexAxis": "y",
       "scope": "category"
     },
+    "siam_production_mix": {
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.siam.in/statistics.aspx?mpgid=8&pgidtrail=13",
+      "unit": "vehicles",
+      "labels": [
+        "Passenger Vehicles",
+        "Commercial Vehicles",
+        "Three Wheelers",
+        "Two Wheelers"
+      ],
+      "values": [
+        3072651.0,
+        698864.0,
+        830120.0,
+        16879891.0
+      ],
+      "note": "Automobile production by segment in 2013-14, from SIAM's public production-trends table (the latest year it publishes openly).",
+      "meta": {
+        "title": "Vehicle Production Mix (2013-14)",
+        "subtitle": "Two-wheelers, passenger cars & UVs, commercial vehicles and three-wheelers",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " vehicles",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Automobiles & Transport Equipment"
+      }
+    },
+    "siam_production_cumulative_mix": {
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "https://www.siam.in/statistics.aspx?mpgid=8&pgidtrail=13",
+      "unit": "vehicles",
+      "labels": [
+        "Passenger Vehicles",
+        "Commercial Vehicles",
+        "Three Wheelers",
+        "Two Wheelers"
+      ],
+      "values": [
+        16628554.0,
+        4205810.0,
+        4464924.0,
+        80333623.0
+      ],
+      "note": "Total vehicles produced by segment, 2008-09 to 2013-14, summed from SIAM's public production-trends table.",
+      "meta": {
+        "title": "Vehicles Produced by Segment (2008-09 to 2013-14)",
+        "subtitle": "Cumulative production by segment",
+        "frequency": "Annual",
+        "color": "#ff9933",
+        "suffix": " vehicles",
+        "category": "Industry Trends & Performance",
+        "subgroup": "Automobiles & Transport Equipment"
+      }
+    },
     "iip_basic_metals": {
       "labels": [
         "2012-13",
@@ -30905,62 +30961,6 @@ window.INDIA_DASHBOARD_DATA = {
         "suffix": " industries",
         "category": "Industry Trends & Performance",
         "subgroup": "Industrial Output Monitor (IIP)"
-      }
-    },
-    "siam_production_mix": {
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.siam.in/statistics.aspx?mpgid=8&pgidtrail=13",
-      "unit": "vehicles",
-      "labels": [
-        "Passenger Vehicles",
-        "Commercial Vehicles",
-        "Three Wheelers",
-        "Two Wheelers"
-      ],
-      "values": [
-        3072651.0,
-        698864.0,
-        830120.0,
-        16879891.0
-      ],
-      "note": "Automobile production by segment in 2013-14, from SIAM's public production-trends table (the latest year it publishes openly).",
-      "meta": {
-        "title": "Vehicle Production Mix (2013-14)",
-        "subtitle": "Two-wheelers, passenger cars & UVs, commercial vehicles and three-wheelers",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " vehicles",
-        "category": "Industry Trends & Performance",
-        "subgroup": "Automobiles & Transport Equipment"
-      }
-    },
-    "siam_production_cumulative_mix": {
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "https://www.siam.in/statistics.aspx?mpgid=8&pgidtrail=13",
-      "unit": "vehicles",
-      "labels": [
-        "Passenger Vehicles",
-        "Commercial Vehicles",
-        "Three Wheelers",
-        "Two Wheelers"
-      ],
-      "values": [
-        16628554.0,
-        4205810.0,
-        4464924.0,
-        80333623.0
-      ],
-      "note": "Total vehicles produced by segment, 2008-09 to 2013-14, summed from SIAM's public production-trends table.",
-      "meta": {
-        "title": "Vehicles Produced by Segment (2008-09 to 2013-14)",
-        "subtitle": "Cumulative production by segment",
-        "frequency": "Annual",
-        "color": "#ff9933",
-        "suffix": " vehicles",
-        "category": "Industry Trends & Performance",
-        "subgroup": "Automobiles & Transport Equipment"
       }
     },
     "iip_sector_weights": {
@@ -41161,30 +41161,6 @@ window.INDIA_DASHBOARD_DATA = {
         "subgroup": "Mineral Price Monitor (WPI)"
       }
     },
-    "wpi_mineral_rising_vs_falling": {
-      "labels": [
-        "Prices rising",
-        "Prices falling"
-      ],
-      "values": [
-        12,
-        4
-      ],
-      "chartType": "doughnut",
-      "scope": "category",
-      "source": "MOSPI Wholesale Price Index API (api.mospi.gov.in)",
-      "unit": "minerals",
-      "note": "How many of the 16 tracked minerals and fuels had higher or lower wholesale prices in 2026-04 than a year earlier. Wholesale Price Index, base 2011-12 = 100, compiled by the Office of the Economic Adviser (DPIIT) and published through MOSPI. The latest two months are provisional and are revised after eight weeks.",
-      "meta": {
-        "title": "Minerals with Rising vs Falling Prices (2026-04)",
-        "subtitle": "Count of commodities by year-on-year price direction",
-        "frequency": "Monthly",
-        "color": "#ff9933",
-        "suffix": " minerals",
-        "category": "Mining & Natural Resources",
-        "subgroup": "Mineral Price Monitor (WPI)"
-      }
-    },
     "wpi_mineral_since_base": {
       "labels": [
         "Zinc concentrate",
@@ -41234,6 +41210,30 @@ window.INDIA_DASHBOARD_DATA = {
         "frequency": "Monthly",
         "color": "#ff9933",
         "suffix": "%",
+        "category": "Mining & Natural Resources",
+        "subgroup": "Mineral Price Monitor (WPI)"
+      }
+    },
+    "wpi_mineral_rising_vs_falling": {
+      "labels": [
+        "Prices rising",
+        "Prices falling"
+      ],
+      "values": [
+        12,
+        4
+      ],
+      "chartType": "doughnut",
+      "scope": "category",
+      "source": "MOSPI Wholesale Price Index API (api.mospi.gov.in)",
+      "unit": "minerals",
+      "note": "How many of the 16 tracked minerals and fuels had higher or lower wholesale prices in 2026-04 than a year earlier. Wholesale Price Index, base 2011-12 = 100, compiled by the Office of the Economic Adviser (DPIIT) and published through MOSPI. The latest two months are provisional and are revised after eight weeks.",
+      "meta": {
+        "title": "Minerals with Rising vs Falling Prices (2026-04)",
+        "subtitle": "Count of commodities by year-on-year price direction",
+        "frequency": "Monthly",
+        "color": "#ff9933",
+        "suffix": " minerals",
         "category": "Mining & Natural Resources",
         "subgroup": "Mineral Price Monitor (WPI)"
       }
@@ -122034,7 +122034,7 @@ window.INDIA_DASHBOARD_DATA = {
         2200558746.96,
         2228957388.96,
         2397807939.48,
-        2578252511.3
+        2578269964.74
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122067,7 +122067,7 @@ window.INDIA_DASHBOARD_DATA = {
         11.455190337474018,
         1.2905196027705124,
         7.5753153181085775,
-        7.5253972117188095
+        7.5261251032113785
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122102,7 +122102,7 @@ window.INDIA_DASHBOARD_DATA = {
         2050402223.99,
         2199331713.83,
         2269973431.55,
-        2365173465.95
+        2365196485.27
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122135,7 +122135,7 @@ window.INDIA_DASHBOARD_DATA = {
         5.238904069147843,
         7.263428028779106,
         3.211962855615913,
-        4.193883200429993
+        4.194897279259302
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122170,7 +122170,7 @@ window.INDIA_DASHBOARD_DATA = {
         509710666.66,
         471118036.52,
         576360151.87,
-        771507574.87
+        771502008.99
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122203,7 +122203,7 @@ window.INDIA_DASHBOARD_DATA = {
         58.68654186178988,
         -7.571477833274987,
         22.33879987431393,
-        33.85859039124137
+        33.857624696444134
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122238,7 +122238,7 @@ window.INDIA_DASHBOARD_DATA = {
         121252536.74,
         195874572.73,
         342281012.4,
-        466925755.25
+        466903909.07
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122271,7 +122271,7 @@ window.INDIA_DASHBOARD_DATA = {
         3.065979924962714,
         61.54265963936978,
         74.74499503915268,
-        36.41590924837408
+        36.4095267207992
       ],
       "chartType": "bar",
       "scope": "category",
@@ -124229,7 +124229,7 @@ window.INDIA_DASHBOARD_DATA = {
         18776408.05,
         18263952.44,
         17531720.96,
-        17027275.2,
+        17034478.45,
         15862118.32
       ],
       "chartType": "bar",
