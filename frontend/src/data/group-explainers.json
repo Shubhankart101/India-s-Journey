@@ -981,9 +981,8 @@
           "indiabudget.gov.in",
           "World Bank (World Development Indicators)",
           "Reserve Bank of India",
-          "RBI Handbook of Statistics on Indian States",
-          "Department of Financial Services, PMJDY statewise account opening report",
           "CEA per-capita power availability",
+          "Department of Financial Services, PMJDY statewise account opening report",
           "Controller General of Accounts (CGA) & Union Budget",
           "DPIIT Business Reform Action Plan",
           "GSTN Portal & Ministry of Finance",
@@ -998,7 +997,6 @@
           "NITI Aayog Export Preparedness Index",
           "PMMY MUDRA Portal & Department of Financial Services",
           "Press Information Bureau",
-          "RBI Handbook of Statistics on Indian States and CEA",
           "Union Budget Documents, Ministry of Finance",
           "Union Budget of India, Ministry of Finance"
         ],
@@ -1276,7 +1274,6 @@
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "RBI Handbook of Statistics on Indian States 2024-25",
-              "RBI Handbook of Statistics on Indian States",
               "GSTN Portal & Ministry of Finance",
               "NITI Aayog"
             ],
@@ -1376,7 +1373,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 4
+                "value": 3
               }
             ],
             "verse": {
@@ -1516,8 +1513,7 @@
               "World Bank (World Development Indicators)",
               "CEA per-capita power availability",
               "DPIIT Business Reform Action Plan",
-              "NITI Aayog Export Preparedness Index",
-              "RBI Handbook of Statistics on Indian States and CEA"
+              "NITI Aayog Export Preparedness Index"
             ],
             "indicatorCount": 20,
             "pattern": "annotated-captions",
@@ -1599,7 +1595,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 6
+                "value": 5
               }
             ],
             "verse": {
@@ -1815,6 +1811,7 @@
               "Directorate General of Foreign Trade (DGFT) & Ministry of Mines",
               "Ministry of Electronics and Information Technology (MeitY) & ICEA",
               "Ministry of Steel & Joint Plant Committee (JPC)",
+              "Office of Economic Adviser WPI monthly workbook",
               "Society of Indian Automobile Manufacturers (SIAM)"
             ],
             "indicatorCount": 30,
@@ -1822,63 +1819,64 @@
             "sections": [
               {
                 "title": "IIP growth: the headline view",
-                "text": "The 5 charts here follow IIP growth, Eight-core industries and Automobile production and 2 related series. IIP growth rose from 54% in 2020-04 to 151% in 2025-10, a shift of 97.1 percentage points. Its high point was 166% in 2025-03. Eight-core industries rose from 81.2 index in 2020-04 to 162 index in 2025-10, a change of 100%. Its high point was 183 index in 2025-03. Hover along the line to read each period's value; the axis shows the unit.",
+                "text": "The 5 charts here follow IIP growth, WPI inflation and Eight-core industries and 2 related series. IIP growth rose from 54% in 2020-04 to 151% in 2025-10, a shift of 97.1 percentage points. Its high point was 166% in 2025-03. WPI inflation rose from 99% in 2023-04 to 111% in 2026-08, a shift of 11.8 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "iip",
+                  "wpi",
                   "core_industries",
                   "auto_production_volume",
-                  "auto_domestic_sales",
-                  "crude_steel_production"
+                  "auto_domestic_sales"
                 ]
               },
               {
-                "title": "Electronics manufacturing output and its neighbours",
-                "text": "The 5 charts here follow Electronics manufacturing output, Pharmaceutical exports and Textiles & apparel exports and 2 related series. Electronics manufacturing output rose from 1.9 INR Lakh Cr in 2015 to 15 INR Lakh Cr in 2026, a change of 689%. Pharmaceutical exports rose from 15.4 USD bn in 2014 to 35.5 USD bn in 2026, a change of 131%. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Crude steel production and its neighbours",
+                "text": "The 5 charts here follow Crude steel production, Electronics manufacturing output and Pharmaceutical exports and 2 related series. Crude steel production rose from 88.9 Million Tonnes in 2014 to 160 Million Tonnes in 2026, a change of 80%. Electronics manufacturing output rose from 1.9 INR Lakh Cr in 2015 to 15 INR Lakh Cr in 2026, a change of 689%. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "crude_steel_production",
                   "electronics_manufacturing",
                   "pharma_exports_trajectory",
                   "textiles_apparel_exports",
-                  "agriculture_gdp_share",
-                  "industry_gdp_share"
+                  "agriculture_gdp_share"
                 ]
               },
               {
-                "title": "Reading Services Value Added in context",
-                "text": "The 5 charts here follow Services Value Added, Manufacturing Value Added and Agricultural Land and 2 related series. Services Value Added rose from 38.78% GDP in 1960 to 49.34% GDP in 2025, a shift of 10.56 percentage points. Its high point was 50.08% GDP in 2019. Manufacturing Value Added fell from 14.75% GDP in 1960 to 13.47% GDP in 2025, a shift of 1.28 percentage points. Its high point was 17.87% GDP in 1995. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Reading Industry Value Added in context",
+                "text": "The 5 charts here follow Industry Value Added, Services Value Added and Manufacturing Value Added and 2 related series. Industry Value Added rose from 20.83% GDP in 1960 to 25.2% GDP in 2025, a shift of 4.37 percentage points. Its high point was 31.14% GDP in 2008. Services Value Added rose from 38.78% GDP in 1960 to 49.34% GDP in 2025, a shift of 10.56 percentage points. Its high point was 50.08% GDP in 2019. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "industry_gdp_share",
                   "services_gdp_share",
                   "manufacturing_gdp_share",
                   "agricultural_land_share",
-                  "cereal_yield",
-                  "agricultural_employment_share"
+                  "cereal_yield"
                 ]
               },
               {
-                "title": "Manufacturing Value-Added Growth: a closer look",
-                "text": "The 5 charts here follow Manufacturing Value-Added Growth, High-Technology Exports and ICT Goods Exports and 2 related series. Manufacturing Value-Added Growth rose from 8.54% in 1961 to 11.53% in 2025, a shift of 2.99 percentage points. Its high point was 17.79% in 2006. High-Technology Exports rose from 9.57% in 2009 to 18.57% in 2024, a shift of 9 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Employment in Agriculture: a closer look",
+                "text": "The 5 charts here follow Employment in Agriculture, Manufacturing Value-Added Growth and High-Technology Exports and 2 related series. Employment in Agriculture fell from 63.13% in 1991 to 41.63% in 2025, a shift of 21.5 percentage points. Manufacturing Value-Added Growth rose from 8.54% in 1961 to 11.53% in 2025, a shift of 2.99 percentage points. Its high point was 17.79% in 2006. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "agricultural_employment_share",
                   "wb_manufacturing_growth",
                   "wb_high_tech_exports",
                   "wb_ict_goods_exports",
-                  "wb_employment_by_sector",
-                  "wb_female_employment_sector"
+                  "wb_employment_by_sector"
                 ]
               },
               {
-                "title": "More on Men's Employment by Sector",
-                "text": "The 5 charts here follow Men's Employment by Sector, Manufacturing Growth by Industry and Output Change Since 2011-12 by Industry and 2 related series. In Men's Employment by Sector, Services leads at 35.93%, ahead of Agriculture at 34.43%, and holds 36% of the total. In Manufacturing Growth by Industry, Motor vehicles (cars, trucks, trailers) leads at 12.5%, ahead of Basic metals (iron, steel, aluminium) at 10.9%; Other manufacturing (jewellery, toys, sports goods) is lowest at -14.9%. Slices are shares of one total, with the smallest folded into Other.",
+                "title": "More on Women's Employment by Sector",
+                "text": "The 5 charts here follow Women's Employment by Sector, Men's Employment by Sector and Manufacturing Growth by Industry and 2 related series. In Women's Employment by Sector, Agriculture leads at 59.83%, ahead of Services at 24.03%, and holds 60% of the total. In Men's Employment by Sector, Services leads at 35.93%, ahead of Agriculture at 34.43%, and holds 36% of the total. Slices are shares of one total, with the smallest folded into Other.",
                 "keys": [
+                  "wb_female_employment_sector",
                   "wb_male_employment_sector",
                   "iip_growth_ranking_latest",
                   "iip_growth_since_base",
-                  "iip_expanding_vs_contracting",
-                  "iip_monthly_use_based"
+                  "iip_expanding_vs_contracting"
                 ]
               },
               {
-                "title": "Monthly Output: the wider picture",
-                "text": "The 4 charts here follow Monthly Output, Industries Expanding vs Contracting and Sector Export Value Mix and 1 related series. Monthly Output rose from 99.3 index in 2012-04 to 173 index in 2026-03, a change of 74%. In Industries Expanding vs Contracting, Expanding leads at 14 industries, ahead of Contracting at 9 industries, and holds 61% of the total. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Monthly Output by Use: the wider picture",
+                "text": "The 5 charts here follow Monthly Output by Use, Monthly Output and Industries Expanding vs Contracting and 2 related series. Monthly Output by Use rose from 98.2 index in 2012-04 to 173 index in 2026-03, a change of 76%. Monthly Output rose from 99.3 index in 2012-04 to 173 index in 2026-03, a change of 74%. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
+                  "iip_monthly_use_based",
                   "iip_monthly_key_industries",
                   "iip_monthly_expanding_vs_contracting",
                   "sector_export_value_mix",
@@ -1928,7 +1926,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 10
+                "value": 11
               }
             ],
             "verse": {
@@ -14382,9 +14380,8 @@
           "MoSPI",
           "Airports Authority of India",
           "Election Commission of India candidate results",
-          "RBI Handbook of Statistics on Indian States",
-          "Ministry of Ports, Shipping & Waterways",
           "CEA per-capita power availability",
+          "Ministry of Ports, Shipping & Waterways",
           "Department of Financial Services, PMJDY statewise account opening report",
           "DPIIT Business Reform Action Plan",
           "GSTN Portal & Ministry of Finance",
@@ -14396,8 +14393,7 @@
           "MOSPI Periodic Labour Force Survey & Census Estimates",
           "National Health Authority PM-JAY Open Dashboard",
           "NITI Aayog Export Preparedness Index",
-          "PMMY MUDRA Portal & Department of Financial Services",
-          "RBI Handbook of Statistics on Indian States and CEA"
+          "PMMY MUDRA Portal & Department of Financial Services"
         ],
         "indicatorCount": 261,
         "subgroupCount": 12,
@@ -14702,9 +14698,8 @@
             "sources": [
               "RBI Handbook of Statistics on Indian States 2024-25",
               "Reserve Bank of India",
-              "RBI Handbook of Statistics on Indian States",
-              "NITI Aayog",
-              "RBI Handbook of Statistics on Indian States and CEA"
+              "CEA per-capita power availability",
+              "NITI Aayog"
             ],
             "indicatorCount": 22,
             "pattern": "annotated-captions",
@@ -14819,7 +14814,7 @@
               },
               {
                 "label": "Named publishers",
-                "value": 5
+                "value": 4
               }
             ],
             "verse": {
