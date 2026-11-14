@@ -169,9 +169,9 @@ button, input, select { font: inherit; color: inherit; }
 .explore-browse-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .explore-browse-head h2 { font-size: 1.25rem; margin: 0; }
 .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-.explore-tile { position: relative; isolation: isolate; overflow: hidden; min-height: 132px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 2px; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; text-align: left; font: inherit; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
-.explore-tile::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--card-art, linear-gradient(135deg, #1d1d20, #0b0b0c)) center / cover no-repeat; transition: transform 0.6s ease-out; }
-.explore-tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.88)); }
+.explore-tile { position: relative; isolation: isolate; overflow: hidden; min-height: 132px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 2px; padding: 12px 14px; border-radius: 16px; border: 1px solid var(--line); background-color: transparent; color: var(--ink); cursor: pointer; text-align: left; font: inherit; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
+.explore-tile::before { content: ""; position: absolute; inset: 0; z-index: -2; background-color: var(--surface); background-image: var(--card-art, linear-gradient(135deg, #1d1d20, #0b0b0c)); background-position: center; background-size: cover; background-repeat: no-repeat; transition: transform 0.6s ease-out; }
+.explore-tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.92) 100%); pointer-events: none; }
 .explore-tile:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.35); box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45); }
 .explore-tile:hover::before { transform: scale(1.08); }
 .explore-tile.active { border-color: var(--saffron); box-shadow: 0 0 0 2px var(--saffron); }

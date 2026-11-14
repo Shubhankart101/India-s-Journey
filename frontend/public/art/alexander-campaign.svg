@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_alexander_campaign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#082f49"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="lower_alexander_campaign" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_alexander_campaign)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Greek Phalanx Sarissas & Macedonian Helmet over the Jhelum -->
+        <g transform="translate(600, 360)">
+          <!-- Corinthian / Boeotian helmet crest -->
+          <path d="M -40 -30 Q 0 -100 40 -30 Q 30 20 -40 -30 Z" fill="#38bdf8" opacity="0.9"/>
+          <path d="M -30 -115 Q 0 -145 30 -115 L 25 -95 Q 0 -125 -25 -95 Z" fill="#ef4444"/>
+          <!-- Slanted 18-foot Sarissa pikes -->
+          <line x1="-300" y1="120" x2="100" y2="-180" stroke="#94a3b8" stroke-width="3" opacity="0.7"/>
+          <line x1="-280" y1="130" x2="120" y2="-170" stroke="#94a3b8" stroke-width="3" opacity="0.7"/>
+          <line x1="-260" y1="140" x2="140" y2="-160" stroke="#94a3b8" stroke-width="3" opacity="0.7"/>
+          <!-- River Waves of Hydaspes -->
+          <path d="M -500 120 Q -250 80 0 120 Q 250 160 500 120 L 500 180 L -500 180 Z" fill="#0369a1" opacity="0.6"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_alexander_campaign)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Alexander's Campaign & Hydaspes</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">MACEDONIAN LIMITS • 327–325 BCE</text>
+</g>
+</svg>

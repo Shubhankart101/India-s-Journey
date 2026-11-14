@@ -14,8 +14,6 @@ import { MOTTO } from '../sanskrit.js';
 const NAV_LABELS = {
   Home: 'गृहम्',
   Explore: 'अन्वेषणम्',
-  'Indus Valley': 'सिन्धु सभ्यता',
-  'Script Decryption': 'लिपि वाचनम्',
   Sources: 'स्रोतांसि',
   Compare: 'तुलना',
   About: 'परिचयः',
@@ -26,8 +24,6 @@ const NAV_LABELS = {
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
   { to: '/explore', label: 'Explore', icon: '◎' },
-  { to: '/explore/indus-valley-civilisation', label: 'Indus Valley', icon: '🏛️' },
-  { to: '/ivc-translator', label: 'Script Decryption', icon: '⚚' },
   { to: '/sources', label: 'Sources', icon: '❡' },
   { to: '/compare', label: 'Compare', icon: '⇄' },
   { to: '/about', label: 'About', icon: 'ℹ' },

@@ -76,10 +76,15 @@ GROUP_VERSE = {
     "Hockey": "uttishthata jagrata prapya varan nibodhata",
     "Football": "matrdevo bhava",
     "Epics, Faiths & Journeys": "charaiveti charaiveti",
+    "Empires of Ancient India": "dharmo rakshati rakshitah",
 }
 
 # Hand-written article text for the journeys group (the other groups use the generic chapter text).
 JOURNEY_TEXT = {
+    "Empires of Ancient India": [
+        "From the democratic assemblies of the Mahajanapadas to the 5-million km² pan-Indian state of Ashoka, the silk-road synthesis of the Kushans, and the Classical Golden Age of the Guptas, this chapter maps ten ancient imperial horizons.",
+        "Each era is documented with geo-referenced imperial boundaries, decisive battlefields marked with crossed swords, and authentic epigraphs in their original script and language (Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil).",
+    ],
     "Epics, Faiths & Journeys": [
         "India's oldest stories are also journeys. Rama walks from Ayodhya to Lanka and back, the Pandavas wander from Hastinapura through exile to Kurukshetra, the Buddha teaches his way from Lumbini to Kushinagar, and Guru Nanak sets out on his long udasis. This chapter puts those routes on a map and lets you walk them one stop at a time.",
         "Each stop carries a short description in our own words and a verse in the original language (Sanskrit, Pali, Prakrit or Gurmukhi) with an English translation, an exact citation and a link to the page it was checked against. Where no verse about the exact place could be verified, the stop shows a verified verse of the same text and says so.",
@@ -108,6 +113,7 @@ JOURNEY_TEXT = {
 
 
 PUBLISHER_HOSTS = {
+    "asi.nic.in": "Archaeological Survey of India",
     "worldbank.org": "World Bank",
     "mospi.gov.in": "MoSPI",
     "rbi.org.in": "Reserve Bank of India",

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_hockey_india" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="lower_hockey_india" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_hockey_india)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Crossed Hockey Sticks & Gold Medals -->
+        <g transform="translate(600, 360)">
+          <!-- Curved Hockey Stick 1 -->
+          <path d="M -120 70 Q -40 20 100 -120 Q 115 -130 125 -115 Q 110 -90 60 -50 L -70 80 Q -100 100 -130 90 Q -150 70 -120 70 Z" fill="#facc15"/>
+          <!-- Curved Hockey Stick 2 -->
+          <path d="M 120 70 Q 40 20 -100 -120 Q -115 -130 -125 -115 Q -110 -90 -60 -50 L 70 80 Q 100 100 130 90 Q 150 70 120 70 Z" fill="#fbbf24"/>
+          <!-- Ball -->
+          <circle cx="0" cy="75" r="14" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_hockey_india)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indian Hockey: Legacy of Gold</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">OLYMPIC GLORY & PRO LEAGUE</text>
+</g>
+</svg>

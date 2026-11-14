@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_maurya_empire" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b0764"/>
+      <stop offset="100%" stop-color="#86198f"/>
+    </linearGradient>
+    <linearGradient id="lower_maurya_empire" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_maurya_empire)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Sanchi Stupa Gateway (Torana) & Ashoka Edicts -->
+        <g transform="translate(600, 370)">
+          <!-- Great Stupa Dome -->
+          <path d="M -160 80 A 160 160 0 0 1 160 80 Z" fill="#581c87"/>
+          <!-- Harmika & Chhatravali umbrella spire -->
+          <rect x="-24" y="-95" width="48" height="20" fill="#a855f7"/>
+          <circle cx="0" cy="-125" r="30" fill="#facc15" opacity="0.8"/>
+          <circle cx="0" cy="-145" r="22" fill="#facc15" opacity="0.9"/>
+          <circle cx="0" cy="-160" r="14" fill="#fde047"/>
+          <!-- Ornate Torana Gateway -->
+          <rect x="-190" y="-40" width="16" height="130" fill="#facc15"/>
+          <rect x="174" y="-40" width="16" height="130" fill="#facc15"/>
+          <rect x="-210" y="-30" width="420" height="12" rx="4" fill="#fde047"/>
+          <rect x="-200" y="-12" width="400" height="10" rx="4" fill="#fde047"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_maurya_empire)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Mauryan Pan-Indian Empire</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">ASHOKA & DHAMMAVIJAYA • 322–185 BCE</text>
+</g>
+</svg>

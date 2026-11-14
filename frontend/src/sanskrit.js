@@ -18,6 +18,7 @@ export const GROUP_SANSKRIT = {
   'epics-faiths-journeys': 'इतिहासः धर्मयात्रा',
   'india-in-maps': 'भारतस्य मानचित्रम्',
   'indus-valley-civilisation': 'सिन्धु-सरस्वती सभ्यता',
+  'empires-ancient-india': 'प्राचीन भारतीय साम्राज्यानि',
 };
 
 export const groupSanskrit = slug => GROUP_SANSKRIT[slug] || '';

@@ -143,8 +143,19 @@ function ExploreBrowse() {
             <strong>🏛️ Indus Valley Archaeological Corpus & Epigraphy:</strong> Complete GIS excavations atlas (49+ sites across 9 countries with official ASI monographs) & computational script decryption workbench.
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <Link to="/explore/indus-valley-civilisation/excavations-geography" className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
+            <Link to="/explore/indus-valley-civilisation/metropolises-major-urban-centers" className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
             <Link to="/ivc-translator" className="btn btn-secondary btn-sm">Indus Script Decryption Workbench →</Link>
+          </div>
+        </div>
+      )}
+      {category?.slug === 'empires-ancient-india' && (
+        <div className="subgroup-callout empires-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem' }}>
+          <div>
+            <strong>⚔️ Empires of Ancient India Atlas (600 BCE – 850 CE):</strong> Interactive changing imperial boundaries, decisive battle sites, and epigraphic inscriptions in Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil.
+          </div>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <Link to="/explore/empires-ancient-india/mauryan-empire-pan-indian-hegemony" className="btn btn-primary btn-sm">Explore Mauryan Empire Map →</Link>
+            <Link to="/explore/empires-ancient-india/alexander-the-greats-campaign-macedonian-limit" className="btn btn-secondary btn-sm">Alexander's Campaign Map →</Link>
           </div>
         </div>
       )}

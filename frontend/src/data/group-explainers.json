@@ -16248,6 +16248,486 @@
           }
         ]
       }
+    },
+    {
+      "name": "Empires of Ancient India",
+      "article": {
+        "pattern": "pull-quote",
+        "headline": "Empires of Ancient India",
+        "dek": "Geospatial evolution of imperial boundaries, decisive battlefields, and original script epigraphs from the 16 Mahajanapadas to the Classical Golden Ages (600 BCE – 850 CE).",
+        "paragraphs": [
+          "From the democratic assemblies of the Mahajanapadas to the 5-million km² pan-Indian state of Ashoka, the silk-road synthesis of the Kushans, and the Classical Golden Age of the Guptas, this chapter maps ten ancient imperial horizons.",
+          "Each era is documented with geo-referenced imperial boundaries, decisive battlefields marked with crossed swords, and authentic epigraphs in their original script and language (Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil)."
+        ],
+        "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
+        "sources": [
+          "Archaeological Survey of India & Epigraphia Indica",
+          "Archaeological Survey of India & Classical Epigraphic Records",
+          "Archaeological Survey of India & Classical Greek Historians",
+          "Archaeological Survey of India & Historical Atlas of South Asia",
+          "Archaeological Survey of India & UNESCO World Heritage Centre",
+          "Epigraphia Indica & Archaeological Survey of India"
+        ],
+        "indicatorCount": 10,
+        "subgroupCount": 10,
+        "verse": {
+          "text": "धर्मो रक्षति रक्षितः",
+          "transliteration": "dharmo rakshati rakshitah",
+          "meaning": "Dharma protects those who protect it."
+        },
+        "subgroups": [
+          {
+            "name": "16 Mahajanapadas & Early Republics",
+            "headline": "16 Mahajanapadas & Early Republics (c. 600–345 BCE)",
+            "dek": "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
+            "paragraphs": [
+              "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Epigraphia Indica"
+            ],
+            "indicatorCount": 1,
+            "pattern": "annotated-captions",
+            "sections": [
+              {
+                "title": "16 Mahajanapadas",
+                "text": "This chart follows 16 Mahajanapadas. In 16 Mahajanapadas, Monarchical Rajyas (Magadha, Kosala, Vatsa, Avanti) leads at 8 realms, ahead of Central & Peninsular Janapadas (Chedi, Matsya, Surasena, Ashmaka) at 4 realms; North-Western Janapadas (Gandhara, Kamboja) is lowest at 2 realms. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "mahajanapadas_political_systems"
+                ]
+              }
+            ],
+            "pullQuote": "In 16 Mahajanapadas, Monarchical Rajyas (Magadha, Kosala, Vatsa, Avanti) leads at 8 realms, ahead of Central & Peninsular Janapadas (Chedi, Matsya, Surasena, Ashmaka) at 4 realms; North-Western Janapadas (Gandhara, Kamboja) is lowest at 2 realms.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "mahajanapadas_political_systems"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda",
+            "headline": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda (544–322 BCE)",
+            "dek": "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
+            "paragraphs": [
+              "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Classical Epigraphic Records"
+            ],
+            "indicatorCount": 1,
+            "pattern": "lede-stat-strip",
+            "sections": [
+              {
+                "title": "Documented Imperial Standing Armies",
+                "text": "This chart follows Documented Imperial Standing Armies. In Documented Imperial Standing Armies, Mauryan Empire (Megasthenes) leads at 600,000 soldiers, ahead of Nanda Empire (Curtius) at 200,000 soldiers; King Porus (Hydaspes) is lowest at 30,000 soldiers. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ancient_empires_military_infantry"
+                ]
+              }
+            ],
+            "pullQuote": "In Documented Imperial Standing Armies, Mauryan Empire (Megasthenes) leads at 600,000 soldiers, ahead of Nanda Empire (Curtius) at 200,000 soldiers; King Porus (Hydaspes) is lowest at 30,000 soldiers.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ancient_empires_military_infantry"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Alexander the Great's Campaign & Macedonian Limit",
+            "headline": "Alexander the Great's Campaign & Macedonian Limit (327–325 BCE)",
+            "dek": "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
+            "paragraphs": [
+              "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Classical Greek Historians"
+            ],
+            "indicatorCount": 1,
+            "pattern": "question-answer",
+            "sections": [
+              {
+                "title": "Imperial War Elephant Corps in Ancient Indian Armies",
+                "text": "This chart follows Imperial War Elephant Corps in Ancient Indian Armies. In Imperial War Elephant Corps in Ancient Indian Armies, Mauryan Empire leads at 9,000 war elephants, ahead of Nanda Empire at 6,000 war elephants; King Porus (Hydaspes) is lowest at 200 war elephants. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ancient_empires_war_elephants"
+                ]
+              }
+            ],
+            "pullQuote": "In Imperial War Elephant Corps in Ancient Indian Armies, Mauryan Empire leads at 9,000 war elephants, ahead of Nanda Empire at 6,000 war elephants; King Porus (Hydaspes) is lowest at 200 war elephants.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ancient_empires_war_elephants"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Mauryan Empire & Pan-Indian Hegemony",
+            "headline": "Mauryan Empire & Pan-Indian Hegemony (322–185 BCE)",
+            "dek": "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
+            "paragraphs": [
+              "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Historical Atlas of South Asia"
+            ],
+            "indicatorCount": 1,
+            "pattern": "reading-journey",
+            "sections": [
+              {
+                "title": "Maximum Territorial Extent of Ancient Indian Empires",
+                "text": "This chart follows Maximum Territorial Extent of Ancient Indian Empires. In Maximum Territorial Extent of Ancient Indian Empires, Mauryan Empire (Ashoka) leads at 5 M km², ahead of Gupta Empire (Vikramaditya) at 3.5 M km²; Magadha (Bimbisara) is lowest at 0.2 M km². Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ancient_empires_territorial_span"
+                ]
+              }
+            ],
+            "pullQuote": "In Maximum Territorial Extent of Ancient Indian Empires, Mauryan Empire (Ashoka) leads at 5 M km², ahead of Gupta Empire (Vikramaditya) at 3.5 M km²; Magadha (Bimbisara) is lowest at 0.2 M km².",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ancient_empires_territorial_span"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Post-Mauryan & Indo-Greek Kingdoms",
+            "headline": "Post-Mauryan & Indo-Greek Kingdoms (185 BCE–10 CE)",
+            "dek": "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
+            "paragraphs": [
+              "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Epigraphia Indica"
+            ],
+            "indicatorCount": 1,
+            "pattern": "by-the-numbers",
+            "sections": [
+              {
+                "title": "Indo-Greek Bilingual Numismatic Coin Hoards",
+                "text": "This chart follows Indo-Greek Bilingual Numismatic Coin Hoards. In Indo-Greek Bilingual Numismatic Coin Hoards, Menander I Soter (Taxila & Punjab Hoards) leads at 480 hoards, ahead of Demetrius I Aniketos (Gandhara Hoards) at 210 hoards; Agathocles Dikaios (Bilingual Brahmi Types) is lowest at 95 hoards. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "indogreek_numismatic_coin_types"
+                ]
+              }
+            ],
+            "pullQuote": "In Indo-Greek Bilingual Numismatic Coin Hoards, Menander I Soter (Taxila & Punjab Hoards) leads at 480 hoards, ahead of Demetrius I Aniketos (Gandhara Hoards) at 210 hoards; Agathocles Dikaios (Bilingual Brahmi Types) is lowest at 95 hoards.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "indogreek_numismatic_coin_types"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Satavahana Empire & Deccan Maritime Ascendancy",
+            "headline": "Satavahana Empire & Deccan Maritime Ascendancy (2nd C. BCE–220 CE)",
+            "dek": "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
+            "paragraphs": [
+              "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Epigraphia Indica"
+            ],
+            "indicatorCount": 1,
+            "pattern": "two-lenses",
+            "sections": [
+              {
+                "title": "Dynastic Longevity of Classical Indian Imperial",
+                "text": "This chart follows Dynastic Longevity of Classical Indian Imperial. In Dynastic Longevity of Classical Indian Imperial, Satavahana Empire leads at 450 years, ahead of Kushan Empire at 345 years; Nanda Empire is lowest at 23 years. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ancient_empires_reign_durations"
+                ]
+              }
+            ],
+            "pullQuote": "In Dynastic Longevity of Classical Indian Imperial, Satavahana Empire leads at 450 years, ahead of Kushan Empire at 345 years; Nanda Empire is lowest at 23 years.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ancient_empires_reign_durations"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Kushan Empire & The Silk Road Synthesis",
+            "headline": "Kushan Empire & The Silk Road Synthesis (30–375 CE)",
+            "dek": "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
+            "paragraphs": [
+              "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & UNESCO World Heritage Centre"
+            ],
+            "indicatorCount": 1,
+            "pattern": "annotated-captions",
+            "sections": [
+              {
+                "title": "Kushan Imperial Buddhist Monasteries and Silk Road",
+                "text": "This chart follows Kushan Imperial Buddhist Monasteries and Silk Road. In Kushan Imperial Buddhist Monasteries and Silk Road, Gandhara Valley (Peshawar & Takht-i-Bahi) leads at 142 complexes, ahead of Taxila & Margalla Basin (Dharmarajika) at 98 complexes; Kashmir Basin (Harwan Fourth Buddhist Council) is lowest at 28 complexes. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "kushan_silkroad_monasteries"
+                ]
+              }
+            ],
+            "pullQuote": "In Kushan Imperial Buddhist Monasteries and Silk Road, Gandhara Valley (Peshawar & Takht-i-Bahi) leads at 142 complexes, ahead of Taxila & Margalla Basin (Dharmarajika) at 98 complexes; Kashmir Basin (Harwan Fourth Buddhist Council) is lowest at 28 complexes.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "kushan_silkroad_monasteries"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Gupta Empire: Classical Golden Age",
+            "headline": "Gupta Empire: Classical Golden Age (319–550 CE)",
+            "dek": "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
+            "paragraphs": [
+              "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Epigraphia Indica & Archaeological Survey of India"
+            ],
+            "indicatorCount": 1,
+            "pattern": "lede-stat-strip",
+            "sections": [
+              {
+                "title": "Cataloged Epigraphic Inscriptions and Edicts by",
+                "text": "This chart follows Cataloged Epigraphic Inscriptions and Edicts by. In Cataloged Epigraphic Inscriptions and Edicts by, Gupta Classical Epigraphs leads at 240 inscriptions, ahead of Sangam Hero Stones & Inscriptions at 210 inscriptions; Heliodorus / Post-Mauryan Pillars is lowest at 25 inscriptions. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ancient_empires_inscriptions_count"
+                ]
+              }
+            ],
+            "pullQuote": "In Cataloged Epigraphic Inscriptions and Edicts by, Gupta Classical Epigraphs leads at 240 inscriptions, ahead of Sangam Hero Stones & Inscriptions at 210 inscriptions; Heliodorus / Post-Mauryan Pillars is lowest at 25 inscriptions.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ancient_empires_inscriptions_count"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Vardhana Empire of Harsha",
+            "headline": "Vardhana Empire of Harsha (606–647 CE)",
+            "dek": "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
+            "paragraphs": [
+              "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Epigraphia Indica"
+            ],
+            "indicatorCount": 1,
+            "pattern": "question-answer",
+            "sections": [
+              {
+                "title": "Harsha's Imperial Convocations",
+                "text": "This chart follows Harsha's Imperial Convocations. In Harsha's Imperial Convocations, Prayag Mahamoksha Assembly (Ascetics & Monks) leads at 10,000 attendees, ahead of Nalanda Mahavihara (Resident Scholars) at 10,000 attendees; Kannauj Assembly (Tributary Vassal Kings) is lowest at 20 attendees. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "harsha_imperial_assemblies"
+                ]
+              }
+            ],
+            "pullQuote": "In Harsha's Imperial Convocations, Prayag Mahamoksha Assembly (Ascetics & Monks) leads at 10,000 attendees, ahead of Nalanda Mahavihara (Resident Scholars) at 10,000 attendees; Kannauj Assembly (Tributary Vassal Kings) is lowest at 20 attendees.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "harsha_imperial_assemblies"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          },
+          {
+            "name": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava",
+            "headline": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava (300 BCE–850 CE)",
+            "dek": "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
+            "paragraphs": [
+              "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
+              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archaeological Survey of India & Epigraphia Indica"
+            ],
+            "indicatorCount": 1,
+            "pattern": "reading-journey",
+            "sections": [
+              {
+                "title": "Ancient Tamil Maritime Ports and Roman",
+                "text": "This chart follows Ancient Tamil Maritime Ports and Roman. In Ancient Tamil Maritime Ports and Roman, Muziris (Chera - Roman Gold Aurei Hoards) leads at 380 artifacts, ahead of Poompuhar / Kaveripattinam (Chola Port) at 310 artifacts; Alagankulam (Pandya Mediterranean Coins) is lowest at 175 artifacts. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "sangam_maritime_ports_trade"
+                ]
+              }
+            ],
+            "pullQuote": "In Ancient Tamil Maritime Ports and Roman, Muziris (Chera - Roman Gold Aurei Hoards) leads at 380 artifacts, ahead of Poompuhar / Kaveripattinam (Chola Port) at 310 artifacts; Alagankulam (Pandya Mediterranean Coins) is lowest at 175 artifacts.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "sangam_maritime_ports_trade"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "धर्मो रक्षति रक्षितः",
+              "transliteration": "dharmo rakshati rakshitah",
+              "meaning": "Dharma protects those who protect it."
+            }
+          }
+        ]
+      }
     }
   ]
 }

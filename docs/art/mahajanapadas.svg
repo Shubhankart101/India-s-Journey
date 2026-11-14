@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_mahajanapadas" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="lower_mahajanapadas" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_mahajanapadas)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Ancient Mudbrick Walls of Rajagriha / Vaishali Assembly -->
+        <g transform="translate(600, 380)">
+          <!-- Cyclopean Wall of Rajgir -->
+          <path d="M -450 60 Q -200 -20 0 10 Q 250 -30 450 60 L 450 140 L -450 140 Z" fill="#2e1065"/>
+          <!-- Democratic Santhagara Assembly Hall -->
+          <polygon points="-80,-40 0,-100 80,-40" fill="#eab308" opacity="0.9"/>
+          <rect x="-70" y="-40" width="140" height="80" fill="#4338ca"/>
+          <!-- Pillars of Assembly -->
+          <rect x="-55" y="-30" width="10" height="70" fill="#e0e7ff"/>
+          <rect x="-20" y="-30" width="10" height="70" fill="#e0e7ff"/>
+          <rect x="15" y="-30" width="10" height="70" fill="#e0e7ff"/>
+          <rect x="50" y="-30" width="10" height="70" fill="#e0e7ff"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_mahajanapadas)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">16 Mahajanapadas & Republics</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#eab308" opacity=".95">SECOND URBANISATION • 600 BCE</text>
+</g>
+</svg>

@@ -15,6 +15,7 @@ import SubgroupArticle from './SubgroupArticle.jsx';
 import ArtBackdrop from './ArtBackdrop.jsx';
 import IndusValleyAtlas from './IndusValleyAtlas.jsx';
 import IndusScriptDecoder from './IndusScriptDecoder.jsx';
+import AncientEmpiresAtlas from './AncientEmpiresAtlas.jsx';
 import { ErrorState, Loading } from './States.jsx';
 
 const SPECIAL_HEIGHT = 560;
@@ -312,11 +313,14 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
     const mapFormat = mapped.length >= 1;
     const isIvc = category.slug === 'indus-valley-civilisation' || category.name === 'Indus Valley Civilisation';
     const isScript = isIvc && (subgroup.slug?.includes('script') || subgroup.name?.includes('Script'));
+    const isEmpires = category.slug === 'empires-ancient-india' || category.name === 'Empires of Ancient India';
     let customLead = null;
     if (isScript) {
       customLead = <IndusScriptDecoder />;
     } else if (isIvc) {
       customLead = <IndusValleyAtlas />;
+    } else if (isEmpires) {
+      customLead = <AncientEmpiresAtlas />;
     } else if (mapFormat) {
       customLead = <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />;
     }

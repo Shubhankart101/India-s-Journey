@@ -1,6 +1,23 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import sitesData from '../data/indus-civilisation.json';
 import './IndusAtlas.css';
+
+const TIER_FILTERS = [
+  { id: 'all', label: 'All 49 Sites', icon: '🗺️' },
+  { id: 'metropolis', label: '8 Major Metropolises', icon: '🏛️' },
+  { id: 'port', label: 'Ports & Harbors', icon: '⚓' },
+  { id: 'craft', label: 'Craft & Metallurgy', icon: '🏺' },
+  { id: 'foreign_trade', label: 'Overseas Trade (Gulf / Mesopotamia)', icon: '🌍' },
+  { id: 'fortified_town', label: 'Fortified Citadels', icon: '🏰' }
+];
+
+const REGION_PRESETS = [
+  { id: 'full', label: 'Pan-Indus & Gulf', vb: { x: 410, y: -460, w: 410, h: 285 } },
+  { id: 'heartland', label: 'Indus-Saraswati Heartland', vb: { x: 570, y: -420, w: 180, h: 160 } },
+  { id: 'gujarat', label: 'Gujarat, Kutch & Saurashtra', vb: { x: 620, y: -330, w: 120, h: 110 } },
+  { id: 'gulf', label: 'Persian Gulf & Mesopotamia', vb: { x: 410, y: -440, w: 200, h: 170 } }
+];
 
 const CATEGORY_COLORS = {
   metropolis: '#d4a72c',
@@ -12,34 +29,24 @@ const CATEGORY_COLORS = {
   foreign_trade: '#f43f5e'
 };
 
-const CATEGORY_LABELS = {
-  all: 'All Excavated Sites (49)',
-  metropolis: 'Major Metropolises',
-  port: 'Ports & Tidal Harbors',
-  craft: 'Craft & Industrial Hubs',
-  fortified_town: 'Fortified Towns & Bastions',
-  agricultural_rural: 'Agricultural Settlements',
-  frontier_outpost: 'Frontier Border Outposts',
-  foreign_trade: 'Overseas Trade Enclaves (Mesopotamia / Gulf)'
-};
-
-// Projected bounding box for world-asia.json (covers Mesopotamia to Northwest India)
-const VIEWBOX = { x: 410, y: -460, w: 410, h: 285 };
-
 export default function IndusValleyAtlas() {
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedSiteId, setSelectedSiteId] = useState('rakhigarhi');
-  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [tierFilter, setTierFilter] = useState('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showRoutes, setShowRoutes] = useState(true);
+  const [hoveredSiteId, setHoveredSiteId] = useState(null);
+
+  // Zoom & Pan state
+  const [viewBox, setViewBox] = useState(REGION_PRESETS[0].vb);
+  const [activeRegion, setActiveRegion] = useState('full');
 
   useEffect(() => {
     fetch('/maps/world-asia.json')
       .then(res => res.json())
       .then(data => {
         if (data && data.paths) {
-          // Focus on countries surrounding the Indus & international trade sphere
           const targetIsos = new Set(['IND', 'PAK', 'AFG', 'IRQ', 'IRN', 'OMN', 'KWT', 'ARE', 'SAU', 'QAT', 'BHR', 'TKM', 'UZB', 'TJK', 'SYR']);
           const relevant = data.paths.filter(p => targetIsos.has(p.i));
           setMapPaths(relevant);
@@ -53,7 +60,7 @@ export default function IndusValleyAtlas() {
 
   const filteredSites = useMemo(() => {
     return sites.filter(site => {
-      if (categoryFilter !== 'all' && site.category !== categoryFilter) return false;
+      if (tierFilter !== 'all' && site.category !== tierFilter) return false;
       if (countryFilter !== 'all' && site.country !== countryFilter) return false;
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
@@ -67,7 +74,7 @@ export default function IndusValleyAtlas() {
       }
       return true;
     });
-  }, [sites, categoryFilter, countryFilter, searchQuery]);
+  }, [sites, tierFilter, countryFilter, searchQuery]);
 
   const selectedSite = useMemo(() => {
     return sites.find(s => s.id === selectedSiteId) || sites[0];
@@ -78,311 +85,422 @@ export default function IndusValleyAtlas() {
     return ['all', ...Array.from(set).sort()];
   }, [sites]);
 
+  const handleRegionChange = (preset) => {
+    setActiveRegion(preset.id);
+    setViewBox(preset.vb);
+  };
+
+  const handleZoom = (factor) => {
+    setViewBox(curr => {
+      const nw = Math.max(80, Math.min(500, curr.w * factor));
+      const nh = Math.max(60, Math.min(350, curr.h * factor));
+      const nx = curr.x + (curr.w - nw) / 2;
+      const ny = curr.y + (curr.h - nh) / 2;
+      return { x: nx, y: ny, w: nw, h: nh };
+    });
+  };
+
   return (
     <div className="indus-atlas">
-      {/* Top Banner & Stats */}
+      {/* Header & Meta */}
       <header className="indus-atlas-header">
         <div className="indus-atlas-title-group">
-          <span className="indus-atlas-tag">OFFICIAL ARCHEOLOGICAL & EXCAVATION SURVEY ATLAS</span>
+          <span className="indus-atlas-tag">OFFICIAL ASI & PEER-REVIEWED ARCHAEOLOGICAL ATLAS</span>
           <h2>The Indus Valley Civilisation Comprehensive Excavation Map</h2>
           <p className="indus-atlas-lead">
-            Explore 49 comprehensively cataloged major and minor archeological excavations, rural farmsteads,
-            tidal dockyards, border bastions, and international trading enclaves across India, Pakistan, Afghanistan,
-            Iraq, Iran, Kuwait, Oman, Bahrain, and the UAE. Every single site includes verified official academic sources,
-            excavation memoirs, and research papers.
+            49 cataloged excavations across 9 countries with exact GPS coordinates, excavated structures,
+            material culture, and peer-reviewed monograph citations from the Archaeological Survey of India (ASI),
+            Nature, Cell, and the French National Centre for Scientific Research (CNRS).
           </p>
         </div>
 
-        <div className="indus-stats-grid">
-          <div className="indus-stat-card">
-            <span className="indus-stat-num">{sites.length}</span>
-            <span className="indus-stat-label">Cataloged Sites</span>
+        {/* Global Stats Counter */}
+        <div className="indus-stats-counter">
+          <div className="indus-stat-chip">
+            <span className="isc-num">49</span>
+            <span className="isc-label">Excavated Sites</span>
           </div>
-          <div className="indus-stat-card">
-            <span className="indus-stat-num">9</span>
-            <span className="indus-stat-label">Modern Nations</span>
+          <div className="indus-stat-chip">
+            <span className="isc-num">9</span>
+            <span className="isc-label">Modern Nations</span>
           </div>
-          <div className="indus-stat-card">
-            <span className="indus-stat-num">1.5M</span>
-            <span className="indus-stat-label">km² Extent</span>
+          <div className="indus-stat-chip">
+            <span className="isc-num">3,500+</span>
+            <span className="isc-label">BCE to 1300 BCE</span>
           </div>
-          <div className="indus-stat-card">
-            <span className="indus-stat-num">100%</span>
-            <span className="indus-stat-label">Official Sources</span>
+          <div className="indus-stat-chip">
+            <span className="isc-num">100%</span>
+            <span className="isc-label">Official Scholarly Sources</span>
           </div>
         </div>
       </header>
 
-      {/* Filter & Search Bar */}
-      <div className="indus-controls">
+      {/* Tier Filter Tabs (Prevents visual clutter) */}
+      <div className="indus-tier-tabs" role="tablist" aria-label="Excavation site hierarchy">
+        {TIER_FILTERS.map(tab => (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={tierFilter === tab.id}
+            className={`indus-tier-tab ${tierFilter === tab.id ? 'active' : ''}`}
+            onClick={() => setTierFilter(tab.id)}
+          >
+            <span className="tab-icon" aria-hidden="true">{tab.icon}</span>
+            <span>{tab.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Secondary Controls Bar */}
+      <div className="indus-controls-bar">
+        {/* Search */}
         <div className="indus-search-wrap">
           <input
             type="search"
-            placeholder="Search site, artifact, excavator, or research paper (e.g. Rakhigarhi, Lothal, Cell, Shinde, Bisht)..."
+            placeholder="Search site, artifact, excavator, or paper (e.g. Dancing Girl, Dholavira, Marshall)..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             className="indus-search-input"
-            aria-label="Search Indus Valley excavations, artifacts, or sources"
           />
+          {searchQuery && (
+            <button type="button" className="indus-clear-btn" onClick={() => setSearchQuery('')}>×</button>
+          )}
         </div>
 
-        <div className="indus-filter-group">
-          <label htmlFor="cat-filter" className="sr-only">Filter by category</label>
-          <select
-            id="cat-filter"
-            value={categoryFilter}
-            onChange={e => setCategoryFilter(e.target.value)}
-            className="indus-select"
-          >
-            {Object.entries(CATEGORY_LABELS).map(([k, label]) => (
-              <option key={k} value={k}>{label}</option>
-            ))}
-          </select>
-
-          <label htmlFor="country-filter" className="sr-only">Filter by country</label>
+        {/* Country filter */}
+        <div className="indus-select-wrap">
+          <label htmlFor="country-filter">Country:</label>
           <select
             id="country-filter"
             value={countryFilter}
             onChange={e => setCountryFilter(e.target.value)}
             className="indus-select"
           >
-            <option value="all">All Nations ({countries.length - 1})</option>
+            <option value="all">All 9 Countries</option>
             {countries.filter(c => c !== 'all').map(c => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
-
-          <button
-            type="button"
-            className={`indus-toggle-btn ${showRoutes ? 'active' : ''}`}
-            onClick={() => setShowRoutes(r => !r)}
-            aria-pressed={showRoutes}
-          >
-            <span className="route-indicator" /> Trade Corridors {showRoutes ? 'On' : 'Off'}
-          </button>
         </div>
+
+        {/* Region focus presets */}
+        <div className="indus-region-presets" role="group" aria-label="Map Region View">
+          <span className="preset-label">Region:</span>
+          {REGION_PRESETS.map(preset => (
+            <button
+              key={preset.id}
+              type="button"
+              className={`preset-btn ${activeRegion === preset.id ? 'active' : ''}`}
+              onClick={() => handleRegionChange(preset)}
+            >
+              {preset.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Toggle Trade Routes */}
+        <label className="indus-toggle-label">
+          <input
+            type="checkbox"
+            checked={showRoutes}
+            onChange={e => setShowRoutes(e.target.checked)}
+          />
+          <span>Show Maritime & Silk Trade Routes</span>
+        </label>
       </div>
 
-      {/* Main Interactive Stage */}
-      <div className="indus-atlas-stage">
-        {/* SVG Map Canvas */}
-        <div className="indus-map-container" role="region" aria-label="Indus Civilisation Interactive Map">
+      {/* Main Atlas Content: Map Viewport + Rich Excavation Detail Drawer */}
+      <div className="indus-workbench">
+        {/* Map Canvas with SVG Vector Basemap */}
+        <div className="indus-map-canvas">
+          {/* Zoom floating buttons */}
+          <div className="indus-zoom-controls" aria-label="Map zoom controls">
+            <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
+            <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
+            <button type="button" onClick={() => handleRegionChange(REGION_PRESETS[0])} title="Reset View" aria-label="Reset view">⟲</button>
+          </div>
+
           <svg
-            className="indus-map-svg"
-            viewBox={`${VIEWBOX.x} ${VIEWBOX.y} ${VIEWBOX.w} ${VIEWBOX.h}`}
+            className="indus-svg"
+            viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`}
             preserveAspectRatio="xMidYMid meet"
           >
-            {/* Background Country Polygons */}
-            <g className="indus-country-base">
-              {mapPaths.map(p => (
+            <defs>
+              <radialGradient id="metropolisGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#d4a72c" stopOpacity="0.8" />
+                <stop offset="60%" stopColor="#d4a72c" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#d4a72c" stopOpacity="0" />
+              </radialGradient>
+              <filter id="siteShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.6" />
+              </filter>
+            </defs>
+
+            {/* Geographical Background */}
+            <rect x={viewBox.x - 200} y={viewBox.y - 200} width={viewBox.w + 400} height={viewBox.h + 400} fill="#0d1117" />
+
+            {/* Country boundary polygons */}
+            <g className="indus-basemap-countries">
+              {mapPaths.map((p, idx) => (
                 <path
-                  key={p.i}
+                  key={idx}
                   d={p.d}
-                  className={`country-poly ${p.i === 'IND' || p.i === 'PAK' ? 'core-indus-poly' : ''}`}
-                  title={p.n}
+                  fill="#181f2a"
+                  stroke="#263345"
+                  strokeWidth="0.75"
+                  vectorEffect="non-scaling-stroke"
                 />
               ))}
             </g>
 
-            {/* Ancient Trade Routes */}
+            {/* Ancient River Courses (Indus, Saraswati / Ghaggar-Hakra, Ravi, Chenab, Sutlej, Narmada) */}
+            <g className="indus-rivers" stroke="#1d4ed8" strokeWidth="1.2" fill="none" opacity="0.65" strokeLinecap="round" vectorEffect="non-scaling-stroke">
+              {/* Saraswati / Ghaggar-Hakra Dry Riverbed */}
+              <path d="M 688 -395 Q 675 -385 660 -370 T 640 -340 T 628 -315" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3,2" />
+              {/* Indus Trunk */}
+              <path d="M 660 -420 Q 645 -400 635 -380 T 620 -355 T 612 -330 T 605 -300" stroke="#0284c7" strokeWidth="2" />
+            </g>
+
+            {/* Maritime & Caravan Trade Routes */}
             {showRoutes && (
-              <g className="indus-trade-routes" aria-label="Ancient Trade Corridors">
-                {tradeRoutes.map(route => {
-                  const pathStr = route.waypoints
-                    .map((pt, i) => `${i === 0 ? 'M' : 'L'}${pt.x} ${pt.y}`)
-                    .join(' ');
-                  return (
-                    <g key={route.id} className="trade-route-group">
-                      <path
-                        d={pathStr}
-                        className={`trade-route-path ${route.type}`}
-                        strokeDasharray={route.type === 'maritime' ? '3,2' : '2,2'}
-                      />
-                    </g>
-                  );
-                })}
+              <g className="indus-routes">
+                {tradeRoutes.map(route => (
+                  <g key={route.id} className="indus-route-group">
+                    <path
+                      d={route.path_d}
+                      fill="none"
+                      stroke={route.type === 'maritime' ? '#38bdf8' : '#fbbf24'}
+                      strokeWidth={route.type === 'maritime' ? '1.5' : '1.2'}
+                      strokeDasharray={route.type === 'maritime' ? '5,3' : '3,3'}
+                      opacity="0.7"
+                      vectorEffect="non-scaling-stroke"
+                    />
+                    <text
+                      x={route.label_pos.x}
+                      y={route.label_pos.y}
+                      fill={route.type === 'maritime' ? '#7dd3fc' : '#fde68a'}
+                      fontSize="5"
+                      fontFamily="sans-serif"
+                      fontWeight="600"
+                      textAnchor="middle"
+                      opacity="0.85"
+                    >
+                      {route.name}
+                    </text>
+                  </g>
+                ))}
               </g>
             )}
 
-            {/* Site Pins */}
-            <g className="indus-site-pins">
+            {/* Sites Markers */}
+            <g className="indus-sites-layer">
               {filteredSites.map(site => {
                 const isSelected = site.id === selectedSiteId;
-                const pinColor = CATEGORY_COLORS[site.category] || '#d4a72c';
-                const r = isSelected ? 4.5 : site.category === 'metropolis' ? 3.6 : 2.4;
+                const isHovered = site.id === hoveredSiteId;
+                const isMetropolis = site.category === 'metropolis';
+                const isForeign = site.category === 'foreign_trade';
+                const color = CATEGORY_COLORS[site.category] || '#94a3b8';
+
+                // Only show labels for metropolises or hovered/selected sites to eliminate visual clutter
+                const shouldShowLabel = isMetropolis || isSelected || isHovered || filteredSites.length <= 10;
 
                 return (
                   <g
                     key={site.id}
-                    className={`site-pin-group ${isSelected ? 'selected' : ''} ${site.is_foreign ? 'foreign-site' : ''}`}
-                    transform={`translate(${site.x}, ${site.y})`}
+                    className={`indus-site-pin ${isSelected ? 'selected' : ''} ${isHovered ? 'hovered' : ''}`}
                     onClick={() => setSelectedSiteId(site.id)}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={`${site.name}, ${site.country} (${site.category})`}
-                    onKeyDown={e => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        setSelectedSiteId(site.id);
-                      }
-                    }}
+                    onMouseEnter={() => setHoveredSiteId(site.id)}
+                    onMouseLeave={() => setHoveredSiteId(null)}
+                    style={{ cursor: 'pointer' }}
                   >
-                    {isSelected && (
-                      <circle r={r + 3.8} className="pin-pulse" stroke={pinColor} />
+                    {/* Metropolis glowing halo */}
+                    {isMetropolis && (
+                      <circle
+                        cx={site.proj_x}
+                        cy={site.proj_y}
+                        r="12"
+                        fill="url(#metropolisGlow)"
+                      />
                     )}
 
+                    {/* Outer pulse ring on selection */}
+                    {isSelected && (
+                      <circle
+                        cx={site.proj_x}
+                        cy={site.proj_y}
+                        r={isMetropolis ? 9 : 7}
+                        fill="none"
+                        stroke="#fff"
+                        strokeWidth="1.5"
+                        strokeDasharray="2,2"
+                        className="pin-pulse"
+                      />
+                    )}
+
+                    {/* Site Base Marker */}
                     <circle
-                      r={r}
-                      fill={pinColor}
-                      stroke="#0f172a"
-                      strokeWidth={isSelected ? 1.2 : 0.6}
-                      className="pin-circle"
+                      cx={site.proj_x}
+                      cy={site.proj_y}
+                      r={isMetropolis ? 5.5 : isForeign ? 4.5 : 3.5}
+                      fill={color}
+                      stroke={isSelected ? '#fff' : '#0b0f15'}
+                      strokeWidth={isSelected ? '2' : '1'}
+                      filter="url(#siteShadow)"
                     />
 
-                    {/* Site Label on Map */}
-                    <text
-                      x={r + 2.2}
-                      y={1.1}
-                      className={`pin-text ${isSelected ? 'pin-text-active' : ''}`}
-                      fontSize={isSelected ? '3.8' : site.category === 'metropolis' ? '3.0' : '2.3'}
-                    >
-                      {site.name}
-                    </text>
+                    {/* Inner iconic dot */}
+                    <circle
+                      cx={site.proj_x}
+                      cy={site.proj_y}
+                      r={isMetropolis ? 2.2 : 1.4}
+                      fill="#0b0f15"
+                    />
+
+                    {/* Clean uncluttered label */}
+                    {shouldShowLabel && (
+                      <g className="site-label-wrap">
+                        <text
+                          x={site.proj_x}
+                          y={site.proj_y - (isMetropolis ? 8 : 6)}
+                          fill={isSelected ? '#fff' : isMetropolis ? '#fef08a' : '#cbd5e1'}
+                          fontSize={isMetropolis ? '6.5' : '5'}
+                          fontWeight={isMetropolis ? '750' : '600'}
+                          fontFamily="sans-serif"
+                          textAnchor="middle"
+                          stroke="#0b0f15"
+                          strokeWidth="2.5"
+                          paintOrder="stroke"
+                          strokeLinejoin="round"
+                        >
+                          {site.name}
+                        </text>
+                      </g>
+                    )}
                   </g>
                 );
               })}
             </g>
           </svg>
 
-          {/* Map Legend */}
+          {/* Quick Legend at bottom of map */}
           <div className="indus-map-legend">
-            <span className="legend-title">Site Classification:</span>
-            <div className="legend-items">
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.metropolis }} /> Metropolis</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.port }} /> Port & Dock</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.craft }} /> Craft / Bead Hub</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.fortified_town }} /> Fortified Town</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.agricultural_rural }} /> Rural Farmstead</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.frontier_outpost }} /> Frontier Outpost</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.foreign_trade }} /> Overseas Trade Hub</span>
-            </div>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.metropolis }} /> Metropolis (8)</span>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.port }} /> Port & Dockyard</span>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.craft }} /> Craft / Bead Hub</span>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.foreign_trade }} /> Mesopotamian Outpost</span>
+            <span className="iml-item"><span className="iml-line blue" /> Maritime Route</span>
+            <span className="iml-item"><span className="iml-line gold" /> Overland Route</span>
           </div>
         </div>
 
-        {/* Site Inspector Drawer */}
-        {selectedSite && (
-          <aside className="indus-site-inspector" aria-label={`Details of ${selectedSite.name}`}>
-            <div className="inspector-badge-row">
-              <span className="inspector-badge" style={{ borderColor: CATEGORY_COLORS[selectedSite.category] }}>
-                {selectedSite.badge}
-              </span>
-              <span className="inspector-country">
-                {selectedSite.country} • {selectedSite.state_or_province}
-              </span>
-            </div>
+        {/* Polished Detailed Excavation Dossier Sidebar */}
+        <aside className="indus-site-dossier" aria-labelledby="dossier-site-title">
+          {selectedSite ? (
+            <div className="dossier-inner">
+              <div className="dossier-hero">
+                <div className="dossier-kicker">
+                  <span className="dossier-category-badge" style={{ '--cat-color': CATEGORY_COLORS[selectedSite.category] }}>
+                    {selectedSite.category.replace(/_/g, ' ').toUpperCase()}
+                  </span>
+                  <span className="dossier-country">{selectedSite.country} · {selectedSite.state_or_province}</span>
+                </div>
 
-            <div className="inspector-header">
-              <h3 className="inspector-site-name">{selectedSite.name}</h3>
-              {selectedSite.name_hi && <p className="inspector-site-hi">{selectedSite.name_hi}</p>}
-            </div>
+                <h3 id="dossier-site-title" className="dossier-title">
+                  {selectedSite.name}
+                  {selectedSite.name_hi && <span className="dossier-hindi" lang="hi">({selectedSite.name_hi})</span>}
+                </h3>
 
-            <p className="inspector-desc">{selectedSite.description}</p>
-
-            <div className="inspector-meta-grid">
-              <div className="meta-box">
-                <span className="meta-k">Estimated Area</span>
-                <span className="meta-v">{selectedSite.area_hectares ? `${selectedSite.area_hectares} ha` : 'Trade Station'}</span>
+                <p className="dossier-period">
+                  <strong>Chronology:</strong> {selectedSite.period_era}
+                </p>
               </div>
-              <div className="meta-box">
-                <span className="meta-k">Chronology</span>
-                <span className="meta-v">{selectedSite.period}</span>
-              </div>
-              <div className="meta-box full-span">
-                <span className="meta-k">Excavators & Archaeological Missions</span>
-                <span className="meta-v">{selectedSite.excavators}</span>
-              </div>
-            </div>
 
-            {/* Monumental Structures */}
-            <div className="inspector-section">
-              <h4>Excavated Architectural Structures</h4>
-              <ul className="inspector-list">
-                {selectedSite.key_structures.map((s, idx) => (
-                  <li key={idx}><strong>{s}</strong></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Key Artifacts */}
-            <div className="inspector-section">
-              <h4>Key Excavated Artifacts</h4>
-              <div className="artifacts-tag-list">
-                {selectedSite.key_artifacts.map((a, idx) => (
-                  <span key={idx} className="artifact-tag">{a}</span>
-                ))}
+              {/* Quick Info Grid */}
+              <div className="dossier-grid">
+                <div className="dossier-cell">
+                  <span className="cell-label">Principal Excavators</span>
+                  <span className="cell-value">{selectedSite.excavators || 'Surveyed by ASI'}</span>
+                </div>
+                <div className="dossier-cell">
+                  <span className="cell-label">Estimated Extent</span>
+                  <span className="cell-value">{selectedSite.area_hectares ? `${selectedSite.area_hectares} Hectares` : 'Settlement mound'}</span>
+                </div>
               </div>
-            </div>
 
-            {/* Foreign Trade Connection */}
-            {selectedSite.foreign_connection && (
-              <div className="inspector-section foreign-box">
-                <h4>International Artifact & Trade Links</h4>
-                <p>{selectedSite.foreign_connection}</p>
+              {/* Key Architectural Structures */}
+              <div className="dossier-section">
+                <h4>Excavated Architecture & Civil Engineering</h4>
+                <ul className="dossier-list">
+                  {selectedSite.key_structures.map((struct, idx) => (
+                    <li key={idx}><strong>✓</strong> {struct}</li>
+                  ))}
+                </ul>
               </div>
-            )}
 
-            {/* OFFICIAL SOURCES & CITATIONS (Academic / ASI / Peer-reviewed) */}
-            <div className="inspector-section official-sources-panel">
-              <h4>Official Excavation Sources & Academic Research Papers</h4>
-              <div className="sources-citation-list">
-                {selectedSite.official_sources && selectedSite.official_sources.map((src, idx) => (
-                  <div key={idx} className="source-citation-card">
-                    <span className="citation-type">{src.type}</span>
-                    <h5 className="citation-title">
-                      {src.url ? (
-                        <a href={src.url} target="_blank" rel="noopener noreferrer">
-                          "{src.title}" ↗
-                        </a>
-                      ) : (
-                        `"${src.title}"`
-                      )}
-                    </h5>
-                    <p className="citation-authors">
-                      <strong>Author(s):</strong> {src.authors} ({src.year})
-                    </p>
-                    <p className="citation-pub">
-                      <strong>Publication:</strong> {src.publisher}{src.volume ? `, ${src.volume}` : ''}{src.pages ? `, pp. ${src.pages}` : ''}
-                    </p>
-                    {src.doi && (
-                      <p className="citation-doi">
-                        <strong>DOI:</strong> <a href={`https://doi.org/${src.doi}`} target="_blank" rel="noopener noreferrer">{src.doi}</a>
-                      </p>
-                    )}
+              {/* Key Artifacts & Inscriptions */}
+              <div className="dossier-section">
+                <h4>Diagnostic Artifacts & Epigraphy</h4>
+                <div className="dossier-chips">
+                  {selectedSite.key_artifacts.map((art, idx) => (
+                    <span key={idx} className="dossier-chip">{art}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Foreign Trade Connection if any */}
+              {selectedSite.foreign_connection && (
+                <div className="dossier-foreign-alert">
+                  <strong>🌍 International Trade Link:</strong> {selectedSite.foreign_connection}
+                </div>
+              )}
+
+              {/* Direct Deep Link to Decryption Workbench for sites with famous seals */}
+              {selectedSite.key_artifacts.some(a => /seal|signboard|script/i.test(a)) && (
+                <div className="dossier-script-banner">
+                  <div>
+                    <strong>⚚ Indus Epigraphic Corpus:</strong>
+                    <p>Decipher the Harappan seals found at {selectedSite.name} with our computational cryptanalysis workbench.</p>
                   </div>
-                ))}
+                  <Link to="/ivc-translator" className="btn btn-primary btn-sm">Open Script Decoder →</Link>
+                </div>
+              )}
+
+              {/* Official Academic & Excavation Sources (ASI Memoirs, Cell, Nature) */}
+              <div className="dossier-section dossier-sources">
+                <h4>Official Peer-Reviewed & ASI Excavation Reports</h4>
+                <div className="dossier-sources-list">
+                  {selectedSite.official_sources && selectedSite.official_sources.map((src, idx) => (
+                    <div key={idx} className="source-citation-card">
+                      <div className="scc-header">
+                        <span className="scc-type">{src.type || 'Monograph'}</span>
+                        <span className="scc-year">{src.year}</span>
+                      </div>
+                      <h5 className="scc-title">{src.title}</h5>
+                      <p className="scc-authors">{src.authors}</p>
+                      <p className="scc-pub">{src.publisher}</p>
+                      {src.doi && (
+                        <a
+                          href={src.doi.startsWith('http') ? src.doi : `https://doi.org/${src.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="scc-link"
+                        >
+                          View Official Record / DOI →
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </aside>
-        )}
+          ) : (
+            <div className="dossier-empty">
+              <p>Select any excavation site on the map to inspect its structures, artifacts, and ASI memoirs.</p>
+            </div>
+          )}
+        </aside>
       </div>
-
-      {/* Sites Quick Grid Selector */}
-      <footer className="indus-site-selector-strip">
-        <span className="strip-heading">Browse All Excavated Sites ({filteredSites.length} of {sites.length} shown):</span>
-        <div className="site-pills-row">
-          {filteredSites.map(s => (
-            <button
-              key={s.id}
-              type="button"
-              className={`site-pill-btn ${s.id === selectedSiteId ? 'active' : ''}`}
-              onClick={() => setSelectedSiteId(s.id)}
-            >
-              <i style={{ background: CATEGORY_COLORS[s.category] || '#d4a72c' }} />
-              <span>{s.name}</span>
-            </button>
-          ))}
-        </div>
-      </footer>
     </div>
   );
 }

@@ -1,12 +1,13 @@
+/* Historical Chronometer: Mechanical Split-Flap Flip Clock & Live IST Watch */
 .independence-clock {
   margin: 1.6rem 0 1.2rem;
-  padding: 1.2rem 1.4rem;
-  background: color-mix(in srgb, var(--surface, #161b22) 85%, transparent);
+  padding: 1.3rem 1.6rem;
+  background: color-mix(in srgb, var(--surface, #14171d) 92%, #08090c);
   border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
-  border-radius: var(--radius, 14px);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius, 16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
 }
@@ -28,21 +29,21 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px 16px;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.1rem;
 }
 
 .ic-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--saffron, #ff9933) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--saffron, #ff9933) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--saffron, #ff9933) 32%, transparent);
   color: var(--saffron, #ff9933);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 750;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -57,79 +58,323 @@
 
 @keyframes ic-pulse-anim {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 0.35; transform: scale(0.75); }
 }
 
 .ic-title {
-  color: var(--muted, #8b949e);
+  color: var(--muted, #9da7b3);
   font-size: 0.8rem;
   font-weight: 600;
 }
 
-.ic-display {
+/* ----------------------------------------------------
+   MECHANICAL SPLIT-FLAP FLIP BOARD
+----------------------------------------------------- */
+.flip-board {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin: 0.4rem 0 0.8rem;
+  margin: 0.6rem 0 1.2rem;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.ic-unit {
+.flip-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 68px;
-  padding: 8px 10px;
-  background: color-mix(in srgb, var(--bg, #0d1117) 65%, transparent);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.08));
-  border-radius: 8px;
-  transition: transform 0.2s, border-color 0.2s;
+  gap: 6px;
 }
 
-.ic-unit.highlight {
-  border-color: color-mix(in srgb, var(--green, #3fb950) 40%, transparent);
-  background: color-mix(in srgb, var(--green, #3fb950) 8%, var(--bg, #0d1117));
+.flip-digits {
+  display: flex;
+  gap: 4px;
 }
 
-.ic-value {
-  font-family: var(--font-display, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
-  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+/* Individual split-flap digit card */
+.flip-digit {
+  position: relative;
+  width: clamp(28px, 4vw, 36px);
+  height: clamp(44px, 6.2vw, 56px);
+  background: #111317;
+  border-radius: 6px;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid #232730;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.flip-card-top,
+.flip-card-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  overflow: hidden;
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+  font-size: clamp(1.6rem, 3.8vw, 2.2rem);
   font-weight: 800;
-  line-height: 1.1;
+  color: #f0f4f8;
+  text-align: center;
+  line-height: clamp(44px, 6.2vw, 56px);
+}
+
+.flip-card-top {
+  top: 0;
+  background: linear-gradient(180deg, #1e222a 0%, #15181e 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.flip-card-bottom {
+  bottom: 0;
+  background: linear-gradient(180deg, #13161c 0%, #0d0f13 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 0;
+  padding-bottom: clamp(10px, 1.6vw, 15px);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Center horizontal split crease */
+.flip-crease {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #000;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  z-index: 3;
+}
+
+/* Side mechanical hinge cutouts */
+.flip-hinge {
+  position: absolute;
+  top: calc(50% - 3px);
+  width: 3px;
+  height: 6px;
+  background: #0a0b0d;
+  border-radius: 2px;
+  z-index: 4;
+}
+.flip-hinge.left { left: 0; border-right: 1px solid #2a303c; }
+.flip-hinge.right { right: 0; border-left: 1px solid #2a303c; }
+
+/* Highlight styling (e.g. seconds) */
+.flip-highlight .flip-digit {
+  border-color: color-mix(in srgb, #3fb950 40%, #232730);
+}
+.flip-highlight .flip-card-top,
+.flip-highlight .flip-card-bottom {
+  color: #3fb950;
+  text-shadow: 0 0 10px rgba(63, 185, 80, 0.4);
+}
+
+.flip-label {
+  font-size: clamp(0.58rem, 1.2vw, 0.68rem);
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  color: #8b949e;
+  text-transform: uppercase;
+}
+.flip-highlight .flip-label {
+  color: #3fb950;
+}
+
+.flip-sep {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+  color: #484f58;
+  margin-top: -16px;
+  user-select: none;
+}
+
+/* ----------------------------------------------------
+   LIVE HOROLOGICAL IST WATCH COMPONENT
+----------------------------------------------------- */
+.ist-watch-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 18px;
+  margin: 10px 0 14px;
+  background: color-mix(in srgb, var(--surface, #14171d) 70%, #000);
+  border: 1px solid color-mix(in srgb, var(--line, #fff) 12%, transparent);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Analog Watch Face */
+.ist-watch-dial {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.watch-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #242933, #0f1115 80%);
+  border: 2px solid #3c4452;
+  box-shadow:
+    0 0 0 2px #181c23,
+    0 4px 10px rgba(0, 0, 0, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.15),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.watch-num {
+  position: absolute;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #c9d1d9;
+  line-height: 1;
+}
+.num-12 { top: 3px; left: 50%; transform: translateX(-50%); }
+.num-3 { right: 3px; top: 50%; transform: translateY(-50%); }
+.num-6 { bottom: 3px; left: 50%; transform: translateX(-50%); }
+.num-9 { left: 3px; top: 50%; transform: translateY(-50%); }
+
+.watch-tick {
+  position: absolute;
+  width: 1px;
+  height: 3px;
+  background: #6e7681;
+}
+.tick-1 { top: 5px; right: 15px; transform: rotate(30deg); }
+.tick-2 { top: 15px; right: 5px; transform: rotate(60deg); }
+.tick-4 { bottom: 15px; right: 5px; transform: rotate(120deg); }
+.tick-5 { bottom: 5px; right: 15px; transform: rotate(150deg); }
+.tick-7 { bottom: 5px; left: 15px; transform: rotate(210deg); }
+.tick-8 { bottom: 15px; left: 5px; transform: rotate(240deg); }
+.tick-10 { top: 15px; left: 5px; transform: rotate(300deg); }
+.tick-11 { top: 5px; left: 15px; transform: rotate(330deg); }
+
+/* Ashoka Chakra insignia at center hub */
+.watch-chakra-hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 128, 0.4);
+  background: rgba(0, 0, 128, 0.08);
+  pointer-events: none;
+}
+
+/* Hands */
+.watch-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  border-radius: 2px 2px 0 0;
+  transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+
+.hour-hand {
+  width: 2.5px;
+  height: 16px;
+  margin-left: -1.25px;
+  background: #f0f6fc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.min-hand {
+  width: 1.8px;
+  height: 22px;
+  margin-left: -0.9px;
+  background: #d0d7de;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+
+.sec-hand {
+  width: 1px;
+  height: 26px;
+  margin-left: -0.5px;
+  background: #ff9933;
+  z-index: 4;
+}
+
+.watch-center-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #ff9933;
+  border: 1px solid #fff;
+  z-index: 5;
+}
+
+/* Watch digital text */
+.ist-watch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ist-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--saffron, #ff9933);
+}
+
+.ist-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3fb950;
+  box-shadow: 0 0 6px #3fb950;
+}
+
+.ist-time-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+  font-weight: 800;
   color: var(--ink, #f0f6fc);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
 }
 
-.ic-unit.highlight .ic-value {
-  color: var(--green, #3fb950);
-}
-
-.ic-label {
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.ist-date-text {
+  font-size: 0.74rem;
   color: var(--muted, #8b949e);
-  margin-top: 4px;
 }
 
-.ic-sep {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--muted, #8b949e) 50%, transparent);
-  margin-top: -12px;
-}
-
+/* Footer quote & total */
 .ic-footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 8px 16px;
-  padding-top: 0.8rem;
-  border-top: 1px solid color-mix(in srgb, var(--line, #fff) 40%, transparent);
+  padding-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--line, #fff) 30%, transparent);
   font-size: 0.78rem;
 }
 
@@ -149,19 +394,22 @@
   color: var(--saffron, #ff9933);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .independence-clock {
     padding: 1rem 0.8rem;
   }
-  .ic-display {
+  .flip-board {
     gap: 4px;
-  }
-  .ic-unit {
-    min-width: 52px;
     padding: 6px 4px;
   }
-  .ic-sep {
-    font-size: 1.2rem;
-    margin-top: -8px;
+  .flip-sep {
+    font-size: 1.1rem;
+    margin-top: -12px;
+  }
+  .ist-watch-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
   }
 }

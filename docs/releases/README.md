@@ -36,3 +36,4 @@ Major releases of India's Journey, oldest first. Each note is generated from the
 | 30 | Air Travel and Indian Railways groups | 2026-11-04 | `2285139` | [30-2285139-air-travel-and-indian-railways-groups.md](./30-2285139-air-travel-and-indian-railways-groups.md) |
 | 31 | Water, Logistics, expanded air and rail data, interactive charts | 2026-11-04 | `aeb4153` | [31-aeb4153-water-logistics-and-interactive-charts.md](./31-aeb4153-water-logistics-and-interactive-charts.md) |
 | 32 | Maps, fiscal and faith atlases, ten display modes | 2026-11-05 | `9e65ede` | [Full release note: maps, regrouping, fiscal views, journeys and themes](./32-9e65ede-india-in-maps-and-display-themes.md) |
+| 33 | Ancient Empires, Indus Valley Atlas & Chronometer | 2026-11-15 | `HEAD` | [Full release note: ancient empires, IVC atlas, script decoder, chronometer & IST watch](./33-major-ancient-empires-indus-valley-and-chronometer.md) |

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_ancient_empires" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2c1810"/>
+      <stop offset="100%" stop-color="#8c481e"/>
+    </linearGradient>
+    <linearGradient id="lower_ancient_empires" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_ancient_empires)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Ancient Citadel & Ashoka Pillar Silhouette -->
+        <g transform="translate(600, 360)">
+          <!-- Grand Ashoka Pillar -->
+          <rect x="-12" y="-180" width="24" height="260" rx="3" fill="#e2d8be"/>
+          <path d="M -24 -180 L 24 -180 L 16 -195 L -16 -195 Z" fill="#d4a72c"/>
+          <!-- Lion Capital -->
+          <circle cx="0" cy="-210" r="18" fill="#d4a72c"/>
+          <path d="M -8 -200 Q -18 -215 0 -228 Q 18 -215 8 -200 Z" fill="#facc15"/>
+          <!-- 24-spoke Ashoka Chakra wheel -->
+          <circle cx="0" cy="-160" r="16" fill="none" stroke="#1d4ed8" stroke-width="2.5" class="rot-slow"/>
+          <!-- Fortified Mauryan / Gupta battlements -->
+          <path d="M -350 80 L -350 -40 L -310 -40 L -310 -20 L -270 -20 L -270 -40 L -230 -40 L -230 80 Z" fill="#3a1e14" opacity="0.8"/>
+          <path d="M 230 80 L 230 -40 L 270 -40 L 270 -20 L 310 -20 L 310 -40 L 350 -40 L 350 80 Z" fill="#3a1e14" opacity="0.8"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_ancient_empires)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Ancient Empires of India</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">600 BCE – 850 CE • SUBREGIONAL HEGEMONY</text>
+</g>
+</svg>
