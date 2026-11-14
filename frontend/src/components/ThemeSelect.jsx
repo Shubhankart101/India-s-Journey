@@ -31,7 +31,7 @@ export default function ThemeSelect({ className = '' }) {
       {THEMES.map(item => (
         <button key={item.id} type="button" role="radio" value={item.id} aria-label={item.label} title={item.label}
           aria-checked={theme === item.id} tabIndex={theme === item.id ? 0 : -1}
-          onClick={() => setTheme(item.id)} onKeyDown={onKeyDown}>
+          onClick={event => { setTheme(item.id); event.currentTarget.focus(); }} onKeyDown={onKeyDown}>
           <span className="theme-label-full" aria-hidden="true">{item.label}</span>
           <span className="theme-label-short" aria-hidden="true">{item.short}</span>
         </button>

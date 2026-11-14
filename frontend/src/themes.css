@@ -11,15 +11,19 @@
 }
 .contact-link svg { width: 16px; height: 16px; fill: currentColor; }
 .contact-link:hover { color: #fff; background: var(--switch-active); border-color: var(--switch-active); transform: translateY(-1px); text-decoration: none; }
-.header-inner { gap: 14px; }
+.header-inner { gap: 14px; min-width: 0; }
+.desktop-nav { gap: clamp(10px, 1.3vw, 18px); min-width: 0; }
 .header-controls-floating { position: fixed; z-index: 30; top: 12px; right: 16px; display: flex; gap: 8px; align-items: center; }
-@media (max-width: 1000px) {
+@media (max-width: 1360px) {
   .header-cta { display: none; }
-  .desktop-nav { gap: 14px; }
+}
+@media (max-width: 1140px) {
+  .header-cta { display: none; }
+  .desktop-nav { gap: 12px; }
   .site-header { height: auto; min-height: var(--header-h); }
   .header-inner { flex-wrap: wrap; row-gap: 4px; padding-block: 6px; }
   .header-inner .contact-links { margin-left: auto; }
-  .desktop-nav { order: 10; flex-basis: 100%; justify-content: flex-start; }
+  .desktop-nav { order: 10; flex-basis: 100%; justify-content: center; }
 }
 @media (max-width: 480px) {
   .site-header { height: auto; }
