@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-13T09:49:30+00:00",
+  "generated_at_utc": "2026-11-14T09:12:49+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -69346,7 +69346,8 @@
         "2021",
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
       "values": [
         11.1,
@@ -69382,25 +69383,26 @@
         17.52,
         18.51,
         21.74,
-        23.3,
-        22.7,
+        23.31,
+        22.71,
         23.03,
         20.08,
-        19.5,
+        19.51,
         19.49,
         19.98,
-        21.41,
-        19.55,
-        18.65,
-        18.04,
-        18.58
+        21.42,
+        19.56,
+        19.21,
+        18.77,
+        19.32,
+        19.54
       ],
       "source": "World Bank API DT.DOD.DECT.GN.ZS",
       "unit": "% of GNI",
-      "note": "External Debt Stocks: India's annual series, 1980 to 2024; the latest value is 18.58% of GNI. Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "External Debt Stocks: India's annual series, 1980 to 2025; the latest value is 19.54% of GNI. Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
         "title": "External Debt Stocks",
-        "subtitle": "India, 1980-2024",
+        "subtitle": "India, 1980-2025",
         "frequency": "Annual",
         "color": "#3fb950",
         "suffix": "% of GNI",
@@ -69408,7 +69410,7 @@
         "subgroup": "External Debt & Reserves",
         "explain": {
           "what": "Total external debt owed to non-residents as a share of gross national income. This chart follows India's annual series.",
-          "read": "The line ends at 18.58% of GNI in 2024. Lower means the country's foreign obligations are small relative to its income.",
+          "read": "The line ends at 19.54% of GNI in 2025. Lower means the country's foreign obligations are small relative to its income.",
           "why": "A modest ratio protects against currency and rollover crises."
         }
       }
@@ -69459,7 +69461,8 @@
         "2021",
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
       "datasets": [
         {
@@ -69499,18 +69502,19 @@
             17.52,
             18.51,
             21.74,
-            23.3,
-            22.7,
+            23.31,
+            22.71,
             23.03,
             20.08,
-            19.5,
+            19.51,
             19.49,
             19.98,
-            21.41,
-            19.55,
-            18.65,
-            18.04,
-            18.58
+            21.42,
+            19.56,
+            19.21,
+            18.77,
+            19.32,
+            19.54
           ]
         },
         {
@@ -69554,14 +69558,15 @@
             16.64,
             11.88,
             12.4,
-            13.66,
+            13.92,
             13.92,
             14.56,
             15.63,
             15.07,
             13.93,
-            13.51,
-            13.0
+            13.5,
+            12.79,
+            11.75
           ]
         },
         {
@@ -69609,10 +69614,11 @@
             29.93,
             31.2,
             38.01,
-            35.29,
-            30.56,
-            28.63,
-            28.66
+            35.34,
+            30.78,
+            28.74,
+            28.72,
+            29.91
           ]
         },
         {
@@ -69663,13 +69669,14 @@
             20.88,
             20.27,
             22.29,
-            22.25
+            22.26,
+            23.57
           ]
         }
       ],
       "source": "World Bank API DT.DOD.DECT.GN.ZS",
       "unit": "% of GNI",
-      "note": "External Debt Stocks: India against 3 comparison countries; gaps are years without a reported value. Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "External Debt Stocks: India against 3 comparison countries; gaps are years without a reported value. Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
         "title": "External Debt Stocks: India vs Peers",
         "subtitle": "India against major economies and neighbours",
@@ -69701,22 +69708,22 @@
         "China"
       ],
       "values": [
-        58.89,
-        44.83,
-        35.63,
-        30.97,
-        28.66,
-        23.27,
-        22.25,
-        18.58,
-        13.0
+        53.99,
+        49.25,
+        33.93,
+        31.13,
+        29.91,
+        25.77,
+        23.57,
+        19.54,
+        11.75
       ],
       "source": "World Bank API DT.DOD.DECT.GN.ZS",
       "unit": "% of GNI",
-      "note": "External Debt Stocks, 2024: India ranks 8 of 9 (1 = highest value). Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "External Debt Stocks, 2025: India ranks 8 of 9 (1 = highest value). Source: World Bank API DT.DOD.DECT.GN.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
-        "title": "External Debt Stocks: Peer Ranking (2024)",
-        "subtitle": "Countries ranked highest to lowest, 2024",
+        "title": "External Debt Stocks: Peer Ranking (2025)",
+        "subtitle": "Countries ranked highest to lowest, 2025",
         "frequency": "Annual",
         "color": "#3fb950",
         "suffix": "% of GNI",
@@ -69724,7 +69731,7 @@
         "subgroup": "External Debt & Reserves",
         "explain": {
           "what": "Total external debt owed to non-residents as a share of gross national income. Fifteen countries are ranked on the latest year with broad coverage.",
-          "read": "Bars run from highest to lowest in 2024; India ranks 8 of 9 (1 = highest value). Lower means the country's foreign obligations are small relative to its income.",
+          "read": "Bars run from highest to lowest in 2025; India ranks 8 of 9 (1 = highest value). Lower means the country's foreign obligations are small relative to its income.",
           "why": "A modest ratio protects against currency and rollover crises."
         }
       }
@@ -69775,7 +69782,8 @@
         "2021",
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
       "values": [
         20.72,
@@ -69809,27 +69817,28 @@
         227.11,
         256.31,
         290.43,
-        334.4,
-        392.58,
-        427.25,
-        457.51,
-        478.83,
-        455.54,
-        511.58,
-        521.18,
-        561.02,
-        564.98,
-        611.99,
-        615.51,
-        647.56,
-        716.46
+        334.49,
+        392.67,
+        427.34,
+        457.59,
+        478.91,
+        455.62,
+        511.66,
+        521.29,
+        561.17,
+        565.17,
+        612.18,
+        615.6,
+        647.85,
+        717.36,
+        763.52
       ],
       "source": "World Bank API DT.DOD.DECT.CD",
       "unit": "USD bn",
-      "note": "External Debt Stock: India's annual series, 1980 to 2024; the latest value is 716.46 USD bn. Source: World Bank API DT.DOD.DECT.CD (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "External Debt Stock: India's annual series, 1980 to 2025; the latest value is 763.52 USD bn. Source: World Bank API DT.DOD.DECT.CD (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
         "title": "External Debt Stock",
-        "subtitle": "India, 1980-2024",
+        "subtitle": "India, 1980-2025",
         "frequency": "Annual",
         "color": "#3fb950",
         "suffix": " USD bn",
@@ -69837,7 +69846,7 @@
         "subgroup": "External Debt & Reserves",
         "explain": {
           "what": "Total outstanding external debt (public, publicly guaranteed and private) in US dollars. This chart follows India's annual series.",
-          "read": "The line ends at 716.46 USD bn in 2024. The line shows how fast India's dollar obligations have grown.",
+          "read": "The line ends at 763.52 USD bn in 2025. The line shows how fast India's dollar obligations have grown.",
           "why": "The absolute stock matters because servicing it drains foreign-exchange reserves."
         }
       }
@@ -69888,7 +69897,8 @@
         "2021",
         "2022",
         "2023",
-        "2024"
+        "2024",
+        "2025"
       ],
       "values": [
         11.34,
@@ -69935,14 +69945,15 @@
         7.81,
         8.27,
         10.16,
-        10.49
+        10.5,
+        9.77
       ],
       "source": "World Bank API DT.TDS.DECT.EX.ZS",
       "unit": "% of exports",
-      "note": "Debt Service: India's annual series, 1980 to 2024; the latest value is 10.49% of exports. Source: World Bank API DT.TDS.DECT.EX.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "Debt Service: India's annual series, 1980 to 2025; the latest value is 9.77% of exports. Source: World Bank API DT.TDS.DECT.EX.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
         "title": "Debt Service",
-        "subtitle": "India, 1980-2024",
+        "subtitle": "India, 1980-2025",
         "frequency": "Annual",
         "color": "#3fb950",
         "suffix": "% of exports",
@@ -69950,7 +69961,7 @@
         "subgroup": "External Debt & Reserves",
         "explain": {
           "what": "Principal plus interest paid on external debt as a share of exports of goods, services and income. This chart follows India's annual series.",
-          "read": "The line ends at 10.49% of exports in 2024. A rising line means a bigger slice of export earnings is spent on debt.",
+          "read": "The line ends at 9.77% of exports in 2025. A rising line means a bigger slice of export earnings is spent on debt.",
           "why": "Debt service relative to export earnings is a classic stress gauge for external solvency."
         }
       }
@@ -69968,12 +69979,12 @@
         28.54,
         15.45,
         10.56,
-        10.36
+        10.26
       ],
       "chartType": "bar",
       "source": "World Bank API DT.TDS.DECT.EX.ZS",
       "unit": "% of exports",
-      "note": "Debt Service: decade averages for India; the 2020s average is -13.22% of exports below the 1980s. Source: World Bank API DT.TDS.DECT.EX.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2024.",
+      "note": "Debt Service: decade averages for India; the 2020s average is -13.32% of exports below the 1980s. Source: World Bank API DT.TDS.DECT.EX.ZS (World Bank International Debt Statistics / IMF); latest year with data: 2025.",
       "meta": {
         "title": "Debt Service: Decade Averages",
         "subtitle": "India, average per decade",
@@ -69984,7 +69995,7 @@
         "subgroup": "External Debt & Reserves",
         "explain": {
           "what": "Principal plus interest paid on external debt as a share of exports of goods, services and income. Annual values are averaged within each decade to smooth year-to-year noise.",
-          "read": "Compare bars left to right: the 2020s average is 10.36% of exports against 23.58% of exports in the 1980s. A rising line means a bigger slice of export earnings is spent on debt.",
+          "read": "Compare bars left to right: the 2020s average is 10.26% of exports against 23.58% of exports in the 1980s. A rising line means a bigger slice of export earnings is spent on debt.",
           "why": "Debt service relative to export earnings is a classic stress gauge for external solvency."
         }
       }
@@ -121848,7 +121859,7 @@
         2231191105.79,
         1908577489.68,
         1724212300.11,
-        1618348829.79
+        1605893669.78
       ],
       "chartType": "bar",
       "scope": "category",
@@ -121881,7 +121892,7 @@
         94.01671651938446,
         -14.459255205563027,
         -9.659822069939194,
-        -6.139816443325808
+        -6.862184565233154
       ],
       "chartType": "bar",
       "scope": "category",
@@ -121916,7 +121927,7 @@
         2128606214.15,
         1892409507.4,
         1748776542.07,
-        1484668738.89
+        1475030754.77
       ],
       "chartType": "bar",
       "scope": "category",
@@ -121949,7 +121960,7 @@
         93.53812452634016,
         -11.096308240569453,
         -7.589951581216637,
-        -15.102432862427317
+        -15.653560115574926
       ],
       "chartType": "bar",
       "scope": "category",
@@ -121984,7 +121995,7 @@
         411070470.17,
         351621949.35,
         345944955.96,
-        478609232.04
+        475792056.15
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122017,7 +122028,7 @@
         68.0475974160828,
         -14.461880658908633,
         -1.6145162156385284,
-        38.348377045086735
+        37.53403480899824
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122052,7 +122063,7 @@
         42378991.41,
         186319299.15,
         306327394.78000003,
-        285704687.0
+        285262626.81
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122085,7 +122096,7 @@
         6.169791858218265,
         339.6501496400289,
         64.40991146783198,
-        -6.732244040664714
+        -6.876553755542647
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122120,7 +122131,7 @@
         2200558746.96,
         2228957388.96,
         2397807939.48,
-        2578358826.06
+        2578362510.06
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122153,7 +122164,7 @@
         11.455190337474018,
         1.2905196027705124,
         7.5753153181085775,
-        7.52983104306324
+        7.529984683391944
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122188,7 +122199,7 @@
         2050402223.99,
         2199331713.83,
         2269973431.55,
-        2365276795.19
+        2365277054.59
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122221,7 +122232,7 @@
         5.238904069147843,
         7.263428028779106,
         3.211962855615913,
-        4.1984352026060545
+        4.198446630052577
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122256,7 +122267,7 @@
         509710666.66,
         471118036.52,
         576360151.87,
-        771564489.4399999
+        771564614.04
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122289,7 +122300,7 @@
         58.68654186178988,
         -7.571477833274987,
         22.33879987431393,
-        33.86846521860674
+        33.86848683703396
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122618,8 +122629,8 @@
         "SC",
         "AK",
         "IA",
-        "MN",
-        "NH"
+        "NH",
+        "KY"
       ],
       "values": [
         211519439.05,
@@ -122635,8 +122646,8 @@
         52843206.02,
         49809079.14,
         43566600.42,
-        42991666.67,
-        35708391.84
+        35708391.84,
+        34728267.24
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122897,9 +122908,9 @@
         "LA",
         "AK",
         "IA",
-        "MN",
         "KY",
-        "AZ"
+        "AZ",
+        "NH"
       ],
       "values": [
         201444652.76,
@@ -122914,9 +122925,9 @@
         52262477.13,
         44012938.54,
         40588088.47,
-        40295340.75,
         36721133.66,
-        32825403.86
+        32825403.86,
+        31812351.79
       ],
       "chartType": "bar",
       "scope": "category",
@@ -123749,11 +123760,11 @@
         92705483.01,
         88918794.96,
         82960719.72,
-        79986558.47,
+        79986642.47,
         79852476.23,
         69608325.88,
-        68608529.1,
-        65368220.25,
+        68611829.1,
+        65368520.25,
         64460337.74,
         60669738.76,
         60470215.09
@@ -124030,13 +124041,13 @@
         84418112.21,
         81157510.07,
         79798649.08,
-        71641402.25,
+        71641486.25,
         68976226.1,
         65598945.54,
         61671241.36,
         60972425.58,
         58973624.15,
-        56684717.96
+        56684893.36
       ],
       "chartType": "bar",
       "scope": "category",
