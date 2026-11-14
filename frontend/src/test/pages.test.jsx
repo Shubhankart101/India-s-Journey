@@ -111,7 +111,7 @@ describe('Layout and Home', () => {
     const primary = screen.getByRole('navigation', { name: 'Primary' });
     const mobile = screen.getByRole('navigation', { name: 'Mobile' });
     for (const nav of [primary, mobile]) {
-      expect(within(nav).getAllByRole('link')).toHaveLength(6);
+      expect(within(nav).getAllByRole('link')).toHaveLength(7);
     }
     expect(within(primary).getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
     expect(screen.queryByRole('link', { name: 'Sign in' })).not.toBeInTheDocument();

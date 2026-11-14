@@ -73,7 +73,7 @@ describe('Account features', () => {
   });
 });
 
-describe('About', () => {
+describe('Articles', () => {
   it('filters articles by publisher and paginates', async () => {
     const { calls } = mockApi({
       '/api/stats/': { indicators: 691, subgroups: 58, last_refresh: '2026-05-01T00:00:00Z' },
@@ -85,7 +85,7 @@ describe('About', () => {
         });
       },
     });
-    renderApp('/about');
+    renderApp('/articles');
     expect(await screen.findByText('all article page 1')).toBeInTheDocument();
     await userEvent.click(screen.getByRole('button', { name: 'Load more' }));
     expect(await screen.findByText('all article page 2')).toBeInTheDocument();

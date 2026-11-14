@@ -74,17 +74,17 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section about-readme" id="project-readme" onClick={navigateReadmeAnchor}>
-        <h2>Project README</h2>
-        <div dangerouslySetInnerHTML={{ __html: README_HTML }} />
-      </section>
-
       <section className="section" id="pew-research">
         <span className="eyebrow">Pew Research indices</span>
         <h2>Browse the Pew collections</h2>
         <p className="muted">The Pew indicators are grouped under People, Health &amp; Society. Open either subgroup to see its indices and survey snapshots.</p>
         <p><Link to="/explore/people-health-society/pew-research-public-opinion-on-india">Public opinion on India</Link></p>
         <p><Link to="/explore/people-health-society/pew-research-reports-survey-snapshots">Reports and survey snapshots</Link></p>
+      </section>
+
+      <section className="section about-readme" id="project-readme" onClick={navigateReadmeAnchor}>
+        <h2>Project README</h2>
+        <div dangerouslySetInnerHTML={{ __html: README_HTML }} />
       </section>
 
     </>

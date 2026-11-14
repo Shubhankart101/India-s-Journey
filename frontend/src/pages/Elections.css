@@ -9,7 +9,7 @@
 .elections-legend-party { background: var(--accent, #ff9933); }
 .elections-legend-empty { background: var(--map-empty, #89909a); }
 .elections-status { padding: 24px 12px; color: var(--muted); text-align: center; }
-.elections-chart-grid { margin-top: 0; }
+.elections-chart-grid { grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); margin-top: 0; }
 .state-election-article .subgroup-article-section-body { overflow-wrap: anywhere; }
 .state-election-article .sv { margin-top: 6px; }
 @media (max-width: 600px) {

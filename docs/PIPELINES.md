@@ -36,7 +36,23 @@
 | `us-campaign-finance.json` | Federal Election Commission | `collect_us_campaign_finance.py` | Daily | `python scripts/collect_us_campaign_finance.py` |
 | `voter-roll.json` | ECI, Census and World Bank sources | `build_voter_roll.py` | On ECI revision | `python scripts/build_voter_roll.py` |
 
-The `data/raw/`, `data/raw_fiscal/`, `data/epic-sources/`, `data/faith-sources/` and `data/journey-sources/` directories are gitignored caches and are not included in the repository. Network-mode updates fetch missing raw election CSVs, Union Budget PDFs, RBI HTML tables and faith verses; journey source pages are fetched lazily into the ignored cache. `--offline` never fetches; it runs cache-backed builders only when their required inputs are present, otherwise it logs a skip and preserves published data. The curated `data/epic-sources/{mahabharata,ramayana}.json` inputs have no canonical downloadable mirror; those atlas steps are skipped if the local editorial cache is absent. `scripture-verses.json` and `source_publishers.json` are intentional hand-maintained inputs, not generated snapshots.
+The `data/raw/`, `data/raw_fiscal/`, `data/epic-sources/`, `data/faith-sources/` and `data/journey-sources/` directories are gitignored caches and are not included in the repository. The tracked `data/*.json` snapshots are sufficient to run the app and build the frontend; raw caches are only needed when regenerating source data. Cache contents come from publishers with differing reuse terms, so do not commit or redistribute downloaded copies unless their terms permit it.
+
+### Local cache setup and refresh
+
+From a fresh clone, run the app using the tracked catalog and generated datasets; a cache download is not required. To download missing inputs and refresh all registered sources, run:
+
+```powershell
+python scripts/update_all_data.py
+```
+
+To inspect the planned work first, add `--dry-run`. To refresh only selected data, pass dataset filenames or producer names after `--only`, for example:
+
+```powershell
+python scripts/update_all_data.py --only pew-india-reports.json pew-snapshots.json
+```
+
+For offline regeneration, first populate the required caches with a network-enabled run. Then use `--offline` (or `--skip-network`) to run only cache-backed producers. Missing required inputs are reported and that producer is skipped; existing published outputs are preserved. Raw election CSVs can also be fetched directly with `python scripts/fetch_election_caches.py`. The curated `data/epic-sources/{mahabharata,ramayana}.json` inputs have no canonical downloadable mirror and must be supplied locally from a permitted source; without them, the related atlas steps are skipped. `scripture-verses.json` and `source_publishers.json` are intentional hand-maintained inputs, not generated snapshots.
 
 The scheduled [Monthly Data Refresh](../.github/workflows/data-refresh.yml) workflow runs the orchestrator and proposes updates as a pull request; it can also be started manually in offline mode. The individual workflows below remain available for more frequent source-specific refreshes. The static site is built from the React frontend by `npm run build:static`; deployment workflows should not stage legacy `docs/data/` copies.
 
