@@ -512,6 +512,81 @@
   border-radius: 50%;
 }
 
+.meta-box.full-span {
+  grid-column: 1 / -1;
+}
+
+/* Official Excavation Sources Citation Cards */
+.official-sources-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: color-mix(in srgb, var(--surface) 60%, rgba(212, 167, 44, 0.06));
+  border: 1px solid color-mix(in srgb, var(--accent, #d4a72c) 30%, transparent);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.official-sources-panel h4 {
+  color: var(--accent, #d4a72c);
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sources-citation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.source-citation-card {
+  background: var(--surface, #161b22);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.citation-type {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent, #d4a72c) 15%, transparent);
+  color: var(--accent, #d4a72c);
+}
+
+.citation-title {
+  margin: 2px 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--ink, #f0f6fc);
+}
+
+.citation-title a {
+  color: var(--accent, #d4a72c);
+  text-decoration: underline;
+}
+
+.citation-authors, .citation-pub, .citation-doi {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--muted, #8b949e);
+}
+
+.citation-doi a {
+  color: #38bdf8;
+}
+
 /* Responsive adjustments */
 @media (max-width: 960px) {
   .indus-atlas-stage {

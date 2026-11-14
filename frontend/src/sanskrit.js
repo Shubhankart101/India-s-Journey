@@ -17,6 +17,7 @@ export const GROUP_SANSKRIT = {
   'culture-heritage-sport': 'संस्कृतिः परम्परा',
   'epics-faiths-journeys': 'इतिहासः धर्मयात्रा',
   'india-in-maps': 'भारतस्य मानचित्रम्',
+  'indus-valley-civilisation': 'सिन्धु-सरस्वती सभ्यता',
 };
 
 export const groupSanskrit = slug => GROUP_SANSKRIT[slug] || '';

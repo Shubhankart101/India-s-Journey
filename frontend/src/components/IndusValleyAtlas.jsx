@@ -6,25 +6,29 @@ const CATEGORY_COLORS = {
   metropolis: '#d4a72c',
   port: '#38bdf8',
   craft: '#fb923c',
-  outpost: '#4ade80',
-  foreign: '#f43f5e'
+  fortified_town: '#a855f7',
+  agricultural_rural: '#4ade80',
+  frontier_outpost: '#f59e0b',
+  foreign_trade: '#f43f5e'
 };
 
 const CATEGORY_LABELS = {
-  all: 'All Sites (23)',
-  metropolis: 'Metropolises (5)',
-  port: 'Coastal & Ports (4)',
-  craft: 'Craft & Mining (5)',
-  outpost: 'Inland Strongholds (5)',
-  foreign: 'Foreign Trade Hubs (4)'
+  all: 'All Excavated Sites (49)',
+  metropolis: 'Major Metropolises',
+  port: 'Ports & Tidal Harbors',
+  craft: 'Craft & Industrial Hubs',
+  fortified_town: 'Fortified Towns & Bastions',
+  agricultural_rural: 'Agricultural Settlements',
+  frontier_outpost: 'Frontier Border Outposts',
+  foreign_trade: 'Overseas Trade Enclaves (Mesopotamia / Gulf)'
 };
 
 // Projected bounding box for world-asia.json (covers Mesopotamia to Northwest India)
-const VIEWBOX = { x: 420, y: -435, w: 375, h: 255 };
+const VIEWBOX = { x: 410, y: -460, w: 410, h: 285 };
 
 export default function IndusValleyAtlas() {
   const [mapPaths, setMapPaths] = useState([]);
-  const [selectedSiteId, setSelectedSiteId] = useState('mohenjo-daro');
+  const [selectedSiteId, setSelectedSiteId] = useState('rakhigarhi');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -35,15 +39,13 @@ export default function IndusValleyAtlas() {
       .then(res => res.json())
       .then(data => {
         if (data && data.paths) {
-          // Focus on countries surrounding the Indus & trade sphere
+          // Focus on countries surrounding the Indus & international trade sphere
           const targetIsos = new Set(['IND', 'PAK', 'AFG', 'IRQ', 'IRN', 'OMN', 'KWT', 'ARE', 'SAU', 'QAT', 'BHR', 'TKM', 'UZB', 'TJK', 'SYR']);
           const relevant = data.paths.filter(p => targetIsos.has(p.i));
           setMapPaths(relevant);
         }
       })
-      .catch(() => {
-        // Fallback gracefully if map path fails to load
-      });
+      .catch(() => {});
   }, []);
 
   const sites = sitesData.sites || [];
@@ -58,8 +60,10 @@ export default function IndusValleyAtlas() {
         const matchName = site.name.toLowerCase().includes(q) || (site.name_hi && site.name_hi.includes(q));
         const matchArtifact = site.key_artifacts.some(a => a.toLowerCase().includes(q));
         const matchStruct = site.key_structures.some(s => s.toLowerCase().includes(q));
-        const matchCountry = site.country.toLowerCase().includes(q);
-        if (!matchName && !matchArtifact && !matchStruct && !matchCountry) return false;
+        const matchCountry = site.country.toLowerCase().includes(q) || (site.state_or_province && site.state_or_province.toLowerCase().includes(q));
+        const matchExcavator = site.excavators && site.excavators.toLowerCase().includes(q);
+        const matchSource = site.official_sources && site.official_sources.some(src => (src.title + src.authors + (src.publisher || '')).toLowerCase().includes(q));
+        if (!matchName && !matchArtifact && !matchStruct && !matchCountry && !matchExcavator && !matchSource) return false;
       }
       return true;
     });
@@ -71,29 +75,31 @@ export default function IndusValleyAtlas() {
 
   const countries = useMemo(() => {
     const set = new Set(sites.map(s => s.country));
-    return ['all', ...Array.from(set)];
+    return ['all', ...Array.from(set).sort()];
   }, [sites]);
 
   return (
     <div className="indus-atlas">
-      {/* Top Banner / Stats */}
+      {/* Top Banner & Stats */}
       <header className="indus-atlas-header">
         <div className="indus-atlas-title-group">
-          <span className="indus-atlas-tag">HARAPPAN GEOGRAPHY & ARCHEOLOGY</span>
-          <h2>The Indus Valley Civilisation Interactive Atlas</h2>
+          <span className="indus-atlas-tag">OFFICIAL ARCHEOLOGICAL & EXCAVATION SURVEY ATLAS</span>
+          <h2>The Indus Valley Civilisation Comprehensive Excavation Map</h2>
           <p className="indus-atlas-lead">
-            Explore 23 major excavated metropolises, dockyards, bead-making factories, and overseas trade colonies
-            across ancient Meluhha, Dilmun, Magan, and Mesopotamia (c. 3300 BCE – 1300 BCE).
+            Explore 49 comprehensively cataloged major and minor archeological excavations, rural farmsteads,
+            tidal dockyards, border bastions, and international trading enclaves across India, Pakistan, Afghanistan,
+            Iraq, Iran, Kuwait, Oman, Bahrain, and the UAE. Every single site includes verified official academic sources,
+            excavation memoirs, and research papers.
           </p>
         </div>
 
         <div className="indus-stats-grid">
           <div className="indus-stat-card">
-            <span className="indus-stat-num">23</span>
-            <span className="indus-stat-label">Mapped Centers</span>
+            <span className="indus-stat-num">{sites.length}</span>
+            <span className="indus-stat-label">Cataloged Sites</span>
           </div>
           <div className="indus-stat-card">
-            <span className="indus-stat-num">7</span>
+            <span className="indus-stat-num">9</span>
             <span className="indus-stat-label">Modern Nations</span>
           </div>
           <div className="indus-stat-card">
@@ -101,22 +107,22 @@ export default function IndusValleyAtlas() {
             <span className="indus-stat-label">km² Extent</span>
           </div>
           <div className="indus-stat-card">
-            <span className="indus-stat-num">4,000+</span>
-            <span className="indus-stat-label">Seals & Inscriptions</span>
+            <span className="indus-stat-num">100%</span>
+            <span className="indus-stat-label">Official Sources</span>
           </div>
         </div>
       </header>
 
-      {/* Filter Controls Bar */}
+      {/* Filter & Search Bar */}
       <div className="indus-controls">
         <div className="indus-search-wrap">
           <input
             type="search"
-            placeholder="Search site, artifact (e.g. dancing girl, lapis, seal)..."
+            placeholder="Search site, artifact, excavator, or research paper (e.g. Rakhigarhi, Lothal, Cell, Shinde, Bisht)..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             className="indus-search-input"
-            aria-label="Search Indus Valley sites or artifacts"
+            aria-label="Search Indus Valley excavations, artifacts, or sources"
           />
         </div>
 
@@ -140,7 +146,7 @@ export default function IndusValleyAtlas() {
             onChange={e => setCountryFilter(e.target.value)}
             className="indus-select"
           >
-            <option value="all">All Countries ({countries.length - 1})</option>
+            <option value="all">All Nations ({countries.length - 1})</option>
             {countries.filter(c => c !== 'all').map(c => (
               <option key={c} value={c}>{c}</option>
             ))}
@@ -152,7 +158,7 @@ export default function IndusValleyAtlas() {
             onClick={() => setShowRoutes(r => !r)}
             aria-pressed={showRoutes}
           >
-            <span className="route-indicator" /> Trade Routes {showRoutes ? 'On' : 'Off'}
+            <span className="route-indicator" /> Trade Corridors {showRoutes ? 'On' : 'Off'}
           </button>
         </div>
       </div>
@@ -166,23 +172,7 @@ export default function IndusValleyAtlas() {
             viewBox={`${VIEWBOX.x} ${VIEWBOX.y} ${VIEWBOX.w} ${VIEWBOX.h}`}
             preserveAspectRatio="xMidYMid meet"
           >
-            <defs>
-              <linearGradient id="maritime-grad" x1="1" y1="1" x2="0" y2="0">
-                <stop offset="0%" stopColor="#38bdf8" />
-                <stop offset="50%" stopColor="#818cf8" />
-                <stop offset="100%" stopColor="#f43f5e" />
-              </linearGradient>
-              <linearGradient id="lapis-grad" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stopColor="#d4a72c" />
-                <stop offset="100%" stopColor="#60a5fa" />
-              </linearGradient>
-              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="1.5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            {/* Background Base Map Countries */}
+            {/* Background Country Polygons */}
             <g className="indus-country-base">
               {mapPaths.map(p => (
                 <path
@@ -194,7 +184,7 @@ export default function IndusValleyAtlas() {
               ))}
             </g>
 
-            {/* Ancient Maritime & Overland Trade Routes */}
+            {/* Ancient Trade Routes */}
             {showRoutes && (
               <g className="indus-trade-routes" aria-label="Ancient Trade Corridors">
                 {tradeRoutes.map(route => {
@@ -219,7 +209,7 @@ export default function IndusValleyAtlas() {
               {filteredSites.map(site => {
                 const isSelected = site.id === selectedSiteId;
                 const pinColor = CATEGORY_COLORS[site.category] || '#d4a72c';
-                const r = isSelected ? 4.8 : site.category === 'metropolis' ? 3.8 : 2.8;
+                const r = isSelected ? 4.5 : site.category === 'metropolis' ? 3.6 : 2.4;
 
                 return (
                   <g
@@ -237,25 +227,24 @@ export default function IndusValleyAtlas() {
                       }
                     }}
                   >
-                    {/* Pulsing ring for selected site */}
                     {isSelected && (
-                      <circle r={r + 4} className="pin-pulse" stroke={pinColor} />
+                      <circle r={r + 3.8} className="pin-pulse" stroke={pinColor} />
                     )}
 
                     <circle
                       r={r}
                       fill={pinColor}
                       stroke="#0f172a"
-                      strokeWidth={isSelected ? 1.4 : 0.8}
+                      strokeWidth={isSelected ? 1.2 : 0.6}
                       className="pin-circle"
                     />
 
-                    {/* Site label on map */}
+                    {/* Site Label on Map */}
                     <text
-                      x={r + 2.5}
-                      y={1.2}
+                      x={r + 2.2}
+                      y={1.1}
                       className={`pin-text ${isSelected ? 'pin-text-active' : ''}`}
-                      fontSize={isSelected ? '4.2' : site.category === 'metropolis' ? '3.4' : '2.8'}
+                      fontSize={isSelected ? '3.8' : site.category === 'metropolis' ? '3.0' : '2.3'}
                     >
                       {site.name}
                     </text>
@@ -270,22 +259,26 @@ export default function IndusValleyAtlas() {
             <span className="legend-title">Site Classification:</span>
             <div className="legend-items">
               <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.metropolis }} /> Metropolis</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.port }} /> Port & Dockyard</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.craft }} /> Bead / Craft Hub</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.outpost }} /> Outpost / Frontier</span>
-              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.foreign }} /> Foreign Trade Hub (Mesopotamia/Gulf)</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.port }} /> Port & Dock</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.craft }} /> Craft / Bead Hub</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.fortified_town }} /> Fortified Town</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.agricultural_rural }} /> Rural Farmstead</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.frontier_outpost }} /> Frontier Outpost</span>
+              <span className="legend-chip"><i style={{ background: CATEGORY_COLORS.foreign_trade }} /> Overseas Trade Hub</span>
             </div>
           </div>
         </div>
 
-        {/* Site Detail Inspector Panel */}
+        {/* Site Inspector Drawer */}
         {selectedSite && (
           <aside className="indus-site-inspector" aria-label={`Details of ${selectedSite.name}`}>
             <div className="inspector-badge-row">
               <span className="inspector-badge" style={{ borderColor: CATEGORY_COLORS[selectedSite.category] }}>
                 {selectedSite.badge}
               </span>
-              <span className="inspector-country">{selectedSite.country} • {selectedSite.region}</span>
+              <span className="inspector-country">
+                {selectedSite.country} • {selectedSite.state_or_province}
+              </span>
             </div>
 
             <div className="inspector-header">
@@ -298,25 +291,21 @@ export default function IndusValleyAtlas() {
             <div className="inspector-meta-grid">
               <div className="meta-box">
                 <span className="meta-k">Estimated Area</span>
-                <span className="meta-v">{selectedSite.area_hectares ? `${selectedSite.area_hectares} ha` : 'Trade Enclave'}</span>
+                <span className="meta-v">{selectedSite.area_hectares ? `${selectedSite.area_hectares} ha` : 'Trade Station'}</span>
               </div>
               <div className="meta-box">
                 <span className="meta-k">Chronology</span>
                 <span className="meta-v">{selectedSite.period}</span>
               </div>
-              <div className="meta-box">
-                <span className="meta-k">Discovery & Excavation</span>
-                <span className="meta-v">{selectedSite.discovered_by}</span>
-              </div>
-              <div className="meta-box">
-                <span className="meta-k">Inscriptions Found</span>
-                <span className="meta-v">{selectedSite.sign_count ? `${selectedSite.sign_count}+ seals` : 'Epigraphic Trade Links'}</span>
+              <div className="meta-box full-span">
+                <span className="meta-k">Excavators & Archaeological Missions</span>
+                <span className="meta-v">{selectedSite.excavators}</span>
               </div>
             </div>
 
-            {/* Key Structures */}
+            {/* Monumental Structures */}
             <div className="inspector-section">
-              <h4>Monumental Structures</h4>
+              <h4>Excavated Architectural Structures</h4>
               <ul className="inspector-list">
                 {selectedSite.key_structures.map((s, idx) => (
                   <li key={idx}><strong>{s}</strong></li>
@@ -341,13 +330,45 @@ export default function IndusValleyAtlas() {
                 <p>{selectedSite.foreign_connection}</p>
               </div>
             )}
+
+            {/* OFFICIAL SOURCES & CITATIONS (Academic / ASI / Peer-reviewed) */}
+            <div className="inspector-section official-sources-panel">
+              <h4>Official Excavation Sources & Academic Research Papers</h4>
+              <div className="sources-citation-list">
+                {selectedSite.official_sources && selectedSite.official_sources.map((src, idx) => (
+                  <div key={idx} className="source-citation-card">
+                    <span className="citation-type">{src.type}</span>
+                    <h5 className="citation-title">
+                      {src.url ? (
+                        <a href={src.url} target="_blank" rel="noopener noreferrer">
+                          "{src.title}" ↗
+                        </a>
+                      ) : (
+                        `"${src.title}"`
+                      )}
+                    </h5>
+                    <p className="citation-authors">
+                      <strong>Author(s):</strong> {src.authors} ({src.year})
+                    </p>
+                    <p className="citation-pub">
+                      <strong>Publication:</strong> {src.publisher}{src.volume ? `, ${src.volume}` : ''}{src.pages ? `, pp. ${src.pages}` : ''}
+                    </p>
+                    {src.doi && (
+                      <p className="citation-doi">
+                        <strong>DOI:</strong> <a href={`https://doi.org/${src.doi}`} target="_blank" rel="noopener noreferrer">{src.doi}</a>
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           </aside>
         )}
       </div>
 
       {/* Sites Quick Grid Selector */}
       <footer className="indus-site-selector-strip">
-        <span className="strip-heading">Browse All 23 Excavated Centers ({filteredSites.length} shown):</span>
+        <span className="strip-heading">Browse All Excavated Sites ({filteredSites.length} of {sites.length} shown):</span>
         <div className="site-pills-row">
           {filteredSites.map(s => (
             <button

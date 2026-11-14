@@ -11,11 +11,23 @@ import ThemeSelect, { ContactLinks, X_URL } from './ThemeSelect.jsx';
 import VintageChrome from './VintageChrome.jsx';
 import { MOTTO } from '../sanskrit.js';
 
-const NAV_LABELS = { Home: 'गृहम्', Explore: 'अन्वेषणम्', Sources: 'स्रोतांसि', Compare: 'तुलना', About: 'परिचयः', Articles: 'लेखाः', API: 'अन्तरापृष्ठम्' };
+const NAV_LABELS = {
+  Home: 'गृहम्',
+  Explore: 'अन्वेषणम्',
+  'Indus Valley': 'सिन्धु सभ्यता',
+  'Script Decryption': 'लिपि वाचनम्',
+  Sources: 'स्रोतांसि',
+  Compare: 'तुलना',
+  About: 'परिचयः',
+  Articles: 'लेखाः',
+  API: 'अन्तरापृष्ठम्',
+};
 
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
   { to: '/explore', label: 'Explore', icon: '◎' },
+  { to: '/explore/indus-valley-civilisation', label: 'Indus Valley', icon: '🏛️' },
+  { to: '/ivc-translator', label: 'Script Decryption', icon: '⚚' },
   { to: '/sources', label: 'Sources', icon: '❡' },
   { to: '/compare', label: 'Compare', icon: '⇄' },
   { to: '/about', label: 'About', icon: 'ℹ' },

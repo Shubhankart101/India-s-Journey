@@ -1,800 +1,2162 @@
 {
   "meta": {
-    "title": "Indus Valley Civilisation Atlas",
-    "subtitle": "Comprehensive Atlas of Harappan Metropolises, Material Discoveries & Global Bronze Age Trade",
-    "period_span": "c. 3300 BCE – 1300 BCE (Mature Urban Phase: 2600–1900 BCE)",
-    "geographic_extent": "Spanning over 1.5 million sq. km across India, Pakistan, Afghanistan, and maritime trading ports in Mesopotamia and the Persian Gulf.",
-    "citations": [
-      "Archaeological Survey of India (ASI) reports and excavation monographs.",
-      "Kenoyer, J.M. (1998). Ancient Cities of the Indus Valley Civilization.",
-      "Possehl, G.L. (2002). The Indus Civilization: A Contemporary Perspective.",
-      "Ratnagar, S. (2001). Understanding Harappa: Civilization in the Greater Indus Valley.",
-      "Parpola, A. (1994). Deciphering the Indus Script.",
-      "Mahadevan, I. (1977). The Indus Script: Texts, Concordance and Tables.",
-      "Rao, S.R. (1973; 1985). Lothal and the Indus Civilization; The Decipherment of the Indus Script.",
-      "Bisht, R.S. (2015). Excavations at Dholavira (1989-2005), Archaeological Survey of India."
-    ]
+    "title": "Comprehensive Atlas of the Indus Valley Civilisation (Harappan Realm)",
+    "subtitle": "Archaeological sites, excavation history, material culture, and international trade networks (c. 3300 – 1300 BCE)",
+    "total_sites": 49,
+    "countries_covered": [
+      "Afghanistan",
+      "Oman",
+      "Iraq",
+      "Bahrain",
+      "Iran",
+      "Pakistan",
+      "India",
+      "Kuwait",
+      "United Arab Emirates"
+    ],
+    "sources_standard": "Official Archaeological Survey of India (ASI) Memoirs, University Research Monograms, and Peer-Reviewed Journals only"
   },
-  "trade_routes": [
-    {
-      "id": "maritime-gulf-route",
-      "name": "Southern Maritime Route to Dilmun & Mesopotamia",
-      "type": "maritime",
-      "color": "#2aa198",
-      "stops": [
-        "lothal",
-        "sutkagan-dor",
-        "ras-al-jinz-oman",
-        "failaka-dilmun",
-        "ur-mesopotamia"
-      ],
-      "description": "The primary ocean-going merchant trade route connecting Lothal and Gujarat ports with Magan (Oman), Dilmun (Bahrain/Failaka), and the Sumerian city of Ur at the head of the Persian Gulf."
-    },
-    {
-      "id": "northern-lapis-route",
-      "name": "Northern Inland & Lapis Lazuli Route",
-      "type": "overland",
-      "color": "#268bd2",
-      "stops": [
-        "rakhigarhi",
-        "harappa",
-        "manda",
-        "mundigak",
-        "shortugai"
-      ],
-      "description": "Overland caravan route passing through Punjab and the Khyber and Hindu Kush passes to the Harappan lapis lazuli outpost of Shortugai on the Amu Darya (Oxus) River."
-    },
-    {
-      "id": "saraswati-axis",
-      "name": "Ghaggar-Hakra River Axis",
-      "type": "river",
-      "color": "#d4a72c",
-      "stops": [
-        "alamgirpur",
-        "rakhigarhi",
-        "banawali",
-        "bhirrana",
-        "kalibangan",
-        "ganweriwala",
-        "harappa"
-      ],
-      "description": "The dense inland urban spine tracing the ancient Ghaggar-Hakra / Saraswati river basin, holding over 60% of all known Harappan settlements."
-    }
-  ],
   "sites": [
     {
-      "id": "mohenjo-daro",
-      "name": "Mohenjo-daro (Mound of the Dead)",
-      "name_hi": "मोहनजोदड़ो",
-      "country": "Pakistan",
-      "region": "Larkana District, Sindh",
-      "lat": 27.32,
-      "lon": 68.14,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Mature Harappan (2600–1900 BCE)",
-      "area_hectares": 300,
-      "discovered_by": "R.D. Banerji (1922); Sir John Marshall",
-      "badge": "UNESCO World Heritage · Largest Urban Center",
+      "id": "rakhigarhi",
+      "name": "Rakhigarhi",
+      "name_hi": "राखीगढी",
+      "country": "India",
+      "state_or_province": "Haryana",
+      "lat": 29.2833,
+      "lon": 76.1167,
+      "category": "metropolis",
+      "period": "Early to Mature Harappan (c. 6500 – 1900 BCE)",
+      "area_hectares": 350.0,
+      "excavators": "Amarendra Nath (ASI 1997-2000); Prof. Vasant Shinde (Deccan College & Harappan Project 2011-2016); Sanjay Manjul (ASI 2021-2023)",
+      "badge": "Largest Indus Metropolis (350 ha)",
       "key_structures": [
-        "The Great Bath (Mahasnanagar) with bitumen waterproofing",
-        "Great Granary / Warehouse with air ducts",
-        "College of Priests / Assembly Hall (pillared hall with 20 brick pillars)",
-        "Citadel Mound and Lower Town on grid plan",
-        "Underground corbelled brick sewer and drainage network"
+        "Mounds 1–9 sprawling across 350+ hectares",
+        "Mound 7 cemetery with extensive mud-brick lined burial pits",
+        "Mound 4 multi-room residential complexes with fire altars",
+        "Sophisticated network of covered brick drains, wastewater soakage jars and street cesspools",
+        "Mud-brick fortification walls and podium platforms"
       ],
       "key_artifacts": [
-        "Bronze 'Dancing Girl' (lost-wax casting)",
-        "Steatite bust of the 'Priest-King' with trefoil patterned shawl",
-        "Pashupati Seal (M-304) depicting seated horned deity surrounded by animals",
-        "Terracotta Mother Goddess figurines",
-        "Seven-sign unicorn seals with standard cubical chert weights"
+        "Ancient DNA successfully extracted from hunter-gatherer / Iranian agriculturalist related genome",
+        "Inscribed square steatite seals and cylindrical clay sealings",
+        "Gold foil jewellery, headbands and micro-bead necklaces",
+        "Lapidary workshops with thousands of semi-precious carnelian, jasper and agate beads",
+        "Terracotta wheels, toy carts and anthropomorphic figurines"
       ],
-      "foreign_connection": "Trade hub connecting Sindh with the Persian Gulf; seals from Mohenjo-daro carry symbols replicated on Gulf seals in Failaka and Ras al-Jinz.",
-      "sign_count": 1820,
-      "description": "The crowning urban jewel of the Indus civilization, housing an estimated 40,000 residents with advanced sanitation, multistory brick courtyards, and zero monumental royal palaces—suggesting a civic republic or merchant governance.",
+      "foreign_connection": "Carnelian beads with chemical trace signatures identical to those excavated in Mesopotamian Royal Tombs of Ur. Shared standard cubical chert weights matching the Persian Gulf exchange standard.",
+      "official_sources": [
+        {
+          "title": "Excavations at Rakhigarhi (1997-1998 to 1999-2000)",
+          "authors": "Amarendra Nath",
+          "publisher": "Memoirs of the Archaeological Survey of India (ASI)",
+          "year": 2014,
+          "url": "https://asi.nic.in/wp-content/uploads/2021/08/Excavation-at-Rakhigarhi.pdf",
+          "type": "ASI Excavation Memoir"
+        },
+        {
+          "title": "An Ancient Harappan Genome Lacks Ancestry from Steppe Pastoralists or Iranian Farmers",
+          "authors": "Vasant Shinde, V. M. Narasimhan, N. Rai, D. Reich et al.",
+          "publisher": "Cell (Elsevier)",
+          "year": 2019,
+          "volume": "179(3): 729-735.e10",
+          "doi": "10.1016/j.cell.2019.08.048",
+          "type": "Peer-reviewed Research Paper"
+        }
+      ],
+      "description": "Located along the ancient paleochannel of the Drishadvati river in Hisar district, Rakhigarhi has emerged as the largest documented urban agglomeration of the Harappan civilization, containing evidence of continuity from pre-Harappan hakra ware culture (c. 6500 BCE) into mature urban climax.",
+      "x": 761.2,
+      "y": -306.5,
+      "is_foreign": false
+    },
+    {
+      "id": "mohenjo-daro",
+      "name": "Mohenjo-daro",
+      "name_hi": "मोहनजोदड़ो",
+      "country": "Pakistan",
+      "state_or_province": "Sindh",
+      "lat": 27.3292,
+      "lon": 68.1389,
+      "category": "metropolis",
+      "period": "Mature Harappan (c. 2600 – 1900 BCE)",
+      "area_hectares": 300.0,
+      "excavators": "R.D. Banerji (1922); Sir John Marshall (1922-1931); E.J.H. Mackay (1931-1938); Sir Mortimer Wheeler (1950); George F. Dales (1964-1965)",
+      "badge": "UNESCO World Heritage Metropolis",
+      "key_structures": [
+        "The Great Bath with bitumen-waterproofed baked brick masonry",
+        "Great Granary / Public Storehouse with air-duct sleeper walls",
+        "College of Priests monumental colonnaded residence",
+        "Citadel Mound (Stupa area) and Lower City cardinal grid street blocks",
+        "Over 700 brick-lined public and private cylinder freshwater wells"
+      ],
+      "key_artifacts": [
+        "Bronze 'Dancing Girl' statuette (lost-wax casting, National Museum New Delhi)",
+        "Steatite 'Priest-King' bust with trefoil-inlaid shawl (National Museum Karachi)",
+        "Pashupati Seal (M-304) depicting seated horned divinity surrounded by beasts",
+        "Unicorn steatite seals with standard Harappan script characters",
+        "Standardized cubical chert weights following binary 1:2:4:8:16 ratio"
+      ],
+      "foreign_connection": "Lapis lazuli ornaments from Badakhshan, green chlorite containers matching southeastern Iranian Jiroft / Tepe Yahya styles, and trade links cited in Sumerian records of King Gudea of Lagash.",
+      "official_sources": [
+        {
+          "title": "Mohenjo-daro and the Indus Civilization (Vols. I–III)",
+          "authors": "Sir John Marshall (ed.)",
+          "publisher": "Arthur Probsthain / Archaeological Survey of India",
+          "year": 1931,
+          "type": "Official Excavation Monograph"
+        },
+        {
+          "title": "Further Excavations at Mohenjo-daro (1927-1931)",
+          "authors": "E.J.H. Mackay",
+          "publisher": "Government of India Press, New Delhi",
+          "year": 1938,
+          "type": "ASI Excavation Memoir"
+        }
+      ],
+      "description": "The preeminent urban center of the lower Indus basin, Mohenjo-daro represents the apex of Bronze Age civic engineering, characterized by orthogonal street grids, covered brick sanitation sewers, and absence of militaristic monuments.",
       "x": 681.4,
-      "y": -284.2
+      "y": -284.3,
+      "is_foreign": false
     },
     {
       "id": "harappa",
       "name": "Harappa",
       "name_hi": "हड़प्पा",
       "country": "Pakistan",
-      "region": "Sahiwal District, West Punjab",
-      "lat": 30.63,
-      "lon": 72.86,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Early to Mature Harappan (3300–1900 BCE)",
-      "area_hectares": 150,
-      "discovered_by": "Dayaram Sahni (1921); M.S. Vats; Sir Mortimer Wheeler",
-      "badge": "First Discovered Type-Site",
+      "state_or_province": "Punjab",
+      "lat": 30.6303,
+      "lon": 72.8683,
+      "category": "metropolis",
+      "period": "Ravi to Late Harappan (c. 3700 – 1300 BCE)",
+      "area_hectares": 150.0,
+      "excavators": "Daya Ram Sahni (1921); Madho Sarup Vats (1926-1934); Sir Mortimer Wheeler (1946); J. Mark Kenoyer & Richard H. Meadow (HARP, 1986–2010)",
+      "badge": "Eponymous Type Site",
       "key_structures": [
-        "Great Granary (two rows of six granaries with ventilation passages)",
-        "Circular brick threshing floors for grain processing",
-        "Workmen's quarters (barracks for artisans)",
-        "Fortified Citadel (Mound AB) with perimeter defense ramparts",
-        "Cemetery R-37 and Cemetery H"
+        "Mound AB (Citadel) with colossal mud-brick defensive revetment",
+        "Granaries on Mound F: twelve brick compartments arranged in two rows",
+        "Circular circular brick threshing platforms with wheat and barley grain residue",
+        "Workmen's quarter tenements and copper smelting furnaces",
+        "Cemetery R-37 (Mature) and Cemetery H (Late Harappan post-cremation urns)"
       ],
       "key_artifacts": [
-        "Red sandstone torso of a youth / dancer with socketed arms",
-        "Grey chert dancing Nataraja-like torso",
-        "Vanity case / cosmetic set with copper tweezers and mirrors",
-        "Over 1,200 inscribed steatite seals and sealing impressions",
-        "Graffiti on potsherds featuring early proto-Indus script"
+        "Red jasper polished male torso with socketed arm sockets (National Museum New Delhi)",
+        "Dark grey stone dancing male figure",
+        "Over 1,400 inscribed steatite, faience and terracotta seals and tokens",
+        "Early Ravi phase pottery sherds showing prototype potter's marks and script origin",
+        "Cast copper chisels, saws and spearheads"
       ],
-      "foreign_connection": "Northern manufacturing and processing capital along the Ravi-Indus river corridor, funneling timber, wheat, and copper into international caravan routes.",
-      "sign_count": 1420,
-      "description": "The first discovered site giving the civilization its name. Excavations revealed extensive grain storage, craft quarters, and stratified cultural layers spanning from pre-urban Kot Diji phase into mature urbanism.",
-      "x": 728.6,
-      "y": -322.0
+      "foreign_connection": "Direct caravan trade route connection linking northern Punjab to Shortugai in Afghanistan for lapis lazuli, and southwards to the Arabian Sea.",
+      "official_sources": [
+        {
+          "title": "Excavations at Harappa: Being an Account of Archaeological Excavations Carried Out between 1920-21 and 1933-34 (Vols. I–II)",
+          "authors": "Madho Sarup Vats",
+          "publisher": "Government of India Press, Calcutta / ASI",
+          "year": 1940,
+          "type": "Official Excavation Monograph"
+        },
+        {
+          "title": "Harappa 1946: The Defences and Cemetery R 37",
+          "authors": "Sir Mortimer Wheeler",
+          "publisher": "Ancient India: Bulletin of the Archaeological Survey of India",
+          "volume": "3: 58-130",
+          "year": 1947,
+          "type": "Official ASI Bulletin Paper"
+        },
+        {
+          "title": "Ancient Cities of the Indus Valley Civilization",
+          "authors": "J. Mark Kenoyer",
+          "publisher": "Oxford University Press & American Institute of Pakistan Studies",
+          "year": 1998,
+          "type": "University Monograph"
+        }
+      ],
+      "description": "Situated beside a former course of the Ravi River in Sahiwal district, Harappa gives its name to the entire civilization. Modern stratigraphy by the Harappa Archaeological Research Project (HARP) established the benchmark five-period chronological sequence.",
+      "x": 728.7,
+      "y": -322.0,
+      "is_foreign": false
     },
     {
       "id": "dholavira",
-      "name": "Dholavira (Kotada Timba)",
-      "name_hi": "धौलावीरा",
+      "name": "Dholavira",
+      "name_hi": "धोलावीरा (कोटड़ा)",
       "country": "India",
-      "region": "Khadir Bet, Kutch District, Gujarat",
-      "lat": 23.89,
-      "lon": 70.21,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Mature to Late Harappan (2600–1600 BCE)",
-      "area_hectares": 100,
-      "discovered_by": "J.P. Joshi (1967-68); R.S. Bisht (1990s)",
-      "badge": "UNESCO World Heritage · Engineering Marvel",
+      "state_or_province": "Gujarat",
+      "lat": 23.8864,
+      "lon": 70.2175,
+      "category": "metropolis",
+      "period": "Stage I to Stage VII (c. 3000 – 1500 BCE)",
+      "area_hectares": 100.0,
+      "excavators": "J.P. Joshi (Discovery, 1967-68); R.S. Bisht (ASI Excavations 1989–2005)",
+      "badge": "UNESCO World Heritage Site",
       "key_structures": [
-        "Gigantic cascading stone water reservoirs (16 reservoirs holding 250,000 cu.m)",
-        "Tripartite city division: Citadel (Castle + Bailey), Middle Town, and Lower Town",
-        "Massive stone architecture using dressed limestone blocks (unique in IVC)",
-        "Monumental ceremonial ground / stadium (283m long)",
-        "Northern gateway chamber where the Dholavira Signboard fell"
+        "Tripartite city plan: Castle / Bailey (Citadel), Middle Town, and Lower Town",
+        "Sixteen massive rock-cut and masonry water reservoirs holding 250,000 m³ of rainwater",
+        "Monumental Stadium / Ceremonial Ground (283 m long) with terraced spectator seating",
+        "Northern Gateway featuring the fallen ten-sign monumental gypsum inscription",
+        "Precision polished stone pillars and hemispherical funerary spoked stone stupas"
       ],
       "key_artifacts": [
-        "The Famous 10-Character Dholavira Signboard (3m long wooden board with giant gypsum letters)",
-        "Polished stone pillars and architectural members",
-        "Gold beads, ear ornaments, and copper mirrors",
-        "Unicorn and composite beast steatite seals",
-        "Spoked terracotta wheel and gaming boards"
+        "The famous Dholavira Signboard: 10 large white crystalline gypsum signs (each ~37 cm high)",
+        "Intricately carved steatite unicorn seals and square animal stamp seals",
+        "Polished limestone structural columns and architectural mouldings",
+        "Copper celts, chisels, antimony rods, and gold spiral beads",
+        "Marine shell bangles (Turbinella pyrum) manufactured on industrial scale"
       ],
-      "foreign_connection": "Key island gateway guarding the Rann of Kutch maritime entry; exported marine shell, chalcedony, and banded agate to Mesopotamia and Magan.",
-      "sign_count": 480,
-      "description": "An architectural and hydraulic marvel built on an island in the Great Rann of Kutch. Features the earliest known monumental inscription (the Dholavira Signboard) and the ancient world's most sophisticated rainwater harvesting system.",
-      "x": 702.1,
-      "y": -246.1
-    },
-    {
-      "id": "rakhigarhi",
-      "name": "Rakhigarhi",
-      "name_hi": "राखीगढ़ी",
-      "country": "India",
-      "region": "Hisar District, Haryana",
-      "lat": 29.29,
-      "lon": 76.07,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Early, Mature to Late Harappan (5500–1800 BCE)",
-      "area_hectares": 350,
-      "discovered_by": "Amarendra Nath (1997-2000); Vasant Shinde (2011-2016)",
-      "badge": "Largest Harappan Site by Area",
-      "key_structures": [
-        "Eleven archaeological mounds (Mounds 1-11) forming an immense metropolis",
-        "Mud-brick fortification walls with bastions",
-        "Podium platforms with sacrificial/fire pits and altars",
-        "Elaborate lapidary workshop with carnelian and steatite beads",
-        "Planned streets with covered public and private drain conduits"
+      "foreign_connection": "Key island gateway regulating maritime trade through the Rann of Kutch to the Persian Gulf; Dilmun-style circular stamp seals recovered in surrounding region.",
+      "official_sources": [
+        {
+          "title": "Excavations at Dholavira (1989-2005)",
+          "authors": "R.S. Bisht",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 113",
+          "year": 2015,
+          "url": "https://asi.nic.in",
+          "type": "Official ASI Memoir"
+        },
+        {
+          "title": "Dholavira: A Harappan City",
+          "authors": "R.S. Bisht",
+          "publisher": "Man and Environment (ISPQWS)",
+          "volume": "14(1): 71-82",
+          "year": 1989,
+          "type": "Peer-reviewed Journal Paper"
+        }
       ],
-      "key_artifacts": [
-        "Gold foil jewellery, banded agate, and carnelian bead necklaces",
-        "Ancient DNA extracted from 4,500-year-old skeleton (Narasimhan et al. Cell 2019)",
-        "Copper fishing hooks, arrowheads, and bronze mirrors",
-        "Terracotta wheels, figurines of bulls, and animal seal impressions",
-        "Standardized chert balance weights"
-      ],
-      "foreign_connection": "Ghaggar-Hakra basin metropolis serving as the premier inland trade hub connecting raw material sources in Rajasthan and the Himalayas with urban consumers across the Saraswati valley.",
-      "sign_count": 310,
-      "description": "Surpassing Mohenjo-daro in total footprint (spanning over 350 hectares across 11 mounds), Rakhigarhi is the largest known settlement of the Indus Valley Civilisation and a vital source of biomolecular and genetic research.",
-      "x": 760.7,
-      "y": -306.6
-    },
-    {
-      "id": "lothal",
-      "name": "Lothal (Mound of the Dead)",
-      "name_hi": "लोथल",
-      "country": "India",
-      "region": "Ahmedabad District, Gujarat",
-      "lat": 22.52,
-      "lon": 72.25,
-      "is_foreign": false,
-      "category": "Port & Maritime",
-      "period": "Mature Harappan (2400–1900 BCE)",
-      "area_hectares": 10,
-      "discovered_by": "S.R. Rao (1954-58)",
-      "badge": "World's First Tidal Dockyard",
-      "key_structures": [
-        "Massive burnt-brick tidal dockyard basin (214m x 36m) with lock-gate and spillway",
-        "High warehouse complex on a 3.5m elevated mud-brick platform (64 cubical blocks)",
-        "Acropolis and Lower Town with bead factory and metal workshops",
-        "Drainage system discharging into the dock basin",
-        "Cemetery with double burials (joint male-female graves)"
-      ],
-      "key_artifacts": [
-        "Persian Gulf circular steatite seal (proving direct maritime link to Dilmun)",
-        "Terracotta models of masted ocean-going sailing ships",
-        "Shell ivory scale (measure of length divided into precise decimal units: 1.704mm)",
-        "Lothal bead factory with micro-drills and thousands of carnelian beads",
-        "Ivory dice, game boards, and terracotta dogs and horses"
-      ],
-      "foreign_connection": "The primary seaport linking the Indus civilization to Mesopotamia (Ur, Kish), Dilmun (Bahrain), and Magan (Oman); exported carnelian, cotton textiles, ivory, and timber in exchange for tin, copper, and silver.",
-      "sign_count": 290,
-      "description": "The world's oldest engineered tidal dockyard, built along the Gulf of Khambhat. Lothal was the premier maritime export hub for Harappan beadmakers and jewelers trading directly with the Bronze Age Near East.",
-      "x": 722.5,
-      "y": -231.2
-    },
-    {
-      "id": "kalibangan",
-      "name": "Kalibangan (Black Bangles)",
-      "name_hi": "कालीबंगा",
-      "country": "India",
-      "region": "Hanumangarh District, Rajasthan",
-      "lat": 29.47,
-      "lon": 74.13,
-      "is_foreign": false,
-      "category": "Craft & Production",
-      "period": "Early to Mature Harappan (2900–1900 BCE)",
-      "area_hectares": 40,
-      "discovered_by": "Luigi Pio Tessitori (1914); B.B. Lal and B.K. Thapar (1960-69)",
-      "badge": "Oldest Ploughed Field in History",
-      "key_structures": [
-        "The world's earliest furrowed agricultural field (criss-cross plough marks)",
-        "Series of seven clay-lined 'fire altars' (havan kundas) on mud-brick platforms",
-        "Citadel (fortified rhomboid) and separate Lower Town",
-        "Brick-lined circular and rectangular sacrificial pits",
-        "Paved streets laid in classic grid pattern with mud-brick walls"
-      ],
-      "key_artifacts": [
-        "Terracotta black terracotta bangles from which the site gets its name",
-        "Cylindrical Mesopotamian-style seal with human and animal figures",
-        "Terracotta bull figurine and plough models",
-        "Camel bones (earliest record of domestic camel in South Asia)",
-        "Inscribed terracotta cakes and pottery showing early Harappan graffiti"
-      ],
-      "foreign_connection": "Key trading depot along the Saraswati (Ghaggar) river trade highway; produced grain surpluses and exported black terracotta and shell bangles.",
-      "sign_count": 210,
-      "description": "Famous for unearthing the earliest recorded ploughed agricultural field in human history (demonstrating two-crop mixed cultivation) and distinctive ritual fire altars.",
-      "x": 741.3,
-      "y": -308.6
-    },
-    {
-      "id": "banawali",
-      "name": "Banawali",
-      "name_hi": "बनावली",
-      "country": "India",
-      "region": "Fatehabad District, Haryana",
-      "lat": 29.6,
-      "lon": 75.23,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Early to Mature Harappan (2800–1800 BCE)",
-      "area_hectares": 25,
-      "discovered_by": "R.S. Bisht (1974-77)",
-      "badge": "Complete Terracotta Plough",
-      "key_structures": [
-        "Radial / star-shaped street layout deviating from strict grid planning",
-        "Deep defensive moat encircling the town",
-        "High fortified citadel separated from lower township by a rampart",
-        "Large multi-room houses equipped with private courtyards and washrooms"
-      ],
-      "key_artifacts": [
-        "Intact, functional terracotta model of a plough (hal)",
-        "Abundant high-yield six-row barley grains (highest concentration in IVC)",
-        "Touchstone with gold streaks (used by ancient goldsmiths to test purity)",
-        "Inscribed steatite seals and lapis lazuli beads",
-        "Clay bangles, shell beads, and copper arrowheads"
-      ],
-      "foreign_connection": "Supplied northern agricultural grains (barley, pulses) and processed copper tools into the regional network.",
-      "sign_count": 140,
-      "description": "Crucial site on the dried bed of the Saraswati river that yielded the world's most complete Harappan terracotta plough model and evidence of sophisticated metallurgy and goldsmithing.",
-      "x": 752.3,
-      "y": -310.1
-    },
-    {
-      "id": "surkotada",
-      "name": "Surkotada",
-      "name_hi": "सुरकोटड़ा",
-      "country": "India",
-      "region": "Kutch District, Gujarat",
-      "lat": 23.62,
-      "lon": 70.84,
-      "is_foreign": false,
-      "category": "Frontier Outpost",
-      "period": "Mature to Late Harappan (2300–1700 BCE)",
-      "area_hectares": 4,
-      "discovered_by": "J.P. Joshi (1964-68)",
-      "badge": "Equine Bone Remains",
-      "key_structures": [
-        "Stone and rubble fortification wall with rampart and entrance gateway",
-        "Interconnected Citadel and Residential Annexure",
-        "Pot-burial system with stone slabs covering megalithic-style cairns"
-      ],
-      "key_artifacts": [
-        "Horse (Equus caballus) bone remains and teeth identified by paleontologist Sandor Bokonyi",
-        "Copper chisel, spearhead, and socketed celt",
-        "Inscribed seal with unicorn motif",
-        "Semi-precious stone beads of agate and carnelian"
-      ],
-      "foreign_connection": "Fortified checkpoint guarding caravan access between Sindh and Kutch.",
-      "sign_count": 45,
-      "description": "A fortified garrison outpost in Kutch renowned among historians for yielding equine skeletal remains in mature Harappan layers.",
-      "x": 708.4,
-      "y": -243.2
-    },
-    {
-      "id": "chanhudaro",
-      "name": "Chanhudaro",
-      "name_hi": "चन्हुदड़ो",
-      "country": "Pakistan",
-      "region": "Nawabshah District, Sindh",
-      "lat": 26.17,
-      "lon": 68.32,
-      "is_foreign": false,
-      "category": "Craft & Production",
-      "period": "Mature Harappan (2600–1900 BCE)",
-      "area_hectares": 12,
-      "discovered_by": "N.G. Majumdar (1931); Ernest J.H. Mackay (1935)",
-      "badge": "Bead-Making Industrial Capital",
-      "key_structures": [
-        "Industrial workshops exclusively devoted to craft manufacture",
-        "Kilns and furnace installations for baking steatite and glazed faience",
-        "No fortified citadel (the only major IVC city without a citadel)"
-      ],
-      "key_artifacts": [
-        "Steatite and carnelian bead-making workshop with specialized micro-drills",
-        "Terracotta lipstick and eye paint (kajal / kohl) cosmetic containers",
-        "Brick bearing the imprint of a dog's paw chasing a cat",
-        "Bronze carts with seated drivers and ornate mirrors",
-        "Seal-cutter tools and uncarved seal blanks"
-      ],
-      "foreign_connection": "Specialized industrial factory town producing luxury carnelian and micro-steatite beads specifically destined for the royal elites of Sumer and Akkad.",
-      "sign_count": 260,
-      "description": "The dedicated industrial manufacturing capital of the Indus world. Located 130 km south of Mohenjo-daro, it was exclusively populated by artisans, beadmakers, metal-casters, and seal cutters.",
-      "x": 683.2,
-      "y": -271.3
+      "description": "Located on Khadir Bet island in the Great Rann of Kutch, Dholavira is renowned for its monumental stone-dressed architecture and the most sophisticated rainwater harvesting hydraulic system of the ancient world.",
+      "x": 702.2,
+      "y": -246.1,
+      "is_foreign": false
     },
     {
       "id": "ganweriwala",
       "name": "Ganweriwala",
       "name_hi": "गनेरीवाला",
       "country": "Pakistan",
-      "region": "Cholistan Desert, Punjab",
-      "lat": 28.32,
-      "lon": 71.33,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Mature Harappan (2600–1900 BCE)",
-      "area_hectares": 82,
-      "discovered_by": "Sir Aurel Stein (1941); Rafique Mughal (1970s)",
-      "badge": "Equidistant Desert Metropolis",
+      "state_or_province": "Punjab (Cholistan)",
+      "lat": 28.3283,
+      "lon": 71.1894,
+      "category": "metropolis",
+      "period": "Mature Harappan (c. 2600 – 1900 BCE)",
+      "area_hectares": 80.0,
+      "excavators": "M. Rafique Mughal (Cholistan Survey, 1974-1977); Department of Archaeology and Museums Pakistan",
+      "badge": "Central Saraswati Axis Metropolis",
       "key_structures": [
-        "Dual-mound topography identical to Harappa and Mohenjo-daro",
-        "High western citadel mound and expansive eastern residential city",
-        "Located equidistant between Harappa and Mohenjo-daro on the dry Hakra bed"
+        "Dual mound formation (Citadel and Lower Town) identical to Mohenjo-daro and Harappa",
+        "Kiln-fired brick architectural foundations along the dried Hakra riverbed",
+        "Industrial craft zones showing copper smelting slag and vitrified ceramics"
       ],
       "key_artifacts": [
-        "Terracotta tablet depicting a cross-legged yogic figure and a kneeling worshipper",
-        "Steatite unicorn seal fragments",
-        "Pottery vessels with Indus graffiti signs",
-        "Terracotta bangles and copper implements"
+        "Terracotta tablet depicting a seated figure in yogic cross-legged posture with kneeling worshipper",
+        "Inscribed seal impressions and chert weights",
+        "Miniature terracotta bull carts and painted Hakra/Harappan ceramics"
       ],
-      "foreign_connection": "Crucial central hub on the Hakra river lifeline connecting the northern plains to the southern delta.",
-      "sign_count": 30,
-      "description": "A massive unexcavated metropolis sitting squarely in the center of the Hakra river system in the Cholistan desert, forming an equilateral triangle of power with Harappa and Mohenjo-daro.",
-      "x": 713.3,
-      "y": -295.5
+      "foreign_connection": "Geographical pivot between Harappa in Punjab and Mohenjo-daro in Sindh along the dry Ghaggar-Hakra axis.",
+      "official_sources": [
+        {
+          "title": "Ancient Cholistan: Archaeology and Architecture",
+          "authors": "M. Rafique Mughal",
+          "publisher": "Ferozsons / Ministry of Culture, Pakistan",
+          "year": 1997,
+          "type": "Official Research Monograph"
+        },
+        {
+          "title": "Recent Archaeological Research in the Cholistan Desert",
+          "authors": "M. Rafique Mughal",
+          "publisher": "Harappan Civilization (ed. Gregory L. Possehl), Oxford & IBH",
+          "year": 1982,
+          "pages": "85-95",
+          "type": "Scholarly Paper"
+        }
+      ],
+      "description": "Discovered in the Cholistan desert near the Indian border, Ganweriwala sits midway between Mohenjo-daro and Harappa along the dry Hakra river course, forming the third primary riverine metropolis of Pakistan.",
+      "x": 711.9,
+      "y": -295.6,
+      "is_foreign": false
     },
     {
-      "id": "alamgirpur",
-      "name": "Alamgirpur",
-      "name_hi": "आलमगीरपुर",
+      "id": "lothal",
+      "name": "Lothal",
+      "name_hi": "लोथल",
       "country": "India",
-      "region": "Meerut District, Uttar Pradesh",
-      "lat": 29.02,
-      "lon": 77.4,
-      "is_foreign": false,
-      "category": "Frontier Outpost",
-      "period": "Late Harappan (1900–1400 BCE)",
-      "area_hectares": 3,
-      "discovered_by": "Y.D. Sharma (1958-59)",
-      "badge": "Easternmost Extent of IVC",
+      "state_or_province": "Gujarat",
+      "lat": 22.5228,
+      "lon": 72.2492,
+      "category": "port",
+      "period": "Phase I to Phase V (c. 2400 – 1600 BCE)",
+      "area_hectares": 20.0,
+      "excavators": "S.R. Rao (ASI Excavations 1955–1962)",
+      "badge": "World's Earliest Tidal Dockyard",
       "key_structures": [
-        "Settlement on the bank of the Hindon River (tributary of Yamuna)",
-        "Mud-brick residential structures and refuse pits",
-        "Potters' kilns and storage silos"
+        "Tidal brick dock basin (214 m long × 36 m wide × 4.5 m deep) with spillway lock-gate",
+        "Warehouse (64 mud-brick block podiums) for inspecting and sealing oceanic cargo",
+        "Acroplolis with paved bathing floors and underground arterial drainage",
+        "Bead factory with central heating kiln and circular firing pits",
+        "Joint twin burial graves in western cemetery"
       ],
       "key_artifacts": [
-        "Impression of woven cloth / textile on a trough",
-        "Ceramic platters, goblets, and perforated jars",
-        "Terracotta beads, animal figurines, and copper pins",
-        "Late Harappan painted pottery showing transition to Ochre Coloured Pottery (OCP)"
+        "Circular steatite 'Persian Gulf' seal connecting to Bahrain / Dilmun",
+        "Over 213 inscribed square steatite seals and hundreds of terracotta sealings",
+        "Etched carnelian long barrel beads exported to Mesopotamia",
+        "Bronze drill bits, micro-bead drills, and ivory measuring scale (1.7 mm divisions)",
+        "Terracotta models of masted ocean-going sailing ships"
       ],
-      "foreign_connection": "Represented the extreme eastern frontier of the Indus Civilization, only 45 km from modern Delhi in the Ganga-Yamuna Doab.",
-      "sign_count": 12,
-      "description": "Marks the eastern boundary of the Harappan world, proving that Indus urban trade and material culture reached deep into the fertile plains of the upper Yamuna valley.",
-      "x": 774.0,
-      "y": -303.5
-    },
-    {
-      "id": "manda",
-      "name": "Manda",
-      "name_hi": "मांडा",
-      "country": "India",
-      "region": "Jammu District, Jammu & Kashmir",
-      "lat": 32.9,
-      "lon": 74.8,
-      "is_foreign": false,
-      "category": "Frontier Outpost",
-      "period": "Mature to Late Harappan (2350–1750 BCE)",
-      "area_hectares": 2,
-      "discovered_by": "J.P. Joshi (1976-77)",
-      "badge": "Northernmost Extent in India",
-      "key_structures": [
-        "Fortified river outpost situated on the right bank of the Chenab River",
-        "Timber revetment and stone embankments",
-        "Himalayan foothill collection depot"
+      "foreign_connection": "Central export harbour sending lapis, ivory, carnelian and timber to Sumerian ports (Ur, Tell Asmar, Kish). Documented in cuneiform inscriptions as trade with 'Meluhha'.",
+      "official_sources": [
+        {
+          "title": "Lothal: A Harappan Port Town (1955-62) - Vols. I & II",
+          "authors": "S.R. Rao",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 78",
+          "year": 1979,
+          "pages": "1-712",
+          "url": "https://asi.nic.in",
+          "type": "Official ASI Memoir"
+        },
+        {
+          "title": "The Decipherment of the Indus Script",
+          "authors": "S.R. Rao",
+          "publisher": "Asia Publishing House, Bombay",
+          "year": 1982,
+          "type": "Scholarly Monograph"
+        }
       ],
-      "key_artifacts": [
-        "Copper spiral-headed pin (linking with Central Asian and Iranian cultures)",
-        "Indus script potsherds and inscribed seal fragments",
-        "Bone arrowheads and terracotta cakes",
-        "Harappan red ware jars and dishes-on-stand"
-      ],
-      "foreign_connection": "Harvested Himalayan deodar cedar and pinewood, floated down the Chenab and Indus rivers for ship construction and roofing in Mohenjo-daro and Harappa.",
-      "sign_count": 15,
-      "description": "The northernmost bastion of the Indus Civilisation within modern India, positioned on the Chenab river in the foothills of the Pir Panjal range to secure Himalayan timber and minerals.",
-      "x": 748.0,
-      "y": -348.7
-    },
-    {
-      "id": "daimabad",
-      "name": "Daimabad",
-      "name_hi": "दायमाबाद",
-      "country": "India",
-      "region": "Ahmednagar District, Maharashtra",
-      "lat": 19.52,
-      "lon": 74.65,
-      "is_foreign": false,
-      "category": "Frontier Outpost",
-      "period": "Late Harappan (2000–1400 BCE)",
-      "area_hectares": 20,
-      "discovered_by": "B.P. Bopardikar (1958); M.N. Deshpande and S.A. Sali",
-      "badge": "Southernmost Extent of IVC",
-      "key_structures": [
-        "Mud-brick multi-room houses on the left bank of the Pravara River",
-        "Craft quarter with copper smelters and crucibles",
-        "Granaries with carbonized wheat, barley, and lentils"
-      ],
-      "key_artifacts": [
-        "The Famous Daimabad Bronzes: A 45cm long solid bronze chariot driven by a man and pulled by two humped oxen",
-        "Heavy solid bronze elephant (29kg) on a platform with wheels",
-        "Solid bronze rhinoceros and water buffalo",
-        "Potsherds bearing incised Indus script signs",
-        "Steatite button seals"
-      ],
-      "foreign_connection": "Linked the Deccan peninsula and Godavari valley to the Harappan trade orbit, accessing Deccan gold, semi-precious stones, and copper ores.",
-      "sign_count": 8,
-      "description": "The southernmost outpost of the Harappan civilization, located in Maharashtra. Astonished archaeologists with the discovery of four massive, solid-cast bronze sculptures weighing over 60 kg in total.",
-      "x": 746.5,
-      "y": -199.1
+      "description": "Positioned at the head of the Gulf of Khambhat in Ahmedabad district, Lothal is celebrated as the earliest known engineered tidal dockyard in human history, equipped with vertical lock gates that maintained water levels at low tide.",
+      "x": 722.5,
+      "y": -231.3,
+      "is_foreign": false
     },
     {
       "id": "sutkagan-dor",
       "name": "Sutkagan Dor",
       "name_hi": "सुत्कागेन डोर",
       "country": "Pakistan",
-      "region": "Makran Coast, Gwadar, Balochistan",
+      "state_or_province": "Balochistan",
       "lat": 25.5,
-      "lon": 61.85,
-      "is_foreign": false,
-      "category": "Port & Maritime",
-      "period": "Mature Harappan (2600–1900 BCE)",
-      "area_hectares": 5,
-      "discovered_by": "Major E. Mockler (1875); Sir Aurel Stein (1928); George Dales (1960)",
-      "badge": "Westernmost Extent of IVC",
+      "lon": 62.0,
+      "category": "port",
+      "period": "Mature Harappan (c. 2500 – 1900 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "Major E. Mockler (1876); Sir Aurel Stein (1928); George F. Dales (1960)",
+      "badge": "Westernmost Frontier Outpost & Port",
       "key_structures": [
-        "Massive stone fortification wall (over 7.5m thick at base) built on a natural rock ridge",
-        "Citadel with towers controlling the mouth of the Dasht River",
-        "Quayside landing steps for ocean vessels (now silted inland 50 km from modern coast)"
+        "Formidable stone citadel walls up to 7.5 meters thick with dressed sandstone blocks",
+        "Lower town residential area nestled against the northern slope",
+        "Ancient sheltered estuary landing wharf (now inland due to coastal tectonic uplift)"
       ],
       "key_artifacts": [
-        "Copper axes and bronze spears",
-        "Pottery vessels with painted Harappan motifs",
-        "Stone blades and standard cubical weights",
-        "Beads of shell, steatite, and carnelian"
+        "Inscribed Indus steatite seals and terracotta bangles",
+        "Copper axes, spearheads and flint blade cores",
+        "Ceramic vessels matching Kulli and Mature Harappan painted styles"
       ],
-      "foreign_connection": "Guarded the entrance to the Persian Gulf; the key maritime resupply station for Harappan cargo vessels sailing between the Indus delta and the Mesopotamian ports of Ur and Kish.",
-      "sign_count": 22,
-      "description": "The westernmost outpost of the Indus civilization, situated near the modern Iran border on the Makran coast. It served as a heavily fortified naval fortress and trading station for Gulf commerce.",
-      "x": 618.5,
-      "y": -263.9
+      "foreign_connection": "Guarded the entrance to the Persian Gulf trade routes towards Oman and Mesopotamia near the border of Iran on the Dasht river.",
+      "official_sources": [
+        {
+          "title": "An Archaeological Tour in Gedrosia",
+          "authors": "Sir Aurel Stein",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 43",
+          "year": 1931,
+          "type": "Official ASI Memoir"
+        },
+        {
+          "title": "A Search for Harappan Sites on the Makran Coast",
+          "authors": "George F. Dales",
+          "publisher": "Expedition Magazine (Penn Museum)",
+          "volume": "4(2): 2-11",
+          "year": 1962,
+          "url": "https://www.penn.museum/sites/expedition/a-search-for-harappan-sites-on-the-makran-coast/",
+          "type": "Museum Journal Article"
+        }
+      ],
+      "description": "The westernmost recognized settlement of the Indus Valley Civilisation, situated on the Makran coast near the Iran border. It operated as a fortified naval outpost controlling oceanic commerce into the Gulf of Oman.",
+      "x": 620.0,
+      "y": -263.9,
+      "is_foreign": false
+    },
+    {
+      "id": "sotka-koh",
+      "name": "Sotka Koh",
+      "name_hi": "सोत्का कोह",
+      "country": "Pakistan",
+      "state_or_province": "Balochistan",
+      "lat": 25.4833,
+      "lon": 63.5,
+      "category": "port",
+      "period": "Mature Harappan (c. 2500 – 1900 BCE)",
+      "area_hectares": 4.0,
+      "excavators": "George F. Dales (1960); University of Pennsylvania Museum Expedition",
+      "badge": "Makran Coastal Station",
+      "key_structures": [
+        "Fortified perimeter stone wall enclosing a small high terrace",
+        "Stone masonry building foundations along the Shadi Kaur valley"
+      ],
+      "key_artifacts": [
+        "Harappan pointed-base drinking goblets and perforated pottery jars",
+        "Copper knife fragments and steatite beads"
+      ],
+      "foreign_connection": "Midway replenishment harbor between Lothal and Sutkagan Dor along the oceanic Arabian Sea sailing route.",
+      "official_sources": [
+        {
+          "title": "Harappan Outposts on the Makran Coast",
+          "authors": "George F. Dales",
+          "publisher": "Antiquity",
+          "volume": "36(142): 86-92",
+          "year": 1962,
+          "doi": "10.1017/S0003598X0002974X",
+          "type": "Peer-reviewed Paper"
+        }
+      ],
+      "description": "An intermediate coastal trade post discovered 15 miles north of Pasni along the Shadi Kaur river in Balochistan, safeguarding the coastal shipping lanes connecting Meluhha with Magan.",
+      "x": 635.0,
+      "y": -263.7,
+      "is_foreign": false
+    },
+    {
+      "id": "bet-dwarka",
+      "name": "Bet Dwarka",
+      "name_hi": "बेट द्वारका",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 22.4667,
+      "lon": 69.1,
+      "category": "port",
+      "period": "Late Harappan to Post-Harappan (c. 1900 – 1400 BCE)",
+      "area_hectares": 8.0,
+      "excavators": "S.R. Rao (Marine Archaeology Unit, National Institute of Oceanography 1982-1988)",
+      "badge": "Submerged Marine Archaeological Port",
+      "key_structures": [
+        "Submerged rubble fortification walls exposed at intertidal zone",
+        "Ancient jetty and stone mooring anchor blocks"
+      ],
+      "key_artifacts": [
+        "Inscribed Late Harappan potsherd bearing seven Indus script signs",
+        "Three-headed animal seal in Persian Gulf / Bahrain style carved on conch shell",
+        "Prismatic chert blades, copper ingots, and chank shell bangle fragments"
+      ],
+      "foreign_connection": "Direct maritime link with Dilmun (Bahrain) through Gulf of Kutch navigation.",
+      "official_sources": [
+        {
+          "title": "Marine Archaeological Explorations off Dwarka and Bet Dwarka",
+          "authors": "S.R. Rao",
+          "publisher": "Journal of Marine Archaeology (NIO Goa)",
+          "volume": "1: 7-20",
+          "year": 1990,
+          "type": "Peer-reviewed Marine Journal"
+        }
+      ],
+      "description": "An island port at the tip of the Kathiawar peninsula in the Gulf of Kutch, where marine archeologists uncovered submerged stone fortifications and late Harappan script evidence demonstrating coastal maritime continuity.",
+      "x": 691.0,
+      "y": -230.7,
+      "is_foreign": false
+    },
+    {
+      "id": "chanhudaro",
+      "name": "Chanhudaro",
+      "name_hi": "चन्हुदड़ो",
+      "country": "Pakistan",
+      "state_or_province": "Sindh",
+      "lat": 26.1667,
+      "lon": 68.3167,
+      "category": "craft",
+      "period": "Harappan to Jhukar & Jhangar (c. 2600 – 1500 BCE)",
+      "area_hectares": 15.0,
+      "excavators": "N.G. Majumdar (ASI 1931); Ernest J.H. Mackay (American School of Indic and Iranian Studies & Boston Museum 1935-1936)",
+      "badge": "Premier Bead-Making Factory",
+      "key_structures": [
+        "Industrial bead-drillers' workshop with specialized furnace kilns",
+        "Artisans' quarters without fortified citadel walls (only unfortified Harappan city)",
+        "Covered brick drains and paved bathing pavements in residential sectors"
+      ],
+      "key_artifacts": [
+        "Thousands of micro-steatite beads and etched carnelian beads in all stages of manufacture",
+        "Bronze toy carts, animal figures, and copper kohl sticks (lipsticks/cosmetic jars)",
+        "Chert micro-drills (Ernestite drills) specially engineered for perforating hard stones",
+        "Mud-brick with imprint of dog's paw chasing a cat"
+      ],
+      "foreign_connection": "Mass producer of etched carnelian beads exported through Lothal and Sutkagan Dor to Mesopotamia and the Royal Cemetery of Ur.",
+      "official_sources": [
+        {
+          "title": "Chanhu-daro Excavations 1935-36",
+          "authors": "Ernest J.H. Mackay",
+          "publisher": "American Oriental Society (American Oriental Series Vol. 20)",
+          "year": 1943,
+          "pages": "1-338",
+          "type": "Official Museum Monograph"
+        },
+        {
+          "title": "Explorations in Sind",
+          "authors": "N.G. Majumdar",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 48",
+          "year": 1934,
+          "type": "Official ASI Memoir"
+        }
+      ],
+      "description": "Located 130 km south of Mohenjo-daro, Chanhudaro is recognized as the manufacturing capital of the Indus realm, exclusively devoted to lapidary bead cutting, shell-working, metal casting, and seal engraving.",
+      "x": 683.2,
+      "y": -271.3,
+      "is_foreign": false
+    },
+    {
+      "id": "kalibangan",
+      "name": "Kalibangan",
+      "name_hi": "कालीबंगा",
+      "country": "India",
+      "state_or_province": "Rajasthan",
+      "lat": 29.4722,
+      "lon": 74.1333,
+      "category": "craft",
+      "period": "Period I (Early) & Period II (Mature Harappan, c. 3000 – 1900 BCE)",
+      "area_hectares": 25.0,
+      "excavators": "A. Ghosh (1951-52); B.B. Lal, B.K. Thapar, M.D. Khare, K.M. Srivastava (ASI 1961-1969)",
+      "badge": "World's Earliest Ploughed Field",
+      "key_structures": [
+        "Earliest agricultural ploughed field in antiquity showing criss-cross furrow grid",
+        "Series of seven clay-lined 'Fire Altars' with ritual central clay stele and ash",
+        "Mud-brick fortification walls around both Citadel and Lower Town",
+        "Cemetery with three distinct burial traditions: extended inhumation, circular pot burial, and rectangular pit"
+      ],
+      "key_artifacts": [
+        "Cylindrical Indus seal showing horned yogic deity between two trees",
+        "Black terracotta and faience bangles giving the site its name ('Black Bangles')",
+        "Terracotta bull with dynamic charging neck and curved horns",
+        "Inscribed potsherds demonstrating right-to-left incised script overlap",
+        "Standardized cubical chert weights"
+      ],
+      "foreign_connection": "Cylindrical seal tradition showing Mesopotamian glyptic influence while retaining pure Indus iconographic motifs.",
+      "official_sources": [
+        {
+          "title": "Excavations at Kalibangan: The Early Harappans (1960-1969)",
+          "authors": "B.B. Lal, Jagat Pati Joshi, B.K. Thapar, Madhu Bala",
+          "publisher": "Archaeological Survey of India, New Delhi",
+          "year": 2003,
+          "type": "Official ASI Excavation Monograph"
+        },
+        {
+          "title": "Kalibangan: A Harappan Metropolis Beyond the Indus Valley",
+          "authors": "B.B. Lal",
+          "publisher": "Expedition Magazine (Penn Museum)",
+          "volume": "4(2): 14-21",
+          "year": 1962,
+          "url": "https://www.penn.museum/sites/expedition/a-new-metropolis-of-the-indus-valley-civilization/",
+          "type": "Museum Journal Article"
+        }
+      ],
+      "description": "Situated on the southern bank of the dry bed of the Ghaggar (Saraswati) river in Hanumangarh district, Kalibangan proved the presence of Harappan civilization far east of the Indus basin and documented the earliest ploughed field surface in archaeology.",
+      "x": 741.3,
+      "y": -308.7,
+      "is_foreign": false
+    },
+    {
+      "id": "banawali",
+      "name": "Banawali",
+      "name_hi": "बनावली",
+      "country": "India",
+      "state_or_province": "Haryana",
+      "lat": 29.6,
+      "lon": 75.25,
+      "category": "craft",
+      "period": "Period I (Pre-Harappan) to Period III (Late Harappan, c. 2800 – 1500 BCE)",
+      "area_hectares": 12.0,
+      "excavators": "R.S. Bisht (ASI 1974-1977 and 1984-1987)",
+      "badge": "Terracotta Plough & Radial Layout",
+      "key_structures": [
+        "Radial / star-shaped street plan converging towards citadel gateway",
+        "Mud-brick fortification wall with deep moat encircling the town",
+        "Houses of wealthy merchants with private fire altars and toilet drain chutes"
+      ],
+      "key_artifacts": [
+        "Complete working terracotta model of an agricultural furrow plough (Hal)",
+        "Large hoard of high-yield two-row and six-row barley grains (Hordeum vulgare)",
+        "Touchstone with gold streaks indicating presence of goldsmith testing facility",
+        "Carnelian, lapis lazuli and faience beads",
+        "Square steatite seals with unicorn and Harappan glyphs"
+      ],
+      "foreign_connection": "Significant agricultural breadbasket feeding long-distance caravan trade systems along the Saraswati valley.",
+      "official_sources": [
+        {
+          "title": "Excavations at Banawali: 1974-77",
+          "authors": "R.S. Bisht",
+          "publisher": "Harappan Civilization (ed. Gregory L. Possehl), Oxford & IBH",
+          "year": 1982,
+          "pages": "113-124",
+          "type": "Scholarly Paper"
+        },
+        {
+          "title": "A New Model of the Harappan Town Planning as Revealed at Banawali",
+          "authors": "R.S. Bisht",
+          "publisher": "Puratattva (Bulletin of the Indian Archaeological Society)",
+          "volume": "10: 23-33",
+          "year": 1981,
+          "type": "Archaeological Journal Paper"
+        }
+      ],
+      "description": "Located on the dry bed of the Rangoi / Saraswati in Fatehabad district, Banawali yielded the definitive terracotta plough model and illustrated radial town planning atypical of normal orthogonal grid towns.",
+      "x": 752.5,
+      "y": -310.1,
+      "is_foreign": false
+    },
+    {
+      "id": "surkotada",
+      "name": "Surkotada",
+      "name_hi": "सुरकोटड़ा",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 23.6167,
+      "lon": 70.8333,
+      "category": "fortified_town",
+      "period": "Period IA to IC (c. 2300 – 1700 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "Jagat Pati Joshi (ASI Excavations 1970–1972)",
+      "badge": "Fortified Citadel & Horse Bone Controversy",
+      "key_structures": [
+        "Massive stone rubble and mud-brick fortified Citadel and Residential Annex",
+        "Interconnected fortified ramparts with stone-faced bastion towers",
+        "Elaborate entrance gateway with ramp and guard rooms"
+      ],
+      "key_artifacts": [
+        "Equid bone fragments identified by paleontologist A.K. Sharma as Equus caballus (horse)",
+        "Potsherds with typical Mature Harappan script incisions",
+        "Copper spearhead, knives and chert cores",
+        "Cairn circle pot burials covered by massive stone boulders"
+      ],
+      "foreign_connection": "Fortified command outpost guarding the overland and coastal passage between Sindh and the Saurashtra peninsula.",
+      "official_sources": [
+        {
+          "title": "Excavations at Surkotada (1971-72) and Exploration in Kutch",
+          "authors": "Jagat Pati Joshi",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 87",
+          "year": 1990,
+          "type": "Official ASI Memoir"
+        }
+      ],
+      "description": "Excavated in the Rapar taluk of Kutch, Surkotada features impressive stone and mud-brick fortifications and gained global archeological attention due to contested osteological evidence of Equus remains in period IC.",
+      "x": 708.3,
+      "y": -243.2,
+      "is_foreign": false
     },
     {
       "id": "shortugai",
-      "name": "Shortugai (Lapis Lazuli Colony)",
+      "name": "Shortugai",
       "name_hi": "शॉर्टुगई",
       "country": "Afghanistan",
-      "region": "Takhar Province, Northern Afghanistan",
-      "lat": 37.18,
-      "lon": 69.52,
-      "is_foreign": false,
-      "category": "Frontier Outpost",
-      "period": "Mature Harappan (2200–1900 BCE)",
-      "area_hectares": 3,
-      "discovered_by": "Henri-Paul Francfort (1975-79)",
-      "badge": "Oxus River Trading Colony",
+      "state_or_province": "Takhar",
+      "lat": 37.3333,
+      "lon": 69.5167,
+      "category": "frontier_outpost",
+      "period": "Period I to IV (c. 2200 – 1600 BCE)",
+      "area_hectares": 4.0,
+      "excavators": "Henri-Paul Francfort (Mission Archéologique Française en Asie Centrale 1976-1980)",
+      "badge": "Northernmost Lapis Lazuli Colony",
       "key_structures": [
-        "Full Harappan brick architecture and street planning on the Oxus (Amu Darya) river",
-        "Canal irrigation network tapping the Kokcha River",
-        "Lapidary workshops for working raw lapis lazuli and tin"
+        "Mud-brick multi-roomed buildings erected in pure Mature Harappan architecture",
+        "Agricultural canal irrigation system drawing water from the Kokcha / Amu Darya river",
+        "Lapidary workshops for rough-dressing raw lapis lazuli lazurite blocks"
       ],
       "key_artifacts": [
-        "Inscribed Indus steatite seals with unicorn and rhinoceros motifs",
-        "Pure lapis lazuli raw nodules, debitage, and polished cylindrical beads",
-        "Clay models of bullock carts and terracotta cakes",
-        "Standard Harappan painted black-on-red pottery identical to Mohenjo-daro"
+        "Square steatite Indus seal engraved with rhinoceros and Harappan script signs",
+        "Unfinished and drilled lapis lazuli beads and carnelian beads",
+        "Bronze axes, gold beads, and engraved shell bangles",
+        "Mature Harappan black-on-red painted ceramics with pipal leaf and peacock motifs"
       ],
-      "foreign_connection": "Direct Harappan commercial colony in Central Asia, established 1,000 km north of the Indus to directly control the legendary Badakhshan lapis lazuli mines and Central Asian tin sources for bronze casting.",
-      "sign_count": 18,
-      "description": "An astonishing distant colony established by the Harappans on the banks of the Amu Darya (Oxus) in Afghanistan. It granted the Indus merchants a complete monopoly over the global Bronze Age trade in lapis lazuli.",
+      "foreign_connection": "Direct Harappan trading enclave established 1,100 km north of the Indus plain to monopolize the world's richest lapis lazuli mines at Badakhshan (Sar-e-Sang), funneling blue stones to Mesopotamian and Egyptian courts.",
+      "official_sources": [
+        {
+          "title": "Fouilles de Shortughaï: Recherches sur un avant-poste de la civilisation de l'Indus en Asie centrale (Vols. I–II)",
+          "authors": "Henri-Paul Francfort",
+          "publisher": "Mémoires de la Mission Archéologique Française en Asie Centrale, CNRS Paris",
+          "year": 1989,
+          "type": "Official CNRS Expedition Monograph"
+        },
+        {
+          "title": "The Harappan Colony at Shortugai",
+          "authors": "Henri-Paul Francfort",
+          "publisher": "Frontiers of the Indus Civilization (eds. B.B. Lal & S.P. Gupta), Books & Books",
+          "year": 1984,
+          "pages": "301-310",
+          "type": "Scholarly Paper"
+        }
+      ],
+      "description": "Situated at the confluence of the Kokcha and Oxus (Amu Darya) rivers in northeastern Afghanistan, Shortugai was a permanent Indus colonial outpost founded specifically to control the international trade in prized Badakhshan lapis lazuli.",
       "x": 695.2,
-      "y": -401.0
+      "y": -403.0,
+      "is_foreign": false
     },
     {
       "id": "bhirrana",
       "name": "Bhirrana",
       "name_hi": "भिरड़ाना",
       "country": "India",
-      "region": "Fatehabad District, Haryana",
+      "state_or_province": "Haryana",
       "lat": 29.55,
-      "lon": 75.56,
-      "is_foreign": false,
-      "category": "Metropolis",
-      "period": "Hakra Ware to Mature Harappan (7500–1900 BCE)",
-      "area_hectares": 6,
-      "discovered_by": "L.S. Rao (2003-2006)",
-      "badge": "Oldest C-14 Dated Site (7500 BCE)",
+      "lon": 75.5667,
+      "category": "agricultural_rural",
+      "period": "Hakra Ware to Mature Harappan (c. 7500 – 1900 BCE)",
+      "area_hectares": 6.0,
+      "excavators": "L.S. Rao, N.B. Sahu, U.A. Shastry (ASI Excavations 2003–2006)",
+      "badge": "Oldest Pre-Harappan Dates (7500 BCE)",
       "key_structures": [
-        "Subterranean circular pit dwellings in the earliest Hakra phase",
-        "Multi-room mud-brick houses with paved hearths in mature phase",
-        "Complex underground drainage with terracotta soakage jars"
+        "Subterranean circular dwelling pits with plastered interior mud floors (Hakra phase)",
+        "Transition to multi-roomed mud-brick surface houses with covered drainage",
+        "T-shaped drainage outlets and terracotta soak-pits"
       ],
       "key_artifacts": [
-        "Red pottery shard engraved with a female figure in the exact pose of Mohenjo-daro's Dancing Girl",
-        "Lapis lazuli, carnelian, agate, and turquoise beads",
-        "Crucibles and copper bangles",
-        "Early Hakra Ware pottery with carbon-14 dates pushing back origin of IVC to 8th millennium BCE"
+        "Red ware potsherd incised with graffiti of a dancing girl closely replicating the Mohenjo-daro bronze posture",
+        "Lapis lazuli, carnelian, agate, and steatite micro-bead jewellery",
+        "Crucibles for copper smelting and terracotta cakes"
       ],
-      "foreign_connection": "Demonstrates the continuous, indigenous evolution of Indus culture along the Saraswati river system over 5,000 continuous years.",
-      "sign_count": 40,
-      "description": "Yielded the earliest radiometric carbon-14 dates in the subcontinent (c. 7570–7180 BCE), proving the deep indigenous antiquity of the pre-Harappan Hakra culture.",
-      "x": 755.6,
-      "y": -309.5
+      "foreign_connection": "Early antecedent center providing radiocarbon continuity linking Neolithic gathering to the urban Harappan horizon.",
+      "official_sources": [
+        {
+          "title": "New Light on the Excavation of Harappan Site at Bhirrana",
+          "authors": "L.S. Rao, N.B. Sahu, U.A. Shastry, V.S. Rawat",
+          "publisher": "Puratattva (Indian Archaeological Society)",
+          "volume": "35: 60-68",
+          "year": 2005,
+          "type": "Archaeological Journal Paper"
+        },
+        {
+          "title": "Oxygen isotope in archaeological bioapatites from India: Implications to climate change and decline of Bronze Age Harappan civilization",
+          "authors": "Anindya Sarkar et al.",
+          "publisher": "Nature Scientific Reports",
+          "volume": "6, 26555",
+          "year": 2016,
+          "doi": "10.1038/srep26555",
+          "type": "Peer-reviewed Scientific Paper"
+        }
+      ],
+      "description": "Excavated on the Saraswati plain in Fatehabad district, Bhirrana provided calibrated carbon-14 dates pushing the Hakra pre-Harappan sequence back to the 8th millennium BCE, challenging theories of foreign diffusion.",
+      "x": 755.7,
+      "y": -309.5,
+      "is_foreign": false
     },
     {
-      "id": "sinauli",
-      "name": "Sinauli",
-      "name_hi": "सिनौली",
+      "id": "kunal",
+      "name": "Kunal",
+      "name_hi": "कुणाल",
       "country": "India",
-      "region": "Baghpat District, Uttar Pradesh",
-      "lat": 29.13,
-      "lon": 77.22,
-      "is_foreign": false,
-      "category": "Craft & Production",
-      "period": "Late Harappan to Copper Hoard (2100–1800 BCE)",
-      "area_hectares": 8,
-      "discovered_by": "D.V. Sharma and S.K. Manjul (2005; 2018)",
-      "badge": "Bronze Age Chariots & Warrior Coffins",
+      "state_or_province": "Haryana",
+      "lat": 29.6167,
+      "lon": 75.65,
+      "category": "craft",
+      "period": "Period IA to IC (Early Harappan, c. 4000 – 2500 BCE)",
+      "area_hectares": 3.0,
+      "excavators": "J.S. Khatri & M. Acharya (Haryana State Dept of Archaeology 1986-1993); Vasant Shinde (2017)",
+      "badge": "Earliest Silver Royal Regalia",
       "key_structures": [
-        "Royal necropolis with 126 anthropomorphic burials",
-        "Wooden royal coffins adorned with copper repoussé anthropomorphic figures",
-        "Underground burial chambers with pottery offerings"
+        "Pit dwellings transitioning to square and rectangular mud-brick structures",
+        "Kiln facilities for firing glazed pottery and metallurgical smelting"
       ],
       "key_artifacts": [
-        "Three full-sized solid-wheeled bronze-plated chariots / horse carts",
-        "Copper antennae swords with solid hilt and leaf-shaped daggers",
-        "Composite copper and bone war helmets (shirastrana)",
-        "Gold and carnelian necklaces and torch-like copper shields",
-        "Eight-inch copper combs and mirrors"
+        "Two pure silver royal tiaras (crowns) and silver armlets",
+        "Hoard of over 12,000 semi-precious beads stored in an earthen jar",
+        "Early steatite and shell button seals with geometric swastika and concentric square designs (precursors to Indus script)"
       ],
-      "foreign_connection": "Showcases a martial, warrior elite during the Late Harappan transition in the upper Yamuna valley, reshaping understanding of Bronze Age warfare in South Asia.",
-      "sign_count": 8,
-      "description": "A landmark excavation in Uttar Pradesh that uncovered the subcontinent's first Bronze Age warrior chariots, copper swords with antenna hilts, and elaborately decorated royal coffins.",
-      "x": 772.2,
-      "y": -304.7
+      "foreign_connection": "Demonstrates early metallurgical sophistication and elite insignia long before mature urban development.",
+      "official_sources": [
+        {
+          "title": "Kunal: A New Dawn of Harappan Civilization",
+          "authors": "J.S. Khatri and M. Acharya",
+          "publisher": "Puratattva (Indian Archaeological Society)",
+          "volume": "25: 84-86",
+          "year": 1995,
+          "type": "Archaeological Journal Paper"
+        }
+      ],
+      "description": "A pioneering early settlement on the Saraswati riverbed in Fatehabad district, Kunal yielded the earliest discovered silver crowns and button seals in South Asia.",
+      "x": 756.5,
+      "y": -310.3,
+      "is_foreign": false
     },
     {
-      "id": "ur-mesopotamia",
-      "name": "Ur (Royal Cemetery of Ur)",
-      "name_hi": "ऊर (मेसोपोटामिया)",
-      "country": "Iraq (Mesopotamia)",
-      "region": "Dhi Qar Governorate, Southern Iraq",
-      "lat": 30.96,
-      "lon": 46.1,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Mesopotamian Early Dynastic III to Akkad (2600–2100 BCE)",
-      "area_hectares": 120,
-      "discovered_by": "Sir Leonard Woolley (1922-34)",
-      "badge": "Indus Artifacts in Sumerian Royal Tombs",
+      "id": "farmana",
+      "name": "Farmana (Daksha Khera)",
+      "name_hi": "फरमाना (दक्ष खेड़ा)",
+      "country": "India",
+      "state_or_province": "Haryana",
+      "lat": 28.9833,
+      "lon": 76.5333,
+      "category": "agricultural_rural",
+      "period": "Mature Harappan (c. 2500 – 2000 BCE)",
+      "area_hectares": 18.0,
+      "excavators": "Vasant Shinde, Toshiki Osada, Akinori Uesugi (Deccan College & RIHN Japan 2006-2009)",
+      "badge": "Largest Excavated Harappan Cemetery in India",
       "key_structures": [
-        "Ziggurat of Ur and Royal Tombs of Sumerian Kings and Queen Puabi",
-        "Cuneiform administrative archives of Sumerian temple merchants",
-        "Quays of the Euphrates River connecting to the Persian Gulf"
+        "Carefully planned residential blocks separated by cardinal streets",
+        "Large cemetery with 70 excavated burials revealing bioarchaeological dental and skeletal health data",
+        "Multi-roomed merchant complexes with terracotta seal storage"
       ],
       "key_artifacts": [
-        "Multiple square steatite Indus stamp seals inscribed with Harappan unicorn and script characters found in Sumerian graves",
-        "Etched carnelian beads with distinctive Harappan chemical alkali-bleached white geometric patterns",
-        "Standard Harappan cubical chert weights discovered in merchant houses",
-        "Cuneiform tablets of Sargon of Akkad (c. 2334–2279 BCE) bragging that 'ships from Meluhha, Magan, and Dilmun tied up at the quay of Akkad'",
-        "Cuneiform inscriptions mentioning Shu-ilishu, a certified 'Meluhha translator' residing in Mesopotamia"
+        "Steatite unicorn stamp seals and inscribed copper tablets",
+        "Potsherds with cooked starch residue confirming consumption of turmeric, ginger, and garlic in Indus curries",
+        "Ornate carnelian and gold ornaments deposited in funerary contexts"
       ],
-      "foreign_connection": "The ultimate destination of Harappan maritime trade. Meluhhan merchants lived in their own designated enclave at Guabba near Lagash, trading ivory, carnelian, lapis, gold, and timber for silver and wool.",
-      "sign_count": 45,
-      "description": "Excavated by Leonard Woolley, the royal graves of Ur yielded indisputable proof of direct Indus trade: authentic Harappan seals, etched carnelian jewelry worn by Sumerian queens, and cuneiform texts recording trade with Meluhha.",
+      "foreign_connection": "Dietary starch grain analysis proved earliest known multi-ingredient spiced cooking in ancient South Asia.",
+      "official_sources": [
+        {
+          "title": "Excavations at Farmana: District Rohtak, Haryana, India, 2006-2008",
+          "authors": "Vasant Shinde, Toshiki Osada, Akinori Uesugi",
+          "publisher": "Research Institute for Humanity and Nature (RIHN), Kyoto",
+          "year": 2011,
+          "pages": "1-980",
+          "type": "International Academic Monograph"
+        }
+      ],
+      "description": "An extensive 18-hectare Mature Harappan urban and mortuary settlement in Rohtak district, Farmana provided groundbreaking bioarchaeological insights into urban paleodiet, migration, and burial rituals.",
+      "x": 765.3,
+      "y": -303.0,
+      "is_foreign": false
+    },
+    {
+      "id": "daimabad",
+      "name": "Daimabad",
+      "name_hi": "दायमाबाद",
+      "country": "India",
+      "state_or_province": "Maharashtra",
+      "lat": 19.5167,
+      "lon": 74.65,
+      "category": "frontier_outpost",
+      "period": "Late Harappan to Jorwe Phase (c. 2200 – 1000 BCE)",
+      "area_hectares": 20.0,
+      "excavators": "B.P. Bopardikar (1958); S.A. Sali (ASI Excavations 1974–1979)",
+      "badge": "Southernmost Outpost of the Indus Realm",
+      "key_structures": [
+        "Mud-brick fortification wall with bastions along the Pravara river",
+        "Late Harappan residential houses with circular hearths and lime-plastered grain silos"
+      ],
+      "key_artifacts": [
+        "Famous Daimabad Bronze Hoard: solid cast bronze chariot driven by a standing charioteer pulled by two zebu oxen (total weight > 65 kg)",
+        "Solid bronze elephant, rhinoceros, and water buffalo statues on wheeled platforms",
+        "Inscribed potsherd with Indus script characters",
+        "Button seals of glazed terracotta and copper celts"
+      ],
+      "foreign_connection": "Marks the furthest southern reach of Indus material culture into the Deccan plateau of peninsular India.",
+      "official_sources": [
+        {
+          "title": "Daimabad 1976-79",
+          "authors": "S.A. Sali",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 83",
+          "year": 1986,
+          "type": "Official ASI Memoir"
+        }
+      ],
+      "description": "Located on the left bank of the Pravara river in Ahmednagar district, Maharashtra, Daimabad is celebrated as the southernmost established outpost of the Indus civilization, famed for its colossal solid bronze sculpture hoard.",
+      "x": 746.5,
+      "y": -199.1,
+      "is_foreign": false
+    },
+    {
+      "id": "manda",
+      "name": "Manda",
+      "name_hi": "मांडा",
+      "country": "India",
+      "state_or_province": "Jammu & Kashmir",
+      "lat": 32.9,
+      "lon": 74.8667,
+      "category": "frontier_outpost",
+      "period": "Period I (Mature Harappan) to Period III (Kushan, c. 2350 – 1750 BCE)",
+      "area_hectares": 2.0,
+      "excavators": "Jagat Pati Joshi & Madhu Bala (ASI Excavations 1976–1977)",
+      "badge": "Northernmost Frontier Post in India",
+      "key_structures": [
+        "Fortified river terrace citadel overlooking the Chenab River",
+        "Stone and timber structures adapted to Himalayan sub-mountainous terrain"
+      ],
+      "key_artifacts": [
+        "Double-spiral headed copper pin of Central Asian / Iranian affinity",
+        "Inscribed potsherds bearing Harappan pictographic signs",
+        "Chert blades, terracotta cakes, and burnished grey ware"
+      ],
+      "foreign_connection": "Key strategic choke-point securing timber (Himalayan cedar/deodar) and mineral flows down the Chenab into the Punjab heartland.",
+      "official_sources": [
+        {
+          "title": "Manda: A Harappan Site in Jammu and Kashmir",
+          "authors": "Jagat Pati Joshi and Madhu Bala",
+          "publisher": "Harappan Civilization (ed. Gregory L. Possehl), Oxford & IBH",
+          "year": 1982,
+          "pages": "185-195",
+          "type": "Scholarly Paper"
+        }
+      ],
+      "description": "Situated on the right bank of the Chenab river near Akhnoor in the Himalayan foothills of Jammu, Manda demarcates the northern geographic boundary of the Harappan civilization within modern India.",
+      "x": 748.7,
+      "y": -348.7,
+      "is_foreign": false
+    },
+    {
+      "id": "alamgirpur",
+      "name": "Alamgirpur",
+      "name_hi": "आलमगीरपुर",
+      "country": "India",
+      "state_or_province": "Uttar Pradesh",
+      "lat": 29.0333,
+      "lon": 77.4833,
+      "category": "frontier_outpost",
+      "period": "Period I (Late Harappan) to Period IV (c. 1900 – 1400 BCE)",
+      "area_hectares": 3.0,
+      "excavators": "Y.D. Sharma (ASI Excavations 1958–1959)",
+      "badge": "Easternmost Frontier Post of the Indus Realm",
+      "key_structures": [
+        "Kiln-fired brick floor pavements along the Hindon riverbank",
+        "Residential settlements showing transition into Ochre Coloured Pottery (OCP) culture"
+      ],
+      "key_artifacts": [
+        "Faience beads, terracotta cakes, and copper cart parts",
+        "Impression of woven cloth textile on a terracotta trough",
+        "Ceramics painted with typical Harappan intersecting circles and peacock motifs"
+      ],
+      "foreign_connection": "Proved Harappan eastward penetration into the fertile Ganga-Yamuna Doab basin.",
+      "official_sources": [
+        {
+          "title": "Indian Archaeology 1958-59 — A Review: Excavations at Alamgirpur",
+          "authors": "Y.D. Sharma",
+          "publisher": "Archaeological Survey of India",
+          "year": 1959,
+          "pages": "50-55",
+          "url": "https://asi.nic.in",
+          "type": "Official ASI Review"
+        }
+      ],
+      "description": "Situated in Meerut district on the Hindon River (a tributary of the Yamuna), Alamgirpur constitutes the recognized eastern frontier outpost of the Indus civilization, illustrating the transition towards the Gangetic basin.",
+      "x": 774.8,
+      "y": -303.6,
+      "is_foreign": false
+    },
+    {
+      "id": "sanauli",
+      "name": "Sanauli",
+      "name_hi": "सनौली",
+      "country": "India",
+      "state_or_province": "Uttar Pradesh",
+      "lat": 29.1333,
+      "lon": 77.1833,
+      "category": "agricultural_rural",
+      "period": "Late Harappan to Copper Hoard / OCP (c. 2000 – 1600 BCE)",
+      "area_hectares": 10.0,
+      "excavators": "D.V. Sharma & K.C. Nauriyal (2005-2006); Dr. Sanjay Kumar Manjul (ASI Excavations 2018–2019)",
+      "badge": "Chariot Burials & Warrior Elite",
+      "key_structures": [
+        "Necropolis of 116 elite anthropomorphic burials oriented north-south",
+        "Royal wooden coffins decorated with anthropomorphic copper repoussé figures",
+        "Warrior burial chambers containing intact wheeled vehicles"
+      ],
+      "key_artifacts": [
+        "Three complete full-scale wooden chariots with solid copper-inlaid spoke wheels",
+        "Copper antennas swords with leaf-shaped hilt guards and copper shields",
+        "Gold and steatite bead necklaces, copper helmets and ritual combs"
+      ],
+      "foreign_connection": "Demonstrates indigenous development of wheeled battle chariots and elite metallurgy in the late Harappan Yamuna zone.",
+      "official_sources": [
+        {
+          "title": "Excavations at Sanauli 2005-2006: A Craft and Burial Centre",
+          "authors": "D.V. Sharma, K.C. Nauriyal et al.",
+          "publisher": "Puratattva (Indian Archaeological Society)",
+          "volume": "36: 166-179",
+          "year": 2006,
+          "type": "Archaeological Journal Paper"
+        },
+        {
+          "title": "Chariot Burials, Weapons and Royal Coffins of Sanauli",
+          "authors": "Sanjay Kumar Manjul and Arvin Manjul",
+          "publisher": "Archaeological Survey of India Monograph",
+          "year": 2020,
+          "type": "Official ASI Research Monograph"
+        }
+      ],
+      "description": "Located in Baghpat district, Western Uttar Pradesh, Sanauli yielded the sensational discovery of the earliest known full-size chariots, warrior weaponry, and royal copper-inlaid coffins in South Asian archaeology.",
+      "x": 771.8,
+      "y": -304.8,
+      "is_foreign": false
+    },
+    {
+      "id": "kot-diji",
+      "name": "Kot Diji",
+      "name_hi": "कोट डिजी",
+      "country": "Pakistan",
+      "state_or_province": "Sindh",
+      "lat": 27.35,
+      "lon": 68.7,
+      "category": "fortified_town",
+      "period": "Kot Diji Phase to Mature Harappan (c. 3300 – 2100 BCE)",
+      "area_hectares": 7.0,
+      "excavators": "F.A. Khan (Department of Archaeology, Government of Pakistan 1955-1957)",
+      "badge": "Early Harappan Citadel Progenitor",
+      "key_structures": [
+        "Citadel mound with stone-rubble foundations and mud-brick bastions",
+        "Thick defensive wall around the upper town",
+        "Widespread conflagration burn layer separating the Kot Diji pre-urban phase from mature Harappan levels"
+      ],
+      "key_artifacts": [
+        "The iconic 'Kot Diji Horned Deity' globular painted pot",
+        "Finely potted 'fish-scale' and pipal-leaf painted ceramics",
+        "Steatite beads, terracotta bangles, and leaf-shaped arrowheads"
+      ],
+      "foreign_connection": "Provided the foundational ceramic horizon (Kot Dijian) that unified the early Indus basin prior to the emergence of mature cities.",
+      "official_sources": [
+        {
+          "title": "Excavations at Kot Diji",
+          "authors": "F.A. Khan",
+          "publisher": "Pakistan Archaeology",
+          "volume": "2: 11-85",
+          "year": 1965,
+          "type": "National Archaeology Journal"
+        }
+      ],
+      "description": "Situated near Khairpur in Sindh opposite Mohenjo-daro, Kot Diji established that mature Harappan civilization did not appear overnight but evolved directly from robust pre-existing fortified agricultural towns.",
+      "x": 687.0,
+      "y": -284.5,
+      "is_foreign": false
+    },
+    {
+      "id": "amri",
+      "name": "Amri",
+      "name_hi": "आमरी",
+      "country": "Pakistan",
+      "state_or_province": "Sindh",
+      "lat": 26.1667,
+      "lon": 68.0167,
+      "category": "agricultural_rural",
+      "period": "Amrian to Mature Harappan (c. 3600 – 1900 BCE)",
+      "area_hectares": 8.0,
+      "excavators": "N.G. Majumdar (1929); Jean-Marie Casal (French Archaeological Mission 1959-1962)",
+      "badge": "Early Stratigraphic Benchmark",
+      "key_structures": [
+        "Cellular mud-brick platforms erected for grain storage and residential dwellings",
+        "Sequential stratigraphy showing pre-Harappan Amri culture overlaid by Mature Harappan city levels"
+      ],
+      "key_artifacts": [
+        "Exquisite thin-walled polychrome pottery painted with geometric gazelle motifs",
+        "Chert blades, shell bangles, and early terracotta bulls"
+      ],
+      "foreign_connection": "Demonstrated cultural exchange connecting the Balochistan uplands with the alluvial Indus floodplain.",
+      "official_sources": [
+        {
+          "title": "Fouilles d'Amri (Vols. I & II)",
+          "authors": "Jean-Marie Casal",
+          "publisher": "Commission des Fouilles Archéologiques, Paris",
+          "year": 1964,
+          "type": "Official French Mission Memoir"
+        }
+      ],
+      "description": "Located on the western bank of the Indus river in Dadu district, Amri provided the first definitive stratigraphic sequence demonstrating the evolution from local copper-age villages to standard Harappan urbanism.",
+      "x": 680.2,
+      "y": -271.3,
+      "is_foreign": false
+    },
+    {
+      "id": "balakot",
+      "name": "Balakot",
+      "name_hi": "बालाकोट",
+      "country": "Pakistan",
+      "state_or_province": "Balochistan",
+      "lat": 25.4,
+      "lon": 66.75,
+      "category": "port",
+      "period": "Balakotian to Mature Harappan (c. 4000 – 1900 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "George F. Dales (University of California, Berkeley & Dept of Archaeology Pakistan 1973-1976)",
+      "badge": "Major Shell-Working & Coastal Harbor",
+      "key_structures": [
+        "Fortified mud-brick architectural perimeter on high mound",
+        "Specialized shell-cutting industrial workshops along ancient lagoon shore"
+      ],
+      "key_artifacts": [
+        "Massive stockpiles of marine gastropod shells (Telescopium telescopium and Turbinella pyrum)",
+        "Finished engraved shell bangles, ladles, and inlay pieces",
+        "Mature Harappan steatite stamp seals and terracotta female figurines"
+      ],
+      "foreign_connection": "Supplied carved marine shell ornaments to inland centers across the Indus, Saraswati, and Mesopotamian spheres.",
+      "official_sources": [
+        {
+          "title": "The Balakot Project: Summary of Four Years of Excavations in Pakistan",
+          "authors": "George F. Dales",
+          "publisher": "Man and Environment",
+          "volume": "3: 45-53",
+          "year": 1979,
+          "type": "Peer-reviewed Archaeology Paper"
+        }
+      ],
+      "description": "Situated on the coastal plain of Sonmiani Bay 80 km northwest of Karachi, Balakot was a prominent marine harvesting harbor and shell-manufacturing industrial enclave.",
+      "x": 667.5,
+      "y": -262.8,
+      "is_foreign": false
+    },
+    {
+      "id": "allahdino",
+      "name": "Allahdino",
+      "name_hi": "अल्लादीनो",
+      "country": "Pakistan",
+      "state_or_province": "Sindh",
+      "lat": 24.9167,
+      "lon": 67.3333,
+      "category": "agricultural_rural",
+      "period": "Mature Harappan (c. 2500 – 2000 BCE)",
+      "area_hectares": 1.5,
+      "excavators": "Walter A. Fairservis (American Museum of Natural History 1973-1976)",
+      "badge": "Rural Estate & Golden Jewellery Hoard",
+      "key_structures": [
+        "Compact mud-brick residential buildings on stone boulder foundations",
+        "Hydraulic stone-lined wells and paved courtyard drainage"
+      ],
+      "key_artifacts": [
+        "Spectacular jewellery hoard: multi-strand necklace of 36 carnelian beads, gold disc beads, and silver ornaments",
+        "Miniature inscribed steatite seal and clay seal impressions",
+        "Abundant copper fish-hooks, knives, and terracotta toy carts"
+      ],
+      "foreign_connection": "Demonstrates that even modest 1.5-hectare rural settlements had access to empire-wide luxury goods, gold, and international metrology.",
+      "official_sources": [
+        {
+          "title": "Excavations at Allahdino: The Seals and Inscribed Material",
+          "authors": "Walter A. Fairservis",
+          "publisher": "American Museum of Natural History, New York",
+          "year": 1976,
+          "type": "Official Museum Monograph"
+        }
+      ],
+      "description": "Located 40 km east of Karachi near the Malir river, Allahdino is a classic example of a small rural Harappan farming and textile estate that nevertheless yielded wealth comparable to metropolitan elites.",
+      "x": 673.3,
+      "y": -257.4,
+      "is_foreign": false
+    },
+    {
+      "id": "kuntasi",
+      "name": "Kuntasi",
+      "name_hi": "कुंतासी",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 22.75,
+      "lon": 70.6167,
+      "category": "port",
+      "period": "Mature to Late Harappan (c. 2400 – 1700 BCE)",
+      "area_hectares": 3.0,
+      "excavators": "M.K. Dhavalikar, M.H. Raval, Y.M. Chitalwala (Deccan College & Gujarat State Archaeology 1987-1990)",
+      "badge": "Fortified Industrial Emporium & Jetty",
+      "key_structures": [
+        "Double-perimeter stone-and-mud fortification wall with corner watchtowers",
+        "Stone jetty on the ancient tidal reach of the Jhinjhudha river",
+        "Artisans' industrial workshops with ceramic kilns and lapidary furnaces"
+      ],
+      "key_artifacts": [
+        "Faience button seals with geometric pinwheel and cross motifs",
+        "Copper rings, bangles, and crucibles with traces of melted metal",
+        "Beads of agate, chalcedony, and lapis lazuli"
+      ],
+      "foreign_connection": "Processing port for raw Saurashtra chalcedony and agate, pre-shipping finished goods overseas via the Gulf of Kutch.",
+      "official_sources": [
+        {
+          "title": "Kuntasi: A Harappan Emporium on West Coast",
+          "authors": "M.K. Dhavalikar, M.H. Raval, Y.M. Chitalwala",
+          "publisher": "Deccan College Post-Graduate and Research Institute, Pune",
+          "year": 1996,
+          "type": "University Research Monograph"
+        }
+      ],
+      "description": "Situated in Maliya taluk of Morbi district, Kuntasi was an intensely fortified craft emporium and port established to process local raw materials for international export.",
+      "x": 706.2,
+      "y": -233.7,
+      "is_foreign": false
+    },
+    {
+      "id": "gola-dhoro",
+      "name": "Gola Dhoro (Bagasra)",
+      "name_hi": "गोला धोरो (बगसरा)",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 23.05,
+      "lon": 70.6333,
+      "category": "craft",
+      "period": "Mature Harappan (c. 2500 – 1900 BCE)",
+      "area_hectares": 2.0,
+      "excavators": "P. Ajithprasad, V.H. Sonawane, K.K. Bhan (M.S. University of Baroda 1996-2005)",
+      "badge": "High-Security Craft Enclave",
+      "key_structures": [
+        "Disproportionately massive stone fortification wall (5.2 m thick) enclosing a tiny 1.9 ha settlement",
+        "Specialized craft factory rooms for shell, faience, and semi-precious bead manufacture"
+      ],
+      "key_artifacts": [
+        "Unique copper vessel hoard containing thousands of semi-precious beads",
+        "Inscribed steatite unicorn seals and bone points",
+        "Finished bangles carved from heavy Turbinella pyrum marine gastropod shells"
+      ],
+      "foreign_connection": "Extensive sealings indicating strict administrative control over precious craft exports shipped across the Gulf of Kutch.",
+      "official_sources": [
+        {
+          "title": "Excavations at Bagasra 1996-2003: A Harappan Craft Centre in the Gulf of Kutch",
+          "authors": "P. Ajithprasad, V.H. Sonawane et al.",
+          "publisher": "Man and Environment",
+          "volume": "30(2): 18-29",
+          "year": 2005,
+          "type": "Archaeological Journal Paper"
+        }
+      ],
+      "description": "Located in Bagasra on the southern shore of the Great Rann of Kutch, Gola Dhoro demonstrated that the Harappans built colossal fortress walls to safeguard valuable craft workshops.",
+      "x": 706.3,
+      "y": -237.0,
+      "is_foreign": false
+    },
+    {
+      "id": "shikarpur",
+      "name": "Shikarpur (Valabhi)",
+      "name_hi": "शिकारपुर",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 23.2333,
+      "lon": 70.7,
+      "category": "craft",
+      "period": "Mature to Late Harappan (c. 2500 – 1800 BCE)",
+      "area_hectares": 4.5,
+      "excavators": "P. Ajithprasad, V.H. Sonawane, K.K. Bhan (M.S. University of Baroda 2007-2011)",
+      "badge": "Coastal Meat Processing & Shell Hub",
+      "key_structures": [
+        "Mud-brick fortification wall surrounding the habitation mound",
+        "Domestic structures with paved kitchen areas and storage jars"
+      ],
+      "key_artifacts": [
+        "Steatite square stamp seal inscribed with unicorn and Harappan characters",
+        "Terracotta sealing with multiple stamp impressions",
+        "Enormous assemblage of animal bones (85% cattle and buffalo) indicating specialized pastoral processing"
+      ],
+      "foreign_connection": "Part of the coastal network linking Saurashtra with Kutch and the Indus delta.",
+      "official_sources": [
+        {
+          "title": "Excavations at Shikarpur 2007-2011: A Coastal Harappan Settlement in Kutch",
+          "authors": "P. Ajithprasad et al.",
+          "publisher": "Department of Archaeology and Ancient History, M.S. University of Baroda",
+          "year": 2012,
+          "type": "University Excavation Report"
+        }
+      ],
+      "description": "Located in Bhachau taluk of Kutch, Shikarpur functioned as an administrative and craft center with substantial evidence of animal husbandry and trade.",
+      "x": 707.0,
+      "y": -239.0,
+      "is_foreign": false
+    },
+    {
+      "id": "kanmer",
+      "name": "Kanmer (Bakreshwar)",
+      "name_hi": "कानमेर",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 23.3833,
+      "lon": 70.8667,
+      "category": "fortified_town",
+      "period": "Mature to Late Harappan (c. 2500 – 1700 BCE)",
+      "area_hectares": 3.0,
+      "excavators": "J.S. Kharakwal, Y.S. Rawat, Toshiki Osada (Indo-Japanese Collaboration 2005-2009)",
+      "badge": "Fortified Transit Bastion",
+      "key_structures": [
+        "Massive stone perimeter fortification wall built of local sandstone blocks",
+        "Three distinct structural phases with stone paved pathways"
+      ],
+      "key_artifacts": [
+        "Three clay sealings bearing impressions of Harappan seals on one side and woven cloth on the reverse",
+        "Agate, lapis lazuli and faience beads",
+        "Polished copper axes and bone chisels"
+      ],
+      "foreign_connection": "Guarded the narrow land route corridor linking Kutch with the mainland Gujarat plains.",
+      "official_sources": [
+        {
+          "title": "Excavations at Kanmer 2005-2009: A Multi-disciplinary Study of a Harappan Site in Gujarat",
+          "authors": "J.S. Kharakwal, Y.S. Rawat, Toshiki Osada",
+          "publisher": "RIHN Kyoto & Gujarat State Department of Archaeology",
+          "year": 2012,
+          "type": "International Excavation Monograph"
+        }
+      ],
+      "description": "Located in Rapar taluka of Kutch, Kanmer served as a heavily guarded stone-walled gateway controlling internal transport of agate, copper, and cattle between Kutch and Gujarat.",
+      "x": 708.7,
+      "y": -240.6,
+      "is_foreign": false
+    },
+    {
+      "id": "padri",
+      "name": "Padri",
+      "name_hi": "पादरी",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 22.3667,
+      "lon": 72.1667,
+      "category": "agricultural_rural",
+      "period": "Padri Ware to Mature Harappan (c. 3600 – 1900 BCE)",
+      "area_hectares": 7.0,
+      "excavators": "Vasant Shinde (Deccan College Pune 1990-1996)",
+      "badge": "Early Regional Salt-Manufacturing Center",
+      "key_structures": [
+        "Mud-brick residential structures with stone footing foundations",
+        "Large clay storage jars and salt-evaporating pans"
+      ],
+      "key_artifacts": [
+        "Unique painted 'Horned Deity' jar (Padri ware) featuring a dancing figure with large curved buffalo horns",
+        "Copper fish-hooks, beads, and stone grinders",
+        "Standard Harappan chert blades and weights"
+      ],
+      "foreign_connection": "Major producer of marine salt exported inland to agrarian and urban centers in Gujarat and the Indus basin.",
+      "official_sources": [
+        {
+          "title": "Padri and the Indus Civilization",
+          "authors": "Vasant Shinde",
+          "publisher": "South Asian Studies",
+          "volume": "8: 55-66",
+          "year": 1992,
+          "doi": "10.1080/02666030.1992.9628445",
+          "type": "Peer-reviewed International Journal"
+        }
+      ],
+      "description": "Located in Bhavnagar district on the Gulf of Khambhat, Padri demonstrated indigenous pre-Harappan ceramic traditions (Padri Ware) and specialized in coastal salt evaporation.",
+      "x": 721.7,
+      "y": -229.6,
+      "is_foreign": false
+    },
+    {
+      "id": "nageshwar",
+      "name": "Nageshwar",
+      "name_hi": "नागेश्वर",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 22.3333,
+      "lon": 69.05,
+      "category": "craft",
+      "period": "Mature Harappan (c. 2500 – 1900 BCE)",
+      "area_hectares": 1.5,
+      "excavators": "K.T.M. Hegde, K.K. Bhan, V.H. Sonawane (M.S. University of Baroda 1984)",
+      "badge": "Dedicated Shell Bangle Industrial Enclave",
+      "key_structures": [
+        "Habitation mound located beside a freshwater lake near the Arabian Sea coast",
+        "Specialized stone workstations with copper saws for shell cutting"
+      ],
+      "key_artifacts": [
+        "Enormous waste middens of Turbinella pyrum marine gastropod shells",
+        "Precision-cut shell bangles, ladles, and incised chevron inlays",
+        "Indus stamp seals and standardized chert weights"
+      ],
+      "foreign_connection": "Specialized shell manufacturer supplying bangles to distant urban centers like Mohenjo-daro and Harappa.",
+      "official_sources": [
+        {
+          "title": "Excavation at Nageshwar, Gujarat: A Harappan Shell Working Site",
+          "authors": "K.T.M. Hegde, K.K. Bhan, V.H. Sonawane",
+          "publisher": "M.S. University Baroda Archaeological Series No. 18",
+          "year": 1990,
+          "type": "University Excavation Monograph"
+        }
+      ],
+      "description": "Situated near Dwarka at the tip of the Saurashtra peninsula, Nageshwar was an exclusive single-industry manufacturing center devoted to harvesting and working marine conch shells.",
+      "x": 690.5,
+      "y": -229.2,
+      "is_foreign": false
+    },
+    {
+      "id": "rojdi",
+      "name": "Rojdi",
+      "name_hi": "रोजड़ी",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 21.8667,
+      "lon": 70.9167,
+      "category": "agricultural_rural",
+      "period": "Rojdi A to C (Late Sorath Harappan, c. 2500 – 1700 BCE)",
+      "area_hectares": 7.0,
+      "excavators": "Gujarat State Dept of Archaeology (1957-59); Gregory L. Possehl & M.H. Raval (1982-1986)",
+      "badge": "Sorath Harappan Type Site",
+      "key_structures": [
+        "Sturdy stone-rubble fortification wall enclosing the northern and eastern slopes",
+        "Stone domestic architecture surrounding a central public courtyard"
+      ],
+      "key_artifacts": [
+        "Short inscribed graffiti in Indus script on ceramic vessels",
+        "Copper celts, chisels, and fishhooks",
+        "Terracotta animal figurines and beads of carnelian and faience"
+      ],
+      "foreign_connection": "Demonstrated that the regional 'Sorath Harappan' culture flourished continuously throughout the 2nd millennium BCE without abrupt urban collapse.",
+      "official_sources": [
+        {
+          "title": "Harappan Civilization and Rojdi",
+          "authors": "Gregory L. Possehl and M.H. Raval",
+          "publisher": "Oxford & IBH Publishing Co., New Delhi",
+          "year": 1989,
+          "type": "Scholarly Research Monograph"
+        }
+      ],
+      "description": "Situated on the Bhadar river in Rajkot district of Saurashtra, Rojdi established the longevity of regional agricultural Harappan adaptations into the post-urban era.",
+      "x": 709.2,
+      "y": -224.2,
+      "is_foreign": false
+    },
+    {
+      "id": "rangpur",
+      "name": "Rangpur",
+      "name_hi": "रंगपुर",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 22.4333,
+      "lon": 71.9167,
+      "category": "agricultural_rural",
+      "period": "Period I (Microlithic) to Period III (Lustrous Red Ware, c. 2000 – 1300 BCE)",
+      "area_hectares": 10.0,
+      "excavators": "M.S. Vats (1934); G.S. Ghurye (1939); S.R. Rao (ASI Excavations 1953–1956)",
+      "badge": "Lustrous Red Ware Horizon",
+      "key_structures": [
+        "Mud-brick residential platforms and drains",
+        "Stratigraphic sequence demonstrating cultural transmutation from Mature Harappan to Lustrous Red Ware"
+      ],
+      "key_artifacts": [
+        "Rice husk impressions inside mud-brick plaster (earliest evidence of rice cultivation in Gujarat)",
+        "Lustrous Red Ware bowls with high peacock design stems",
+        "Beads of agate, jasper, and steatite"
+      ],
+      "foreign_connection": "Key transitional center showing eastward and southward rural migration of Harappan communities following climate aridification.",
+      "official_sources": [
+        {
+          "title": "Excavation at Rangpur and Other Explorations in Gujarat",
+          "authors": "S.R. Rao",
+          "publisher": "Ancient India: Bulletin of the Archaeological Survey of India",
+          "volume": "18-19: 5-207",
+          "year": 1963,
+          "type": "Official ASI Bulletin Memoir"
+        }
+      ],
+      "description": "Located on the Sukbhadar river in Surendranagar district, Rangpur provided the essential ceramic sequence demonstrating the transformation of the mature Indus culture into regional post-urban societies.",
+      "x": 719.2,
+      "y": -230.3,
+      "is_foreign": false
+    },
+    {
+      "id": "desalpur",
+      "name": "Desalpur (Gunthli)",
+      "name_hi": "देसलपुर",
+      "country": "India",
+      "state_or_province": "Gujarat",
+      "lat": 23.4667,
+      "lon": 69.1667,
+      "category": "fortified_town",
+      "period": "Mature to Late Harappan (c. 2400 – 1800 BCE)",
+      "area_hectares": 3.5,
+      "excavators": "K.V. Soundara Rajan (ASI Excavations 1963–1964)",
+      "badge": "Stone-Walled Kutch Citadel",
+      "key_structures": [
+        "Stone-dressed defensive rampart with salients and bastions measuring 4 meters in height",
+        "Reinforced mud-brick residential quarters with stone veneer foundations"
+      ],
+      "key_artifacts": [
+        "Steatite and copper seals bearing typical Harappan script and unicorn iconography",
+        "Thin copper knives, razors, and chisels",
+        "Glazed faience and carnelian beads"
+      ],
+      "foreign_connection": "Strategic border bastion controlling the creek waterways between Sindh and western Kutch.",
+      "official_sources": [
+        {
+          "title": "Indian Archaeology 1963-64 — A Review: Excavation at Desalpur",
+          "authors": "K.V. Soundara Rajan",
+          "publisher": "Archaeological Survey of India",
+          "year": 1964,
+          "pages": "10-12",
+          "type": "Official ASI Review"
+        }
+      ],
+      "description": "Located on the Bhamrai river in Nakhatrana taluk of Kutch, Desalpur was an intensely fortified border station monitoring coastal and riverine transit.",
+      "x": 691.7,
+      "y": -241.5,
+      "is_foreign": false
+    },
+    {
+      "id": "ropar",
+      "name": "Ropar (Rupnagar)",
+      "name_hi": "रोपड़ (रूपनगर)",
+      "country": "India",
+      "state_or_province": "Punjab",
+      "lat": 30.9667,
+      "lon": 76.5333,
+      "category": "fortified_town",
+      "period": "Period I (Harappan) to Period VI (Medieval, c. 2100 – 1400 BCE)",
+      "area_hectares": 8.0,
+      "excavators": "Y.D. Sharma (ASI Excavations 1952–1955)",
+      "badge": "First Post-Independence Harappan Excavation in India",
+      "key_structures": [
+        "Mud-brick and river pebble residential structures",
+        "Harappan cemetery with extended burials accompanied by funerary pots and jewellery"
+      ],
+      "key_artifacts": [
+        "Square steatite seal with unicorn and Harappan inscription",
+        "Terracotta sealings with seal impressions",
+        "Copper celts, bronze arrowheads, and chert blades",
+        "Steatite micro-beads and faience bangles"
+      ],
+      "foreign_connection": "Demonstrated that the Harappan civilization stretched across the upper Sutlej river valley right into the Siwalik foothills.",
+      "official_sources": [
+        {
+          "title": "Past Patterns in Living as Unfolded by Excavations at Ropar",
+          "authors": "Y.D. Sharma",
+          "publisher": "Lalit Kala",
+          "volume": "1-2: 121-129",
+          "year": 1955,
+          "type": "Scholarly Archaeological Paper"
+        }
+      ],
+      "description": "Situated on the Sutlej river in Punjab, Ropar was the first Harappan site excavated in independent India, confirming that major Bronze Age centers existed well inside Indian territory after the partition.",
+      "x": 765.3,
+      "y": -325.9,
+      "is_foreign": false
+    },
+    {
+      "id": "bhagwanpura",
+      "name": "Bhagwanpura",
+      "name_hi": "भगवानपुरा",
+      "country": "India",
+      "state_or_province": "Haryana",
+      "lat": 30.0667,
+      "lon": 76.8333,
+      "category": "agricultural_rural",
+      "period": "Sub-period IA (Late Harappan) & IB (Late Harappan + PGW Overlap, c. 1700 – 1000 BCE)",
+      "area_hectares": 4.0,
+      "excavators": "Jagat Pati Joshi (ASI Excavations 1975–1976)",
+      "badge": "Late Harappan & Painted Grey Ware (PGW) Overlap",
+      "key_structures": [
+        "Round mud huts evolving into a 13-room mud-brick house",
+        "Mud-brick platforms built to protect residences from Saraswati river floods"
+      ],
+      "key_artifacts": [
+        "Late Harappan ceramics found in direct association and co-existence with Painted Grey Ware (PGW)",
+        "Terracotta anthropomorphic figures, wheeled toy birds, and bull figurines",
+        "Beads of carnelian, agate, and faience"
+      ],
+      "foreign_connection": "Crucial site establishing that there was no cultural vacuum or violent destruction between the Harappan civilization and the Vedic/Iron Age PGW culture.",
+      "official_sources": [
+        {
+          "title": "Excavations at Bhagwanpura 1975-76 and Other Explorations and Excavations 1975-1981 in Haryana, Jammu & Kashmir and Punjab",
+          "authors": "Jagat Pati Joshi",
+          "publisher": "Memoirs of the Archaeological Survey of India No. 89",
+          "year": 1993,
+          "type": "Official ASI Memoir"
+        }
+      ],
+      "description": "Located on the right bank of the Saraswati river in Kurukshetra district, Bhagwanpura provided the historic proof of physical overlap and peaceful synthesis between late Harappan and Painted Grey Ware (PGW) traditions.",
+      "x": 768.3,
+      "y": -315.5,
+      "is_foreign": false
+    },
+    {
+      "id": "hulas",
+      "name": "Hulas",
+      "name_hi": "हुलास",
+      "country": "India",
+      "state_or_province": "Uttar Pradesh",
+      "lat": 29.7,
+      "lon": 77.3667,
+      "category": "agricultural_rural",
+      "period": "Late Harappan to PGW (c. 1800 – 1000 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "K.N. Dikshit (ASI Excavations 1978–1983)",
+      "badge": "Doab Agricultural & Seal Discovery",
+      "key_structures": [
+        "Circular wattle-and-daub huts and mud houses",
+        "Grain storage pits containing wheat, barley, rice, ragi, and lentils"
+      ],
+      "key_artifacts": [
+        "Terracotta sealing bearing an inscription in Indus script",
+        "Faience bangles, steatite beads, and chert blades",
+        "Charred botanical seeds proving multi-cropping agrarian practice"
+      ],
+      "foreign_connection": "Demonstrates continuity of Indus script literacy into rural Uttar Pradesh during the Late Harappan phase.",
+      "official_sources": [
+        {
+          "title": "Hulas and the Late Harappan Complex in Western Uttar Pradesh",
+          "authors": "K.N. Dikshit",
+          "publisher": "Harappan Civilization (ed. Gregory L. Possehl), Oxford & IBH",
+          "year": 1982,
+          "pages": "339-351",
+          "type": "Scholarly Paper"
+        }
+      ],
+      "description": "Situated on the Katha Nala in Saharanpur district, Hulas confirmed that Harappan script, metrology, and dense agrarian colonization extended deep into western Uttar Pradesh.",
+      "x": 773.7,
+      "y": -311.3,
+      "is_foreign": false
+    },
+    {
+      "id": "karanpura",
+      "name": "Karanpura",
+      "name_hi": "करणपुरा",
+      "country": "India",
+      "state_or_province": "Rajasthan",
+      "lat": 29.2333,
+      "lon": 74.2,
+      "category": "agricultural_rural",
+      "period": "Early to Mature Harappan (c. 2800 – 1900 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "V.K. Tiwari (ASI Excavations 2012–2014)",
+      "badge": "Saraswati Valley Steatite Seal Discovery",
+      "key_structures": [
+        "Mud-brick multi-room residences with paved drainage channels",
+        "Circular mud storage silos with grain chaff"
+      ],
+      "key_artifacts": [
+        "Square steatite seal with unicorn motif and fine Indus script characters",
+        "Copper bangles, celts, and terracotta toy carts",
+        "Carnelian beads and chert blades"
+      ],
+      "foreign_connection": "Strengthens the dense settlement corridor along the Saraswati river linking Kalibangan with Haryana centers.",
+      "official_sources": [
+        {
+          "title": "Excavations at Karanpura, District Hanumangarh, Rajasthan",
+          "authors": "V.K. Tiwari",
+          "publisher": "Indian Archaeology 2012-13 — A Review, Archaeological Survey of India",
+          "year": 2014,
+          "type": "Official ASI Review"
+        }
+      ],
+      "description": "Located in the Bhadra tehsil of Hanumangarh district, Rajasthan, Karanpura yielded pristine steatite seals and domestic architecture verifying dense urbanization along the Ghaggar-Saraswati drainage.",
+      "x": 742.0,
+      "y": -305.9,
+      "is_foreign": false
+    },
+    {
+      "id": "rehman-dheri",
+      "name": "Rehman Dheri",
+      "name_hi": "रहमान ढेरी",
+      "country": "Pakistan",
+      "state_or_province": "Khyber Pakhtunkhwa",
+      "lat": 31.8333,
+      "lon": 70.75,
+      "category": "fortified_town",
+      "period": "Period I to III (Early to Proto-Harappan, c. 3300 – 1900 BCE)",
+      "area_hectares": 22.0,
+      "excavators": "Farzand Ali Durrani (University of Peshawar 1976-1982)",
+      "badge": "Earliest Planned Fortified Grid Town",
+      "key_structures": [
+        "Massive mud-brick fortification wall encircling an orthogonal grid town with central boulevard",
+        "Potters' quarters with specialized circular kiln complexes"
+      ],
+      "key_artifacts": [
+        "Ivory button seal carved with two mountain goats on one side and scorpions/frogs on the other",
+        "Graffiti marks on pottery demonstrating evolutionary precursor stages to standard Indus signs",
+        "Micro-beads of turquoise, lapis lazuli, and carnelian"
+      ],
+      "foreign_connection": "Vital overland crossroads connecting the Indus plain to the Iranian plateau, Gomal Pass, and Central Asia.",
+      "official_sources": [
+        {
+          "title": "Excavations in the Gomal Valley: Rehman Dheri Report No. 1",
+          "authors": "Farzand Ali Durrani",
+          "publisher": "Ancient Pakistan (University of Peshawar)",
+          "volume": "6: 1-204",
+          "year": 1988,
+          "type": "University Research Memoir"
+        }
+      ],
+      "description": "Situated in the Gomal plains near Dera Ismail Khan, Rehman Dheri is one of the oldest planned fortified towns in South Asia, pre-dating mature Harappa by several centuries.",
+      "x": 707.5,
+      "y": -336.1,
+      "is_foreign": false
+    },
+    {
+      "id": "gumla",
+      "name": "Gumla",
+      "name_hi": "गुमला",
+      "country": "Pakistan",
+      "state_or_province": "Khyber Pakhtunkhwa",
+      "lat": 31.95,
+      "lon": 70.8333,
+      "category": "frontier_outpost",
+      "period": "Period I (Neolithic) to Period IV (Mature Harappan, c. 3500 – 2000 BCE)",
+      "area_hectares": 3.0,
+      "excavators": "Ahmad Hasan Dani (University of Peshawar 1971)",
+      "badge": "Gomal Pass Gateway",
+      "key_structures": [
+        "Stratified mud-brick settlement showing transition from pastoral nomadism to urban Harappan",
+        "Communal hearths and storage pits"
+      ],
+      "key_artifacts": [
+        "Terracotta stylized female figurines with pinched bird-like heads",
+        "Mature Harappan steatite seal with unicorn engraving",
+        "Copper needles and micro-flint blades"
+      ],
+      "foreign_connection": "Key strategic post guarding the Gomal Pass transit trade from Central Asia.",
+      "official_sources": [
+        {
+          "title": "Excavations in the Gomal Valley",
+          "authors": "Ahmad Hasan Dani",
+          "publisher": "Ancient Pakistan",
+          "volume": "5: 1-177",
+          "year": 1971,
+          "type": "University Journal Memoir"
+        }
+      ],
+      "description": "Located in the Gomal River valley near Dera Ismail Khan, Gumla demonstrated the sequential integration of western highland communities into the broader Indus network.",
+      "x": 708.3,
+      "y": -337.5,
+      "is_foreign": false
+    },
+    {
+      "id": "nausharo",
+      "name": "Nausharo",
+      "name_hi": "नौशारो",
+      "country": "Pakistan",
+      "state_or_province": "Balochistan",
+      "lat": 29.35,
+      "lon": 67.5833,
+      "category": "fortified_town",
+      "period": "Period I to IV (Pre-Harappan to Mature Harappan, c. 2800 – 1900 BCE)",
+      "area_hectares": 6.0,
+      "excavators": "Jean-François Jarrige (French Archaeological Mission & Dept of Archaeology Pakistan 1985-1996)",
+      "badge": "Kachi Plain Stratigraphic Bridge",
+      "key_structures": [
+        "Monumental mud-brick city gate and defensive perimeter wall",
+        "Potters' industrial district with multi-chamber kilns"
+      ],
+      "key_artifacts": [
+        "Terracotta female figurines with vermilion (sindoor) pigment preserved in the hair parting",
+        "Indus steatite seals and engraved clay sealings",
+        "Copper-bronze tools and stone weights"
+      ],
+      "foreign_connection": "Provides the direct evolutionary bridge connecting Neolithic Mehrgarh with mature urban Harappa.",
+      "official_sources": [
+        {
+          "title": "Excavations at Nausharo 1985-88",
+          "authors": "Jean-François Jarrige",
+          "publisher": "Pakistan Archaeology",
+          "volume": "24: 21-67",
+          "year": 1989,
+          "type": "National Archaeology Journal"
+        }
+      ],
+      "description": "Situated near Mehrgarh in the Kachi plain of Balochistan, Nausharo demonstrated how local Kachi communities adopted standard mature Harappan architecture, scripts, and ceramic forms.",
+      "x": 675.8,
+      "y": -307.2,
+      "is_foreign": false
+    },
+    {
+      "id": "ur",
+      "name": "Ur (Royal Cemetery & Harbor)",
+      "name_hi": "उर (मेसोपोटामिया)",
+      "country": "Iraq",
+      "state_or_province": "Dhi Qar (Sumer)",
+      "lat": 30.9622,
+      "lon": 46.1031,
+      "category": "foreign_trade",
+      "period": "Early Dynastic III to Isin-Larsa (c. 2600 – 1800 BCE)",
+      "area_hectares": 50.0,
+      "excavators": "Sir Leonard Woolley (British Museum & Penn Museum 1922-1934)",
+      "badge": "Royal Tombs of Sumer: Indus Seals & Beads",
+      "key_structures": [
+        "Royal Tombs of Ur including Tomb of Queen Puabi",
+        "Great Ziggurat of Ur and commercial quay basins along the Euphrates river"
+      ],
+      "key_artifacts": [
+        "Royal Cemetery Seal (U. 7683): Round stamp seal with Indus unicorn and 5 Indus script signs",
+        "Long barrel-cylinder etched carnelian beads with bleached white cloverleaf / heart designs identical to Lothal manufacture",
+        "Cuneiform administrative tablets recording shipments from 'Meluhha' (Indus) paid in barley, oil, and wool"
+      ],
+      "foreign_connection": "The primary Mesopotamian maritime terminus where Harappan merchant translators ('dragomans of Meluhha') resided in dedicated trade quarters.",
+      "official_sources": [
+        {
+          "title": "Seals of Ancient Indian Style Found at Ur",
+          "authors": "C.J. Gadd",
+          "publisher": "Proceedings of the British Academy",
+          "volume": "18: 191-210",
+          "year": 1932,
+          "type": "British Academy Monograph"
+        },
+        {
+          "title": "Ur Excavations II: The Royal Cemetery",
+          "authors": "Sir Leonard Woolley",
+          "publisher": "British Museum & University of Pennsylvania Museum",
+          "year": 1934,
+          "type": "Official Museum Monograph"
+        }
+      ],
+      "description": "The capital city of ancient Sumer on the Euphrates River in southern Iraq, Ur is the most famous overseas site where authentic Indus Valley seals, weights, etched carnelian, and inscribed tablets were scientifically excavated in royal tombs.",
       "x": 461.0,
-      "y": -325.9
-    },
-    {
-      "id": "kish-mesopotamia",
-      "name": "Kish",
-      "name_hi": "किश (मेसोपोटामिया)",
-      "country": "Iraq (Mesopotamia)",
-      "region": "Babil Governorate, Central Iraq",
-      "lat": 32.55,
-      "lon": 44.65,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Early Dynastic to Akkadian (2600–2200 BCE)",
-      "area_hectares": 90,
-      "discovered_by": "Henri de Genouillac (1912); Stephen Langdon (1923-33)",
-      "badge": "Indus Seals in Central Mesopotamia",
-      "key_structures": [
-        "Monumental Palace of Kish and Ziggurats of Inanna and Zababa",
-        "Commercial warehouses and administrative quarters"
-      ],
-      "key_artifacts": [
-        "Classic square Harappan steatite stamp seals featuring the humped Indian bull and Indus script",
-        "Long barrel-cylinder etched carnelian beads made with Indus micro-drill technology",
-        "Inscribed sherds of Harappan black-slipped storage jars",
-        "Mesopotamian stone cylinder seals carved with Harappan animals (elephants and rhinos)"
-      ],
-      "foreign_connection": "Major northern Sumerian consumer of Harappan luxury goods, receiving goods via the Euphrates river network.",
-      "sign_count": 28,
-      "description": "One of the most powerful ancient Sumerian city-states. Archaeological excavations recovered numerous Harappan seals and imported Indian carnelian beads in both domestic and temple contexts.",
-      "x": 446.5,
-      "y": -344.6
+      "y": -325.9,
+      "is_foreign": true
     },
     {
       "id": "tell-asmar",
-      "name": "Tell Asmar (Ancient Eshnunna)",
-      "name_hi": "तेल अस्म़ार (अश्नुन्ना)",
-      "country": "Iraq (Mesopotamia)",
-      "region": "Diyala River Valley, Central Iraq",
-      "lat": 33.45,
-      "lon": 44.75,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Early Dynastic to Old Babylonian (2500–1800 BCE)",
-      "area_hectares": 80,
-      "discovered_by": "Henri Frankfort (1930-36, Oriental Institute of Chicago)",
-      "badge": "Indus Cylinder Seal with Elephant & Rhino",
+      "name": "Tell Asmar (Eshnunna)",
+      "name_hi": "तेल अस्मिर (एश्नुन्ना)",
+      "country": "Iraq",
+      "state_or_province": "Diyala",
+      "lat": 33.5833,
+      "lon": 44.8333,
+      "category": "foreign_trade",
+      "period": "Akkadian Period (c. 2350 – 2150 BCE)",
+      "area_hectares": 35.0,
+      "excavators": "Henri Frankfort (Oriental Institute of the University of Chicago 1930-1936)",
+      "badge": "Akkadian Palace Indus Cylinder Seal",
       "key_structures": [
-        "Palace of the Rulers and Temple of Abu",
-        "Scribe school archives and merchant storage rooms"
+        "Square Temple of Abu and Palace of the Rulers of Eshnunna",
+        "Private houses of the Akkadian period with indoor terracotta bathtubs and brick drains"
       ],
       "key_artifacts": [
-        "Celebrated cylinder seal carved with an Indian elephant, one-horned rhinoceros, and long-snouted gharial (crocodile)",
-        "Etched carnelian beads identical to beads from Mohenjo-daro and Lothal",
-        "Indus-style square stamp seals and painted Indus pottery sherds",
-        "Indus chert weights conforming precisely to the 13.7g standard"
+        "Indus cylinder seal depicting Asian elephant, rhinoceros, and fish-eating crocodile (gharial)",
+        "Etched carnelian beads with distinctive Harappan circular bleaching patterns",
+        "Indus-style pottery jars with Harappan geometric motifs"
       ],
-      "foreign_connection": "Served as a key inland trade clearinghouse in the Diyala valley, receiving Indus goods transshipped through the Persian Gulf and overland via the Iranian plateau.",
-      "sign_count": 18,
-      "description": "Henri Frankfort's excavations uncovered unmistakable Indian fauna depicted on Mesopotamian seals alongside authentic Harappan carnelian beads and weights, providing critical cross-dating benchmarks.",
-      "x": 447.5,
-      "y": -355.3
+      "foreign_connection": "Proved direct trade interaction during the reign of Sargon of Akkad, who declared in royal inscriptions that ships from Meluhha tied up at his capital.",
+      "official_sources": [
+        {
+          "title": "Tell Asmar, Khafaje and Khorsabad: Second Preliminary Report of the Iraq Expedition",
+          "authors": "Henri Frankfort",
+          "publisher": "Oriental Institute of the University of Chicago Communication No. 16",
+          "year": 1933,
+          "pages": "47-53",
+          "type": "University Expedition Report"
+        }
+      ],
+      "description": "Located in the Diyala river basin northeast of Baghdad, Tell Asmar provided definitive proof of Akkadian-Harappan trade through Frankfort's excavation of an unmistakable Indus-style cylinder seal in an undisturbed Akkadian house.",
+      "x": 448.3,
+      "y": -356.9,
+      "is_foreign": true
     },
     {
-      "id": "susa-elam",
-      "name": "Susa (Capital of Elam)",
-      "name_hi": "सूसा (ईलाम)",
-      "country": "Iran (Elam)",
-      "region": "Khuzestan Province, Southwestern Iran",
-      "lat": 32.19,
-      "lon": 48.25,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Proto-Elamite to Achaemenid (2600–1700 BCE)",
-      "area_hectares": 150,
-      "discovered_by": "Jacques de Morgan (1897); Roman Ghirshman",
-      "badge": "Overland & Gulf Gateway to Persia",
+      "id": "kish",
+      "name": "Kish (Mound A & Palace)",
+      "name_hi": "किश (मेसोपोटामिया)",
+      "country": "Iraq",
+      "state_or_province": "Babil",
+      "lat": 32.55,
+      "lon": 44.65,
+      "category": "foreign_trade",
+      "period": "Early Dynastic to Akkadian (c. 2600 – 2100 BCE)",
+      "area_hectares": 40.0,
+      "excavators": "Ernest Mackay & Stephen Langdon (Field Museum-Oxford University Expedition 1923-1933)",
+      "badge": "Early Steatite Seal Discovery in Mesopotamia",
       "key_structures": [
-        "Acropolis of Susa and royal administrative complexes",
-        "Workshops connecting Persian Gulf trade with the Iranian plateau"
+        "Monumental Early Dynastic Palace 'A' and Ziggurat complex",
+        "Deep cemetery excavations along the Euphrates alluvium"
       ],
       "key_artifacts": [
-        "Over two dozen Indus stamp seals bearing Harappan script and unicorn motifs",
-        "Etched carnelian beads, shell bangles from the Indian Ocean (Turbinella pyrum)",
-        "Indus cubical chert weights",
-        "Elamite cuneiform texts recording trade with Meluhha for exotic animals, ivory, and lapis"
+        "Square steatite stamp seal engraved with a unicorn and Harappan script signs",
+        "Etched carnelian beads and chert cubical weights matching the Harappan ratio",
+        "Inlaid shell gaming pieces"
       ],
-      "foreign_connection": "The premier trade hub of the Elamite kingdom, linking Harappan maritime traders from the Gulf with overland caravans crossing the Iranian plateau toward Central Asia.",
-      "sign_count": 35,
-      "description": "Susa has yielded one of the largest concentrations of Indus seals outside South Asia, establishing the city as an essential diplomatic and commercial bridge between Meluhha and Elam.",
-      "x": 482.5,
-      "y": -340.3
+      "foreign_connection": "One of the earliest sites where an authentic Indus seal was identified in Mesopotamia, leading Sir John Marshall to announce the antiquity of the Indus civilization in 1924.",
+      "official_sources": [
+        {
+          "title": "Report on the Excavations at Kish (Vols. I & II)",
+          "authors": "Ernest Mackay",
+          "publisher": "Field Museum of Natural History, Chicago",
+          "year": 1925,
+          "type": "Museum Research Monograph"
+        }
+      ],
+      "description": "An ancient Sumerian city-state situated east of Babylon, Kish provided crucial cross-dating evidence when Ernest Mackay unearthed an Indus steatite seal in pre-Sargonic strata.",
+      "x": 446.5,
+      "y": -344.6,
+      "is_foreign": true
     },
     {
-      "id": "failaka-dilmun",
-      "name": "Failaka Island (Dilmun)",
-      "name_hi": "फैलका द्वीप (दिलमुन)",
-      "country": "Kuwait (Dilmun)",
-      "region": "Kuwait Bay, Persian Gulf",
-      "lat": 29.43,
-      "lon": 48.33,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Dilmun Civilisation (2100–1700 BCE)",
-      "area_hectares": 15,
-      "discovered_by": "Danish Archaeological Expedition (Poul Kjaerum, 1958-60)",
-      "badge": "Persian Gulf Circular Seals",
+      "id": "susa",
+      "name": "Susa (Acropolis & Apadana)",
+      "name_hi": "सुसा (एलाम / ईरान)",
+      "country": "Iran",
+      "state_or_province": "Khuzestan",
+      "lat": 32.1892,
+      "lon": 48.2578,
+      "category": "foreign_trade",
+      "period": "Proto-Elamite to Achaemenid (c. 2600 – 1700 BCE)",
+      "area_hectares": 60.0,
+      "excavators": "Jacques de Morgan; Roland de Mecquenem; Pierre Amiet (Délégation Archéologique Française en Iran)",
+      "badge": "Elamite Capital: Indus Seals & Cubical Weights",
       "key_structures": [
-        "Dilmun palace, temple complexes, and stone quayside installations",
-        "Warehouse storehouses for long-distance maritime shipping"
+        "Acropolis of Susa and Ville Royale",
+        "Monumental temples of Inshushinak"
       ],
       "key_artifacts": [
-        "Circular Persian Gulf seals carved with classic Harappan unicorn and Indus script characters",
-        "Indus carnelian beads and Harappan weights",
-        "Chlorite vessels decorated in the Gulf dot-and-circle style",
-        "Harappan pottery storage jars with thick waterproof slip"
+        "Five square steatite Indus seals with unicorn, zebu bull, and Indus script characters",
+        "Standard Harappan banded chert cubical weights matching the Mohenjo-daro 13.63 g unit",
+        "Bleached etched carnelian beads and lapis lazuli pendants"
       ],
-      "foreign_connection": "Dilmun (modern Bahrain and Failaka) was the legendary middleman described in Mesopotamian texts as 'the place where the sun rises', mediating trade between Indus Meluhha and Sumer.",
-      "sign_count": 25,
-      "description": "An island outpost in Kuwait Bay that served as the primary offshore entrepôt for Dilmun merchants trading directly with Harappan ships sailing out of Lothal and Sutkagan Dor.",
+      "foreign_connection": "Major overland and maritime trading partner in southwest Iran; Elamite scribes used Indus metrology for valuing international luxury exchange.",
+      "official_sources": [
+        {
+          "title": "L'âge des échanges inter-iraniens: 3500-1700 av. J.-C.",
+          "authors": "Pierre Amiet",
+          "publisher": "Notes et Documents des Musées de France, Réunion des Musées Nationaux, Paris",
+          "year": 1986,
+          "type": "National Museum Monograph"
+        }
+      ],
+      "description": "The capital of the ancient Elamite civilization in southwest Iran, Susa was an essential land-and-sea emporium where five authentic Indus seals and standard Harappan chert cubical weights were excavated.",
+      "x": 482.6,
+      "y": -340.3,
+      "is_foreign": true
+    },
+    {
+      "id": "failaka",
+      "name": "Failaka Island (Tell F3 & Tell Sa'ad)",
+      "name_hi": "फैलका द्वीप (दिल्मुन / कुवैत)",
+      "country": "Kuwait",
+      "state_or_province": "Kuwait Bay",
+      "lat": 29.4333,
+      "lon": 48.3333,
+      "category": "foreign_trade",
+      "period": "Dilmun Civilization (c. 2200 – 1700 BCE)",
+      "area_hectares": 12.0,
+      "excavators": "Poul Kjærum (Danish Archaeological Bahrain Expedition 1958-1962); Kuwaiti-Slovak Archaeological Mission",
+      "badge": "Dilmun-Indus Gulf Exchange Post",
+      "key_structures": [
+        "Bronze Age administrative temple and stone governor's palace",
+        "Stone warehouse quay fronting Kuwait Bay"
+      ],
+      "key_artifacts": [
+        "Circular Persian Gulf stamp seals featuring Indus script signs alongside Dilmun motifs",
+        "Harappan etched carnelian beads and chert cubical weights",
+        "Micaceous red ware potsherds imported from Gujarat"
+      ],
+      "foreign_connection": "Key island station in the maritime network connecting Meluhha (Indus) with Dilmun (Bahrain/Kuwait) and Mesopotamia.",
+      "official_sources": [
+        {
+          "title": "Failaka/Dilmun: The Stamp and Cylinder Seals",
+          "authors": "Poul Kjærum",
+          "publisher": "Jutland Archaeological Society Publications XVII:1, Aarhus",
+          "year": 1983,
+          "type": "Official Society Monograph"
+        }
+      ],
+      "description": "Located in the entrance to Kuwait Bay, Failaka Island was a crucial hub of the ancient maritime kingdom of Dilmun, yielding stamp seals that combined Indus script characters with Arabian Gulf iconography.",
       "x": 483.3,
-      "y": -308.2
+      "y": -308.2,
+      "is_foreign": true
     },
     {
-      "id": "ras-al-jinz-oman",
-      "name": "Ras al-Jinz (Magan)",
-      "name_hi": "रास अल-जिंज़ (मगन / ओमान)",
-      "country": "Oman (Magan)",
-      "region": "Ash Sharqiyah South, Oman Coast",
-      "lat": 22.43,
-      "lon": 59.83,
-      "is_foreign": true,
-      "category": "Foreign Trade Center",
-      "period": "Magan Bronze Age (2500–1900 BCE)",
-      "area_hectares": 10,
-      "discovered_by": "Joint Hadd Project (Serge Cleuziou and Maurizio Tosi, 1985-2000)",
-      "badge": "Harappan Inscribed Storage Jars in Arabia",
+      "id": "ras-al-jinz",
+      "name": "Ras al-Jinz (RJ-1 & RJ-2)",
+      "name_hi": "रास अल-जिंज़ (मागन / ओमान)",
+      "country": "Oman",
+      "state_or_province": "Sur / Ash Sharqiyah",
+      "lat": 22.4283,
+      "lon": 59.8317,
+      "category": "foreign_trade",
+      "period": "Early Bronze Age / Magan (c. 2500 – 2000 BCE)",
+      "area_hectares": 5.0,
+      "excavators": "Serge Cleuziou & Maurizio Tosi (Joint Hadd Project 1985–2002)",
+      "badge": "Magan Maritime Outpost: Indus Copper & Tar Slabs",
       "key_structures": [
-        "Mud-brick maritime trading settlement (Building RJ-2) right on the Arabian Sea",
-        "Workshops for working green chlorite and processing Arabian Sea turtle shell and dried fish",
-        "Boat repair yards with bitumen slabs bearing impressions of reed hulls"
+        "Mud-brick multi-roomed buildings (Building I at RJ-2)",
+        "Bitumen-coated reed boat caulking workshops with barnacle encrustations"
       ],
       "key_artifacts": [
-        "Large Harappan black-slipped storage jar sherds bearing incised Indus script signs",
-        "Copper ingots sourced from Omani mountain mines (the source of copper for both Indus and Sumer)",
-        "Indus steatite seal impression with composite beast",
-        "Carnelian beads, ivory combs, and shell ladles manufactured in Gujarat",
-        "Slabs of marine bitumen used for caulking Harappan trade ships"
+        "Large Harappan storage jar inscribed with four Indus script signs used for transporting liquids across the Arabian Sea",
+        "Ivory comb of Harappan design and cubical chert weights",
+        "Copper prills and ingots sourced from Omani copper mines (ancient Magan)"
       ],
-      "foreign_connection": "Identified as the ancient land of 'Magan', famed in Sumerian texts for copper and diorite. Harappan sailors made regular landfall here crossing the Arabian Sea.",
-      "sign_count": 20,
-      "description": "The easternmost tip of the Arabian peninsula where French and Italian archaeologists uncovered unambiguous evidence of Harappan seafaring merchants: authentic Indus jars, seals, ivory, and bitumen caulking.",
+      "foreign_connection": "Direct oceanic landfall on the easternmost point of the Arabian Peninsula for masted Harappan merchant ships sailing from Lothal and Sutkagan Dor.",
+      "official_sources": [
+        {
+          "title": "In the Shadow of the Ancestors: The Prehistoric Foundations of the Early Arabian Civilization in Oman",
+          "authors": "Serge Cleuziou and Maurizio Tosi",
+          "publisher": "Ministry of Heritage and Culture, Sultanate of Oman",
+          "year": 2007,
+          "pages": "1-334",
+          "type": "Official Ministerial Monograph"
+        },
+        {
+          "title": "A Harappan Stamp Seal from Ras al-Junayz, Sultanate of Oman",
+          "authors": "Maurizio Tosi",
+          "publisher": "Proceedings of the Seminar for Arabian Studies",
+          "volume": "16: 187-188",
+          "year": 1986,
+          "type": "Peer-reviewed Paper"
+        }
+      ],
+      "description": "Located at the easternmost cape of the Arabian peninsula in Oman, Ras al-Jinz yielded bitumen slabs from ancient ocean-going reed ships and Harappan inscribed storage vessels, proving regular oceanic navigation between India and Magan.",
       "x": 598.3,
-      "y": -230.3
+      "y": -230.2,
+      "is_foreign": true
+    },
+    {
+      "id": "tell-abraq",
+      "name": "Tell Abraq",
+      "name_hi": "तेल अबराक़ (संयुक्त अरब अमीरात)",
+      "country": "United Arab Emirates",
+      "state_or_province": "Umm al-Quwain / Sharjah",
+      "lat": 25.5333,
+      "lon": 55.5333,
+      "category": "foreign_trade",
+      "period": "Umm an-Nar to Iron Age (c. 2200 – 1800 BCE)",
+      "area_hectares": 4.0,
+      "excavators": "Daniel T. Potts (University of Sydney 1989-1998)",
+      "badge": "UAE Gulf Port: Indus Ivory & Weights",
+      "key_structures": [
+        "Colossal circular stone fortress tower (40 meters in diameter)",
+        "Communal collective stone tomb of the Umm an-Nar period"
+      ],
+      "key_artifacts": [
+        "Indus ivory comb decorated with incised concentric circles and dots",
+        "Standard Harappan chert cubical weights",
+        "Harappan painted ceramics with peacock motifs and red-slipped ware"
+      ],
+      "foreign_connection": "Demonstrated sustained trade along the Trucial Coast linking Indus merchants with local copper-producing Arabian communities.",
+      "official_sources": [
+        {
+          "title": "A Prehistoric Mound in the Emirate of Umm al-Qaiwain: Excavations at Tell Abraq 1989",
+          "authors": "Daniel T. Potts",
+          "publisher": "Munksgaard, Copenhagen",
+          "year": 1990,
+          "type": "Academic Monograph"
+        }
+      ],
+      "description": "A major Bronze Age settlement in the northern UAE, Tell Abraq yielded authentic Indus ivory combs, ceramics, and cubical weights in an ancient fortified Arabian coastal tower.",
+      "x": 555.3,
+      "y": -264.2,
+      "is_foreign": true
+    },
+    {
+      "id": "qal-at-al-bahrain",
+      "name": "Qal'at al-Bahrain",
+      "name_hi": "क़लअत अल-बहरीन (दिल्मुन राजधानी)",
+      "country": "Bahrain",
+      "state_or_province": "Northern Governorate",
+      "lat": 26.2333,
+      "lon": 50.5167,
+      "category": "foreign_trade",
+      "period": "City I and City II (Dilmun Period, c. 2200 – 1750 BCE)",
+      "area_hectares": 18.0,
+      "excavators": "P.V. Glob & Geoffrey Bibby (Danish Archaeological Expedition 1953-1970); Flemming Højlund",
+      "badge": "UNESCO Capital of Ancient Dilmun",
+      "key_structures": [
+        "City II monumental stone city wall and seaward harbor gate",
+        "Dilmun palace warehouse containing standard weights and seals"
+      ],
+      "key_artifacts": [
+        "Complete set of spherical and cubical chert weights calibrated to the Indus standard",
+        "Circular Dilmun stamp seals showing bull and human figures",
+        "Bleached etched carnelian beads and Harappan storage jars"
+      ],
+      "foreign_connection": "The capital of Dilmun, celebrated in Mesopotamian cuneiform as the commercial clearinghouse for all goods sailing from Meluhha.",
+      "official_sources": [
+        {
+          "title": "Qala'at al-Bahrain: The Northern City Wall and the Islamic Fortress (Vols. 1 & 2)",
+          "authors": "Flemming Højlund and H. Hellmuth Andersen",
+          "publisher": "Jutland Archaeological Society Publications XXX:1-2, Moesgaard",
+          "year": 1994,
+          "type": "Official Society Monograph"
+        },
+        {
+          "title": "Looking for Dilmun",
+          "authors": "Geoffrey Bibby",
+          "publisher": "Alfred A. Knopf, New York",
+          "year": 1969,
+          "type": "Scholarly Monograph"
+        }
+      ],
+      "description": "The capital of ancient Dilmun in northern Bahrain, Qal'at al-Bahrain served as the international trading nexus where Indus merchants transshipped timber, ivory, and carnelian destined for the cities of southern Mesopotamia.",
+      "x": 505.2,
+      "y": -272.0,
+      "is_foreign": true
+    }
+  ],
+  "trade_routes": [
+    {
+      "id": "maritime-gulf-route",
+      "name": "Southern Maritime Route to Dilmun, Magan & Mesopotamia",
+      "name_hi": "मेहुल्हा-दिल्मुन-मागन समुद्री व्यापार मार्ग",
+      "type": "maritime",
+      "description": "The primary oceanic highway of Bronze Age antiquity. Masted Harappan merchant ships sailed from Lothal, Bet Dwarka, and Sutkagan Dor across the Arabian Sea to Ras al-Jinz (Oman/Magan), through the Strait of Hormuz to Qal'at al-Bahrain and Failaka Island (Dilmun), and up the Euphrates to Ur and Kish in Mesopotamia.",
+      "waypoints": [
+        {
+          "name": "Lothal",
+          "x": 722.5,
+          "y": -243.6
+        },
+        {
+          "name": "Bet Dwarka",
+          "x": 691.0,
+          "y": -242.9
+        },
+        {
+          "name": "Sutkagan Dor",
+          "x": 620.0,
+          "y": -281.0
+        },
+        {
+          "name": "Ras al-Jinz",
+          "x": 598.3,
+          "y": -242.4
+        },
+        {
+          "name": "Tell Abraq",
+          "x": 555.3,
+          "y": -281.4
+        },
+        {
+          "name": "Qal'at al-Bahrain",
+          "x": 505.2,
+          "y": -290.5
+        },
+        {
+          "name": "Failaka Island",
+          "x": 483.3,
+          "y": -332.6
+        },
+        {
+          "name": "Ur",
+          "x": 461.0,
+          "y": -353.4
+        },
+        {
+          "name": "Kish",
+          "x": 446.5,
+          "y": -375.0
+        }
+      ]
+    },
+    {
+      "id": "northern-lapis-route",
+      "name": "Northern Lapis Lazuli & Central Asian Caravan Route",
+      "name_hi": "उत्तरी वैदूर्य (लापिस लाजुली) स्थल मार्ग",
+      "type": "overland",
+      "description": "The strategic overland caravan highway connecting the Punjab metropolises (Harappa, Rehman Dheri) through the Gomal and Khyber passes across the Hindu Kush to Shortugai on the Oxus River, directly controlling the Badakhshan lapis lazuli and tin sources.",
+      "waypoints": [
+        {
+          "name": "Harappa",
+          "x": 728.7,
+          "y": -348.8
+        },
+        {
+          "name": "Rehman Dheri",
+          "x": 707.5,
+          "y": -365.1
+        },
+        {
+          "name": "Gumla",
+          "x": 708.3,
+          "y": -366.7
+        },
+        {
+          "name": "Shortugai",
+          "x": 695.2,
+          "y": -446.8
+        }
+      ]
+    },
+    {
+      "id": "saraswati-axis",
+      "name": "Ghaggar-Hakra / Saraswati Riverine Axis",
+      "name_hi": "घग्गर-हाकरा / सरस्वती नदीय धुरी",
+      "type": "riverine",
+      "description": "Dense urban and agricultural corridor following the paleochannels of the Saraswati and Drishadvati rivers, connecting Bhirrana, Kunal, Banawali, Rakhigarhi, Kalibangan, and Ganweriwala.",
+      "waypoints": [
+        {
+          "name": "Rakhigarhi",
+          "x": 761.2,
+          "y": -330.5
+        },
+        {
+          "name": "Bhirrana",
+          "x": 755.7,
+          "y": -334.1
+        },
+        {
+          "name": "Banawali",
+          "x": 752.5,
+          "y": -334.8
+        },
+        {
+          "name": "Kalibangan",
+          "x": 741.3,
+          "y": -333.1
+        },
+        {
+          "name": "Ganweriwala",
+          "x": 711.9,
+          "y": -318.0
+        }
+      ]
     }
   ]
 }

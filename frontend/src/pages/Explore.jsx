@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useAsync, useBatchedCount, useDebounced, useDocumentTitle } from '../hooks.js';
 import IndicatorCard from '../components/IndicatorCard.jsx';
@@ -38,10 +38,15 @@ function resolveLegacyFilters(categorySlug, subgroupSlug, categories, aliases) {
 }
 
 function ExploreBrowse() {
+  const { group: routeGroup } = useParams();
   const [params, setParams] = useSearchParams();
   const [query, setQuery] = useState(params.get('q') || '');
   const debouncedQuery = useDebounced(query.trim(), 300);
-  const filters = useMemo(() => Object.fromEntries(FILTER_KEYS.map(key => [key, params.get(key) || ''])), [params]);
+  const filters = useMemo(() => {
+    const map = Object.fromEntries(FILTER_KEYS.map(key => [key, params.get(key) || '']));
+    if (!map.category && routeGroup) map.category = routeGroup;
+    return map;
+  }, [params, routeGroup]);
   const categories = useAsync(signal => api.categories(signal), []);
   const category = (categories.data || []).find(item => item.slug === filters.category);
   const subgroup = category?.subgroups.find(item => item.slug === filters.subgroup);
@@ -132,6 +137,17 @@ function ExploreBrowse() {
 
       {category && <ExplainerArticle category={category} subgroup={subgroup} indicators={first.data?.results || []} />}
       {category?.slug === 'elections-democracy' && <p className="subgroup-callout">Looking for results by place? Open the <Link to="/elections">State and Union Territory election map</Link> for Lok Sabha and Assembly histories.</p>}
+      {category?.slug === 'indus-valley-civilisation' && (
+        <div className="subgroup-callout ivc-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem' }}>
+          <div>
+            <strong>🏛️ Indus Valley Archaeological Corpus & Epigraphy:</strong> Complete GIS excavations atlas (49+ sites across 9 countries with official ASI monographs) & computational script decryption workbench.
+          </div>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <Link to="/explore/indus-valley-civilisation/excavations-geography" className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
+            <Link to="/ivc-translator" className="btn btn-secondary btn-sm">Indus Script Decryption Workbench →</Link>
+          </div>
+        </div>
+      )}
 
       <section className="explore-browse" aria-label="Browse">
         <div className="explore-browse-head">
@@ -248,9 +264,10 @@ function ExploreBrowse() {
 
 // A group + subgroup URL opens that subgroup's article (or map selector); everything else is the browser above.
 export default function Explore() {
+  const { group: routeGroup } = useParams();
   const [params] = useSearchParams();
   const categories = useAsync(signal => api.categories(signal), []);
-  const categorySlug = params.get('category') || '';
+  const categorySlug = params.get('category') || routeGroup || '';
   const subgroupSlug = params.get('subgroup') || '';
   if (categorySlug && subgroupSlug && categories.loading) return <Loading label="Loading the article…" />;
   const category = (categories.data || []).find(item => item.slug === categorySlug);

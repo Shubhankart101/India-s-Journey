@@ -14,6 +14,7 @@ const Indicator = lazy(() => import('./pages/Indicator.jsx'));
 const Compare = lazy(() => import('./pages/Compare.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Articles = lazy(() => import('./pages/Articles.jsx'));
+const IndusScriptTranslator = lazy(() => import('./pages/IndusScriptTranslator.jsx'));
 const Api = lazy(() => import('./pages/Api.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
@@ -25,8 +26,10 @@ export function AppRoutes() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="explore" element={<Explore />} />
+          <Route path="explore/:group" element={<Explore />} />
           <Route path="explore/:group/:subgroup" element={<SubgroupRoute />} />
           <Route path="explore/:group/:subgroup/:stateSlug" element={<SubgroupRoute />} />
+          <Route path="ivc-translator" element={<IndusScriptTranslator />} />
           <Route path="elections" element={<Elections />} />
           <Route path="elections/:stateSlug" element={<Elections />} />
           <Route path="voter-list-sir-ssr" element={<VoterRollPage />} />
