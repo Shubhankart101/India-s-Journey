@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="scriptGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#302015"/>
+      <stop offset="60%" stop-color="#1c130d"/>
+      <stop offset="100%" stop-color="#0d0906"/>
+    </radialGradient>
+    <linearGradient id="boardWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#593b22"/>
+      <stop offset="50%" stop-color="#3d2716"/>
+      <stop offset="100%" stop-color="#26170d"/>
+    </linearGradient>
+    <linearGradient id="gypsumInlay" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#e8e2d5"/>
+      <stop offset="100%" stop-color="#b0a896"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#scriptGlow)"/>
+
+  <!-- Subtle Ancient Grid Background -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.05">
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="300" y1="0" x2="300" y2="800"/>
+    <line x1="600" y1="0" x2="600" y2="800"/>
+    <line x1="900" y1="0" x2="900" y2="800"/>
+  </g>
+
+  <!-- Title / Decipherment Framing Header Banner -->
+  <text x="600" y="90" font-family="'Stardos Stencil', Georgia, serif" font-size="28" font-weight="700" fill="#d4a72c" text-anchor="middle" letter-spacing="0.2em">
+    THE DHOLAVIRA SIGNBOARD · धोलावीरा फलक
+  </text>
+  <text x="600" y="125" font-family="sans-serif" font-size="14" fill="#a89a84" text-anchor="middle" letter-spacing="0.08em">
+    The world's oldest surviving monumental signboard · 10 giant crystalline gypsum characters (c. 2400 BCE)
+  </text>
+
+  <!-- THE FAMOUS DHOLAVIRA 10-CHARACTER SIGNBOARD (Length ~3 meters in wooden frame) -->
+  <g transform="translate(60, 160)">
+    <!-- Wooden board backing (decayed in antiquity, leaving inlaid crystalline gypsum signs) -->
+    <rect x="0" y="0" width="1080" height="190" rx="10" fill="url(#boardWood)" stroke="#8f5b2c" stroke-width="4"/>
+    <rect x="10" y="10" width="1060" height="170" fill="#1f140b" stroke="#3b2310" stroke-width="2"/>
+
+    <!-- 10 Famous Dholavira Inlay Signs drawn with accurate glyph strokes -->
+    <!-- Sign 1: Four-spoked Wheel with strokes -->
+    <g transform="translate(40, 25)" stroke="url(#gypsumInlay)" stroke-width="10" stroke-linecap="round" fill="none">
+      <circle cx="45" cy="70" r="45"/>
+      <line x1="45" y1="25" x2="45" y2="115"/>
+      <line x1="0" y1="70" x2="90" y2="70"/>
+      <line x1="13" y1="38" x2="77" y2="102"/>
+      <line x1="13" y1="102" x2="77" y2="38"/>
+    </g>
+
+    <!-- Sign 2: Spoked Diamond / Sieve Sign -->
+    <g transform="translate(145, 25)" stroke="url(#gypsumInlay)" stroke-width="10" stroke-linecap="round" fill="none">
+      <polygon points="45,15 85,70 45,125 5,70"/>
+      <line x1="45" y1="15" x2="45" y2="125"/>
+      <line x1="5" y1="70" x2="85" y2="70"/>
+    </g>
+
+    <!-- Sign 3: Man with Bow and Arrow -->
+    <g transform="translate(250, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <circle cx="45" cy="30" r="14"/>
+      <line x1="45" y1="44" x2="45" y2="105"/>
+      <line x1="45" y1="105" x2="25" y2="135"/>
+      <line x1="45" y1="105" x2="65" y2="135"/>
+      <line x1="20" y1="65" x2="70" y2="65"/>
+      <!-- Bow -->
+      <path d="M70 40 Q90 65 70 90"/>
+    </g>
+
+    <!-- Sign 4: The Celebrated Harappan Fish Sign (mīn) with Fin / Diacritic -->
+    <g transform="translate(355, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <path d="M15 70 Q45 25 75 70 Q45 115 15 70 Z"/>
+      <line x1="75" y1="70" x2="95" y2="45"/>
+      <line x1="75" y1="70" x2="95" y2="95"/>
+      <line x1="95" y1="45" x2="95" y2="95"/>
+      <!-- Center Eye Dot / Fin -->
+      <line x1="45" y1="45" x2="45" y2="95"/>
+    </g>
+
+    <!-- Sign 5: Repeating Fish Sign Variant with Roof (Modified Sign) -->
+    <g transform="translate(460, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <path d="M15 75 Q45 35 75 75 Q45 115 15 75 Z"/>
+      <line x1="75" y1="75" x2="95" y2="55"/>
+      <line x1="75" y1="75" x2="95" y2="95"/>
+      <!-- Roof / Crown strokes above fish -->
+      <path d="M15 28 L45 15 L75 28"/>
+    </g>
+
+    <!-- Sign 6: Pitted Jar / Terminal Vessel (M-342) -->
+    <g transform="translate(565, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <line x1="25" y1="25" x2="75" y2="25"/>
+      <path d="M30 25 L35 90 Q50 130 65 90 L70 25"/>
+      <line x1="50" y1="12" x2="50" y2="25"/>
+      <line x1="38" y1="12" x2="62" y2="12"/>
+      <!-- Internal strokes -->
+      <line x1="42" y1="55" x2="58" y2="55"/>
+      <line x1="42" y1="75" x2="58" y2="75"/>
+    </g>
+
+    <!-- Sign 7: Twin Spades / Forked Horns -->
+    <g transform="translate(670, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <line x1="50" y1="60" x2="50" y2="130"/>
+      <path d="M20 20 Q50 60 50 60 Q50 60 80 20"/>
+      <line x1="20" y1="20" x2="35" y2="35"/>
+      <line x1="80" y1="20" x2="65" y2="35"/>
+    </g>
+
+    <!-- Sign 8: Two Parallel Vertical Strokes (Numeral 2) -->
+    <g transform="translate(775, 25)" stroke="url(#gypsumInlay)" stroke-width="11" stroke-linecap="round" fill="none">
+      <line x1="30" y1="25" x2="30" y2="125"/>
+      <line x1="60" y1="25" x2="60" y2="125"/>
+    </g>
+
+    <!-- Sign 9: Repeating Modified Fish Sign with Gills -->
+    <g transform="translate(875, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <path d="M15 70 Q45 25 75 70 Q45 115 15 70 Z"/>
+      <line x1="75" y1="70" x2="95" y2="45"/>
+      <line x1="75" y1="70" x2="95" y2="95"/>
+      <line x1="35" y1="50" x2="55" y2="90"/>
+      <line x1="55" y1="50" x2="35" y2="90"/>
+    </g>
+
+    <!-- Sign 10: Terminal Standard Jar Sign (M-342) -->
+    <g transform="translate(975, 25)" stroke="url(#gypsumInlay)" stroke-width="9" stroke-linecap="round" fill="none">
+      <line x1="25" y1="25" x2="75" y2="25"/>
+      <path d="M30 25 L35 90 Q50 130 65 90 L70 25"/>
+      <line x1="50" y1="12" x2="50" y2="25"/>
+      <line x1="38" y1="12" x2="62" y2="12"/>
+    </g>
+  </g>
+
+  <!-- Reading Direction Indicator: Harappan Script is read Right-to-Left (←) -->
+  <g transform="translate(600, 385)">
+    <line x1="280" y1="0" x2="-280" y2="0" stroke="#d4a72c" stroke-width="2.5" stroke-dasharray="6,4"/>
+    <polygon points="-295,0 -275,-8 -275,8" fill="#d4a72c"/>
+    <rect x="-180" y="-14" width="360" height="28" rx="6" fill="#140f0a" stroke="#d4a72c" stroke-width="1.5"/>
+    <text x="0" y="5" font-family="sans-serif" font-size="12" font-weight="700" fill="#f2e7b8" text-anchor="middle" letter-spacing="0.1em">
+      STANDARD READING DIRECTION: RIGHT TO LEFT (←)
+    </text>
+  </g>
+
+  <!-- Steatite Seal Impression (Unicorn facing Sacred Brazier) in Center Bottom -->
+  <g transform="translate(420, 430)">
+    <rect x="0" y="0" width="360" height="320" rx="12" fill="#2d251d" stroke="#c99532" stroke-width="3"/>
+    
+    <!-- Top 5 Inscription Signs on Seal -->
+    <g transform="translate(30, 25)" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.9">
+      <!-- Sign 1 -->
+      <path d="M20 15 L45 15 L48 55 Q32 70 18 55 Z"/>
+      <!-- Sign 2 -->
+      <path d="M80 35 Q100 15 120 35 Q100 55 80 35 Z M120 35 L135 25 L135 45 Z"/>
+      <!-- Sign 3 -->
+      <circle cx="175" cy="35" r="18"/>
+      <line x1="175" y1="17" x2="175" y2="53"/>
+      <line x1="157" y1="35" x2="193" y2="35"/>
+      <!-- Sign 4 -->
+      <line x1="230" y1="18" x2="230" y2="54"/>
+      <line x1="242" y1="18" x2="242" y2="54"/>
+      <!-- Sign 5 -->
+      <path d="M280 18 L310 18 L312 55 Q295 68 280 55 Z"/>
+    </g>
+
+    <!-- Carved Unicorn (Ekashringa - Most common IVC seal motif, 65%+ of all seals) -->
+    <g transform="translate(50, 110)">
+      <!-- Curved single horn -->
+      <path d="M170 30 Q210 10 230 -20" fill="none" stroke="#d4a72c" stroke-width="5" stroke-linecap="round"/>
+      <!-- Head with alert ear and eye -->
+      <path d="M150 40 Q180 35 190 60 Q170 80 145 70 Z" fill="#8c683b"/>
+      <circle cx="165" cy="50" r="3" fill="#ffffff"/>
+      <polygon points="152,38 158,25 163,38" fill="#d4a72c"/>
+      <!-- Neck with ornamental harness/garland folds -->
+      <path d="M145 70 Q160 110 135 140 L105 130 Q120 90 120 60 Z" fill="#7a552c"/>
+      <line x1="122" y1="75" x2="148" y2="85" stroke="#d4a72c" stroke-width="2"/>
+      <line x1="118" y1="95" x2="142" y2="105" stroke="#d4a72c" stroke-width="2"/>
+      <line x1="112" y1="115" x2="135" y2="125" stroke="#d4a72c" stroke-width="2"/>
+      <!-- Muscular Bull-like Body -->
+      <path d="M135 140 Q80 145 40 170 Q40 210 90 210 Q140 210 170 180 Q190 150 135 140 Z" fill="#8c683b"/>
+      <!-- Powerful Legs and Tail -->
+      <path d="M50 180 L40 250 L55 250" fill="none" stroke="#8c683b" stroke-width="8"/>
+      <path d="M75 190 L75 250 L90 250" fill="none" stroke="#8c683b" stroke-width="8"/>
+      <path d="M140 180 L145 250 L160 250" fill="none" stroke="#8c683b" stroke-width="8"/>
+      <path d="M165 175 L175 250 L190 250" fill="none" stroke="#8c683b" stroke-width="8"/>
+      <!-- Tail with tuft -->
+      <path d="M40 170 Q25 190 30 220" fill="none" stroke="#8c683b" stroke-width="3"/>
+      <!-- Sacred Incense Burner / Filter Stand in front of Unicorn -->
+      <g transform="translate(205, 50)">
+        <!-- Top perforated bowl -->
+        <ellipse cx="20" cy="50" rx="22" ry="14" fill="#a87944" stroke="#d4a72c" stroke-width="2"/>
+        <line x1="8" y1="50" x2="32" y2="50" stroke="#d4a72c" stroke-width="1.5"/>
+        <!-- Central shaft with spherical knob -->
+        <line x1="20" y1="64" x2="20" y2="110" stroke="#d4a72c" stroke-width="3"/>
+        <circle cx="20" cy="85" r="7" fill="#d4a72c"/>
+        <!-- Bottom bell-shaped base -->
+        <polygon points="5,145 35,145 25,110 15,110" fill="#a87944" stroke="#d4a72c" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

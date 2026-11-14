@@ -1,0 +1,363 @@
+{
+  "meta": {
+    "title": "Indus Script Decipherment Workbench & Sign Concordance",
+    "subtitle": "Interactive catalog of Harappan signs, positional frequencies, reading direction, and major decipherment hypotheses",
+    "corpus_stats": {
+      "total_inscriptions": 4124,
+      "unique_signs": 417,
+      "frequent_signs": 67,
+      "average_inscription_length": 4.6,
+      "longest_inscription_signs": 26,
+      "dominant_direction": "Right-to-Left (86.5% of inscriptions)",
+      "boustrophedon_rate": "7.2% (alternating R-to-L and L-to-R in multi-line texts)"
+    },
+    "theories": [
+      {
+        "id": "dravidian",
+        "name": "Dravidian Rebus Hypothesis",
+        "proponents": "Asko Parpola (Univ. of Helsinki); Iravatham Mahadevan (ASI / Epigraphical Society); Walter Fairservis",
+        "framework": "Logo-syllabic script where pictograms represent homonyms (rebus principle) based on Proto-Dravidian roots. For example, the fish sign (mīn) represents both 'fish' and 'star' (mīn), allowing astral deities and planetary alignments to be recorded.",
+        "strengths": "Supported by Brahui (a North Dravidian language surviving in Balochistan heartland), structural positional constraints, and Dravidian loanwords in the Rigveda.",
+        "status": "Most widely studied linguistic decipherment framework in international academia."
+      },
+      {
+        "id": "indo-aryan",
+        "name": "Proto-Indo-Aryan / Sanskrit Hypothesis",
+        "proponents": "S.R. Rao (Excavator of Lothal); Natwar Jha; N.S. Rajaram",
+        "framework": "Argues that Mature Harappan script evolved into an alphabetic or consonantal writing system related to early Brahmi, encoding Vedic and Proto-Sanskrit words (e.g. 'maha', 'shasa', 'arka', 'pa').",
+        "strengths": "Direct cultural and architectural continuities observed in fire altars at Kalibangan and Lothal, swastika and yoga postures.",
+        "status": "Debated; criticized by many computational linguists for flexible phonetic assignments without rigid cross-checks."
+      },
+      {
+        "id": "non-linguistic",
+        "name": "Non-Linguistic Symbolic System",
+        "proponents": "Steve Farmer; Richard Sproat; Michael Witzel (Harvard University, 2004)",
+        "framework": "Proposes that the Indus signs were non-linguistic political, religious, or clan emblems (similar to coats of arms or heraldic insignia) rather than a phonetic spoken script, pointing to the extreme brevity of inscriptions (avg. 4.6 signs).",
+        "strengths": "Explains why no long literary texts, clay tablets, or monumental stone histories exist despite an empire spanning 1.5 million sq. km.",
+        "status": "Controversial; strongly challenged by Rao et al. (Science 2009) whose conditional entropy and Markov model tests proved Indus text entropy matches spoken natural languages (Sumerian, Sanskrit, English) and differs from non-linguistic symbols."
+      }
+    ]
+  },
+  "signs": [
+    {
+      "id": "M-342",
+      "name": "The Jar / Vessel Sign",
+      "name_hi": "कलश / कुंभ चिन्ह",
+      "description": "The single most frequent sign in the entire Indus corpus. Appears predominantly at the end (terminal) of inscriptions.",
+      "svg_path": "M15 15 L65 15 M20 15 L25 65 Q40 95 55 65 L60 15 M40 5 L40 15 M30 5 L50 5",
+      "frequency": 1395,
+      "share_percent": 10.4,
+      "positional": {
+        "initial": 3.2,
+        "medial": 11.5,
+        "terminal": 85.3
+      },
+      "dravidian_reading": "kō / kōṭṭu",
+      "dravidian_meaning": "Vessel / Lord / Ruler / Clan suffix (nominal genitive/dative ending)",
+      "rao_reading": "p / pa",
+      "rao_meaning": "Protector / Guardian (Sanskrit: pā)",
+      "glyph_type": "Terminal Suffix"
+    },
+    {
+      "id": "M-059",
+      "name": "Standard Fish Sign",
+      "name_hi": "मत्स्य चिन्ह (साधारण)",
+      "description": "Classic fish outline. Central to the Dravidian rebus decipherment (mīn = fish and star).",
+      "svg_path": "M15 50 Q40 15 65 50 Q40 85 15 50 Z M65 50 L85 28 L85 72 Z",
+      "frequency": 372,
+      "share_percent": 2.8,
+      "positional": {
+        "initial": 22.1,
+        "medial": 61.4,
+        "terminal": 16.5
+      },
+      "dravidian_reading": "mīn",
+      "dravidian_meaning": "Fish → homophone for 'Star / Planet / Luminary deity'",
+      "rao_reading": "s / sa",
+      "rao_meaning": "Soma / Divine nectar",
+      "glyph_type": "Ideogram / Root"
+    },
+    {
+      "id": "M-065",
+      "name": "Fish with Roof / Canopy",
+      "name_hi": "छत्र मत्स्य (मेघ / तारा)",
+      "description": "Fish sign surmounted by a triangular canopy or roof diacritic.",
+      "svg_path": "M15 55 Q40 25 65 55 Q40 85 15 55 Z M65 55 L85 35 L85 75 Z M15 20 L40 8 L65 20",
+      "frequency": 118,
+      "share_percent": 0.9,
+      "positional": {
+        "initial": 31.4,
+        "medial": 58.2,
+        "terminal": 10.4
+      },
+      "dravidian_reading": "mēi-mīn",
+      "dravidian_meaning": "Covered star / Saturn (Dravidian: mai-mīn = dark/slow star)",
+      "rao_reading": "chhatra-s",
+      "rao_meaning": "Sheltered / Auspicious",
+      "glyph_type": "Compound Ideogram"
+    },
+    {
+      "id": "M-067",
+      "name": "Pectinated Fish (Finned / Star Cluster)",
+      "name_hi": "पक्ष-युक्त मत्स्य",
+      "description": "Fish sign with internal transverse hatching lines resembling fins or scales.",
+      "svg_path": "M15 50 Q40 15 65 50 Q40 85 15 50 Z M65 50 L85 28 L85 72 Z M35 30 L35 70 M45 30 L45 70",
+      "frequency": 96,
+      "share_percent": 0.7,
+      "positional": {
+        "initial": 18.5,
+        "medial": 72.3,
+        "terminal": 9.2
+      },
+      "dravidian_reading": "aṟu-mīn",
+      "dravidian_meaning": "The Pleiades (Krittika constellation; lit. 'Six-stars')",
+      "rao_reading": "sh / sha",
+      "rao_meaning": "Splendid / Radiant",
+      "glyph_type": "Compound Ideogram"
+    },
+    {
+      "id": "M-099",
+      "name": "Four-Spoked Wheel / Sun",
+      "name_hi": "चक्र / सूर्य चिन्ह",
+      "description": "Circle containing an inscribed Greek-cross (+), representing a spoked wheel or solar disc.",
+      "svg_path": "M40 40 m -30, 0 a 30,30 0 1,0 60,0 a 30,30 0 1,0 -60,0 M40 10 L40 70 M10 40 L70 40",
+      "frequency": 245,
+      "share_percent": 1.8,
+      "positional": {
+        "initial": 28.6,
+        "medial": 54.1,
+        "terminal": 17.3
+      },
+      "dravidian_reading": "āzi / tika",
+      "dravidian_meaning": "Disc / Wheel / Sun / Time cycle (āzi = discus/ocean)",
+      "rao_reading": "ch / chakra",
+      "rao_meaning": "Sovereign wheel / Chakra",
+      "glyph_type": "Ideogram / Root"
+    },
+    {
+      "id": "M-012",
+      "name": "Man with Bow & Arrow",
+      "name_hi": "धनुर्धर चिन्ह",
+      "description": "Anthropomorphic stick figure holding an arched hunting bow.",
+      "svg_path": "M40 18 A6 6 0 1 0 40 30 A6 6 0 1 0 40 18 M40 30 L40 60 M40 60 L28 85 M40 60 L52 85 M22 45 L58 45 M58 30 Q70 45 58 60",
+      "frequency": 164,
+      "share_percent": 1.2,
+      "positional": {
+        "initial": 34.2,
+        "medial": 52.8,
+        "terminal": 13.0
+      },
+      "dravidian_reading": "ampu / vil",
+      "dravidian_meaning": "Archer / Hunter / Orion constellation (Mrigashira)",
+      "rao_reading": "dh / dhanus",
+      "rao_meaning": "Warrior / Bow-bearer",
+      "glyph_type": "Pictogram"
+    },
+    {
+      "id": "M-176",
+      "name": "Two Vertical Strokes (Numeral 2)",
+      "name_hi": "द्वि-रेखा (अंक २)",
+      "description": "Two distinct parallel vertical strokes used as multiplier or syllable indicator.",
+      "svg_path": "M30 15 L30 75 M50 15 L50 75",
+      "frequency": 388,
+      "share_percent": 2.9,
+      "positional": {
+        "initial": 44.5,
+        "medial": 41.2,
+        "terminal": 14.3
+      },
+      "dravidian_reading": "iraṇṭu / iru",
+      "dravidian_meaning": "Two / Dual / Double (rebus: iru = great/dark)",
+      "rao_reading": "dvi / da",
+      "rao_meaning": "Numeral 2",
+      "glyph_type": "Numeral / Modifier"
+    },
+    {
+      "id": "M-177",
+      "name": "Three Vertical Strokes (Numeral 3)",
+      "name_hi": "त्रि-रेखा (अंक ३)",
+      "description": "Three parallel vertical strokes, often indicating plural or triad.",
+      "svg_path": "M22 15 L22 75 M40 15 L40 75 M58 15 L58 75",
+      "frequency": 298,
+      "share_percent": 2.2,
+      "positional": {
+        "initial": 38.2,
+        "medial": 49.5,
+        "terminal": 12.3
+      },
+      "dravidian_reading": "mūṉṟu / mu",
+      "dravidian_meaning": "Three / Triad (mu-mīn = three stars of Orion)",
+      "rao_reading": "tri / tra",
+      "rao_meaning": "Numeral 3",
+      "glyph_type": "Numeral / Modifier"
+    },
+    {
+      "id": "M-162",
+      "name": "Forked Horns / Tree Sign",
+      "name_hi": "वृक्ष / शृंग चिन्ह",
+      "description": "Upward branching forks resembling tree branches or sacred bovid horns.",
+      "svg_path": "M40 75 L40 35 M40 35 L15 15 M40 35 L65 15 M40 50 L25 35 M40 50 L55 35",
+      "frequency": 142,
+      "share_percent": 1.1,
+      "positional": {
+        "initial": 12.0,
+        "medial": 68.0,
+        "terminal": 20.0
+      },
+      "dravidian_reading": "maram / kōṭu",
+      "dravidian_meaning": "Tree / Branch / Sacred Asvattha tree",
+      "rao_reading": "v / vrksha",
+      "rao_meaning": "Tree / Divine branch",
+      "glyph_type": "Ideogram"
+    },
+    {
+      "id": "M-245",
+      "name": "Diamond / Sieve Sign",
+      "name_hi": "हीरक / जाली चिन्ह",
+      "description": "Lozenge or rhombus, occasionally bisected by cross-strokes.",
+      "svg_path": "M40 12 L70 45 L40 78 L10 45 Z M40 12 L40 78 M10 45 L70 45",
+      "frequency": 182,
+      "share_percent": 1.4,
+      "positional": {
+        "initial": 26.5,
+        "medial": 61.2,
+        "terminal": 12.3
+      },
+      "dravidian_reading": "kaṇ / aṭai",
+      "dravidian_meaning": "Eye / Mesh / Enclosure / Watchman",
+      "rao_reading": "k / ka",
+      "rao_meaning": "Protection / Shielder",
+      "glyph_type": "Ideogram"
+    },
+    {
+      "id": "M-211",
+      "name": "Lance / Spearhead Sign",
+      "name_hi": "भाला / शूल चिन्ह",
+      "description": "Triangular blade atop a central vertical shaft.",
+      "svg_path": "M40 10 L58 35 L40 35 L40 80 M40 35 L22 35 L40 10",
+      "frequency": 115,
+      "share_percent": 0.9,
+      "positional": {
+        "initial": 21.0,
+        "medial": 45.0,
+        "terminal": 34.0
+      },
+      "dravidian_reading": "vēl",
+      "dravidian_meaning": "Spear / Lance (deity Murugan / Skanda emblem)",
+      "rao_reading": "sh / shula",
+      "rao_meaning": "Spear / Trident weapon",
+      "glyph_type": "Weapon Emblem"
+    },
+    {
+      "id": "M-389",
+      "name": "Harrow / Comb Sign",
+      "name_hi": "कंकत (कंघी) चिन्ह",
+      "description": "Horizontal spine with four downward pointing vertical teeth.",
+      "svg_path": "M15 30 L65 30 M22 30 L22 65 M34 30 L34 65 M46 30 L46 65 M58 30 L58 65",
+      "frequency": 136,
+      "share_percent": 1.0,
+      "positional": {
+        "initial": 15.3,
+        "medial": 58.7,
+        "terminal": 26.0
+      },
+      "dravidian_reading": "cīppu",
+      "dravidian_meaning": "Comb / Weaver's reed / Sifter",
+      "rao_reading": "m / ma",
+      "rao_meaning": "Measure / Weave",
+      "glyph_type": "Tool / Implement"
+    }
+  ],
+  "famous_inscriptions": [
+    {
+      "id": "dholavira-signboard",
+      "title": "The Dholavira 10-Character Signboard",
+      "site": "Dholavira (Gujarat, India)",
+      "date": "c. 2400 BCE (Mature Harappan)",
+      "context": "Found fallen in the western chamber of the monumental North Gateway of the Citadel. Each symbol is approximately 37 cm high, crafted from pure white crystalline gypsum inlaid into a massive wooden signboard that hung above the city gate.",
+      "sign_sequence": [
+        "M-342",
+        "M-067",
+        "M-176",
+        "M-162",
+        "M-342",
+        "M-065",
+        "M-059",
+        "M-012",
+        "M-245",
+        "M-099"
+      ],
+      "reading_direction": "Right to Left (←)",
+      "sign_count": 10,
+      "interpretation": "A civic, royal, or territorial proclamation declaring the sovereign authority and divine protection of the city of Dholavira and its merchant citadel."
+    },
+    {
+      "id": "pashupati-seal",
+      "title": "Pashupati Seal (M-304)",
+      "site": "Mohenjo-daro (Sindh, Pakistan)",
+      "date": "c. 2500–2300 BCE",
+      "context": "Discovered in Block 1, Southern Area of the Citadel by Ernest Mackay. Steatite seal depicting a three-faced horned deity seated in yogic asana (Mulabandhasana) flanked by an elephant, tiger, rhinoceros, water buffalo, and antelopes.",
+      "sign_sequence": [
+        "M-342",
+        "M-059",
+        "M-099",
+        "M-211",
+        "M-176",
+        "M-389"
+      ],
+      "reading_direction": "Right to Left (←)",
+      "sign_count": 6,
+      "interpretation": "Lord of the Beasts / Proto-Shiva: Dedication inscription to the master of wild creatures, divine yogic protector, and guardian of cosmic forces."
+    },
+    {
+      "id": "unicorn-seal-m1",
+      "title": "Mohenjo-daro Royal Unicorn Seal (M-1)",
+      "site": "Mohenjo-daro (Sindh, Pakistan)",
+      "date": "c. 2400 BCE",
+      "context": "Square steatite stamp seal depicting the magnificent unicorn (Ekashringa) with arched single horn facing a sacred double-decked incense burner / filter stand. Over 65% of all IVC seals bear this exact creature.",
+      "sign_sequence": [
+        "M-342",
+        "M-177",
+        "M-099",
+        "M-059",
+        "M-342"
+      ],
+      "reading_direction": "Right to Left (←)",
+      "sign_count": 5,
+      "interpretation": "Standard commercial credential of a high-ranking civic official or merchant guild overseeing exports from the Mohenjo-daro central district."
+    },
+    {
+      "id": "ur-mesopotamia-seal",
+      "title": "Harappan Unicorn Seal at Ur (Mesopotamia)",
+      "site": "Royal Cemetery of Ur (Iraq)",
+      "date": "c. 2250 BCE (Akkadian Period)",
+      "context": "Discovered in an Akkadian royal tomb in southern Iraq by Sir Leonard Woolley. Square steatite seal cut by an authentic Harappan master carver, carried by an Indus merchant residing in Mesopotamia.",
+      "sign_sequence": [
+        "M-342",
+        "M-059",
+        "M-162",
+        "M-099",
+        "M-176"
+      ],
+      "reading_direction": "Right to Left (←)",
+      "sign_count": 5,
+      "interpretation": "Proof of overseas Meluhhan merchant diaspora: credential of a Harappan trade factor living in the Meluhha quarter of southern Mesopotamia."
+    },
+    {
+      "id": "lothal-dock-seal",
+      "title": "Lothal Persian Gulf Seal & Sealing",
+      "site": "Lothal (Gujarat, India)",
+      "date": "c. 2200 BCE",
+      "context": "Found in the warehouse area adjacent to the Lothal tidal dock basin. Clay sealing used to stamp bundles of cotton textiles and bales of timber destined for overseas shipping.",
+      "sign_sequence": [
+        "M-342",
+        "M-245",
+        "M-067",
+        "M-177"
+      ],
+      "reading_direction": "Right to Left (←)",
+      "sign_count": 4,
+      "interpretation": "Maritime customs and cargo verification stamp certifying the weight, origin, and tax payment of Indian goods leaving the Gulf of Khambhat."
+    }
+  ]
+}

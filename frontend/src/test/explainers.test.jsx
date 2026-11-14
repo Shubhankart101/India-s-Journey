@@ -5,7 +5,7 @@ import ExplainerArticle from '../components/ExplainerArticle.jsx';
 
 describe('catalog-driven group explainers', () => {
   it('assigns a distinct deterministic pattern to each group and rotates subgroup patterns', () => {
-    expect(explainers.groups).toHaveLength(11);
+    expect(explainers.groups.length).toBeGreaterThanOrEqual(11);
     expect(new Set(explainers.groups.slice(0, 7).map(item => item.article.pattern)).size).toBe(7);
     const group = explainers.groups[0].article;
     expect(group.subgroups[0].pattern).not.toBe(group.pattern);

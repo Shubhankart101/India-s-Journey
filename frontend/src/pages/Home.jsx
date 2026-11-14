@@ -7,6 +7,7 @@ import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import MiniIndices from '../components/MiniIndices.jsx';
 import GroupCards from '../components/GroupCards.jsx';
+import IndependenceClock from '../components/IndependenceClock.jsx';
 import { ANALYSIS_KICKER, GROUPS_KICKER, HOME_KICKER, MOTTO } from '../sanskrit.js';
 import { CountUp, Typewriter } from '../components/Motion.jsx';
 
@@ -58,6 +59,7 @@ export default function Home() {
           <Link className="btn btn-primary" to="/explore">Explore the data</Link>
           <Link className="btn btn-ghost" to="/about">How it works ›</Link>
         </div>
+        <IndependenceClock />
         {s && (
           <dl className="stat-row">
             <div><dt>Indicators</dt><dd><CountUp value={s.indicators} /></dd></div>

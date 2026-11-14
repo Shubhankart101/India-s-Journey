@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b38"/>
+      <stop offset="50%" stop-color="#19485c"/>
+      <stop offset="100%" stop-color="#0b1b24"/>
+    </linearGradient>
+    <linearGradient id="skyTrade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141a24"/>
+      <stop offset="60%" stop-color="#2d3b4d"/>
+      <stop offset="100%" stop-color="#c47a3f"/>
+    </linearGradient>
+    <linearGradient id="dockBrick" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8f4d26"/>
+      <stop offset="100%" stop-color="#b36232"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#skyTrade)"/>
+
+  <!-- Ancient Arabian Sea & Gulf of Khambhat -->
+  <path d="M0 480 Q300 420 600 450 T1200 440 L1200 800 L0 800 Z" fill="url(#seaGrad)"/>
+
+  <!-- Setting Sun over the Persian Gulf Trade Horizon -->
+  <circle cx="600" cy="420" r="110" fill="#e28743" opacity="0.45"/>
+  <circle cx="600" cy="420" r="70" fill="#ffb066" opacity="0.6"/>
+
+  <!-- Distant Mesopotamian Ziggurat Silhouette on Far Horizon -->
+  <polygon points="120,440 180,440 170,410 130,410" fill="#1b242e"/>
+  <polygon points="135,410 165,410 160,390 140,390" fill="#1b242e"/>
+  <polygon points="143,390 157,390 155,375 145,375" fill="#1b242e"/>
+
+  <!-- Lothal Tidal Dockyard Basin Embankments (Right/Foreground) -->
+  <!-- Gigantic Kiln-fired Brick Wall (214m x 36m Basin) -->
+  <polygon points="680,520 1200,480 1200,780 720,800" fill="url(#dockBrick)" stroke="#4a2411" stroke-width="3"/>
+  <!-- Lock-gate Sluice Channel -->
+  <rect x="700" y="520" width="35" height="180" fill="#1b120c" stroke="#d4a72c" stroke-width="2"/>
+  <line x1="700" y1="560" x2="735" y2="560" stroke="#d4a72c" stroke-width="2"/>
+  <line x1="700" y1="600" x2="735" y2="600" stroke="#d4a72c" stroke-width="2"/>
+  <line x1="700" y1="640" x2="735" y2="640" stroke="#d4a72c" stroke-width="2"/>
+
+  <!-- Warehouses & Acropolis on High Platform -->
+  <polygon points="800,480 1150,440 1200,480 850,520" fill="#5e3218"/>
+  <rect x="880" y="420" width="120" height="40" fill="#783e1c"/>
+  <rect x="1020" y="410" width="80" height="40" fill="#783e1c"/>
+
+  <!-- Harappan Ocean-Going Sailing Ship (Based on Lothal Terracotta Model & Mohenjo-daro Seal) -->
+  <g transform="translate(320, 390)">
+    <!-- High prow and stern wooden hull -->
+    <path d="M0 120 Q120 180 260 120 Q180 200 40 180 Z" fill="#4d2f14" stroke="#8a5323" stroke-width="3"/>
+    <!-- Oars / Steerage Rudder -->
+    <line x1="20" y1="140" x2="-20" y2="200" stroke="#8a5323" stroke-width="4"/>
+    <polygon points="-25,195 -15,190 -30,220 -40,215" fill="#8a5323"/>
+    <!-- Central Mast -->
+    <line x1="130" y1="140" x2="130" y2="10" stroke="#c98a4b" stroke-width="5"/>
+    <line x1="130" y1="10" x2="20" y2="135" stroke="#a66e38" stroke-width="2"/>
+    <line x1="130" y1="10" x2="240" y2="135" stroke="#a66e38" stroke-width="2"/>
+    <!-- Reed / Cloth Sail -->
+    <polygon points="130,20 220,70 130,120" fill="#dfcbb5" opacity="0.85" stroke="#9e8a74" stroke-width="2"/>
+    <!-- Ship Cabin on Deck -->
+    <rect x="90" y="105" width="45" height="30" fill="#69401d" stroke="#8a5323" stroke-width="2"/>
+    <circle cx="112" cy="120" r="4" fill="#ffc066"/>
+  </g>
+
+  <!-- Dilmun / Persian Gulf Circular Seal Floating (Top Left) -->
+  <g transform="translate(140, 160)">
+    <circle cx="90" cy="90" r="75" fill="#29211a" stroke="#d4a72c" stroke-width="3"/>
+    <!-- Two short-horned bulls facing an altar with Indus Script above -->
+    <ellipse cx="65" cy="105" rx="28" ry="16" fill="#8c6436"/>
+    <circle cx="40" cy="95" r="10" fill="#8c6436"/>
+    <ellipse cx="115" cy="105" rx="28" ry="16" fill="#8c6436"/>
+    <circle cx="140" cy="95" r="10" fill="#8c6436"/>
+    <!-- Indus Glyphs on Seal -->
+    <path d="M70 45 Q85 30 100 45 Q85 60 70 45 Z" fill="none" stroke="#d4a72c" stroke-width="2"/>
+    <line x1="110" y1="35" x2="110" y2="55" stroke="#d4a72c" stroke-width="2"/>
+    <line x1="118" y1="35" x2="118" y2="55" stroke="#d4a72c" stroke-width="2"/>
+  </g>
+
+  <!-- Lapis Lazuli Gems from Badakhshan / Shortugai and Carnelian from Gujarat in Sea -->
+  <g transform="translate(420, 640)" opacity="0.8">
+    <polygon points="30,20 50,0 70,20 50,40" fill="#1b4d8a" stroke="#4a8ade" stroke-width="2"/>
+    <polygon points="100,25 125,5 150,25 125,45" fill="#b82d18" stroke="#ff8570" stroke-width="2"/>
+    <polygon points="180,20 200,0 220,20 200,40" fill="#1b4d8a" stroke="#4a8ade" stroke-width="2"/>
+  </g>
+</svg>

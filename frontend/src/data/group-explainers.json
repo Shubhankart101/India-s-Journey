@@ -15994,6 +15994,260 @@
           }
         ]
       }
+    },
+    {
+      "name": "Indus Valley Civilisation",
+      "article": {
+        "pattern": "two-lenses",
+        "headline": "Indus Valley Civilisation",
+        "dek": "Urban planning, metallurgy, maritime trade networks, undeciphered script, and material culture of the Bronze Age Indus civilization (c. 3300 – 1300 BCE).",
+        "paragraphs": [
+          "This chapter brings together 5 catalogued lenses: Metropolises & Major Urban Centers, Artifacts, Statuary & Material Culture, Maritime Trade & International Artifacts, Indus Script & Alphabet Decoding, Chronology, Settlement Geography & Legacy.",
+          "Read the measures alongside their chart titles, reporting periods, units and source notes; no single series is a complete account of its subject."
+        ],
+        "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
+        "sources": [
+          "Archeological Survey of India & Harappa Archaeological Research Project",
+          "Corpus of Indus Seals and Inscriptions",
+          "National Institute of Oceanography (NIO) & Possehl Maritime Studies",
+          "Possehl (2002) & Shaffer Radiocarbon Calibration Synthesis",
+          "The Indus Script: Texts, Concordance and Tables"
+        ],
+        "indicatorCount": 5,
+        "subgroupCount": 5,
+        "verse": {
+          "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+          "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+          "meaning": "May noble thoughts come to us from every side."
+        },
+        "subgroups": [
+          {
+            "name": "Metropolises & Major Urban Centers",
+            "headline": "Metropolises & Major Urban Centers",
+            "dek": "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
+            "paragraphs": [
+              "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
+              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Archeological Survey of India & Harappa Archaeological Research Project"
+            ],
+            "indicatorCount": 1,
+            "pattern": "pull-quote",
+            "sections": [
+              {
+                "title": "Excavated Urban Settlement Area of Major Indus",
+                "text": "This chart follows Excavated Urban Settlement Area of Major Indus. In Excavated Urban Settlement Area of Major Indus, Rakhigarhi leads at 350 ha, ahead of Mohenjo-daro at 300 ha; Surkotada is lowest at 5 ha. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ivc_urban_settlement_area"
+                ]
+              }
+            ],
+            "pullQuote": "In Excavated Urban Settlement Area of Major Indus, Rakhigarhi leads at 350 ha, ahead of Mohenjo-daro at 300 ha; Surkotada is lowest at 5 ha.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ivc_urban_settlement_area"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+              "meaning": "May noble thoughts come to us from every side."
+            }
+          },
+          {
+            "name": "Artifacts, Statuary & Material Culture",
+            "headline": "Artifacts, Statuary & Material Culture",
+            "dek": "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
+            "paragraphs": [
+              "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
+              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Corpus of Indus Seals and Inscriptions"
+            ],
+            "indicatorCount": 1,
+            "pattern": "annotated-captions",
+            "sections": [
+              {
+                "title": "Inscribed Steatite Seals Discovered by Major",
+                "text": "This chart follows Inscribed Steatite Seals Discovered by Major. In Inscribed Steatite Seals Discovered by Major, Mohenjo-daro leads at 2,500 seals, ahead of Harappa at 1,400 seals; Rakhigarhi is lowest at 45 seals. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ivc_steatite_seals_by_site"
+                ]
+              }
+            ],
+            "pullQuote": "In Inscribed Steatite Seals Discovered by Major, Mohenjo-daro leads at 2,500 seals, ahead of Harappa at 1,400 seals; Rakhigarhi is lowest at 45 seals.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ivc_steatite_seals_by_site"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+              "meaning": "May noble thoughts come to us from every side."
+            }
+          },
+          {
+            "name": "Maritime Trade & International Artifacts",
+            "headline": "Maritime Trade & International Artifacts",
+            "dek": "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
+            "paragraphs": [
+              "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
+              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "National Institute of Oceanography (NIO) & Possehl Maritime Studies"
+            ],
+            "indicatorCount": 1,
+            "pattern": "lede-stat-strip",
+            "sections": [
+              {
+                "title": "Ancient Maritime & Overland Trade Distances from",
+                "text": "This chart follows Ancient Maritime & Overland Trade Distances from. In Ancient Maritime & Overland Trade Distances from, Lothal to Ur (Mesopotamia) leads at 2,600 km, ahead of Lothal to Susa (Elam) at 2,400 km; Sutkagan Dor to Bandar Abbas is lowest at 750 km. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ivc_international_trade_distance"
+                ]
+              }
+            ],
+            "pullQuote": "In Ancient Maritime & Overland Trade Distances from, Lothal to Ur (Mesopotamia) leads at 2,600 km, ahead of Lothal to Susa (Elam) at 2,400 km; Sutkagan Dor to Bandar Abbas is lowest at 750 km.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ivc_international_trade_distance"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+              "meaning": "May noble thoughts come to us from every side."
+            }
+          },
+          {
+            "name": "Indus Script & Alphabet Decoding",
+            "headline": "Indus Script & Alphabet Decoding",
+            "dek": "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
+            "paragraphs": [
+              "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
+              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "The Indus Script: Texts, Concordance and Tables"
+            ],
+            "indicatorCount": 1,
+            "pattern": "question-answer",
+            "sections": [
+              {
+                "title": "Corpus Frequency of Top Indus Script Signs",
+                "text": "This chart follows Corpus Frequency of Top Indus Script Signs. In Corpus Frequency of Top Indus Script Signs, Jar / Vessel Sign (M-342) leads at 1,395 occurrences, ahead of Arrow / Spear Sign (M-48) at 620 occurrences; Diamond Sign (M-267) is lowest at 145 occurrences. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ivc_top_script_signs_frequency"
+                ]
+              }
+            ],
+            "pullQuote": "In Corpus Frequency of Top Indus Script Signs, Jar / Vessel Sign (M-342) leads at 1,395 occurrences, ahead of Arrow / Spear Sign (M-48) at 620 occurrences; Diamond Sign (M-267) is lowest at 145 occurrences.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ivc_top_script_signs_frequency"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+              "meaning": "May noble thoughts come to us from every side."
+            }
+          },
+          {
+            "name": "Chronology, Settlement Geography & Legacy",
+            "headline": "Chronology, Settlement Geography & Legacy",
+            "dek": "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
+            "paragraphs": [
+              "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
+              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Possehl (2002) & Shaffer Radiocarbon Calibration Synthesis"
+            ],
+            "indicatorCount": 1,
+            "pattern": "reading-journey",
+            "sections": [
+              {
+                "title": "Chronological Span of Indus Valley Civilisation Eras",
+                "text": "This chart follows Chronological Span of Indus Valley Civilisation Eras. In Chronological Span of Indus Valley Civilisation Eras, Early Harappan (3300-2600 BCE) leads at 700 years span, ahead of Mature Harappan (2600-1900 BCE) at 700 years span. Bars follow the published order; hover a bar for its exact figure.",
+                "keys": [
+                  "ivc_radiocarbon_phases"
+                ]
+              }
+            ],
+            "pullQuote": "In Chronological Span of Indus Valley Civilisation Eras, Early Harappan (3300-2600 BCE) leads at 700 years span, ahead of Mature Harappan (2600-1900 BCE) at 700 years span.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "ivc_radiocarbon_phases"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 1
+              },
+              {
+                "label": "Named publishers",
+                "value": 1
+              }
+            ],
+            "verse": {
+              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
+              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
+              "meaning": "May noble thoughts come to us from every side."
+            }
+          }
+        ]
+      }
     }
   ]
 }

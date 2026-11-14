@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1c160e"/>
+      <stop offset="60%" stop-color="#3d2a18"/>
+      <stop offset="100%" stop-color="#734d28"/>
+    </linearGradient>
+    <linearGradient id="brickGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9e532b"/>
+      <stop offset="50%" stop-color="#b86537"/>
+      <stop offset="100%" stop-color="#8a4421"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a403d"/>
+      <stop offset="100%" stop-color="#2d6b66"/>
+    </linearGradient>
+    <pattern id="brickPattern" width="40" height="20" patternUnits="userSpaceOnUse">
+      <rect width="40" height="20" fill="#9e532b"/>
+      <rect x="0" y="0" width="38" height="9" fill="#b86537"/>
+      <rect x="20" y="10" width="38" height="9" fill="#a8592f"/>
+      <line x1="0" y1="10" x2="40" y2="10" stroke="#5a2a12" stroke-width="1.5"/>
+      <line x1="20" y1="0" x2="20" y2="10" stroke="#5a2a12" stroke-width="1.5"/>
+      <line x1="0" y1="10" x2="0" y2="20" stroke="#5a2a12" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="800" fill="url(#skyGrad)"/>
+
+  <!-- Ancient Sun & Haze -->
+  <circle cx="600" cy="220" r="140" fill="#e0a050" opacity="0.18"/>
+  <circle cx="600" cy="220" r="90" fill="#ffc87a" opacity="0.25"/>
+
+  <!-- Mohenjo-daro Citadel Mound Background -->
+  <path d="M0 550 Q300 480 600 500 T1200 520 L1200 800 L0 800 Z" fill="#4d321d" opacity="0.6"/>
+
+  <!-- The Great Stupa / High Citadel Mound -->
+  <path d="M420 500 L500 360 L700 360 L780 500 Z" fill="#6e4222" opacity="0.85"/>
+  <rect x="520" y="340" width="160" height="25" fill="#8a4f27" rx="4"/>
+  <circle cx="600" cy="310" r="35" fill="#8a4f27"/>
+  <circle cx="600" cy="265" r="12" fill="#d4a72c"/>
+
+  <!-- Ancient City Walls & Towers -->
+  <rect x="180" y="440" width="160" height="180" fill="url(#brickPattern)" stroke="#5a2a12" stroke-width="2"/>
+  <rect x="860" y="440" width="160" height="180" fill="url(#brickPattern)" stroke="#5a2a12" stroke-width="2"/>
+  
+  <!-- Pillared Hall & Granary Platforms -->
+  <rect x="220" y="400" width="80" height="40" fill="#8a4f27"/>
+  <rect x="900" y="400" width="80" height="40" fill="#8a4f27"/>
+
+  <!-- The Great Bath (Mahasnanagar) in Foreground -->
+  <polygon points="260,540 940,540 1020,740 180,740" fill="#2d1c10" stroke="#b86537" stroke-width="4"/>
+  <!-- Inner Bath Basin -->
+  <polygon points="340,570 860,570 910,700 290,700" fill="url(#waterGrad)" stroke="#5a2a12" stroke-width="3"/>
+  
+  <!-- Steps Leading into the Great Bath -->
+  <!-- North Steps -->
+  <polygon points="560,545 640,545 635,570 565,570" fill="#b86537" stroke="#5a2a12"/>
+  <line x1="562" y1="553" x2="638" y2="553" stroke="#5a2a12" stroke-width="2"/>
+  <line x1="564" y1="561" x2="636" y2="561" stroke="#5a2a12" stroke-width="2"/>
+  <!-- South Steps -->
+  <polygon points="565,700 635,700 640,730 560,730" fill="#b86537" stroke="#5a2a12"/>
+  <line x1="563" y1="710" x2="637" y2="710" stroke="#5a2a12" stroke-width="2"/>
+  <line x1="561" y1="720" x2="639" y2="720" stroke="#5a2a12" stroke-width="2"/>
+
+  <!-- Drain Channel with Corbelled Arch -->
+  <path d="M290 690 L240 730 L210 730 L250 690 Z" fill="#14100c" stroke="#b86537"/>
+
+  <!-- Surrounding Colonade / Bathrooms -->
+  <g stroke="#b86537" stroke-width="3" fill="#3a2213">
+    <rect x="280" y="525" width="28" height="40"/>
+    <rect x="360" y="525" width="28" height="40"/>
+    <rect x="440" y="525" width="28" height="40"/>
+    <rect x="730" y="525" width="28" height="40"/>
+    <rect x="810" y="525" width="28" height="40"/>
+    <rect x="890" y="525" width="28" height="40"/>
+  </g>
+
+  <!-- Symbolic Indus Script Glyphs Floating Elegantly in Sky -->
+  <g fill="none" stroke="#e0a050" stroke-width="3" opacity="0.35">
+    <!-- Fish Sign (mīn) -->
+    <path d="M200 220 Q240 190 280 220 Q240 250 200 220 Z M280 220 L305 200 L305 240 Z"/>
+    <!-- Jar Sign -->
+    <path d="M400 190 L440 190 L445 250 Q420 270 395 250 Z M410 180 L430 180 M420 180 L420 190"/>
+    <!-- Unicorn Silhouette -->
+    <path d="M880 240 Q900 210 930 220 Q950 210 970 230 L970 270 L950 270 L950 250 L920 250 L910 270 Z M935 220 L965 170" stroke-width="2.5"/>
+    <!-- Wheel Sign -->
+    <circle cx="760" cy="220" r="28"/>
+    <line x1="760" y1="192" x2="760" y2="248"/>
+    <line x1="732" y1="220" x2="788" y2="220"/>
+    <line x1="740" y1="200" x2="780" y2="240"/>
+    <line x1="740" y1="240" x2="780" y2="200"/>
+  </g>
+
+  <!-- Foreground Atmospheric Vignette -->
+  <rect x="0" y="740" width="1200" height="60" fill="#140f0a" opacity="0.75"/>
+</svg>

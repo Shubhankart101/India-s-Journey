@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sealBg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#382619"/>
+      <stop offset="60%" stop-color="#21150c"/>
+      <stop offset="100%" stop-color="#120a05"/>
+    </radialGradient>
+    <linearGradient id="steatite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d6cebd"/>
+      <stop offset="50%" stop-color="#a89d89"/>
+      <stop offset="100%" stop-color="#736754"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#sealBg)"/>
+
+  <!-- Left: The Great Bull / Zebu Seal (Harappa & Mohenjo-daro) -->
+  <g transform="translate(140, 180)">
+    <rect x="0" y="0" width="420" height="420" rx="16" fill="#261b12" stroke="#a67838" stroke-width="4"/>
+    <rect x="12" y="12" width="396" height="396" rx="10" fill="#1f150d" stroke="#543719" stroke-width="2"/>
+    
+    <!-- Inscription across the top -->
+    <g transform="translate(40, 35)" stroke="#ffffff" stroke-width="3.5" fill="none" opacity="0.95">
+      <path d="M15 25 Q35 5 55 25 Q35 45 15 25 Z M55 25 L70 15 L70 35 Z"/>
+      <circle cx="115" cy="25" r="16"/>
+      <line x1="115" y1="9" x2="115" y2="41"/>
+      <line x1="99" y1="25" x2="131" y2="25"/>
+      <path d="M165 10 L195 10 L198 42 Q180 55 165 42 Z"/>
+      <line x1="240" y1="10" x2="240" y2="42"/>
+      <line x1="255" y1="10" x2="255" y2="42"/>
+      <line x1="270" y1="10" x2="270" y2="42"/>
+      <path d="M310 10 L335 10 L338 42 Q322 55 310 42 Z"/>
+    </g>
+
+    <!-- Zebu / Humped Indian Bull (Bos indicus) in High Relief -->
+    <g transform="translate(60, 110)">
+      <!-- Massive Hump (Distinctive Indian Zebu characteristic) -->
+      <path d="M130 90 Q170 30 200 80 Z" fill="url(#steatite)"/>
+      <!-- Lyre-shaped Majestic Horns -->
+      <path d="M220 70 Q250 10 270 5" fill="none" stroke="#e0c080" stroke-width="7" stroke-linecap="round"/>
+      <path d="M205 65 Q235 5 255 0" fill="none" stroke="#e0c080" stroke-width="6" stroke-linecap="round"/>
+      <!-- Head with Dewlap folds -->
+      <ellipse cx="230" cy="85" rx="35" ry="25" fill="url(#steatite)" transform="rotate(15 230 85)"/>
+      <circle cx="238" cy="80" r="4" fill="#2b1a0e"/>
+      <!-- Prominent Heavy Dewlap (Hanging skin folds under neck) -->
+      <path d="M210 100 Q240 160 190 180 Q160 170 160 120 Z" fill="#918470"/>
+      <path d="M220 120 Q240 150 205 165" fill="none" stroke="#544734" stroke-width="2"/>
+      <path d="M205 135 Q225 160 195 172" fill="none" stroke="#544734" stroke-width="2"/>
+      <!-- Powerful Body and Shoulder -->
+      <path d="M160 120 Q100 125 50 150 Q45 220 110 220 Q180 220 220 180 Q210 130 160 120 Z" fill="url(#steatite)"/>
+      <!-- Legs and Hooves -->
+      <path d="M65 200 L55 280 L75 280" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M100 205 L100 280 L120 280" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M175 190 L180 280 L200 280" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M210 180 L220 280 L240 280" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <!-- Tail with Tuft -->
+      <path d="M45 160 Q25 200 35 250" fill="none" stroke="url(#steatite)" stroke-width="4"/>
+      <circle cx="35" cy="255" r="7" fill="#544734"/>
+    </g>
+  </g>
+
+  <!-- Right: The Famous Pashupati Seal (M-304) -->
+  <g transform="translate(640, 180)">
+    <rect x="0" y="0" width="420" height="420" rx="16" fill="#261b12" stroke="#a67838" stroke-width="4"/>
+    <rect x="12" y="12" width="396" height="396" rx="10" fill="#1f150d" stroke="#543719" stroke-width="2"/>
+
+    <!-- Inscription across top: 6 signs -->
+    <g transform="translate(50, 35)" stroke="#ffffff" stroke-width="3.5" fill="none" opacity="0.95">
+      <path d="M20 10 L45 10 L48 45 Q32 58 18 45 Z"/>
+      <path d="M75 30 Q95 10 115 30 Q95 50 75 30 Z M115 30 L128 20 L128 40 Z"/>
+      <circle cx="160" cy="30" r="15"/>
+      <line x1="160" y1="15" x2="160" y2="45"/>
+      <line x1="145" y1="30" x2="175" y2="30"/>
+      <path d="M210 10 L240 45 M240 10 L210 45"/>
+      <line x1="275" y1="10" x2="275" y2="45"/>
+      <line x1="290" y1="10" x2="290" y2="45"/>
+    </g>
+
+    <!-- The Seated Tri-cephalic Figure in Yogic Asana -->
+    <g transform="translate(120, 95)">
+      <!-- Massive Buffalo Horns -->
+      <path d="M50 70 Q90 10 170 70" fill="none" stroke="#e0c080" stroke-width="9" stroke-linecap="round"/>
+      <path d="M30 50 Q60 85 85 95" fill="none" stroke="#e0c080" stroke-width="6"/>
+      <path d="M190 50 Q160 85 135 95" fill="none" stroke="#e0c080" stroke-width="6"/>
+      <!-- Tall Crown / Central Crest -->
+      <polygon points="100,50 120,50 110,20" fill="#d4a72c"/>
+      <!-- Three faces (central, left, right) -->
+      <ellipse cx="110" cy="100" rx="25" ry="30" fill="url(#steatite)"/>
+      <ellipse cx="85" cy="102" rx="12" ry="20" fill="#8c7e6c"/>
+      <ellipse cx="135" cy="102" rx="12" ry="20" fill="#8c7e6c"/>
+      <!-- Torso with pectorals and belt -->
+      <path d="M80 130 L140 130 L150 200 L70 200 Z" fill="url(#steatite)"/>
+      <rect x="70" y="190" width="80" height="15" fill="#544734"/>
+      <!-- Folded Yogic Legs with Soles Touching (Mulabandhasana) -->
+      <path d="M40 230 Q110 255 180 230 L155 200 L65 200 Z" fill="url(#steatite)"/>
+      <!-- Arms laden with bangles, resting on knees -->
+      <path d="M80 135 L40 190 L65 205" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M140 135 L180 190 L155 205" fill="none" stroke="url(#steatite)" stroke-width="12" stroke-linecap="round"/>
+      <!-- Platform with Two Antelopes / Ibex beneath throne -->
+      <rect x="20" y="240" width="180" height="10" fill="#3a2717"/>
+      <path d="M60 270 Q80 250 100 270" stroke="#d4a72c" stroke-width="2" fill="none"/>
+      <path d="M120 270 Q140 250 160 270" stroke="#d4a72c" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg>

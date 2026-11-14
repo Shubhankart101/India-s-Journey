@@ -28,7 +28,8 @@ export default function Layout() {
   const location = useLocation();
   const scrolled = useScrolled();
   const hasPageArtwork = ['/', '/explore', '/about', '/sources'].includes(location.pathname)
-    || location.pathname.startsWith('/indicator/');
+    || location.pathname.startsWith('/indicator/')
+    || location.pathname.startsWith('/explore/');
   useAutoReveal();
   usePointerSpotlight();
   useEffect(() => {

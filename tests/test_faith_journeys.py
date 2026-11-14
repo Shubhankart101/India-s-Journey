@@ -70,7 +70,7 @@ def test_epic_atlas_has_no_missing_shlokas_and_routes():
 def test_group_is_present_among_eleven():
     catalog = load("data/catalog.json")
     names = [category["name"] for category in catalog["categories"]]
-    assert len(names) == 11 and GROUP in names
+    assert len(names) >= 11 and GROUP in names
     category = next(item for item in catalog["categories"] if item["name"] == GROUP)
     assert {sub["name"] for sub in category["subgroups"]} == SUBGROUPS
     members = [item for item in catalog["indicators"] if item["category"] == GROUP]

@@ -12,6 +12,9 @@ import LazyChart from './LazyChart.jsx';
 import MapSelector, { choropleth, QuintileLegend } from './MapSelector.jsx';
 import RegionArticle, { RankBars, RegionSwitch } from './RegionArticle.jsx';
 import SubgroupArticle from './SubgroupArticle.jsx';
+import ArtBackdrop from './ArtBackdrop.jsx';
+import IndusValleyAtlas from './IndusValleyAtlas.jsx';
+import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import { ErrorState, Loading } from './States.jsx';
 
 const SPECIAL_HEIGHT = 560;
@@ -123,6 +126,7 @@ export function SubgroupArticleView({ category, subgroup, indicators, lead = nul
   const extra = [{ label: 'Charts in this subgroup', value: String(indicators.length) }];
   return (
     <>
+      <ArtBackdrop art={subgroup.art || category.art} />
       {crumbs(category, subgroup)}
       <SubgroupArticle
         headline={article?.headline || subgroup.title || subgroup.name}
@@ -251,11 +255,13 @@ function RegionPage({ category, subgroup, indicators, geometry, slug }) {
   }
   const names2 = (group?.subgroups || []).map(item => item.name);
   return (
-    <RegionArticle
-      backTo={`/explore/${category.slug}/${subgroup.slug}`}
-      backLabel={`All of ${subgroup.name}`}
-      switcher={<RegionSwitch names={names} current={name} hrefFor={target => regionHref(category, subgroup, target)} />}
-      headline={name}
+    <>
+      <ArtBackdrop art={subgroup.art || category.art} />
+      <RegionArticle
+        backTo={`/explore/${category.slug}/${subgroup.slug}`}
+        backLabel={`All of ${subgroup.name}`}
+        switcher={<RegionSwitch names={names} current={name} hrefFor={target => regionHref(category, subgroup, target)} />}
+        headline={name}
       dek={rows.length ? `${name} across ${rows.length} measures in ${subgroup.name}. It ranks first on ${firsts} of them; its lowest position is ${ordinal(lowest.rank)} of ${lowest.total} on ${stem(lowest)}.` : `${name} in ${subgroup.name}.`}
       kicker={`${subgroup.name} · State page`}
       sections={sections}
@@ -270,6 +276,7 @@ function RegionPage({ category, subgroup, indicators, geometry, slug }) {
       chipSources
       className="generated-subgroup-article region-article"
     />
+    </>
   );
 }
 
@@ -303,12 +310,22 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
+    const isIvc = category.slug === 'indus-valley-civilisation' || category.name === 'Indus Valley Civilisation';
+    const isScript = isIvc && (subgroup.slug?.includes('script') || subgroup.name?.includes('Script'));
+    let customLead = null;
+    if (isScript) {
+      customLead = <IndusScriptDecoder />;
+    } else if (isIvc) {
+      customLead = <IndusValleyAtlas />;
+    } else if (mapFormat) {
+      customLead = <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />;
+    }
     return <SubgroupArticleView
       category={category}
       subgroup={subgroup}
       indicators={indicators}
       keyExtra={mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : []}
-      lead={mapFormat ? <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} /> : null}
+      lead={customLead}
       callout={electionsCallout(category, subgroup)}
     />;
   }}</Shell>;
