@@ -8,32 +8,34 @@ This release implements the two distinct cartographic and schematic representati
 ## Key Deliverables
 
 ### 1. Dual Map Representations for All 17 Metro Cities
-Commuters and analysts can now toggle between two authentic visual modes for every single Indian rapid transit network:
+Commuters and analysts can now toggle between two authentic visual modes for every single Indian rapid transit network, sourced directly from the original platforms:
 
-#### Kind A: Pure White Schematic Transit Diagram (`metrosafar.com/maps` style)
-- **Visual Canvas:** Pure crisp white background (`#ffffff`), dark charcoal typography (`#0f172a`), and high-contrast vector lines.
-- **Top-Left Floating Legend Box:** Displays the official city route map title (e.g. `Delhi Metro Route Map`), color-coded line bars, and complete transit symbology:
-  - `◯ Station` (standard node)
-  - `⊚ Interchange` (multi-line junction)
-  - `🚆 Railways` (Indian Railways suburban/mainline integration)
-  - `✈️ Airport` (airport express link)
-  - `🚌 ISBT` (Inter-State Bus Terminal)
-- **Clean Octolinear Geometry:** Standardized 45° angles and horizontal lines with directional labels protected by crisp white contrast halos (`stroke="#ffffff" strokeWidth="4.5"`).
-- **Branding Badge:** Bottom-right `Metro सफर metrosafar.com` badge with transit logo insignia.
+#### Kind A: Official Vector Schematic Transit Diagram (`metrosafar.com/maps`)
+- **Direct Asset Integration:** Bundles the official high-resolution vector SVG route maps sourced directly from `metrosafar.com/assets/<city>-metro-map.svg` across all 17 operational Indian metro networks. Every single station, interchange, branch line, and depot is plotted in complete detail.
+- **Visual Canvas:** Pure crisp white background (`#ffffff`), dark charcoal typography (`#0f172a`), official route colors, and leader lines.
+- **Interactive Stage (`MetroSafarSvgViewer.jsx`):**
+  - Smooth pan and drag with mouse and touch gestures.
+  - Smooth zoom controls: Zoom In (`+`), Zoom Out (`−`), and Reset (`↺`).
+  - **Live Station Search:** Search any station across the network with instant glowing highlight and automatic camera centering.
+  - **Download SVG:** One-click download of the complete original SVG map for high-resolution offline use.
+  - Official `Metro सफ़र (metrosafar.com)` attribution insignia and route legend card.
 
-#### Kind B: Geographic Cartography ("Mapped Where It Actually Runs" · `politypolicy.com/DelhiMetro` style)
-- **Visual Canvas:** Warm physical terrain parchment (`#fff8f0` / `#faf5ee`), natural river meanders (River Yamuna in Delhi, Hooghly in Kolkata, Mithi in Mumbai, Musi in Hyderabad, etc.), and arterial highway networks.
+#### Kind B: Authentic Geographic Cartography ("Mapped Where It Actually Runs" · `politypolicy.com/DelhiMetro`)
+- **Direct Engine & GeoJSON Integration (`PolityPolicyMetroCanvas.jsx`):**
+  - Built directly upon the authentic 2.0 MB GeoJSON dataset (`delhi_metro_pack.json`) and Web Mercator Canvas 2D engine from `politypolicy.com/DelhiMetro`.
+  - **All 290 Stations Plotted Accurately:** Plots every single station node at its precise geographic GPS latitude and longitude coordinates.
+  - **Physical Base Cartography:** Renders true OpenStreetMap physical terrain: River Yamuna, River Hindon, canals, arterial roads (Ring Road, Outer Ring Road), Indian Railways tracks, and NCT district borders.
+  - **Phase 4 & Phase 5 Future Alignments:** Displays under-construction corridors and DMRC official influence zones.
 - **Top-Left Layer Toggles:**
   - `Whole Network` (shows complete active and future corridors)
   - `--- Under Construction` (isolates and highlights Phase 4 / Phase 5 expansion lines)
-  - `All Lines` (corridor-specific isolation)
-- **Top-Right Floating "PLAN A JOURNEY" Card:**
-  - Header: Burgundy bar (`#4a1525` / `#5c1d2e`) with `‹ PLAN A JOURNEY` title and collapse/expand toggle.
-  - Interactive `FROM` and `TO` station selectors with instant swap button `⇅`.
-  - Action button: `Find The Route` in warm rose (`#b85d77`).
-  - Route diagnostic readout: travel time (e.g. `24 min`), distance (`14.2 km`), station count, interchanges, token fare, and smart card discount fare.
-  - Clickable station mapping: commuters can click any station on the canvas to assign origin or destination.
-- **Bottom-Left Attribution:** OpenStreetMap contributors (ODbL) and official DMRC / MoHUA KML attribution.
+  - `All Lines` (isolates active operational lines)
+- **Top-Right Floating "PLAN A JOURNEY" Route Planner Card:**
+  - Collapsible / minimizable card (`‹ PLAN A JOURNEY` / `−` / `+`) so it never obscures the map view.
+  - Autocomplete station selectors covering all 290 stations with instant swap (`⇅`).
+  - Authentic Dijkstra shortest-path solver returning duration, distance (km), hop count, interchange stations, and DMRC token vs smart card fares.
+  - Interactive station callouts: click any station on the map to trigger "Set As From" or "Set As To".
+- **Bottom-Left Attribution:** OpenStreetMap contributors (ODbL) and official DMRC KML documentation.
 
 ---
 

@@ -1,0 +1,215 @@
+<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="noida-metro-map" clip-path="url(#clip0_30_92)">
+<g id="noida">
+<path id="Rectangle 7" d="M700 0H0V700H700V0Z" fill="white"/>
+<g id="lines-connectors">
+<path id="seg-gnida-office--depot" d="M395.405 634.767L349.073 635.252" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-delta-1--gnida-office" d="M349.074 635.289L293.477 636.017" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-alpha-1--delta-1" d="M296.564 635.84L250.232 636.325" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-pari-chowk--alpha-1" d="M250.231 636.325L200.81 636.843" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-knowledge-park-ii--pari-chowk" d="M200.852 634.603L200.976 598" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-148--knowledge-park-ii" d="M200.976 598V564" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-147--sector-148" d="M200.976 564.5V527" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-146--sector-147" d="M200.976 527V492.5" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-145--sector-146" d="M200.976 492.5L200.575 456" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-144--sector-145" d="M200.476 456L199.976 422" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-143--sector-144" d="M199.976 422L198.976 389.5" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-142--sector-143" d="M198.976 389.5L197.976 348" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-137--sector-142" d="M197.976 348V306" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-83--sector-137" d="M197.976 306V269" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-nsez--sector-83" d="M197.976 269V239" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-81--nsez" d="M197.976 239V203" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-101--sector-81" d="M197.976 203V167" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-76--sector-101" d="M197.976 167V129" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-50--sector-76" d="M197.976 129V93" stroke="#00FFDF" stroke-width="3"/>
+<path id="seg-sector-51--sector-50" d="M197.976 93V60" stroke="#00FFDF" stroke-width="3"/>
+</g>
+<g id="stations">
+<g id="st-depot">
+<path id="Vector" d="M397.579 631.419H391.579V637.419H397.579V631.419Z" fill="white" stroke="black"/>
+</g>
+<g id="st-gnida-office">
+<path id="Vector_2" d="M353.413 632.64H347.413V638.64H353.413V632.64Z" fill="white" stroke="black"/>
+</g>
+<g id="st-delta-1">
+<path id="Vector_3" d="M299.578 633.419H293.578V639.419H299.578V633.419Z" fill="white" stroke="black"/>
+</g>
+<g id="st-alpha-1">
+<path id="Vector_4" d="M254.572 633.712H248.572V639.712H254.572V633.712Z" fill="white" stroke="black"/>
+</g>
+<g id="st-pari-chowk">
+<path id="Vector_5" d="M205.15 634.231H199.15V640.231H205.15V634.231Z" fill="white" stroke="black"/>
+</g>
+<g id="st-knowledge-park-ii">
+<path id="Vector_6" d="M203.577 594.603H197.577V600.603H203.577V594.603Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-148">
+<path id="Vector_7" d="M203.58 560.606H197.58V566.606H203.58V560.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-147">
+<path id="Vector_8" d="M203.577 523.603H197.577V529.603H203.577V523.603Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-146">
+<path id="Vector_9" d="M203.58 488.606H197.58V494.606H203.58V488.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-145">
+<path id="Vector_10" d="M202.581 452.606H196.581V458.606H202.581V452.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-144">
+<path id="Vector_11" d="M202.581 418.606H196.581V424.606H202.581V418.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-143">
+<path id="Vector_12" d="M201.581 386.606H195.581V392.606H201.581V386.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-142">
+<path id="Vector_13" d="M200.579 344.603H194.579V350.603H200.579V344.603Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-137">
+<path id="Vector_14" d="M200.582 302.606H194.582V308.606H200.582V302.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-83">
+<path id="Vector_15" d="M200.582 265.606H194.582V271.606H200.582V265.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-nsez">
+<path id="Vector_16" d="M200.582 235.606H194.582V241.606H200.582V235.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-81">
+<path id="Vector_17" d="M200.582 198.606H194.582V204.606H200.582V198.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-101">
+<path id="Vector_18" d="M200.579 163.603H194.579V169.603H200.579V163.603Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-76">
+<path id="Vector_19" d="M200.582 126.606H194.582V132.606H200.582V126.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-50">
+<path id="Vector_20" d="M200.583 89.606H194.583V95.606H200.583V89.606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sector-51">
+<path id="Vector_21" d="M197.583 64.606C200.344 64.606 202.583 62.3674 202.583 59.606C202.583 56.8446 200.344 54.606 197.583 54.606C194.822 54.606 192.583 56.8446 192.583 59.606C192.583 62.3674 194.822 64.606 197.583 64.606Z" fill="white" stroke="#00DCC0"/>
+</g>
+</g>
+<g id="lables">
+<g id="lb-sector-51">
+<text id="Sector 51" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="207.976" y="70.7854">Sector 51</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 51" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209" y="60.6364">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 51</tspan></text>
+</g>
+<g id="lb-sector-50">
+<text id="Sector 50" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.374" y="91.7264">Sector 50</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 50" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="207.976" y="101.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 50</tspan></text>
+</g>
+<g id="lb-sector-76">
+<text id="Sector 76" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.374" y="126.725">Sector 76</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 76" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="207.976" y="136.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 76</tspan></text>
+</g>
+<g id="lb-sector-101">
+<text id="Sector 101" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209.374" y="164.725">Sector 101</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 101" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.976" y="174.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 101</tspan></text>
+</g>
+<g id="lb-sector-81">
+<text id="Sector 81" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209.374" y="199.725">Sector 81</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 81" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.976" y="209.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 81</tspan></text>
+</g>
+<g id="lb-nsez">
+<text id="NSEZ" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209.593" y="236.725">NSEZ</tspan></text>
+<text id="&#224;&#164;&#143;&#224;&#164;&#168;&#224;&#164;&#143;&#224;&#164;&#184;&#224;&#164;&#136;&#224;&#164;&#156;&#224;&#165;&#135;&#224;&#164;&#161;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.976" y="247.03">&#x90f;&#x928;&#x90f;&#x938;&#x908;&#x91c;&#x947;&#x921;</tspan></text>
+</g>
+<g id="lb-sector-83">
+<text id="Sector 83" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.374" y="266.725">Sector 83</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 83" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="207.976" y="276.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 83</tspan></text>
+</g>
+<g id="lb-sector-137">
+<text id="Sector 137" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209.374" y="300.725">Sector 137</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 137" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="208.976" y="310.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 137</tspan></text>
+</g>
+<g id="lb-sector-142">
+<text id="Sector 142" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="210.374" y="345.725">Sector 142</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 142" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="209.976" y="355.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 142</tspan></text>
+</g>
+<g id="lb-sector-143">
+<text id="Sector 143" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="211.374" y="387.725">Sector 143</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 143" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="210.976" y="397.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 143</tspan></text>
+</g>
+<g id="lb-sector-144">
+<text id="Sector 144" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="211.374" y="419.725">Sector 144</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 144" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="210.976" y="429.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 144</tspan></text>
+</g>
+<g id="lb-sector-145">
+<text id="Sector 145" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="211.374" y="451.725">Sector 145</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 145" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="210.976" y="461.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 145</tspan></text>
+</g>
+<g id="lb-sector-146">
+<text id="Sector 146" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="211.374" y="489.725">Sector 146</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 146" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="210.976" y="499.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 146</tspan></text>
+</g>
+<g id="lb-sector-147">
+<text id="Sector 147" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="212.374" y="524.725">Sector 147</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 147" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="211.976" y="534.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 147</tspan></text>
+</g>
+<g id="lb-sector-148">
+<text id="Sector 148" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="213.374" y="561.725">Sector 148</tspan></text>
+<text id="&#224;&#164;&#184;&#224;&#165;&#135;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#176; 148" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="212.976" y="571.561">&#x938;&#x947;&#x915;&#x94d;&#x91f;&#x930; 148</tspan></text>
+</g>
+<g id="lb-knowledge-park-ii">
+<text id="Knowledge Park II" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="213.593" y="597.147">Knowledge Park II</tspan></text>
+<text id="&#224;&#164;&#168;&#224;&#165;&#137;&#224;&#164;&#178;&#224;&#165;&#135;&#224;&#164;&#156; &#224;&#164;&#170;&#224;&#164;&#190;&#224;&#164;&#176;&#224;&#165;&#141;&#224;&#164;&#149; II" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="212.976" y="605.001">&#x928;&#x949;&#x932;&#x947;&#x91c; &#x92a;&#x93e;&#x930;&#x94d;&#x915; II</tspan></text>
+</g>
+<g id="lb-pari-chowk">
+<text id="Pari Chowk" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="178.617" y="651.636">Pari Chowk</tspan></text>
+<text id="&#224;&#164;&#170;&#224;&#164;&#190;&#224;&#164;&#176;&#224;&#165;&#128; &#224;&#164;&#154;&#224;&#165;&#140;&#224;&#164;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="178" y="660.897">&#x92a;&#x93e;&#x930;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+</g>
+<g id="lb-alpha-1">
+<text id="Alpha 1" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="242.113" y="650.636">Alpha 1</tspan></text>
+<text id="&#224;&#164;&#133;&#224;&#164;&#178;&#224;&#165;&#141;&#224;&#164;&#171;&#224;&#164;&#190; 1" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="242" y="661.52">&#x905;&#x932;&#x94d;&#x92b;&#x93e; 1</tspan></text>
+</g>
+<g id="lb-delta-1">
+<text id="Delta 1" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="287.686" y="621.636">Delta 1</tspan></text>
+<text id="&#224;&#164;&#161;&#224;&#165;&#135;&#224;&#164;&#178;&#224;&#165;&#141;&#224;&#164;&#159;&#224;&#164;&#190; 1" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="287" y="630.911">&#x921;&#x947;&#x932;&#x94d;&#x91f;&#x93e; 1</tspan></text>
+</g>
+<g id="lb-gnida-office">
+<text id="GNIDA Office" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="323.418" y="648.636">GNIDA Office</tspan></text>
+<text id="&#224;&#164;&#156;&#224;&#165;&#128;&#224;&#164;&#143;&#224;&#164;&#168;&#224;&#164;&#134;&#224;&#164;&#136;&#224;&#164;&#161;&#224;&#165;&#128;&#224;&#164;&#143; &#224;&#164;&#145;&#224;&#164;&#171;&#224;&#164;&#191;&#224;&#164;&#184;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="323" y="661.636">&#x91c;&#x940;&#x90f;&#x928;&#x906;&#x908;&#x921;&#x940;&#x90f; &#x911;&#x92b;&#x93f;&#x938;</tspan></text>
+</g>
+<g id="lb-depot">
+<text id="Depot" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="386.616" y="618.636">Depot</tspan></text>
+<text id="&#224;&#164;&#161;&#224;&#164;&#191;&#224;&#164;&#170;&#224;&#165;&#139;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="388.588" y="628.56">&#x921;&#x93f;&#x92a;&#x94b;</tspan></text>
+</g>
+</g>
+<g id="index-table">
+<path id="legend-bg" d="M627 173H455C450.582 173 447 176.582 447 181V235C447 239.418 450.582 243 455 243H627C631.418 243 635 239.418 635 235V181C635 176.582 631.418 173 627 173Z" fill="#F0F0F0"/>
+<g id="metro">
+<text id="Noida Metro Map" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="477" y="188.864">Noida Metro Map</tspan></text>
+</g>
+<g id="lines">
+<g id="aqua line">
+<path id="Rectangle 6" d="M525 199H625V202H525V199Z" fill="#00FFDF"/>
+<text id="Aqua Line" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="457" y="199.273">Aqua Line</tspan></text>
+<text id="aqua-line-hi" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="457" y="207.273">&#x90f;&#x915;&#x94d;&#x935;&#x93e; &#x932;&#x93e;&#x907;&#x928;</tspan></text>
+</g>
+</g>
+<g id="other">
+<g id="station">
+<path id="Vector_21_2" d="M469 221H463V227H469V221Z" fill="white" stroke="black"/>
+</g>
+<text id="Station" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="473" y="226.273">Station</tspan></text>
+<g id="interchange">
+<path id="Vector_20_2" d="M541 227C544.314 227 547 224.314 547 221C547 217.686 544.314 215 541 215C537.686 215 535 217.686 535 221C535 224.314 537.686 227 541 227Z" fill="white" stroke="black"/>
+</g>
+<text id="Interchange" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="551" y="224.273">Interchange</tspan></text>
+</g>
+</g>
+</g>
+<g id="metrosafar-watermark">
+<g id="metrosafar-brand">
+<text fill="#0878D1" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="520" y="669.864">Metro</tspan></text>
+<text fill="#FF7A00" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="554.781" y="669.864">&#x938;&#x92b;&#x930;</tspan></text>
+</g>
+<text id="metrosafar-tag" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="11" font-weight="bold" letter-spacing="0em"><tspan x="520" y="685.5">metrosafar.com</tspan></text>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_30_92">
+<rect width="700" height="700" fill="white"/>
+</clipPath>
+</defs>
+</svg>

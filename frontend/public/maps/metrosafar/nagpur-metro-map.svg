@@ -1,0 +1,365 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="nagpur-metro-map" clip-path="url(#clip0_28_738)">
+<g id="nagpur">
+<path id="Rectangle 9" d="M900 0H0V900H900V0Z" fill="white"/>
+<g id="lines-connector">
+<path id="seg-prajapati-nagar--vaishnodevi-square" d="M789 253H839" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-vaishnodevi-square--ambedkar-square" d="M739 253H789" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-ambedkar-square--telephone-exchange" d="M689 253H739" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-telephone-exchange--chitar-oli-square" d="M639 253H689" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-chitar-oli-square--agrasen-square" d="M589 253H639" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-agrasen-square--dosar-vaishya-square" d="M539 253H589" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-dosar-vaishya-square--nagpur-railway-station" d="M489 253H539" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-nagpur-railway-station--cotton-market" d="M489 253C441 253 449 255 449 293" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-cotton-market--sitabuldi" d="M449 293C447.5 336.5 455.5 333.5 409 333" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-sitabuldi--jhasi-rani-square" d="M359 333H409" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-jhasi-rani-square--institute-of-engineers" d="M309 333H359" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-institute-of-engineers--shankar-nagar-square" d="M309 333C286.909 333 269 350.909 269 373" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-shankar-nagar-square--lad-square" d="M269 373V423" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-lad-square--dharampeth-college" d="M269 423C269 445.091 197.591 512.5 175.5 512.5" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-subhash-nagar--rachana-ring-road-junction" d="M174 512H124" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-rachana-ring-road-junction--vasudev-nagar" d="M124 512H74" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-vasudev-nagar--bansi-nagar" d="M74 512C57.4315 512 44 508.931 44 525.5V562" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-bansi-nagar--lokmanya-nagar" d="M44 559V609" stroke="#00DCC0" stroke-width="3"/>
+<path id="seg-automative-square--nari-road" d="M616 79H566" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-nari-road--indora-square" d="M566 79H516" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-indora-square--kadvi-square" d="M516 79H466" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-kadvi-square--gaddigodam-square" d="M466.5 79H427.5C405.409 79 409 96.9086 409 119V153.5" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-gaddigodam-square--kasturchand-park" d="M409 153V213" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-kasturchand-park--zero-mile" d="M409 213V273" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-zero-mile--sitabuldi" d="M409 273V333" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-sitabuldi--congress-nagar" d="M409 333V383" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-congress-nagar--rahate-colony" d="M409 383V400C409 405.523 404.523 410 399 410C393.477 410 389 414.477 389 420V435" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-rahate-colony--ajni-square" d="M389 433V483" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-ajni-square--chhatrapati-square" d="M389 483V533" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-chhatrapati-square--jaiprakash-nagar" d="M389 533V583" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-jaiprakash-nagar--ujjwal-nagar" d="M389 583V633" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-ujjwal-nagar--airport" d="M389 633V683" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-airport--airport-south" d="M389 683V733" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-airport-south--new-airport" d="M389 733V783" stroke="#FF9800" stroke-width="3"/>
+<path id="seg-new-airport--khapri" d="M389 783V833" stroke="#FF9800" stroke-width="3"/>
+</g>
+<g id="stations">
+<g id="st-prajapati-nagar">
+<path id="Vector" d="M842 250H836V256H842V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-vaishnodevi-square">
+<path id="Vector_2" d="M792 250H786V256H792V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-ambedkar-square">
+<path id="Vector_3" d="M742 250H736V256H742V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-telephone-exchange">
+<path id="Vector_4" d="M692 250H686V256H692V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-chitar-oli-square">
+<path id="Vector_5" d="M642 250H636V256H642V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-agrasen-square">
+<path id="Vector_6" d="M592 250H586V256H592V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-dosar-vaishya-square">
+<path id="Vector_7" d="M542 250H536V256H542V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-nagpur-railway-station">
+<path id="Vector_8" d="M492 250H486V256H492V250Z" fill="white" stroke="black"/>
+</g>
+<g id="st-cotton-market">
+<path id="Vector_9" d="M452 290H446V296H452V290Z" fill="white" stroke="black"/>
+</g>
+<g id="st-sitabuldi">
+<path id="Vector_10" d="M409 339C411.761 339 414 336.761 414 334C414 331.239 411.761 329 409 329C406.239 329 404 331.239 404 334C404 336.761 406.239 339 409 339Z" fill="white" stroke="black"/>
+</g>
+<g id="st-jhasi-rani-square">
+<path id="Vector_11" d="M362 330H356V336H362V330Z" fill="white" stroke="black"/>
+</g>
+<g id="st-institute-of-engineers">
+<path id="Vector_12" d="M312 330H306V336H312V330Z" fill="white" stroke="black"/>
+</g>
+<g id="st-shankar-nagar-square">
+<path id="Vector_13" d="M272 370H266V376H272V370Z" fill="white" stroke="black"/>
+</g>
+<g id="st-lad-square">
+<path id="Vector_14" d="M272 420H266V426H272V420Z" fill="white" stroke="black"/>
+</g>
+<g id="st-dharampeth-college">
+<path id="Vector_15" d="M243 462H237V468H243V462Z" fill="white" stroke="black"/>
+</g>
+<g id="st-subhash-nagar">
+<path id="Vector_16" d="M177 509H171V515H177V509Z" fill="white" stroke="black"/>
+</g>
+<g id="st-rachana-ring-road-junction">
+<path id="Vector_17" d="M127 509H121V515H127V509Z" fill="white" stroke="black"/>
+</g>
+<g id="st-vasudev-nagar">
+<path id="Vector_18" d="M77 509H71V515H77V509Z" fill="white" stroke="black"/>
+</g>
+<g id="st-bansi-nagar">
+<path id="Vector_19" d="M47 559H41V565H47V559Z" fill="white" stroke="black"/>
+</g>
+<g id="st-lokmanya-nagar">
+<path id="Vector_20" d="M47 606H41V612H47V606Z" fill="white" stroke="black"/>
+</g>
+<g id="st-automative-square">
+<path id="Vector_21" d="M619 76H613V82H619V76Z" fill="white" stroke="black"/>
+</g>
+<g id="st-nari-road">
+<path id="Vector_22" d="M569 76H563V82H569V76Z" fill="white" stroke="black"/>
+</g>
+<g id="st-indora-square">
+<path id="Vector_23" d="M519 76H513V82H519V76Z" fill="white" stroke="black"/>
+</g>
+<g id="st-kadvi-square">
+<path id="Vector_24" d="M469 76H463V82H469V76Z" fill="white" stroke="black"/>
+</g>
+<g id="st-gaddigodam-square">
+<path id="Vector_25" d="M412 150H406V156H412V150Z" fill="white" stroke="black"/>
+</g>
+<g id="st-kasturchand-park">
+<path id="Vector_26" d="M412 210H406V216H412V210Z" fill="white" stroke="black"/>
+</g>
+<g id="st-zero-mile">
+<path id="Vector_27" d="M412 270H406V276H412V270Z" fill="white" stroke="black"/>
+</g>
+<g id="st-congress-nagar">
+<path id="Vector_28" d="M412 380H406V386H412V380Z" fill="white" stroke="black"/>
+</g>
+<g id="st-rahate-colony">
+<path id="Vector_29" d="M392 431H386V437H392V431Z" fill="white" stroke="black"/>
+</g>
+<g id="st-ajni-square">
+<path id="Vector_30" d="M392 481H386V487H392V481Z" fill="white" stroke="black"/>
+</g>
+<g id="st-chhatrapati-square">
+<path id="Vector_31" d="M392 531H386V537H392V531Z" fill="white" stroke="black"/>
+</g>
+<g id="st-jaiprakash-nagar">
+<path id="Vector_32" d="M392 581H386V587H392V581Z" fill="white" stroke="black"/>
+</g>
+<g id="st-ujjwal-nagar">
+<path id="Vector_33" d="M392 631H386V637H392V631Z" fill="white" stroke="black"/>
+</g>
+<g id="st-airport">
+<path id="Vector_34" d="M392 681H386V687H392V681Z" fill="white" stroke="black"/>
+</g>
+<g id="st-airport-south">
+<path id="Vector_35" d="M392 731H386V737H392V731Z" fill="white" stroke="black"/>
+</g>
+<g id="st-new-airport">
+<path id="Vector_36" d="M392 781H386V787H392V781Z" fill="white" stroke="black"/>
+</g>
+<g id="st-khapri">
+<path id="Vector_37" d="M392 831H386V837H392V831Z" fill="white" stroke="black"/>
+</g>
+</g>
+<g id="lables">
+<g id="lb-prajapati-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="825" y="278.181">&#x92a;&#x94d;&#x930;&#x91c;&#x93e;&#x92a;&#x924;&#x940; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Prajapati Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="825" y="267.181">Prajapati Nagar</tspan></text>
+</g>
+<g id="lb-vaishnodevi-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#136;&#195;&#160;&#194;&#164;&#194;&#183;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#163;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="766.908" y="241.181">&#x935;&#x948;&#x937;&#x94d;&#x923;&#x94b;&#x926;&#x947;&#x935;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Vaishnodevi Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="766" y="229.181">Vaishnodevi Square</tspan></text>
+</g>
+<g id="lb-ambedkar-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#134;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="708.816" y="277.636">&#x906;&#x902;&#x92c;&#x947;&#x921;&#x915;&#x930; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Ambedkar Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="708" y="265.636">Ambedkar Square</tspan></text>
+</g>
+<g id="lb-telephone-exchange">
+<text id="&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#171;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#168; &#195;&#160;&#194;&#164;&#194;&#143;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#156;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="657.908" y="241.181">&#x91f;&#x947;&#x932;&#x93f;&#x92b;&#x94b;&#x928; &#x90f;&#x915;&#x94d;&#x938;&#x91a;&#x947;&#x902;&#x91c;</tspan></text>
+<text id="Telephone Exchange" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="657" y="229.181">Telephone Exchange</tspan></text>
+</g>
+<g id="lb-chitar-oli-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#147;&#195;&#160;&#194;&#164;&#194;&#179;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="611.307" y="277.636">&#x91a;&#x93f;&#x924;&#x93e;&#x930;&#x913;&#x933;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Chitar Oli Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="606" y="265.636">Chitar Oli Square</tspan></text>
+</g>
+<g id="lb-agrasen-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#133;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#168; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="569.908" y="241.181">&#x905;&#x917;&#x94d;&#x930;&#x938;&#x947;&#x928; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Agrasen Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="569" y="229.181">Agrasen Square</tspan></text>
+</g>
+<g id="lb-dosar-vaishya-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#136;&#195;&#160;&#194;&#164;&#194;&#182;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#175; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="520.908" y="287.181">&#x921;&#x94b;&#x938;&#x930; &#x935;&#x948;&#x936;&#x94d;&#x92f; &#x91a;&#x94c;&#x915;</tspan></text>
+<g id="Dosar Vaishya Square">
+<text id="Dosar Vaishya" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="521" y="268.181">Dosar Vaishya </tspan></text>
+<text id="Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="521" y="276.181">Square</tspan></text>
+</g>
+</g>
+<g id="lb-nagpur-railway-station">
+<text id="&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#135; &#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#182;&#195;&#160;&#194;&#164;&#194;&#168;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="469.908" y="241.181">&#x928;&#x93e;&#x917;&#x92a;&#x942;&#x930; &#x930;&#x947;&#x932;&#x94d;&#x935;&#x947; &#x938;&#x94d;&#x91f;&#x947;&#x936;&#x928;</tspan></text>
+<g id="Nagpur Railway Station">
+<text id="Nagpur Railway" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="471" y="223.181">Nagpur Railway </tspan></text>
+<text id="Station" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="471" y="231.181">Station</tspan></text>
+</g>
+</g>
+<g id="lb-cotton-market">
+<text id="&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#184; &#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="457" y="301.181">&#x915;&#x93e;&#x92a;&#x942;&#x938; &#x92c;&#x93e;&#x91c;&#x93e;&#x930;</tspan></text>
+<text id="Cotton Market" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="458.092" y="292.181">Cotton Market</tspan></text>
+</g>
+<g id="lb-sitabuldi">
+<text id="&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#128;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#165;&#194;&#129;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#165;&#194;&#128;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="419" y="352.181">&#x938;&#x940;&#x924;&#x93e;&#x92c;&#x941;&#x932;&#x921;&#x940;</tspan></text>
+<text id="Sitabuldi" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="419.061" y="343.181">Sitabuldi</tspan></text>
+</g>
+<g id="lb-jhasi-rani-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#157;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#182;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#163;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="348" y="364.181">&#x91d;&#x93e;&#x936;&#x940; &#x930;&#x93e;&#x923;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<g id="Jhasi Rani Square">
+<text id="Jhasi Rani" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="348.061" y="347.181">Jhasi Rani </tspan></text>
+<text id="Square_2" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="348.061" y="355.181">Square</tspan></text>
+</g>
+</g>
+<g id="lb-institute-of-engineers">
+<text id="&#195;&#160;&#194;&#164;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#175;&#195;&#160;&#194;&#165;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#159; &#195;&#160;&#194;&#164;&#194;&#145;&#195;&#160;&#194;&#164;&#194;&#171; &#195;&#160;&#194;&#164;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#175;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#184;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="273" y="321.181">&#x907;&#x902;&#x938;&#x94d;&#x91f;&#x93f;&#x91f;&#x94d;&#x92f;&#x942;&#x91f; &#x911;&#x92b; &#x907;&#x902;&#x91c;&#x93f;&#x928;&#x93f;&#x92f;&#x930;&#x94d;&#x938;</tspan></text>
+<text id="Institute of Engineers" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="272" y="310.181">Institute of Engineers</tspan></text>
+</g>
+<g id="lb-shankar-nagar-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#182;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="197" y="383.636">&#x936;&#x902;&#x915;&#x930; &#x928;&#x917;&#x930; &#x91a;&#x94c;&#x915;</tspan></text>
+<g id="Shankar Nagar Square">
+<text id="Shankar Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="197" y="365.636">Shankar Nagar </tspan></text>
+<text id="Square_3" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="197" y="373.636">Square</tspan></text>
+</g>
+</g>
+<g id="lb-lad-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#143;&#195;&#160;&#194;&#164;&#194;&#178;. &#195;&#160;&#194;&#164;&#194;&#143;. &#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#165;&#194;&#128;. &#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#133;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="279" y="430.181">&#x90f;&#x932;. &#x90f;. &#x921;&#x940;. &#x938;&#x94d;&#x915;&#x94d;&#x935;&#x947;&#x905;&#x930;</tspan></text>
+<text id="LAD Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="279" y="420.181">LAD Square</tspan></text>
+</g>
+<g id="lb-dharampeth-college">
+<text id="&#195;&#160;&#194;&#164;&#194;&#167;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;  &#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#137;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#156;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="245" y="481.636">&#x927;&#x930;&#x92e;&#x92a;&#x947;&#x920; &#x915;&#x949;&#x932;&#x947;&#x91c;</tspan></text>
+<text id="Dharampeth College" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="245" y="471.636">Dharampeth College</tspan></text>
+</g>
+<g id="lb-subhash-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#129;&#195;&#160;&#194;&#164;&#194;&#173;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#183; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="154" y="535.181">&#x938;&#x941;&#x92d;&#x93e;&#x937; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Subhash Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="154" y="525.181">Subhash Nagar</tspan></text>
+</g>
+<g id="lb-rachana-ring-road-junction">
+<g id="&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#190; &#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#151; &#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#161; &#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#182;&#195;&#160;&#194;&#164;&#194;&#168;">
+<text id="&#224;&#164;&#176;&#224;&#164;&#154;&#224;&#164;&#168;&#224;&#164;&#190; &#224;&#164;&#176;&#224;&#164;&#191;&#224;&#164;&#130;&#224;&#164;&#151; &#224;&#164;&#176;&#224;&#165;&#139;&#224;&#164;&#161;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="107" y="494.181">&#x930;&#x91a;&#x928;&#x93e; &#x930;&#x93f;&#x902;&#x917; &#x930;&#x94b;&#x921; </tspan></text>
+<text id="&#224;&#164;&#156;&#224;&#164;&#130;&#224;&#164;&#149;&#224;&#165;&#141;&#224;&#164;&#182;&#224;&#164;&#168;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="107" y="502.181">&#x91c;&#x902;&#x915;&#x94d;&#x936;&#x928;</tspan></text>
+</g>
+<g id="Rachana Ring Road Junction">
+<text id="Rachana Ring" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="107" y="476.181">Rachana Ring </tspan></text>
+<text id="Road Junction" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="107" y="484.181">Road Junction</tspan></text>
+</g>
+</g>
+<g id="lb-vasudev-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#129;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#181; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="59" y="536.181">&#x935;&#x93e;&#x938;&#x941;&#x926;&#x947;&#x935; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Vasudev Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="59" y="526.181">Vasudev Nagar</tspan></text>
+</g>
+<g id="lb-bansi-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="56" y="566.181">&#x92c;&#x928;&#x94d;&#x938;&#x940; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Bansi Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="56" y="556.181">Bansi Nagar</tspan></text>
+</g>
+<g id="lb-lokmanya-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#175; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="53" y="616.181">&#x932;&#x94b;&#x915;&#x92e;&#x93e;&#x928;&#x94d;&#x92f; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Lokmanya Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="53" y="606.181">Lokmanya Nagar</tspan></text>
+</g>
+<g id="lb-automative-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#145;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#185; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="596" y="103.181">&#x911;&#x91f;&#x94b;&#x92e;&#x94b;&#x91f;&#x93f;&#x935;&#x94d;&#x939; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Automative Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="596" y="93.1819">Automative Square</tspan></text>
+</g>
+<g id="lb-nari-road">
+<text id="&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#161;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="551" y="73.6359">&#x928;&#x930;&#x940; &#x930;&#x94b;&#x921;</tspan></text>
+<text id="Nari Road" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="551" y="63.6364">Nari Road</tspan></text>
+</g>
+<g id="lb-indora-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#190; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="499.455" y="102.181">&#x907;&#x902;&#x926;&#x94b;&#x930;&#x93e; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Indora Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="500" y="92.1819">Indora Square</tspan></text>
+</g>
+<g id="lb-kadvi-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="437" y="73.6359">&#x915;&#x921;&#x935;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Kadvi Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="437.545" y="63.6364">Kadvi Square</tspan></text>
+</g>
+<g id="lb-gaddigodam-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#165;&#194;&#128;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#174; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="335.376" y="158.636">&#x917;&#x921;&#x94d;&#x921;&#x940;&#x917;&#x94b;&#x926;&#x93e;&#x92e; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Gaddigodam Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="308" y="148.636">Gaddigodam Square</tspan></text>
+</g>
+<g id="lb-kasturchand-park">
+<text id="&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#165;&#194;&#129;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#166; &#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="341.748" y="218.636">&#x915;&#x938;&#x94d;&#x924;&#x941;&#x930;&#x91a;&#x902;&#x926; &#x92a;&#x93e;&#x930;&#x94d;&#x915;</tspan></text>
+<text id="Kasturchand Park" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="320" y="208.636">Kasturchand Park</tspan></text>
+</g>
+<g id="lb-zero-mile">
+<text id="&#195;&#160;&#194;&#165;&#194;&#155;&#195;&#160;&#194;&#165;&#194;&#128;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#139; &#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#136;&#195;&#160;&#194;&#164;&#194;&#178;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="362.171" y="280.636">&#x95b;&#x940;&#x930;&#x94b; &#x92e;&#x93e;&#x908;&#x932;</tspan></text>
+<text id="Zero Mile" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="359" y="270.636">Zero Mile</tspan></text>
+</g>
+<g id="lb-congress-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#129;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#184; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="418" y="389.181">&#x915;&#x93e;&#x901;&#x917;&#x94d;&#x930;&#x947;&#x938; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Congress Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="418" y="379.181">Congress Nagar</tspan></text>
+</g>
+<g id="lb-rahate-colony">
+<text id="&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#185;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#135; &#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#137;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#128;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="441.181">&#x930;&#x93e;&#x939;&#x93e;&#x91f;&#x947; &#x915;&#x949;&#x932;&#x928;&#x940;</tspan></text>
+<text id="Rahate Colony" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="431.181">Rahate Colony</tspan></text>
+</g>
+<g id="lb-ajni-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#133;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="491.181">&#x905;&#x91c;&#x928;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Ajni Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="481.181">Ajni Square</tspan></text>
+</g>
+<g id="lb-chhatrapati-square">
+<text id="&#195;&#160;&#194;&#164;&#194;&#155;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#165;&#194;&#128; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="541.181">&#x91b;&#x924;&#x94d;&#x930;&#x92a;&#x924;&#x940; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Chhatrapati Square" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="531.181">Chhatrapati Square</tspan></text>
+</g>
+<g id="lb-jaiprakash-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#175;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#182; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="590.181">&#x91c;&#x92f;&#x92a;&#x94d;&#x930;&#x915;&#x93e;&#x936; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Jaiprakash Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="580.181">Jaiprakash Nagar</tspan></text>
+</g>
+<g id="lb-ujjwal-nagar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#137;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#164;&#194;&#178; &#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="641.181">&#x909;&#x91c;&#x94d;&#x91c;&#x935;&#x932; &#x928;&#x917;&#x930;</tspan></text>
+<text id="Ujjwal Nagar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="631.181">Ujjwal Nagar</tspan></text>
+</g>
+<g id="lb-airport">
+<text id="&#195;&#160;&#194;&#164;&#194;&#143;&#195;&#160;&#194;&#164;&#194;&#175;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#159;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="690.181">&#x90f;&#x92f;&#x930;&#x92a;&#x94b;&#x930;&#x94d;&#x91f;</tspan></text>
+<text id="Airport" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="680.181">Airport</tspan></text>
+</g>
+<g id="lb-airport-south">
+<text id="&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#183;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#163; &#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#164;&#194;&#179;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="740.181">&#x926;&#x915;&#x94d;&#x937;&#x93f;&#x923; &#x935;&#x93f;&#x92e;&#x93e;&#x928;&#x924;&#x933;</tspan></text>
+<text id="Airport South" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="730.181">Airport South</tspan></text>
+</g>
+<g id="lb-new-airport">
+<text id="&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#165;&#194;&#128;&#195;&#160;&#194;&#164;&#194;&#168; &#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#164;&#194;&#179;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="791.181">&#x928;&#x935;&#x940;&#x928; &#x935;&#x93f;&#x92e;&#x93e;&#x928;&#x924;&#x933;</tspan></text>
+<text id="New Airport" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="781.181">New Airport</tspan></text>
+</g>
+<g id="lb-khapri">
+<text id="&#195;&#160;&#194;&#164;&#194;&#150;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#128;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="840.181">&#x916;&#x93e;&#x92a;&#x930;&#x940;</tspan></text>
+<text id="Khapri" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="10" letter-spacing="0em"><tspan x="399" y="830.181">Khapri</tspan></text>
+</g>
+</g>
+<g id="index">
+<path id="legend-bg" d="M194 14H22C17.5817 14 14 17.5817 14 22V102C14 106.418 17.5817 110 22 110H194C198.418 110 202 106.418 202 102V22C202 17.5817 198.418 14 194 14Z" fill="#F0F0F0"/>
+<g id="metro">
+<text id="Nagpur Metro Map" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="42" y="29.8636">Nagpur Metro Map</tspan></text>
+</g>
+<g id="lines">
+<g id="aqua line">
+<path id="Rectangle 6" d="M92 40H192V43H92V40Z" fill="#00DCC0"/>
+<text id="Aqua Line" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="24" y="40.2727">Aqua Line</tspan></text>
+<text id="aqua-line-hi" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="24" y="48.2727">&#x90f;&#x915;&#x94d;&#x935;&#x93e; &#x932;&#x93e;&#x907;&#x928;</tspan></text>
+</g>
+<g id="orange line">
+<path id="Rectangle 6_2" d="M92 58H192V61H92V58Z" fill="#FF9800"/>
+<text id="Orange Line" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="24" y="58.2727">Orange Line</tspan></text>
+<text id="orange-line-hi" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="24" y="66.2727">&#x911;&#x930;&#x947;&#x902;&#x91c; &#x932;&#x93e;&#x907;&#x928;</tspan></text>
+</g>
+</g>
+<g id="other">
+<g id="station">
+<path id="Vector_21_2" d="M36 84H30V90H36V84Z" fill="white" stroke="black"/>
+</g>
+<text id="Station_2" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="40" y="89.2727">Station</tspan></text>
+<g id="interchange">
+<path id="Vector_20_2" d="M118 90C121.314 90 124 87.314 124 84C124 80.686 121.314 78 118 78C114.686 78 112 80.686 112 84C112 87.314 114.686 90 118 90Z" fill="white" stroke="black"/>
+</g>
+<text id="Interchange" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="9" letter-spacing="0em"><tspan x="128" y="87.2727">Interchange</tspan></text>
+</g>
+</g>
+</g>
+<g id="metrosafar-watermark">
+<g id="metrosafar-brand">
+<text fill="#0878D1" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="720" y="869.864">Metro</tspan></text>
+<text fill="#FF7A00" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="754.781" y="869.864">&#x938;&#x92b;&#x930;</tspan></text>
+</g>
+<text id="metrosafar-tag" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="11" font-weight="bold" letter-spacing="0em"><tspan x="720" y="885.5">metrosafar.com</tspan></text>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_28_738">
+<rect width="900" height="900" fill="white"/>
+</clipPath>
+</defs>
+</svg>

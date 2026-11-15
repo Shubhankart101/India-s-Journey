@@ -1,0 +1,496 @@
+/* PolityPolicy Geographic Cartography Canvas Styling */
+
+.polity-metro-viewport {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  min-height: 580px;
+  overflow: hidden;
+  border-radius: 16px;
+  user-select: none;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
+  background: var(--bg, #fff1e5);
+}
+
+.polity-metro-viewport.theme-light {
+  --bg: #fff1e5;
+  --bg2: #fff9f2;
+  --panel: #fff9f2;
+  --panel2: #fdf3e8;
+  --line: #e4d5c5;
+  --line2: #eee0d2;
+  --ink: #2b2622;
+  --mut: #6b5d51;
+  --dim: #93857a;
+  --ca: #A81B52;
+  --shadow: 0 14px 34px -24px rgba(0, 0, 0, 0.3);
+}
+
+.polity-metro-viewport.theme-dark {
+  --bg: #07050f;
+  --bg2: #0b0918;
+  --panel: #0e0b1c;
+  --panel2: #131024;
+  --line: #2a2447;
+  --line2: #1c1830;
+  --ink: #f7f0f6;
+  --mut: #b3a5bd;
+  --dim: #7a6e8c;
+  --ca: #FC8EAC;
+  --shadow: 0 18px 46px -24px rgba(0, 0, 0, 0.9);
+}
+
+.polity-metro-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: grab;
+}
+
+.polity-metro-canvas:active {
+  cursor: grabbing;
+}
+
+.polity-metro-loading,
+.polity-metro-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  background: #fff1e5;
+  color: #2b2622;
+  gap: 16px;
+  border-radius: 16px;
+}
+
+.polity-metro-spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(168, 27, 82, 0.2);
+  border-top-color: #a81b52;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Layer toggles */
+.polity-layer-toggles {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.polity-layer-pill {
+  background: var(--panel, #fff9f2);
+  border: 1px solid var(--line, #e4d5c5);
+  color: var(--mut, #6b5d51);
+  padding: 7px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.polity-layer-pill:hover {
+  color: var(--ink, #2b2622);
+  border-color: var(--ca, #a81b52);
+}
+
+.polity-layer-pill.active {
+  background: var(--ca, #a81b52);
+  border-color: var(--ca, #a81b52);
+  color: #ffffff;
+}
+
+.polity-layer-pill.future.active {
+  background: #475569;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+/* Floating PLAN A JOURNEY card */
+.polity-journey-card {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 320px;
+  max-width: calc(100% - 36px);
+  background: var(--panel, #fff9f2);
+  border: 1px solid var(--line, #e4d5c5);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polity-journey-card.minimized {
+  width: auto;
+  cursor: pointer;
+}
+
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--panel2, #fdf3e8);
+  border-bottom: 1px solid var(--line2, #eee0d2);
+  cursor: pointer;
+}
+
+.journey-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ca, #a81b52);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.journey-toggle-arrow {
+  font-size: 14px;
+}
+
+.journey-minimize-btn {
+  background: none;
+  border: none;
+  color: var(--mut, #6b5d51);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.journey-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.journey-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.journey-field label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--dim, #93857a);
+  text-transform: uppercase;
+}
+
+.journey-field select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--ink, #2b2622);
+  background: var(--panel, #ffffff);
+  border: 1px solid var(--line, #e4d5c5);
+  border-radius: 8px;
+  outline: none;
+}
+
+.journey-field select:focus {
+  border-color: var(--ca, #a81b52);
+}
+
+.journey-swap-row {
+  display: flex;
+  justify-content: center;
+  margin: -4px 0;
+}
+
+.journey-swap-btn {
+  background: var(--panel2, #fdf3e8);
+  border: 1px solid var(--line2, #eee0d2);
+  color: var(--mut, #6b5d51);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.journey-swap-btn:hover {
+  border-color: var(--ca, #a81b52);
+  color: var(--ca, #a81b52);
+}
+
+.journey-find-btn {
+  background: var(--ca, #a81b52);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  margin-top: 4px;
+}
+
+.journey-find-btn:hover {
+  opacity: 0.92;
+}
+
+.journey-results {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.results-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink, #2b2622);
+  background: var(--panel2, #fdf3e8);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.results-fares {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 6px;
+}
+
+.smart-card-fare {
+  color: #059669;
+}
+
+.results-legs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.leg-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--panel2, #fdf3e8);
+  border-radius: 6px;
+}
+
+.leg-badge {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.leg-stops {
+  font-size: 11.5px;
+  color: var(--mut, #6b5d51);
+}
+
+.journey-hint {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--mut, #6b5d51);
+}
+
+.journey-hint strong {
+  color: var(--ink, #2b2622);
+}
+
+/* Station selected callout */
+.polity-station-callout {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  background: var(--panel, #fff9f2);
+  border: 1px solid var(--line, #e4d5c5);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+  z-index: 20;
+  max-width: 320px;
+}
+
+.callout-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--mut, #6b5d51);
+  cursor: pointer;
+}
+
+.callout-type {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ca, #a81b52);
+  margin-bottom: 2px;
+}
+
+.callout-name {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink, #2b2622);
+}
+
+.callout-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.callout-line-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink, #2b2622);
+  border: 1px solid var(--line, #e4d5c5);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.line-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.callout-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.callout-btn {
+  flex: 1;
+  background: var(--panel2, #fdf3e8);
+  border: 1px solid var(--line2, #eee0d2);
+  color: var(--ink, #2b2622);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.callout-btn:hover {
+  background: var(--ca, #a81b52);
+  color: #ffffff;
+  border-color: var(--ca, #a81b52);
+}
+
+/* Tooltip */
+.polity-metro-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.94);
+  color: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltip-lines {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.tooltip-tag {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+/* Bottom controls */
+.polity-bottom-controls {
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.polity-attribution {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--dim, #93857a);
+  pointer-events: auto;
+  background: rgba(255, 241, 229, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.polity-metro-viewport.theme-dark .polity-attribution {
+  background: rgba(7, 5, 15, 0.85);
+}
+
+.polity-zoom-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: auto;
+}
+
+.polity-zoom-btns button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--panel, #fff9f2);
+  border: 1px solid var(--line, #e4d5c5);
+  color: var(--ink, #2b2622);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polity-zoom-btns button:hover {
+  border-color: var(--ca, #a81b52);
+  color: var(--ca, #a81b52);
+}

@@ -106,7 +106,7 @@ describe('MetroAtlas: Transit Guide, Route Planner & Operational Directory', () 
     fireEvent.click(schematicToggle);
 
     expect(container.querySelector('.theme-schematic')).toBeInTheDocument();
-    expect(screen.getByText(/Metro Route Map/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Metro Route Map/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getAllByText(/metrosafar\.com/i).length).toBeGreaterThanOrEqual(1);
     expect(container.querySelector('.metro-safar-badge')).toBeInTheDocument();
     expect(screen.getByText(/सफ़र/i)).toBeInTheDocument();

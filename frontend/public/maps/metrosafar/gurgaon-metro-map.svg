@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none">
+<title>Metro Safar metro map — metrosafar.com</title>
+<desc>Official Metro Safar route map. https://metrosafar.com</desc>
+<g id="gurgaon">
+<rect id="Rectangle 13" width="600" height="600" fill="#fff"></rect>
+<g id="lines-connector">
+<path id="seg-phase-2--belvedere-towers" d="M141.419 246.079H259.434" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-belvedere-towers--cyber-city" d="M154.075 163.196L141.419 246.079" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-cyber-city--moulsari-avenue" d="M167.077 115.135L154.075 163.196" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-phase-2--phase-3" d="M241.151 137.211L259.434 246.079" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-moulsari-avenue--phase-3" d="M241.151 137.211L167.076 115.135" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-sikanderpur--phase-2" d="M330.945 246.079H259.435" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-phase-1--sikanderpur" d="M381.76 246.079H330.944" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-sector-42-43--phase-1" d="M471.358 246.079H381.759" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-sector-53-54--sector-42-43" d="M471.359 344.61V246.079" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-sector-54-chowk--sector-53-54" d="M471.359 408.709V344.609" stroke="#015B97" stroke-width="3"></path>
+<path id="seg-sector-55-56--sector-54-chowk" d="M471.359 472.809V408.709" stroke="#015B97" stroke-width="3"></path>
+</g>
+<g id="stations">
+<g id="st-belvedere-towers">
+<path d="M145 244H139V250H145V244Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-cyber-city">
+<path d="M158 161H152V167H158V161Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-moulsari-avenue">
+<path d="M171 113H165V119H171V113Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-phase-3">
+<path d="M245 135H239V141H245V135Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-phase-2">
+<path d="M263 244H257V250H263V244Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-sikanderpur">
+<circle cx="332" cy="247" r="5" fill="white" stroke="#015B97" stroke-width="1"/>
+</g>
+<g id="st-phase-1">
+<path d="M386 244H380V250H386V244Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-sector-42-43">
+<path d="M475 245H469V251H475V245Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-sector-53-54">
+<path d="M475 342H469V348H475V342Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-sector-54-chowk">
+<path d="M475 407H469V413H475V407Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+<g id="st-sector-55-56">
+<path d="M475 470H469V476H475V470Z" fill="white" stroke="black" stroke-width="1"/>
+</g>
+</g>
+<g id="lables">
+<g id="lb-phase-2">
+<text id="Phase 2" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="248.591" y="262.128">Phase 2</tspan></text>
+<text id="फेज 2" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="255.332" y="274.313">फेज 2</tspan></text>
+</g>
+<g id="lb-belvedere-towers">
+<text id="Belvedere Towers" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="48.662" y="243.114">Belvedere Towers</tspan></text>
+<text id="बेल्वेडियर टावर्स" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="75.633" y="256.220">बेल्वेडियर टावर्स</tspan></text>
+</g>
+<g id="lb-cyber-city">
+<text id="Cyber City" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="97.597" y="160.045">Cyber City</tspan></text>
+<text id="साइबर सिटी" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="102.000" y="172.347">साइबर सिटी</tspan></text>
+</g>
+<g id="lb-moulsari-avenue">
+<text id="Moulsari Avenue" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="145.756" y="93.128">Moulsari Avenue</tspan></text>
+<text id="मौलसरी एवेन्यू" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="146.265" y="108.740">मौलसरी एवेन्यू</tspan></text>
+</g>
+<g id="lb-phase-3">
+<text id="Phase 3" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="251.295" y="137.702">Phase 3</tspan></text>
+<text id="फेज 3" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="250.414" y="149.306">फेज 3</tspan></text>
+</g>
+<g id="lb-sikanderpur">
+<text id="Sikanderpur" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="304.543" y="263.045">Sikanderpur</tspan></text>
+<text id="सिकंदरपुर" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="311.558" y="275.993">सिकंदरपुर</tspan></text>
+</g>
+<g id="lb-phase-1">
+<text id="Phase 1" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="370.138" y="262.128">Phase 1</tspan></text>
+<text id="फेज 1" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="377.050" y="274.313">फेज 1</tspan></text>
+</g>
+<g id="lb-sector-42-43">
+<text id="Sector 42-43" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="479.676" y="243.967">Sector 42-43</tspan></text>
+<text id="सेक्टर 42-43" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="480.108" y="258.693">सेक्टर 42-43</tspan></text>
+</g>
+<g id="lb-sector-53-54">
+<text id="Sector 53-54" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="480.676" y="342.068">Sector 53-54</tspan></text>
+<text id="सेक्टर 53-54" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="481.108" y="356.110">सेक्टर 53-54</tspan></text>
+</g>
+<g id="lb-sector-54-chowk">
+<text id="Sector 54 Chowk" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="481.676" y="406.594">Sector 54 Chowk</tspan></text>
+<text id="सेक्टर 54 चौक" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="482.108" y="421.490">सेक्टर 54 चौक</tspan></text>
+</g>
+<g id="lb-sector-55-56">
+<text id="Sector 55-56" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="484.568" y="469.128">Sector 55-56</tspan></text>
+<text id="सेक्टर 55-56" fill="black" xml:space="preserve" font-family="Inter" font-size="8" letter-spacing="0em"><tspan x="485.000" y="482.865">सेक्टर 55-56</tspan></text>
+</g>
+</g>
+<g id="index">
+<rect id="legend-bg" x="418" y="14" width="168" height="70" rx="8" fill="#F0F0F0"/>
+<g id="metro">
+<text id="Gurgaon Metro Map" fill="black" xml:space="preserve" font-family="Inter" font-size="10" font-weight="bold" letter-spacing="0em"><tspan x="442" y="30">Gurgaon Metro Map</tspan></text>
+</g>
+<g id="lines">
+<g id="rapid line">
+<path id="Rectangle 6" d="M476 40H576V43H476V40Z" fill="#015B97"/>
+<text id="Rapid Line" fill="black" xml:space="preserve" font-family="Inter" font-size="7" letter-spacing="0em"><tspan x="428" y="40.5">Rapid Line</tspan></text>
+<text id="rapid-line-hi" fill="black" xml:space="preserve" font-family="Inter" font-size="7" letter-spacing="0em"><tspan x="428" y="48.5">रैपिड लाइन</tspan></text>
+</g>
+</g>
+<g id="other">
+<g id="station">
+<path id="Vector_21" d="M440 62H434V68H440V62Z" fill="white" stroke="black"/>
+</g>
+<text id="Station" fill="black" xml:space="preserve" font-family="Inter" font-size="7" letter-spacing="0em"><tspan x="444" y="67.5">Station</tspan></text>
+<g id="interchange">
+<path id="Vector_20" d="M512 68C515.314 68 518 65.314 518 62C518 58.686 515.314 56 512 56C508.686 56 506 58.686 506 62C506 65.314 508.686 68 512 68Z" fill="white" stroke="black"/>
+</g>
+<text id="Interchange" fill="black" xml:space="preserve" font-family="Inter" font-size="7" letter-spacing="0em"><tspan x="522" y="65.5">Interchange</tspan></text>
+</g>
+</g>
+</g>
+<g id="metrosafar-watermark" pointer-events="none">
+<text id="metrosafar-brand" font-family="Inter, Noto Sans Devanagari, sans-serif" font-size="11" font-weight="800" letter-spacing="0.02em"><tspan x="455" y="555" fill="#0878D1">Metro</tspan><tspan fill="#FF7A00">सफर</tspan></text>
+<text id="metrosafar-tag" fill="#000000" font-family="Inter" font-size="10" font-weight="bold" letter-spacing="0.01em"><tspan x="455" y="568">metrosafar.com</tspan></text>
+</g>
+</svg>

@@ -1,0 +1,135 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="navi-mumbai-metro-map" clip-path="url(#clip0_29_2)">
+<g id="navi mumbai">
+<path id="Rectangle 15" d="M200 0H0V200H200V0Z" fill="white"/>
+<g id="lines-connector">
+<path id="seg-pethali-taloja--pendhar" d="M146.929 20.9087H169.303" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-amandoot--pethali-taloja" d="M124.555 20.9087H146.929" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-pethpada--amandoot" d="M124.555 20.9087C112.198 20.9087 102.181 20.9087 102.181 43.2827" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-central-park--pethpada" d="M102.181 43.0589V69.9077" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-kharghar-village--central-park" d="M102.181 69.9077V96.7566" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-kendriya-vihar--kharghar-village" d="M102.181 96.7566C102.181 109.113 106.5 119.131 79.8071 119.131" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-utsav-chowk--kendriya-vihar" d="M79.8072 119.131H57.4331" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-belpada--utsav-chowk" d="M57.4331 119.131H35.0591" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-rbi-colony--belpada" d="M35.059 119.131C22.7022 119.131 12 119.131 12.685 141.505V145.979" stroke="#2196F3" stroke-width="2"/>
+<path id="seg-belapur-terminal--rbi-colony" d="M12.6851 145.979V168.353" stroke="#2196F3" stroke-width="2"/>
+</g>
+<g id="stations">
+<g id="st-pendhar">
+<path id="Vector" d="M171.415 18.797H167.415V22.797H171.415V18.797Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-pethali-taloja">
+<path id="Vector_2" d="M149.041 18.797H145.041V22.797H149.041V18.797Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-amandoot">
+<path id="Vector_3" d="M126.667 18.797H122.667V22.797H126.667V18.797Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-pethpada">
+<path id="Vector_4" d="M104.293 40.947H100.293V44.947H104.293V40.947Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-central-park">
+<path id="Vector_5" d="M104.293 67.796H100.293V71.796H104.293V67.796Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-kharghar-village">
+<path id="Vector_6" d="M104.293 94.645H100.293V98.645H104.293V94.645Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-kendriya-vihar">
+<path id="Vector_7" d="M91 117H87V121H91V117Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-utsav-chowk">
+<path id="Vector_8" d="M63 117H59V121H63V117Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-belpada">
+<path id="Vector_9" d="M37.1709 117.019H33.1709V121.019H37.1709V117.019Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-rbi-colony">
+<path id="Vector_10" d="M14.7969 143.868H10.7969V147.868H14.7969V143.868Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+<g id="st-belapur-terminal">
+<path id="Vector_11" d="M14.7969 166.242H10.7969V170.242H14.7969V166.242Z" fill="white" stroke="black" stroke-width="0.8"/>
+</g>
+</g>
+<g id="lables">
+<g id="lb-belapur-terminal">
+<text id="&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#178;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="18.1597" y="172.039">&#x92c;&#x947;&#x932;&#x93e;&#x92a;&#x942;&#x930; &#x91f;&#x930;&#x94d;&#x92e;&#x93f;&#x928;&#x932;</tspan></text>
+<text id="Belapur Terminal" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="18.1597" y="167.788">Belapur Terminal</tspan></text>
+</g>
+<g id="lb-rbi-colony">
+<text id="&#195;&#160;&#194;&#164;&#194;&#134;&#195;&#160;&#194;&#164;&#194;&#176;.&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#165;&#194;&#128;.&#195;&#160;&#194;&#164;&#194;&#134;&#195;&#160;&#194;&#164;&#194;&#136;. &#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#137;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#128;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="18.1597" y="149.112">&#x906;&#x930;.&#x92c;&#x940;.&#x906;&#x908;. &#x915;&#x949;&#x932;&#x928;&#x940;</tspan></text>
+<text id="RBI Colony" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="18" y="144.909">RBI Colony</tspan></text>
+</g>
+<g id="lb-belpada">
+<text id="&#195;&#160;&#194;&#164;&#194;&#172;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#164;&#194;&#190;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="25" y="116.069">&#x92c;&#x947;&#x932;&#x92a;&#x93e;&#x921;&#x93e;</tspan></text>
+<text id="Belpada" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="25" y="111.818">Belpada</tspan></text>
+</g>
+<g id="lb-utsav-chowk">
+<text id="&#195;&#160;&#194;&#164;&#194;&#137;&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#164;&#194;&#181; &#195;&#160;&#194;&#164;&#194;&#154;&#195;&#160;&#194;&#165;&#194;&#140;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="47" y="129.818">&#x909;&#x924;&#x94d;&#x938;&#x935; &#x91a;&#x94c;&#x915;</tspan></text>
+<text id="Utsav Chowk" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="47" y="125.818">Utsav Chowk</tspan></text>
+</g>
+<g id="lb-kendriya-vihar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#149;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#128;&#195;&#160;&#194;&#164;&#194;&#175; &#195;&#160;&#194;&#164;&#194;&#181;&#195;&#160;&#194;&#164;&#194;&#191;&#195;&#160;&#194;&#164;&#194;&#185;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="66" y="113.66">&#x915;&#x947;&#x928;&#x94d;&#x926;&#x94d;&#x930;&#x940;&#x92f; &#x935;&#x93f;&#x939;&#x93e;&#x930;</tspan></text>
+<text id="Kendriya vihar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="66.3184" y="109.818">Kendriya vihar</tspan></text>
+</g>
+<g id="lb-kharghar-village">
+<text id="&#195;&#160;&#194;&#164;&#194;&#150;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#152;&#195;&#160;&#194;&#164;&#194;&#176; &#195;&#160;&#194;&#164;&#194;&#151;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#181;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="98.9091">&#x916;&#x93e;&#x930;&#x918;&#x930; &#x917;&#x93e;&#x935;</tspan></text>
+<text id="Kharghar village" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="94.9091">Kharghar village</tspan></text>
+</g>
+<g id="lb-central-park">
+<text id="&#195;&#160;&#194;&#164;&#194;&#184;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#159;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#164;&#194;&#178; &#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#176;&#195;&#160;&#194;&#165;&#194;&#141;&#195;&#160;&#194;&#164;&#194;&#149;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="72.9091">&#x938;&#x947;&#x902;&#x91f;&#x94d;&#x930;&#x932; &#x92a;&#x93e;&#x930;&#x94d;&#x915;</tspan></text>
+<text id="Central park" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="68.9091">Central park</tspan></text>
+</g>
+<g id="lb-pethpada">
+<text id="&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164; &#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#161;&#195;&#160;&#194;&#164;&#194;&#190;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="45.9091">&#x92a;&#x947;&#x920;&#x92a;&#x93e;&#x921;&#x93e;</tspan></text>
+<text id="Pethpada" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="108" y="41.9091">Pethpada</tspan></text>
+</g>
+<g id="lb-amandoot">
+<text id="&#195;&#160;&#194;&#164;&#194;&#133;&#195;&#160;&#194;&#164;&#194;&#174;&#195;&#160;&#194;&#164;&#194;&#168;&#195;&#160;&#194;&#164;&#194;&#166;&#195;&#160;&#194;&#165;&#194;&#130;&#195;&#160;&#194;&#164;&#194;&#164;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="118" y="31.9091">&#x905;&#x92e;&#x928;&#x926;&#x942;&#x924;</tspan></text>
+<text id="Amandoot" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="118" y="27.9091">Amandoot</tspan></text>
+</g>
+<g id="lb-pethali-taloja">
+<text id="&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164; &#195;&#160;&#194;&#164;&#194;&#190;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#165;&#194;&#128;-&#195;&#160;&#194;&#164;&#194;&#164;&#195;&#160;&#194;&#164;&#194;&#178;&#195;&#160;&#194;&#165;&#194;&#139;&#195;&#160;&#194;&#164;&#194;&#156;&#195;&#160;&#194;&#164;&#194;&#190;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="136.007" y="15.8823">&#x92a;&#x947;&#x920;&#x93e;&#x932;&#x940;-&#x924;&#x932;&#x94b;&#x91c;&#x93e;</tspan></text>
+<text id="Pethali taloja" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="136" y="11.8182">Pethali taloja</tspan></text>
+</g>
+<g id="lb-pendhar">
+<text id="&#195;&#160;&#194;&#164;&#194;&#170;&#195;&#160;&#194;&#165;&#194;&#135;&#195;&#160;&#194;&#164;&#194;&#163;&#195;&#160;&#194;&#164;&#194;&#167;&#195;&#160;&#194;&#164;&#194;&#176;" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="165" y="31.9091">&#x92a;&#x947;&#x923;&#x927;&#x930;</tspan></text>
+<text id="Pendhar" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" letter-spacing="0em"><tspan x="165" y="27.9091">Pendhar</tspan></text>
+</g>
+</g>
+<g id="index">
+<path id="legend-bg" d="M84 12H8C5.79086 12 4 13.7909 4 16V58C4 60.2091 5.79086 62 8 62H84C86.2091 62 88 60.2091 88 58V16C88 13.7909 86.2091 12 84 12Z" fill="#F0F0F0"/>
+<g id="metro">
+<text id="Navi Mumbai Metro Map" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" font-weight="bold" letter-spacing="0em"><tspan x="8" y="20.8182">Navi Mumbai Metro</tspan></text>
+</g>
+<g id="lines">
+<g id="line 1">
+<path id="Rectangle 6" d="M34 26H80V28H34V26Z" fill="#2196F3"/>
+<text id="Line 1" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="4" letter-spacing="0em"><tspan x="8" y="27.9545">Line 1</tspan></text>
+<text id="line-1-hi" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="4" letter-spacing="0em"><tspan x="8" y="32.9545">&#x932;&#x93e;&#x907;&#x928; 1</tspan></text>
+</g>
+</g>
+<g id="other">
+<g id="station">
+<path id="Vector_21" d="M12 42H9V45H12V42Z" fill="white" stroke="black" stroke-width="0.6"/>
+</g>
+<text id="Station" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="4" letter-spacing="0em"><tspan x="14" y="44.9545">Station</tspan></text>
+<g id="interchange">
+<path id="Vector_20" d="M46 45.5C47.1046 45.5 48 44.6046 48 43.5C48 42.3954 47.1046 41.5 46 41.5C44.8954 41.5 44 42.3954 44 43.5C44 44.6046 44.8954 45.5 46 45.5Z" fill="white" stroke="black" stroke-width="0.6"/>
+</g>
+<text id="Interchange" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="4" letter-spacing="0em"><tspan x="50" y="44.9545">Interchange</tspan></text>
+</g>
+</g>
+</g>
+<g id="metrosafar-watermark">
+<g id="metrosafar-brand">
+<text fill="#0878D1" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" font-weight="bold" letter-spacing="0em"><tspan x="161" y="186.818">Metro</tspan></text>
+<text fill="#FF7A00" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="5" font-weight="bold" letter-spacing="0em"><tspan x="175.492" y="186.818">&#x938;&#x92b;&#x930;</tspan></text>
+</g>
+<text id="metrosafar-tag" fill="black" style="white-space: pre" xml:space="preserve" font-family="Inter" font-size="4" font-weight="bold" letter-spacing="0em"><tspan x="161" y="193.955">metrosafar.com</tspan></text>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_29_2">
+<rect width="200" height="200" fill="white"/>
+</clipPath>
+</defs>
+</svg>

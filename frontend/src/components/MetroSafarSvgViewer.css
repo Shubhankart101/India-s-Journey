@@ -1,0 +1,228 @@
+/* MetroSafar Authentic SVG Viewer Styles */
+
+.metrosafar-viewer-container {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  min-height: 580px;
+  background: #ffffff;
+  overflow: hidden;
+  border-radius: 16px;
+  user-select: none;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.metrosafar-viewer-container:active {
+  cursor: grabbing;
+}
+
+.metrosafar-svg-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s linear;
+  width: 100%;
+  height: 100%;
+}
+
+.metrosafar-svg-stage svg {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
+}
+
+/* Station search hit highlighting */
+.station-search-hit {
+  fill: #dc2626 !important;
+  font-weight: 900 !important;
+  stroke: #ffffff !important;
+  stroke-width: 0.8px !important;
+  paint-order: stroke fill !important;
+}
+
+/* Search bar card */
+.metrosafar-search-card {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 320px;
+  max-width: calc(100% - 36px);
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 6px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  gap: 8px;
+}
+
+.search-icon {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.station-search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+  font-family: inherit;
+  color: #0f172a;
+  background: transparent;
+}
+
+.clear-search-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.search-status-bar {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  width: fit-content;
+  backdrop-filter: blur(4px);
+}
+
+/* Floating controls */
+.metrosafar-controls {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+
+.metrosafar-controls button {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.15s ease;
+}
+
+.metrosafar-controls button:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.metrosafar-controls .download-btn {
+  width: auto;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 4px;
+}
+
+/* Official legend box */
+.metrosafar-legend-box {
+  position: absolute;
+  top: 72px;
+  left: 18px;
+  z-index: 15;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ms-legend-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ms-legend-sub {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Official attribution badge */
+.metrosafar-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  text-align: right;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.brand-text {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ea580c;
+  line-height: 1.1;
+}
+
+.brand-url {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* State message */
+.metrosafar-state-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.metrosafar-state-msg.error {
+  color: #dc2626;
+}
+
+.metrosafar-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(234, 88, 12, 0.2);
+  border-top-color: #ea580c;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
