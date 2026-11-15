@@ -1,7 +1,7 @@
 /* Ancient Empires Atlas: Geospatial Imperial Map & Epigraphy */
 .empires-atlas {
-  margin: 1.5rem 0 2.5rem;
-  padding: 1.5rem;
+  margin: 1.25rem 0 2rem;
+  padding: 1.25rem;
   background: color-mix(in srgb, var(--surface, #14171d) 92%, #000);
   border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
   border-radius: var(--radius, 16px);
@@ -9,12 +9,17 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .empires-atlas-header {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-width: 0;
 }
 
 .empires-tag {
@@ -27,15 +32,16 @@
 }
 
 .empires-title-group h2 {
-  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
   font-weight: 800;
   color: var(--ink, #f0f6fc);
   margin: 0 0 0.5rem;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .empires-lead {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: var(--muted, #94a3b8);
   line-height: 1.6;
   max-width: 85ch;
@@ -50,6 +56,9 @@
   padding: 4px 2px 10px;
   scrollbar-width: thin;
   scrollbar-color: #334155 transparent;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .empires-timeline-strip::-webkit-scrollbar {
@@ -116,12 +125,50 @@
   margin-top: 2px;
 }
 
-/* Workbench Grid */
+/* Mode Switcher Bar */
+.empires-mode-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+.empires-mode-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.empires-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.empires-mode-btn.active {
+  background: #d4a72c;
+  color: #0b0f15;
+  border-color: #d4a72c;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(212, 167, 44, 0.3);
+}
+
+/* Workbench Grid (No Overflow) */
 .empires-workbench {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 16px;
-  min-height: 640px;
+  min-height: 540px;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Map Container */
@@ -134,6 +181,9 @@
   box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .empires-map-toolbar {
@@ -192,13 +242,13 @@
 }
 
 .map-zoom-btns button {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   background: rgba(15, 23, 42, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #f8fafc;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   display: grid;
   place-items: center;
@@ -215,7 +265,8 @@
 .empires-svg {
   width: 100%;
   height: 100%;
-  min-height: 520px;
+  min-height: 480px;
+  max-height: 580px;
   display: block;
 }
 
@@ -225,92 +276,201 @@
   border-top: 1px solid #1e293b;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px 20px;
-  font-size: 0.74rem;
+  gap: 12px 18px;
+  font-size: 0.72rem;
   color: #94a3b8;
 }
 
-/* Sidebar Dossier */
+/* Authentic Historical Map View Frame */
+.authentic-historical-map-frame {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-height: 520px;
+  background: #1a1714;
+}
+
+.ahm-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(30, 25, 20, 0.95);
+  border-bottom: 1px solid rgba(168, 124, 47, 0.3);
+}
+
+.ahm-title {
+  font-family: 'Cinzel', serif, Georgia;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.ahm-credit {
+  font-size: 0.7rem;
+  color: #a89f91;
+  font-style: italic;
+}
+
+.ahm-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 8px;
+  background: #14110e;
+}
+
+.ahm-svg-img {
+  max-width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar Dossier (Tabbed, Constrained, Zero Overflow) */
 .empire-dossier {
   background: rgba(15, 23, 42, 0.6);
   border: 1px solid #1e293b;
   border-radius: 12px;
   overflow-y: auto;
-  max-height: 720px;
-  padding: 18px 20px;
+  max-height: 580px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .dossier-hero {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 12px;
+  padding-bottom: 10px;
+  min-width: 0;
 }
 
 .dossier-era-badge {
   display: inline-block;
-  font-size: 0.66rem;
+  font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  padding: 2px 8px;
+  padding: 2px 7px;
   border-radius: 4px;
   background: rgba(250, 204, 21, 0.15);
   color: #fef08a;
   border: 1px solid rgba(250, 204, 21, 0.35);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .dossier-emp-name {
   margin: 0;
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #f8fafc;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .dossier-emp-hi {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #facc15;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .dossier-meta {
-  margin: 6px 0 0;
-  font-size: 0.82rem;
+  margin: 4px 0 0;
+  font-size: 0.78rem;
   color: #cbd5e1;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Dossier Tabs */
+.dossier-tab-bar {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.dossier-tab-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.dossier-tab-btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25);
+  color: #94a3b8;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.dossier-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+}
+
+.dossier-tab-btn.active {
+  background: rgba(250, 204, 21, 0.2);
+  border-color: #facc15;
+  color: #fef08a;
+  font-weight: 800;
+}
+
+.dossier-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
 }
 
 .dossier-box {
   background: rgba(0, 0, 0, 0.3);
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  min-width: 0;
 }
 
 .dossier-box h4 {
   margin: 0 0 4px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #facc15;
+  overflow-wrap: anywhere;
 }
 
 .dossier-box p {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #cbd5e1;
   line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 /* Battle Alert Popup */
 .battle-alert-card {
   background: #450a0a;
   border: 1px solid #dc2626;
-  border-radius: 10px;
-  padding: 12px 16px;
+  border-radius: 8px;
+  padding: 10px 14px;
   color: #fecaca;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.45;
+  min-width: 0;
 }
 
 .bac-header {
@@ -321,9 +481,9 @@
 }
 
 .bac-tag {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #fca5a5;
 }
 
@@ -333,27 +493,39 @@
   color: #fca5a5;
   font-size: 1.2rem;
   cursor: pointer;
+  line-height: 1;
 }
 
 .battle-alert-card h4 {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .battle-alert-card p {
   margin: 2px 0;
+  overflow-wrap: anywhere;
+}
+
+.bac-source {
+  font-size: 0.72rem;
+  color: #fca5a5;
+  font-style: italic;
+  margin-top: 4px;
 }
 
 /* Original Epigraph Card */
 .epigraph-card {
   background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.1), rgba(0, 0, 0, 0.4));
   border: 1px solid rgba(250, 204, 21, 0.3);
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: 8px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .epigraph-header {
@@ -361,11 +533,13 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.68rem;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .epigraph-badge {
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #facc15;
 }
 
@@ -380,57 +554,86 @@
   border-left: 3px solid #facc15;
   background: rgba(0, 0, 0, 0.35);
   color: #fef08a;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 0.9rem;
+  line-height: 1.5;
   font-family: "Noto Serif Devanagari", "Tiro Devanagari Hindi", serif;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .epigraph-translit {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #e2e8f0;
-  line-height: 1.45;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .epigraph-translation {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: #cbd5e1;
-  line-height: 1.5;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.epigraph-cite-box {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.7rem;
+  color: #94a3b8;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+  overflow-wrap: anywhere;
 }
 
 .epigraph-source {
-  font-size: 0.72rem;
-  color: #64748b;
+  font-style: italic;
+}
+
+.epigraph-verified {
+  color: #38bdf8;
   font-style: italic;
 }
 
 /* Battles List */
+.dossier-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
 .dossier-section h4 {
-  margin: 0 0 10px;
-  font-size: 0.84rem;
+  margin: 0;
+  font-size: 0.8rem;
   font-weight: 750;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #facc15;
+  overflow-wrap: anywhere;
 }
 
 .battles-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-width: 0;
 }
 
 .battle-list-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 8px;
   padding: 8px 10px;
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.15s ease;
+  min-width: 0;
 }
 
 .battle-list-item:hover, .battle-list-item.selected {
@@ -440,18 +643,36 @@
 
 .bli-swords {
   color: #ef4444;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
-.battle-list-item strong {
-  font-size: 0.82rem;
+.bli-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.bli-content strong {
+  font-size: 0.8rem;
   color: #f8fafc;
+  display: block;
+  overflow-wrap: anywhere;
 }
 
 .bli-desc {
   margin: 2px 0 0;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   color: #94a3b8;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.bli-parties {
+  display: block;
+  font-size: 0.7rem;
+  color: #cbd5e1;
+  margin-top: 2px;
+  overflow-wrap: anywhere;
 }
 
 /* Timeline */
@@ -461,30 +682,45 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-width: 0;
 }
 
 .events-timeline li {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 10px;
-  font-size: 0.8rem;
+  display: flex;
+  gap: 8px;
+  font-size: 0.78rem;
+  padding: 6px 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border-left: 2px solid #facc15;
+  min-width: 0;
 }
 
 .ev-year {
   font-weight: 700;
   color: #facc15;
+  flex-shrink: 0;
+  width: 65px;
+}
+
+.ev-body {
+  min-width: 0;
+  flex: 1;
 }
 
 .ev-title {
   color: #cbd5e1;
+  overflow-wrap: anywhere;
+  display: block;
 }
 
 /* Sources */
 .sources-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-width: 0;
 }
 
 .source-citation-card {
@@ -492,40 +728,48 @@
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 6px;
+  min-width: 0;
 }
 
 .scc-year {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   color: #94a3b8;
   font-weight: 700;
 }
 
 .scc-title {
   margin: 2px 0;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #f1f5f9;
+  overflow-wrap: anywhere;
 }
 
 .scc-authors {
   margin: 0;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: #cbd5e1;
+  overflow-wrap: anywhere;
 }
 
 .scc-pub {
   margin: 2px 0 0;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: #64748b;
   font-style: italic;
+  overflow-wrap: anywhere;
 }
 
-@media (max-width: 960px) {
+/* Responsive Breakpoint: Stack on narrower viewports */
+@media (max-width: 900px) {
   .empires-workbench {
     grid-template-columns: 1fr;
   }
   .empire-dossier {
-    max-height: 520px;
+    max-height: 480px;
+  }
+  .empires-svg {
+    min-height: 380px;
   }
 }
 
@@ -572,20 +816,4 @@
   font-size: 0.75rem;
   line-height: 1.35;
   color: #e2e8f0;
-}
-
-.epigraph-cite-box {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-size: 0.72rem;
-  color: #94a3b8;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
-  padding-top: 6px;
-}
-
-.epigraph-verified {
-  color: #38bdf8;
-  font-style: italic;
 }

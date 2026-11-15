@@ -2158,5 +2158,7 @@
         }
       ]
     }
-  ]
+  ],
+  "historical_map_svg": "maps/historical/indus-civilisation.svg",
+  "historical_map_title": "Cities of the Indus — the Harappan Civilisation (c. 3300–1300 BCE)"
 }

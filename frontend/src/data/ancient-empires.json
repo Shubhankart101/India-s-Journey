@@ -146,7 +146,9 @@
           "publisher": "Peeters Press",
           "year": 1988
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/mahajanapadas.svg",
+      "historical_map_title": "The Sixteen Mahājanapadas — India's First Republics & Kingdoms (c. 600–345 BCE)"
     },
     {
       "id": "magadha-nanda",
@@ -249,7 +251,9 @@
           "publisher": "Loeb Classical Library",
           "year": 1935
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/later-vedic.svg",
+      "historical_map_title": "The Later Vedic Age — Janapadas of the Gangetic Plain (c. 1100–600 BCE)"
     },
     {
       "id": "alexander-campaign",
@@ -423,7 +427,9 @@
           "publisher": "Patiala University Press",
           "year": 1967
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/post-mauryan-indo-greek.svg",
+      "historical_map_title": "After the Mauryas — Shungas, Greeks and Sakas (c. 185 BCE–50 CE)"
     },
     {
       "id": "maurya-empire",
@@ -579,7 +585,9 @@
           "publisher": "Archaeological Survey of India (CII Vol. I)",
           "year": 1925
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/mauryan-empire.svg",
+      "historical_map_title": "The First Empire — India under the Mauryas (c. 322–185 BCE)"
     },
     {
       "id": "indo-greek-shunga",
@@ -701,7 +709,9 @@
           "publisher": "Pali Text Society",
           "year": 1963
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/post-mauryan-indo-greek.svg",
+      "historical_map_title": "After the Mauryas — Shungas, Greeks and Sakas (c. 185 BCE–50 CE)"
     },
     {
       "id": "satavahana-empire",
@@ -810,7 +820,9 @@
           "publisher": "Agam Kala Prakashan",
           "year": 1980
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/satavahana-empire.svg",
+      "historical_map_title": "The Deccan Bridge — the Sātavāhana Age (c. 100 BCE–220 CE)"
     },
     {
       "id": "kushan-empire",
@@ -925,7 +937,9 @@
           "publisher": "UNESCO Publishing",
           "year": 1994
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/kushan-empire.svg",
+      "historical_map_title": "The Crossroads Empire — India under the Kushans (c. 30–375 CE)"
     },
     {
       "id": "gupta-empire",
@@ -1063,7 +1077,9 @@
           "publisher": "Oriental Book Agency",
           "year": 1941
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/gupta-empire.svg",
+      "historical_map_title": "India in the Gupta Golden Age (c. 320–550 CE)"
     },
     {
       "id": "harsha-empire",
@@ -1172,7 +1188,9 @@
           "publisher": "Royal Asiatic Society",
           "year": 1897
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/harsha-empire.svg",
+      "historical_map_title": "North India in the Age of Harshavardhana (c. 600–650 CE)"
     },
     {
       "id": "classical-southern-dynasties",
@@ -1303,7 +1321,9 @@
           "publisher": "Archaeological Survey of India",
           "year": 1890
         }
-      ]
+      ],
+      "historical_map_svg": "maps/historical/chola-empire.svg",
+      "historical_map_title": "The Imperial Cholas — Rājarāja I & Rājendra I (c. 985–1150 CE)"
     }
   ]
 }

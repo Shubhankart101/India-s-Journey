@@ -140,7 +140,7 @@ export function SubgroupArticleView({ category, subgroup, indicators, lead = nul
         quoteAfterSection={1}
         verse={verse}
         lead={<>{callout}{lead}</>}
-        after={<AllCharts indicators={indicators} />}
+        after={sectionsFilter ? null : <AllCharts indicators={indicators} />}
         sources={article?.sources || []}
         chipSources
         className="generated-subgroup-article"
@@ -286,19 +286,45 @@ function useSubgroup(categorySlug, subgroupSlug) {
   const categories = useAsync(signal => api.categories(signal), []);
   const normCatSlug = slugify(categorySlug);
   const normSubSlug = slugify(subgroupSlug);
-  const category = (categories.data || []).find(item => (
-    item.slug === categorySlug
-    || slugify(item.slug) === normCatSlug
-    || slugify(item.name) === normCatSlug
-    || (normCatSlug.includes('empires') && item.name.includes('Empires'))
-    || (normCatSlug.includes('indus') && item.name.includes('Indus'))
-  ));
-  const subgroup = category?.subgroups.find(item => (
-    item.slug === subgroupSlug
-    || slugify(item.slug) === normSubSlug
-    || slugify(item.name) === normSubSlug
-    || (normSubSlug.includes('script') && item.name.includes('Script'))
-  ));
+
+  // 1. Robust category resolution matching exact slugs, names, or key substrings
+  const category = (categories.data || []).find(item => {
+    const itemSlug = slugify(item.slug);
+    const itemName = slugify(item.name);
+    return (
+      item.slug === categorySlug
+      || itemSlug === normCatSlug
+      || itemName === normCatSlug
+      || (normCatSlug.includes('indus') && itemName.includes('indus'))
+      || (normCatSlug.includes('harapp') && itemName.includes('indus'))
+      || (normCatSlug.includes('empire') && itemName.includes('empire'))
+      || (normCatSlug.includes('ancient') && itemName.includes('ancient'))
+    );
+  }) || ((normSubSlug.includes('indus') || normSubSlug.includes('script') || normSubSlug.includes('excavation'))
+    ? (categories.data || []).find(item => slugify(item.name).includes('indus'))
+    : null)
+    || ((normSubSlug.includes('empire') || normSubSlug.includes('dynast') || normSubSlug.includes('battle'))
+    ? (categories.data || []).find(item => slugify(item.name).includes('empire'))
+    : null);
+
+  // 2. Robust subgroup resolution:
+  // If the category has only 1 subgroup (Indus Valley Civilisation or Empires of Ancient India),
+  // ALWAYS fall back to category.subgroups[0] so no route or legacy alias ever 404s!
+  const subgroup = category?.subgroups.find(item => {
+    const itemSlug = slugify(item.slug);
+    const itemName = slugify(item.name);
+    return (
+      item.slug === subgroupSlug
+      || itemSlug === normSubSlug
+      || itemName === normSubSlug
+      || (normSubSlug.includes('script') && itemName.includes('script'))
+      || (normSubSlug.includes('excavation') && itemName.includes('excavation'))
+      || (normSubSlug.includes('indus') && itemName.includes('indus'))
+      || (normSubSlug.includes('empire') && itemName.includes('empire'))
+      || (normSubSlug.includes('atlas') && itemName.includes('atlas'))
+    );
+  }) || (category?.subgroups.length === 1 ? category.subgroups[0] : null);
+
   const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
   const wantsMap = Boolean(category && subgroup && articleFor(category.name, subgroup.name).subgroup?.format === 'map');
   const geometry = useAsync(signal => (wantsMap ? loadGeometry() : Promise.resolve(null)), [wantsMap]);
@@ -381,6 +407,7 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
       keyExtra={mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : []}
       lead={customLead}
       callout={electionsCallout(category, subgroup)}
+      sectionsFilter={isIvc || isEmpires ? () => [] : undefined}
     />;
   }}</Shell>;
 }

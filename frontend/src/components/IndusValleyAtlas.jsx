@@ -40,6 +40,7 @@ export default function IndusValleyAtlas() {
   const [showRoutes, setShowRoutes] = useState(true);
   const [hoveredSiteId, setHoveredSiteId] = useState(null);
   const [tooltip, setTooltip] = useState(null);
+  const [mapViewMode, setMapViewMode] = useState('interactive');
   const mapStageRef = useRef(null);
 
   // Zoom & Pan state
@@ -230,6 +231,28 @@ export default function IndusValleyAtlas() {
         </button>
       </div>
 
+      {/* View Mode Switcher */}
+      <div className="indus-mode-bar" role="tablist" aria-label="Atlas Display Mode">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mapViewMode === 'interactive'}
+          className={`indus-mode-btn ${mapViewMode === 'interactive' ? 'active' : ''}`}
+          onClick={() => setMapViewMode('interactive')}
+        >
+          🗺️ 49 Excavation Sites (Interactive GPS &amp; Artifacts)
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mapViewMode === 'historical'}
+          className={`indus-mode-btn ${mapViewMode === 'historical' ? 'active' : ''}`}
+          onClick={() => setMapViewMode('historical')}
+        >
+          📜 Authentic Harappan Civilisation Atlas (Tapas Banerjee Cartography)
+        </button>
+      </div>
+
       {/* Interactive Map & Site Dossier Split View */}
       <div className="indus-workbench">
         {/* SVG Interactive Map */}
@@ -239,16 +262,33 @@ export default function IndusValleyAtlas() {
           onMouseMove={handleMouseMove}
           onMouseLeave={() => { setHoveredSiteId(null); setTooltip(null); }}
         >
-          <div className="indus-map-toolbar">
-            <span className="showing-sites-count">
-              Showing {filteredSites.length} of {sites.length} Excavations
-            </span>
-            <div className="map-zoom-btns">
-              <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
-              <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
-              <button type="button" onClick={() => handleRegionChange(REGION_PRESETS[0])} title="Reset View" aria-label="Reset view">⟲</button>
+          {mapViewMode === 'historical' ? (
+            <div className="authentic-historical-map-frame">
+              <div className="ahm-toolbar">
+                <span className="ahm-title">Cities of the Indus — the Harappan Civilisation · c. 3300–1300 BCE</span>
+                <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
+              </div>
+              <div className="ahm-img-wrapper">
+                <img
+                  src={assetUrl('maps/historical/indus-civilisation.svg')}
+                  alt="Cities of the Indus — the Harappan Civilisation"
+                  className="ahm-svg-img"
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
+          ) : (
+            <>
+              <div className="indus-map-toolbar">
+                <span className="showing-sites-count">
+                  Showing {filteredSites.length} of {sites.length} Excavations
+                </span>
+                <div className="map-zoom-btns">
+                  <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
+                  <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
+                  <button type="button" onClick={() => handleRegionChange(REGION_PRESETS[0])} title="Reset View" aria-label="Reset view">⟲</button>
+                </div>
+              </div>
 
           <svg
             className="indus-svg"
@@ -438,6 +478,8 @@ export default function IndusValleyAtlas() {
             <span className="iml-item"><span className="iml-line blue" /> Maritime Route</span>
             <span className="iml-item"><span className="iml-line gold" /> Overland Route</span>
           </div>
+          </>
+        )}
         </div>
 
         {/* Polished Detailed Excavation Dossier Sidebar */}
