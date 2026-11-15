@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
+import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { resolveSourceUrl } from './source_urls.mjs';
 
@@ -264,6 +265,11 @@ const articles = [
   ...(pewReports.reports?.length ? pewReports.reports : payload.pew_reports || []).map(item => article(item, 'Pew Research Center', 'pew')),
 ].filter(item => item.url.startsWith('http'));
 
+legacyAliases.groups['empires-ancient-india'] = { group: 'Empires of Ancient India', subgroup: '' };
+legacyAliases.groups['empires-of-ancient-india'] = { group: 'Empires of Ancient India', subgroup: '' };
+legacyAliases.groups['indus-valley'] = { group: 'Indus Valley Civilisation', subgroup: '' };
+legacyAliases.groups['indus-valley-civilisation'] = { group: 'Indus Valley Civilisation', subgroup: '' };
+
 const catalog = {
   generated_at_utc: payload.generated_at_utc || new Date().toISOString(),
   categories,
@@ -274,9 +280,15 @@ const catalog = {
 const outFile = process.argv[2] ? path.resolve(process.argv[2]) : path.join(root, 'data', 'catalog.json');
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, `${JSON.stringify(catalog)}\n`);
+try {
+  execSync('python scripts/add_indus_valley_group.py', { cwd: root, stdio: 'inherit' });
+  execSync('python scripts/add_ancient_empires_and_art.py', { cwd: root, stdio: 'inherit' });
+} catch (err) {
+  console.warn('Could not enrich ancient groups:', err.message);
+}
 if (!process.argv[2]) {
   const aliasFile = path.join(root, 'frontend', 'src', 'data', 'legacy-aliases.json');
-  fs.writeFileSync(aliasFile, `${JSON.stringify(legacyAliases)}\n`);
+  fs.writeFileSync(aliasFile, `${JSON.stringify(legacyAliases, null, 2)}\n`);
 }
 const live = indicators.filter(indicator => indicator.series.datasets.length).length;
 console.log(`Exported ${indicators.length} indicators (${live} with data), ${categories.length} groups and ${articles.length} articles to ${path.relative(root, outFile)}`);
