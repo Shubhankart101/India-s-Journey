@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Turnkey Azure Deployment Script for India's Journey (PowerShell).
     Supports Terraform (default) and Azure CLI roll out modes.
