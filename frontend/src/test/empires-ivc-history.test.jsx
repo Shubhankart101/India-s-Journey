@@ -31,6 +31,47 @@ describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
     // Verify the academic citation is present
     expect(screen.getByText(/Corpus Inscriptionum Indicarum/i)).toBeInTheDocument();
   });
+
+  it('renders all decisive battles and historic locations tabs with rich metadata and layer toggles', () => {
+    render(<AncientEmpiresAtlas initialEmpireId="maurya-empire" />);
+
+    // Verify map layer switcher buttons exist
+    const allLayerBtn = screen.getByRole('button', { name: /All \(/i });
+    const battlesLayerBtn = screen.getByRole('button', { name: /Battles \(/i });
+    const locationsLayerBtn = screen.getByRole('button', { name: /Locations \(/i });
+    expect(allLayerBtn).toBeInTheDocument();
+    expect(battlesLayerBtn).toBeInTheDocument();
+    expect(locationsLayerBtn).toBeInTheDocument();
+
+    // Switch to Battles tab in dossier
+    const battlesTab = screen.getByRole('tab', { name: /Battles \(/i });
+    expect(battlesTab).toBeInTheDocument();
+    fireEvent.click(battlesTab);
+
+    // Verify decisive Mauryan battles are rendered both on map canvas and in dossier list
+    expect(screen.getAllByText(/The Kalinga War/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Mauryan–Seleucid War/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Overthrow of the Nanda Empire/i).length).toBeGreaterThanOrEqual(2);
+
+    // Switch to Locations & Cities tab in dossier
+    const locationsTab = screen.getByRole('tab', { name: /Locations & Cities \(/i });
+    expect(locationsTab).toBeInTheDocument();
+    fireEvent.click(locationsTab);
+
+    // Verify historical locations and citadels are rendered both on map canvas and in dossier list
+    expect(screen.getAllByText(/Taxila \(Uttarapatha\)/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Sannati/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Alexandropolis \/ Kandahar/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/Tamralipti/i).length).toBeGreaterThanOrEqual(2);
+
+    // Switch to Milestones tab
+    const milestonesTab = screen.getByRole('tab', { name: /Milestones \(/i });
+    expect(milestonesTab).toBeInTheDocument();
+    fireEvent.click(milestonesTab);
+
+    // Verify dynastic milestones and descriptive narrative are present
+    expect(screen.getByText(/Third Buddhist Council convened at Pataliputra/i)).toBeInTheDocument();
+  });
 });
 
 describe('Indus Valley Atlas: Period Boundaries & ASI Memoirs', () => {

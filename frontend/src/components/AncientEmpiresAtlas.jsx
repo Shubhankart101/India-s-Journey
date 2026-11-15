@@ -109,14 +109,18 @@ export default function AncientEmpiresAtlas({
   const [selectedPhaseIndex, setSelectedPhaseIndex] = useState(0);
   const [selectedBattle, setSelectedBattle] = useState(null);
   const [selectedCapital, setSelectedCapital] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
   const [hoveredCapital, setHoveredCapital] = useState(null);
+  const [hoveredLocation, setHoveredLocation] = useState(null);
   const [hoveredBattle, setHoveredBattle] = useState(null);
   const [hoveredTerritory, setHoveredTerritory] = useState(null);
   const [hoveredNeighbor, setHoveredNeighbor] = useState(null);
   const [selectedVariantSvg, setSelectedVariantSvg] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const [mapViewMode, setMapViewMode] = useState('interactive'); // 'interactive' | 'historical'
-  const [dossierTab, setDossierTab] = useState('overview'); // 'overview' | 'battles' | 'milestones' | 'sources'
+  const [dossierTab, setDossierTab] = useState('overview'); // 'overview' | 'history' | 'battles' | 'locations' | 'milestones' | 'sources'
+  const [mapLayerFilter, setMapLayerFilter] = useState('all'); // 'all' | 'battles' | 'locations'
+  const [locationTypeFilter, setLocationTypeFilter] = useState('all');
   const mapStageRef = useRef(null);
 
   const empires = empiresData.empires || [];
@@ -124,6 +128,19 @@ export default function AncientEmpiresAtlas({
   const currentEmpire = useMemo(() => {
     return empires.find(e => e.id === selectedEmpireId) || empires[0];
   }, [empires, selectedEmpireId]);
+
+  const allLocations = useMemo(() => {
+    return currentEmpire.locations || currentEmpire.capitals || [];
+  }, [currentEmpire]);
+
+  const allBattles = useMemo(() => {
+    return currentEmpire.battles || [];
+  }, [currentEmpire]);
+
+  const filteredLocations = useMemo(() => {
+    if (locationTypeFilter === 'all') return allLocations;
+    return allLocations.filter(loc => (loc.type || 'capital') === locationTypeFilter);
+  }, [allLocations, locationTypeFilter]);
 
   const activePhase = useMemo(() => {
     const phases = currentEmpire.boundary_phases || [];
@@ -162,12 +179,16 @@ export default function AncientEmpiresAtlas({
     setSelectedPhaseIndex(0);
     setSelectedBattle(null);
     setSelectedCapital(null);
+    setSelectedLocation(null);
     setSelectedVariantSvg(null);
     setHoveredCapital(null);
+    setHoveredLocation(null);
     setHoveredBattle(null);
     setHoveredTerritory(null);
     setHoveredNeighbor(null);
     setTooltip(null);
+    setMapLayerFilter('all');
+    setLocationTypeFilter('all');
   };
 
   const handleZoom = (factor) => {
@@ -183,7 +204,7 @@ export default function AncientEmpiresAtlas({
   const handleMouseMove = (e) => {
     if (!mapStageRef.current) return;
     const rect = mapStageRef.current.getBoundingClientRect();
-    const activeHover = hoveredCapital || hoveredBattle || hoveredTerritory || hoveredNeighbor;
+    const activeHover = hoveredLocation || hoveredCapital || hoveredBattle || hoveredTerritory || hoveredNeighbor;
     if (activeHover) {
       setTooltip({
         x: Math.max(10, Math.min(rect.width - 240, e.clientX - rect.left + 15)),
@@ -312,6 +333,34 @@ export default function AncientEmpiresAtlas({
                     ))}
                   </div>
                 )}
+
+                {/* Map Layer Selector Toolbar (All / Battles / Locations) */}
+                <div className="map-layer-selector" role="group" aria-label="Map Layer Toggle">
+                  <button
+                    type="button"
+                    className={`mls-btn ${mapLayerFilter === 'all' ? 'active' : ''}`}
+                    onClick={() => setMapLayerFilter('all')}
+                    title="Display all battles and historical locations on map"
+                  >
+                    🌐 All ({allBattles.length + allLocations.length})
+                  </button>
+                  <button
+                    type="button"
+                    className={`mls-btn ${mapLayerFilter === 'battles' ? 'active' : ''}`}
+                    onClick={() => setMapLayerFilter('battles')}
+                    title="Display only decisive military battles"
+                  >
+                    ⚔ Battles ({allBattles.length})
+                  </button>
+                  <button
+                    type="button"
+                    className={`mls-btn ${mapLayerFilter === 'locations' ? 'active' : ''}`}
+                    onClick={() => setMapLayerFilter('locations')}
+                    title="Display only imperial capitals, citadels, ports and academies"
+                  >
+                    🏛 Locations ({allLocations.length})
+                  </button>
+                </div>
 
                 {/* Zoom Controls */}
                 <div className="map-zoom-btns">
@@ -451,41 +500,61 @@ export default function AncientEmpiresAtlas({
                   </g>
                 )}
 
-                {/* Imperial Capitals */}
-                {currentEmpire.capitals && (
-                  <g className="capitals-layer">
-                    {currentEmpire.capitals.map((cap, idx) => {
-                      const isCapSelected = selectedCapital?.name === cap.name;
+                {/* Historical Locations & Capitals Layer */}
+                {(mapLayerFilter === 'all' || mapLayerFilter === 'locations') && (
+                  <g className="locations-layer">
+                    {filteredLocations.map((loc, idx) => {
+                      const isLocSelected = selectedLocation?.name === loc.name || selectedCapital?.name === loc.name;
+                      const locType = loc.type || 'capital';
+                      
+                      let markerColor = '#facc15';
+                      if (locType === 'port') markerColor = '#38bdf8';
+                      else if (locType === 'university') markerColor = '#c084fc';
+                      else if (locType === 'citadel') markerColor = '#fb923c';
+                      else if (locType === 'sacred_site') markerColor = '#34d399';
+                      else if (locType === 'republic_assembly') markerColor = '#e879f9';
+                      else if (locType === 'provincial_seat') markerColor = '#94a3b8';
+
                       return (
                         <g
-                          key={idx}
-                          className={`capital-pin ${isCapSelected ? 'active-pin' : ''}`}
-                          transform={`translate(${cap.x}, ${cap.y})`}
-                          onClick={() => { setSelectedCapital(cap); setSelectedBattle(null); }}
-                          onMouseEnter={() => setHoveredCapital({ type: 'capital', title: cap.name, role: cap.role, desc: cap.desc || cap.role })}
-                          onMouseLeave={() => setHoveredCapital(null)}
+                          key={`loc-${idx}`}
+                          className={`location-pin loc-type-${locType} ${isLocSelected ? 'active-pin' : ''}`}
+                          transform={`translate(${loc.x}, ${loc.y})`}
+                          onClick={() => {
+                            setSelectedLocation(loc);
+                            setSelectedCapital(locType === 'capital' ? loc : null);
+                            setSelectedBattle(null);
+                            setDossierTab('locations');
+                          }}
+                          onMouseEnter={() => setHoveredLocation({
+                            type: locType,
+                            title: loc.name,
+                            role: loc.role,
+                            desc: loc.desc || loc.role
+                          })}
+                          onMouseLeave={() => setHoveredLocation(null)}
                           style={{ cursor: 'pointer' }}
                           tabIndex={0}
                           role="button"
-                          aria-label={`Imperial Capital: ${cap.name}`}
+                          aria-label={`${loc.name} (${locType}): ${loc.role || ''}`}
                         >
-                          {isCapSelected && (
-                            <circle r="8" fill="none" stroke="#facc15" strokeWidth="1.5" strokeDasharray="2,2" className="pin-pulse" />
+                          {isLocSelected && (
+                            <circle r="9" fill="none" stroke={markerColor} strokeWidth="1.5" strokeDasharray="2,2" className="pin-pulse" />
                           )}
-                          <circle r="4" fill="#facc15" stroke="#000" strokeWidth="1.2" />
-                          <circle r="1.5" fill="#000" />
+                          <circle r={locType === 'capital' ? "4.5" : "3.5"} fill={markerColor} stroke="#000" strokeWidth="1.2" />
+                          {locType === 'capital' && <circle r="1.5" fill="#000" />}
                           <text
-                            y="-6"
-                            fill="#fef08a"
-                            fontSize="5"
-                            fontWeight="750"
+                            y={locType === 'capital' ? "-6" : "-5"}
+                            fill={isLocSelected ? "#ffffff" : markerColor}
+                            fontSize={locType === 'capital' ? "4.8" : "4.2"}
+                            fontWeight={locType === 'capital' ? "800" : "700"}
                             fontFamily="sans-serif"
                             textAnchor="middle"
                             stroke="#0b0f15"
-                            strokeWidth="2"
+                            strokeWidth="1.8"
                             paintOrder="stroke"
                           >
-                            ★ {cap.name}
+                            {locType === 'capital' ? `★ ${loc.name}` : loc.name}
                           </text>
                         </g>
                       );
@@ -494,16 +563,16 @@ export default function AncientEmpiresAtlas({
                 )}
 
                 {/* Battles Markers (Crossed Swords ⚔) */}
-                {currentEmpire.battles && (
+                {(mapLayerFilter === 'all' || mapLayerFilter === 'battles') && allBattles.length > 0 && (
                   <g className="battles-layer">
-                    {currentEmpire.battles.map((bt, idx) => {
+                    {allBattles.map((bt, idx) => {
                       const isSelected = selectedBattle?.name === bt.name;
                       return (
                         <g
-                          key={idx}
+                          key={`bt-${idx}`}
                           className={`battle-pin ${isSelected ? 'active' : ''}`}
                           transform={`translate(${bt.coords.x}, ${bt.coords.y})`}
-                          onClick={() => { setSelectedBattle(bt); setSelectedCapital(null); setDossierTab('battles'); }}
+                          onClick={() => { setSelectedBattle(bt); setSelectedLocation(null); setSelectedCapital(null); setDossierTab('battles'); }}
                           onMouseEnter={() => setHoveredBattle({ type: 'battle', title: bt.name, year: bt.year, parties: bt.parties, summary: bt.summary, source: bt.source })}
                           onMouseLeave={() => setHoveredBattle(null)}
                           style={{ cursor: 'pointer' }}
@@ -514,10 +583,10 @@ export default function AncientEmpiresAtlas({
                           {isSelected && (
                             <circle r="11" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3,2" className="pin-pulse" />
                           )}
-                          <circle r={isSelected ? "8" : "6"} fill="#ef4444" fillOpacity={isSelected ? "0.95" : "0.8"} stroke="#fff" strokeWidth="1.2" />
+                          <circle r={isSelected ? "8" : "6"} fill="#ef4444" fillOpacity={isSelected ? "0.95" : "0.85"} stroke="#ffffff" strokeWidth="1.2" />
                           <text
                             y="2"
-                            fill="#fff"
+                            fill="#ffffff"
                             fontSize="5"
                             fontWeight="900"
                             textAnchor="middle"
@@ -526,9 +595,9 @@ export default function AncientEmpiresAtlas({
                           </text>
                           <text
                             y="12"
-                            fill={isSelected ? "#fca5a5" : "#e2e8f0"}
+                            fill={isSelected ? "#fca5a5" : "#f87171"}
                             fontSize="4.5"
-                            fontWeight="700"
+                            fontWeight="750"
                             fontFamily="sans-serif"
                             textAnchor="middle"
                             stroke="#0b0f15"
@@ -548,8 +617,14 @@ export default function AncientEmpiresAtlas({
               {tooltip && (
                 <div className="empires-floating-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
                   <div className="eft-tag">
-                    {tooltip.data.type === 'battle' ? '⚔ HISTORIC BATTLE' :
+                    {tooltip.data.type === 'battle' ? '⚔ DECISIVE HISTORIC BATTLE' :
                      tooltip.data.type === 'capital' ? '★ IMPERIAL CAPITAL' :
+                     tooltip.data.type === 'port' ? '⚓ MARITIME PORT' :
+                     tooltip.data.type === 'university' ? '📜 UNIVERSITY & MONASTERY' :
+                     tooltip.data.type === 'citadel' ? '🏛 FORTIFIED CITADEL' :
+                     tooltip.data.type === 'sacred_site' ? '☸ SACRED SANCTUARY' :
+                     tooltip.data.type === 'republic_assembly' ? '⚖ GANA-SANGHA REPUBLIC ASSEMBLY' :
+                     tooltip.data.type === 'provincial_seat' ? '📍 PROVINCIAL HEADQUARTERS' :
                      tooltip.data.type === 'territory' ? '🏛 EMPIRE REALM' :
                      tooltip.data.type === 'neighbor' ? '🌍 FRONTIER REALM' :
                      tooltip.data.type === 'route' ? '🧭 MARCH ROUTE' : 'INFO'}
@@ -566,10 +641,13 @@ export default function AncientEmpiresAtlas({
               {/* Map Footer Legend */}
               <div className="empires-map-legend">
                 <span><strong style={{ color: activePhase.color }}>■</strong> {currentEmpire.name} ({activePhase.year})</span>
-                <span><strong style={{ color: '#facc15' }}>★</strong> Imperial Capital</span>
-                <span><strong style={{ color: '#ef4444' }}>⚔</strong> Historic Battle</span>
-                {currentEmpire.campaign_route && <span><strong style={{ color: '#38bdf8' }}>- -</strong> Macedonian March Route</span>}
-                <span><strong style={{ color: '#64748b' }}>ABC</strong> Frontier Kingdoms</span>
+                <span><strong style={{ color: '#facc15' }}>★</strong> Capital</span>
+                <span><strong style={{ color: '#fb923c' }}>🏛</strong> Citadel</span>
+                <span><strong style={{ color: '#38bdf8' }}>⚓</strong> Port</span>
+                <span><strong style={{ color: '#c084fc' }}>📜</strong> Academy</span>
+                <span><strong style={{ color: '#34d399' }}>☸</strong> Sacred</span>
+                <span><strong style={{ color: '#ef4444' }}>⚔</strong> Battle</span>
+                {currentEmpire.campaign_route && <span><strong style={{ color: '#38bdf8' }}>- -</strong> Macedonian Route</span>}
               </div>
             </>
           )}
@@ -618,7 +696,16 @@ export default function AncientEmpiresAtlas({
                 className={`dossier-tab-btn ${dossierTab === 'battles' ? 'active' : ''}`}
                 onClick={() => setDossierTab('battles')}
               >
-                ⚔ Battles ({currentEmpire.battles?.length || 0})
+                ⚔ Battles ({allBattles.length})
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'locations'}
+                className={`dossier-tab-btn ${dossierTab === 'locations' ? 'active' : ''}`}
+                onClick={() => setDossierTab('locations')}
+              >
+                🏛 Locations &amp; Cities ({allLocations.length})
               </button>
               <button
                 type="button"
@@ -827,15 +914,15 @@ export default function AncientEmpiresAtlas({
                 </div>
               )}
 
-              {currentEmpire.battles && (
+              {allBattles.length > 0 && (
                 <div className="dossier-section">
                   <h4>Major Campaigns &amp; Clashes (Click to highlight on map)</h4>
                   <div className="battles-list">
-                    {currentEmpire.battles.map((bt, idx) => (
+                    {allBattles.map((bt, idx) => (
                       <div
                         key={idx}
                         className={`battle-list-item ${selectedBattle?.name === bt.name ? 'selected' : ''}`}
-                        onClick={() => setSelectedBattle(bt)}
+                        onClick={() => { setSelectedBattle(bt); setSelectedLocation(null); setSelectedCapital(null); }}
                       >
                         <span className="bli-swords">⚔</span>
                         <div className="bli-content">
@@ -851,6 +938,91 @@ export default function AncientEmpiresAtlas({
             </div>
           )}
 
+          {/* TAB: Imperial Locations, Citadels & Seaports */}
+          {dossierTab === 'locations' && (
+            <div className="dossier-tab-content">
+              {/* Location Details Card */}
+              {selectedLocation && (
+                <div className="capital-alert-card location-alert-card">
+                  <div className="cac-header">
+                    <span className="cac-tag">
+                      {selectedLocation.type === 'capital' ? '★ IMPERIAL CAPITAL' :
+                       selectedLocation.type === 'port' ? '⚓ MARITIME PORT' :
+                       selectedLocation.type === 'university' ? '📜 UNIVERSITY & MONASTERY' :
+                       selectedLocation.type === 'citadel' ? '🏛 FORTIFIED CITADEL' :
+                       selectedLocation.type === 'sacred_site' ? '☸ SACRED SANCTUARY' :
+                       selectedLocation.type === 'republic_assembly' ? '⚖ GANA-SANGHA REPUBLIC' :
+                       selectedLocation.type === 'provincial_seat' ? '📍 PROVINCIAL HEADQUARTERS' : '🏛 HISTORICAL LOCATION'}
+                    </span>
+                    <button type="button" className="cac-close" onClick={() => setSelectedLocation(null)} aria-label="Close location details">×</button>
+                  </div>
+                  <h4>{selectedLocation.name}</h4>
+                  <p><strong>Administrative Role:</strong> {selectedLocation.role}</p>
+                  {selectedLocation.desc && <p className="cac-desc">{selectedLocation.desc}</p>}
+                </div>
+              )}
+
+              {/* Type Filter Pills */}
+              <div className="location-type-pills" role="group" aria-label="Filter locations by type">
+                {[
+                  { id: 'all', label: 'All Sites' },
+                  { id: 'capital', label: '★ Capitals' },
+                  { id: 'citadel', label: '🏛 Citadels' },
+                  { id: 'port', label: '⚓ Ports' },
+                  { id: 'university', label: '📜 Academies' },
+                  { id: 'sacred_site', label: '☸ Sacred Sites' }
+                ].map(t => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    className={`lt-pill ${locationTypeFilter === t.id ? 'active' : ''}`}
+                    onClick={() => setLocationTypeFilter(t.id)}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Locations List */}
+              <div className="dossier-section">
+                <h4>Imperial Cities, Citadels &amp; Emporia (Click to highlight on map)</h4>
+                <div className="locations-list">
+                  {filteredLocations.map((loc, idx) => {
+                    const isLocSelected = selectedLocation?.name === loc.name;
+                    return (
+                      <div
+                        key={idx}
+                        className={`location-list-item ${isLocSelected ? 'selected' : ''}`}
+                        onClick={() => {
+                          setSelectedLocation(loc);
+                          setSelectedCapital(loc.type === 'capital' ? loc : null);
+                          setSelectedBattle(null);
+                        }}
+                      >
+                        <span className="lli-icon">
+                          {loc.type === 'capital' ? '★' :
+                           loc.type === 'port' ? '⚓' :
+                           loc.type === 'university' ? '📜' :
+                           loc.type === 'citadel' ? '🏛' :
+                           loc.type === 'sacred_site' ? '☸' :
+                           loc.type === 'republic_assembly' ? '⚖' : '📍'}
+                        </span>
+                        <div className="lli-content">
+                          <div className="lli-top">
+                            <strong>{loc.name}</strong>
+                            <span className="lli-type-tag">{loc.type || 'capital'}</span>
+                          </div>
+                          <p className="lli-role">{loc.role}</p>
+                          {loc.desc && <p className="lli-desc">{loc.desc}</p>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* TAB 3: Historical Events Timeline */}
           {dossierTab === 'milestones' && (
             <div className="dossier-tab-content">
@@ -863,6 +1035,7 @@ export default function AncientEmpiresAtlas({
                         <span className="ev-year">{ev.year}</span>
                         <div className="ev-body">
                           <strong className="ev-title">{ev.title}</strong>
+                          {ev.desc && <p className="ev-desc">{ev.desc}</p>}
                         </div>
                       </li>
                     ))}
