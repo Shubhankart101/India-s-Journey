@@ -111,13 +111,15 @@ const crumbs = (category, subgroup) => (
   </nav>
 );
 
-export function SubgroupArticleView({ category, subgroup, indicators, lead = null, keyExtra = [], callout = null, sectionsFilter }) {
+export function SubgroupArticleView({ category, subgroup, indicators, lead = null, keyExtra = [], callout = null, sectionsFilter, emptySections = false }) {
   const { group, subgroup: article } = articleFor(category.name, subgroup.name);
   const byKey = useMemo(() => new Map(indicators.map(item => [item.key, item])), [indicators]);
+  const isIvc = category.slug === 'indus-valley-civilisation' || slugify(category.name).includes('indus');
+  const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
   const generated = article?.sections?.length ? article.sections : [{
     title: 'The evidence', text: subgroup.description || '', keys: indicators.slice(0, 5).map(item => item.key),
   }];
-  const sections = sectionsFilter ? sectionsFilter(generated) : generated;
+  const sections = (emptySections || isIvc || isEmpires) ? [] : (sectionsFilter ? sectionsFilter(generated) : generated);
   const names = (group?.subgroups || []).map(item => item.name);
   const verse = pickSubgroupVerse(category.name, subgroup.name, names);
   const shown = sections.map(section => ({
@@ -125,22 +127,31 @@ export function SubgroupArticleView({ category, subgroup, indicators, lead = nul
     text: section.text,
     content: (section.keys || []).length ? <div className="subgroup-figures">{section.keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null,
   }));
-  const extra = [{ label: 'Charts in this subgroup', value: String(indicators.length) }];
+  const extra = indicators.length > 0 ? [{ label: 'Charts in this subgroup', value: String(indicators.length) }] : [];
+
+  // Rotating live artwork playlist for IVC and Empires
+  const artPlaylist = isIvc
+    ? ['indus-valley.svg', 'ivc-artifacts.svg', 'indus-trade.svg', 'indus-script.svg', 'ivc-excavations.svg']
+    : isEmpires
+      ? ['ancient-empires.svg', 'mahajanapadas.svg', 'magadha-nanda.svg', 'alexander-campaign.svg', 'maurya-empire.svg', 'indo-greek.svg', 'satavahana-empire.svg', 'kushan-empire.svg', 'gupta-empire.svg', 'harsha-empire.svg', 'southern-dynasties.svg']
+      : (subgroup.art || category.art);
+
   return (
     <>
-      <ArtBackdrop art={subgroup.art || category.art} />
+      <ArtBackdrop art={artPlaylist} />
       {crumbs(category, subgroup)}
       <SubgroupArticle
         headline={article?.headline || subgroup.title || subgroup.name}
         dek={subgroup.description || article?.dek || ''}
         kicker={`${category.name} · ${subgroup.name}`}
         sections={shown}
-        keyNumbers={keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
+        emptySections={emptySections || isIvc || isEmpires}
+        keyNumbers={isIvc || isEmpires ? keyExtra : keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
         quote={article?.pullQuote}
         quoteAfterSection={1}
         verse={verse}
         lead={<>{callout}{lead}</>}
-        after={sectionsFilter ? null : <AllCharts indicators={indicators} />}
+        after={(sectionsFilter || isIvc || isEmpires) ? null : <AllCharts indicators={indicators} />}
         sources={article?.sources || []}
         chipSources
         className="generated-subgroup-article"
@@ -323,7 +334,7 @@ function useSubgroup(categorySlug, subgroupSlug) {
       || (normSubSlug.includes('empire') && itemName.includes('empire'))
       || (normSubSlug.includes('atlas') && itemName.includes('atlas'))
     );
-  }) || (category?.subgroups.length === 1 ? category.subgroups[0] : null);
+  }) || (category?.subgroups?.length === 1 ? category.subgroups[0] : (category?.subgroups?.[0] || null));
 
   const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
   const wantsMap = Boolean(category && subgroup && articleFor(category.name, subgroup.name).subgroup?.format === 'map');
@@ -390,13 +401,27 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
-    const isIvc = category.slug === 'indus-valley-civilisation' || category.name === 'Indus Valley Civilisation';
-    const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || category.name === 'Empires of Ancient India';
+    const isIvc = category.slug === 'indus-valley-civilisation' || slugify(category.name).includes('indus');
+    const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
     let customLead = null;
+    let customKeyExtra = mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : [];
+
     if (isIvc) {
       customLead = <IndusValleyWorkbench />;
+      customKeyExtra = [
+        { label: 'Cataloged Excavations', value: '49 Sites', note: '9 modern nations' },
+        { label: 'Script Corpus', value: '400+ Signs', note: 'Mahadevan concordance' },
+        { label: 'Geographical Extent', value: '1.5M km²', note: 'Oxus to Arabian Sea' },
+        { label: 'Mature Era Climax', value: '2600–1900 BCE', note: 'Radiocarbon calibrated' },
+      ];
     } else if (isEmpires) {
       customLead = <AncientEmpiresWorkbench />;
+      customKeyExtra = [
+        { label: 'Major Dynasties', value: '10 Empires', note: 'Magadha to Imperial Cholas' },
+        { label: 'Historical Span', value: '1,600+ Years', note: '600 BCE – 850 CE' },
+        { label: 'Mahajanapadas', value: '16 States', note: 'Iron Age urbanisation' },
+        { label: 'Primary Epigraphs', value: 'Brahmi & Tamil', note: 'Rock edicts & copper plates' },
+      ];
     } else if (mapFormat) {
       customLead = <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />;
     }
@@ -404,10 +429,11 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
       category={category}
       subgroup={subgroup}
       indicators={indicators}
-      keyExtra={mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : []}
+      keyExtra={customKeyExtra}
       lead={customLead}
       callout={electionsCallout(category, subgroup)}
       sectionsFilter={isIvc || isEmpires ? () => [] : undefined}
+      emptySections={isIvc || isEmpires}
     />;
   }}</Shell>;
 }

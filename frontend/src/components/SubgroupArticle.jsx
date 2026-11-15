@@ -17,8 +17,9 @@ export default function SubgroupArticle({
   lead = null,
   chipSources = false,
   quoteAfterSection = -1,
+  emptySections = false,
 }) {
-  const blocks = sections.length ? sections : (dek ? [{ title: 'The subject', text: dek }] : []);
+  const blocks = emptySections ? [] : (sections.length ? sections : (lead ? [] : (dek ? [{ title: 'The subject', text: dek }] : [])));
   const Headline = headingLevel === 1 ? 'h1' : 'h2';
   const inlineQuote = quoteAfterSection >= 0 && quote;
   const sourceName = source => (typeof source === 'string' ? source : source.name || source.label || source.url);
@@ -38,21 +39,23 @@ export default function SubgroupArticle({
         {verse && quoteAfterSection < 0 && <ScriptureVerse verse={verse} className="subgroup-article-verse" />}
       </header>
       {lead}
-      <div className="subgroup-article-sections">
-        {blocks.map((section, index) => {
-          const id = `subgroup-section-${index + 1}`;
-          return <section className={`subgroup-article-section ${sectionClassName}`.trim()} key={`${section.title || 'section'}-${index}`} aria-labelledby={id}>
-            <span className="subgroup-article-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-            <div className="subgroup-article-section-body">
-              <h2 id={id}>{section.title || `Section ${index + 1}`}</h2>
-              {section.text && <p>{section.text}</p>}
-              {section.quote && <blockquote className="subgroup-article-quote">{section.quote}</blockquote>}
-              {section.content}
-              {inlineQuote && index === Math.min(quoteAfterSection, blocks.length - 1) && <blockquote className="subgroup-article-quote subgroup-article-pull">{quote}</blockquote>}
-            </div>
-          </section>;
-        })}
-      </div>
+      {blocks.length > 0 && (
+        <div className="subgroup-article-sections">
+          {blocks.map((section, index) => {
+            const id = `subgroup-section-${index + 1}`;
+            return <section className={`subgroup-article-section ${sectionClassName}`.trim()} key={`${section.title || 'section'}-${index}`} aria-labelledby={id}>
+              <span className="subgroup-article-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <div className="subgroup-article-section-body">
+                <h2 id={id}>{section.title || `Section ${index + 1}`}</h2>
+                {section.text && <p>{section.text}</p>}
+                {section.quote && <blockquote className="subgroup-article-quote">{section.quote}</blockquote>}
+                {section.content}
+                {inlineQuote && index === Math.min(quoteAfterSection, blocks.length - 1) && <blockquote className="subgroup-article-quote subgroup-article-pull">{quote}</blockquote>}
+              </div>
+            </section>;
+          })}
+        </div>
+      )}
       {quoteAfterSection >= 0 && verse && <ScriptureVerse verse={verse} className="subgroup-article-verse" />}
       {after}
       {sources.length > 0 && <footer className="subgroup-article-sources">

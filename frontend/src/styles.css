@@ -2,6 +2,8 @@
   --bg: #000;
   --surface: #1c1c1e;
   --surface-2: #2c2c2e;
+  --surface-header: rgba(22, 22, 23, 0.95);
+  --surface-header-scrolled: rgba(16, 16, 18, 0.98);
   --line: rgba(255, 255, 255, 0.1);
   --ink: #f5f5f7;
   --muted: #a1a1a6;
@@ -44,7 +46,7 @@ button, input, select { font: inherit; color: inherit; }
 .gradient-text { background: linear-gradient(90deg, #ff9933, #f5f5f7 50%, #3fb950); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
 /* Header and navigation */
-.site-header { position: sticky; top: 0; z-index: 20; height: var(--header-h); background: rgba(22, 22, 23, 0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 20; height: var(--header-h); background: var(--surface-header, rgba(22, 22, 23, 0.95)); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--line); }
 .header-inner { max-width: 1360px; height: 100%; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 24px; }
 .brand { color: var(--ink); font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .brand:hover { text-decoration: none; }
@@ -53,7 +55,7 @@ button, input, select { font: inherit; color: inherit; }
 .brand-dot { color: var(--saffron); display: inline-block; transition: transform 0.3s; }
 .brand:hover .brand-dot { transform: scale(1.6) translateY(-1px); color: var(--green); }
 .site-header { transition: background 0.3s, box-shadow 0.3s, border-color 0.3s; }
-.site-header.scrolled { background: rgba(0, 0, 0, 0.72); border-bottom-color: rgba(255, 255, 255, 0.14); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); }
+.site-header.scrolled { background: var(--surface-header-scrolled, rgba(16, 16, 18, 0.98)); border-bottom-color: rgba(255, 255, 255, 0.14); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); }
 .desktop-nav a { position: relative; }
 .desktop-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--saffron), var(--accent), var(--green)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
 .desktop-nav a:hover::after, .desktop-nav a.active::after { transform: scaleX(1); }

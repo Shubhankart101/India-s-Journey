@@ -25,38 +25,44 @@
         {
           "name": "Rajagriha (Magadha)",
           "x": 854.2,
-          "y": -250.0,
-          "role": "Ancient Magadhan capital encircled by cyclopean stone walls"
+          "y": -250,
+          "role": "Ancient Magadhan capital encircled by cyclopean stone walls",
+          "desc": "Ancient Magadhan capital encircled by cyclopean stone walls"
         },
         {
           "name": "Shravasti (Kosala)",
-          "x": 820.0,
-          "y": -275.0,
-          "role": "Commercial hub of the Rapti river and seat of King Prasenajit"
+          "x": 820,
+          "y": -275,
+          "role": "Commercial hub of the Rapti river and seat of King Prasenajit",
+          "desc": "Commercial hub of the Rapti river and seat of King Prasenajit"
         },
         {
           "name": "Kaushambi (Vatsa)",
-          "x": 814.0,
-          "y": -253.0,
-          "role": "Yamuna river trade nexus ruled by King Udayana"
+          "x": 814,
+          "y": -253,
+          "role": "Yamuna river trade nexus ruled by King Udayana",
+          "desc": "Yamuna river trade nexus ruled by King Udayana"
         },
         {
           "name": "Ujjayini (Avanti)",
           "x": 757.8,
           "y": -231.8,
-          "role": "Western trade junction on the Dakshinapatha highway"
+          "role": "Western trade junction on the Dakshinapatha highway",
+          "desc": "Western trade junction on the Dakshinapatha highway"
         },
         {
           "name": "Taxila (Gandhara)",
           "x": 728.2,
           "y": -337.4,
-          "role": "Foremost pan-Asian Vedic university and northern trade crossroad"
+          "role": "Foremost pan-Asian Vedic university and northern trade crossroad",
+          "desc": "Foremost pan-Asian Vedic university and northern trade crossroad"
         },
         {
           "name": "Vaishali (Vajji)",
-          "x": 853.0,
-          "y": -259.0,
-          "role": "Metropolis of the Licchavi republic, the world's earliest recorded confederacy"
+          "x": 853,
+          "y": -259,
+          "role": "Metropolis of the Licchavi republic, the world's earliest recorded confederacy",
+          "desc": "Metropolis of the Licchavi republic, the world's earliest recorded confederacy"
         }
       ],
       "boundary_phases": [
@@ -81,21 +87,24 @@
           "pos": {
             "x": 650,
             "y": -330
-          }
+          },
+          "desc": "Achaemenid Empire (Hindush): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Kalinga",
           "pos": {
             "x": 850,
             "y": -200
-          }
+          },
+          "desc": "Maritime eastern kingdom noted for elephant cavalry and oceanic trade with Southeast Asia."
         },
         {
           "name": "Assaka (Godavari)",
           "pos": {
             "x": 775,
             "y": -190
-          }
+          },
+          "desc": "Assaka (Godavari): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -103,8 +112,8 @@
           "name": "Magadha–Vajji War",
           "year": "c. 484 – 468 BCE",
           "coords": {
-            "x": 853.0,
-            "y": -259.0
+            "x": 853,
+            "y": -259
           },
           "parties": "Ajatashatru of Magadha vs. Licchavi / Vajji Confederacy",
           "summary": "Ajatashatru deployed two groundbreaking military innovations: the Mahashilakantaka (heavy stone siege catapult) and the Rathamusala (chariot with revolving scythe blades). Ended the independence of Vaishali.",
@@ -167,8 +176,9 @@
         {
           "name": "Pataliputra (Patna)",
           "x": 851.3,
-          "y": -256.0,
-          "role": "Founded by Udayin at the confluence of Ganga and Son; fortified imperial capital"
+          "y": -256,
+          "role": "Founded by Udayin at the confluence of Ganga and Son; fortified imperial capital",
+          "desc": "Founded by Udayin at the confluence of Ganga and Son; fortified imperial capital"
         }
       ],
       "boundary_phases": [
@@ -186,21 +196,24 @@
           "pos": {
             "x": 735,
             "y": -330
-          }
+          },
+          "desc": "Kingdom of Porus (Pauravas): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Gangaridai (Bengal Delta)",
           "pos": {
             "x": 895,
             "y": -225
-          }
+          },
+          "desc": "Gangaridai (Bengal Delta): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Kalinga",
           "pos": {
             "x": 850,
             "y": -195
-          }
+          },
+          "desc": "Maritime eastern kingdom noted for elephant cavalry and oceanic trade with Southeast Asia."
         }
       ],
       "battles": [
@@ -208,8 +221,8 @@
           "name": "Conquest of the Kshatriya Dynasties",
           "year": "c. 350 BCE",
           "coords": {
-            "x": 810.0,
-            "y": -260.0
+            "x": 810,
+            "y": -260
           },
           "parties": "Mahapadma Nanda vs. Ikshvakus, Panchalas, Kasis, Haihayas, Kalingas, Asmakas, Kurus, Maithilas",
           "summary": "Mahapadma earned the epithets 'Sarva-Kshatrantaka' (Destroyer of all Kshatriyas) and 'Bhargava' (like Parashurama) in the Puranas for systematically subduing traditional oligarchies.",
@@ -273,19 +286,22 @@
           "name": "Pella (Macedonia)",
           "x": 225.2,
           "y": -407.6,
-          "role": "Macedonian royal birthplace of Alexander and launchpad of the Pan-Hellenic expedition"
+          "role": "Macedonian royal birthplace of Alexander and launchpad of the Pan-Hellenic expedition",
+          "desc": "Macedonian royal birthplace of Alexander and launchpad of the Pan-Hellenic expedition"
         },
         {
           "name": "Alexandria (Egypt)",
           "x": 299.2,
-          "y": -312.0,
-          "role": "Mediterranean metropolis founded 331 BCE; tomb of Alexander and Ptolemaic capital"
+          "y": -312,
+          "role": "Mediterranean metropolis founded 331 BCE; tomb of Alexander and Ptolemaic capital",
+          "desc": "Mediterranean metropolis founded 331 BCE; tomb of Alexander and Ptolemaic capital"
         },
         {
           "name": "Babylon (Mesopotamia)",
           "x": 444.2,
           "y": -325.4,
-          "role": "Administrative center of Alexander's world empire where he died in June 323 BCE"
+          "role": "Administrative center of Alexander's world empire where he died in June 323 BCE",
+          "desc": "Administrative center of Alexander's world empire where he died in June 323 BCE"
         }
       ],
       "boundary_phases": [
@@ -304,21 +320,24 @@
           "pos": {
             "x": 800,
             "y": -260
-          }
+          },
+          "desc": "Nanda Empire of Magadha (Gangaridai & Prasii): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Kingdom of Porus (Pauravas)",
           "pos": {
             "x": 745,
             "y": -325
-          }
+          },
+          "desc": "Kingdom of Porus (Pauravas): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Taxila (King Ambhi / Omphis)",
           "pos": {
             "x": 718,
             "y": -348
-          }
+          },
+          "desc": "Taxila (King Ambhi / Omphis): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -327,7 +346,7 @@
           "year": "May 334 BCE",
           "coords": {
             "x": 272.5,
-            "y": -402.0
+            "y": -402
           },
           "parties": "Alexander III vs. Persian Satraps & Greek Mercenaries",
           "summary": "First major victory in Asia Minor. Alexander personally led the Companion Cavalry charge across the river.",
@@ -337,8 +356,8 @@
           "name": "Battle of Issus",
           "year": "November 333 BCE",
           "coords": {
-            "x": 362.0,
-            "y": -368.0
+            "x": 362,
+            "y": -368
           },
           "parties": "Alexander III vs. Darius III of Persia",
           "summary": "Decisive tactical triumph at the Pinarus river; Darius fled leaving his royal family and imperial chariot behind.",
@@ -348,8 +367,8 @@
           "name": "Battle of Gaugamela",
           "year": "October 331 BCE",
           "coords": {
-            "x": 435.0,
-            "y": -363.0
+            "x": 435,
+            "y": -363
           },
           "parties": "Alexander III vs. Darius III & Royal Persian Host",
           "summary": "Masterstroke wedge charge broke the Persian center. Alexander crowned 'Lord of Asia' and captured Babylon, Susa, and Persepolis.",
@@ -370,8 +389,8 @@
           "name": "Mutiny at the Hyphasis (Beas River)",
           "year": "July 326 BCE",
           "coords": {
-            "x": 753.0,
-            "y": -317.0
+            "x": 753,
+            "y": -317
           },
           "parties": "Macedonian Veterans vs. Alexander's Ambition",
           "summary": "Exhausted by 8 years of marching, terrified by reports of the Nanda Empire's 4,000 war elephants, Coenus spoke for the troops: 'If there is one thing above all which a successful man should know, it is when to say: Hold, enough.' Alexander erected 12 monumental altars to the Olympian gods and turned south down the Indus.",
@@ -448,32 +467,37 @@
         {
           "name": "Pataliputra",
           "x": 851.3,
-          "y": -256.0,
-          "role": "Imperial seat described by Megasthenes: 64 gates, 570 towers, 9 miles long along the Ganga"
+          "y": -256,
+          "role": "Imperial seat described by Megasthenes: 64 gates, 570 towers, 9 miles long along the Ganga",
+          "desc": "Imperial seat described by Megasthenes: 64 gates, 570 towers, 9 miles long along the Ganga"
         },
         {
           "name": "Taxila (Uttarapatha)",
           "x": 728.2,
           "y": -337.4,
-          "role": "Northern viceroyalty governing the Hellenistic frontier satrapies"
+          "role": "Northern viceroyalty governing the Hellenistic frontier satrapies",
+          "desc": "Northern viceroyalty governing the Hellenistic frontier satrapies"
         },
         {
           "name": "Ujjayini (Avantiratha)",
           "x": 757.8,
           "y": -231.8,
-          "role": "Western viceroyalty overseeing trade with Barygaza and Arabia"
+          "role": "Western viceroyalty overseeing trade with Barygaza and Arabia",
+          "desc": "Western viceroyalty overseeing trade with Barygaza and Arabia"
         },
         {
           "name": "Tosali (Kalinga)",
           "x": 858.4,
           "y": -201.9,
-          "role": "Eastern viceroyalty established following the Kalinga War"
+          "role": "Eastern viceroyalty established following the Kalinga War",
+          "desc": "Eastern viceroyalty established following the Kalinga War"
         },
         {
           "name": "Suvarnagiri (Dakshinapatha)",
-          "x": 772.0,
-          "y": -153.0,
-          "role": "Southern viceroyalty in Karnataka governing goldfields and Deccan provinces"
+          "x": 772,
+          "y": -153,
+          "role": "Southern viceroyalty in Karnataka governing goldfields and Deccan provinces",
+          "desc": "Southern viceroyalty in Karnataka governing goldfields and Deccan provinces"
         }
       ],
       "boundary_phases": [
@@ -498,28 +522,32 @@
           "pos": {
             "x": 580,
             "y": -330
-          }
+          },
+          "desc": "Hellenistic successor empire of Seleucus I Nicator across Persia and Syria; concluded treaty with Chandragupta Maurya."
         },
         {
           "name": "Greco-Bactrian Kingdom (Diodotus I)",
           "pos": {
             "x": 670,
             "y": -370
-          }
+          },
+          "desc": "Greco-Bactrian kingdom founded by Diodotus I; hub of Hellenistic trade along the Oxus River."
         },
         {
           "name": "Cholas, Pandyas, Cheras, Satiyaputras",
           "pos": {
             "x": 780,
             "y": -100
-          }
+          },
+          "desc": "Sangam maritime dynasty on the Malabar coast; famous for pepper trade with Rome and Muziris port."
         },
         {
           "name": "Tamraparni (Sri Lanka)",
           "pos": {
             "x": 808,
             "y": -78
-          }
+          },
+          "desc": "Tamraparni (Sri Lanka): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -527,8 +555,8 @@
           "name": "Mauryan–Seleucid War",
           "year": "305 – 303 BCE",
           "coords": {
-            "x": 660.0,
-            "y": -330.0
+            "x": 660,
+            "y": -330
           },
           "parties": "Chandragupta Maurya vs. Seleucus I Nicator",
           "summary": "Chandragupta halted Seleucus's advance across the Indus. The peace treaty ceded all four eastern satrapies of the former Achaemenid empire to the Mauryans, established marriage alliance (epigamia), and sent Megasthenes as ambassador to Pataliputra.",
@@ -605,21 +633,24 @@
       "capitals": [
         {
           "name": "Sagala (Sialkot)",
-          "x": 745.0,
-          "y": -325.0,
-          "role": "Indo-Greek capital celebrated in the Milinda Panha as a splendid commercial hub"
+          "x": 745,
+          "y": -325,
+          "role": "Indo-Greek capital celebrated in the Milinda Panha as a splendid commercial hub",
+          "desc": "Indo-Greek capital celebrated in the Milinda Panha as a splendid commercial hub"
         },
         {
           "name": "Vidisha (Besnagar)",
-          "x": 778.0,
-          "y": -235.0,
-          "role": "Shunga secondary capital; location of the famous Heliodorus Garuda pillar"
+          "x": 778,
+          "y": -235,
+          "role": "Shunga secondary capital; location of the famous Heliodorus Garuda pillar",
+          "desc": "Shunga secondary capital; location of the famous Heliodorus Garuda pillar"
         },
         {
           "name": "Pataliputra",
           "x": 851.3,
-          "y": -256.0,
-          "role": "Seat of Pushyamitra Shunga following the regicide of Brihadratha"
+          "y": -256,
+          "role": "Seat of Pushyamitra Shunga following the regicide of Brihadratha",
+          "desc": "Seat of Pushyamitra Shunga following the regicide of Brihadratha"
         }
       ],
       "boundary_phases": [
@@ -644,21 +675,24 @@
           "pos": {
             "x": 760,
             "y": -190
-          }
+          },
+          "desc": "Satavahanas of Deccan: Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Kharavela of Kalinga",
           "pos": {
             "x": 855,
             "y": -200
-          }
+          },
+          "desc": "Maritime eastern kingdom noted for elephant cavalry and oceanic trade with Southeast Asia."
         },
         {
           "name": "Indo-Scythians (Sakas)",
           "pos": {
             "x": 670,
             "y": -280
-          }
+          },
+          "desc": "Indo-Scythian rulers of Gujarat, Malwa, and Saurashtra; issued refined silver coinage."
         }
       ],
       "battles": [
@@ -666,8 +700,8 @@
           "name": "Battle of the Sindhu River (Vasumitra vs. Greeks)",
           "year": "c. 150 BCE",
           "coords": {
-            "x": 775.0,
-            "y": -265.0
+            "x": 775,
+            "y": -265
           },
           "parties": "Prince Vasumitra (Shunga) vs. Indo-Greek Yavana Cavalry",
           "summary": "Vasumitra guarded Pushyamitra's sacrificial horse and defeated an encroaching Yavana force on the banks of the Sindhu (Indus or Kali Sindh in Madhya Pradesh).",
@@ -729,15 +763,17 @@
       "capitals": [
         {
           "name": "Pratishthana (Paithan)",
-          "x": 754.0,
-          "y": -195.0,
-          "role": "Western capital on the Godavari controlling Western Ghats pass trade to Sopara and Kalyan"
+          "x": 754,
+          "y": -195,
+          "role": "Western capital on the Godavari controlling Western Ghats pass trade to Sopara and Kalyan",
+          "desc": "Western capital on the Godavari controlling Western Ghats pass trade to Sopara and Kalyan"
         },
         {
           "name": "Amaravati / Dharanikota",
-          "x": 803.0,
-          "y": -166.0,
-          "role": "Eastern capital on the Krishna; site of the great Mahachaitya marble stupa"
+          "x": 803,
+          "y": -166,
+          "role": "Eastern capital on the Krishna; site of the great Mahachaitya marble stupa",
+          "desc": "Eastern capital on the Krishna; site of the great Mahachaitya marble stupa"
         }
       ],
       "boundary_phases": [
@@ -755,21 +791,24 @@
           "pos": {
             "x": 710,
             "y": -225
-          }
+          },
+          "desc": "Indo-Scythian rulers of Gujarat, Malwa, and Saurashtra; issued refined silver coinage."
         },
         {
           "name": "Kushan Empire (North)",
           "pos": {
             "x": 760,
             "y": -275
-          }
+          },
+          "desc": "Kushan Empire (North): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Sangam Kingdoms (South)",
           "pos": {
             "x": 780,
             "y": -110
-          }
+          },
+          "desc": "Sangam Kingdoms (South): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -777,8 +816,8 @@
           "name": "Battle of Govardhana (Overthrow of Nahapana)",
           "year": "c. 124 CE",
           "coords": {
-            "x": 738.0,
-            "y": -200.0
+            "x": 738,
+            "y": -200
           },
           "parties": "Gautamiputra Satakarni vs. Nahapana of Western Kshatrapas",
           "summary": "Decisive victory annihilating the Kshaharata dynasty. Gautamiputra annexed Aparanta (Konkan), Saurashtra, Kukura, and Anupa.",
@@ -840,21 +879,24 @@
       "capitals": [
         {
           "name": "Purushapura (Peshawar)",
-          "x": 715.0,
-          "y": -340.0,
-          "role": "Imperial primary capital; site of the towering Kanishka Stupa celebrated by Chinese pilgrims"
+          "x": 715,
+          "y": -340,
+          "role": "Imperial primary capital; site of the towering Kanishka Stupa celebrated by Chinese pilgrims",
+          "desc": "Imperial primary capital; site of the towering Kanishka Stupa celebrated by Chinese pilgrims"
         },
         {
           "name": "Mathura",
-          "x": 777.0,
-          "y": -275.0,
-          "role": "Southern / winter capital on the Yamuna; epicentre of indigenous Mathura sandstone sculpture"
+          "x": 777,
+          "y": -275,
+          "role": "Southern / winter capital on the Yamuna; epicentre of indigenous Mathura sandstone sculpture",
+          "desc": "Southern / winter capital on the Yamuna; epicentre of indigenous Mathura sandstone sculpture"
         },
         {
           "name": "Kapisa / Begram",
-          "x": 693.0,
-          "y": -349.0,
-          "role": "Summer mountain capital where the Begram treasure of Roman glass and Chinese lacquers was found"
+          "x": 693,
+          "y": -349,
+          "role": "Summer mountain capital where the Begram treasure of Roman glass and Chinese lacquers was found",
+          "desc": "Summer mountain capital where the Begram treasure of Roman glass and Chinese lacquers was found"
         }
       ],
       "boundary_phases": [
@@ -872,21 +914,24 @@
           "pos": {
             "x": 750,
             "y": -400
-          }
+          },
+          "desc": "Han Dynasty / Western Regions: Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Parthian / Sasanian Empire",
           "pos": {
             "x": 610,
             "y": -330
-          }
+          },
+          "desc": "Parthian / Sasanian Empire: Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Satavahana Empire (South)",
           "pos": {
             "x": 760,
             "y": -200
-          }
+          },
+          "desc": "Satavahana Empire (South): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -894,8 +939,8 @@
           "name": "Kushan Expedition to Eastern India",
           "year": "c. 130 CE",
           "coords": {
-            "x": 830.0,
-            "y": -253.0
+            "x": 830,
+            "y": -253
           },
           "parties": "Kanishka I vs. Kings of Saketa and Pataliputra",
           "summary": "Kanishka conquered the Gangetic plain as far as Pataliputra, from where he took the celebrated Buddhist philosopher Ashvaghosha to his northern court.",
@@ -958,14 +1003,16 @@
         {
           "name": "Pataliputra",
           "x": 851.3,
-          "y": -256.0,
-          "role": "Imperial ancestral dynastic capital of Chandragupta I and Samudragupta"
+          "y": -256,
+          "role": "Imperial ancestral dynastic capital of Chandragupta I and Samudragupta",
+          "desc": "Imperial ancestral dynastic capital of Chandragupta I and Samudragupta"
         },
         {
           "name": "Ujjayini",
           "x": 757.8,
           "y": -231.8,
-          "role": "Second capital and intellectual court of Chandragupta II Vikramaditya and the Navaratnas (Kalidasa, Varahamihira)"
+          "role": "Second capital and intellectual court of Chandragupta II Vikramaditya and the Navaratnas (Kalidasa, Varahamihira)",
+          "desc": "Second capital and intellectual court of Chandragupta II Vikramaditya and the Navaratnas (Kalidasa, Varahamihira)"
         }
       ],
       "boundary_phases": [
@@ -990,28 +1037,32 @@
           "pos": {
             "x": 780,
             "y": -205
-          }
+          },
+          "desc": "Deccan dynasty contemporaneous with Guptas; patrons of the rock-cut Buddhist caves at Ajanta."
         },
         {
           "name": "Kadamba Dynasty",
           "pos": {
             "x": 750,
             "y": -150
-          }
+          },
+          "desc": "Kadamba Dynasty: Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Sasanian Empire (West)",
           "pos": {
             "x": 640,
             "y": -290
-          }
+          },
+          "desc": "Sasanian Empire (West): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Pallavas of Kanchipuram",
           "pos": {
             "x": 795,
             "y": -130
-          }
+          },
+          "desc": "Dravidian dynasty of Kanchipuram; maritime expeditions to Southeast Asia and monolithic shore temples at Mamallapuram."
         }
       ],
       "battles": [
@@ -1019,8 +1070,8 @@
           "name": "Eradication of the Western Kshatrapas",
           "year": "c. 395 – 409 CE",
           "coords": {
-            "x": 705.0,
-            "y": -215.0
+            "x": 705,
+            "y": -215
           },
           "parties": "Chandragupta II Vikramaditya vs. Rudrasimha III (Saka Kshatrapa)",
           "summary": "Annihilated the last Saka satrap of Gujarat and Malwa. Commemorated by issuing Gupta silver coins modeled on Kshatrapa prototypes and adopting the title 'Sakari' (Foe of the Sakas).",
@@ -1030,8 +1081,8 @@
           "name": "Repulsion of the Huna Invasions",
           "year": "c. 455 CE",
           "coords": {
-            "x": 745.0,
-            "y": -305.0
+            "x": 745,
+            "y": -305
           },
           "parties": "Skandagupta vs. Kidarite / Hephthalite White Huns",
           "summary": "Crown Prince Skandagupta spent a night sleeping on the bare earth before rallying the Gupta army to shatter the Huna vanguard, saving northern India from devastation.",
@@ -1099,13 +1150,15 @@
           "name": "Kanyakubja (Kannauj)",
           "x": 799.2,
           "y": -270.5,
-          "role": "Imperial capital (Mahodaya) on the Ganga; venue of the grand 20-nation religious assembly"
+          "role": "Imperial capital (Mahodaya) on the Ganga; venue of the grand 20-nation religious assembly",
+          "desc": "Imperial capital (Mahodaya) on the Ganga; venue of the grand 20-nation religious assembly"
         },
         {
           "name": "Thanesar (Sthanishvara)",
-          "x": 768.0,
-          "y": -299.0,
-          "role": "Ancestral seat of the Pushyabhuti dynasty in Kurukshetra"
+          "x": 768,
+          "y": -299,
+          "role": "Ancestral seat of the Pushyabhuti dynasty in Kurukshetra",
+          "desc": "Ancestral seat of the Pushyabhuti dynasty in Kurukshetra"
         }
       ],
       "boundary_phases": [
@@ -1123,21 +1176,24 @@
           "pos": {
             "x": 760,
             "y": -165
-          }
+          },
+          "desc": "Badami Chalukya empire under Pulakeshin II; dominant power across the Deccan and Narmada."
         },
         {
           "name": "Kamarupa (King Bhaskaravarman)",
           "pos": {
             "x": 920,
             "y": -260
-          }
+          },
+          "desc": "Ancient kingdom in the Brahmaputra valley (Assam) ruled by King Bhaskaravarman, close ally of Emperor Harsha."
         },
         {
           "name": "Pallava Dynasty",
           "pos": {
             "x": 795,
             "y": -125
-          }
+          },
+          "desc": "Dravidian dynasty of Kanchipuram; maritime expeditions to Southeast Asia and monolithic shore temples at Mamallapuram."
         }
       ],
       "battles": [
@@ -1145,8 +1201,8 @@
           "name": "Battle of the Narmada",
           "year": "c. 618 – 619 CE",
           "coords": {
-            "x": 760.0,
-            "y": -218.0
+            "x": 760,
+            "y": -218
           },
           "parties": "Harshavardhana of Kannauj vs. Pulakeshin II of Badami Chalukyas",
           "summary": "Harsha marched south with vast elephant corps to subjugate the Deccan. Pulakeshin II met him on the banks of the Narmada, routing Harsha's forces and securing the title 'Parameshvara'.",
@@ -1210,25 +1266,29 @@
           "name": "Thanjavur (Chola)",
           "x": 791.3,
           "y": -107.8,
-          "role": "Chola heartland along the Kaveri delta; site of Rajaraja I's monolithic Brihadisvara granite vimana"
+          "role": "Chola heartland along the Kaveri delta; site of Rajaraja I's monolithic Brihadisvara granite vimana",
+          "desc": "Chola heartland along the Kaveri delta; site of Rajaraja I's monolithic Brihadisvara granite vimana"
         },
         {
           "name": "Madurai (Pandya)",
           "x": 781.2,
           "y": -99.2,
-          "role": "Ancient Tamil seat of the three Sangam literary academies on the Vaigai river"
+          "role": "Ancient Tamil seat of the three Sangam literary academies on the Vaigai river",
+          "desc": "Ancient Tamil seat of the three Sangam literary academies on the Vaigai river"
         },
         {
           "name": "Kanchipuram (Pallava)",
-          "x": 797.0,
-          "y": -128.0,
-          "role": "Pallava educational center and cradle of Dravidian stone architecture (Kailasanathar temple)"
+          "x": 797,
+          "y": -128,
+          "role": "Pallava educational center and cradle of Dravidian stone architecture (Kailasanathar temple)",
+          "desc": "Pallava educational center and cradle of Dravidian stone architecture (Kailasanathar temple)"
         },
         {
           "name": "Badami / Vatapi (Chalukya)",
           "x": 756.8,
           "y": -159.2,
-          "role": "Cliffside fortress capital of Pulakeshin I and II with magnificent rock-cut cave temples"
+          "role": "Cliffside fortress capital of Pulakeshin I and II with magnificent rock-cut cave temples",
+          "desc": "Cliffside fortress capital of Pulakeshin I and II with magnificent rock-cut cave temples"
         }
       ],
       "boundary_phases": [
@@ -1246,14 +1306,16 @@
           "pos": {
             "x": 770,
             "y": -230
-          }
+          },
+          "desc": "Harsha's Empire (North of Narmada): Contemporaneous frontier realm and trading partner."
         },
         {
           "name": "Anuradhapura Kingdom (Sri Lanka)",
           "pos": {
             "x": 805,
             "y": -83
-          }
+          },
+          "desc": "Anuradhapura Kingdom (Sri Lanka): Contemporaneous frontier realm and trading partner."
         }
       ],
       "battles": [
@@ -1272,8 +1334,8 @@
           "name": "Battle of Venni",
           "year": "c. 130 CE",
           "coords": {
-            "x": 792.0,
-            "y": -106.0
+            "x": 792,
+            "y": -106
           },
           "parties": "Karikala Chola vs. Confederacy of Chera, Pandya & 11 Velir Chiefs",
           "summary": "Karikala shattered the allied southern coalition. The defeated Chera king Peruncheralathan committed suicide by Vadakkiruttal (fasting facing north) out of shame for receiving a wound in the back.",

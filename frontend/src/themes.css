@@ -64,14 +64,16 @@
 
 :root[data-theme="light"] {
   --bg: #f5f5f7; --surface: #fff; --surface-2: #e8e8ed; --line: rgba(0, 0, 0, 0.12);
+  --surface-header: rgba(255, 255, 255, 0.96); --surface-header-scrolled: rgba(255, 255, 255, 0.98);
   --ink: #1d1d1f; --muted: #515154; --accent: #0066cc; --saffron: #b35900; --green: #1a7f37; --danger: #c62828;
-  --glass: rgba(255, 255, 255, 0.84); --bar-bg: rgba(255, 255, 255, 0.82); --fill: rgba(0, 0, 0, 0.05); --fill-hover: rgba(0, 0, 0, 0.1);
+  --glass: rgba(255, 255, 255, 0.84); --bar-bg: rgba(255, 255, 255, 0.96); --fill: rgba(0, 0, 0, 0.05); --fill-hover: rgba(0, 0, 0, 0.1);
   --on-accent: #fff; --shadow: 0 6px 24px rgba(0, 0, 0, 0.08); --shadow-lift: 0 18px 44px rgba(0, 0, 0, 0.14);
   --overlay: linear-gradient(180deg, rgba(245, 245, 247, 0.3) 0%, rgba(245, 245, 247, 0.45) 55%, rgba(245, 245, 247, 0.6) 100%);
   color-scheme: light;
 }
 :root[data-theme="newspaper"] {
   --bg: #f4f0e6; --surface: #fbf8f1; --surface-2: #ebe5d6; --line: rgba(17, 17, 17, 0.35);
+  --surface-header: #f4f0e6; --surface-header-scrolled: #ebe5d6;
   --ink: #111; --muted: #3b3b3b; --accent: #7a1010; --saffron: #7a1010; --green: #1f4d1f; --danger: #9b1c1c; --radius: 0px;
   --glass: #fbf8f1; --bar-bg: #f4f0e6; --fill: rgba(17, 17, 17, 0.06); --fill-hover: rgba(17, 17, 17, 0.12);
   --on-accent: #f4f0e6; --shadow: none; --shadow-lift: none;
@@ -82,6 +84,7 @@
 }
 :root[data-theme="pamphlet"] {
   --bg: #fff4dc; --surface: #fffaf0; --surface-2: #ffe0a3; --line: #2b1708;
+  --surface-header: #fff4dc; --surface-header-scrolled: #ffe0a3;
   --ink: #2b1708; --muted: #4a2f1a; --accent: #c2185b; --saffron: #c45100; --green: #138808; --danger: #b3001b; --radius: 8px;
   --glass: #fffaf0; --bar-bg: #ffb300; --fill: rgba(43, 23, 8, 0.07); --fill-hover: rgba(194, 24, 91, 0.14);
   --on-accent: #fff; --shadow: 6px 6px 0 #2b1708; --shadow-lift: 9px 9px 0 #2b1708;
@@ -106,7 +109,8 @@
   & .hero h1, & .page-hero h1, & .hero .lead, & .page-hero .lead { text-shadow: none; }
   & .hero .lead, & .page-hero .lead { color: var(--muted); }
 
-  & .site-header, & .site-header.scrolled { background: var(--bar-bg); border-bottom-color: var(--line); box-shadow: none; }
+  & .site-header { background: var(--surface-header, var(--bar-bg)); border-bottom-color: var(--line); }
+  & .site-header.scrolled { background: var(--surface-header-scrolled, var(--bar-bg)); border-bottom-color: var(--line); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); }
   & .skip-link, & .badge, & .btn-primary, & .scroll-top { color: var(--on-accent); }
   & .btn-primary:hover:not(:disabled) { background: var(--accent); filter: brightness(1.12); box-shadow: var(--shadow); }
   & .btn-ghost:hover:not(:disabled) { background: var(--fill); border-color: var(--ink); }

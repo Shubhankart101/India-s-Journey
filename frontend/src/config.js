@@ -11,9 +11,12 @@ export const POLITYPOLICY_CONTACT_URL = 'https://politypolicy.substack.com/about
  */
 export function assetUrl(relPath) {
   const clean = String(relPath || '').replace(/^\/+/, '');
-  const base = import.meta.env?.BASE_URL || '/';
-  if (typeof window !== 'undefined' && window.location.pathname.startsWith('/India-s-Journey')) {
+  if (typeof window !== 'undefined' && window.location?.pathname?.startsWith('/India-s-Journey')) {
     return `/India-s-Journey/${clean}`;
+  }
+  const base = import.meta.env?.BASE_URL;
+  if (!base || base === './' || base === '.' || base === '/') {
+    return `/${clean}`;
   }
   return `${base.endsWith('/') ? base : `${base}/`}${clean}`;
 }

@@ -33,6 +33,16 @@ export function pickVerse(key, group, avoidId = '', verses = VERSES, groupThemes
 
 // Subgroup explainers use "group/subgroup" and never repeat the previous subgroup's verse.
 export function pickSubgroupVerse(group, subgroup, subgroupNames = []) {
+  const gStr = String(group || '').toLowerCase();
+  const sStr = String(subgroup || '').toLowerCase();
+  if (gStr.includes('indus') || sStr.includes('indus') || gStr.includes('harapp') || sStr.includes('harapp')) {
+    const ivc = VERSES.find(v => v.id === 'rv-7-95-2');
+    if (ivc) return ivc;
+  }
+  if (gStr.includes('empire') || sStr.includes('empire') || gStr.includes('ancient') || sStr.includes('ancient')) {
+    const emp = VERSES.find(v => v.id === 'ashoka-mre-12') || VERSES.find(v => v.id === 'gita-4-7-8');
+    if (emp) return emp;
+  }
   const index = subgroupNames.indexOf(subgroup);
   const previous = index > 0 ? subgroupNames[index - 1] : '';
   const avoid = previous ? pickVerse(`${group}/${previous}`, group) : pickVerse(group, group);

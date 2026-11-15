@@ -175,17 +175,21 @@ export default function IndependenceClock() {
 
       {/* Mechanical Flip-Flap Countdown Board with 6 Units: Years, Months, Days, Hours, Minutes, Seconds */}
       <div className="flip-board" aria-label="Elapsed time flip chronometer">
-        <FlipCard value={data.years} label="YEARS" />
-        <span className="flip-sep" aria-hidden="true">:</span>
-        <FlipCard value={data.months} label="MONTHS" />
-        <span className="flip-sep" aria-hidden="true">:</span>
-        <FlipCard value={data.days} label="DAYS" />
-        <span className="flip-sep" aria-hidden="true">:</span>
-        <FlipCard value={data.hours} label="HOURS" />
-        <span className="flip-sep" aria-hidden="true">:</span>
-        <FlipCard value={data.minutes} label="MINUTES" />
-        <span className="flip-sep" aria-hidden="true">:</span>
-        <FlipCard value={data.seconds} label="SECONDS" highlight />
+        <div className="flip-group">
+          <FlipCard value={data.years} label="YEARS" />
+          <span className="flip-sep" aria-hidden="true">:</span>
+          <FlipCard value={data.months} label="MONTHS" />
+          <span className="flip-sep" aria-hidden="true">:</span>
+          <FlipCard value={data.days} label="DAYS" />
+        </div>
+        <span className="flip-sep flip-sep-major" aria-hidden="true">:</span>
+        <div className="flip-group">
+          <FlipCard value={data.hours} label="HOURS" />
+          <span className="flip-sep" aria-hidden="true">:</span>
+          <FlipCard value={data.minutes} label="MINUTES" />
+          <span className="flip-sep" aria-hidden="true">:</span>
+          <FlipCard value={data.seconds} label="SECONDS" highlight />
+        </div>
       </div>
 
       {/* Live Analog & Digital Indian Standard Time Watch */}

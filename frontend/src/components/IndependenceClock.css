@@ -10,6 +10,8 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .independence-clock::before {
@@ -68,21 +70,27 @@
 }
 
 /* ----------------------------------------------------
-   MECHANICAL SPLIT-FLAP FLIP BOARD
+   MECHANICAL SPLIT-FLAP FLIP BOARD (Solari Udine style)
 ----------------------------------------------------- */
 .flip-board {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 1.3vw, 14px);
-  flex-wrap: wrap;
+  gap: clamp(8px, 1.5vw, 16px);
   width: 100%;
   margin: 0.8rem 0 1.2rem;
   padding: 14px 18px;
-  background: rgba(0, 0, 0, 0.55);
+  background: #090c12;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.75), 0 6px 18px rgba(0, 0, 0, 0.35);
+  box-sizing: border-box;
+}
+
+.flip-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 12px);
 }
 
 .flip-unit {
@@ -103,73 +111,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(28px, 4vw, 42px);
-  height: clamp(46px, 6.4vw, 62px);
-  background: linear-gradient(180deg, #1f232b 0%, #15181f 49%, #111318 51%, #0b0c10 100%);
+  width: clamp(24px, 3.4vw, 42px);
+  height: clamp(42px, 5.6vw, 62px);
+  background: linear-gradient(180deg, #222733 0%, #181c25 49.5%, #13161e 50.5%, #0d0f15 100%);
   border-radius: 6px;
   box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.75),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.9);
-  border: 1px solid #2d3340;
+    0 4px 12px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.85);
+  border: 1px solid #2d3444;
   overflow: hidden;
   user-select: none;
 }
 
 .flip-num {
   font-family: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
   font-weight: 850;
-  color: #f5f8fc;
+  color: #ffffff;
   text-align: center;
   line-height: 1;
   letter-spacing: -0.02em;
   z-index: 1;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  font-variant-numeric: tabular-nums;
 }
 
-/* Center horizontal split hairline seam - fine, subtle realistic flap division */
+/* Center horizontal split hairline seam - fine, subtle realistic flap division without obscuring numbers */
 .flip-crease {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   height: 1px;
-  background: rgba(0, 0, 0, 0.55);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
   z-index: 2;
   pointer-events: none;
+  opacity: 0.85;
 }
 
 /* Side mechanical hinge cutouts */
 .flip-hinge {
   position: absolute;
-  top: calc(50% - 3px);
-  width: 3px;
-  height: 6px;
-  background: #060709;
-  border-radius: 2px;
+  top: calc(50% - 2.5px);
+  width: 2.5px;
+  height: 5px;
+  background: #06070a;
+  border-radius: 1px;
   z-index: 3;
   pointer-events: none;
 }
-.flip-hinge.left { left: 0; border-right: 1px solid #333a4a; }
-.flip-hinge.right { right: 0; border-left: 1px solid #333a4a; }
+.flip-hinge.left { left: 0; border-right: 1px solid rgba(255, 255, 255, 0.15); }
+.flip-hinge.right { right: 0; border-left: 1px solid rgba(255, 255, 255, 0.15); }
 
-/* Highlight styling (e.g. seconds) */
+/* Highlight styling (Seconds) */
 .flip-highlight .flip-digit {
-  border-color: color-mix(in srgb, #3fb950 50%, #282d38);
-  background: linear-gradient(180deg, #18281d 0%, #111d15 49%, #0d1610 51%, #070d09 100%);
+  border-color: color-mix(in srgb, #3fb950 55%, #282d38);
+  background: linear-gradient(180deg, #192a1e 0%, #122017 49.5%, #0e1811 50.5%, #070d09 100%);
 }
 .flip-highlight .flip-num {
   color: #3fb950;
-  text-shadow: 0 0 12px rgba(63, 185, 80, 0.5);
+  text-shadow: 0 0 10px rgba(63, 185, 80, 0.55);
 }
 
 .flip-label {
   font-size: clamp(0.58rem, 1.2vw, 0.68rem);
   font-weight: 750;
   letter-spacing: 0.12em;
-  color: #8b949e;
+  color: #94a3b8;
   text-transform: uppercase;
 }
 .flip-highlight .flip-label {
@@ -179,7 +189,7 @@
 .flip-sep {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   font-weight: 800;
-  color: #484f58;
+  color: #64748b;
   margin-top: -24px;
   user-select: none;
 }
@@ -199,6 +209,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Analog Watch Face */
@@ -317,8 +328,9 @@
 .ist-watch-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   min-width: 0;
+  flex: 1;
 }
 
 .ist-badge {
@@ -346,11 +358,14 @@
   color: var(--ink, #f0f6fc);
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
+  line-height: 1.2;
 }
 
 .ist-date-text {
   font-size: 0.74rem;
   color: var(--muted, #8b949e);
+  line-height: 1.4;
+  overflow-wrap: break-word;
 }
 
 /* Footer quote & total */
@@ -381,22 +396,199 @@
   color: var(--saffron, #ff9933);
 }
 
+/* ----------------------------------------------------
+   THEME ADAPTATIONS (Light, Newspaper, Pamphlet, etc.)
+----------------------------------------------------- */
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .independence-clock {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow, 0 6px 24px rgba(0, 0, 0, 0.08));
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ic-title {
+  color: var(--muted);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-board {
+  background: #0d131d;
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7), 0 4px 14px rgba(15, 23, 42, 0.15);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-digit {
+  background: linear-gradient(180deg, #1c2536 0%, #151d2c 49.5%, #101622 50.5%, #0b0f17 100%);
+  border: 1px solid #2b394e;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-num {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-label {
+  color: #94a3b8;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-sep {
+  color: #64748b;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-highlight .flip-digit {
+  background: linear-gradient(180deg, #122d1f 0%, #0d2016 49.5%, #0a1911 50.5%, #060e0a 100%);
+  border-color: #10b981;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-highlight .flip-num {
+  color: #34d399;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .flip-highlight .flip-label {
+  color: #10b981;
+}
+
+/* Light Theme IST Watch */
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ist-watch-container {
+  background: var(--surface-2, #f0f2f5);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .watch-face {
+  background: radial-gradient(circle at 40% 35%, #ffffff, #e6ecf4 80%);
+  border: 2px solid #94a3b8;
+  box-shadow:
+    0 0 0 2px #cbd5e1,
+    0 3px 8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.15);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .watch-num {
+  color: #0f172a;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .watch-tick {
+  background: #64748b;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .hour-hand {
+  background: #0f172a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .min-hand {
+  background: #334155;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .sec-hand {
+  background: #ea580c;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .watch-center-pin {
+  background: #ea580c;
+  border-color: #ffffff;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ist-badge {
+  color: var(--saffron, #c2410c);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ist-pulse {
+  background: #16a34a;
+  box-shadow: 0 0 6px #16a34a;
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ist-time-text {
+  color: var(--ink, #0f172a);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ist-date-text {
+  color: var(--muted, #475569);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ic-footer {
+  border-top-color: var(--line);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ic-quote {
+  color: var(--muted);
+}
+
+:root:is([data-theme="light"], [data-theme="newspaper"], [data-theme="pamphlet"], [data-theme="desi"], [data-theme="navy"], [data-theme="police"]) .ic-total {
+  color: var(--ink);
+}
+
+/* Specific Newspaper Vintage Styles */
+:root[data-theme="newspaper"] .independence-clock {
+  border-radius: 0;
+  border: 1px solid var(--line);
+  border-top: 3px solid #17130f;
+  box-shadow: 2px 2px 0 rgba(43, 31, 17, 0.15);
+}
+:root[data-theme="newspaper"] .flip-board,
+:root[data-theme="newspaper"] .flip-digit {
+  border-radius: 0;
+}
+:root[data-theme="newspaper"] .ic-quote {
+  font-family: "Old Standard TT", "Playfair Display", Georgia, serif;
+}
+
+/* Specific Pamphlet Vintage Styles */
+:root[data-theme="pamphlet"] .independence-clock {
+  border-radius: 8px;
+  border: 2px solid #2b1708;
+  box-shadow: 4px 4px 0 rgba(43, 23, 8, 0.25);
+}
+:root[data-theme="pamphlet"] .ic-quote {
+  font-family: "Special Elite", Georgia, serif;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVE / MOBILE
+----------------------------------------------------- */
 @media (max-width: 680px) {
   .independence-clock {
-    padding: 1rem 0.8rem;
+    padding: 1.1rem 0.85rem;
   }
   .flip-board {
-    gap: 4px;
-    padding: 6px 4px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 8px;
+  }
+  .flip-sep-major {
+    display: none;
+  }
+  .flip-group {
+    gap: 6px;
+  }
+  .flip-digit {
+    width: clamp(20px, 5.5vw, 36px);
+    height: clamp(36px, 8.5vw, 54px);
+  }
+  .flip-num {
+    font-size: clamp(1.35rem, 5.5vw, 2.1rem);
   }
   .flip-sep {
-    font-size: 1.1rem;
-    margin-top: -12px;
+    font-size: 1.2rem;
+    margin-top: -14px;
   }
   .ist-watch-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
     padding: 10px 12px;
+  }
+  .ist-watch-dial {
+    width: 52px;
+    height: 52px;
+  }
+  .ist-time-text {
+    font-size: 1.15rem;
+  }
+  .ist-date-text {
+    font-size: 0.70rem;
+    line-height: 1.35;
   }
 }

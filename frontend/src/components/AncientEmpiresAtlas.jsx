@@ -6,7 +6,28 @@ import './AncientEmpiresAtlas.css';
 const PAN_INDIA_VIEWBOX = { x: 600, y: -380, w: 380, h: 330 };
 const ALEX_VIEWBOX = { x: 160, y: -480, w: 600, h: 290 };
 
-export function HistoricalMapViewer({ svgUrl, title }) {
+const HISTORICAL_VARIANTS = {
+  'classical-southern-dynasties': [
+    { svg: 'maps/historical/sangam-age.svg', title: 'Tamilakam — Sangam Age (c. 300 BCE – 300 CE)' },
+    { svg: 'maps/historical/pallava-empire.svg', title: 'Pallava Ascendancy (c. 300 – 900 CE)' },
+    { svg: 'maps/historical/chola-empire.svg', title: 'Imperial Cholas (c. 985 – 1150 CE)' },
+    { svg: 'maps/historical/chalukya-rashtrakuta.svg', title: 'Chālukyas & Rāṣṭrakūṭas (c. 543 – 982 CE)' },
+  ],
+  'mahajanapadas': [
+    { svg: 'maps/historical/mahajanapadas.svg', title: 'Sixteen Mahājanapadas (c. 600–345 BCE)' },
+    { svg: 'maps/historical/later-vedic.svg', title: 'Later Vedic Janapadas (c. 1100–600 BCE)' },
+  ],
+  'magadha-nanda': [
+    { svg: 'maps/historical/mahajanapadas.svg', title: 'Sixteen Mahājanapadas & Magadha (c. 600–345 BCE)' },
+    { svg: 'maps/historical/later-vedic.svg', title: 'Later Vedic Janapadas (c. 1100–600 BCE)' },
+  ],
+  'indo-greek-shunga': [
+    { svg: 'maps/historical/post-mauryan-indo-greek.svg', title: 'Śuṅgas, Greeks & Śakas (c. 185 BCE – 50 CE)' },
+    { svg: 'maps/historical/mauryan-empire.svg', title: 'Mauryan Age Context (c. 322–185 BCE)' },
+  ],
+};
+
+export function HistoricalMapViewer({ svgUrl, title, variants = [], onSelectVariant, selectedSvg }) {
   const [svgContent, setSvgContent] = useState('');
   const [error, setError] = useState(false);
 
@@ -54,8 +75,12 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
   const [selectedEmpireId, setSelectedEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
   const [selectedPhaseIndex, setSelectedPhaseIndex] = useState(0);
   const [selectedBattle, setSelectedBattle] = useState(null);
+  const [selectedCapital, setSelectedCapital] = useState(null);
   const [hoveredCapital, setHoveredCapital] = useState(null);
   const [hoveredBattle, setHoveredBattle] = useState(null);
+  const [hoveredTerritory, setHoveredTerritory] = useState(null);
+  const [hoveredNeighbor, setHoveredNeighbor] = useState(null);
+  const [selectedVariantSvg, setSelectedVariantSvg] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const [mapViewMode, setMapViewMode] = useState('interactive'); // 'interactive' | 'historical'
   const [dossierTab, setDossierTab] = useState('overview'); // 'overview' | 'battles' | 'milestones' | 'sources'
@@ -102,6 +127,13 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
     setSelectedEmpireId(id);
     setSelectedPhaseIndex(0);
     setSelectedBattle(null);
+    setSelectedCapital(null);
+    setSelectedVariantSvg(null);
+    setHoveredCapital(null);
+    setHoveredBattle(null);
+    setHoveredTerritory(null);
+    setHoveredNeighbor(null);
+    setTooltip(null);
   };
 
   const handleZoom = (factor) => {
@@ -117,16 +149,20 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
   const handleMouseMove = (e) => {
     if (!mapStageRef.current) return;
     const rect = mapStageRef.current.getBoundingClientRect();
-    if (hoveredCapital || hoveredBattle) {
+    const activeHover = hoveredCapital || hoveredBattle || hoveredTerritory || hoveredNeighbor;
+    if (activeHover) {
       setTooltip({
-        x: Math.max(10, e.clientX - rect.left + 15),
-        y: Math.max(10, e.clientY - rect.top - 10),
-        data: hoveredCapital || hoveredBattle
+        x: Math.max(10, Math.min(rect.width - 240, e.clientX - rect.left + 15)),
+        y: Math.max(10, Math.min(rect.height - 150, e.clientY - rect.top - 10)),
+        data: activeHover,
       });
     } else {
       setTooltip(null);
     }
   };
+
+  const variants = HISTORICAL_VARIANTS[currentEmpire.id] || [];
+  const currentHistoricalSvg = selectedVariantSvg || currentEmpire.historical_map_svg;
 
   return (
     <div className="empires-atlas">
@@ -195,7 +231,7 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
           className="empires-map-container"
           ref={mapStageRef}
           onMouseMove={handleMouseMove}
-          onMouseLeave={() => { setHoveredCapital(null); setHoveredBattle(null); setTooltip(null); }}
+          onMouseLeave={() => { setHoveredCapital(null); setHoveredBattle(null); setHoveredTerritory(null); setHoveredNeighbor(null); setTooltip(null); }}
         >
           {mapViewMode === 'historical' && currentEmpire.historical_map_svg ? (
             <div className="authentic-historical-map-frame">
@@ -203,8 +239,22 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 <span className="ahm-title">{currentEmpire.historical_map_title || currentEmpire.name}</span>
                 <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
               </div>
+              {variants.length > 1 && (
+                <div className="ahm-variant-selector" role="group" aria-label="Atlas Map Variations">
+                  {variants.map(v => (
+                    <button
+                      key={v.svg}
+                      type="button"
+                      className={`ahm-var-btn ${currentHistoricalSvg === v.svg ? 'active' : ''}`}
+                      onClick={() => setSelectedVariantSvg(v.svg)}
+                    >
+                      {v.title.split('—')[1] || v.title.split('(')[0] || v.title}
+                    </button>
+                  ))}
+                </div>
+              )}
               <HistoricalMapViewer
-                svgUrl={assetUrl(currentEmpire.historical_map_svg)}
+                svgUrl={assetUrl(currentHistoricalSvg)}
                 title={currentEmpire.historical_map_title || currentEmpire.name}
               />
             </div>
@@ -283,12 +333,25 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                     <path
                       d={activePhase.territory_path}
                       fill={activePhase.color || '#a855f7'}
-                      fillOpacity="0.35"
+                      fillOpacity="0.38"
                       stroke={activePhase.color || '#a855f7'}
                       strokeWidth="2.5"
                       strokeLinejoin="round"
                       filter="url(#empShadow)"
                       vectorEffect="non-scaling-stroke"
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`${currentEmpire.name} territory in ${activePhase.year}`}
+                      onMouseEnter={() => setHoveredTerritory({
+                        type: 'territory',
+                        title: currentEmpire.name,
+                        year: activePhase.year,
+                        phase: activePhase.phase,
+                        desc: activePhase.description,
+                        color: activePhase.color,
+                      })}
+                      onMouseLeave={() => setHoveredTerritory(null)}
+                      style={{ cursor: 'pointer', transition: 'fill-opacity 0.2s ease, stroke-width 0.2s ease' }}
                     />
                   </g>
                 )}
@@ -300,10 +363,22 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                       d={currentEmpire.campaign_route}
                       fill="none"
                       stroke="#38bdf8"
-                      strokeWidth="2.2"
+                      strokeWidth="2.5"
                       strokeDasharray="5,3"
                       filter="url(#glowRoute)"
                       vectorEffect="non-scaling-stroke"
+                      tabIndex={0}
+                      role="button"
+                      aria-label="Alexander the Great Macedonian Campaign Route"
+                      onMouseEnter={() => setHoveredTerritory({
+                        type: 'route',
+                        title: "Alexander's Macedonian Campaign Route",
+                        year: '334 – 323 BCE',
+                        desc: '30,000+ km expedition from Pella across Anatolia, Egypt, Mesopotamia, Persepolis, Bactria, and the Hindu Kush into the Punjab/Indus basin.',
+                        color: '#38bdf8',
+                      })}
+                      onMouseLeave={() => setHoveredTerritory(null)}
+                      style={{ cursor: 'pointer' }}
                     />
                   </g>
                 )}
@@ -312,22 +387,29 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 {currentEmpire.neighboring_kingdoms && (
                   <g className="neighboring-realms">
                     {currentEmpire.neighboring_kingdoms.map((nb, idx) => (
-                      <text
+                      <g
                         key={idx}
-                        x={nb.pos.x}
-                        y={nb.pos.y}
-                        fill="#64748b"
-                        fontSize="6"
-                        fontFamily="sans-serif"
-                        fontWeight="700"
-                        letterSpacing="0.08em"
-                        textAnchor="middle"
-                        stroke="#0b0f15"
-                        strokeWidth="2"
-                        paintOrder="stroke"
+                        className="neighbor-pin"
+                        onMouseEnter={() => setHoveredNeighbor({ type: 'neighbor', title: nb.name, desc: nb.desc })}
+                        onMouseLeave={() => setHoveredNeighbor(null)}
+                        style={{ cursor: 'pointer' }}
                       >
-                        {nb.name.toUpperCase()}
-                      </text>
+                        <text
+                          x={nb.pos.x}
+                          y={nb.pos.y}
+                          fill="#94a3b8"
+                          fontSize="6"
+                          fontFamily="sans-serif"
+                          fontWeight="700"
+                          letterSpacing="0.08em"
+                          textAnchor="middle"
+                          stroke="#0b0f15"
+                          strokeWidth="2"
+                          paintOrder="stroke"
+                        >
+                          {nb.name.toUpperCase()}
+                        </text>
+                      </g>
                     ))}
                   </g>
                 )}
@@ -335,32 +417,42 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 {/* Imperial Capitals */}
                 {currentEmpire.capitals && (
                   <g className="capitals-layer">
-                    {currentEmpire.capitals.map((cap, idx) => (
-                      <g
-                        key={idx}
-                        className="capital-pin"
-                        transform={`translate(${cap.x}, ${cap.y})`}
-                        onMouseEnter={() => setHoveredCapital({ type: 'capital', title: cap.name, desc: cap.role })}
-                        onMouseLeave={() => setHoveredCapital(null)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <circle r="4" fill="#facc15" stroke="#000" strokeWidth="1.2" />
-                        <circle r="1.5" fill="#000" />
-                        <text
-                          y="-6"
-                          fill="#fef08a"
-                          fontSize="5"
-                          fontWeight="750"
-                          fontFamily="sans-serif"
-                          textAnchor="middle"
-                          stroke="#0b0f15"
-                          strokeWidth="2"
-                          paintOrder="stroke"
+                    {currentEmpire.capitals.map((cap, idx) => {
+                      const isCapSelected = selectedCapital?.name === cap.name;
+                      return (
+                        <g
+                          key={idx}
+                          className={`capital-pin ${isCapSelected ? 'active-pin' : ''}`}
+                          transform={`translate(${cap.x}, ${cap.y})`}
+                          onClick={() => { setSelectedCapital(cap); setSelectedBattle(null); }}
+                          onMouseEnter={() => setHoveredCapital({ type: 'capital', title: cap.name, role: cap.role, desc: cap.desc || cap.role })}
+                          onMouseLeave={() => setHoveredCapital(null)}
+                          style={{ cursor: 'pointer' }}
+                          tabIndex={0}
+                          role="button"
+                          aria-label={`Imperial Capital: ${cap.name}`}
                         >
-                          ★ {cap.name}
-                        </text>
-                      </g>
-                    ))}
+                          {isCapSelected && (
+                            <circle r="8" fill="none" stroke="#facc15" strokeWidth="1.5" strokeDasharray="2,2" className="pin-pulse" />
+                          )}
+                          <circle r="4" fill="#facc15" stroke="#000" strokeWidth="1.2" />
+                          <circle r="1.5" fill="#000" />
+                          <text
+                            y="-6"
+                            fill="#fef08a"
+                            fontSize="5"
+                            fontWeight="750"
+                            fontFamily="sans-serif"
+                            textAnchor="middle"
+                            stroke="#0b0f15"
+                            strokeWidth="2"
+                            paintOrder="stroke"
+                          >
+                            ★ {cap.name}
+                          </text>
+                        </g>
+                      );
+                    })}
                   </g>
                 )}
 
@@ -374,11 +466,17 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                           key={idx}
                           className={`battle-pin ${isSelected ? 'active' : ''}`}
                           transform={`translate(${bt.coords.x}, ${bt.coords.y})`}
-                          onClick={() => { setSelectedBattle(bt); setDossierTab('battles'); }}
-                          onMouseEnter={() => setHoveredBattle({ type: 'battle', title: bt.name, year: bt.year, parties: bt.parties, summary: bt.summary })}
+                          onClick={() => { setSelectedBattle(bt); setSelectedCapital(null); setDossierTab('battles'); }}
+                          onMouseEnter={() => setHoveredBattle({ type: 'battle', title: bt.name, year: bt.year, parties: bt.parties, summary: bt.summary, source: bt.source })}
                           onMouseLeave={() => setHoveredBattle(null)}
                           style={{ cursor: 'pointer' }}
+                          tabIndex={0}
+                          role="button"
+                          aria-label={`Historic battle: ${bt.name}`}
                         >
+                          {isSelected && (
+                            <circle r="11" fill="none" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3,2" className="pin-pulse" />
+                          )}
                           <circle r={isSelected ? "8" : "6"} fill="#ef4444" fillOpacity={isSelected ? "0.95" : "0.8"} stroke="#fff" strokeWidth="1.2" />
                           <text
                             y="2"
@@ -412,10 +510,18 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
               {/* Interactive Floating Tooltip */}
               {tooltip && (
                 <div className="empires-floating-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
-                  <div className="eft-tag">{tooltip.data.type === 'battle' ? '⚔ BATTLE' : '★ IMPERIAL CAPITAL'}</div>
+                  <div className="eft-tag">
+                    {tooltip.data.type === 'battle' ? '⚔ HISTORIC BATTLE' :
+                     tooltip.data.type === 'capital' ? '★ IMPERIAL CAPITAL' :
+                     tooltip.data.type === 'territory' ? '🏛 EMPIRE REALM' :
+                     tooltip.data.type === 'neighbor' ? '🌍 FRONTIER REALM' :
+                     tooltip.data.type === 'route' ? '🧭 MARCH ROUTE' : 'INFO'}
+                  </div>
                   <strong className="eft-title">{tooltip.data.title}</strong>
                   {tooltip.data.year && <span className="eft-year"> ({tooltip.data.year})</span>}
+                  {tooltip.data.phase && <p className="eft-phase"><strong>Phase:</strong> {tooltip.data.phase}</p>}
                   {tooltip.data.parties && <p className="eft-parties"><strong>Forces:</strong> {tooltip.data.parties}</p>}
+                  {tooltip.data.role && <p className="eft-role"><strong>Role:</strong> {tooltip.data.role}</p>}
                   <p className="eft-desc">{tooltip.data.summary || tooltip.data.desc}</p>
                 </div>
               )}
@@ -489,6 +595,19 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
           {/* TAB 1: Overview & Epigraph */}
           {dossierTab === 'overview' && (
             <div className="dossier-tab-content">
+              {/* Capital Inspector Card if pinned */}
+              {selectedCapital && (
+                <div className="capital-alert-card">
+                  <div className="cac-header">
+                    <span className="cac-tag">★ IMPERIAL CAPITAL INSPECTOR</span>
+                    <button type="button" className="cac-close" onClick={() => setSelectedCapital(null)} aria-label="Close capital details">×</button>
+                  </div>
+                  <h4>{selectedCapital.name}</h4>
+                  <p><strong>Administrative Role:</strong> {selectedCapital.role}</p>
+                  {selectedCapital.desc && <p className="cac-desc">{selectedCapital.desc}</p>}
+                </div>
+              )}
+
               {/* Territorial Phase Summary */}
               <div className="dossier-box">
                 <h4>Territorial Phase: {activePhase.phase}</h4>

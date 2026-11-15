@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import sitesData from '../data/indus-civilisation.json';
 import { assetUrl } from '../config.js';
 import { HistoricalMapViewer } from './AncientEmpiresAtlas.jsx';
+import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import './IndusAtlas.css';
 
 const MAJOR_METROPOLIS_IDS = new Set(['rakhigarhi', 'mohenjo-daro', 'harappa', 'dholavira', 'ganweriwala', 'kalibangan', 'lothal', 'banawali']);
@@ -252,40 +253,52 @@ export default function IndusValleyAtlas() {
         >
           📜 Authentic Harappan Civilisation Atlas (Tapas Banerjee Cartography)
         </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={mapViewMode === 'script'}
+          className={`indus-mode-btn ${mapViewMode === 'script' ? 'active' : ''}`}
+          onClick={() => setMapViewMode('script')}
+        >
+          🔤 Script Decryption &amp; Concordance (400+ Signs)
+        </button>
       </div>
 
-      {/* Interactive Map & Site Dossier Split View */}
-      <div className="indus-workbench">
-        {/* SVG Interactive Map */}
-        <div
-          className="indus-map-container"
-          ref={mapStageRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={() => { setHoveredSiteId(null); setTooltip(null); }}
-        >
-          {mapViewMode === 'historical' ? (
-            <div className="authentic-historical-map-frame">
-              <div className="ahm-toolbar">
-                <span className="ahm-title">Cities of the Indus — the Harappan Civilisation · c. 3300–1300 BCE</span>
-                <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
-              </div>
-              <HistoricalMapViewer
-                svgUrl={assetUrl('maps/historical/indus-civilisation.svg')}
-                title="Cities of the Indus — the Harappan Civilisation"
-              />
-            </div>
-          ) : (
-            <>
-              <div className="indus-map-toolbar">
-                <span className="showing-sites-count">
-                  Showing {filteredSites.length} of {sites.length} Excavations
-                </span>
-                <div className="map-zoom-btns">
-                  <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
-                  <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
-                  <button type="button" onClick={() => handleRegionChange(REGION_PRESETS[0])} title="Reset View" aria-label="Reset view">⟲</button>
+      {mapViewMode === 'script' ? (
+        <IndusScriptDecoder />
+      ) : (
+        /* Interactive Map & Site Dossier Split View */
+        <div className="indus-workbench">
+          {/* SVG Interactive Map */}
+          <div
+            className="indus-map-container"
+            ref={mapStageRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={() => { setHoveredSiteId(null); setTooltip(null); }}
+          >
+            {mapViewMode === 'historical' ? (
+              <div className="authentic-historical-map-frame">
+                <div className="ahm-toolbar">
+                  <span className="ahm-title">Cities of the Indus — the Harappan Civilisation · c. 3300–1300 BCE</span>
+                  <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
                 </div>
+                <HistoricalMapViewer
+                  svgUrl={assetUrl('maps/historical/indus-civilisation.svg')}
+                  title="Cities of the Indus — the Harappan Civilisation"
+                />
               </div>
+            ) : (
+              <>
+                <div className="indus-map-toolbar">
+                  <span className="showing-sites-count">
+                    Showing {filteredSites.length} of {sites.length} Excavations
+                  </span>
+                  <div className="map-zoom-btns">
+                    <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
+                    <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
+                    <button type="button" onClick={() => handleRegionChange(REGION_PRESETS[0])} title="Reset View" aria-label="Reset view">⟲</button>
+                  </div>
+                </div>
 
           <svg
             className="indus-svg"
@@ -332,7 +345,21 @@ export default function IndusValleyAtlas() {
             {showRoutes && (
               <g className="indus-routes">
                 {tradeRoutes.map(route => (
-                  <g key={route.id} className="indus-route-group">
+                  <g
+                    key={route.id}
+                    className="indus-route-group"
+                    onMouseEnter={(e) => {
+                      if (!mapStageRef.current) return;
+                      const rect = mapStageRef.current.getBoundingClientRect();
+                      setTooltip({
+                        x: Math.max(10, Math.min(rect.width - 240, e.clientX - rect.left + 15)),
+                        y: Math.max(10, Math.min(rect.height - 150, e.clientY - rect.top - 10)),
+                        route,
+                      });
+                    }}
+                    onMouseLeave={() => setTooltip(null)}
+                    style={{ cursor: 'pointer' }}
+                  >
                     <path
                       d={route.path_d}
                       fill="none"
@@ -454,15 +481,28 @@ export default function IndusValleyAtlas() {
           {/* Interactive Floating Tooltip */}
           {tooltip && (
             <div className="indus-floating-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
-              <div className="ift-tag" style={{ color: CATEGORY_COLORS[tooltip.site.category] || '#fbbf24' }}>
-                {tooltip.site.badge || tooltip.site.category.replace(/_/g, ' ').toUpperCase()}
-              </div>
-              <strong className="ift-title">{tooltip.site.name}</strong>
-              {tooltip.site.name_hi && <span className="ift-hi"> ({tooltip.site.name_hi})</span>}
-              <p className="ift-loc">{tooltip.site.state_or_province}, {tooltip.site.country}</p>
-              {tooltip.site.area_hectares && (
-                <p className="ift-area"><strong>Area:</strong> {tooltip.site.area_hectares} hectares</p>
-              )}
+              {tooltip.site ? (
+                <>
+                  <div className="ift-tag" style={{ color: CATEGORY_COLORS[tooltip.site.category] || '#fbbf24' }}>
+                    {tooltip.site.badge || tooltip.site.category.replace(/_/g, ' ').toUpperCase()}
+                  </div>
+                  <strong className="ift-title">{tooltip.site.name}</strong>
+                  {tooltip.site.name_hi && <span className="ift-hi"> ({tooltip.site.name_hi})</span>}
+                  <p className="ift-loc">{tooltip.site.state_or_province}, {tooltip.site.country}</p>
+                  {tooltip.site.area_hectares && (
+                    <p className="ift-area"><strong>Area:</strong> {tooltip.site.area_hectares} hectares</p>
+                  )}
+                  {tooltip.site.period && <p className="ift-period"><strong>Era:</strong> {tooltip.site.period}</p>}
+                </>
+              ) : tooltip.route ? (
+                <>
+                  <div className="ift-tag" style={{ color: tooltip.route.type === 'maritime' ? '#38bdf8' : '#fbbf24' }}>
+                    {tooltip.route.type === 'maritime' ? '⚓ MARITIME SEA LANE' : '🐪 OVERLAND CARAVAN CORRIDOR'}
+                  </div>
+                  <strong className="ift-title">{tooltip.route.name}</strong>
+                  <p className="ift-loc">{tooltip.route.description || 'Ancient commercial trade corridor linking Harappan cities with Mesopotamia, Dilmun, and the Iranian plateau.'}</p>
+                </>
+              ) : null}
             </div>
           )}
 
@@ -586,6 +626,7 @@ export default function IndusValleyAtlas() {
           )}
         </aside>
       </div>
+      )}
     </div>
   );
 }

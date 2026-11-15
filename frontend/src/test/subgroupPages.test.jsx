@@ -36,6 +36,29 @@ describe('SubgroupArticle extensions', () => {
     expect(screen.getByText('All charts')).toBeInTheDocument();
     expect(screen.getByText('03')).toBeInTheDocument();
   });
+  it('renders lead without empty section clutter when emptySections is true', () => {
+    const { container } = render(<MemoryRouter><SubgroupArticle
+      headline="Indus Civilisation"
+      dek="Bronze Age Metropolis"
+      kicker="Indus Valley Civilisation · Excavations"
+      lead={<div data-testid="workbench">Interactive Workbench</div>}
+      sections={[]}
+      emptySections={true}
+      keyNumbers={[{ label: 'Sites', value: '49' }]}
+      verse={{ tradition: 'Hindu', lang: 'sa', text: 'सरस्वती', english: 'Sarasvati', source: 'Rigveda 7.95.2' }}
+      sources={['ASI Reports']}
+      chipSources
+    /></MemoryRouter>);
+    expect(screen.getByTestId('workbench')).toBeInTheDocument();
+    expect(screen.getByText('Indus Civilisation')).toBeInTheDocument();
+    expect(screen.getByText('Bronze Age Metropolis')).toBeInTheDocument();
+    expect(screen.getByText('Sites')).toBeInTheDocument();
+    expect(screen.getByText('49')).toBeInTheDocument();
+    expect(screen.getByText('सरस्वती')).toBeInTheDocument();
+    expect(container.querySelector('.subgroup-article-sections')).toBeNull();
+    expect(container.querySelector('.subgroup-article-index')).toBeNull();
+  });
+
 });
 
 describe('MapSelector', () => {
