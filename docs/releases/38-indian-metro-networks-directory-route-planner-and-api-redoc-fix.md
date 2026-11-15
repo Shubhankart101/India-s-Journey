@@ -37,10 +37,10 @@ Collating from official transit records and open-source benchmarks:
 
 ### Five Integrated Workbench Tabs
 
-#### Tab 1: 🗺️ Geographic Alignment ("Where It Actually Runs")
-- Spatial representation of the Delhi-NCR network mapped onto actual physical terrain.
-- **River Yamuna:** Rendered with authentic hydraulic curvature and all four rapid transit bridge crossings: Bridge #1 at Shastri Park (Red Line), Bridge #2 at Yamuna Bank (Blue Line), Bridge #3 at Nizamuddin (Pink Line), and Bridge #4 at Kalindi Kunj (Magenta Line).
-- **Physical Barriers & Corridors:** Najafgarh Drain, Ring Road (Mahatma Gandhi Marg), Outer Ring Road, and inter-state borders between Delhi, Haryana, and Uttar Pradesh.
+#### Tab 1: 🗺️ Geographic Alignment ("Where It Actually Runs") & High-Resolution Vector Canvas
+- **Spacious 1400×1100 Non-Colliding Layout (metrosafar.com/maps):** Expanded spatial coordinates for Delhi-NCR and across all 17 cities, completely eliminating text collisions and unreadable label overlaps in central interchanges (e.g. Rajiv Chowk, Mandi House, Central Secretariat, Hauz Khas, and Kashmere Gate each maintain 80–140px clearance with intelligent label anchors and contrast backing halos).
+- **Interactive Map Controls:** Station search bar with real-time text highlight, zoom (+ / − / ↺ reset), smooth click-and-drag panning, and one-click SVG map export.
+- **Physical Barriers & Corridors:** River Yamuna with all 4 rapid transit bridge crossings, Najafgarh Drain, Ring Road (Mahatma Gandhi Marg), Outer Ring Road, and inter-state borders.
 - **Phase 4 & Phase 5 Alignments:** Golden/Silver Line (Aerocity to Tughlakabad), Janakpuri West to RK Ashram, and Majlis Park to Maujpur.
 - **Namo Bharat RRTS:** Semi-high speed 160 km/h regional rapid transit corridor from Sarai Kale Khan through Anand Vihar to Meerut.
 

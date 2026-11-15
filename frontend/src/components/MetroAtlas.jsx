@@ -1,380 +1,379 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import metroData from '../data/metro-networks.json';
 import './MetroAtlas.css';
 
-// 17 Indian Metro Cities: Geographic ("Where It Actually Runs") & Schematic Transit Networks
+// 17 Indian Metro Cities: High-Resolution Spacious Transit Networks (metrosafar.com/maps)
 export const CITY_LAYOUTS = {
   'delhi-ncr': {
-    width: 720,
-    height: 640,
+    width: 1400,
+    height: 1100,
     waterways: [
       {
         id: 'yamuna',
         name: 'River Yamuna (यमुना नदी)',
-        path: 'M 470,10 Q 455,90 435,150 T 420,210 T 430,270 T 465,360 T 515,460 T 560,550 T 590,620',
+        path: 'M 880,20 Q 850,180 810,330 T 780,480 T 820,620 T 890,780 T 980,950 T 1060,1100',
         stroke: '#0284c7',
-        width: 16,
-        opacity: 0.65,
+        width: 32,
+        opacity: 0.55,
       },
       {
         id: 'najafgarh',
         name: 'Najafgarh Drain',
-        path: 'M 50,420 Q 140,360 210,300 T 350,210 T 435,150',
+        path: 'M 100,820 Q 260,700 380,580 T 640,410 T 810,330',
         stroke: '#0369a1',
-        width: 4,
-        opacity: 0.45,
+        width: 8,
+        opacity: 0.4,
       },
     ],
     roads: [
-      { id: 'ring-road', name: 'Ring Road (Mahatma Gandhi Marg)', path: 'M 270,210 C 390,200 425,245 410,345 C 390,430 250,425 205,330 Z', stroke: 'rgba(255,255,255,0.14)', width: 3.5 },
-      { id: 'outer-ring', name: 'Outer Ring Road', path: 'M 210,140 C 460,120 510,220 490,400 C 450,510 180,500 130,320 Z', stroke: 'rgba(255,255,255,0.09)', width: 2.5, dash: '4,4' },
-      { id: 'border-up', name: 'Delhi - Uttar Pradesh Border', path: 'M 500,80 L 480,220 L 455,360 L 550,500', stroke: '#f59e0b', width: 1.5, dash: '6,4', opacity: 0.45 },
-      { id: 'border-haryana', name: 'Delhi - Haryana Border', path: 'M 90,120 L 80,260 L 150,490 L 270,580', stroke: '#f59e0b', width: 1.5, dash: '6,4', opacity: 0.45 },
+      { id: 'ring-road', name: 'Ring Road (Mahatma Gandhi Marg)', path: 'M 540,420 C 760,400 840,490 810,690 C 770,860 480,850 420,660 Z', stroke: 'rgba(255,255,255,0.12)', width: 5 },
+      { id: 'outer-ring', name: 'Outer Ring Road', path: 'M 420,280 C 920,240 1020,440 980,800 C 900,1020 360,1000 260,640 Z', stroke: 'rgba(255,255,255,0.08)', width: 4, dash: '6,6' },
+      { id: 'border-up', name: 'Delhi - Uttar Pradesh Border', path: 'M 1000,140 L 960,440 L 910,720 L 1100,1000', stroke: '#f59e0b', width: 2, dash: '8,6', opacity: 0.4 },
+      { id: 'border-haryana', name: 'Delhi - Haryana Border', path: 'M 180,240 L 160,520 L 300,980 L 540,1100', stroke: '#f59e0b', width: 2, dash: '8,6', opacity: 0.4 },
     ],
     geoLines: [
-      { id: 'red', name: 'Red Line (Line 1)', color: '#dc2626', path: 'M 110,185 L 230,185 Q 295,195 340,215 L 420,210 L 475,210 L 560,180 L 650,160', status: 'Operational' },
-      { id: 'yellow', name: 'Yellow Line (Line 2)', color: '#eab308', path: 'M 370,50 L 370,130 Q 375,170 380,210 L 380,270 L 380,305 L 360,380 Q 335,460 290,530 L 250,580', status: 'Operational' },
-      { id: 'blue', name: 'Blue Line (Line 3 & 4)', color: '#2563eb', path: 'M 100,450 Q 185,385 255,340 L 380,270 L 440,275 L 470,320 L 570,335 L 660,335', status: 'Operational' },
-      { id: 'blue-branch', name: 'Blue Line Vaishali Branch', color: '#2563eb', path: 'M 440,275 L 500,245 L 580,240', status: 'Operational' },
-      { id: 'green', name: 'Green Line (Line 5)', color: '#16a34a', path: 'M 60,250 L 180,250 Q 250,265 305,280 L 340,285', status: 'Operational' },
-      { id: 'violet', name: 'Violet Line (Line 6)', color: '#7c3aed', path: 'M 380,210 L 420,240 L 420,325 Q 430,410 450,495 L 460,565', status: 'Operational' },
-      { id: 'pink', name: 'Pink Line (Ring Line 7)', color: '#ec4899', path: 'M 310,135 Q 420,130 490,210 L 515,290 L 475,385 Q 415,450 350,450 L 245,435 Q 185,380 185,280 L 205,205 Q 250,145 310,135 Z', status: 'Operational Ring' },
-      { id: 'magenta', name: 'Magenta Line (Line 8)', color: '#d946ef', path: 'M 150,370 Q 235,425 340,425 L 440,425 Q 495,390 535,365 L 570,335', status: 'Operational' },
-      { id: 'orange', name: 'Airport Express (Orange)', color: '#ea580c', path: 'M 380,255 L 330,300 L 230,390 L 170,425 L 135,440', status: 'Operational' },
-      { id: 'rapid', name: 'Rapid Metro Gurugram', color: '#64748b', path: 'M 290,530 L 315,510 L 340,530 L 335,570 L 295,575 L 290,530', status: 'Operational Loop' },
-      { id: 'aqua', name: 'Noida Aqua Line', color: '#06b6d4', path: 'M 570,345 L 585,400 L 610,470 L 635,540 L 660,570', status: 'Operational' },
-      { id: 'silver-p4', name: 'Phase 4 Golden/Silver Alignment', color: '#d97706', path: 'M 230,390 L 285,425 L 365,450 L 445,490', status: 'Under Construction (DMRC Phase 4)', dash: '5,5' },
-      { id: 'rrts', name: 'Namo Bharat Regional Rapid Transit', color: '#991b1b', path: 'M 450,330 L 505,280 L 560,215 L 620,130 L 670,40', status: 'Semi-High Speed RRTS (160 km/h)' },
+      { id: 'red', name: 'Red Line (Line 1)', color: '#dc2626', path: 'M 260,290 L 460,290 Q 600,310 740,330 L 940,330 L 1220,270', status: 'Operational' },
+      { id: 'yellow', name: 'Yellow Line (Line 2)', color: '#eab308', path: 'M 680,100 L 680,230 L 740,330 L 680,430 L 680,520 L 680,610 L 640,710 L 600,800 Q 550,900 500,960 L 420,1030', status: 'Operational' },
+      { id: 'blue', name: 'Blue Line (Line 3 & 4)', color: '#2563eb', path: 'M 180,840 Q 280,740 360,650 L 680,520 L 820,520 L 960,610 L 1100,650 L 1280,650', status: 'Operational' },
+      { id: 'blue-branch', name: 'Blue Line Vaishali Branch', color: '#2563eb', path: 'M 820,520 L 940,490 L 1060,480 L 1160,440', status: 'Operational' },
+      { id: 'violet', name: 'Violet Line (Line 6)', color: '#7c3aed', path: 'M 740,330 L 820,520 L 680,610 L 780,720 L 860,800 L 880,950', status: 'Operational' },
+      { id: 'pink', name: 'Pink Line (Ring Line 7)', color: '#ec4899', path: 'M 680,230 Q 820,220 940,330 L 1060,480 L 960,610 Q 880,700 860,680 L 780,720 L 640,710 Q 480,700 460,650 L 360,650 Q 300,520 460,290 L 680,230 Z', status: 'Operational Ring' },
+      { id: 'magenta', name: 'Magenta Line (Line 8)', color: '#d946ef', path: 'M 360,650 Q 460,760 600,800 L 860,800 Q 980,740 1100,650', status: 'Operational' },
+      { id: 'orange', name: 'Airport Express (Orange)', color: '#ea580c', path: 'M 680,430 L 560,540 L 420,680 L 320,800 L 180,840', status: 'Operational' },
+      { id: 'rapid', name: 'Rapid Metro Gurugram', color: '#64748b', path: 'M 500,960 L 560,940 L 580,1020 L 520,1040 L 500,960', status: 'Operational Loop' },
+      { id: 'aqua', name: 'Noida Aqua Line', color: '#06b6d4', path: 'M 1100,650 L 1140,760 L 1200,880 L 1280,1020', status: 'Operational' },
+      { id: 'silver-p4', name: 'Phase 4 Golden/Silver Alignment', color: '#d97706', path: 'M 320,800 L 460,850 L 620,890 L 860,950', status: 'Under Construction (Phase 4)', dash: '6,6' },
+      { id: 'rrts', name: 'Namo Bharat Regional Rapid Transit', color: '#991b1b', path: 'M 860,680 L 1060,480 L 1220,200 L 1340,60', status: 'Semi-High Speed RRTS (160 km/h)' },
     ],
     stations: [
-      { name: 'Kashmere Gate', hindi: 'कश्मीरी गेट', x: 380, y: 210, lines: ['Red Line (Line 1)', 'Yellow Line (Line 2)', 'Violet Line (Line 6)'], interchange: true, footfall: '350,000', lat: 28.6675, lng: 77.2285, connections: ['Rithala', 'Netaji Subhash Place', 'Welcome', 'Samaypur Badli', 'Azadpur', 'New Delhi Railway Station', 'Mandi House', 'Central Secretariat'] },
-      { name: 'Rajiv Chowk (CP)', hindi: 'राजीव चौक', x: 380, y: 270, lines: ['Yellow Line (Line 2)', 'Blue Line (Line 3 & 4)'], interchange: true, footfall: '500,000', lat: 28.6328, lng: 77.2195, connections: ['New Delhi Railway Station', 'Central Secretariat', 'Janakpuri West', 'Mandi House'] },
-      { name: 'New Delhi Railway Station', hindi: 'नई दिल्ली', x: 380, y: 245, lines: ['Yellow Line (Line 2)', 'Airport Express (Orange)'], interchange: true, footfall: '290,000', lat: 28.6431, lng: 77.2223, connections: ['Kashmere Gate', 'Rajiv Chowk (CP)', 'IGI Airport T3'] },
-      { name: 'Central Secretariat', hindi: 'केंद्रीय सचिवालय', x: 380, y: 305, lines: ['Yellow Line (Line 2)', 'Violet Line (Line 6)'], interchange: true, footfall: '210,000', lat: 28.6146, lng: 77.2119, connections: ['Rajiv Chowk (CP)', 'Dilli Haat INA', 'Mandi House', 'Lajpat Nagar'] },
-      { name: 'Mandi House', hindi: 'मंडी हाउस', x: 420, y: 270, lines: ['Blue Line (Line 3 & 4)', 'Violet Line (Line 6)'], interchange: true, footfall: '170,000', lat: 28.6258, lng: 77.2343, connections: ['Rajiv Chowk (CP)', 'Central Secretariat', 'Kashmere Gate', 'Mayur Vihar Phase 1', 'Anand Vihar ISBT'] },
-      { name: 'Dilli Haat INA', hindi: 'दिल्ली हाट आईएनए', x: 370, y: 350, lines: ['Yellow Line (Line 2)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '160,000', lat: 28.5744, lng: 77.2096, connections: ['Central Secretariat', 'Hauz Khas', 'Lajpat Nagar', 'Netaji Subhash Place'] },
-      { name: 'Hauz Khas', hindi: 'हौज़ खास', x: 360, y: 380, lines: ['Yellow Line (Line 2)', 'Magenta Line (Line 8)'], interchange: true, footfall: '280,000', lat: 28.5432, lng: 77.2066, connections: ['Dilli Haat INA', 'Sikanderpur', 'Janakpuri West', 'Kalkaji Mandir'] },
-      { name: 'Lajpat Nagar', hindi: 'लाजपत नगर', x: 420, y: 355, lines: ['Violet Line (Line 6)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '190,000', lat: 28.5708, lng: 77.2378, connections: ['Central Secretariat', 'Kalkaji Mandir', 'Dilli Haat INA', 'Sarai Kale Khan'] },
-      { name: 'Kalkaji Mandir', hindi: 'कालकाजी मंदिर', x: 440, y: 405, lines: ['Violet Line (Line 6)', 'Magenta Line (Line 8)'], interchange: true, footfall: '185,000', lat: 28.5492, lng: 77.2581, connections: ['Lajpat Nagar', 'Hauz Khas', 'Botanical Garden'] },
-      { name: 'Botanical Garden', hindi: 'बॉटनिकल गार्डन', x: 570, y: 335, lines: ['Blue Line (Line 3 & 4)', 'Magenta Line (Line 8)'], interchange: true, footfall: '220,000', lat: 28.5642, lng: 77.3342, connections: ['Mayur Vihar Phase 1', 'Noida Electronic City', 'Kalkaji Mandir', 'Depot Greater Noida'] },
-      { name: 'Mayur Vihar Phase 1', hindi: 'मयूर विहार फेस 1', x: 500, y: 320, lines: ['Blue Line (Line 3 & 4)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '145,000', lat: 28.6045, lng: 77.2945, connections: ['Mandi House', 'Botanical Garden', 'Anand Vihar ISBT', 'Sarai Kale Khan'] },
-      { name: 'Anand Vihar ISBT', hindi: 'आनंद विहार', x: 540, y: 250, lines: ['Blue Line (Line 3 & 4)', 'Pink Line (Ring Line 7)', 'Namo Bharat RRTS'], interchange: true, footfall: '260,000', lat: 28.6469, lng: 77.3161, connections: ['Mandi House', 'Vaishali', 'Mayur Vihar Phase 1', 'Welcome', 'Sarai Kale Khan', 'Ghaziabad RRTS'] },
-      { name: 'Sarai Kale Khan', hindi: 'सराय काले खां', x: 450, y: 330, lines: ['Pink Line (Ring Line 7)', 'Namo Bharat RRTS'], interchange: true, footfall: '180,000', lat: 28.5908, lng: 77.2569, connections: ['Mayur Vihar Phase 1', 'Lajpat Nagar', 'Anand Vihar ISBT'] },
-      { name: 'Netaji Subhash Place', hindi: 'नेताजी सुभाष प्लेस', x: 230, y: 185, lines: ['Red Line (Line 1)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '175,000', lat: 28.6953, lng: 77.1528, connections: ['Rithala', 'Kashmere Gate', 'Azadpur', 'Dilli Haat INA'] },
-      { name: 'Azadpur', hindi: 'आज़ादपुर', x: 310, y: 135, lines: ['Yellow Line (Line 2)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '155,000', lat: 28.7067, lng: 77.1783, connections: ['Samaypur Badli', 'Kashmere Gate', 'Netaji Subhash Place', 'Welcome'] },
-      { name: 'Welcome', hindi: 'वेलकम', x: 475, y: 210, lines: ['Red Line (Line 1)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '160,000', lat: 28.6722, lng: 77.2778, connections: ['Kashmere Gate', 'Shaheed Sthal (Ghaziabad)', 'Azadpur', 'Anand Vihar ISBT'] },
-      { name: 'Janakpuri West', hindi: 'जनकपुरी पश्चिम', x: 220, y: 340, lines: ['Blue Line (Line 3 & 4)', 'Magenta Line (Line 8)'], interchange: true, footfall: '150,000', lat: 28.6294, lng: 77.0778, connections: ['Dwarka Sector 21', 'Rajiv Chowk (CP)', 'Hauz Khas'] },
-      { name: 'Dwarka Sector 21', hindi: 'द्वारका सेक्टर 21', x: 100, y: 450, lines: ['Blue Line (Line 3 & 4)', 'Airport Express (Orange)'], interchange: true, footfall: '125,000', lat: 28.5522, lng: 77.0583, connections: ['Janakpuri West', 'IGI Airport T3'] },
-      { name: 'IGI Airport T3', hindi: 'आईजीआई एयरपोर्ट टी3', x: 170, y: 425, lines: ['Airport Express (Orange)'], interchange: false, footfall: '75,000', lat: 28.5562, lng: 77.0863, connections: ['New Delhi Railway Station', 'Dwarka Sector 21'] },
-      { name: 'Sikanderpur', hindi: 'सिकंदरपुर', x: 290, y: 530, lines: ['Yellow Line (Line 2)', 'Rapid Metro Gurugram'], interchange: true, footfall: '130,000', lat: 28.4819, lng: 77.0928, connections: ['Hauz Khas', 'Millennium City Centre Gurugram', 'Cyber City Gurugram'] },
-      { name: 'Millennium City Centre Gurugram', hindi: 'मिलेनियम सिटी सेंटर', x: 250, y: 580, lines: ['Yellow Line (Line 2)'], interchange: false, footfall: '140,000', lat: 28.4593, lng: 77.0725, connections: ['Sikanderpur'] },
-      { name: 'Rithala', hindi: 'रिठाला', x: 110, y: 185, lines: ['Red Line (Line 1)'], interchange: false, footfall: '90,000', lat: 28.7206, lng: 77.1072, connections: ['Netaji Subhash Place'] },
-      { name: 'Shaheed Sthal (Ghaziabad)', hindi: 'शहीद स्थल गाज़ियाबाद', x: 650, y: 160, lines: ['Red Line (Line 1)'], interchange: false, footfall: '105,000', lat: 28.6719, lng: 77.4189, connections: ['Welcome'] },
-      { name: 'Samaypur Badli', hindi: 'समयपुर बादली', x: 370, y: 50, lines: ['Yellow Line (Line 2)'], interchange: false, footfall: '85,000', lat: 28.7456, lng: 77.1358, connections: ['Azadpur'] },
-      { name: 'Noida Electronic City', hindi: 'नोएडा इलेक्ट्रॉनिक सिटी', x: 660, y: 335, lines: ['Blue Line (Line 3 & 4)'], interchange: false, footfall: '110,000', lat: 28.6272, lng: 77.3725, connections: ['Botanical Garden'] },
-      { name: 'Vaishali', hindi: 'वैशाली', x: 580, y: 240, lines: ['Blue Line (Line 3 & 4)'], interchange: false, footfall: '80,000', lat: 28.6497, lng: 77.3397, connections: ['Anand Vihar ISBT'] },
-      { name: 'Cyber City Gurugram', hindi: 'साइबर सिटी', x: 335, y: 570, lines: ['Rapid Metro Gurugram'], interchange: false, footfall: '95,000', lat: 28.4958, lng: 77.0886, connections: ['Sikanderpur'] },
-      { name: 'Depot Greater Noida', hindi: 'डिपो स्टेशन ग्रेटर नोएडा', x: 660, y: 570, lines: ['Noida Aqua Line'], interchange: false, footfall: '25,000', lat: 28.4358, lng: 77.5269, connections: ['Botanical Garden'] },
-      { name: 'Ghaziabad RRTS', hindi: 'गाज़ियाबाद नमो भारत', x: 620, y: 130, lines: ['Namo Bharat RRTS'], interchange: false, footfall: '65,000', lat: 28.6658, lng: 77.4372, connections: ['Anand Vihar ISBT'] },
+      { name: 'Kashmere Gate', hindi: 'कश्मीरी गेट', x: 740, y: 330, lines: ['Red Line (Line 1)', 'Yellow Line (Line 2)', 'Violet Line (Line 6)'], interchange: true, footfall: '350,000', lat: 28.6675, lng: 77.2285, anchor: 'start', dx: 18, dy: -6, connections: ['Rithala', 'Netaji Subhash Place', 'Welcome', 'Samaypur Badli', 'Azadpur', 'New Delhi Railway Station', 'Mandi House', 'Central Secretariat'] },
+      { name: 'New Delhi Railway Station', hindi: 'नई दिल्ली', x: 680, y: 430, lines: ['Yellow Line (Line 2)', 'Airport Express (Orange)'], interchange: true, footfall: '290,000', lat: 28.6431, lng: 77.2223, anchor: 'end', dx: -18, dy: 4, connections: ['Kashmere Gate', 'Rajiv Chowk (CP)', 'IGI Airport T3'] },
+      { name: 'Rajiv Chowk (CP)', hindi: 'राजीव चौक', x: 680, y: 520, lines: ['Yellow Line (Line 2)', 'Blue Line (Line 3 & 4)'], interchange: true, footfall: '500,000', lat: 28.6328, lng: 77.2195, anchor: 'end', dx: -18, dy: 4, connections: ['New Delhi Railway Station', 'Central Secretariat', 'Janakpuri West', 'Mandi House'] },
+      { name: 'Mandi House', hindi: 'मंडी हाउस', x: 820, y: 520, lines: ['Blue Line (Line 3 & 4)', 'Violet Line (Line 6)'], interchange: true, footfall: '170,000', lat: 28.6258, lng: 77.2343, anchor: 'start', dx: 18, dy: 4, connections: ['Rajiv Chowk (CP)', 'Central Secretariat', 'Kashmere Gate', 'Mayur Vihar Phase 1', 'Anand Vihar ISBT'] },
+      { name: 'Central Secretariat', hindi: 'केंद्रीय सचिवालय', x: 680, y: 610, lines: ['Yellow Line (Line 2)', 'Violet Line (Line 6)'], interchange: true, footfall: '210,000', lat: 28.6146, lng: 77.2119, anchor: 'end', dx: -18, dy: 4, connections: ['Rajiv Chowk (CP)', 'Dilli Haat INA', 'Mandi House', 'Lajpat Nagar'] },
+      { name: 'Dilli Haat INA', hindi: 'दिल्ली हाट आईएनए', x: 640, y: 710, lines: ['Yellow Line (Line 2)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '160,000', lat: 28.5744, lng: 77.2096, anchor: 'end', dx: -18, dy: 4, connections: ['Central Secretariat', 'Hauz Khas', 'Lajpat Nagar', 'Netaji Subhash Place'] },
+      { name: 'Lajpat Nagar', hindi: 'लाजपत नगर', x: 780, y: 720, lines: ['Violet Line (Line 6)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '190,000', lat: 28.5708, lng: 77.2378, anchor: 'start', dx: 18, dy: 4, connections: ['Central Secretariat', 'Kalkaji Mandir', 'Dilli Haat INA', 'Sarai Kale Khan'] },
+      { name: 'Hauz Khas', hindi: 'हौज़ खास', x: 600, y: 800, lines: ['Yellow Line (Line 2)', 'Magenta Line (Line 8)'], interchange: true, footfall: '280,000', lat: 28.5432, lng: 77.2066, anchor: 'end', dx: -18, dy: 4, connections: ['Dilli Haat INA', 'Sikanderpur', 'Janakpuri West', 'Kalkaji Mandir'] },
+      { name: 'Kalkaji Mandir', hindi: 'कालकाजी मंदिर', x: 860, y: 800, lines: ['Violet Line (Line 6)', 'Magenta Line (Line 8)'], interchange: true, footfall: '185,000', lat: 28.5492, lng: 77.2581, anchor: 'start', dx: 18, dy: 4, connections: ['Lajpat Nagar', 'Hauz Khas', 'Botanical Garden'] },
+      { name: 'Botanical Garden', hindi: 'बॉटनिकल गार्डन', x: 1100, y: 650, lines: ['Blue Line (Line 3 & 4)', 'Magenta Line (Line 8)'], interchange: true, footfall: '220,000', lat: 28.5642, lng: 77.3342, anchor: 'start', dx: 18, dy: 4, connections: ['Mayur Vihar Phase 1', 'Noida Electronic City', 'Kalkaji Mandir', 'Depot Greater Noida'] },
+      { name: 'Mayur Vihar Phase 1', hindi: 'मयूर विहार फेस 1', x: 960, y: 610, lines: ['Blue Line (Line 3 & 4)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '145,000', lat: 28.6045, lng: 77.2945, anchor: 'start', dx: 18, dy: 4, connections: ['Mandi House', 'Botanical Garden', 'Anand Vihar ISBT', 'Sarai Kale Khan'] },
+      { name: 'Sarai Kale Khan', hindi: 'सराय काले खां', x: 860, y: 680, lines: ['Pink Line (Ring Line 7)', 'Namo Bharat RRTS'], interchange: true, footfall: '180,000', lat: 28.5908, lng: 77.2569, anchor: 'start', dx: 18, dy: 14, connections: ['Mayur Vihar Phase 1', 'Lajpat Nagar', 'Anand Vihar ISBT'] },
+      { name: 'Anand Vihar ISBT', hindi: 'आनंद विहार', x: 1060, y: 480, lines: ['Blue Line (Line 3 & 4)', 'Pink Line (Ring Line 7)', 'Namo Bharat RRTS'], interchange: true, footfall: '260,000', lat: 28.6469, lng: 77.3161, anchor: 'start', dx: 18, dy: 4, connections: ['Mandi House', 'Vaishali', 'Mayur Vihar Phase 1', 'Welcome', 'Sarai Kale Khan', 'Ghaziabad RRTS'] },
+      { name: 'Netaji Subhash Place', hindi: 'नेताजी सुभाष प्लेस', x: 460, y: 290, lines: ['Red Line (Line 1)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '175,000', lat: 28.6953, lng: 77.1528, anchor: 'end', dx: -18, dy: 4, connections: ['Rithala', 'Kashmere Gate', 'Azadpur', 'Dilli Haat INA'] },
+      { name: 'Azadpur', hindi: 'आज़ादपुर', x: 680, y: 230, lines: ['Yellow Line (Line 2)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '155,000', lat: 28.7067, lng: 77.1783, anchor: 'start', dx: 18, dy: 4, connections: ['Samaypur Badli', 'Kashmere Gate', 'Netaji Subhash Place', 'Welcome'] },
+      { name: 'Welcome', hindi: 'वेलकम', x: 940, y: 330, lines: ['Red Line (Line 1)', 'Pink Line (Ring Line 7)'], interchange: true, footfall: '160,000', lat: 28.6722, lng: 77.2778, anchor: 'start', dx: 18, dy: 4, connections: ['Kashmere Gate', 'Shaheed Sthal (Ghaziabad)', 'Azadpur', 'Anand Vihar ISBT'] },
+      { name: 'Janakpuri West', hindi: 'जनकपुरी पश्चिम', x: 360, y: 650, lines: ['Blue Line (Line 3 & 4)', 'Magenta Line (Line 8)'], interchange: true, footfall: '150,000', lat: 28.6294, lng: 77.0778, anchor: 'end', dx: -18, dy: 4, connections: ['Dwarka Sector 21', 'Rajiv Chowk (CP)', 'Hauz Khas'] },
+      { name: 'Dwarka Sector 21', hindi: 'द्वारका सेक्टर 21', x: 180, y: 840, lines: ['Blue Line (Line 3 & 4)', 'Airport Express (Orange)'], interchange: true, footfall: '125,000', lat: 28.5522, lng: 77.0583, anchor: 'end', dx: -18, dy: 4, connections: ['Janakpuri West', 'IGI Airport T3'] },
+      { name: 'IGI Airport T3', hindi: 'आईजीआई एयरपोर्ट टी3', x: 320, y: 800, lines: ['Airport Express (Orange)'], interchange: false, footfall: '75,000', lat: 28.5562, lng: 77.0863, anchor: 'middle', dx: 0, dy: 22, connections: ['New Delhi Railway Station', 'Dwarka Sector 21'] },
+      { name: 'Sikanderpur', hindi: 'सिकंदरपुर', x: 500, y: 960, lines: ['Yellow Line (Line 2)', 'Rapid Metro Gurugram'], interchange: true, footfall: '130,000', lat: 28.4819, lng: 77.0928, anchor: 'end', dx: -18, dy: 4, connections: ['Hauz Khas', 'Millennium City Centre Gurugram', 'Cyber City Gurugram'] },
+      { name: 'Millennium City Centre Gurugram', hindi: 'मिलेनियम सिटी सेंटर', x: 420, y: 1030, lines: ['Yellow Line (Line 2)'], interchange: false, footfall: '140,000', lat: 28.4593, lng: 77.0725, anchor: 'end', dx: -18, dy: 4, connections: ['Sikanderpur'] },
+      { name: 'Rithala', hindi: 'रिठाला', x: 260, y: 290, lines: ['Red Line (Line 1)'], interchange: false, footfall: '90,000', lat: 28.7206, lng: 77.1072, anchor: 'end', dx: -18, dy: 4, connections: ['Netaji Subhash Place'] },
+      { name: 'Shaheed Sthal (Ghaziabad)', hindi: 'शहीद स्थल गाज़ियाबाद', x: 1220, y: 270, lines: ['Red Line (Line 1)'], interchange: false, footfall: '105,000', lat: 28.6719, lng: 77.4189, anchor: 'start', dx: 18, dy: 4, connections: ['Welcome'] },
+      { name: 'Samaypur Badli', hindi: 'समयपुर बादली', x: 680, y: 100, lines: ['Yellow Line (Line 2)'], interchange: false, footfall: '85,000', lat: 28.7456, lng: 77.1358, anchor: 'start', dx: 18, dy: 4, connections: ['Azadpur'] },
+      { name: 'Noida Electronic City', hindi: 'नोएडा इलेक्ट्रॉनिक सिटी', x: 1280, y: 650, lines: ['Blue Line (Line 3 & 4)'], interchange: false, footfall: '110,000', lat: 28.6272, lng: 77.3725, anchor: 'start', dx: 18, dy: 4, connections: ['Botanical Garden'] },
+      { name: 'Vaishali', hindi: 'वैशाली', x: 1160, y: 440, lines: ['Blue Line (Line 3 & 4)'], interchange: false, footfall: '80,000', lat: 28.6497, lng: 77.3397, anchor: 'start', dx: 18, dy: 4, connections: ['Anand Vihar ISBT'] },
+      { name: 'Cyber City Gurugram', hindi: 'साइबर सिटी', x: 580, y: 1020, lines: ['Rapid Metro Gurugram'], interchange: false, footfall: '95,000', lat: 28.4958, lng: 77.0886, anchor: 'start', dx: 18, dy: 4, connections: ['Sikanderpur'] },
+      { name: 'Depot Greater Noida', hindi: 'डिपो स्टेशन ग्रेटर नोएडा', x: 1280, y: 1020, lines: ['Noida Aqua Line'], interchange: false, footfall: '25,000', lat: 28.4358, lng: 77.5269, anchor: 'start', dx: 18, dy: 4, connections: ['Botanical Garden'] },
+      { name: 'Ghaziabad RRTS', hindi: 'गाज़ियाबाद नमो भारत', x: 1220, y: 200, lines: ['Namo Bharat RRTS'], interchange: false, footfall: '65,000', lat: 28.6658, lng: 77.4372, anchor: 'start', dx: 18, dy: 4, connections: ['Anand Vihar ISBT'] },
     ],
   },
   'mumbai': {
-    width: 620,
-    height: 560,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'arabian-sea', name: 'Arabian Sea Coast', path: 'M 110,20 Q 95,200 130,380 T 170,540', stroke: '#0284c7', width: 22, opacity: 0.5 },
-      { id: 'thane-creek', name: 'Thane Creek Basin', path: 'M 510,40 Q 480,180 450,320 T 400,500', stroke: '#0284c7', width: 15, opacity: 0.5 },
+      { id: 'arabian-sea', name: 'Arabian Sea Coast', path: 'M 160,30 Q 140,320 200,600 T 260,920', stroke: '#0284c7', width: 36, opacity: 0.5 },
+      { id: 'thane-creek', name: 'Thane Creek Basin', path: 'M 1000,50 Q 940,300 880,550 T 780,880', stroke: '#0284c7', width: 28, opacity: 0.5 },
     ],
     roads: [
-      { id: 'weh', name: 'Western Express Highway (WEH)', path: 'M 280,40 L 275,230 L 270,330 L 230,480', stroke: 'rgba(255,255,255,0.12)', width: 3 },
+      { id: 'weh', name: 'Western Express Highway (WEH)', path: 'M 540,50 L 530,380 L 520,560 L 440,820', stroke: 'rgba(255,255,255,0.12)', width: 4 },
     ],
     geoLines: [
-      { id: 'line1', name: 'Line 1 (Blue Corridor)', color: '#0284c7', path: 'M 140,230 L 275,230 L 450,230', status: 'Operational' },
-      { id: 'line2a', name: 'Line 2A (Yellow Corridor)', color: '#facc15', path: 'M 220,50 L 175,140 L 140,230 L 150,290', status: 'Operational' },
-      { id: 'line7', name: 'Line 7 (Red Corridor)', color: '#ef4444', path: 'M 285,50 L 278,140 L 275,230 L 270,290', status: 'Operational' },
-      { id: 'line3', name: 'Line 3 (Aqua Underground)', color: '#06b6d4', path: 'M 285,160 L 270,230 L 275,320 L 250,420 L 210,520', status: 'Operational' },
+      { id: 'line1', name: 'Line 1 (Blue Corridor)', color: '#0284c7', path: 'M 240,380 L 530,380 L 880,380', status: 'Operational' },
+      { id: 'line2a', name: 'Line 2A (Yellow Corridor)', color: '#facc15', path: 'M 420,80 L 330,220 L 240,380 L 260,480', status: 'Operational' },
+      { id: 'line7', name: 'Line 7 (Red Corridor)', color: '#ef4444', path: 'M 550,80 L 538,220 L 530,380 L 520,480', status: 'Operational' },
+      { id: 'line3', name: 'Line 3 (Aqua Underground)', color: '#06b6d4', path: 'M 550,260 L 520,380 L 530,540 L 480,720 L 400,880', status: 'Operational' },
     ],
     stations: [
-      { name: 'Versova', hindi: 'वर्सोवा', x: 140, y: 230, lines: ['Line 1 (Blue Corridor)'], interchange: false, footfall: '65,000', lat: 19.1311, lng: 72.8197, connections: ['DN Nagar'] },
-      { name: 'DN Nagar', hindi: 'डी एन नगर', x: 190, y: 230, lines: ['Line 1 (Blue Corridor)', 'Line 2A (Yellow Corridor)'], interchange: true, footfall: '140,000', lat: 19.1306, lng: 72.8319, connections: ['Versova', 'Andheri / WEH', 'Dahisar West'] },
-      { name: 'Andheri / WEH', hindi: 'अंधेरी वेस्टर्न एक्सप्रेस', x: 275, y: 230, lines: ['Line 1 (Blue Corridor)', 'Line 7 (Red Corridor)'], interchange: true, footfall: '240,000', lat: 19.1197, lng: 72.8464, connections: ['DN Nagar', 'Ghatkopar', 'Dahisar East', 'CSMIA Terminal 2'] },
-      { name: 'Ghatkopar', hindi: 'घाटकोपर', x: 450, y: 230, lines: ['Line 1 (Blue Corridor)'], interchange: true, footfall: '185,000', lat: 19.0864, lng: 72.9081, connections: ['Andheri / WEH'] },
-      { name: 'Dahisar East', hindi: 'दहिसर पूर्व', x: 285, y: 50, lines: ['Line 7 (Red Corridor)'], interchange: false, footfall: '70,000', lat: 19.2567, lng: 72.8606, connections: ['Andheri / WEH'] },
-      { name: 'Dahisar West', hindi: 'दहिसर पश्चिम', x: 220, y: 50, lines: ['Line 2A (Yellow Corridor)'], interchange: false, footfall: '65,000', lat: 19.2558, lng: 72.8533, connections: ['DN Nagar'] },
-      { name: 'CSMIA Terminal 2', hindi: 'छत्रपति शिवाजी एयरपोर्ट', x: 285, y: 160, lines: ['Line 3 (Aqua Underground)'], interchange: true, footfall: '80,000', lat: 19.0974, lng: 72.8744, connections: ['Andheri / WEH', 'Bandra-Kurla Complex (BKC)'] },
-      { name: 'Bandra-Kurla Complex (BKC)', hindi: 'बीकेसी', x: 275, y: 320, lines: ['Line 3 (Aqua Underground)'], interchange: true, footfall: '110,000', lat: 19.0667, lng: 72.8667, connections: ['CSMIA Terminal 2', 'Cuffe Parade'] },
-      { name: 'Cuffe Parade', hindi: 'कफ परेड', x: 210, y: 520, lines: ['Line 3 (Aqua Underground)'], interchange: false, footfall: '45,000', lat: 18.9167, lng: 72.8167, connections: ['Bandra-Kurla Complex (BKC)'] },
+      { name: 'Versova', hindi: 'वर्सोवा', x: 240, y: 380, lines: ['Line 1 (Blue Corridor)'], interchange: false, footfall: '65,000', lat: 19.1311, lng: 72.8197, anchor: 'end', dx: -18, dy: 4, connections: ['DN Nagar'] },
+      { name: 'DN Nagar', hindi: 'डी एन नगर', x: 350, y: 380, lines: ['Line 1 (Blue Corridor)', 'Line 2A (Yellow Corridor)'], interchange: true, footfall: '140,000', lat: 19.1306, lng: 72.8319, anchor: 'middle', dx: 0, dy: -18, connections: ['Versova', 'Andheri / WEH', 'Dahisar West'] },
+      { name: 'Andheri / WEH', hindi: 'अंधेरी वेस्टर्न एक्सप्रेस', x: 530, y: 380, lines: ['Line 1 (Blue Corridor)', 'Line 7 (Red Corridor)'], interchange: true, footfall: '240,000', lat: 19.1197, lng: 72.8464, anchor: 'start', dx: 18, dy: 4, connections: ['DN Nagar', 'Ghatkopar', 'Dahisar East', 'CSMIA Terminal 2'] },
+      { name: 'Ghatkopar', hindi: 'घाटकोपर', x: 880, y: 380, lines: ['Line 1 (Blue Corridor)'], interchange: true, footfall: '185,000', lat: 19.0864, lng: 72.9081, anchor: 'start', dx: 18, dy: 4, connections: ['Andheri / WEH'] },
+      { name: 'Dahisar East', hindi: 'दहिसर पूर्व', x: 550, y: 80, lines: ['Line 7 (Red Corridor)'], interchange: false, footfall: '70,000', lat: 19.2567, lng: 72.8606, anchor: 'start', dx: 18, dy: 4, connections: ['Andheri / WEH'] },
+      { name: 'Dahisar West', hindi: 'दहिसर पश्चिम', x: 420, y: 80, lines: ['Line 2A (Yellow Corridor)'], interchange: false, footfall: '65,000', lat: 19.2558, lng: 72.8533, anchor: 'end', dx: -18, dy: 4, connections: ['DN Nagar'] },
+      { name: 'CSMIA Terminal 2', hindi: 'छत्रपति शिवाजी एयरपोर्ट', x: 550, y: 260, lines: ['Line 3 (Aqua Underground)'], interchange: true, footfall: '80,000', lat: 19.0974, lng: 72.8744, anchor: 'start', dx: 18, dy: 4, connections: ['Andheri / WEH', 'Bandra-Kurla Complex (BKC)'] },
+      { name: 'Bandra-Kurla Complex (BKC)', hindi: 'बीकेसी', x: 530, y: 540, lines: ['Line 3 (Aqua Underground)'], interchange: true, footfall: '110,000', lat: 19.0667, lng: 72.8667, anchor: 'start', dx: 18, dy: 4, connections: ['CSMIA Terminal 2', 'Cuffe Parade'] },
+      { name: 'Cuffe Parade', hindi: 'कफ परेड', x: 400, y: 880, lines: ['Line 3 (Aqua Underground)'], interchange: false, footfall: '45,000', lat: 18.9167, lng: 72.8167, anchor: 'end', dx: -18, dy: 4, connections: ['Bandra-Kurla Complex (BKC)'] },
     ],
   },
   'bengaluru': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [],
     roads: [
-      { id: 'orr-blr', name: 'Outer Ring Road (ORR)', path: 'M 110,270 C 130,460 470,460 500,250 C 480,80 150,80 110,270 Z', stroke: 'rgba(255,255,255,0.08)', width: 2.5, dash: '4,4' },
+      { id: 'orr-blr', name: 'Outer Ring Road (ORR)', path: 'M 220,460 C 260,780 940,780 1000,430 C 960,140 300,140 220,460 Z', stroke: 'rgba(255,255,255,0.08)', width: 4, dash: '6,6' },
     ],
     geoLines: [
-      { id: 'purple', name: 'Purple Line (East-West)', color: '#9333ea', path: 'M 70,380 L 170,320 L 280,260 L 400,260 L 550,200', status: 'Operational' },
-      { id: 'green', name: 'Green Line (North-South)', color: '#15803d', path: 'M 200,70 L 240,160 L 280,260 L 300,370 L 320,490', status: 'Operational' },
-      { id: 'yellow', name: 'Yellow Line (Electronic City)', color: '#eab308', path: 'M 280,370 L 350,400 L 430,450 L 520,500', status: 'Operational' },
+      { id: 'purple', name: 'Purple Line (East-West)', color: '#9333ea', path: 'M 140,640 L 340,540 L 560,440 L 800,440 L 1100,340', status: 'Operational' },
+      { id: 'green', name: 'Green Line (North-South)', color: '#15803d', path: 'M 400,120 L 480,270 L 560,440 L 600,630 L 640,840', status: 'Operational' },
+      { id: 'yellow', name: 'Yellow Line (Electronic City)', color: '#eab308', path: 'M 560,630 L 700,680 L 860,770 L 1040,850', status: 'Operational' },
     ],
     stations: [
-      { name: 'Kempegowda Majestic', hindi: 'ಮೆಜೆಸ್ಟಿಕ್', x: 280, y: 260, lines: ['Purple Line (East-West)', 'Green Line (North-South)'], interchange: true, footfall: '240,000', lat: 12.9757, lng: 77.5728, connections: ['MG Road', 'Mysuru Road', 'Yeshwanthpur', 'Silk Board'] },
-      { name: 'MG Road', hindi: 'ಎಂ ಜಿ ರಸ್ತೆ', x: 340, y: 260, lines: ['Purple Line (East-West)'], interchange: false, footfall: '95,000', lat: 12.9756, lng: 77.6066, connections: ['Kempegowda Majestic', 'Indiranagar'] },
-      { name: 'Indiranagar', hindi: 'ಇಂದಿರಾನಗರ', x: 410, y: 250, lines: ['Purple Line (East-West)'], interchange: false, footfall: '85,000', lat: 12.9783, lng: 77.6386, connections: ['MG Road', 'Whitefield (Kadugodi)'] },
-      { name: 'Whitefield (Kadugodi)', hindi: 'ವೈಟ್‌ಫೀಲ್ಡ್', x: 550, y: 200, lines: ['Purple Line (East-West)'], interchange: false, footfall: '80,000', lat: 12.9961, lng: 77.7611, connections: ['Indiranagar'] },
-      { name: 'Mysuru Road', hindi: 'ಮೈಸೂರು ರಸ್ತೆ', x: 170, y: 320, lines: ['Purple Line (East-West)'], interchange: false, footfall: '60,000', lat: 12.9469, lng: 77.5278, connections: ['Kempegowda Majestic'] },
-      { name: 'Yeshwanthpur', hindi: 'ಯಶವಂತಪುರ', x: 240, y: 160, lines: ['Green Line (North-South)'], interchange: true, footfall: '90,000', lat: 13.0233, lng: 77.5500, connections: ['Kempegowda Majestic'] },
-      { name: 'Silk Board', hindi: 'ಸಿಲ್ಕ್ ಬೋರ್ಡ್', x: 350, y: 400, lines: ['Yellow Line (Electronic City)'], interchange: true, footfall: '110,000', lat: 12.9172, lng: 77.6228, connections: ['Kempegowda Majestic', 'Electronic City'] },
-      { name: 'Electronic City', hindi: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ', x: 480, y: 480, lines: ['Yellow Line (Electronic City)'], interchange: false, footfall: '85,000', lat: 12.8452, lng: 77.6602, connections: ['Silk Board'] },
+      { name: 'Kempegowda Majestic', hindi: 'ಮೆಜೆಸ್ಟಿಕ್', x: 560, y: 440, lines: ['Purple Line (East-West)', 'Green Line (North-South)'], interchange: true, footfall: '240,000', lat: 12.9757, lng: 77.5728, anchor: 'end', dx: -18, dy: -12, connections: ['MG Road', 'Mysuru Road', 'Yeshwanthpur', 'Silk Board'] },
+      { name: 'MG Road', hindi: 'ಎಂ ಜಿ ರಸ್ತೆ', x: 680, y: 440, lines: ['Purple Line (East-West)'], interchange: false, footfall: '95,000', lat: 12.9756, lng: 77.6066, anchor: 'middle', dx: 0, dy: -18, connections: ['Kempegowda Majestic', 'Indiranagar'] },
+      { name: 'Indiranagar', hindi: 'ಇಂದಿರಾನಗರ', x: 820, y: 430, lines: ['Purple Line (East-West)'], interchange: false, footfall: '85,000', lat: 12.9783, lng: 77.6386, anchor: 'middle', dx: 0, dy: -18, connections: ['MG Road', 'Whitefield (Kadugodi)'] },
+      { name: 'Whitefield (Kadugodi)', hindi: 'ವೈಟ್‌ಫೀಲ್ಡ್', x: 1100, y: 340, lines: ['Purple Line (East-West)'], interchange: false, footfall: '80,000', lat: 12.9961, lng: 77.7611, anchor: 'start', dx: 18, dy: 4, connections: ['Indiranagar'] },
+      { name: 'Mysuru Road', hindi: 'ಮೈಸೂರು ರಸ್ತೆ', x: 340, y: 540, lines: ['Purple Line (East-West)'], interchange: false, footfall: '60,000', lat: 12.9469, lng: 77.5278, anchor: 'end', dx: -18, dy: 4, connections: ['Kempegowda Majestic'] },
+      { name: 'Yeshwanthpur', hindi: 'ಯಶವಂತಪುರ', x: 480, y: 270, lines: ['Green Line (North-South)'], interchange: true, footfall: '90,000', lat: 13.0233, lng: 77.5500, anchor: 'end', dx: -18, dy: 4, connections: ['Kempegowda Majestic'] },
+      { name: 'Silk Board', hindi: 'ಸಿಲ್ಕ್ ಬೋರ್ಡ್', x: 700, y: 680, lines: ['Yellow Line (Electronic City)'], interchange: true, footfall: '110,000', lat: 12.9172, lng: 77.6228, anchor: 'start', dx: 18, dy: 4, connections: ['Kempegowda Majestic', 'Electronic City'] },
+      { name: 'Electronic City', hindi: 'ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ', x: 960, y: 820, lines: ['Yellow Line (Electronic City)'], interchange: false, footfall: '85,000', lat: 12.8452, lng: 77.6602, anchor: 'start', dx: 18, dy: 4, connections: ['Silk Board'] },
     ],
   },
   'kolkata': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'hooghly', name: 'River Hooghly (South Asia’s Deepest Tunnel)', path: 'M 250,30 Q 260,150 270,270 T 245,510', stroke: '#0284c7', width: 22, opacity: 0.7 },
+      { id: 'hooghly', name: 'River Hooghly (Deepest Under-River Tunnel 33m)', path: 'M 480,30 Q 500,260 520,480 T 470,920', stroke: '#0284c7', width: 36, opacity: 0.7 },
     ],
     roads: [],
     geoLines: [
-      { id: 'blue', name: 'Blue Line (Line 1 Historic)', color: '#2563eb', path: 'M 320,50 L 320,180 L 320,270 L 340,380 L 370,500', status: 'Operational' },
-      { id: 'green', name: 'Green Line (Line 2 Underwater)', color: '#16a34a', path: 'M 150,270 L 230,270 L 320,270 L 440,270 L 540,240', status: 'Operational (Underwater)' },
-      { id: 'orange', name: 'Orange Line (Line 6 Airport)', color: '#ea580c', path: 'M 370,500 L 470,440 L 500,330 L 520,130', status: 'Operational / Ext.' },
+      { id: 'blue', name: 'Blue Line (Line 1 Historic)', color: '#2563eb', path: 'M 620,80 L 620,310 L 620,480 L 660,670 L 720,880', status: 'Operational' },
+      { id: 'green', name: 'Green Line (Line 2 Underwater)', color: '#16a34a', path: 'M 280,480 L 440,480 L 620,480 L 860,480 L 1060,430', status: 'Operational (Underwater)' },
+      { id: 'orange', name: 'Orange Line (Line 6 Airport)', color: '#ea580c', path: 'M 720,880 L 920,770 L 980,580 L 1020,230', status: 'Operational / Ext.' },
     ],
     stations: [
-      { name: 'Howrah Station (33m Deep Underwater)', hindi: 'হাওড়া স্টেশন', x: 230, y: 270, lines: ['Green Line (Line 2 Underwater)'], interchange: true, footfall: '220,000', lat: 22.5833, lng: 88.3425, connections: ['Esplanade'] },
-      { name: 'Esplanade', hindi: 'এসপ্ল্যানেড', x: 320, y: 270, lines: ['Blue Line (Line 1 Historic)', 'Green Line (Line 2 Underwater)'], interchange: true, footfall: '260,000', lat: 22.5647, lng: 88.3516, connections: ['Howrah Station (33m Deep Underwater)', 'Sealdah', 'Dum Dum', 'Park Street'] },
-      { name: 'Sealdah', hindi: 'শিয়ালদহ', x: 380, y: 270, lines: ['Green Line (Line 2 Underwater)'], interchange: true, footfall: '190,000', lat: 22.5683, lng: 88.3719, connections: ['Esplanade', 'Salt Lake Sector V'] },
-      { name: 'Salt Lake Sector V', hindi: 'সল্টলেক সেক্টর ৫', x: 540, y: 240, lines: ['Green Line (Line 2 Underwater)'], interchange: false, footfall: '110,000', lat: 22.5804, lng: 88.4372, connections: ['Sealdah'] },
-      { name: 'Dum Dum', hindi: 'দমদম', x: 320, y: 120, lines: ['Blue Line (Line 1 Historic)'], interchange: true, footfall: '175,000', lat: 22.6219, lng: 88.3936, connections: ['Esplanade'] },
-      { name: 'Park Street', hindi: 'পার্ক স্ট্রিট', x: 320, y: 320, lines: ['Blue Line (Line 1 Historic)'], interchange: false, footfall: '130,000', lat: 22.5511, lng: 88.3522, connections: ['Esplanade', 'Kavi Subhash'] },
-      { name: 'Kavi Subhash', hindi: 'কবি সুভাষ', x: 370, y: 500, lines: ['Blue Line (Line 1 Historic)', 'Orange Line (Line 6 Airport)'], interchange: true, footfall: '140,000', lat: 22.4719, lng: 88.3967, connections: ['Park Street'] },
+      { name: 'Howrah Station (33m Deep Underwater)', hindi: 'হাওড়া স্টেশন', x: 440, y: 480, lines: ['Green Line (Line 2 Underwater)'], interchange: true, footfall: '220,000', lat: 22.5833, lng: 88.3425, anchor: 'end', dx: -18, dy: 4, connections: ['Esplanade'] },
+      { name: 'Esplanade', hindi: 'এসপ্ল্যানেড', x: 620, y: 480, lines: ['Blue Line (Line 1 Historic)', 'Green Line (Line 2 Underwater)'], interchange: true, footfall: '260,000', lat: 22.5647, lng: 88.3516, anchor: 'end', dx: -18, dy: -14, connections: ['Howrah Station (33m Deep Underwater)', 'Sealdah', 'Dum Dum', 'Park Street'] },
+      { name: 'Sealdah', hindi: 'শিয়ালদহ', x: 740, y: 480, lines: ['Green Line (Line 2 Underwater)'], interchange: true, footfall: '190,000', lat: 22.5683, lng: 88.3719, anchor: 'start', dx: 18, dy: 4, connections: ['Esplanade', 'Salt Lake Sector V'] },
+      { name: 'Salt Lake Sector V', hindi: 'সল্টলেক সেক্টর ৫', x: 1060, y: 430, lines: ['Green Line (Line 2 Underwater)'], interchange: false, footfall: '110,000', lat: 22.5804, lng: 88.4372, anchor: 'start', dx: 18, dy: 4, connections: ['Sealdah'] },
+      { name: 'Dum Dum', hindi: 'দমদম', x: 620, y: 210, lines: ['Blue Line (Line 1 Historic)'], interchange: true, footfall: '175,000', lat: 22.6219, lng: 88.3936, anchor: 'start', dx: 18, dy: 4, connections: ['Esplanade'] },
+      { name: 'Park Street', hindi: 'পার্ক স্ট্রিট', x: 620, y: 570, lines: ['Blue Line (Line 1 Historic)'], interchange: false, footfall: '130,000', lat: 22.5511, lng: 88.3522, anchor: 'end', dx: -18, dy: 4, connections: ['Esplanade', 'Kavi Subhash'] },
+      { name: 'Kavi Subhash', hindi: 'কবি সুভাষ', x: 720, y: 880, lines: ['Blue Line (Line 1 Historic)', 'Orange Line (Line 6 Airport)'], interchange: true, footfall: '140,000', lat: 22.4719, lng: 88.3967, anchor: 'start', dx: 18, dy: 4, connections: ['Park Street'] },
     ],
   },
   'chennai': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'bay-of-bengal', name: 'Bay of Bengal Coastline', path: 'M 500,30 Q 480,220 450,510', stroke: '#0284c7', width: 18, opacity: 0.5 },
+      { id: 'bay-of-bengal', name: 'Bay of Bengal Coastline', path: 'M 980,50 Q 940,400 880,900', stroke: '#0284c7', width: 32, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'blue', name: 'Blue Line (Corridor 1)', color: '#1d4ed8', path: 'M 410,60 L 360,160 L 320,250 L 240,360 L 150,470', status: 'Operational' },
-      { id: 'green', name: 'Green Line (Corridor 2)', color: '#15803d', path: 'M 360,160 L 270,200 L 210,270 L 220,380', status: 'Operational' },
+      { id: 'blue', name: 'Blue Line (Corridor 1)', color: '#1d4ed8', path: 'M 800,100 L 700,280 L 620,440 L 460,630 L 280,830', status: 'Operational' },
+      { id: 'green', name: 'Green Line (Corridor 2)', color: '#15803d', path: 'M 700,280 L 520,350 L 400,470 L 420,660', status: 'Operational' },
     ],
     stations: [
-      { name: 'Chennai Central (MGR)', hindi: 'சென்னை சென்ट्रல்', x: 360, y: 160, lines: ['Blue Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '110,000', lat: 13.0827, lng: 80.2707, connections: ['Alandur', 'Koyambedu Wholesale Hub'] },
-      { name: 'Alandur', hindi: 'ஆலந்தூர்', x: 220, y: 380, lines: ['Blue Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '65,000', lat: 13.0039, lng: 80.2014, connections: ['Chennai Central (MGR)', 'Chennai Airport', 'Koyambedu Wholesale Hub'] },
-      { name: 'Chennai Airport', hindi: 'சென்னை விமான நிலையம்', x: 150, y: 470, lines: ['Blue Line (Corridor 1)'], interchange: false, footfall: '55,000', lat: 12.9806, lng: 80.1636, connections: ['Alandur'] },
-      { name: 'Koyambedu Wholesale Hub', hindi: 'கோயம்பேடு', x: 210, y: 270, lines: ['Green Line (Corridor 2)'], interchange: true, footfall: '70,000', lat: 13.0733, lng: 80.1942, connections: ['Chennai Central (MGR)', 'Alandur'] },
+      { name: 'Chennai Central (MGR)', hindi: 'சென்னை சென்ट्रல்', x: 700, y: 280, lines: ['Blue Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '110,000', lat: 13.0827, lng: 80.2707, anchor: 'start', dx: 18, dy: 4, connections: ['Alandur', 'Koyambedu Wholesale Hub'] },
+      { name: 'Alandur', hindi: 'ஆலந்தூர்', x: 420, y: 660, lines: ['Blue Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '65,000', lat: 13.0039, lng: 80.2014, anchor: 'end', dx: -18, dy: 4, connections: ['Chennai Central (MGR)', 'Chennai Airport', 'Koyambedu Wholesale Hub'] },
+      { name: 'Chennai Airport', hindi: 'சென்னை விமான நிலையம்', x: 280, y: 830, lines: ['Blue Line (Corridor 1)'], interchange: false, footfall: '55,000', lat: 12.9806, lng: 80.1636, anchor: 'end', dx: -18, dy: 4, connections: ['Alandur'] },
+      { name: 'Koyambedu Wholesale Hub', hindi: 'கோயம்பேடு', x: 400, y: 470, lines: ['Green Line (Corridor 2)'], interchange: true, footfall: '70,000', lat: 13.0733, lng: 80.1942, anchor: 'end', dx: -18, dy: 4, connections: ['Chennai Central (MGR)', 'Alandur'] },
     ],
   },
   'hyderabad': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'musi', name: 'River Musi', path: 'M 50,350 Q 250,345 570,355', stroke: '#0284c7', width: 6, opacity: 0.4 },
+      { id: 'musi', name: 'River Musi', path: 'M 100,620 Q 500,610 1100,630', stroke: '#0284c7', width: 12, opacity: 0.4 },
     ],
     roads: [],
     geoLines: [
-      { id: 'red', name: 'Red Line (Corridor 1)', color: '#dc2626', path: 'M 110,80 L 260,220 L 340,320 L 490,450', status: 'Operational' },
-      { id: 'blue', name: 'Blue Line (Corridor 3)', color: '#2563eb', path: 'M 90,320 L 260,220 L 410,190 L 530,230', status: 'Operational' },
-      { id: 'green', name: 'Green Line (Corridor 2)', color: '#16a34a', path: 'M 350,110 L 350,240 L 340,320', status: 'Operational' },
+      { id: 'red', name: 'Red Line (Corridor 1)', color: '#dc2626', path: 'M 220,140 L 520,390 L 680,570 L 980,800', status: 'Operational' },
+      { id: 'blue', name: 'Blue Line (Corridor 3)', color: '#2563eb', path: 'M 180,570 L 520,390 L 820,340 L 1060,410', status: 'Operational' },
+      { id: 'green', name: 'Green Line (Corridor 2)', color: '#16a34a', path: 'M 700,200 L 700,430 L 680,570', status: 'Operational' },
     ],
     stations: [
-      { name: 'Ameerpet Hub', hindi: 'అమీర్‌పేట్', x: 260, y: 220, lines: ['Red Line (Corridor 1)', 'Blue Line (Corridor 3)'], interchange: true, footfall: '140,000', lat: 17.4375, lng: 78.4483, connections: ['Raidurg (HITEC City)', 'MGBS Central', 'Miyapur Depot', 'Secunderabad East'] },
-      { name: 'Raidurg (HITEC City)', hindi: 'రాయదుర్గం', x: 90, y: 320, lines: ['Blue Line (Corridor 3)'], interchange: false, footfall: '95,000', lat: 17.4428, lng: 78.3772, connections: ['Ameerpet Hub'] },
-      { name: 'MGBS Central', hindi: 'ఎంజీబీఎస్', x: 340, y: 320, lines: ['Red Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '85,000', lat: 17.3789, lng: 78.4811, connections: ['Ameerpet Hub', 'Secunderabad East', 'LB Nagar'] },
-      { name: 'Secunderabad East', hindi: 'సికింద్రాబాద్ ఈస్ట్', x: 410, y: 190, lines: ['Blue Line (Corridor 3)', 'Green Line (Corridor 2)'], interchange: true, footfall: '90,000', lat: 17.4339, lng: 78.5042, connections: ['Ameerpet Hub', 'MGBS Central'] },
-      { name: 'Miyapur Depot', hindi: 'మియాపూర్', x: 110, y: 80, lines: ['Red Line (Corridor 1)'], interchange: false, footfall: '55,000', lat: 17.4967, lng: 78.3614, connections: ['Ameerpet Hub'] },
-      { name: 'LB Nagar', hindi: 'ఎల్బీ నగర్', x: 490, y: 450, lines: ['Red Line (Corridor 1)'], interchange: false, footfall: '65,000', lat: 17.3486, lng: 78.5519, connections: ['MGBS Central'] },
+      { name: 'Ameerpet Hub', hindi: 'అమీర్‌పేట్', x: 520, y: 390, lines: ['Red Line (Corridor 1)', 'Blue Line (Corridor 3)'], interchange: true, footfall: '140,000', lat: 17.4375, lng: 78.4483, anchor: 'end', dx: -18, dy: -12, connections: ['Raidurg (HITEC City)', 'MGBS Central', 'Miyapur Depot', 'Secunderabad East'] },
+      { name: 'Raidurg (HITEC City)', hindi: 'రాయదుర్గం', x: 180, y: 570, lines: ['Blue Line (Corridor 3)'], interchange: false, footfall: '95,000', lat: 17.4428, lng: 78.3772, anchor: 'end', dx: -18, dy: 4, connections: ['Ameerpet Hub'] },
+      { name: 'MGBS Central', hindi: 'ఎంజీబీఎస్', x: 680, y: 570, lines: ['Red Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '85,000', lat: 17.3789, lng: 78.4811, anchor: 'start', dx: 18, dy: 14, connections: ['Ameerpet Hub', 'Secunderabad East', 'LB Nagar'] },
+      { name: 'Secunderabad East', hindi: 'సికింద్రాబాద్ ఈస్ట్', x: 820, y: 340, lines: ['Blue Line (Corridor 3)', 'Green Line (Corridor 2)'], interchange: true, footfall: '90,000', lat: 17.4339, lng: 78.5042, anchor: 'start', dx: 18, dy: 4, connections: ['Ameerpet Hub', 'MGBS Central'] },
+      { name: 'Miyapur Depot', hindi: 'మియాపూర్', x: 220, y: 140, lines: ['Red Line (Corridor 1)'], interchange: false, footfall: '55,000', lat: 17.4967, lng: 78.3614, anchor: 'end', dx: -18, dy: 4, connections: ['Ameerpet Hub'] },
+      { name: 'LB Nagar', hindi: 'ఎల్బీ నగర్', x: 980, y: 800, lines: ['Red Line (Corridor 1)'], interchange: false, footfall: '65,000', lat: 17.3486, lng: 78.5519, anchor: 'start', dx: 18, dy: 4, connections: ['MGBS Central'] },
     ],
   },
   'kochi': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'vembanad', name: 'Vembanad Backwaters & Coast', path: 'M 210,40 Q 190,260 220,500', stroke: '#0284c7', width: 32, opacity: 0.5 },
+      { id: 'vembanad', name: 'Vembanad Backwaters & Coast', path: 'M 420,70 Q 380,470 440,900', stroke: '#0284c7', width: 50, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'rail', name: 'Kochi Metro Rail (Aluva - Thripunithura)', color: '#0284c7', path: 'M 390,60 L 350,180 L 330,300 L 380,450', status: 'Operational' },
-      { id: 'water-1', name: 'Water Metro (High Court - Vypin)', color: '#06b6d4', path: 'M 230,270 L 150,300', status: 'Electric Ferry Route', dash: '5,4' },
-      { id: 'water-2', name: 'Water Metro (High Court - Fort Kochi)', color: '#06b6d4', path: 'M 230,270 L 120,390', status: 'Electric Ferry Route', dash: '5,4' },
+      { id: 'rail', name: 'Kochi Metro Rail (Aluva - Thripunithura)', color: '#0284c7', path: 'M 780,110 L 700,330 L 660,540 L 760,810', status: 'Operational' },
+      { id: 'water-1', name: 'Water Metro (High Court - Vypin)', color: '#06b6d4', path: 'M 460,490 L 300,540', status: 'Electric Ferry Route', dash: '8,6' },
+      { id: 'water-2', name: 'Water Metro (High Court - Fort Kochi)', color: '#06b6d4', path: 'M 460,490 L 240,700', status: 'Electric Ferry Route', dash: '8,6' },
     ],
     stations: [
-      { name: 'High Court Water Terminal', hindi: 'ഹൈക്കോടതി', x: 230, y: 270, lines: ['Kochi Water Metro Hub'], interchange: true, footfall: '24,000', lat: 9.9814, lng: 76.2753, connections: ['MG Road Commercial', 'Fort Kochi Heritage Pier', 'Vypin Island Jetty'] },
-      { name: 'Aluva North Terminus', hindi: 'ആലുവ', x: 390, y: 60, lines: ['Kochi Metro Rail'], interchange: false, footfall: '40,000', lat: 10.1102, lng: 76.3533, connections: ['MG Road Commercial'] },
-      { name: 'MG Road Commercial', hindi: 'എം ജി റോഡ്', x: 330, y: 300, lines: ['Kochi Metro Rail'], interchange: true, footfall: '45,000', lat: 9.9722, lng: 76.2847, connections: ['Aluva North Terminus', 'High Court Water Terminal', 'Thripunithura Southern Depot'] },
-      { name: 'Thripunithura Southern Depot', hindi: 'തൃപ്പൂണിത്തുറ', x: 380, y: 450, lines: ['Kochi Metro Rail'], interchange: false, footfall: '30,000', lat: 9.9489, lng: 76.3475, connections: ['MG Road Commercial'] },
-      { name: 'Fort Kochi Heritage Pier', hindi: 'ഫോർട്ട് കൊച്ചി', x: 120, y: 390, lines: ['Kochi Water Metro'], interchange: false, footfall: '20,000', lat: 9.9658, lng: 76.2425, connections: ['High Court Water Terminal'] },
-      { name: 'Vypin Island Jetty', hindi: 'വൈപ്പിൻ', x: 150, y: 300, lines: ['Kochi Water Metro'], interchange: false, footfall: '18,000', lat: 9.9922, lng: 76.2394, connections: ['High Court Water Terminal'] },
+      { name: 'High Court Water Terminal', hindi: 'ഹൈക്കോടതി', x: 460, y: 490, lines: ['Kochi Water Metro Hub'], interchange: true, footfall: '24,000', lat: 9.9814, lng: 76.2753, anchor: 'end', dx: -18, dy: 4, connections: ['MG Road Commercial', 'Fort Kochi Heritage Pier', 'Vypin Island Jetty'] },
+      { name: 'Aluva North Terminus', hindi: 'ആലുവ', x: 780, y: 110, lines: ['Kochi Metro Rail'], interchange: false, footfall: '40,000', lat: 10.1102, lng: 76.3533, anchor: 'start', dx: 18, dy: 4, connections: ['MG Road Commercial'] },
+      { name: 'MG Road Commercial', hindi: 'എം ജി ರೋڈ', x: 660, y: 540, lines: ['Kochi Metro Rail'], interchange: true, footfall: '45,000', lat: 9.9722, lng: 76.2847, anchor: 'start', dx: 18, dy: 4, connections: ['Aluva North Terminus', 'High Court Water Terminal', 'Thripunithura Southern Depot'] },
+      { name: 'Thripunithura Southern Depot', hindi: 'തൃപ്പൂണിത്തുറ', x: 760, y: 810, lines: ['Kochi Metro Rail'], interchange: false, footfall: '30,000', lat: 9.9489, lng: 76.3475, anchor: 'start', dx: 18, dy: 4, connections: ['MG Road Commercial'] },
+      { name: 'Fort Kochi Heritage Pier', hindi: 'ഫോർട്ട് കൊച്ചി', x: 240, y: 700, lines: ['Kochi Water Metro'], interchange: false, footfall: '20,000', lat: 9.9658, lng: 76.2425, anchor: 'end', dx: -18, dy: 4, connections: ['High Court Water Terminal'] },
+      { name: 'Vypin Island Jetty', hindi: 'വൈപ്പിൻ', x: 300, y: 540, lines: ['Kochi Water Metro'], interchange: false, footfall: '18,000', lat: 9.9922, lng: 76.2394, anchor: 'end', dx: -18, dy: 4, connections: ['High Court Water Terminal'] },
     ],
   },
   'ahmedabad': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'sabarmati', name: 'River Sabarmati', path: 'M 310,30 Q 315,250 300,500', stroke: '#0284c7', width: 14, opacity: 0.55 },
+      { id: 'sabarmati', name: 'River Sabarmati', path: 'M 620,50 Q 630,450 600,900', stroke: '#0284c7', width: 28, opacity: 0.55 },
     ],
     roads: [],
     geoLines: [
-      { id: 'north-south', name: 'North-South Corridor (APMC - Motera)', color: '#dc2626', path: 'M 350,60 L 340,190 L 320,260 L 270,370 L 260,480', status: 'Operational' },
-      { id: 'east-west', name: 'East-West Corridor (Thaltej - Vastral)', color: '#2563eb', path: 'M 80,260 L 210,260 L 320,260 L 450,260 L 550,280', status: 'Operational' },
+      { id: 'north-south', name: 'North-South Corridor (APMC - Motera)', color: '#dc2626', path: 'M 700,110 L 680,340 L 640,470 L 540,670 L 520,860', status: 'Operational' },
+      { id: 'east-west', name: 'East-West Corridor (Thaltej - Vastral)', color: '#2563eb', path: 'M 160,470 L 420,470 L 640,470 L 900,470 L 1100,510', status: 'Operational' },
     ],
     stations: [
-      { name: 'Old High Court Interchange', hindi: 'જૂની હાઈકોર્ટ', x: 320, y: 260, lines: ['North-South Corridor', 'East-West Corridor'], interchange: true, footfall: '70,000', lat: 23.0375, lng: 72.5714, connections: ['Motera Narendra Modi Stadium', 'APMC Vasna', 'Thaltej Gam', 'Kalupur Railway Junction'] },
-      { name: 'Motera Narendra Modi Stadium', hindi: 'મોટેરા સ્ટેડિયમ', x: 350, y: 60, lines: ['North-South Corridor'], interchange: false, footfall: '45,000', lat: 23.0919, lng: 72.5975, connections: ['Old High Court Interchange'] },
-      { name: 'APMC Vasna', hindi: 'એપીએમસી', x: 260, y: 480, lines: ['North-South Corridor'], interchange: false, footfall: '35,000', lat: 22.9989, lng: 72.5458, connections: ['Old High Court Interchange'] },
-      { name: 'Thaltej Gam', hindi: 'થલતેજ ગામ', x: 80, y: 260, lines: ['East-West Corridor'], interchange: false, footfall: '30,000', lat: 23.0514, lng: 72.5028, connections: ['Old High Court Interchange'] },
-      { name: 'Kalupur Railway Junction', hindi: 'કાલુપુર રેલવે', x: 450, y: 260, lines: ['East-West Corridor'], interchange: true, footfall: '55,000', lat: 23.0236, lng: 72.6006, connections: ['Old High Court Interchange'] },
+      { name: 'Old High Court Interchange', hindi: 'જૂની હાઈકોર્ટ', x: 640, y: 470, lines: ['North-South Corridor', 'East-West Corridor'], interchange: true, footfall: '70,000', lat: 23.0375, lng: 72.5714, anchor: 'start', dx: 18, dy: -14, connections: ['Motera Narendra Modi Stadium', 'APMC Vasna', 'Thaltej Gam', 'Kalupur Railway Junction'] },
+      { name: 'Motera Narendra Modi Stadium', hindi: 'મોટેરા સ્ટેડિયમ', x: 700, y: 110, lines: ['North-South Corridor'], interchange: false, footfall: '45,000', lat: 23.0919, lng: 72.5975, anchor: 'start', dx: 18, dy: 4, connections: ['Old High Court Interchange'] },
+      { name: 'APMC Vasna', hindi: 'એપીએમસી', x: 520, y: 860, lines: ['North-South Corridor'], interchange: false, footfall: '35,000', lat: 22.9989, lng: 72.5458, anchor: 'end', dx: -18, dy: 4, connections: ['Old High Court Interchange'] },
+      { name: 'Thaltej Gam', hindi: 'થલતેજ ગામ', x: 160, y: 470, lines: ['East-West Corridor'], interchange: false, footfall: '30,000', lat: 23.0514, lng: 72.5028, anchor: 'end', dx: -18, dy: 4, connections: ['Old High Court Interchange'] },
+      { name: 'Kalupur Railway Junction', hindi: 'કાલુપુર રેલવે', x: 900, y: 470, lines: ['East-West Corridor'], interchange: true, footfall: '55,000', lat: 23.0236, lng: 72.6006, anchor: 'start', dx: 18, dy: 4, connections: ['Old High Court Interchange'] },
     ],
   },
   'pune': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'mula-mutha', name: 'Mula-Mutha Confluence', path: 'M 70,250 Q 240,240 340,270 T 550,260', stroke: '#0284c7', width: 10, opacity: 0.5 },
+      { id: 'mula-mutha', name: 'Mula-Mutha Confluence', path: 'M 140,450 Q 480,430 680,490 T 1100,470', stroke: '#0284c7', width: 20, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'purple', name: 'Purple Line (PCMC - Swargate)', color: '#9333ea', path: 'M 260,50 L 270,180 L 290,260 L 300,370 L 310,480', status: 'Operational' },
-      { id: 'aqua', name: 'Aqua Line (Vanaz - Ramwadi)', color: '#06b6d4', path: 'M 90,340 L 200,300 L 290,260 L 430,220 L 540,170', status: 'Operational' },
+      { id: 'purple', name: 'Purple Line (PCMC - Swargate)', color: '#9333ea', path: 'M 520,90 L 540,320 L 580,470 L 600,670 L 620,860', status: 'Operational' },
+      { id: 'aqua', name: 'Aqua Line (Vanaz - Ramwadi)', color: '#06b6d4', path: 'M 180,610 L 400,540 L 580,470 L 860,400 L 1080,310', status: 'Operational' },
     ],
     stations: [
-      { name: 'Civil Court Interchange', hindi: 'सिव्हिल कोर्ट', x: 290, y: 260, lines: ['Purple Line (PCMC - Swargate)', 'Aqua Line (Vanaz - Ramwadi)'], interchange: true, footfall: '75,000', lat: 18.5289, lng: 73.8567, connections: ['PCMC Bhavan', 'Swargate Multimodal', 'Vanaz Western Depot', 'Ramwadi IT Corridor'] },
-      { name: 'PCMC Bhavan', hindi: 'पिंपरी चिंचवड', x: 260, y: 50, lines: ['Purple Line (PCMC - Swargate)'], interchange: false, footfall: '40,000', lat: 18.6278, lng: 73.8131, connections: ['Civil Court Interchange'] },
-      { name: 'Swargate Multimodal', hindi: 'स्वारगेट', x: 310, y: 480, lines: ['Purple Line (PCMC - Swargate)'], interchange: true, footfall: '60,000', lat: 18.5019, lng: 73.8586, connections: ['Civil Court Interchange'] },
-      { name: 'Vanaz Western Depot', hindi: 'वनाझ', x: 90, y: 340, lines: ['Aqua Line (Vanaz - Ramwadi)'], interchange: false, footfall: '30,000', lat: 18.5056, lng: 73.8058, connections: ['Civil Court Interchange'] },
-      { name: 'Ramwadi IT Corridor', hindi: 'रामवाडी', x: 540, y: 170, lines: ['Aqua Line (Vanaz - Ramwadi)'], interchange: false, footfall: '45,000', lat: 18.5528, lng: 73.9056, connections: ['Civil Court Interchange'] },
+      { name: 'Civil Court Interchange', hindi: 'सिव्हिल कोर्ट', x: 580, y: 470, lines: ['Purple Line (PCMC - Swargate)', 'Aqua Line (Vanaz - Ramwadi)'], interchange: true, footfall: '75,000', lat: 18.5289, lng: 73.8567, anchor: 'start', dx: 18, dy: -14, connections: ['PCMC Bhavan', 'Swargate Multimodal', 'Vanaz Western Depot', 'Ramwadi IT Corridor'] },
+      { name: 'PCMC Bhavan', hindi: 'पिंपरी चिंचवड', x: 520, y: 90, lines: ['Purple Line (PCMC - Swargate)'], interchange: false, footfall: '40,000', lat: 18.6278, lng: 73.8131, anchor: 'end', dx: -18, dy: 4, connections: ['Civil Court Interchange'] },
+      { name: 'Swargate Multimodal', hindi: 'स्वारगेट', x: 620, y: 860, lines: ['Purple Line (PCMC - Swargate)'], interchange: true, footfall: '60,000', lat: 18.5019, lng: 73.8586, anchor: 'start', dx: 18, dy: 4, connections: ['Civil Court Interchange'] },
+      { name: 'Vanaz Western Depot', hindi: 'वनाझ', x: 180, y: 610, lines: ['Aqua Line (Vanaz - Ramwadi)'], interchange: false, footfall: '30,000', lat: 18.5056, lng: 73.8058, anchor: 'end', dx: -18, dy: 4, connections: ['Civil Court Interchange'] },
+      { name: 'Ramwadi IT Corridor', hindi: 'रामवाडी', x: 1080, y: 310, lines: ['Aqua Line (Vanaz - Ramwadi)'], interchange: false, footfall: '45,000', lat: 18.5528, lng: 73.9056, anchor: 'start', dx: 18, dy: 4, connections: ['Civil Court Interchange'] },
     ],
   },
   'lucknow': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'gomti', name: 'River Gomti', path: 'M 110,200 Q 310,190 530,250', stroke: '#0284c7', width: 10, opacity: 0.5 },
+      { id: 'gomti', name: 'River Gomti', path: 'M 220,360 Q 620,340 1060,450', stroke: '#0284c7', width: 20, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'red', name: 'Red Line (CCS Airport - Munshi Pulia)', color: '#dc2626', path: 'M 170,480 L 240,390 L 300,290 L 340,200 L 450,120 L 520,80', status: 'Operational' },
+      { id: 'red', name: 'Red Line (CCS Airport - Munshi Pulia)', color: '#dc2626', path: 'M 340,860 L 480,700 L 600,520 L 680,360 L 900,220 L 1040,140', status: 'Operational' },
     ],
     stations: [
-      { name: 'CCS Airport Terminal', hindi: 'चौधरी चरण सिंह एयरपोर्ट', x: 170, y: 480, lines: ['Red Line (North-South)'], interchange: false, footfall: '22,000', lat: 26.7606, lng: 80.8893, connections: ['Charbagh Railway Hub'] },
-      { name: 'Charbagh Railway Hub', hindi: 'चारबाग रेलवे स्टेशन', x: 300, y: 290, lines: ['Red Line (North-South)'], interchange: true, footfall: '35,000', lat: 26.8322, lng: 80.9178, connections: ['CCS Airport Terminal', 'Hazratganj Heritage'] },
-      { name: 'Hazratganj Heritage', hindi: 'हज़रतगंज', x: 340, y: 200, lines: ['Red Line (North-South)'], interchange: false, footfall: '20,000', lat: 26.8528, lng: 80.9427, connections: ['Charbagh Railway Hub', 'Munshi Pulia Terminus'] },
-      { name: 'Munshi Pulia Terminus', hindi: 'मुंशी पुलिया', x: 520, y: 80, lines: ['Red Line (North-South)'], interchange: false, footfall: '18,000', lat: 26.8863, lng: 80.9936, connections: ['Hazratganj Heritage'] },
+      { name: 'CCS Airport Terminal', hindi: 'चौधरी चरण सिंह एयरपोर्ट', x: 340, y: 860, lines: ['Red Line (North-South)'], interchange: false, footfall: '22,000', lat: 26.7606, lng: 80.8893, anchor: 'end', dx: -18, dy: 4, connections: ['Charbagh Railway Hub'] },
+      { name: 'Charbagh Railway Hub', hindi: 'चारबाग रेलवे स्टेशन', x: 600, y: 520, lines: ['Red Line (North-South)'], interchange: true, footfall: '35,000', lat: 26.8322, lng: 80.9178, anchor: 'end', dx: -18, dy: 4, connections: ['CCS Airport Terminal', 'Hazratganj Heritage'] },
+      { name: 'Hazratganj Heritage', hindi: 'हज़रतगंज', x: 680, y: 360, lines: ['Red Line (North-South)'], interchange: false, footfall: '20,000', lat: 26.8528, lng: 80.9427, anchor: 'start', dx: 18, dy: 4, connections: ['Charbagh Railway Hub', 'Munshi Pulia Terminus'] },
+      { name: 'Munshi Pulia Terminus', hindi: 'मुंशी पुलिया', x: 1040, y: 140, lines: ['Red Line (North-South)'], interchange: false, footfall: '18,000', lat: 26.8863, lng: 80.9936, anchor: 'start', dx: 18, dy: 4, connections: ['Hazratganj Heritage'] },
     ],
   },
   'kanpur': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'ganges-kanpur', name: 'River Ganga', path: 'M 90,100 Q 330,120 550,160', stroke: '#0284c7', width: 14, opacity: 0.5 },
+      { id: 'ganges-kanpur', name: 'River Ganga', path: 'M 180,180 Q 660,220 1100,290', stroke: '#0284c7', width: 28, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'orange', name: 'Orange Line (IIT Kanpur - Naubasta)', color: '#ea580c', path: 'M 110,180 L 230,240 L 340,300 L 430,380 L 500,470', status: 'Operational / Ext.' },
+      { id: 'orange', name: 'Orange Line (IIT Kanpur - Naubasta)', color: '#ea580c', path: 'M 220,320 L 460,430 L 680,540 L 860,680 L 1000,850', status: 'Operational / Ext.' },
     ],
     stations: [
-      { name: 'IIT Kanpur Gateway', hindi: 'आईआईटी कानपुर', x: 110, y: 180, lines: ['Orange Line (Corridor 1)'], interchange: false, footfall: '15,000', lat: 26.5123, lng: 80.2329, connections: ['Motijheel Civic Core'] },
-      { name: 'Motijheel Civic Core', hindi: 'मोतीझील', x: 340, y: 300, lines: ['Orange Line (Corridor 1)'], interchange: false, footfall: '18,000', lat: 26.4789, lng: 80.3168, connections: ['IIT Kanpur Gateway', 'Kanpur Central Railway Terminal'] },
-      { name: 'Kanpur Central Railway Terminal', hindi: 'कानपुर सेंट्रल', x: 430, y: 380, lines: ['Orange Line (Corridor 1)'], interchange: true, footfall: '28,000', lat: 26.4542, lng: 80.3508, connections: ['Motijheel Civic Core'] },
+      { name: 'IIT Kanpur Gateway', hindi: 'आईआईटी कानपुर', x: 220, y: 320, lines: ['Orange Line (Corridor 1)'], interchange: false, footfall: '15,000', lat: 26.5123, lng: 80.2329, anchor: 'end', dx: -18, dy: 4, connections: ['Motijheel Civic Core'] },
+      { name: 'Motijheel Civic Core', hindi: 'मोतीझील', x: 680, y: 540, lines: ['Orange Line (Corridor 1)'], interchange: false, footfall: '18,000', lat: 26.4789, lng: 80.3168, anchor: 'start', dx: 18, dy: 4, connections: ['IIT Kanpur Gateway', 'Kanpur Central Railway Terminal'] },
+      { name: 'Kanpur Central Railway Terminal', hindi: 'कानपुर सेंट्रल', x: 860, y: 680, lines: ['Orange Line (Corridor 1)'], interchange: true, footfall: '28,000', lat: 26.4542, lng: 80.3508, anchor: 'start', dx: 18, dy: 4, connections: ['Motijheel Civic Core'] },
     ],
   },
   'agra': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'yamuna-agra', name: 'River Yamuna (Taj Trapezium)', path: 'M 160,80 Q 290,240 460,290 T 550,470', stroke: '#0284c7', width: 14, opacity: 0.5 },
+      { id: 'yamuna-agra', name: 'River Yamuna (Taj Trapezium)', path: 'M 320,140 Q 580,430 920,520 T 1100,850', stroke: '#0284c7', width: 26, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'yellow', name: 'Yellow Line (Taj East Gate - Sikandra)', color: '#eab308', path: 'M 490,340 L 410,290 L 340,230 L 250,170 L 150,110', status: 'Operational Priority' },
+      { id: 'yellow', name: 'Yellow Line (Taj East Gate - Sikandra)', color: '#eab308', path: 'M 980,610 L 820,520 L 680,410 L 500,300 L 300,200', status: 'Operational Priority' },
     ],
     stations: [
-      { name: 'Taj East Gate (UNESCO Precinct)', hindi: 'ताज ईस्ट गेट', x: 490, y: 340, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '18,000', lat: 27.1712, lng: 78.0560, connections: ['Agra Fort Citadel'] },
-      { name: 'Agra Fort Citadel', hindi: 'आगरा किला', x: 340, y: 230, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '15,000', lat: 27.1795, lng: 78.0211, connections: ['Taj East Gate (UNESCO Precinct)', 'Mankameshwar Mandir'] },
-      { name: 'Mankameshwar Mandir', hindi: 'मनकामेश्वर मंदिर', x: 250, y: 170, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '12,000', lat: 27.1852, lng: 78.0163, connections: ['Agra Fort Citadel'] },
+      { name: 'Taj East Gate (UNESCO Precinct)', hindi: 'ताज ईस्ट गेट', x: 980, y: 610, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '18,000', lat: 27.1712, lng: 78.0560, anchor: 'start', dx: 18, dy: 4, connections: ['Agra Fort Citadel'] },
+      { name: 'Agra Fort Citadel', hindi: 'आगरा किला', x: 680, y: 410, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '15,000', lat: 27.1795, lng: 78.0211, anchor: 'start', dx: 18, dy: 4, connections: ['Taj East Gate (UNESCO Precinct)', 'Mankameshwar Mandir'] },
+      { name: 'Mankameshwar Mandir', hindi: 'मनकामेश्वर मंदिर', x: 500, y: 300, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '12,000', lat: 27.1852, lng: 78.0163, anchor: 'end', dx: -18, dy: 4, connections: ['Agra Fort Citadel'] },
     ],
   },
   'jaipur': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [],
     roads: [],
     geoLines: [
-      { id: 'pink', name: 'Pink Line (Mansarovar - Badi Chaupar)', color: '#ec4899', path: 'M 100,450 L 190,370 L 280,290 L 380,220 L 500,180', status: 'Operational' },
+      { id: 'pink', name: 'Pink Line (Mansarovar - Badi Chaupar)', color: '#ec4899', path: 'M 200,810 L 380,670 L 560,520 L 760,400 L 1000,320', status: 'Operational' },
     ],
     stations: [
-      { name: 'Mansarovar Western Depot', hindi: 'मानसरोवर', x: 100, y: 450, lines: ['Pink Line (Phase 1)'], interchange: false, footfall: '14,000', lat: 26.8642, lng: 75.7602, connections: ['Jaipur Junction IR'] },
-      { name: 'Jaipur Junction IR', hindi: 'जयपुर जंक्शन', x: 280, y: 290, lines: ['Pink Line (Phase 1)'], interchange: true, footfall: '22,000', lat: 26.9205, lng: 75.7876, connections: ['Mansarovar Western Depot', 'Badi Chaupar Hawa Mahal Core'] },
-      { name: 'Badi Chaupar Hawa Mahal Core', hindi: 'बड़ी चौपड़', x: 500, y: 180, lines: ['Pink Line (Phase 1)'], interchange: false, footfall: '18,000', lat: 26.9238, lng: 75.8267, connections: ['Jaipur Junction IR'] },
+      { name: 'Mansarovar Western Depot', hindi: 'मानसरोवर', x: 200, y: 810, lines: ['Pink Line (Phase 1)'], interchange: false, footfall: '14,000', lat: 26.8642, lng: 75.7602, anchor: 'end', dx: -18, dy: 4, connections: ['Jaipur Junction IR'] },
+      { name: 'Jaipur Junction IR', hindi: 'जयपुर जंक्शन', x: 560, y: 520, lines: ['Pink Line (Phase 1)'], interchange: true, footfall: '22,000', lat: 26.9205, lng: 75.7876, anchor: 'end', dx: -18, dy: -12, connections: ['Mansarovar Western Depot', 'Badi Chaupar Hawa Mahal Core'] },
+      { name: 'Badi Chaupar Hawa Mahal Core', hindi: 'बड़ी चौपड़', x: 1000, y: 320, lines: ['Pink Line (Phase 1)'], interchange: false, footfall: '18,000', lat: 26.9238, lng: 75.8267, anchor: 'start', dx: 18, dy: 4, connections: ['Jaipur Junction IR'] },
     ],
   },
   'nagpur': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [],
     roads: [],
     geoLines: [
-      { id: 'orange', name: 'Orange Line (Automotive Sq - Khapri)', color: '#ea580c', path: 'M 300,70 L 300,210 L 300,270 L 300,400 L 300,490', status: 'Operational' },
-      { id: 'aqua', name: 'Aqua Line (Prajapati - Lokmanya)', color: '#06b6d4', path: 'M 90,270 L 200,270 L 300,270 L 430,270 L 530,270', status: 'Operational' },
+      { id: 'orange', name: 'Orange Line (Automotive Sq - Khapri)', color: '#ea580c', path: 'M 600,120 L 600,380 L 600,480 L 600,720 L 600,880', status: 'Operational' },
+      { id: 'aqua', name: 'Aqua Line (Prajapati - Lokmanya)', color: '#06b6d4', path: 'M 180,480 L 400,480 L 600,480 L 860,480 L 1060,480', status: 'Operational' },
     ],
     stations: [
-      { name: 'Sitabuldi Central Atrium', hindi: 'सीताबर्डी', x: 300, y: 270, lines: ['Orange Line (North-South)', 'Aqua Line (East-West)'], interchange: true, footfall: '40,000', lat: 21.1458, lng: 79.0882, connections: ['Khapri Solar Depot', 'Prajapati Nagar East'] },
-      { name: 'Khapri Solar Depot', hindi: 'खापरी', x: 300, y: 490, lines: ['Orange Line (North-South)'], interchange: false, footfall: '12,000', lat: 21.0583, lng: 79.0528, connections: ['Sitabuldi Central Atrium'] },
-      { name: 'Prajapati Nagar East', hindi: 'प्रजापती नगर', x: 530, y: 270, lines: ['Aqua Line (East-West)'], interchange: false, footfall: '15,000', lat: 21.1642, lng: 79.1558, connections: ['Sitabuldi Central Atrium'] },
+      { name: 'Sitabuldi Central Atrium', hindi: 'सीताबर्डी', x: 600, y: 480, lines: ['Orange Line (North-South)', 'Aqua Line (East-West)'], interchange: true, footfall: '40,000', lat: 21.1458, lng: 79.0882, anchor: 'start', dx: 18, dy: -14, connections: ['Khapri Solar Depot', 'Prajapati Nagar East'] },
+      { name: 'Khapri Solar Depot', hindi: 'खापरी', x: 600, y: 880, lines: ['Orange Line (North-South)'], interchange: false, footfall: '12,000', lat: 21.0583, lng: 79.0528, anchor: 'start', dx: 18, dy: 4, connections: ['Sitabuldi Central Atrium'] },
+      { name: 'Prajapati Nagar East', hindi: 'प्रजापती नगर', x: 1060, y: 480, lines: ['Aqua Line (East-West)'], interchange: false, footfall: '15,000', lat: 21.1642, lng: 79.1558, anchor: 'start', dx: 18, dy: 4, connections: ['Sitabuldi Central Atrium'] },
     ],
   },
   'noida': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [],
     roads: [
-      { id: 'noida-expressway', name: 'Noida-Greater Noida Expressway', path: 'M 200,90 L 290,240 L 420,390 L 520,490', stroke: 'rgba(255,255,255,0.1)', width: 3 },
+      { id: 'noida-expressway', name: 'Noida-Greater Noida Expressway', path: 'M 400,160 L 580,440 L 840,700 L 1040,880', stroke: 'rgba(255,255,255,0.1)', width: 4 },
     ],
     geoLines: [
-      { id: 'aqua', name: 'Aqua Line Corridor', color: '#06b6d4', path: 'M 190,80 L 230,170 L 300,270 L 390,370 L 470,440 L 530,490', status: 'Operational' },
+      { id: 'aqua', name: 'Aqua Line Corridor', color: '#06b6d4', path: 'M 380,140 L 460,310 L 600,490 L 780,670 L 940,800 L 1060,880', status: 'Operational' },
     ],
     stations: [
-      { name: 'Sector 51 (Walkway to Blue Line)', hindi: 'सेक्टर 51', x: 190, y: 80, lines: ['Aqua Line'], interchange: true, footfall: '26,000', lat: 28.5794, lng: 77.3689, connections: ['NSEZ Export Zone'] },
-      { name: 'NSEZ Export Zone', hindi: 'एनएसईजेड', x: 300, y: 270, lines: ['Aqua Line'], interchange: false, footfall: '16,000', lat: 28.5292, lng: 77.4098, connections: ['Sector 51 (Walkway to Blue Line)', 'Pari Chowk Commercial Hub'] },
-      { name: 'Pari Chowk Commercial Hub', hindi: 'परी चौक', x: 470, y: 440, lines: ['Aqua Line'], interchange: false, footfall: '18,000', lat: 28.4631, lng: 77.5122, connections: ['NSEZ Export Zone', 'Depot Greater Noida'] },
-      { name: 'Depot Greater Noida', hindi: 'डिपो स्टेशन', x: 530, y: 490, lines: ['Aqua Line'], interchange: false, footfall: '10,000', lat: 28.4358, lng: 77.5269, connections: ['Pari Chowk Commercial Hub'] },
+      { name: 'Sector 51 (Walkway to Blue Line)', hindi: 'सेक्टर 51', x: 380, y: 140, lines: ['Aqua Line'], interchange: true, footfall: '26,000', lat: 28.5794, lng: 77.3689, anchor: 'end', dx: -18, dy: 4, connections: ['NSEZ Export Zone'] },
+      { name: 'NSEZ Export Zone', hindi: 'एनएसईजेड', x: 600, y: 490, lines: ['Aqua Line'], interchange: false, footfall: '16,000', lat: 28.5292, lng: 77.4098, anchor: 'start', dx: 18, dy: 4, connections: ['Sector 51 (Walkway to Blue Line)', 'Pari Chowk Commercial Hub'] },
+      { name: 'Pari Chowk Commercial Hub', hindi: 'परी चौक', x: 940, y: 800, lines: ['Aqua Line'], interchange: false, footfall: '18,000', lat: 28.4631, lng: 77.5122, anchor: 'start', dx: 18, dy: 4, connections: ['NSEZ Export Zone', 'Depot Greater Noida'] },
+      { name: 'Depot Greater Noida', hindi: 'डिपो स्टेशन', x: 1060, y: 880, lines: ['Aqua Line'], interchange: false, footfall: '10,000', lat: 28.4358, lng: 77.5269, anchor: 'start', dx: 18, dy: 4, connections: ['Pari Chowk Commercial Hub'] },
     ],
   },
   'navi-mumbai': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'panvel-creek', name: 'Panvel Creek Inlet', path: 'M 130,470 Q 290,450 460,480', stroke: '#0284c7', width: 14, opacity: 0.5 },
+      { id: 'panvel-creek', name: 'Panvel Creek Inlet', path: 'M 260,850 Q 580,810 920,860', stroke: '#0284c7', width: 28, opacity: 0.5 },
     ],
     roads: [],
     geoLines: [
-      { id: 'line1', name: 'Line 1 (CBD Belapur - Pendhar)', color: '#3b82f6', path: 'M 150,440 L 220,350 L 300,260 L 380,180 L 470,120', status: 'Operational' },
+      { id: 'line1', name: 'Line 1 (CBD Belapur - Pendhar)', color: '#3b82f6', path: 'M 300,790 L 440,630 L 600,470 L 760,320 L 940,220', status: 'Operational' },
     ],
     stations: [
-      { name: 'CBD Belapur IR Hub', hindi: 'सीबीडी बेलापूर', x: 150, y: 440, lines: ['Line 1 (Phase 1)'], interchange: true, footfall: '15,000', lat: 19.0189, lng: 73.0389, connections: ['Kharghar Sector 14'] },
-      { name: 'Kharghar Sector 14', hindi: 'खारघर सेक्टर 14', x: 300, y: 260, lines: ['Line 1 (Phase 1)'], interchange: false, footfall: '9,000', lat: 19.0433, lng: 73.0722, connections: ['CBD Belapur IR Hub', 'Pendhar Industrial Terminus'] },
-      { name: 'Pendhar Industrial Terminus', hindi: 'पेणधर', x: 470, y: 120, lines: ['Line 1 (Phase 1)'], interchange: false, footfall: '10,000', lat: 19.0778, lng: 73.1033, connections: ['Kharghar Sector 14'] },
+      { name: 'CBD Belapur IR Hub', hindi: 'सीबीडी बेलापूर', x: 300, y: 790, lines: ['Line 1 (Phase 1)'], interchange: true, footfall: '15,000', lat: 19.0189, lng: 73.0389, anchor: 'end', dx: -18, dy: 4, connections: ['Kharghar Sector 14'] },
+      { name: 'Kharghar Sector 14', hindi: 'खारघर सेक्टर 14', x: 600, y: 470, lines: ['Line 1 (Phase 1)'], interchange: false, footfall: '9,000', lat: 19.0433, lng: 73.0722, anchor: 'start', dx: 18, dy: 4, connections: ['CBD Belapur IR Hub', 'Pendhar Industrial Terminus'] },
+      { name: 'Pendhar Industrial Terminus', hindi: 'पेणधर', x: 940, y: 220, lines: ['Line 1 (Phase 1)'], interchange: false, footfall: '10,000', lat: 19.0778, lng: 73.1033, anchor: 'start', dx: 18, dy: 4, connections: ['Kharghar Sector 14'] },
     ],
   },
   'bhopal-indore': {
-    width: 620,
-    height: 540,
+    width: 1200,
+    height: 950,
     waterways: [
-      { id: 'upper-lake', name: 'Bhojtal (Upper Lake Bhopal)', path: 'M 130,190 C 190,150 230,230 190,270 C 140,290 90,230 130,190 Z', stroke: '#0284c7', width: 2, fill: 'rgba(2,132,199,0.25)' },
+      { id: 'upper-lake', name: 'Bhojtal (Upper Lake Bhopal)', path: 'M 260,340 C 380,260 460,420 380,500 C 280,540 180,420 260,340 Z', stroke: '#0284c7', width: 4, fill: 'rgba(2,132,199,0.25)' },
     ],
     roads: [],
     geoLines: [
-      { id: 'bhopal-orange', name: 'Bhopal Orange Line (Bhoj Metro)', color: '#ea580c', path: 'M 150,330 L 250,270 L 350,220 L 470,170', status: 'Operational Priority' },
-      { id: 'indore-yellow', name: 'Indore Yellow Ring (Super Corridor)', color: '#eab308', path: 'M 360,480 L 430,410 L 490,340 L 550,280', status: 'Operational Priority' },
+      { id: 'bhopal-orange', name: 'Bhopal Orange Line (Bhoj Metro)', color: '#ea580c', path: 'M 300,590 L 500,480 L 700,390 L 940,300', status: 'Operational Priority' },
+      { id: 'indore-yellow', name: 'Indore Yellow Ring (Super Corridor)', color: '#eab308', path: 'M 720,860 L 860,740 L 980,610 L 1100,500', status: 'Operational Priority' },
     ],
     stations: [
-      { name: 'AIIMS Bhopal Terminal', hindi: 'एम्स भोपाल', x: 150, y: 330, lines: ['Bhopal Orange (Priority)'], interchange: false, footfall: '14,000', lat: 23.2083, lng: 77.4589, connections: ['Subhash Nagar Viaduct'] },
-      { name: 'Subhash Nagar Viaduct', hindi: 'सुभाष नगर', x: 350, y: 220, lines: ['Bhopal Orange (Priority)'], interchange: true, footfall: '12,000', lat: 23.2422, lng: 77.4328, connections: ['AIIMS Bhopal Terminal'] },
-      { name: 'Indore Super Corridor Gateway', hindi: 'सुपर कॉरिडोर इंदौर', x: 490, y: 340, lines: ['Indore Yellow (Priority)'], interchange: false, footfall: '15,000', lat: 22.7667, lng: 75.8333, connections: [] },
+      { name: 'AIIMS Bhopal Terminal', hindi: 'एम्स भोपाल', x: 300, y: 590, lines: ['Bhopal Orange (Priority)'], interchange: false, footfall: '14,000', lat: 23.2083, lng: 77.4589, anchor: 'end', dx: -18, dy: 4, connections: ['Subhash Nagar Viaduct'] },
+      { name: 'Subhash Nagar Viaduct', hindi: 'सुभाष नगर', x: 700, y: 390, lines: ['Bhopal Orange (Priority)'], interchange: true, footfall: '12,000', lat: 23.2422, lng: 77.4328, anchor: 'start', dx: 18, dy: 4, connections: ['AIIMS Bhopal Terminal'] },
+      { name: 'Indore Super Corridor Gateway', hindi: 'सुपर कॉरिडोर इंदौर', x: 980, y: 610, lines: ['Indore Yellow (Priority)'], interchange: false, footfall: '15,000', lat: 22.7667, lng: 75.8333, anchor: 'start', dx: 18, dy: 4, connections: [] },
     ],
   },
 };
@@ -416,7 +415,6 @@ function calculateRoute(stations, startName, endName) {
 
   if (!shortestPath) return null;
 
-  // Build steps with line transitions and interchanges
   const steps = [];
   let currentLine = null;
   let segStart = shortestPath[0];
@@ -470,7 +468,6 @@ function calculateRoute(stations, startName, endName) {
   const distanceKm = Math.round((totalStops * 1.6 + interchanges * 0.4) * 10) / 10;
   const durationMins = Math.round(totalStops * 2.2 + interchanges * 4.5);
 
-  // Official DMRC Fare slab formula
   let tokenFare = 10;
   if (distanceKm > 32) tokenFare = 60;
   else if (distanceKm > 21) tokenFare = 50;
@@ -478,8 +475,8 @@ function calculateRoute(stations, startName, endName) {
   else if (distanceKm > 5) tokenFare = 30;
   else if (distanceKm > 2) tokenFare = 20;
 
-  const smartCardFare = Math.round(tokenFare * 0.9); // 10% peak discount
-  const offPeakFare = Math.round(tokenFare * 0.8); // 20% off-peak discount
+  const smartCardFare = Math.round(tokenFare * 0.9);
+  const offPeakFare = Math.round(tokenFare * 0.8);
 
   return {
     path: shortestPath,
@@ -501,6 +498,10 @@ export default function MetroAtlas({ onSelectCity }) {
   const [selectedStation, setSelectedStation] = useState(null);
   const [workbenchTab, setWorkbenchTab] = useState('geographic'); // 'geographic' | 'schematic' | 'planner' | 'directory' | 'guide'
   const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isPanning, setIsPanning] = useState(false);
+  const [startPan, setStartPan] = useState({ x: 0, y: 0 });
+  const [stationSearch, setStationSearch] = useState('');
   const [istTime, setIstTime] = useState(new Date());
 
   // Route Planner State
@@ -512,7 +513,8 @@ export default function MetroAtlas({ onSelectCity }) {
   const [directorySearch, setDirectorySearch] = useState('');
   const [gaugeFilter, setGaugeFilter] = useState('all');
 
-  // Clock running against IST (Asia/Kolkata)
+  const svgRef = useRef(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIstTime(new Date());
@@ -558,7 +560,6 @@ export default function MetroAtlas({ onSelectCity }) {
     return layout.stations || [];
   }, [layout]);
 
-  // Set default origin and destination when switching cities
   useEffect(() => {
     if (currentStations.length >= 2) {
       setOriginStation(currentStations[0].name);
@@ -570,6 +571,8 @@ export default function MetroAtlas({ onSelectCity }) {
       setDestStation('');
       setPlannedRoute(null);
     }
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
   }, [selectedCityId, currentStations]);
 
   const handleCityChange = (id) => {
@@ -577,6 +580,7 @@ export default function MetroAtlas({ onSelectCity }) {
     setSelectedLineId(null);
     setHoveredStation(null);
     setSelectedStation(null);
+    setStationSearch('');
     if (onSelectCity) onSelectCity(id);
   };
 
@@ -595,7 +599,7 @@ export default function MetroAtlas({ onSelectCity }) {
     handleCalculateRoute(prevD, prevO);
   };
 
-  // Compute animated train positions based on IST clock
+  // Train simulations against IST
   const trains = useMemo(() => {
     const activeLines = layout.geoLines || [];
     const sec = istTime.getSeconds() + istTime.getMilliseconds() / 1000;
@@ -609,7 +613,6 @@ export default function MetroAtlas({ onSelectCity }) {
     }).flat();
   }, [layout.geoLines, istTime]);
 
-  // Filtered cities for directory matrix
   const filteredDirectoryCities = useMemo(() => {
     return allCities.filter(c => {
       const q = directorySearch.toLowerCase();
@@ -621,9 +624,40 @@ export default function MetroAtlas({ onSelectCity }) {
     });
   }, [allCities, directorySearch, gaugeFilter]);
 
+  // Download SVG
+  const handleDownloadMap = () => {
+    if (!svgRef.current) return;
+    const svgData = new XMLSerializer().serializeToString(svgRef.current);
+    const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${selectedCityId}-metro-map.svg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  // Mouse pan handlers
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    setIsPanning(true);
+    setStartPan({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isPanning) return;
+    setPan({ x: e.clientX - startPan.x, y: e.clientY - startPan.y });
+  };
+
+  const handleMouseUp = () => {
+    setIsPanning(false);
+  };
+
   return (
     <div className="metro-atlas-root" aria-label="Interactive Metro Rail Workbench">
-      {/* Top Header Strip with City Selector and IST Clock */}
+      {/* Top Header Strip matching metrosafar.com/maps */}
       <div className="metro-top-bar">
         <div className="metro-title-group">
           <div className="metro-badge-row">
@@ -642,7 +676,7 @@ export default function MetroAtlas({ onSelectCity }) {
           </h2>
         </div>
 
-        {/* Top-Level Workbench Mode Switcher */}
+        {/* View Mode Switcher */}
         <div className="metro-view-modes" role="tablist" aria-label="Workbench Mode Selector">
           <button
             type="button"
@@ -682,7 +716,7 @@ export default function MetroAtlas({ onSelectCity }) {
         </div>
       </div>
 
-      {/* 17 Cities Navigation Pills */}
+      {/* 17 Cities Navigation Pills Strip */}
       <div className="metro-cities-strip">
         <div className="metro-cities-nav" role="tablist" aria-label="All 17 Indian Metro Cities">
           {allCities.map(c => (
@@ -701,47 +735,79 @@ export default function MetroAtlas({ onSelectCity }) {
         </div>
       </div>
 
-      {/* TAB 1 & 2: GEOGRAPHIC & SCHEMATIC MAP VIEW */}
+      {/* MAP VIEWS: GEOGRAPHIC OR SCHEMATIC */}
       {(workbenchTab === 'geographic' || workbenchTab === 'schematic') && (
         <div className="metro-workbench-grid">
-          <div className="metro-map-canvas-container">
-            {/* Zoom controls */}
-            <div className="metro-map-controls">
-              <button
-                type="button"
-                className="metro-map-btn"
-                aria-label="Zoom in"
-                onClick={() => setZoom(z => Math.min(2.0, z + 0.2))}
-              >
-                +
-              </button>
-              <button
-                type="button"
-                className="metro-map-btn"
-                aria-label="Zoom out"
-                onClick={() => setZoom(z => Math.max(0.7, z - 0.2))}
-              >
-                −
-              </button>
-              <button
-                type="button"
-                className="metro-map-btn"
-                aria-label="Reset zoom"
-                onClick={() => setZoom(1)}
-              >
-                ↺
-              </button>
+          <div
+            className="metro-map-canvas-container"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            style={{ cursor: isPanning ? 'grabbing' : 'grab' }}
+          >
+            {/* Top Toolbar: Search Station, Zoom, Download */}
+            <div className="metro-map-header-tools">
+              <div className="metro-station-search-box">
+                <input
+                  type="search"
+                  className="metro-search-input"
+                  placeholder={`Search station in ${city.name.split('(')[0].trim()}...`}
+                  value={stationSearch}
+                  onChange={e => setStationSearch(e.target.value)}
+                />
+              </div>
+
+              <div className="metro-map-controls">
+                <button
+                  type="button"
+                  className="metro-map-btn"
+                  title="Zoom In"
+                  onClick={() => setZoom(z => Math.min(2.5, z + 0.25))}
+                >
+                  +
+                </button>
+                <button
+                  type="button"
+                  className="metro-map-btn"
+                  title="Zoom Out"
+                  onClick={() => setZoom(z => Math.max(0.6, z - 0.25))}
+                >
+                  −
+                </button>
+                <button
+                  type="button"
+                  className="metro-map-btn"
+                  title="Reset View"
+                  onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}
+                >
+                  ↺
+                </button>
+                <button
+                  type="button"
+                  className="metro-map-btn action-dl"
+                  title="Download High-Resolution Map"
+                  onClick={handleDownloadMap}
+                >
+                  ⬇ SVG Map
+                </button>
+              </div>
             </div>
 
-            {/* SVG Map Canvas */}
+            {/* High-Resolution SVG Canvas */}
             <svg
+              ref={svgRef}
               className={`metro-svg-canvas mode-${workbenchTab}`}
               viewBox={`0 0 ${layout.width} ${layout.height}`}
-              style={{ transform: `scale(${zoom})`, transformOrigin: 'center center', transition: 'transform 0.2s ease' }}
+              style={{
+                transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
+                transformOrigin: 'center center',
+                transition: isPanning ? 'none' : 'transform 0.15s ease',
+              }}
             >
               <defs>
-                <pattern id="metroGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-                  <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.035)" strokeWidth="1" />
+                <pattern id="metroGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.035)" strokeWidth="1" />
                 </pattern>
                 <filter id="trainGlow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="3" result="blur" />
@@ -750,25 +816,25 @@ export default function MetroAtlas({ onSelectCity }) {
               </defs>
               <rect width="100%" height="100%" fill="url(#metroGrid)" />
 
-              {/* Geographic Physical Waterways */}
+              {/* Waterways */}
               {layout.waterways && layout.waterways.map(w => (
                 <g key={w.id} className="metro-waterway-group">
                   <path
                     d={w.path}
                     fill={w.fill || 'none'}
                     stroke={w.stroke || '#0284c7'}
-                    strokeWidth={w.width || 12}
+                    strokeWidth={w.width || 20}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     opacity={w.opacity || 0.6}
                   />
                   <text
-                    x="68%"
-                    y="42%"
+                    x="75%"
+                    y="40%"
                     fill="#38bdf8"
-                    opacity="0.25"
-                    fontSize="12"
-                    fontWeight="700"
+                    opacity="0.35"
+                    fontSize="16"
+                    fontWeight="800"
                     fontStyle="italic"
                     fontFamily="sans-serif"
                   >
@@ -793,18 +859,18 @@ export default function MetroAtlas({ onSelectCity }) {
               {/* Metro Rail Lines */}
               {(layout.geoLines || []).map(line => {
                 const isSelected = !selectedLineId || selectedLineId === line.id;
-                const opacity = isSelected ? 1 : 0.15;
-                const strokeW = line.dash ? 5 : 7;
+                const opacity = isSelected ? 1 : 0.12;
+                const strokeW = line.dash ? 6 : 9;
                 return (
                   <g key={line.id} className="metro-line-group" opacity={opacity} style={{ transition: 'opacity 0.25s ease' }}>
                     <path
                       d={line.path}
                       fill="none"
                       stroke={line.color}
-                      strokeWidth={strokeW + 6}
+                      strokeWidth={strokeW + 8}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      opacity={isSelected ? 0.25 : 0.05}
+                      opacity={isSelected ? 0.25 : 0.04}
                     />
                     <path
                       d={line.path}
@@ -819,7 +885,7 @@ export default function MetroAtlas({ onSelectCity }) {
                 );
               })}
 
-              {/* Live Train Simulation Markers */}
+              {/* Moving Trains */}
               {trains.map(tr => {
                 const line = (layout.geoLines || []).find(l => l.id === tr.lineId);
                 if (!line) return null;
@@ -829,22 +895,26 @@ export default function MetroAtlas({ onSelectCity }) {
                 return (
                   <g key={tr.id} className="metro-live-train" filter="url(#trainGlow)">
                     <circle
-                      r="5.5"
+                      r="7"
                       fill="#ffffff"
                       stroke={tr.color}
-                      strokeWidth="2.5"
+                      strokeWidth="3.5"
                       opacity="0.95"
                     />
                   </g>
                 );
               })}
 
-              {/* Stations */}
+              {/* Stations with Smart Positioned, Non-Colliding Labels */}
               {currentStations.map((st, idx) => {
                 const isInterchange = st.interchange;
                 const isHovered = hoveredStation?.name === st.name;
                 const isSelected = selectedStation?.name === st.name;
-                const r = isInterchange ? 9 : 6;
+                const isSearched = stationSearch && st.name.toLowerCase().includes(stationSearch.toLowerCase());
+                const r = isInterchange ? 11 : 7.5;
+                const anchor = st.anchor || (st.x > layout.width * 0.55 ? 'start' : 'end');
+                const dx = st.dx !== undefined ? st.dx : (anchor === 'end' ? -18 : 18);
+                const dy = st.dy !== undefined ? st.dy : 4;
 
                 return (
                   <g
@@ -867,40 +937,51 @@ export default function MetroAtlas({ onSelectCity }) {
                   >
                     {isInterchange && (
                       <circle
-                        r={15}
+                        r={19}
                         fill="none"
                         stroke="#f59e0b"
-                        strokeWidth="2"
-                        opacity={isHovered || isSelected ? 0.9 : 0.5}
-                        strokeDasharray="3,3"
+                        strokeWidth="2.5"
+                        opacity={isHovered || isSelected || isSearched ? 1 : 0.6}
+                        strokeDasharray="4,4"
                       />
                     )}
                     <circle
-                      r={isSelected ? r + 3 : isHovered ? r + 2 : r}
+                      r={isSelected || isSearched ? r + 4 : isHovered ? r + 2.5 : r}
                       fill={isInterchange ? '#ffffff' : '#0f172a'}
                       stroke={isInterchange ? '#f59e0b' : '#ffffff'}
-                      strokeWidth={isSelected ? '4' : '3'}
+                      strokeWidth={isSelected || isSearched ? '4.5' : '3.5'}
                     />
-                    <text
-                      x={st.x > layout.width * 0.6 ? -14 : 14}
-                      y={4}
-                      textAnchor={st.x > layout.width * 0.6 ? 'end' : 'start'}
-                      fill={isSelected ? '#38bdf8' : '#f8fafc'}
-                      fontSize={isInterchange ? '11px' : '9.5px'}
-                      fontWeight={isInterchange ? '800' : '600'}
-                      fontFamily="sans-serif"
-                      stroke="#0b0f15"
-                      strokeWidth="2"
-                      paintOrder="stroke"
-                    >
-                      {isInterchange ? `★ ${st.name}` : st.name}
-                    </text>
+
+                    {/* Text Label with Contrast Halo */}
+                    <g transform={`translate(${dx}, ${dy})`}>
+                      <text
+                        textAnchor={anchor}
+                        fill="#0b0f15"
+                        stroke="#0b0f15"
+                        strokeWidth="5"
+                        strokeLinejoin="round"
+                        fontSize={isInterchange ? '13px' : '11px'}
+                        fontWeight={isInterchange ? '800' : '650'}
+                        fontFamily="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+                      >
+                        {isInterchange ? `★ ${st.name}` : st.name}
+                      </text>
+                      <text
+                        textAnchor={anchor}
+                        fill={isSelected || isSearched ? '#38bdf8' : isInterchange ? '#ffffff' : '#f1f5f9'}
+                        fontSize={isInterchange ? '13px' : '11px'}
+                        fontWeight={isInterchange ? '800' : '650'}
+                        fontFamily="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+                      >
+                        {isInterchange ? `★ ${st.name}` : st.name}
+                      </text>
+                    </g>
                   </g>
                 );
               })}
             </svg>
 
-            {/* Hover Station Floating Tooltip */}
+            {/* Hover Floating Tooltip */}
             {hoveredStation && (
               <div
                 className="metro-station-tooltip"
@@ -941,13 +1022,13 @@ export default function MetroAtlas({ onSelectCity }) {
               ))}
             </div>
 
-            {/* Official Sources Banner */}
+            {/* Official Sources Attribution Banner */}
             <div className="metro-attribution-banner">
               <span className="mab-icon">🗺️</span>
               <div className="mab-content">
                 <strong>Official Cartographic &amp; Transit Alignment Sources:</strong>
                 <p>
-                  Metro and base geography: © OpenStreetMap contributors, ODbL 1.0. Phase 4 and Phase 5 alignments: Delhi Metro Rail Corporation, influencezone.delhimetrorail.com. Counts cross-checked against DMRC’s network table and Wikipedia’s line table, August 2026. Live IST schematic engine inspired by Dtensor/metro-live &amp; RomanGolovanov/ametro. Curated transit guide inspired by digitalcreator-dev/indian-metro-networks.
+                  Metro and base geography: © OpenStreetMap contributors, ODbL 1.0. Phase 4 and Phase 5 alignments: Delhi Metro Rail Corporation, influencezone.delhimetrorail.com. High-resolution city line maps inspired by metrosafar.com/maps and digitalcreator-dev/indian-metro-networks. Live schematic train engine inspired by Dtensor/metro-live &amp; RomanGolovanov/ametro.
                 </p>
               </div>
             </div>
@@ -966,7 +1047,7 @@ export default function MetroAtlas({ onSelectCity }) {
               </div>
             </div>
 
-            {/* Selected Station Inspector if clicked */}
+            {/* Station Inspector */}
             {selectedStation && (
               <div className="metro-station-inspector">
                 <div className="msi-top">
@@ -1068,7 +1149,7 @@ export default function MetroAtlas({ onSelectCity }) {
         </div>
       )}
 
-      {/* TAB 3: INTERACTIVE ROUTE PLANNER & FARE FINDER (digitalcreator-dev/indian-metro-networks) */}
+      {/* TAB 3: ROUTE PLANNER */}
       {workbenchTab === 'planner' && (
         <div className="metro-planner-wrapper">
           <div className="metro-planner-header">
@@ -1103,7 +1184,6 @@ export default function MetroAtlas({ onSelectCity }) {
           </div>
 
           <div className="metro-planner-grid">
-            {/* Input Selection Box */}
             <div className="metro-planner-form">
               <div className="form-group">
                 <label htmlFor="origin-station-select">
@@ -1173,7 +1253,6 @@ export default function MetroAtlas({ onSelectCity }) {
                 🔍 Calculate Shortest Route &amp; Fare
               </button>
 
-              {/* Station Info Highlights */}
               <div className="station-quick-info">
                 <h4>Network Operational Standards</h4>
                 <ul>
@@ -1185,7 +1264,6 @@ export default function MetroAtlas({ onSelectCity }) {
               </div>
             </div>
 
-            {/* Journey Result Summary */}
             <div className="metro-planner-results">
               {plannedRoute ? (
                 <div>
@@ -1216,7 +1294,6 @@ export default function MetroAtlas({ onSelectCity }) {
                     </div>
                   </div>
 
-                  {/* Step-by-Step Transit Itinerary */}
                   <div className="route-itinerary">
                     <h4>Step-by-Step Commuter Itinerary</h4>
                     <div className="itinerary-timeline">
@@ -1277,7 +1354,7 @@ export default function MetroAtlas({ onSelectCity }) {
         </div>
       )}
 
-      {/* TAB 4: CURATED DIRECTORY MATRIX (digitalcreator-dev/indian-metro-networks) */}
+      {/* TAB 4: DIRECTORY MATRIX (metrosafar.com/maps) */}
       {workbenchTab === 'directory' && (
         <div className="metro-directory-wrapper">
           <div className="metro-directory-header">
@@ -1385,7 +1462,7 @@ export default function MetroAtlas({ onSelectCity }) {
         </div>
       )}
 
-      {/* TAB 5: COMMUTER TRANSIT GUIDE & RULES (digitalcreator-dev/indian-metro-networks) */}
+      {/* TAB 5: COMMUTER GUIDE */}
       {workbenchTab === 'guide' && (
         <div className="metro-guide-wrapper">
           <div className="metro-guide-header">
