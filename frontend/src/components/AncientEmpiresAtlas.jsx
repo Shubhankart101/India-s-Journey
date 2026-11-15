@@ -577,95 +577,107 @@ export default function AncientEmpiresAtlas({
 
         {/* Rich Empire Dossier Sidebar with Tabbed Navigation (Zero Overflow) */}
         <aside className="empire-dossier" aria-label="Imperial details">
-          {/* Empire Header */}
-          <div className="dossier-hero">
-            <span className="dossier-era-badge">{currentEmpire.era_type}</span>
-            <h3 className="dossier-emp-name">
-              {currentEmpire.name}
-              {currentEmpire.name_hi && <span className="dossier-emp-hi" lang="hi">({currentEmpire.name_hi})</span>}
-            </h3>
-            <p className="dossier-meta">
-              <strong>Period:</strong> {currentEmpire.period} · <strong>Ideology / Faith:</strong> {currentEmpire.religion}
-            </p>
+          {/* Pinned Top Bar: Hero + Tab Navigation (NEVER scrolls away or clips) */}
+          <div className="empire-dossier-pinned-header">
+            {/* Empire Header */}
+            <div className="dossier-hero">
+              <span className="dossier-era-badge">{currentEmpire.era_type}</span>
+              <h3 className="dossier-emp-name">
+                {currentEmpire.name}
+                {currentEmpire.name_hi && <span className="dossier-emp-hi" lang="hi">({currentEmpire.name_hi})</span>}
+              </h3>
+              <p className="dossier-meta">
+                <strong>Period:</strong> {currentEmpire.period} · <strong>Ideology / Faith:</strong> {currentEmpire.religion}
+              </p>
+            </div>
+
+            {/* Dossier Tabs (Permanently pinned & clearly visible) */}
+            <div className="dossier-tab-bar" role="tablist" aria-label="Imperial Dossier Sections">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'overview'}
+                className={`dossier-tab-btn ${dossierTab === 'overview' ? 'active' : ''}`}
+                onClick={() => setDossierTab('overview')}
+              >
+                📜 Overview &amp; Epigraph
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'history'}
+                className={`dossier-tab-btn ${dossierTab === 'history' ? 'active' : ''}`}
+                onClick={() => setDossierTab('history')}
+              >
+                📖 History &amp; Quotes ({currentEmpire.detailed_history?.primary_sources?.length || 0})
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'battles'}
+                className={`dossier-tab-btn ${dossierTab === 'battles' ? 'active' : ''}`}
+                onClick={() => setDossierTab('battles')}
+              >
+                ⚔ Battles ({currentEmpire.battles?.length || 0})
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'milestones'}
+                className={`dossier-tab-btn ${dossierTab === 'milestones' ? 'active' : ''}`}
+                onClick={() => setDossierTab('milestones')}
+              >
+                ⏳ Milestones ({currentEmpire.events?.length || 0})
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'sources'}
+                className={`dossier-tab-btn ${dossierTab === 'sources' ? 'active' : ''}`}
+                onClick={() => setDossierTab('sources')}
+              >
+                📚 Sources
+              </button>
+            </div>
           </div>
 
-          {/* Dossier Tabs (Eliminates vertical content overload) */}
-          <div className="dossier-tab-bar" role="tablist" aria-label="Imperial Dossier Sections">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={dossierTab === 'overview'}
-              className={`dossier-tab-btn ${dossierTab === 'overview' ? 'active' : ''}`}
-              onClick={() => setDossierTab('overview')}
-            >
-              📜 Overview &amp; Epigraph
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={dossierTab === 'history'}
-              className={`dossier-tab-btn ${dossierTab === 'history' ? 'active' : ''}`}
-              onClick={() => setDossierTab('history')}
-            >
-              📖 History &amp; Quotes ({currentEmpire.detailed_history?.primary_sources?.length || 0})
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={dossierTab === 'battles'}
-              className={`dossier-tab-btn ${dossierTab === 'battles' ? 'active' : ''}`}
-              onClick={() => setDossierTab('battles')}
-            >
-              ⚔ Battles ({currentEmpire.battles?.length || 0})
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={dossierTab === 'milestones'}
-              className={`dossier-tab-btn ${dossierTab === 'milestones' ? 'active' : ''}`}
-              onClick={() => setDossierTab('milestones')}
-            >
-              ⏳ Milestones ({currentEmpire.events?.length || 0})
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={dossierTab === 'sources'}
-              className={`dossier-tab-btn ${dossierTab === 'sources' ? 'active' : ''}`}
-              onClick={() => setDossierTab('sources')}
-            >
-              📚 Sources
-            </button>
-          </div>
-
-          {/* TAB 1: Overview & Epigraph */}
-          {dossierTab === 'overview' && (
-            <div className="dossier-tab-content">
-              {/* Capital Inspector Card if pinned */}
-              {selectedCapital && (
-                <div className="capital-alert-card">
-                  <div className="cac-header">
-                    <span className="cac-tag">★ IMPERIAL CAPITAL INSPECTOR</span>
-                    <button type="button" className="cac-close" onClick={() => setSelectedCapital(null)} aria-label="Close capital details">×</button>
+          {/* Scrollable Tab Content Container */}
+          <div className="empire-dossier-scroll-body">
+            {/* TAB 1: Overview & Epigraph */}
+            {dossierTab === 'overview' && (
+              <div className="dossier-tab-content">
+                {/* Capital Inspector Card if pinned */}
+                {selectedCapital && (
+                  <div className="capital-alert-card">
+                    <div className="cac-header">
+                      <span className="cac-tag">★ IMPERIAL CAPITAL INSPECTOR</span>
+                      <button type="button" className="cac-close" onClick={() => setSelectedCapital(null)} aria-label="Close capital details">×</button>
+                    </div>
+                    <h4>{selectedCapital.name}</h4>
+                    <p><strong>Administrative Role:</strong> {selectedCapital.role}</p>
+                    {selectedCapital.desc && <p className="cac-desc">{selectedCapital.desc}</p>}
                   </div>
-                  <h4>{selectedCapital.name}</h4>
-                  <p><strong>Administrative Role:</strong> {selectedCapital.role}</p>
-                  {selectedCapital.desc && <p className="cac-desc">{selectedCapital.desc}</p>}
-                </div>
-              )}
+                )}
 
-              {/* Detailed History & Quoted Primary Sources Teaser */}
-              {currentEmpire.detailed_history && (
-                <div className="dossier-history-teaser" onClick={() => setDossierTab('history')}>
-                  <div className="dht-badge">📖 DETAILED HISTORICAL CHRONICLE & QUOTED EPIGRAPHS</div>
-                  <p className="dht-text">{currentEmpire.detailed_history.overview}</p>
-                  <button type="button" className="dht-btn" onClick={() => setDossierTab('history')}>
-                    Read Full Dynastic Chronicle &amp; Quoted Primary Sources ({currentEmpire.detailed_history.primary_sources?.length || 0}) →
-                  </button>
-                </div>
-              )}
+                {/* Streamlined Dynastic History Bridge */}
+                {currentEmpire.detailed_history && (
+                  <div className="empire-history-bridge">
+                    <button
+                      type="button"
+                      className="empire-history-btn"
+                      onClick={() => setDossierTab('history')}
+                      title="Read complete dynastic history and primary epigraphic charters"
+                    >
+                      <span className="ehb-icon">📖</span>
+                      <span className="ehb-text">
+                        Read Full <strong>{currentEmpire.name}</strong> Chronicle &amp; Quoted Epigraphs ({currentEmpire.detailed_history.primary_sources?.length || 0})
+                      </span>
+                      <span className="ehb-arrow">→</span>
+                    </button>
+                  </div>
+                )}
 
-              {/* Territorial Phase Summary */}
+                {/* Territorial Phase Summary */}
               <div className="dossier-box">
                 <h4>Territorial Phase: {activePhase.phase}</h4>
                 <p>{activePhase.description}</p>
@@ -880,6 +892,7 @@ export default function AncientEmpiresAtlas({
               )}
             </div>
           )}
+          </div>
         </aside>
       </div>
     </div>

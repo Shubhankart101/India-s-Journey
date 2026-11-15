@@ -27,7 +27,7 @@
       "lon": 76.1167,
       "category": "metropolis",
       "period": "Early to Mature Harappan (c. 6500 – 1900 BCE)",
-      "area_hectares": 350.0,
+      "area_hectares": 350,
       "excavators": "Amarendra Nath (ASI 1997-2000); Prof. Vasant Shinde (Deccan College & Harappan Project 2011-2016); Sanjay Manjul (ASI 2021-2023)",
       "badge": "Largest Indus Metropolis (350 ha)",
       "key_structures": [
@@ -80,7 +80,7 @@
       "lon": 68.1389,
       "category": "metropolis",
       "period": "Mature Harappan (c. 2600 – 1900 BCE)",
-      "area_hectares": 300.0,
+      "area_hectares": 300,
       "excavators": "R.D. Banerji (1922); Sir John Marshall (1922-1931); E.J.H. Mackay (1931-1938); Sir Mortimer Wheeler (1950); George F. Dales (1964-1965)",
       "badge": "UNESCO World Heritage Metropolis",
       "key_structures": [
@@ -130,7 +130,7 @@
       "lon": 72.8683,
       "category": "metropolis",
       "period": "Ravi to Late Harappan (c. 3700 – 1300 BCE)",
-      "area_hectares": 150.0,
+      "area_hectares": 150,
       "excavators": "Daya Ram Sahni (1921); Madho Sarup Vats (1926-1934); Sir Mortimer Wheeler (1946); J. Mark Kenoyer & Richard H. Meadow (HARP, 1986–2010)",
       "badge": "Eponymous Type Site",
       "key_structures": [
@@ -174,7 +174,7 @@
       ],
       "description": "Situated beside a former course of the Ravi River in Sahiwal district, Harappa gives its name to the entire civilization. Modern stratigraphy by the Harappa Archaeological Research Project (HARP) established the benchmark five-period chronological sequence.",
       "x": 728.7,
-      "y": -322.0,
+      "y": -322,
       "is_foreign": false,
       "period_era": "late"
     },
@@ -188,7 +188,7 @@
       "lon": 70.2175,
       "category": "metropolis",
       "period": "Stage I to Stage VII (c. 3000 – 1500 BCE)",
-      "area_hectares": 100.0,
+      "area_hectares": 100,
       "excavators": "J.P. Joshi (Discovery, 1967-68); R.S. Bisht (ASI Excavations 1989–2005)",
       "badge": "UNESCO World Heritage Site",
       "key_structures": [
@@ -240,7 +240,7 @@
       "lon": 71.1894,
       "category": "metropolis",
       "period": "Mature Harappan (c. 2600 – 1900 BCE)",
-      "area_hectares": 80.0,
+      "area_hectares": 80,
       "excavators": "M. Rafique Mughal (Cholistan Survey, 1974-1977); Department of Archaeology and Museums Pakistan",
       "badge": "Central Saraswati Axis Metropolis",
       "key_structures": [
@@ -287,7 +287,7 @@
       "lon": 72.2492,
       "category": "port",
       "period": "Phase I to Phase V (c. 2400 – 1600 BCE)",
-      "area_hectares": 20.0,
+      "area_hectares": 20,
       "excavators": "S.R. Rao (ASI Excavations 1955–1962)",
       "badge": "World's Earliest Tidal Dockyard",
       "key_structures": [
@@ -336,10 +336,10 @@
       "country": "Pakistan",
       "state_or_province": "Balochistan",
       "lat": 25.5,
-      "lon": 62.0,
+      "lon": 62,
       "category": "port",
       "period": "Mature Harappan (c. 2500 – 1900 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "Major E. Mockler (1876); Sir Aurel Stein (1928); George F. Dales (1960)",
       "badge": "Westernmost Frontier Outpost & Port",
       "key_structures": [
@@ -372,7 +372,7 @@
         }
       ],
       "description": "The westernmost recognized settlement of the Indus Valley Civilisation, situated on the Makran coast near the Iran border. It operated as a fortified naval outpost controlling oceanic commerce into the Gulf of Oman.",
-      "x": 620.0,
+      "x": 620,
       "y": -263.9,
       "is_foreign": false,
       "period_era": "mature"
@@ -387,7 +387,7 @@
       "lon": 63.5,
       "category": "port",
       "period": "Mature Harappan (c. 2500 – 1900 BCE)",
-      "area_hectares": 4.0,
+      "area_hectares": 4,
       "excavators": "George F. Dales (1960); University of Pennsylvania Museum Expedition",
       "badge": "Makran Coastal Station",
       "key_structures": [
@@ -411,7 +411,7 @@
         }
       ],
       "description": "An intermediate coastal trade post discovered 15 miles north of Pasni along the Shadi Kaur river in Balochistan, safeguarding the coastal shipping lanes connecting Meluhha with Magan.",
-      "x": 635.0,
+      "x": 635,
       "y": -263.7,
       "is_foreign": false,
       "period_era": "mature"
@@ -426,7 +426,7 @@
       "lon": 69.1,
       "category": "port",
       "period": "Late Harappan to Post-Harappan (c. 1900 – 1400 BCE)",
-      "area_hectares": 8.0,
+      "area_hectares": 8,
       "excavators": "S.R. Rao (Marine Archaeology Unit, National Institute of Oceanography 1982-1988)",
       "badge": "Submerged Marine Archaeological Port",
       "key_structures": [
@@ -450,7 +450,7 @@
         }
       ],
       "description": "An island port at the tip of the Kathiawar peninsula in the Gulf of Kutch, where marine archeologists uncovered submerged stone fortifications and late Harappan script evidence demonstrating coastal maritime continuity.",
-      "x": 691.0,
+      "x": 691,
       "y": -230.7,
       "is_foreign": false,
       "period_era": "late"
@@ -465,7 +465,7 @@
       "lon": 68.3167,
       "category": "craft",
       "period": "Harappan to Jhukar & Jhangar (c. 2600 – 1500 BCE)",
-      "area_hectares": 15.0,
+      "area_hectares": 15,
       "excavators": "N.G. Majumdar (ASI 1931); Ernest J.H. Mackay (American School of Indic and Iranian Studies & Boston Museum 1935-1936)",
       "badge": "Premier Bead-Making Factory",
       "key_structures": [
@@ -513,7 +513,7 @@
       "lon": 74.1333,
       "category": "craft",
       "period": "Period I (Early) & Period II (Mature Harappan, c. 3000 – 1900 BCE)",
-      "area_hectares": 25.0,
+      "area_hectares": 25,
       "excavators": "A. Ghosh (1951-52); B.B. Lal, B.K. Thapar, M.D. Khare, K.M. Srivastava (ASI 1961-1969)",
       "badge": "World's Earliest Ploughed Field",
       "key_structures": [
@@ -564,7 +564,7 @@
       "lon": 75.25,
       "category": "craft",
       "period": "Period I (Pre-Harappan) to Period III (Late Harappan, c. 2800 – 1500 BCE)",
-      "area_hectares": 12.0,
+      "area_hectares": 12,
       "excavators": "R.S. Bisht (ASI 1974-1977 and 1984-1987)",
       "badge": "Terracotta Plough & Radial Layout",
       "key_structures": [
@@ -614,7 +614,7 @@
       "lon": 70.8333,
       "category": "fortified_town",
       "period": "Period IA to IC (c. 2300 – 1700 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "Jagat Pati Joshi (ASI Excavations 1970–1972)",
       "badge": "Fortified Citadel & Horse Bone Controversy",
       "key_structures": [
@@ -654,7 +654,7 @@
       "lon": 69.5167,
       "category": "frontier_outpost",
       "period": "Period I to IV (c. 2200 – 1600 BCE)",
-      "area_hectares": 4.0,
+      "area_hectares": 4,
       "excavators": "Henri-Paul Francfort (Mission Archéologique Française en Asie Centrale 1976-1980)",
       "badge": "Northernmost Lapis Lazuli Colony",
       "key_structures": [
@@ -688,7 +688,7 @@
       ],
       "description": "Situated at the confluence of the Kokcha and Oxus (Amu Darya) rivers in northeastern Afghanistan, Shortugai was a permanent Indus colonial outpost founded specifically to control the international trade in prized Badakhshan lapis lazuli.",
       "x": 695.2,
-      "y": -403.0,
+      "y": -403,
       "is_foreign": false,
       "period_era": "mature"
     },
@@ -702,7 +702,7 @@
       "lon": 75.5667,
       "category": "agricultural_rural",
       "period": "Hakra Ware to Mature Harappan (c. 7500 – 1900 BCE)",
-      "area_hectares": 6.0,
+      "area_hectares": 6,
       "excavators": "L.S. Rao, N.B. Sahu, U.A. Shastry (ASI Excavations 2003–2006)",
       "badge": "Oldest Pre-Harappan Dates (7500 BCE)",
       "key_structures": [
@@ -751,7 +751,7 @@
       "lon": 75.65,
       "category": "craft",
       "period": "Period IA to IC (Early Harappan, c. 4000 – 2500 BCE)",
-      "area_hectares": 3.0,
+      "area_hectares": 3,
       "excavators": "J.S. Khatri & M. Acharya (Haryana State Dept of Archaeology 1986-1993); Vasant Shinde (2017)",
       "badge": "Earliest Silver Royal Regalia",
       "key_structures": [
@@ -790,7 +790,7 @@
       "lon": 76.5333,
       "category": "agricultural_rural",
       "period": "Mature Harappan (c. 2500 – 2000 BCE)",
-      "area_hectares": 18.0,
+      "area_hectares": 18,
       "excavators": "Vasant Shinde, Toshiki Osada, Akinori Uesugi (Deccan College & RIHN Japan 2006-2009)",
       "badge": "Largest Excavated Harappan Cemetery in India",
       "key_structures": [
@@ -816,7 +816,7 @@
       ],
       "description": "An extensive 18-hectare Mature Harappan urban and mortuary settlement in Rohtak district, Farmana provided groundbreaking bioarchaeological insights into urban paleodiet, migration, and burial rituals.",
       "x": 765.3,
-      "y": -303.0,
+      "y": -303,
       "is_foreign": false,
       "period_era": "mature"
     },
@@ -830,7 +830,7 @@
       "lon": 74.65,
       "category": "frontier_outpost",
       "period": "Late Harappan to Jorwe Phase (c. 2200 – 1000 BCE)",
-      "area_hectares": 20.0,
+      "area_hectares": 20,
       "excavators": "B.P. Bopardikar (1958); S.A. Sali (ASI Excavations 1974–1979)",
       "badge": "Southernmost Outpost of the Indus Realm",
       "key_structures": [
@@ -869,7 +869,7 @@
       "lon": 74.8667,
       "category": "frontier_outpost",
       "period": "Period I (Mature Harappan) to Period III (Kushan, c. 2350 – 1750 BCE)",
-      "area_hectares": 2.0,
+      "area_hectares": 2,
       "excavators": "Jagat Pati Joshi & Madhu Bala (ASI Excavations 1976–1977)",
       "badge": "Northernmost Frontier Post in India",
       "key_structures": [
@@ -908,7 +908,7 @@
       "lon": 77.4833,
       "category": "frontier_outpost",
       "period": "Period I (Late Harappan) to Period IV (c. 1900 – 1400 BCE)",
-      "area_hectares": 3.0,
+      "area_hectares": 3,
       "excavators": "Y.D. Sharma (ASI Excavations 1958–1959)",
       "badge": "Easternmost Frontier Post of the Indus Realm",
       "key_structures": [
@@ -948,7 +948,7 @@
       "lon": 77.1833,
       "category": "agricultural_rural",
       "period": "Late Harappan to Copper Hoard / OCP (c. 2000 – 1600 BCE)",
-      "area_hectares": 10.0,
+      "area_hectares": 10,
       "excavators": "D.V. Sharma & K.C. Nauriyal (2005-2006); Dr. Sanjay Kumar Manjul (ASI Excavations 2018–2019)",
       "badge": "Chariot Burials & Warrior Elite",
       "key_structures": [
@@ -995,7 +995,7 @@
       "lon": 68.7,
       "category": "fortified_town",
       "period": "Kot Diji Phase to Mature Harappan (c. 3300 – 2100 BCE)",
-      "area_hectares": 7.0,
+      "area_hectares": 7,
       "excavators": "F.A. Khan (Department of Archaeology, Government of Pakistan 1955-1957)",
       "badge": "Early Harappan Citadel Progenitor",
       "key_structures": [
@@ -1020,7 +1020,7 @@
         }
       ],
       "description": "Situated near Khairpur in Sindh opposite Mohenjo-daro, Kot Diji established that mature Harappan civilization did not appear overnight but evolved directly from robust pre-existing fortified agricultural towns.",
-      "x": 687.0,
+      "x": 687,
       "y": -284.5,
       "is_foreign": false,
       "period_era": "early"
@@ -1035,7 +1035,7 @@
       "lon": 68.0167,
       "category": "agricultural_rural",
       "period": "Amrian to Mature Harappan (c. 3600 – 1900 BCE)",
-      "area_hectares": 8.0,
+      "area_hectares": 8,
       "excavators": "N.G. Majumdar (1929); Jean-Marie Casal (French Archaeological Mission 1959-1962)",
       "badge": "Early Stratigraphic Benchmark",
       "key_structures": [
@@ -1072,7 +1072,7 @@
       "lon": 66.75,
       "category": "port",
       "period": "Balakotian to Mature Harappan (c. 4000 – 1900 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "George F. Dales (University of California, Berkeley & Dept of Archaeology Pakistan 1973-1976)",
       "badge": "Major Shell-Working & Coastal Harbor",
       "key_structures": [
@@ -1149,7 +1149,7 @@
       "lon": 70.6167,
       "category": "port",
       "period": "Mature to Late Harappan (c. 2400 – 1700 BCE)",
-      "area_hectares": 3.0,
+      "area_hectares": 3,
       "excavators": "M.K. Dhavalikar, M.H. Raval, Y.M. Chitalwala (Deccan College & Gujarat State Archaeology 1987-1990)",
       "badge": "Fortified Industrial Emporium & Jetty",
       "key_structures": [
@@ -1188,7 +1188,7 @@
       "lon": 70.6333,
       "category": "craft",
       "period": "Mature Harappan (c. 2500 – 1900 BCE)",
-      "area_hectares": 2.0,
+      "area_hectares": 2,
       "excavators": "P. Ajithprasad, V.H. Sonawane, K.K. Bhan (M.S. University of Baroda 1996-2005)",
       "badge": "High-Security Craft Enclave",
       "key_structures": [
@@ -1213,7 +1213,7 @@
       ],
       "description": "Located in Bagasra on the southern shore of the Great Rann of Kutch, Gola Dhoro demonstrated that the Harappans built colossal fortress walls to safeguard valuable craft workshops.",
       "x": 706.3,
-      "y": -237.0,
+      "y": -237,
       "is_foreign": false,
       "period_era": "mature"
     },
@@ -1250,8 +1250,8 @@
         }
       ],
       "description": "Located in Bhachau taluk of Kutch, Shikarpur functioned as an administrative and craft center with substantial evidence of animal husbandry and trade.",
-      "x": 707.0,
-      "y": -239.0,
+      "x": 707,
+      "y": -239,
       "is_foreign": false,
       "period_era": "late"
     },
@@ -1265,7 +1265,7 @@
       "lon": 70.8667,
       "category": "fortified_town",
       "period": "Mature to Late Harappan (c. 2500 – 1700 BCE)",
-      "area_hectares": 3.0,
+      "area_hectares": 3,
       "excavators": "J.S. Kharakwal, Y.S. Rawat, Toshiki Osada (Indo-Japanese Collaboration 2005-2009)",
       "badge": "Fortified Transit Bastion",
       "key_structures": [
@@ -1303,7 +1303,7 @@
       "lon": 72.1667,
       "category": "agricultural_rural",
       "period": "Padri Ware to Mature Harappan (c. 3600 – 1900 BCE)",
-      "area_hectares": 7.0,
+      "area_hectares": 7,
       "excavators": "Vasant Shinde (Deccan College Pune 1990-1996)",
       "badge": "Early Regional Salt-Manufacturing Center",
       "key_structures": [
@@ -1381,7 +1381,7 @@
       "lon": 70.9167,
       "category": "agricultural_rural",
       "period": "Rojdi A to C (Late Sorath Harappan, c. 2500 – 1700 BCE)",
-      "area_hectares": 7.0,
+      "area_hectares": 7,
       "excavators": "Gujarat State Dept of Archaeology (1957-59); Gregory L. Possehl & M.H. Raval (1982-1986)",
       "badge": "Sorath Harappan Type Site",
       "key_structures": [
@@ -1419,7 +1419,7 @@
       "lon": 71.9167,
       "category": "agricultural_rural",
       "period": "Period I (Microlithic) to Period III (Lustrous Red Ware, c. 2000 – 1300 BCE)",
-      "area_hectares": 10.0,
+      "area_hectares": 10,
       "excavators": "M.S. Vats (1934); G.S. Ghurye (1939); S.R. Rao (ASI Excavations 1953–1956)",
       "badge": "Lustrous Red Ware Horizon",
       "key_structures": [
@@ -1497,7 +1497,7 @@
       "lon": 76.5333,
       "category": "fortified_town",
       "period": "Period I (Harappan) to Period VI (Medieval, c. 2100 – 1400 BCE)",
-      "area_hectares": 8.0,
+      "area_hectares": 8,
       "excavators": "Y.D. Sharma (ASI Excavations 1952–1955)",
       "badge": "First Post-Independence Harappan Excavation in India",
       "key_structures": [
@@ -1537,7 +1537,7 @@
       "lon": 76.8333,
       "category": "agricultural_rural",
       "period": "Sub-period IA (Late Harappan) & IB (Late Harappan + PGW Overlap, c. 1700 – 1000 BCE)",
-      "area_hectares": 4.0,
+      "area_hectares": 4,
       "excavators": "Jagat Pati Joshi (ASI Excavations 1975–1976)",
       "badge": "Late Harappan & Painted Grey Ware (PGW) Overlap",
       "key_structures": [
@@ -1575,7 +1575,7 @@
       "lon": 77.3667,
       "category": "agricultural_rural",
       "period": "Late Harappan to PGW (c. 1800 – 1000 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "K.N. Dikshit (ASI Excavations 1978–1983)",
       "badge": "Doab Agricultural & Seal Discovery",
       "key_structures": [
@@ -1614,7 +1614,7 @@
       "lon": 74.2,
       "category": "agricultural_rural",
       "period": "Early to Mature Harappan (c. 2800 – 1900 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "V.K. Tiwari (ASI Excavations 2012–2014)",
       "badge": "Saraswati Valley Steatite Seal Discovery",
       "key_structures": [
@@ -1637,7 +1637,7 @@
         }
       ],
       "description": "Located in the Bhadra tehsil of Hanumangarh district, Rajasthan, Karanpura yielded pristine steatite seals and domestic architecture verifying dense urbanization along the Ghaggar-Saraswati drainage.",
-      "x": 742.0,
+      "x": 742,
       "y": -305.9,
       "is_foreign": false,
       "period_era": "early"
@@ -1652,7 +1652,7 @@
       "lon": 70.75,
       "category": "fortified_town",
       "period": "Period I to III (Early to Proto-Harappan, c. 3300 – 1900 BCE)",
-      "area_hectares": 22.0,
+      "area_hectares": 22,
       "excavators": "Farzand Ali Durrani (University of Peshawar 1976-1982)",
       "badge": "Earliest Planned Fortified Grid Town",
       "key_structures": [
@@ -1691,7 +1691,7 @@
       "lon": 70.8333,
       "category": "frontier_outpost",
       "period": "Period I (Neolithic) to Period IV (Mature Harappan, c. 3500 – 2000 BCE)",
-      "area_hectares": 3.0,
+      "area_hectares": 3,
       "excavators": "Ahmad Hasan Dani (University of Peshawar 1971)",
       "badge": "Gomal Pass Gateway",
       "key_structures": [
@@ -1730,7 +1730,7 @@
       "lon": 67.5833,
       "category": "fortified_town",
       "period": "Period I to IV (Pre-Harappan to Mature Harappan, c. 2800 – 1900 BCE)",
-      "area_hectares": 6.0,
+      "area_hectares": 6,
       "excavators": "Jean-François Jarrige (French Archaeological Mission & Dept of Archaeology Pakistan 1985-1996)",
       "badge": "Kachi Plain Stratigraphic Bridge",
       "key_structures": [
@@ -1769,7 +1769,7 @@
       "lon": 46.1031,
       "category": "foreign_trade",
       "period": "Early Dynastic III to Isin-Larsa (c. 2600 – 1800 BCE)",
-      "area_hectares": 50.0,
+      "area_hectares": 50,
       "excavators": "Sir Leonard Woolley (British Museum & Penn Museum 1922-1934)",
       "badge": "Royal Tombs of Sumer: Indus Seals & Beads",
       "key_structures": [
@@ -1800,7 +1800,7 @@
         }
       ],
       "description": "The capital city of ancient Sumer on the Euphrates River in southern Iraq, Ur is the most famous overseas site where authentic Indus Valley seals, weights, etched carnelian, and inscribed tablets were scientifically excavated in royal tombs.",
-      "x": 461.0,
+      "x": 461,
       "y": -325.9,
       "is_foreign": true,
       "period_era": "early"
@@ -1815,7 +1815,7 @@
       "lon": 44.8333,
       "category": "foreign_trade",
       "period": "Akkadian Period (c. 2350 – 2150 BCE)",
-      "area_hectares": 35.0,
+      "area_hectares": 35,
       "excavators": "Henri Frankfort (Oriental Institute of the University of Chicago 1930-1936)",
       "badge": "Akkadian Palace Indus Cylinder Seal",
       "key_structures": [
@@ -1854,7 +1854,7 @@
       "lon": 44.65,
       "category": "foreign_trade",
       "period": "Early Dynastic to Akkadian (c. 2600 – 2100 BCE)",
-      "area_hectares": 40.0,
+      "area_hectares": 40,
       "excavators": "Ernest Mackay & Stephen Langdon (Field Museum-Oxford University Expedition 1923-1933)",
       "badge": "Early Steatite Seal Discovery in Mesopotamia",
       "key_structures": [
@@ -1892,7 +1892,7 @@
       "lon": 48.2578,
       "category": "foreign_trade",
       "period": "Proto-Elamite to Achaemenid (c. 2600 – 1700 BCE)",
-      "area_hectares": 60.0,
+      "area_hectares": 60,
       "excavators": "Jacques de Morgan; Roland de Mecquenem; Pierre Amiet (Délégation Archéologique Française en Iran)",
       "badge": "Elamite Capital: Indus Seals & Cubical Weights",
       "key_structures": [
@@ -1930,7 +1930,7 @@
       "lon": 48.3333,
       "category": "foreign_trade",
       "period": "Dilmun Civilization (c. 2200 – 1700 BCE)",
-      "area_hectares": 12.0,
+      "area_hectares": 12,
       "excavators": "Poul Kjærum (Danish Archaeological Bahrain Expedition 1958-1962); Kuwaiti-Slovak Archaeological Mission",
       "badge": "Dilmun-Indus Gulf Exchange Post",
       "key_structures": [
@@ -1968,7 +1968,7 @@
       "lon": 59.8317,
       "category": "foreign_trade",
       "period": "Early Bronze Age / Magan (c. 2500 – 2000 BCE)",
-      "area_hectares": 5.0,
+      "area_hectares": 5,
       "excavators": "Serge Cleuziou & Maurizio Tosi (Joint Hadd Project 1985–2002)",
       "badge": "Magan Maritime Outpost: Indus Copper & Tar Slabs",
       "key_structures": [
@@ -2015,7 +2015,7 @@
       "lon": 55.5333,
       "category": "foreign_trade",
       "period": "Umm an-Nar to Iron Age (c. 2200 – 1800 BCE)",
-      "area_hectares": 4.0,
+      "area_hectares": 4,
       "excavators": "Daniel T. Potts (University of Sydney 1989-1998)",
       "badge": "UAE Gulf Port: Indus Ivory & Weights",
       "key_structures": [
@@ -2053,7 +2053,7 @@
       "lon": 50.5167,
       "category": "foreign_trade",
       "period": "City I and City II (Dilmun Period, c. 2200 – 1750 BCE)",
-      "area_hectares": 18.0,
+      "area_hectares": 18,
       "excavators": "P.V. Glob & Geoffrey Bibby (Danish Archaeological Expedition 1953-1970); Flemming Højlund",
       "badge": "UNESCO Capital of Ancient Dilmun",
       "key_structures": [
@@ -2084,7 +2084,7 @@
       ],
       "description": "The capital of ancient Dilmun in northern Bahrain, Qal'at al-Bahrain served as the international trading nexus where Indus merchants transshipped timber, ivory, and carnelian destined for the cities of southern Mesopotamia.",
       "x": 505.2,
-      "y": -272.0,
+      "y": -272,
       "is_foreign": true,
       "period_era": "mature"
     }
@@ -2104,13 +2104,13 @@
         },
         {
           "name": "Bet Dwarka",
-          "x": 691.0,
+          "x": 691,
           "y": -242.9
         },
         {
           "name": "Sutkagan Dor",
-          "x": 620.0,
-          "y": -281.0
+          "x": 620,
+          "y": -281
         },
         {
           "name": "Ras al-Jinz",
@@ -2134,13 +2134,13 @@
         },
         {
           "name": "Ur",
-          "x": 461.0,
+          "x": 461,
           "y": -353.4
         },
         {
           "name": "Kish",
           "x": 446.5,
-          "y": -375.0
+          "y": -375
         }
       ]
     },
@@ -2203,7 +2203,7 @@
         {
           "name": "Ganweriwala",
           "x": 711.9,
-          "y": -318.0
+          "y": -318
         }
       ]
     }
@@ -2224,15 +2224,21 @@
       "chronicle": [
         {
           "era": "c. 3800 – 3200 BCE: Hakra Ware & Early Pastoral-Agricultural Settlements",
-          "narrative": "The pioneering phase developed along the dense paleochannels of the Ghaggar-Hakra river system in Cholistan (Punjab) and Haryana. Discoveries at Bhirrana, Kunal, and Rakhigarhi reveal circular pits evolving into multi-room rectangular mud-brick structures, copper smelting, and micro-bead jewelry."
+          "narrative": "The pioneering phase developed along the dense paleochannels of the Ghaggar-Hakra river system in Cholistan (Punjab) and Haryana. Discoveries at Bhirrana, Kunal, and Rakhigarhi reveal circular pits evolving into multi-room rectangular mud-brick structures, copper smelting, and micro-bead jewelry.",
+          "phase": "c. 3800 – 3200 BCE: Hakra Ware & Early Pastoral-Agricultural Settlements",
+          "details": "The pioneering phase developed along the dense paleochannels of the Ghaggar-Hakra river system in Cholistan (Punjab) and Haryana. Discoveries at Bhirrana, Kunal, and Rakhigarhi reveal circular pits evolving into multi-room rectangular mud-brick structures, copper smelting, and micro-bead jewelry."
         },
         {
           "era": "c. 3200 – 2800 BCE: The Ravi & Kot Diji Regional Clusters",
-          "narrative": "At Harappa (Ravi phase) and Kot Diji (Sindh), fortified citadel platforms arose with standardized mud-bricks (ratio 3:2:1 or 4:2:1). Incised potters' marks on vessel shoulders anticipate early signs of the classical Indus script. Terracotta wheeled carts and humped bull figurines demonstrate overland transport."
+          "narrative": "At Harappa (Ravi phase) and Kot Diji (Sindh), fortified citadel platforms arose with standardized mud-bricks (ratio 3:2:1 or 4:2:1). Incised potters' marks on vessel shoulders anticipate early signs of the classical Indus script. Terracotta wheeled carts and humped bull figurines demonstrate overland transport.",
+          "phase": "c. 3200 – 2800 BCE: The Ravi & Kot Diji Regional Clusters",
+          "details": "At Harappa (Ravi phase) and Kot Diji (Sindh), fortified citadel platforms arose with standardized mud-bricks (ratio 3:2:1 or 4:2:1). Incised potters' marks on vessel shoulders anticipate early signs of the classical Indus script. Terracotta wheeled carts and humped bull figurines demonstrate overland transport."
         },
         {
           "era": "c. 2800 – 2600 BCE: Proto-Urban Transition & Fortifications",
-          "narrative": "Sites like Kalibangan (Period I) and Dholavira (Stage I–II) reveal planned orthogonal defensive walls, early ploughed agricultural fields with criss-cross furrows (for simultaneous mustard and chickpea cultivation), and initial steatite stamp seals."
+          "narrative": "Sites like Kalibangan (Period I) and Dholavira (Stage I–II) reveal planned orthogonal defensive walls, early ploughed agricultural fields with criss-cross furrows (for simultaneous mustard and chickpea cultivation), and initial steatite stamp seals.",
+          "phase": "c. 2800 – 2600 BCE: Proto-Urban Transition & Fortifications",
+          "details": "Sites like Kalibangan (Period I) and Dholavira (Stage I–II) reveal planned orthogonal defensive walls, early ploughed agricultural fields with criss-cross furrows (for simultaneous mustard and chickpea cultivation), and initial steatite stamp seals."
         }
       ],
       "primary_sources": [
@@ -2265,15 +2271,21 @@
       "chronicle": [
         {
           "era": "c. 2600 – 2400 BCE: Urban Revolution & Grid-Iron Planning",
-          "narrative": "Across thousands of miles, metropolises were laid out on dual-mound structures: a raised, fortified Western Citadel for civic governance and monumental assemblies, and an expansive Lower Town divided into uniform residential blocks by wide north-south and east-west thoroughfares. At Mohenjo-daro, the Great Bath utilized bitumen waterproofing and interlocking baked bricks; at Dholavira, sixteen massive stone-cut reservoirs harvested 250,000 cubic meters of stormwater."
+          "narrative": "Across thousands of miles, metropolises were laid out on dual-mound structures: a raised, fortified Western Citadel for civic governance and monumental assemblies, and an expansive Lower Town divided into uniform residential blocks by wide north-south and east-west thoroughfares. At Mohenjo-daro, the Great Bath utilized bitumen waterproofing and interlocking baked bricks; at Dholavira, sixteen massive stone-cut reservoirs harvested 250,000 cubic meters of stormwater.",
+          "phase": "c. 2600 – 2400 BCE: Urban Revolution & Grid-Iron Planning",
+          "details": "Across thousands of miles, metropolises were laid out on dual-mound structures: a raised, fortified Western Citadel for civic governance and monumental assemblies, and an expansive Lower Town divided into uniform residential blocks by wide north-south and east-west thoroughfares. At Mohenjo-daro, the Great Bath utilized bitumen waterproofing and interlocking baked bricks; at Dholavira, sixteen massive stone-cut reservoirs harvested 250,000 cubic meters of stormwater."
         },
         {
           "era": "c. 2400 – 2100 BCE: Seafaring Commerce with Meluhha & Dilmun",
-          "narrative": "At Lothal (Gujarat), Harappan engineers constructed the world's first tidal lock-gate dockyard (214 × 36 meters) on the Gulf of Khambhat. Mesopotamian cuneiform records from Sargon of Akkad to Gudea of Lagash explicitly record trade with 'Meluhha' (the Indus realm), importing lapis lazuli, carnelian beads, copper, ivory dice, and exotic peacocks in exchange for Mesopotamian wool and barley."
+          "narrative": "At Lothal (Gujarat), Harappan engineers constructed the world's first tidal lock-gate dockyard (214 × 36 meters) on the Gulf of Khambhat. Mesopotamian cuneiform records from Sargon of Akkad to Gudea of Lagash explicitly record trade with 'Meluhha' (the Indus realm), importing lapis lazuli, carnelian beads, copper, ivory dice, and exotic peacocks in exchange for Mesopotamian wool and barley.",
+          "phase": "c. 2400 – 2100 BCE: Seafaring Commerce with Meluhha & Dilmun",
+          "details": "At Lothal (Gujarat), Harappan engineers constructed the world's first tidal lock-gate dockyard (214 × 36 meters) on the Gulf of Khambhat. Mesopotamian cuneiform records from Sargon of Akkad to Gudea of Lagash explicitly record trade with 'Meluhha' (the Indus realm), importing lapis lazuli, carnelian beads, copper, ivory dice, and exotic peacocks in exchange for Mesopotamian wool and barley."
         },
         {
           "era": "c. 2100 – 1900 BCE: Standardized Metrology & Epigraphic Uniformity",
-          "narrative": "The entire civilization operated on a unified binary-decimal weight system: chert cubical weights following 1, 2, 4, 8, 16, 32, 64, with the 16th ratio (13.71 grams) being the most prevalent unit. Over 4,000 inscribed steatite, faience, and terracotta seals carrying animal emblems (unicorn, bull, elephant, tiger) and 400+ distinct glyphs regulated merchant packaging and administrative customs."
+          "narrative": "The entire civilization operated on a unified binary-decimal weight system: chert cubical weights following 1, 2, 4, 8, 16, 32, 64, with the 16th ratio (13.71 grams) being the most prevalent unit. Over 4,000 inscribed steatite, faience, and terracotta seals carrying animal emblems (unicorn, bull, elephant, tiger) and 400+ distinct glyphs regulated merchant packaging and administrative customs.",
+          "phase": "c. 2100 – 1900 BCE: Standardized Metrology & Epigraphic Uniformity",
+          "details": "The entire civilization operated on a unified binary-decimal weight system: chert cubical weights following 1, 2, 4, 8, 16, 32, 64, with the 16th ratio (13.71 grams) being the most prevalent unit. Over 4,000 inscribed steatite, faience, and terracotta seals carrying animal emblems (unicorn, bull, elephant, tiger) and 400+ distinct glyphs regulated merchant packaging and administrative customs."
         }
       ],
       "primary_sources": [
@@ -2306,15 +2318,21 @@
       "chronicle": [
         {
           "era": "c. 1900 – 1700 BCE: Desiccation of the Saraswati & De-Urbanization",
-          "narrative": "Major metropolises like Mohenjo-daro and Kalibangan experienced gradual civic decay. Large-scale public structures like the Great Bath were abandoned, and the centralized production of chert weights, steatite stamp seals, and long carnelian beads ceased as international trade with the Persian Gulf contracted."
+          "narrative": "Major metropolises like Mohenjo-daro and Kalibangan experienced gradual civic decay. Large-scale public structures like the Great Bath were abandoned, and the centralized production of chert weights, steatite stamp seals, and long carnelian beads ceased as international trade with the Persian Gulf contracted.",
+          "phase": "c. 1900 – 1700 BCE: Desiccation of the Saraswati & De-Urbanization",
+          "details": "Major metropolises like Mohenjo-daro and Kalibangan experienced gradual civic decay. Large-scale public structures like the Great Bath were abandoned, and the centralized production of chert weights, steatite stamp seals, and long carnelian beads ceased as international trade with the Persian Gulf contracted."
         },
         {
           "era": "c. 1700 – 1500 BCE: Regional Reorganisation (Cemetery H & Jhukar)",
-          "narrative": "The civilization reorganized into diverse regional cultural traditions: the Cemetery H culture in western Punjab, the Jhukar phase in Sindh, and the Rangpur/Rojdi phase in Gujarat. At Bhagwanpura (Haryana), Late Harappan pottery is found directly overlapping with early Painted Grey Ware (PGW)."
+          "narrative": "The civilization reorganized into diverse regional cultural traditions: the Cemetery H culture in western Punjab, the Jhukar phase in Sindh, and the Rangpur/Rojdi phase in Gujarat. At Bhagwanpura (Haryana), Late Harappan pottery is found directly overlapping with early Painted Grey Ware (PGW).",
+          "phase": "c. 1700 – 1500 BCE: Regional Reorganisation (Cemetery H & Jhukar)",
+          "details": "The civilization reorganized into diverse regional cultural traditions: the Cemetery H culture in western Punjab, the Jhukar phase in Sindh, and the Rangpur/Rojdi phase in Gujarat. At Bhagwanpura (Haryana), Late Harappan pottery is found directly overlapping with early Painted Grey Ware (PGW)."
         },
         {
           "era": "c. 1500 – 1300 BCE: Transition to Iron Age & Vedic Traditions",
-          "narrative": "The dispersal of populations into rural agrarian villages across Haryana, western Uttar Pradesh, and Gujarat laid the agricultural and technological bedrock for the subsequent Painted Grey Ware and Northern Black Polished Ware cultures of the Second Urbanisation."
+          "narrative": "The dispersal of populations into rural agrarian villages across Haryana, western Uttar Pradesh, and Gujarat laid the agricultural and technological bedrock for the subsequent Painted Grey Ware and Northern Black Polished Ware cultures of the Second Urbanisation.",
+          "phase": "c. 1500 – 1300 BCE: Transition to Iron Age & Vedic Traditions",
+          "details": "The dispersal of populations into rural agrarian villages across Haryana, western Uttar Pradesh, and Gujarat laid the agricultural and technological bedrock for the subsequent Painted Grey Ware and Northern Black Polished Ware cultures of the Second Urbanisation."
         }
       ],
       "primary_sources": [

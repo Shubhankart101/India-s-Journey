@@ -587,15 +587,16 @@ export function buildIvcArticleSections(sitesData) {
               <p className="aipc-extent"><strong>Geographical Extent:</strong> {p.area_sq_km}</p>
               <p className="aipc-overview">{p.overview}</p>
               <div className="aipc-chronicle">
-                <strong>Stratigraphic Phases:</strong>
+                <strong className="aipc-chronicle-header">Stratigraphic Phases:</strong>
                 <ul>
                   {p.chronicle?.map((c, i) => {
-                    const phaseTitle = c.era || c.phase || c.title || '';
-                    const phaseDesc = c.narrative || c.details || c.text || c.desc || '';
+                    const phaseTitle = (c.era || c.phase || c.title || '').trim();
+                    const phaseDesc = (c.narrative || c.details || c.text || c.desc || '').trim();
+                    if (!phaseTitle && !phaseDesc) return null;
                     return (
                       <li key={i}>
-                        {phaseTitle && <strong>{phaseTitle}{phaseDesc ? ': ' : ''}</strong>}
-                        {phaseDesc}
+                        {phaseTitle && <strong className="aipc-phase-title">{phaseTitle}</strong>}
+                        {phaseDesc && <span className="aipc-phase-desc"> — {phaseDesc}</span>}
                       </li>
                     );
                   })}

@@ -593,9 +593,22 @@
 }
 
 .aipc-chronicle ul {
-  margin: 4px 0 0;
-  padding-left: 16px;
+  margin: 6px 0 0;
+  padding-left: 18px;
   line-height: 1.5;
+}
+
+.aipc-chronicle li {
+  margin-bottom: 6px;
+}
+
+.aipc-phase-title {
+  color: #f1f5f9;
+  font-weight: 700;
+}
+
+.aipc-phase-desc {
+  color: #cbd5e1;
 }
 
 /* Article Format: Stats Highlights */

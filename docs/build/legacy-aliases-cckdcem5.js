@@ -1,1 +1,0 @@
-export{n as default}from"./SubgroupPage-BO6uFtKq.js";
