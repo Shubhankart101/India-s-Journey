@@ -578,3 +578,632 @@
 .metro-specs-grid strong {
   color: var(--ink, #ffffff);
 }
+
+/* Meta Pills in Header */
+.metro-meta-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: var(--surface-2, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--line, #334155);
+  color: var(--muted, #94a3b8);
+}
+
+/* ==========================================================================
+   ROUTE PLANNER & FARE FINDER (digitalcreator-dev/indian-metro-networks)
+   ========================================================================== */
+.metro-planner-wrapper {
+  padding: 24px;
+}
+
+.metro-planner-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line, #1e293b);
+  margin-bottom: 24px;
+}
+
+.planner-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metro-planner-header h3 {
+  margin: 4px 0 6px;
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--ink, #ffffff);
+}
+
+.planner-subtext {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted, #94a3b8);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+.planner-presets {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-label {
+  font-size: 0.78rem;
+  color: var(--muted, #94a3b8);
+  font-weight: 600;
+}
+
+.preset-pill {
+  background: var(--surface-2, #1e293b);
+  border: 1px solid var(--line, #334155);
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-pill:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: #38bdf8;
+}
+
+.metro-planner-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .metro-planner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metro-planner-form {
+  background: var(--surface-2, rgba(15, 23, 42, 0.6));
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink, #e2e8f0);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.st-marker.origin {
+  color: #10b981;
+}
+
+.st-marker.dest {
+  color: #ef4444;
+}
+
+.metro-select {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--surface, #0f172a);
+  border: 1px solid var(--line, #334155);
+  color: var(--ink, #f1f5f9);
+  font-size: 0.85rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.metro-select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.swap-btn-row {
+  display: flex;
+  justify-content: center;
+}
+
+.swap-btn {
+  font-size: 0.78rem;
+  padding: 5px 12px;
+  color: var(--muted, #94a3b8);
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.station-quick-info {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line, #1e293b);
+}
+
+.station-quick-info h4 {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f59e0b;
+}
+
+.station-quick-info ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted, #cbd5e1);
+}
+
+/* Results & Metrics */
+.metro-planner-results {
+  background: var(--surface-2, rgba(15, 23, 42, 0.5));
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.empty-planner-state {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.eps-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.empty-planner-state h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: var(--ink, #ffffff);
+}
+
+.empty-planner-state p {
+  margin: 0 auto;
+  max-width: 440px;
+  color: var(--muted, #94a3b8);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.route-metric-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.rm-card {
+  background: var(--surface, #0f172a);
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rm-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.rm-label {
+  font-size: 0.72rem;
+  color: var(--muted, #94a3b8);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.rm-card.highlight .rm-value {
+  color: #10b981;
+}
+
+.rm-card.smart .rm-value {
+  color: #f59e0b;
+}
+
+/* Timeline */
+.route-itinerary h4 {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink, #e2e8f0);
+}
+
+.itinerary-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  padding-left: 8px;
+}
+
+.itinerary-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--surface, #0f172a);
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.itinerary-step.interchange {
+  background: rgba(245, 158, 11, 0.06);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.itinerary-step.destination {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.step-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 90px;
+}
+
+.step-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #38bdf8;
+  text-transform: uppercase;
+}
+
+.step-line-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.step-instruction {
+  margin: 0 0 6px;
+  font-size: 0.88rem;
+  color: var(--ink, #e2e8f0);
+}
+
+.intermediate-stops details {
+  font-size: 0.78rem;
+  color: var(--muted, #94a3b8);
+  cursor: pointer;
+}
+
+.stops-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 0.78rem;
+  color: var(--muted, #cbd5e1);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 4px;
+}
+
+.transfer-icon, .dest-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.transfer-details strong, .dest-details strong {
+  font-size: 0.88rem;
+  color: var(--ink, #ffffff);
+}
+
+.transfer-details p, .dest-details p {
+  margin: 3px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted, #94a3b8);
+}
+
+/* ==========================================================================
+   CURATED DIRECTORY MATRIX (digitalcreator-dev/indian-metro-networks)
+   ========================================================================== */
+.metro-directory-wrapper {
+  padding: 24px;
+}
+
+.metro-directory-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line, #1e293b);
+  margin-bottom: 20px;
+}
+
+.directory-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #10b981;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metro-directory-header h3 {
+  margin: 4px 0 6px;
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--ink, #ffffff);
+}
+
+.directory-subtext {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted, #94a3b8);
+  max-width: 650px;
+  line-height: 1.5;
+}
+
+.directory-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.directory-search-input {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--surface, #0f172a);
+  border: 1px solid var(--line, #334155);
+  color: var(--ink, #ffffff);
+  font-size: 0.85rem;
+  outline: none;
+  min-width: 220px;
+}
+
+.directory-search-input:focus {
+  border-color: #38bdf8;
+}
+
+.gauge-filter-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.g-pill {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--line, #334155);
+  background: var(--surface, #0f172a);
+  color: var(--muted, #94a3b8);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.g-pill:hover {
+  color: var(--ink, #ffffff);
+}
+
+.g-pill.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.metro-directory-table-container {
+  overflow-x: auto;
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 12px;
+  background: var(--surface, #0f172a);
+}
+
+.metro-directory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.metro-directory-table th {
+  background: var(--surface-2, #1e293b);
+  color: var(--muted, #94a3b8);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line, #334155);
+  white-space: nowrap;
+}
+
+.metro-directory-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line, #1e293b);
+  vertical-align: middle;
+}
+
+.metro-directory-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.highlighted-row {
+  background: rgba(56, 189, 248, 0.06) !important;
+}
+
+.table-city-name strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink, #ffffff);
+}
+
+.table-hindi {
+  font-size: 0.75rem;
+  color: #38bdf8;
+}
+
+.table-operator {
+  font-size: 0.8rem;
+  color: var(--muted, #cbd5e1);
+}
+
+.table-length {
+  color: #10b981;
+  font-size: 0.9rem;
+}
+
+.table-ridership {
+  font-size: 0.82rem;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.table-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.78rem;
+}
+
+.table-specs small {
+  color: var(--muted, #94a3b8);
+}
+
+.table-fleet {
+  font-size: 0.8rem;
+  color: var(--muted, #cbd5e1);
+}
+
+.table-ticketing {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ticketing-badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table-action-btn {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   COMMUTER TRANSIT GUIDE & RULES (digitalcreator-dev/indian-metro-networks)
+   ========================================================================== */
+.metro-guide-wrapper {
+  padding: 24px;
+}
+
+.metro-guide-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line, #1e293b);
+  margin-bottom: 24px;
+}
+
+.guide-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #f59e0b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metro-guide-header h3 {
+  margin: 4px 0 6px;
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--ink, #ffffff);
+}
+
+.guide-subtext {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted, #94a3b8);
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.metro-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.guide-card {
+  background: var(--surface-2, rgba(15, 23, 42, 0.6));
+  border: 1px solid var(--line, #1e293b);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.guide-card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.guide-card h4 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: var(--ink, #ffffff);
+}
+
+.guide-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted, #cbd5e1);
+}
+
+.guide-card li {
+  margin-bottom: 8px;
+}
+
+.guide-card strong {
+  color: var(--ink, #ffffff);
+}
+
