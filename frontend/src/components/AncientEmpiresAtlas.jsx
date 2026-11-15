@@ -1,16 +1,20 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import empiresData from '../data/ancient-empires.json';
+import { assetUrl } from '../config.js';
 import './AncientEmpiresAtlas.css';
 
-// Projected bounding box for world-asia.json (covers Greece/Mesopotamia to Bengal/South India)
-const BASE_VIEWBOX = { x: 440, y: -480, w: 420, h: 360 };
+const PAN_INDIA_VIEWBOX = { x: 600, y: -380, w: 380, h: 330 };
+const ALEX_VIEWBOX = { x: 160, y: -480, w: 600, h: 290 };
 
 export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedEmpireId, setSelectedEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
   const [selectedPhaseIndex, setSelectedPhaseIndex] = useState(0);
   const [selectedBattle, setSelectedBattle] = useState(null);
-  const [viewBox, setViewBox] = useState(BASE_VIEWBOX);
+  const [hoveredCapital, setHoveredCapital] = useState(null);
+  const [hoveredBattle, setHoveredBattle] = useState(null);
+  const [tooltip, setTooltip] = useState(null);
+  const mapStageRef = useRef(null);
 
   const empires = empiresData.empires || [];
 
@@ -23,9 +27,21 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
     return phases[selectedPhaseIndex] || phases[0];
   }, [currentEmpire, selectedPhaseIndex]);
 
-  // Load vector basemap
+  const defaultViewBox = useMemo(() => {
+    if (currentEmpire.viewbox) return currentEmpire.viewbox;
+    return currentEmpire.id === 'alexander-campaign' ? ALEX_VIEWBOX : PAN_INDIA_VIEWBOX;
+  }, [currentEmpire]);
+
+  const [viewBox, setViewBox] = useState(defaultViewBox);
+
+  // Switch viewbox when empire changes
   useEffect(() => {
-    fetch('/maps/world-asia.json')
+    setViewBox(defaultViewBox);
+  }, [defaultViewBox]);
+
+  // Load vector basemap using assetUrl
+  useEffect(() => {
+    fetch(assetUrl('maps/world-asia.json'))
       .then(res => res.json())
       .then(data => {
         if (data && data.paths) {
@@ -45,12 +61,26 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
 
   const handleZoom = (factor) => {
     setViewBox(curr => {
-      const nw = Math.max(120, Math.min(600, curr.w * factor));
-      const nh = Math.max(90, Math.min(450, curr.h * factor));
+      const nw = Math.max(100, Math.min(800, curr.w * factor));
+      const nh = Math.max(70, Math.min(600, curr.h * factor));
       const nx = curr.x + (curr.w - nw) / 2;
       const ny = curr.y + (curr.h - nh) / 2;
       return { x: nx, y: ny, w: nw, h: nh };
     });
+  };
+
+  const handleMouseMove = (e) => {
+    if (!mapStageRef.current) return;
+    const rect = mapStageRef.current.getBoundingClientRect();
+    if (hoveredCapital || hoveredBattle) {
+      setTooltip({
+        x: Math.max(10, e.clientX - rect.left + 15),
+        y: Math.max(10, e.clientY - rect.top - 10),
+        data: hoveredCapital || hoveredBattle
+      });
+    } else {
+      setTooltip(null);
+    }
   };
 
   return (
@@ -59,12 +89,12 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
       <header className="empires-atlas-header">
         <div className="empires-title-group">
           <span className="empires-tag">OFFICIAL HISTORICAL & GEOSPATIAL ATLAS (600 BCE – 850 CE)</span>
-          <h2>Empires of Ancient India: Geospatial Borders, Battles & Epigraphy</h2>
+          <h2>Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions</h2>
           <p className="empires-lead">
-            Explore 10 major empires and eras following the Later Vedic period, including the 16 Mahajanapadas,
-            the Mauryan pan-Indian state, Alexander the Great's Macedonian frontier campaign, the Gupta Golden Age,
-            and the Classical Southern Dynasties. Track interactive changing borders, decisive battles, and original
-            epigraphic inscriptions in Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil.
+            Explore 10 major imperial eras from the 16 Mahajanapadas to the Classical Golden Ages.
+            Featuring authentic geospatial territory boundaries, Alexander the Great's trans-continental Macedonian campaign,
+            decisive battlefield coordinates, and primary epigraphic charters in Ashokan Brahmi, Classical Sanskrit,
+            Ancient Greek, and Sangam Old Tamil.
           </p>
         </div>
       </header>
@@ -81,7 +111,7 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
               className={`timeline-chip ${isSelected ? 'active' : ''} ${isAlex ? 'chip-special' : ''}`}
               onClick={() => handleEmpireSelect(emp.id)}
             >
-              {isAlex && <span className="chip-badge">SPECIAL</span>}
+              {isAlex && <span className="chip-badge">SPECIAL MENTION</span>}
               <span className="chip-title">{emp.name}</span>
               <span className="chip-period">{emp.period}</span>
             </button>
@@ -92,7 +122,12 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
       {/* Main Interactive Map & Dossier */}
       <div className="empires-workbench">
         {/* SVG Interactive Map */}
-        <div className="empires-map-container">
+        <div
+          className="empires-map-container"
+          ref={mapStageRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => { setHoveredCapital(null); setHoveredBattle(null); setTooltip(null); }}
+        >
           <div className="empires-map-toolbar">
             {/* Phase Selector for changing boundaries */}
             {currentEmpire.boundary_phases.length > 1 && (
@@ -113,9 +148,9 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
 
             {/* Zoom Controls */}
             <div className="map-zoom-btns">
-              <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In">+</button>
-              <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out">−</button>
-              <button type="button" onClick={() => setViewBox(BASE_VIEWBOX)} title="Reset View">⟲</button>
+              <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
+              <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
+              <button type="button" onClick={() => setViewBox(defaultViewBox)} title="Reset View" aria-label="Reset view">⟲</button>
             </div>
           </div>
 
@@ -128,10 +163,13 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
               <filter id="empShadow" x="-10%" y="-10%" width="120%" height="120%">
                 <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.7" />
               </filter>
+              <filter id="glowRoute" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#38bdf8" floodOpacity="0.8" />
+              </filter>
             </defs>
 
             {/* Ocean / Background */}
-            <rect x={viewBox.x - 300} y={viewBox.y - 300} width={viewBox.w + 600} height={viewBox.h + 600} fill="#0a0d13" />
+            <rect x={viewBox.x - 400} y={viewBox.y - 400} width={viewBox.w + 800} height={viewBox.h + 800} fill="#0a0d13" />
 
             {/* Basemap Countries */}
             <g className="empires-basemap">
@@ -141,20 +179,20 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                   d={p.d}
                   fill="#151b24"
                   stroke="#232e3d"
-                  strokeWidth="0.7"
+                  strokeWidth="0.75"
                   vectorEffect="non-scaling-stroke"
                 />
               ))}
             </g>
 
-            {/* Major Sacred Rivers (Ganges, Indus, Yamuna, Narmada, Godavari, Kaveri) */}
-            <g className="empires-rivers" stroke="#1d4ed8" strokeWidth="1.2" fill="none" opacity="0.5" strokeLinecap="round" vectorEffect="non-scaling-stroke">
+            {/* Ancient River Courses (Ganges, Indus, Yamuna, Narmada, Godavari, Kaveri) */}
+            <g className="empires-rivers" stroke="#1d4ed8" strokeWidth="1.2" fill="none" opacity="0.55" strokeLinecap="round" vectorEffect="non-scaling-stroke">
               {/* Ganges */}
-              <path d="M 680 -380 Q 720 -355 770 -335 T 805 -315" />
+              <path d="M 780 -300 Q 820 -275 850 -255 T 880 -235" />
               {/* Indus */}
-              <path d="M 650 -420 Q 630 -380 615 -345 T 605 -300" />
+              <path d="M 730 -340 Q 710 -310 685 -280 T 680 -250" />
               {/* Narmada */}
-              <path d="M 640 -300 Q 680 -295 725 -290" strokeDasharray="3,2" />
+              <path d="M 730 -220 Q 770 -218 805 -215" strokeDasharray="3,2" />
             </g>
 
             {/* Imperial Boundary Polygon with Animation */}
@@ -163,11 +201,26 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 <path
                   d={activePhase.territory_path}
                   fill={activePhase.color || '#a855f7'}
-                  fillOpacity="0.32"
+                  fillOpacity="0.35"
                   stroke={activePhase.color || '#a855f7'}
                   strokeWidth="2.5"
                   strokeLinejoin="round"
                   filter="url(#empShadow)"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </g>
+            )}
+
+            {/* Alexander's Campaign March Route (Special Mention) */}
+            {currentEmpire.campaign_route && (
+              <g className="alexander-route-layer">
+                <path
+                  d={currentEmpire.campaign_route}
+                  fill="none"
+                  stroke="#38bdf8"
+                  strokeWidth="2.2"
+                  strokeDasharray="5,3"
+                  filter="url(#glowRoute)"
                   vectorEffect="non-scaling-stroke"
                 />
               </g>
@@ -182,13 +235,13 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                     x={nb.pos.x}
                     y={nb.pos.y}
                     fill="#64748b"
-                    fontSize="7"
+                    fontSize="6"
                     fontFamily="sans-serif"
                     fontWeight="700"
                     letterSpacing="0.08em"
                     textAnchor="middle"
                     stroke="#0b0f15"
-                    strokeWidth="2.5"
+                    strokeWidth="2"
                     paintOrder="stroke"
                   >
                     {nb.name.toUpperCase()}
@@ -201,18 +254,25 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
             {currentEmpire.capitals && (
               <g className="capitals-layer">
                 {currentEmpire.capitals.map((cap, idx) => (
-                  <g key={idx} className="capital-pin" transform={`translate(${cap.x}, ${cap.y})`}>
-                    <circle r="4.5" fill="#facc15" stroke="#000" strokeWidth="1.5" />
-                    <circle r="1.8" fill="#000" />
+                  <g
+                    key={idx}
+                    className="capital-pin"
+                    transform={`translate(${cap.x}, ${cap.y})`}
+                    onMouseEnter={() => setHoveredCapital({ type: 'capital', title: cap.name, desc: cap.role })}
+                    onMouseLeave={() => setHoveredCapital(null)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <circle r="4" fill="#facc15" stroke="#000" strokeWidth="1.2" />
+                    <circle r="1.5" fill="#000" />
                     <text
-                      y="-7"
+                      y="-6"
                       fill="#fef08a"
-                      fontSize="6"
+                      fontSize="5"
                       fontWeight="750"
                       fontFamily="sans-serif"
                       textAnchor="middle"
                       stroke="#0b0f15"
-                      strokeWidth="2.5"
+                      strokeWidth="2"
                       paintOrder="stroke"
                     >
                       ★ {cap.name}
@@ -233,27 +293,29 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                       className={`battle-pin ${isSelected ? 'active' : ''}`}
                       transform={`translate(${bt.coords.x}, ${bt.coords.y})`}
                       onClick={() => setSelectedBattle(bt)}
+                      onMouseEnter={() => setHoveredBattle({ type: 'battle', title: bt.name, year: bt.year, parties: bt.parties, summary: bt.summary })}
+                      onMouseLeave={() => setHoveredBattle(null)}
                       style={{ cursor: 'pointer' }}
                     >
-                      <circle r={isSelected ? "9" : "7"} fill="#ef4444" fillOpacity={isSelected ? "0.9" : "0.75"} stroke="#fff" strokeWidth="1.5" />
+                      <circle r={isSelected ? "8" : "6"} fill="#ef4444" fillOpacity={isSelected ? "0.95" : "0.8"} stroke="#fff" strokeWidth="1.2" />
                       <text
-                        y="2.5"
+                        y="2"
                         fill="#fff"
-                        fontSize="6"
+                        fontSize="5"
                         fontWeight="900"
                         textAnchor="middle"
                       >
                         ⚔
                       </text>
                       <text
-                        y="14"
+                        y="12"
                         fill={isSelected ? "#fca5a5" : "#e2e8f0"}
-                        fontSize="5"
+                        fontSize="4.5"
                         fontWeight="700"
                         fontFamily="sans-serif"
                         textAnchor="middle"
                         stroke="#0b0f15"
-                        strokeWidth="2"
+                        strokeWidth="1.8"
                         paintOrder="stroke"
                       >
                         {bt.name}
@@ -265,29 +327,40 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
             )}
           </svg>
 
+          {/* Interactive Floating Tooltip */}
+          {tooltip && (
+            <div className="empires-floating-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
+              <div className="eft-tag">{tooltip.data.type === 'battle' ? '⚔ BATTLE' : '★ IMPERIAL CAPITAL'}</div>
+              <strong className="eft-title">{tooltip.data.title}</strong>
+              {tooltip.data.year && <span className="eft-year"> ({tooltip.data.year})</span>}
+              {tooltip.data.parties && <p className="eft-parties"><strong>Forces:</strong> {tooltip.data.parties}</p>}
+              <p className="eft-desc">{tooltip.data.summary || tooltip.data.desc}</p>
+            </div>
+          )}
+
           {/* Map Footer Legend */}
           <div className="empires-map-legend">
             <span><strong style={{ color: activePhase.color }}>■</strong> {currentEmpire.name} ({activePhase.year})</span>
             <span><strong style={{ color: '#facc15' }}>★</strong> Imperial Capital</span>
-            <span><strong style={{ color: '#ef4444' }}>⚔</strong> Major Battle Site</span>
-            <span><strong style={{ color: '#64748b' }}>ABC</strong> Neighboring Realms</span>
+            <span><strong style={{ color: '#ef4444' }}>⚔</strong> Historic Battle</span>
+            {currentEmpire.campaign_route && <span><strong style={{ color: '#38bdf8' }}>- -</strong> Macedonian March Route</span>}
+            <span><strong style={{ color: '#64748b' }}>ABC</strong> Frontier Kingdoms</span>
           </div>
         </div>
 
         {/* Rich Empire Dossier Sidebar */}
         <aside className="empire-dossier" aria-label="Imperial details">
-          {/* Battle Popup if clicked */}
+          {/* Battle Details Card */}
           {selectedBattle && (
             <div className="battle-alert-card">
               <div className="bac-header">
                 <span className="bac-tag">⚔ DECISIVE HISTORICAL BATTLE</span>
-                <button type="button" className="bac-close" onClick={() => setSelectedBattle(null)}>×</button>
+                <button type="button" className="bac-close" onClick={() => setSelectedBattle(null)} aria-label="Close battle details">×</button>
               </div>
               <h4>{selectedBattle.name} ({selectedBattle.year})</h4>
-              <p><strong>Location:</strong> {selectedBattle.location}</p>
-              <p><strong>Commanders:</strong> {selectedBattle.commanders}</p>
-              <p><strong>Outcome:</strong> {selectedBattle.outcome}</p>
-              {selectedBattle.significance && <p><strong>Significance:</strong> {selectedBattle.significance}</p>}
+              <p><strong>Parties:</strong> {selectedBattle.parties}</p>
+              <p><strong>Tactical Summary:</strong> {selectedBattle.summary}</p>
+              <p className="bac-source"><strong>Official Source:</strong> {selectedBattle.source}</p>
             </div>
           )}
 
@@ -306,7 +379,7 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
           {/* Territorial Phase Summary */}
           <div className="dossier-box">
             <h4>Territorial Phase: {activePhase.phase}</h4>
-            <p>{activePhase.notes}</p>
+            <p>{activePhase.description}</p>
           </div>
 
           {/* Original Script & Language Shloka / Epigraph */}
@@ -314,51 +387,47 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
             <div className="epigraph-card">
               <div className="epigraph-header">
                 <span className="epigraph-badge">ORIGINAL EPIGRAPHIC TESTIMONY</span>
-                <span className="epigraph-lang">{currentEmpire.shloka_epigraph.language} ({currentEmpire.shloka_epigraph.script})</span>
+                <span className="epigraph-lang">{currentEmpire.shloka_epigraph.lang} ({currentEmpire.shloka_epigraph.script})</span>
               </div>
 
               {/* Inscription in Original Script */}
               <blockquote className="epigraph-original" lang="sa">
-                {currentEmpire.shloka_epigraph.original}
+                {currentEmpire.shloka_epigraph.text}
               </blockquote>
-
-              {/* Transliteration */}
-              {currentEmpire.shloka_epigraph.transliteration && (
-                <p className="epigraph-translit">
-                  <em>{currentEmpire.shloka_epigraph.transliteration}</em>
-                </p>
-              )}
 
               {/* Translation */}
               <p className="epigraph-translation">
                 <strong>Translation:</strong> {currentEmpire.shloka_epigraph.translation}
               </p>
 
-              <span className="epigraph-source">
-                Source: {currentEmpire.shloka_epigraph.source_text}
-              </span>
+              <div className="epigraph-cite-box">
+                <span className="epigraph-source">Citation: {currentEmpire.shloka_epigraph.citation}</span>
+                <span className="epigraph-verified">Verified from: {currentEmpire.shloka_epigraph.verified_from}</span>
+              </div>
             </div>
           )}
 
           {/* Key Battles */}
-          <div className="dossier-section">
-            <h4>Major Military Campaigns & Battles</h4>
-            <div className="battles-list">
-              {currentEmpire.battles.map((bt, idx) => (
-                <div
-                  key={idx}
-                  className={`battle-list-item ${selectedBattle?.name === bt.name ? 'selected' : ''}`}
-                  onClick={() => setSelectedBattle(bt)}
-                >
-                  <span className="bli-swords">⚔</span>
-                  <div>
-                    <strong>{bt.name} ({bt.year})</strong>
-                    <p className="bli-desc">{bt.outcome}</p>
+          {currentEmpire.battles && (
+            <div className="dossier-section">
+              <h4>Major Military Campaigns & Battles</h4>
+              <div className="battles-list">
+                {currentEmpire.battles.map((bt, idx) => (
+                  <div
+                    key={idx}
+                    className={`battle-list-item ${selectedBattle?.name === bt.name ? 'selected' : ''}`}
+                    onClick={() => setSelectedBattle(bt)}
+                  >
+                    <span className="bli-swords">⚔</span>
+                    <div>
+                      <strong>{bt.name} ({bt.year})</strong>
+                      <p className="bli-desc">{bt.summary}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Historical Events Timeline */}
           {currentEmpire.events && (
@@ -376,19 +445,21 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
           )}
 
           {/* Official Academic Sources */}
-          <div className="dossier-section dossier-sources">
-            <h4>Official Scholarly Research & Epigraphic Sources</h4>
-            <div className="sources-list">
-              {currentEmpire.sources.map((src, idx) => (
-                <div key={idx} className="source-citation-card">
-                  <span className="scc-year">{src.year}</span>
-                  <h5 className="scc-title">{src.title}</h5>
-                  <p className="scc-authors">{src.authors}</p>
-                  <p className="scc-pub">{src.publisher}</p>
-                </div>
-              ))}
+          {currentEmpire.sources && (
+            <div className="dossier-section dossier-sources">
+              <h4>Official Scholarly Research & Epigraphic Sources</h4>
+              <div className="sources-list">
+                {currentEmpire.sources.map((src, idx) => (
+                  <div key={idx} className="source-citation-card">
+                    <span className="scc-year">{src.year}</span>
+                    <h5 className="scc-title">{src.title}</h5>
+                    <p className="scc-authors">{src.author || src.authors}</p>
+                    <p className="scc-pub">{src.publisher}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </aside>
       </div>
     </div>

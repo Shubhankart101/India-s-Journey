@@ -556,3 +556,53 @@
     max-height: 480px;
   }
 }
+
+/* Floating Tooltip */
+.indus-floating-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(212, 167, 44, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 50;
+  max-width: 260px;
+  backdrop-filter: blur(8px);
+}
+
+.ift-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.ift-title {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.ift-hi {
+  color: #fde047;
+  font-size: 0.78rem;
+}
+
+.ift-loc {
+  margin: 3px 0 0;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.ift-area {
+  margin: 3px 0 0;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.dossier-desc-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0;
+}

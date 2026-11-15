@@ -528,3 +528,64 @@
     max-height: 520px;
   }
 }
+
+/* Floating Tooltip */
+.empires-floating-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 50;
+  max-width: 280px;
+  backdrop-filter: blur(8px);
+}
+
+.eft-tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fbbf24;
+  margin-bottom: 2px;
+}
+
+.eft-title {
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.eft-year {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.eft-parties {
+  margin: 4px 0 2px;
+  font-size: 0.72rem;
+  color: #cbd5e1;
+}
+
+.eft-desc {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: #e2e8f0;
+}
+
+.epigraph-cite-box {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+}
+
+.epigraph-verified {
+  color: #38bdf8;
+  font-style: italic;
+}

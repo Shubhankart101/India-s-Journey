@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const apiDir = path.join(root, 'docs', 'api');
-for (const name of ['assets', 'vendor']) {
+for (const name of ['assets', 'vendor', 'build']) {
   fs.rmSync(path.join(root, 'docs', name), { recursive: true, force: true });
 }
 for (const name of [

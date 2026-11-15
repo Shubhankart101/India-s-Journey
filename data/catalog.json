@@ -1262,7 +1262,7 @@
       "slug": "indus-valley-civilisation",
       "order": 11,
       "title": "Indus Valley Civilisation",
-      "description": "Urban planning, metallurgy, maritime trade networks, undeciphered script, and material culture of the Bronze Age Indus civilization (c. 3300 – 1300 BCE).",
+      "description": "Comprehensive archaeological atlas of 49+ excavations, urban planning, metallurgy, maritime trade networks, undeciphered script concordance, and material culture (c. 3300 – 1300 BCE).",
       "badges": [
         "Archeology",
         "Bronze Age",
@@ -1274,44 +1274,12 @@
       "art": "indus-valley.svg",
       "subgroups": [
         {
-          "name": "Metropolises & Major Urban Centers",
-          "slug": "metropolises-major-urban-centers",
+          "name": "The Indus Valley Civilisation Comprehensive Excavation Map",
+          "slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
           "order": 0,
-          "title": "Metropolises & Major Urban Centers",
-          "description": "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
+          "title": "The Indus Valley Civilisation Comprehensive Excavation Map & Epigraphy",
+          "description": "Comprehensive GIS excavation atlas across 49+ sites and 9 countries, Harappan urban planning, script concordance, metallurgy, maritime trade networks, and material culture.",
           "art": "indus-valley.svg"
-        },
-        {
-          "name": "Artifacts, Statuary & Material Culture",
-          "slug": "artifacts-statuary-material-culture",
-          "order": 1,
-          "title": "Artifacts, Statuary & Material Culture",
-          "description": "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
-          "art": "ivc-artifacts.svg"
-        },
-        {
-          "name": "Maritime Trade & International Artifacts",
-          "slug": "maritime-trade-international-artifacts",
-          "order": 2,
-          "title": "Maritime Trade & International Artifacts",
-          "description": "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
-          "art": "indus-trade.svg"
-        },
-        {
-          "name": "Indus Script & Alphabet Decoding",
-          "slug": "indus-script-alphabet-decoding",
-          "order": 3,
-          "title": "Indus Script & Alphabet Decoding",
-          "description": "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
-          "art": "indus-script.svg"
-        },
-        {
-          "name": "Chronology, Settlement Geography & Legacy",
-          "slug": "chronology-settlement-geography-legacy",
-          "order": 4,
-          "title": "Chronology, Settlement Geography & Legacy",
-          "description": "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
-          "art": "ivc-excavations.svg"
         }
       ]
     },
@@ -1332,84 +1300,12 @@
       "art": "ancient-empires.svg",
       "subgroups": [
         {
-          "name": "16 Mahajanapadas & Early Republics",
-          "slug": "16-mahajanapadas-early-republics",
+          "name": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+          "slug": "empires-of-ancient-india-atlas",
           "order": 0,
-          "title": "16 Mahajanapadas & Early Republics (c. 600–345 BCE)",
-          "description": "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
-          "art": "mahajanapadas.svg"
-        },
-        {
-          "name": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda",
-          "slug": "magadha-ascendancy-haryanka-shishunaga-nanda",
-          "order": 1,
-          "title": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda (544–322 BCE)",
-          "description": "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
-          "art": "magadha-nanda.svg"
-        },
-        {
-          "name": "Alexander the Great's Campaign & Macedonian Limit",
-          "slug": "alexander-the-great-s-campaign-macedonian-limit",
-          "order": 2,
-          "title": "Alexander the Great's Campaign & Macedonian Limit (327–325 BCE)",
-          "description": "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
-          "art": "alexander-campaign.svg"
-        },
-        {
-          "name": "Mauryan Empire & Pan-Indian Hegemony",
-          "slug": "mauryan-empire-pan-indian-hegemony",
-          "order": 3,
-          "title": "Mauryan Empire & Pan-Indian Hegemony (322–185 BCE)",
-          "description": "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
-          "art": "maurya-empire.svg"
-        },
-        {
-          "name": "Post-Mauryan & Indo-Greek Kingdoms",
-          "slug": "post-mauryan-indo-greek-kingdoms",
-          "order": 4,
-          "title": "Post-Mauryan & Indo-Greek Kingdoms (185 BCE–10 CE)",
-          "description": "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
-          "art": "indo-greek.svg"
-        },
-        {
-          "name": "Satavahana Empire & Deccan Maritime Ascendancy",
-          "slug": "satavahana-empire-deccan-maritime-ascendancy",
-          "order": 5,
-          "title": "Satavahana Empire & Deccan Maritime Ascendancy (2nd C. BCE–220 CE)",
-          "description": "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
-          "art": "satavahana-empire.svg"
-        },
-        {
-          "name": "Kushan Empire & The Silk Road Synthesis",
-          "slug": "kushan-empire-the-silk-road-synthesis",
-          "order": 6,
-          "title": "Kushan Empire & The Silk Road Synthesis (30–375 CE)",
-          "description": "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
-          "art": "kushan-empire.svg"
-        },
-        {
-          "name": "Gupta Empire: Classical Golden Age",
-          "slug": "gupta-empire-classical-golden-age",
-          "order": 7,
-          "title": "Gupta Empire: Classical Golden Age (319–550 CE)",
-          "description": "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
-          "art": "gupta-empire.svg"
-        },
-        {
-          "name": "Vardhana Empire of Harsha",
-          "slug": "vardhana-empire-of-harsha",
-          "order": 8,
-          "title": "Vardhana Empire of Harsha (606–647 CE)",
-          "description": "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
-          "art": "harsha-empire.svg"
-        },
-        {
-          "name": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava",
-          "slug": "classical-southern-dynasties-chola-chera-pandya-pallava",
-          "order": 9,
-          "title": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava (300 BCE–850 CE)",
-          "description": "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
-          "art": "southern-dynasties.svg"
+          "title": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+          "description": "Interactive dynastic atlases mapping 10 major imperial eras, territorial boundary shifts, decisive battlefields, and epigraphic records in original ancient scripts with official citations.",
+          "art": "ancient-empires.svg"
         }
       ]
     }
@@ -256885,38 +256781,33 @@
       "source_url": "https://asi.nic.in",
       "details": "Comparative urban footprint in hectares across primary Indus metropolises based on archeological surveys by ASI and international missions.",
       "category": "Indus Valley Civilisation",
-      "subgroup": "Metropolises & Major Urban Centers",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
       "position": 0,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
         "source": "Archeological Survey of India & Harappa Archaeological Research Project",
         "labels": [
-          "Rakhigarhi",
-          "Mohenjo-daro",
-          "Harappa",
-          "Dholavira",
-          "Ganweriwala",
-          "Kalibangan",
-          "Lothal",
-          "Chanhudaro",
-          "Banawali",
-          "Surkotada"
+          "Rakhigarhi (Haryana)",
+          "Mohenjo-daro (Sindh)",
+          "Harappa (Punjab)",
+          "Dholavira (Gujarat)",
+          "Ganweriwala (Punjab)",
+          "Kalibangan (Rajasthan)",
+          "Lothal (Gujarat)"
         ],
         "datasets": [
           {
-            "label": "Settlement Area (ha)",
+            "label": "Settlement Footprint (Hectares)",
             "values": [
               350,
               300,
               150,
               100,
               80,
-              25,
-              20,
-              15,
-              12,
-              5
+              50,
+              15
             ]
           }
         ]
@@ -256924,20 +256815,21 @@
     },
     {
       "key": "ivc_steatite_seals_by_site",
-      "title": "Inscribed Steatite Seals Discovered by Major Archeological Site",
-      "subtitle": "Count of cataloged Indus seals, tablets, and inscribed sealings",
+      "title": "Cataloged Harappan Inscribed Seals by Excavation Site",
+      "subtitle": "Number of inscribed steatite, terracotta, and faience seals in Corpus of Indus Seals",
       "frequency": "archeological",
       "color": "#38bdf8",
       "suffix": " seals",
       "source_url": "https://asi.nic.in",
-      "details": "Distribution of inscribed seals and tokens across Indus Valley excavations cataloged in the Corpus of Indus Seals and Inscriptions (CISI).",
+      "details": "Distribution of inscribed seals and tablets cataloged in the Corpus of Indus Seals and Inscriptions (CISI). Mohenjo-daro and Harappa account for over 85% of all recovered glyptic epigraphs.",
       "category": "Indus Valley Civilisation",
-      "subgroup": "Artifacts, Statuary & Material Culture",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
       "position": 1,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Corpus of Indus Seals and Inscriptions (Parpola & Joshi)",
+        "source": "Mahadevan Concordance (ASI 1977) & Parpola CISI (Vols 1-3)",
         "labels": [
           "Mohenjo-daro",
           "Harappa",
@@ -256945,21 +256837,19 @@
           "Kalibangan",
           "Dholavira",
           "Chanhudaro",
-          "Rakhigarhi",
-          "Foreign Sites (Ur, Susa, Kish, Failaka)"
+          "Other Sites (Combined)"
         ],
         "datasets": [
           {
-            "label": "Inscribed Seals Discovered",
+            "label": "Cataloged Inscribed Objects",
             "values": [
-              2500,
-              1400,
-              213,
-              105,
-              80,
+              2150,
+              1420,
+              245,
+              120,
+              95,
               68,
-              45,
-              62
+              142
             ]
           }
         ]
@@ -256967,38 +256857,37 @@
     },
     {
       "key": "ivc_international_trade_distance",
-      "title": "Ancient Maritime & Overland Trade Distances from Indus Ports",
-      "subtitle": "Navigational and caravan trade distances from Lothal & Sutkagan Dor in kilometres",
-      "frequency": "geographical",
-      "color": "#fb923c",
+      "title": "Maritime and Overland Trade Distances from Indus Ports",
+      "subtitle": "Kilometres travelled by Harappan merchant expeditions to ancient trade partners",
+      "frequency": "historical",
+      "color": "#10b981",
       "suffix": " km",
       "source_url": "https://asi.nic.in",
-      "details": "Oceanic and inland trade corridor distances connecting the Indus heartland to Dilmun, Magan, Elam, and Mesopotamia during the 3rd millennium BCE.",
+      "details": "Estimated nautical and caravan route distances connecting Indus trade hubs like Lothal and Sutkagan Dor with ancient Gulf and Near Eastern civilizations.",
       "category": "Indus Valley Civilisation",
-      "subgroup": "Maritime Trade & International Artifacts",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
       "position": 2,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "National Institute of Oceanography (NIO) & Possehl Maritime Studies",
+        "source": "National Institute of Oceanography (Goa) & Possehl Seafaring Studies",
         "labels": [
-          "Lothal to Ras al-Jinz (Oman/Magan)",
-          "Lothal to Failaka Island (Dilmun)",
-          "Lothal to Ur (Mesopotamia)",
-          "Harappa to Shortugai (Lapis Colony)",
-          "Lothal to Susa (Elam)",
-          "Sutkagan Dor to Bandar Abbas"
+          "Meluhha to Mesopotamia (Ur/Kish)",
+          "Lothal to Dilmun (Bahrain/Failaka)",
+          "Makran Coast to Magan (Oman)",
+          "Indus Plains to Shortugai (Oxus River Lapis Mines)",
+          "Gujarat Ports to Susa (Elam)"
         ],
         "datasets": [
           {
-            "label": "Distance (km)",
+            "label": "Route Distance (km)",
             "values": [
-              1280,
-              2150,
-              2600,
-              1150,
-              2400,
-              750
+              2500,
+              1850,
+              950,
+              1200,
+              2200
             ]
           }
         ]
@@ -257006,46 +256895,39 @@
     },
     {
       "key": "ivc_top_script_signs_frequency",
-      "title": "Corpus Frequency of Top Indus Script Signs",
-      "subtitle": "Total occurrences in the Mahadevan (1977) epigraphical concordance",
-      "frequency": "epigraphical",
-      "color": "#a855f7",
-      "suffix": " occurrences",
-      "source_url": "https://asi.nic.in",
-      "details": "Frequency of the most recurrent signs across 4,124 cataloged Indus texts according to Iravatham Mahadevan's computer concordance.",
+      "title": "High-Frequency Signs in the Undeciphered Indus Script",
+      "subtitle": "Absolute sign occurrences in the Mahadevan Concordance corpus of 4,000+ texts",
+      "frequency": "epigraphic",
+      "color": "#f59e0b",
+      "suffix": " times",
+      "source_url": "https://indusscript.net",
+      "details": "Frequency of occurrence of the most common signs in the Indus script corpus according to Iravatham Mahadevan's ASI Concordance (1977).",
       "category": "Indus Valley Civilisation",
-      "subgroup": "Indus Script & Alphabet Decoding",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
       "position": 3,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "The Indus Script: Texts, Concordance and Tables (Mahadevan 1977)",
+        "source": "Iravatham Mahadevan, The Indus Script: Texts, Concordance and Tables (ASI 1977)",
         "labels": [
-          "Jar / Vessel Sign (M-342)",
-          "Arrow / Spear Sign (M-48)",
-          "Fish Sign (M-59)",
-          "Double Stroke (M-102)",
-          "Pincer / Bearer (M-211)",
-          "Comb Sign (M-176)",
-          "Horned Deity (M-1)",
-          "Wheel / Sun Sign (M-391)",
-          "Archer Sign (M-49)",
-          "Diamond Sign (M-267)"
+          "M-342 (Jar / Vessel Sign)",
+          "M-267 (Bearer / Arrow Sign)",
+          "M-59 (Chevrons / Pincer)",
+          "M-176 (Harrow / Combs)",
+          "M-99 (Fish Sign)",
+          "M-391 (Terminal Strokes)"
         ],
         "datasets": [
           {
             "label": "Corpus Occurrences",
             "values": [
               1395,
-              620,
-              580,
-              310,
-              275,
-              230,
-              210,
-              185,
-              160,
-              145
+              680,
+              520,
+              480,
+              410,
+              395
             ]
           }
         ]
@@ -257053,15 +256935,16 @@
     },
     {
       "key": "ivc_radiocarbon_phases",
-      "title": "Chronological Span of Indus Valley Civilisation Eras",
-      "subtitle": "Span in years based on calibrated radiocarbon dating",
+      "title": "Chronological Span of Indus Civilisation Cultural Phases",
+      "subtitle": "Duration in years based on calibrated radiocarbon (C14) dating",
       "frequency": "chronological",
-      "color": "#10b981",
-      "suffix": " years span",
+      "color": "#a855f7",
+      "suffix": " yrs",
       "source_url": "https://asi.nic.in",
-      "details": "Calibrated carbon-14 duration of the Early Harappan (regionalization), Mature Harappan (urban integration), and Late Harappan (localization) phases.",
+      "details": "Calibrated chronological sequence of the Indus tradition from Early Regionalization through Mature Urban Climax to Late Post-Urban Localization.",
       "category": "Indus Valley Civilisation",
-      "subgroup": "Chronology, Settlement Geography & Legacy",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
       "position": 4,
       "series": {
         "chart_type": "bar",
@@ -257086,46 +256969,41 @@
     },
     {
       "key": "ancient_empires_territorial_span",
-      "title": "Maximum Territorial Extent of Ancient Indian Empires",
-      "subtitle": "Estimated imperial land area in million square kilometers at peak zenith",
+      "title": "Peak Territorial Extent of Ancient Indian Empires",
+      "subtitle": "Estimated maximum land area in million square kilometres (sq km)",
       "frequency": "historical",
       "color": "#facc15",
       "suffix": " M km²",
       "source_url": "https://asi.nic.in",
-      "details": "Comparative territorial extent across classical Indian dynasties based on historical GIS surveys by the Archaeological Survey of India (ASI) and Cambridge Ancient History.",
+      "details": "Comparative territorial surface area at imperial zenith based on epigraphic distribution and historical geographical syntheses.",
       "category": "Empires of Ancient India",
-      "subgroup": "Mauryan Empire & Pan-Indian Hegemony",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 0,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Historical Atlas of South Asia",
+        "source": "Schwartzberg Historical Atlas of South Asia & ASI Epigraphy Branch",
         "labels": [
           "Mauryan Empire (Ashoka)",
-          "Gupta Empire (Vikramaditya)",
-          "Kushan Empire (Kanishka)",
-          "Harsha's Empire (Vardhana)",
-          "Nanda Empire",
+          "Gupta Empire (Chandragupta II)",
+          "Kushan Empire (Kanishka I)",
+          "Harsha's Empire",
           "Satavahana Empire",
-          "Indo-Greek Kingdom (Menander)",
-          "Alexander's Macedonian Realm (in India)",
-          "Vajji Confederacy",
-          "Magadha (Bimbisara)"
+          "Nanda Empire",
+          "Indo-Greek Kingdom"
         ],
         "datasets": [
           {
-            "label": "Territorial Area (Million km²)",
+            "label": "Territorial Span (Million km²)",
             "values": [
               5.0,
               3.5,
+              3.0,
               2.5,
+              2.2,
               1.8,
-              1.5,
-              1.3,
-              1.1,
-              0.8,
-              0.4,
-              0.2
+              1.2
             ]
           }
         ]
@@ -257133,42 +257011,37 @@
     },
     {
       "key": "ancient_empires_military_infantry",
-      "title": "Documented Imperial Standing Armies: Infantry Strength",
-      "subtitle": "Foot soldier division sizes recorded in classical Greek, Roman, and Indian epigraphs",
-      "frequency": "historical",
+      "title": "Documented Standing Army Infantry Strength of Classical Empires",
+      "subtitle": "Number of regular infantry troops recorded in classical and epigraphic chronicles",
+      "frequency": "military",
       "color": "#ef4444",
-      "suffix": " soldiers",
+      "suffix": " troops",
       "source_url": "https://asi.nic.in",
-      "details": "Standing infantry forces documented by Megasthenes (Indica), Pliny the Elder (Natural History), Quintus Curtius Rufus, and Xuanzang.",
+      "details": "Infantry size recorded by contemporary Roman, Greek, Chinese, and Indian chroniclers (Pliny, Megasthenes, Curtius, Xuanzang).",
       "category": "Empires of Ancient India",
-      "subgroup": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 1,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Classical Epigraphic Records",
+        "source": "Megasthenes Indica & Pliny Naturalis Historia",
         "labels": [
-          "Mauryan Empire (Megasthenes)",
-          "Nanda Empire (Curtius)",
-          "Harsha's Army (Xuanzang)",
-          "Satavahanas (Pliny)",
-          "Alexander's Punjab Army",
-          "King Porus (Hydaspes)",
-          "Kalinga Army (Pliny)",
-          "Vajjian Gana-Sangha"
+          "Mauryan Empire (Chandragupta)",
+          "Nanda Empire of Magadha",
+          "Harsha's Imperial Host",
+          "Alexander's Macedonian Host (Asia)",
+          "Satavahana Forces"
         ],
         "datasets": [
           {
-            "label": "Infantry Strength",
+            "label": "Standing Infantry",
             "values": [
               600000,
               200000,
               100000,
-              100000,
-              45000,
-              30000,
-              60000,
-              40000
+              40000,
+              100000
             ]
           }
         ]
@@ -257176,40 +257049,37 @@
     },
     {
       "key": "ancient_empires_war_elephants",
-      "title": "Imperial War Elephant Corps in Ancient Indian Armies",
-      "subtitle": "Armored war pachyderm divisions documented across ancient battle accounts",
-      "frequency": "historical",
-      "color": "#f59e0b",
-      "suffix": " war elephants",
+      "title": "Imperial War Elephant Corps in Indian Warfare",
+      "subtitle": "Number of trained battle elephants deployed by imperial armies",
+      "frequency": "military",
+      "color": "#3b82f6",
+      "suffix": " elephants",
       "source_url": "https://asi.nic.in",
-      "details": "War elephant divisions recorded during the Alexander invasion, Seleucid treaty, and Gangetic imperial campaigns.",
+      "details": "War elephants formed the decisive arm of ancient Indian statecraft (Gaja-bala), celebrated in Kautilya's Arthashastra and chronicled by Greek historians.",
       "category": "Empires of Ancient India",
-      "subgroup": "Alexander the Great's Campaign & Macedonian Limit",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 2,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Classical Greek Historians",
+        "source": "Arthashastra & Curtius Rufus History of Alexander",
         "labels": [
-          "Mauryan Empire",
+          "Mauryan Empire (Peak)",
           "Nanda Empire",
-          "Harsha's Army",
-          "Gangaridai (Bengal)",
-          "Satavahana Empire",
-          "Kalinga Army",
-          "King Porus (Hydaspes)"
+          "Harsha's Vardhana Army",
+          "King Porus (Hydaspes)",
+          "Seleucus I Treaty Transfer"
         ],
         "datasets": [
           {
-            "label": "Armored War Elephants",
+            "label": "War Elephants",
             "values": [
               9000,
-              6000,
-              5000,
               4000,
-              1500,
-              1000,
-              200
+              5000,
+              200,
+              500
             ]
           }
         ]
@@ -257217,42 +257087,41 @@
     },
     {
       "key": "ancient_empires_inscriptions_count",
-      "title": "Cataloged Epigraphic Inscriptions and Edicts by Imperial Era",
-      "subtitle": "Surviving stone edicts, pillar inscriptions, and copper plates cataloged in Epigraphia Indica",
-      "frequency": "historical",
+      "title": "Cataloged Official Imperial Inscriptions by Dynasty",
+      "subtitle": "Number of published stone, pillar, cave, and copper plate royal charters in CII and Epigraphia Indica",
+      "frequency": "epigraphic",
       "color": "#10b981",
       "suffix": " inscriptions",
       "source_url": "https://asi.nic.in",
-      "details": "Count of official royal edicts, cave grants, and prasastis cataloged by the Archaeological Survey of India.",
+      "details": "Epigraphic corpus cataloged by the Archaeological Survey of India (ASI) Epigraphy Branch across Corpus Inscriptionum Indicarum (CII).",
       "category": "Empires of Ancient India",
-      "subgroup": "Gupta Empire: Classical Golden Age",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 3,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Epigraphia Indica & Archaeological Survey of India",
+        "source": "Archaeological Survey of India Epigraphy Branch & CII Volumes",
         "labels": [
-          "Gupta Classical Epigraphs",
-          "Sangam Hero Stones & Inscriptions",
-          "Ashokan Mauryan Edicts",
-          "Kushan Mathura/Gandhara Epigraphs",
-          "Satavahana Rock Inscriptions",
-          "Indo-Greek Bilingual Inscriptions",
-          "Harsha's Copper Plates",
-          "Heliodorus / Post-Mauryan Pillars"
+          "Chola Dynasty (Imperial)",
+          "Gupta & Later Gupta",
+          "Mauryan Edicts (Ashoka)",
+          "Badami Chalukyas",
+          "Pallavas of Kanchi",
+          "Satavahanas",
+          "Harshavardhana"
         ],
         "datasets": [
           {
-            "label": "Cataloged Inscriptions",
+            "label": "Cataloged Royal Inscriptions",
             "values": [
-              240,
+              12000,
+              320,
+              185,
               210,
-              180,
-              150,
-              120,
-              45,
-              35,
-              25
+              165,
+              85,
+              12
             ]
           }
         ]
@@ -257260,42 +257129,41 @@
     },
     {
       "key": "ancient_empires_reign_durations",
-      "title": "Dynastic Longevity of Classical Indian Imperial Houses",
-      "subtitle": "Duration of imperial rule in years from dynasty foundation to decline",
+      "title": "Dynastic Lifespan of Ancient Indian Imperial Houses",
+      "subtitle": "Total duration of unbroken imperial rule in years",
       "frequency": "historical",
-      "color": "#38bdf8",
+      "color": "#a855f7",
       "suffix": " years",
       "source_url": "https://asi.nic.in",
-      "details": "Comparative chronological lifespan of major classical dynasties across the ancient subcontinent.",
+      "details": "Total chronological span of primary dynastic houses from foundation to imperial eclipse.",
       "category": "Empires of Ancient India",
-      "subgroup": "Satavahana Empire & Deccan Maritime Ascendancy",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 4,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Epigraphia Indica",
+        "source": "Nilakanta Sastri & Majumdar Dynastic Chronology",
         "labels": [
-          "Satavahana Empire",
+          "Satavahana Dynasty",
+          "Pallava Dynasty",
           "Kushan Empire",
           "Gupta Empire",
-          "Indo-Greek Kingdom",
           "Mauryan Empire",
           "Shunga Dynasty",
-          "Harsha's Vardhana Rule",
-          "Nanda Empire"
+          "Harsha's Reign"
         ],
         "datasets": [
           {
-            "label": "Dynastic Lifespan (Years)",
+            "label": "Imperial Duration (Years)",
             "values": [
               450,
+              400,
               345,
-              230,
-              195,
+              231,
               137,
               112,
-              41,
-              23
+              41
             ]
           }
         ]
@@ -257303,34 +257171,32 @@
     },
     {
       "key": "mahajanapadas_political_systems",
-      "title": "16 Mahajanapadas: Distribution of Monarchies and Gana-Sangha Republics",
-      "subtitle": "Geographic classification of Vedic Mahajanapadas into Monarchical Rajyas and Republican Sanghas",
+      "title": "State Formations of the 16 Mahajanapadas (c. 600 BCE)",
+      "subtitle": "Breakdown between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas)",
       "frequency": "historical",
       "color": "#eab308",
-      "suffix": " realms",
+      "suffix": " states",
       "source_url": "https://asi.nic.in",
-      "details": "Classification of the sixteen great realms documented in the Anguttara Nikaya and Digha Nikaya into monarchical and republican polities.",
+      "details": "Classification of Iron Age polities listed in the Anguttara Nikaya and Jaina texts into hereditary monarchical states vs clan-based republican confederacies.",
       "category": "Empires of Ancient India",
-      "subgroup": "16 Mahajanapadas & Early Republics",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 5,
       "series": {
-        "chart_type": "bar",
-        "index_axis": "y",
-        "source": "Archaeological Survey of India & Epigraphia Indica",
+        "chart_type": "doughnut",
+        "source": "Anguttara Nikaya & Rhys Davids Buddhist India",
         "labels": [
-          "Monarchical Rajyas (Magadha, Kosala, Vatsa, Avanti)",
-          "Gana-Sanghas & Republics (Vajji, Malla)",
-          "North-Western Janapadas (Gandhara, Kamboja)",
-          "Central & Peninsular Janapadas (Chedi, Matsya, Surasena, Ashmaka)"
+          "Monarchies (Rajyas - Magadha, Kosala, Vatsa, etc.)",
+          "Republics / Gana-Sanghas (Vajji, Malla)",
+          "Tribal Frontier Polities (Kamboja, Assaka)"
         ],
         "datasets": [
           {
-            "label": "Number of Recorded Realms",
+            "label": "Number of Polities",
             "values": [
-              8,
-              2,
-              2,
-              4
+              11,
+              3,
+              2
             ]
           }
         ]
@@ -257338,38 +257204,35 @@
     },
     {
       "key": "indogreek_numismatic_coin_types",
-      "title": "Indo-Greek Bilingual Numismatic Coin Hoards",
-      "subtitle": "Bilingual Greek and Kharosthi/Brahmi royal coinage hoards discovered across Gandhara and Punjab",
-      "frequency": "historical",
-      "color": "#a855f7",
-      "suffix": " hoards",
+      "title": "Bilingual Coinage and Hellenistic Kings of Bactria & India",
+      "subtitle": "Known Greek and Indo-Greek sovereigns who issued bilingual currency",
+      "frequency": "numismatic",
+      "color": "#06b6d4",
+      "suffix": " kings",
       "source_url": "https://asi.nic.in",
-      "details": "Major coin hoards and bilingual silver tetradrachms cataloged across Taxila, Pushkalavati, Mir Zakah, and Chaman.",
+      "details": "Number of documented Indo-Greek monarchs known almost exclusively through their magnificent bilingual silver tetradrachms and drachms (Greek obverse, Kharosthi reverse).",
       "category": "Empires of Ancient India",
-      "subgroup": "Post-Mauryan & Indo-Greek Kingdoms",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 6,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Epigraphia Indica",
+        "source": "Osmund Bopearachchi, Monnaies greco-bactriennes et indo-grecques (1991)",
         "labels": [
-          "Menander I Soter (Taxila & Punjab Hoards)",
-          "Demetrius I Aniketos (Gandhara Hoards)",
-          "Eucratides I Megas (Bactria-Kabul Hoards)",
-          "Apollodotus I (Sindh & Gujarat Hoards)",
-          "Antialcidas Nikephoros (Vidisha & Taxila)",
-          "Agathocles Dikaios (Bilingual Brahmi Types)"
+          "Bilingual Indo-Greek Kings (Punjab/Gandhara)",
+          "Greco-Bactrian Kings (North of Hindu Kush)",
+          "Indo-Scythian Kings (Sakas)",
+          "Indo-Parthian Kings (Gondophares)"
         ],
         "datasets": [
           {
-            "label": "Cataloged Coin Specimens",
+            "label": "Documented Monetary Sovereigns",
             "values": [
-              480,
-              210,
-              185,
-              160,
-              125,
-              95
+              34,
+              8,
+              14,
+              6
             ]
           }
         ]
@@ -257377,38 +257240,37 @@
     },
     {
       "key": "kushan_silkroad_monasteries",
-      "title": "Kushan Imperial Buddhist Monasteries and Silk Road Emporia",
-      "subtitle": "Excavated Buddhist monastic stupas and Silk Road trading posts from Bactria to the Gangetic plain",
-      "frequency": "historical",
-      "color": "#06b6d4",
+      "title": "Buddhist Monasteries along Kushan Trade Corridors",
+      "subtitle": "Excavated viharas and stupa complexes along northern Silk Road and Uttarapatha routes",
+      "frequency": "archeological",
+      "color": "#f43f5e",
       "suffix": " complexes",
       "source_url": "https://asi.nic.in",
-      "details": "Cataloged archaeological sites spanning the Kushan imperial heartland under Kanishka I and Huvishka.",
+      "details": "Distribution of monumental Buddhist rock-cut and structural monasteries patronized by the Kushan court.",
       "category": "Empires of Ancient India",
-      "subgroup": "Kushan Empire & The Silk Road Synthesis",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 7,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & UNESCO World Heritage Centre",
+        "source": "UNESCO Silk Roads Archaeological Inventory & ASI Gandhara Survey",
         "labels": [
-          "Gandhara Valley (Peshawar & Takht-i-Bahi)",
-          "Taxila & Margalla Basin (Dharmarajika)",
-          "Mathura & Yamuna Basin (Kankali Tila)",
-          "Bagram (Kapisa Royal Ivory & Glass Hoard)",
-          "Bactria & Oxus Basin (Surkh Kotal & Termez)",
-          "Kashmir Basin (Harwan Fourth Buddhist Council)"
+          "Gandhara & Taxila Basin",
+          "Mathura & Yamuna Valley",
+          "Bactria & Oxus River Basin",
+          "Kashmir Valley",
+          "Begram / Kapisa Valley"
         ],
         "datasets": [
           {
             "label": "Excavated Monastic Complexes",
             "values": [
-              142,
-              98,
-              76,
-              54,
-              42,
-              28
+              120,
+              45,
+              38,
+              25,
+              22
             ]
           }
         ]
@@ -257416,36 +257278,35 @@
     },
     {
       "key": "harsha_imperial_assemblies",
-      "title": "Harsha's Imperial Convocations: Royal and Scholarly Attendance",
-      "subtitle": "Documented attendance of vassal kings, Buddhist monks, and Vedic scholars recorded by Xuanzang",
+      "title": "Dignitaries and Kings Attending Harsha's Kannauj Assembly (643 CE)",
+      "subtitle": "Recorded attendance of vassal monarchs, Buddhist scholars, and Vedic Brahmins",
       "frequency": "historical",
-      "color": "#ec4899",
+      "color": "#8b5cf6",
       "suffix": " attendees",
       "source_url": "https://asi.nic.in",
-      "details": "Official historical records of the Kannauj Assembly and the quinquennial Prayag Mahamoksha Parishad documented by Xuanzang and Banabhatta.",
+      "details": "Chronicle recorded by Xuanzang (Hiuen Tsang) documenting the extraordinary 20-king assembly convened by Emperor Harshavardhana at Kannauj.",
       "category": "Empires of Ancient India",
-      "subgroup": "Vardhana Empire of Harsha",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 8,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Epigraphia Indica",
+        "source": "Xuanzang, Si-Yu-Ki: Buddhist Records of the Western World",
         "labels": [
-          "Prayag Mahamoksha Assembly (Ascetics & Monks)",
-          "Nalanda Mahavihara (Resident Scholars)",
-          "Kannauj Assembly (Buddhist Monks)",
-          "Kannauj Assembly (Vedic Scholars & Brahmins)",
-          "Kannauj Assembly (Tributary Vassal Kings)"
+          "Vassal Kings (incl. Bhaskaravarman of Kamarupa)",
+          "Eminent Buddhist Scholars & Monks",
+          "Learned Vedic Brahmins & Jains",
+          "Royal War Elephants in Procession"
         ],
         "datasets": [
           {
-            "label": "Documented Attendees",
+            "label": "Recorded Numbers",
             "values": [
-              10000,
-              10000,
+              20,
               3000,
-              3000,
-              20
+              2000,
+              300
             ]
           }
         ]
@@ -257453,38 +257314,35 @@
     },
     {
       "key": "sangam_maritime_ports_trade",
-      "title": "Ancient Tamil Maritime Ports and Roman Mediterranean Trade Hubs",
-      "subtitle": "Documented Sangam era coastal emporia with Roman amphorae and Mediterranean coinage hoards",
-      "frequency": "historical",
+      "title": "Roman Amphorae and Coin Hoards in Southern Dynastic Ports",
+      "subtitle": "Excavated Mediterranean artifact assemblages along Coromandel and Malabar coasts",
+      "frequency": "archeological",
       "color": "#14b8a6",
-      "suffix": " artifacts",
+      "suffix": " hoards",
       "source_url": "https://asi.nic.in",
-      "details": "Archaeological finds of Mediterranean amphorae, rouletted ware, and Roman imperial aurei along the Coromandel and Malabar coasts.",
+      "details": "Quantification of Roman gold aurei hoards and Mediterranean amphorae fragments excavated at Muziris, Arikamedu, Korkai, and Kaveripattinam, confirming the Periplus of the Erythraean Sea.",
       "category": "Empires of Ancient India",
-      "subgroup": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
       "position": 9,
       "series": {
         "chart_type": "bar",
         "index_axis": "y",
-        "source": "Archaeological Survey of India & Epigraphia Indica",
+        "source": "R. Nagaswamy, Roman Karur & ASI Arikamedu Reports",
         "labels": [
-          "Muziris (Chera - Roman Gold Aurei Hoards)",
-          "Poompuhar / Kaveripattinam (Chola Port)",
-          "Arikamedu / Poduke (Roman Amphorae & Glass)",
-          "Korkai (Pandya Pearl & Maritime Port)",
-          "Mamallapuram (Pallava Harbor & Temples)",
-          "Alagankulam (Pandya Mediterranean Coins)"
+          "Chera Ports (Muziris / Karur Hoards)",
+          "Chola Ports (Kaveripattinam / Arikamedu)",
+          "Pandya Ports (Madurai / Korkai)",
+          "Pallava Ports (Mamallapuram / Kanchi)"
         ],
         "datasets": [
           {
-            "label": "Cataloged Roman & Mediterranean Artifacts",
+            "label": "Documented Roman Coin Hoards",
             "values": [
-              380,
-              310,
-              290,
-              240,
-              190,
-              175
+              42,
+              28,
+              19,
+              11
             ]
           }
         ]

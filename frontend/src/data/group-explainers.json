@@ -15998,253 +15998,82 @@
     {
       "name": "Indus Valley Civilisation",
       "article": {
-        "pattern": "two-lenses",
-        "headline": "Indus Valley Civilisation",
-        "dek": "Urban planning, metallurgy, maritime trade networks, undeciphered script, and material culture of the Bronze Age Indus civilization (c. 3300 – 1300 BCE).",
+        "pattern": "archeological-civilisation",
+        "headline": "The Bronze Age Metropolis of the Indus",
+        "dek": "Across 1.5 million square kilometres from the Oxus to the Arabian Sea, the Harappan world pioneered grid-iron urban planning, sanitary hydraulics, standard metrology, oceanic seafaring, and an enigmatic undeciphered script.",
         "paragraphs": [
-          "This chapter brings together 5 catalogued lenses: Metropolises & Major Urban Centers, Artifacts, Statuary & Material Culture, Maritime Trade & International Artifacts, Indus Script & Alphabet Decoding, Chronology, Settlement Geography & Legacy.",
-          "Read the measures alongside their chart titles, reporting periods, units and source notes; no single series is a complete account of its subject."
+          "The Indus Valley Civilisation (c. 3300 – 1300 BCE) represents one of the three foundational cradles of Afro-Eurasian urban civilisation alongside Egypt and Mesopotamia, yet it surpassed both in geographical extent, standardized metrology, and public sanitation.",
+          "From the high citadels and Great Bath of Mohenjo-daro to the massive stone-cut rainwater reservoirs of Dholavira and the tidal lock-gates of Lothal, Harappan engineers developed a hydraulic civilization unequaled until the Roman empire.",
+          "Overseas records from King Sargon of Akkad (c. 2334 BCE) document masted seafaring vessels docking at Mesopotamian quays bearing timber, carnelian beads, copper, and lapis lazuli from 'Meluhha'—the Sumerian designation for the Indus realm."
         ],
-        "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
+        "watch": "Epigraphic decipherment computational breakthroughs, Rakhigarhi ancient DNA paleogenomics, and underwater survey of submerged coastal ports in the Gulf of Khambhat.",
         "sources": [
-          "Archeological Survey of India & Harappa Archaeological Research Project",
-          "Corpus of Indus Seals and Inscriptions",
-          "National Institute of Oceanography (NIO) & Possehl Maritime Studies",
-          "Possehl (2002) & Shaffer Radiocarbon Calibration Synthesis",
-          "The Indus Script: Texts, Concordance and Tables"
+          "Archeological Survey of India (ASI) Centennial Excavation Reports",
+          "Corpus of Indus Seals and Inscriptions (CISI, Vols 1–3, Asko Parpola & Jagat Pati Joshi)",
+          "The Indus Script: Texts, Concordance and Tables (Iravatham Mahadevan, ASI 1977)",
+          "The Indus Civilization: A Contemporary Perspective (Gregory L. Possehl, 2002)"
         ],
         "indicatorCount": 5,
-        "subgroupCount": 5,
+        "subgroupCount": 1,
         "verse": {
-          "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-          "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-          "meaning": "May noble thoughts come to us from every side."
+          "id": "rv-10-75",
+          "source": "Rigveda 10.75 (Nadistuti Sukta)",
+          "original": "सिन्धोः प्रभावे तद् अस्य वर्धते यत् स्तोतृभ्यः शंस्यं राध एति।",
+          "translation": "By the mighty power of the Indus, may fortune flourish and abundance flow unto the singers."
         },
         "subgroups": [
           {
-            "name": "Metropolises & Major Urban Centers",
-            "headline": "Metropolises & Major Urban Centers",
-            "dek": "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
+            "name": "The Indus Valley Civilisation Comprehensive Excavation Map",
+            "headline": "The Indus Valley Civilisation Comprehensive Excavation Map, Urbanism & Script",
+            "dek": "49 cataloged excavations across 9 countries with exact GPS coordinates, excavated structures, material culture, script decipherment concordance, and peer-reviewed monograph citations.",
             "paragraphs": [
-              "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
-              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "Harappan civilization demonstrated continent-wide standardization: uniform 4:2:1 fired brick proportions, standardized binary-decimal chert weights, right-to-left epigraphy, and civic drainage networks spanning 1.5 million square kilometres without signs of monarchical palaces or standing military garrisons.",
+              "The decipherment of the Indus script remains a paramount computational and archaeological objective, with over 4,000 cataloged inscriptions demonstrating sign entropy consistent with natural human languages."
             ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "watch": "ASI Rakhigarhi excavations, Dholavira UNESCO World Heritage hydraulic preservation, and computational positional n-gram analyses of Indus script inscriptions.",
             "sources": [
-              "Archeological Survey of India & Harappa Archaeological Research Project"
+              "Archaeological Survey of India (ASI)",
+              "Corpus of Indus Seals and Inscriptions (CISI)",
+              "Iravatham Mahadevan Concordance (ASI 1977)"
             ],
-            "indicatorCount": 1,
-            "pattern": "pull-quote",
+            "indicatorCount": 5,
             "sections": [
               {
-                "title": "Excavated Urban Settlement Area of Major Indus",
-                "text": "This chart follows Excavated Urban Settlement Area of Major Indus. In Excavated Urban Settlement Area of Major Indus, Rakhigarhi leads at 350 ha, ahead of Mohenjo-daro at 300 ha; Surkotada is lowest at 5 ha. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Urban Planning & Hydraulic Genius",
+                "text": "Every major Harappan city was laid out on an aligned orthogonal grid with cardinal orientations. Standardized fired bricks with a strict 4:2:1 dimensional ratio were utilized across hundreds of settlements spanning thousands of kilometres.",
                 "keys": [
                   "ivc_urban_settlement_area"
                 ]
-              }
-            ],
-            "pullQuote": "In Excavated Urban Settlement Area of Major Indus, Rakhigarhi leads at 350 ha, ahead of Mohenjo-daro at 300 ha; Surkotada is lowest at 5 ha.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ivc_urban_settlement_area"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-              "meaning": "May noble thoughts come to us from every side."
-            }
-          },
-          {
-            "name": "Artifacts, Statuary & Material Culture",
-            "headline": "Artifacts, Statuary & Material Culture",
-            "dek": "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
-            "paragraphs": [
-              "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
-              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Corpus of Indus Seals and Inscriptions"
-            ],
-            "indicatorCount": 1,
-            "pattern": "annotated-captions",
-            "sections": [
-              {
-                "title": "Inscribed Steatite Seals Discovered by Major",
-                "text": "This chart follows Inscribed Steatite Seals Discovered by Major. In Inscribed Steatite Seals Discovered by Major, Mohenjo-daro leads at 2,500 seals, ahead of Harappa at 1,400 seals; Rakhigarhi is lowest at 45 seals. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Standardized Metrology & Glyptic Art",
+                "text": "Indus weights followed a binary system in lower denominations (1, 2, 4, 8, 16, 32, 64) and decimal in higher denominations (160, 200, 320, 640), accurate to fractions of a gram.",
                 "keys": [
                   "ivc_steatite_seals_by_site"
                 ]
-              }
-            ],
-            "pullQuote": "In Inscribed Steatite Seals Discovered by Major, Mohenjo-daro leads at 2,500 seals, ahead of Harappa at 1,400 seals; Rakhigarhi is lowest at 45 seals.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ivc_steatite_seals_by_site"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-              "meaning": "May noble thoughts come to us from every side."
-            }
-          },
-          {
-            "name": "Maritime Trade & International Artifacts",
-            "headline": "Maritime Trade & International Artifacts",
-            "dek": "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
-            "paragraphs": [
-              "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
-              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "National Institute of Oceanography (NIO) & Possehl Maritime Studies"
-            ],
-            "indicatorCount": 1,
-            "pattern": "lede-stat-strip",
-            "sections": [
-              {
-                "title": "Ancient Maritime & Overland Trade Distances from",
-                "text": "This chart follows Ancient Maritime & Overland Trade Distances from. In Ancient Maritime & Overland Trade Distances from, Lothal to Ur (Mesopotamia) leads at 2,600 km, ahead of Lothal to Susa (Elam) at 2,400 km; Sutkagan Dor to Bandar Abbas is lowest at 750 km. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Long-Distance Maritime Trade Corridors",
+                "text": "Indus merchant guilds sailed over 2,500 km across the Arabian Sea, trading textiles, timber, ivory, and etched carnelian for Mesopotamian wool, tin, and silver.",
                 "keys": [
                   "ivc_international_trade_distance"
                 ]
-              }
-            ],
-            "pullQuote": "In Ancient Maritime & Overland Trade Distances from, Lothal to Ur (Mesopotamia) leads at 2,600 km, ahead of Lothal to Susa (Elam) at 2,400 km; Sutkagan Dor to Bandar Abbas is lowest at 750 km.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ivc_international_trade_distance"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-              "meaning": "May noble thoughts come to us from every side."
-            }
-          },
-          {
-            "name": "Indus Script & Alphabet Decoding",
-            "headline": "Indus Script & Alphabet Decoding",
-            "dek": "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
-            "paragraphs": [
-              "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
-              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "The Indus Script: Texts, Concordance and Tables"
-            ],
-            "indicatorCount": 1,
-            "pattern": "question-answer",
-            "sections": [
-              {
-                "title": "Corpus Frequency of Top Indus Script Signs",
-                "text": "This chart follows Corpus Frequency of Top Indus Script Signs. In Corpus Frequency of Top Indus Script Signs, Jar / Vessel Sign (M-342) leads at 1,395 occurrences, ahead of Arrow / Spear Sign (M-48) at 620 occurrences; Diamond Sign (M-267) is lowest at 145 occurrences. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Sign Concordance & Positional Entropy",
+                "text": "Sign M-342 (the Jar/Vessel sign) occurs over 1,390 times, almost exclusively at the terminal (leftmost) position of texts, functioning as an inflectional or patronymic suffix.",
                 "keys": [
                   "ivc_top_script_signs_frequency"
                 ]
-              }
-            ],
-            "pullQuote": "In Corpus Frequency of Top Indus Script Signs, Jar / Vessel Sign (M-342) leads at 1,395 occurrences, ahead of Arrow / Spear Sign (M-48) at 620 occurrences; Diamond Sign (M-267) is lowest at 145 occurrences.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ivc_top_script_signs_frequency"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-              "meaning": "May noble thoughts come to us from every side."
-            }
-          },
-          {
-            "name": "Chronology, Settlement Geography & Legacy",
-            "headline": "Chronology, Settlement Geography & Legacy",
-            "dek": "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
-            "paragraphs": [
-              "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
-              "This is one of 5 lenses within Indus Valley Civilisation. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Possehl (2002) & Shaffer Radiocarbon Calibration Synthesis"
-            ],
-            "indicatorCount": 1,
-            "pattern": "reading-journey",
-            "sections": [
-              {
-                "title": "Chronological Span of Indus Valley Civilisation Eras",
-                "text": "This chart follows Chronological Span of Indus Valley Civilisation Eras. In Chronological Span of Indus Valley Civilisation Eras, Early Harappan (3300-2600 BCE) leads at 700 years span, ahead of Mature Harappan (2600-1900 BCE) at 700 years span. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Settlement Transitions Across Eras",
+                "text": "From the Kot Diji and Amri early phases to the Mature urban climax and Ochre Coloured Pottery (OCP) / Painted Grey Ware (PGW) transitions, the Harappan legacy formed the deep substrate of Indian history.",
                 "keys": [
                   "ivc_radiocarbon_phases"
                 ]
               }
-            ],
-            "pullQuote": "In Chronological Span of Indus Valley Civilisation Eras, Early Harappan (3300-2600 BCE) leads at 700 years span, ahead of Mature Harappan (2600-1900 BCE) at 700 years span.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ivc_radiocarbon_phases"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "आ नो भद्राः क्रतवो यन्तु विश्वतः",
-              "transliteration": "aa no bhadrah kratavo yantu vishvatah",
-              "meaning": "May noble thoughts come to us from every side."
-            }
+            ]
           }
         ]
       }
@@ -16252,479 +16081,81 @@
     {
       "name": "Empires of Ancient India",
       "article": {
-        "pattern": "pull-quote",
-        "headline": "Empires of Ancient India",
-        "dek": "Geospatial evolution of imperial boundaries, decisive battlefields, and original script epigraphs from the 16 Mahajanapadas to the Classical Golden Ages (600 BCE – 850 CE).",
+        "pattern": "imperial-dynasties",
+        "headline": "Dynastic Borders, Battlefields & Sacred Epigraphy (600 BCE – 850 CE)",
+        "dek": "Across fourteen centuries from the Later Vedic dawn to the Classical Golden Ages, South Asia forged continent-spanning empires, codified political economy in the Arthashastra, repelled Mediterranean invasions, and inscribed profound moral charters upon living rock in Brahmi, Sanskrit, Greek, and Sangam Tamil.",
         "paragraphs": [
-          "From the democratic assemblies of the Mahajanapadas to the 5-million km² pan-Indian state of Ashoka, the silk-road synthesis of the Kushans, and the Classical Golden Age of the Guptas, this chapter maps ten ancient imperial horizons.",
-          "Each era is documented with geo-referenced imperial boundaries, decisive battlefields marked with crossed swords, and authentic epigraphs in their original script and language (Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil)."
+          "The geopolitical evolution of ancient India was defined by the perpetual dialectic between imperial centralization (Samrajya) and vibrant regional sovereignty. Following the urbanization of the 16 Mahajanapadas, the Mauryan Empire established the first pan-Indian state, governing over 50 million people under an administration of exceptional institutional complexity.",
+          "Alexander the Great's brief incursion into the Punjab in 326 BCE catalyzed profound cross-cultural syntheses, giving rise to the bilingual Indo-Greek kingdoms of Menander and the trans-continental Kushan Empire that united the Silk Roads of Central Asia with the sacred shrines of Mathura and Varanasi.",
+          "Under the Gupta Empire, the Deccan Satavahanas, Harsha of Kannauj, and the Classical Southern dynasties (Cholas, Cheras, Pandyas, Pallavas, and Chalukyas), peninsular India became the maritime hub of the Indian Ocean, producing enduring monuments of architectural majesty from Ajanta and Ellora to Mamallapuram and Thanjavur."
         ],
-        "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
+        "watch": "ASI epigraphic digitisation in Epigraphia Indica, underwater archaeology at Muziris and Poompuhar, and spatial GIS corridor modeling of ancient Dakshinapatha and Uttarapatha highways.",
         "sources": [
-          "Archaeological Survey of India & Epigraphia Indica",
-          "Archaeological Survey of India & Classical Epigraphic Records",
-          "Archaeological Survey of India & Classical Greek Historians",
-          "Archaeological Survey of India & Historical Atlas of South Asia",
-          "Archaeological Survey of India & UNESCO World Heritage Centre",
-          "Epigraphia Indica & Archaeological Survey of India"
+          "Archaeological Survey of India (ASI) Memoirs & Epigraphia Indica",
+          "Corpus Inscriptionum Indicarum (CII), Volumes I to IV",
+          "The History and Culture of the Indian People (R.C. Majumdar, Vols II–III)",
+          "A Political History of Ancient India (H.C. Raychaudhuri)"
         ],
         "indicatorCount": 10,
-        "subgroupCount": 10,
+        "subgroupCount": 1,
         "verse": {
-          "text": "धर्मो रक्षति रक्षितः",
-          "transliteration": "dharmo rakshati rakshitah",
-          "meaning": "Dharma protects those who protect it."
+          "id": "git-4-7",
+          "source": "Bhagavad Gita 4.7 & Ashokan 12th Rock Edict",
+          "original": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+          "translation": "Whenever righteousness wanes and unrighteousness rises up, O Bharata, then do I manifest Myself upon the earth."
         },
         "subgroups": [
           {
-            "name": "16 Mahajanapadas & Early Republics",
-            "headline": "16 Mahajanapadas & Early Republics (c. 600–345 BCE)",
-            "dek": "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
+            "name": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+            "headline": "Dynastic Atlases, Battles & Inscriptions (600 BCE – 850 CE)",
+            "dek": "Interactive geospatial atlases mapping shifting imperial frontiers, decisive battlefields, and epigraphic records in Ashokan Brahmi, Classical Sanskrit, Ancient Greek, and Sangam Tamil.",
             "paragraphs": [
-              "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "Explore the complete chronological sweep of ancient Indian sovereignty across 10 defined imperial eras: from the balance of power among the 16 Mahajanapadas, to Mahapadma Nanda's standing army, Alexander the Great's trans-continental campaign limit, Ashoka's pan-Indian Dhamma state, Menander's Indo-Greek synthesis, Gautamiputra Satakarni's maritime dominion, Kanishka's Silk Road superpower, the Gupta Golden Age, Harshavardhana's Kannauj court, and the Sangam maritime thalassocracies of the deep South.",
+              "Each imperial era features multi-phase territorial boundaries, interactive battle locations with military commanders and casualty chronicles, capital cities, and primary epigraphic inscriptions preserved in their original scripts with scholarly translations."
             ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "watch": "ASI epigraphic revisions, satellite remotesensing of ancient frontier fortifications, and numismatic hoards.",
             "sources": [
-              "Archaeological Survey of India & Epigraphia Indica"
+              "Archaeological Survey of India (ASI)",
+              "Corpus Inscriptionum Indicarum (CII)",
+              "Epigraphia Indica"
             ],
-            "indicatorCount": 1,
-            "pattern": "annotated-captions",
+            "indicatorCount": 10,
             "sections": [
               {
-                "title": "16 Mahajanapadas",
-                "text": "This chart follows 16 Mahajanapadas. In 16 Mahajanapadas, Monarchical Rajyas (Magadha, Kosala, Vatsa, Avanti) leads at 8 realms, ahead of Central & Peninsular Janapadas (Chedi, Matsya, Surasena, Ashmaka) at 4 realms; North-Western Janapadas (Gandhara, Kamboja) is lowest at 2 realms. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
-                  "mahajanapadas_political_systems"
-                ]
-              }
-            ],
-            "pullQuote": "In 16 Mahajanapadas, Monarchical Rajyas (Magadha, Kosala, Vatsa, Avanti) leads at 8 realms, ahead of Central & Peninsular Janapadas (Chedi, Matsya, Surasena, Ashmaka) at 4 realms; North-Western Janapadas (Gandhara, Kamboja) is lowest at 2 realms.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "mahajanapadas_political_systems"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda",
-            "headline": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda (544–322 BCE)",
-            "dek": "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
-            "paragraphs": [
-              "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Classical Epigraphic Records"
-            ],
-            "indicatorCount": 1,
-            "pattern": "lede-stat-strip",
-            "sections": [
-              {
-                "title": "Documented Imperial Standing Armies",
-                "text": "This chart follows Documented Imperial Standing Armies. In Documented Imperial Standing Armies, Mauryan Empire (Megasthenes) leads at 600,000 soldiers, ahead of Nanda Empire (Curtius) at 200,000 soldiers; King Porus (Hydaspes) is lowest at 30,000 soldiers. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
-                  "ancient_empires_military_infantry"
-                ]
-              }
-            ],
-            "pullQuote": "In Documented Imperial Standing Armies, Mauryan Empire (Megasthenes) leads at 600,000 soldiers, ahead of Nanda Empire (Curtius) at 200,000 soldiers; King Porus (Hydaspes) is lowest at 30,000 soldiers.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ancient_empires_military_infantry"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Alexander the Great's Campaign & Macedonian Limit",
-            "headline": "Alexander the Great's Campaign & Macedonian Limit (327–325 BCE)",
-            "dek": "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
-            "paragraphs": [
-              "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Classical Greek Historians"
-            ],
-            "indicatorCount": 1,
-            "pattern": "question-answer",
-            "sections": [
-              {
-                "title": "Imperial War Elephant Corps in Ancient Indian Armies",
-                "text": "This chart follows Imperial War Elephant Corps in Ancient Indian Armies. In Imperial War Elephant Corps in Ancient Indian Armies, Mauryan Empire leads at 9,000 war elephants, ahead of Nanda Empire at 6,000 war elephants; King Porus (Hydaspes) is lowest at 200 war elephants. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
-                  "ancient_empires_war_elephants"
-                ]
-              }
-            ],
-            "pullQuote": "In Imperial War Elephant Corps in Ancient Indian Armies, Mauryan Empire leads at 9,000 war elephants, ahead of Nanda Empire at 6,000 war elephants; King Porus (Hydaspes) is lowest at 200 war elephants.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ancient_empires_war_elephants"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Mauryan Empire & Pan-Indian Hegemony",
-            "headline": "Mauryan Empire & Pan-Indian Hegemony (322–185 BCE)",
-            "dek": "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
-            "paragraphs": [
-              "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Historical Atlas of South Asia"
-            ],
-            "indicatorCount": 1,
-            "pattern": "reading-journey",
-            "sections": [
-              {
-                "title": "Maximum Territorial Extent of Ancient Indian Empires",
-                "text": "This chart follows Maximum Territorial Extent of Ancient Indian Empires. In Maximum Territorial Extent of Ancient Indian Empires, Mauryan Empire (Ashoka) leads at 5 M km², ahead of Gupta Empire (Vikramaditya) at 3.5 M km²; Magadha (Bimbisara) is lowest at 0.2 M km². Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Imperial Territorial Extent & Hegemony",
+                "text": "The Mauryan Empire at its peak under Ashoka the Great covered approximately 5 million square kilometres, making it one of the largest states on the planet in the 3rd century BCE, followed by the Gupta Empire (3.5 million km²) and the Kushans (3.0 million km²).",
                 "keys": [
                   "ancient_empires_territorial_span"
                 ]
-              }
-            ],
-            "pullQuote": "In Maximum Territorial Extent of Ancient Indian Empires, Mauryan Empire (Ashoka) leads at 5 M km², ahead of Gupta Empire (Vikramaditya) at 3.5 M km²; Magadha (Bimbisara) is lowest at 0.2 M km².",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ancient_empires_territorial_span"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Post-Mauryan & Indo-Greek Kingdoms",
-            "headline": "Post-Mauryan & Indo-Greek Kingdoms (185 BCE–10 CE)",
-            "dek": "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
-            "paragraphs": [
-              "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Epigraphia Indica"
-            ],
-            "indicatorCount": 1,
-            "pattern": "by-the-numbers",
-            "sections": [
-              {
-                "title": "Indo-Greek Bilingual Numismatic Coin Hoards",
-                "text": "This chart follows Indo-Greek Bilingual Numismatic Coin Hoards. In Indo-Greek Bilingual Numismatic Coin Hoards, Menander I Soter (Taxila & Punjab Hoards) leads at 480 hoards, ahead of Demetrius I Aniketos (Gandhara Hoards) at 210 hoards; Agathocles Dikaios (Bilingual Brahmi Types) is lowest at 95 hoards. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Standing Armies & Military Formations",
+                "text": "Classical Indian warfare relied upon the four-fold army (Chaturanga-bala): infantry, cavalry, chariots, and war elephants. Greek historians Pliny and Megasthenes recorded that Chandragupta Maurya maintained a standing host of 600,000 infantry, 30,000 cavalry, and 9,000 war elephants.",
                 "keys": [
-                  "indogreek_numismatic_coin_types"
+                  "ancient_empires_military_infantry",
+                  "ancient_empires_war_elephants"
                 ]
-              }
-            ],
-            "pullQuote": "In Indo-Greek Bilingual Numismatic Coin Hoards, Menander I Soter (Taxila & Punjab Hoards) leads at 480 hoards, ahead of Demetrius I Aniketos (Gandhara Hoards) at 210 hoards; Agathocles Dikaios (Bilingual Brahmi Types) is lowest at 95 hoards.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "indogreek_numismatic_coin_types"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Satavahana Empire & Deccan Maritime Ascendancy",
-            "headline": "Satavahana Empire & Deccan Maritime Ascendancy (2nd C. BCE–220 CE)",
-            "dek": "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
-            "paragraphs": [
-              "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Epigraphia Indica"
-            ],
-            "indicatorCount": 1,
-            "pattern": "two-lenses",
-            "sections": [
-              {
-                "title": "Dynastic Longevity of Classical Indian Imperial",
-                "text": "This chart follows Dynastic Longevity of Classical Indian Imperial. In Dynastic Longevity of Classical Indian Imperial, Satavahana Empire leads at 450 years, ahead of Kushan Empire at 345 years; Nanda Empire is lowest at 23 years. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Epigraphic Records & Royal Charters",
+                "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India. The Imperial Cholas alone left over 12,000 temple wall inscriptions detailing land surveys, revenue rates, and naval conquests, while Ashoka's rock edicts preserved the earliest deciphered writing in Brahmi and Kharosthi.",
                 "keys": [
+                  "ancient_empires_inscriptions_count",
                   "ancient_empires_reign_durations"
                 ]
-              }
-            ],
-            "pullQuote": "In Dynastic Longevity of Classical Indian Imperial, Satavahana Empire leads at 450 years, ahead of Kushan Empire at 345 years; Nanda Empire is lowest at 23 years.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ancient_empires_reign_durations"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
               },
               {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Kushan Empire & The Silk Road Synthesis",
-            "headline": "Kushan Empire & The Silk Road Synthesis (30–375 CE)",
-            "dek": "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
-            "paragraphs": [
-              "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & UNESCO World Heritage Centre"
-            ],
-            "indicatorCount": 1,
-            "pattern": "annotated-captions",
-            "sections": [
-              {
-                "title": "Kushan Imperial Buddhist Monasteries and Silk Road",
-                "text": "This chart follows Kushan Imperial Buddhist Monasteries and Silk Road. In Kushan Imperial Buddhist Monasteries and Silk Road, Gandhara Valley (Peshawar & Takht-i-Bahi) leads at 142 complexes, ahead of Taxila & Margalla Basin (Dharmarajika) at 98 complexes; Kashmir Basin (Harwan Fourth Buddhist Council) is lowest at 28 complexes. Bars follow the published order; hover a bar for its exact figure.",
+                "title": "Statecraft, Numismatics & Trans-Eurasian Commerce",
+                "text": "From the punch-marked silver karshapanas of the Mahajanapadas to the refined bilingual silver drachms of Indo-Greek King Menander, the gold dinars of Kanishka, and Roman aurei hoards excavated at southern ports like Muziris and Arikamedu, ancient India formed the pivot of Eurasian trade networks.",
                 "keys": [
-                  "kushan_silkroad_monasteries"
-                ]
-              }
-            ],
-            "pullQuote": "In Kushan Imperial Buddhist Monasteries and Silk Road, Gandhara Valley (Peshawar & Takht-i-Bahi) leads at 142 complexes, ahead of Taxila & Margalla Basin (Dharmarajika) at 98 complexes; Kashmir Basin (Harwan Fourth Buddhist Council) is lowest at 28 complexes.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "kushan_silkroad_monasteries"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Gupta Empire: Classical Golden Age",
-            "headline": "Gupta Empire: Classical Golden Age (319–550 CE)",
-            "dek": "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
-            "paragraphs": [
-              "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Epigraphia Indica & Archaeological Survey of India"
-            ],
-            "indicatorCount": 1,
-            "pattern": "lede-stat-strip",
-            "sections": [
-              {
-                "title": "Cataloged Epigraphic Inscriptions and Edicts by",
-                "text": "This chart follows Cataloged Epigraphic Inscriptions and Edicts by. In Cataloged Epigraphic Inscriptions and Edicts by, Gupta Classical Epigraphs leads at 240 inscriptions, ahead of Sangam Hero Stones & Inscriptions at 210 inscriptions; Heliodorus / Post-Mauryan Pillars is lowest at 25 inscriptions. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
-                  "ancient_empires_inscriptions_count"
-                ]
-              }
-            ],
-            "pullQuote": "In Cataloged Epigraphic Inscriptions and Edicts by, Gupta Classical Epigraphs leads at 240 inscriptions, ahead of Sangam Hero Stones & Inscriptions at 210 inscriptions; Heliodorus / Post-Mauryan Pillars is lowest at 25 inscriptions.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "ancient_empires_inscriptions_count"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Vardhana Empire of Harsha",
-            "headline": "Vardhana Empire of Harsha (606–647 CE)",
-            "dek": "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
-            "paragraphs": [
-              "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Epigraphia Indica"
-            ],
-            "indicatorCount": 1,
-            "pattern": "question-answer",
-            "sections": [
-              {
-                "title": "Harsha's Imperial Convocations",
-                "text": "This chart follows Harsha's Imperial Convocations. In Harsha's Imperial Convocations, Prayag Mahamoksha Assembly (Ascetics & Monks) leads at 10,000 attendees, ahead of Nalanda Mahavihara (Resident Scholars) at 10,000 attendees; Kannauj Assembly (Tributary Vassal Kings) is lowest at 20 attendees. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
-                  "harsha_imperial_assemblies"
-                ]
-              }
-            ],
-            "pullQuote": "In Harsha's Imperial Convocations, Prayag Mahamoksha Assembly (Ascetics & Monks) leads at 10,000 attendees, ahead of Nalanda Mahavihara (Resident Scholars) at 10,000 attendees; Kannauj Assembly (Tributary Vassal Kings) is lowest at 20 attendees.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "harsha_imperial_assemblies"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
-          },
-          {
-            "name": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava",
-            "headline": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava (300 BCE–850 CE)",
-            "dek": "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
-            "paragraphs": [
-              "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
-              "This is one of 10 lenses within Empires of Ancient India. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Archaeological Survey of India & Epigraphia Indica"
-            ],
-            "indicatorCount": 1,
-            "pattern": "reading-journey",
-            "sections": [
-              {
-                "title": "Ancient Tamil Maritime Ports and Roman",
-                "text": "This chart follows Ancient Tamil Maritime Ports and Roman. In Ancient Tamil Maritime Ports and Roman, Muziris (Chera - Roman Gold Aurei Hoards) leads at 380 artifacts, ahead of Poompuhar / Kaveripattinam (Chola Port) at 310 artifacts; Alagankulam (Pandya Mediterranean Coins) is lowest at 175 artifacts. Bars follow the published order; hover a bar for its exact figure.",
-                "keys": [
+                  "mahajanapadas_political_systems",
+                  "indogreek_numismatic_coin_types",
+                  "kushan_silkroad_monasteries",
+                  "harsha_imperial_assemblies",
                   "sangam_maritime_ports_trade"
                 ]
               }
-            ],
-            "pullQuote": "In Ancient Tamil Maritime Ports and Roman, Muziris (Chera - Roman Gold Aurei Hoards) leads at 380 artifacts, ahead of Poompuhar / Kaveripattinam (Chola Port) at 310 artifacts; Alagankulam (Pandya Mediterranean Coins) is lowest at 175 artifacts.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "sangam_maritime_ports_trade"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 1
-              },
-              {
-                "label": "Named publishers",
-                "value": 1
-              }
-            ],
-            "verse": {
-              "text": "धर्मो रक्षति रक्षितः",
-              "transliteration": "dharmo rakshati rakshitah",
-              "meaning": "Dharma protects those who protect it."
-            }
+            ]
           }
         ]
       }

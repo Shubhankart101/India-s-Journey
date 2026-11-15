@@ -77,12 +77,16 @@ export default function GroupCards({ categories = [], cta = 'Explore' }) {
     <div className="group-cards">
       {ordered.map(category => {
         const slug = slugOf(category);
+        const singleSubgroup = category.subgroups?.length === 1 ? category.subgroups[0] : null;
+        const targetUrl = slug === 'elections-democracy'
+          ? '/elections'
+          : (singleSubgroup ? `/explore/${slug}/${singleSubgroup.slug}` : `/explore?category=${slug}`);
         return (
           <GroupCard
             key={slug || category.name}
             category={{ ...category, slug }}
             cta={cta}
-            to={slug === 'elections-democracy' ? '/elections' : `/explore?category=${slug}`}
+            to={targetUrl}
           />
         );
       })}

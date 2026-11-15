@@ -16,6 +16,7 @@ import ArtBackdrop from './ArtBackdrop.jsx';
 import IndusValleyAtlas from './IndusValleyAtlas.jsx';
 import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import AncientEmpiresAtlas from './AncientEmpiresAtlas.jsx';
+import GroupArtCarousel from './GroupArtCarousel.jsx';
 import { ErrorState, Loading } from './States.jsx';
 
 const SPECIAL_HEIGHT = 560;
@@ -319,21 +320,57 @@ const electionsCallout = (category, subgroup) => (category.slug === 'elections-d
   ? <p className="subgroup-callout">For results by place, open the <Link to="/elections">State and Union Territory election map</Link>: every Lok Sabha and Assembly history on one clickable India map.</p>
   : null);
 
+function IndusValleyWorkbench() {
+  const [activeTab, setActiveTab] = useState('map');
+  return (
+    <div className="ivc-consolidated-workbench">
+      <GroupArtCarousel groupSlug="indus-valley-civilisation" title="Indus Valley Civilisation Artworks" />
+      <div className="ivc-workbench-switch" role="tablist" aria-label="Indus Valley Primary Tools" style={{ display: 'flex', gap: '0.75rem', margin: '1rem 0 1.5rem', flexWrap: 'wrap' }}>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'map'}
+          className={`btn ${activeTab === 'map' ? 'btn-primary' : 'btn-ghost'}`}
+          onClick={() => setActiveTab('map')}
+        >
+          🗺️ Comprehensive Excavation Map (49 Sites)
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'decoder'}
+          className={`btn ${activeTab === 'decoder' ? 'btn-primary' : 'btn-ghost'}`}
+          onClick={() => setActiveTab('decoder')}
+        >
+          🔤 Script Decryption & Concordance Workbench
+        </button>
+      </div>
+      {activeTab === 'map' ? <IndusValleyAtlas /> : <IndusScriptDecoder />}
+    </div>
+  );
+}
+
+function AncientEmpiresWorkbench() {
+  return (
+    <div className="empires-consolidated-workbench">
+      <GroupArtCarousel groupSlug="empires-of-ancient-india" title="Empires of Ancient India Artworks" />
+      <AncientEmpiresAtlas />
+    </div>
+  );
+}
+
 export function SubgroupPage({ categorySlug, subgroupSlug }) {
   const state = useSubgroup(categorySlug, subgroupSlug);
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
     const isIvc = category.slug === 'indus-valley-civilisation' || category.name === 'Indus Valley Civilisation';
-    const isScript = isIvc && (subgroup.slug?.includes('script') || subgroup.name?.includes('Script'));
     const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || category.name === 'Empires of Ancient India';
     let customLead = null;
-    if (isScript) {
-      customLead = <IndusScriptDecoder />;
-    } else if (isIvc) {
-      customLead = <IndusValleyAtlas />;
+    if (isIvc) {
+      customLead = <IndusValleyWorkbench />;
     } else if (isEmpires) {
-      customLead = <AncientEmpiresAtlas />;
+      customLead = <AncientEmpiresWorkbench />;
     } else if (mapFormat) {
       customLead = <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />;
     }
