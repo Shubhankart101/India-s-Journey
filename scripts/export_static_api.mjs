@@ -58,14 +58,22 @@ const slugify = val => String(val || '').normalize('NFKD').replace(/[\u0300-\u03
 const categories = catalog.categories.map(cat => ({
   ...cat,
   slug: cat.slug || slugify(cat.name),
-  subgroups: (cat.subgroups || []).map(sub => ({
-    ...sub,
-    slug: sub.slug || slugify(sub.name),
-    art: (sub.art || '').split('?')[0] || (cat.art || '').split('?')[0] || 'parliament.svg',
-  })),
+  indicator_count: indicators.filter(i => i.category === cat.name).length,
+  subgroups: (cat.subgroups || []).map(sub => {
+    const count = indicators.filter(i => i.category === cat.name && i.subgroup === sub.name).length;
+    return {
+      ...sub,
+      indicator_count: count,
+      slug: sub.slug || slugify(sub.name),
+      art: (sub.art || '').split('?')[0] || (cat.art || '').split('?')[0] || 'parliament.svg',
+    };
+  }),
 }));
 
 fs.mkdirSync(apiDir, { recursive: true });
+const publicApiDir = path.join(root, 'frontend', 'public', 'api');
+fs.mkdirSync(publicApiDir, { recursive: true });
+
 for (const [name, data] of Object.entries({
   categories,
   indicators,
@@ -74,7 +82,9 @@ for (const [name, data] of Object.entries({
   stats,
   'legacy-aliases': aliases,
 })) {
-  fs.writeFileSync(path.join(apiDir, `${name}.json`), `${JSON.stringify(data)}\n`);
+  const content = `${JSON.stringify(data)}\n`;
+  fs.writeFileSync(path.join(apiDir, `${name}.json`), content);
+  fs.writeFileSync(path.join(publicApiDir, `${name}.json`), content);
 }
 const oldCatalog = path.join(apiDir, 'catalog.json');
 if (fs.existsSync(oldCatalog)) fs.unlinkSync(oldCatalog);

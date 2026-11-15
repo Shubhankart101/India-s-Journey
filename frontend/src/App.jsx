@@ -32,6 +32,10 @@ export function AppRoutes() {
           <Route path="metro" element={<SubgroupRoute />} />
           <Route path="metro-in-maps" element={<SubgroupRoute />} />
           <Route path="metro-atlas" element={<SubgroupRoute />} />
+          <Route path="delhi-metro" element={<SubgroupRoute />} />
+          <Route path="indian-metro-networks" element={<SubgroupRoute />} />
+          <Route path="maps" element={<Explore />} />
+          <Route path="maps/:subgroup" element={<SubgroupRoute />} />
           <Route path="ivc-translator" element={<IndusScriptTranslator />} />
           <Route path="elections" element={<Elections />} />
           <Route path="elections/:stateSlug" element={<Elections />} />

@@ -22,18 +22,37 @@ const FILTER_KEYS = ['q', 'category', 'subgroup', 'live', 'chart', 'sort'];
 const toSlug = value => String(value || '').toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 function resolveLegacyFilters(categorySlug, subgroupSlug, categories, aliases) {
-  const legacyGroupAliases = new Map(Object.entries(aliases.groups).map(([name, target]) => [toSlug(name), target]));
-  const legacySubgroupAliases = new Map(Object.entries(aliases.subgroups).map(([key, target]) => {
+  const normCat = toSlug(categorySlug);
+  const normSub = toSlug(subgroupSlug);
+
+  // Direct metro alias resolution
+  if (['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(normCat)
+    || ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(normSub)
+    || (normCat.includes('map') && normSub.includes('metro'))) {
+    return { category: 'india-in-maps', subgroup: 'metro-in-maps' };
+  }
+
+  // Maps category alias
+  if (normCat === 'maps' || normCat === 'india-maps') {
+    return { category: 'india-in-maps', subgroup: normSub || '' };
+  }
+
+  const legacyGroupAliases = new Map(Object.entries(aliases?.groups || {}).map(([name, target]) => [toSlug(name), target]));
+  const legacySubgroupAliases = new Map(Object.entries(aliases?.subgroups || {}).map(([key, target]) => {
     const [group, subgroup] = key.split('|');
     return [`${toSlug(group)}|${toSlug(subgroup)}`, target];
   }));
-  const target = legacySubgroupAliases.get(`${categorySlug}|${subgroupSlug}`)
-    || legacyGroupAliases.get(categorySlug);
+  const target = legacySubgroupAliases.get(`${normCat}|${normSub}`)
+    || legacySubgroupAliases.get(`india-in-maps|${normSub}`)
+    || legacyGroupAliases.get(normCat);
   if (!target) return { category: categorySlug, subgroup: subgroupSlug };
-  const category = categories.find(item => item.slug === toSlug(target.group));
+  const targetGroupName = typeof target === 'object' ? target.group : target;
+  const targetSubName = typeof target === 'object' ? target.subgroup : '';
+  const category = (categories || []).find(item => item.slug === toSlug(targetGroupName) || toSlug(item.name) === toSlug(targetGroupName));
   if (!category) return { category: categorySlug, subgroup: subgroupSlug };
-  const subgroup = target.subgroup
-    ? category.subgroups.find(item => item.slug === toSlug(target.subgroup))
+  const resolvedSubSlug = targetSubName ? toSlug(targetSubName) : normSub;
+  const subgroup = resolvedSubSlug
+    ? category.subgroups.find(item => item.slug === resolvedSubSlug || toSlug(item.name) === resolvedSubSlug || (resolvedSubSlug.includes('metro') && item.slug.includes('metro')))
     : null;
   return { category: category.slug, subgroup: subgroup?.slug || '' };
 }
@@ -72,7 +91,7 @@ function ExploreBrowse() {
       const next = new URLSearchParams(params);
       next.set('category', resolved.category);
       if (resolved.subgroup) next.set('subgroup', resolved.subgroup);
-      else next.delete('subgroup');
+      else if (!filters.subgroup) next.delete('subgroup');
       setParams(next, { replace: true });
     });
     return () => { active = false; };
@@ -334,9 +353,10 @@ export default function Explore() {
   const categorySlug = params.get('category') || routeGroup || '';
   const subgroupSlug = params.get('subgroup') || '';
   // Direct resolution for metro aliases
-  const isMetroReq = ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(categorySlug))
-    || ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(subgroupSlug))
-    || ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(routeGroup));
+  const isMetroReq = ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(toSlug(categorySlug))
+    || ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(toSlug(subgroupSlug))
+    || ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(toSlug(routeGroup))
+    || (toSlug(categorySlug).includes('map') && toSlug(subgroupSlug).includes('metro'));
   if (isMetroReq) {
     return <SubgroupPage categorySlug="india-in-maps" subgroupSlug="metro-in-maps" />;
   }

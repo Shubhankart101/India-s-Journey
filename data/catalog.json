@@ -1447,6 +1447,38 @@
       "indus-valley-civilisation": {
         "group": "Indus Valley Civilisation",
         "subgroup": ""
+      },
+      "metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "metro-in-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "metro-atlas": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps": {
+        "group": "India in Maps",
+        "subgroup": ""
+      },
+      "india-maps": {
+        "group": "India in Maps",
+        "subgroup": ""
+      },
+      "metro-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "delhi-metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "indian-metro-networks": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
       }
     },
     "subgroups": {
@@ -2241,6 +2273,102 @@
       "India in Maps|Innovation & Technology on the map": {
         "group": "India in Maps",
         "subgroup": "Innovation & Technology on the map"
+      },
+      "India in Maps|metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "India in Maps|metro-in-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|metro-in-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|metro-in-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "India in Maps|metro-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "India in Maps|delhi-metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "India in Maps|metro-atlas": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "India in Maps|indian-metro-networks": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|metro-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|delhi-metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|metro-atlas": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-in-maps|indian-metro-networks": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|metro-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|delhi-metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|metro-atlas": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "india-maps|indian-metro-networks": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|metro-in-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|metro-maps": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|delhi-metro": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|metro-atlas": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
+      },
+      "maps|indian-metro-networks": {
+        "group": "India in Maps",
+        "subgroup": "Metro in Maps"
       }
     }
   },

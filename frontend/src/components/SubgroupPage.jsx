@@ -367,6 +367,9 @@ function useSubgroup(categorySlug, subgroupSlug) {
     || ((isEmpireMatch(normSubSlug) || normSubSlug.includes('dynast') || normSubSlug.includes('battle') || normSubSlug.includes('maurya'))
     ? (categories.data || []).find(item => isEmpireMatch(slugify(item.slug)))
     : null)
+    || (normSubSlug.includes('metro') || normCatSlug.includes('metro')
+    ? (categories.data || []).find(item => slugify(item.slug).includes('map'))
+    : null)
     || (categories.data || []).find(item => {
       const words = normCatSlug.split('-').filter(w => w.length > 3);
       const catWords = slugify(item.name).split('-');
@@ -388,6 +391,7 @@ function useSubgroup(categorySlug, subgroupSlug) {
       || (isIvcMatch(normSubSlug) && isIvcMatch(itemName))
       || (normSubSlug.includes('empire') && itemName.includes('empire'))
       || (normSubSlug.includes('atlas') && itemName.includes('atlas'))
+      || (normSubSlug.includes('metro') && (itemSlug.includes('metro') || itemName.includes('metro')))
     );
   }) || (category?.subgroups?.find(item => {
     const subWords = normSubSlug.split('-').filter(w => w.length > 3);
@@ -873,8 +877,13 @@ export function SubgroupRegionPage({ categorySlug, subgroupSlug, stateSlug }) {
 
 export function SubgroupRoute() {
   const { group, subgroup, stateSlug } = useParams();
-  const isMetroParam = !group || ['metro', 'metro-in-maps', 'metro-atlas'].includes(group);
-  const catSlug = isMetroParam ? 'india-in-maps' : group;
+  const normGroup = slugify(group);
+  const normSub = slugify(subgroup);
+  const isMetroParam = !group
+    || ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks', 'maps'].includes(normGroup)
+    || ['metro', 'metro-in-maps', 'metro-atlas', 'delhi-metro', 'indian-metro-networks'].includes(normSub)
+    || (normGroup.includes('map') && normSub.includes('metro'));
+  const catSlug = (normGroup === 'maps' || normGroup === 'india-maps' || isMetroParam) ? 'india-in-maps' : group;
   const subSlug = isMetroParam ? 'metro-in-maps' : (subgroup || 'metro-in-maps');
   return stateSlug
     ? <SubgroupRegionPage categorySlug={catSlug} subgroupSlug={subSlug} stateSlug={stateSlug} />

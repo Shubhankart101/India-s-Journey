@@ -59,11 +59,38 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
         <span className="group-card-kicker">{sanskrit && <span className="sa-kicker" lang="sa" aria-hidden="true">{sanskrit}</span>}{kicker}</span>
         <h3 className="group-card-title">{category.name}</h3>
         <p className="group-card-dek clamp-2">{category.description}</p>
-        <span className="group-card-link">{cta} <span aria-hidden="true">→</span></span>
+        <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+          <span className="group-card-link">{cta} <span aria-hidden="true">→</span></span>
+          {featured && (
+            <span
+              className="btn btn-sm btn-primary"
+              style={{ padding: '0.25rem 0.65rem', fontSize: '0.85rem' }}
+              onClick={e => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.hash = '#/explore/india-in-maps/metro-in-maps';
+              }}
+            >
+              🚇 Metro Atlas (17 Cities) →
+            </span>
+          )}
+        </div>
       </div>
       {featured && (
         <ul className="group-card-chips" aria-label="About India in Maps">
-          {MAP_CHIPS.map(chip => <li key={chip}>{chip}</li>)}
+          {MAP_CHIPS.map(chip => (
+            <li
+              key={chip}
+              style={chip.includes('Metro') ? { borderColor: '#0284c7', background: 'rgba(2, 132, 199, 0.15)', color: '#38bdf8', fontWeight: 'bold', cursor: 'pointer' } : {}}
+              onClick={chip.includes('Metro') ? e => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.location.hash = '#/explore/india-in-maps/metro-in-maps';
+              } : undefined}
+            >
+              {chip.includes('Metro') ? '🚇 ' + chip : chip}
+            </li>
+          ))}
         </ul>
       )}
     </Link>
