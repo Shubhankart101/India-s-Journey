@@ -94,7 +94,18 @@ Expanded `PulseDashboard.jsx` on the Home page from 21 to **34 high-frequency ma
 
 ---
 
+### 4. Prominent Surfacing, Direct Routing & Omnipresent Discovery
+To ensure the Metro in Maps subgroup is immediately accessible from anywhere on the platform:
+- **Subgroup #1 Ordering:** Elevated `Metro in Maps` to **Order 0** (first position) within the `India in Maps` category catalog and explainers, placing it at the front of the subgroup cards grid.
+- **Dedicated Direct Routes:** Added top-level routes `/#/metro`, `/#/metro-in-maps`, and `/#/metro-atlas` in `App.jsx` and `SubgroupRoute`, allowing immediate direct linking without drilling through group hierarchies.
+- **Prominent Portal Banner:** Introduced a portal banner inside `India in Maps` matching the Indus Valley and Ancient Empires portals, with direct call-to-action **"Explore Metro in Maps Atlas →"**.
+- **Quick-Jump Pill:** Added a prominent `🚇 Metro Atlas (17 Cities)` pill directly in the Explore quick-jump navigation bar.
+- **Instant Query & Slug Aliases:** Configured automatic alias resolution in `Explore.jsx` and `legacy-aliases.json` for `?category=metro`, `?category=metro-in-maps`, `?subgroup=metro`, `?subgroup=metro-in-maps`, `/explore/metro`, and `/explore/metro-in-maps`.
+- **Homepage Group Card Highlight:** Added `'17 Metro Networks'` to the featured `India in Maps` chips on the homepage.
+
+---
+
 ## Verification & Test Results
-- **Vitest Unit Tests:** All 19 test files (140 tests) pass 100% in `frontend`.
+- **Vitest Unit Tests:** All 19 test files (141 tests) pass 100% in `frontend`.
 - **Python Unit Tests:** All 100 tests pass 100% via `python -m unittest discover tests`.
 - **Static API & Build:** Static distribution bundle compiled successfully into `docs/build/`.
