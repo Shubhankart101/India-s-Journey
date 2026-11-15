@@ -6,6 +6,49 @@ import './AncientEmpiresAtlas.css';
 const PAN_INDIA_VIEWBOX = { x: 600, y: -380, w: 380, h: 330 };
 const ALEX_VIEWBOX = { x: 160, y: -480, w: 600, h: 290 };
 
+export function HistoricalMapViewer({ svgUrl, title }) {
+  const [svgContent, setSvgContent] = useState('');
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    setError(false);
+    fetch(svgUrl)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
+      .then(text => {
+        if (!active) return;
+        const clean = text.replace(/<\?xml[^>]*\?>/gi, '').trim();
+        setSvgContent(clean);
+      })
+      .catch(() => {
+        if (active) setError(true);
+      });
+    return () => { active = false; };
+  }, [svgUrl]);
+
+  if (error) {
+    return (
+      <div className="ahm-img-wrapper">
+        <img src={svgUrl} alt={title} className="ahm-svg-img" />
+      </div>
+    );
+  }
+
+  if (!svgContent) {
+    return <div className="ahm-loading">Loading authentic historical atlas…</div>;
+  }
+
+  return (
+    <div
+      className="ahm-svg-inline"
+      dangerouslySetInnerHTML={{ __html: svgContent }}
+    />
+  );
+}
+
 export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedEmpireId, setSelectedEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
@@ -160,14 +203,10 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 <span className="ahm-title">{currentEmpire.historical_map_title || currentEmpire.name}</span>
                 <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
               </div>
-              <div className="ahm-img-wrapper">
-                <img
-                  src={assetUrl(currentEmpire.historical_map_svg)}
-                  alt={currentEmpire.historical_map_title || currentEmpire.name}
-                  className="ahm-svg-img"
-                  loading="lazy"
-                />
-              </div>
+              <HistoricalMapViewer
+                svgUrl={assetUrl(currentEmpire.historical_map_svg)}
+                title={currentEmpire.historical_map_title || currentEmpire.name}
+              />
             </div>
           ) : (
             <>

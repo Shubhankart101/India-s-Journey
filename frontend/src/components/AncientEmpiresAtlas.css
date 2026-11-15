@@ -333,6 +333,35 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
+.ahm-svg-inline {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 8px;
+  background: #14110e;
+  box-sizing: border-box;
+}
+
+.ahm-svg-inline svg {
+  width: 100%;
+  max-width: 880px;
+  height: auto;
+  max-height: 520px;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.ahm-loading {
+  padding: 40px;
+  text-align: center;
+  color: #a89f91;
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
 /* Sidebar Dossier (Tabbed, Constrained, Zero Overflow) */
 .empire-dossier {
   background: rgba(15, 23, 42, 0.6);

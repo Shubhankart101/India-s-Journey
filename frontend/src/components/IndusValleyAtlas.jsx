@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import sitesData from '../data/indus-civilisation.json';
 import { assetUrl } from '../config.js';
+import { HistoricalMapViewer } from './AncientEmpiresAtlas.jsx';
 import './IndusAtlas.css';
 
 const MAJOR_METROPOLIS_IDS = new Set(['rakhigarhi', 'mohenjo-daro', 'harappa', 'dholavira', 'ganweriwala', 'kalibangan', 'lothal', 'banawali']);
@@ -268,14 +269,10 @@ export default function IndusValleyAtlas() {
                 <span className="ahm-title">Cities of the Indus — the Harappan Civilisation · c. 3300–1300 BCE</span>
                 <span className="ahm-credit">Open-source South Asian Historical Atlas · Tapas Banerjee</span>
               </div>
-              <div className="ahm-img-wrapper">
-                <img
-                  src={assetUrl('maps/historical/indus-civilisation.svg')}
-                  alt="Cities of the Indus — the Harappan Civilisation"
-                  className="ahm-svg-img"
-                  loading="lazy"
-                />
-              </div>
+              <HistoricalMapViewer
+                svgUrl={assetUrl('maps/historical/indus-civilisation.svg')}
+                title="Cities of the Indus — the Harappan Civilisation"
+              />
             </div>
           ) : (
             <>

@@ -1,4 +1,5 @@
-<svg class="map" viewBox="0 0 880 1140" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="880" height="1140" class="map" viewBox="0 0 880 1140" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="hatch-anchor" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
             <rect width="8" height="8" fill="#d4a86a" opacity="0.25"/>
