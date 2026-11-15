@@ -673,17 +673,9 @@ function IndusValleyWorkbench() {
       <GroupArtCarousel groupSlug="indus-valley-civilisation" title="Indus Valley Civilisation Artworks" />
       <IndusValleyAtlas />
       {/* Docked Dedicated Script Decryption Window below map */}
-      <section className="ivc-decoder-docked-window" id="ivc-script-decoder-dock" aria-label="Indus Script Decryption Engine">
-        <div className="idw-header">
-          <span className="idw-tag">INTERACTIVE COMPUTATIONAL EPIGRAPHY TOOL</span>
-          <h3 className="idw-title">🔤 Indus Script Decryption &amp; Concordance Engine (400+ Signs)</h3>
-          <p className="idw-desc">
-            Analyze the undeciphered Harappan script corpus using the Mahadevan (1977) and Parpola (CISI) sign concordances.
-            Translate sign sequences, build custom inscribed steatite seals, and inspect sign frequency distributions.
-          </p>
-        </div>
+      <div id="ivc-script-decoder-dock" className="ivc-script-decoder-dock">
         <IndusScriptDecoder />
-      </section>
+      </div>
     </div>
   );
 }

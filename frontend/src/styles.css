@@ -66,7 +66,7 @@ button, input, select { font: inherit; color: inherit; }
 .account { display: flex; align-items: center; gap: 10px; }
 .tab-bar { display: none; }
 
-.main { max-width: 1180px; margin: 0 auto; padding: 0 20px 48px; min-height: 70vh; }
+.main { max-width: 1180px; width: 100%; min-width: 0; box-sizing: border-box; margin: 0 auto; padding: 0 20px 48px; min-height: 70vh; overflow-x: clip; }
 .site-footer { position: relative; z-index: 2; max-width: 1180px; margin: 24px auto 40px; color: #d7dce3; font-size: 0.82rem; line-height: 1.6; text-align: center; padding: 18px 20px; background: rgba(8, 10, 14, .82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, .12); border-radius: 16px; }
 .site-footer p { margin: 4px 0; }
 .site-footer a { color: #7cc4ff; font-weight: 600; }

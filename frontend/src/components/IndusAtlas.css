@@ -254,14 +254,24 @@
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 16px;
-  min-height: 560px;
+  height: 640px;
   max-width: 100%;
   min-width: 0;
+  width: 100%;
   box-sizing: border-box;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .indus-workbench {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 }
 
 /* Map Canvas Container */
-.indus-map-canvas {
+.indus-map-canvas,
+.indus-map-container {
   position: relative;
   background: #090c10;
   border-radius: 12px;
@@ -270,6 +280,36 @@
   box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  height: 640px;
+}
+
+@media (max-width: 1024px) {
+  .indus-map-canvas,
+  .indus-map-container {
+    height: 480px;
+  }
+}
+
+.indus-map-toolbar {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.showing-sites-count {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 0.04em;
 }
 
 .indus-zoom-controls {
@@ -307,7 +347,8 @@
 .indus-svg {
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  flex: 1;
+  min-height: 0;
   display: block;
 }
 
@@ -340,6 +381,7 @@
   gap: 12px 18px;
   font-size: 0.74rem;
   color: #94a3b8;
+  flex-shrink: 0;
 }
 
 .iml-item {
@@ -369,10 +411,21 @@
   border: 1px solid #1e293b;
   border-radius: 12px;
   overflow-y: auto;
-  max-height: 680px;
+  height: 640px;
+  max-height: 640px;
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .indus-site-dossier {
+    height: auto;
+    max-height: 640px;
+  }
 }
 
 .dossier-inner {
@@ -589,12 +642,14 @@
   text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .indus-workbench {
     grid-template-columns: 1fr;
+    height: auto;
   }
   .indus-site-dossier {
-    max-height: 480px;
+    height: auto;
+    max-height: 540px;
   }
 }
 

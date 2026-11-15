@@ -3,6 +3,9 @@
 .group-art-carousel {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   margin: 1.5rem 0 2rem 0;
   border-radius: 14px;
   overflow: hidden;
@@ -128,6 +131,11 @@
   background: rgba(13, 17, 23, 0.95);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   scrollbar-width: thin;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
 }
 
 .art-nav-pill {

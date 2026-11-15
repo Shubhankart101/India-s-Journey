@@ -36,13 +36,19 @@ export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) 
     setError(false);
     setSvgContent('');
 
-    const cleanPath = String(svgUrl || '').replace(/^\/+/, '');
-    const candidateUrls = [
+    const cleanPath = String(svgUrl || '')
+      .replace(/^\/+/, '')
+      .replace(/^India-s-Journey\//i, '');
+    const filename = cleanPath.split('/').pop();
+    const candidateUrls = Array.from(new Set([
       svgUrl,
       `/India-s-Journey/${cleanPath}`,
       `/${cleanPath}`,
       `./${cleanPath}`,
-    ];
+      `/India-s-Journey/maps/historical/${filename}`,
+      `/maps/historical/${filename}`,
+      `./maps/historical/${filename}`,
+    ].filter(Boolean)));
 
     async function tryFetch() {
       for (const u of candidateUrls) {

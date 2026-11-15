@@ -1,4 +1,4 @@
-.subgroup-article { display: grid; gap: clamp(24px, 4vw, 42px); min-width: 0; color: var(--ink); }
+.subgroup-article { display: grid; gap: clamp(24px, 4vw, 42px); min-width: 0; max-width: 100%; width: 100%; box-sizing: border-box; overflow-x: clip; color: var(--ink); }
 .subgroup-article-hero { display: grid; gap: 12px; min-width: 0; padding-top: 20px; }
 .subgroup-crumbs + .subgroup-article .subgroup-article-hero,
 .subgroup-crumbs ~ .subgroup-article .subgroup-article-hero { padding-top: 4px; }
@@ -636,4 +636,24 @@
   font-size: 0.74rem;
   line-height: 1.4;
   color: #94a3b8;
+}
+
+/* Consolidated Workbench wrappers */
+.empires-consolidated-workbench,
+.ivc-consolidated-workbench {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ivc-script-decoder-dock {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }

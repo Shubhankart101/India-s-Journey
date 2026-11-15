@@ -11,6 +11,10 @@
   border-radius: var(--radius, 16px);
   box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.2));
   color: var(--ink, #f0f6fc);
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .indus-decoder-header {
