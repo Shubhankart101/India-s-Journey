@@ -27,7 +27,9 @@ Release v2.0 represents the most expansive architectural and content leap in **I
 | `78f3faa` | `feat: add Indus Valley Civilisation group, interactive atlas & script decoder, independence clock, subgroup artwork, and fix theme switcher overflow` | Initial chronometer and theme switcher bounds hardening |
 | `15aab99` | `Fix header overflow and theme pill clipping in military mode across viewports` | Military mode typography adjustments and overflow handling |
 | `1cf9f7e` | `Fix card overflow, align Pew collection placement, update test suites, and rebuild static dashboard` | Layout stabilization, test suite expansion, and static assets |
-| `HEAD` | `fix: resolve timer layout & digit duplication, fix IVC script decoder crash, and make ancient empires accessible on group list` | Split-flap digit card deduplication, decoder array mappings, quick-jump group pills, and subgroup banner art |
+| `0a423ab` | `fix(v2.0): resolve split-flap timer layout, fix script decoder crash, render subgroup art banners, and make ancient empires accessible on group list` | Split-flap digit card deduplication, decoder array mappings, and subgroup banner art |
+| `08f7992` | `fix: restore Indus Valley and Empires of Ancient India in catalog.json and harden export_catalog pipeline` | Pipeline hardening to protect enrichment scripts from scheduled automation overrides |
+| `HEAD` | `fix(v2.0): bake slugs into categories, fix asset URL resolution on GitHub Pages, polish split-flap crease, and isolate header decorations` | Defensive category slugification, resilient assetUrl, hairline split-flap crease, and military mode header line isolation |
 
 ---
 

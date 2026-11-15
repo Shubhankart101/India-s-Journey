@@ -103,39 +103,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(28px, 4vw, 40px);
-  height: clamp(44px, 6.2vw, 58px);
-  background: linear-gradient(180deg, #1e222a 0%, #15181f 49%, #101217 51%, #0b0d11 100%);
+  width: clamp(28px, 4vw, 42px);
+  height: clamp(46px, 6.4vw, 62px);
+  background: linear-gradient(180deg, #1f232b 0%, #15181f 49%, #111318 51%, #0b0c10 100%);
   border-radius: 6px;
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.75),
-    inset 0 1px 1px rgba(255, 255, 255, 0.16),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.85);
-  border: 1px solid #282d38;
+    0 4px 14px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.9);
+  border: 1px solid #2d3340;
   overflow: hidden;
   user-select: none;
 }
 
 .flip-num {
   font-family: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
-  font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 850;
-  color: #f0f4f8;
+  color: #f5f8fc;
   text-align: center;
   line-height: 1;
   letter-spacing: -0.02em;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* Center horizontal split crease */
+/* Center horizontal split hairline seam - fine, subtle realistic flap division */
 .flip-crease {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
-  height: 1.5px;
-  background: #000;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  z-index: 3;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -145,18 +147,18 @@
   top: calc(50% - 3px);
   width: 3px;
   height: 6px;
-  background: #07080a;
+  background: #060709;
   border-radius: 2px;
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
 }
-.flip-hinge.left { left: 0; border-right: 1px solid #2a303c; }
-.flip-hinge.right { right: 0; border-left: 1px solid #2a303c; }
+.flip-hinge.left { left: 0; border-right: 1px solid #333a4a; }
+.flip-hinge.right { right: 0; border-left: 1px solid #333a4a; }
 
 /* Highlight styling (e.g. seconds) */
 .flip-highlight .flip-digit {
-  border-color: color-mix(in srgb, #3fb950 45%, #232730);
-  background: linear-gradient(180deg, #16241a 0%, #101c13 49%, #0c150e 51%, #070d09 100%);
+  border-color: color-mix(in srgb, #3fb950 50%, #282d38);
+  background: linear-gradient(180deg, #18281d 0%, #111d15 49%, #0d1610 51%, #070d09 100%);
 }
 .flip-highlight .flip-num {
   color: #3fb950;

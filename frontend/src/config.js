@@ -4,3 +4,16 @@ export const BACKUP_MIRROR_URL = import.meta.env.VITE_BACKUP_MIRROR_URL || 'http
 export const API_DOCS_URL = '/api/docs/';
 export const WEB_APP_URL = 'https://indias-journey.onrender.com/';
 export const POLITYPOLICY_CONTACT_URL = 'https://politypolicy.substack.com/about';
+
+/**
+ * Resiliently resolves an asset or API relative path to its public URL.
+ * Accounts for GitHub Pages subpath (/India-s-Journey/), preview domains, and localhost.
+ */
+export function assetUrl(relPath) {
+  const clean = String(relPath || '').replace(/^\/+/, '');
+  const base = import.meta.env?.BASE_URL || '/';
+  if (typeof window !== 'undefined' && window.location.pathname.startsWith('/India-s-Journey')) {
+    return `/India-s-Journey/${clean}`;
+  }
+  return `${base.endsWith('/') ? base : `${base}/`}${clean}`;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ART_INTERVAL_MS } from '../art.js';
+import { assetUrl } from '../config.js';
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -18,7 +19,7 @@ function useArtCycle(art, interval) {
       setIndex(current => {
         const next = (current + 1) % list.length;
         const preload = new Image();
-        preload.src = `${import.meta.env.BASE_URL}art/${list[(next + 1) % list.length]}`;
+        preload.src = assetUrl(`art/${list[(next + 1) % list.length].split('?')[0]}`);
         return next;
       });
     }, interval);
@@ -33,7 +34,8 @@ const textFreeCache = new Map();
 
 /** Art SVGs embed a title/caption; strip it so no text floats behind page content. */
 function useTextFreeArt(art) {
-  const url = art ? `${import.meta.env.BASE_URL}art/${art}` : '';
+  const raw = art ? String(art).split('?')[0] : '';
+  const url = raw ? assetUrl(`art/${raw}`) : '';
   const [src, setSrc] = useState(() => textFreeCache.get(url) || url);
   useEffect(() => {
     if (!url) return undefined;

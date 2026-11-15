@@ -19,6 +19,9 @@ const readJson = (file, fallback) => {
   }
 };
 
+const slugify = val => String(val || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 const appSource = read('app.js');
 
 // Returns the source of `const NAME = {...};` (or `[...]`) using bracket matching that skips strings.
@@ -232,6 +235,7 @@ const categories = [...new Set([...categoryNames, ...indicators.map(indicator =>
   const subgroupNames = [...new Set(indicators.filter(indicator => indicator.category === name).map(indicator => indicator.subgroup))];
   return {
     name,
+    slug: slugify(name),
     order,
     title: hero.title || name,
     description: hero.desc || '',
@@ -243,6 +247,7 @@ const categories = [...new Set([...categoryNames, ...indicators.map(indicator =>
       const subHero = app.subgroupHeroData[subgroupName] || {};
       return {
         name: subgroupName,
+        slug: slugify(subgroupName),
         order: subgroupOrder,
         title: subHero.title || subgroupName,
         description: subHero.desc || '',

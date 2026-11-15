@@ -43,6 +43,7 @@ empire_cat_exists = any(c['name'] == 'Empires of Ancient India' for c in catalog
 if not empire_cat_exists:
     empires_category = {
         "name": "Empires of Ancient India",
+        "slug": "empires-of-ancient-india",
         "order": len(catalog['categories']),
         "title": "Empires of Ancient India",
         "description": "Geospatial evolution of imperial boundaries, decisive battlefields, and original script epigraphs from the 16 Mahajanapadas to the Classical Golden Ages (600 BCE – 850 CE).",
@@ -53,6 +54,7 @@ if not empire_cat_exists:
         "subgroups": [
             {
                 "name": "16 Mahajanapadas & Early Republics",
+                "slug": "16-mahajanapadas-early-republics",
                 "order": 0,
                 "title": "16 Mahajanapadas & Early Republics (c. 600–345 BCE)",
                 "description": "Second urbanisation in the Gangetic plain, the balance of power between monarchies (Rajyas) and oligarchic republics (Gana-Sanghas) like the Vajjian Confederacy.",
@@ -60,6 +62,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda",
+                "slug": "magadha-ascendancy-haryanka-shishunaga-nanda",
                 "order": 1,
                 "title": "Magadha Ascendancy: Haryanka, Shishunaga & Nanda (544–322 BCE)",
                 "description": "First unification of northern India under the Haryanka, Shishunaga, and Nanda dynasties with massive standing armies and war elephant divisions.",
@@ -67,6 +70,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Alexander the Great's Campaign & Macedonian Limit",
+                "slug": "alexander-the-great-s-campaign-macedonian-limit",
                 "order": 2,
                 "title": "Alexander the Great's Campaign & Macedonian Limit (327–325 BCE)",
                 "description": "The Macedonian invasion of Punjab, Battle of the Hydaspes against King Porus, mutiny at the Beas, and voyage down the Indus.",
@@ -74,6 +78,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Mauryan Empire & Pan-Indian Hegemony",
+                "slug": "mauryan-empire-pan-indian-hegemony",
                 "order": 3,
                 "title": "Mauryan Empire & Pan-Indian Hegemony (322–185 BCE)",
                 "description": "Chandragupta Maurya, Chanakya's Arthashastra, defeat of Seleucus I Nicator, and Ashoka's pan-Indian Dhamma state across 5 million square kilometers.",
@@ -81,6 +86,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Post-Mauryan & Indo-Greek Kingdoms",
+                "slug": "post-mauryan-indo-greek-kingdoms",
                 "order": 4,
                 "title": "Post-Mauryan & Indo-Greek Kingdoms (185 BCE–10 CE)",
                 "description": "Greco-Indian synthesis in Gandhara and Punjab under King Menander (Milinda), the Shunga dynasty in Magadha, and the Heliodorus Garuda pillar at Vidisha.",
@@ -88,6 +94,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Satavahana Empire & Deccan Maritime Ascendancy",
+                "slug": "satavahana-empire-deccan-maritime-ascendancy",
                 "order": 5,
                 "title": "Satavahana Empire & Deccan Maritime Ascendancy (2nd C. BCE–220 CE)",
                 "description": "Gautamiputra Satakarni's destruction of the Western Kshatrapas, control of the three oceans (Tri-Samudra-Toya), and maritime commerce with Rome.",
@@ -95,6 +102,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Kushan Empire & The Silk Road Synthesis",
+                "slug": "kushan-empire-the-silk-road-synthesis",
                 "order": 6,
                 "title": "Kushan Empire & The Silk Road Synthesis (30–375 CE)",
                 "description": "Trans-Eurasian superpower under Kanishka I spanning from Bactria and the Oxus River to Mathura and Varanasi; Fourth Buddhist Council in Kashmir.",
@@ -102,6 +110,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Gupta Empire: Classical Golden Age",
+                "slug": "gupta-empire-classical-golden-age",
                 "order": 7,
                 "title": "Gupta Empire: Classical Golden Age (319–550 CE)",
                 "description": "The golden age of Indian science (Aryabhata), literature (Kalidasa), mathematics, and military zenith under Samudragupta and Chandragupta II Vikramaditya.",
@@ -109,6 +118,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Vardhana Empire of Harsha",
+                "slug": "vardhana-empire-of-harsha",
                 "order": 8,
                 "title": "Vardhana Empire of Harsha (606–647 CE)",
                 "description": "Imperial court of Kannauj, patron of Nalanda, Xuanzang's pilgrimage, and the Battle of Narmada against Chalukya King Pulakeshin II.",
@@ -116,6 +126,7 @@ if not empire_cat_exists:
             },
             {
                 "name": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava",
+                "slug": "classical-southern-dynasties-chola-chera-pandya-pallava",
                 "order": 9,
                 "title": "Classical Southern Dynasties: Chola, Chera, Pandya & Pallava (300 BCE–850 CE)",
                 "description": "Sangam literature in Tamil, maritime trade from Muziris and Poompuhar to Alexandria and Rome, and monolithic rock architecture of Mamallapuram.",
@@ -124,6 +135,19 @@ if not empire_cat_exists:
         ]
     }
     catalog['categories'].append(empires_category)
+else:
+    for c in catalog['categories']:
+        if c['name'] == 'Empires of Ancient India':
+            c['slug'] = 'empires-of-ancient-india'
+            for sub in c.get('subgroups', []):
+                import re, unicodedata
+                def to_slug(val):
+                    s = unicodedata.normalize('NFKD', str(val or ''))
+                    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+                    s = re.sub(r'[^a-z0-9]+', '-', s.lower())
+                    return s.strip('-')
+                if not sub.get('slug'):
+                    sub['slug'] = to_slug(sub['name'])
 
 # 3. Add Indicators for Empires of Ancient India
 EMPIRE_INDICATORS = [

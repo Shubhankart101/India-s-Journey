@@ -11,6 +11,7 @@ import { SubgroupPage } from '../components/SubgroupPage.jsx';
 import GroupCards from '../components/GroupCards.jsx';
 import { articleFor } from '../subgroup.js';
 import { EXPLORE_KICKER, groupSanskrit } from '../sanskrit.js';
+import { assetUrl } from '../config.js';
 
 const PAGE_SIZE = 24;
 // Maps draw lazily, so the India in Maps group loads every card (100 per request, the API maximum).
@@ -198,9 +199,7 @@ function ExploreBrowse() {
             {category.subgroups.map(item => {
               const info = articleFor(category.name, item.name).subgroup;
               const rawArt = (item.art || category.art || 'parliament.svg').split('?')[0];
-              const base = import.meta.env.BASE_URL || '/';
-              const cleanBase = base === './' ? '/' : (base.endsWith('/') ? base : `${base}/`);
-              const artUrl = `${cleanBase}art/${rawArt}`;
+              const artUrl = assetUrl(`art/${rawArt}`);
               return (
                 <Link
                   role="listitem"

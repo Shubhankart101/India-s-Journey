@@ -1,3 +1,5 @@
+import { assetUrl } from './config.js';
+
 const cookie = name => document.cookie.split('; ').find(row => row.startsWith(`${name}=`))?.split('=')[1] || '';
 
 export class ApiError extends Error {
@@ -71,6 +73,13 @@ export async function request(path, { method = 'GET', body, signal } = {}) {
       const transient = error instanceof ApiError && TRANSIENT.has(error.status);
       if (!transient || tries >= delays.length) {
         if (transient) window.dispatchEvent(new Event('api:unreachable'));
+        if (method === 'GET' && transient && !STATIC_MODE && import.meta.env?.MODE !== 'test') {
+          try {
+            return await staticRequest(path, { signal });
+          } catch {
+            // fall back to throwing original error
+          }
+        }
         throw error;
       }
       await wait(delays[tries], signal);
@@ -119,8 +128,9 @@ const apiPage = (items, params) => {
 async function getStaticCatalog(signal) {
   if (!staticCatalogPromise) {
     const names = ['categories', 'indicators', 'articles', 'search-index', 'stats'];
+    const version = import.meta.env?.MODE === 'test' ? '' : `?v=${import.meta.env?.VITE_BUILD_TIME || Date.now()}`;
     staticCatalogPromise = Promise.all(names.map(async name => {
-      const response = await fetch(`${import.meta.env.BASE_URL}api/${name}.json`);
+      const response = await fetch(assetUrl(`api/${name}.json${version}`));
       if (!response.ok) throw new ApiError(response.status, await response.json().catch(() => null));
       return response.json();
     })).then(([categories, indicators, articles, searchIndex, stats]) => ({
@@ -143,8 +153,8 @@ async function getStaticCatalog(signal) {
 }
 
 const slugIndex = catalog => new Map(catalog.categories.map(category => [category.name, {
-  category: { ...category, slug: slugify(category.name) },
-  subgroups: new Map(category.subgroups.map(subgroup => [subgroup.name, { ...subgroup, slug: slugify(subgroup.name) }])),
+  category: { ...category, slug: category.slug || slugify(category.name) },
+  subgroups: new Map((category.subgroups || []).map(subgroup => [subgroup.name, { ...subgroup, slug: subgroup.slug || slugify(subgroup.name) }])),
 }]));
 const normalizedSeries = item => item.series || {};
 const valuesOf = item => normalizedSeries(item).datasets?.[0]?.values || [];
@@ -221,14 +231,16 @@ async function staticRequest(path, { signal } = {}) {
     return catalog.categories.map(category => {
       const summary = summaries.filter(item => item.category === category.name);
       const group = indexes.get(category.name);
+      const catSlug = category.slug || group?.category.slug || slugify(category.name);
       return {
-        name: category.name, slug: group.category.slug, order: category.order, title: category.title,
+        name: category.name, slug: catSlug, order: category.order, title: category.title,
         description: category.description || '', badges: category.badges || [], art: category.art || '',
         indicator_count: summary.length, live_count: summary.filter(item => item.is_live).length,
-        subgroups: category.subgroups.map(subgroup => {
+        subgroups: (category.subgroups || []).map(subgroup => {
           const members = summary.filter(item => item.subgroup === subgroup.name);
+          const subSlug = subgroup.slug || group?.subgroups.get(subgroup.name)?.slug || slugify(subgroup.name);
           return {
-            name: subgroup.name, slug: group.subgroups.get(subgroup.name).slug,
+            name: subgroup.name, slug: subSlug,
             order: subgroup.order, title: subgroup.title, description: subgroup.description || '',
             art: subgroup.art || '', indicator_count: members.length,
             live_count: members.filter(item => item.is_live).length,

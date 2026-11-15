@@ -14,6 +14,7 @@ cat_exists = any(c['name'] == 'Indus Valley Civilisation' for c in catalog['cate
 if not cat_exists:
     ivc_category = {
         "name": "Indus Valley Civilisation",
+        "slug": "indus-valley-civilisation",
         "order": len(catalog['categories']),
         "title": "Indus Valley Civilisation",
         "description": "Urban planning, metallurgy, maritime trade networks, undeciphered script, and material culture of the Bronze Age Indus civilization (c. 3300 – 1300 BCE).",
@@ -24,6 +25,7 @@ if not cat_exists:
         "subgroups": [
             {
                 "name": "Metropolises & Major Urban Centers",
+                "slug": "metropolises-major-urban-centers",
                 "order": 0,
                 "title": "Metropolises & Major Urban Centers",
                 "description": "Grid plans, baked brick citadels, sophisticated drainage networks, and monumental water reservoirs across Mohenjo-daro, Harappa, Rakhigarhi, Dholavira, and Ganweriwala.",
@@ -31,6 +33,7 @@ if not cat_exists:
             },
             {
                 "name": "Artifacts, Statuary & Material Culture",
+                "slug": "artifacts-statuary-material-culture",
                 "order": 1,
                 "title": "Artifacts, Statuary & Material Culture",
                 "description": "Lost-wax bronze statuary (Dancing Girl), steatite sculpture (Priest-King), terracotta figurines, micro-beads, etched carnelian, and standardized binary-decimal chert weights.",
@@ -38,6 +41,7 @@ if not cat_exists:
             },
             {
                 "name": "Maritime Trade & International Artifacts",
+                "slug": "maritime-trade-international-artifacts",
                 "order": 2,
                 "title": "Maritime Trade & International Artifacts",
                 "description": "The world's earliest tidal dockyard at Lothal, oceanic trade corridors across the Arabian Sea, and Harappan seals and weights recovered in Mesopotamia (Ur, Kish), Iran (Susa), and the Persian Gulf.",
@@ -45,6 +49,7 @@ if not cat_exists:
             },
             {
                 "name": "Indus Script & Alphabet Decoding",
+                "slug": "indus-script-alphabet-decoding",
                 "order": 3,
                 "title": "Indus Script & Alphabet Decoding",
                 "description": "Concordance of 400+ signs, right-to-left epigraphy, the Dholavira 10-glyph citadel signboard, positional entropy, and Dravidian, Indo-Aryan, and non-linguistic decipherment models.",
@@ -52,14 +57,28 @@ if not cat_exists:
             },
             {
                 "name": "Chronology, Settlement Geography & Legacy",
+                "slug": "chronology-settlement-geography-legacy",
                 "order": 4,
                 "title": "Chronology, Settlement Geography & Legacy",
                 "description": "From Early Harappan village regionalization (3300 BCE) through Mature urban integration to Late Harappan de-urbanization, monsoon shifts, and cultural continuity in historical India.",
-                "art": "harappan-seals.svg"
+                "art": "ivc-excavations.svg"
             }
         ]
     }
     catalog['categories'].append(ivc_category)
+else:
+    for c in catalog['categories']:
+        if c['name'] == 'Indus Valley Civilisation':
+            c['slug'] = 'indus-valley-civilisation'
+            for sub in c.get('subgroups', []):
+                import re, unicodedata
+                def to_slug(val):
+                    s = unicodedata.normalize('NFKD', str(val or ''))
+                    s = ''.join(ch for ch in s if not unicodedata.combining(ch))
+                    s = re.sub(r'[^a-z0-9]+', '-', s.lower())
+                    return s.strip('-')
+                if not sub.get('slug'):
+                    sub['slug'] = to_slug(sub['name'])
 
 # Add IVC Indicators
 ivc_indicators = [

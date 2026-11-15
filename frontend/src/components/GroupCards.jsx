@@ -2,9 +2,12 @@ import { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from '../hooks.js';
 import { groupSanskrit } from '../sanskrit.js';
+import { assetUrl } from '../config.js';
 
 const MAP_SLUG = 'india-in-maps';
 const MAP_CHIPS = ['36 states & UTs', 'Lok Sabha 1952–2024', 'Primary ECI data'];
+
+const slugOf = cat => cat?.slug || String(cat?.name || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 let outlinePromise = null;
 export const loadOutline = () => {
@@ -40,14 +43,16 @@ function IndiaOutline() {
 }
 
 const GroupCard = memo(function GroupCard({ category, to, cta }) {
-  const featured = category.slug === MAP_SLUG;
-  const sanskrit = groupSanskrit(category.slug);
-  const kicker = `${category.subgroups.length} subgroups`;
+  const slug = slugOf(category);
+  const featured = slug === MAP_SLUG;
+  const sanskrit = groupSanskrit(slug);
+  const kicker = `${(category.subgroups || []).length} subgroups`;
+  const rawArt = (category.art || 'parliament.svg').split('?')[0];
   return (
     <Link to={to} className={`group-card${featured ? ' featured' : ''}`}>
       {featured ? <IndiaOutline /> : (
         <span className="group-card-art" aria-hidden="true">
-          <img src={`${import.meta.env.BASE_URL}art/${category.art || 'parliament.svg'}`} alt="" loading="lazy" decoding="async" width="72" height="72" />
+          <img src={assetUrl(`art/${rawArt}`)} alt="" loading="lazy" decoding="async" width="72" height="72" />
         </span>
       )}
       <div className="group-card-body">
@@ -66,13 +71,21 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
 });
 
 // Editorial "browse by group" grid shared by Home; the featured map card spans the full row.
-export default function GroupCards({ categories, cta = 'Explore' }) {
-  const ordered = [...categories.filter(item => item.slug === MAP_SLUG), ...categories.filter(item => item.slug !== MAP_SLUG)];
+export default function GroupCards({ categories = [], cta = 'Explore' }) {
+  const ordered = [...categories.filter(item => slugOf(item) === MAP_SLUG), ...categories.filter(item => slugOf(item) !== MAP_SLUG)];
   return (
     <div className="group-cards">
-      {ordered.map(category => (
-        <GroupCard key={category.slug} category={category} cta={cta} to={category.slug === 'elections-democracy' ? '/elections' : `/explore?category=${category.slug}`} />
-      ))}
+      {ordered.map(category => {
+        const slug = slugOf(category);
+        return (
+          <GroupCard
+            key={slug || category.name}
+            category={{ ...category, slug }}
+            cta={cta}
+            to={slug === 'elections-democracy' ? '/elections' : `/explore?category=${slug}`}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -51,9 +51,22 @@ const stats = {
   source_generated_at: catalog.generated_at_utc || null,
   last_refresh: catalog.generated_at_utc ? new Date(catalog.generated_at_utc).toISOString().replace(/\.000Z$/, 'Z') : null,
 };
+const slugify = val => String(val || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+const categories = catalog.categories.map(cat => ({
+  ...cat,
+  slug: cat.slug || slugify(cat.name),
+  subgroups: (cat.subgroups || []).map(sub => ({
+    ...sub,
+    slug: sub.slug || slugify(sub.name),
+    art: (sub.art || '').split('?')[0] || (cat.art || '').split('?')[0] || 'parliament.svg',
+  })),
+}));
+
 fs.mkdirSync(apiDir, { recursive: true });
 for (const [name, data] of Object.entries({
-  categories: catalog.categories,
+  categories,
   indicators,
   articles,
   'search-index': searchIndex,

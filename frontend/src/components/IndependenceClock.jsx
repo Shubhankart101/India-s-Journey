@@ -4,40 +4,43 @@ import './IndependenceClock.css';
 // 15 August 1947, 00:00:00 IST (UTC+05:30) is 14 August 1947, 18:30:00 UTC
 const INDEPENDENCE_EPOCH = Date.UTC(1947, 7, 14, 18, 30, 0);
 
-function getIstDate(dateObj = new Date()) {
-  const utc = dateObj.getTime() + dateObj.getTimezoneOffset() * 60000;
-  return new Date(utc + 5.5 * 3600000);
+function getIstComponents(dateObj = new Date()) {
+  const IST_OFFSET_MS = 5.5 * 3600000;
+  const istTimeMs = dateObj.getTime() + IST_OFFSET_MS;
+  const istDate = new Date(istTimeMs);
+
+  return {
+    year: istDate.getUTCFullYear(),
+    month: istDate.getUTCMonth(),
+    date: istDate.getUTCDate(),
+    hours: istDate.getUTCHours(),
+    minutes: istDate.getUTCMinutes(),
+    seconds: istDate.getUTCSeconds(),
+    ms: istDate.getUTCMilliseconds(),
+  };
 }
 
 function computeElapsed() {
   const now = new Date();
   const diffMs = Math.max(0, now.getTime() - INDEPENDENCE_EPOCH);
+  const ist = getIstComponents(now);
 
-  // Exact calendar differences in IST
-  const start = new Date(1947, 7, 15, 0, 0, 0);
-  const current = getIstDate(now);
+  const startYear = 1947;
+  const startMonth = 7; // August
+  const startDay = 15;
 
-  let years = current.getFullYear() - start.getFullYear();
-  let months = current.getMonth() - start.getMonth();
-  let days = current.getDate() - start.getDate();
-  let hours = current.getHours() - start.getHours();
-  let minutes = current.getMinutes() - start.getMinutes();
-  let seconds = current.getSeconds() - start.getSeconds();
+  let years = ist.year - startYear;
+  let months = ist.month - startMonth;
+  let days = ist.date - startDay;
+  let hours = ist.hours;
+  let minutes = ist.minutes;
+  let seconds = ist.seconds;
 
-  if (seconds < 0) {
-    seconds += 60;
-    minutes -= 1;
-  }
-  if (minutes < 0) {
-    minutes += 60;
-    hours -= 1;
-  }
-  if (hours < 0) {
-    hours += 24;
-    days -= 1;
-  }
+  if (seconds < 0) { seconds += 60; minutes -= 1; }
+  if (minutes < 0) { minutes += 60; hours -= 1; }
+  if (hours < 0) { hours += 24; days -= 1; }
   if (days < 0) {
-    const prevMonthLastDay = new Date(current.getFullYear(), current.getMonth(), 0).getDate();
+    const prevMonthLastDay = new Date(Date.UTC(ist.year, ist.month, 0)).getUTCDate();
     days += prevMonthLastDay;
     months -= 1;
   }
@@ -58,7 +61,7 @@ function computeElapsed() {
     seconds,
     totalDays,
     totalSeconds,
-    istNow: current,
+    ist,
   };
 }
 
@@ -90,42 +93,36 @@ function FlipCard({ value, label, highlight = false }) {
 }
 
 // Precision Analog Watch Face with Live Indian Standard Time
-function IstWatch({ date }) {
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-  const ms = date.getMilliseconds ? date.getMilliseconds() : 0;
+function IstWatch({ ist }) {
+  const hours = ist.hours;
+  const minutes = ist.minutes;
+  const seconds = ist.seconds;
+  const ms = ist.ms || 0;
 
   // Exact clock hand angles
   const secAngle = (seconds + ms / 1000) * 6; // 360 / 60
   const minAngle = (minutes + seconds / 60) * 6;
   const hourAngle = ((hours % 12) + minutes / 60) * 30; // 360 / 12
 
-  const timeString = date.toLocaleTimeString('en-IN', {
-    hour12: true,
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-  });
+  const pad = n => String(n).padStart(2, '0');
+  const h12 = hours % 12 || 12;
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const timeString = `${pad(h12)}:${pad(minutes)}:${pad(seconds)} ${ampm}`;
 
-  const dateString = date.toLocaleDateString('en-IN', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  });
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayOfWeek = DAYS[new Date(Date.UTC(ist.year, ist.month, ist.date)).getUTCDay()];
+  const dateString = `${dayOfWeek}, ${ist.date} ${MONTHS[ist.month]} ${ist.year}`;
 
   return (
-    <div className="ist-watch-container" aria-label={`Current Indian Standard Time: ${timeString}`}>
+    <div className="ist-watch-container" aria-label={`Current Indian Standard Time: ${timeString} IST`}>
       <div className="ist-watch-dial" aria-hidden="true">
-        {/* Watch bezel and hour markers */}
         <div className="watch-face">
           <span className="watch-num num-12">12</span>
           <span className="watch-num num-3">3</span>
           <span className="watch-num num-6">6</span>
           <span className="watch-num num-9">9</span>
 
-          {/* Tick marks */}
           <span className="watch-tick tick-1" />
           <span className="watch-tick tick-2" />
           <span className="watch-tick tick-4" />
@@ -135,10 +132,8 @@ function IstWatch({ date }) {
           <span className="watch-tick tick-10" />
           <span className="watch-tick tick-11" />
 
-          {/* Ashoka Chakra insignia at center */}
           <div className="watch-chakra-hub" />
 
-          {/* Clock hands */}
           <div className="watch-hand hour-hand" style={{ transform: `rotate(${hourAngle}deg)` }} />
           <div className="watch-hand min-hand" style={{ transform: `rotate(${minAngle}deg)` }} />
           <div className="watch-hand sec-hand" style={{ transform: `rotate(${secAngle}deg)` }} />
@@ -151,8 +146,8 @@ function IstWatch({ date }) {
           <span className="ist-pulse" aria-hidden="true" />
           <span>INDIAN STANDARD TIME (IST · UTC+05:30)</span>
         </div>
-        <div className="ist-time-text">{timeString}</div>
-        <div className="ist-date-text">{dateString} · New Delhi Standard Observatory</div>
+        <div className="ist-time-text">{timeString} IST</div>
+        <div className="ist-date-text">{dateString} · Rashtrapati Bhavan Standard Chronometer</div>
       </div>
     </div>
   );
@@ -194,7 +189,7 @@ export default function IndependenceClock() {
       </div>
 
       {/* Live Analog & Digital Indian Standard Time Watch */}
-      <IstWatch date={data.istNow} />
+      <IstWatch ist={data.ist} />
 
       <div className="ic-footer">
         <p className="ic-quote">
