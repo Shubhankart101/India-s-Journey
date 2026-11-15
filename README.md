@@ -184,7 +184,7 @@ See [docs/TESTING.md](docs/TESTING.md) and [Web app CI](.github/workflows/webapp
 
 - **Static dashboard:** Netlify is configured for `docs/`; GitHub Pages provides a mirror. See [`netlify.toml`](netlify.toml) and [the Pages workflow](.github/workflows/deploy-dashboard.yml).
 - **Django + React:** [`render.yaml`](render.yaml) is the Render Blueprint. Select **New > Blueprint** in Render and point it at this repository; it builds the Docker app and has a health check at `/api/health/`.
-- **Fly.io:** paused; its deployment workflow is manual-only. Render is the continuing web-app deployment target. See [deployment options](docs/DEPLOYMENT.md).
+- **Microsoft Azure (Terraform):** Low-resource production deployment on Azure Linux App Service (B1 tier, ~₹1,100/month) with automated Terraform Infrastructure-as-Code and budget safeguards. See [`terraform/`](terraform/) and [deployment options](docs/DEPLOYMENT.md).
 
 Free-tier container filesystems may be ephemeral; configure persistent storage if application data must survive redeploys. The indicator catalogue is re-imported from source data at startup.
 

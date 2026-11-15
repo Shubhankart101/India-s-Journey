@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - Dockerfile
-      - azure-resources.bicep
+      - terraform/**
       - webapp/**
       - frontend/**
       - data/catalog.json

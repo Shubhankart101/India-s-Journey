@@ -32,3 +32,9 @@ data/journey-sources/
 /*.txt
 frontend/_*
 *.log
+
+# Terraform local state and modules
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan

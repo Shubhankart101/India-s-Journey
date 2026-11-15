@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r webapp/requirements.txt
 COPY . .
 COPY --from=frontend /app/frontend/dist frontend/dist
 RUN DJANGO_SECRET_KEY=build-only python webapp/manage.py collectstatic --noinput
-# Bake the catalogue into the image's SQLite DB so cold starts (Fly stops idle machines) serve in seconds instead of
+# Bake the catalogue into the image's SQLite DB so container cold starts serve in seconds instead of
 # re-importing thousands of rows before gunicorn listens; boot only re-imports when data/catalog.json changed.
 RUN DJANGO_SECRET_KEY=build-only python webapp/manage.py migrate --noinput \
  && DJANGO_SECRET_KEY=build-only python webapp/manage.py import_catalog

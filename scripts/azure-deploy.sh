@@ -1,27 +1,26 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Turnkey Azure Deployment Script for India's Journey
+# Turnkey Azure Deployment Script for India's Journey (Terraform / CLI)
 # Budget Optimization: Configured for Linux B1 (~Rs. 1,100/month)
 # Fits well inside your Rs. 12,500/month budget ceiling.
 # ==============================================================================
 set -euo pipefail
 
-RESOURCE_GROUP="${1:-rg-indiasjourney}"
-LOCATION="${2:-centralindia}"          # Central India (Pune) for lowest latency in India
-APP_NAME="${3:-indias-journey-$RANDOM}" # Globally unique web app name
-PLAN_NAME="${4:-asp-indiasjourney-b1}"
-SKU="B1"                               # Basic 1 vCPU, 1.75 GB RAM (~Rs. 1,100 / mo)
+MODE="${1:-terraform}" # "terraform" (default) or "cli"
+RESOURCE_GROUP="${2:-rg-indiasjourney}"
+LOCATION="${3:-centralindia}"          # Central India (Pune) for lowest latency in India
+APP_NAME="${4:-indias-journey-$RANDOM}"
 
 echo "======================================================================"
-echo "🇮🇳 India's Journey: Deploying to Microsoft Azure (Lowest Resource Plan)"
-echo "Target Resource Group : ${RESOURCE_GROUP}"
-echo "Location               : ${LOCATION}"
-echo "App Name               : ${APP_NAME}"
-echo "App Service Plan SKU   : ${SKU} (~Rs. 1,100 / month)"
-echo "Monthly Budget Ceiling : Rs. 12,500"
+echo "🇮🇳 India's Journey: Azure Cloud Roll Out"
+echo "Deployment Mode        : ${MODE}"
+echo "Target Resource Group  : ${RESOURCE_GROUP}"
+echo "Location                : ${LOCATION}"
+echo "Compute Plan SKU        : Linux B1 (1 vCPU, 1.75 GB RAM, ~Rs. 1,100 / mo)"
+echo "Monthly Budget Ceiling  : Rs. 12,500 (with automated email alerts)"
 echo "======================================================================"
 
-# 1. Verify Azure CLI sign-in
+# Verify Azure CLI login
 if ! az account show > /dev/null 2>&1; then
   echo "⚠️ Not signed in to Azure CLI. Please run: az login"
   exit 1
@@ -30,24 +29,44 @@ fi
 SUBSCRIPTION_ID=$(az account show --query id -o tsv)
 echo "✓ Connected to Azure Subscription: ${SUBSCRIPTION_ID}"
 
-# 2. Create Resource Group
+if [ "${MODE}" = "terraform" ]; then
+  if ! command -v terraform > /dev/null 2>&1; then
+    echo "⚠️ Terraform is not installed on PATH. Falling back to Azure CLI deployment..."
+    MODE="cli"
+  else
+    echo "Provisioning infrastructure via Terraform..."
+    cd "$(dirname "$0")/../terraform"
+    terraform init
+    terraform apply -auto-approve \
+      -var="resource_group_name=${RESOURCE_GROUP}" \
+      -var="location=${LOCATION}" \
+      -var="app_name_prefix=indias-journey" \
+      -var="sku_name=B1" \
+      -var="monthly_budget_inr=12500"
+    echo "======================================================================"
+    echo "🎉 Terraform Deployment Complete!"
+    terraform output
+    echo "======================================================================"
+    exit 0
+  fi
+fi
+
+# Fallback / CLI Deployment Mode
 echo "Creating resource group '${RESOURCE_GROUP}' in '${LOCATION}'..."
 az group create --name "${RESOURCE_GROUP}" --location "${LOCATION}" --output table
 
-# 3. Create App Service Plan (Linux B1)
-echo "Creating App Service Plan '${PLAN_NAME}' (Linux ${SKU})..."
+PLAN_NAME="asp-indiasjourney-b1"
+echo "Creating App Service Plan '${PLAN_NAME}' (Linux B1)..."
 az appservice plan create \
   --name "${PLAN_NAME}" \
   --resource-group "${RESOURCE_GROUP}" \
   --location "${LOCATION}" \
   --is-linux \
-  --sku "${SKU}" \
+  --sku "B1" \
   --output table
 
-# 4. Generate a high-entropy Django Secret Key
 SECRET_KEY=$(python3 -c "import secrets; print(secrets.token_urlsafe(50))" 2>/dev/null || openssl rand -base64 36)
 
-# 5. Create Web App (Docker Container runtime)
 echo "Creating Web App '${APP_NAME}'..."
 az webapp create \
   --name "${APP_NAME}" \
@@ -56,7 +75,6 @@ az webapp create \
   --deployment-local-git \
   --output table
 
-# 6. Configure Application Settings
 echo "Configuring environment variables and persistent storage..."
 az webapp config appsettings set \
   --name "${APP_NAME}" \
@@ -73,7 +91,6 @@ az webapp config appsettings set \
     DJANGO_LOG_LEVEL=INFO \
   --output table
 
-# 7. Configure Health Check
 echo "Enabling health check at /api/health/..."
 az webapp config set \
   --name "${APP_NAME}" \
@@ -83,10 +100,6 @@ az webapp config set \
 
 APP_URL="https://${APP_NAME}.azurewebsites.net"
 echo "======================================================================"
-echo "🎉 Deployment Configuration Complete!"
+echo "🎉 Azure CLI Roll Out Complete!"
 echo "App URL: ${APP_URL}"
-echo ""
-echo "Next step: Push your container image or code:"
-echo "  Option A (Container): az webapp config container set --name ${APP_NAME} --resource-group ${RESOURCE_GROUP} --docker-custom-image-name <your-acr-or-dockerhub-image>"
-echo "  Option B (GitHub Actions): Set up AZURE_WEBAPP_PUBLISH_PROFILE in GitHub Secrets"
 echo "======================================================================"

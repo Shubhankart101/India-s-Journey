@@ -1,66 +1,95 @@
-<#
+﻿<#
 .SYNOPSIS
     Turnkey Azure Deployment Script for India's Journey (PowerShell).
+    Supports Terraform (default) and Azure CLI roll out modes.
     Optimized for Linux B1 Plan (~Rs. 1,100/month, well within the Rs. 12,500 budget).
 
 .EXAMPLE
-    .\scripts\azure-deploy.ps1 -ResourceGroup "rg-indiasjourney" -Location "centralindia"
+    .\scripts\azure-deploy.ps1 -Mode "terraform"
+    .\scripts\azure-deploy.ps1 -Mode "cli" -ResourceGroup "rg-indiasjourney"
 #>
 param(
+    [ValidateSet("terraform", "cli")]
+    [string]$Mode = "terraform",
     [string]$ResourceGroup = "rg-indiasjourney",
     [string]$Location = "centralindia",
     [string]$AppName = "indias-journey-$((Get-Random -Minimum 1000 -Maximum 9999))",
-    [string]$PlanName = "asp-indiasjourney-b1",
     [string]$Sku = "B1"
 )
 
 $ErrorActionPreference = "Stop"
 
 Write-Host "======================================================================" -ForegroundColor Cyan
-Write-Host " India's Journey: Deploying to Microsoft Azure (Lowest Resource Plan)" -ForegroundColor Cyan
-Write-Host " Target Resource Group : $ResourceGroup"
-Write-Host " Location               : $Location"
-Write-Host " App Name               : $AppName"
-Write-Host " App Service Plan SKU   : $Sku (~Rs. 1,100 / month)"
-Write-Host " Monthly Budget Ceiling : Rs. 12,500"
+Write-Host " 🇮🇳 India's Journey: Azure Cloud Roll Out" -ForegroundColor Cyan
+Write-Host " Deployment Mode        : $Mode"
+Write-Host " Target Resource Group  : $ResourceGroup"
+Write-Host " Location                : $Location"
+Write-Host " Compute Plan SKU        : Linux $Sku (1 vCPU, 1.75 GB RAM, ~Rs. 1,100 / mo)"
+Write-Host " Monthly Budget Ceiling  : Rs. 12,500 (with automated email alerts)"
 Write-Host "======================================================================"
 
 # 1. Verify Azure CLI login
 try {
     $account = az account show --output json | ConvertFrom-Json
-    Write-Host "Connected to Azure Subscription: $($account.id)" -ForegroundColor Green
+    Write-Host "✓ Connected to Azure Subscription: $($account.id)" -ForegroundColor Green
 } catch {
-    Write-Host "Not signed in to Azure CLI. Please run: az login" -ForegroundColor Red
+    Write-Host "⚠️ Not signed in to Azure CLI. Please run: az login" -ForegroundColor Red
     exit 1
 }
 
-# 2. Create Resource Group
+# 2. Terraform Deployment Mode
+if ($Mode -eq "terraform") {
+    $tf = Get-Command terraform -ErrorAction SilentlyContinue
+    if (-not $tf) {
+        Write-Host "⚠️ Terraform not found on PATH. Falling back to Azure CLI deployment..." -ForegroundColor Yellow
+        $Mode = "cli"
+    } else {
+        Write-Host "Provisioning infrastructure via Terraform..." -ForegroundColor Cyan
+        $tfDir = Join-Path $PSScriptRoot "..\terraform"
+        Push-Location $tfDir
+        try {
+            terraform init
+            terraform apply -auto-approve `
+                -var="resource_group_name=$ResourceGroup" `
+                -var="location=$Location" `
+                -var="app_name_prefix=indias-journey" `
+                -var="sku_name=$Sku" `
+                -var="monthly_budget_inr=12500"
+            Write-Host "======================================================================" -ForegroundColor Green
+            Write-Host "🎉 Terraform Deployment Complete!" -ForegroundColor Green
+            terraform output
+            Write-Host "======================================================================" -ForegroundColor Green
+        } finally {
+            Pop-Location
+        }
+        exit 0
+    }
+}
+
+# 3. CLI Deployment Mode
 Write-Host "Creating Resource Group '$ResourceGroup'..."
 az group create --name $ResourceGroup --location $Location --output table
 
-# 3. Create App Service Plan (Linux B1)
-Write-Host "Creating App Service Plan '$PlanName' (Linux $Sku)..."
+$planName = "asp-indiasjourney-b1"
+Write-Host "Creating App Service Plan '$planName' (Linux $Sku)..."
 az appservice plan create `
-    --name $PlanName `
+    --name $planName `
     --resource-group $ResourceGroup `
     --location $Location `
     --is-linux `
     --sku $Sku `
     --output table
 
-# 4. Generate high-entropy Django Secret Key
 $secretKey = -join ((65..90) + (97..122) + (48..57) | Get-Random -Count 50 | ForEach-Object {[char]$_})
 
-# 5. Create Web App
 Write-Host "Creating Web App '$AppName'..."
 az webapp create `
     --name $AppName `
     --resource-group $ResourceGroup `
-    --plan $PlanName `
+    --plan $planName `
     --deployment-local-git `
     --output table
 
-# 6. Configure Application Settings
 Write-Host "Configuring environment variables and persistent storage..."
 az webapp config appsettings set `
     --name $AppName `
@@ -77,7 +106,6 @@ az webapp config appsettings set `
         DJANGO_LOG_LEVEL=INFO `
     --output table
 
-# 7. Configure Health Check Path
 Write-Host "Enabling health check at /api/health/..."
 az webapp config set `
     --name $AppName `
@@ -87,10 +115,6 @@ az webapp config set `
 
 $appUrl = "https://${AppName}.azurewebsites.net"
 Write-Host "======================================================================" -ForegroundColor Green
-Write-Host " Deployment Configuration Complete!" -ForegroundColor Green
-Write-Host " App URL: $appUrl" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Next step: Deploy your container or code:"
-Write-Host "  Option A (Container): az webapp config container set --name $AppName --resource-group $ResourceGroup --docker-custom-image-name <your-image>"
-Write-Host "  Option B (GitHub Actions): Download publish profile via: az webapp deployment list-publishing-profiles --name $AppName --resource-group $ResourceGroup --xml"
+Write-Host "🎉 Azure CLI Roll Out Complete!" -ForegroundColor Green
+Write-Host "App URL: $appUrl" -ForegroundColor Cyan
 Write-Host "======================================================================" -ForegroundColor Green

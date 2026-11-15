@@ -6,7 +6,7 @@ There are two deployments, plus a backup mirror:
 | --- | --- | --- |
 | **Static dashboard on Netlify** (primary, <https://indiasjourney.netlify.app>) | [`netlify.toml`](../netlify.toml) builds the React static site and publishes `docs/` | Every push to `main` |
 | Backup mirror on GitHub Pages (<https://shubhankart101.github.io/India-s-Journey/>) | [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` | Push to `main`, or after any collector workflow |
-| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Render ([`render.yaml`](../render.yaml)), Fly.io ([`fly.toml`](../fly.toml)) or any container host | Render: auto on push (live host). Fly.io: paused; [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) is manual-only |
+| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Microsoft Azure ([`terraform/`](../terraform/)), Render ([`render.yaml`](../render.yaml)) or any container host | Azure: via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) or Terraform. Render: auto on push |
 
 See [BACKUP.md](BACKUP.md) for how the app and the two static copies point to each other.
 
@@ -20,13 +20,13 @@ The app is a single Docker image that listens on `$PORT`, so it runs on any cont
 | **GitHub Pages** (live) | Static dashboard in `docs/` | Free for public repositories | Static only; the backup mirror of Netlify |
 | **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
 | **Render** (`render.yaml`) | Full app from the `Dockerfile` | Free web service: 512 MB RAM, 0.1 CPU, 750 instance-hours/month | Sleeps after 15 minutes idle (~1 minute cold start); no disk on the free plan |
-| **Fly.io** (`fly.toml`) | Full app from the `Dockerfile` | Trial credit only for new accounts; then pay-as-you-go | Card required; machines stop when idle, so a 512 MB machine costs only while it runs |
+| **Microsoft Azure** (`terraform/`) | Full app on Linux App Service B1 | Basic B1 tier (~Rs. 1,100/mo) | Persistent `/home` SSD storage, 1 vCPU, 1.75 GB RAM; fits well within Rs. 12,500/mo budget |
 
-On Render and Fly.io you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$RENDER_EXTERNAL_HOSTNAME` and `$FLY_APP_NAME.fly.dev` automatically. Set them only for a custom domain.
+On Azure and Render you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$RENDER_EXTERNAL_HOSTNAME`, `$WEBSITE_HOSTNAME` (`.azurewebsites.net`), and `.azurecontainerapps.io` automatically. Set them only for a custom domain.
 
 ### Render (live web app)
 
-The live Django + React app runs on Render's free plan because the Fly.io trial credit ran out. One-click setup:
+The live Django + React app runs on Render's web service blueprint. One-click setup:
 
 <a href="https://render.com/deploy?repo=https://github.com/Shubhankart101/India-s-Journey"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"></a>
 
@@ -37,20 +37,20 @@ The live Django + React app runs on Render's free plan because the Fly.io trial 
 
 To deploy without the blueprint: **New → Web Service**, choose the repo, runtime **Docker**, plan **Free**, health check path `/api/health/`, and add `DJANGO_SECRET_KEY` and `WEB_CONCURRENCY=1`.
 
-### Fly.io (paused)
+### Microsoft Azure (Terraform)
 
-Fly.io is no longer the live host: the trial credit is used up, so [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) now runs only when triggered manually. The steps below still work if the account is topped up.
+The Django + React app can be deployed to Microsoft Azure Linux App Service (Basic B1 tier: 1 vCPU, 1.75 GB RAM) in `centralindia` (Pune) for approximately **Rs. 1,100 / month**, safely within a **Rs. 12,500 / month** budget.
 
-<a href="https://india-s-journey.fly.dev"><img src="https://img.shields.io/badge/Open%20the%20web%20app%20on%20Fly.io-8B5CF6?style=for-the-badge&logo=flydotio&logoColor=white" alt="Open the web app on Fly.io"></a>
 
-The Django + React app is deployed at <https://india-s-journey.fly.dev> on the existing `india-s-journey` app in Singapore (`sin`). Its machine is `shared-cpu-1x` with 512 MB RAM; `fly.toml` is configured to match.
 
-1. Install `flyctl` (`iwr https://fly.io/install.ps1 -useb | iex` on Windows, or `curl -L https://fly.io/install.sh | sh`) and authenticate with `fly auth login`.
-2. From the repository root, verify access to the existing app with `fly status --app india-s-journey`. Do not run `fly launch`; that would create a different app.
-3. Ensure the app has a `DJANGO_SECRET_KEY` secret. If needed, generate a value with `python -c "import secrets; print(secrets.token_urlsafe(50))"`, then set it with `fly secrets set DJANGO_SECRET_KEY=<generated-value> --app india-s-journey`. Never commit or publish the value.
-4. Deploy with `fly deploy --app india-s-journey`. The configuration keeps the machine in `sin` and at 512 MB.
-5. The `/api/health/` check sends `Host = "india-s-journey.fly.dev"`. Fly runs service checks over the private network using the machine IP as the host; setting the public hostname lets Django validate the request without allowing arbitrary hosts.
-6. To deploy from Actions, run `fly tokens create deploy`, save the token as the repository secret `FLY_API_TOKEN`, and trigger [`fly-deploy.yml`](../.github/workflows/fly-deploy.yml) manually (it no longer runs on push).
+1. Ensure Azure CLI (`az`) and Terraform (>= 1.5.0) are installed, and run `az login`.
+
+2. Navigate to `terraform/` and run `terraform init` and `terraform apply`.
+3. The deployment sets up persistent storage for SQLite at `/home/data/db.sqlite3` (`WEBSITES_ENABLE_APP_SERVICE_STORAGE=true`), an automatic budget ceiling alert at Rs. 12,500/mo, and health check monitoring at `/api/health/`.
+4. Automated continuous deployment runs via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) using your Azure Web App publish profile.
+
+
+
 
 ### Netlify
 
@@ -70,7 +70,7 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 
 - **Stage 1:** `node:22-slim` builds the React app with `npm ci` and `npm run build`.
 - **Stage 2:** `python:3.12-slim` installs the Django requirements, runs `collectstatic` (whitenoise, compressed and hashed), and bakes `data/catalog.json` into the image's SQLite database (`migrate` + `import_catalog`).
-- **On start:** `migrate`, then `import_catalog --if-changed` (skipped when the baked catalogue is already loaded, so a stopped Fly.io machine wakes in seconds instead of re-importing thousands of rows before gunicorn listens), then gunicorn with `$WEB_CONCURRENCY` workers (default 2; Render and Fly.io set 1) on `$PORT`.
+- **On start:** `migrate`, then `import_catalog --if-changed` (skipped when the baked catalogue is already loaded, so container cold starts wake in seconds instead of re-importing thousands of rows before gunicorn listens), then gunicorn with `$WEB_CONCURRENCY` workers (default 2; or configured in `webapp/gunicorn.conf.py`) on `$PORT`.
 
 ## Environment variables
 
@@ -78,7 +78,7 @@ gcloud run deploy indias-journey --source . --region asia-south1 --allow-unauthe
 | --- | --- | --- |
 | `DJANGO_SECRET_KEY` | yes | A long random value |
 | `DJANGO_DEBUG` | no (`false` in the image) | Never enable in production |
-| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated. Render and Fly.io default domains are added automatically |
+| `DJANGO_ALLOWED_HOSTS`, `DJANGO_CSRF_TRUSTED_ORIGINS` | for custom domains | Comma-separated. Render and Azure default domains are added automatically |
 | `WEB_CONCURRENCY` | no (`2` in the image) | Gunicorn workers; use `1` on 512 MB plans |
 | `DJANGO_SQLITE_PATH` | with a disk | e.g. `/var/data/db.sqlite3`, so accounts survive redeploys |
 | `DJANGO_SECURE_COOKIES` | no (default on when not DEBUG) | Secure session and CSRF cookies |
