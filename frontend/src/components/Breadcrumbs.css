@@ -1,0 +1,71 @@
+/* Breadcrumbs Navigation Bar */
+.breadcrumbs-nav {
+  width: 100%;
+  background: var(--surface-2, rgba(255, 255, 255, 0.04));
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08));
+  padding: 8px 0;
+  font-size: 0.82rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 15;
+}
+
+.breadcrumbs-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+}
+
+.breadcrumbs-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted, #64748b);
+  font-weight: 500;
+}
+
+.breadcrumbs-separator {
+  color: var(--muted, #94a3b8);
+  font-size: 0.85rem;
+  user-select: none;
+  opacity: 0.7;
+}
+
+.breadcrumbs-link {
+  color: var(--muted, #64748b);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.breadcrumbs-link:hover,
+.breadcrumbs-link:focus-visible {
+  color: var(--ink, #0f172a);
+  background: var(--fill, rgba(0, 0, 0, 0.05));
+  text-decoration: none;
+}
+
+.breadcrumbs-current {
+  color: var(--ink, #0f172a);
+  font-weight: 700;
+  padding: 2px 4px;
+}
+
+@media (max-width: 640px) {
+  .breadcrumbs-nav {
+    font-size: 0.76rem;
+    padding: 6px 0;
+  }
+}

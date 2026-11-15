@@ -4861,13 +4861,19 @@
                 ]
               },
               {
-                "title": "Immunisation Coverage, Child Nutrition & Preventable Risk Factors",
-                "text": "The 5 charts here follow DPT Immunization, Measles Immunisation and Prevalence of Undernourishment and 2 related series. DPT Immunization rose from 6% in 1980 to 94% in 2024, a shift of 88 percentage points. Measles Immunisation rose from 1% in 1985 to 97% in 2024, a shift of 96 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Immunisation Coverage & Child Nutrition Indicators",
+                "text": "The 4 charts here track DPT immunization, Measles immunization, child undernourishment and stunting prevalence. DPT immunization rose from 6% in 1980 to 94% in 2024, while Measles immunization expanded from 1% in 1985 to 97% in 2024 under Universal Immunization Programme (UIP) and Mission Indradhanush.",
                 "keys": [
                   "wb_dpt_immunization",
                   "wb_measles_immunisation",
                   "wb_undernourishment",
-                  "wb_child_stunting",
+                  "wb_child_stunting"
+                ]
+              },
+              {
+                "title": "Preventable Lifestyle Risk Factors: Tobacco & Smoking Prevalence",
+                "text": "The series below tracks smoking prevalence among adults in India from World Bank and Global Adult Tobacco Survey (GATS) data, documenting a sustained decline from over 55% in 2000 to under 25% by 2024 driven by nationwide tobacco control mandates and public health awareness.",
+                "keys": [
                   "wb_smoking"
                 ]
               }
@@ -6828,12 +6834,18 @@
                 ]
               },
               {
-                "title": "Jammu & Kashmir and Punjab Militancy: Conflict Trajectories & Incidents",
-                "text": "The 5 charts here follow Jammu & Kashmir insurgency deaths, Jammu & Kashmir terror incidents and Jammu & Kashmir Fatalities by Period and 2 related series. Jammu & Kashmir insurgency deaths fell from 3,288 deaths in 2000 to 85 deaths in 2025, a change of 97%. Its high point was 4,507 deaths in 2001. Jammu & Kashmir terror incidents fell from 222 incidents in 2014 to 32 incidents in 2025, a change of 86%. Its high point was 614 incidents in 2018. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Jammu & Kashmir Security: Casualties, Incidents & Counter-Terrorism",
+                "text": "The 3 charts here track Jammu & Kashmir insurgency deaths, terror incidents, and periodic casualty records from the Ministry of Home Affairs J&K Division and SATP. J&K insurgency deaths declined from 3,288 deaths in 2000 to 85 deaths in 2025 (a 97% decline), with terror incidents down 86% since 2014.",
                 "keys": [
                   "kashmir_insurgency_fatalities",
                   "kashmir_terror_incidents",
-                  "kashmir_fatalities_by_period",
+                  "kashmir_fatalities_by_period"
+                ]
+              },
+              {
+                "title": "Punjab Militancy Historical Record (1981–1995)",
+                "text": "The 2 charts here document historical fatalities and periodic records during the Punjab militancy period between 1981 and 1995 from SATP and MHA archives, reflecting the complete stabilization of the border state over the past three decades.",
+                "keys": [
                   "khalistan_insurgency_historical",
                   "khalistan_fatalities_by_period"
                 ]

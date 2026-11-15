@@ -1,6 +1,23 @@
 import ScriptureVerse from './ScriptureVerse.jsx';
 import './SubgroupArticle.css';
 
+function isQuoteRelevant(quoteText, section) {
+  if (!quoteText) return false;
+  if (!section) return true;
+  const qLower = String(quoteText).toLowerCase();
+  const titleLower = String(section.title || '').toLowerCase();
+  const textLower = String(section.text || '').toLowerCase();
+  const keysStr = Array.isArray(section.keys) ? section.keys.join(' ').toLowerCase() : '';
+  const combined = `${titleLower} ${textLower} ${keysStr}`;
+
+  const words = qLower.match(/[a-z]{4,}/g) || [];
+  const stopWords = new Set(['from', 'rose', 'fell', 'shift', 'change', 'points', 'point', 'percentage', 'total', 'year', 'than', 'more', 'less', 'high', 'leads', 'ahead', 'with', 'held', 'helds', 'this', 'that', 'these', 'those', 'each', 'were', 'been', 'have', 'between', 'during']);
+  const topicWords = words.filter(w => !stopWords.has(w));
+  if (topicWords.length === 0) return true;
+
+  return topicWords.some(w => combined.includes(w));
+}
+
 export default function SubgroupArticle({
   headline,
   dek = '',

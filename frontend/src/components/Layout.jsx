@@ -9,6 +9,7 @@ import { AMBIENT_ART } from '../art.js';
 import { ScrollProgress, ScrollTopButton, useAutoReveal, usePointerSpotlight, useScrolled } from './Motion.jsx';
 import ThemeSelect, { ContactLinks, X_URL } from './ThemeSelect.jsx';
 import VintageChrome from './VintageChrome.jsx';
+import Breadcrumbs from './Breadcrumbs.jsx';
 import { MOTTO } from '../sanskrit.js';
 
 const NAV_LABELS = {
@@ -75,6 +76,7 @@ export default function Layout() {
       <VintageChrome />
 
       <OfflineBanner />
+      <Breadcrumbs />
       <main id="main" className="main">
         <ErrorBoundary key={location.pathname}>
           <Outlet />

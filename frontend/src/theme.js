@@ -35,9 +35,9 @@ const listeners = new Set();
 function readStored() {
   try {
     const saved = localStorage.getItem(KEY);
-    return isTheme(saved) ? saved : 'dark';
+    return isTheme(saved) ? saved : 'light';
   } catch {
-    return 'dark';
+    return 'light';
   }
 }
 

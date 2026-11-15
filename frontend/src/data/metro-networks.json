@@ -1,10 +1,10 @@
 {
   "summary": {
     "title": "Metro Rail Networks & Rapid Transit of India",
-    "total_route_km": 994,
-    "operational_cities": 16,
+    "total_route_km": 1042,
+    "operational_cities": 17,
     "under_construction_km": 1050,
-    "daily_ridership_millions": 11.2,
+    "daily_ridership_millions": 12.1,
     "annual_carbon_abatement_tons": "3.8 Million MT CO2e",
     "lead_agency": "Ministry of Housing and Urban Affairs (MoHUA), Government of India"
   },
@@ -29,10 +29,26 @@
         "source": "Memoirs of the Metro Man & DMRC Project Monograph (2012)"
       },
       "stats": [
-        { "label": "Network Length", "value": "393.1 km", "note": "5th largest in world" },
-        { "label": "Daily Footfall", "value": "6.8 Million", "note": "Peak: 7.2M (2024)" },
-        { "label": "Total Lines", "value": "12 Lines", "note": "Including Airport Express & RRTS" },
-        { "label": "Punctuality Rate", "value": "99.8%", "note": "MoHUA benchmark" }
+        {
+          "label": "Network Length",
+          "value": "393.1 km",
+          "note": "5th largest in world"
+        },
+        {
+          "label": "Daily Footfall",
+          "value": "6.8 Million",
+          "note": "Peak: 7.2M (2024)"
+        },
+        {
+          "label": "Total Lines",
+          "value": "12 Lines",
+          "note": "Including Airport Express & RRTS"
+        },
+        {
+          "label": "Punctuality Rate",
+          "value": "99.8%",
+          "note": "MoHUA benchmark"
+        }
       ],
       "engineering_feats": [
         "Chawri Bazar underground station excavated 30 meters beneath 350-year-old walled city structures using earth-pressure balance TBMs.",
@@ -40,25 +56,166 @@
         "Namo Bharat (Delhi-Meerut RRTS) operating at 160 km/h with European Train Control System (ETCS) Level-2 signalling."
       ],
       "lines": [
-        { "name": "Red Line (Line 1)", "color": "#dc2626", "length": "34.4 km", "stations": 29, "terminals": "Shaheed Sthal (Ghaziabad) ↔ Rithala", "status": "Operational" },
-        { "name": "Yellow Line (Line 2)", "color": "#eab308", "length": "49.3 km", "stations": 37, "terminals": "Samaypur Badli ↔ Millennium City Centre Gurugram", "status": "Operational" },
-        { "name": "Blue Line (Line 3 & 4)", "color": "#2563eb", "length": "65.3 km", "stations": 58, "terminals": "Noida Electronic City / Vaishali ↔ Dwarka Sector 21", "status": "Operational" },
-        { "name": "Green Line (Line 5)", "color": "#16a34a", "length": "29.6 km", "stations": 23, "terminals": "Brigadier Hoshiar Singh ↔ Inderlok / Kirti Nagar", "status": "Operational" },
-        { "name": "Violet Line (Line 6)", "color": "#7c3aed", "length": "46.6 km", "stations": 34, "terminals": "Kashmere Gate ↔ Raja Nahar Singh (Ballabhgarh)", "status": "Operational" },
-        { "name": "Pink Line (Line 7)", "color": "#ec4899", "length": "58.4 km", "stations": 38, "terminals": "Majlis Park ↔ Shiv Vihar (Ring Metro)", "status": "Operational" },
-        { "name": "Magenta Line (Line 8)", "color": "#d946ef", "length": "37.5 km", "stations": 25, "terminals": "Janakpuri West ↔ Botanical Garden (Airport T1)", "status": "Operational" },
-        { "name": "Airport Express (Orange Line)", "color": "#ea580c", "length": "24.9 km", "stations": 7, "terminals": "New Delhi Station ↔ Yashobhoomi Dwarka Sec 25", "status": "Operational" },
-        { "name": "Noida Aqua Line", "color": "#06b6d4", "length": "29.7 km", "stations": 21, "terminals": "Noida Sector 51 ↔ Depot (Greater Noida)", "status": "Operational" },
-        { "name": "Namo Bharat RRTS", "color": "#991b1b", "length": "82.1 km", "stations": 16, "terminals": "Sarai Kale Khan ↔ Modipuram (Meerut)", "status": "Priority Operational" }
+        {
+          "name": "Red Line (Line 1)",
+          "color": "#dc2626",
+          "length": "34.4 km",
+          "stations": 29,
+          "terminals": "Shaheed Sthal (Ghaziabad) ↔ Rithala",
+          "status": "Operational"
+        },
+        {
+          "name": "Yellow Line (Line 2)",
+          "color": "#eab308",
+          "length": "49.3 km",
+          "stations": 37,
+          "terminals": "Samaypur Badli ↔ Millennium City Centre Gurugram",
+          "status": "Operational"
+        },
+        {
+          "name": "Blue Line (Line 3 & 4)",
+          "color": "#2563eb",
+          "length": "65.3 km",
+          "stations": 58,
+          "terminals": "Noida Electronic City / Vaishali ↔ Dwarka Sector 21",
+          "status": "Operational"
+        },
+        {
+          "name": "Green Line (Line 5)",
+          "color": "#16a34a",
+          "length": "29.6 km",
+          "stations": 23,
+          "terminals": "Brigadier Hoshiar Singh ↔ Inderlok / Kirti Nagar",
+          "status": "Operational"
+        },
+        {
+          "name": "Violet Line (Line 6)",
+          "color": "#7c3aed",
+          "length": "46.6 km",
+          "stations": 34,
+          "terminals": "Kashmere Gate ↔ Raja Nahar Singh (Ballabhgarh)",
+          "status": "Operational"
+        },
+        {
+          "name": "Pink Line (Line 7)",
+          "color": "#ec4899",
+          "length": "58.4 km",
+          "stations": 38,
+          "terminals": "Majlis Park ↔ Shiv Vihar (Ring Metro)",
+          "status": "Operational"
+        },
+        {
+          "name": "Magenta Line (Line 8)",
+          "color": "#d946ef",
+          "length": "37.5 km",
+          "stations": 25,
+          "terminals": "Janakpuri West ↔ Botanical Garden (Airport T1)",
+          "status": "Operational"
+        },
+        {
+          "name": "Airport Express (Orange Line)",
+          "color": "#ea580c",
+          "length": "24.9 km",
+          "stations": 7,
+          "terminals": "New Delhi Station ↔ Yashobhoomi Dwarka Sec 25",
+          "status": "Operational"
+        },
+        {
+          "name": "Noida Aqua Line",
+          "color": "#06b6d4",
+          "length": "29.7 km",
+          "stations": 21,
+          "terminals": "Noida Sector 51 ↔ Depot (Greater Noida)",
+          "status": "Operational"
+        },
+        {
+          "name": "Namo Bharat RRTS",
+          "color": "#991b1b",
+          "length": "82.1 km",
+          "stations": 16,
+          "terminals": "Sarai Kale Khan ↔ Modipuram (Meerut)",
+          "status": "Priority Operational"
+        }
       ],
       "key_stations": [
-        { "name": "Kashmere Gate", "lines": ["Red", "Yellow", "Violet"], "type": "Triple Interchange", "daily_footfall": "350,000", "lat": 28.6675, "lng": 77.2285 },
-        { "name": "Rajiv Chowk (Connaught Place)", "lines": ["Yellow", "Blue"], "type": "Subterranean Hub", "daily_footfall": "500,000", "lat": 28.6328, "lng": 77.2195 },
-        { "name": "Central Secretariat", "lines": ["Yellow", "Violet"], "type": "Government Hub", "daily_footfall": "210,000", "lat": 28.6146, "lng": 77.2119 },
-        { "name": "Hauz Khas", "lines": ["Yellow", "Magenta"], "type": "Deep Interchange (29m)", "daily_footfall": "280,000", "lat": 28.5431, "lng": 77.2065 },
-        { "name": "IGI Airport Terminal 3", "lines": ["Airport Express"], "type": "Airport Air-Rail Link", "daily_footfall": "75,000", "lat": 28.5562, "lng": 77.0856 },
-        { "name": "Anand Vihar ISBT", "lines": ["Blue", "Pink", "RRTS"], "type": "Intermodal Multimodal Hub", "daily_footfall": "260,000", "lat": 28.6469, "lng": 77.3160 },
-        { "name": "Millennium City Centre", "lines": ["Yellow", "Rapid Metro"], "type": "Gurugram CBD Terminal", "daily_footfall": "140,000", "lat": 28.4593, "lng": 77.0725 }
+        {
+          "name": "Kashmere Gate",
+          "lines": [
+            "Red",
+            "Yellow",
+            "Violet"
+          ],
+          "type": "Triple Interchange",
+          "daily_footfall": "350,000",
+          "lat": 28.6675,
+          "lng": 77.2285
+        },
+        {
+          "name": "Rajiv Chowk (Connaught Place)",
+          "lines": [
+            "Yellow",
+            "Blue"
+          ],
+          "type": "Subterranean Hub",
+          "daily_footfall": "500,000",
+          "lat": 28.6328,
+          "lng": 77.2195
+        },
+        {
+          "name": "Central Secretariat",
+          "lines": [
+            "Yellow",
+            "Violet"
+          ],
+          "type": "Government Hub",
+          "daily_footfall": "210,000",
+          "lat": 28.6146,
+          "lng": 77.2119
+        },
+        {
+          "name": "Hauz Khas",
+          "lines": [
+            "Yellow",
+            "Magenta"
+          ],
+          "type": "Deep Interchange (29m)",
+          "daily_footfall": "280,000",
+          "lat": 28.5431,
+          "lng": 77.2065
+        },
+        {
+          "name": "IGI Airport Terminal 3",
+          "lines": [
+            "Airport Express"
+          ],
+          "type": "Airport Air-Rail Link",
+          "daily_footfall": "75,000",
+          "lat": 28.5562,
+          "lng": 77.0856
+        },
+        {
+          "name": "Anand Vihar ISBT",
+          "lines": [
+            "Blue",
+            "Pink",
+            "RRTS"
+          ],
+          "type": "Intermodal Multimodal Hub",
+          "daily_footfall": "260,000",
+          "lat": 28.6469,
+          "lng": 77.316
+        },
+        {
+          "name": "Millennium City Centre",
+          "lines": [
+            "Yellow",
+            "Rapid Metro"
+          ],
+          "type": "Gurugram CBD Terminal",
+          "daily_footfall": "140,000",
+          "lat": 28.4593,
+          "lng": 77.0725
+        }
       ],
       "map_svg": "metro-delhi.svg"
     },
@@ -82,10 +239,26 @@
         "source": "Mumbai Metropolitan Region Development Authority Infrastructure Report (2024)"
       },
       "stats": [
-        { "label": "Operational Length", "value": "80.2 km", "note": "337 km planned" },
-        { "label": "Aqua Line 3 Depth", "value": "20–29 meters", "note": "Full underground tunnel" },
-        { "label": "Daily Footfall", "value": "850,000", "note": "Rising rapidly" },
-        { "label": "Airport Connectivity", "value": "T1 & T2", "note": "Direct underground links" }
+        {
+          "label": "Operational Length",
+          "value": "80.2 km",
+          "note": "337 km planned"
+        },
+        {
+          "label": "Aqua Line 3 Depth",
+          "value": "20–29 meters",
+          "note": "Full underground tunnel"
+        },
+        {
+          "label": "Daily Footfall",
+          "value": "850,000",
+          "note": "Rising rapidly"
+        },
+        {
+          "label": "Airport Connectivity",
+          "value": "T1 & T2",
+          "note": "Direct underground links"
+        }
       ],
       "engineering_feats": [
         "Aqua Line 3 tunneling through dense volcanic basalt using 17 dual-mode tunnel boring machines beneath live railway tracks and heritage buildings.",
@@ -93,18 +266,102 @@
         "Underground stations engineered with platform screen doors (PSDs) and regenerative water recycling."
       ],
       "lines": [
-        { "name": "Line 1 (Blue Line)", "color": "#0284c7", "length": "11.4 km", "stations": 12, "terminals": "Versova ↔ Ghatkopar", "status": "Operational" },
-        { "name": "Line 2A (Yellow Line)", "color": "#facc15", "length": "18.6 km", "stations": 17, "terminals": "Dahisar East ↔ D.N. Nagar (Andheri West)", "status": "Operational" },
-        { "name": "Line 7 (Red Line)", "color": "#ef4444", "length": "16.5 km", "stations": 14, "terminals": "Dahisar East ↔ Gundavali (Andheri East)", "status": "Operational" },
-        { "name": "Line 3 (Aqua Line Underground)", "color": "#06b6d4", "length": "33.5 km", "stations": 27, "terminals": "Aarey JVLR ↔ BKC ↔ Cuffe Parade", "status": "Phase 1 Operational" },
-        { "name": "Line 4 (Green Line)", "color": "#22c55e", "length": "32.3 km", "stations": 32, "terminals": "Wadala ↔ Kasarvadavali (Thane)", "status": "Under Construction" }
+        {
+          "name": "Line 1 (Blue Line)",
+          "color": "#0284c7",
+          "length": "11.4 km",
+          "stations": 12,
+          "terminals": "Versova ↔ Ghatkopar",
+          "status": "Operational"
+        },
+        {
+          "name": "Line 2A (Yellow Line)",
+          "color": "#facc15",
+          "length": "18.6 km",
+          "stations": 17,
+          "terminals": "Dahisar East ↔ D.N. Nagar (Andheri West)",
+          "status": "Operational"
+        },
+        {
+          "name": "Line 7 (Red Line)",
+          "color": "#ef4444",
+          "length": "16.5 km",
+          "stations": 14,
+          "terminals": "Dahisar East ↔ Gundavali (Andheri East)",
+          "status": "Operational"
+        },
+        {
+          "name": "Line 3 (Aqua Line Underground)",
+          "color": "#06b6d4",
+          "length": "33.5 km",
+          "stations": 27,
+          "terminals": "Aarey JVLR ↔ BKC ↔ Cuffe Parade",
+          "status": "Phase 1 Operational"
+        },
+        {
+          "name": "Line 4 (Green Line)",
+          "color": "#22c55e",
+          "length": "32.3 km",
+          "stations": 32,
+          "terminals": "Wadala ↔ Kasarvadavali (Thane)",
+          "status": "Under Construction"
+        }
       ],
       "key_stations": [
-        { "name": "Bandra-Kurla Complex (BKC)", "lines": ["Line 3 (Aqua)"], "type": "Underground Financial District Station", "daily_footfall": "95,000", "lat": 19.0657, "lng": 72.8642 },
-        { "name": "Ghatkopar", "lines": ["Line 1", "Central Railway"], "type": "Suburban Rail Interchange", "daily_footfall": "180,000", "lat": 19.0864, "lng": 72.9081 },
-        { "name": "Andheri / Western Express Highway", "lines": ["Line 1", "Line 7", "Western Railway"], "type": "Major Western Transit Node", "daily_footfall": "220,000", "lat": 19.1197, "lng": 72.8464 },
-        { "name": "D.N. Nagar", "lines": ["Line 1", "Line 2A"], "type": "Western Suburbs Cross-Link", "daily_footfall": "70,000", "lat": 19.1246, "lng": 72.8315 },
-        { "name": "CSMIA Terminal 2 (Airport)", "lines": ["Line 3 (Aqua)"], "type": "Direct Airport Terminal Station", "daily_footfall": "60,000", "lat": 19.0968, "lng": 72.8744 }
+        {
+          "name": "Bandra-Kurla Complex (BKC)",
+          "lines": [
+            "Line 3 (Aqua)"
+          ],
+          "type": "Underground Financial District Station",
+          "daily_footfall": "95,000",
+          "lat": 19.0657,
+          "lng": 72.8642
+        },
+        {
+          "name": "Ghatkopar",
+          "lines": [
+            "Line 1",
+            "Central Railway"
+          ],
+          "type": "Suburban Rail Interchange",
+          "daily_footfall": "180,000",
+          "lat": 19.0864,
+          "lng": 72.9081
+        },
+        {
+          "name": "Andheri / Western Express Highway",
+          "lines": [
+            "Line 1",
+            "Line 7",
+            "Western Railway"
+          ],
+          "type": "Major Western Transit Node",
+          "daily_footfall": "220,000",
+          "lat": 19.1197,
+          "lng": 72.8464
+        },
+        {
+          "name": "D.N. Nagar",
+          "lines": [
+            "Line 1",
+            "Line 2A"
+          ],
+          "type": "Western Suburbs Cross-Link",
+          "daily_footfall": "70,000",
+          "lat": 19.1246,
+          "lng": 72.8315
+        },
+        {
+          "name": "CSMIA Terminal 2 (Airport)",
+          "lines": [
+            "Line 3 (Aqua)"
+          ],
+          "type": "Direct Airport Terminal Station",
+          "daily_footfall": "60,000",
+          "lat": 19.0968,
+          "lng": 72.8744
+        }
       ],
       "map_svg": "metro-mumbai.svg"
     },
@@ -128,10 +385,26 @@
         "source": "BMRCL Operational Chronicles & Urban Commute Synthesis (2024)"
       },
       "stats": [
-        { "label": "Operational Network", "value": "73.8 km", "note": "2nd largest in South India" },
-        { "label": "Daily Commuters", "value": "820,000+", "note": "Single day high: 917,000" },
-        { "label": "Majestic Hub Footfall", "value": "220,000 / day", "note": "Purple & Green interchange" },
-        { "label": "Phase 2 Pipeline", "value": "102 km", "note": "ORR-Airport Blue Line" }
+        {
+          "label": "Operational Network",
+          "value": "73.8 km",
+          "note": "2nd largest in South India"
+        },
+        {
+          "label": "Daily Commuters",
+          "value": "820,000+",
+          "note": "Single day high: 917,000"
+        },
+        {
+          "label": "Majestic Hub Footfall",
+          "value": "220,000 / day",
+          "note": "Purple & Green interchange"
+        },
+        {
+          "label": "Phase 2 Pipeline",
+          "value": "102 km",
+          "note": "ORR-Airport Blue Line"
+        }
       ],
       "engineering_feats": [
         "Underground tunneling through hard granitic gneisses beneath historic Bangalore City Railway Station and Cubbon Park.",
@@ -139,18 +412,102 @@
         "Grade-separated elevated viaduct over the bustling Outer Ring Road (ORR) and flyover intersections."
       ],
       "lines": [
-        { "name": "Purple Line", "color": "#9333ea", "length": "43.5 km", "stations": 37, "terminals": "Challaghatta ↔ Whitefield (Kadugodi)", "status": "Operational" },
-        { "name": "Green Line", "color": "#15803d", "length": "33.5 km", "stations": 31, "terminals": "Madavara (BIEC) ↔ Silk Institute", "status": "Operational" },
-        { "name": "Yellow Line", "color": "#eab308", "length": "18.8 km", "stations": 16, "terminals": "RV Road ↔ Bommasandra (Electronics City)", "status": "Testing / Near Opening" },
-        { "name": "Pink Line", "color": "#ec4899", "length": "21.3 km", "stations": 18, "terminals": "Kalena Agrahara ↔ Nagawara (13.8 km tunnel)", "status": "Under Construction" },
-        { "name": "Blue Line (Airport Line)", "color": "#2563eb", "length": "58.2 km", "stations": 30, "terminals": "Central Silk Board ↔ Kempegowda Airport", "status": "Under Construction" }
+        {
+          "name": "Purple Line",
+          "color": "#9333ea",
+          "length": "43.5 km",
+          "stations": 37,
+          "terminals": "Challaghatta ↔ Whitefield (Kadugodi)",
+          "status": "Operational"
+        },
+        {
+          "name": "Green Line",
+          "color": "#15803d",
+          "length": "33.5 km",
+          "stations": 31,
+          "terminals": "Madavara (BIEC) ↔ Silk Institute",
+          "status": "Operational"
+        },
+        {
+          "name": "Yellow Line",
+          "color": "#eab308",
+          "length": "18.8 km",
+          "stations": 16,
+          "terminals": "RV Road ↔ Bommasandra (Electronics City)",
+          "status": "Testing / Near Opening"
+        },
+        {
+          "name": "Pink Line",
+          "color": "#ec4899",
+          "length": "21.3 km",
+          "stations": 18,
+          "terminals": "Kalena Agrahara ↔ Nagawara (13.8 km tunnel)",
+          "status": "Under Construction"
+        },
+        {
+          "name": "Blue Line (Airport Line)",
+          "color": "#2563eb",
+          "length": "58.2 km",
+          "stations": 30,
+          "terminals": "Central Silk Board ↔ Kempegowda Airport",
+          "status": "Under Construction"
+        }
       ],
       "key_stations": [
-        { "name": "Nadaprabhu Kempegowda Majestic", "lines": ["Purple", "Green", "KSR Bengaluru Rail"], "type": "Flagship 2-Level Interchange", "daily_footfall": "240,000", "lat": 12.9757, "lng": 77.5728 },
-        { "name": "Whitefield (Kadugodi)", "lines": ["Purple"], "type": "IT Tech Hub Terminal", "daily_footfall": "75,000", "lat": 12.9972, "lng": 77.7608 },
-        { "name": "MG Road", "lines": ["Purple", "Pink (Future)"], "type": "Central Business District", "daily_footfall": "90,000", "lat": 12.9754, "lng": 77.6066 },
-        { "name": "Indiranagar", "lines": ["Purple"], "type": "Commercial Node", "daily_footfall": "60,000", "lat": 12.9784, "lng": 77.6386 },
-        { "name": "Silk Board (Future Blue/Yellow)", "lines": ["Yellow", "Blue"], "type": "Flyover-cum-Metro Multilevel Hub", "daily_footfall": "110,000", "lat": 12.9172, "lng": 77.6227 }
+        {
+          "name": "Nadaprabhu Kempegowda Majestic",
+          "lines": [
+            "Purple",
+            "Green",
+            "KSR Bengaluru Rail"
+          ],
+          "type": "Flagship 2-Level Interchange",
+          "daily_footfall": "240,000",
+          "lat": 12.9757,
+          "lng": 77.5728
+        },
+        {
+          "name": "Whitefield (Kadugodi)",
+          "lines": [
+            "Purple"
+          ],
+          "type": "IT Tech Hub Terminal",
+          "daily_footfall": "75,000",
+          "lat": 12.9972,
+          "lng": 77.7608
+        },
+        {
+          "name": "MG Road",
+          "lines": [
+            "Purple",
+            "Pink (Future)"
+          ],
+          "type": "Central Business District",
+          "daily_footfall": "90,000",
+          "lat": 12.9754,
+          "lng": 77.6066
+        },
+        {
+          "name": "Indiranagar",
+          "lines": [
+            "Purple"
+          ],
+          "type": "Commercial Node",
+          "daily_footfall": "60,000",
+          "lat": 12.9784,
+          "lng": 77.6386
+        },
+        {
+          "name": "Silk Board (Future Blue/Yellow)",
+          "lines": [
+            "Yellow",
+            "Blue"
+          ],
+          "type": "Flyover-cum-Metro Multilevel Hub",
+          "daily_footfall": "110,000",
+          "lat": 12.9172,
+          "lng": 77.6227
+        }
       ],
       "map_svg": "metro-bengaluru.svg"
     },
@@ -174,10 +531,26 @@
         "source": "Kolkata Underwater Metro Engineering Monograph (2024)"
       },
       "stats": [
-        { "label": "Operational Network", "value": "59.0 km", "note": "India's 1st Metro (1984)" },
-        { "label": "Underwater Tunnel", "value": "520 meters", "note": "33m beneath riverbed" },
-        { "label": "Deepest Station", "value": "Howrah (33m)", "note": "Deepest in India" },
-        { "label": "Daily Footfall", "value": "750,000+", "note": "Serving Howrah & Sealdah" }
+        {
+          "label": "Operational Network",
+          "value": "59.0 km",
+          "note": "India's 1st Metro (1984)"
+        },
+        {
+          "label": "Underwater Tunnel",
+          "value": "520 meters",
+          "note": "33m beneath riverbed"
+        },
+        {
+          "label": "Deepest Station",
+          "value": "Howrah (33m)",
+          "note": "Deepest in India"
+        },
+        {
+          "label": "Daily Footfall",
+          "value": "750,000+",
+          "note": "Serving Howrah & Sealdah"
+        }
       ],
       "engineering_feats": [
         "First sub-riverine tunnel in South Asia: 520m twin tunnels bored beneath the active silt bed of the mighty Hooghly River.",
@@ -185,16 +558,85 @@
         "Integration with Howrah and Sealdah railway stations—the two busiest passenger railway terminals in the world."
       ],
       "lines": [
-        { "name": "Blue Line (Line 1)", "color": "#2563eb", "length": "32.1 km", "stations": 26, "terminals": "Dakshineswar ↔ Kavi Subhash (New Garia)", "status": "Operational" },
-        { "name": "Green Line (Line 2 - Underwater)", "color": "#16a34a", "length": "16.6 km", "stations": 12, "terminals": "Howrah Maidan ↔ Salt Lake Sector V", "status": "Operational" },
-        { "name": "Purple Line (Line 3)", "color": "#7c3aed", "length": "7.7 km", "stations": 7, "terminals": "Joka ↔ Majerhat (extending to Esplanade)", "status": "Partially Operational" },
-        { "name": "Orange Line (Line 6)", "color": "#ea580c", "length": "5.4 km", "stations": 5, "terminals": "Kavi Subhash ↔ Hemanta Mukhopadhyay (Ruby)", "status": "Operational" }
+        {
+          "name": "Blue Line (Line 1)",
+          "color": "#2563eb",
+          "length": "32.1 km",
+          "stations": 26,
+          "terminals": "Dakshineswar ↔ Kavi Subhash (New Garia)",
+          "status": "Operational"
+        },
+        {
+          "name": "Green Line (Line 2 - Underwater)",
+          "color": "#16a34a",
+          "length": "16.6 km",
+          "stations": 12,
+          "terminals": "Howrah Maidan ↔ Salt Lake Sector V",
+          "status": "Operational"
+        },
+        {
+          "name": "Purple Line (Line 3)",
+          "color": "#7c3aed",
+          "length": "7.7 km",
+          "stations": 7,
+          "terminals": "Joka ↔ Majerhat (extending to Esplanade)",
+          "status": "Partially Operational"
+        },
+        {
+          "name": "Orange Line (Line 6)",
+          "color": "#ea580c",
+          "length": "5.4 km",
+          "stations": 5,
+          "terminals": "Kavi Subhash ↔ Hemanta Mukhopadhyay (Ruby)",
+          "status": "Operational"
+        }
       ],
       "key_stations": [
-        { "name": "Howrah Station", "lines": ["Green (Underwater)", "Eastern / South Eastern Rail"], "type": "Deepest Subterranean Hub (33m)", "daily_footfall": "220,000", "lat": 22.5850, "lng": 88.3426 },
-        { "name": "Esplanade", "lines": ["Blue", "Green", "Purple"], "type": "Grand Triple Interchange", "daily_footfall": "260,000", "lat": 22.5647, "lng": 88.3516 },
-        { "name": "Sealdah", "lines": ["Green Line", "Suburban Rail Terminal"], "type": "Intermodal Rail Hub", "daily_footfall": "190,000", "lat": 22.5683, "lng": 88.3713 },
-        { "name": "Salt Lake Sector V", "lines": ["Green", "Orange"], "type": "IT Capital Terminal", "daily_footfall": "110,000", "lat": 22.5806, "lng": 88.4328 }
+        {
+          "name": "Howrah Station",
+          "lines": [
+            "Green (Underwater)",
+            "Eastern / South Eastern Rail"
+          ],
+          "type": "Deepest Subterranean Hub (33m)",
+          "daily_footfall": "220,000",
+          "lat": 22.585,
+          "lng": 88.3426
+        },
+        {
+          "name": "Esplanade",
+          "lines": [
+            "Blue",
+            "Green",
+            "Purple"
+          ],
+          "type": "Grand Triple Interchange",
+          "daily_footfall": "260,000",
+          "lat": 22.5647,
+          "lng": 88.3516
+        },
+        {
+          "name": "Sealdah",
+          "lines": [
+            "Green Line",
+            "Suburban Rail Terminal"
+          ],
+          "type": "Intermodal Rail Hub",
+          "daily_footfall": "190,000",
+          "lat": 22.5683,
+          "lng": 88.3713
+        },
+        {
+          "name": "Salt Lake Sector V",
+          "lines": [
+            "Green",
+            "Orange"
+          ],
+          "type": "IT Capital Terminal",
+          "daily_footfall": "110,000",
+          "lat": 22.5806,
+          "lng": 88.4328
+        }
       ],
       "map_svg": "metro-kolkata.svg"
     },
@@ -218,21 +660,95 @@
         "source": "Chennai Metro Rail Limited Annual Monograph (2024)"
       },
       "stats": [
-        { "label": "Phase 1 Operational", "value": "54.1 km", "note": "41 stations" },
-        { "label": "Phase 2 Pipeline", "value": "118.9 km", "note": "3 mega corridors" },
-        { "label": "Daily Footfall", "value": "310,000", "note": "Growing 25% YoY" },
-        { "label": "Central Hub Depth", "value": "28 meters", "note": "Chennai Central Interchange" }
+        {
+          "label": "Phase 1 Operational",
+          "value": "54.1 km",
+          "note": "41 stations"
+        },
+        {
+          "label": "Phase 2 Pipeline",
+          "value": "118.9 km",
+          "note": "3 mega corridors"
+        },
+        {
+          "label": "Daily Footfall",
+          "value": "310,000",
+          "note": "Growing 25% YoY"
+        },
+        {
+          "label": "Central Hub Depth",
+          "value": "28 meters",
+          "note": "Chennai Central Interchange"
+        }
       ],
       "lines": [
-        { "name": "Blue Line (Corridor 1)", "color": "#1d4ed8", "length": "32.6 km", "stations": 26, "terminals": "Wimco Nagar Depot ↔ Chennai Airport", "status": "Operational" },
-        { "name": "Green Line (Corridor 2)", "color": "#15803d", "length": "22.0 km", "stations": 17, "terminals": "Chennai Central ↔ St. Thomas Mount", "status": "Operational" },
-        { "name": "Corridor 3 (Purple - Phase 2)", "color": "#7e22ce", "length": "45.8 km", "stations": 49, "terminals": "Madhavaram Milk Colony ↔ SIPCOT 2", "status": "Under Construction" },
-        { "name": "Corridor 4 (Orange - Phase 2)", "color": "#ea580c", "length": "26.1 km", "stations": 30, "terminals": "Light House ↔ Poonamallee Bypass", "status": "Under Construction" }
+        {
+          "name": "Blue Line (Corridor 1)",
+          "color": "#1d4ed8",
+          "length": "32.6 km",
+          "stations": 26,
+          "terminals": "Wimco Nagar Depot ↔ Chennai Airport",
+          "status": "Operational"
+        },
+        {
+          "name": "Green Line (Corridor 2)",
+          "color": "#15803d",
+          "length": "22.0 km",
+          "stations": 17,
+          "terminals": "Chennai Central ↔ St. Thomas Mount",
+          "status": "Operational"
+        },
+        {
+          "name": "Corridor 3 (Purple - Phase 2)",
+          "color": "#7e22ce",
+          "length": "45.8 km",
+          "stations": 49,
+          "terminals": "Madhavaram Milk Colony ↔ SIPCOT 2",
+          "status": "Under Construction"
+        },
+        {
+          "name": "Corridor 4 (Orange - Phase 2)",
+          "color": "#ea580c",
+          "length": "26.1 km",
+          "stations": 30,
+          "terminals": "Light House ↔ Poonamallee Bypass",
+          "status": "Under Construction"
+        }
       ],
       "key_stations": [
-        { "name": "Chennai Central (Puratchi Thalaivar Dr MGR)", "lines": ["Blue", "Green", "Southern Railway"], "type": "Grand Underground Hub", "daily_footfall": "110,000", "lat": 13.0827, "lng": 80.2755 },
-        { "name": "Chennai International Airport", "lines": ["Blue Line"], "type": "Airport Air-Rail Link", "daily_footfall": "45,000", "lat": 12.9815, "lng": 80.1637 },
-        { "name": "Alandur", "lines": ["Blue", "Green"], "type": "Elevated Bi-Level Junction", "daily_footfall": "50,000", "lat": 13.0039, "lng": 80.2014 }
+        {
+          "name": "Chennai Central (Puratchi Thalaivar Dr MGR)",
+          "lines": [
+            "Blue",
+            "Green",
+            "Southern Railway"
+          ],
+          "type": "Grand Underground Hub",
+          "daily_footfall": "110,000",
+          "lat": 13.0827,
+          "lng": 80.2755
+        },
+        {
+          "name": "Chennai International Airport",
+          "lines": [
+            "Blue Line"
+          ],
+          "type": "Airport Air-Rail Link",
+          "daily_footfall": "45,000",
+          "lat": 12.9815,
+          "lng": 80.1637
+        },
+        {
+          "name": "Alandur",
+          "lines": [
+            "Blue",
+            "Green"
+          ],
+          "type": "Elevated Bi-Level Junction",
+          "daily_footfall": "50,000",
+          "lat": 13.0039,
+          "lng": 80.2014
+        }
       ],
       "map_svg": "metro-chennai.svg"
     },
@@ -256,20 +772,86 @@
         "source": "HMRL Urban Transit Papers (2023)"
       },
       "stats": [
-        { "label": "Network Length", "value": "69.2 km", "note": "3 corridors" },
-        { "label": "Ameerpet Hub Footfall", "value": "115,000 / day", "note": "Red & Blue cross junction" },
-        { "label": "Daily Commuters", "value": "530,000", "note": "HITEC City dominant" },
-        { "label": "Model", "value": "DBFOT PPP", "note": "L&T Infrastructure" }
+        {
+          "label": "Network Length",
+          "value": "69.2 km",
+          "note": "3 corridors"
+        },
+        {
+          "label": "Ameerpet Hub Footfall",
+          "value": "115,000 / day",
+          "note": "Red & Blue cross junction"
+        },
+        {
+          "label": "Daily Commuters",
+          "value": "530,000",
+          "note": "HITEC City dominant"
+        },
+        {
+          "label": "Model",
+          "value": "DBFOT PPP",
+          "note": "L&T Infrastructure"
+        }
       ],
       "lines": [
-        { "name": "Red Line (Corridor 1)", "color": "#dc2626", "length": "29.2 km", "stations": 27, "terminals": "Miyapur ↔ LB Nagar", "status": "Operational" },
-        { "name": "Blue Line (Corridor 3)", "color": "#2563eb", "length": "27.0 km", "stations": 23, "terminals": "Nagole ↔ Raidurg (HITEC City)", "status": "Operational" },
-        { "name": "Green Line (Corridor 2)", "color": "#16a34a", "length": "11.0 km", "stations": 9, "terminals": "JBS Parade Ground ↔ MGBS", "status": "Operational" }
+        {
+          "name": "Red Line (Corridor 1)",
+          "color": "#dc2626",
+          "length": "29.2 km",
+          "stations": 27,
+          "terminals": "Miyapur ↔ LB Nagar",
+          "status": "Operational"
+        },
+        {
+          "name": "Blue Line (Corridor 3)",
+          "color": "#2563eb",
+          "length": "27.0 km",
+          "stations": 23,
+          "terminals": "Nagole ↔ Raidurg (HITEC City)",
+          "status": "Operational"
+        },
+        {
+          "name": "Green Line (Corridor 2)",
+          "color": "#16a34a",
+          "length": "11.0 km",
+          "stations": 9,
+          "terminals": "JBS Parade Ground ↔ MGBS",
+          "status": "Operational"
+        }
       ],
       "key_stations": [
-        { "name": "Ameerpet", "lines": ["Red", "Blue"], "type": "Multi-Level Mega Interchange", "daily_footfall": "120,000", "lat": 17.4375, "lng": 78.4483 },
-        { "name": "Raidurg", "lines": ["Blue"], "type": "HITEC City Software Hub Terminal", "daily_footfall": "85,000", "lat": 17.4414, "lng": 78.3776 },
-        { "name": "MGBS (Mahatma Gandhi Bus Station)", "lines": ["Red", "Green"], "type": "Interstate Bus Terminal Hub", "daily_footfall": "70,000", "lat": 17.3789, "lng": 78.4812 }
+        {
+          "name": "Ameerpet",
+          "lines": [
+            "Red",
+            "Blue"
+          ],
+          "type": "Multi-Level Mega Interchange",
+          "daily_footfall": "120,000",
+          "lat": 17.4375,
+          "lng": 78.4483
+        },
+        {
+          "name": "Raidurg",
+          "lines": [
+            "Blue"
+          ],
+          "type": "HITEC City Software Hub Terminal",
+          "daily_footfall": "85,000",
+          "lat": 17.4414,
+          "lng": 78.3776
+        },
+        {
+          "name": "MGBS (Mahatma Gandhi Bus Station)",
+          "lines": [
+            "Red",
+            "Green"
+          ],
+          "type": "Interstate Bus Terminal Hub",
+          "daily_footfall": "70,000",
+          "lat": 17.3789,
+          "lng": 78.4812
+        }
       ],
       "map_svg": "metro-hyderabad.svg"
     },
@@ -293,20 +875,85 @@
         "source": "KMRL Water Metro Benchmark Monograph (2024)"
       },
       "stats": [
-        { "label": "Rail Route Length", "value": "28.1 km", "note": "Aluva to Thripunithura" },
-        { "label": "Water Metro Routes", "value": "78 km", "note": "15 routes, 10 island terminals" },
-        { "label": "Electric Boat Fleet", "value": "23 Vessels", "note": "LTO battery electric" },
-        { "label": "Inclusive Work", "value": "Kudumbashree", "note": "Transgender & women-run ops" }
+        {
+          "label": "Rail Route Length",
+          "value": "28.1 km",
+          "note": "Aluva to Thripunithura"
+        },
+        {
+          "label": "Water Metro Routes",
+          "value": "78 km",
+          "note": "15 routes, 10 island terminals"
+        },
+        {
+          "label": "Electric Boat Fleet",
+          "value": "23 Vessels",
+          "note": "LTO battery electric"
+        },
+        {
+          "label": "Inclusive Work",
+          "value": "Kudumbashree",
+          "note": "Transgender & women-run ops"
+        }
       ],
       "lines": [
-        { "name": "Kochi Metro Rail", "color": "#0284c7", "length": "28.1 km", "stations": 25, "terminals": "Aluva ↔ Thripunithura", "status": "Operational" },
-        { "name": "Water Metro: High Court ↔ Vypin", "color": "#06b6d4", "length": "3.8 km", "stations": 2, "terminals": "High Court ↔ Vypin", "status": "Operational" },
-        { "name": "Water Metro: High Court ↔ Fort Kochi", "color": "#0891b2", "length": "5.6 km", "stations": 2, "terminals": "High Court ↔ Fort Kochi", "status": "Operational" }
+        {
+          "name": "Kochi Metro Rail",
+          "color": "#0284c7",
+          "length": "28.1 km",
+          "stations": 25,
+          "terminals": "Aluva ↔ Thripunithura",
+          "status": "Operational"
+        },
+        {
+          "name": "Water Metro: High Court ↔ Vypin",
+          "color": "#06b6d4",
+          "length": "3.8 km",
+          "stations": 2,
+          "terminals": "High Court ↔ Vypin",
+          "status": "Operational"
+        },
+        {
+          "name": "Water Metro: High Court ↔ Fort Kochi",
+          "color": "#0891b2",
+          "length": "5.6 km",
+          "stations": 2,
+          "terminals": "High Court ↔ Fort Kochi",
+          "status": "Operational"
+        }
       ],
       "key_stations": [
-        { "name": "High Court Terminal", "lines": ["Water Metro Hub", "Feeder Bus"], "type": "Flagship Marine Interchange", "daily_footfall": "22,000", "lat": 9.9839, "lng": 76.2758 },
-        { "name": "Aluva", "lines": ["Kochi Metro Rail"], "type": "Northern Suburban Rail Terminal", "daily_footfall": "35,000", "lat": 10.1086, "lng": 76.3533 },
-        { "name": "MG Road", "lines": ["Kochi Metro Rail"], "type": "Central Business Corridor", "daily_footfall": "28,000", "lat": 9.9723, "lng": 76.2825 }
+        {
+          "name": "High Court Terminal",
+          "lines": [
+            "Water Metro Hub",
+            "Feeder Bus"
+          ],
+          "type": "Flagship Marine Interchange",
+          "daily_footfall": "22,000",
+          "lat": 9.9839,
+          "lng": 76.2758
+        },
+        {
+          "name": "Aluva",
+          "lines": [
+            "Kochi Metro Rail"
+          ],
+          "type": "Northern Suburban Rail Terminal",
+          "daily_footfall": "35,000",
+          "lat": 10.1086,
+          "lng": 76.3533
+        },
+        {
+          "name": "MG Road",
+          "lines": [
+            "Kochi Metro Rail"
+          ],
+          "type": "Central Business Corridor",
+          "daily_footfall": "28,000",
+          "lat": 9.9723,
+          "lng": 76.2825
+        }
       ],
       "map_svg": "metro-kochi.svg"
     },
@@ -330,18 +977,74 @@
         "source": "Gujarat Metro Rail Corporation Annual Report (2024)"
       },
       "stats": [
-        { "label": "Network Length", "value": "40.0 km", "note": "+28.2 km Gandhinagar Phase 2" },
-        { "label": "Old High Court Hub", "value": "Interchange", "note": "East-West & North-South cross" },
-        { "label": "GIFT City Link", "value": "Direct Metro", "note": "Under Phase 2 commissioning" }
+        {
+          "label": "Network Length",
+          "value": "40.0 km",
+          "note": "+28.2 km Gandhinagar Phase 2"
+        },
+        {
+          "label": "Old High Court Hub",
+          "value": "Interchange",
+          "note": "East-West & North-South cross"
+        },
+        {
+          "label": "GIFT City Link",
+          "value": "Direct Metro",
+          "note": "Under Phase 2 commissioning"
+        }
       ],
       "lines": [
-        { "name": "East-West Corridor (Blue Line)", "color": "#2563eb", "length": "21.1 km", "stations": 17, "terminals": "Thaltej Gam ↔ Vastral Gam", "status": "Operational" },
-        { "name": "North-South Corridor (Red Line)", "color": "#dc2626", "length": "18.8 km", "stations": 15, "terminals": "APMC ↔ Motera Stadium ↔ Mahatma Mandir", "status": "Operational / Extended" }
+        {
+          "name": "East-West Corridor (Blue Line)",
+          "color": "#2563eb",
+          "length": "21.1 km",
+          "stations": 17,
+          "terminals": "Thaltej Gam ↔ Vastral Gam",
+          "status": "Operational"
+        },
+        {
+          "name": "North-South Corridor (Red Line)",
+          "color": "#dc2626",
+          "length": "18.8 km",
+          "stations": 15,
+          "terminals": "APMC ↔ Motera Stadium ↔ Mahatma Mandir",
+          "status": "Operational / Extended"
+        }
       ],
       "key_stations": [
-        { "name": "Old High Court", "lines": ["Blue Line", "Red Line"], "type": "Central Cross Interchange", "daily_footfall": "40,000", "lat": 23.0371, "lng": 72.5714 },
-        { "name": "Narendra Modi Stadium (Motera)", "lines": ["Red Line"], "type": "World's Largest Cricket Stadium Link", "daily_footfall": "65,000 (Matchday 120,000)", "lat": 23.0917, "lng": 72.5975 },
-        { "name": "Kalupur (Ahmedabad Railway Station)", "lines": ["Blue Line", "Western Railway", "Bullet Train Future"], "type": "Tri-Modal Transit Terminal", "daily_footfall": "55,000", "lat": 23.0232, "lng": 72.5997 }
+        {
+          "name": "Old High Court",
+          "lines": [
+            "Blue Line",
+            "Red Line"
+          ],
+          "type": "Central Cross Interchange",
+          "daily_footfall": "40,000",
+          "lat": 23.0371,
+          "lng": 72.5714
+        },
+        {
+          "name": "Narendra Modi Stadium (Motera)",
+          "lines": [
+            "Red Line"
+          ],
+          "type": "World's Largest Cricket Stadium Link",
+          "daily_footfall": "65,000 (Matchday 120,000)",
+          "lat": 23.0917,
+          "lng": 72.5975
+        },
+        {
+          "name": "Kalupur (Ahmedabad Railway Station)",
+          "lines": [
+            "Blue Line",
+            "Western Railway",
+            "Bullet Train Future"
+          ],
+          "type": "Tri-Modal Transit Terminal",
+          "daily_footfall": "55,000",
+          "lat": 23.0232,
+          "lng": 72.5997
+        }
       ],
       "map_svg": "metro-ahmedabad.svg"
     },
@@ -365,58 +1068,872 @@
         "source": "Pune Metro Engineering Trajectory (2024)"
       },
       "stats": [
-        { "label": "Network Length", "value": "33.2 km", "note": "3 lines" },
-        { "label": "Civil Court Interchange", "value": "Multi-tier Hub", "note": "Largest underground station in MH" },
-        { "label": "Aluminium Cars", "value": "Lightweight", "note": "Titagarh Made in India" }
+        {
+          "label": "Network Length",
+          "value": "33.2 km",
+          "note": "3 lines"
+        },
+        {
+          "label": "Civil Court Interchange",
+          "value": "Multi-tier Hub",
+          "note": "Largest underground station in MH"
+        },
+        {
+          "label": "Aluminium Cars",
+          "value": "Lightweight",
+          "note": "Titagarh Made in India"
+        }
       ],
       "lines": [
-        { "name": "Purple Line (Line 1)", "color": "#7c3aed", "length": "17.5 km", "stations": 14, "terminals": "PCMC ↔ Swargate (Underground)", "status": "Operational" },
-        { "name": "Aqua Line (Line 2)", "color": "#06b6d4", "length": "15.7 km", "stations": 16, "terminals": "Vanaz ↔ Ramwadi", "status": "Operational" },
-        { "name": "Line 3 (Hinjewadi IT Link)", "color": "#f59e0b", "length": "23.3 km", "stations": 23, "terminals": "Megapolis Circle Hinjewadi ↔ Civil Court", "status": "Under Construction" }
+        {
+          "name": "Purple Line (Line 1)",
+          "color": "#7c3aed",
+          "length": "17.5 km",
+          "stations": 14,
+          "terminals": "PCMC ↔ Swargate (Underground)",
+          "status": "Operational"
+        },
+        {
+          "name": "Aqua Line (Line 2)",
+          "color": "#06b6d4",
+          "length": "15.7 km",
+          "stations": 16,
+          "terminals": "Vanaz ↔ Ramwadi",
+          "status": "Operational"
+        },
+        {
+          "name": "Line 3 (Hinjewadi IT Link)",
+          "color": "#f59e0b",
+          "length": "23.3 km",
+          "stations": 23,
+          "terminals": "Megapolis Circle Hinjewadi ↔ Civil Court",
+          "status": "Under Construction"
+        }
       ],
       "key_stations": [
-        { "name": "Civil Court", "lines": ["Purple", "Aqua", "Line 3 (Future)"], "type": "Multi-Level Interchange Hub", "daily_footfall": "55,000", "lat": 18.5284, "lng": 73.8567 },
-        { "name": "Swargate", "lines": ["Purple (Underground)"], "type": "Southern Intercity Bus Hub", "daily_footfall": "45,000", "lat": 18.5018, "lng": 73.8586 },
-        { "name": "Pune Railway Station", "lines": ["Aqua Line", "Central Railway"], "type": "Intermodal Rail Link", "daily_footfall": "40,000", "lat": 18.5289, "lng": 73.8744 }
+        {
+          "name": "Civil Court",
+          "lines": [
+            "Purple",
+            "Aqua",
+            "Line 3 (Future)"
+          ],
+          "type": "Multi-Level Interchange Hub",
+          "daily_footfall": "55,000",
+          "lat": 18.5284,
+          "lng": 73.8567
+        },
+        {
+          "name": "Swargate",
+          "lines": [
+            "Purple (Underground)"
+          ],
+          "type": "Southern Intercity Bus Hub",
+          "daily_footfall": "45,000",
+          "lat": 18.5018,
+          "lng": 73.8586
+        },
+        {
+          "name": "Pune Railway Station",
+          "lines": [
+            "Aqua Line",
+            "Central Railway"
+          ],
+          "type": "Intermodal Rail Link",
+          "daily_footfall": "40,000",
+          "lat": 18.5289,
+          "lng": 73.8744
+        }
       ],
       "map_svg": "metro-pune.svg"
     },
     {
-      "id": "lucknow-kanpur",
-      "name": "Uttar Pradesh Metros (Lucknow, Kanpur & Agra)",
-      "hindi": "उत्तर प्रदेश मेट्रो (लखनऊ, कानपुर एवं आगरा)",
+      "id": "lucknow",
+      "name": "Lucknow Metro (UPMRC)",
+      "hindi": "लखनऊ मेट्रो",
       "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
       "opened_year": 2017,
-      "length_km": 50.8,
-      "stations_count": 47,
-      "daily_ridership": "165,000",
+      "length_km": 22.87,
+      "stations_count": 21,
+      "daily_ridership": "85,000",
       "gauge": "Standard (1435 mm)",
-      "traction": "25 kV AC overhead & 750 V DC third rail",
-      "rolling_stock": "Alstom Metropolis & Bombardier",
-      "description": "Pioneering tier-2 city rapid transit. UPMRC has delivered the fastest completed metro projects in India across Lucknow (Chaudhary Charan Singh Airport to Munshi Pulia, 22.8 km), Kanpur (IIT Kanpur to Motijheel), and Agra (Taj East Gate to Mankameshwar Temple / Agra Fort).",
+      "traction": "25 kV AC 50 Hz overhead catenary",
+      "rolling_stock": "Alstom Metropolis",
+      "description": "Constructed in a record time of under 36 months under the leadership of Kumar Keshav, the Lucknow Metro Red Line connects Chaudhary Charan Singh International Airport in the south to Munshi Pulia in the north. It features South Asia’s fastest completed underground tunnel section beneath the Gomti river basin and the historical Hazratganj market with zero surface disruption.",
       "quote": {
-        "text": "From completing the Lucknow Metro ahead of schedule to unveiling the Agra Metro priority corridor touching the Taj Mahal within 23 months of groundbreaking, UPMRC set new velocity benchmarks for Indian civil projects.",
+        "text": "Building the Lucknow Metro through the dense urban core and heritage corridors in just 36 months set a benchmark in Indian rail engineering for zero-accident execution and punctuality.",
         "author": "Kumar Keshav",
-        "title": "Former Managing Director, UPMRC",
-        "source": "UPMRC Development Chronicles (2023)"
+        "title": "Managing Director, UPMRC",
+        "source": "UPMRC Project Synthesis & Civil Engineering Monograph (2019)"
       },
       "stats": [
-        { "label": "Combined UP Routes", "value": "50.8 km", "note": "Across 3 cities" },
-        { "label": "Taj Mahal Corridor", "value": "6 km Priority", "note": "Zero-vibration tracks near monument" },
-        { "label": "IIT Kanpur Corridor", "value": "9 km Priority", "note": "Elevated tech corridor" }
+        {
+          "label": "Total Route",
+          "value": "22.87 km",
+          "note": "Phase 1 Active"
+        },
+        {
+          "label": "Daily Riders",
+          "value": "85,000+",
+          "note": "Growing rapidly"
+        },
+        {
+          "label": "Stations",
+          "value": "21 Stations",
+          "note": "4 Underground"
+        },
+        {
+          "label": "Completion Time",
+          "value": "36 Months",
+          "note": "Fastest in India"
+        }
+      ],
+      "engineering_feats": [
+        "Hazratganj underground station excavated with special acoustic and vibration damping to protect Nawabi-era heritage structures.",
+        "Special balanced-cantilever steel truss bridge over Northern Railway tracks at Mawaiya.",
+        "Integrated multi-modal connection directly inside the arrival terminal of CCS International Airport."
       ],
       "lines": [
-        { "name": "Lucknow Red Line", "color": "#ef4444", "length": "22.8 km", "stations": 21, "terminals": "CCS Airport ↔ Munshi Pulia", "status": "Operational" },
-        { "name": "Kanpur Orange Line", "color": "#f97316", "length": "16.0 km", "stations": 14, "terminals": "IIT Kanpur ↔ Motijheel ↔ Naubasta", "status": "Priority Operational" },
-        { "name": "Agra Yellow Line", "color": "#eab308", "length": "6.0 km", "stations": 6, "terminals": "Taj East Gate ↔ Mankameshwar Temple", "status": "Operational" }
+        {
+          "name": "Red Line (North-South)",
+          "color": "#dc2626",
+          "length": "22.87 km",
+          "stations": 21,
+          "terminals": "CCS Airport ↔ Munshi Pulia",
+          "status": "Operational"
+        },
+        {
+          "name": "Blue Line (East-West)",
+          "color": "#2563eb",
+          "length": "11.10 km",
+          "stations": 12,
+          "terminals": "Charbagh ↔ Vasant Kunj",
+          "status": "Approved"
+        }
       ],
       "key_stations": [
-        { "name": "CCS Airport (Lucknow)", "lines": ["Lucknow Red Line"], "type": "Airport Air-Rail Terminal", "daily_footfall": "18,000", "lat": 26.7606, "lng": 80.8893 },
-        { "name": "Charbagh (Lucknow)", "lines": ["Lucknow Red Line", "Northern Railway"], "type": "Heritage Terminus Interchange", "daily_footfall": "35,000", "lat": 26.8322, "lng": 80.9174 },
-        { "name": "IIT Kanpur", "lines": ["Kanpur Orange Line"], "type": "Academic & Research Terminal", "daily_footfall": "16,000", "lat": 26.5123, "lng": 80.2329 },
-        { "name": "Taj East Gate (Agra)", "lines": ["Agra Priority Line"], "type": "World Heritage Site Gateway", "daily_footfall": "25,000", "lat": 27.1724, "lng": 78.0531 }
+        {
+          "name": "CCS Airport",
+          "lines": [
+            "Red"
+          ],
+          "type": "Airport Terminal",
+          "daily_footfall": "18,000",
+          "lat": 26.7606,
+          "lng": 80.8893
+        },
+        {
+          "name": "Charbagh Railway Station",
+          "lines": [
+            "Red",
+            "Blue"
+          ],
+          "type": "IR Interchange Hub",
+          "daily_footfall": "28,000",
+          "lat": 26.8322,
+          "lng": 80.9178
+        },
+        {
+          "name": "Hazratganj",
+          "lines": [
+            "Red"
+          ],
+          "type": "Heritage Commercial Hub",
+          "daily_footfall": "16,000",
+          "lat": 26.8528,
+          "lng": 80.9427
+        },
+        {
+          "name": "Munshi Pulia",
+          "lines": [
+            "Red"
+          ],
+          "type": "Northern Terminal",
+          "daily_footfall": "15,000",
+          "lat": 26.8863,
+          "lng": 80.9936
+        }
+      ]
+    },
+    {
+      "id": "kanpur",
+      "name": "Kanpur Metro (UPMRC)",
+      "hindi": "कानपुर मेट्रो",
+      "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
+      "opened_year": 2021,
+      "length_km": 16.0,
+      "stations_count": 14,
+      "daily_ridership": "45,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "750 V DC Third Rail",
+      "rolling_stock": "Alstom Movia",
+      "description": "Kanpur Metro serves Uttar Pradesh’s major industrial metropolis. Inaugurated by Prime Minister Narendra Modi in December 2021, the Orange Line runs from IIT Kanpur to Motijheel and is expanding to Kanpur Central Railway Station and Naubasta. It incorporates energy-efficient third rail electrification and regenerative braking.",
+      "quote": {
+        "text": "Kanpur Metro’s priority corridor was built in just two years despite the COVID-19 pandemic, proving Indian infrastructure teams can deliver world-class transit at speed.",
+        "author": "Sushil Kumar",
+        "title": "Managing Director, UPMRC",
+        "source": "Kanpur Urban Transport Progress Report (2023)"
+      },
+      "stats": [
+        {
+          "label": "Active Route",
+          "value": "16.0 km",
+          "note": "Priority corridor"
+        },
+        {
+          "label": "Planned Route",
+          "value": "32.4 km",
+          "note": "Corridors 1 & 2"
+        },
+        {
+          "label": "Fleet System",
+          "value": "Third Rail",
+          "note": "750 V DC power"
+        },
+        {
+          "label": "Key Node",
+          "value": "IIT Kanpur",
+          "note": "Academic anchor"
+        }
       ],
-      "map_svg": "metro-upmrc.svg"
+      "engineering_feats": [
+        "Twin TBM tunneling through alluvial Gangetic sand layers under dense Kanpur civil quarters.",
+        "Constructed using pre-cast U-girders and pier caps erected via automated launching girders in record time.",
+        "100% LED lighting and regenerative braking feeding power back into the grid."
+      ],
+      "lines": [
+        {
+          "name": "Orange Line (Line 1)",
+          "color": "#ea580c",
+          "length": "23.8 km",
+          "stations": 21,
+          "terminals": "IIT Kanpur ↔ Naubasta",
+          "status": "Operational / Ext."
+        },
+        {
+          "name": "Blue Line (Line 2)",
+          "color": "#2563eb",
+          "length": "8.6 km",
+          "stations": 8,
+          "terminals": "Agriculture University ↔ Barra-8",
+          "status": "Under Construction"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "IIT Kanpur",
+          "lines": [
+            "Orange"
+          ],
+          "type": "Academic Terminal",
+          "daily_footfall": "12,000",
+          "lat": 26.5123,
+          "lng": 80.2329
+        },
+        {
+          "name": "Motijheel",
+          "lines": [
+            "Orange"
+          ],
+          "type": "Civic Centre",
+          "daily_footfall": "14,000",
+          "lat": 26.4789,
+          "lng": 80.3168
+        },
+        {
+          "name": "Kanpur Central",
+          "lines": [
+            "Orange"
+          ],
+          "type": "IR Interchange",
+          "daily_footfall": "22,000",
+          "lat": 26.4542,
+          "lng": 80.3508
+        }
+      ]
+    },
+    {
+      "id": "agra",
+      "name": "Agra Metro (UPMRC)",
+      "hindi": "आगरा मेट्रो",
+      "operator": "Uttar Pradesh Metro Rail Corporation (UPMRC)",
+      "opened_year": 2024,
+      "length_km": 6.0,
+      "stations_count": 6,
+      "daily_ridership": "28,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "750 V DC Third Rail",
+      "rolling_stock": "Alstom Movia",
+      "description": "Inaugurated in March 2024, Agra Metro provides clean, zero-emission mass transit connecting the world-famous UNESCO World Heritage monuments—Taj Mahal and Agra Fort. Built with strict environmental safeguards under the Taj Trapezium Zone (TTZ) authority, trains operate with third-rail power to avoid overhead visual clutter around the marble mausoleum.",
+      "quote": {
+        "text": "Agra Metro is a triumph of ecological engineering, designed to preserve the pristine marble of the Taj Mahal by eliminating vehicular emissions in the Taj Trapezium Zone.",
+        "author": "UPMRC Engineering Directorate",
+        "title": "Heritage Transit Monograph",
+        "source": "Agra Metro Project Report (2024)"
+      },
+      "stats": [
+        {
+          "label": "Priority Line",
+          "value": "6.0 km",
+          "note": "Opened March 2024"
+        },
+        {
+          "label": "Planned Route",
+          "value": "29.65 km",
+          "note": "2 Corridors"
+        },
+        {
+          "label": "Heritage Focus",
+          "value": "Taj & Fort",
+          "note": "Zero diesel pollution"
+        },
+        {
+          "label": "Technology",
+          "value": "Third Rail",
+          "note": "Aesthetically unobtrusive"
+        }
+      ],
+      "engineering_feats": [
+        "Underground tunneling directly beneath historic Agra using specialized earth-pressure shield TBMs without vibration to ancient masonry.",
+        "No overhead catenary wires near heritage monuments, preserving iconic historic sightlines.",
+        "Direct subterranean pedestrian subways connecting Agra Fort and Taj Mahal east gate."
+      ],
+      "lines": [
+        {
+          "name": "Yellow Line (Line 1)",
+          "color": "#eab308",
+          "length": "14.0 km",
+          "stations": 13,
+          "terminals": "Taj East Gate ↔ Sikandra",
+          "status": "Operational / Ext."
+        },
+        {
+          "name": "Blue Line (Line 2)",
+          "color": "#2563eb",
+          "length": "15.4 km",
+          "stations": 14,
+          "terminals": "Agra Cantt ↔ Kalindi Vihar",
+          "status": "Under Construction"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "Taj East Gate",
+          "lines": [
+            "Yellow"
+          ],
+          "type": "UNESCO Monument Terminal",
+          "daily_footfall": "15,000",
+          "lat": 27.1712,
+          "lng": 78.056
+        },
+        {
+          "name": "Agra Fort",
+          "lines": [
+            "Yellow"
+          ],
+          "type": "UNESCO Citadel Hub",
+          "daily_footfall": "12,000",
+          "lat": 27.1795,
+          "lng": 78.0211
+        },
+        {
+          "name": "Mankameshwar Mandir",
+          "lines": [
+            "Yellow"
+          ],
+          "type": "Old City Core",
+          "daily_footfall": "9,000",
+          "lat": 27.1852,
+          "lng": 78.0163
+        }
+      ]
+    },
+    {
+      "id": "jaipur",
+      "name": "Jaipur Metro (JMRC)",
+      "hindi": "जयपुर मेट्रो",
+      "operator": "Jaipur Metro Rail Corporation (JMRC)",
+      "opened_year": 2015,
+      "length_km": 12.0,
+      "stations_count": 11,
+      "daily_ridership": "52,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "25 kV AC overhead catenary",
+      "rolling_stock": "BEML",
+      "description": "Jaipur Metro is Rajasthan’s premier rapid transit system, connecting the western residential hub of Mansarovar across the Pink City into the heart of the walled heritage city at Badi Chaupar. The underground extension beneath UNESCO World Heritage bazaars like Chandpole and Badi Chaupar was carved with vibration-controlled tunneling to protect ancient Rajasthani havelis.",
+      "quote": {
+        "text": "Tunnelling through the 18th-century stone and lime foundations of the walled city of Jaipur proved that ancient heritage and modern high-capacity metro transit can harmoniously coexist.",
+        "author": "JMRC Engineering Directorate",
+        "title": "Heritage Preservation Report",
+        "source": "JMRC Walled City Phase 1B Monograph (2020)"
+      },
+      "stats": [
+        {
+          "label": "Active Length",
+          "value": "12.0 km",
+          "note": "Phase 1A + 1B"
+        },
+        {
+          "label": "Daily Riders",
+          "value": "52,000",
+          "note": "Pink City corridor"
+        },
+        {
+          "label": "Heritage Stations",
+          "value": "2 Underground",
+          "note": "Badi & Chhoti Chaupar"
+        },
+        {
+          "label": "Elevated Corridor",
+          "value": "9.6 km",
+          "note": "Mansarovar - Chandpole"
+        }
+      ],
+      "engineering_feats": [
+        "Twin tunnel boring under the historic stone foundations of Jaipur Walled City without disturbing surface bazaars.",
+        "Heritage art gallery integrated into Badi Chaupar station exhibiting 18th-century step-wells and artefacts recovered during excavation.",
+        "Constructed double-decker elevated viaduct on Ajmer Road carrying both metro trains and 6-lane vehicular flyover."
+      ],
+      "lines": [
+        {
+          "name": "Pink Line (Phase 1)",
+          "color": "#ec4899",
+          "length": "12.0 km",
+          "stations": 11,
+          "terminals": "Mansarovar ↔ Badi Chaupar",
+          "status": "Operational"
+        },
+        {
+          "name": "Orange Line (Phase 2)",
+          "color": "#ea580c",
+          "length": "23.8 km",
+          "stations": 20,
+          "terminals": "Sitapura ↔ Ambabari",
+          "status": "Planned"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "Mansarovar",
+          "lines": [
+            "Pink"
+          ],
+          "type": "Western Depot Terminal",
+          "daily_footfall": "11,000",
+          "lat": 26.8642,
+          "lng": 75.7602
+        },
+        {
+          "name": "Railway Station",
+          "lines": [
+            "Pink"
+          ],
+          "type": "IR Interchange Hub",
+          "daily_footfall": "16,000",
+          "lat": 26.9205,
+          "lng": 75.7876
+        },
+        {
+          "name": "Badi Chaupar",
+          "lines": [
+            "Pink"
+          ],
+          "type": "UNESCO City Core",
+          "daily_footfall": "14,000",
+          "lat": 26.9238,
+          "lng": 75.8267
+        }
+      ]
+    },
+    {
+      "id": "nagpur",
+      "name": "Nagpur Metro (MahaMetro)",
+      "hindi": "नागपूर मेट्रो",
+      "operator": "Maharashtra Metro Rail Corporation (MahaMetro)",
+      "opened_year": 2019,
+      "length_km": 40.1,
+      "stations_count": 38,
+      "daily_ridership": "90,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "25 kV AC overhead catenary",
+      "rolling_stock": "CRRC Dalian",
+      "description": "Nagpur Metro operates in the geographical heart of India as one of the world’s greenest rapid transit networks, drawing over 65% of its total traction energy from rooftop and viaduct solar arrays. It holds multiple Guinness World Records, including the longest double-decker viaduct with a highway flyover beneath and metro tracks above.",
+      "quote": {
+        "text": "Nagpur Metro proved that solar-powered urban rail is not just a dream but an operational reality, achieving 65% solar power reliance while pioneering multi-layer viaducts.",
+        "author": "Dr. Brijesh Dixit",
+        "title": "Managing Director, MahaMetro",
+        "source": "MahaMetro Engineering & Guinness Record Dossier (2022)"
+      },
+      "stats": [
+        {
+          "label": "Network Length",
+          "value": "40.1 km",
+          "note": "Phase 1 Complete"
+        },
+        {
+          "label": "Solar Powered",
+          "value": "65% Energy",
+          "note": "Global green benchmark"
+        },
+        {
+          "label": "Guinness Record",
+          "value": "3.14 km Double-Decker",
+          "note": "Wardha Road"
+        },
+        {
+          "label": "Stations",
+          "value": "38 Stations",
+          "note": "Zero Discharge"
+        }
+      ],
+      "engineering_feats": [
+        "Guinness World Record for longest double-decker viaduct (3.14 km) carrying highway and metro on Wardha Road.",
+        "Multi-layer transportation interchange at Sitabuldi where Orange and Aqua lines cross in an engineered circular atrium.",
+        "First metro in India with 100% bio-digester toilets and wastewater recycling across all passenger depots."
+      ],
+      "lines": [
+        {
+          "name": "Orange Line (North-South)",
+          "color": "#ea580c",
+          "length": "19.6 km",
+          "stations": 18,
+          "terminals": "Automotive Square ↔ Khapri / Metro City",
+          "status": "Operational"
+        },
+        {
+          "name": "Aqua Line (East-West)",
+          "color": "#06b6d4",
+          "length": "20.5 km",
+          "stations": 20,
+          "terminals": "Prajapati Nagar ↔ Lokmanya Nagar",
+          "status": "Operational"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "Sitabuldi Interchange",
+          "lines": [
+            "Orange",
+            "Aqua"
+          ],
+          "type": "Central Multi-level Hub",
+          "daily_footfall": "32,000",
+          "lat": 21.1458,
+          "lng": 79.0882
+        },
+        {
+          "name": "Khapri",
+          "lines": [
+            "Orange"
+          ],
+          "type": "Southern Terminal",
+          "daily_footfall": "8,000",
+          "lat": 21.0583,
+          "lng": 79.0528
+        },
+        {
+          "name": "Prajapati Nagar",
+          "lines": [
+            "Aqua"
+          ],
+          "type": "Eastern Terminal",
+          "daily_footfall": "10,000",
+          "lat": 21.1642,
+          "lng": 79.1558
+        }
+      ]
+    },
+    {
+      "id": "noida",
+      "name": "Noida-Greater Noida Metro (NMRC)",
+      "hindi": "नोएडा-ग्रेटर नोएडा मेट्रो (एक्वा लाइन)",
+      "operator": "Noida Metro Rail Corporation (NMRC)",
+      "opened_year": 2019,
+      "length_km": 29.7,
+      "stations_count": 21,
+      "daily_ridership": "58,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "25 kV AC overhead catenary",
+      "rolling_stock": "CRRC Nanjing Puzhen",
+      "description": "The Aqua Line is a 29.7 km modern rapid transit corridor connecting the industrial and institutional nerve centers of Noida and Greater Noida in Gautam Buddha Nagar, Uttar Pradesh. Operating across 21 stations from Noida Sector 51 to Depot Station, the system connects directly with the Delhi Metro Blue Line via an e-rickshaw travelator walkway.",
+      "quote": {
+        "text": "The Aqua Line created an eco-friendly mobility spine connecting knowledge parks, IT Special Economic Zones, and residential clusters across NCR’s twin industrial cities.",
+        "author": "NMRC Operations Directorate",
+        "title": "Suburban Mobility Review",
+        "source": "NMRC Annual Overview (2023)"
+      },
+      "stats": [
+        {
+          "label": "Length",
+          "value": "29.7 km",
+          "note": "Fully Elevated"
+        },
+        {
+          "label": "Stations",
+          "value": "21 Stations",
+          "note": "All Barrier-Free"
+        },
+        {
+          "label": "Daily Footfall",
+          "value": "58,000",
+          "note": "Peak: 65,000"
+        },
+        {
+          "label": "Headway",
+          "value": "7.5 mins",
+          "note": "Automated CBTC"
+        }
+      ],
+      "engineering_feats": [
+        "Entire 29.7 km viaduct completed using precast prestressed concrete segmental construction with zero major road blockages on the expressway.",
+        "Solar rooftop installations powering station lighting and HVAC across 21 stations.",
+        "Dedicated women-only pink stations and specialized multi-modal feeder bus fleet connecting Greater Noida sectors."
+      ],
+      "lines": [
+        {
+          "name": "Aqua Line",
+          "color": "#06b6d4",
+          "length": "29.7 km",
+          "stations": 21,
+          "terminals": "Noida Sector 51 ↔ Depot (Greater Noida)",
+          "status": "Operational"
+        },
+        {
+          "name": "Aqua Line Extension",
+          "color": "#06b6d4",
+          "length": "14.95 km",
+          "stations": 9,
+          "terminals": "Sector 51 ↔ Knowledge Park V",
+          "status": "Approved"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "Sector 51 (Noida)",
+          "lines": [
+            "Aqua"
+          ],
+          "type": "Transfer Hub to Delhi Blue Line",
+          "daily_footfall": "22,000",
+          "lat": 28.5794,
+          "lng": 77.3689
+        },
+        {
+          "name": "NSEZ (Special Economic Zone)",
+          "lines": [
+            "Aqua"
+          ],
+          "type": "Industrial Cluster",
+          "daily_footfall": "12,000",
+          "lat": 28.5292,
+          "lng": 77.4098
+        },
+        {
+          "name": "Pari Chowk",
+          "lines": [
+            "Aqua"
+          ],
+          "type": "Greater Noida Commercial Core",
+          "daily_footfall": "14,000",
+          "lat": 28.4631,
+          "lng": 77.5122
+        }
+      ]
+    },
+    {
+      "id": "navi-mumbai",
+      "name": "Navi Mumbai Metro (CIDCO)",
+      "hindi": "नवी मुंबई मेट्रो",
+      "operator": "City and Industrial Development Corporation (CIDCO)",
+      "opened_year": 2023,
+      "length_km": 11.1,
+      "stations_count": 11,
+      "daily_ridership": "30,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "25 kV AC overhead catenary",
+      "rolling_stock": "CRRC Zhuzhou",
+      "description": "Inaugurated in November 2023, Line 1 of the Navi Mumbai Metro spans 11.1 km between CBD Belapur and Pendhar. Built to support Mumbai’s planned eastern twin city and the upcoming Navi Mumbai International Airport (NMIA), the elevated line integrates suburban railway transfer points and industrial employment zones.",
+      "quote": {
+        "text": "Navi Mumbai Metro Line 1 unlocks east-west connectivity for Kharghar and Taloja, offering rapid mass transit to thousands of daily suburban commuters.",
+        "author": "Anil Diggikar",
+        "title": "Managing Director, CIDCO",
+        "source": "CIDCO Urban Infrastructure Dossier (2023)"
+      },
+      "stats": [
+        {
+          "label": "Line 1 Length",
+          "value": "11.1 km",
+          "note": "Opened Nov 2023"
+        },
+        {
+          "label": "Stations",
+          "value": "11 Elevated",
+          "note": "Fully Accessible"
+        },
+        {
+          "label": "Speed",
+          "value": "80 km/h",
+          "note": "Design Speed"
+        },
+        {
+          "label": "Key Transfer",
+          "value": "Belapur CBD",
+          "note": "Harbour Line IR"
+        }
+      ],
+      "engineering_feats": [
+        "Erection of a 100-meter open web steel truss bridge over the Central Railway suburban tracks at Kharghar.",
+        "Driverless-capable Communication Based Train Control (CBTC) signalling with central depot control at Taloja.",
+        "Zero-effluent discharge rolling stock maintenance facility and rainwater harvesting reservoirs."
+      ],
+      "lines": [
+        {
+          "name": "Line 1",
+          "color": "#3b82f6",
+          "length": "11.1 km",
+          "stations": 11,
+          "terminals": "CBD Belapur ↔ Pendhar",
+          "status": "Operational"
+        },
+        {
+          "name": "Line 2 & 3",
+          "color": "#10b981",
+          "length": "15.3 km",
+          "stations": 14,
+          "terminals": "MIDC Taloja ↔ Khandeshwar / NMIA",
+          "status": "Planned"
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "CBD Belapur",
+          "lines": [
+            "Line 1"
+          ],
+          "type": "Suburban Rail Interchange",
+          "daily_footfall": "12,000",
+          "lat": 19.0189,
+          "lng": 73.0389
+        },
+        {
+          "name": "Kharghar Sector 14",
+          "lines": [
+            "Line 1"
+          ],
+          "type": "Residential Hub",
+          "daily_footfall": "7,000",
+          "lat": 19.0433,
+          "lng": 73.0722
+        },
+        {
+          "name": "Pendhar",
+          "lines": [
+            "Line 1"
+          ],
+          "type": "Industrial Terminal",
+          "daily_footfall": "8,000",
+          "lat": 19.0778,
+          "lng": 73.1033
+        }
+      ]
+    },
+    {
+      "id": "bhopal-indore",
+      "name": "Bhopal & Indore Metro (MPMRCL)",
+      "hindi": "भोपाल एवं इंदौर मेट्रो (भोज मेट्रो)",
+      "operator": "Madhya Pradesh Metro Rail Corporation (MPMRCL)",
+      "opened_year": 2024,
+      "length_km": 12.5,
+      "stations_count": 13,
+      "daily_ridership": "35,000",
+      "gauge": "Standard (1435 mm)",
+      "traction": "750 V DC Third Rail",
+      "rolling_stock": "Alstom Movia",
+      "description": "Madhya Pradesh’s dual rapid transit systems in state capital Bhopal (Bhoj Metro) and commercial capital Indore represent modern central Indian urban rail. Featuring innovative Third Rail electrification, grade-separated flyover integration, and driverless unattended train operation (UTO) capabilities, the priority sections connect industrial corridors with central universities and transit hubs.",
+      "quote": {
+        "text": "The twin metro networks of Bhopal and Indore will revolutionize mobility in Central India, combining state-of-the-art third rail technology with regional identity.",
+        "author": "MPMRCL Directorate",
+        "title": "Madhya Pradesh Rapid Transit Synthesis",
+        "source": "MPMRCL Project Milestone Report (2024)"
+      },
+      "stats": [
+        {
+          "label": "Priority Corridors",
+          "value": "12.5 km",
+          "note": "Bhopal & Indore"
+        },
+        {
+          "label": "Total Sanctioned",
+          "value": "59.4 km",
+          "note": "Across twin cities"
+        },
+        {
+          "label": "Traction",
+          "value": "750V DC",
+          "note": "Third Rail"
+        },
+        {
+          "label": "Technology",
+          "value": "CBTC GoA4",
+          "note": "Driverless ready"
+        }
+      ],
+      "engineering_feats": [
+        "Implementation of composite steel-concrete girders for rapid bridge crossings over Indian Railways tracks at Subhash Nagar (Bhopal).",
+        "Underground alignment through congested commercial sectors in Indore using latest earth-pressure balance TBMs.",
+        "Integration of regenerative braking and 100% solarized station rooftops across both networks."
+      ],
+      "lines": [
+        {
+          "name": "Orange Line (Bhopal)",
+          "color": "#ea580c",
+          "length": "14.99 km",
+          "stations": 16,
+          "terminals": "Karond Circle ↔ AIIMS Bhopal",
+          "status": "Operational / Ext."
+        },
+        {
+          "name": "Yellow Line (Indore Ring)",
+          "color": "#eab308",
+          "length": "31.55 km",
+          "stations": 28,
+          "terminals": "Palasia ↔ Airport ↔ Super Corridor",
+          "status": "Operational / Ext."
+        }
+      ],
+      "key_stations": [
+        {
+          "name": "AIIMS Bhopal",
+          "lines": [
+            "Orange Line"
+          ],
+          "type": "Medical Terminal Hub",
+          "daily_footfall": "11,000",
+          "lat": 23.2083,
+          "lng": 77.4589
+        },
+        {
+          "name": "Subhash Nagar (Bhopal)",
+          "lines": [
+            "Orange Line"
+          ],
+          "type": "Depot Interchange",
+          "daily_footfall": "9,000",
+          "lat": 23.2422,
+          "lng": 77.4328
+        },
+        {
+          "name": "Super Corridor (Indore)",
+          "lines": [
+            "Yellow Line"
+          ],
+          "type": "Tech Corridor Hub",
+          "daily_footfall": "10,000",
+          "lat": 22.7667,
+          "lng": 75.8333
+        }
+      ]
     }
   ]
 }

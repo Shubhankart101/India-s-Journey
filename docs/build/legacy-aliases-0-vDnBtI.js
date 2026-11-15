@@ -1,0 +1,1 @@
+export{n as default}from"./SubgroupPage-DERIVCxi.js";

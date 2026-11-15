@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#f5f5f7" />
     <meta name="description" content="India's Journey — searchable official data on India's economy, industry, mining, elections, society and more." />
     <link rel="icon" href="./art/lotus-temple.svg" type="image/svg+xml" />
     <title>India's Journey</title>
     <script>
-      try { var t = localStorage.getItem('ij-theme'); if (/^(light|newspaper|pamphlet|military|parliamentary|desi|airforce|navy|police)$/.test(t)) document.documentElement.dataset.theme = t; } catch (e) {}
+      try {
+        var t = localStorage.getItem('ij-theme') || 'light';
+        if (/^(light|dark|newspaper|pamphlet|military|parliamentary|desi|airforce|navy|police)$/.test(t)) {
+          document.documentElement.dataset.theme = t;
+        }
+      } catch (e) {}
     </script>
-    <script type="module" crossorigin src="./build/index-C2Udrl38.js"></script>
+    <script type="module" crossorigin src="./build/index-BCCulvsx.js"></script>
     <link rel="modulepreload" crossorigin href="./build/rolldown-runtime-XKyaHtl9.js">
     <link rel="modulepreload" crossorigin href="./build/charts-B6pdgxOd.js">
     <link rel="modulepreload" crossorigin href="./build/vendor-CMZuCPfa.js">
     <link rel="modulepreload" crossorigin href="./build/config-uet0De6j.js">
-    <link rel="stylesheet" crossorigin href="./build/index-D7yx-lrR.css">
+    <link rel="stylesheet" crossorigin href="./build/index-Fwk5xPsx.css">
   </head>
   <body>
     <div id="root"></div>

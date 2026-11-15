@@ -703,22 +703,22 @@ export function buildMetroArticleSections(metroData, selectedCityId, onSelectCit
   return [
     {
       title: 'Decadal Expansion & Urban Mobility Revolution (2002 – 2026)',
-      text: `From a single 16 km operational corridor in Kolkata in 2002 to an expansive 994 km network spanning 16 metropolitan regions, India has built the world's third largest urban rapid transit network in under two decades. Spearheaded by the Ministry of Housing and Urban Affairs (MoHUA) and local metropolitan authorities, rapid rail now serves over 11.2 million commuters daily, fundamentally shifting urban mobility from congested road corridors onto zero-emission grade-separated transit.`,
-      quote: `“The metro rail network in India has grown by over 400% in the last decade, transitioning from a luxury in few Tier-1 capitals into the backbone of urban transport across 16 cities.” — Ministry of Housing and Urban Affairs (MoHUA), Metro Rail Policy Synthesis Report, 2024`,
+      text: `From a single 16 km operational corridor in Kolkata in 2002 to an expansive 1,042 km network spanning 17 metropolitan regions, India has built the world's third largest urban rapid transit network in under two decades. Spearheaded by the Ministry of Housing and Urban Affairs (MoHUA) and local metropolitan authorities, rapid rail now serves over 12.1 million commuters daily, fundamentally shifting urban mobility from congested road corridors onto zero-emission grade-separated transit.`,
+      quote: `“The metro rail network in India has grown by over 450% in the last decade, transitioning from a luxury in few Tier-1 capitals into the backbone of urban transport across 17 cities.” — Ministry of Housing and Urban Affairs (MoHUA), Metro Rail Policy Synthesis Report, 2026`,
       content: (
         <div className="article-stat-highlights">
           <div className="ash-box">
-            <span className="ash-num">994 km</span>
+            <span className="ash-num">1,042 km</span>
             <span className="ash-label">Operational Rail Routes</span>
-            <p>Across 16 metropolitan cities and urban corridors.</p>
+            <p>Across 17 metropolitan cities and urban corridors.</p>
           </div>
           <div className="ash-box">
-            <span className="ash-num">11.2M</span>
+            <span className="ash-num">12.1M</span>
             <span className="ash-label">Daily Commuters</span>
             <p>Carried safely with 99.8% on-time performance.</p>
           </div>
           <div className="ash-box">
-            <span className="ash-num">3.8M MT</span>
+            <span className="ash-num">3.9M MT</span>
             <span className="ash-label">CO2e Annual Abatement</span>
             <p>Certified green emissions avoided via regenerative braking.</p>
           </div>
@@ -836,8 +836,8 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
       customLead = <MetroWorkbench selectedCityId={selectedMetroCityId} onSelectCity={setSelectedMetroCityId} />;
       customSections = buildMetroArticleSections(metroData, selectedMetroCityId, setSelectedMetroCityId);
       customKeyExtra = [
-        { label: 'Operational Networks', value: '16 Cities', note: '994 km active routes' },
-        { label: 'Daily Commuters', value: '11.2 Million', note: 'High frequency transit' },
+        { label: 'Operational Networks', value: '17 Cities', note: '1,042 km active routes' },
+        { label: 'Daily Commuters', value: '12.1 Million', note: 'High frequency transit' },
         { label: 'Deepest Subterranean', value: 'Howrah (33m)', note: 'Hooghly underwater tunnel' },
         { label: 'Regional Rapid Rail', value: '160 km/h', note: 'Delhi-Meerut Namo Bharat' },
       ];

@@ -120,6 +120,7 @@ export default function AncientEmpiresAtlas({
   const [mapViewMode, setMapViewMode] = useState('interactive'); // 'interactive' | 'historical'
   const [dossierTab, setDossierTab] = useState('overview'); // 'overview' | 'history' | 'battles' | 'locations' | 'milestones' | 'sources'
   const [mapLayerFilter, setMapLayerFilter] = useState('all'); // 'all' | 'battles' | 'locations'
+  const [showAllLabels, setShowAllLabels] = useState(false);
   const [locationTypeFilter, setLocationTypeFilter] = useState('all');
   const mapStageRef = useRef(null);
 
@@ -360,6 +361,15 @@ export default function AncientEmpiresAtlas({
                   >
                     🏛 Locations ({allLocations.length})
                   </button>
+                  <button
+                    type="button"
+                    className={`mls-btn ${showAllLabels ? 'active' : ''}`}
+                    onClick={() => setShowAllLabels(!showAllLabels)}
+                    title="Toggle label density (Smart mode shows capitals and selected sites to avoid map clutter)"
+                    aria-pressed={showAllLabels}
+                  >
+                    🏷️ {showAllLabels ? 'Labels: All' : 'Labels: Smart'}
+                  </button>
                 </div>
 
                 {/* Zoom Controls */}
@@ -553,6 +563,8 @@ export default function AncientEmpiresAtlas({
                             stroke="#0b0f15"
                             strokeWidth="1.8"
                             paintOrder="stroke"
+                            opacity={(showAllLabels || locType === 'capital' || isLocSelected || hoveredLocation?.title === loc.name) ? 1 : 0}
+                            pointerEvents={(showAllLabels || locType === 'capital' || isLocSelected || hoveredLocation?.title === loc.name) ? 'auto' : 'none'}
                           >
                             {locType === 'capital' ? `★ ${loc.name}` : loc.name}
                           </text>
@@ -603,6 +615,8 @@ export default function AncientEmpiresAtlas({
                             stroke="#0b0f15"
                             strokeWidth="1.8"
                             paintOrder="stroke"
+                            opacity={(showAllLabels || isSelected || hoveredBattle?.title === bt.name || allBattles.length <= 4) ? 1 : 0}
+                            pointerEvents={(showAllLabels || isSelected || hoveredBattle?.title === bt.name || allBattles.length <= 4) ? 'auto' : 'none'}
                           >
                             {bt.name}
                           </text>
