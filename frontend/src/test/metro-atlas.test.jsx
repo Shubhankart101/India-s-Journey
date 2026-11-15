@@ -85,4 +85,30 @@ describe('MetroAtlas: Transit Guide, Route Planner & Operational Directory', () 
     expect(screen.getByText(/Luggage & Baggage Regulations/i)).toBeInTheDocument();
     expect(screen.getByText(/Section 64/i)).toBeInTheDocument();
   });
+
+  it('renders dual map representations: PolityPolicy Geographic with floating Plan a Journey card and layer toggles', () => {
+    const { container } = render(<MetroAtlas />);
+
+    // Default is geographic mode
+    expect(container.querySelector('.theme-geographic')).toBeInTheDocument();
+    expect(screen.getByText(/PLAN A JOURNEY/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Find The Route/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Whole Network/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Under Construction/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/OpenStreetMap contributors/i).length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('switches to Metro Safar Schematic mode and displays white diagram legend and Metro Safar branding', () => {
+    const { container } = render(<MetroAtlas />);
+
+    // Click schematic toggle button
+    const schematicToggle = screen.getByRole('button', { name: /Line Diagram \(Metro Safar\)/i });
+    fireEvent.click(schematicToggle);
+
+    expect(container.querySelector('.theme-schematic')).toBeInTheDocument();
+    expect(screen.getByText(/Metro Route Map/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/metrosafar\.com/i).length).toBeGreaterThanOrEqual(1);
+    expect(container.querySelector('.metro-safar-badge')).toBeInTheDocument();
+    expect(screen.getByText(/सफ़र/i)).toBeInTheDocument();
+  });
 });

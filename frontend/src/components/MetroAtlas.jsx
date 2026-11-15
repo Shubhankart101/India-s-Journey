@@ -92,6 +92,7 @@ export const CITY_LAYOUTS = {
       { id: 'line2a', name: 'Line 2A (Yellow Corridor)', color: '#facc15', path: 'M 420,80 L 330,220 L 240,380 L 260,480', status: 'Operational' },
       { id: 'line7', name: 'Line 7 (Red Corridor)', color: '#ef4444', path: 'M 550,80 L 538,220 L 530,380 L 520,480', status: 'Operational' },
       { id: 'line3', name: 'Line 3 (Aqua Underground)', color: '#06b6d4', path: 'M 550,260 L 520,380 L 530,540 L 480,720 L 400,880', status: 'Operational' },
+      { id: 'line4-uc', name: 'Line 4 (Wadala – Kasarvadavali)', color: '#f97316', path: 'M 720,200 L 710,480 L 680,680 L 640,840', status: 'Under Construction (Phase 4)', dash: '6,6' },
     ],
     stations: [
       { name: 'Versova', hindi: 'वर्सोवा', x: 240, y: 380, lines: ['Line 1 (Blue Corridor)'], interchange: false, footfall: '65,000', lat: 19.1311, lng: 72.8197, anchor: 'end', dx: -18, dy: 4, connections: ['DN Nagar'] },
@@ -116,6 +117,7 @@ export const CITY_LAYOUTS = {
       { id: 'purple', name: 'Purple Line (East-West)', color: '#9333ea', path: 'M 140,640 L 340,540 L 560,440 L 800,440 L 1100,340', status: 'Operational' },
       { id: 'green', name: 'Green Line (North-South)', color: '#15803d', path: 'M 400,120 L 480,270 L 560,440 L 600,630 L 640,840', status: 'Operational' },
       { id: 'yellow', name: 'Yellow Line (Electronic City)', color: '#eab308', path: 'M 560,630 L 700,680 L 860,770 L 1040,850', status: 'Operational' },
+      { id: 'pink-uc', name: 'Pink Line (Kalena Agrahara – Nagawara)', color: '#ec4899', path: 'M 640,80 L 650,280 L 680,440 L 720,700 L 760,920', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Kempegowda Majestic', hindi: 'ಮೆಜೆಸ್ಟಿಕ್', x: 560, y: 440, lines: ['Purple Line (East-West)', 'Green Line (North-South)'], interchange: true, footfall: '240,000', lat: 12.9757, lng: 77.5728, anchor: 'end', dx: -18, dy: -12, connections: ['MG Road', 'Mysuru Road', 'Yeshwanthpur', 'Silk Board'] },
@@ -139,6 +141,7 @@ export const CITY_LAYOUTS = {
       { id: 'blue', name: 'Blue Line (Line 1 Historic)', color: '#2563eb', path: 'M 620,80 L 620,310 L 620,480 L 660,670 L 720,880', status: 'Operational' },
       { id: 'green', name: 'Green Line (Line 2 Underwater)', color: '#16a34a', path: 'M 280,480 L 440,480 L 620,480 L 860,480 L 1060,430', status: 'Operational (Underwater)' },
       { id: 'orange', name: 'Orange Line (Line 6 Airport)', color: '#ea580c', path: 'M 720,880 L 920,770 L 980,580 L 1020,230', status: 'Operational / Ext.' },
+      { id: 'orange-uc-ext', name: 'Orange Line Airport Extension', color: '#ea580c', path: 'M 1020,230 L 1040,150 L 1080,80', status: 'Under Construction (Line 6 Extension)', dash: '6,6' },
     ],
     stations: [
       { name: 'Howrah Station (33m Deep Underwater)', hindi: 'হাওড়া স্টেশন', x: 440, y: 480, lines: ['Green Line (Line 2 Underwater)'], interchange: true, footfall: '220,000', lat: 22.5833, lng: 88.3425, anchor: 'end', dx: -18, dy: 4, connections: ['Esplanade'] },
@@ -160,6 +163,7 @@ export const CITY_LAYOUTS = {
     geoLines: [
       { id: 'blue', name: 'Blue Line (Corridor 1)', color: '#1d4ed8', path: 'M 800,100 L 700,280 L 620,440 L 460,630 L 280,830', status: 'Operational' },
       { id: 'green', name: 'Green Line (Corridor 2)', color: '#15803d', path: 'M 700,280 L 520,350 L 400,470 L 420,660', status: 'Operational' },
+      { id: 'c3-uc', name: 'Phase 2 Corridor 3 (Madhavaram - SIPCOT)', color: '#d97706', path: 'M 580,80 L 520,350 L 480,560 L 360,780', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Chennai Central (MGR)', hindi: 'சென்னை சென்ट्रல்', x: 700, y: 280, lines: ['Blue Line (Corridor 1)', 'Green Line (Corridor 2)'], interchange: true, footfall: '110,000', lat: 13.0827, lng: 80.2707, anchor: 'start', dx: 18, dy: 4, connections: ['Alandur', 'Koyambedu Wholesale Hub'] },
@@ -179,6 +183,7 @@ export const CITY_LAYOUTS = {
       { id: 'red', name: 'Red Line (Corridor 1)', color: '#dc2626', path: 'M 220,140 L 520,390 L 680,570 L 980,800', status: 'Operational' },
       { id: 'blue', name: 'Blue Line (Corridor 3)', color: '#2563eb', path: 'M 180,570 L 520,390 L 820,340 L 1060,410', status: 'Operational' },
       { id: 'green', name: 'Green Line (Corridor 2)', color: '#16a34a', path: 'M 700,200 L 700,430 L 680,570', status: 'Operational' },
+      { id: 'airport-uc', name: 'Airport Express Corridor', color: '#0284c7', path: 'M 180,570 L 190,720 L 240,860 L 320,950', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Ameerpet Hub', hindi: 'అమీర్‌పేట్', x: 520, y: 390, lines: ['Red Line (Corridor 1)', 'Blue Line (Corridor 3)'], interchange: true, footfall: '140,000', lat: 17.4375, lng: 78.4483, anchor: 'end', dx: -18, dy: -12, connections: ['Raidurg (HITEC City)', 'MGBS Central', 'Miyapur Depot', 'Secunderabad East'] },
@@ -198,6 +203,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'rail', name: 'Kochi Metro Rail (Aluva - Thripunithura)', color: '#0284c7', path: 'M 780,110 L 700,330 L 660,540 L 760,810', status: 'Operational' },
+      { id: 'pink-kochi-uc', name: 'Pink Line (JLN Stadium - Kakkanad Infopark)', color: '#ec4899', path: 'M 700,330 L 860,340 L 980,360 L 1060,380', status: 'Under Construction (Phase 2)', dash: '6,6' },
       { id: 'water-1', name: 'Water Metro (High Court - Vypin)', color: '#06b6d4', path: 'M 460,490 L 300,540', status: 'Electric Ferry Route', dash: '8,6' },
       { id: 'water-2', name: 'Water Metro (High Court - Fort Kochi)', color: '#06b6d4', path: 'M 460,490 L 240,700', status: 'Electric Ferry Route', dash: '8,6' },
     ],
@@ -220,6 +226,7 @@ export const CITY_LAYOUTS = {
     geoLines: [
       { id: 'north-south', name: 'North-South Corridor (APMC - Motera)', color: '#dc2626', path: 'M 700,110 L 680,340 L 640,470 L 540,670 L 520,860', status: 'Operational' },
       { id: 'east-west', name: 'East-West Corridor (Thaltej - Vastral)', color: '#2563eb', path: 'M 160,470 L 420,470 L 640,470 L 900,470 L 1100,510', status: 'Operational' },
+      { id: 'gn-uc', name: 'Gandhinagar Phase 2 Extension', color: '#10b981', path: 'M 700,110 L 760,60 L 820,20', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Old High Court Interchange', hindi: 'જૂની હાઈકોર્ટ', x: 640, y: 470, lines: ['North-South Corridor', 'East-West Corridor'], interchange: true, footfall: '70,000', lat: 23.0375, lng: 72.5714, anchor: 'start', dx: 18, dy: -14, connections: ['Motera Narendra Modi Stadium', 'APMC Vasna', 'Thaltej Gam', 'Kalupur Railway Junction'] },
@@ -239,6 +246,7 @@ export const CITY_LAYOUTS = {
     geoLines: [
       { id: 'purple', name: 'Purple Line (PCMC - Swargate)', color: '#9333ea', path: 'M 520,90 L 540,320 L 580,470 L 600,670 L 620,860', status: 'Operational' },
       { id: 'aqua', name: 'Aqua Line (Vanaz - Ramwadi)', color: '#06b6d4', path: 'M 180,610 L 400,540 L 580,470 L 860,400 L 1080,310', status: 'Operational' },
+      { id: 'line3-pune-uc', name: 'Line 3 (Hinjawadi - Shivajinagar)', color: '#f59e0b', path: 'M 220,280 L 380,340 L 520,410 L 580,470', status: 'Under Construction (Line 3)', dash: '6,6' },
     ],
     stations: [
       { name: 'Civil Court Interchange', hindi: 'सिव्हिल कोर्ट', x: 580, y: 470, lines: ['Purple Line (PCMC - Swargate)', 'Aqua Line (Vanaz - Ramwadi)'], interchange: true, footfall: '75,000', lat: 18.5289, lng: 73.8567, anchor: 'start', dx: 18, dy: -14, connections: ['PCMC Bhavan', 'Swargate Multimodal', 'Vanaz Western Depot', 'Ramwadi IT Corridor'] },
@@ -257,6 +265,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'red', name: 'Red Line (CCS Airport - Munshi Pulia)', color: '#dc2626', path: 'M 340,860 L 480,700 L 600,520 L 680,360 L 900,220 L 1040,140', status: 'Operational' },
+      { id: 'blue-lko-uc', name: 'East-West Blue Corridor (Charbagh - Vasant Kunj)', color: '#2563eb', path: 'M 600,520 L 480,440 L 360,390 L 260,340', status: 'Under Construction (Phase 1B)', dash: '6,6' },
     ],
     stations: [
       { name: 'CCS Airport Terminal', hindi: 'चौधरी चरण सिंह एयरपोर्ट', x: 340, y: 860, lines: ['Red Line (North-South)'], interchange: false, footfall: '22,000', lat: 26.7606, lng: 80.8893, anchor: 'end', dx: -18, dy: 4, connections: ['Charbagh Railway Hub'] },
@@ -274,6 +283,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'orange', name: 'Orange Line (IIT Kanpur - Naubasta)', color: '#ea580c', path: 'M 220,320 L 460,430 L 680,540 L 860,680 L 1000,850', status: 'Operational / Ext.' },
+      { id: 'blue-knp-uc', name: 'Line 2 (Agriculture Univ - Barra 8)', color: '#0284c7', path: 'M 400,160 L 520,330 L 680,540 L 740,780', status: 'Under Construction (Line 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'IIT Kanpur Gateway', hindi: 'आईआईटी कानपुर', x: 220, y: 320, lines: ['Orange Line (Corridor 1)'], interchange: false, footfall: '15,000', lat: 26.5123, lng: 80.2329, anchor: 'end', dx: -18, dy: 4, connections: ['Motijheel Civic Core'] },
@@ -290,6 +300,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'yellow', name: 'Yellow Line (Taj East Gate - Sikandra)', color: '#eab308', path: 'M 980,610 L 820,520 L 680,410 L 500,300 L 300,200', status: 'Operational Priority' },
+      { id: 'blue-agra-uc', name: 'Line 2 (Agra Cantt - Kalindi Vihar)', color: '#0284c7', path: 'M 440,220 L 540,430 L 680,410 L 760,820', status: 'Under Construction (Line 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Taj East Gate (UNESCO Precinct)', hindi: 'ताज ईस्ट गेट', x: 980, y: 610, lines: ['Yellow Line (Priority)'], interchange: false, footfall: '18,000', lat: 27.1712, lng: 78.0560, anchor: 'start', dx: 18, dy: 4, connections: ['Agra Fort Citadel'] },
@@ -304,6 +315,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'pink', name: 'Pink Line (Mansarovar - Badi Chaupar)', color: '#ec4899', path: 'M 200,810 L 380,670 L 560,520 L 760,400 L 1000,320', status: 'Operational' },
+      { id: 'orange-jpr-uc', name: 'Phase 2 (Sitapura - Ambabari)', color: '#ea580c', path: 'M 560,100 L 560,320 L 560,520 L 560,860', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Mansarovar Western Depot', hindi: 'मानसरोवर', x: 200, y: 810, lines: ['Pink Line (Phase 1)'], interchange: false, footfall: '14,000', lat: 26.8642, lng: 75.7602, anchor: 'end', dx: -18, dy: 4, connections: ['Jaipur Junction IR'] },
@@ -319,6 +331,7 @@ export const CITY_LAYOUTS = {
     geoLines: [
       { id: 'orange', name: 'Orange Line (Automotive Sq - Khapri)', color: '#ea580c', path: 'M 600,120 L 600,380 L 600,480 L 600,720 L 600,880', status: 'Operational' },
       { id: 'aqua', name: 'Aqua Line (Prajapati - Lokmanya)', color: '#06b6d4', path: 'M 180,480 L 400,480 L 600,480 L 860,480 L 1060,480', status: 'Operational' },
+      { id: 'p2-ngp-uc', name: 'Phase 2 Extension Corridors', color: '#f59e0b', path: 'M 600,120 L 600,40 L 600,10', status: 'Under Construction (Phase 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'Sitabuldi Central Atrium', hindi: 'सीताबर्डी', x: 600, y: 480, lines: ['Orange Line (North-South)', 'Aqua Line (East-West)'], interchange: true, footfall: '40,000', lat: 21.1458, lng: 79.0882, anchor: 'start', dx: 18, dy: -14, connections: ['Khapri Solar Depot', 'Prajapati Nagar East'] },
@@ -335,6 +348,7 @@ export const CITY_LAYOUTS = {
     ],
     geoLines: [
       { id: 'aqua', name: 'Aqua Line Corridor', color: '#06b6d4', path: 'M 380,140 L 460,310 L 600,490 L 780,670 L 940,800 L 1060,880', status: 'Operational' },
+      { id: 'bodaki-uc', name: 'Aqua Line Bodaki MMTH Extension', color: '#06b6d4', path: 'M 1060,880 L 1120,930 L 1180,980', status: 'Under Construction (Extension)', dash: '6,6' },
     ],
     stations: [
       { name: 'Sector 51 (Walkway to Blue Line)', hindi: 'सेक्टर 51', x: 380, y: 140, lines: ['Aqua Line'], interchange: true, footfall: '26,000', lat: 28.5794, lng: 77.3689, anchor: 'end', dx: -18, dy: 4, connections: ['NSEZ Export Zone'] },
@@ -352,6 +366,7 @@ export const CITY_LAYOUTS = {
     roads: [],
     geoLines: [
       { id: 'line1', name: 'Line 1 (CBD Belapur - Pendhar)', color: '#3b82f6', path: 'M 300,790 L 440,630 L 600,470 L 760,320 L 940,220', status: 'Operational' },
+      { id: 'p2-nm-uc', name: 'Line 2 (MIDC Taloja - Khandeshwar)', color: '#0284c7', path: 'M 600,470 L 640,640 L 700,780', status: 'Under Construction (Line 2)', dash: '6,6' },
     ],
     stations: [
       { name: 'CBD Belapur IR Hub', hindi: 'सीबीडी बेलापूर', x: 300, y: 790, lines: ['Line 1 (Phase 1)'], interchange: true, footfall: '15,000', lat: 19.0189, lng: 73.0389, anchor: 'end', dx: -18, dy: 4, connections: ['Kharghar Sector 14'] },
@@ -369,6 +384,7 @@ export const CITY_LAYOUTS = {
     geoLines: [
       { id: 'bhopal-orange', name: 'Bhopal Orange Line (Bhoj Metro)', color: '#ea580c', path: 'M 300,590 L 500,480 L 700,390 L 940,300', status: 'Operational Priority' },
       { id: 'indore-yellow', name: 'Indore Yellow Ring (Super Corridor)', color: '#eab308', path: 'M 720,860 L 860,740 L 980,610 L 1100,500', status: 'Operational Priority' },
+      { id: 'indore-ring-uc', name: 'Indore Ring Line Extension', color: '#eab308', path: 'M 1100,500 L 1020,410 L 880,360 L 760,420', status: 'Under Construction (Ring)', dash: '6,6' },
     ],
     stations: [
       { name: 'AIIMS Bhopal Terminal', hindi: 'एम्स भोपाल', x: 300, y: 590, lines: ['Bhopal Orange (Priority)'], interchange: false, footfall: '14,000', lat: 23.2083, lng: 77.4589, anchor: 'end', dx: -18, dy: 4, connections: ['Subhash Nagar Viaduct'] },
@@ -497,6 +513,8 @@ export default function MetroAtlas({ onSelectCity }) {
   const [hoveredStation, setHoveredStation] = useState(null);
   const [selectedStation, setSelectedStation] = useState(null);
   const [workbenchTab, setWorkbenchTab] = useState('geographic'); // 'geographic' | 'schematic' | 'planner' | 'directory' | 'guide'
+  const [geoLayerFilter, setGeoLayerFilter] = useState('all'); // 'all' | 'under-construction'
+  const [isJourneyCardCollapsed, setIsJourneyCardCollapsed] = useState(false);
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isPanning, setIsPanning] = useState(false);
@@ -739,14 +757,14 @@ export default function MetroAtlas({ onSelectCity }) {
       {(workbenchTab === 'geographic' || workbenchTab === 'schematic') && (
         <div className="metro-workbench-grid">
           <div
-            className="metro-map-canvas-container"
+            className={`metro-map-canvas-container theme-${workbenchTab === 'schematic' ? 'schematic' : 'geographic'}`}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             style={{ cursor: isPanning ? 'grabbing' : 'grab' }}
           >
-            {/* Top Toolbar: Search Station, Zoom, Download */}
+            {/* Top Toolbar: Search Station, Map Mode Switcher, Zoom, Download */}
             <div className="metro-map-header-tools">
               <div className="metro-station-search-box">
                 <input
@@ -756,6 +774,26 @@ export default function MetroAtlas({ onSelectCity }) {
                   value={stationSearch}
                   onChange={e => setStationSearch(e.target.value)}
                 />
+              </div>
+
+              {/* Prominent Dual Map Mode Switcher for all 17 cities */}
+              <div className="metro-map-mode-toggle-group" role="group" aria-label="Map Representation">
+                <button
+                  type="button"
+                  className={`metro-mode-toggle-btn ${workbenchTab === 'geographic' ? 'active' : ''}`}
+                  onClick={() => setWorkbenchTab('geographic')}
+                  title="Warm cartographic terrain map with real curves and journey planner (politypolicy.com)"
+                >
+                  🗺️ Cartographic Terrain (PolityPolicy)
+                </button>
+                <button
+                  type="button"
+                  className={`metro-mode-toggle-btn ${workbenchTab === 'schematic' ? 'active' : ''}`}
+                  onClick={() => setWorkbenchTab('schematic')}
+                  title="Pure white octolinear schematic map with route legend (metrosafar.com)"
+                >
+                  🚇 Line Diagram (Metro Safar)
+                </button>
               </div>
 
               <div className="metro-map-controls">
@@ -794,6 +832,206 @@ export default function MetroAtlas({ onSelectCity }) {
               </div>
             </div>
 
+            {/* KIND A: Top-Left Floating Legend Box (metrosafar.com/maps style) */}
+            {workbenchTab === 'schematic' && (
+              <div className="metro-schematic-legend-card" aria-label="Transit Line Legend">
+                <div className="mslc-header">
+                  <h4 className="mslc-title">{city.name.split('(')[0].trim()} Metro Route Map</h4>
+                  <p className="mslc-subtitle">Schematic Transit Diagram · metrosafar.com</p>
+                </div>
+                <div className="mslc-lines-list">
+                  {(layout.geoLines || []).map(line => {
+                    const isLineSelected = selectedLineId === line.id;
+                    return (
+                      <div
+                        key={line.id}
+                        className={`mslc-line-item ${isLineSelected ? 'active' : ''}`}
+                        onClick={() => setSelectedLineId(isLineSelected ? null : line.id)}
+                        title={`Filter ${line.name}`}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <span
+                          className={`mslc-line-bar ${line.dash ? 'dashed' : ''}`}
+                          style={{
+                            background: line.dash ? 'transparent' : line.color,
+                            borderColor: line.color,
+                          }}
+                        />
+                        <span className="mslc-line-name">{line.name.split('(')[0].trim()}</span>
+                        {line.status && line.status.includes('Under Construction') && (
+                          <span className="mslc-uc-tag">UC</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mslc-symbols">
+                  <div><span className="sym-circle">◯</span> Station</div>
+                  <div><span className="sym-ring">⊚</span> Interchange</div>
+                  <div><span>🚆</span> Railways</div>
+                  <div><span>✈️</span> Airport</div>
+                  <div><span>🚌</span> ISBT</div>
+                </div>
+              </div>
+            )}
+
+            {/* KIND A: Bottom-Right Metro Safar Branding (metrosafar.com/maps style) */}
+            {workbenchTab === 'schematic' && (
+              <div className="metro-safar-badge" aria-label="Metro Safar Attribution">
+                <div className="msb-brand">
+                  Metro<span className="msb-hindi">सफ़र</span>
+                </div>
+                <div className="msb-url">metrosafar.com</div>
+              </div>
+            )}
+
+            {/* KIND B: Top-Left Layer Filter Pills (politypolicy.com/DelhiMetro style) */}
+            {workbenchTab === 'geographic' && (
+              <div className="metro-geo-layer-toggles" role="toolbar" aria-label="Cartographic Layer Filters">
+                <button
+                  type="button"
+                  className={`mglt-btn ${geoLayerFilter === 'all' && !selectedLineId ? 'active' : ''}`}
+                  onClick={() => { setGeoLayerFilter('all'); setSelectedLineId(null); }}
+                >
+                  Whole Network
+                </button>
+                <button
+                  type="button"
+                  className={`mglt-btn ${geoLayerFilter === 'under-construction' ? 'active' : ''}`}
+                  onClick={() => { setGeoLayerFilter(prev => prev === 'under-construction' ? 'all' : 'under-construction'); }}
+                >
+                  <span className="mglt-dash-icon" /> Under Construction
+                </button>
+                <button
+                  type="button"
+                  className={`mglt-btn ${selectedLineId ? 'active' : ''}`}
+                  onClick={() => setSelectedLineId(null)}
+                >
+                  {selectedLineId
+                    ? (layout.geoLines || []).find(l => l.id === selectedLineId)?.name.split('(')[0].trim() || 'Selected Line'
+                    : 'All Lines'}
+                </button>
+              </div>
+            )}
+
+            {/* KIND B: Top-Right Floating "PLAN A JOURNEY" Card (politypolicy.com/DelhiMetro style) */}
+            {workbenchTab === 'geographic' && (
+              <div className={`metro-plan-journey-floating-card ${isJourneyCardCollapsed ? 'collapsed' : ''}`} aria-label="Plan a Journey">
+                <div className="mpjc-header">
+                  <span className="mpjc-icon">‹</span>
+                  <span className="mpjc-title">PLAN A JOURNEY</span>
+                  <button
+                    type="button"
+                    className="mpjc-collapse-toggle"
+                    onClick={() => setIsJourneyCardCollapsed(c => !c)}
+                    title={isJourneyCardCollapsed ? 'Expand journey planner' : 'Minimize journey planner'}
+                  >
+                    {isJourneyCardCollapsed ? '＋' : '−'}
+                  </button>
+                </div>
+                {!isJourneyCardCollapsed && (
+                  <div className="mpjc-body">
+                    <div className="mpjc-field-group">
+                      <label htmlFor="geo-origin-select" className="mpjc-label">FROM</label>
+                      <select
+                        id="geo-origin-select"
+                        className="mpjc-select"
+                        value={originStation}
+                        onChange={e => {
+                          setOriginStation(e.target.value);
+                          if (destStation && destStation !== e.target.value) {
+                            handleCalculateRoute(e.target.value, destStation);
+                          }
+                        }}
+                      >
+                        <option value="">Start Station</option>
+                        {currentStations.map(st => (
+                          <option key={st.name} value={st.name}>
+                            {st.name} {st.interchange ? '★ (Interchange)' : ''}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="mpjc-swap-btn"
+                      onClick={handleSwapStations}
+                      title="Swap Origin and Destination"
+                    >
+                      ⇅
+                    </button>
+
+                    <div className="mpjc-field-group">
+                      <label htmlFor="geo-dest-select" className="mpjc-label">TO</label>
+                      <select
+                        id="geo-dest-select"
+                        className="mpjc-select"
+                        value={destStation}
+                        onChange={e => {
+                          setDestStation(e.target.value);
+                          if (originStation && originStation !== e.target.value) {
+                            handleCalculateRoute(originStation, e.target.value);
+                          }
+                        }}
+                      >
+                        <option value="">Destination</option>
+                        {currentStations.map(st => (
+                          <option key={st.name} value={st.name}>
+                            {st.name} {st.interchange ? '★ (Interchange)' : ''}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="mpjc-submit-btn"
+                      onClick={() => handleCalculateRoute()}
+                      disabled={!originStation || !destStation || originStation === destStation}
+                    >
+                      Find The Route
+                    </button>
+
+                    {plannedRoute ? (
+                      <div className="mpjc-quick-results">
+                        <div className="mpjc-metric-row">
+                          <span>⏱ {plannedRoute.durationMins} min</span>
+                          <span>📏 {plannedRoute.distanceKm} km</span>
+                          <span>🛑 {plannedRoute.totalStops} stops</span>
+                          <span>⇄ {plannedRoute.interchanges} xchg</span>
+                        </div>
+                        <div className="mpjc-fare-row">
+                          <strong>Token: ₹{plannedRoute.tokenFare}</strong>
+                          <span className="mpjc-smart-pill">Smart Card: ₹{plannedRoute.smartCardFare}</span>
+                        </div>
+                        <button
+                          type="button"
+                          className="mpjc-itinerary-link"
+                          onClick={() => setWorkbenchTab('planner')}
+                        >
+                          View Step-by-Step Commuter Itinerary →
+                        </button>
+                      </div>
+                    ) : (
+                      <p className="mpjc-subtext">
+                        Pick two stations, or click any station on the map and use Set As From / Set As To. The route is worked out over the real network — every line, every Interchange, including the ones between operators.
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* KIND B: Bottom-Left Attribution (politypolicy.com/DelhiMetro style) */}
+            {workbenchTab === 'geographic' && (
+              <div className="metro-geo-attribution">
+                Network and city geography: © OpenStreetMap contributors (ODbL).<br />
+                Corridors under construction: Official KML &amp; MoHUA.
+              </div>
+            )}
+
             {/* High-Resolution SVG Canvas */}
             <svg
               ref={svgRef}
@@ -806,37 +1044,44 @@ export default function MetroAtlas({ onSelectCity }) {
               }}
             >
               <defs>
-                <pattern id="metroGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <pattern id="metroGridDark" width="40" height="40" patternUnits="userSpaceOnUse">
                   <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.035)" strokeWidth="1" />
+                </pattern>
+                <pattern id="metroGridLight" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.03)" strokeWidth="1" />
                 </pattern>
                 <filter id="trainGlow" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="3" result="blur" />
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
               </defs>
-              <rect width="100%" height="100%" fill="url(#metroGrid)" />
+              <rect
+                width="100%"
+                height="100%"
+                fill={workbenchTab === 'schematic' ? '#ffffff' : '#fff8f0'}
+              />
 
-              {/* Waterways */}
+              {/* Waterways: River Yamuna, Hooghly, etc. */}
               {layout.waterways && layout.waterways.map(w => (
                 <g key={w.id} className="metro-waterway-group">
                   <path
                     d={w.path}
                     fill={w.fill || 'none'}
-                    stroke={w.stroke || '#0284c7'}
-                    strokeWidth={w.width || 20}
+                    stroke={workbenchTab === 'schematic' ? 'rgba(2, 132, 199, 0.2)' : (w.stroke || '#0284c7')}
+                    strokeWidth={w.width || 24}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    opacity={w.opacity || 0.6}
+                    opacity={workbenchTab === 'schematic' ? 0.35 : (w.opacity || 0.65)}
                   />
                   <text
                     x="75%"
                     y="40%"
-                    fill="#38bdf8"
-                    opacity="0.35"
-                    fontSize="16"
+                    fill={workbenchTab === 'schematic' ? '#0284c7' : '#0369a1'}
+                    opacity={workbenchTab === 'schematic' ? 0.35 : 0.6}
+                    fontSize="15"
                     fontWeight="800"
                     fontStyle="italic"
-                    fontFamily="sans-serif"
+                    fontFamily="serif"
                   >
                     {w.name}
                   </text>
@@ -849,29 +1094,38 @@ export default function MetroAtlas({ onSelectCity }) {
                   key={r.id}
                   d={r.path}
                   fill="none"
-                  stroke={r.stroke}
-                  strokeWidth={r.width}
+                  stroke={workbenchTab === 'schematic' ? 'rgba(0,0,0,0.06)' : (r.stroke || '#d6c7b2')}
+                  strokeWidth={r.width || 4}
                   strokeDasharray={r.dash || 'none'}
-                  opacity={r.opacity || 1}
+                  opacity={workbenchTab === 'schematic' ? 0.4 : (r.opacity || 0.85)}
                 />
               ))}
 
               {/* Metro Rail Lines */}
               {(layout.geoLines || []).map(line => {
-                const isSelected = !selectedLineId || selectedLineId === line.id;
-                const opacity = isSelected ? 1 : 0.12;
-                const strokeW = line.dash ? 6 : 9;
+                let isDimmed = false;
+                if (selectedLineId && selectedLineId !== line.id) isDimmed = true;
+                if (geoLayerFilter === 'under-construction' && !line.dash && !(line.status || '').includes('Under Construction')) {
+                  isDimmed = true;
+                }
+                const isUnderConstruction = line.dash || (line.status || '').includes('Under Construction');
+                const isHighlighted = geoLayerFilter === 'under-construction' && isUnderConstruction;
+                const opacity = isDimmed ? 0.12 : 1;
+                const strokeW = line.dash ? (isHighlighted ? 8 : 6) : 9;
+
                 return (
                   <g key={line.id} className="metro-line-group" opacity={opacity} style={{ transition: 'opacity 0.25s ease' }}>
+                    {/* Line Halo */}
                     <path
                       d={line.path}
                       fill="none"
                       stroke={line.color}
-                      strokeWidth={strokeW + 8}
+                      strokeWidth={strokeW + (workbenchTab === 'schematic' ? 4 : 8)}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      opacity={isSelected ? 0.25 : 0.04}
+                      opacity={workbenchTab === 'schematic' ? 0.15 : (isDimmed ? 0.03 : 0.22)}
                     />
+                    {/* Main Line Stroke */}
                     <path
                       d={line.path}
                       fill="none"
@@ -885,17 +1139,18 @@ export default function MetroAtlas({ onSelectCity }) {
                 );
               })}
 
-              {/* Moving Trains */}
+              {/* Moving Trains (Live against IST) */}
               {trains.map(tr => {
                 const line = (layout.geoLines || []).find(l => l.id === tr.lineId);
                 if (!line) return null;
-                const isSelected = !selectedLineId || selectedLineId === line.id;
-                if (!isSelected) return null;
+                const isDimmed = (selectedLineId && selectedLineId !== line.id)
+                  || (geoLayerFilter === 'under-construction' && !line.dash && !(line.status || '').includes('Under Construction'));
+                if (isDimmed) return null;
 
                 return (
                   <g key={tr.id} className="metro-live-train" filter="url(#trainGlow)">
                     <circle
-                      r="7"
+                      r="6.5"
                       fill="#ffffff"
                       stroke={tr.color}
                       strokeWidth="3.5"
@@ -911,10 +1166,14 @@ export default function MetroAtlas({ onSelectCity }) {
                 const isHovered = hoveredStation?.name === st.name;
                 const isSelected = selectedStation?.name === st.name;
                 const isSearched = stationSearch && st.name.toLowerCase().includes(stationSearch.toLowerCase());
-                const r = isInterchange ? 11 : 7.5;
+                const r = isInterchange ? 10 : 7;
                 const anchor = st.anchor || (st.x > layout.width * 0.55 ? 'start' : 'end');
                 const dx = st.dx !== undefined ? st.dx : (anchor === 'end' ? -18 : 18);
                 const dy = st.dy !== undefined ? st.dy : 4;
+                const haloColor = workbenchTab === 'schematic' ? '#ffffff' : '#fff8f0';
+                const textColor = isSelected || isSearched
+                  ? '#0284c7'
+                  : (workbenchTab === 'schematic' ? '#0f172a' : '#1e293b');
 
                 return (
                   <g
@@ -935,29 +1194,31 @@ export default function MetroAtlas({ onSelectCity }) {
                     role="button"
                     aria-label={`Metro Station: ${st.name}`}
                   >
+                    {/* Interchange Outer Ring */}
                     {isInterchange && (
                       <circle
-                        r={19}
+                        r={18}
                         fill="none"
                         stroke="#f59e0b"
                         strokeWidth="2.5"
-                        opacity={isHovered || isSelected || isSearched ? 1 : 0.6}
-                        strokeDasharray="4,4"
+                        opacity={isHovered || isSelected || isSearched ? 1 : 0.75}
+                        strokeDasharray={workbenchTab === 'schematic' ? 'none' : '4,4'}
                       />
                     )}
+                    {/* Station Roundel */}
                     <circle
                       r={isSelected || isSearched ? r + 4 : isHovered ? r + 2.5 : r}
-                      fill={isInterchange ? '#ffffff' : '#0f172a'}
-                      stroke={isInterchange ? '#f59e0b' : '#ffffff'}
-                      strokeWidth={isSelected || isSearched ? '4.5' : '3.5'}
+                      fill="#ffffff"
+                      stroke={isInterchange ? '#d97706' : '#2563eb'}
+                      strokeWidth={isSelected || isSearched ? '4.5' : '3'}
                     />
 
                     {/* Text Label with Contrast Halo */}
                     <g transform={`translate(${dx}, ${dy})`}>
                       <text
                         textAnchor={anchor}
-                        fill="#0b0f15"
-                        stroke="#0b0f15"
+                        fill={haloColor}
+                        stroke={haloColor}
                         strokeWidth="5"
                         strokeLinejoin="round"
                         fontSize={isInterchange ? '13px' : '11px'}
@@ -968,7 +1229,7 @@ export default function MetroAtlas({ onSelectCity }) {
                       </text>
                       <text
                         textAnchor={anchor}
-                        fill={isSelected || isSearched ? '#38bdf8' : isInterchange ? '#ffffff' : '#f1f5f9'}
+                        fill={textColor}
                         fontSize={isInterchange ? '13px' : '11px'}
                         fontWeight={isInterchange ? '800' : '650'}
                         fontFamily="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"

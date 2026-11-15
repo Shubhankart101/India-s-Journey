@@ -7,6 +7,10 @@
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   margin: 32px 0 48px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .metro-top-bar {
@@ -18,6 +22,10 @@
   padding: 16px 24px;
   background: var(--surface-2, rgba(15, 23, 42, 0.8));
   border-bottom: 1px solid var(--line, #1e293b);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .metro-title-group {
@@ -171,13 +179,17 @@
 /* Grid Layout */
 .metro-workbench-grid {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   min-height: 640px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .metro-workbench-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -190,7 +202,22 @@
   flex-direction: column;
   justify-content: space-between;
   border-right: 1px solid var(--line, #1e293b);
-  min-height: 600px;
+  min-height: 640px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.metro-map-canvas-container.theme-schematic {
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+
+.metro-map-canvas-container.theme-geographic {
+  background: #fff8f0;
+  border-right: 1px solid #ebd9c8;
 }
 
 .metro-map-header-tools {
@@ -198,11 +225,12 @@
   top: 14px;
   left: 14px;
   right: 14px;
-  z-index: 25;
+  z-index: 30;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   pointer-events: none;
 }
 
@@ -218,10 +246,22 @@
   color: #f1f5f9;
   font-size: 0.82rem;
   outline: none;
-  min-width: 250px;
+  min-width: 220px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
+}
+
+.theme-schematic .metro-search-input {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+}
+
+.theme-geographic .metro-search-input {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d6c7b2;
+  color: #1c1917;
 }
 
 .metro-search-input:focus {
@@ -229,12 +269,523 @@
   box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
 }
 
+/* Map Mode Dual Toggle (PolityPolicy Geographic vs Metro Safar Schematic) */
+.metro-map-mode-toggle-group {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 3px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.theme-schematic .metro-map-mode-toggle-group,
+.theme-geographic .metro-map-mode-toggle-group {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #cbd5e1;
+}
+
+.metro-mode-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.76rem;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.theme-schematic .metro-mode-toggle-btn,
+.theme-geographic .metro-mode-toggle-btn {
+  color: #64748b;
+}
+
+.metro-mode-toggle-btn:hover {
+  color: #ffffff;
+}
+
+.theme-schematic .metro-mode-toggle-btn:hover,
+.theme-geographic .metro-mode-toggle-btn:hover {
+  color: #0f172a;
+}
+
+.metro-mode-toggle-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+}
+
+.theme-geographic .metro-mode-toggle-btn.active {
+  background: #4a1525;
+  color: #ffffff;
+}
+
+/* Map Controls (+ / - / Reset / DL) */
 .metro-map-controls {
   pointer-events: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 6px;
+}
+
+.metro-map-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #334155;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(8px);
+  transition: background 0.15s;
+}
+
+.theme-schematic .metro-map-btn,
+.theme-geographic .metro-map-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.metro-map-btn.action-dl {
+  width: auto;
+  height: 32px;
+  padding: 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.theme-schematic .metro-map-btn.action-dl,
+.theme-geographic .metro-map-btn.action-dl {
+  color: #0284c7;
+}
+
+.metro-map-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   KIND A: SCHEMATIC TRANSIT MAP (metrosafar.com/maps style)
+   ========================================================================== */
+.metro-schematic-legend-card {
+  position: absolute;
+  top: 60px;
+  left: 14px;
+  z-index: 25;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 250px;
+  pointer-events: auto;
+}
+
+.mslc-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.mslc-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.mslc-subtitle {
+  font-size: 0.68rem;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+.mslc-lines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+  padding-right: 4px;
+}
+
+.mslc-line-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 650;
+  color: #1e293b;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.mslc-line-item:hover,
+.mslc-line-item.active {
+  background: rgba(2, 132, 199, 0.1);
+  color: #0284c7;
+}
+
+.mslc-line-bar {
+  width: 20px;
+  height: 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.mslc-line-bar.dashed {
+  border-top: 2px dashed;
+  height: 0;
+}
+
+.mslc-line-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mslc-uc-tag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.mslc-symbols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 6px;
+  font-size: 0.68rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.sym-circle {
+  color: #0284c7;
+  font-weight: 800;
+}
+
+.sym-ring {
+  color: #d97706;
+  font-weight: 800;
+}
+
+/* Metro Safar Branding Badge (metrosafar.com) */
+.metro-safar-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 25;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+.msb-brand {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0284c7;
+  letter-spacing: -0.01em;
+}
+
+.msb-hindi {
+  color: #ea580c;
+  margin-left: 3px;
+}
+
+.msb-url {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   KIND B: GEOGRAPHIC TERRAIN MAP (politypolicy.com/DelhiMetro style)
+   ========================================================================== */
+.metro-geo-layer-toggles {
+  position: absolute;
+  top: 60px;
+  left: 14px;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  pointer-events: auto;
+}
+
+.mglt-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #d6c7b2;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #44403c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.mglt-btn:hover {
+  background: #ffffff;
+  color: #1c1917;
+  border-color: #a8a29e;
+}
+
+.mglt-btn.active {
+  background: #4a1525;
+  color: #ffffff;
+  border-color: #4a1525;
+  box-shadow: 0 2px 8px rgba(74, 21, 37, 0.3);
+}
+
+.mglt-dash-icon {
+  display: inline-block;
+  width: 14px;
+  height: 0;
+  border-top: 2px dashed #b45309;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.mglt-btn.active .mglt-dash-icon {
+  border-top-color: #fef3c7;
+}
+
+/* Floating "PLAN A JOURNEY" Card (politypolicy.com style) */
+.metro-plan-journey-floating-card {
+  position: absolute;
+  top: 60px;
+  right: 14px;
+  z-index: 26;
+  width: 320px;
+  max-width: calc(100% - 28px);
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(44, 21, 35, 0.16);
+  overflow: hidden;
+  border: 1px solid #ebd9c8;
+  pointer-events: auto;
+  transition: max-height 0.3s ease;
+}
+
+.mpjc-header {
+  background: #4a1525;
+  color: #ffffff;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mpjc-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.mpjc-title {
+  flex: 1;
+  margin-left: 6px;
+}
+
+.mpjc-collapse-toggle {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.mpjc-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fdfbf9;
+}
+
+.mpjc-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mpjc-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #78350f;
+  text-transform: uppercase;
+}
+
+.mpjc-select {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #e2d9cf;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 0.8rem;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.mpjc-select:focus {
+  border-color: #b85d77;
+  box-shadow: 0 0 0 2px rgba(184, 93, 119, 0.2);
+}
+
+.mpjc-swap-btn {
+  align-self: center;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.mpjc-swap-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+}
+
+.mpjc-submit-btn {
+  width: 100%;
+  padding: 9px;
+  background: #b85d77;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.mpjc-submit-btn:hover:not(:disabled) {
+  background: #a24b64;
+}
+
+.mpjc-submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.mpjc-subtext {
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: #78716c;
+  margin: 0;
+}
+
+.mpjc-quick-results {
+  background: #f7efe7;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.74rem;
+  border: 1px solid #ebd9c8;
+}
+
+.mpjc-metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-weight: 700;
+  color: #44403c;
+}
+
+.mpjc-fare-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px solid #e7d8c7;
+}
+
+.mpjc-smart-pill {
+  color: #047857;
+  font-weight: 700;
+}
+
+.mpjc-itinerary-link {
+  background: transparent;
+  border: none;
+  color: #b85d77;
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.mpjc-itinerary-link:hover {
+  color: #8b324d;
+}
+
+.metro-geo-attribution {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  z-index: 25;
+  font-size: 0.65rem;
+  color: #78716c;
+  background: rgba(255, 248, 240, 0.92);
+  padding: 4px 8px;
+  border-radius: 6px;
+  max-width: 320px;
+  line-height: 1.35;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .metro-map-btn {
@@ -403,7 +954,14 @@
   flex-direction: column;
   gap: 18px;
   overflow-y: auto;
+  overflow-x: hidden;
   max-height: 720px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .metro-dossier-hindi {
@@ -534,8 +1092,11 @@
 /* Stats Grid */
 .metro-stats-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .metro-stat-box {
@@ -545,6 +1106,10 @@
   padding: 10px 12px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 .metro-stat-value {
@@ -601,6 +1166,9 @@
   border: 1px solid var(--line, #1e293b);
   border-radius: 8px;
   padding: 12px 16px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .metro-tech-specs h4 {
@@ -613,10 +1181,14 @@
 
 .metro-specs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
   gap: 8px;
   font-size: 0.78rem;
   color: var(--muted, #cbd5e1);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 .metro-specs-grid strong {
@@ -707,8 +1279,11 @@
 
 .metro-planner-grid {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   gap: 24px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 860px) {
@@ -1070,6 +1645,11 @@
 
 .metro-directory-table-container {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
   border: 1px solid var(--line, #1e293b);
   border-radius: 12px;
   background: var(--surface, #0f172a);
@@ -1212,8 +1792,11 @@
 
 .metro-guide-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 20px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .guide-card {
@@ -1221,6 +1804,11 @@
   border: 1px solid var(--line, #1e293b);
   border-radius: 12px;
   padding: 20px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .guide-card-icon {
