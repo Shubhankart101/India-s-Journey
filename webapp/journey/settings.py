@@ -40,14 +40,20 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or ('insecure-local-development
 if not SECRET_KEY:
     raise RuntimeError('DJANGO_SECRET_KEY must be set when DJANGO_DEBUG is off.')
 
-ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver')
-CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173')
+ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver,.azurewebsites.net,.azurecontainerapps.io')
+CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173,https://*.azurewebsites.net,https://*.azurecontainerapps.io')
 
-# Trust the default public hostname that Render and Fly.io inject, so no host config is needed there.
+# Trust default public hostnames that Azure, Render, and Fly.io inject, so no host config is needed there.
+AZURE_CONTAINER_HOST = ''
+if os.environ.get('CONTAINER_APP_NAME') and os.environ.get('CONTAINER_APP_ENV_DNS_SUFFIX'):
+    AZURE_CONTAINER_HOST = f"{os.environ['CONTAINER_APP_NAME'].strip()}.{os.environ['CONTAINER_APP_ENV_DNS_SUFFIX'].strip()}"
+
 PLATFORM_HOSTS = [
     host for host in (
         os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip(),
         f"{os.environ['FLY_APP_NAME'].strip()}.fly.dev" if os.environ.get('FLY_APP_NAME', '').strip() else '',
+        os.environ.get('WEBSITE_HOSTNAME', '').strip(),  # Azure App Service default domain
+        AZURE_CONTAINER_HOST,  # Azure Container Apps default domain
     ) if host
 ]
 for _host in PLATFORM_HOSTS:
@@ -55,6 +61,16 @@ for _host in PLATFORM_HOSTS:
         ALLOWED_HOSTS.append(_host)
     if f'https://{_host}' not in CSRF_TRUSTED_ORIGINS:
         CSRF_TRUSTED_ORIGINS.append(f'https://{_host}')
+
+# When running in Azure, automatically trust .azurewebsites.net and .azurecontainerapps.io subdomains
+if os.environ.get('WEBSITE_SITE_NAME') or os.environ.get('WEBSITE_HOSTNAME') or os.environ.get('CONTAINER_APP_NAME'):
+    if '.azurewebsites.net' not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append('.azurewebsites.net')
+    if '.azurecontainerapps.io' not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append('.azurecontainerapps.io')
+    for azure_origin in ('https://*.azurewebsites.net', 'https://*.azurecontainerapps.io'):
+        if azure_origin not in CSRF_TRUSTED_ORIGINS:
+            CSRF_TRUSTED_ORIGINS.append(azure_origin)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -108,12 +124,32 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = 'journey.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': Path(os.environ.get('DJANGO_SQLITE_PATH', BASE_DIR / 'db.sqlite3')),
+import dj_database_url
+
+DATABASE_URL = os.environ.get('DATABASE_URL', '').strip()
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
     }
-}
+else:
+    sqlite_path = Path(os.environ.get('DJANGO_SQLITE_PATH', BASE_DIR / 'db.sqlite3'))
+    try:
+        sqlite_path.parent.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': sqlite_path,
+            'OPTIONS': {
+                'timeout': 20,
+            },
+        }
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},

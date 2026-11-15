@@ -20,4 +20,4 @@ RUN DJANGO_SECRET_KEY=build-only python webapp/manage.py collectstatic --noinput
 RUN DJANGO_SECRET_KEY=build-only python webapp/manage.py migrate --noinput \
  && DJANGO_SECRET_KEY=build-only python webapp/manage.py import_catalog
 EXPOSE 8000
-CMD python webapp/manage.py migrate --noinput && python webapp/manage.py import_catalog --if-changed && gunicorn journey.wsgi --chdir webapp --bind 0.0.0.0:$PORT --workers $WEB_CONCURRENCY --timeout 60
+CMD python webapp/manage.py migrate --noinput && python webapp/manage.py import_catalog --if-changed && gunicorn journey.wsgi --config webapp/gunicorn.conf.py --chdir webapp
