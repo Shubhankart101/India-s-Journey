@@ -17,6 +17,8 @@ import IndusValleyAtlas from './IndusValleyAtlas.jsx';
 import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import AncientEmpiresAtlas from './AncientEmpiresAtlas.jsx';
 import GroupArtCarousel from './GroupArtCarousel.jsx';
+import empiresData from '../data/ancient-empires.json';
+import sitesData from '../data/indus-civilisation.json';
 import { ErrorState, Loading } from './States.jsx';
 
 const SPECIAL_HEIGHT = 560;
@@ -111,7 +113,17 @@ const crumbs = (category, subgroup) => (
   </nav>
 );
 
-export function SubgroupArticleView({ category, subgroup, indicators, lead = null, keyExtra = [], callout = null, sectionsFilter, emptySections = false }) {
+export function SubgroupArticleView({
+  category,
+  subgroup,
+  indicators,
+  lead = null,
+  keyExtra = [],
+  callout = null,
+  sectionsFilter,
+  emptySections = false,
+  customSections = null,
+}) {
   const { group, subgroup: article } = articleFor(category.name, subgroup.name);
   const byKey = useMemo(() => new Map(indicators.map(item => [item.key, item])), [indicators]);
   const isIvc = category.slug === 'indus-valley-civilisation' || (slugify(category.name).includes('indus') && !slugify(category.name).includes('industry')) || slugify(category.name).includes('harapp');
@@ -119,13 +131,17 @@ export function SubgroupArticleView({ category, subgroup, indicators, lead = nul
   const generated = article?.sections?.length ? article.sections : [{
     title: 'The evidence', text: subgroup.description || '', keys: indicators.slice(0, 5).map(item => item.key),
   }];
-  const sections = (emptySections || isIvc || isEmpires) ? [] : (sectionsFilter ? sectionsFilter(generated) : generated);
+  const sections = customSections
+    ? customSections
+    : ((emptySections || (!customSections && (isIvc || isEmpires))) ? [] : (sectionsFilter ? sectionsFilter(generated) : generated));
+
   const names = (group?.subgroups || []).map(item => item.name);
   const verse = pickSubgroupVerse(category.name, subgroup.name, names);
   const shown = sections.map(section => ({
     title: section.title,
     text: section.text,
-    content: (section.keys || []).length ? <div className="subgroup-figures">{section.keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null,
+    quote: section.quote,
+    content: section.content || ((section.keys || []).length ? <div className="subgroup-figures">{section.keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null),
   }));
   const extra = indicators.length > 0 ? [{ label: 'Charts in this subgroup', value: String(indicators.length) }] : [];
 
@@ -145,7 +161,7 @@ export function SubgroupArticleView({ category, subgroup, indicators, lead = nul
         dek={subgroup.description || article?.dek || ''}
         kicker={`${category.name} · ${subgroup.name}`}
         sections={shown}
-        emptySections={emptySections || isIvc || isEmpires}
+        emptySections={false}
         keyNumbers={isIvc || isEmpires ? keyExtra : keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
         quote={article?.pullQuote}
         quoteAfterSection={1}
@@ -358,47 +374,289 @@ const electionsCallout = (category, subgroup) => (category.slug === 'elections-d
   ? <p className="subgroup-callout">For results by place, open the <Link to="/elections">State and Union Territory election map</Link>: every Lok Sabha and Assembly history on one clickable India map.</p>
   : null);
 
+export function buildEmpiresArticleSections(currentEmpire, onSelectEmpire, allEmpires) {
+  if (!currentEmpire) return [];
+  const hist = currentEmpire.detailed_history || {};
+  const chronicle = hist.chronicle || [];
+  const primarySources = hist.primary_sources || [];
+
+  return [
+    {
+      title: `${currentEmpire.name} — Imperial Epoch, Ideological Imperative & Sovereign Zenith`,
+      text: hist.overview || currentEmpire.description || '',
+      quote: currentEmpire.shloka_epigraph?.translation ? `“${currentEmpire.shloka_epigraph.translation}”` : undefined,
+      content: (
+        <div className="article-empire-context-card">
+          <div className="aecc-toolbar">
+            <span className="aecc-label">Select Dynastic Era to Inspect Article Chronicle:</span>
+            <div className="aecc-chips">
+              {allEmpires.map(emp => (
+                <button
+                  key={emp.id}
+                  type="button"
+                  className={`aecc-chip ${emp.id === currentEmpire.id ? 'active' : ''}`}
+                  onClick={() => onSelectEmpire(emp.id)}
+                >
+                  {emp.name.split(':')[0].split('—')[0].trim()}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="aecc-meta-row">
+            <div><strong>Period:</strong> {currentEmpire.period}</div>
+            <div><strong>Ideology / Faith:</strong> {currentEmpire.religion}</div>
+            <div><strong>Imperial Form:</strong> {currentEmpire.era_type}</div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Dynastic Chronology & Historical Trajectory',
+      text: `Across successive reigns and territorial transformations, the historical evolution of ${currentEmpire.name} is documented through primary epigraphs and classical archaeological strata:`,
+      content: (
+        <div className="article-chronicle-list">
+          {chronicle.map((item, idx) => (
+            <div key={idx} className="article-chronicle-item">
+              <span className="aci-era-badge">{item.era}</span>
+              <p className="aci-narrative">{item.narrative}</p>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Authentic Primary Epigraphic & Classical Documentation Quoted Directly',
+      text: `Original epigraphic inscriptions and classical literary accounts quoted verbatim in their original ancient scripts with Romanized transliteration, scholarly translation, and official academic citations:`,
+      content: (
+        <div className="article-primary-sources-grid">
+          {primarySources.map((ps, idx) => (
+            <div key={idx} className="article-source-card">
+              <div className="asc-top">
+                <span className="asc-badge">{ps.type || 'Primary Epigraph'}</span>
+                <span className="asc-script">{ps.script || 'Original Script'}</span>
+                {ps.date && <span className="asc-date">{ps.date}</span>}
+              </div>
+              <h4 className="asc-title">{ps.source_title || ps.title}</h4>
+              {(ps.author || ps.ruler) && <p className="asc-author"><strong>Author / Sovereign:</strong> {ps.author || ps.ruler}</p>}
+
+              {ps.original_text && (
+                <blockquote className="asc-original" lang="sa">
+                  {ps.original_text}
+                </blockquote>
+              )}
+
+              {ps.transliteration && (
+                <div className="asc-translit">
+                  <span className="asc-label">Transliteration (IAST / Classical):</span>
+                  <p><em>{ps.transliteration}</em></p>
+                </div>
+              )}
+
+              {ps.translation && (
+                <div className="asc-translation">
+                  <span className="asc-label">English Translation:</span>
+                  <p>“{ps.translation}”</p>
+                </div>
+              )}
+
+              <div className="asc-footer">
+                {ps.academic_citation && (
+                  <p className="asc-citation"><strong>Academic Citation:</strong> {ps.academic_citation}</p>
+                )}
+                {(ps.historical_significance || ps.significance) && (
+                  <p className="asc-significance"><strong>Historical Significance:</strong> {ps.historical_significance || ps.significance}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Decisive Military Campaigns & Battlefield Coordinates',
+      text: `Key military engagements and strategic campaigns that defined the territorial boundaries and geopolitical hegemony of ${currentEmpire.name}:`,
+      content: currentEmpire.battles?.length > 0 ? (
+        <div className="article-battles-grid">
+          {currentEmpire.battles.map((bt, idx) => (
+            <div key={idx} className="article-battle-card">
+              <div className="abc-header">
+                <span className="abc-year">{bt.year}</span>
+                <span className="abc-tag">⚔ DECISIVE BATTLE</span>
+              </div>
+              <h4 className="abc-title">{bt.name}</h4>
+              <p className="abc-parties"><strong>Opponents:</strong> {bt.parties}</p>
+              <p className="abc-summary">{bt.summary}</p>
+              {bt.source && <p className="abc-source"><strong>Ancient Source:</strong> {bt.source}</p>}
+            </div>
+          ))}
+        </div>
+      ) : null,
+    },
+    {
+      title: 'Imperial Capitals, Epigraphic Charters & Classical Legacy',
+      text: `Administrative viceroyalties, monumental architecture, and scholarly monographs verifying the historical primacy of ${currentEmpire.name}:`,
+      content: (
+        <div className="article-capitals-sources">
+          {currentEmpire.capitals?.length > 0 && (
+            <div className="article-capitals-block">
+              <h5>Administrative Capitals &amp; Viceroyalties</h5>
+              <div className="article-capitals-chips">
+                {currentEmpire.capitals.map((cap, idx) => (
+                  <div key={idx} className="acc-item">
+                    <strong>★ {cap.name}:</strong> <span>{cap.desc || cap.role}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {currentEmpire.sources?.length > 0 && (
+            <div className="article-sources-block">
+              <h5>Peer-Reviewed Academic &amp; Epigraphic Sources</h5>
+              <ul className="article-sources-ul">
+                {currentEmpire.sources.map((src, idx) => (
+                  <li key={idx}>
+                    <strong>{src.title}</strong> ({src.year}) — {src.author || src.authors}, <em>{src.publisher}</em>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ),
+    },
+  ];
+}
+
+export function buildIvcArticleSections(sitesData) {
+  const periods = sitesData.periods || [];
+
+  return [
+    {
+      title: 'The Three Chronometric Horizons & Territorial Period Boundaries (3300 – 1300 BCE)',
+      text: `The Harappan Civilization developed through three distinct, radiocarbon-calibrated horizons spanning over two millennia: the formative Early Harappan (Regionalisation Era), the peak urban Mature Harappan (Integration Era), and the post-urban Late Harappan (Localisation Era). Territorial boundaries on the map reflect these dynamic shifts across 1.5 million square kilometres:`,
+      quote: `“One cannot fail to be impressed by the immense antiquity of this civilization and its vast geographical expanse, which exceeded that of contemporary Egypt and Mesopotamia combined.” — Sir John Marshall, Director-General ASI, 1931`,
+      content: (
+        <div className="article-ivc-periods-grid">
+          {periods.map(p => (
+            <div key={p.id} className="article-ivc-period-card" style={{ '--p-color': p.color }}>
+              <div className="aipc-header">
+                <span className="aipc-badge" style={{ color: p.color, borderColor: p.color }}>{p.badge}</span>
+                <span className="aipc-span">{p.span}</span>
+              </div>
+              <h4 className="aipc-title">{p.name}</h4>
+              <p className="aipc-extent"><strong>Geographical Extent:</strong> {p.area_sq_km}</p>
+              <p className="aipc-overview">{p.overview}</p>
+              <div className="aipc-chronicle">
+                <strong>Stratigraphic Phases:</strong>
+                <ul>
+                  {p.chronicle?.map((c, i) => (
+                    <li key={i}><strong>{c.phase}:</strong> {c.details}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Quoted Excavation Memoirs & Archaeological Survey of India Monograph Reports',
+      text: `Official primary testimonies directly quoted from excavation directors, ASI memoirs (MASI), and peer-reviewed archaeological monographs establishing the stratigraphic reality of Harappan urbanism:`,
+      content: (
+        <div className="article-primary-sources-grid">
+          {periods.flatMap(p => p.primary_sources || []).map((ps, idx) => (
+            <div key={idx} className="article-source-card">
+              <div className="asc-top">
+                <span className="asc-badge">ASI EXCAVATION MEMOIR</span>
+                <span className="asc-date">{ps.year}</span>
+              </div>
+              <h4 className="asc-title">{ps.source_title}</h4>
+              <p className="asc-author"><strong>Director / Scholar:</strong> {ps.director}</p>
+
+              <blockquote className="asc-memoir-quote">
+                “{ps.quote}”
+              </blockquote>
+
+              <div className="asc-footer">
+                <p className="asc-citation"><strong>Official Citation:</strong> {ps.citation}</p>
+                <p className="asc-significance"><strong>Diagnostic Significance:</strong> {ps.significance}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Orthogonal Urban Planning, Underground Drainage & Hydraulic Engineering',
+      text: `Every major Harappan metropolis was laid out along a strict cardinal orthogonal grid with standardized 4:2:1 fired-brick metrology. Underground corbelled brick sewer networks with inspection chambers, soak pits, private bathing platforms, and the Great Bath of Mohenjo-daro demonstrate a level of municipal sanitation unmatched anywhere in antiquity until imperial Rome two millennia later. At Dholavira, rock-cut reservoirs impounded over 250,000 cubic meters of storm runoff, engineering survival in arid Kutch.`,
+      content: (
+        <div className="article-stat-highlights">
+          <div className="ash-box">
+            <span className="ash-num">4:2:1</span>
+            <span className="ash-label">Standardized Brick Ratio</span>
+            <p>Uniform across thousands of settlements from the Makran coast to Uttar Pradesh.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">16</span>
+            <span className="ash-label">Rock-Cut Reservoirs</span>
+            <p>Impounded water cascade system excavated at Dholavira citadel.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">100%</span>
+            <span className="ash-label">Covered Drainage</span>
+            <p>Underground street sewer mains with lime-mortar corbelled vaults.</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Glyptic Seals, Binary-Decimal Metrology & Computational Epigraphy',
+      text: `The Harappan glyptic tradition yielded thousands of exquisitely carved steatite stamp seals depicting unicorn bovines, humped bulls, tigers, elephants, and the 'Pashupati' proto-Shiva motif. Indus metrology utilized a strict binary progression (1, 2, 4, 8, 16, 32, 64) in lower denominations transitioning to decimal multiples (160, 200, 320, 640) for larger weights, manufactured with precision of fractions of a gram. Over 400 distinct glyphic signs have been cataloged in the Mahadevan and Parpola concordances, read predominantly right-to-left.`,
+    },
+    {
+      title: 'Long-Distance Maritime Trade Corridors: Meluhha, Dilmun & Mesopotamia',
+      text: `Harappan merchants commanded maritime sea lanes across the Arabian Sea, Persian Gulf, and into Mesopotamia. Cuneiform tablets from Sargon of Akkad (c. 2334–2279 BCE) boast of 'ships from Meluhha, Magan, and Dilmun tied up at the quay of Akkad.' The tidal dockyard at Lothal, featuring an engineered 214-meter brick basin with sluice gates, facilitated trans-shipment of carnelian etched beads, lapis lazuli, shell ornaments, ivory dice, and copper ingots across western Asia.`,
+    },
+  ];
+}
+
 function IndusValleyWorkbench() {
-  const [activeTab, setActiveTab] = useState('map');
   return (
     <div className="ivc-consolidated-workbench">
       <GroupArtCarousel groupSlug="indus-valley-civilisation" title="Indus Valley Civilisation Artworks" />
-      <div className="ivc-workbench-switch" role="tablist" aria-label="Indus Valley Primary Tools" style={{ display: 'flex', gap: '0.75rem', margin: '1rem 0 1.5rem', flexWrap: 'wrap' }}>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={activeTab === 'map'}
-          className={`btn ${activeTab === 'map' ? 'btn-primary' : 'btn-ghost'}`}
-          onClick={() => setActiveTab('map')}
-        >
-          🗺️ Comprehensive Excavation Map (49 Sites)
-        </button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={activeTab === 'decoder'}
-          className={`btn ${activeTab === 'decoder' ? 'btn-primary' : 'btn-ghost'}`}
-          onClick={() => setActiveTab('decoder')}
-        >
-          🔤 Script Decryption & Concordance Workbench
-        </button>
-      </div>
-      {activeTab === 'map' ? <IndusValleyAtlas /> : <IndusScriptDecoder />}
+      <IndusValleyAtlas />
+      {/* Docked Dedicated Script Decryption Window below map */}
+      <section className="ivc-decoder-docked-window" id="ivc-script-decoder-dock" aria-label="Indus Script Decryption Engine">
+        <div className="idw-header">
+          <span className="idw-tag">INTERACTIVE COMPUTATIONAL EPIGRAPHY TOOL</span>
+          <h3 className="idw-title">🔤 Indus Script Decryption &amp; Concordance Engine (400+ Signs)</h3>
+          <p className="idw-desc">
+            Analyze the undeciphered Harappan script corpus using the Mahadevan (1977) and Parpola (CISI) sign concordances.
+            Translate sign sequences, build custom inscribed steatite seals, and inspect sign frequency distributions.
+          </p>
+        </div>
+        <IndusScriptDecoder />
+      </section>
     </div>
   );
 }
 
-function AncientEmpiresWorkbench() {
+function AncientEmpiresWorkbench({ selectedEmpireId, onSelectEmpire }) {
   return (
     <div className="empires-consolidated-workbench">
       <GroupArtCarousel groupSlug="empires-of-ancient-india" title="Empires of Ancient India Artworks" />
-      <AncientEmpiresAtlas />
+      <AncientEmpiresAtlas
+        selectedEmpireId={selectedEmpireId}
+        onSelectEmpire={onSelectEmpire}
+      />
     </div>
   );
 }
 
 export function SubgroupPage({ categorySlug, subgroupSlug }) {
   const state = useSubgroup(categorySlug, subgroupSlug);
+  const [selectedEmpireId, setSelectedEmpireId] = useState('maurya-empire');
+
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
@@ -406,9 +664,11 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
     const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
     let customLead = null;
     let customKeyExtra = mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : [];
+    let customSections = null;
 
     if (isIvc) {
       customLead = <IndusValleyWorkbench />;
+      customSections = buildIvcArticleSections(sitesData);
       customKeyExtra = [
         { label: 'Cataloged Excavations', value: '49 Sites', note: '9 modern nations' },
         { label: 'Script Corpus', value: '400+ Signs', note: 'Mahadevan concordance' },
@@ -416,7 +676,10 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
         { label: 'Mature Era Climax', value: '2600–1900 BCE', note: 'Radiocarbon calibrated' },
       ];
     } else if (isEmpires) {
-      customLead = <AncientEmpiresWorkbench />;
+      const allEmpires = empiresData.empires || [];
+      const currentEmpire = allEmpires.find(e => e.id === selectedEmpireId) || allEmpires[3] || allEmpires[0];
+      customLead = <AncientEmpiresWorkbench selectedEmpireId={selectedEmpireId} onSelectEmpire={setSelectedEmpireId} />;
+      customSections = buildEmpiresArticleSections(currentEmpire, setSelectedEmpireId, allEmpires);
       customKeyExtra = [
         { label: 'Major Dynasties', value: '10 Empires', note: 'Magadha to Imperial Cholas' },
         { label: 'Historical Span', value: '1,600+ Years', note: '600 BCE – 850 CE' },
@@ -433,8 +696,8 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
       keyExtra={customKeyExtra}
       lead={customLead}
       callout={electionsCallout(category, subgroup)}
-      sectionsFilter={isIvc || isEmpires ? () => [] : undefined}
-      emptySections={isIvc || isEmpires}
+      customSections={customSections}
+      emptySections={false}
     />;
   }}</Shell>;
 }

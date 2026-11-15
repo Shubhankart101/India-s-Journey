@@ -92,9 +92,14 @@ export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) 
   );
 }
 
-export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
+export default function AncientEmpiresAtlas({
+  initialEmpireId = null,
+  selectedEmpireId: controlledEmpireId,
+  onSelectEmpire: controlledOnSelectEmpire,
+}) {
   const [mapPaths, setMapPaths] = useState([]);
-  const [selectedEmpireId, setSelectedEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
+  const [internalEmpireId, setInternalEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
+  const selectedEmpireId = controlledEmpireId !== undefined ? controlledEmpireId : internalEmpireId;
   const [selectedPhaseIndex, setSelectedPhaseIndex] = useState(0);
   const [selectedBattle, setSelectedBattle] = useState(null);
   const [selectedCapital, setSelectedCapital] = useState(null);
@@ -146,7 +151,8 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
   }, []);
 
   const handleEmpireSelect = (id) => {
-    setSelectedEmpireId(id);
+    if (controlledOnSelectEmpire) controlledOnSelectEmpire(id);
+    setInternalEmpireId(id);
     setSelectedPhaseIndex(0);
     setSelectedBattle(null);
     setSelectedCapital(null);

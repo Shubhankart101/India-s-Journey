@@ -39,6 +39,10 @@ Release v2.0 represents the most expansive architectural, geospatial, and conten
 
 ### 1. Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions
 - **Unified Subgroup Architecture**: Consolidated into one comprehensive subgroup article: `"Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions"` (`empires-of-ancient-india-atlas`).
+- **Detailed Histories in Full Article Format**:
+  - Each of the 10 imperial eras includes a complete multi-era chronicle (Overview, Historical Trajectory, Primary Epigraphs, Decisive Battles, and Classical Legacy) rendered in full numbered article format below the interactive workbench.
+  - **Dynamic Map-to-Article Synchronization**: Clicking any empire on the interactive map or timeline strip instantly updates the long-form article below to that empire's detailed chronicle and primary source documentation.
+  - **Interactive Article Era Switcher**: Fast-switch between all 10 empires directly from within the article section.
 - **Authentic Geospatial Coordinates**: Bounded to equirectangular coordinates:
   - Pan-Indian viewbox: `600 -380 380 330` covering Kashmir, Punjab, Gandhara, Bengal, Gujarat, Maharashtra, Deccan, and Tamil Nadu.
   - Alexander the Great's trans-continental viewbox: `160 -480 600 290` stretching from Greece and Egypt to the Beas (Hyphasis) and Indus.
@@ -53,20 +57,37 @@ Release v2.0 represents the most expansive architectural, geospatial, and conten
   8. *Gupta Empire: The Classical Golden Age (319–550 CE)*
   9. *Vardhana Empire of Harsha (606–647 CE)*
   10. *Classical Southern Dynasties: Chola, Chera, Pandya & Pallava (300 BCE – 850 CE)*
-- **Original Script Epigraphs**:
-  - Ashokan Brahmi: Rummindei Minor Pillar Inscription
-  - Classical Sanskrit: Allahabad Stone Pillar Inscription (Prayag Prashasti) & Banskhera Plate
-  - Ancient Greek: Inscriptions of Alexander and the Altars at the Hyphasis
-  - Old Tamil (Sangam): Purananuru (poem 192 by Kaniyan Pungundranar)
-  - Prakrit: Heliodorus Pillar at Vidisha & Nasik Cave 3 Inscription of Gautamiputra Satakarni
-  - Bactrian (Greek script): Rabatak Inscription of Kanishka I
+- **Authentic Quoted Primary Epigraphs & Classical Historiography**:
+  - Direct inscriptions quoted in original scripts:
+    - Ashokan Brahmi: Major Rock Edict XIII (Kalinga War & Dhamma Conquest) & Rummindei Pillar
+    - Classical Sanskrit (Devanagari): Allahabad Stone Pillar Inscription (Prayag Prashasti), Junagadh Rock Inscription of Rudradaman, and Banskhera Copper Plate of Harsha
+    - Classical Greek: Alexander's Altars at the Hyphasis, Arrian's *Anabasis*, and Megasthenes' *Indika*
+    - Sangam Old Tamil: Purananuru (poem 192 by Kaniyan Pungundranar) and Thiruvalangadu Copper Plates of Rajendra Chola I
+    - Prakrit: Heliodorus Pillar at Besnagar and Nasik Cave 3 Inscription of Gautami Balashri
+    - Bactrian (Greek script): Rabatak Inscription of Kanishka I
+  - Complete with Romanized transliterations (IAST), official translations, peer-reviewed academic citations (*Corpus Inscriptionum Indicarum*, *Epigraphia Indica*, *Loeb Classical Library*), and diagnostic historical significance analysis.
 - **Living Artwork Carousel**: Cycles dynamically through all 11 bespoke SVG artworks (`ancient-empires.svg`, `mahajanapadas.svg`, `magadha-nanda.svg`, `alexander-campaign.svg`, `maurya-empire.svg`, `indo-greek.svg`, `satavahana-empire.svg`, `kushan-empire.svg`, `gupta-empire.svg`, `harsha-empire.svg`, `southern-dynasties.svg`).
 
 ### 2. Indus Valley Civilisation: Excavations, Urbanism & Script
 - **Unified Subgroup Architecture**: Consolidated into one comprehensive subgroup article: `"The Indus Valley Civilisation Comprehensive Excavation Map"` (`the-indus-valley-civilisation-comprehensive-excavation-map`).
-- **Interactive Dual Workbench**:
-  - `[🗺️ Comprehensive Excavation Map]`: 49 cataloged excavations across 9 countries with ASI Memoirs, Cell, and Nature citations.
-  - `[🔤 Script Decryption & Concordance Workbench]`: Mahadevan 1977 & Parpola CISI sign concordances, interactive seal builder, and right-to-left epigraphic reader.
+- **Tripartite Period Territorial Boundaries on Map**:
+  - Interactive SVG boundary polygons mapped across the subcontinent reflecting calibrated radiocarbon horizons:
+    - *Early Harappan / Regionalisation Era (c. 3300–2600 BCE)*: ~500,000 km² extent covering Hakra, Ravi, Kot Diji, and Amri-Nal phases.
+    - *Mature Harappan / Integration Era (c. 2600–1900 BCE)*: ~1,500,000 km² peak urbanism stretching from Shortugai (Oxus River, Badakhshan) to Daimabad (Maharashtra) and Sutkagan Dor (Makran coast).
+    - *Late Harappan / Localisation Era (c. 1900–1300 BCE)*: ~400,000 km² post-urban resettlement toward the Ganga-Yamuna Doab and Gujarat.
+  - Interactive Era Horizons filter bar with glowing animated boundaries and synchronized excavation highlighting.
+- **Quoted ASI Excavation Memoirs & Monograph Reports**:
+  - Excerpts directly quoted from official Archaeological Survey of India (ASI) excavation memoirs and monographs:
+    - Sir John Marshall (1931): *Mohenjo-daro and the Indus Civilization*
+    - Dr. Mohammad Rafique Mughal (1970): *The Early Harappan Period in the Greater Indus Valley*
+    - Prof. Jonathan Mark Kenoyer (1998): *Ancient Cities of the Indus Valley Civilization*
+    - Dr. S.R. Rao (1979): *Lothal and the Indus Civilization* (Tidal dockyard engineering)
+    - Prof. Gregory L. Possehl (2002): *The Indus Age: The Beginnings & The Transition*
+    - J.P. Joshi (1990): *Excavations at Dholavira* (Rock-cut reservoir cascades)
+  - Presented in both the interactive excavation dossier and the long-form article format below.
+- **Docked Indus Script Decryption Window**:
+  - Permanently docked dedicated window directly below the excavation map tool: both the Map Tool AND the Decoder Tool are visible on the page simultaneously.
+  - Features the Mahadevan (1977) and Parpola (CISI) 400+ sign concordances, interactive steatite seal synthesizer, and right-to-left epigraphic reader.
 - **Uncluttered GIS Cartography**:
   - Permanent labels reserved for the 8 great metropolises (*Rakhigarhi, Mohenjo-daro, Harappa, Dholavira, Ganweriwala, Kalibangan, Lothal, Banawali*).
   - All other 41 sites rendered as styled interactive nodes with category color coding and floating hover tooltips.

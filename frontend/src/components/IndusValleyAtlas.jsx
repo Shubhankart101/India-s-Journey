@@ -295,20 +295,19 @@ export default function IndusValleyAtlas() {
         </button>
         <button
           type="button"
-          role="tab"
-          aria-selected={mapViewMode === 'script'}
-          className={`indus-mode-btn ${mapViewMode === 'script' ? 'active' : ''}`}
-          onClick={() => setMapViewMode('script')}
+          className="indus-mode-btn"
+          onClick={() => {
+            const el = document.getElementById('ivc-script-decoder-dock');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+          title="Scroll down to the docked Indus Script Decryption tool"
         >
-          🔤 Script Decryption &amp; Concordance (400+ Signs)
+          🔤 Script Decryption &amp; Concordance Engine ↓
         </button>
       </div>
 
-      {mapViewMode === 'script' ? (
-        <IndusScriptDecoder />
-      ) : (
-        /* Interactive Map & Site Dossier Split View */
-        <div className="indus-workbench">
+      {/* Interactive Map & Site Dossier Split View */}
+      <div className="indus-workbench">
           {/* SVG Interactive Map */}
           <div
             className="indus-map-container"
@@ -831,7 +830,6 @@ export default function IndusValleyAtlas() {
           )}
         </aside>
       </div>
-      )}
     </div>
   );
 }
