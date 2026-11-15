@@ -529,12 +529,17 @@
   overflow-wrap: anywhere;
 }
 
-/* Dossier Tabs */
+/* Dossier Tabs (Sticky & Pinned) */
 .dossier-tab-bar {
+  position: sticky;
+  top: -14px;
+  z-index: 10;
+  background: #0f172a;
   display: flex;
   gap: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
+  margin: -6px 0 10px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -988,20 +993,25 @@
 }
 
 .dht-btn {
-  background: #6366f1;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
   color: #fff;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 0.72rem;
+  padding: 7px 14px;
+  font-size: 0.74rem;
   font-weight: 700;
   cursor: pointer;
-  display: inline-block;
-  transition: background 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .dht-btn:hover {
-  background: #4f46e5;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.4);
 }
 
 /* Detailed History & Chronicle */

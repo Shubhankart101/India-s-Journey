@@ -407,13 +407,13 @@
    POLISHED EXCAVATION DOSSIER SIDEBAR
 ----------------------------------------------------- */
 .indus-site-dossier {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0.75);
   border: 1px solid #1e293b;
   border-radius: 12px;
-  overflow-y: auto;
+  overflow: hidden;
   height: 640px;
   max-height: 640px;
-  padding: 16px 18px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -426,6 +426,13 @@
     height: auto;
     max-height: 640px;
   }
+}
+
+.indus-site-dossier .dossier-body-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 18px;
+  min-height: 0;
 }
 
 .dossier-inner {
@@ -842,39 +849,95 @@
   100% { opacity: 1; stroke-width: 3.2; }
 }
 
-/* Dossier Tab Bar */
+/* Dossier Tab Bar (Pinned & Sticky) */
 .indus-site-dossier .dossier-tab-bar {
   display: flex;
-  gap: 6px;
-  padding: 8px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(15, 23, 42, 0.7);
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.98);
   border-radius: 12px 12px 0 0;
+  flex-shrink: 0;
+  z-index: 10;
 }
 
 .indus-site-dossier .dossier-tab-btn {
   flex: 1;
-  padding: 7px 10px;
-  border-radius: 6px;
-  background: transparent;
-  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: #94a3b8;
   font-size: 0.75rem;
   font-weight: 650;
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .indus-site-dossier .dossier-tab-btn:hover {
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .indus-site-dossier .dossier-tab-btn.active {
   color: #fef08a;
-  background: rgba(212, 167, 44, 0.16);
-  border-color: rgba(212, 167, 44, 0.4);
+  background: rgba(212, 167, 44, 0.18);
+  border-color: rgba(212, 167, 44, 0.6);
+  box-shadow: 0 0 10px rgba(212, 167, 44, 0.15);
+}
+
+/* Era Bridge Pill Button in Site Hero */
+.dossier-era-bridge {
+  margin-top: 10px;
+}
+
+.dossier-era-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(212, 167, 44, 0.08));
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fef08a;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.dossier-era-btn:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(212, 167, 44, 0.16));
+  border-color: #f59e0b;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
+}
+
+.deb-icon {
+  font-size: 0.85rem;
+}
+
+.deb-text {
+  flex: 1;
+  text-align: left;
+}
+
+.deb-arrow {
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+
+.dossier-era-btn:hover .deb-arrow {
+  transform: translateX(3px);
 }
 
 /* Period Subswitcher inside dossier */

@@ -583,8 +583,8 @@ export default function IndusValleyAtlas() {
         </div>
 
         {/* Polished Detailed Excavation Dossier Sidebar */}
-        <aside className="indus-site-dossier" aria-labelledby="dossier-tab-title">
-          {/* Dossier Tabs: Site vs Periods & ASI Memoirs */}
+        <aside className="indus-site-dossier" aria-labelledby="dossier-site-title">
+          {/* Dossier Tabs: Site vs Periods & ASI Memoirs (Pinned at top) */}
           <div className="dossier-tab-bar" role="tablist" aria-label="Indus Dossier Sections">
             <button
               type="button"
@@ -593,7 +593,7 @@ export default function IndusValleyAtlas() {
               className={`dossier-tab-btn ${dossierTab === 'site' ? 'active' : ''}`}
               onClick={() => setDossierTab('site')}
             >
-              🏛 Excavation Site ({selectedSite?.name || 'Inspect'})
+              🏛 Excavation Site {selectedSite ? `(${selectedSite.name})` : ''}
             </button>
             <button
               type="button"
@@ -606,46 +606,49 @@ export default function IndusValleyAtlas() {
             </button>
           </div>
 
-          {/* TAB 1: Site Excavations */}
-          {dossierTab === 'site' && (
-            selectedSite ? (
-              <div className="dossier-inner">
-                {/* Teaser link to Era Boundaries & ASI Memoirs */}
-                <div
-                  className="dossier-history-teaser"
-                  onClick={() => {
-                    const era = selectedSite.period_era || 'mature';
-                    setActiveDossierPeriodId(era);
-                    setSelectedPeriodId(era);
-                    setDossierTab('periods');
-                  }}
-                >
-                  <div className="dht-badge">⏳ HARAPPAN PERIOD BOUNDARIES &amp; ASI MEMOIRS</div>
-                  <p className="dht-text">
-                    Inspect territorial boundaries on the map and read directly quoted excavation memoirs by Sir John Marshall, S.R. Rao, and ASI archaeologists.
-                  </p>
-                  <button type="button" className="dht-btn">
-                    View {selectedSite.period_era ? `${selectedSite.period_era.toUpperCase()} ERA` : 'ERA'} Boundaries &amp; Memoirs →
-                  </button>
-                </div>
+          <div className="dossier-body-scroll">
+            {/* TAB 1: Site Excavations */}
+            {dossierTab === 'site' && (
+              selectedSite ? (
+                <div className="dossier-inner">
+                  <div className="dossier-hero">
+                    <div className="dossier-kicker">
+                      <span className="dossier-category-badge" style={{ '--cat-color': CATEGORY_COLORS[selectedSite.category] }}>
+                        {selectedSite.category.replace(/_/g, ' ').toUpperCase()}
+                      </span>
+                      <span className="dossier-country">{selectedSite.country} · {selectedSite.state_or_province}</span>
+                    </div>
 
-                <div className="dossier-hero">
-                  <div className="dossier-kicker">
-                    <span className="dossier-category-badge" style={{ '--cat-color': CATEGORY_COLORS[selectedSite.category] }}>
-                      {selectedSite.category.replace(/_/g, ' ').toUpperCase()}
-                    </span>
-                    <span className="dossier-country">{selectedSite.country} · {selectedSite.state_or_province}</span>
+                    <h3 id="dossier-site-title" className="dossier-title">
+                      {selectedSite.name}
+                      {selectedSite.name_hi && <span className="dossier-hindi" lang="hi">({selectedSite.name_hi})</span>}
+                    </h3>
+
+                    <p className="dossier-period">
+                      <strong>Chronology:</strong> {selectedSite.period}
+                    </p>
+
+                    {/* Integrated Harappan Period & Memoirs Bridge Button */}
+                    <div className="dossier-era-bridge">
+                      <button
+                        type="button"
+                        className="dossier-era-btn"
+                        onClick={() => {
+                          const era = selectedSite.period_era || 'mature';
+                          setActiveDossierPeriodId(era);
+                          setSelectedPeriodId(era);
+                          setDossierTab('periods');
+                        }}
+                        title={`View ${selectedSite.period_era ? selectedSite.period_era.toUpperCase() : 'MATURE'} Harappan boundaries & memoirs`}
+                      >
+                        <span className="deb-icon">⏳</span>
+                        <span className="deb-text">
+                          View <strong>{selectedSite.period_era ? `${selectedSite.period_era.toUpperCase()} ERA` : 'ERA'}</strong> Boundaries &amp; Memoirs
+                        </span>
+                        <span className="deb-arrow">→</span>
+                      </button>
+                    </div>
                   </div>
-
-                  <h3 id="dossier-site-title" className="dossier-title">
-                    {selectedSite.name}
-                    {selectedSite.name_hi && <span className="dossier-hindi" lang="hi">({selectedSite.name_hi})</span>}
-                  </h3>
-
-                  <p className="dossier-period">
-                    <strong>Chronology:</strong> {selectedSite.period}
-                  </p>
-                </div>
 
                 {/* Quick Info Grid */}
                 <div className="dossier-grid">
@@ -828,6 +831,7 @@ export default function IndusValleyAtlas() {
               )}
             </div>
           )}
+          </div>
         </aside>
       </div>
     </div>
