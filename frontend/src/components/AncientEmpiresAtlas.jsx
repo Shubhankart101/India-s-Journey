@@ -27,33 +27,55 @@ const HISTORICAL_VARIANTS = {
   ],
 };
 
-export function HistoricalMapViewer({ svgUrl, title, variants = [], onSelectVariant, selectedSvg }) {
+export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) {
   const [svgContent, setSvgContent] = useState('');
   const [error, setError] = useState(false);
 
   useEffect(() => {
     let active = true;
     setError(false);
-    fetch(svgUrl)
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.text();
-      })
-      .then(text => {
-        if (!active) return;
-        const clean = text.replace(/<\?xml[^>]*\?>/gi, '').trim();
-        setSvgContent(clean);
-      })
-      .catch(() => {
-        if (active) setError(true);
-      });
+    setSvgContent('');
+
+    const cleanPath = String(svgUrl || '').replace(/^\/+/, '');
+    const candidateUrls = [
+      svgUrl,
+      `/India-s-Journey/${cleanPath}`,
+      `/${cleanPath}`,
+      `./${cleanPath}`,
+    ];
+
+    async function tryFetch() {
+      for (const u of candidateUrls) {
+        try {
+          const res = await fetch(u);
+          if (res.ok) {
+            const text = await res.text();
+            if (active && text.includes('<svg')) {
+              const clean = text.replace(/<\?xml[^>]*\?>/gi, '').trim();
+              setSvgContent(clean);
+              return;
+            }
+          }
+        } catch {
+          // continue
+        }
+      }
+      if (active) setError(true);
+    }
+
+    tryFetch();
     return () => { active = false; };
   }, [svgUrl]);
 
   if (error) {
     return (
-      <div className="ahm-img-wrapper">
-        <img src={svgUrl} alt={title} className="ahm-svg-img" />
+      <div className="ahm-error-fallback">
+        <p className="ahm-error-msg">Historical atlas for <strong>{title}</strong> is currently unavailable in this view.</p>
+        {onFallbackToInteractive && (
+          <button type="button" className="btn btn-primary" onClick={onFallbackToInteractive}>
+            Switch to Interactive Geospatial Workbench →
+          </button>
+        )}
       </div>
     );
   }
@@ -256,6 +278,7 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
               <HistoricalMapViewer
                 svgUrl={assetUrl(currentHistoricalSvg)}
                 title={currentEmpire.historical_map_title || currentEmpire.name}
+                onFallbackToInteractive={() => setMapViewMode('interactive')}
               />
             </div>
           ) : (
@@ -568,6 +591,15 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
             <button
               type="button"
               role="tab"
+              aria-selected={dossierTab === 'history'}
+              className={`dossier-tab-btn ${dossierTab === 'history' ? 'active' : ''}`}
+              onClick={() => setDossierTab('history')}
+            >
+              📖 History &amp; Quotes ({currentEmpire.detailed_history?.primary_sources?.length || 0})
+            </button>
+            <button
+              type="button"
+              role="tab"
               aria-selected={dossierTab === 'battles'}
               className={`dossier-tab-btn ${dossierTab === 'battles' ? 'active' : ''}`}
               onClick={() => setDossierTab('battles')}
@@ -610,6 +642,17 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                 </div>
               )}
 
+              {/* Detailed History & Quoted Primary Sources Teaser */}
+              {currentEmpire.detailed_history && (
+                <div className="dossier-history-teaser" onClick={() => setDossierTab('history')}>
+                  <div className="dht-badge">📖 DETAILED HISTORICAL CHRONICLE & QUOTED EPIGRAPHS</div>
+                  <p className="dht-text">{currentEmpire.detailed_history.overview}</p>
+                  <button type="button" className="dht-btn" onClick={() => setDossierTab('history')}>
+                    Read Full Dynastic Chronicle &amp; Quoted Primary Sources ({currentEmpire.detailed_history.primary_sources?.length || 0}) →
+                  </button>
+                </div>
+              )}
+
               {/* Territorial Phase Summary */}
               <div className="dossier-box">
                 <h4>Territorial Phase: {activePhase.phase}</h4>
@@ -645,6 +688,99 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                     <span className="epigraph-source">Citation: {currentEmpire.shloka_epigraph.citation}</span>
                     <span className="epigraph-verified">Verified from: {currentEmpire.shloka_epigraph.verified_from}</span>
                   </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* TAB: Detailed History & Quoted Primary Epigraphic Sources */}
+          {dossierTab === 'history' && (
+            <div className="dossier-tab-content">
+              {currentEmpire.detailed_history ? (
+                <>
+                  {/* Detailed Overview */}
+                  <div className="dossier-box history-overview-box">
+                    <h4>Imperial Era &amp; Historical Trajectory</h4>
+                    <p className="history-overview-text">{currentEmpire.detailed_history.overview}</p>
+                  </div>
+
+                  {/* Dynastic Chronicle */}
+                  {currentEmpire.detailed_history.chronicle && (
+                    <div className="dossier-section chronicle-section">
+                      <h4>Dynastic Phases &amp; Historical Trajectory</h4>
+                      <div className="chronicle-timeline">
+                        {currentEmpire.detailed_history.chronicle.map((ch, idx) => (
+                          <div key={idx} className="chronicle-card">
+                            <span className="chronicle-era-badge">{ch.era}</span>
+                            <p className="chronicle-narrative">{ch.narrative}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Primary Source Documentation Quoted Directly */}
+                  {currentEmpire.detailed_history.primary_sources && (
+                    <div className="dossier-section primary-sources-section">
+                      <h4>Authentic Primary Epigraphic &amp; Classical Documentation</h4>
+                      <div className="primary-sources-list">
+                        {currentEmpire.detailed_history.primary_sources.map((ps, idx) => (
+                          <div key={idx} className="primary-quote-card">
+                            <div className="pqc-header">
+                              <span className="pqc-badge">{ps.type || 'Epigraph'}</span>
+                              <span className="pqc-script">{ps.script || 'Sanskrit / Brahmi'}</span>
+                            </div>
+                            <h5 className="pqc-title">{ps.source_title || ps.title}</h5>
+                            <div className="pqc-meta">
+                              {(ps.author || ps.ruler) && <span><strong>Author/Ruler:</strong> {ps.author || ps.ruler}</span>}
+                              {ps.date && <span> · <strong>Date:</strong> {ps.date}</span>}
+                            </div>
+
+                            {/* Inscription in Original Script */}
+                            {ps.original_text && (
+                              <blockquote className="pqc-original">
+                                {ps.original_text}
+                              </blockquote>
+                            )}
+
+                            {/* Transliteration */}
+                            {ps.transliteration && (
+                              <div className="pqc-translit">
+                                <span className="pqc-sublabel">Transliteration (IAST / Romanized):</span>
+                                <p><em>{ps.transliteration}</em></p>
+                              </div>
+                            )}
+
+                            {/* Translation */}
+                            {ps.translation && (
+                              <div className="pqc-translation">
+                                <span className="pqc-sublabel">English Translation:</span>
+                                <p>“{ps.translation}”</p>
+                              </div>
+                            )}
+
+                            {/* Academic Citation & Significance */}
+                            <div className="pqc-footer">
+                              {ps.academic_citation && (
+                                <p className="pqc-citation">
+                                  <strong>Academic Citation:</strong> {ps.academic_citation}
+                                </p>
+                              )}
+                              {(ps.historical_significance || ps.significance) && (
+                                <p className="pqc-significance">
+                                  <strong>Historical Significance:</strong> {ps.historical_significance || ps.significance}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="dossier-box">
+                  <p>Detailed historical documentation is being compiled for this empire.</p>
                 </div>
               )}
             </div>

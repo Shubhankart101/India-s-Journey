@@ -67,7 +67,8 @@
       "description": "Located along the ancient paleochannel of the Drishadvati river in Hisar district, Rakhigarhi has emerged as the largest documented urban agglomeration of the Harappan civilization, containing evidence of continuity from pre-Harappan hakra ware culture (c. 6500 BCE) into mature urban climax.",
       "x": 761.2,
       "y": -306.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "mohenjo-daro",
@@ -116,7 +117,8 @@
       "description": "The preeminent urban center of the lower Indus basin, Mohenjo-daro represents the apex of Bronze Age civic engineering, characterized by orthogonal street grids, covered brick sanitation sewers, and absence of militaristic monuments.",
       "x": 681.4,
       "y": -284.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "harappa",
@@ -173,7 +175,8 @@
       "description": "Situated beside a former course of the Ravi River in Sahiwal district, Harappa gives its name to the entire civilization. Modern stratigraphy by the Harappa Archaeological Research Project (HARP) established the benchmark five-period chronological sequence.",
       "x": 728.7,
       "y": -322.0,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "dholavira",
@@ -224,7 +227,8 @@
       "description": "Located on Khadir Bet island in the Great Rann of Kutch, Dholavira is renowned for its monumental stone-dressed architecture and the most sophisticated rainwater harvesting hydraulic system of the ancient world.",
       "x": 702.2,
       "y": -246.1,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "ganweriwala",
@@ -270,7 +274,8 @@
       "description": "Discovered in the Cholistan desert near the Indian border, Ganweriwala sits midway between Mohenjo-daro and Harappa along the dry Hakra river course, forming the third primary riverine metropolis of Pakistan.",
       "x": 711.9,
       "y": -295.6,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "lothal",
@@ -321,7 +326,8 @@
       "description": "Positioned at the head of the Gulf of Khambhat in Ahmedabad district, Lothal is celebrated as the earliest known engineered tidal dockyard in human history, equipped with vertical lock gates that maintained water levels at low tide.",
       "x": 722.5,
       "y": -231.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "sutkagan-dor",
@@ -368,7 +374,8 @@
       "description": "The westernmost recognized settlement of the Indus Valley Civilisation, situated on the Makran coast near the Iran border. It operated as a fortified naval outpost controlling oceanic commerce into the Gulf of Oman.",
       "x": 620.0,
       "y": -263.9,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "sotka-koh",
@@ -406,7 +413,8 @@
       "description": "An intermediate coastal trade post discovered 15 miles north of Pasni along the Shadi Kaur river in Balochistan, safeguarding the coastal shipping lanes connecting Meluhha with Magan.",
       "x": 635.0,
       "y": -263.7,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "bet-dwarka",
@@ -444,7 +452,8 @@
       "description": "An island port at the tip of the Kathiawar peninsula in the Gulf of Kutch, where marine archeologists uncovered submerged stone fortifications and late Harappan script evidence demonstrating coastal maritime continuity.",
       "x": 691.0,
       "y": -230.7,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "chanhudaro",
@@ -491,7 +500,8 @@
       "description": "Located 130 km south of Mohenjo-daro, Chanhudaro is recognized as the manufacturing capital of the Indus realm, exclusively devoted to lapidary bead cutting, shell-working, metal casting, and seal engraving.",
       "x": 683.2,
       "y": -271.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "kalibangan",
@@ -541,7 +551,8 @@
       "description": "Situated on the southern bank of the dry bed of the Ghaggar (Saraswati) river in Hanumangarh district, Kalibangan proved the presence of Harappan civilization far east of the Indus basin and documented the earliest ploughed field surface in archaeology.",
       "x": 741.3,
       "y": -308.7,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "banawali",
@@ -590,7 +601,8 @@
       "description": "Located on the dry bed of the Rangoi / Saraswati in Fatehabad district, Banawali yielded the definitive terracotta plough model and illustrated radial town planning atypical of normal orthogonal grid towns.",
       "x": 752.5,
       "y": -310.1,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "surkotada",
@@ -629,7 +641,8 @@
       "description": "Excavated in the Rapar taluk of Kutch, Surkotada features impressive stone and mud-brick fortifications and gained global archeological attention due to contested osteological evidence of Equus remains in period IC.",
       "x": 708.3,
       "y": -243.2,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "shortugai",
@@ -676,7 +689,8 @@
       "description": "Situated at the confluence of the Kokcha and Oxus (Amu Darya) rivers in northeastern Afghanistan, Shortugai was a permanent Indus colonial outpost founded specifically to control the international trade in prized Badakhshan lapis lazuli.",
       "x": 695.2,
       "y": -403.0,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "bhirrana",
@@ -724,7 +738,8 @@
       "description": "Excavated on the Saraswati plain in Fatehabad district, Bhirrana provided calibrated carbon-14 dates pushing the Hakra pre-Harappan sequence back to the 8th millennium BCE, challenging theories of foreign diffusion.",
       "x": 755.7,
       "y": -309.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "kunal",
@@ -762,7 +777,8 @@
       "description": "A pioneering early settlement on the Saraswati riverbed in Fatehabad district, Kunal yielded the earliest discovered silver crowns and button seals in South Asia.",
       "x": 756.5,
       "y": -310.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "farmana",
@@ -801,7 +817,8 @@
       "description": "An extensive 18-hectare Mature Harappan urban and mortuary settlement in Rohtak district, Farmana provided groundbreaking bioarchaeological insights into urban paleodiet, migration, and burial rituals.",
       "x": 765.3,
       "y": -303.0,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "daimabad",
@@ -839,7 +856,8 @@
       "description": "Located on the left bank of the Pravara river in Ahmednagar district, Maharashtra, Daimabad is celebrated as the southernmost established outpost of the Indus civilization, famed for its colossal solid bronze sculpture hoard.",
       "x": 746.5,
       "y": -199.1,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "manda",
@@ -877,7 +895,8 @@
       "description": "Situated on the right bank of the Chenab river near Akhnoor in the Himalayan foothills of Jammu, Manda demarcates the northern geographic boundary of the Harappan civilization within modern India.",
       "x": 748.7,
       "y": -348.7,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "alamgirpur",
@@ -916,7 +935,8 @@
       "description": "Situated in Meerut district on the Hindon River (a tributary of the Yamuna), Alamgirpur constitutes the recognized eastern frontier outpost of the Indus civilization, illustrating the transition towards the Gangetic basin.",
       "x": 774.8,
       "y": -303.6,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "sanauli",
@@ -962,7 +982,8 @@
       "description": "Located in Baghpat district, Western Uttar Pradesh, Sanauli yielded the sensational discovery of the earliest known full-size chariots, warrior weaponry, and royal copper-inlaid coffins in South Asian archaeology.",
       "x": 771.8,
       "y": -304.8,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "kot-diji",
@@ -1001,7 +1022,8 @@
       "description": "Situated near Khairpur in Sindh opposite Mohenjo-daro, Kot Diji established that mature Harappan civilization did not appear overnight but evolved directly from robust pre-existing fortified agricultural towns.",
       "x": 687.0,
       "y": -284.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "amri",
@@ -1037,7 +1059,8 @@
       "description": "Located on the western bank of the Indus river in Dadu district, Amri provided the first definitive stratigraphic sequence demonstrating the evolution from local copper-age villages to standard Harappan urbanism.",
       "x": 680.2,
       "y": -271.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "balakot",
@@ -1075,7 +1098,8 @@
       "description": "Situated on the coastal plain of Sonmiani Bay 80 km northwest of Karachi, Balakot was a prominent marine harvesting harbor and shell-manufacturing industrial enclave.",
       "x": 667.5,
       "y": -262.8,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "allahdino",
@@ -1112,7 +1136,8 @@
       "description": "Located 40 km east of Karachi near the Malir river, Allahdino is a classic example of a small rural Harappan farming and textile estate that nevertheless yielded wealth comparable to metropolitan elites.",
       "x": 673.3,
       "y": -257.4,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "kuntasi",
@@ -1150,7 +1175,8 @@
       "description": "Situated in Maliya taluk of Morbi district, Kuntasi was an intensely fortified craft emporium and port established to process local raw materials for international export.",
       "x": 706.2,
       "y": -233.7,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "gola-dhoro",
@@ -1188,7 +1214,8 @@
       "description": "Located in Bagasra on the southern shore of the Great Rann of Kutch, Gola Dhoro demonstrated that the Harappans built colossal fortress walls to safeguard valuable craft workshops.",
       "x": 706.3,
       "y": -237.0,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "shikarpur",
@@ -1225,7 +1252,8 @@
       "description": "Located in Bhachau taluk of Kutch, Shikarpur functioned as an administrative and craft center with substantial evidence of animal husbandry and trade.",
       "x": 707.0,
       "y": -239.0,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "kanmer",
@@ -1262,7 +1290,8 @@
       "description": "Located in Rapar taluka of Kutch, Kanmer served as a heavily guarded stone-walled gateway controlling internal transport of agate, copper, and cattle between Kutch and Gujarat.",
       "x": 708.7,
       "y": -240.6,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "padri",
@@ -1301,7 +1330,8 @@
       "description": "Located in Bhavnagar district on the Gulf of Khambhat, Padri demonstrated indigenous pre-Harappan ceramic traditions (Padri Ware) and specialized in coastal salt evaporation.",
       "x": 721.7,
       "y": -229.6,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "nageshwar",
@@ -1338,7 +1368,8 @@
       "description": "Situated near Dwarka at the tip of the Saurashtra peninsula, Nageshwar was an exclusive single-industry manufacturing center devoted to harvesting and working marine conch shells.",
       "x": 690.5,
       "y": -229.2,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "rojdi",
@@ -1375,7 +1406,8 @@
       "description": "Situated on the Bhadar river in Rajkot district of Saurashtra, Rojdi established the longevity of regional agricultural Harappan adaptations into the post-urban era.",
       "x": 709.2,
       "y": -224.2,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "rangpur",
@@ -1413,7 +1445,8 @@
       "description": "Located on the Sukbhadar river in Surendranagar district, Rangpur provided the essential ceramic sequence demonstrating the transformation of the mature Indus culture into regional post-urban societies.",
       "x": 719.2,
       "y": -230.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "desalpur",
@@ -1451,7 +1484,8 @@
       "description": "Located on the Bhamrai river in Nakhatrana taluk of Kutch, Desalpur was an intensely fortified border station monitoring coastal and riverine transit.",
       "x": 691.7,
       "y": -241.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "ropar",
@@ -1490,7 +1524,8 @@
       "description": "Situated on the Sutlej river in Punjab, Ropar was the first Harappan site excavated in independent India, confirming that major Bronze Age centers existed well inside Indian territory after the partition.",
       "x": 765.3,
       "y": -325.9,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "bhagwanpura",
@@ -1527,7 +1562,8 @@
       "description": "Located on the right bank of the Saraswati river in Kurukshetra district, Bhagwanpura provided the historic proof of physical overlap and peaceful synthesis between late Harappan and Painted Grey Ware (PGW) traditions.",
       "x": 768.3,
       "y": -315.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "hulas",
@@ -1565,7 +1601,8 @@
       "description": "Situated on the Katha Nala in Saharanpur district, Hulas confirmed that Harappan script, metrology, and dense agrarian colonization extended deep into western Uttar Pradesh.",
       "x": 773.7,
       "y": -311.3,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "late"
     },
     {
       "id": "karanpura",
@@ -1602,7 +1639,8 @@
       "description": "Located in the Bhadra tehsil of Hanumangarh district, Rajasthan, Karanpura yielded pristine steatite seals and domestic architecture verifying dense urbanization along the Ghaggar-Saraswati drainage.",
       "x": 742.0,
       "y": -305.9,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "rehman-dheri",
@@ -1640,7 +1678,8 @@
       "description": "Situated in the Gomal plains near Dera Ismail Khan, Rehman Dheri is one of the oldest planned fortified towns in South Asia, pre-dating mature Harappa by several centuries.",
       "x": 707.5,
       "y": -336.1,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "gumla",
@@ -1678,7 +1717,8 @@
       "description": "Located in the Gomal River valley near Dera Ismail Khan, Gumla demonstrated the sequential integration of western highland communities into the broader Indus network.",
       "x": 708.3,
       "y": -337.5,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "mature"
     },
     {
       "id": "nausharo",
@@ -1716,7 +1756,8 @@
       "description": "Situated near Mehrgarh in the Kachi plain of Balochistan, Nausharo demonstrated how local Kachi communities adopted standard mature Harappan architecture, scripts, and ceramic forms.",
       "x": 675.8,
       "y": -307.2,
-      "is_foreign": false
+      "is_foreign": false,
+      "period_era": "early"
     },
     {
       "id": "ur",
@@ -1761,7 +1802,8 @@
       "description": "The capital city of ancient Sumer on the Euphrates River in southern Iraq, Ur is the most famous overseas site where authentic Indus Valley seals, weights, etched carnelian, and inscribed tablets were scientifically excavated in royal tombs.",
       "x": 461.0,
       "y": -325.9,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "early"
     },
     {
       "id": "tell-asmar",
@@ -1799,7 +1841,8 @@
       "description": "Located in the Diyala river basin northeast of Baghdad, Tell Asmar provided definitive proof of Akkadian-Harappan trade through Frankfort's excavation of an unmistakable Indus-style cylinder seal in an undisturbed Akkadian house.",
       "x": 448.3,
       "y": -356.9,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "mature"
     },
     {
       "id": "kish",
@@ -1836,7 +1879,8 @@
       "description": "An ancient Sumerian city-state situated east of Babylon, Kish provided crucial cross-dating evidence when Ernest Mackay unearthed an Indus steatite seal in pre-Sargonic strata.",
       "x": 446.5,
       "y": -344.6,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "early"
     },
     {
       "id": "susa",
@@ -1873,7 +1917,8 @@
       "description": "The capital of the ancient Elamite civilization in southwest Iran, Susa was an essential land-and-sea emporium where five authentic Indus seals and standard Harappan chert cubical weights were excavated.",
       "x": 482.6,
       "y": -340.3,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "mature"
     },
     {
       "id": "failaka",
@@ -1910,7 +1955,8 @@
       "description": "Located in the entrance to Kuwait Bay, Failaka Island was a crucial hub of the ancient maritime kingdom of Dilmun, yielding stamp seals that combined Indus script characters with Arabian Gulf iconography.",
       "x": 483.3,
       "y": -308.2,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "mature"
     },
     {
       "id": "ras-al-jinz",
@@ -1956,7 +2002,8 @@
       "description": "Located at the easternmost cape of the Arabian peninsula in Oman, Ras al-Jinz yielded bitumen slabs from ancient ocean-going reed ships and Harappan inscribed storage vessels, proving regular oceanic navigation between India and Magan.",
       "x": 598.3,
       "y": -230.2,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "early"
     },
     {
       "id": "tell-abraq",
@@ -1993,7 +2040,8 @@
       "description": "A major Bronze Age settlement in the northern UAE, Tell Abraq yielded authentic Indus ivory combs, ceramics, and cubical weights in an ancient fortified Arabian coastal tower.",
       "x": 555.3,
       "y": -264.2,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "mature"
     },
     {
       "id": "qal-at-al-bahrain",
@@ -2037,7 +2085,8 @@
       "description": "The capital of ancient Dilmun in northern Bahrain, Qal'at al-Bahrain served as the international trading nexus where Indus merchants transshipped timber, ivory, and carnelian destined for the cities of southern Mesopotamia.",
       "x": 505.2,
       "y": -272.0,
-      "is_foreign": true
+      "is_foreign": true,
+      "period_era": "mature"
     }
   ],
   "trade_routes": [
@@ -2160,5 +2209,130 @@
     }
   ],
   "historical_map_svg": "maps/historical/indus-civilisation.svg",
-  "historical_map_title": "Cities of the Indus — the Harappan Civilisation (c. 3300–1300 BCE)"
+  "historical_map_title": "Cities of the Indus — the Harappan Civilisation (c. 3300–1300 BCE)",
+  "periods": [
+    {
+      "id": "early",
+      "name": "Early Harappan / Regionalisation Era",
+      "span": "c. 3300 – 2600 BCE",
+      "color": "#f59e0b",
+      "fill_color": "rgba(245, 158, 11, 0.12)",
+      "area_sq_km": "~500,000 km²",
+      "badge": "Regional Polities & Ravi/Kot Diji Phases",
+      "boundary_path_d": "M 670 -290 L 695 -320 L 730 -315 L 755 -300 L 760 -285 L 730 -270 L 710 -220 L 685 -245 L 660 -255 Z",
+      "overview": "The Regionalisation Era (c. 3300–2600 BCE) witnessed the development of distinct cultural communities across the greater Indus basin. Nucleated around Kot Diji, Amri, Sothi-Siswal, and the Ravi phase at Harappa, this period pioneered mud-brick architecture, rudimentary drainage, early pictographic potters' marks, standardized wheel-thrown ceramics, and long-distance lapidary trade in turquoise and carnelian.",
+      "chronicle": [
+        {
+          "era": "c. 3800 – 3200 BCE: Hakra Ware & Early Pastoral-Agricultural Settlements",
+          "narrative": "The pioneering phase developed along the dense paleochannels of the Ghaggar-Hakra river system in Cholistan (Punjab) and Haryana. Discoveries at Bhirrana, Kunal, and Rakhigarhi reveal circular pits evolving into multi-room rectangular mud-brick structures, copper smelting, and micro-bead jewelry."
+        },
+        {
+          "era": "c. 3200 – 2800 BCE: The Ravi & Kot Diji Regional Clusters",
+          "narrative": "At Harappa (Ravi phase) and Kot Diji (Sindh), fortified citadel platforms arose with standardized mud-bricks (ratio 3:2:1 or 4:2:1). Incised potters' marks on vessel shoulders anticipate early signs of the classical Indus script. Terracotta wheeled carts and humped bull figurines demonstrate overland transport."
+        },
+        {
+          "era": "c. 2800 – 2600 BCE: Proto-Urban Transition & Fortifications",
+          "narrative": "Sites like Kalibangan (Period I) and Dholavira (Stage I–II) reveal planned orthogonal defensive walls, early ploughed agricultural fields with criss-cross furrows (for simultaneous mustard and chickpea cultivation), and initial steatite stamp seals."
+        }
+      ],
+      "primary_sources": [
+        {
+          "source_title": "M.R. Mughal, Ancient Cholistan: Archaeology and Architecture",
+          "publisher": "Ferozsons / Department of Archaeology and Museums, Pakistan",
+          "year": 1997,
+          "quote": "The survey of 400 km of the dried-up Hakra river bed revealed 99 Hakra Ware sites and 40 Kot Diji phase settlements. The sheer density of Early Harappan settlements in the central Saraswati-Hakra basin proves this river system was the primary demographic and cultural incubator from which mature Harappan urban civilization coalesced.",
+          "significance": "Establishes the Saraswati-Hakra river system as the core demographic catalyst of the civilization."
+        },
+        {
+          "source_title": "J.M. Kenoyer & R.H. Meadow, Excavations at Harappa 1986–2000: The Ravi Phase",
+          "publisher": "Harappa Archaeological Research Project (HARP) / Memoirs of the ASI",
+          "year": 2000,
+          "quote": "The discovery of early inscribed post-firing graffiti on Ravi phase pottery at Mound AB confirms that the fundamentals of the Indus script, including standardized linear and geometric signs, originated locally in the northwestern subcontinent before 3300 BCE, refuting theories of external Mesopotamian script derivation.",
+          "significance": "Proves indigenous development of Harappan epigraphic script and metrology prior to the urban climax."
+        }
+      ]
+    },
+    {
+      "id": "mature",
+      "name": "Mature Harappan / Integration Era",
+      "span": "c. 2600 – 1900 BCE",
+      "color": "#10b981",
+      "fill_color": "rgba(16, 185, 129, 0.14)",
+      "area_sq_km": "1,500,000+ km²",
+      "badge": "Pan-Subcontinental Urban Climax (1.5M km²)",
+      "boundary_path_d": "M 695 -372 L 748 -329 L 774 -290 L 760 -240 L 746 -195 L 720 -210 L 702 -238 L 618 -255 L 610 -275 L 660 -320 L 695 -372 Z",
+      "overview": "The Integration Era (c. 2600–1900 BCE) represents the pinnacle of Bronze Age urban planning and civic engineering in antiquity. Spanning 1.5 million square kilometers from Shortugai on the Oxus (Afghanistan) to Daimabad on the Godavari (Maharashtra), and from Sutkagan Dor on the Iranian frontier to Alamgirpur on the Yamuna, the Harappan world achieved absolute standardization: orthogonal cardinal grid planning, strict 4:2:1 fired brick dimensions, binary-decimal chert weights, deep hydraulic wastewater drainage, steatite glyptic seals, and tidal dockyards.",
+      "chronicle": [
+        {
+          "era": "c. 2600 – 2400 BCE: Urban Revolution & Grid-Iron Planning",
+          "narrative": "Across thousands of miles, metropolises were laid out on dual-mound structures: a raised, fortified Western Citadel for civic governance and monumental assemblies, and an expansive Lower Town divided into uniform residential blocks by wide north-south and east-west thoroughfares. At Mohenjo-daro, the Great Bath utilized bitumen waterproofing and interlocking baked bricks; at Dholavira, sixteen massive stone-cut reservoirs harvested 250,000 cubic meters of stormwater."
+        },
+        {
+          "era": "c. 2400 – 2100 BCE: Seafaring Commerce with Meluhha & Dilmun",
+          "narrative": "At Lothal (Gujarat), Harappan engineers constructed the world's first tidal lock-gate dockyard (214 × 36 meters) on the Gulf of Khambhat. Mesopotamian cuneiform records from Sargon of Akkad to Gudea of Lagash explicitly record trade with 'Meluhha' (the Indus realm), importing lapis lazuli, carnelian beads, copper, ivory dice, and exotic peacocks in exchange for Mesopotamian wool and barley."
+        },
+        {
+          "era": "c. 2100 – 1900 BCE: Standardized Metrology & Epigraphic Uniformity",
+          "narrative": "The entire civilization operated on a unified binary-decimal weight system: chert cubical weights following 1, 2, 4, 8, 16, 32, 64, with the 16th ratio (13.71 grams) being the most prevalent unit. Over 4,000 inscribed steatite, faience, and terracotta seals carrying animal emblems (unicorn, bull, elephant, tiger) and 400+ distinct glyphs regulated merchant packaging and administrative customs."
+        }
+      ],
+      "primary_sources": [
+        {
+          "source_title": "Sir John Marshall, Mohenjo-daro and the Indus Civilization",
+          "publisher": "Arthur Probsthain / Archaeological Survey of India (ASI)",
+          "year": 1931,
+          "quote": "One is impressed above all by the high standard of civic life, hygiene, and domestic comfort that prevailed among these people. The municipal water supply and underground covered drainage system was unmatched anywhere in the ancient world, not even in imperial Rome two millennia later.",
+          "significance": "The foundational 3-volume ASI memoir officially announcing the discovery of the Bronze Age Indus metropolis."
+        },
+        {
+          "source_title": "S.R. Rao, Lothal: A Harappan Port Town (1955–1962)",
+          "publisher": "Memoirs of the Archaeological Survey of India (MASI No. 78)",
+          "year": 1979,
+          "quote": "The Lothal dock basin, measuring 214 meters long and 36 meters wide, was an engineering masterpiece equipped with a sluice gate to hold water at high tide for ships to load and discharge cargo. Seals with the Indus script and Persian Gulf circular button seals discovered in the warehouse prove direct international shipping between Lothal and Dilmun (Bahrain).",
+          "significance": "Definitive ASI memoir detailing ancient India's first tidal basin port engineering and Gulf seafaring."
+        }
+      ]
+    },
+    {
+      "id": "late",
+      "name": "Late Harappan / Localisation Era",
+      "span": "c. 1900 – 1300 BCE",
+      "color": "#ef4444",
+      "fill_color": "rgba(239, 68, 68, 0.12)",
+      "area_sq_km": "~750,000 km² (decentralized)",
+      "badge": "Post-Urban Reorganisation & Eastern Migration",
+      "boundary_path_d": "M 720 -315 L 755 -310 L 780 -290 L 765 -250 L 748 -195 L 710 -215 L 690 -235 L 715 -275 Z",
+      "overview": "The Localisation Era (c. 1900–1300 BCE) witnessed the transformation and decentralization of Harappan society rather than sudden extinction. Triggered by tectonic shifts, hydrographic desiccation of the sacred Saraswati/Ghaggar river, and shifts in monsoon patterns, the hyper-arid central Indus basin was largely vacated. Populations migrated eastward into the fertile, rain-fed Ganga-Yamuna Doab and southward into the Kathiawar peninsula and Saurashtra.",
+      "chronicle": [
+        {
+          "era": "c. 1900 – 1700 BCE: Desiccation of the Saraswati & De-Urbanization",
+          "narrative": "Major metropolises like Mohenjo-daro and Kalibangan experienced gradual civic decay. Large-scale public structures like the Great Bath were abandoned, and the centralized production of chert weights, steatite stamp seals, and long carnelian beads ceased as international trade with the Persian Gulf contracted."
+        },
+        {
+          "era": "c. 1700 – 1500 BCE: Regional Reorganisation (Cemetery H & Jhukar)",
+          "narrative": "The civilization reorganized into diverse regional cultural traditions: the Cemetery H culture in western Punjab, the Jhukar phase in Sindh, and the Rangpur/Rojdi phase in Gujarat. At Bhagwanpura (Haryana), Late Harappan pottery is found directly overlapping with early Painted Grey Ware (PGW)."
+        },
+        {
+          "era": "c. 1500 – 1300 BCE: Transition to Iron Age & Vedic Traditions",
+          "narrative": "The dispersal of populations into rural agrarian villages across Haryana, western Uttar Pradesh, and Gujarat laid the agricultural and technological bedrock for the subsequent Painted Grey Ware and Northern Black Polished Ware cultures of the Second Urbanisation."
+        }
+      ],
+      "primary_sources": [
+        {
+          "source_title": "Gregory L. Possehl, The Indus Civilization: A Contemporary Perspective",
+          "publisher": "Rowman Altamira",
+          "year": 2002,
+          "quote": "The end of the Indus civilization was not a catastrophe or destruction by foreign invaders, but an urban transformation and devolution into agrarian village societies. In Punjab, Haryana, and western Uttar Pradesh, the number of Late Harappan sites actually increased from 218 to 853, proving a massive demographic eastward movement toward the monsoon-fed Gangetic watershed.",
+          "significance": "Overturned obsolete invasion theories, establishing ecological migration and cultural continuity."
+        },
+        {
+          "source_title": "J.P. Joshi, Excavation at Bhagwanpura 1975–1976 and Other Explorations & Excavations",
+          "publisher": "Memoirs of the Archaeological Survey of India (MASI No. 89)",
+          "year": 1993,
+          "quote": "The stratigraphy of Bhagwanpura on the bank of the Saraswati provides conclusive archaeological evidence of the interlocking and peaceful coexistence between the Late Harappan culture and the Painted Grey Ware (PGW) culture, demonstrating uninterrupted cultural continuity between the Bronze Age and Early Iron Age India.",
+          "significance": "Critical ASI evidence proving direct physical transition and continuity between Harappan civilization and Vedic India."
+        }
+      ]
+    }
+  ]
 }

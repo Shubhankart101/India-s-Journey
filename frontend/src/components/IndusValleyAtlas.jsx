@@ -36,6 +36,9 @@ const REGION_PRESETS = [
 export default function IndusValleyAtlas() {
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedSiteId, setSelectedSiteId] = useState('rakhigarhi');
+  const [selectedPeriodId, setSelectedPeriodId] = useState('all');
+  const [dossierTab, setDossierTab] = useState('site'); // 'site' | 'periods'
+  const [activeDossierPeriodId, setActiveDossierPeriodId] = useState('mature');
   const [tierFilter, setTierFilter] = useState('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -64,9 +67,17 @@ export default function IndusValleyAtlas() {
 
   const sites = sitesData.sites || [];
   const tradeRoutes = sitesData.trade_routes || [];
+  const periods = sitesData.periods || [];
+
+  const currentDossierPeriod = useMemo(() => {
+    return periods.find(p => p.id === activeDossierPeriodId) || periods[1] || periods[0] || {};
+  }, [periods, activeDossierPeriodId]);
 
   const filteredSites = useMemo(() => {
     return sites.filter(site => {
+      if (selectedPeriodId !== 'all' && site.period_era && site.period_era !== selectedPeriodId) {
+        if (!searchQuery.trim()) return false;
+      }
       if (tierFilter !== 'all' && site.category !== tierFilter) return false;
       if (countryFilter !== 'all' && site.country !== countryFilter) return false;
       if (searchQuery.trim()) {
@@ -81,7 +92,7 @@ export default function IndusValleyAtlas() {
       }
       return true;
     });
-  }, [sites, tierFilter, countryFilter, searchQuery]);
+  }, [sites, selectedPeriodId, tierFilter, countryFilter, searchQuery]);
 
   const selectedSite = useMemo(() => {
     return sites.find(s => s.id === selectedSiteId) || sites[0];
@@ -233,6 +244,35 @@ export default function IndusValleyAtlas() {
         </button>
       </div>
 
+      {/* Harappan Period / Era Horizons & Territorial Boundary Selector */}
+      <div className="indus-periods-strip" role="group" aria-label="Harappan Era Horizons & Boundaries">
+        <span className="ips-label">⏳ Chronological Eras &amp; Map Boundaries:</span>
+        <button
+          type="button"
+          className={`ips-pill ${selectedPeriodId === 'all' ? 'active' : ''}`}
+          onClick={() => setSelectedPeriodId('all')}
+        >
+          All Eras (3300–1300 BCE)
+        </button>
+        {periods.map(p => (
+          <button
+            key={p.id}
+            type="button"
+            className={`ips-pill ${selectedPeriodId === p.id ? 'active' : ''}`}
+            style={{ '--period-color': p.color }}
+            onClick={() => {
+              setSelectedPeriodId(p.id);
+              setActiveDossierPeriodId(p.id);
+              setDossierTab('periods');
+            }}
+          >
+            <span className="ips-dot" style={{ background: p.color }} />
+            <span>{p.name.split('/')[0].trim()}</span>
+            <small className="ips-span">({p.span})</small>
+          </button>
+        ))}
+      </div>
+
       {/* View Mode Switcher */}
       <div className="indus-mode-bar" role="tablist" aria-label="Atlas Display Mode">
         <button
@@ -339,6 +379,28 @@ export default function IndusValleyAtlas() {
               <path d="M 765 -300 Q 740 -295 715 -285 T 685 -260" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3,2" />
               {/* Indus Trunk */}
               <path d="M 730 -340 Q 710 -310 685 -280 T 680 -250" stroke="#0284c7" strokeWidth="2" />
+            </g>
+
+            {/* Harappan Period Territorial Boundaries */}
+            <g className="indus-period-boundaries">
+              {periods.map(p => {
+                const isActive = selectedPeriodId === p.id;
+                const isShowing = selectedPeriodId === 'all' || isActive;
+                if (!isShowing || !p.boundary_path_d) return null;
+                return (
+                  <path
+                    key={p.id}
+                    d={p.boundary_path_d}
+                    fill={isActive ? (p.fill_color || 'rgba(245, 158, 11, 0.12)') : (selectedPeriodId === 'all' ? p.fill_color || 'transparent' : 'none')}
+                    stroke={p.color}
+                    strokeWidth={isActive ? '2.5' : '1.4'}
+                    strokeDasharray={isActive ? '5,3' : '3,3'}
+                    opacity={isActive ? 0.95 : 0.55}
+                    vectorEffect="non-scaling-stroke"
+                    className={`period-boundary-path ${isActive ? 'active-pulse' : ''}`}
+                  />
+                );
+              })}
             </g>
 
             {/* Maritime & Caravan Trade Routes */}
@@ -522,108 +584,249 @@ export default function IndusValleyAtlas() {
         </div>
 
         {/* Polished Detailed Excavation Dossier Sidebar */}
-        <aside className="indus-site-dossier" aria-labelledby="dossier-site-title">
-          {selectedSite ? (
+        <aside className="indus-site-dossier" aria-labelledby="dossier-tab-title">
+          {/* Dossier Tabs: Site vs Periods & ASI Memoirs */}
+          <div className="dossier-tab-bar" role="tablist" aria-label="Indus Dossier Sections">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={dossierTab === 'site'}
+              className={`dossier-tab-btn ${dossierTab === 'site' ? 'active' : ''}`}
+              onClick={() => setDossierTab('site')}
+            >
+              🏛 Excavation Site ({selectedSite?.name || 'Inspect'})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={dossierTab === 'periods'}
+              className={`dossier-tab-btn ${dossierTab === 'periods' ? 'active' : ''}`}
+              onClick={() => setDossierTab('periods')}
+            >
+              ⏳ Harappan Periods &amp; ASI Quotes ({periods.length})
+            </button>
+          </div>
+
+          {/* TAB 1: Site Excavations */}
+          {dossierTab === 'site' && (
+            selectedSite ? (
+              <div className="dossier-inner">
+                {/* Teaser link to Era Boundaries & ASI Memoirs */}
+                <div
+                  className="dossier-history-teaser"
+                  onClick={() => {
+                    const era = selectedSite.period_era || 'mature';
+                    setActiveDossierPeriodId(era);
+                    setSelectedPeriodId(era);
+                    setDossierTab('periods');
+                  }}
+                >
+                  <div className="dht-badge">⏳ HARAPPAN PERIOD BOUNDARIES &amp; ASI MEMOIRS</div>
+                  <p className="dht-text">
+                    Inspect territorial boundaries on the map and read directly quoted excavation memoirs by Sir John Marshall, S.R. Rao, and ASI archaeologists.
+                  </p>
+                  <button type="button" className="dht-btn">
+                    View {selectedSite.period_era ? `${selectedSite.period_era.toUpperCase()} ERA` : 'ERA'} Boundaries &amp; Memoirs →
+                  </button>
+                </div>
+
+                <div className="dossier-hero">
+                  <div className="dossier-kicker">
+                    <span className="dossier-category-badge" style={{ '--cat-color': CATEGORY_COLORS[selectedSite.category] }}>
+                      {selectedSite.category.replace(/_/g, ' ').toUpperCase()}
+                    </span>
+                    <span className="dossier-country">{selectedSite.country} · {selectedSite.state_or_province}</span>
+                  </div>
+
+                  <h3 id="dossier-site-title" className="dossier-title">
+                    {selectedSite.name}
+                    {selectedSite.name_hi && <span className="dossier-hindi" lang="hi">({selectedSite.name_hi})</span>}
+                  </h3>
+
+                  <p className="dossier-period">
+                    <strong>Chronology:</strong> {selectedSite.period}
+                  </p>
+                </div>
+
+                {/* Quick Info Grid */}
+                <div className="dossier-grid">
+                  <div className="dossier-cell">
+                    <span className="cell-label">Principal Excavators</span>
+                    <span className="cell-value">{selectedSite.excavators || 'Surveyed by ASI'}</span>
+                  </div>
+                  <div className="dossier-cell">
+                    <span className="cell-label">Estimated Extent</span>
+                    <span className="cell-value">{selectedSite.area_hectares ? `${selectedSite.area_hectares} Hectares` : 'Settlement mound'}</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                {selectedSite.description && (
+                  <div className="dossier-section">
+                    <p className="dossier-desc-text">{selectedSite.description}</p>
+                  </div>
+                )}
+
+                {/* Key Architectural Structures */}
+                {selectedSite.key_structures && (
+                  <div className="dossier-section">
+                    <h4>Excavated Architecture &amp; Civil Engineering</h4>
+                    <ul className="dossier-list">
+                      {selectedSite.key_structures.map((struct, idx) => (
+                        <li key={idx}><strong>✓</strong> {struct}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Key Artifacts & Inscriptions */}
+                {selectedSite.key_artifacts && (
+                  <div className="dossier-section">
+                    <h4>Diagnostic Artifacts &amp; Epigraphy</h4>
+                    <div className="dossier-chips">
+                      {selectedSite.key_artifacts.map((art, idx) => (
+                        <span key={idx} className="dossier-chip">{art}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Foreign Trade Connection if any */}
+                {selectedSite.foreign_connection && (
+                  <div className="dossier-foreign-alert">
+                    <strong>🌍 International Trade Link:</strong> {selectedSite.foreign_connection}
+                  </div>
+                )}
+
+                {/* Official Academic & Excavation Sources (ASI Memoirs, Cell, Nature) */}
+                <div className="dossier-section dossier-sources">
+                  <h4>Official Peer-Reviewed &amp; ASI Excavation Reports</h4>
+                  <div className="dossier-sources-list">
+                    {selectedSite.official_sources && selectedSite.official_sources.map((src, idx) => (
+                      <div key={idx} className="source-citation-card">
+                        <div className="scc-header">
+                          <span className="scc-type">{src.type || 'Monograph'}</span>
+                          <span className="scc-year">{src.year}</span>
+                        </div>
+                        <h5 className="scc-title">{src.title}</h5>
+                        <p className="scc-authors">{src.authors}</p>
+                        <p className="scc-pub">{src.publisher}</p>
+                        {src.url && (
+                          <a
+                            href={src.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="scc-link"
+                          >
+                            View Official Record / Report →
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="dossier-empty">
+                <p>Select any excavation site on the map to inspect its structures, artifacts, and ASI memoirs.</p>
+              </div>
+            )
+          )}
+
+          {/* TAB 2: Harappan Periods, Boundaries & Quoted ASI Memoirs */}
+          {dossierTab === 'periods' && (
             <div className="dossier-inner">
               <div className="dossier-hero">
                 <div className="dossier-kicker">
-                  <span className="dossier-category-badge" style={{ '--cat-color': CATEGORY_COLORS[selectedSite.category] }}>
-                    {selectedSite.category.replace(/_/g, ' ').toUpperCase()}
+                  <span className="dossier-category-badge" style={{ '--cat-color': currentDossierPeriod.color || '#f59e0b' }}>
+                    {currentDossierPeriod.badge || 'HARAPPAN HORIZON'}
                   </span>
-                  <span className="dossier-country">{selectedSite.country} · {selectedSite.state_or_province}</span>
+                  <span className="dossier-country">Geographic Extent: {currentDossierPeriod.area_sq_km}</span>
                 </div>
-
-                <h3 id="dossier-site-title" className="dossier-title">
-                  {selectedSite.name}
-                  {selectedSite.name_hi && <span className="dossier-hindi" lang="hi">({selectedSite.name_hi})</span>}
-                </h3>
-
+                <h3 className="dossier-title">{currentDossierPeriod.name}</h3>
                 <p className="dossier-period">
-                  <strong>Chronology:</strong> {selectedSite.period}
+                  <strong>Radiocarbon Dating:</strong> {currentDossierPeriod.span}
                 </p>
               </div>
 
-              {/* Quick Info Grid */}
-              <div className="dossier-grid">
-                <div className="dossier-cell">
-                  <span className="cell-label">Principal Excavators</span>
-                  <span className="cell-value">{selectedSite.excavators || 'Surveyed by ASI'}</span>
-                </div>
-                <div className="dossier-cell">
-                  <span className="cell-label">Estimated Extent</span>
-                  <span className="cell-value">{selectedSite.area_hectares ? `${selectedSite.area_hectares} Hectares` : 'Settlement mound'}</span>
-                </div>
+              {/* Sub-period Selector Switcher */}
+              <div className="ivc-period-subswitcher" role="group" aria-label="Select Harappan Horizon">
+                {periods.map(p => (
+                  <button
+                    key={p.id}
+                    type="button"
+                    className={`ips-sub-btn ${activeDossierPeriodId === p.id ? 'active' : ''}`}
+                    style={{ '--period-color': p.color }}
+                    onClick={() => {
+                      setActiveDossierPeriodId(p.id);
+                      setSelectedPeriodId(p.id);
+                    }}
+                  >
+                    <span className="ips-dot" style={{ background: p.color }} />
+                    {p.name.split('/')[0].trim()}
+                  </button>
+                ))}
               </div>
 
-              {/* Description */}
-              {selectedSite.description && (
-                <div className="dossier-section">
-                  <p className="dossier-desc-text">{selectedSite.description}</p>
-                </div>
-              )}
+              {/* Archaeological Overview */}
+              <div className="dossier-box">
+                <h4>Archaeological Trajectory &amp; Urban Morphology</h4>
+                <p className="history-overview-text">{currentDossierPeriod.overview}</p>
+              </div>
 
-              {/* Key Architectural Structures */}
-              {selectedSite.key_structures && (
-                <div className="dossier-section">
-                  <h4>Excavated Architecture & Civil Engineering</h4>
-                  <ul className="dossier-list">
-                    {selectedSite.key_structures.map((struct, idx) => (
-                      <li key={idx}><strong>✓</strong> {struct}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Key Artifacts & Inscriptions */}
-              {selectedSite.key_artifacts && (
-                <div className="dossier-section">
-                  <h4>Diagnostic Artifacts & Epigraphy</h4>
-                  <div className="dossier-chips">
-                    {selectedSite.key_artifacts.map((art, idx) => (
-                      <span key={idx} className="dossier-chip">{art}</span>
+              {/* Chronicle of Horizons */}
+              {currentDossierPeriod.chronicle && (
+                <div className="dossier-section chronicle-section">
+                  <h4>Chronological Horizons &amp; Stratigraphic Phases</h4>
+                  <div className="chronicle-timeline">
+                    {currentDossierPeriod.chronicle.map((ch, idx) => (
+                      <div key={idx} className="chronicle-card">
+                        <span className="chronicle-era-badge" style={{ color: currentDossierPeriod.color, borderColor: currentDossierPeriod.color }}>
+                          {ch.phase}
+                        </span>
+                        <p className="chronicle-narrative">{ch.details}</p>
+                      </div>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Foreign Trade Connection if any */}
-              {selectedSite.foreign_connection && (
-                <div className="dossier-foreign-alert">
-                  <strong>🌍 International Trade Link:</strong> {selectedSite.foreign_connection}
+              {/* Quoted Primary Source Documentation & ASI Memoirs */}
+              {currentDossierPeriod.primary_sources && (
+                <div className="dossier-section primary-sources-section">
+                  <h4>Quoted Primary Excavation Memoirs &amp; Official Monographs</h4>
+                  <div className="primary-sources-list">
+                    {currentDossierPeriod.primary_sources.map((ps, idx) => (
+                      <div key={idx} className="primary-quote-card">
+                        <div className="pqc-header">
+                          <span className="pqc-badge" style={{ color: currentDossierPeriod.color, borderColor: currentDossierPeriod.color }}>
+                            ASI EXCAVATION MEMOIR
+                          </span>
+                          <span className="pqc-script">{ps.year}</span>
+                        </div>
+                        <h5 className="pqc-title">{ps.source_title}</h5>
+                        <div className="pqc-meta">
+                          <span><strong>Excavation Director / Scholar:</strong> {ps.director}</span>
+                        </div>
+
+                        {/* Quoted Memoir Text */}
+                        <blockquote className="memoir-quote">
+                          “{ps.quote}”
+                        </blockquote>
+
+                        <div className="pqc-footer">
+                          <p className="pqc-citation">
+                            <strong>Official Citation:</strong> {ps.citation}
+                          </p>
+                          <p className="pqc-significance">
+                            <strong>Diagnostic Archaeological Significance:</strong> {ps.significance}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
-
-              {/* Official Academic & Excavation Sources (ASI Memoirs, Cell, Nature) */}
-              <div className="dossier-section dossier-sources">
-                <h4>Official Peer-Reviewed & ASI Excavation Reports</h4>
-                <div className="dossier-sources-list">
-                  {selectedSite.official_sources && selectedSite.official_sources.map((src, idx) => (
-                    <div key={idx} className="source-citation-card">
-                      <div className="scc-header">
-                        <span className="scc-type">{src.type || 'Monograph'}</span>
-                        <span className="scc-year">{src.year}</span>
-                      </div>
-                      <h5 className="scc-title">{src.title}</h5>
-                      <p className="scc-authors">{src.authors}</p>
-                      <p className="scc-pub">{src.publisher}</p>
-                      {src.url && (
-                        <a
-                          href={src.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="scc-link"
-                        >
-                          View Official Record / Report →
-                        </a>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="dossier-empty">
-              <p>Select any excavation site on the map to inspect its structures, artifacts, and ASI memoirs.</p>
             </div>
           )}
         </aside>
