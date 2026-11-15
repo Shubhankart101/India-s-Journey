@@ -32,6 +32,98 @@ READING_TIPS = {
     "special": "This view is interactive: use its own controls to change the period, place or layer.",
 }
 
+# Explicit semantic section recipes for known multi-theater / multi-thematic subgroups
+CUSTOM_SUBGROUP_CLUSTERS = {
+    "Insurgency & Militancy": [
+        ("North East Insurgency: Fatalities, Incidents & Trajectory",
+         ["northeast_insurgency_fatalities", "northeast_insurgency_incidents", "northeast_fatalities_by_period"]),
+        ("Jammu & Kashmir and Punjab Militancy: Conflict Trajectories & Incidents",
+         ["kashmir_insurgency_fatalities", "kashmir_terror_incidents", "kashmir_fatalities_by_period", "khalistan_insurgency_historical", "khalistan_fatalities_by_period"]),
+        ("Left-Wing Extremism: Annual Fatalities & Force Casualties",
+         ["lwe_incidents", "lwe_civilian_casualties", "lwe_security_force_casualties", "lwe_perpetrator_casualties", "lwe_casualties_cumulative"]),
+        ("Left-Wing Extremism: Period Trajectories & Recent Civilian Toll",
+         ["lwe_casualties_latest", "lwe_civilian_casualties_by_period"]),
+        ("Left-Wing Extremism: Affected Districts & Violent Incidents",
+         ["lwe_affected_districts", "lwe_most_affected_districts", "lwe_violent_incidents", "lwe_fatalities", "lwe_civilians_killed"]),
+        ("Left-Wing Extremism: Surrenders, Security Operations & Infrastructure",
+         ["lwe_attacks_economic_infrastructure", "lwe_maoist_surrenders", "lwe_security_buildup", "lwe_roads_towers"]),
+    ],
+    "Health Spending & Disease Burden": [
+        ("Health Expenditure, Public Financing & Out-of-Pocket Spending",
+         ["current_health_spending", "government_health_spending_per_capita", "wb_government_health_share", "wb_health_financing_mix", "wb_health_spending_split"]),
+        ("Drinking Water, Sanitation Access & Healthcare Capacity",
+         ["basic_water_access", "basic_sanitation_access", "safely_managed_drinking_water", "physicians_density", "wb_hospital_beds"]),
+        ("Communicable Diseases: Tuberculosis, Vector-Borne Cases & Mortality",
+         ["wb_tb_incidence", "wb_malaria_incidence", "mospi_malaria_cases", "mospi_dengue_cases", "wb_causes_of_death"]),
+        ("Immunisation Coverage, Child Nutrition & Preventable Risk Factors",
+         ["wb_dpt_immunization", "wb_measles_immunisation", "wb_undernourishment", "wb_child_stunting", "wb_smoking"]),
+    ],
+    "Coal, Oil & Gas": [
+        ("Coal, Lignite & Hydrocarbon Production Trajectories",
+         ["coal_production", "lignite_production", "crude_petroleum_domestic", "natural_gas_production", "coal_output_by_period"]),
+        ("Energy Consumption & Import Dependence",
+         ["energy_use_per_capita", "electricity_use_per_capita", "net_energy_imports_share", "energy_supply_composition", "wb_fossil_fuel_share"]),
+        ("Renewable Energy & Electricity Generation Mix",
+         ["renewable_energy_consumption", "renewable_electricity_output", "wb_renewable_final_energy", "wb_electricity_generation_mix"]),
+        ("Resource Depletion, Coal Rents & Forest Cover",
+         ["wb_coal_rents", "wb_oil_rents", "wb_natural_gas_rents", "wb_energy_depletion", "forest_area_share"]),
+        ("Wholesale Price Indices for Energy Minerals",
+         ["wpi_crude_petroleum", "wpi_natural_gas", "wpi_coking_coal", "wpi_lignite", "wpi_non_coking_coal"]),
+        ("Comparative Energy Price Trends & Particulate Exposure",
+         ["wpi_compare_energy_minerals", "pm25_exposure"]),
+    ],
+    "Defence Budget, Production & Exports": [
+        ("Defence Expenditure, Modernisation Outlay & R&D Budget",
+         ["defence_expenditure", "defence_budget_share", "defence_budget_composition", "defence_capital_acquisition", "defence_rd_budget"]),
+        ("Indigenous Defence Production & Exports Engine",
+         ["defence_production", "defence_exports", "defence_production_exports", "defence_stockpile"]),
+        ("Arms Imports & Global Arms Trade (SIPRI)",
+         ["sipri_arms_imports", "wb_arms_imports_tiv", "wb_arms_exports_tiv"]),
+        ("Military Spending in Global Perspective",
+         ["military_expenditure_usd", "military_expenditure_per_capita", "wb_military_gdp", "wb_military_govt", "wb_military_budget_share"]),
+        ("Armed Forces Personnel & Military Strength",
+         ["wb_armed_forces_personnel"]),
+    ],
+    "Heritage & Visitor Trends": [
+        ("Domestic and Foreign Tourist Visits & Forex Earnings",
+         ["tourist_visits_domestic", "tourist_visits_foreign", "tourism_foreign_exchange_earnings", "tourism_contribution_gdp", "tourist_arrivals_foreign"]),
+        ("UNESCO World Heritage Sites & Cultural Preservation",
+         ["unesco_world_heritage_sites", "unesco_cultural_sites", "unesco_natural_sites"]),
+        ("International Tourism Receipts & Travel Spending",
+         ["wb_international_tourism_receipts", "wb_international_tourism_expenditures", "wb_tourism_inbound_share"]),
+    ],
+    "Terrorism, Conflict & Displacement": [
+        ("Terrorism Fatalities, Incidents & Historical Trajectory",
+         ["terror_fatalities", "terror_incidents", "terror_fatalities_trend", "insurgency_fatalities_overview", "terror_fatalities_by_region"]),
+        ("Civilian Impact & Internal Conflict Displacement",
+         ["terror_civilian_casualties", "conflict_displaced_persons", "xp_idp_conflict_trend", "xp_idp_conflict_peers"]),
+        ("Global Peace & Counter-Terrorism Index Comparisons",
+         ["global_terrorism_index", "global_peace_index", "xp_terrorism_index_trend", "xp_peace_index_rank"]),
+    ],
+    "The Indus Valley Civilisation Comprehensive Excavation Map": [
+        ("Urban Planning & Hydraulic Sanitation",
+         ["ivc_urban_settlement_area"]),
+        ("Standardized Metrology & Glyptic Seals",
+         ["ivc_steatite_seals_by_site"]),
+        ("Long-Distance Maritime Trade Corridors",
+         ["ivc_international_trade_distance"]),
+        ("Epigraphic Sign Concordance & Positional Entropy",
+         ["ivc_top_script_signs_frequency"]),
+        ("Settlement Chronology & Radiocarbon Horizons",
+         ["ivc_radiocarbon_phases"]),
+    ],
+    "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions": [
+        ("Imperial Territorial Extent & Hegemony",
+         ["ancient_empires_territorial_span"]),
+        ("Standing Armies & Military Formations",
+         ["ancient_empires_military_infantry", "ancient_empires_war_elephants"]),
+        ("Epigraphic Records & Royal Charters",
+         ["ancient_empires_inscriptions_count", "ancient_empires_reign_durations"]),
+        ("Statecraft, Numismatics & Trans-Eurasian Commerce",
+         ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "kushan_silkroad_monasteries", "harsha_imperial_assemblies", "sangam_maritime_ports_trade"]),
+    ],
+}
+
 
 def clean(text):
     return re.sub(r"\s+", " ", str(text or "")).strip()
@@ -43,6 +135,38 @@ def stem_of(title):
     if len(text) > 52:
         text = text[:52].rsplit(" ", 1)[0].rstrip(" ,-:&")
     return text or clean(title)[:52]
+
+
+def topic_of(indicator):
+    title = indicator.get("title", "")
+    key = indicator.get("key", "")
+    for pat, label in [
+        (r"north\s*east|northeast", "North East Insurgency"),
+        (r"jammu\s*&?\s*kashmir|kashmir", "Jammu & Kashmir Militancy"),
+        (r"punjab|khalistan", "Punjab Militancy"),
+        (r"maoist|naxal|left-wing|lwe", "Left-Wing Extremism (LWE)"),
+        (r"drinking\s*water", "Drinking Water Access"),
+        (r"sanitation", "Sanitation Infrastructure"),
+        (r"health\s*(spending|expenditure|financing)", "Health Expenditure & Financing"),
+        (r"hospital|physician", "Healthcare Capacity"),
+        (r"malaria|dengue|tuberculosis|\btb\b", "Communicable Diseases"),
+        (r"immunis|immuniz|vaccin", "Immunisation Coverage"),
+        (r"stunting|undernourish|malnutrition", "Child Nutrition"),
+        (r"smoking|tobacco", "Risk Factors & Lifestyle"),
+        (r"coal|lignite", "Coal & Lignite"),
+        (r"crude|petroleum|oil", "Crude Oil & Petroleum"),
+        (r"natural\s*gas", "Natural Gas"),
+        (r"renewable|solar|wind", "Renewable Energy"),
+        (r"defence\s*expenditure|defence\s*budget|military\s*expenditure", "Defence Spending"),
+        (r"defence\s*production|defence\s*export", "Defence Production & Exports"),
+        (r"arms\s*import|arms\s*export", "Arms Trade (SIPRI)"),
+        (r"tourist\s*visit|tourism\s*foreign", "Tourism Visits & Earnings"),
+        (r"unesco", "UNESCO World Heritage"),
+        (r"international\s*tourism", "International Tourism Receipts"),
+    ]:
+        if re.search(pat, title, re.I) or re.search(pat, key, re.I):
+            return label
+    return stem_of(title)
 
 
 def chart_type_of(indicator):
@@ -150,6 +274,96 @@ def chunk(items, count):
     return parts
 
 
+def cluster_indicators(selected, subgroup_name=""):
+    """Clusters selected indicators into 3-6 sections of 1-5 indicators each.
+    Returns list of dicts: [{"title": custom_title_or_None, "members": [...]}, ...]
+    """
+    by_key = {item["key"]: item for item in selected}
+    recipe = CUSTOM_SUBGROUP_CLUSTERS.get(subgroup_name)
+    if recipe:
+        sections = []
+        used_keys = set()
+        for custom_title, key_list in recipe:
+            members = [by_key[k] for k in key_list if k in by_key]
+            if members:
+                for i in range(0, len(members), MAX_CHARTS_PER_SECTION):
+                    slice_part = members[i:i + MAX_CHARTS_PER_SECTION]
+                    sections.append({
+                        "title": custom_title if i == 0 else f"{custom_title} (Part {i//MAX_CHARTS_PER_SECTION + 1})",
+                        "members": slice_part,
+                    })
+                    used_keys.update(item["key"] for item in slice_part)
+        remaining = [item for item in selected if item["key"] not in used_keys]
+        if remaining:
+            for i in range(0, len(remaining), MAX_CHARTS_PER_SECTION):
+                sections.append({
+                    "title": None,
+                    "members": remaining[i:i + MAX_CHARTS_PER_SECTION],
+                })
+        while len(sections) > MAX_SECTIONS:
+            merged = False
+            for i in range(len(sections) - 1):
+                if len(sections[i]["members"]) + len(sections[i+1]["members"]) <= MAX_CHARTS_PER_SECTION:
+                    t1 = sections[i]["title"] or ""
+                    t2 = sections[i+1]["title"] or ""
+                    joint_title = f"{t1} & {t2}" if t1 and t2 and t1 != t2 else (t1 or t2 or None)
+                    sections[i] = {
+                        "title": joint_title,
+                        "members": sections[i]["members"] + sections[i+1]["members"],
+                    }
+                    sections.pop(i+1)
+                    merged = True
+                    break
+            if not merged:
+                last_two = sections[-2]["members"] + sections[-1]["members"]
+                sections.pop()
+                sections.pop()
+                sections.append({"title": None, "members": last_two[:MAX_CHARTS_PER_SECTION]})
+                if len(last_two) > MAX_CHARTS_PER_SECTION:
+                    sections.append({"title": None, "members": last_two[MAX_CHARTS_PER_SECTION:]})
+                break
+        min_target = min(MIN_SECTIONS, len(selected))
+        while len(sections) < min_target:
+            split_idx = max(range(len(sections)), key=lambda i: len(sections[i]["members"]))
+            if len(sections[split_idx]["members"]) <= 1:
+                break
+            big = sections[split_idx]["members"]
+            mid = len(big) // 2
+            t = sections[split_idx]["title"]
+            sections[split_idx] = {"title": t, "members": big[:mid]}
+            sections.insert(split_idx + 1, {"title": None, "members": big[mid:]})
+        return sections
+
+    # Generic clustering for other subgroups
+    target_count = min(len(selected), MAX_SECTIONS, max(math.ceil(len(selected) / MAX_CHARTS_PER_SECTION), MIN_SECTIONS))
+    raw_chunks = chunk(selected, target_count)
+    return [{"title": None, "members": c} for c in raw_chunks]
+
+
+def synthesize_section_title(members, subgroup_name, section_index, total_sections):
+    """Generates an accurate, composite section title reflecting all indicators in the section."""
+    topics = dedupe([topic_of(item) for item in members])
+    stems = dedupe([stem_of(item["title"]) for item in members])
+
+    if len(members) == 1:
+        return stems[0]
+
+    if len(topics) == 1:
+        topic = topics[0]
+        if ":" in topic:
+            return topic
+        return clean(f"{topic}: Key Trends & Indicators")
+
+    if len(topics) == 2:
+        return clean(f"{topics[0]} & {topics[1]}: Core Measures")
+
+    if len(topics) == 3:
+        joint = f"{topics[0]}, {topics[1]} & {topics[2]}"
+        return clean(joint if len(joint) <= 64 else f"{topics[0]} & {topics[1]}: Comparative Trends")
+
+    return clean(f"{stems[0]} and Related Measures")
+
+
 def has_values(indicator):
     return bool(numeric_points(indicator)) or chart_type_of(indicator) not in PLAIN_TYPES
 
@@ -176,25 +390,36 @@ def build_subgroup_article(name, description, indicators, intro="", publishers=(
     maps = [item["key"] for item in ordered if chart_type_of(item) == "map" and len(numeric_points(item)) >= 8]
     limit = MAX_SECTIONS * MAX_CHARTS_PER_SECTION
     selected = pick_charts(live, limit) or ordered[:MAX_CHARTS_PER_SECTION]
-    section_count = min(len(selected), MAX_SECTIONS, max(math.ceil(len(selected) / MAX_CHARTS_PER_SECTION), MIN_SECTIONS))
-    groups = chunk(selected, section_count) if selected else []
+
+    clusters = cluster_indicators(selected, subgroup_name=name) if selected else []
     sections, facts = [], []
-    for index, members in enumerate(groups):
+
+    for index, cluster in enumerate(clusters):
+        members = cluster["members"]
         stems = dedupe([stem_of(item["title"]) for item in members])
         kinds = dedupe([chart_type_of(item) if chart_type_of(item) in PLAIN_TYPES else "special" for item in members])
         pairs = [fact_for(item) for item in members]
         pairs = [pair for pair in pairs if pair[0]]
         facts.extend(pairs)
-        title = TITLES[index % len(TITLES)].format(stem=stems[0])
-        if index == 0 and len(stems) == 1 and len(groups) == 1:
-            title = stems[0]
+
+        title = cluster["title"] or synthesize_section_title(members, name, index, len(clusters))
         lead = (f"This chart follows {stems[0]}." if len(members) == 1
                 else f"The {len(members)} charts here follow {join_names(stems[:3])}" + (f" and {len(stems) - 3} related series." if len(stems) > 3 else "."))
         if index == 0 and intro:
             lead = f"{intro} {lead}"
         parts = [lead] + [pair[0] for pair in pairs[:2]] + [READING_TIPS[kinds[0]]]
         sections.append({"title": title, "text": clean(" ".join(parts)), "keys": [item["key"] for item in members]})
-    pull = max(facts, key=lambda pair: pair[1])[0] if facts else clean(description)
+
+    # Prioritize pull quote from the headline section indicators to ensure alignment with topic
+    first_facts = [fact_for(item) for item in clusters[0]["members"]] if clusters else []
+    first_facts = [p for p in first_facts if p[0]]
+    if first_facts:
+        pull = max(first_facts, key=lambda pair: pair[1])[0]
+    elif facts:
+        pull = max(facts, key=lambda pair: pair[1])[0]
+    else:
+        pull = clean(description)
+
     return {
         "sections": sections,
         "pullQuote": pull,

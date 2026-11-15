@@ -217,14 +217,16 @@ ivc_explainer = {
         "verse": {
             "id": "rv-10-75",
             "source": "Rigveda 10.75 (Nadistuti Sukta)",
-            "original": "सिन्धोः प्रभावे तद् अस्य वर्धते यत् स्तोतृभ्यः शंस्यं राध एति।",
-            "translation": "By the mighty power of the Indus, may fortune flourish and abundance flow unto the singers."
+            "text": "सिन्धोः प्रभावे तद् अस्य वर्धते यत् स्तोतृभ्यः शंस्यं राध एति",
+            "transliteration": "sindhoh prabhave tad asya vardhate",
+            "meaning": "By the mighty power of the Indus, may fortune flourish and abundance flow unto the singers."
         },
         "subgroups": [
             {
                 "name": SUBGROUP_NAME,
                 "headline": "The Indus Valley Civilisation Comprehensive Excavation Map, Urbanism & Script",
                 "dek": "49 cataloged excavations across 9 countries with exact GPS coordinates, excavated structures, material culture, script decipherment concordance, and peer-reviewed monograph citations.",
+                "format": "map",
                 "paragraphs": [
                     "Harappan civilization demonstrated continent-wide standardization: uniform 4:2:1 fired brick proportions, standardized binary-decimal chert weights, right-to-left epigraphy, and civic drainage networks spanning 1.5 million square kilometres without signs of monarchical palaces or standing military garrisons.",
                     "The decipherment of the Indus script remains a paramount computational and archaeological objective, with over 4,000 cataloged inscriptions demonstrating sign entropy consistent with natural human languages."

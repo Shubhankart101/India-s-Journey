@@ -44,16 +44,29 @@ VERSES = json.loads(r"""[
   ["जननी जन्मभूमिश्च स्वर्गादपि गरीयसी", "janani janmabhumish cha svargad api gariyasi", "Mother and motherland are greater than heaven."],
   ["योगक्षेमं वहाम्यहम्", "yogakshemam vahamy aham", "I secure the welfare of those who rely on me."],
   ["नभः स्पृशं दीप्तम्", "nabhah sprisham diptam", "Touch the sky with glory."],
-  ["शं नो वरुणः", "sham no varunah", "May Varuna, lord of the waters, be gracious to us."]
+  ["शं नो वरुणः", "sham no varunah", "May Varuna, lord of the waters, be gracious to us."],
+  ["सिन्धोः प्रभावे तद् अस्य वर्धते यत् स्तोतृभ्यः शंस्यं राध एति", "sindhoh prabhave tad asya vardhate", "By the mighty power of the Indus, may fortune flourish and abundance flow unto the singers."]
 ]""")
 # Thematic pairing by transliteration; groups not listed fall back to round-robin.
 GROUP_VERSE = {
+    "Economy & Markets": "udyamena hi siddhyanti karyani na manorathaih",
+    "Public Finance & States": "sarve bhavantu sukhinah",
+    "Industry, Energy & Technology": "yogah karmasu kaushalam",
+    "Infrastructure & Mobility": "charaiveti charaiveti",
+    "People, Health & Society": "vasudhaiva kutumbakam",
+    "Environment, Agriculture & Food": "annam bahu kurvita",
+    "Security, Justice & Defence": "ahimsa paramo dharmah",
+    "Elections & Democracy": "satyam eva jayate",
+    "Culture, Heritage & Sport": "shariram adyam khalu dharmasadhanam",
+    "Epics, Faiths & Journeys": "asato ma sadgamaya",
+    "India in Maps": "janani janmabhumish cha svargad api gariyasi",
+    "Indus Valley Civilisation": "sindhoh prabhave tad asya vardhate",
+    "Empires of Ancient India": "dharmo rakshati rakshitah",
     "Economic": "udyamena hi siddhyanti karyani na manorathaih",
     "Industry Trends & Performance": "yogah karmasu kaushalam",
     "Mining & Natural Resources": "mata bhumih putro'ham prithivyah",
     "Payments & Digital Banking": "yogakshemam vahamy aham",
     "State Performance & Regional Health": "asato ma sadgamaya",
-    "India in Maps": "janani janmabhumish cha svargad api gariyasi",
     "Public Health & Epidemiology": "sarve bhavantu sukhinah",
     "Social": "vasudhaiva kutumbakam",
     "Environment & Climate": "tamaso ma jyotirgamaya",
@@ -75,8 +88,6 @@ GROUP_VERSE = {
     "Cricket": "acharyadevo bhava",
     "Hockey": "uttishthata jagrata prapya varan nibodhata",
     "Football": "matrdevo bhava",
-    "Epics, Faiths & Journeys": "charaiveti charaiveti",
-    "Empires of Ancient India": "dharmo rakshati rakshitah",
 }
 
 # Hand-written article text for the journeys group (the other groups use the generic chapter text).
@@ -84,6 +95,16 @@ JOURNEY_TEXT = {
     "Empires of Ancient India": [
         "From the democratic assemblies of the Mahajanapadas to the 5-million km² pan-Indian state of Ashoka, the silk-road synthesis of the Kushans, and the Classical Golden Age of the Guptas, this chapter maps ten ancient imperial horizons.",
         "Each era is documented with geo-referenced imperial boundaries, decisive battlefields marked with crossed swords, and authentic epigraphs in their original script and language (Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil).",
+    ],
+    "Indus Valley Civilisation": [
+        "The Indus Valley Civilisation (c. 3300 – 1300 BCE) represents one of the foundational cradles of Afro-Eurasian urban civilisation alongside Egypt and Mesopotamia, surpassing both in geographical extent, standardized metrology, and public sanitation.",
+        "Across 1.5 million square kilometres from the Oxus to the Arabian Sea, Harappan engineers pioneered orthogonal grid planning, hydraulic drainage, binary-decimal weights, and oceanic seafaring to Mesopotamia.",
+    ],
+    "The Indus Valley Civilisation Comprehensive Excavation Map": [
+        "Comprehensive GIS excavation atlas across 49+ sites and 9 countries, Harappan urban planning, script concordance, metallurgy, maritime trade networks, and material culture.",
+    ],
+    "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions": [
+        "Interactive geospatial atlases mapping shifting imperial frontiers, decisive battlefields, and epigraphic records in Ashokan Brahmi, Classical Sanskrit, Ancient Greek, and Sangam Tamil.",
     ],
     "Epics, Faiths & Journeys": [
         "India's oldest stories are also journeys. Rama walks from Ayodhya to Lanka and back, the Pandavas wander from Hastinapura through exile to Kurukshetra, the Buddha teaches his way from Lumbini to Kushinagar, and Guru Nanak sets out on his long udasis. This chapter puts those routes on a map and lets you walk them one stop at a time.",

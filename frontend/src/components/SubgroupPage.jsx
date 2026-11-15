@@ -165,7 +165,7 @@ export function SubgroupArticleView({
         emptySections={false}
         keyNumbers={isIvc || isEmpires ? keyExtra : keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
         quote={article?.pullQuote}
-        quoteAfterSection={1}
+        quoteAfterSection={-1}
         verse={verse}
         lead={<>{callout}{lead}</>}
         after={(sectionsFilter || isIvc || isEmpires) ? null : <AllCharts indicators={indicators} />}

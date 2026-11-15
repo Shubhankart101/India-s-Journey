@@ -368,14 +368,16 @@ empires_explainer = {
         "verse": {
             "id": "git-4-7",
             "source": "Bhagavad Gita 4.7 & Ashokan 12th Rock Edict",
-            "original": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
-            "translation": "Whenever righteousness wanes and unrighteousness rises up, O Bharata, then do I manifest Myself upon the earth."
+            "text": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत । अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥",
+            "transliteration": "yada yada hi dharmasya glanir bhavati bharata",
+            "meaning": "Whenever righteousness wanes and unrighteousness rises up, O Bharata, then do I manifest Myself upon the earth."
         },
         "subgroups": [
             {
                 "name": EMP_SUBGROUP_NAME,
                 "headline": "Dynastic Atlases, Battles & Inscriptions (600 BCE – 850 CE)",
                 "dek": "Interactive geospatial atlases mapping shifting imperial frontiers, decisive battlefields, and epigraphic records in Ashokan Brahmi, Classical Sanskrit, Ancient Greek, and Sangam Tamil.",
+                "format": "map",
                 "paragraphs": [
                     "Explore the complete chronological sweep of ancient Indian sovereignty across 10 defined imperial eras: from the balance of power among the 16 Mahajanapadas, to Mahapadma Nanda's standing army, Alexander the Great's trans-continental campaign limit, Ashoka's pan-Indian Dhamma state, Menander's Indo-Greek synthesis, Gautamiputra Satakarni's maritime dominion, Kanishka's Silk Road superpower, the Gupta Golden Age, Harshavardhana's Kannauj court, and the Sangam maritime thalassocracies of the deep South.",
                     "Each imperial era features multi-phase territorial boundaries, interactive battle locations with military commanders and casualty chronicles, capital cities, and primary epigraphic inscriptions preserved in their original scripts with scholarly translations."
