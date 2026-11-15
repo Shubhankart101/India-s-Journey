@@ -27,7 +27,7 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_mahajanapadas)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
         <!-- Ancient Mudbrick Walls of Rajagriha / Vaishali Assembly -->
         <g transform="translate(600, 380)">
@@ -45,7 +45,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_mahajanapadas)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">16 Mahajanapadas & Republics</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">16 Mahajanapadas &amp; Republics</text>
   <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#eab308" opacity=".95">SECOND URBANISATION • 600 BCE</text>
 </g>
 </svg>

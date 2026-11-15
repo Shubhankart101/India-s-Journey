@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_ivc_excavations)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Great Bath of Mohenjo-daro & Citadel Wall -->
+        <!-- Great Bath of Mohenjo-daro &amp; Citadel Wall -->
         <g transform="translate(600, 370)">
           <!-- Brick Citadel Mound -->
           <path d="M -300 80 L -250 -20 L 250 -20 L 300 80 Z" fill="#451a03"/>

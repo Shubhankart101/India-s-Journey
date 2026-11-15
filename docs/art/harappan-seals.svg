@@ -14,7 +14,7 @@
 
   <rect width="1200" height="800" fill="url(#sealBg)"/>
 
-  <!-- Left: The Great Bull / Zebu Seal (Harappa & Mohenjo-daro) -->
+  <!-- Left: The Great Bull / Zebu Seal (Harappa &amp; Mohenjo-daro) -->
   <g transform="translate(140, 180)">
     <rect x="0" y="0" width="420" height="420" rx="16" fill="#261b12" stroke="#a67838" stroke-width="4"/>
     <rect x="12" y="12" width="396" height="396" rx="10" fill="#1f150d" stroke="#543719" stroke-width="2"/>

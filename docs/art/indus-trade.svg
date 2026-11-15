@@ -18,7 +18,7 @@
 
   <rect width="1200" height="800" fill="url(#skyTrade)"/>
 
-  <!-- Ancient Arabian Sea & Gulf of Khambhat -->
+  <!-- Ancient Arabian Sea &amp; Gulf of Khambhat -->
   <path d="M0 480 Q300 420 600 450 T1200 440 L1200 800 L0 800 Z" fill="url(#seaGrad)"/>
 
   <!-- Setting Sun over the Persian Gulf Trade Horizon -->
@@ -39,12 +39,12 @@
   <line x1="700" y1="600" x2="735" y2="600" stroke="#d4a72c" stroke-width="2"/>
   <line x1="700" y1="640" x2="735" y2="640" stroke="#d4a72c" stroke-width="2"/>
 
-  <!-- Warehouses & Acropolis on High Platform -->
+  <!-- Warehouses &amp; Acropolis on High Platform -->
   <polygon points="800,480 1150,440 1200,480 850,520" fill="#5e3218"/>
   <rect x="880" y="420" width="120" height="40" fill="#783e1c"/>
   <rect x="1020" y="410" width="80" height="40" fill="#783e1c"/>
 
-  <!-- Harappan Ocean-Going Sailing Ship (Based on Lothal Terracotta Model & Mohenjo-daro Seal) -->
+  <!-- Harappan Ocean-Going Sailing Ship (Based on Lothal Terracotta Model &amp; Mohenjo-daro Seal) -->
   <g transform="translate(320, 390)">
     <!-- High prow and stern wooden hull -->
     <path d="M0 120 Q120 180 260 120 Q180 200 40 180 Z" fill="#4d2f14" stroke="#8a5323" stroke-width="3"/>

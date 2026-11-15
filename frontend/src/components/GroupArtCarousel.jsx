@@ -61,6 +61,12 @@ export default function GroupArtCarousel({ groupSlug, title = 'Living Historical
             className="art-carousel-img animate-fade"
             loading="eager"
             decoding="async"
+            onError={(e) => {
+              const fallback = isIvc ? 'indus-valley.svg' : 'ancient-empires.svg';
+              if (!e.currentTarget.src.includes(fallback)) {
+                e.currentTarget.src = assetUrl(`art/${fallback}`);
+              }
+            }}
           />
           <div className="art-carousel-overlay">
             <span className="art-live-badge">

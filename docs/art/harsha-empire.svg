@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_harsha_empire)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Grand Kannauj Assembly Pavilion & Xuanzang's Manuscripts -->
+        <!-- Grand Kannauj Assembly Pavilion &amp; Xuanzang's Manuscripts -->
         <g transform="translate(600, 360)">
           <!-- Tiered Wooden Imperial Pavilion -->
           <polygon points="-120,-30 0,-110 120,-30" fill="#ea580c"/>

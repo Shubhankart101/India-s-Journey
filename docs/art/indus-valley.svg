@@ -27,7 +27,7 @@
   <!-- Sky -->
   <rect width="1200" height="800" fill="url(#skyGrad)"/>
 
-  <!-- Ancient Sun & Haze -->
+  <!-- Ancient Sun &amp; Haze -->
   <circle cx="600" cy="220" r="140" fill="#e0a050" opacity="0.18"/>
   <circle cx="600" cy="220" r="90" fill="#ffc87a" opacity="0.25"/>
 
@@ -40,11 +40,11 @@
   <circle cx="600" cy="310" r="35" fill="#8a4f27"/>
   <circle cx="600" cy="265" r="12" fill="#d4a72c"/>
 
-  <!-- Ancient City Walls & Towers -->
+  <!-- Ancient City Walls &amp; Towers -->
   <rect x="180" y="440" width="160" height="180" fill="url(#brickPattern)" stroke="#5a2a12" stroke-width="2"/>
   <rect x="860" y="440" width="160" height="180" fill="url(#brickPattern)" stroke="#5a2a12" stroke-width="2"/>
   
-  <!-- Pillared Hall & Granary Platforms -->
+  <!-- Pillared Hall &amp; Granary Platforms -->
   <rect x="220" y="400" width="80" height="40" fill="#8a4f27"/>
   <rect x="900" y="400" width="80" height="40" fill="#8a4f27"/>
 

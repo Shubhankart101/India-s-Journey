@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_alexander_campaign)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Greek Phalanx Sarissas & Macedonian Helmet over the Jhelum -->
+        <!-- Greek Phalanx Sarissas &amp; Macedonian Helmet over the Jhelum -->
         <g transform="translate(600, 360)">
           <!-- Corinthian / Boeotian helmet crest -->
           <path d="M -40 -30 Q 0 -100 40 -30 Q 30 20 -40 -30 Z" fill="#38bdf8" opacity="0.9"/>
@@ -44,7 +44,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_alexander_campaign)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Alexander's Campaign & Hydaspes</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Alexander's Campaign &amp; Hydaspes</text>
   <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">MACEDONIAN LIMITS • 327–325 BCE</text>
 </g>
 </svg>

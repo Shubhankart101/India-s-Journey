@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_savings_investment)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Investment growth chart & mutual fund vault -->
+        <!-- Investment growth chart &amp; mutual fund vault -->
         <g transform="translate(600, 360)">
           <!-- Glowing upward trajectory curve -->
           <path d="M -300 80 Q -100 40 0 -30 T 300 -120" fill="none" stroke="#34d399" stroke-width="5" class="draw" pathLength="1000"/>
@@ -41,7 +41,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_savings_investment)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Savings, Investment & Media</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#34d399" opacity=".95">CAPITAL FORMATION & HOUSEHOLD ASSETS</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Savings, Investment &amp; Media</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#34d399" opacity=".95">CAPITAL FORMATION &amp; HOUSEHOLD ASSETS</text>
 </g>
 </svg>

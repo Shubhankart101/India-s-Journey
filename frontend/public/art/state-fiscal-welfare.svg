@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_state_fiscal_welfare)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- DBT Network & State Welfare Map -->
+        <!-- DBT Network &amp; State Welfare Map -->
         <g transform="translate(600, 360)">
           <!-- India map outline wireframe -->
           <path d="M -100 -90 L 0 -130 L 70 -80 L 50 40 L 0 90 L -50 30 Z" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="4,4"/>
@@ -39,7 +39,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_state_fiscal_welfare)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">State Fiscal Explorer & Welfare</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">DIRECT BENEFIT TRANSFER & SOCIAL SPEND</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">State Fiscal Explorer &amp; Welfare</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">DIRECT BENEFIT TRANSFER &amp; SOCIAL SPEND</text>
 </g>
 </svg>
