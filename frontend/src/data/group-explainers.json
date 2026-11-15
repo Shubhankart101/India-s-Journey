@@ -14435,6 +14435,69 @@
         },
         "subgroups": [
           {
+            "name": "Metro in Maps",
+            "headline": "Metro in Maps",
+            "dek": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+            "paragraphs": [
+              "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+              "This is one of 13 lenses within India in Maps. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [
+              "Ministry of Housing and Urban Affairs",
+              "Ministry of Housing and Urban Affairs (MoHUA) & Metro Rail Corporations",
+              "MoHUA & Transit Authorities Operational Statistics"
+            ],
+            "indicatorCount": 3,
+            "pattern": "two-lenses",
+            "sections": [
+              {
+                "title": "Metro Rail Network Length by City",
+                "text": "This chart follows Metro Rail Network Length by City. In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km. Hover along the line to read each period's value; the axis shows the unit.",
+                "keys": [
+                  "metro_network_length_by_city_km"
+                ]
+              },
+              {
+                "title": "Daily Metro Ridership by City",
+                "text": "This chart follows Daily Metro Ridership by City. In Daily Metro Ridership by City, Delhi-NCR leads at 6,800,000 passengers/day, ahead of Mumbai at 850,000 passengers/day; Kanpur is lowest at 48,000 passengers/day. Hover along the line to read each period's value; the axis shows the unit.",
+                "keys": [
+                  "metro_daily_ridership_by_city"
+                ]
+              },
+              {
+                "title": "All-India Operational Metro Network Growth",
+                "text": "This chart follows All-India Operational Metro Network Growth. All-India Operational Metro Network Growth rose from 16 km in 2002 to 994 km in 2026, a change of 6,112%. Hover along the line to read each period's value; the axis shows the unit.",
+                "keys": [
+                  "metro_all_india_operational_growth_km"
+                ]
+              }
+            ],
+            "pullQuote": "In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [
+              "metro_network_length_by_city_km",
+              "metro_daily_ridership_by_city",
+              "metro_all_india_operational_growth_km"
+            ],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 3
+              },
+              {
+                "label": "Named publishers",
+                "value": 3
+              }
+            ],
+            "verse": {
+              "text": "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी",
+              "transliteration": "janani janmabhumish cha svargad api gariyasi",
+              "meaning": "Mother and motherland are greater than heaven."
+            }
+          },
+          {
             "name": "Payments & Banking Maps",
             "headline": "Payments & Banking Maps",
             "dek": "UPI, cards, deposits and credit drawn state by state.",
@@ -16015,69 +16078,6 @@
               {
                 "label": "Named publishers",
                 "value": 1
-              }
-            ],
-            "verse": {
-              "text": "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी",
-              "transliteration": "janani janmabhumish cha svargad api gariyasi",
-              "meaning": "Mother and motherland are greater than heaven."
-            }
-          },
-          {
-            "name": "Metro in Maps",
-            "headline": "Metro in Maps",
-            "dek": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
-            "paragraphs": [
-              "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
-              "This is one of 13 lenses within India in Maps. Read it beside the other group topics, and retain the source and period attached to each indicator."
-            ],
-            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
-            "sources": [
-              "Ministry of Housing and Urban Affairs",
-              "Ministry of Housing and Urban Affairs (MoHUA) & Metro Rail Corporations",
-              "MoHUA & Transit Authorities Operational Statistics"
-            ],
-            "indicatorCount": 3,
-            "pattern": "two-lenses",
-            "sections": [
-              {
-                "title": "Metro Rail Network Length by City",
-                "text": "This chart follows Metro Rail Network Length by City. In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km. Hover along the line to read each period's value; the axis shows the unit.",
-                "keys": [
-                  "metro_network_length_by_city_km"
-                ]
-              },
-              {
-                "title": "Daily Metro Ridership by City",
-                "text": "This chart follows Daily Metro Ridership by City. In Daily Metro Ridership by City, Delhi-NCR leads at 6,800,000 passengers/day, ahead of Mumbai at 850,000 passengers/day; Kanpur is lowest at 48,000 passengers/day. Hover along the line to read each period's value; the axis shows the unit.",
-                "keys": [
-                  "metro_daily_ridership_by_city"
-                ]
-              },
-              {
-                "title": "All-India Operational Metro Network Growth",
-                "text": "This chart follows All-India Operational Metro Network Growth. All-India Operational Metro Network Growth rose from 16 km in 2002 to 994 km in 2026, a change of 6,112%. Hover along the line to read each period's value; the axis shows the unit.",
-                "keys": [
-                  "metro_all_india_operational_growth_km"
-                ]
-              }
-            ],
-            "pullQuote": "In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km.",
-            "mapKeys": [],
-            "format": "article",
-            "chartKeys": [
-              "metro_network_length_by_city_km",
-              "metro_daily_ridership_by_city",
-              "metro_all_india_operational_growth_km"
-            ],
-            "keyNumbers": [
-              {
-                "label": "Indicator series",
-                "value": 3
-              },
-              {
-                "label": "Named publishers",
-                "value": 3
               }
             ],
             "verse": {

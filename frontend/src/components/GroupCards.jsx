@@ -5,7 +5,7 @@ import { groupSanskrit } from '../sanskrit.js';
 import { assetUrl } from '../config.js';
 
 const MAP_SLUG = 'india-in-maps';
-const MAP_CHIPS = ['36 states & UTs', 'Lok Sabha 1952–2024', 'Primary ECI data'];
+const MAP_CHIPS = ['36 states & UTs', '17 Metro Networks', 'Lok Sabha 1952–2024', 'Primary ECI data'];
 
 const slugOf = cat => cat?.slug || String(cat?.name || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 

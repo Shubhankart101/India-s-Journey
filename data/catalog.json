@@ -1160,9 +1160,17 @@
       "art": "india-maps.svg?v=5",
       "subgroups": [
         {
+          "name": "Metro in Maps",
+          "slug": "metro-in-maps",
+          "order": 0,
+          "title": "Metro in Maps",
+          "description": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+          "art": "auto-highway.svg?v=4"
+        },
+        {
           "name": "Payments & Banking Maps",
           "slug": "payments-banking-maps",
-          "order": 0,
+          "order": 1,
           "title": "Payments & Banking Maps",
           "description": "UPI, cards, deposits and credit drawn state by state.",
           "art": "maps-payments-digital-banking.svg?v=4"
@@ -1170,7 +1178,7 @@
         {
           "name": "State Economy & Fiscal Maps",
           "slug": "state-economy-fiscal-maps",
-          "order": 1,
+          "order": 2,
           "title": "State Economy & Fiscal Maps",
           "description": "GSDP, income, taxes and fiscal strength on the map.",
           "art": "maps-state-performance-regional-health.svg?v=4"
@@ -1178,7 +1186,7 @@
         {
           "name": "State Services & Welfare Maps",
           "slug": "state-services-welfare-maps",
-          "order": 2,
+          "order": 3,
           "title": "State Services & Welfare Maps",
           "description": "Power, water, housing and scheme coverage on the map.",
           "art": "maps-state-performance-regional-health.svg?v=4"
@@ -1186,7 +1194,7 @@
         {
           "name": "Health, Environment & Transport Maps",
           "slug": "health-environment-transport-maps",
-          "order": 3,
+          "order": 4,
           "title": "Health, Environment & Transport Maps",
           "description": "Health outcomes, climate, air, rail and water transport by state.",
           "art": "maps-public-health-epidemiology.svg?v=4"
@@ -1194,7 +1202,7 @@
         {
           "name": "Society & Elections Maps",
           "slug": "society-elections-maps",
-          "order": 4,
+          "order": 5,
           "title": "Society & Elections Maps",
           "description": "Demographics, education, gender and election results by state.",
           "art": "maps-social.svg?v=4"
@@ -1202,7 +1210,7 @@
         {
           "name": "Court Rankings by Jurisdiction",
           "slug": "court-rankings-by-jurisdiction",
-          "order": 5,
+          "order": 6,
           "title": "Court Rankings by Jurisdiction",
           "description": "Which jurisdictions lead on filings, disposals, delays and women and senior-citizen litigants.",
           "art": "maps-judiciary-pending-cases.svg?v=4"
@@ -1210,7 +1218,7 @@
         {
           "name": "Court Maps · Case types",
           "slug": "court-maps-case-types",
-          "order": 6,
+          "order": 7,
           "title": "Court Maps · Case types",
           "description": "Lower-court pendency by case types, drawn state by state.",
           "art": "maps-lower-courts.svg?v=4"
@@ -1218,7 +1226,7 @@
         {
           "name": "Court Maps · Case types & Case categories",
           "slug": "court-maps-case-types-case-categories",
-          "order": 7,
+          "order": 8,
           "title": "Court Maps · Case types & Case categories",
           "description": "Lower-court pendency by case types and case categories, drawn state by state.",
           "art": "maps-lower-courts.svg?v=4"
@@ -1226,7 +1234,7 @@
         {
           "name": "Court Maps · Case stage",
           "slug": "court-maps-case-stage",
-          "order": 8,
+          "order": 9,
           "title": "Court Maps · Case stage",
           "description": "Lower-court pendency by case stage, drawn state by state.",
           "art": "maps-lower-courts.svg?v=4"
@@ -1234,7 +1242,7 @@
         {
           "name": "Court Maps · Case stage & Filing year",
           "slug": "court-maps-case-stage-filing-year",
-          "order": 9,
+          "order": 10,
           "title": "Court Maps · Case stage & Filing year",
           "description": "Lower-court pendency by case stage and filing year, drawn state by state.",
           "art": "maps-lower-courts.svg?v=4"
@@ -1242,7 +1250,7 @@
         {
           "name": "Economic on the map",
           "slug": "economic-on-the-map",
-          "order": 10,
+          "order": 11,
           "title": "Economic on the map",
           "description": "Economic on the map within India in Maps.",
           "art": "maps-economic.svg?v=4"
@@ -1250,18 +1258,10 @@
         {
           "name": "Innovation & Technology on the map",
           "slug": "innovation-technology-on-the-map",
-          "order": 11,
+          "order": 12,
           "title": "Innovation & Technology on the map",
           "description": "Innovation & Technology on the map within India in Maps.",
           "art": "maps-innovation-technology.svg?v=4"
-        },
-        {
-          "name": "Metro in Maps",
-          "slug": "metro-in-maps",
-          "order": 12,
-          "title": "Metro in Maps",
-          "description": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
-          "art": "auto-highway.svg?v=4"
         }
       ]
     },

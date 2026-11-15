@@ -137,6 +137,16 @@ function ExploreBrowse() {
       </section>
 
       {category && <ExplainerArticle category={category} subgroup={subgroup} indicators={first.data?.results || []} />}
+      {['india-in-maps', 'india-maps'].includes(category?.slug) && (
+        <div className="subgroup-callout metro-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem', background: 'rgba(2, 132, 199, 0.08)', borderColor: '#0284c7' }}>
+          <div>
+            <strong>🚇 All 17 Indian Metro Networks &amp; Live Transit Atlas:</strong> Real geographic alignments, live IST schematic route planner, and authentic cartographic terrain maps for Delhi-NCR, Mumbai, Bengaluru, and all operational metro rail systems.
+          </div>
+          <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
+            <Link to="/explore/india-in-maps/metro-in-maps" className="btn btn-primary btn-sm">Explore Metro in Maps Atlas →</Link>
+          </div>
+        </div>
+      )}
       {category?.slug === 'elections-democracy' && <p className="subgroup-callout">Looking for results by place? Open the <Link to="/elections">State and Union Territory election map</Link> for Lok Sabha and Assembly histories.</p>}
       {['indus-valley-civilisation', 'indus-valley'].includes(category?.slug) && (
         <div className="subgroup-callout ivc-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem' }}>
@@ -169,6 +179,13 @@ function ExploreBrowse() {
         >
           All Groups
         </button>
+        <Link
+          to="/explore/india-in-maps/metro-in-maps"
+          className="explore-group-pill metro-atlas-pill"
+          style={{ borderColor: '#0284c7', color: '#38bdf8', fontWeight: '700' }}
+        >
+          🚇 Metro Atlas (17 Cities)
+        </Link>
         {(categories.data || []).map(group => {
           const isActive = filters.category === group.slug || (category && category.name === group.name);
           return (
@@ -316,6 +333,14 @@ export default function Explore() {
   const categories = useAsync(signal => api.categories(signal), []);
   const categorySlug = params.get('category') || routeGroup || '';
   const subgroupSlug = params.get('subgroup') || '';
+  // Direct resolution for metro aliases
+  const isMetroReq = ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(categorySlug))
+    || ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(subgroupSlug))
+    || ['metro', 'metro-in-maps', 'metro-atlas'].includes(toSlug(routeGroup));
+  if (isMetroReq) {
+    return <SubgroupPage categorySlug="india-in-maps" subgroupSlug="metro-in-maps" />;
+  }
+
   if (categorySlug && categories.loading) return <Loading label="Loading the article…" />;
   const category = (categories.data || []).find(item => item.slug === categorySlug || toSlug(item.slug) === toSlug(categorySlug) || toSlug(item.name) === toSlug(categorySlug));
   if (category && (subgroupSlug || isConsolidatedArticle(category))) {

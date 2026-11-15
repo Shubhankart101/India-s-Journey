@@ -137,4 +137,16 @@ describe('map subgroup and region page', () => {
     const figures = await screen.findAllByRole('img', { name: 'Chart: Exports' });
     expect(figures).toHaveLength(1);
   });
+
+  it('renders Metro in Maps workbench when navigating to /explore/india-in-maps/metro-in-maps', async () => {
+    mockApi({
+      '/api/categories/': [{
+        name: 'India in Maps', slug: 'india-in-maps', order: 0, title: 'India in maps', description: '', badges: [], art: 'parliament.svg', indicator_count: 3, live_count: 3,
+        subgroups: [{ name: 'Metro in Maps', slug: 'metro-in-maps', order: 0, title: 'Metro in Maps', description: 'Metro by City.', art: 'parliament.svg', indicator_count: 3, live_count: 3 }],
+      }],
+      '/api/indicators/': page([summary({ key: 'metro_network_length_by_city_km', title: 'Metro length' })]),
+    });
+    renderApp('/explore/india-in-maps/metro-in-maps');
+    expect(await screen.findByText(/All 17 Indian Metro Cities/i)).toBeInTheDocument();
+  });
 });

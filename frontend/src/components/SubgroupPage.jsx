@@ -873,7 +873,10 @@ export function SubgroupRegionPage({ categorySlug, subgroupSlug, stateSlug }) {
 
 export function SubgroupRoute() {
   const { group, subgroup, stateSlug } = useParams();
+  const isMetroParam = !group || ['metro', 'metro-in-maps', 'metro-atlas'].includes(group);
+  const catSlug = isMetroParam ? 'india-in-maps' : group;
+  const subSlug = isMetroParam ? 'metro-in-maps' : (subgroup || 'metro-in-maps');
   return stateSlug
-    ? <SubgroupRegionPage categorySlug={group} subgroupSlug={subgroup} stateSlug={stateSlug} />
-    : <SubgroupPage categorySlug={group} subgroupSlug={subgroup} />;
+    ? <SubgroupRegionPage categorySlug={catSlug} subgroupSlug={subSlug} stateSlug={stateSlug} />
+    : <SubgroupPage categorySlug={catSlug} subgroupSlug={subSlug} />;
 }

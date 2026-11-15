@@ -1,1 +1,0 @@
-export{n as default}from"./SubgroupPage-CwbfWsw3.js";

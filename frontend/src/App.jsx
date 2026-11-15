@@ -29,6 +29,9 @@ export function AppRoutes() {
           <Route path="explore/:group" element={<Explore />} />
           <Route path="explore/:group/:subgroup" element={<SubgroupRoute />} />
           <Route path="explore/:group/:subgroup/:stateSlug" element={<SubgroupRoute />} />
+          <Route path="metro" element={<SubgroupRoute />} />
+          <Route path="metro-in-maps" element={<SubgroupRoute />} />
+          <Route path="metro-atlas" element={<SubgroupRoute />} />
           <Route path="ivc-translator" element={<IndusScriptTranslator />} />
           <Route path="elections" element={<Elections />} />
           <Route path="elections/:stateSlug" element={<Elections />} />
