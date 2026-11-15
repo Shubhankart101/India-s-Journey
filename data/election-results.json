@@ -1,7 +1,9 @@
 {
   "refresh_frequency": "Every 3 hours",
-  "collection_status": "ok",
-  "collection_errors": [],
+  "collection_status": "partial",
+  "collection_errors": [
+    "ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
+  ],
   "india_constituencies": [
     {
       "election_type": "State Assembly by-election",
@@ -821,7 +823,7 @@
       "chartType": "bar",
       "indexAxis": "y",
       "source": "Election Commission of India live results portal",
-      "note": "Top 30 candidates by reported vote total across the currently published Lok Sabha and Assembly by-election constituencies. The ECI portal labels displayed results provisional until Form 20 is published. Full candidate tables are retained in election-results.json."
+      "note": "Top 30 candidates by reported vote total across the currently published Lok Sabha and Assembly by-election constituencies. The ECI portal labels displayed results provisional until Form 20 is published. Full candidate tables are retained in election-results.json. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
     },
     "india_live_candidate_vote_share": {
       "labels": [
@@ -892,7 +894,7 @@
       "indexAxis": "y",
       "source": "Election Commission of India live results portal",
       "unit": "% of votes",
-      "note": "Top 30 candidates by reported vote share across currently published constituencies. ECI displays provisional results until Form 20."
+      "note": "Top 30 candidates by reported vote share across currently published constituencies. ECI displays provisional results until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
     },
     "india_live_constituency_margin": {
       "labels": [
@@ -915,7 +917,7 @@
       "indexAxis": "y",
       "source": "Calculated from Election Commission of India live constituency candidate totals",
       "unit": "votes",
-      "note": "Reported-vote lead between the top two candidates in each currently published constituency. The ECI portal labels displayed results provisional until Form 20."
+      "note": "Reported-vote lead between the top two candidates in each currently published constituency. The ECI portal labels displayed results provisional until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
     },
     "india_live_winner_vote_share": {
       "labels": [
@@ -938,7 +940,7 @@
       "indexAxis": "y",
       "source": "Election Commission of India live results portal",
       "unit": "% of votes",
-      "note": "Reported vote share of the leading candidate in each currently published constituency. ECI displays provisional results until Form 20."
+      "note": "Reported vote share of the leading candidate in each currently published constituency. ECI displays provisional results until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
     },
     "india_live_party_seats": {
       "labels": [
@@ -955,7 +957,7 @@
       "indexAxis": "y",
       "source": "Election Commission of India live constituency results",
       "unit": "constituencies",
-      "note": "Count of currently published constituencies in which each party's candidate has the highest reported vote total. This is a provisional snapshot, not an all-election seat tally."
+      "note": "Count of currently published constituencies in which each party's candidate has the highest reported vote total. This is a provisional snapshot, not an all-election seat tally. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>"
     },
     "us_presidential_electoral_votes": {
       "labels": [
@@ -1260,5 +1262,5 @@
       "unit": "electoral votes"
     }
   },
-  "generated_at_utc": "2026-11-15T00:34:36+00:00"
+  "generated_at_utc": "2026-11-15T10:14:28+00:00"
 }
