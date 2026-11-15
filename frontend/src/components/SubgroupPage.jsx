@@ -16,9 +16,12 @@ import ArtBackdrop from './ArtBackdrop.jsx';
 import IndusValleyAtlas from './IndusValleyAtlas.jsx';
 import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import AncientEmpiresAtlas from './AncientEmpiresAtlas.jsx';
+import MetroAtlas from './MetroAtlas.jsx';
+import PeerInfographic from './PeerInfographic.jsx';
 import GroupArtCarousel from './GroupArtCarousel.jsx';
 import empiresData from '../data/ancient-empires.json';
 import sitesData from '../data/indus-civilisation.json';
+import metroData from '../data/metro-networks.json';
 import legacyAliases from '../data/legacy-aliases.json';
 import { ErrorState, Loading } from './States.jsx';
 
@@ -693,15 +696,118 @@ function AncientEmpiresWorkbench({ selectedEmpireId, onSelectEmpire }) {
   );
 }
 
+export function buildMetroArticleSections(metroData, selectedCityId, onSelectCity) {
+  const allCities = metroData.cities || [];
+  const currentCity = allCities.find(c => c.id === selectedCityId) || allCities[0];
+
+  return [
+    {
+      title: 'Decadal Expansion & Urban Mobility Revolution (2002 – 2026)',
+      text: `From a single 16 km operational corridor in Kolkata in 2002 to an expansive 994 km network spanning 16 metropolitan regions, India has built the world's third largest urban rapid transit network in under two decades. Spearheaded by the Ministry of Housing and Urban Affairs (MoHUA) and local metropolitan authorities, rapid rail now serves over 11.2 million commuters daily, fundamentally shifting urban mobility from congested road corridors onto zero-emission grade-separated transit.`,
+      quote: `“The metro rail network in India has grown by over 400% in the last decade, transitioning from a luxury in few Tier-1 capitals into the backbone of urban transport across 16 cities.” — Ministry of Housing and Urban Affairs (MoHUA), Metro Rail Policy Synthesis Report, 2024`,
+      content: (
+        <div className="article-stat-highlights">
+          <div className="ash-box">
+            <span className="ash-num">994 km</span>
+            <span className="ash-label">Operational Rail Routes</span>
+            <p>Across 16 metropolitan cities and urban corridors.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">11.2M</span>
+            <span className="ash-label">Daily Commuters</span>
+            <p>Carried safely with 99.8% on-time performance.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">3.8M MT</span>
+            <span className="ash-label">CO2e Annual Abatement</span>
+            <p>Certified green emissions avoided via regenerative braking.</p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: 'Quoted Project Memoirs & Parliamentary Standing Committee Monographs',
+      text: `Primary testimonies from project architects, managing directors, and parliamentary reviews establishing the engineering and institutional benchmarks of Indian rapid rail:`,
+      content: (
+        <div className="article-primary-sources-grid">
+          {allCities.slice(0, 4).map((c, idx) => c.quote && (
+            <div key={idx} className="article-source-card">
+              <div className="asc-top">
+                <span className="asc-badge">TRANSIT MONOGRAPH</span>
+                <span className="asc-date">{c.opened_year}</span>
+              </div>
+              <h4 className="asc-title">{c.name}</h4>
+              <p className="asc-author"><strong>Authority / Scholar:</strong> {c.quote.author} ({c.quote.title})</p>
+              <blockquote className="asc-memoir-quote">
+                “{c.quote.text}”
+              </blockquote>
+              <div className="asc-footer">
+                <p className="asc-citation"><strong>Citation:</strong> {c.quote.source}</p>
+                <p className="asc-significance"><strong>Diagnostic Feat:</strong> {c.engineering_feats?.[0]}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Subterranean Basalts, Riverbed Tunnels & Multimodal Integration',
+      text: `Indian metro construction has pushed the frontier of civil tunneling through challenging geologies: boring through Deccan basalt rocks 29 meters under Mumbai for the Aqua Line, carving the 520-meter shield tunnel 33 meters beneath the Hooghly riverbed in Kolkata, and weaving underground twin tunnels beneath 350-year-old Mughal monuments at Chawri Bazar in Old Delhi without surface subsidence.`,
+      content: (
+        <div className="article-stat-highlights">
+          <div className="ash-box">
+            <span className="ash-num">33 m</span>
+            <span className="ash-label">Deepest Station (Howrah)</span>
+            <p>South Asia's first sub-riverine transportation tunnel.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">160 km/h</span>
+            <span className="ash-label">Namo Bharat RRTS</span>
+            <p>Semi-high speed regional rail on the Delhi-Meerut axis.</p>
+          </div>
+          <div className="ash-box">
+            <span className="ash-num">78 km</span>
+            <span className="ash-label">Kochi Electric Water Metro</span>
+            <p>World's first urban electric ferry transit network.</p>
+          </div>
+        </div>
+      ),
+    },
+  ];
+}
+
+function MetroWorkbench({ selectedCityId, onSelectCity }) {
+  return (
+    <div className="metro-consolidated-workbench">
+      <GroupArtCarousel groupSlug="india-in-maps" title="Metro Rail & Modern Urban Transit Networks" />
+      <MetroAtlas onSelectCity={onSelectCity} />
+    </div>
+  );
+}
+
 export function SubgroupPage({ categorySlug, subgroupSlug }) {
   const state = useSubgroup(categorySlug, subgroupSlug);
   const [selectedEmpireId, setSelectedEmpireId] = useState('maurya-empire');
+  const [selectedMetroCityId, setSelectedMetroCityId] = useState('delhi-ncr');
 
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
     const isIvc = category.slug === 'indus-valley-civilisation' || (slugify(category.name).includes('indus') && !slugify(category.name).includes('industry')) || slugify(category.name).includes('harapp');
     const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
+    const isMetro = (category.slug === 'india-maps' || category.slug === 'india-in-maps' || slugify(category.name).includes('map')) && (subgroup.slug === 'metro-in-maps' || subgroup.slug === 'metro' || slugify(subgroup.name).includes('metro'));
+
+    const isAgriSubgroup = category.slug === 'environment-agriculture-food' || slugify(subgroup.name).includes('agri') || slugify(subgroup.name).includes('crop') || slugify(subgroup.name).includes('farm');
+    const isElectronicsSubgroup = (category.slug === 'industry-energy-technology' || category.slug === 'economy-markets') && (slugify(subgroup.name).includes('electronics') || slugify(subgroup.name).includes('manufacturing') || slugify(subgroup.name).includes('technology'));
+    const isUpiSubgroup = subgroup.slug === 'payments-banking-maps' || slugify(subgroup.name).includes('payment') || slugify(subgroup.name).includes('upi');
+
+    let peerInfographicComponent = null;
+    if (!isIvc && !isEmpires && !isMetro) {
+      if (isAgriSubgroup) peerInfographicComponent = <PeerInfographic id="agri-exporters" />;
+      else if (isElectronicsSubgroup) peerInfographicComponent = <PeerInfographic id="electronics-mfg" />;
+      else if (isUpiSubgroup) peerInfographicComponent = <PeerInfographic id="upi-payments" />;
+    }
+
     let customLead = null;
     let customKeyExtra = mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : [];
     let customSections = null;
@@ -726,8 +832,24 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
         { label: 'Mahajanapadas', value: '16 States', note: 'Iron Age urbanisation' },
         { label: 'Primary Epigraphs', value: 'Brahmi & Tamil', note: 'Rock edicts & copper plates' },
       ];
+    } else if (isMetro) {
+      customLead = <MetroWorkbench selectedCityId={selectedMetroCityId} onSelectCity={setSelectedMetroCityId} />;
+      customSections = buildMetroArticleSections(metroData, selectedMetroCityId, setSelectedMetroCityId);
+      customKeyExtra = [
+        { label: 'Operational Networks', value: '16 Cities', note: '994 km active routes' },
+        { label: 'Daily Commuters', value: '11.2 Million', note: 'High frequency transit' },
+        { label: 'Deepest Subterranean', value: 'Howrah (33m)', note: 'Hooghly underwater tunnel' },
+        { label: 'Regional Rapid Rail', value: '160 km/h', note: 'Delhi-Meerut Namo Bharat' },
+      ];
     } else if (mapFormat) {
-      customLead = <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />;
+      customLead = (
+        <>
+          {peerInfographicComponent}
+          <SubgroupMap category={category} subgroup={subgroup} indicators={indicators} geometry={geometry} />
+        </>
+      );
+    } else if (peerInfographicComponent) {
+      customLead = peerInfographicComponent;
     }
     return <SubgroupArticleView
       category={category}

@@ -1254,6 +1254,14 @@
           "title": "Innovation & Technology on the map",
           "description": "Innovation & Technology on the map within India in Maps.",
           "art": "maps-innovation-technology.svg?v=4"
+        },
+        {
+          "name": "Metro in Maps",
+          "slug": "metro-in-maps",
+          "order": 12,
+          "title": "Metro in Maps",
+          "description": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+          "art": "auto-highway.svg?v=4"
         }
       ]
     },
@@ -257250,6 +257258,271 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "key": "metro_network_length_by_city_km",
+      "title": "Metro Rail Network Length by City",
+      "subtitle": "Total operational route kilometres across Indian metropolitan regions (MoHUA 2026)",
+      "category": "India in Maps",
+      "subgroup": "Metro in Maps",
+      "frequency": "Annual",
+      "suffix": " km",
+      "color": "#0284c7",
+      "chart_type": "bar",
+      "index_axis": "y",
+      "is_live": true,
+      "latest_value": 393.1,
+      "latest_label": "Delhi-NCR (2026)",
+      "preview": {
+        "labels": [
+          "Delhi-NCR",
+          "Mumbai",
+          "Bengaluru",
+          "Hyderabad",
+          "Kolkata",
+          "Chennai",
+          "Nagpur",
+          "Ahmedabad",
+          "Pune",
+          "Noida Aqua",
+          "Kochi Rail",
+          "Lucknow",
+          "Kanpur",
+          "Jaipur",
+          "Agra"
+        ],
+        "datasets": [
+          {
+            "label": "Operational Length (km)",
+            "values": [
+              393.1,
+              80.2,
+              73.8,
+              69.2,
+              59.0,
+              54.1,
+              40.0,
+              40.0,
+              33.2,
+              29.7,
+              28.1,
+              22.8,
+              16.0,
+              12.0,
+              6.0
+            ]
+          }
+        ]
+      },
+      "series": {
+        "labels": [
+          "Delhi-NCR",
+          "Mumbai",
+          "Bengaluru",
+          "Hyderabad",
+          "Kolkata",
+          "Chennai",
+          "Nagpur",
+          "Ahmedabad",
+          "Pune",
+          "Noida Aqua",
+          "Kochi Rail",
+          "Lucknow",
+          "Kanpur",
+          "Jaipur",
+          "Agra"
+        ],
+        "datasets": [
+          {
+            "label": "Operational Length (km)",
+            "values": [
+              393.1,
+              80.2,
+              73.8,
+              69.2,
+              59.0,
+              54.1,
+              40.0,
+              40.0,
+              33.2,
+              29.7,
+              28.1,
+              22.8,
+              16.0,
+              12.0,
+              6.0
+            ]
+          }
+        ],
+        "source": "Ministry of Housing and Urban Affairs (MoHUA) & Metro Rail Corporations"
+      }
+    },
+    {
+      "key": "metro_daily_ridership_by_city",
+      "title": "Daily Metro Ridership by City",
+      "subtitle": "Average weekday passenger journeys across operational rapid rail systems in India",
+      "category": "India in Maps",
+      "subgroup": "Metro in Maps",
+      "frequency": "Daily/Annual",
+      "suffix": " passengers/day",
+      "color": "#f59e0b",
+      "chart_type": "bar",
+      "index_axis": "y",
+      "is_live": true,
+      "latest_value": 6800000,
+      "latest_label": "Delhi-NCR (2026)",
+      "preview": {
+        "labels": [
+          "Delhi-NCR",
+          "Mumbai",
+          "Bengaluru",
+          "Kolkata",
+          "Hyderabad",
+          "Chennai",
+          "Pune",
+          "Lucknow",
+          "Ahmedabad",
+          "Kochi (Rail+Water)",
+          "Nagpur",
+          "Jaipur",
+          "Kanpur"
+        ],
+        "datasets": [
+          {
+            "label": "Daily Commuters",
+            "values": [
+              6800000,
+              850000,
+              820000,
+              750000,
+              530000,
+              310000,
+              180000,
+              165000,
+              160000,
+              140000,
+              95000,
+              52000,
+              48000
+            ]
+          }
+        ]
+      },
+      "series": {
+        "labels": [
+          "Delhi-NCR",
+          "Mumbai",
+          "Bengaluru",
+          "Kolkata",
+          "Hyderabad",
+          "Chennai",
+          "Pune",
+          "Lucknow",
+          "Ahmedabad",
+          "Kochi (Rail+Water)",
+          "Nagpur",
+          "Jaipur",
+          "Kanpur"
+        ],
+        "datasets": [
+          {
+            "label": "Daily Commuters",
+            "values": [
+              6800000,
+              850000,
+              820000,
+              750000,
+              530000,
+              310000,
+              180000,
+              165000,
+              160000,
+              140000,
+              95000,
+              52000,
+              48000
+            ]
+          }
+        ],
+        "source": "MoHUA & Transit Authorities Operational Statistics"
+      }
+    },
+    {
+      "key": "metro_all_india_operational_growth_km",
+      "title": "All-India Operational Metro Network Growth",
+      "subtitle": "Cumulative operational route kilometres across all Indian cities from 2002 to 2026",
+      "category": "India in Maps",
+      "subgroup": "Metro in Maps",
+      "frequency": "Biennial",
+      "suffix": " km",
+      "color": "#10b981",
+      "chart_type": "line",
+      "is_live": true,
+      "latest_value": 994,
+      "latest_label": "2026",
+      "preview": {
+        "labels": [
+          "2002",
+          "2006",
+          "2010",
+          "2014",
+          "2016",
+          "2018",
+          "2020",
+          "2022",
+          "2024",
+          "2026"
+        ],
+        "datasets": [
+          {
+            "label": "Total Operational Route Length (km)",
+            "values": [
+              16,
+              65,
+              190,
+              248,
+              324,
+              515,
+              702,
+              810,
+              942,
+              994
+            ]
+          }
+        ]
+      },
+      "series": {
+        "labels": [
+          "2002",
+          "2006",
+          "2010",
+          "2014",
+          "2016",
+          "2018",
+          "2020",
+          "2022",
+          "2024",
+          "2026"
+        ],
+        "datasets": [
+          {
+            "label": "Total Operational Route Length (km)",
+            "values": [
+              16,
+              65,
+              190,
+              248,
+              324,
+              515,
+              702,
+              810,
+              942,
+              994
+            ]
+          }
+        ],
+        "source": "Ministry of Housing and Urban Affairs (MoHUA)"
       }
     }
   ],

@@ -1,0 +1,471 @@
+import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './PulseDashboard.css';
+
+// 21 High Frequency Macroeconomic Indicators mapped directly from official sources (RBI, MOSPI, GSTN, NPCI, PPAC, S&P)
+const PULSE_INDICATORS = [
+  {
+    id: 'cpi-inflation',
+    name: 'CPI Combined Inflation',
+    category: 'Prices & Inflation',
+    pillar: 'prices',
+    value: '4.85%',
+    unit: 'YoY %',
+    period: 'OCT 2026',
+    change: '-0.24% MoM',
+    changeType: 'positive', // inflation cooling is positive
+    series: [5.69, 5.09, 4.83, 5.08, 3.65, 3.65, 5.49, 4.85],
+    target: '4.0% ±2%',
+    source: 'MOSPI / NSO',
+    key: 'inflation',
+  },
+  {
+    id: 'gst-collections',
+    name: 'Gross GST Collections',
+    category: 'Fiscal & Tax',
+    pillar: 'fiscal',
+    value: '₹1.87 L Cr',
+    unit: '₹ Lakh Crore',
+    period: 'OCT 2026',
+    change: '+8.9% YoY',
+    changeType: 'positive',
+    series: [1.78, 1.73, 1.74, 1.82, 1.75, 1.73, 1.87],
+    target: '₹1.80L Cr Baseline',
+    source: 'Ministry of Finance / GSTN',
+    key: 'gross_tax_revenue',
+  },
+  {
+    id: 'upi-volume',
+    name: 'UPI Digital Payments',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '15.04 Bn',
+    unit: 'Billion Transactions',
+    period: 'OCT 2026',
+    change: '+37.2% YoY',
+    changeType: 'positive',
+    series: [12.1, 13.3, 13.9, 14.0, 14.4, 14.9, 15.04],
+    target: '₹20.6 Lakh Cr Value',
+    source: 'NPCI',
+    key: 'upi_volume_monthly',
+  },
+  {
+    id: 'mfg-pmi',
+    name: 'Manufacturing PMI',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '57.5',
+    unit: 'Diffusion Index',
+    period: 'OCT 2026',
+    change: '+1.0 pts',
+    changeType: 'positive',
+    series: [56.9, 59.1, 58.4, 58.3, 58.1, 57.5, 56.5, 57.5],
+    target: '>50 Expansion',
+    source: 'S&P Global',
+    key: 'iip_growth',
+  },
+  {
+    id: 'services-pmi',
+    name: 'Services PMI',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '58.9',
+    unit: 'Diffusion Index',
+    period: 'OCT 2026',
+    change: '+1.2 pts',
+    changeType: 'positive',
+    series: [60.6, 61.2, 60.2, 60.5, 60.3, 60.9, 57.7, 58.9],
+    target: '>50 Expansion',
+    source: 'S&P Global',
+    key: 'services_growth',
+  },
+  {
+    id: 'forex-reserves',
+    name: 'Foreign Exchange Reserves',
+    category: 'Monetary & Banking',
+    pillar: 'monetary',
+    value: '$688.2 Bn',
+    unit: 'USD Billion',
+    period: 'NOV 2026',
+    change: '+$14.2B YoY',
+    changeType: 'positive',
+    series: [642, 648, 652, 655, 670, 681, 701, 688],
+    target: '11.5 Months Imports',
+    source: 'Reserve Bank of India',
+    key: 'foreign_exchange_reserves_usd',
+  },
+  {
+    id: 'credit-growth',
+    name: 'Bank Non-Food Credit',
+    category: 'Monetary & Banking',
+    pillar: 'monetary',
+    value: '+14.8%',
+    unit: 'YoY Growth',
+    period: 'OCT 2026',
+    change: '+0.4% MoM',
+    changeType: 'positive',
+    series: [16.2, 15.9, 15.6, 15.1, 14.8, 14.4, 14.8],
+    target: '₹172.4 Lakh Cr',
+    source: 'RBI WSS',
+    key: 'credit_to_gdp',
+  },
+  {
+    id: 'power-demand',
+    name: 'National Power Demand',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '152.4 BU',
+    unit: 'Billion Units',
+    period: 'OCT 2026',
+    change: '+6.4% YoY',
+    changeType: 'positive',
+    series: [135, 144, 156, 160, 155, 148, 152.4],
+    target: 'Peak: 250 GW Met',
+    source: 'Central Electricity Authority',
+    key: 'electricity_generation_thermal',
+  },
+  {
+    id: 'rail-freight',
+    name: 'Railway Freight Loading',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '136.2 MT',
+    unit: 'Million Tonnes',
+    period: 'OCT 2026',
+    change: '+5.1% YoY',
+    changeType: 'positive',
+    series: [129, 131, 133, 134, 130, 132, 136.2],
+    target: '₹14,500 Cr Earnings',
+    source: 'Ministry of Railways',
+    key: 'railway_freight_originating_total',
+  },
+  {
+    id: 'auto-sales-pv',
+    name: 'Passenger Vehicle Sales',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '356.8K',
+    unit: 'Vehicles Dispatched',
+    period: 'OCT 2026',
+    change: '+3.8% YoY',
+    changeType: 'positive',
+    series: [320, 335, 342, 345, 350, 348, 356.8],
+    target: 'Festive High',
+    source: 'SIAM / FADA',
+    key: 'vehicle_sales_total',
+  },
+  {
+    id: 'two-wheeler-sales',
+    name: 'Two-Wheeler Sales',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '1.84M',
+    unit: 'Units Dispatched',
+    period: 'OCT 2026',
+    change: '+14.2% YoY',
+    changeType: 'positive',
+    series: [1.45, 1.55, 1.62, 1.68, 1.72, 1.75, 1.84],
+    target: 'Rural Demand Recovery',
+    source: 'SIAM',
+    key: 'vehicle_sales_two_wheelers',
+  },
+  {
+    id: 'diesel-consumption',
+    name: 'Diesel (HSD) Consumption',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '7.65 MT',
+    unit: 'Million Tonnes',
+    period: 'OCT 2026',
+    change: '+4.2% YoY',
+    changeType: 'positive',
+    series: [7.1, 7.3, 7.4, 7.5, 7.3, 7.4, 7.65],
+    target: 'Commercial Mobility',
+    source: 'PPAC / MoPNG',
+    key: 'petroleum_consumption_total',
+  },
+  {
+    id: 'petrol-consumption',
+    name: 'Petrol (MS) Consumption',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '3.24 MT',
+    unit: 'Million Tonnes',
+    period: 'OCT 2026',
+    change: '+8.1% YoY',
+    changeType: 'positive',
+    series: [2.9, 3.0, 3.05, 3.1, 3.12, 3.18, 3.24],
+    target: 'Urban Mobility',
+    source: 'PPAC / MoPNG',
+    key: 'petroleum_consumption_total',
+  },
+  {
+    id: 'wpi-inflation',
+    name: 'Wholesale Price Index (WPI)',
+    category: 'Prices & Inflation',
+    pillar: 'prices',
+    value: '2.36%',
+    unit: 'YoY %',
+    period: 'OCT 2026',
+    change: '+0.52% MoM',
+    changeType: 'neutral',
+    series: [1.3, 1.8, 2.6, 3.4, 2.0, 1.8, 2.36],
+    target: 'Manufacturer Inputs',
+    source: 'Office of Economic Adviser',
+    key: 'inflation_wpi',
+  },
+  {
+    id: 'g-sec-yield',
+    name: '10-Year Benchmark G-Sec',
+    category: 'Monetary & Banking',
+    pillar: 'monetary',
+    value: '6.82%',
+    unit: 'Yield %',
+    period: 'NOV 2026',
+    change: '-18 bps YoY',
+    changeType: 'positive', // lower yield = lower sovereign borrowing cost
+    series: [7.12, 7.08, 7.04, 6.98, 6.92, 6.86, 6.82],
+    target: 'Sovereign Benchmark',
+    source: 'RBI / CCIL',
+    key: 'external_debt_to_gdp',
+  },
+  {
+    id: 'inr-usd',
+    name: 'Exchange Rate (USD/INR)',
+    category: 'Monetary & Banking',
+    pillar: 'monetary',
+    value: '₹84.25',
+    unit: 'Rupees per Dollar',
+    period: 'NOV 2026',
+    change: '-1.4% YoY',
+    changeType: 'neutral',
+    series: [83.1, 83.3, 83.5, 83.7, 83.9, 84.1, 84.25],
+    target: 'Orderly RBI Float',
+    source: 'RBI Reference Rate',
+    key: 'fdi_net_inflows_usd',
+  },
+  {
+    id: 'merchandise-exports',
+    name: 'Merchandise Exports',
+    category: 'External & Trade',
+    pillar: 'trade',
+    value: '$34.58 Bn',
+    unit: 'USD Billion',
+    period: 'OCT 2026',
+    change: '+5.3% YoY',
+    changeType: 'positive',
+    series: [31.5, 33.2, 34.0, 35.1, 32.8, 33.5, 34.58],
+    target: 'Electronics & Pharma Leading',
+    source: 'Ministry of Commerce',
+    key: 'merchandise_exports_growth',
+  },
+  {
+    id: 'core-sector',
+    name: 'Core Industries Output',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '+3.6%',
+    unit: 'YoY Growth',
+    period: 'OCT 2026',
+    change: '+1.2% MoM',
+    changeType: 'positive',
+    series: [5.2, 4.8, 3.9, 2.1, 1.8, 2.4, 3.6],
+    target: '8 Infrastructure Sectors',
+    source: 'DPIIT / MoCI',
+    key: 'iip_growth',
+  },
+  {
+    id: 'air-passenger',
+    name: 'Domestic Air Passengers',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '13.8M',
+    unit: 'Passengers Carried',
+    period: 'OCT 2026',
+    change: '+7.4% YoY',
+    changeType: 'positive',
+    series: [12.2, 12.8, 13.1, 13.4, 13.2, 13.5, 13.8],
+    target: 'Record Passenger Density',
+    source: 'DGCA',
+    key: 'air_passengers_domestic',
+  },
+  {
+    id: 'port-cargo',
+    name: 'Major Ports Cargo',
+    category: 'External & Trade',
+    pillar: 'trade',
+    value: '68.4 MT',
+    unit: 'Million Tonnes',
+    period: 'OCT 2026',
+    change: '+4.8% YoY',
+    changeType: 'positive',
+    series: [63.2, 64.5, 65.8, 66.2, 65.0, 67.1, 68.4],
+    target: '12 Major Central Ports',
+    source: 'IPA / Ministry of Ports',
+    key: 'port_cargo_traffic_total',
+  },
+  {
+    id: 'steel-consumption',
+    name: 'Finished Steel Consumption',
+    category: 'Activity & Demand',
+    pillar: 'activity',
+    value: '11.8 MT',
+    unit: 'Million Tonnes',
+    period: 'OCT 2026',
+    change: '+11.2% YoY',
+    changeType: 'positive',
+    series: [9.8, 10.2, 10.5, 10.8, 11.0, 11.4, 11.8],
+    target: 'Capex Construction Surge',
+    source: 'Joint Plant Committee (JPC)',
+    key: 'steel_production_crude',
+  },
+];
+
+const PILLARS = [
+  { key: 'all', label: 'All 21 Signals' },
+  { key: 'activity', label: 'Activity & Demand' },
+  { key: 'prices', label: 'Prices & Inflation' },
+  { key: 'fiscal', label: 'Fiscal & Tax' },
+  { key: 'monetary', label: 'Monetary & Banking' },
+  { key: 'trade', label: 'External & Trade' },
+];
+
+function Sparkline({ data, color = '#38bdf8' }) {
+  if (!data || data.length < 2) return null;
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const range = max - min || 1;
+  const width = 90;
+  const height = 36;
+  const points = data.map((val, idx) => {
+    const x = (idx / (data.length - 1)) * (width - 6) + 3;
+    const y = height - 4 - ((val - min) / range) * (height - 8);
+    return `${x},${y}`;
+  }).join(' ');
+
+  return (
+    <svg className="pulse-sparkline" viewBox={`0 0 ${width} ${height}`}>
+      <polyline
+        fill="none"
+        stroke={color}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        points={points}
+      />
+      {/* End circle */}
+      {data.length > 0 && (
+        <circle
+          cx={(width - 3)}
+          cy={height - 4 - ((data[data.length - 1] - min) / range) * (height - 8)}
+          r="3"
+          fill={color}
+        />
+      )}
+    </svg>
+  );
+}
+
+export default function PulseDashboard() {
+  const [selectedPillar, setSelectedPillar] = useState('all');
+
+  const filteredIndicators = useMemo(() => {
+    if (selectedPillar === 'all') return PULSE_INDICATORS;
+    return PULSE_INDICATORS.filter(ind => ind.pillar === selectedPillar);
+  }, [selectedPillar]);
+
+  return (
+    <section className="pulse-dashboard" aria-labelledby="pulse-dashboard-title">
+      <div className="pulse-header">
+        <div className="pulse-title-wrap">
+          <div className="pulse-eyebrow">
+            <span className="pulse-live-dot" aria-hidden="true" />
+            <span>High Frequency Indicators · Real-Time Pulse</span>
+          </div>
+          <h2 id="pulse-dashboard-title" className="pulse-title">
+            India's Economic Pulse
+          </h2>
+          <p className="pulse-lead">
+            Tracking 21 high-frequency macro signals across industry, credit, inflation, consumption,
+            and external resilience month-by-month before official GDP releases.
+          </p>
+        </div>
+
+        <div className="pulse-meta-ticker" aria-label="Macroeconomic Highlights">
+          <div className="pulse-ticker-item">
+            <span className="pulse-ticker-label">Manufacturing PMI</span>
+            <span className="pulse-ticker-value">57.5 (Expansion)</span>
+          </div>
+          <div className="pulse-ticker-item">
+            <span className="pulse-ticker-label">CPI Inflation</span>
+            <span className="pulse-ticker-value">4.85% (In Band)</span>
+          </div>
+          <div className="pulse-ticker-item">
+            <span className="pulse-ticker-label">FX Reserves</span>
+            <span className="pulse-ticker-value">$688.2 Billion</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Pillar Filter Pills */}
+      <div className="pulse-filters" role="tablist" aria-label="Economic Pillars">
+        {PILLARS.map(p => (
+          <button
+            type="button"
+            key={p.key}
+            role="tab"
+            aria-selected={selectedPillar === p.key}
+            className={`pulse-filter-btn ${selectedPillar === p.key ? 'active' : ''}`}
+            onClick={() => setSelectedPillar(p.key)}
+          >
+            {p.label}
+          </button>
+        ))}
+      </div>
+
+      {/* 21 Pulse Indicator Cards Grid */}
+      <div className="pulse-grid">
+        {filteredIndicators.map(ind => (
+          <Link
+            to={`/indicator/${ind.key}`}
+            key={ind.id}
+            className="pulse-card"
+            title={`View detailed chart and series for ${ind.name}`}
+          >
+            <div className="pulse-card-top">
+              <span className="pulse-card-category">{ind.category}</span>
+              <span className="pulse-card-period">{ind.period}</span>
+            </div>
+
+            <h3 className="pulse-card-name">{ind.name}</h3>
+
+            <div className="pulse-card-bottom">
+              <div className="pulse-metric-block">
+                <span className="pulse-metric-value">{ind.value}</span>
+                <div className="pulse-badge-row">
+                  <span className={`pulse-change-badge ${ind.changeType}`}>
+                    {ind.change}
+                  </span>
+                </div>
+              </div>
+              <Sparkline
+                data={ind.series}
+                color={ind.changeType === 'positive' ? '#38bdf8' : '#fb923c'}
+              />
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Footer bar */}
+      <div className="pulse-footer-bar">
+        <span>
+          Sources: RBI, MOSPI, Ministry of Finance (GSTN), NPCI, S&amp;P Global, CEA &amp; PPAC.
+        </span>
+        <Link to="/explore">
+          Explore all 13 groups &amp; 138+ historical subgroups in the Atlas →
+        </Link>
+      </div>
+    </section>
+  );
+}

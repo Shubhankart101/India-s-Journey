@@ -31,6 +31,23 @@ const PUBLISHERS = [
   ['https://scdg.sci.gov.in/scnjdg/', 'National Judicial Data Grid — Supreme Court of India'],
   ['https://datahub.itu.int/', 'ITU DataHub — telecom & internet indicators'],
   ['https://www.worldbank.org/en/programs/entrepreneurship', 'World Bank Entrepreneurship Database — new business density'],
+  ['https://mohua.gov.in/cms/metro-rail.php', 'Ministry of Housing and Urban Affairs (MoHUA) — Metro Rail Division & Policy Reports'],
+  ['https://www.delhimetrorail.com/', 'Delhi Metro Rail Corporation (DMRC) — Annual Reports & Monograph Archives'],
+  ['https://mmrda.maharashtra.gov.in/', 'Mumbai Metropolitan Region Development Authority (MMRDA) & MMRC Aqua Line 3'],
+  ['https://english.bmrc.co.in/', 'Bangalore Metro Rail Corporation Limited (BMRCL Namma Metro)'],
+  ['https://kmrl.co.in/', 'Kochi Metro Rail Limited (KMRL) & Electric Water Metro Whitepaper'],
+  ['https://chennaimetrorail.org/', 'Chennai Metro Rail Limited (CMRL)'],
+  ['https://www.kmrc.in/', 'Kolkata Metro Rail Corporation (KMRCL) — Underwater Hooghly Tunnel Technical Monograph'],
+  ['https://ncrtc.in/', 'National Capital Region Transport Corporation (NCRTC) — Namo Bharat RRTS'],
+  ['https://www.spglobal.com/marketintelligence/en/mi/products/purchasing-managers-index.html', 'S&P Global — India Manufacturing & Services Purchasing Managers’ Index (PMI)'],
+  ['https://www.gst.gov.in/', 'Goods and Services Tax Network (GSTN) / Department of Revenue — Monthly Gross Collections'],
+  ['https://www.ppac.gov.in/', 'Petroleum Planning & Analysis Cell (PPAC) — Monthly Petroleum Products Consumption'],
+  ['https://cea.nic.in/', 'Central Electricity Authority (CEA) — National Power Generation & Demand Monitor'],
+  ['https://www.siam.in/', 'Society of Indian Automobile Manufacturers (SIAM) — Vehicle Dispatch Data'],
+  ['https://www.wto.org/english/res_e/statis_e/statis_e.htm', 'World Trade Organization (WTO) — International Trade Statistics & Agri Exporters'],
+  ['https://apeda.gov.in/', 'Agricultural and Processed Food Products Export Development Authority (APEDA) — Export Database'],
+  ['https://www.fao.org/faostat/', 'Food and Agriculture Organization of the United Nations (FAOSTAT)'],
+  ['https://www.aciworldwide.com/real-time-payments-report', 'ACI Worldwide — Prime Time for Real-Time Payments Global Benchmark'],
 ];
 
 const SPORTS_SOURCES = [

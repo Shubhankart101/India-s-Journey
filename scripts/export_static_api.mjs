@@ -12,7 +12,7 @@ for (const name of [
   'groupcards.css', 'india-maps.css', 'journeys.css', 'parity.css', 'product-theme.css',
   'scripture-data.js', 'scripture.css', 'scripture.js', 'site.js', 'state-elections.js', 'styles.css',
   'themes.css', 'vintage.css', 'voter-roll.css', 'atlas.js', 'journeys.js', 'vintage.js', 'voter-roll.js',
-  'compare-data.js', 'overlays.js', 'data.js', 'openapi.json',
+  'compare-data.js', 'overlays.js', 'data.js',
 ]) fs.rmSync(path.join(root, 'docs', name), { force: true });
 const readJson = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const catalog = readJson('data/catalog.json');
@@ -77,4 +77,9 @@ for (const [name, data] of Object.entries({
 }
 const oldCatalog = path.join(apiDir, 'catalog.json');
 if (fs.existsSync(oldCatalog)) fs.unlinkSync(oldCatalog);
+const openApiSource = path.join(root, 'data', 'openapi.json');
+if (fs.existsSync(openApiSource)) {
+  fs.copyFileSync(openApiSource, path.join(apiDir, 'openapi.json'));
+  fs.copyFileSync(openApiSource, path.join(root, 'docs', 'openapi.json'));
+}
 console.log(`Exported static API (${indicators.length} indicators, ${catalog.articles.length} articles).`);

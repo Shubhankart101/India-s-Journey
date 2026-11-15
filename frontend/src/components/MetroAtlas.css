@@ -1,0 +1,316 @@
+/* Metro Atlas Styles - Matches Indus Valley & Empires of Ancient India Atlas */
+.metro-atlas-root {
+  background: #090d16;
+  color: #f1f5f9;
+  border-radius: 16px;
+  border: 1px solid #1e293b;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  margin: 32px 0 48px;
+}
+
+.metro-top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid #1e293b;
+}
+
+.metro-cities-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metro-city-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metro-city-pill:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: #1e293b;
+}
+
+.metro-city-pill.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
+}
+
+.metro-city-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+.metro-workbench-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  min-height: 620px;
+}
+
+@media (max-width: 1024px) {
+  .metro-workbench-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metro-map-canvas-container {
+  position: relative;
+  background: #060911;
+  border-right: 1px solid #1e293b;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.metro-map-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.metro-map-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.15s ease;
+}
+
+.metro-map-btn:hover {
+  background: #0284c7;
+  border-color: #38bdf8;
+}
+
+.metro-line-filter-strip {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 10;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  backdrop-filter: blur(8px);
+}
+
+.metro-line-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.metro-line-pill.active {
+  border-color: var(--line-color, #38bdf8);
+  background: var(--line-color, #0284c7);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--line-color, #0284c7);
+}
+
+.metro-line-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--line-color, #38bdf8);
+}
+
+.metro-svg-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+}
+
+.metro-dossier-panel {
+  padding: 24px;
+  background: #0b1120;
+  overflow-y: auto;
+  max-height: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.metro-dossier-header {
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 16px;
+}
+
+.metro-dossier-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 4px 0 2px;
+}
+
+.metro-dossier-hindi {
+  font-family: 'Martel', serif;
+  font-size: 1rem;
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.metro-dossier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.metro-meta-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+.metro-dossier-lead {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.metro-quote-card {
+  background: rgba(30, 41, 59, 0.4);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.metro-quote-cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.metro-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.metro-stat-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.metro-stat-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+}
+
+.metro-stat-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.metro-stat-note {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.metro-feats-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.metro-feats-box h4 {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f59e0b;
+  margin: 0 0 10px;
+}
+
+.metro-feats-box ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.metro-station-tooltip {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  margin-top: -12px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  pointer-events: none;
+  z-index: 100;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}

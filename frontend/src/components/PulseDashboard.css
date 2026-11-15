@@ -1,0 +1,274 @@
+/* Pulse Dashboard Styles - Inspired by politypolicy.com/pulse/ */
+.pulse-dashboard {
+  background: var(--bg-card, #090d16);
+  border: 1px solid var(--border-color, #1e293b);
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin: 32px 0 48px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.pulse-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.pulse-title-wrap {
+  max-width: 700px;
+}
+
+.pulse-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.pulse-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.pulse-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-color, #f8fafc);
+  margin: 0 0 8px;
+}
+
+.pulse-lead {
+  font-size: 1rem;
+  color: var(--text-muted, #94a3b8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.pulse-meta-ticker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.pulse-ticker-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pulse-ticker-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.pulse-ticker-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+/* Category Filter Bar */
+.pulse-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 16px;
+}
+
+.pulse-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid #1e293b;
+  background: rgba(255, 255, 255, 0.03);
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pulse-filter-btn:hover {
+  color: #f8fafc;
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.pulse-filter-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.4);
+}
+
+/* 21 Pulse Grid */
+.pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.pulse-card {
+  background: #0c1220;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pulse-card:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.15);
+}
+
+.pulse-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pulse-card-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+
+.pulse-card-period {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.pulse-card-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f8fafc;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.pulse-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.pulse-metric-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pulse-metric-value {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.pulse-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pulse-change-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.pulse-change-badge.positive {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.pulse-change-badge.negative {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.pulse-change-badge.neutral {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+}
+
+.pulse-sparkline {
+  width: 90px;
+  height: 38px;
+}
+
+.pulse-footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #1e293b;
+  font-size: 0.88rem;
+  color: #94a3b8;
+}
+
+.pulse-footer-bar a {
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pulse-footer-bar a:hover {
+  text-decoration: underline;
+}

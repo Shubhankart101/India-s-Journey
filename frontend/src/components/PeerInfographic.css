@@ -1,0 +1,203 @@
+/* Peer Infographics Styles - Modeled after infographics.politypolicy.com */
+.peer-infographic-card {
+  background: var(--bg-card, #0c1220);
+  border: 1px solid var(--border-color, #1e293b);
+  border-radius: 18px;
+  padding: 32px 28px;
+  margin: 36px 0 44px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.peer-info-header {
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.peer-info-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+.peer-info-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #f8fafc;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+
+.peer-info-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 850px;
+}
+
+/* Callout Summary Boxes */
+.peer-callouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.peer-callout-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 16px 18px;
+  position: relative;
+}
+
+.peer-callout-box.highlight {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.peer-callout-metric {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  display: block;
+}
+
+.peer-callout-box.highlight .peer-callout-metric {
+  color: #f59e0b;
+}
+
+.peer-callout-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+.peer-callout-note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 2px;
+  display: block;
+}
+
+/* Core Paradox / Insight Banner */
+.peer-insight-banner {
+  background: rgba(30, 41, 59, 0.4);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 10px 10px 0;
+  padding: 16px 20px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+}
+
+.peer-insight-banner strong {
+  color: #f8fafc;
+}
+
+/* Ranking Slope & Bar Table */
+.peer-table-container {
+  overflow-x: auto;
+}
+
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.peer-table th {
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  border-bottom: 1px solid #1e293b;
+}
+
+.peer-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+  color: #cbd5e1;
+}
+
+.peer-row-highlight {
+  background: rgba(245, 158, 11, 0.12) !important;
+  font-weight: 700;
+}
+
+.peer-row-highlight td {
+  color: #fef08a !important;
+  border-bottom-color: #f59e0b !important;
+}
+
+.peer-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.peer-row-highlight .peer-rank-badge {
+  background: #f59e0b;
+  color: #000000;
+}
+
+.peer-bar-track {
+  width: 100%;
+  max-width: 180px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.peer-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: #38bdf8;
+}
+
+.peer-row-highlight .peer-bar-fill {
+  background: #f59e0b;
+}
+
+.peer-info-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+  font-size: 0.78rem;
+  color: #64748b;
+}

@@ -6,6 +6,7 @@ import { useAsync, useDocumentTitle } from '../hooks.js';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import MiniIndices from '../components/MiniIndices.jsx';
+import PulseDashboard from '../components/PulseDashboard.jsx';
 import GroupCards from '../components/GroupCards.jsx';
 import IndependenceClock from '../components/IndependenceClock.jsx';
 import { ANALYSIS_KICKER, GROUPS_KICKER, HOME_KICKER, MOTTO } from '../sanskrit.js';
@@ -90,6 +91,9 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      {/* High Frequency Indicators Pulse Dashboard */}
+      <PulseDashboard />
 
       <section className="section">
         <div className="section-head">

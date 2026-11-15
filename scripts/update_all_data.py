@@ -133,6 +133,9 @@ STEPS: tuple[Step, ...] = (
          source="Reviewed scripture corpus and exported catalogue", cadence="After catalogue export"),
     Step("build-explainers", py("build_explainers.py"), dependencies=("export-catalog",),
          required_cache=("data/catalog.json",), source="Exported catalogue", cadence="After catalogue export"),
+    Step("export-static-api", ("node", str(ROOT / "scripts" / "export_static_api.mjs")),
+         outputs=("docs/api/categories.json", "docs/api/indicators.json", "docs/api/openapi.json"),
+         dependencies=("build-explainers",), source="Static API exporter and OpenAPI generator", cadence="After explainers build"),
 )
 
 # Entries without a command are intentional: keep source attribution configuration

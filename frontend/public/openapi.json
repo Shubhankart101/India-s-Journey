@@ -1,0 +1,1551 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "India's Journey API",
+        "version": "2.0.0",
+        "description": "Read-only indicator catalogue (groups, indicators, compare, downloads, articles) plus session-authenticated saved charts. Sign in with Google or Microsoft from the web app; Swagger \"Try it out\" then reuses that session and sends the CSRF token automatically."
+    },
+    "paths": {
+        "/api/": {
+            "get": {
+                "operationId": "root_retrieve",
+                "summary": "API index",
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {}
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/articles/": {
+            "get": {
+                "operationId": "articles_list",
+                "summary": "Articles and reports",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "kind",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Publisher kind, e.g. `substack`, `pew`."
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "description": "A page number within the paginated result set.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page_size",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Title search."
+                    }
+                ],
+                "tags": [
+                    "articles"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PaginatedArticleList"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/auth/csrf/": {
+            "get": {
+                "operationId": "auth_csrf_retrieve",
+                "summary": "Set the csrftoken cookie",
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Detail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/auth/logout/": {
+            "post": {
+                "operationId": "auth_logout_create",
+                "summary": "Sign out",
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthState"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/auth/me/": {
+            "get": {
+                "operationId": "auth_me_retrieve",
+                "summary": "Current session user",
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthState"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/auth/providers/": {
+            "get": {
+                "operationId": "auth_providers_list",
+                "description": "Sign-in is only through Google or Microsoft (Outlook/Live/Microsoft 365) accounts.",
+                "summary": "Configured sign-in providers",
+                "tags": [
+                    "auth"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Provider"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/categories/": {
+            "get": {
+                "operationId": "categories_list",
+                "summary": "Groups with subgroup counts",
+                "tags": [
+                    "categories"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Category"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/compare/": {
+            "get": {
+                "operationId": "compare_retrieve",
+                "description": "Aligns up to four indicators on a shared label axis (first dataset of each).",
+                "summary": "Compare up to four indicators",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "keys",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Comma-separated keys, e.g. `gdp_growth,cpi_inflation`.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "compare"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Compare"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Detail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/health/": {
+            "get": {
+                "operationId": "health_retrieve",
+                "summary": "Liveness check",
+                "tags": [
+                    "health"
+                ],
+                "security": [
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Health"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/indicators/": {
+            "get": {
+                "operationId": "indicators_list",
+                "description": "Searchable, filterable, paginated indicator list.\n\nQuery params: q, category, subgroup (slugs), live (true/false), chart (radial|line|bar|map), sort (position|title|recent|points).",
+                "summary": "Search and filter indicators",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "category",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Category slug, e.g. `macroeconomics`."
+                    },
+                    {
+                        "in": "query",
+                        "name": "chart",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "bar",
+                                "line",
+                                "map",
+                                "radial"
+                            ]
+                        },
+                        "description": "Chart family."
+                    },
+                    {
+                        "in": "query",
+                        "name": "live",
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "description": "Only live (or only non-live) indicators."
+                    },
+                    {
+                        "name": "page",
+                        "required": false,
+                        "in": "query",
+                        "description": "A page number within the paginated result set.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "page_size",
+                        "required": false,
+                        "in": "query",
+                        "description": "Number of results to return per page.",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Space-separated search terms (all must match)."
+                    },
+                    {
+                        "in": "query",
+                        "name": "sort",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "points",
+                                "position",
+                                "recent",
+                                "title"
+                            ],
+                            "default": "position"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "subgroup",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Subgroup slug."
+                    }
+                ],
+                "tags": [
+                    "indicators"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PaginatedIndicatorSummaryList"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/indicators/{key}/": {
+            "get": {
+                "operationId": "indicators_retrieve",
+                "description": "Adds `related` (same subgroup), `previous_key` and `next_key` (same group).",
+                "summary": "Full indicator data with related indicators",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "indicators"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/IndicatorDetail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/indicators/{key}/download/": {
+            "get": {
+                "operationId": "indicators_download_retrieve",
+                "summary": "Download an indicator as CSV or JSON",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "format",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "csv",
+                                "json"
+                            ],
+                            "default": "csv"
+                        },
+                        "description": "File format."
+                    },
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "indicators"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {}
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Detail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Detail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/saved/": {
+            "get": {
+                "operationId": "saved_list",
+                "summary": "Signed-in user's saved charts",
+                "tags": [
+                    "saved"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SavedChart"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "operationId": "saved_create",
+                "summary": "Save a chart (upsert)",
+                "tags": [
+                    "saved"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SavedChartRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SavedChartRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SavedChartRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SavedChart"
+                                }
+                            }
+                        },
+                        "description": ""
+                    },
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SavedChart"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/saved/{key}/": {
+            "delete": {
+                "operationId": "saved_destroy",
+                "summary": "Remove a saved chart",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "saved"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No response body"
+                    },
+                    "404": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Detail"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/stats/": {
+            "get": {
+                "operationId": "stats_retrieve",
+                "summary": "Catalogue totals and last refresh",
+                "tags": [
+                    "stats"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {}
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Stats"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Article": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "maxLength": 700
+                    },
+                    "published": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "publisher": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "kind": {
+                        "$ref": "#/components/schemas/KindEnum"
+                    },
+                    "is_featured": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "title",
+                    "url"
+                ]
+            },
+            "AuthState": {
+                "type": "object",
+                "properties": {
+                    "authenticated": {
+                        "type": "boolean"
+                    },
+                    "user": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/User"
+                            }
+                        ],
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "authenticated",
+                    "user"
+                ]
+            },
+            "Category": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "slug": {
+                        "type": "string",
+                        "maxLength": 140,
+                        "pattern": "^[-a-zA-Z0-9_]+$"
+                    },
+                    "order": {
+                        "type": "integer",
+                        "maximum": 9223372036854775807,
+                        "minimum": 0,
+                        "format": "int64"
+                    },
+                    "title": {
+                        "type": "string",
+                        "maxLength": 200
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "badges": {},
+                    "art": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "indicator_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "live_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "subgroups": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Subgroup"
+                        },
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "indicator_count",
+                    "live_count",
+                    "name",
+                    "slug",
+                    "subgroups"
+                ]
+            },
+            "Compare": {
+                "type": "object",
+                "properties": {
+                    "labels": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "series": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CompareSeries"
+                        }
+                    },
+                    "missing": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "labels",
+                    "missing",
+                    "series"
+                ]
+            },
+            "CompareSeries": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "suffix": {
+                        "type": "string"
+                    },
+                    "color": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "subgroup": {
+                        "type": "string"
+                    },
+                    "chart_type": {
+                        "type": "string"
+                    },
+                    "values": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "format": "double",
+                            "nullable": true
+                        }
+                    }
+                },
+                "required": [
+                    "category",
+                    "chart_type",
+                    "color",
+                    "key",
+                    "subgroup",
+                    "suffix",
+                    "title",
+                    "values"
+                ]
+            },
+            "Detail": {
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "detail"
+                ]
+            },
+            "Health": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "indicators": {
+                        "type": "integer"
+                    },
+                    "backup_url": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "backup_url",
+                    "indicators",
+                    "status"
+                ]
+            },
+            "IndicatorDetail": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "maxLength": 160,
+                        "pattern": "^[-a-zA-Z0-9_]+$"
+                    },
+                    "title": {
+                        "type": "string",
+                        "maxLength": 300
+                    },
+                    "subtitle": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "frequency": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "color": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "suffix": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "source_url": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "uri",
+                                "maxLength": 600
+                            },
+                            {
+                                "type": "string",
+                                "maxLength": 0
+                            }
+                        ]
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "category_slug": {
+                        "type": "string"
+                    },
+                    "subgroup": {
+                        "type": "string"
+                    },
+                    "subgroup_slug": {
+                        "type": "string"
+                    },
+                    "chart_type": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "index_axis": {
+                        "type": "string",
+                        "maxLength": 1
+                    },
+                    "scope": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "is_live": {
+                        "type": "boolean"
+                    },
+                    "point_count": {
+                        "type": "integer",
+                        "maximum": 9223372036854775807,
+                        "minimum": 0,
+                        "format": "int64"
+                    },
+                    "first_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_value": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "details": {
+                        "type": "string"
+                    },
+                    "labels": {},
+                    "datasets": {},
+                    "scope_label": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "note": {
+                        "type": "string"
+                    },
+                    "unit": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "error": {
+                        "type": "string"
+                    },
+                    "category_art": {
+                        "type": "string"
+                    },
+                    "subgroup_art": {
+                        "type": "string"
+                    },
+                    "is_saved": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "category",
+                    "category_art",
+                    "category_slug",
+                    "is_saved",
+                    "key",
+                    "subgroup",
+                    "subgroup_art",
+                    "subgroup_slug",
+                    "title",
+                    "updated_at"
+                ]
+            },
+            "IndicatorSummary": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "maxLength": 160,
+                        "pattern": "^[-a-zA-Z0-9_]+$"
+                    },
+                    "title": {
+                        "type": "string",
+                        "maxLength": 300
+                    },
+                    "subtitle": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "frequency": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "color": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "suffix": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "source_url": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "uri",
+                                "maxLength": 600
+                            },
+                            {
+                                "type": "string",
+                                "maxLength": 0
+                            }
+                        ]
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "category_slug": {
+                        "type": "string"
+                    },
+                    "subgroup": {
+                        "type": "string"
+                    },
+                    "subgroup_slug": {
+                        "type": "string"
+                    },
+                    "chart_type": {
+                        "type": "string",
+                        "maxLength": 20
+                    },
+                    "index_axis": {
+                        "type": "string",
+                        "maxLength": 1
+                    },
+                    "scope": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "is_live": {
+                        "type": "boolean"
+                    },
+                    "point_count": {
+                        "type": "integer",
+                        "maximum": 9223372036854775807,
+                        "minimum": 0,
+                        "format": "int64"
+                    },
+                    "first_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_value": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "preview": {},
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "category",
+                    "category_slug",
+                    "key",
+                    "subgroup",
+                    "subgroup_slug",
+                    "title",
+                    "updated_at"
+                ]
+            },
+            "IndicatorSummaryRequest": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 160,
+                        "pattern": "^[-a-zA-Z0-9_]+$"
+                    },
+                    "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 300
+                    },
+                    "subtitle": {
+                        "type": "string",
+                        "maxLength": 500
+                    },
+                    "frequency": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "color": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 20
+                    },
+                    "suffix": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "source_url": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "uri",
+                                "maxLength": 600
+                            },
+                            {
+                                "type": "string",
+                                "maxLength": 0
+                            }
+                        ]
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "category_slug": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "subgroup": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "subgroup_slug": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "chart_type": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 20
+                    },
+                    "index_axis": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1
+                    },
+                    "scope": {
+                        "type": "string",
+                        "maxLength": 40
+                    },
+                    "is_live": {
+                        "type": "boolean"
+                    },
+                    "point_count": {
+                        "type": "integer",
+                        "maximum": 9223372036854775807,
+                        "minimum": 0,
+                        "format": "int64"
+                    },
+                    "first_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_label": {
+                        "type": "string",
+                        "maxLength": 80
+                    },
+                    "latest_value": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "preview": {}
+                },
+                "required": [
+                    "category",
+                    "category_slug",
+                    "key",
+                    "subgroup",
+                    "subgroup_slug",
+                    "title"
+                ]
+            },
+            "KindEnum": {
+                "enum": [
+                    "indian_matrix",
+                    "polity_policy",
+                    "pew",
+                    "other"
+                ],
+                "type": "string",
+                "description": "* `indian_matrix` - Indian Matrix\n* `polity_policy` - Polity and Policy\n* `pew` - Pew Research Center\n* `other` - Other"
+            },
+            "PaginatedArticleList": {
+                "type": "object",
+                "required": [
+                    "count",
+                    "results"
+                ],
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?page=4"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?page=2"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Article"
+                        }
+                    }
+                }
+            },
+            "PaginatedIndicatorSummaryList": {
+                "type": "object",
+                "required": [
+                    "count",
+                    "results"
+                ],
+                "properties": {
+                    "count": {
+                        "type": "integer",
+                        "example": 123
+                    },
+                    "next": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?page=4"
+                    },
+                    "previous": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "uri",
+                        "example": "http://api.example.org/accounts/?page=2"
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/IndicatorSummary"
+                        }
+                    }
+                }
+            },
+            "Provider": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "login_url": {
+                        "type": "string",
+                        "description": "POST here (form submit with csrfmiddlewaretoken and next) to start OAuth."
+                    }
+                },
+                "required": [
+                    "id",
+                    "login_url",
+                    "name"
+                ]
+            },
+            "SavedChart": {
+                "type": "object",
+                "properties": {
+                    "indicator": {
+                        "allOf": [
+                            {
+                                "$ref": "#/components/schemas/IndicatorSummary"
+                            }
+                        ],
+                        "readOnly": true
+                    },
+                    "note": {
+                        "type": "string",
+                        "maxLength": 300
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "created_at",
+                    "indicator"
+                ]
+            },
+            "SavedChartRequest": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "minLength": 1,
+                        "writeOnly": true
+                    },
+                    "note": {
+                        "type": "string",
+                        "maxLength": 300
+                    }
+                },
+                "required": [
+                    "key"
+                ]
+            },
+            "Stats": {
+                "type": "object",
+                "properties": {
+                    "indicators": {
+                        "type": "integer"
+                    },
+                    "live_indicators": {
+                        "type": "integer"
+                    },
+                    "radial_indicators": {
+                        "type": "integer"
+                    },
+                    "categories": {
+                        "type": "integer"
+                    },
+                    "subgroups": {
+                        "type": "integer"
+                    },
+                    "articles": {
+                        "type": "integer"
+                    },
+                    "data_points": {
+                        "type": "integer"
+                    },
+                    "source_generated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "last_refresh": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "articles",
+                    "categories",
+                    "data_points",
+                    "indicators",
+                    "last_refresh",
+                    "live_indicators",
+                    "radial_indicators",
+                    "source_generated_at",
+                    "subgroups"
+                ]
+            },
+            "Subgroup": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "maxLength": 160
+                    },
+                    "slug": {
+                        "type": "string",
+                        "maxLength": 180,
+                        "pattern": "^[-a-zA-Z0-9_]+$"
+                    },
+                    "order": {
+                        "type": "integer",
+                        "maximum": 9223372036854775807,
+                        "minimum": 0,
+                        "format": "int64"
+                    },
+                    "title": {
+                        "type": "string",
+                        "maxLength": 220
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "art": {
+                        "type": "string",
+                        "maxLength": 120
+                    },
+                    "indicator_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "live_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "indicator_count",
+                    "live_count",
+                    "name",
+                    "slug"
+                ]
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+                        "pattern": "^[\\w.@+-]+$",
+                        "maxLength": 150
+                    },
+                    "name": {
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "email": {
+                        "title": "Email address",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "email",
+                                "maxLength": 254
+                            },
+                            {
+                                "type": "string",
+                                "maxLength": 0
+                            }
+                        ]
+                    },
+                    "date_joined": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "is_staff": {
+                        "type": "boolean",
+                        "title": "Staff status",
+                        "description": "Designates whether the user can log into this admin site."
+                    },
+                    "providers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "readOnly": true
+                    },
+                    "saved_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    }
+                },
+                "required": [
+                    "id",
+                    "name",
+                    "providers",
+                    "saved_count",
+                    "username"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "cookieAuth": {
+                "type": "apiKey",
+                "in": "cookie",
+                "name": "sessionid"
+            }
+        }
+    }
+}
