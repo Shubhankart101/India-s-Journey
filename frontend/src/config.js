@@ -11,7 +11,7 @@ export const POLITYPOLICY_CONTACT_URL = 'https://politypolicy.substack.com/about
  */
 export function assetUrl(relPath) {
   const clean = String(relPath || '').replace(/^\/+/, '');
-  if (typeof window !== 'undefined' && window.location?.pathname?.startsWith('/India-s-Journey')) {
+  if (typeof window !== 'undefined' && /^\/India-s-Journey/i.test(window.location?.pathname || '')) {
     return `/India-s-Journey/${clean}`;
   }
   const base = import.meta.env?.BASE_URL;

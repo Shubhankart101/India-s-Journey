@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import AncientEmpiresAtlas from '../components/AncientEmpiresAtlas.jsx';
 import IndusValleyAtlas from '../components/IndusValleyAtlas.jsx';
+import { buildIvcArticleSections } from '../components/SubgroupPage.jsx';
+import sitesData from '../data/indus-civilisation.json';
 
 describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
   it('renders detailed history chronicle and primary source documentation when history tab is selected', async () => {
@@ -49,7 +51,26 @@ describe('Indus Valley Atlas: Period Boundaries & ASI Memoirs', () => {
     expect(screen.getByText(/Archaeological Trajectory & Urban Morphology/i)).toBeInTheDocument();
     expect(screen.getByText(/Quoted Primary Excavation Memoirs/i)).toBeInTheDocument();
 
+    // Verify chronological horizons are populated with era names (not empty colons)
+    expect(screen.getByText(/Urban Revolution & Grid-Iron Planning/i)).toBeInTheDocument();
+
     // Verify quoted Director-General Sir John Marshall memoir or ASI memoir
     expect(screen.getByText(/Sir John Marshall/i)).toBeInTheDocument();
+  });
+
+  it('renders IVC article sections with populated stratigraphic phases and no empty colons', () => {
+    const sections = buildIvcArticleSections(sitesData);
+    expect(sections.length).toBe(5);
+
+    const firstSectionContent = sections[0].content;
+    render(firstSectionContent);
+
+    // Verify badge and extent
+    expect(screen.getByText(/REGIONAL POLITIES & RAVI\/KOT DIJI PHASES/i)).toBeInTheDocument();
+    expect(screen.getByText(/~500,000 km²/i)).toBeInTheDocument();
+
+    // Verify stratigraphic phase text is fully populated without empty colons
+    expect(screen.getByText(/Hakra Ware & Early Pastoral-Agricultural Settlements/i)).toBeInTheDocument();
+    expect(screen.queryByText(/^:$/)).not.toBeInTheDocument();
   });
 });

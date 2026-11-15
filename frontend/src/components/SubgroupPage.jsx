@@ -19,6 +19,7 @@ import AncientEmpiresAtlas from './AncientEmpiresAtlas.jsx';
 import GroupArtCarousel from './GroupArtCarousel.jsx';
 import empiresData from '../data/ancient-empires.json';
 import sitesData from '../data/indus-civilisation.json';
+import legacyAliases from '../data/legacy-aliases.json';
 import { ErrorState, Loading } from './States.jsx';
 
 const SPECIAL_HEIGHT = 560;
@@ -315,8 +316,37 @@ function useSubgroup(categorySlug, subgroupSlug) {
   const normSubSlug = slugify(subgroupSlug);
 
   const isIvcMatch = str => (str.includes('indus') && !str.includes('industry')) || str.includes('harapp');
+  const isEmpireMatch = str => str.includes('empire') || str.includes('ancient');
 
-  // 1. Robust category resolution matching exact slugs, names, or key substrings
+  // Check legacy aliases
+  const legacyGroups = legacyAliases?.groups || {};
+  const legacySubgroups = legacyAliases?.subgroups || {};
+
+  let targetGroupSlug = '';
+  let targetSubSlug = '';
+  for (const [key, val] of Object.entries(legacySubgroups)) {
+    const parts = key.split('|');
+    if (parts.length === 2) {
+      const gSlug = slugify(parts[0]);
+      const sSlug = slugify(parts[1]);
+      if ((gSlug === normCatSlug && sSlug === normSubSlug) || sSlug === normSubSlug) {
+        targetGroupSlug = slugify(val.group);
+        targetSubSlug = slugify(val.subgroup);
+        break;
+      }
+    }
+  }
+
+  if (!targetGroupSlug && legacyGroups) {
+    for (const [k, v] of Object.entries(legacyGroups)) {
+      if (slugify(k) === normCatSlug) {
+        targetGroupSlug = slugify(v);
+        break;
+      }
+    }
+  }
+
+  // 1. Robust category resolution matching exact slugs, names, legacy targets, or key substrings
   const category = (categories.data || []).find(item => {
     const itemSlug = slugify(item.slug);
     const itemName = slugify(item.name);
@@ -324,34 +354,44 @@ function useSubgroup(categorySlug, subgroupSlug) {
       item.slug === categorySlug
       || itemSlug === normCatSlug
       || itemName === normCatSlug
-      || (isIvcMatch(normCatSlug) && isIvcMatch(itemName))
-      || (normCatSlug.includes('empire') && itemName.includes('empire'))
-      || (normCatSlug.includes('ancient') && itemName.includes('ancient'))
+      || (targetGroupSlug && (itemSlug === targetGroupSlug || itemName === targetGroupSlug))
+      || (isIvcMatch(normCatSlug) && isIvcMatch(itemSlug))
+      || (isEmpireMatch(normCatSlug) && isEmpireMatch(itemSlug))
     );
   }) || ((isIvcMatch(normSubSlug) || normSubSlug.includes('script') || normSubSlug.includes('excavation'))
-    ? (categories.data || []).find(item => isIvcMatch(slugify(item.name)))
+    ? (categories.data || []).find(item => isIvcMatch(slugify(item.slug)))
     : null)
-    || ((normSubSlug.includes('empire') || normSubSlug.includes('dynast') || normSubSlug.includes('battle'))
-    ? (categories.data || []).find(item => slugify(item.name).includes('empire'))
-    : null);
+    || ((isEmpireMatch(normSubSlug) || normSubSlug.includes('dynast') || normSubSlug.includes('battle') || normSubSlug.includes('maurya'))
+    ? (categories.data || []).find(item => isEmpireMatch(slugify(item.slug)))
+    : null)
+    || (categories.data || []).find(item => {
+      const words = normCatSlug.split('-').filter(w => w.length > 3);
+      const catWords = slugify(item.name).split('-');
+      return words.some(w => catWords.includes(w));
+    })
+    || (categories.data?.[0] || null);
 
   // 2. Robust subgroup resolution:
-  // If the category has only 1 subgroup (Indus Valley Civilisation or Empires of Ancient India),
-  // ALWAYS fall back to category.subgroups[0] so no route or legacy alias ever 404s!
-  const subgroup = category?.subgroups.find(item => {
+  const subgroup = category?.subgroups?.find(item => {
     const itemSlug = slugify(item.slug);
     const itemName = slugify(item.name);
     return (
       item.slug === subgroupSlug
       || itemSlug === normSubSlug
       || itemName === normSubSlug
+      || (targetSubSlug && (itemSlug === targetSubSlug || itemName === targetSubSlug))
       || (normSubSlug.includes('script') && itemName.includes('script'))
       || (normSubSlug.includes('excavation') && itemName.includes('excavation'))
       || (isIvcMatch(normSubSlug) && isIvcMatch(itemName))
       || (normSubSlug.includes('empire') && itemName.includes('empire'))
       || (normSubSlug.includes('atlas') && itemName.includes('atlas'))
     );
-  }) || (category?.subgroups?.length === 1 ? category.subgroups[0] : null);
+  }) || (category?.subgroups?.find(item => {
+    const subWords = normSubSlug.split('-').filter(w => w.length > 3);
+    const itemWords = slugify(item.slug).split('-');
+    return subWords.some(w => itemWords.includes(w));
+  }))
+  || (category?.subgroups?.[0] || null);
 
   const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
   const wantsMap = Boolean(category && subgroup && articleFor(category.name, subgroup.name).subgroup?.format === 'map');
@@ -549,9 +589,16 @@ export function buildIvcArticleSections(sitesData) {
               <div className="aipc-chronicle">
                 <strong>Stratigraphic Phases:</strong>
                 <ul>
-                  {p.chronicle?.map((c, i) => (
-                    <li key={i}><strong>{c.phase}:</strong> {c.details}</li>
-                  ))}
+                  {p.chronicle?.map((c, i) => {
+                    const phaseTitle = c.era || c.phase || c.title || '';
+                    const phaseDesc = c.narrative || c.details || c.text || c.desc || '';
+                    return (
+                      <li key={i}>
+                        {phaseTitle && <strong>{phaseTitle}{phaseDesc ? ': ' : ''}</strong>}
+                        {phaseDesc}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>

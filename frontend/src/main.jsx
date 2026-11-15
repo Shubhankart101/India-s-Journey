@@ -16,8 +16,8 @@ function configureStaticAssetPaths() {
   const project = location.pathname.split('/').filter(Boolean)[0];
   if (!project) return;
   const prefix = `/${project}/`;
-  const rewrite = value => typeof value === 'string' && /^\/(art|data|maps)\//.test(value)
-    ? `${prefix}${value.slice(1)}` : value;
+  const rewrite = value => typeof value === 'string' && /^\/?(art|data|maps|api)\//.test(value)
+    ? `${prefix}${value.replace(/^\/+/, '')}` : value;
   const originalFetch = window.fetch.bind(window);
   window.fetch = (input, init) => {
     const source = typeof input === 'string' ? input : input?.url;

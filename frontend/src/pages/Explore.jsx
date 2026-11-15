@@ -144,7 +144,7 @@ function ExploreBrowse() {
             <strong>🏛️ Indus Valley Archaeological Corpus & Epigraphy:</strong> Complete GIS excavations atlas (49+ sites across 9 countries with official ASI monographs) & computational script decryption workbench.
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <Link to={`/explore/${category.slug}/metropolises-major-urban-centers`} className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
+            <Link to={`/explore/${category.slug}/${category.subgroups[0]?.slug || 'the-indus-valley-civilisation-comprehensive-excavation-map'}`} className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
             <Link to="/ivc-translator" className="btn btn-secondary btn-sm">Indus Script Decryption Workbench →</Link>
           </div>
         </div>
@@ -155,8 +155,7 @@ function ExploreBrowse() {
             <strong>⚔️ Empires of Ancient India Atlas (600 BCE – 850 CE):</strong> Interactive changing imperial boundaries, decisive battle sites, and epigraphic inscriptions in Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil.
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <Link to={`/explore/${category.slug}/mauryan-empire-pan-indian-hegemony`} className="btn btn-primary btn-sm">Explore Mauryan Empire Map →</Link>
-            <Link to={`/explore/${category.slug}/alexander-the-greats-campaign-macedonian-limit`} className="btn btn-secondary btn-sm">Alexander's Campaign Map →</Link>
+            <Link to={`/explore/${category.slug}/${category.subgroups[0]?.slug || 'empires-of-ancient-india-atlas'}`} className="btn btn-primary btn-sm">Explore Ancient Empires Atlas →</Link>
           </div>
         </div>
       )}
@@ -305,15 +304,23 @@ function ExploreBrowse() {
   );
 }
 
-// A group + subgroup URL opens that subgroup's article (or map selector); everything else is the browser above.
+const isConsolidatedArticle = cat => {
+  const s = toSlug(cat?.slug || cat?.name || '');
+  return (s.includes('indus') && !s.includes('industry')) || s.includes('harapp') || s.includes('empire') || s.includes('ancient');
+};
+
+// A group + subgroup URL opens that subgroup's article (or map selector); consolidated groups open directly; everything else is the browser above.
 export default function Explore() {
   const { group: routeGroup } = useParams();
   const [params] = useSearchParams();
   const categories = useAsync(signal => api.categories(signal), []);
   const categorySlug = params.get('category') || routeGroup || '';
   const subgroupSlug = params.get('subgroup') || '';
-  if (categorySlug && subgroupSlug && categories.loading) return <Loading label="Loading the article…" />;
-  const category = (categories.data || []).find(item => item.slug === categorySlug);
-  if (category?.subgroups.some(item => item.slug === subgroupSlug)) return <SubgroupPage categorySlug={categorySlug} subgroupSlug={subgroupSlug} />;
+  if (categorySlug && categories.loading) return <Loading label="Loading the article…" />;
+  const category = (categories.data || []).find(item => item.slug === categorySlug || toSlug(item.slug) === toSlug(categorySlug) || toSlug(item.name) === toSlug(categorySlug));
+  if (category && (subgroupSlug || isConsolidatedArticle(category))) {
+    const targetSubSlug = subgroupSlug || category.subgroups[0]?.slug;
+    return <SubgroupPage categorySlug={category.slug} subgroupSlug={targetSubSlug} />;
+  }
   return <ExploreBrowse />;
 }

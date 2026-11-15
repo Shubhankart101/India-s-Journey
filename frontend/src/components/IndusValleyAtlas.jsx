@@ -781,9 +781,9 @@ export default function IndusValleyAtlas() {
                     {currentDossierPeriod.chronicle.map((ch, idx) => (
                       <div key={idx} className="chronicle-card">
                         <span className="chronicle-era-badge" style={{ color: currentDossierPeriod.color, borderColor: currentDossierPeriod.color }}>
-                          {ch.phase}
+                          {ch.era || ch.phase}
                         </span>
-                        <p className="chronicle-narrative">{ch.details}</p>
+                        <p className="chronicle-narrative">{ch.narrative || ch.details}</p>
                       </div>
                     ))}
                   </div>
