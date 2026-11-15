@@ -64,23 +64,21 @@ function computeElapsed() {
 
 // Split-flap mechanical flip digit pair
 function FlipCard({ value, label, highlight = false }) {
-  const str = String(value).padStart(2, '0');
+  const str = String(Math.max(0, value || 0)).padStart(2, '0');
   const d1 = str[0];
   const d2 = str[1];
 
   return (
-    <div className={`flip-group ${highlight ? 'flip-highlight' : ''}`}>
-      <div className="flip-digits">
+    <div className={`flip-unit ${highlight ? 'flip-highlight' : ''}`}>
+      <div className="flip-pair">
         <div className="flip-digit">
-          <span className="flip-card-top">{d1}</span>
-          <span className="flip-card-bottom">{d1}</span>
+          <span className="flip-num">{d1}</span>
           <span className="flip-crease" aria-hidden="true" />
           <span className="flip-hinge left" aria-hidden="true" />
           <span className="flip-hinge right" aria-hidden="true" />
         </div>
         <div className="flip-digit">
-          <span className="flip-card-top">{d2}</span>
-          <span className="flip-card-bottom">{d2}</span>
+          <span className="flip-num">{d2}</span>
           <span className="flip-crease" aria-hidden="true" />
           <span className="flip-hinge left" aria-hidden="true" />
           <span className="flip-hinge right" aria-hidden="true" />

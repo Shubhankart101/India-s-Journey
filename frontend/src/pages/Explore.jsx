@@ -137,28 +137,52 @@ function ExploreBrowse() {
 
       {category && <ExplainerArticle category={category} subgroup={subgroup} indicators={first.data?.results || []} />}
       {category?.slug === 'elections-democracy' && <p className="subgroup-callout">Looking for results by place? Open the <Link to="/elections">State and Union Territory election map</Link> for Lok Sabha and Assembly histories.</p>}
-      {category?.slug === 'indus-valley-civilisation' && (
+      {['indus-valley-civilisation', 'indus-valley'].includes(category?.slug) && (
         <div className="subgroup-callout ivc-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem' }}>
           <div>
             <strong>🏛️ Indus Valley Archaeological Corpus & Epigraphy:</strong> Complete GIS excavations atlas (49+ sites across 9 countries with official ASI monographs) & computational script decryption workbench.
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <Link to="/explore/indus-valley-civilisation/metropolises-major-urban-centers" className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
+            <Link to={`/explore/${category.slug}/metropolises-major-urban-centers`} className="btn btn-primary btn-sm">Explore Excavations Atlas →</Link>
             <Link to="/ivc-translator" className="btn btn-secondary btn-sm">Indus Script Decryption Workbench →</Link>
           </div>
         </div>
       )}
-      {category?.slug === 'empires-ancient-india' && (
+      {['empires-of-ancient-india', 'empires-ancient-india'].includes(category?.slug) && (
         <div className="subgroup-callout empires-portal-callout" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', marginBlock: '1rem' }}>
           <div>
             <strong>⚔️ Empires of Ancient India Atlas (600 BCE – 850 CE):</strong> Interactive changing imperial boundaries, decisive battle sites, and epigraphic inscriptions in Sanskrit, Ashokan Brahmi, Ancient Greek, and Sangam Tamil.
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-            <Link to="/explore/empires-ancient-india/mauryan-empire-pan-indian-hegemony" className="btn btn-primary btn-sm">Explore Mauryan Empire Map →</Link>
-            <Link to="/explore/empires-ancient-india/alexander-the-greats-campaign-macedonian-limit" className="btn btn-secondary btn-sm">Alexander's Campaign Map →</Link>
+            <Link to={`/explore/${category.slug}/mauryan-empire-pan-indian-hegemony`} className="btn btn-primary btn-sm">Explore Mauryan Empire Map →</Link>
+            <Link to={`/explore/${category.slug}/alexander-the-greats-campaign-macedonian-limit`} className="btn btn-secondary btn-sm">Alexander's Campaign Map →</Link>
           </div>
         </div>
       )}
+
+      {/* Quick Jump Bar for all 13 groups */}
+      <nav className="explore-groups-nav" aria-label="Groups of India's Journey">
+        <button
+          type="button"
+          className={`explore-group-pill ${!filters.category ? 'active' : ''}`}
+          onClick={() => update({ category: '', subgroup: '' })}
+        >
+          All Groups
+        </button>
+        {(categories.data || []).map(group => {
+          const isActive = filters.category === group.slug || (category && category.name === group.name);
+          return (
+            <button
+              key={group.slug}
+              type="button"
+              className={`explore-group-pill ${isActive ? 'active' : ''}`}
+              onClick={() => update({ category: group.slug, subgroup: '' })}
+            >
+              {group.name}
+            </button>
+          );
+        })}
+      </nav>
 
       <section className="explore-browse" aria-label="Browse">
         <div className="explore-browse-head">
@@ -173,18 +197,27 @@ function ExploreBrowse() {
             </button>
             {category.subgroups.map(item => {
               const info = articleFor(category.name, item.name).subgroup;
+              const rawArt = (item.art || category.art || 'parliament.svg').split('?')[0];
+              const base = import.meta.env.BASE_URL || '/';
+              const cleanBase = base === './' ? '/' : (base.endsWith('/') ? base : `${base}/`);
+              const artUrl = `${cleanBase}art/${rawArt}`;
               return (
                 <Link
                   role="listitem"
                   key={item.slug}
                   to={`/explore/${category.slug}/${item.slug}`}
                   className="explore-tile explore-article-card"
-                  style={{ '--card-art': `url(${import.meta.env.BASE_URL}art/${item.art || category.art})` }}
+                  style={{ '--card-art': `url(${artUrl})` }}
                 >
-                  <span className="explore-tile-count">{item.indicator_count}</span>
-                  <span className="explore-tile-name">{item.name}</span>
-                  {item.description && <span className="explore-tile-dek">{item.description}</span>}
-                  <span className="explore-tile-meta">{item.indicator_count} charts · {info?.format === 'map' ? 'Map + articles' : 'Long-form article'}</span>
+                  <span className="explore-tile-art" aria-hidden="true">
+                    <img src={artUrl} alt="" loading="lazy" decoding="async" />
+                  </span>
+                  <div className="explore-tile-content">
+                    <span className="explore-tile-count">{item.indicator_count}</span>
+                    <span className="explore-tile-name">{item.name}</span>
+                    {item.description && <span className="explore-tile-dek">{item.description}</span>}
+                    <span className="explore-tile-meta">{item.indicator_count} charts · {info?.format === 'map' ? 'Map + articles' : 'Long-form article'}</span>
+                  </div>
                 </Link>
               );
             })}

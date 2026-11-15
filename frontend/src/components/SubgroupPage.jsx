@@ -283,9 +283,22 @@ function RegionPage({ category, subgroup, indicators, geometry, slug }) {
 
 function useSubgroup(categorySlug, subgroupSlug) {
   const categories = useAsync(signal => api.categories(signal), []);
-  const category = (categories.data || []).find(item => item.slug === categorySlug);
-  const subgroup = category?.subgroups.find(item => item.slug === subgroupSlug);
-  const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(categorySlug, subgroupSlug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
+  const normCatSlug = slugify(categorySlug);
+  const normSubSlug = slugify(subgroupSlug);
+  const category = (categories.data || []).find(item => (
+    item.slug === categorySlug
+    || slugify(item.slug) === normCatSlug
+    || slugify(item.name) === normCatSlug
+    || (normCatSlug.includes('empires') && item.name.includes('Empires'))
+    || (normCatSlug.includes('indus') && item.name.includes('Indus'))
+  ));
+  const subgroup = category?.subgroups.find(item => (
+    item.slug === subgroupSlug
+    || slugify(item.slug) === normSubSlug
+    || slugify(item.name) === normSubSlug
+    || (normSubSlug.includes('script') && item.name.includes('Script'))
+  ));
+  const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
   const wantsMap = Boolean(category && subgroup && articleFor(category.name, subgroup.name).subgroup?.format === 'map');
   const geometry = useAsync(signal => (wantsMap ? loadGeometry() : Promise.resolve(null)), [wantsMap]);
   return { categories, category, subgroup, list, wantsMap, geometry };
@@ -313,7 +326,7 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
     const mapFormat = mapped.length >= 1;
     const isIvc = category.slug === 'indus-valley-civilisation' || category.name === 'Indus Valley Civilisation';
     const isScript = isIvc && (subgroup.slug?.includes('script') || subgroup.name?.includes('Script'));
-    const isEmpires = category.slug === 'empires-ancient-india' || category.name === 'Empires of Ancient India';
+    const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || category.name === 'Empires of Ancient India';
     let customLead = null;
     if (isScript) {
       customLead = <IndusScriptDecoder />;

@@ -12,6 +12,12 @@ export default function IndusScriptDecoder() {
   const [selectedSign, setSelectedSign] = useState(signs[0] || null);
 
   const currentInscription = famous_inscriptions.find(item => item.id === selectedInscId) || famous_inscriptions[0];
+  const inscSigns = (currentInscription?.sign_sequence || currentInscription?.signs || []).map(item => {
+    if (typeof item === 'string') {
+      return signs.find(s => s.id === item) || { id: item, name: 'Indus Sign', svg_path: 'M20 20 L60 60 M60 20 L20 60', dravidian_reading: 'rebus' };
+    }
+    return item;
+  });
 
   const handleAddSignToCustom = (signId) => {
     if (customSequence.length < 10) {
@@ -95,7 +101,7 @@ export default function IndusScriptDecoder() {
                 className={`insc-pill ${insc.id === selectedInscId ? 'active' : ''}`}
                 onClick={() => setSelectedInscId(insc.id)}
               >
-                <strong>{insc.name}</strong>
+                <strong>{insc.title || insc.name}</strong>
                 <span>{insc.site} • {insc.date}</span>
               </button>
             ))}
@@ -104,8 +110,8 @@ export default function IndusScriptDecoder() {
           <div className="inscription-card">
             <div className="insc-header">
               <div>
-                <span className="insc-sub">{currentInscription.artifact_type} • Found at {currentInscription.site} ({currentInscription.current_location})</span>
-                <h3 className="insc-title">{currentInscription.name}</h3>
+                <span className="insc-sub">{currentInscription.site} • {currentInscription.date}</span>
+                <h3 className="insc-title">{currentInscription.title || currentInscription.name}</h3>
                 <p className="insc-context">{currentInscription.context}</p>
               </div>
               <div className="rtl-direction-banner" title="Indus Script reading direction is predominant Right to Left">
@@ -123,18 +129,18 @@ export default function IndusScriptDecoder() {
               </div>
 
               <div className="glyphs-row rtl-flow">
-                {currentInscription.signs.map((sign, idx) => (
+                {inscSigns.map((sign, idx) => (
                   <div key={idx} className="glyph-box">
                     <span className="glyph-pos">#{idx + 1}</span>
                     <div className="glyph-svg-wrap">
                       <svg viewBox="0 0 80 80" className="glyph-svg" aria-hidden="true">
-                        <path d={sign.svg_path} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d={sign.svg_path || 'M20 20 L60 60 M60 20 L20 60'} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </div>
                     <span className="glyph-id">{sign.id}</span>
                     <span className="glyph-name">{sign.name}</span>
                     <span className="glyph-val" title="Rebus Dravidian Interpretation">
-                      <em>{sign.dravidian_val || sign.meaning}</em>
+                      <em>{sign.dravidian_reading || sign.dravidian_val || sign.name}</em>
                     </span>
                   </div>
                 ))}
@@ -150,7 +156,7 @@ export default function IndusScriptDecoder() {
               <div className="analysis-col">
                 <h4>Sign Concordance Insights</h4>
                 <ul className="insights-list">
-                  <li><strong>Total Glyphs:</strong> {currentInscription.signs.length} standardized signs.</li>
+                  <li><strong>Total Glyphs:</strong> {inscSigns.length} standardized signs.</li>
                   <li><strong>Directionality:</strong> Verified via right-side sign cramming and overlapping incisions on terracotta sealings.</li>
                   <li><strong>Linguistic Sign Pattern:</strong> Positional clustering matches noun/proper-name + patronymic/genitive case endings.</li>
                 </ul>
@@ -269,15 +275,15 @@ export default function IndusScriptDecoder() {
                 </div>
                 <div className="dive-box">
                   <span className="dive-k">Dominant Position</span>
-                  <span className="dive-v">{selectedSign.position}</span>
+                  <span className="dive-v">{selectedSign.position || (selectedSign.positional ? (selectedSign.positional.terminal > 50 ? 'Terminal (End of Signboard)' : selectedSign.positional.initial > 30 ? 'Initial (Start)' : 'Medial (Middle)') : 'Variable')}</span>
                 </div>
                 <div className="dive-box">
                   <span className="dive-k">Dravidian Rebus Value</span>
-                  <span className="dive-v">{selectedSign.dravidian_reading}</span>
+                  <span className="dive-v">{selectedSign.dravidian_reading || selectedSign.dravidian_val || 'kō / mīn'}</span>
                 </div>
                 <div className="dive-box">
                   <span className="dive-k">Indo-Aryan Reading</span>
-                  <span className="dive-v">{selectedSign.indo_aryan_reading}</span>
+                  <span className="dive-v">{selectedSign.rao_reading || selectedSign.indo_aryan_reading || 'pā / maha'}</span>
                 </div>
               </div>
             </div>

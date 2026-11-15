@@ -74,75 +74,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: clamp(6px, 1.3vw, 14px);
   flex-wrap: wrap;
-  margin: 0.6rem 0 1.2rem;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  margin: 0.8rem 0 1.2rem;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.flip-group {
+.flip-unit {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
-.flip-digits {
+.flip-pair {
   display: flex;
-  gap: 4px;
+  gap: 3px;
 }
 
 /* Individual split-flap digit card */
 .flip-digit {
   position: relative;
-  width: clamp(28px, 4vw, 36px);
-  height: clamp(44px, 6.2vw, 56px);
-  background: #111317;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(28px, 4vw, 40px);
+  height: clamp(44px, 6.2vw, 58px);
+  background: linear-gradient(180deg, #1e222a 0%, #15181f 49%, #101217 51%, #0b0d11 100%);
   border-radius: 6px;
   box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.7),
-    inset 0 1px 1px rgba(255, 255, 255, 0.15),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.8);
-  border: 1px solid #232730;
-  display: flex;
-  flex-direction: column;
+    0 4px 12px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.85);
+  border: 1px solid #282d38;
   overflow: hidden;
+  user-select: none;
 }
 
-.flip-card-top,
-.flip-card-bottom {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 50%;
-  overflow: hidden;
+.flip-num {
   font-family: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
-  font-size: clamp(1.6rem, 3.8vw, 2.2rem);
-  font-weight: 800;
+  font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+  font-weight: 850;
   color: #f0f4f8;
   text-align: center;
-  line-height: clamp(44px, 6.2vw, 56px);
-}
-
-.flip-card-top {
-  top: 0;
-  background: linear-gradient(180deg, #1e222a 0%, #15181e 100%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.flip-card-bottom {
-  bottom: 0;
-  background: linear-gradient(180deg, #13161c 0%, #0d0f13 100%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  line-height: 0;
-  padding-bottom: clamp(10px, 1.6vw, 15px);
-  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 /* Center horizontal split crease */
@@ -151,10 +132,11 @@
   top: 50%;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 1.5px;
   background: #000;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
   z-index: 3;
+  pointer-events: none;
 }
 
 /* Side mechanical hinge cutouts */
@@ -163,21 +145,22 @@
   top: calc(50% - 3px);
   width: 3px;
   height: 6px;
-  background: #0a0b0d;
+  background: #07080a;
   border-radius: 2px;
   z-index: 4;
+  pointer-events: none;
 }
 .flip-hinge.left { left: 0; border-right: 1px solid #2a303c; }
 .flip-hinge.right { right: 0; border-left: 1px solid #2a303c; }
 
 /* Highlight styling (e.g. seconds) */
 .flip-highlight .flip-digit {
-  border-color: color-mix(in srgb, #3fb950 40%, #232730);
+  border-color: color-mix(in srgb, #3fb950 45%, #232730);
+  background: linear-gradient(180deg, #16241a 0%, #101c13 49%, #0c150e 51%, #070d09 100%);
 }
-.flip-highlight .flip-card-top,
-.flip-highlight .flip-card-bottom {
+.flip-highlight .flip-num {
   color: #3fb950;
-  text-shadow: 0 0 10px rgba(63, 185, 80, 0.4);
+  text-shadow: 0 0 12px rgba(63, 185, 80, 0.5);
 }
 
 .flip-label {
@@ -195,7 +178,7 @@
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   font-weight: 800;
   color: #484f58;
-  margin-top: -16px;
+  margin-top: -24px;
   user-select: none;
 }
 
@@ -205,13 +188,15 @@
 .ist-watch-container {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 24px);
   padding: 12px 18px;
   margin: 10px 0 14px;
   background: color-mix(in srgb, var(--surface, #14171d) 70%, #000);
   border: 1px solid color-mix(in srgb, var(--line, #fff) 12%, transparent);
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 /* Analog Watch Face */

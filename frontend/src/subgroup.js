@@ -83,8 +83,10 @@ export function articleFor(categoryName, subgroupName) {
     const subgroup = IVC_GROUP_ARTICLE.subgroups.find(item => item.name === subgroupName || slugify(item.name) === slugify(subgroupName));
     return { group: IVC_GROUP_ARTICLE, subgroup };
   }
-  const group = explainers.groups.find(item => item.name === categoryName);
-  const subgroup = group?.article.subgroups.find(item => item.name === subgroupName);
+  const catSlug = slugify(categoryName);
+  const group = explainers.groups.find(item => item.name === categoryName || slugify(item.name) === catSlug || (catSlug.includes('empires') && item.name.includes('Empires')));
+  const subSlug = slugify(subgroupName);
+  const subgroup = group?.article.subgroups.find(item => item.name === subgroupName || slugify(item.name) === subSlug);
   return { group: group?.article, subgroup };
 }
 
