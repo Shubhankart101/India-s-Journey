@@ -25,7 +25,19 @@ def main() -> None:
         link = (item.findtext("link") or "").strip()
         published = (item.findtext("pubDate") or "").strip()
         description = re.sub(r"\s+", " ", unescape(item.findtext("description") or "")).strip()
-        items.append({"title": title, "link": link, "published": published, "description": description})
+        enclosure = item.find("enclosure")
+        image_url = enclosure.get("url") if enclosure is not None else ""
+        if not image_url:
+            media = item.find("{http://search.yahoo.com/mrss/}content")
+            if media is not None:
+                image_url = media.get("url") or ""
+        items.append({
+            "title": title,
+            "link": link,
+            "published": published,
+            "description": description,
+            "image_url": image_url,
+        })
 
     now = datetime.now(timezone.utc).replace(microsecond=0)
     snapshot = {

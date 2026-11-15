@@ -1,127 +1,72 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
-import packData from '../data/metro/delhi_metro_pack.json';
+import { getCityPack, kmDist } from '../data/metro/all_city_packs.js';
 import './PolityPolicyMetroCanvas.css';
 
-// Web Mercator projections matching politypolicy.com/DelhiMetro
-const px = l => (l + 180) / 360;
-const py = l => {
-  const s = Math.sin((l * Math.PI) / 180);
-  return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI);
-};
-
-const R2 = Math.PI / 180;
-function kmDist(a, b) {
-  const dx = (b.ll[0] - a.ll[0]) * Math.cos(((a.ll[1] + b.ll[1]) / 2) * R2) * 111.32;
-  const dy = (b.ll[1] - a.ll[1]) * 110.57;
-  return Math.hypot(dx, dy);
-}
-
-// Pre-project raw geometry once at module load
-const projSegs = g => {
-  const o = new Array(g.length);
-  for (let i = 0; i < g.length; i++) o[i] = [px(g[i][0]), py(g[i][1])];
-  return o;
-};
-
-// Deep prepare PACK geometry
-const PACK = {
-  ...packData,
-  lines: packData.lines.map(l => ({ ...l, P: l.segs.map(projSegs) })),
-  stations: packData.stations.map(s => ({
-    ...s,
-    P: [px(s.ll[0]), py(s.ll[1])],
-    ix: s.l.length > 1 || !!(packData.branchIx && packData.branchIx[s.n]),
-  })),
-  future: (packData.future || []).map(f => ({
-    ...f,
-    PZ: projSegs(f.zone),
-    st: f.st.map(s => ({ ...s, P: [px(s.ll[0]), py(s.ll[1])] })),
-  })),
-  base: {
-    bd: (packData.base?.bd || []).map(b => ({ ...b, P: b.r.map(projSegs) })),
-    water: (packData.base?.water || []).map(w => ({ ...w, P: projSegs(w.g) })),
-    roads: (packData.base?.roads || []).map(r => ({ ...r, P: projSegs(r.g) })),
-    rail: (packData.base?.rail || []).map(r => ({ ...r, P: projSegs(r.g) })),
-    places: (packData.base?.places || []).map(p => ({ ...p, P: [px(p.ll[0]), py(p.ll[1])] })),
-  },
-};
-
-const LMAP = Object.fromEntries(PACK.lines.map(l => [l.id, l]));
-const SMAP = Object.fromEntries(PACK.stations.map(s => [s.n, s]));
-const ADJ = {};
-
-function addEdge(a, b, line) {
-  if (!SMAP[a] || !SMAP[b] || a === b) return;
-  const d = kmDist(SMAP[a], SMAP[b]);
-  (ADJ[a] = ADJ[a] || []).push({ to: b, line, km: d });
-  (ADJ[b] = ADJ[b] || []).push({ to: a, line, km: d });
-}
-
-for (const l of PACK.lines) {
-  for (const br of [l.seq, l.branch]) {
-    if (br) {
-      for (let i = 1; i < br.length; i++) addEdge(br[i - 1], br[i], l.id);
-    }
-  }
-}
-
-const LINK = [
-  ['Sarai Kale Khan', 'Sarai Kale Khan - Nizamuddin'],
-  ['New Ashok Nagar RRTS', 'New Ashok Nagar'],
-  ['Anand Vihar RRTS', 'Anand Vihar'],
-  ['Noida Sector 51', 'Noida Sector 52'],
-  ['New Delhi', 'New Delhi Airport Express Terminal'],
-];
-for (const p of LINK) addEdge(p[0], p[1], null);
-
-export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
+export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 'light' }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
 
+  // Active City Pack & Lookups
+  const PACK = useMemo(() => getCityPack(cityId), [cityId]);
+  const LMAP = PACK.lmap || {};
+  const SMAP = PACK.smap || {};
+  const ADJ = PACK.adj || {};
+
   // View state
   const viewRef = useRef({ cx: 0.7143, cy: 0.4172, z: 280000 });
-  const [zoomLevel, setZoomLevel] = useState(280000);
+  const [, setRenderTrigger] = useState(0);
 
   // Interaction & UI State
   const [cardOpen, setCardOpen] = useState(true);
   const [showFuture, setShowFuture] = useState(true);
   const [selectedLines, setSelectedLines] = useState(new Set());
-  const [fromStation, setFromStation] = useState('Kashmere Gate');
-  const [toStation, setToStation] = useState('New Delhi');
+  const [fromStation, setFromStation] = useState('');
+  const [toStation, setToStation] = useState('');
   const [routeResult, setRouteResult] = useState(null);
   const [selectedStation, setSelectedStation] = useState(null);
   const [hoverStation, setHoverStation] = useState(null);
   const [tooltip, setTooltip] = useState(null);
 
-  // 1. Initial Home Bounds Fit
-  useEffect(() => {
+  // Helper to fit bounding box of current city
+  const fitCityBounds = useCallback((pack) => {
+    if (!pack || !pack.stations || pack.stations.length === 0) return;
     let x0 = 1, y0 = 1, x1 = 0, y1 = 0;
-    for (const l of PACK.lines) {
-      if (l.sys !== 'dmrc') continue;
-      for (const g of l.P) {
-        for (const p of g) {
-          if (p[0] < x0) x0 = p[0];
-          if (p[0] > x1) x1 = p[0];
-          if (p[1] < y0) y0 = p[1];
-          if (p[1] > y1) y1 = p[1];
-        }
-      }
+    for (const s of pack.stations) {
+      if (s.P[0] < x0) x0 = s.P[0];
+      if (s.P[0] > x1) x1 = s.P[0];
+      if (s.P[1] < y0) y0 = s.P[1];
+      if (s.P[1] > y1) y1 = s.P[1];
     }
-    const mx = (x1 - x0) * 0.06, my = (y1 - y0) * 0.06;
+    const mx = Math.max((x1 - x0) * 0.14, 0.0004);
+    const my = Math.max((y1 - y0) * 0.14, 0.0004);
     const b = { w: x0 - mx, e: x1 + mx, n: y0 - my, s: y1 + my };
     const cv = canvasRef.current;
     if (cv) {
       const W = cv.clientWidth || 900;
       const H = cv.clientHeight || 700;
-      const z = Math.min((W * 0.88) / (b.e - b.w), (H * 0.88) / (b.s - b.n));
+      const z = Math.min((W * 0.85) / Math.max(1e-5, b.e - b.w), (H * 0.85) / Math.max(1e-5, b.s - b.n));
       viewRef.current = {
         cx: (b.w + b.e) / 2,
         cy: (b.n + b.s) / 2,
-        z: Math.max(180000, z),
+        z: Math.max(40000, Math.min(8000000, z)),
       };
-      setZoomLevel(viewRef.current.z);
+      setRenderTrigger(prev => prev + 1);
     }
   }, []);
+
+  // 1. Initial City Bounds Fit and Station Defaults
+  useEffect(() => {
+    if (PACK.stations && PACK.stations.length >= 2) {
+      const startSt = PACK.stations[0].n;
+      const endSt = PACK.stations[Math.min(PACK.stations.length - 1, 4)].n;
+      setFromStation(startSt);
+      setToStation(endSt);
+      setSelectedStation(null);
+      setSelectedLines(new Set());
+      setRouteResult(null);
+      fitCityBounds(PACK);
+    }
+  }, [cityId, PACK, fitCityBounds]);
 
   // 2. Dijkstra Route Solver
   const solveRoute = useCallback((from, to) => {
@@ -207,7 +152,7 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
       smartCardFare,
       key: from + '>' + to,
     };
-  }, []);
+  }, [ADJ, LMAP, SMAP]);
 
   // Compute route on initial load and when from/to change
   useEffect(() => {
@@ -269,19 +214,19 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
     const z = view.z;
     const S = Math.max(0.5, Math.min(9, Math.pow(z / 470000, 0.42)));
 
-    // Clear
+    // Clear background
     ctx.fillStyle = C.bg;
     ctx.fillRect(0, 0, W, H);
 
     const path1 = (c, g, close) => {
-      if (g.length < 2) return;
+      if (!g || g.length < 2) return;
       c.moveTo(sx(g[0][0]), sy(g[0][1]));
       for (let i = 1; i < g.length; i++) c.lineTo(sx(g[i][0]), sy(g[i][1]));
       if (close) c.closePath();
     };
 
-    // 1. Boundaries
-    if (PACK.base?.bd) {
+    // 1. Boundaries (if present)
+    if (PACK.base?.bd && PACK.base.bd.length) {
       ctx.beginPath();
       for (const b of PACK.base.bd) {
         if (b.lvl === '4') for (const g of b.P) path1(ctx, g, true);
@@ -298,51 +243,42 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
       ctx.stroke();
     }
 
-    // 2. Waterways (Yamuna, Hindon)
-    if (PACK.base?.water) {
+    // 2. Waterways (Rivers, canals, coasts, lakes)
+    if (PACK.base?.water && PACK.base.water.length) {
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       ctx.beginPath();
       for (const w of PACK.base.water) if (w.t === 'canal') path1(ctx, w.P, false);
-      ctx.lineWidth = 0.75 * S;
+      ctx.lineWidth = 1.2 * S;
       ctx.strokeStyle = C.water;
-      ctx.globalAlpha = 0.55;
+      ctx.globalAlpha = 0.65;
       ctx.stroke();
       ctx.globalAlpha = 1;
 
       ctx.beginPath();
       for (const w of PACK.base.water) if (w.t === 'river') path1(ctx, w.P, false);
-      ctx.lineWidth = 2.4 * S;
+      ctx.lineWidth = 3.2 * S;
       ctx.strokeStyle = C.water;
       ctx.stroke();
     }
 
-    // 3. Roads & Railways
-    if (PACK.base?.roads) {
-      if (z > 330000) {
-        ctx.beginPath();
-        for (const r of PACK.base.roads) if (r.c === 2) path1(ctx, r.P, false);
-        ctx.lineWidth = 0.6 * S;
-        ctx.strokeStyle = C.road;
-        ctx.stroke();
-      }
+    // 3. Roads & Expressways
+    if (PACK.base?.roads && PACK.base.roads.length) {
+      ctx.beginPath();
+      for (const r of PACK.base.roads) if (r.c === 2) path1(ctx, r.P, false);
+      ctx.lineWidth = 0.8 * S;
+      ctx.strokeStyle = C.road;
+      ctx.stroke();
+
       ctx.beginPath();
       for (const r of PACK.base.roads) if (r.c === 3) path1(ctx, r.P, false);
-      ctx.lineWidth = 1.05 * S;
+      ctx.lineWidth = 1.4 * S;
       ctx.strokeStyle = C.road;
       ctx.stroke();
     }
 
-    if (PACK.base?.rail && z > 420000) {
-      ctx.beginPath();
-      for (const r of PACK.base.rail) path1(ctx, r.P, false);
-      ctx.lineWidth = 0.5 * S;
-      ctx.strokeStyle = C.rail;
-      ctx.stroke();
-    }
-
     // 4. Future Corridors (Phase 4 / 5)
-    if (showFuture && PACK.future && !routeResult) {
+    if (showFuture && PACK.future && PACK.future.length && !routeResult) {
       for (const f of PACK.future) {
         ctx.save();
         ctx.setLineDash([6 * S, 5 * S]);
@@ -357,29 +293,29 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
     }
 
     // 5. Metro Lines
-    const lw = k => Math.max(1.4, Math.min(26, 2.9 * S * k));
+    const lw = k => Math.max(1.8, Math.min(28, 3.2 * S * k));
     const isLineActive = id => selectedLines.size === 0 || selectedLines.has(id);
 
-    for (const l of PACK.lines) {
+    for (const l of PACK.lines || []) {
       const active = isLineActive(l.id);
       const isRouteActive = !!routeResult;
       ctx.lineWidth = lw(1);
-      ctx.strokeStyle = l.c;
-      ctx.globalAlpha = active ? (isRouteActive ? 0.22 : 1) : 0.12;
+      ctx.strokeStyle = l.c || '#2563eb';
+      ctx.globalAlpha = active ? (isRouteActive ? 0.25 : 1) : 0.12;
       ctx.beginPath();
-      for (const g of l.P) {
-        if (g.length < 2) continue;
+      for (const g of l.P || []) {
+        if (!g || g.length < 2) continue;
         path1(ctx, g, false);
       }
       ctx.stroke();
       ctx.globalAlpha = 1;
     }
 
-    // 6. Active Journey Route
+    // 6. Active Journey Route (Highlighted overlay)
     if (routeResult) {
       for (const leg of routeResult.legs) {
         ctx.save();
-        ctx.lineWidth = lw(1.8);
+        ctx.lineWidth = lw(2.0);
         ctx.strokeStyle = leg.color || C.ix;
         if (!leg.line) ctx.setLineDash([4 * S, 4 * S]);
         ctx.beginPath();
@@ -397,27 +333,23 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
     }
 
     // 7. Stations
-    const r = z > 9000000 ? 8.5 : z > 4500000 ? 7 : z > 2200000 ? 5.8 : z > 1100000 ? 4.8 : z > 620000 ? 4 : z > 330000 ? 3.2 : 2.4;
-    const onlyIx = z < 320000 && selectedLines.size === 0 && !routeResult;
+    const r = z > 9000000 ? 8.5 : z > 4500000 ? 7 : z > 2200000 ? 5.8 : z > 1100000 ? 4.8 : z > 620000 ? 4 : z > 330000 ? 3.5 : 2.8;
 
-    for (const s of PACK.stations) {
+    for (const s of PACK.stations || []) {
       const X = sx(s.P[0]), Y = sy(s.P[1]);
       if (X < -20 || Y < -20 || X > W + 20 || Y > H + 20) continue;
 
       const inRoute = routeResult && routeResult.stops.has(s.n);
-      if (routeResult && !inRoute && !s.ix) continue;
-      if (onlyIx && !s.ix) continue;
-
       const isSel = selectedStation?.n === s.n;
       const isHov = hoverStation?.n === s.n;
-      const radius = isSel ? r * 1.8 : isHov ? r * 1.4 : inRoute ? r * 1.3 : s.ix ? r * 1.25 : r * 0.9;
+      const radius = isSel ? r * 1.9 : isHov ? r * 1.5 : inRoute ? r * 1.35 : s.ix ? r * 1.3 : r * 1.0;
 
       if (s.ix) {
         ctx.beginPath();
-        ctx.arc(X, Y, radius + 2, 0, 2 * Math.PI);
+        ctx.arc(X, Y, radius + 2.5, 0, 2 * Math.PI);
         ctx.fillStyle = C.bg;
         ctx.fill();
-        ctx.lineWidth = 1.8;
+        ctx.lineWidth = 1.9;
         ctx.strokeStyle = inRoute ? C.ca : C.ix;
         ctx.stroke();
       }
@@ -426,24 +358,20 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
       ctx.arc(X, Y, radius, 0, 2 * Math.PI);
       ctx.fillStyle = inRoute ? C.ca : isSel ? '#f59e0b' : C.bg;
       ctx.fill();
-      ctx.lineWidth = 1.4;
-      ctx.strokeStyle = inRoute ? '#ffffff' : s.l[0] ? LMAP[s.l[0]]?.c : C.ink;
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = inRoute ? '#ffffff' : s.l && s.l[0] && LMAP[s.l[0]] ? LMAP[s.l[0]].c : C.ink;
       ctx.stroke();
     }
 
     // 8. Labels
-    const placed = [];
     ctx.textBaseline = 'middle';
-    ctx.font = `600 ${Math.max(9, Math.min(13, 10.5 * S))}px 'Sora',system-ui,sans-serif`;
+    ctx.font = `600 ${Math.max(9, Math.min(13, 11 * S))}px 'Sora',system-ui,sans-serif`;
 
-    if (PACK.base?.places) {
+    if (PACK.base?.places && PACK.base.places.length) {
       ctx.textAlign = 'center';
       for (const p of PACK.base.places) {
-        if (p.r < (z > 620000 ? 3 : 5)) continue;
         const X = sx(p.P[0]), Y = sy(p.P[1]);
         if (X < 50 || X > W - 50 || Y < 34 || Y > H - 34) continue;
-        const w = ctx.measureText(p.n).width;
-        placed.push([X - w / 2 - 4, Y - 7, X + w / 2 + 4, Y + 7]);
         ctx.lineWidth = 3;
         ctx.strokeStyle = C.bg;
         ctx.strokeText(p.n, X, Y);
@@ -452,39 +380,41 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
       }
     }
 
+    // Station Labels (Show interchanges or active route stations, or all if zoomed in)
+    const showAllLabels = z > 250000 || (PACK.stations && PACK.stations.length < 35);
     ctx.textAlign = 'left';
-    const labelPool = PACK.stations
-      .filter(s => (routeResult ? routeResult.stops.has(s.n) : s.ix || z > 480000))
-      .sort((a, b) => b.ix - a.ix);
 
-    for (const s of labelPool) {
+    for (const s of PACK.stations || []) {
+      const inRoute = routeResult && routeResult.stops.has(s.n);
+      const isSel = selectedStation?.n === s.n;
+      const isHov = hoverStation?.n === s.n;
+
+      if (!showAllLabels && !s.ix && !inRoute && !isSel && !isHov) continue;
+
       const X = sx(s.P[0]), Y = sy(s.P[1]);
-      if (X < 30 || X > W - 30 || Y < 20 || Y > H - 20) continue;
-      const w = ctx.measureText(s.n).width;
-      const box = [X + 8, Y - 7, X + 12 + w, Y + 7];
-      let clash = false;
-      for (const b of placed) {
-        if (box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1]) {
-          clash = true;
-          break;
-        }
-      }
-      if (clash && !s.ix && !routeResult) continue;
-      placed.push(box);
+      if (X < 20 || X > W - 140 || Y < 20 || Y > H - 20) continue;
 
-      ctx.lineWidth = 3.2;
+      const lx = X + r * 1.5 + 4;
+      const ly = Y;
+
+      ctx.lineWidth = 3;
       ctx.strokeStyle = C.bg;
-      ctx.strokeText(s.n, X + 9, Y);
-      ctx.fillStyle = routeResult?.stops.has(s.n) ? C.ca : s.ix ? C.ink : C.mut;
-      ctx.fillText(s.n, X + 9, Y);
+      ctx.strokeText(s.n, lx, ly);
+      ctx.fillStyle = inRoute ? C.ca : isSel ? '#d97706' : C.ink;
+      ctx.fillText(s.n, lx, ly);
     }
-  }, [theme, zoomLevel, showFuture, selectedLines, routeResult, selectedStation, hoverStation]);
+  }, [theme, selectedLines, showFuture, routeResult, selectedStation, hoverStation, PACK, LMAP, SMAP]);
 
-  // Pan & Zoom
+  // Mouse Interaction handlers
   const dragRef = useRef({ dragging: false, startX: 0, startY: 0, moved: 0 });
 
   const handleMouseDown = e => {
-    dragRef.current = { dragging: true, startX: e.clientX, startY: e.clientY, moved: 0 };
+    dragRef.current = {
+      dragging: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      moved: 0,
+    };
   };
 
   const handleMouseMove = e => {
@@ -503,7 +433,7 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
 
       viewRef.current.cx -= dx / viewRef.current.z;
       viewRef.current.cy -= dy / viewRef.current.z;
-      setZoomLevel(viewRef.current.z + Math.random() * 0.001);
+      setRenderTrigger(prev => prev + 1);
       return;
     }
 
@@ -511,8 +441,8 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
     const sx = x => (x - view.cx) * view.z + cv.clientWidth / 2;
     const sy = y => (y - view.cy) * view.z + cv.clientHeight / 2;
 
-    let nearest = null, bd = 16;
-    for (const s of PACK.stations) {
+    let nearest = null, bd = 18;
+    for (const s of PACK.stations || []) {
       const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
       if (d < bd) {
         bd = d;
@@ -525,7 +455,7 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
         x: cX,
         y: cY,
         name: nearest.n,
-        lines: nearest.l.map(id => LMAP[id]?.nm || id).join(' · '),
+        lines: (nearest.l || []).map(id => LMAP[id]?.nm || id).join(' · '),
         interchange: nearest.ix,
       });
     } else {
@@ -550,7 +480,7 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
 
     const factor = e.deltaY < 0 ? 1.25 : 0.8;
     const oldZ = viewRef.current.z;
-    const newZ = Math.max(90000, Math.min(12000000, oldZ * factor));
+    const newZ = Math.max(30000, Math.min(14000000, oldZ * factor));
 
     const W = cv.clientWidth, H = cv.clientHeight;
     const pX = (cX - W / 2) / oldZ + viewRef.current.cx;
@@ -559,24 +489,23 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
     viewRef.current.z = newZ;
     viewRef.current.cx = pX - (cX - W / 2) / newZ;
     viewRef.current.cy = pY - (cY - H / 2) / newZ;
-    setZoomLevel(newZ);
+    setRenderTrigger(prev => prev + 1);
   };
 
   const handleZoom = delta => {
     const factor = delta > 0 ? 1.35 : 0.75;
-    viewRef.current.z = Math.max(90000, Math.min(12000000, viewRef.current.z * factor));
-    setZoomLevel(viewRef.current.z);
+    viewRef.current.z = Math.max(30000, Math.min(14000000, viewRef.current.z * factor));
+    setRenderTrigger(prev => prev + 1);
   };
 
   const handleReset = () => {
-    viewRef.current = { cx: 0.7143, cy: 0.4172, z: 280000 };
-    setZoomLevel(280000);
+    fitCityBounds(PACK);
     setSelectedStation(null);
   };
 
   const allStations = useMemo(() => {
-    return [...PACK.stations].sort((a, b) => a.n.localeCompare(b.n));
-  }, []);
+    return [...(PACK.stations || [])].sort((a, b) => a.n.localeCompare(b.n));
+  }, [PACK]);
 
   return (
     <div className={`polity-metro-viewport theme-${theme}`} ref={containerRef}>
@@ -589,22 +518,24 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
         >
           Whole Network
         </button>
-        <button
-          type="button"
-          className={`polity-layer-pill ${showFuture ? 'active future' : ''}`}
-          onClick={() => setShowFuture(prev => !prev)}
-        >
-          --- Under Construction
-        </button>
+        {PACK.future && PACK.future.length > 0 && (
+          <button
+            type="button"
+            className={`polity-layer-pill ${showFuture ? 'active future' : ''}`}
+            onClick={() => setShowFuture(prev => !prev)}
+          >
+            --- Under Construction
+          </button>
+        )}
         <button
           type="button"
           className="polity-layer-pill"
           onClick={() => {
-            const all = new Set(PACK.lines.map(l => l.id));
+            const all = new Set((PACK.lines || []).map(l => l.id));
             setSelectedLines(all);
           }}
         >
-          All Lines ({PACK.lines.length})
+          All Lines ({PACK.lines?.length || 0})
         </button>
       </div>
 
@@ -645,11 +576,11 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
           </div>
           <h4 className="callout-name">{selectedStation.n}</h4>
           <div className="callout-lines">
-            {selectedStation.l.map(id => {
+            {(selectedStation.l || []).map(id => {
               const l = LMAP[id];
               return (
-                <span key={id} className="callout-line-pill" style={{ borderColor: l?.c }}>
-                  <span className="line-dot" style={{ background: l?.c }} />
+                <span key={id} className="callout-line-pill" style={{ borderColor: l?.c || '#2563eb' }}>
+                  <span className="line-dot" style={{ background: l?.c || '#2563eb' }} />
                   {l?.nm || id}
                 </span>
               );
@@ -758,23 +689,29 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
             {routeResult ? (
               <div className="journey-results">
                 <div className="results-metrics">
-                  <span>⏱ {routeResult.durationMin} min</span>
-                  <span>📏 {routeResult.km} km</span>
-                  <span>🔴 {routeResult.hops} stops</span>
-                  <span>⇄ {routeResult.changes} xchg</span>
+                  <span className="metric-pill">⏱ {routeResult.durationMin} min</span>
+                  <span className="metric-pill">📏 {routeResult.km} km</span>
+                  <span className="metric-pill">⬤ {routeResult.hops} stops</span>
+                  <span className="metric-pill">⇄ {routeResult.changes} xchg</span>
                 </div>
-                <div className="results-fares">
-                  <span className="token-fare">Token: ₹{routeResult.tokenFare}</span>
-                  <span className="smart-card-fare">Smart Card: ₹{routeResult.smartCardFare}</span>
+
+                <div className="results-fare">
+                  <span className="fare-token">Token: ₹{routeResult.tokenFare}</span>
+                  <span className="fare-smartcard">Smart Card: ₹{routeResult.smartCardFare}</span>
                 </div>
-                <div className="results-legs">
-                  {routeResult.legs.map((leg, idx) => (
-                    <div key={idx} className="leg-item">
-                      <div className="leg-badge" style={{ background: leg.color }}>
-                        {leg.lineName}
-                      </div>
-                      <div className="leg-stops">
-                        {leg.stops[0]} → {leg.stops[leg.stops.length - 1]} ({leg.stops.length - 1} stops)
+
+                <div className="results-itinerary">
+                  {routeResult.legs.map((leg, i) => (
+                    <div key={i} className="itinerary-leg">
+                      <div className="leg-indicator" style={{ background: leg.color }} />
+                      <div className="leg-content">
+                        <div className="leg-line-name" style={{ color: leg.color }}>
+                          {leg.lineName}
+                        </div>
+                        <div className="leg-stations">
+                          {leg.stops[0]} → {leg.stops[leg.stops.length - 1]}
+                          <span className="leg-count"> ({leg.stops.length - 1} stops)</span>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -782,27 +719,44 @@ export default function PolityPolicyMetroCanvas({ theme = 'light' }) {
               </div>
             ) : (
               <div className="journey-hint">
-                Pick two stations, or click any station on the map and use{' '}
-                <strong>Set As From</strong> / <strong>Set As To</strong>. The route is worked out
-                over the real network — every line, every interchange, including the ones between
-                operators.
+                Pick origin and destination stations, or click any station circle directly on the terrain map.
               </div>
             )}
           </div>
         )}
       </div>
 
-      {/* Bottom Controls */}
-      <div className="polity-bottom-controls">
-        <div className="polity-attribution">
-          <div>Network and city geography: © OpenStreetMap contributors (ODbL)</div>
-          <div>Corridors under construction: DMRC official KML (Phase 4 & 5)</div>
-        </div>
-        <div className="polity-zoom-btns">
-          <button type="button" onClick={() => handleZoom(1)} title="Zoom In">+</button>
-          <button type="button" onClick={() => handleZoom(-1)} title="Zoom Out">−</button>
-          <button type="button" onClick={handleReset} title="Reset View">↺</button>
-        </div>
+      {/* Bottom Right Zoom & Reset Controls */}
+      <div className="polity-zoom-controls">
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={() => handleZoom(1)}
+          title="Zoom In"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={() => handleZoom(-1)}
+          title="Zoom Out"
+        >
+          −
+        </button>
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={handleReset}
+          title="Reset View"
+        >
+          ↺
+        </button>
+      </div>
+
+      {/* Attribution Footer */}
+      <div className="polity-attribution">
+        <span>Network and city geography: © OpenStreetMap contributors (ODbL). Corridors under construction: official city metro authority alignments.</span>
       </div>
     </div>
   );

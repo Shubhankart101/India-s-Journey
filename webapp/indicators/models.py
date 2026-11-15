@@ -92,6 +92,7 @@ class Article(models.Model):
     published_at = models.DateTimeField(null=True, blank=True, db_index=True)
     publisher = models.CharField(max_length=120, blank=True)
     kind = models.CharField(max_length=30, choices=KIND_CHOICES, default='other', db_index=True)
+    image_url = models.URLField(max_length=1000, blank=True, default='')
     is_featured = models.BooleanField(default=False)
 
     class Meta:

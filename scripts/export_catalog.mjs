@@ -263,6 +263,7 @@ const article = (item, publisher, kind) => ({
   published: item.published || item.date || '',
   publisher,
   kind,
+  image_url: item.image_url || item.image || item.enclosure || null,
 });
 const articles = [
   ...(indianMatrix.articles?.length ? indianMatrix.articles : payload.indian_matrix_articles || []).map(item => article(item, 'Indian Matrix', 'indian_matrix')),

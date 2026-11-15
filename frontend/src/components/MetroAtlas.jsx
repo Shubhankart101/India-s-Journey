@@ -783,22 +783,8 @@ export default function MetroAtlas({ onSelectCity }) {
 
             {workbenchTab === 'schematic' ? (
               <MetroSafarSvgViewer cityKey={selectedCityId} />
-            ) : selectedCityId === 'delhi-ncr' ? (
-              <PolityPolicyMetroCanvas theme="light" />
             ) : (
-              <div className="metro-non-delhi-geo-stage">
-                <div className="metro-non-delhi-geo-banner">
-                  <span>Cartographic terrain view for <strong>{city.name}</strong>. Complete station transit network is available in Line Diagram mode.</span>
-                  <button
-                    type="button"
-                    className="switch-to-schematic-pill"
-                    onClick={() => setWorkbenchTab('schematic')}
-                  >
-                    View {city.name} Official Line Diagram →
-                  </button>
-                </div>
-                <MetroSafarSvgViewer cityKey={selectedCityId} />
-              </div>
+              <PolityPolicyMetroCanvas cityId={selectedCityId} theme="light" />
             )}
           </div>
 

@@ -38,6 +38,7 @@ const articles = catalog.articles.map(article => ({
   published_at: articleDate(article.published),
   publisher: String(article.publisher || '').slice(0, 120),
   kind: ['indian_matrix', 'polity_policy', 'pew', 'other'].includes(article.kind) ? article.kind : 'other',
+  image_url: article.image_url || null,
   is_featured: false,
 })).filter(article => /^https?:\/\//i.test(article.url));
 const stats = {

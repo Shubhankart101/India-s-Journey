@@ -24,11 +24,18 @@ def main() -> None:
             date = parsedate_to_datetime(published).astimezone(timezone.utc).date()
         except (TypeError, ValueError):
             continue
+        enclosure = item.find("enclosure")
+        image_url = enclosure.get("url") if enclosure is not None else ""
+        if not image_url:
+            media = item.find("{http://search.yahoo.com/mrss/}content")
+            if media is not None:
+                image_url = media.get("url") or ""
         articles.append({
             "title": (item.findtext("title") or "Untitled article").strip(),
             "link": (item.findtext("link") or "").strip(),
             "published": published.strip(),
             "date": date.isoformat(),
+            "image_url": image_url,
         })
     articles = articles[:60]
     weekly = Counter()

@@ -23,38 +23,51 @@ function formatSubstackDate(dateStr) {
   return `${day} ${month} ${year}`;
 }
 
+const AUTHENTIC_ARTICLE_IMAGES = {
+  // Polity & Policy authentic Substack CDN covers
+  midterms: 'https://substackcdn.com/image/fetch/$s_!kf6B!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac221d2d-405e-42c8-83b1-1b324d598182_1152x768.jpeg',
+  'delhi police': 'https://substackcdn.com/image/fetch/$s_!DBFF!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c614127-8d4d-4e7d-bac3-61dcc0a7279f_1792x1008.jpeg',
+  disproportionate: 'https://substackcdn.com/image/fetch/$s_!DBFF!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c614127-8d4d-4e7d-bac3-61dcc0a7279f_1792x1008.jpeg',
+  machchhar: 'https://substackcdn.com/image/fetch/$s_!rj5P!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F42fdead7-3365-42c5-aa8c-3a50d0a7c7be_1792x1008.jpeg',
+  transactional: 'https://substackcdn.com/image/fetch/$s_!V4l9!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F00644181-53cb-46f7-b4a9-226aa68006ad_1728x1152.jpeg',
+  china: 'https://substackcdn.com/image/fetch/$s_!tF2Z!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86d54965-39ef-4633-aae9-4abda41c7560_1152x768.jpeg',
+  gdp: 'https://substackcdn.com/image/fetch/$s_!9RkP!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe7f22379-cb4a-493f-8461-8ee22030ce14_1152x768.jpeg',
+  cities: 'https://substackcdn.com/image/fetch/$s_!t6xQ!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1c614127-8d4d-4e7d-bac3-61dcc0a7279f_1792x1008.jpeg',
+
+  // Indian Matrix authentic Substack CDN covers
+  'white-collar': 'https://substackcdn.com/image/fetch/$s_!7ed1!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ed17470-765e-4407-acde-6e21c5df65ae_1677x938.png',
+  idbi: 'https://substackcdn.com/image/fetch/$s_!u8ev!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7998f9e-9f1d-4ddd-897d-f0316c77bee9_1677x938.png',
+  nehruvian: 'https://substackcdn.com/image/fetch/$s_!u8ev!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa7998f9e-9f1d-4ddd-897d-f0316c77bee9_1677x938.png',
+  'gunda raj': 'https://substackcdn.com/image/fetch/$s_!BbXY!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9173021a-0d06-4a71-a42c-f903267fc74c_1677x938.png',
+  'uttar pradesh': 'https://substackcdn.com/image/fetch/$s_!BbXY!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9173021a-0d06-4a71-a42c-f903267fc74c_1677x938.png',
+  telecom: 'https://substackcdn.com/image/fetch/$s_!m6qA!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faed47fc2-64dc-4073-ae8a-1d54daf9fefe_1677x938.png',
+  tariffs: 'https://substackcdn.com/image/fetch/$s_!d669!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd669431c-fc84-4072-8e7b-2db98c257b51_1677x938.png',
+  ballot: 'https://substackcdn.com/image/fetch/$s_!b29c!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4978a2cb-ff13-43dc-8fc9-b68bbda7738b_1677x938.png',
+  'form 6': 'https://substackcdn.com/image/fetch/$s_!e91a!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc05f15a1-7785-48fa-bb64-c2bbca93297a_1677x938.png',
+
+  // Pew Research Center authentic covers
+  naturalized: 'https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/SR_26.10.27_naturalized_voters_crop.png',
+  g20: 'https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/FT_26.10.16_G20views_featured.png',
+  'social media': 'https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/FT_26.10.01_socialMedia_featured.png',
+};
+
 function getArticleCover(article) {
+  if (article.image_url) return article.image_url;
+  if (article.image) return article.image;
+  if (article.cover_image) return article.cover_image;
   const title = (article.title || '').toLowerCase();
-  if (title.includes('midterms') || title.includes('modi after')) {
-    return assetUrl('art/modi-midterms.svg');
+  for (const [key, url] of Object.entries(AUTHENTIC_ARTICLE_IMAGES)) {
+    if (title.includes(key)) return url;
   }
-  if (title.includes('delhi police') || title.includes('disproportionate')) {
-    return assetUrl('art/delhi-police.svg');
+  if (article.kind === 'polity_policy') {
+    return 'https://substackcdn.com/image/fetch/$s_!kf6B!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac221d2d-405e-42c8-83b1-1b324d598182_1152x768.jpeg';
   }
-  if (title.includes('machchhar') || title.includes('saves the day')) {
-    return assetUrl('art/captain-machchhar.svg');
+  if (article.kind === 'indian_matrix') {
+    return 'https://substackcdn.com/image/fetch/$s_!7ed1!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7ed17470-765e-4407-acde-6e21c5df65ae_1677x938.png';
   }
-  if (title.includes('idbi') || title.includes('nehruvian')) {
-    return assetUrl('art/central-bank.svg');
+  if (article.kind === 'pew') {
+    return 'https://www.pewresearch.org/wp-content/uploads/sites/20/2026/10/SR_26.10.27_naturalized_voters_crop.png';
   }
-  if (title.includes('gunda raj') || title.includes('uttar pradesh')) {
-    return assetUrl('art/counter-terror.svg');
-  }
-  if (title.includes('gb to almost free') || title.includes('telecom')) {
-    return assetUrl('art/innovation.svg');
-  }
-  if (title.includes('ballot') || title.includes('paper')) {
-    return assetUrl('art/ballot-box.svg');
-  }
-  if (title.includes('form 6') || title.includes('supreme court')) {
-    return assetUrl('art/supreme-court.svg');
-  }
-  if (title.includes('tariffs') || title.includes('trade')) {
-    return assetUrl('art/port-trade.svg');
-  }
-  if (article.kind === 'polity_policy') return assetUrl('art/opinion.svg');
-  if (article.kind === 'indian_matrix') return assetUrl('art/parliament.svg');
-  if (article.kind === 'pew') return assetUrl('art/public-opinion.svg');
   return assetUrl('art/media-press.svg');
 }
 

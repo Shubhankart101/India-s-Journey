@@ -390,16 +390,25 @@ export default function Api() {
       }
     }
 
-    const script = document.createElement('script');
-    script.src = 'https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js';
-    script.async = true;
-    script.onload = function() {
-      tryInitRedoc();
-    };
-    script.onerror = function() {
-      renderFallback();
-    };
-    document.head.appendChild(script);
+    const cdnList = [
+      'https://cdn.jsdelivr.net/npm/redoc@2.1.5/bundles/redoc.standalone.js',
+      'https://unpkg.com/redoc@2.1.5/bundles/redoc.standalone.js',
+      'https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js'
+    ];
+    let cdnIdx = 0;
+    function loadNextScript() {
+      if (initialized || cdnIdx >= cdnList.length) {
+        if (!initialized) renderFallback();
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = cdnList[cdnIdx++];
+      s.async = true;
+      s.onload = function() { tryInitRedoc(); };
+      s.onerror = function() { loadNextScript(); };
+      document.head.appendChild(s);
+    }
+    loadNextScript();
 
     let polls = 0;
     const pollTimer = setInterval(function() {

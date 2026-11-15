@@ -64,7 +64,7 @@ class IndicatorDetailSerializer(IndicatorSummarySerializer):
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ['title', 'url', 'published', 'published_at', 'publisher', 'kind', 'is_featured']
+        fields = ['title', 'url', 'published', 'published_at', 'publisher', 'kind', 'image_url', 'is_featured']
 
 
 class SavedChartSerializer(serializers.ModelSerializer):

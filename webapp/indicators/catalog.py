@@ -205,6 +205,7 @@ def import_catalog(catalog, prune=True, fingerprint=''):
                 'published_at': parse_published(item.get('published')),
                 'publisher': (item.get('publisher') or '')[:120],
                 'kind': kind,
+                'image_url': (item.get('image_url') or item.get('image') or '')[:1000],
             },
         )
         seen_urls.add(url[:700])
