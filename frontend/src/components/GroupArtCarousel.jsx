@@ -5,7 +5,7 @@ import './GroupArtCarousel.css';
 const SLIDE_INTERVAL_MS = 5500;
 
 export default function GroupArtCarousel({ groupSlug, title = 'Living Historical Artworks' }) {
-  const isIvc = groupSlug?.includes('indus');
+  const isIvc = groupSlug?.includes('indus') && !groupSlug?.includes('industry');
   const isEmpires = groupSlug?.includes('empire');
 
   const artworks = isIvc ? [

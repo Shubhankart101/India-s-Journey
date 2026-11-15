@@ -114,7 +114,7 @@ const crumbs = (category, subgroup) => (
 export function SubgroupArticleView({ category, subgroup, indicators, lead = null, keyExtra = [], callout = null, sectionsFilter, emptySections = false }) {
   const { group, subgroup: article } = articleFor(category.name, subgroup.name);
   const byKey = useMemo(() => new Map(indicators.map(item => [item.key, item])), [indicators]);
-  const isIvc = category.slug === 'indus-valley-civilisation' || slugify(category.name).includes('indus');
+  const isIvc = category.slug === 'indus-valley-civilisation' || (slugify(category.name).includes('indus') && !slugify(category.name).includes('industry')) || slugify(category.name).includes('harapp');
   const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
   const generated = article?.sections?.length ? article.sections : [{
     title: 'The evidence', text: subgroup.description || '', keys: indicators.slice(0, 5).map(item => item.key),
@@ -298,6 +298,8 @@ function useSubgroup(categorySlug, subgroupSlug) {
   const normCatSlug = slugify(categorySlug);
   const normSubSlug = slugify(subgroupSlug);
 
+  const isIvcMatch = str => (str.includes('indus') && !str.includes('industry')) || str.includes('harapp');
+
   // 1. Robust category resolution matching exact slugs, names, or key substrings
   const category = (categories.data || []).find(item => {
     const itemSlug = slugify(item.slug);
@@ -306,13 +308,12 @@ function useSubgroup(categorySlug, subgroupSlug) {
       item.slug === categorySlug
       || itemSlug === normCatSlug
       || itemName === normCatSlug
-      || (normCatSlug.includes('indus') && itemName.includes('indus'))
-      || (normCatSlug.includes('harapp') && itemName.includes('indus'))
+      || (isIvcMatch(normCatSlug) && isIvcMatch(itemName))
       || (normCatSlug.includes('empire') && itemName.includes('empire'))
       || (normCatSlug.includes('ancient') && itemName.includes('ancient'))
     );
-  }) || ((normSubSlug.includes('indus') || normSubSlug.includes('script') || normSubSlug.includes('excavation'))
-    ? (categories.data || []).find(item => slugify(item.name).includes('indus'))
+  }) || ((isIvcMatch(normSubSlug) || normSubSlug.includes('script') || normSubSlug.includes('excavation'))
+    ? (categories.data || []).find(item => isIvcMatch(slugify(item.name)))
     : null)
     || ((normSubSlug.includes('empire') || normSubSlug.includes('dynast') || normSubSlug.includes('battle'))
     ? (categories.data || []).find(item => slugify(item.name).includes('empire'))
@@ -330,11 +331,11 @@ function useSubgroup(categorySlug, subgroupSlug) {
       || itemName === normSubSlug
       || (normSubSlug.includes('script') && itemName.includes('script'))
       || (normSubSlug.includes('excavation') && itemName.includes('excavation'))
-      || (normSubSlug.includes('indus') && itemName.includes('indus'))
+      || (isIvcMatch(normSubSlug) && isIvcMatch(itemName))
       || (normSubSlug.includes('empire') && itemName.includes('empire'))
       || (normSubSlug.includes('atlas') && itemName.includes('atlas'))
     );
-  }) || (category?.subgroups?.length === 1 ? category.subgroups[0] : (category?.subgroups?.[0] || null));
+  }) || (category?.subgroups?.length === 1 ? category.subgroups[0] : null);
 
   const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);
   const wantsMap = Boolean(category && subgroup && articleFor(category.name, subgroup.name).subgroup?.format === 'map');
@@ -401,7 +402,7 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
   return <Shell state={state}>{({ category, subgroup, indicators, geometry }) => {
     const mapped = geometry ? buildMetrics(indicators, Object.keys(geometry.states)) : [];
     const mapFormat = mapped.length >= 1;
-    const isIvc = category.slug === 'indus-valley-civilisation' || slugify(category.name).includes('indus');
+    const isIvc = category.slug === 'indus-valley-civilisation' || (slugify(category.name).includes('indus') && !slugify(category.name).includes('industry')) || slugify(category.name).includes('harapp');
     const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
     let customLead = null;
     let customKeyExtra = mapFormat ? [{ label: 'Measures on the map', value: String(mapped.length) }] : [];

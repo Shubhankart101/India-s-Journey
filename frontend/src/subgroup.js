@@ -60,7 +60,7 @@ const IVC_GROUP_ARTICLE = {
 
 export function articleFor(categoryName, subgroupName) {
   const normCat = slugify(categoryName);
-  if (normCat.includes('indus')) {
+  if ((normCat.includes('indus') && !normCat.includes('industry')) || normCat.includes('harapp')) {
     const subgroup = IVC_GROUP_ARTICLE.subgroups.find(item => item.name === subgroupName || slugify(item.name) === slugify(subgroupName))
       || IVC_GROUP_ARTICLE.subgroups[0];
     return { group: IVC_GROUP_ARTICLE, subgroup };

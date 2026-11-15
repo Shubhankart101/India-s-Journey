@@ -35,7 +35,8 @@ export function pickVerse(key, group, avoidId = '', verses = VERSES, groupThemes
 export function pickSubgroupVerse(group, subgroup, subgroupNames = []) {
   const gStr = String(group || '').toLowerCase();
   const sStr = String(subgroup || '').toLowerCase();
-  if (gStr.includes('indus') || sStr.includes('indus') || gStr.includes('harapp') || sStr.includes('harapp')) {
+  const isIndus = str => (str.includes('indus') && !str.includes('industry')) || str.includes('harapp');
+  if (isIndus(gStr) || isIndus(sStr)) {
     const ivc = VERSES.find(v => v.id === 'rv-7-95-2');
     if (ivc) return ivc;
   }

@@ -369,18 +369,20 @@ export default function IndusValleyAtlas() {
                       opacity="0.7"
                       vectorEffect="non-scaling-stroke"
                     />
-                    <text
-                      x={route.label_pos.x}
-                      y={route.label_pos.y}
-                      fill={route.type === 'maritime' ? '#7dd3fc' : '#fde68a'}
-                      fontSize="5"
-                      fontFamily="sans-serif"
-                      fontWeight="600"
-                      textAnchor="middle"
-                      opacity="0.85"
-                    >
-                      {route.name}
-                    </text>
+                    {route.label_pos && (
+                      <text
+                        x={route.label_pos.x}
+                        y={route.label_pos.y}
+                        fill={route.type === 'maritime' ? '#7dd3fc' : '#fde68a'}
+                        fontSize="5"
+                        fontFamily="sans-serif"
+                        fontWeight="600"
+                        textAnchor="middle"
+                        opacity="0.85"
+                      >
+                        {route.name}
+                      </text>
+                    )}
                   </g>
                 ))}
               </g>

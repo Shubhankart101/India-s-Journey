@@ -394,21 +394,23 @@ export default function AncientEmpiresAtlas({ initialEmpireId = null }) {
                         onMouseLeave={() => setHoveredNeighbor(null)}
                         style={{ cursor: 'pointer' }}
                       >
-                        <text
-                          x={nb.pos.x}
-                          y={nb.pos.y}
-                          fill="#94a3b8"
-                          fontSize="6"
-                          fontFamily="sans-serif"
-                          fontWeight="700"
-                          letterSpacing="0.08em"
-                          textAnchor="middle"
-                          stroke="#0b0f15"
-                          strokeWidth="2"
-                          paintOrder="stroke"
-                        >
-                          {nb.name.toUpperCase()}
-                        </text>
+                        {nb.pos && (
+                          <text
+                            x={nb.pos.x}
+                            y={nb.pos.y}
+                            fill="#94a3b8"
+                            fontSize="6"
+                            fontFamily="sans-serif"
+                            fontWeight="700"
+                            letterSpacing="0.08em"
+                            textAnchor="middle"
+                            stroke="#0b0f15"
+                            strokeWidth="2"
+                            paintOrder="stroke"
+                          >
+                            {nb.name.toUpperCase()}
+                          </text>
+                        )}
                       </g>
                     ))}
                   </g>
