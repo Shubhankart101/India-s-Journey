@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T09:12:49+00:00",
+  "generated_at_utc": "2026-11-15T09:42:30+00:00",
   "categories": [
     {
       "name": "Economy & Markets",
@@ -7499,13 +7499,13 @@
     },
     {
       "key": "wb_external_debt_mix",
-      "title": "External Debt by Maturity and Creditor (2024)",
+      "title": "External Debt by Maturity and Creditor (2025)",
       "subtitle": "Total external debt stocks, current US dollars",
       "frequency": "Annual",
       "color": "#ff9933",
       "suffix": " USD",
       "source_url": "https://data.worldbank.org/indicator/DT.DOD.DLXF.CD?locations=IN",
-      "details": "Total external debt stocks, current US dollars, latest year with every component reported (2024). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
+      "details": "Total external debt stocks, current US dollars, latest year with every component reported (2025). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
       "category": "Economy & Markets",
       "subgroup": "Trade, Debt & Reserves",
       "position": 43,
@@ -7517,12 +7517,12 @@
         ],
         "datasets": [
           {
-            "label": "External Debt by Maturity and Creditor (2024)",
+            "label": "External Debt by Maturity and Creditor (2025)",
             "color": "#ff9933",
             "values": [
-              555307373499.3,
-              139568064000,
-              21580586391.1
+              590081686214.3,
+              150771987000,
+              22662287453.2
             ]
           }
         ],
@@ -7530,7 +7530,7 @@
         "index_axis": "x",
         "scope": "category",
         "scope_label": "",
-        "note": "Total external debt stocks, current US dollars, latest year with every component reported (2024). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
+        "note": "Total external debt stocks, current US dollars, latest year with every component reported (2025). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
         "source": "World Bank API DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD",
         "unit": "USD"
       }
@@ -209468,7 +209468,7 @@
               22910995,
               21344664.86,
               82960719.72,
-              267564451.69,
+              267564509.55,
               65368520.25,
               14792456.47,
               3877611.74,
@@ -209602,7 +209602,7 @@
               20055287.09,
               21069398.65,
               79798649.08,
-              229889290.82,
+              229889496.07,
               56684893.36,
               13462921.28,
               3657970.04,
@@ -209640,7 +209640,7 @@
               6184875.15,
               22603593.82,
               7019547.09,
-              43148650.56,
+              43148668.56,
               171854075.09,
               11807743.95,
               71641486.25,
@@ -209736,7 +209736,7 @@
               10261551.72,
               14709962,
               10769422.54,
-              125104687.77,
+              125104540.38,
               14402197.3,
               5312786.62,
               256121.4,
@@ -209774,7 +209774,7 @@
               4354460.7,
               4036103.45,
               2470840.18,
-              18263952.44,
+              18263934.44,
               46379536.3,
               4003148.96,
               15862118.32,
@@ -213254,7 +213254,7 @@
               2200558746.96,
               2228957388.96,
               2397807939.48,
-              2578362510.06
+              2578362567.92
             ]
           }
         ],
@@ -213294,7 +213294,7 @@
               11.455190337474018,
               1.2905196027705124,
               7.5753153181085775,
-              7.529984683391944
+              7.529987096429247
             ]
           }
         ],
@@ -213336,7 +213336,7 @@
               2050402223.99,
               2199331713.83,
               2269973431.55,
-              2365277054.59
+              2365277277.84
             ]
           }
         ],
@@ -213376,7 +213376,7 @@
               5.238904069147843,
               7.263428028779106,
               3.211962855615913,
-              4.198446630052577
+              4.198456464969458
             ]
           }
         ],
@@ -213418,7 +213418,7 @@
               509710666.66,
               471118036.52,
               576360151.87,
-              771564614.04
+              771564448.65
             ]
           }
         ],
@@ -213458,7 +213458,7 @@
               58.68654186178988,
               -7.571477833274987,
               22.33879987431393,
-              33.86848683703396
+              33.86845814143462
             ]
           }
         ],
@@ -214292,7 +214292,7 @@
             "label": "2026 House Campaign Receipts by State",
             "color": "#bc8cff",
             "values": [
-              267564451.69,
+              267564509.55,
               249351178.6,
               216218207.12,
               180748110.33,
@@ -214602,7 +214602,7 @@
             "label": "2026 House Campaign Disbursements by State",
             "color": "#bc8cff",
             "values": [
-              229889290.82,
+              229889496.07,
               212876013.68,
               197028893.46,
               171854075.09,
@@ -214912,7 +214912,7 @@
             "label": "2026 House Campaign Cash on Hand by State",
             "color": "#bc8cff",
             "values": [
-              125104687.77,
+              125104540.38,
               83932571.13,
               46379536.3,
               40627162.53,
@@ -214923,7 +214923,7 @@
               24124951.46,
               18779158.95,
               18776408.05,
-              18263952.44,
+              18263934.44,
               17531720.96,
               17034478.45,
               15862118.32
@@ -217211,7 +217211,7 @@
             "label": "2026 House: Receipts by Party",
             "color": "#58a6ff",
             "values": [
-              1409339153.73,
+              1409339211.59,
               1135572919.95,
               25998066.78,
               9148002.35,
@@ -217253,7 +217253,7 @@
             "color": "#58a6ff",
             "values": [
               1372066195.7,
-              730982490.47,
+              730982548.33,
               477518029.06
             ]
           }
@@ -217295,7 +217295,7 @@
             "label": "2026 House: Where the Money Came From",
             "color": "#58a6ff",
             "values": [
-              1494097998.17,
+              1494098056.03,
               430199334.66,
               335885536.32,
               235268140.53,

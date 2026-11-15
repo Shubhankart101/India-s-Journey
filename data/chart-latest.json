@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-14T09:12:49+00:00",
+  "generated_at_utc": "2026-11-15T09:42:30+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -21624,17 +21624,17 @@
         "Use of IMF credit"
       ],
       "values": [
-        555307373499.3,
-        139568064000.0,
-        21580586391.1
+        590081686214.3,
+        150771987000.0,
+        22662287453.2
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "World Bank API DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD",
       "unit": "USD",
-      "note": "Total external debt stocks, current US dollars, latest year with every component reported (2024). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
+      "note": "Total external debt stocks, current US dollars, latest year with every component reported (2025). World Bank indicators DT.DOD.DLXF.CD, DT.DOD.DSTC.CD, DT.DOD.DIMF.CD.",
       "meta": {
-        "title": "External Debt by Maturity and Creditor (2024)",
+        "title": "External Debt by Maturity and Creditor (2025)",
         "subtitle": "Total external debt stocks, current US dollars",
         "frequency": "Annual",
         "color": "#ff9933",
@@ -122131,7 +122131,7 @@
         2200558746.96,
         2228957388.96,
         2397807939.48,
-        2578362510.06
+        2578362567.92
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122164,7 +122164,7 @@
         11.455190337474018,
         1.2905196027705124,
         7.5753153181085775,
-        7.529984683391944
+        7.529987096429247
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122199,7 +122199,7 @@
         2050402223.99,
         2199331713.83,
         2269973431.55,
-        2365277054.59
+        2365277277.84
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122232,7 +122232,7 @@
         5.238904069147843,
         7.263428028779106,
         3.211962855615913,
-        4.198446630052577
+        4.198456464969458
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122267,7 +122267,7 @@
         509710666.66,
         471118036.52,
         576360151.87,
-        771564614.04
+        771564448.65
       ],
       "chartType": "bar",
       "scope": "category",
@@ -122300,7 +122300,7 @@
         58.68654186178988,
         -7.571477833274987,
         22.33879987431393,
-        33.86848683703396
+        33.86845814143462
       ],
       "chartType": "bar",
       "scope": "category",
@@ -123753,7 +123753,7 @@
         "WI"
       ],
       "values": [
-        267564451.69,
+        267564509.55,
         249351178.6,
         216218207.12,
         180748110.33,
@@ -124033,7 +124033,7 @@
         "CO"
       ],
       "values": [
-        229889290.82,
+        229889496.07,
         212876013.68,
         197028893.46,
         171854075.09,
@@ -124313,7 +124313,7 @@
         "VA"
       ],
       "values": [
-        125104687.77,
+        125104540.38,
         83932571.13,
         46379536.3,
         40627162.53,
@@ -124324,7 +124324,7 @@
         24124951.46,
         18779158.95,
         18776408.05,
-        18263952.44,
+        18263934.44,
         17531720.96,
         17034478.45,
         15862118.32
