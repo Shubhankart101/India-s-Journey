@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_state_fiscal_welfare)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- DBT Network &amp; State Welfare Map -->
         <g transform="translate(600, 360)">
@@ -37,9 +37,9 @@
           <circle cx="0" cy="-20" r="30" fill="none" stroke="#facc15" stroke-width="2" class="ping"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_state_fiscal_welfare)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">State Fiscal Explorer &amp; Welfare</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">DIRECT BENEFIT TRANSFER &amp; SOCIAL SPEND</text>
+  
+  
+  
+  
 </g>
 </svg>

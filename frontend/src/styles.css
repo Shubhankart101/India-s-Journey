@@ -258,7 +258,7 @@ button, input, select { font: inherit; color: inherit; }
 .explore-tile.active { border-color: var(--saffron); box-shadow: 0 0 0 2px var(--saffron); }
 .explore-tile-back { justify-content: center; border-style: dashed; }
 .explore-tile-back::after { background: rgba(0, 0, 0, 0.35); }
-.explore-tile-count { position: absolute; top: 10px; right: 10px; border-radius: 999px; padding: 2px 9px; font-size: 0.72rem; font-weight: 700; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.18); }
+.explore-tile-count { position: absolute; top: 10px; right: 10px; border-radius: 999px; padding: 2px 9px; font-size: 0.72rem; font-weight: 700; background: var(--surface-2, rgba(127, 127, 127, 0.18)); color: var(--ink); border: 1px solid var(--line); }
 .explore-tile-name { font-size: 0.95rem; font-weight: 650; line-height: 1.2; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9); }
 .explore-tile-meta { font-size: 0.74rem; color: #c7c7cc; }
 .saved-item { display: flex; flex-direction: column; gap: 8px; }

@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_satavahana_empire)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Two-Masted Satavahana Ocean Vessel &amp; Amaravati Relief -->
         <g transform="translate(600, 370)">
@@ -43,9 +43,9 @@
           <path d="M -450 70 Q -250 40 0 70 Q 250 100 450 70 L 450 140 L -450 140 Z" fill="#065f46"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_satavahana_empire)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Satavahana Deccan Empire</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#34d399" opacity=".95">TRI-SAMUDRA-TOYA • 2ND C. BCE–220 CE</text>
+  
+  
+  
+  
 </g>
 </svg>

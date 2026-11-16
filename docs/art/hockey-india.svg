@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_hockey_india)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Crossed Hockey Sticks &amp; Gold Medals -->
         <g transform="translate(600, 360)">
@@ -39,9 +39,9 @@
           <circle cx="0" cy="75" r="14" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_hockey_india)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indian Hockey: Legacy of Gold</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">OLYMPIC GLORY &amp; PRO LEAGUE</text>
+  
+  
+  
+  
 </g>
 </svg>

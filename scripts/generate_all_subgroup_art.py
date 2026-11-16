@@ -677,14 +677,8 @@ TEMPLATE = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" pre
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_{name})"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes & bespoke art on transparent background -->
   {shapes}
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_{name})"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">{title}</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="{accent}" opacity=".95">{subtitle}</text>
 </g>
 </svg>"""
 

@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_magadha_nanda)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Imperial War Elephants &amp; Pataliputra Citadel -->
         <g transform="translate(600, 370)">
@@ -48,9 +48,9 @@
           <line x1="0" y1="-105" x2="0" y2="-75" stroke="#facc15" stroke-width="3"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_magadha_nanda)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Magadha Empire &amp; The Nandas</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#fbbf24" opacity=".95">EKACHHATRA UNIFICATION • 544–322 BCE</text>
+  
+  
+  
+  
 </g>
 </svg>

@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_savings_investment)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Investment growth chart &amp; mutual fund vault -->
         <g transform="translate(600, 360)">
@@ -39,9 +39,9 @@
           <text x="-160" y="-20" fill="#fef08a" font-size="52" font-family="sans-serif" font-weight="900" text-anchor="middle">₹</text>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_savings_investment)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Savings, Investment &amp; Media</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#34d399" opacity=".95">CAPITAL FORMATION &amp; HOUSEHOLD ASSETS</text>
+  
+  
+  
+  
 </g>
 </svg>

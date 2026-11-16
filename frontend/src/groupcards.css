@@ -4,8 +4,9 @@
 .group-card:hover, .group-card:focus-visible, .group-card *, .group-card:hover * { text-decoration: none !important; }
 .group-card:hover, .group-card:focus-visible { transform: translateY(-2px); border-color: var(--link, var(--accent)); box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
 .group-card:focus-visible { outline: 2px solid var(--link, var(--accent)); outline-offset: 3px; }
-.group-card-art, .group-card-map { display: block; height: 96px; border-radius: 10px; overflow: hidden; background: var(--soft, rgba(127, 127, 127, .12)); }
-.group-card-art img { width: 100%; height: 100%; object-fit: cover; opacity: .85; display: block; }
+.group-card-art, .group-card-map { display: flex; align-items: center; justify-content: center; height: 110px; border-radius: 10px; overflow: visible; background: transparent !important; border: none !important; box-shadow: none !important; }
+.group-card-art img { width: 100%; height: 100%; object-fit: contain; opacity: .95; display: block; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .2)); transition: transform .3s ease; }
+.group-card:hover .group-card-art img { transform: scale(1.05); }
 .group-card-kicker { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .group-card-kicker .sa-kicker::after { content: " · "; }
 .group-card-title { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.3rem; line-height: 1.2; font-weight: 700; }

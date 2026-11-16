@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_ancient_empires)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Ancient Citadel &amp; Ashoka Pillar Silhouette -->
         <g transform="translate(600, 360)">
@@ -44,9 +44,9 @@
           <path d="M 230 80 L 230 -40 L 270 -40 L 270 -20 L 310 -20 L 310 -40 L 350 -40 L 350 80 Z" fill="#3a1e14" opacity="0.8"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_ancient_empires)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Ancient Empires of India</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">600 BCE – 850 CE • SUBREGIONAL HEGEMONY</text>
+  
+  
+  
+  
 </g>
 </svg>

@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_football_india)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Football Goalnet &amp; Geodesic Soccer Ball -->
         <g transform="translate(600, 360)">
@@ -38,9 +38,9 @@
           <polygon points="60,-35 48,-25 52,-10 68,-10 72,-25" fill="#0f172a"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_football_india)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indian Football &amp; Leagues</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">ISL, I-LEAGUE &amp; ASIAN CHALLENGES</text>
+  
+  
+  
+  
 </g>
 </svg>

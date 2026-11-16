@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_maurya_empire)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Sanchi Stupa Gateway (Torana) &amp; Ashoka Edicts -->
         <g transform="translate(600, 370)">
@@ -45,9 +45,9 @@
           <rect x="-200" y="-12" width="400" height="10" rx="4" fill="#fde047"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_maurya_empire)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Mauryan Pan-Indian Empire</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">ASHOKA &amp; DHAMMAVIJAYA • 322–185 BCE</text>
+  
+  
+  
+  
 </g>
 </svg>

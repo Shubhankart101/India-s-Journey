@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_metro_transit)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Subterranean Geological Strata &amp; Underwater Trench -->
         <g opacity="0.5">
@@ -88,9 +88,9 @@
           <line x1="720" y1="440" x2="850" y2="380" stroke="#10b981" stroke-width="3"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_metro_transit)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Urban Rapid Transit &amp; Subterranean Corridors</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#2dd4bf" opacity=".95">UNDERGROUND SHIELD TUNNELS • HOOGHLY RIVER BORE • REGIONAL RAPID RAIL</text>
+  
+  
+  
+  
 </g>
 </svg>

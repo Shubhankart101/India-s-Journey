@@ -25,9 +25,9 @@
       <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
-  <!-- Background sky -->
-  <rect width="1200" height="600" fill="url(#sky_borrowing_debt)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  
+  
+  
   
         <!-- Sovereign Bond &amp; Reserve Bank Vault -->
         <g transform="translate(600, 360)">
@@ -37,9 +37,9 @@
           <circle cx="0" cy="0" r="25" fill="#fbbf24" class="rot"/>
         </g>
         
-  <!-- Bottom vignette and title -->
-  <rect width="1200" height="600" fill="url(#lower_borrowing_debt)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">How India Borrows &amp; Debt</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#fbbf24" opacity=".95">SOVEREIGN BONDS &amp; FISCAL DISCIPLINE</text>
+  
+  
+  
+  
 </g>
 </svg>
