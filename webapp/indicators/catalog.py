@@ -226,4 +226,9 @@ def import_catalog(catalog, prune=True, fingerprint=''):
     refresh.articles_count = article_count
     refresh.message = f'Imported {len(seen_keys)} indicators ({live_count} live) and {article_count} articles.'
     refresh.save()
+    try:
+        from django.core.cache import cache
+        cache.clear()
+    except Exception:
+        pass
     return refresh

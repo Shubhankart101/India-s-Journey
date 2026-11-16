@@ -177,6 +177,21 @@ STORAGES = {
 
 CATALOG_PATH = Path(os.environ.get('CATALOG_PATH', REPO_ROOT / 'data' / 'catalog.json'))
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'indias-journey-cache',
+        'TIMEOUT': int(os.environ.get('API_CACHE_TIMEOUT', 900)),
+        'OPTIONS': {
+            'MAX_ENTRIES': 2000,
+            'CULL_FREQUENCY': 3,
+        },
+    }
+}
+
+API_CACHE_TIMEOUT = int(os.environ.get('API_CACHE_TIMEOUT', 900))
+API_CACHE_CONTROL = os.environ.get('API_CACHE_CONTROL', 'public, max-age=300, stale-while-revalidate=60')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {

@@ -22,6 +22,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .auth import configured_providers
+from .caching import CachedAPIViewMixin
 from .models import Article, Category, DataRefresh, Indicator, SavedChart, Subgroup
 from .serializers import (
     ArticleSerializer, AuthStateSerializer, CategorySerializer, CompareSerializer, DetailSerializer, HealthSerializer,
@@ -61,7 +62,7 @@ def _summary_queryset():
 
 
 @extend_schema_view(get=extend_schema(summary='Groups with subgroup counts'))
-class CategoryListView(generics.ListAPIView):
+class CategoryListView(CachedAPIViewMixin, generics.ListAPIView):
     serializer_class = CategorySerializer
     pagination_class = None
 
@@ -73,7 +74,7 @@ class CategoryListView(generics.ListAPIView):
 
 
 @extend_schema_view(get=extend_schema(summary='Search and filter indicators', parameters=INDICATOR_FILTERS))
-class IndicatorListView(generics.ListAPIView):
+class IndicatorListView(CachedAPIViewMixin, generics.ListAPIView):
     """Searchable, filterable, paginated indicator list.
 
     Query params: q, category, subgroup (slugs), live (true/false), chart (radial|line|bar|map), sort (position|title|recent|points).
@@ -106,7 +107,7 @@ class IndicatorListView(generics.ListAPIView):
 @extend_schema_view(get=extend_schema(
     summary='Full indicator data with related indicators',
     description='Adds `related` (same subgroup), `previous_key` and `next_key` (same group).'))
-class IndicatorDetailView(generics.RetrieveAPIView):
+class IndicatorDetailView(CachedAPIViewMixin, generics.RetrieveAPIView):
     serializer_class = IndicatorDetailSerializer
     lookup_field = 'key'
     queryset = Indicator.objects.select_related('category', 'subgroup')
@@ -151,7 +152,7 @@ class IgnoreAcceptNegotiation(BaseContentNegotiation):
         400: DetailSerializer, 404: DetailSerializer,
     },
 )
-class IndicatorDownloadView(APIView):
+class IndicatorDownloadView(CachedAPIViewMixin, APIView):
     content_negotiation_class = IgnoreAcceptNegotiation
 
     def get(self, request, key):
@@ -179,7 +180,7 @@ class IndicatorDownloadView(APIView):
         return response
 
 
-class CompareView(APIView):
+class CompareView(CachedAPIViewMixin, APIView):
     """Aligns up to four indicators on a shared label axis (first dataset of each)."""
 
     @extend_schema(
@@ -216,7 +217,7 @@ class CompareView(APIView):
     OpenApiParameter('kind', str, description='Publisher kind, e.g. `substack`, `pew`.'),
     OpenApiParameter('q', str, description='Title search.'),
 ]))
-class ArticleListView(generics.ListAPIView):
+class ArticleListView(CachedAPIViewMixin, generics.ListAPIView):
     serializer_class = ArticleSerializer
 
     def get_queryset(self):
@@ -240,7 +241,7 @@ def _last_refresh(refresh):
         return refresh.finished_at
 
 
-class StatsView(APIView):
+class StatsView(CachedAPIViewMixin, APIView):
     @extend_schema(summary='Catalogue totals and last refresh', responses=StatsSerializer)
     def get(self, request):
         last = DataRefresh.objects.filter(status='success').first()
