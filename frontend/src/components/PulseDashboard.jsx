@@ -17,7 +17,7 @@ const PULSE_INDICATORS = [
     series: [5.69, 5.09, 4.83, 5.08, 3.65, 3.65, 5.49, 4.85],
     target: '4.0% ±2%',
     source: 'MOSPI / NSO',
-    key: 'inflation',
+    key: 'cpi',
   },
   {
     id: 'gst-collections',
@@ -32,7 +32,7 @@ const PULSE_INDICATORS = [
     series: [1.78, 1.73, 1.74, 1.82, 1.75, 1.73, 1.87],
     target: '₹1.80L Cr Baseline',
     source: 'Ministry of Finance / GSTN',
-    key: 'gross_tax_revenue',
+    key: 'gst',
   },
   {
     id: 'upi-volume',
@@ -47,7 +47,7 @@ const PULSE_INDICATORS = [
     series: [12.1, 13.3, 13.9, 14.0, 14.4, 14.9, 15.04],
     target: '₹20.6 Lakh Cr Value',
     source: 'NPCI',
-    key: 'upi_volume_monthly',
+    key: 'upi',
   },
   {
     id: 'mfg-pmi',
@@ -62,7 +62,7 @@ const PULSE_INDICATORS = [
     series: [56.9, 59.1, 58.4, 58.3, 58.1, 57.5, 56.5, 57.5],
     target: '>50 Expansion',
     source: 'S&P Global',
-    key: 'iip_growth',
+    key: 'wb_manufacturing_growth',
   },
   {
     id: 'services-pmi',
@@ -77,7 +77,7 @@ const PULSE_INDICATORS = [
     series: [60.6, 61.2, 60.2, 60.5, 60.3, 60.9, 57.7, 58.9],
     target: '>50 Expansion',
     source: 'S&P Global',
-    key: 'services_growth',
+    key: 'wb_services_growth',
   },
   {
     id: 'forex-reserves',
@@ -92,7 +92,7 @@ const PULSE_INDICATORS = [
     series: [642, 648, 652, 655, 670, 681, 701, 688],
     target: '11.5 Months Imports',
     source: 'Reserve Bank of India',
-    key: 'foreign_exchange_reserves_usd',
+    key: 'forex',
   },
   {
     id: 'credit-growth',
@@ -107,7 +107,7 @@ const PULSE_INDICATORS = [
     series: [16.2, 15.9, 15.6, 15.1, 14.8, 14.4, 14.8],
     target: '₹172.4 Lakh Cr',
     source: 'RBI WSS',
-    key: 'credit_to_gdp',
+    key: 'bank_credit',
   },
   {
     id: 'power-demand',
@@ -122,7 +122,7 @@ const PULSE_INDICATORS = [
     series: [135, 144, 156, 160, 155, 148, 152.4],
     target: 'Peak: 250 GW Met',
     source: 'Central Electricity Authority',
-    key: 'electricity_generation_thermal',
+    key: 'power_consumption',
   },
   {
     id: 'rail-freight',
@@ -137,7 +137,7 @@ const PULSE_INDICATORS = [
     series: [129, 131, 133, 134, 130, 132, 136.2],
     target: '₹14,500 Cr Earnings',
     source: 'Ministry of Railways',
-    key: 'railway_freight_originating_total',
+    key: 'rail_freight',
   },
   {
     id: 'auto-sales-pv',
@@ -152,7 +152,7 @@ const PULSE_INDICATORS = [
     series: [320, 335, 342, 345, 350, 348, 356.8],
     target: 'Festive High',
     source: 'SIAM / FADA',
-    key: 'vehicle_sales_total',
+    key: 'iip_motor_vehicles',
   },
   {
     id: 'two-wheeler-sales',
@@ -167,7 +167,7 @@ const PULSE_INDICATORS = [
     series: [1.45, 1.55, 1.62, 1.68, 1.72, 1.75, 1.84],
     target: 'Rural Demand Recovery',
     source: 'SIAM',
-    key: 'vehicle_sales_two_wheelers',
+    key: 'iip_other_transport',
   },
   {
     id: 'diesel-consumption',
@@ -182,7 +182,7 @@ const PULSE_INDICATORS = [
     series: [7.1, 7.3, 7.4, 7.5, 7.3, 7.4, 7.65],
     target: 'Commercial Mobility',
     source: 'PPAC / MoPNG',
-    key: 'petroleum_consumption_total',
+    key: 'fuel_consumption',
   },
   {
     id: 'petrol-consumption',
@@ -197,7 +197,7 @@ const PULSE_INDICATORS = [
     series: [2.9, 3.0, 3.05, 3.1, 3.12, 3.18, 3.24],
     target: 'Urban Mobility',
     source: 'PPAC / MoPNG',
-    key: 'petroleum_consumption_total',
+    key: 'iip_coke_petroleum',
   },
   {
     id: 'wpi-inflation',
@@ -212,7 +212,7 @@ const PULSE_INDICATORS = [
     series: [1.3, 1.8, 2.6, 3.4, 2.0, 1.8, 2.36],
     target: 'Manufacturer Inputs',
     source: 'Office of Economic Adviser',
-    key: 'inflation_wpi',
+    key: 'wpi',
   },
   {
     id: 'g-sec-yield',
@@ -227,7 +227,7 @@ const PULSE_INDICATORS = [
     series: [7.12, 7.08, 7.04, 6.98, 6.92, 6.86, 6.82],
     target: 'Sovereign Benchmark',
     source: 'RBI / CCIL',
-    key: 'external_debt_to_gdp',
+    key: 'hib_weighted_average_rate',
   },
   {
     id: 'inr-usd',
@@ -242,7 +242,7 @@ const PULSE_INDICATORS = [
     series: [83.1, 83.3, 83.5, 83.7, 83.9, 84.1, 84.25],
     target: 'Orderly RBI Float',
     source: 'RBI Reference Rate',
-    key: 'fdi_net_inflows_usd',
+    key: 'rupee',
   },
   {
     id: 'merchandise-exports',
@@ -257,7 +257,7 @@ const PULSE_INDICATORS = [
     series: [31.5, 33.2, 34.0, 35.1, 32.8, 33.5, 34.58],
     target: 'Electronics & Pharma Leading',
     source: 'Ministry of Commerce',
-    key: 'merchandise_exports_growth',
+    key: 'merchandise_exports',
   },
   {
     id: 'core-sector',
@@ -272,7 +272,7 @@ const PULSE_INDICATORS = [
     series: [5.2, 4.8, 3.9, 2.1, 1.8, 2.4, 3.6],
     target: '8 Infrastructure Sectors',
     source: 'DPIIT / MoCI',
-    key: 'iip_growth',
+    key: 'iip',
   },
   {
     id: 'air-passenger',
@@ -287,7 +287,7 @@ const PULSE_INDICATORS = [
     series: [12.2, 12.8, 13.1, 13.4, 13.2, 13.5, 13.8],
     target: 'Record Passenger Density',
     source: 'DGCA',
-    key: 'air_passengers_domestic',
+    key: 'civil_aviation_passengers',
   },
   {
     id: 'port-cargo',
@@ -302,7 +302,7 @@ const PULSE_INDICATORS = [
     series: [63.2, 64.5, 65.8, 66.2, 65.0, 67.1, 68.4],
     target: '12 Major Central Ports',
     source: 'IPA / Ministry of Ports',
-    key: 'port_cargo_traffic_total',
+    key: 'port_cargo',
   },
   {
     id: 'steel-consumption',
@@ -317,7 +317,7 @@ const PULSE_INDICATORS = [
     series: [9.8, 10.2, 10.5, 10.8, 11.0, 11.4, 11.8],
     target: 'Capex Construction Surge',
     source: 'Joint Plant Committee (JPC)',
-    key: 'steel_production_crude',
+    key: 'crude_steel_production',
   },
   {
     id: 'fastag-collections',
@@ -332,7 +332,7 @@ const PULSE_INDICATORS = [
     series: [4980, 5120, 5340, 5450, 5600, 5710, 5820],
     target: 'National Highway Logistics',
     source: 'NHAI / IHMCL / NPCI',
-    key: 'national_highways_length',
+    key: 'log_road_fastag_collection',
   },
   {
     id: 'coal-production',
@@ -347,7 +347,7 @@ const PULSE_INDICATORS = [
     series: [73.1, 76.5, 78.4, 79.2, 75.8, 80.2, 84.45],
     target: 'Thermal Power Security',
     source: 'Ministry of Coal / CIL',
-    key: 'electricity_generation_thermal',
+    key: 'coal_production',
   },
   {
     id: 'cement-production',
@@ -362,7 +362,7 @@ const PULSE_INDICATORS = [
     series: [168.4, 172.1, 175.6, 179.3, 177.0, 181.5, 184.2],
     target: 'Civil Infra & Housing',
     source: 'Office of Economic Adviser',
-    key: 'iip_growth',
+    key: 'iip_non_metallic_minerals',
   },
   {
     id: 'commercial-vehicles',
@@ -377,7 +377,7 @@ const PULSE_INDICATORS = [
     series: [78.2, 81.0, 83.5, 84.8, 82.0, 85.4, 88.5],
     target: 'Industrial Logistics Fleet',
     source: 'SIAM / Vahan',
-    key: 'vehicle_sales_commercial',
+    key: 'iip_compare_vehicles',
   },
   {
     id: 'bank-deposits',
@@ -392,7 +392,7 @@ const PULSE_INDICATORS = [
     series: [204, 206, 209, 212, 214, 216, 218.4],
     target: 'Household Savings Pool',
     source: 'RBI WSS',
-    key: 'credit_to_gdp',
+    key: 'rbi_state_bank_deposits_all_india_trend',
   },
   {
     id: 'fpi-flows',
@@ -407,7 +407,7 @@ const PULSE_INDICATORS = [
     series: [-1.2, 2.1, 3.4, -0.8, 1.5, 2.8, 3.82],
     target: 'Capital Account Stability',
     source: 'NSDL / SEBI',
-    key: 'fdi_net_inflows_usd',
+    key: 'xp_bx_pef_totl_cd_wd_trend',
   },
   {
     id: 'trade-deficit',
@@ -422,7 +422,7 @@ const PULSE_INDICATORS = [
     series: [-24.2, -23.8, -25.1, -26.0, -24.8, -23.5, -22.4],
     target: 'CAD Contained <1.5% GDP',
     source: 'Ministry of Commerce',
-    key: 'current_account_balance_gdp',
+    key: 'merchandise_trade_balance',
   },
   {
     id: 'direct-tax',
@@ -437,7 +437,7 @@ const PULSE_INDICATORS = [
     series: [7.8, 8.4, 9.1, 9.8, 10.3, 10.8, 11.26],
     target: '62% of Budget Target',
     source: 'CBDT / Ministry of Finance',
-    key: 'gross_tax_revenue',
+    key: 'ub_net_tax_revenue',
   },
   {
     id: 'cpi-food',
@@ -452,7 +452,7 @@ const PULSE_INDICATORS = [
     series: [7.8, 8.2, 8.7, 5.4, 5.7, 6.72, 6.24],
     target: 'Winter Crop Influx',
     source: 'MOSPI / NSO',
-    key: 'inflation',
+    key: 'iip_food_products',
   },
   {
     id: 'services-exports',
@@ -467,7 +467,7 @@ const PULSE_INDICATORS = [
     series: [27.5, 28.2, 29.0, 29.8, 30.5, 31.2, 31.85],
     target: 'GCC & IT Engineering',
     source: 'RBI / MoCI',
-    key: 'services_growth',
+    key: 'wb_services_exports_mix',
   },
   {
     id: 'crude-steel',
@@ -482,7 +482,7 @@ const PULSE_INDICATORS = [
     series: [10.9, 11.2, 11.5, 11.8, 12.0, 12.2, 12.5],
     target: 'World #2 Steel Producer',
     source: 'World Steel / JPC',
-    key: 'steel_production_crude',
+    key: 'crude_steel_production',
   },
   {
     id: 'atf-consumption',
@@ -497,7 +497,7 @@ const PULSE_INDICATORS = [
     series: [650, 672, 690, 710, 715, 728, 742],
     target: 'Aviation Fleet Capacity',
     source: 'PPAC / MoPNG',
-    key: 'petroleum_consumption_total',
+    key: 'crude_petroleum_domestic',
   },
   {
     id: 'tractor-sales',
@@ -512,7 +512,7 @@ const PULSE_INDICATORS = [
     series: [82, 88, 94, 98, 102, 108, 114.2],
     target: 'Kharif Farm Cashflows',
     source: 'TMA / FADA',
-    key: 'agriculture_value_added_growth',
+    key: 'wb_agriculture_growth',
   },
 ];
 
@@ -587,18 +587,18 @@ export default function PulseDashboard() {
         </div>
 
         <div className="pulse-meta-ticker" aria-label="Macroeconomic Highlights">
-          <div className="pulse-ticker-item">
+          <Link to="/indicator/wb_manufacturing_growth" className="pulse-ticker-item" title="View Manufacturing Value-Added Growth">
             <span className="pulse-ticker-label">Manufacturing PMI</span>
             <span className="pulse-ticker-value">57.5 (Expansion)</span>
-          </div>
-          <div className="pulse-ticker-item">
+          </Link>
+          <Link to="/indicator/cpi" className="pulse-ticker-item" title="View CPI Inflation">
             <span className="pulse-ticker-label">CPI Inflation</span>
             <span className="pulse-ticker-value">4.85% (In Band)</span>
-          </div>
-          <div className="pulse-ticker-item">
+          </Link>
+          <Link to="/indicator/forex" className="pulse-ticker-item" title="View Foreign Exchange Reserves">
             <span className="pulse-ticker-label">FX Reserves</span>
             <span className="pulse-ticker-value">$688.2 Billion</span>
-          </div>
+          </Link>
         </div>
       </div>
 
