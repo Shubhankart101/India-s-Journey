@@ -485,27 +485,80 @@
 .polity-zoom-btns {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   pointer-events: auto;
+  z-index: 100;
 }
 
 .polity-zoom-btns button {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 8px;
   background: var(--panel, #fff9f2);
   border: 1px solid var(--line, #e4d5c5);
   color: var(--ink, #2b2622);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.15s ease;
 }
 
 .polity-zoom-btns button:hover {
   border-color: var(--ca, #a81b52);
   color: var(--ca, #a81b52);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.polity-zoom-btns button:active {
+  transform: translateY(0);
+}
+
+.polity-top-zoom-controls {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  display: flex;
+  gap: 6px;
+  z-index: 25;
+  pointer-events: auto;
+}
+
+.polity-top-zoom-controls .polity-zoom-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 249, 242, 0.95);
+  border: 1px solid var(--line, #e4d5c5);
+  color: var(--ink, #2b2622);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  transition: all 0.15s ease;
+}
+
+.polity-top-zoom-controls .polity-zoom-btn:hover {
+  border-color: var(--ca, #a81b52);
+  color: var(--ca, #a81b52);
+  background: #ffffff;
+}
+
+.polity-metro-viewport.theme-dark .polity-top-zoom-controls .polity-zoom-btn {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.polity-metro-viewport.theme-dark .polity-zoom-btns button {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
 }

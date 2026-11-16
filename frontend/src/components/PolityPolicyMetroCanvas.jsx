@@ -302,17 +302,37 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       ctx.stroke();
     }
 
-    // 4. Future Corridors (Phase 4 / 5)
+    // 4. Future Corridors (Phase 4 / 5 / Under Construction)
     if (showFuture && PACK.future && PACK.future.length && !routeResult) {
       for (const f of PACK.future) {
         ctx.save();
-        ctx.setLineDash([6 * S, 5 * S]);
-        ctx.lineWidth = (f.ph === '4' ? 1.6 : 1.2) * S;
-        ctx.strokeStyle = f.ph === '4' ? '#7C8AA0' : '#5A6678';
-        ctx.globalAlpha = f.ph === '4' ? 0.8 : 0.55;
+        ctx.setLineDash([8 * S, 6 * S]);
+        ctx.lineWidth = Math.max(2.2, 3.2 * S);
+        ctx.strokeStyle = f.c || (f.ph === '4' ? '#f59e0b' : '#0284c7');
+        ctx.globalAlpha = 0.9;
         ctx.beginPath();
-        path1(ctx, f.PZ, true);
+        if (f.segs && Array.isArray(f.segs)) {
+          for (const seg of f.segs) path1(ctx, seg.map(p => [px(p[0]), py(p[1])]), false);
+        } else if (f.PZ && f.PZ.length) {
+          path1(ctx, f.PZ, false);
+        }
         ctx.stroke();
+
+        // Draw under-construction station rings (open hollow circles)
+        if (f.st && f.st.length) {
+          ctx.setLineDash([]);
+          for (const ust of f.st) {
+            const X = sx(ust.P[0]), Y = sy(ust.P[1]);
+            if (X < -20 || Y < -20 || X > W + 20 || Y > H + 20) continue;
+            ctx.beginPath();
+            ctx.arc(X, Y, Math.max(3.2, 4.2 * S), 0, 2 * Math.PI);
+            ctx.fillStyle = C.bg;
+            ctx.fill();
+            ctx.lineWidth = 2.0;
+            ctx.strokeStyle = f.c || '#f59e0b';
+            ctx.stroke();
+          }
+        }
         ctx.restore();
       }
     }
@@ -412,6 +432,29 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       ctx.fillStyle = isSel ? '#d97706' : C.ink;
       ctx.fillText(s.n, lx, ly);
     }
+
+    // Under-construction station names strictly visible on scroll/hover/select
+    if (showFuture && PACK.future) {
+      for (const f of PACK.future) {
+        for (const s of f.st || []) {
+          const isSel = selectedStation?.n === s.n;
+          const isHov = hoverStation?.n === s.n;
+          if (!isHov && !isSel) continue;
+
+          const X = sx(s.P[0]), Y = sy(s.P[1]);
+          if (X < 15 || X > W - 140 || Y < 15 || Y > H - 15) continue;
+
+          const lx = X + r * 1.6 + 6;
+          const ly = Y;
+
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = C.bg;
+          ctx.strokeText(`${s.n} (Under Construction)`, lx, ly);
+          ctx.fillStyle = f.c || '#f59e0b';
+          ctx.fillText(`${s.n} (Under Construction)`, lx, ly);
+        }
+      }
+    }
   }, [theme, selectedLines, showFuture, routeResult, selectedStation, hoverStation, PACK, LMAP, SMAP, renderTrigger]);
 
   // Mouse Interaction handlers
@@ -458,6 +501,17 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         nearest = s;
       }
     }
+    if (showFuture && PACK.future) {
+      for (const f of PACK.future) {
+        for (const s of f.st || []) {
+          const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
+          if (d < bd) {
+            bd = d;
+            nearest = { ...s, l: [f.nm || f.lab || 'Under Construction Corridor'], isUnderConstruction: true, color: f.c || '#f59e0b' };
+          }
+        }
+      }
+    }
     setHoverStation(nearest);
     if (nearest) {
       setTooltip({
@@ -467,6 +521,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         hindi: nearest.hindi,
         lines: (nearest.l || []).map(id => LMAP[id]?.nm || id).join(' · '),
         interchange: nearest.ix,
+        underConstruction: nearest.isUnderConstruction,
       });
     } else {
       setTooltip(null);
@@ -510,6 +565,17 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         nearest = s;
       }
     }
+    if (showFuture && PACK.future) {
+      for (const f of PACK.future) {
+        for (const s of f.st || []) {
+          const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
+          if (d < bd) {
+            bd = d;
+            nearest = { ...s, l: [f.nm || f.lab || 'Under Construction Corridor'], isUnderConstruction: true, color: f.c || '#f59e0b' };
+          }
+        }
+      }
+    }
     setHoverStation(nearest);
     if (nearest) {
       setTooltip({
@@ -519,6 +585,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         hindi: nearest.hindi,
         lines: (nearest.l || []).map(id => LMAP[id]?.nm || id).join(' · '),
         interchange: nearest.ix,
+        underConstruction: nearest.isUnderConstruction,
       });
     } else {
       setTooltip(null);
@@ -539,8 +606,18 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
   };
 
   const allStations = useMemo(() => {
-    return [...(PACK.stations || [])].sort((a, b) => a.n.localeCompare(b.n));
-  }, [PACK]);
+    const list = [...(PACK.stations || [])];
+    if (showFuture && PACK.future) {
+      for (const f of PACK.future) {
+        for (const s of f.st || []) {
+          if (!list.some(x => x.n === s.n)) {
+            list.push({ ...s, isUnderConstruction: true, l: [f.nm || f.lab || 'Under Construction'] });
+          }
+        }
+      }
+    }
+    return list.sort((a, b) => a.n.localeCompare(b.n));
+  }, [PACK, showFuture]);
 
   return (
     <div className={`polity-metro-viewport theme-${theme}`} ref={containerRef}>
@@ -558,8 +635,9 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
             type="button"
             className={`polity-layer-pill ${showFuture ? 'active future' : ''}`}
             onClick={() => setShowFuture(prev => !prev)}
+            title="Toggle under-construction and proposed corridors"
           >
-            --- Under Construction
+            --- Under Construction ({PACK.future.length})
           </button>
         )}
         <button
@@ -571,6 +649,37 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
           }}
         >
           All Lines ({PACK.lines?.length || 0})
+        </button>
+      </div>
+
+      {/* Top Right Zoom Controls */}
+      <div className="polity-top-zoom-controls" role="group" aria-label="Map Zoom and Fit Controls">
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={() => handleZoom(1)}
+          title="Zoom In (+)"
+          aria-label="Zoom In"
+        >
+          + Zoom In
+        </button>
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={() => handleZoom(-1)}
+          title="Zoom Out (−)"
+          aria-label="Zoom Out"
+        >
+          − Zoom Out
+        </button>
+        <button
+          type="button"
+          className="polity-zoom-btn"
+          onClick={handleReset}
+          title="Reset Map View (↺)"
+          aria-label="Reset View"
+        >
+          ↺ Fit View
         </button>
       </div>
 
@@ -595,6 +704,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
             {tooltip.hindi && <span className="tooltip-hindi">({tooltip.hindi})</span>}
           </div>
           <div className="tooltip-lines">{tooltip.lines}</div>
+          {tooltip.underConstruction && <span className="tooltip-tag" style={{ color: '#f59e0b' }}>🚧 Under Construction / Proposed</span>}
           {tooltip.interchange && <span className="tooltip-tag">★ Interchange Junction</span>}
         </div>
       )}
@@ -764,37 +874,37 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         )}
       </div>
 
-      {/* Bottom Right Zoom & Reset Controls */}
-      <div className="polity-zoom-controls">
-        <button
-          type="button"
-          className="polity-zoom-btn"
-          onClick={() => handleZoom(1)}
-          title="Zoom In"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          className="polity-zoom-btn"
-          onClick={() => handleZoom(-1)}
-          title="Zoom Out"
-        >
-          −
-        </button>
-        <button
-          type="button"
-          className="polity-zoom-btn"
-          onClick={handleReset}
-          title="Reset View"
-        >
-          ↺
-        </button>
-      </div>
-
-      {/* Attribution Footer */}
-      <div className="polity-attribution">
-        <span>Network and city geography: © OpenStreetMap contributors (ODbL). Corridors under construction: official city metro authority alignments.</span>
+      {/* Bottom controls: Attribution on left, Zoom & Reset cluster on right */}
+      <div className="polity-bottom-controls">
+        <div className="polity-attribution">
+          <span>Network and city geography: © OpenStreetMap contributors (ODbL). Corridors under construction: official city metro authority alignments.</span>
+        </div>
+        <div className="polity-zoom-btns" role="group" aria-label="Map Zoom and Fit Controls">
+          <button
+            type="button"
+            onClick={() => handleZoom(1)}
+            title="Zoom In (+)"
+            aria-label="Zoom In"
+          >
+            +
+          </button>
+          <button
+            type="button"
+            onClick={() => handleZoom(-1)}
+            title="Zoom Out (−)"
+            aria-label="Zoom Out"
+          >
+            −
+          </button>
+          <button
+            type="button"
+            onClick={handleReset}
+            title="Reset Map View (↺)"
+            aria-label="Reset View"
+          >
+            ↺
+          </button>
+        </div>
       </div>
     </div>
   );

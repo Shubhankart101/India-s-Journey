@@ -1771,6 +1771,247 @@ export const CITY_RAW_DATA = {
         "DN Nagar",
         "Andheri West"
       ]
+    ],
+    "future": [
+      {
+        "id": "mum-line2b",
+        "k": "mum-line2b",
+        "nm": "Line 2B (D.N. Nagar \u2013 Mandale via BKC)",
+        "lab": "Yellow Line 2B",
+        "c": "#eab308",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            72.828,
+            19.125
+          ],
+          [
+            72.836,
+            19.098
+          ],
+          [
+            72.848,
+            19.076
+          ],
+          [
+            72.868,
+            19.066
+          ],
+          [
+            72.889,
+            19.065
+          ],
+          [
+            72.901,
+            19.052
+          ],
+          [
+            72.915,
+            19.045
+          ],
+          [
+            72.935,
+            19.038
+          ]
+        ],
+        "st": [
+          {
+            "n": "Bandra Kurla Complex (BKC)",
+            "hindi": "\u092c\u093e\u0902\u0926\u094d\u0930\u093e \u0915\u0941\u0930\u094d\u0932\u093e \u0915\u0949\u092e\u094d\u092a\u094d\u0932\u0947\u0915\u094d\u0938",
+            "ll": [
+              72.868,
+              19.066
+            ]
+          },
+          {
+            "n": "Kurla East",
+            "hindi": "\u0915\u0941\u0930\u094d\u0932\u093e \u092a\u0942\u0930\u094d\u0935",
+            "ll": [
+              72.889,
+              19.065
+            ]
+          },
+          {
+            "n": "Diamond Garden Chembur",
+            "hindi": "\u0921\u093e\u092f\u092e\u0902\u0921 \u0917\u093e\u0930\u094d\u0921\u0928 \u091a\u0947\u0902\u092c\u0942\u0930",
+            "ll": [
+              72.901,
+              19.052
+            ]
+          },
+          {
+            "n": "Mandale Depot",
+            "hindi": "\u092e\u0902\u0921\u093e\u0932\u0947 \u0921\u093f\u092a\u094b",
+            "ll": [
+              72.935,
+              19.038
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mum-line4",
+        "k": "mum-line4",
+        "nm": "Line 4 & 4A (Wadala \u2013 Kasarvadavali \u2013 Gaimukh)",
+        "lab": "Green Line 4",
+        "c": "#22c55e",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            72.86,
+            19.018
+          ],
+          [
+            72.875,
+            19.045
+          ],
+          [
+            72.88,
+            19.06
+          ],
+          [
+            72.908,
+            19.086
+          ],
+          [
+            72.923,
+            19.115
+          ],
+          [
+            72.937,
+            19.145
+          ],
+          [
+            72.955,
+            19.176
+          ],
+          [
+            72.964,
+            19.196
+          ],
+          [
+            72.973,
+            19.235
+          ],
+          [
+            72.969,
+            19.273
+          ]
+        ],
+        "st": [
+          {
+            "n": "Bhakti Park Wadala",
+            "hindi": "\u092d\u0915\u094d\u0924\u093f \u092a\u093e\u0930\u094d\u0915 \u0935\u0921\u093e\u0932\u093e",
+            "ll": [
+              72.86,
+              19.018
+            ]
+          },
+          {
+            "n": "Amar Mahal Junction",
+            "hindi": "\u0905\u092e\u0930 \u092e\u0939\u0932 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              72.88,
+              19.06
+            ]
+          },
+          {
+            "n": "Bhandup West",
+            "hindi": "\u092d\u093e\u0902\u0921\u0941\u092a \u092a\u0936\u094d\u091a\u093f\u092e",
+            "ll": [
+              72.937,
+              19.145
+            ]
+          },
+          {
+            "n": "Teen Hath Naka Thane",
+            "hindi": "\u0924\u0940\u0928 \u0939\u093e\u0925 \u0928\u093e\u0915\u093e \u0920\u093e\u0923\u0947",
+            "ll": [
+              72.964,
+              19.196
+            ]
+          },
+          {
+            "n": "Kasarvadavali",
+            "hindi": "\u0915\u093e\u0938\u093e\u0930\u0935\u0921\u0935\u0932\u0940",
+            "ll": [
+              72.969,
+              19.273
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mum-line6",
+        "k": "mum-line6",
+        "nm": "Line 6 (Lokhandwala \u2013 Vikhroli via JVLR)",
+        "lab": "Pink Line 6",
+        "c": "#ec4899",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            72.826,
+            19.142
+          ],
+          [
+            72.849,
+            19.135
+          ],
+          [
+            72.879,
+            19.124
+          ],
+          [
+            72.91,
+            19.126
+          ],
+          [
+            72.932,
+            19.13
+          ],
+          [
+            72.939,
+            19.112
+          ]
+        ],
+        "st": [
+          {
+            "n": "Swami Samarth Nagar",
+            "hindi": "\u0938\u094d\u0935\u093e\u092e\u0940 \u0938\u092e\u0930\u094d\u0925 \u0928\u0917\u0930",
+            "ll": [
+              72.826,
+              19.142
+            ]
+          },
+          {
+            "n": "JVLR SEEPZ",
+            "hindi": "\u0938\u0940\u092a\u094d\u091c\u093c \u091c\u0947\u0935\u0940\u090f\u0932\u0906\u0930",
+            "ll": [
+              72.879,
+              19.124
+            ]
+          },
+          {
+            "n": "IIT Bombay Powai",
+            "hindi": "\u0906\u0908\u0906\u0908\u091f\u0940 \u092c\u0949\u092e\u094d\u092c\u0947 \u092a\u0935\u0908",
+            "ll": [
+              72.91,
+              19.126
+            ]
+          },
+          {
+            "n": "Vikhroli EEH",
+            "hindi": "\u0935\u093f\u0915\u094d\u0930\u094b\u0932\u0940 \u0908\u0908\u090f\u091a",
+            "ll": [
+              72.939,
+              19.112
+            ]
+          }
+        ]
+      }
     ]
   },
   "bengaluru": {
@@ -3508,7 +3749,235 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "blr-pink",
+        "k": "blr-pink",
+        "nm": "Pink Line (Kalena Agrahara \u2013 Nagawara via MG Road)",
+        "lab": "Pink Line (Reach 6)",
+        "c": "#ec4899",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            77.597,
+            12.872
+          ],
+          [
+            77.599,
+            12.884
+          ],
+          [
+            77.601,
+            12.895
+          ],
+          [
+            77.598,
+            12.918
+          ],
+          [
+            77.598,
+            12.938
+          ],
+          [
+            77.602,
+            12.961
+          ],
+          [
+            77.607,
+            12.975
+          ],
+          [
+            77.603,
+            12.985
+          ],
+          [
+            77.599,
+            12.993
+          ],
+          [
+            77.606,
+            13.003
+          ],
+          [
+            77.616,
+            13.012
+          ],
+          [
+            77.62,
+            13.042
+          ]
+        ],
+        "st": [
+          {
+            "n": "Kalena Agrahara",
+            "hindi": "\u0915\u0932\u0947\u0928\u093e \u0905\u0917\u094d\u0930\u0939\u093e\u0930\u093e",
+            "ll": [
+              77.597,
+              12.872
+            ]
+          },
+          {
+            "n": "IIM-Bangalore",
+            "hindi": "\u0906\u0908\u0906\u0908\u090f\u092e \u092c\u0948\u0902\u0917\u0932\u094b\u0930",
+            "ll": [
+              77.601,
+              12.895
+            ]
+          },
+          {
+            "n": "Dairy Circle",
+            "hindi": "\u0921\u0947\u092f\u0930\u0940 \u0938\u0930\u094d\u0915\u0932",
+            "ll": [
+              77.598,
+              12.938
+            ]
+          },
+          {
+            "n": "Shivaji Nagar",
+            "hindi": "\u0936\u093f\u0935\u093e\u091c\u0940 \u0928\u0917\u0930",
+            "ll": [
+              77.603,
+              12.985
+            ]
+          },
+          {
+            "n": "Bangalore Cantonment",
+            "hindi": "\u092c\u0948\u0902\u0917\u0932\u094b\u0930 \u091b\u093e\u0935\u0928\u0940",
+            "ll": [
+              77.599,
+              12.993
+            ]
+          },
+          {
+            "n": "Nagawara Interchange",
+            "hindi": "\u0928\u093e\u0917\u0935\u093e\u0930\u093e",
+            "ll": [
+              77.62,
+              13.042
+            ]
+          }
+        ]
+      },
+      {
+        "id": "blr-blue",
+        "k": "blr-blue",
+        "nm": "Blue Line (Silk Board \u2013 KR Puram \u2013 Kempegowda Airport)",
+        "lab": "Blue Line (Airport Link)",
+        "c": "#0284c7",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            77.623,
+            12.917
+          ],
+          [
+            77.636,
+            12.912
+          ],
+          [
+            77.676,
+            12.926
+          ],
+          [
+            77.698,
+            12.956
+          ],
+          [
+            77.697,
+            12.973
+          ],
+          [
+            77.695,
+            12.998
+          ],
+          [
+            77.666,
+            13.011
+          ],
+          [
+            77.592,
+            13.036
+          ],
+          [
+            77.601,
+            13.072
+          ],
+          [
+            77.605,
+            13.101
+          ],
+          [
+            77.634,
+            13.172
+          ],
+          [
+            77.706,
+            13.199
+          ]
+        ],
+        "st": [
+          {
+            "n": "Central Silk Board",
+            "hindi": "\u0938\u0947\u0902\u091f\u094d\u0930\u0932 \u0938\u093f\u0932\u094d\u0915 \u092c\u094b\u0930\u094d\u0921",
+            "ll": [
+              77.623,
+              12.917
+            ]
+          },
+          {
+            "n": "Bellandur Outer Ring Road",
+            "hindi": "\u092c\u0947\u0932\u0902\u0926\u0942\u0930",
+            "ll": [
+              77.676,
+              12.926
+            ]
+          },
+          {
+            "n": "Marathahalli",
+            "hindi": "\u092e\u0930\u093e\u0920\u093e\u0939\u0932\u094d\u0932\u0940",
+            "ll": [
+              77.698,
+              12.956
+            ]
+          },
+          {
+            "n": "KR Puram Interchange",
+            "hindi": "\u0915\u0947\u0906\u0930 \u092a\u0941\u0930\u092e",
+            "ll": [
+              77.695,
+              12.998
+            ]
+          },
+          {
+            "n": "Hebbal Junction",
+            "hindi": "\u0939\u0947\u092c\u094d\u092c\u0932",
+            "ll": [
+              77.592,
+              13.036
+            ]
+          },
+          {
+            "n": "Yelahanka",
+            "hindi": "\u092f\u0947\u0932\u094d\u0939\u093e\u0902\u0915\u093e",
+            "ll": [
+              77.605,
+              13.101
+            ]
+          },
+          {
+            "n": "KIA Airport Terminal",
+            "hindi": "\u0915\u0947\u092e\u094d\u092a\u0947\u0917\u094c\u0921\u093c\u093e \u0939\u0935\u093e\u0908 \u0905\u0921\u094d\u0921\u093e",
+            "ll": [
+              77.706,
+              13.199
+            ]
+          }
+        ]
+      }
+    ]
   },
   "kolkata": {
     "name": "Kolkata Metro (India's First Metro & Underwater Tunnel)",
@@ -4613,7 +5082,155 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "kol-orange-ext",
+        "k": "kol-orange-ext",
+        "nm": "Orange Line Extension (Ruby \u2013 Beleghata \u2013 NSCBI Airport)",
+        "lab": "Orange Line 6",
+        "c": "#f97316",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            88.401,
+            22.513
+          ],
+          [
+            88.404,
+            22.529
+          ],
+          [
+            88.402,
+            22.541
+          ],
+          [
+            88.405,
+            22.563
+          ],
+          [
+            88.434,
+            22.581
+          ],
+          [
+            88.455,
+            22.628
+          ],
+          [
+            88.448,
+            22.639
+          ],
+          [
+            88.444,
+            22.654
+          ]
+        ],
+        "st": [
+          {
+            "n": "Science City Barun Sengupta",
+            "hindi": "\u0938\u093e\u0907\u0902\u0938 \u0938\u093f\u091f\u0940",
+            "ll": [
+              88.402,
+              22.541
+            ]
+          },
+          {
+            "n": "Beleghata",
+            "hindi": "\u092c\u0947\u0932\u0947\u0918\u093e\u091f\u093e",
+            "ll": [
+              88.405,
+              22.563
+            ]
+          },
+          {
+            "n": "City Centre II New Town",
+            "hindi": "\u0938\u093f\u091f\u0940 \u0938\u0947\u0902\u091f\u0930 \u0968 \u0928\u094d\u092f\u0942 \u091f\u093e\u0909\u0928",
+            "ll": [
+              88.455,
+              22.628
+            ]
+          },
+          {
+            "n": "Jai Hind NSCBI Airport",
+            "hindi": "\u091c\u092f \u0939\u093f\u0902\u0926 \u0939\u0935\u093e\u0908 \u0905\u0921\u094d\u0921\u093e",
+            "ll": [
+              88.444,
+              22.654
+            ]
+          }
+        ]
+      },
+      {
+        "id": "kol-purple-ext",
+        "k": "kol-purple-ext",
+        "nm": "Purple Line Extension (Majerhat \u2013 Victoria \u2013 Esplanade)",
+        "lab": "Purple Line 3",
+        "c": "#a855f7",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            88.324,
+            22.518
+          ],
+          [
+            88.329,
+            22.531
+          ],
+          [
+            88.33,
+            22.54
+          ],
+          [
+            88.341,
+            22.546
+          ],
+          [
+            88.351,
+            22.553
+          ],
+          [
+            88.352,
+            22.565
+          ]
+        ],
+        "st": [
+          {
+            "n": "Mominpur",
+            "hindi": "\u092e\u094b\u092e\u093f\u0928\u092a\u0941\u0930",
+            "ll": [
+              88.329,
+              22.531
+            ]
+          },
+          {
+            "n": "Khidirpur",
+            "hindi": "\u0916\u093f\u0926\u093f\u0930\u092a\u0941\u0930",
+            "ll": [
+              88.33,
+              22.54
+            ]
+          },
+          {
+            "n": "Victoria Memorial",
+            "hindi": "\u0935\u093f\u0915\u094d\u091f\u094b\u0930\u093f\u092f\u093e \u092e\u0947\u092e\u094b\u0930\u093f\u092f\u0932",
+            "ll": [
+              88.341,
+              22.546
+            ]
+          },
+          {
+            "n": "Esplanade Interchange",
+            "hindi": "\u090f\u0938\u094d\u092a\u094d\u0932\u0947\u0928\u0947\u0921",
+            "ll": [
+              88.352,
+              22.565
+            ]
+          }
+        ]
+      }
+    ]
   },
   "chennai": {
     "name": "Chennai Metro (CMRL)",
@@ -5492,7 +6109,211 @@ export const CITY_RAW_DATA = {
         "interchange": true
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "chn-line3",
+        "k": "chn-line3",
+        "nm": "Line 3 (Madhavaram \u2013 Adyar \u2013 SIPCOT Siruseri)",
+        "lab": "Purple Line 3",
+        "c": "#9333ea",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            80.231,
+            13.149
+          ],
+          [
+            80.243,
+            13.109
+          ],
+          [
+            80.244,
+            13.08
+          ],
+          [
+            80.252,
+            13.053
+          ],
+          [
+            80.264,
+            13.045
+          ],
+          [
+            80.256,
+            13.016
+          ],
+          [
+            80.258,
+            12.986
+          ],
+          [
+            80.236,
+            12.942
+          ],
+          [
+            80.228,
+            12.901
+          ],
+          [
+            80.222,
+            12.827
+          ]
+        ],
+        "st": [
+          {
+            "n": "Madhavaram Milk Colony",
+            "hindi": "\u092e\u093e\u0927\u0935\u0930\u093e\u092e \u092e\u093f\u0932\u094d\u0915 \u0915\u0949\u0932\u094b\u0928\u0940",
+            "ll": [
+              80.231,
+              13.149
+            ]
+          },
+          {
+            "n": "Perambur",
+            "hindi": "\u092a\u0947\u0930\u092e\u094d\u092c\u0942\u0930",
+            "ll": [
+              80.243,
+              13.109
+            ]
+          },
+          {
+            "n": "Kilpauk",
+            "hindi": "\u0915\u0940\u0932\u092a\u0949\u0915",
+            "ll": [
+              80.244,
+              13.08
+            ]
+          },
+          {
+            "n": "Royapettah",
+            "hindi": "\u0930\u094b\u092f\u093e\u092a\u0947\u091f\u094d\u091f\u093e",
+            "ll": [
+              80.264,
+              13.045
+            ]
+          },
+          {
+            "n": "Adyar Junction",
+            "hindi": "\u0905\u0921\u094d\u092f\u093e\u0930 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              80.256,
+              13.016
+            ]
+          },
+          {
+            "n": "Thiruvanmiyur OMR",
+            "hindi": "\u0924\u093f\u0930\u0941\u0935\u093e\u0928\u092e\u093f\u092f\u0942\u0930",
+            "ll": [
+              80.258,
+              12.986
+            ]
+          },
+          {
+            "n": "Sholinganallur",
+            "hindi": "\u0936\u094b\u0932\u093f\u0902\u0917\u0928\u0932\u094d\u0932\u0942\u0930",
+            "ll": [
+              80.228,
+              12.901
+            ]
+          },
+          {
+            "n": "SIPCOT IT Park Siruseri",
+            "hindi": "\u0938\u093f\u092a\u0915\u094b\u091f \u0906\u0908\u091f\u0940 \u092a\u093e\u0930\u094d\u0915 \u0938\u093f\u0930\u0941\u0938\u0947\u0930\u0940",
+            "ll": [
+              80.222,
+              12.827
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chn-line4",
+        "k": "chn-line4",
+        "nm": "Line 4 (Lighthouse Marina \u2013 Poonamallee Bypass)",
+        "lab": "Orange Line 4",
+        "c": "#ea580c",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            80.278,
+            13.038
+          ],
+          [
+            80.271,
+            13.033
+          ],
+          [
+            80.241,
+            13.029
+          ],
+          [
+            80.223,
+            13.051
+          ],
+          [
+            80.211,
+            13.052
+          ],
+          [
+            80.155,
+            13.034
+          ],
+          [
+            80.138,
+            13.037
+          ],
+          [
+            80.088,
+            13.049
+          ]
+        ],
+        "st": [
+          {
+            "n": "Lighthouse Marina",
+            "hindi": "\u0932\u093e\u0907\u091f\u0939\u093e\u0909\u0938 \u092e\u0930\u0940\u0928\u093e",
+            "ll": [
+              80.278,
+              13.038
+            ]
+          },
+          {
+            "n": "Nandanam Interchange",
+            "hindi": "\u0928\u0902\u0926\u0928\u092e",
+            "ll": [
+              80.241,
+              13.029
+            ]
+          },
+          {
+            "n": "Kodambakkam",
+            "hindi": "\u0915\u094b\u0926\u0902\u092c\u0915\u094d\u0915\u092e",
+            "ll": [
+              80.223,
+              13.051
+            ]
+          },
+          {
+            "n": "Porur Junction",
+            "hindi": "\u092a\u094b\u0930\u0942\u0930 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              80.155,
+              13.034
+            ]
+          },
+          {
+            "n": "Poonamallee Bypass",
+            "hindi": "\u092a\u0942\u0928\u092e\u0932\u094d\u0932\u0940 \u092c\u093e\u0908\u092a\u093e\u0938",
+            "ll": [
+              80.088,
+              13.049
+            ]
+          }
+        ]
+      }
+    ]
   },
   "hyderabad": {
     "name": "Hyderabad Metro (HMRL)",
@@ -6567,7 +7388,139 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "hyd-airport-express",
+        "k": "hyd-airport-express",
+        "nm": "Airport Express Line (Raidurg \u2013 Shamshabad RGI Airport)",
+        "lab": "Airport Express Corridor",
+        "c": "#0284c7",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            78.376,
+            17.442
+          ],
+          [
+            78.375,
+            17.426
+          ],
+          [
+            78.361,
+            17.415
+          ],
+          [
+            78.347,
+            17.409
+          ],
+          [
+            78.398,
+            17.318
+          ],
+          [
+            78.431,
+            17.242
+          ],
+          [
+            78.43,
+            17.231
+          ]
+        ],
+        "st": [
+          {
+            "n": "Biodiversity Junction",
+            "hindi": "\u092c\u093e\u092f\u094b\u0921\u093e\u0907\u0935\u0930\u094d\u0938\u093f\u091f\u0940 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              78.375,
+              17.426
+            ]
+          },
+          {
+            "n": "Nanakramguda Financial District",
+            "hindi": "\u0928\u093e\u0928\u0915\u0930\u093e\u092e\u0917\u0941\u0921\u093e \u092b\u093e\u0907\u0928\u0947\u0902\u0936\u093f\u092f\u0932 \u0921\u093f\u0938\u094d\u091f\u094d\u0930\u093f\u0915\u094d\u091f",
+            "ll": [
+              78.347,
+              17.409
+            ]
+          },
+          {
+            "n": "Rajendranagar TS Police Academy",
+            "hindi": "\u0930\u093e\u091c\u0947\u0928\u094d\u0926\u094d\u0930\u0928\u0917\u0930",
+            "ll": [
+              78.398,
+              17.318
+            ]
+          },
+          {
+            "n": "Shamshabad RGI Airport Terminal",
+            "hindi": "\u0936\u092e\u0936\u093e\u092c\u093e\u0926 \u0906\u0930\u091c\u0940\u0906\u0908 \u0939\u0935\u093e\u0908 \u0905\u0921\u094d\u0921\u093e",
+            "ll": [
+              78.43,
+              17.231
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hyd-green-ext",
+        "k": "hyd-green-ext",
+        "nm": "Green Line Old City Extension (MGBS \u2013 Falaknuma)",
+        "lab": "Green Line Extension",
+        "c": "#16a34a",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            78.483,
+            17.378
+          ],
+          [
+            78.481,
+            17.368
+          ],
+          [
+            78.474,
+            17.361
+          ],
+          [
+            78.471,
+            17.353
+          ],
+          [
+            78.468,
+            17.33
+          ]
+        ],
+        "st": [
+          {
+            "n": "Salar Jung Museum",
+            "hindi": "\u0938\u093e\u0932\u093e\u0930 \u091c\u0902\u0917 \u0938\u0902\u0917\u094d\u0930\u0939\u093e\u0932\u092f",
+            "ll": [
+              78.481,
+              17.368
+            ]
+          },
+          {
+            "n": "Charminar",
+            "hindi": "\u091a\u093e\u0930\u092e\u0940\u0928\u093e\u0930",
+            "ll": [
+              78.474,
+              17.361
+            ]
+          },
+          {
+            "n": "Falaknuma Palace",
+            "hindi": "\u092b\u0932\u0915\u0928\u0941\u092e\u093e \u092a\u0948\u0932\u0947\u0938",
+            "ll": [
+              78.468,
+              17.33
+            ]
+          }
+        ]
+      }
+    ]
   },
   "kochi": {
     "name": "Kochi Metro & Water Metro (KMRL)",
@@ -7205,7 +8158,82 @@ export const CITY_RAW_DATA = {
         "interchange": true
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "koc-pink",
+        "k": "koc-pink",
+        "nm": "Pink Line (JLN Stadium \u2013 Kakkanad InfoPark)",
+        "lab": "Pink Line Phase 2",
+        "c": "#ec4899",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            76.301,
+            9.998
+          ],
+          [
+            76.311,
+            10.003
+          ],
+          [
+            76.326,
+            10.013
+          ],
+          [
+            76.335,
+            10.018
+          ],
+          [
+            76.353,
+            10.019
+          ],
+          [
+            76.357,
+            10.013
+          ],
+          [
+            76.366,
+            10.009
+          ]
+        ],
+        "st": [
+          {
+            "n": "Palarivattom Bypass",
+            "hindi": "\u092a\u0932\u093e\u0930\u0940\u0935\u091f\u094d\u091f\u092e \u092c\u093e\u0908\u092a\u093e\u0938",
+            "ll": [
+              76.311,
+              10.003
+            ]
+          },
+          {
+            "n": "Kakkanad Civil Station",
+            "hindi": "\u0915\u0915\u094d\u0915\u0928\u093e\u0921 \u0938\u093f\u0935\u093f\u0932 \u0938\u094d\u091f\u0947\u0936\u0928",
+            "ll": [
+              76.353,
+              10.019
+            ]
+          },
+          {
+            "n": "Cochin Special Economic Zone",
+            "hindi": "\u0915\u094b\u091a\u0940\u0928 \u090f\u0938\u0908\u091c\u0947\u0921",
+            "ll": [
+              76.357,
+              10.013
+            ]
+          },
+          {
+            "n": "InfoPark Kochi",
+            "hindi": "\u0907\u0928\u094d\u092b\u094b\u092a\u093e\u0930\u094d\u0915 \u0915\u094b\u091a\u094d\u091a\u093f",
+            "ll": [
+              76.366,
+              10.009
+            ]
+          }
+        ]
+      }
+    ]
   },
   "ahmedabad": {
     "name": "Ahmedabad & Gandhinagar Metro (GMRC)",
@@ -7961,7 +8989,82 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "ahm-phase2-gift",
+        "k": "ahm-phase2-gift",
+        "nm": "Phase 2 (Motera \u2013 GNLU \u2013 GIFT City \u2013 Mahatma Mandir)",
+        "lab": "Gandhinagar & GIFT City Extension",
+        "c": "#0284c7",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            72.597,
+            23.092
+          ],
+          [
+            72.601,
+            23.111
+          ],
+          [
+            72.602,
+            23.125
+          ],
+          [
+            72.628,
+            23.181
+          ],
+          [
+            72.684,
+            23.161
+          ],
+          [
+            72.636,
+            23.197
+          ],
+          [
+            72.654,
+            23.242
+          ]
+        ],
+        "st": [
+          {
+            "n": "Tapovan Circle",
+            "hindi": "\u0924\u092a\u094b\u0935\u0928 \u0938\u0930\u094d\u0915\u0932",
+            "ll": [
+              72.602,
+              23.125
+            ]
+          },
+          {
+            "n": "GNLU Interchange",
+            "hindi": "\u091c\u0940\u090f\u0928\u090f\u0932\u092f\u0942 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              72.628,
+              23.181
+            ]
+          },
+          {
+            "n": "GIFT City Financial Hub",
+            "hindi": "\u0917\u093f\u092b\u094d\u091f \u0938\u093f\u091f\u0940",
+            "ll": [
+              72.684,
+              23.161
+            ]
+          },
+          {
+            "n": "Mahatma Mandir Gandhinagar",
+            "hindi": "\u092e\u0939\u093e\u0924\u094d\u092e\u093e \u092e\u0902\u0926\u093f\u0930 \u0917\u093e\u0902\u0927\u0940\u0928\u0917\u0930",
+            "ll": [
+              72.654,
+              23.242
+            ]
+          }
+        ]
+      }
+    ]
   },
   "pune": {
     "name": "Pune Metro (Maha Metro)",
@@ -8679,7 +9782,131 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "pun-line3",
+        "k": "pun-line3",
+        "nm": "Line 3 (Hinjawadi Megapolis \u2013 Shivajinagar)",
+        "lab": "Puneri Metro Line 3",
+        "c": "#ef4444",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            73.689,
+            18.591
+          ],
+          [
+            73.731,
+            18.596
+          ],
+          [
+            73.763,
+            18.597
+          ],
+          [
+            73.774,
+            18.577
+          ],
+          [
+            73.791,
+            18.558
+          ],
+          [
+            73.826,
+            18.553
+          ],
+          [
+            73.851,
+            18.532
+          ]
+        ],
+        "st": [
+          {
+            "n": "Megapolis Circle Hinjawadi",
+            "hindi": "\u092e\u0947\u0917\u093e\u092a\u094b\u0932\u093f\u0938 \u0938\u0930\u094d\u0915\u0932 \u0939\u093f\u0902\u091c\u0935\u0921\u0940",
+            "ll": [
+              73.689,
+              18.591
+            ]
+          },
+          {
+            "n": "Wakad Chowk",
+            "hindi": "\u0935\u093e\u0915\u0921 \u091a\u094c\u0915",
+            "ll": [
+              73.763,
+              18.597
+            ]
+          },
+          {
+            "n": "Balewadi Stadium",
+            "hindi": "\u092c\u093e\u0932\u0947\u0935\u093e\u0921\u093c\u0940 \u0938\u094d\u091f\u0947\u0921\u093f\u092f\u092e",
+            "ll": [
+              73.774,
+              18.577
+            ]
+          },
+          {
+            "n": "Pune University Chowk",
+            "hindi": "\u092a\u0941\u0923\u0947 \u0935\u093f\u0926\u094d\u092f\u093e\u092a\u0940\u0920 \u091a\u094c\u0915",
+            "ll": [
+              73.826,
+              18.553
+            ]
+          },
+          {
+            "n": "Shivajinagar Interchange",
+            "hindi": "\u0936\u093f\u0935\u093e\u091c\u0940\u0928\u0917\u0930",
+            "ll": [
+              73.851,
+              18.532
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pun-purple-ext",
+        "k": "pun-purple-ext",
+        "nm": "Purple Line Extension (Swargate \u2013 Katraj & Pimpri \u2013 Nigdi)",
+        "lab": "Purple Line Extension",
+        "c": "#9333ea",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            73.857,
+            18.502
+          ],
+          [
+            73.856,
+            18.484
+          ],
+          [
+            73.857,
+            18.455
+          ]
+        ],
+        "st": [
+          {
+            "n": "Padmavati",
+            "hindi": "\u092a\u0926\u094d\u092e\u093e\u0935\u0924\u0940",
+            "ll": [
+              73.856,
+              18.484
+            ]
+          },
+          {
+            "n": "Katraj Chowk",
+            "hindi": "\u0915\u093e\u0924\u094d\u0930\u091c \u091a\u094c\u0915",
+            "ll": [
+              73.857,
+              18.455
+            ]
+          }
+        ]
+      }
+    ]
   },
   "lucknow": {
     "name": "Lucknow Metro (UPMRC)",
@@ -9225,7 +10452,86 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "lko-blue",
+        "k": "lko-blue",
+        "nm": "East-West Corridor (Charbagh \u2013 Chowk \u2013 Vasant Kunj)",
+        "lab": "Blue Line Corridor 2",
+        "c": "#3b82f6",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            80.922,
+            26.833
+          ],
+          [
+            80.918,
+            26.845
+          ],
+          [
+            80.924,
+            26.852
+          ],
+          [
+            80.91,
+            26.865
+          ],
+          [
+            80.913,
+            26.871
+          ],
+          [
+            80.902,
+            26.873
+          ],
+          [
+            80.887,
+            26.875
+          ],
+          [
+            80.858,
+            26.883
+          ]
+        ],
+        "st": [
+          {
+            "n": "Aminabad Market",
+            "hindi": "\u0905\u092e\u0940\u0928\u093e\u092c\u093e\u0926",
+            "ll": [
+              80.924,
+              26.852
+            ]
+          },
+          {
+            "n": "KGMU Medical University",
+            "hindi": "\u0915\u0947\u091c\u0940\u090f\u092e\u092f\u0942 \u092e\u0947\u0921\u093f\u0915\u0932 \u0915\u0949\u0932\u0947\u091c",
+            "ll": [
+              80.913,
+              26.871
+            ]
+          },
+          {
+            "n": "Chowk Old Lucknow",
+            "hindi": "\u091a\u094c\u0915",
+            "ll": [
+              80.902,
+              26.873
+            ]
+          },
+          {
+            "n": "Vasant Kunj Hardoi Road",
+            "hindi": "\u0935\u0938\u0902\u0924 \u0915\u0941\u0902\u091c",
+            "ll": [
+              80.858,
+              26.883
+            ]
+          }
+        ]
+      }
+    ]
   },
   "kanpur": {
     "name": "Kanpur Metro (UPMRC)",
@@ -9746,7 +11052,90 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "knp-corridor1-ext",
+        "k": "knp-corridor1-ext",
+        "nm": "Corridor 1 Balance (Motijheel \u2013 Kanpur Central \u2013 Naubasta)",
+        "lab": "Orange Line Extension",
+        "c": "#ea580c",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            80.318,
+            26.475
+          ],
+          [
+            80.334,
+            26.476
+          ],
+          [
+            80.354,
+            26.467
+          ],
+          [
+            80.355,
+            26.46
+          ],
+          [
+            80.353,
+            26.453
+          ],
+          [
+            80.343,
+            26.447
+          ],
+          [
+            80.334,
+            26.439
+          ],
+          [
+            80.329,
+            26.425
+          ],
+          [
+            80.324,
+            26.411
+          ]
+        ],
+        "st": [
+          {
+            "n": "Chunniganj Underground",
+            "hindi": "\u091a\u0941\u0928\u094d\u0928\u0940\u0917\u0902\u091c",
+            "ll": [
+              80.334,
+              26.476
+            ]
+          },
+          {
+            "n": "Nayaganj Underground",
+            "hindi": "\u0928\u092f\u093e\u0917\u0902\u091c",
+            "ll": [
+              80.355,
+              26.46
+            ]
+          },
+          {
+            "n": "Kanpur Central Railway Station",
+            "hindi": "\u0915\u093e\u0928\u092a\u0941\u0930 \u0938\u0947\u0902\u091f\u094d\u0930\u0932 \u0930\u0947\u0932\u0935\u0947 \u0938\u094d\u091f\u0947\u0936\u0928",
+            "ll": [
+              80.353,
+              26.453
+            ]
+          },
+          {
+            "n": "Naubasta Terminal",
+            "hindi": "\u0928\u094c\u092c\u0938\u094d\u0924\u093e",
+            "ll": [
+              80.324,
+              26.411
+            ]
+          }
+        ]
+      }
+    ]
   },
   "agra": {
     "name": "Agra Metro (UPMRC)",
@@ -10070,7 +11459,66 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "agr-corridor1-ext",
+        "k": "agr-corridor1-ext",
+        "nm": "Priority Corridor Extension (Mankameshwar \u2013 Agra Cantt & Sikandra)",
+        "lab": "Yellow Line Corridor 1",
+        "c": "#eab308",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            78.016,
+            27.185
+          ],
+          [
+            78.021,
+            27.179
+          ],
+          [
+            78.006,
+            27.159
+          ],
+          [
+            77.994,
+            27.198
+          ],
+          [
+            77.954,
+            27.221
+          ]
+        ],
+        "st": [
+          {
+            "n": "Agra Fort Underground",
+            "hindi": "\u0906\u0917\u0930\u093e \u0915\u093f\u0932\u093e",
+            "ll": [
+              78.021,
+              27.179
+            ]
+          },
+          {
+            "n": "Agra Cantt Railway Station",
+            "hindi": "\u0906\u0917\u0930\u093e \u0915\u0948\u0902\u091f",
+            "ll": [
+              78.006,
+              27.159
+            ]
+          },
+          {
+            "n": "Sikandra Monument",
+            "hindi": "\u0938\u093f\u0915\u0902\u0926\u0930\u093e",
+            "ll": [
+              77.954,
+              27.221
+            ]
+          }
+        ]
+      }
+    ]
   },
   "jaipur": {
     "name": "Jaipur Metro (JMRC)",
@@ -10423,7 +11871,66 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "jai-phase1c-1d",
+        "k": "jai-phase1c-1d",
+        "nm": "Phase 1C & 1D (Badi Chaupar \u2013 Transport Nagar & Mansarovar \u2013 Ajmer Road)",
+        "lab": "Pink Line Extensions",
+        "c": "#f43f5e",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            75.731,
+            26.876
+          ],
+          [
+            75.753,
+            26.877
+          ],
+          [
+            75.827,
+            26.924
+          ],
+          [
+            75.836,
+            26.925
+          ],
+          [
+            75.852,
+            26.921
+          ]
+        ],
+        "st": [
+          {
+            "n": "200 Feet Bypass Ajmer Road",
+            "hindi": "\u0968\u0966\u0966 \u092b\u0940\u091f \u092c\u093e\u0908\u092a\u093e\u0938 \u0905\u091c\u092e\u0947\u0930 \u0930\u094b\u0921",
+            "ll": [
+              75.731,
+              26.876
+            ]
+          },
+          {
+            "n": "Ramganj Chaupar",
+            "hindi": "\u0930\u093e\u092e\u0917\u0902\u091c \u091a\u094c\u092a\u0921\u093c",
+            "ll": [
+              75.836,
+              26.925
+            ]
+          },
+          {
+            "n": "Transport Nagar Delhi Road",
+            "hindi": "\u091f\u094d\u0930\u093e\u0902\u0938\u092a\u094b\u0930\u094d\u091f \u0928\u0917\u0930",
+            "ll": [
+              75.852,
+              26.921
+            ]
+          }
+        ]
+      }
+    ]
   },
   "nagpur": {
     "name": "Nagpur Metro (Maha Metro)",
@@ -11206,7 +12713,66 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "nag-phase2",
+        "k": "nag-phase2",
+        "nm": "Phase 2 (Automotive Square \u2013 Kanhan & Prajapati \u2013 Transport Nagar)",
+        "lab": "Phase 2 Metro Extensions",
+        "c": "#f97316",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            79.088,
+            21.196
+          ],
+          [
+            79.191,
+            21.222
+          ],
+          [
+            79.224,
+            21.233
+          ],
+          [
+            79.146,
+            21.144
+          ],
+          [
+            79.192,
+            21.14
+          ]
+        ],
+        "st": [
+          {
+            "n": "Kamptee Municipal Council",
+            "hindi": "\u0915\u093e\u092e\u0920\u0940",
+            "ll": [
+              79.191,
+              21.222
+            ]
+          },
+          {
+            "n": "Kanhan River Junction",
+            "hindi": "\u0915\u0928\u094d\u0939\u093e\u0928",
+            "ll": [
+              79.224,
+              21.233
+            ]
+          },
+          {
+            "n": "Transport Nagar East",
+            "hindi": "\u091f\u094d\u0930\u093e\u0902\u0938\u092a\u094b\u0930\u094d\u091f \u0928\u0917\u0930 \u092a\u0942\u0930\u094d\u0935",
+            "ll": [
+              79.192,
+              21.14
+            ]
+          }
+        ]
+      }
+    ]
   },
   "noida": {
     "name": "Noida & Greater Noida Metro (NMRC Aqua Line)",
@@ -11715,7 +13281,78 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "noi-aqua-ext",
+        "k": "noi-aqua-ext",
+        "nm": "Aqua Line Extension (Noida Sec 51 \u2013 Greater Noida West \u2013 KP V)",
+        "lab": "Greater Noida West Extension",
+        "c": "#06b6d4",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            77.373,
+            28.577
+          ],
+          [
+            77.382,
+            28.583
+          ],
+          [
+            77.429,
+            28.609
+          ],
+          [
+            77.452,
+            28.601
+          ],
+          [
+            77.476,
+            28.573
+          ],
+          [
+            77.334,
+            28.564
+          ]
+        ],
+        "st": [
+          {
+            "n": "Noida Sector 72",
+            "hindi": "\u0928\u094b\u090f\u0921\u093e \u0938\u0947\u0915\u094d\u091f\u0930 \u096d\u0968",
+            "ll": [
+              77.382,
+              28.583
+            ]
+          },
+          {
+            "n": "Gaur City Char Murti Chowk",
+            "hindi": "\u0917\u094c\u0930 \u0938\u093f\u091f\u0940 \u091a\u093e\u0930 \u092e\u0942\u0930\u094d\u0924\u093f",
+            "ll": [
+              77.429,
+              28.609
+            ]
+          },
+          {
+            "n": "Knowledge Park V",
+            "hindi": "\u0928\u0949\u0932\u0947\u091c \u092a\u093e\u0930\u094d\u0915 \u096b",
+            "ll": [
+              77.476,
+              28.573
+            ]
+          },
+          {
+            "n": "Botanical Garden DMRC Interchange",
+            "hindi": "\u092c\u0949\u091f\u0928\u093f\u0915\u0932 \u0917\u093e\u0930\u094d\u0921\u0928",
+            "ll": [
+              77.334,
+              28.564
+            ]
+          }
+        ]
+      }
+    ]
   },
   "navi-mumbai": {
     "name": "Navi Mumbai Metro (CIDCO Line 1)",
@@ -12067,7 +13704,66 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "nvm-line1-phase2",
+        "k": "nvm-line1-phase2",
+        "nm": "Line 1 Phase 2 & 3 (Pendhar \u2013 Taloja MIDC \u2013 NMIA Airport)",
+        "lab": "Airport Metro Link",
+        "c": "#0284c7",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            73.088,
+            19.076
+          ],
+          [
+            73.109,
+            19.068
+          ],
+          [
+            73.118,
+            19.049
+          ],
+          [
+            73.103,
+            19.006
+          ],
+          [
+            73.071,
+            18.991
+          ]
+        ],
+        "st": [
+          {
+            "n": "Taloja MIDC",
+            "hindi": "\u0924\u0933\u094b\u091c\u093e \u090f\u092e\u0906\u0908\u0921\u0940\u0938\u0940",
+            "ll": [
+              73.109,
+              19.068
+            ]
+          },
+          {
+            "n": "Khandeshwar Railway Interchange",
+            "hindi": "\u0916\u093e\u0902\u0926\u0947\u0936\u094d\u0935\u0930",
+            "ll": [
+              73.103,
+              19.006
+            ]
+          },
+          {
+            "n": "Navi Mumbai International Airport (NMIA)",
+            "hindi": "\u0928\u0935\u0940 \u092e\u0941\u0902\u092c\u0908 \u0905\u0902\u0924\u0930\u094d\u0930\u093e\u0937\u094d\u091f\u094d\u0930\u0940\u092f \u0939\u0935\u093e\u0908 \u0905\u0921\u094d\u0921\u093e",
+            "ll": [
+              73.071,
+              18.991
+            ]
+          }
+        ]
+      }
+    ]
   },
   "bhopal-indore": {
     "name": "Madhya Pradesh Metro (Bhopal & Indore - MPMRCL)",
@@ -12612,7 +14308,127 @@ export const CITY_RAW_DATA = {
         ]
       }
     ],
-    "links": []
+    "links": [],
+    "future": [
+      {
+        "id": "bho-orange-ext",
+        "k": "bho-orange-ext",
+        "nm": "Bhopal Orange Line (AIIMS \u2013 Railway Station \u2013 Karond Circle)",
+        "lab": "Bhopal Orange Line",
+        "c": "#ea580c",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            77.46,
+            23.208
+          ],
+          [
+            77.436,
+            23.245
+          ],
+          [
+            77.414,
+            23.267
+          ],
+          [
+            77.409,
+            23.284
+          ],
+          [
+            77.405,
+            23.303
+          ]
+        ],
+        "st": [
+          {
+            "n": "Bhopal Central Railway Station",
+            "hindi": "\u092d\u094b\u092a\u093e\u0932 \u091c\u0902\u0915\u094d\u0936\u0928",
+            "ll": [
+              77.414,
+              23.267
+            ]
+          },
+          {
+            "n": "DIG Bungalow",
+            "hindi": "\u0921\u0940\u0906\u0908\u091c\u0940 \u092c\u0902\u0917\u0932\u093e",
+            "ll": [
+              77.409,
+              23.284
+            ]
+          },
+          {
+            "n": "Karond Circle Terminal",
+            "hindi": "\u0915\u0930\u094b\u0902\u0926 \u091a\u094c\u0930\u093e\u0939\u093e",
+            "ll": [
+              77.405,
+              23.303
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ind-yellow-ring",
+        "k": "ind-yellow-ring",
+        "nm": "Indore Yellow Line Ring (Palasia \u2013 Rajwada \u2013 Airport \u2013 Super Corridor)",
+        "lab": "Indore Ring Metro",
+        "c": "#eab308",
+        "ph": "Under Construction",
+        "status": "Under Construction",
+        "zone": [
+          [
+            75.885,
+            22.721
+          ],
+          [
+            75.856,
+            22.718
+          ],
+          [
+            75.845,
+            22.72
+          ],
+          [
+            75.805,
+            22.726
+          ],
+          [
+            75.808,
+            22.775
+          ],
+          [
+            75.802,
+            22.784
+          ]
+        ],
+        "st": [
+          {
+            "n": "Rajwada Palace Underground",
+            "hindi": "\u0930\u093e\u091c\u0935\u093e\u0921\u093c\u093e \u092a\u0948\u0932\u0947\u0938",
+            "ll": [
+              75.856,
+              22.718
+            ]
+          },
+          {
+            "n": "Bada Ganpati",
+            "hindi": "\u092c\u0921\u093c\u093e \u0917\u0923\u092a\u0924\u093f",
+            "ll": [
+              75.845,
+              22.72
+            ]
+          },
+          {
+            "n": "Indore International Airport",
+            "hindi": "\u0926\u0947\u0935\u0940 \u0905\u0939\u093f\u0932\u094d\u092f\u093e\u092c\u093e\u0908 \u0939\u094b\u0932\u094d\u0915\u0930 \u0939\u0935\u093e\u0908 \u0905\u0921\u094d\u0921\u093e",
+            "ll": [
+              75.805,
+              22.726
+            ]
+          }
+        ]
+      }
+    ]
   }
 };
 
