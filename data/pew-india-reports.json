@@ -1,18 +1,63 @@
 {
-  "generated_at_utc": "2026-11-09T12:35:41+00:00",
+  "generated_at_utc": "2026-11-16T12:29:38+00:00",
   "source": "Pew Research Center public India search results",
   "search_url": "https://www.pewresearch.org/search/india/",
-  "report_count": 1417,
+  "report_count": 1414,
   "reports": [
+    {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2026/11/12/single-black-adults-methodology/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "A First Look at Polling Performance in 2026",
+      "link": "https://www.pewresearch.org/short-reads/2026/11/12/a-first-look-at-polling-performance-in-2026/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "What We Know \u2013 and Don\u2019t Know \u2013 About Flock\u2019s License Plate Cameras",
+      "link": "https://www.pewresearch.org/short-reads/2026/11/09/what-we-know-and-dont-know-about-flocks-license-plate-cameras/",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "How Many People in the U.S. Are Middle Eastern or North African?",
+      "link": "https://www.pewresearch.org/decoded/2026/11/02/how-many-people-in-the-us-are-middle-eastern-or-north-african/",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Religion Remains Stable in the U.S., With Mixed Signals for Young Adults",
+      "link": "https://www.pewresearch.org/religion/2026/10/28/religion-remains-stable-in-the-us-with-mixed-signals-for-young-adults/",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "Most Americans\u2019 Religious Lives Haven\u2019t Changed Much in Recent Years",
+      "link": "https://www.pewresearch.org/short-reads/2026/10/28/most-americans-religious-lives-havent-changed-much-in-recent-years/",
+      "date": "2026-10-28"
+    },
     {
       "title": "What We Know About Eligible Voters Who Are Naturalized U.S. Citizens",
       "link": "https://www.pewresearch.org/short-reads/2026/10/27/what-we-know-about-eligible-voters-who-are-naturalized-us-citizens/",
       "date": "2026-10-27"
     },
     {
+      "title": "How Latino Voters Are Experiencing the 2026 Midterm Elections",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2026/10/16/how-latino-voters-are-experiencing-the-2026-midterm-elections/",
+      "date": "2026-10-16"
+    },
+    {
       "title": "How Do Americans Feel About G20 Countries?",
       "link": "https://www.pewresearch.org/global/2026/10/16/how-do-americans-feel-about-g20-countries/",
       "date": "2026-10-16"
+    },
+    {
+      "title": "Many Americans Are Struggling to Afford Basic Necessities",
+      "link": "https://www.pewresearch.org/short-reads/2026/10/14/many-americans-are-struggling-to-afford-basic-necessities/",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/data-labs/2026/10/07/health-influencers-methodology/",
+      "date": "2026-10-07"
     },
     {
       "title": "Social Media Platform Use Around the World",
@@ -35,9 +80,39 @@
       "date": "2026-10-01"
     },
     {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/methodology-silicon-samples/",
+      "date": "2026-09-30"
+    },
+    {
       "title": "How well synthetic polls capture the diversity of public opinion",
       "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-polls-capture-the-diversity-of-public-opinion/",
       "date": "2026-09-30"
+    },
+    {
+      "title": "How synthetic respondents express certainty and factual knowledge",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-respondents-express-certainty-and-factual-knowledge/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "How synthetic polling results change based on the AI model",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Can AI Stand In for Human Survey-Takers? Not Really",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Appendix C: Full list of variables in profile information",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/appendix-c-full-list-of-variables-in-profile-information/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Tradition and Change Among Latter-day Saints in the U.S.",
+      "link": "https://www.pewresearch.org/religion/2026/09/22/tradition-and-change-among-latter-day-saints-in-the-us/",
+      "date": "2026-09-22"
     },
     {
       "title": "Who has heard or read a lot about AI, and how is awareness changing?",
@@ -70,6 +145,26 @@
       "date": "2026-09-17"
     },
     {
+      "title": "3 ways to correct a poll\u2019s political balance: Party affiliation, past vote and voter file information",
+      "link": "https://www.pewresearch.org/methods/2026/09/16/3-ways-to-correct-a-polls-political-balance-party-affiliation-past-vote-and-voter-file-information/",
+      "date": "2026-09-16"
+    },
+    {
+      "title": "Appendix B: Coding methodology",
+      "link": "https://www.pewresearch.org/global/2026/09/15/appendix-b-coding-methodology-coexistence/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "Appendix A: Survey methodology",
+      "link": "https://www.pewresearch.org/global/2026/09/15/appendix-a-survey-methodology-coexistence/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "6 facts about grandparents in the U.S.",
+      "link": "https://www.pewresearch.org/short-reads/2026/09/09/6-facts-about-grandparents-in-the-us/",
+      "date": "2026-09-09"
+    },
+    {
       "title": "Many across 37 countries view the UN favorably, but opinions have become more negative in some places",
       "link": "https://www.pewresearch.org/short-reads/2026/08/27/many-across-37-countries-view-the-un-favorably-but-opinions-have-become-more-negative-in-some-places/",
       "date": "2026-08-27"
@@ -93,11 +188,6 @@
       "title": "What do people in middle-income countries think about cuts to U.S. humanitarian aid?",
       "link": "https://www.pewresearch.org/short-reads/2026/07/21/what-do-people-in-middle-income-countries-think-about-cuts-to-us-humanitarian-aid/",
       "date": "2026-07-21"
-    },
-    {
-      "title": "How global energy production is changing, in 6 charts",
-      "link": "https://www.pewresearch.org/short-reads/2026/07/20/how-global-energy-production-is-changing-in-6-charts/",
-      "date": "2026-07-20"
     },
     {
       "title": "Views of China and Xi Are Improving Globally",
@@ -310,11 +400,6 @@
       "date": "2026-02-17"
     },
     {
-      "title": "Which countries have the most \u2013 and fewest \u2013 public holidays?",
-      "link": "https://www.pewresearch.org/short-reads/2026/02/12/which-countries-have-the-most-and-fewest-public-holidays/",
-      "date": "2026-02-12"
-    },
-    {
       "title": "Sortable table: Religious diversity by country, 2010-2020",
       "link": "https://www.pewresearch.org/religion/2026/02/12/sortable-table-religious-diversity-by-country-2010-2020/",
       "date": "2026-02-12"
@@ -323,11 +408,6 @@
       "title": "Religious Diversity Around the World",
       "link": "https://www.pewresearch.org/religion/2026/02/12/religious-diversity-around-the-world/",
       "date": "2026-02-12"
-    },
-    {
-      "title": "U.S. stands out globally in how it draws legislative districts",
-      "link": "https://www.pewresearch.org/short-reads/2025/12/19/us-stands-out-globally-in-how-it-draws-legislative-districts/",
-      "date": "2025-12-19"
     },
     {
       "title": "Many religions are heavily concentrated in a few countries",
@@ -672,11 +752,6 @@
     {
       "title": "7. \u2018Other religions\u2019 population change",
       "link": "https://www.pewresearch.org/religion/2025/06/09/other-religions-population-change/",
-      "date": "2025-06-09"
-    },
-    {
-      "title": "6. Buddhist population change",
-      "link": "https://www.pewresearch.org/religion/2025/06/09/buddhist-population-change/",
       "date": "2025-06-09"
     },
     {
@@ -1575,11 +1650,6 @@
       "date": "2023-06-21"
     },
     {
-      "title": "4. Themes: The best and most beneficial changes in digital life that are likely by 2035",
-      "link": "https://www.pewresearch.org/internet/2023/06/21/themes-the-best-and-most-beneficial-changes-in-digital-life-that-are-likely-by-2035/",
-      "date": "2023-06-21"
-    },
-    {
       "title": "3. Themes: The most harmful or menacing changes in digital life that are likely by 2035",
       "link": "https://www.pewresearch.org/internet/2023/06/21/themes-the-most-harmful-or-menacing-changes-in-digital-life-that-are-likely-by-2035/",
       "date": "2023-06-21"
@@ -1665,11 +1735,6 @@
       "date": "2022-11-29"
     },
     {
-      "title": "3. Small changes in median scores for government restrictions, social hostilities involving religion in 2020",
-      "link": "https://www.pewresearch.org/religion/2022/11/29/small-changes-in-median-scores-for-government-restrictions-social-hostilities-involving-religion-in-2020/",
-      "date": "2022-11-29"
-    },
-    {
       "title": "1. Number of countries with \u2018very high\u2019 government restrictions falls for third straight year in 2020",
       "link": "https://www.pewresearch.org/religion/2022/11/29/number-of-countries-with-very-high-government-restrictions-falls-for-third-straight-year-in-2020/",
       "date": "2022-11-29"
@@ -1748,11 +1813,6 @@
       "title": "Global population projected to exceed 8 billion in 2022; half live in just seven countries",
       "link": "https://www.pewresearch.org/short-reads/2022/07/21/global-population-projected-to-exceed-8-billion-in-2022-half-live-in-just-seven-countries/",
       "date": "2022-07-21"
-    },
-    {
-      "title": "4. The metaverse will fully emerge as its advocates predict",
-      "link": "https://www.pewresearch.org/internet/2022/06/30/the-metaverse-will-fully-emerge-as-its-advocates-predict/",
-      "date": "2022-06-30"
     },
     {
       "title": "Negative Views of China Tied to Critical Views of Its Policies on Human Rights",
@@ -1940,11 +2000,6 @@
       "date": "2021-08-05"
     },
     {
-      "title": "Are you in the global middle class? Find out with our income calculator",
-      "link": "https://www.pewresearch.org/short-reads/2021/07/21/are-you-in-the-global-middle-class-find-out-with-our-income-calculator/",
-      "date": "2021-07-21"
-    },
-    {
       "title": "For most of India\u2019s Hindus, religious and national identities are closely linked",
       "link": "https://www.pewresearch.org/short-reads/2021/07/20/for-most-of-indias-hindus-religious-and-national-identities-are-closely-linked/",
       "date": "2021-07-20"
@@ -2090,11 +2145,6 @@
       "date": "2021-06-23"
     },
     {
-      "title": "Experts Doubt Ethical AI Design Will Be Broadly Adopted as the Norm Within the Next Decade",
-      "link": "https://www.pewresearch.org/internet/2021/06/16/experts-doubt-ethical-ai-design-will-be-broadly-adopted-as-the-norm-within-the-next-decade/",
-      "date": "2021-06-16"
-    },
-    {
       "title": "The U.S. differs from most other countries in how it sets its minimum wage",
       "link": "https://www.pewresearch.org/short-reads/2021/05/20/the-u-s-differs-from-most-other-countries-in-how-it-sets-its-minimum-wage/",
       "date": "2021-05-20"
@@ -2103,6 +2153,16 @@
       "title": "Methodology",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2021/05/14/2020-census-identity-methodology/",
       "date": "2021-05-14"
+    },
+    {
+      "title": "3. Hispanic identity and immigrant generations",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2021/05/14/hispanic-identity-and-immigrant-generations/",
+      "date": "2021-05-14"
+    },
+    {
+      "title": "Key facts about Asian origin groups in the U.S.",
+      "link": "https://www.pewresearch.org/short-reads/2021/04/29/key-facts-about-asian-origin-groups-in-the-u-s/",
+      "date": "2021-04-29"
     },
     {
       "title": "Americans\u2019 views of Asia-Pacific nations have not changed since 2018 \u2013 with the exception of China",
@@ -2138,11 +2198,6 @@
       "title": "In Vice President Kamala Harris, we can see how America has changed",
       "link": "https://www.pewresearch.org/short-reads/2021/02/25/in-vice-president-kamala-harris-we-can-see-how-america-has-changed/",
       "date": "2021-02-25"
-    },
-    {
-      "title": "2. Worries about life in 2025",
-      "link": "https://www.pewresearch.org/internet/2021/02/18/worries-about-life-in-2025/",
-      "date": "2021-02-18"
     },
     {
       "title": "10. A brief overview of Black religious history in the U.S.",
@@ -2295,16 +2350,6 @@
       "date": "2020-06-30"
     },
     {
-      "title": "3. Power dynamics play a key role in problems and innovation",
-      "link": "https://www.pewresearch.org/internet/2020/06/30/power-dynamics-play-a-key-role-in-problems-and-innovation/",
-      "date": "2020-06-30"
-    },
-    {
-      "title": "2. Tech is (just) a tool",
-      "link": "https://www.pewresearch.org/internet/2020/06/30/tech-is-just-a-tool/",
-      "date": "2020-06-30"
-    },
-    {
       "title": "1. The innovations these experts predict by 2030",
       "link": "https://www.pewresearch.org/internet/2020/06/30/innovations-these-experts-predict-by-2030/",
       "date": "2020-06-30"
@@ -2415,16 +2460,6 @@
       "date": "2020-02-21"
     },
     {
-      "title": "4. Hopeful themes and suggested solutions",
-      "link": "https://www.pewresearch.org/internet/2020/02/21/hopeful-themes-and-suggested-solutions/",
-      "date": "2020-02-21"
-    },
-    {
-      "title": "3. Concerns about democracy in the digital age",
-      "link": "https://www.pewresearch.org/internet/2020/02/21/concerns-about-democracy-in-the-digital-age/",
-      "date": "2020-02-21"
-    },
-    {
       "title": "1. Themes about the digital disruption of democracy in the next decade",
       "link": "https://www.pewresearch.org/internet/2020/02/21/themes-about-the-digital-disruption-of-democracy-in-the-next-decade/",
       "date": "2020-02-21"
@@ -2448,6 +2483,11 @@
       "title": "Russia and Putin receive low ratings globally",
       "link": "https://www.pewresearch.org/short-reads/2020/02/07/russia-and-putin-receive-low-ratings-globally/",
       "date": "2020-02-07"
+    },
+    {
+      "title": "Among Democrats, Christians lean toward Biden, while \u2018nones\u2019 prefer Sanders",
+      "link": "https://www.pewresearch.org/short-reads/2020/01/31/among-democrats-christians-lean-toward-biden-while-nones-prefer-sanders/",
+      "date": "2020-01-31"
     },
     {
       "title": "Around the world, more see the U.S. positively than China, but little confidence in Trump or Xi",
@@ -2585,11 +2625,6 @@
       "date": "2019-11-13"
     },
     {
-      "title": "5. Leading concerns about the future of digital life",
-      "link": "https://www.pewresearch.org/internet/2019/10/28/5-leading-concerns-about-the-future-of-digital-life/",
-      "date": "2019-10-28"
-    },
-    {
       "title": "Pluralities in most emerging economies believe government should ensure equal internet access",
       "link": "https://www.pewresearch.org/short-reads/2019/08/22/pluralities-in-most-emerging-economies-believe-government-should-ensure-equal-internet-access/",
       "date": "2019-08-22"
@@ -2603,11 +2638,6 @@
       "title": "1. Social activities, information seeking on subjects like health and education top the list of mobile activities",
       "link": "https://www.pewresearch.org/internet/2019/08/22/social-activities-information-seeking-on-subjects-like-health-and-education-top-the-list-of-mobile-activities/",
       "date": "2019-08-22"
-    },
-    {
-      "title": "U.S. Views of China Turn Sharply Negative Amid Trade Tensions",
-      "link": "https://www.pewresearch.org/global/2019/08/13/u-s-views-of-china-turn-sharply-negative-amid-trade-tensions/",
-      "date": "2019-08-13"
     },
     {
       "title": "Methods 101: How is polling done around the world?",
@@ -2910,16 +2940,6 @@
       "date": "2018-07-12"
     },
     {
-      "title": "2. The negatives of digital life",
-      "link": "https://www.pewresearch.org/internet/2018/07/03/the-negatives-of-digital-life/",
-      "date": "2018-07-03"
-    },
-    {
-      "title": "1. The positives of digital life",
-      "link": "https://www.pewresearch.org/internet/2018/07/03/the-positives-of-digital-life/",
-      "date": "2018-07-03"
-    },
-    {
       "title": "5 facts about religion in India",
       "link": "https://www.pewresearch.org/short-reads/2018/06/29/5-facts-about-religion-in-india/",
       "date": "2018-06-29"
@@ -2996,12 +3016,12 @@
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
+      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
       "date": "2018-06-06"
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
+      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
       "date": "2018-06-06"
     },
     {
@@ -3065,6 +3085,11 @@
       "date": "2018-01-11"
     },
     {
+      "title": "Strongman Modi Chimes With Voters but Seen as Soft on Pakistan",
+      "link": "https://www.pewresearch.org/global/2017/12/23/strongman-modi-chimes-with-voters-but-seen-as-soft-on-pakistan/",
+      "date": "2017-12-23"
+    },
+    {
       "title": "How people in India see Pakistan, 70 years after partition",
       "link": "https://www.pewresearch.org/short-reads/2017/12/07/how-people-in-india-see-pakistan-70-years-after-partition/",
       "date": "2017-12-07"
@@ -3073,11 +3098,6 @@
       "title": "Worldwide, People Divided on Whether Life Today Is Better Than in the Past",
       "link": "https://www.pewresearch.org/global/2017/12/05/worldwide-people-divided-on-whether-life-today-is-better-than-in-the-past/",
       "date": "2017-12-05"
-    },
-    {
-      "title": "Europe\u2019s Growing Muslim Population",
-      "link": "https://www.pewresearch.org/religion/2017/11/29/europes-growing-muslim-population/",
-      "date": "2017-11-29"
     },
     {
       "title": "New foreign student enrollment at U.S. colleges and universities doubled since Great Recession",
@@ -3118,11 +3138,6 @@
       "title": "2. Orthodox Christians are highly religious in Ethiopia, much less so in former Soviet Union",
       "link": "https://www.pewresearch.org/religion/2017/11/08/orthodox-christians-are-highly-religious-in-ethiopia-much-less-so-in-former-soviet-union/",
       "date": "2017-11-08"
-    },
-    {
-      "title": "How countries around the world view democracy, military rule and other political systems",
-      "link": "https://www.pewresearch.org/short-reads/2017/10/30/global-views-political-systems/",
-      "date": "2017-10-30"
     },
     {
       "title": "Japanese Divided on Democracy\u2019s Success at Home, but Value Voice of the People",
@@ -3167,11 +3182,6 @@
     {
       "title": "Public Attitudes Toward Human Rights Organizations: The Case of India, Indonesia, Kenya and Mexico",
       "link": "https://www.pewresearch.org/global/2017/10/03/attitudes-toward-human-rights-organizations-india-indonesia-kenya-mexico/",
-      "date": "2017-10-03"
-    },
-    {
-      "title": "Many Countries Favor Specific Religions, Officially or Unofficially",
-      "link": "https://www.pewresearch.org/religion/2017/10/03/many-countries-favor-specific-religions-officially-or-unofficially/",
       "date": "2017-10-03"
     },
     {
@@ -3352,6 +3362,11 @@
     {
       "title": "World\u2019s Muslim population more widespread than you might think",
       "link": "https://www.pewresearch.org/short-reads/2017/01/31/worlds-muslim-population-more-widespread-than-you-might-think/",
+      "date": "2017-01-31"
+    },
+    {
+      "title": "Women may never make up half of the U.S. workforce",
+      "link": "https://www.pewresearch.org/short-reads/2017/01/31/women-may-never-make-up-half-of-the-u-s-workforce/",
       "date": "2017-01-31"
     },
     {
@@ -3665,6 +3680,11 @@
       "date": "2015-11-19"
     },
     {
+      "title": "Appendix C: Detailed Tables",
+      "link": "https://www.pewresearch.org/global/2015/11/18/appendix-c-detailed-tables/",
+      "date": "2015-11-18"
+    },
+    {
       "title": "1. Support for Democratic Principles",
       "link": "https://www.pewresearch.org/global/2015/11/18/1-support-for-democratic-principles/",
       "date": "2015-11-18"
@@ -3682,11 +3702,6 @@
     {
       "title": "Modbama: A Budding Bromance",
       "link": "https://www.pewresearch.org/global/2015/09/28/modbama-a-budding-bromance/",
-      "date": "2015-09-28"
-    },
-    {
-      "title": "Chapter 5: U.S. Foreign-Born Population Trends",
-      "link": "https://www.pewresearch.org/race-and-ethnicity/2015/09/28/chapter-5-u-s-foreign-born-population-trends/",
       "date": "2015-09-28"
     },
     {
@@ -3728,11 +3743,6 @@
       "title": "1. The Modi Phenomenon",
       "link": "https://www.pewresearch.org/global/2015/09/17/1-the-modi-phenomenon/",
       "date": "2015-09-17"
-    },
-    {
-      "title": "Health Care, Education Are Top Priorities in Sub-Saharan Africa",
-      "link": "https://www.pewresearch.org/global/2015/09/16/health-care-education-are-top-priorities-in-sub-saharan-africa/",
-      "date": "2015-09-16"
     },
     {
       "title": "How Asia-Pacific Publics See Each Other and Their National Leaders",
@@ -3790,11 +3800,6 @@
       "date": "2015-07-08"
     },
     {
-      "title": "Despite Poverty\u2019s Plunge, Middle-Class Status Remains Out of Reach for Many",
-      "link": "https://www.pewresearch.org/global/2015/07/08/despite-povertys-plunge-middle-class-status-remains-out-of-reach-for-many/",
-      "date": "2015-07-08"
-    },
-    {
       "title": "Appendix: Methodology and Data Sources",
       "link": "https://www.pewresearch.org/global/2015/07/08/appendix-methodology-and-data-sources/",
       "date": "2015-07-08"
@@ -3802,11 +3807,6 @@
     {
       "title": "About the Report",
       "link": "https://www.pewresearch.org/global/2015/07/08/about-the-report/",
-      "date": "2015-07-08"
-    },
-    {
-      "title": "A Global Middle Class Is More Promise than Reality",
-      "link": "https://www.pewresearch.org/global/2015/07/08/a-global-middle-class-is-more-promise-than-reality/",
       "date": "2015-07-08"
     },
     {
@@ -3857,6 +3857,26 @@
     {
       "title": "How Pew Research Center conducted its survey of multiracial Americans",
       "link": "https://www.pewresearch.org/short-reads/2015/06/11/how-pew-research-conducted-its-survey-of-multiracial-americans/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "Chapter 1: Race and Multiracial Americans in the U.S. Census",
+      "link": "https://www.pewresearch.org/social-trends/2015/06/11/chapter-1-race-and-multiracial-americans-in-the-u-s-census/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "Appendix A: Survey Methodology",
+      "link": "https://www.pewresearch.org/global-migration-and-demography/2015/06/11/appendix-a-survey-methodology-2/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "American Indian and white, but not \u2018multiracial\u2019",
+      "link": "https://www.pewresearch.org/social-trends/2015/06/11/american-indian-and-white-but-not-multiracial/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "American Indian and white, but not \u2018multiracial\u2019",
+      "link": "https://www.pewresearch.org/short-reads/2015/06/11/american-indian-and-white-but-not-multiracial/",
       "date": "2015-06-11"
     },
     {
@@ -3980,6 +4000,11 @@
       "date": "2015-03-19"
     },
     {
+      "title": "Jobs situation looks brighter as employers seek to fill more positions",
+      "link": "https://www.pewresearch.org/short-reads/2015/03/11/jobs-situation-looks-brighter-as-employers-seek-to-fill-more-positions/",
+      "date": "2015-03-11"
+    },
+    {
       "title": "Asian youth feel happy and helpless",
       "link": "https://www.pewresearch.org/global/2015/03/04/asian-youth-feel-happy-and-helpless/",
       "date": "2015-03-04"
@@ -4050,11 +4075,6 @@
       "date": "2014-12-18"
     },
     {
-      "title": "Elaborations: More Expert Responses",
-      "link": "https://www.pewresearch.org/internet/2014/12/18/elaborations-more-expert-responses-4/",
-      "date": "2014-12-18"
-    },
-    {
       "title": "Appendix",
       "link": "https://www.pewresearch.org/global/2014/12/18/appendix-8/",
       "date": "2014-12-18"
@@ -4098,11 +4118,6 @@
       "title": "Crime and Corruption Top Problems in Emerging and Developing Countries",
       "link": "https://www.pewresearch.org/global/2014/11/06/crime-and-corruption-top-problems-in-emerging-and-developing-countries/",
       "date": "2014-11-06"
-    },
-    {
-      "title": "People in Emerging Markets Catch Up to Advanced Economies in Life Satisfaction",
-      "link": "https://www.pewresearch.org/global/2014/10/30/people-in-emerging-markets-catch-up-to-advanced-economies-in-life-satisfaction/",
-      "date": "2014-10-30"
     },
     {
       "title": "Methods in Detail",
@@ -4220,6 +4235,11 @@
       "date": "2014-07-28"
     },
     {
+      "title": "How statehouse reporting power compares with a state\u2019s population",
+      "link": "https://www.pewresearch.org/short-reads/2014/07/21/how-statehouse-reporting-power-compares-with-a-states-population/",
+      "date": "2014-07-21"
+    },
+    {
       "title": "Methods in Detail",
       "link": "https://www.pewresearch.org/global/2014/07/14/methods-in-detail-9/",
       "date": "2014-07-14"
@@ -4265,6 +4285,11 @@
       "date": "2014-05-30"
     },
     {
+      "title": "Midterm Election Indicators Daunting for Democrats",
+      "link": "https://www.pewresearch.org/politics/2014/05/05/midterm-election-indicators-daunting-for-democrats/",
+      "date": "2014-05-05"
+    },
+    {
       "title": "Politics in India: Still a Man\u2019s Game",
       "link": "https://www.pewresearch.org/global/2014/04/27/politics-in-india-still-a-mans-game/",
       "date": "2014-04-27"
@@ -4278,6 +4303,11 @@
       "title": "Indians See Rape as a Major National Problem",
       "link": "https://www.pewresearch.org/global/2014/04/22/indians-see-rape-as-major-national-problem/",
       "date": "2014-04-22"
+    },
+    {
+      "title": "Turnout High as Indians Vote for Change",
+      "link": "https://www.pewresearch.org/global/2014/04/18/turnout-high-as-indians-vote-for-change/",
+      "date": "2014-04-18"
     },
     {
       "title": "Data Feed: Google\u2019s campaign donations, tax day facts, world military spending",
@@ -4382,6 +4412,11 @@
     {
       "title": "What the Digital News Boom Means for Consumers",
       "link": "https://www.pewresearch.org/journalism/2014/03/26/what-the-digital-news-boom-means-for-consumers/",
+      "date": "2014-03-26"
+    },
+    {
+      "title": "Key Indicators in Media &amp; News",
+      "link": "https://www.pewresearch.org/journalism/2014/03/26/state-of-the-news-media-2014-key-indicators-in-media-and-news/",
       "date": "2014-03-26"
     },
     {
@@ -4497,11 +4532,6 @@
     {
       "title": "References",
       "link": "https://www.pewresearch.org/global/2014/01/30/references-4/",
-      "date": "2014-01-30"
-    },
-    {
-      "title": "Data Feed: Hillary Clinton leads, GDP up 3.2%, uninsured don\u2019t like ACA",
-      "link": "https://www.pewresearch.org/short-reads/2014/01/30/data-feed-hillary-clinton-leads-gdp-up-3-2-uninsured-dont-like-aca/",
       "date": "2014-01-30"
     },
     {
@@ -4650,6 +4680,11 @@
       "date": "2013-09-10"
     },
     {
+      "title": "Chart of the Week: Big drop in birth rate may be leveling off",
+      "link": "https://www.pewresearch.org/short-reads/2013/09/06/chart-of-the-week-big-drop-in-birth-rate-may-be-levelling-off/",
+      "date": "2013-09-06"
+    },
+    {
       "title": "Global Opinion of Russia Mixed",
       "link": "https://www.pewresearch.org/global/2013/09/03/global-opinion-of-russia-mixed/",
       "date": "2013-09-03"
@@ -4723,11 +4758,6 @@
       "title": "Chapter 2. The Fight Against Extremists",
       "link": "https://www.pewresearch.org/global/2013/05/07/chapter-2-the-fight-against-extremists/",
       "date": "2013-05-07"
-    },
-    {
-      "title": "The World\u2019s Muslims: Religion, Politics and Society",
-      "link": "https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-overview/",
-      "date": "2013-04-30"
     },
     {
       "title": "Preface",
@@ -4920,6 +4950,11 @@
       "date": "2012-09-12"
     },
     {
+      "title": "Survey: Indians disappointed with economy, gov\u2019t",
+      "link": "https://www.pewresearch.org/global/2012/09/10/survey-indians-disappointed-with-economy-govt/",
+      "date": "2012-09-10"
+    },
+    {
       "title": "Survey Methods",
       "link": "https://www.pewresearch.org/global/2012/09/10/survey-methods-37/",
       "date": "2012-09-10"
@@ -4993,16 +5028,6 @@
       "title": "Pakistanis more optimistic than US, India about hard work: Survey",
       "link": "https://www.pewresearch.org/global/2012/07/31/pakistanis-more-optimistic-than-us-india-about-hard-work-survey/",
       "date": "2012-07-31"
-    },
-    {
-      "title": "Main Findings: Higher education\u2019s destination by 2020",
-      "link": "https://www.pewresearch.org/internet/2012/07/27/main-findings-higher-educations-destination-by-2020/",
-      "date": "2012-07-27"
-    },
-    {
-      "title": "Main Findings: Influence of Big Data in 2020",
-      "link": "https://www.pewresearch.org/internet/2012/07/20/main-findings-influence-of-big-data-in-2020/",
-      "date": "2012-07-20"
     },
     {
       "title": "People in Emerging Economies More Upbeat than those in U.S. and European Union",
@@ -5170,19 +5195,9 @@
       "date": "2012-06-13"
     },
     {
-      "title": "Main Findings: Getting into the gamification?",
-      "link": "https://www.pewresearch.org/internet/2012/05/18/main-findings-getting-into-the-gamification/",
-      "date": "2012-05-18"
-    },
-    {
       "title": "India\u2019s Broken Promise",
       "link": "https://www.pewresearch.org/global/2012/04/25/indias-broken-promise/",
       "date": "2012-04-25"
-    },
-    {
-      "title": "Main Findings: The Future of Money",
-      "link": "https://www.pewresearch.org/internet/2012/04/17/main-findings-the-future-of-money/",
-      "date": "2012-04-17"
     },
     {
       "title": "U.S. is Top Destination for World\u2019s Migrants",
@@ -5333,11 +5348,6 @@
       "title": "Popular distrust challenges peaceful rise of India and China",
       "link": "https://www.pewresearch.org/global/2011/12/02/popular-distrust-challenges-peaceful-rise-of-india-and-china/",
       "date": "2011-12-02"
-    },
-    {
-      "title": "Major Characteristics of Religious Advocacy Groups",
-      "link": "https://www.pewresearch.org/religion/2011/11/21/lobbying-for-the-faithful-major-characteristics/",
-      "date": "2011-11-21"
     },
     {
       "title": "Evolution, Growth and Turnover",
@@ -5545,6 +5555,11 @@
       "date": "2011-01-06"
     },
     {
+      "title": "Six Telling Findings from the Iowa Caucuses",
+      "link": "https://www.pewresearch.org/politics/2011/01/04/six-telling-findings-from-the-iowa-caucuses/",
+      "date": "2011-01-04"
+    },
+    {
       "title": "Global Publics Embrace Social Networking",
       "link": "https://www.pewresearch.org/global/2010/12/15/global-publics-embrace-social-networking-2/",
       "date": "2010-12-15"
@@ -5601,12 +5616,12 @@
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
       "date": "2010-11-04"
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
       "date": "2010-11-04"
     },
     {
@@ -5658,11 +5673,6 @@
       "title": "Chapter 1. Views of Pakistan and Extremism",
       "link": "https://www.pewresearch.org/global/2010/10/20/chapter-1-views-of-pakistan-and-extremism/",
       "date": "2010-10-20"
-    },
-    {
-      "title": "Can Civilization Survive Without God?",
-      "link": "https://www.pewresearch.org/religion/2010/10/12/can-civilization-survive-without-god/",
-      "date": "2010-10-12"
     },
     {
       "title": "Who Knows What About Religion",
@@ -5785,9 +5795,9 @@
       "date": "2010-06-04"
     },
     {
-      "title": "A Conversation With Tariq Ramadan",
-      "link": "https://www.pewresearch.org/religion/2010/04/27/a-conversation-with-tariq-ramadan/",
-      "date": "2010-04-27"
+      "title": "State of the News Media: Local TV",
+      "link": "https://www.pewresearch.org/journalism/2010/03/19/state-of-the-news-media-local-tv/",
+      "date": "2010-03-19"
     },
     {
       "title": "Briefing on U.S. International Religious Freedom Policy",
@@ -5893,11 +5903,6 @@
       "title": "Global Warming Seen as a Major Problem Around the World",
       "link": "https://www.pewresearch.org/science/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world-2/",
       "date": "2009-12-02"
-    },
-    {
-      "title": "The Future of Evangelicals: A Conversation with Pastor Rick Warren",
-      "link": "https://www.pewresearch.org/religion/2009/11/13/the-future-of-evangelicals-a-conversation-with-pastor-rick-warren/",
-      "date": "2009-11-13"
     },
     {
       "title": "A Conversation with Pastor Rick Warren",
@@ -6290,11 +6295,6 @@
       "date": "2008-06-12"
     },
     {
-      "title": "American Evangelicalism: New Leaders, New Faces, New Issues",
-      "link": "https://www.pewresearch.org/religion/2008/05/06/american-evangelicalism-new-leaders-new-faces-new-issues/",
-      "date": "2008-05-06"
-    },
-    {
       "title": "Where Trust is High, Crime and Corruption are Low",
       "link": "https://www.pewresearch.org/global/2008/04/15/where-trust-is-high-crime-and-corruption-are-low/",
       "date": "2008-04-15"
@@ -6361,12 +6361,12 @@
     },
     {
       "title": "Widespread Negativity: Muslims Distrust Westerners More than Vice Versa",
-      "link": "https://www.pewresearch.org/global/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa/",
+      "link": "https://www.pewresearch.org/religion/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa-2/",
       "date": "2007-10-30"
     },
     {
       "title": "Widespread Negativity: Muslims Distrust Westerners More than Vice Versa",
-      "link": "https://www.pewresearch.org/religion/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa-2/",
+      "link": "https://www.pewresearch.org/global/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa/",
       "date": "2007-10-30"
     },
     {
@@ -6480,19 +6480,9 @@
       "date": "2007-06-13"
     },
     {
-      "title": "Another Trans-Atlantic Divide? Church-State Relations in Europe and the United States",
-      "link": "https://www.pewresearch.org/religion/2007/05/22/another-trans-atlantic-divide-church-state-relations-in-europe-and-the-united-states/",
-      "date": "2007-05-22"
-    },
-    {
       "title": "In Focus: Mormonism in Modern America",
       "link": "https://www.pewresearch.org/religion/2007/05/16/in-focus-mormonism-in-modern-america/",
       "date": "2007-05-16"
-    },
-    {
-      "title": "God\u2019s Will: Iran\u2019s Polity and the Challenges of the Future",
-      "link": "https://www.pewresearch.org/religion/2007/05/15/gods-will-irans-polity-and-the-challenges-of-the-future/",
-      "date": "2007-05-15"
     },
     {
       "title": "Are Americans Ready to Elect a Female President?",
@@ -6513,11 +6503,6 @@
       "title": "New UN Chief Heads an Organization That Faces Both Skepticism and Support",
       "link": "https://www.pewresearch.org/global/2006/12/20/new-un-chief-heads-an-organization-that-faces-both-skepticism-and-support/",
       "date": "2006-12-20"
-    },
-    {
-      "title": "The Christmas Wars: Religion in the American Public Square",
-      "link": "https://www.pewresearch.org/religion/2006/12/12/the-christmas-wars-religion-in-the-american-public-square/",
-      "date": "2006-12-12"
     },
     {
       "title": "Religion in a Globalizing World",
@@ -6615,11 +6600,6 @@
       "date": "2006-09-24"
     },
     {
-      "title": "Brief Biographies",
-      "link": "https://www.pewresearch.org/internet/2006/09/24/brief-biographies/",
-      "date": "2006-09-24"
-    },
-    {
       "title": "Japan\u2019s View of China\u2019s Military Might",
       "link": "https://www.pewresearch.org/short-reads/2006/09/22/japans-view-of-chinas-military-might/",
       "date": "2006-09-22"
@@ -6633,6 +6613,11 @@
       "title": "Methodological Appendix",
       "link": "https://www.pewresearch.org/global/2006/09/21/methodological-appendix-4/",
       "date": "2006-09-21"
+    },
+    {
+      "title": "Charting the Mid-Term Election",
+      "link": "https://www.pewresearch.org/2006/09/06/charting-the-midterm-election/",
+      "date": "2006-09-06"
     },
     {
       "title": "Parental Pressure on Students",
@@ -6666,12 +6651,12 @@
     },
     {
       "title": "G8 Summiteers Inspire Little Confidence Around the Globe",
-      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe/",
+      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe-2/",
       "date": "2006-07-13"
     },
     {
       "title": "G8 Summiteers Inspire Little Confidence Around the Globe",
-      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe-2/",
+      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe/",
       "date": "2006-07-13"
     },
     {
@@ -6750,16 +6735,6 @@
       "date": "2006-05-16"
     },
     {
-      "title": "Islam and the West: A Conversation with Bernard Lewis",
-      "link": "https://www.pewresearch.org/religion/2006/04/27/islam-and-the-west-a-conversation-with-bernard-lewis/",
-      "date": "2006-04-27"
-    },
-    {
-      "title": "Moved by the Spirit: Pentecostal Power &amp; Politics after 100 Years",
-      "link": "https://www.pewresearch.org/religion/2006/04/24/moved-by-the-spirit-pentecostal-power-and-politics-after-100-years2/",
-      "date": "2006-04-24"
-    },
-    {
       "title": "The New Face of Global Christianity: The Emergence of \u2019Progressive Pentecostalism\u2019",
       "link": "https://www.pewresearch.org/religion/2006/04/12/the-new-face-of-global-christianity-the-emergence-of-progressive-pentecostalism/",
       "date": "2006-04-12"
@@ -6778,11 +6753,6 @@
       "title": "Islam and the Global War on Terrorism in Latin America",
       "link": "https://www.pewresearch.org/religion/2006/04/06/islam-and-the-global-war-on-terrorism-in-latin-america/",
       "date": "2006-04-06"
-    },
-    {
-      "title": "Religion, Violence and the Middle East: A Conversation with U.S. Senator Joseph R. Biden Jr.",
-      "link": "https://www.pewresearch.org/religion/2006/04/04/religion-violence-and-the-middle-east-a-conversation-with-us-senator-joseph-r-biden-jr/",
-      "date": "2006-04-04"
     },
     {
       "title": "Religion and International Development: A Conversation with Andrew Natsios",
@@ -6900,11 +6870,6 @@
       "date": "2005-06-23"
     },
     {
-      "title": "Myths of the Modern Megachurch",
-      "link": "https://www.pewresearch.org/religion/2005/05/23/myths-of-the-modern-megachurch/",
-      "date": "2005-05-23"
-    },
-    {
       "title": "The Coming Religious Wars? Demographics and Conflict in Islam and Christianity",
       "link": "https://www.pewresearch.org/religion/2005/05/18/the-coming-religious-wars-demographics-and-conflict-in-islam-and-christianity/",
       "date": "2005-05-18"
@@ -6923,26 +6888,6 @@
       "title": "Faith and Conflict: The Global Rise of Christianity",
       "link": "https://www.pewresearch.org/religion/2005/03/02/faith-and-conflict-the-global-rise-of-christianity/",
       "date": "2005-03-02"
-    },
-    {
-      "title": "Religion and Security: The New Nexus in International Relations",
-      "link": "https://www.pewresearch.org/religion/2004/11/10/religion-and-security-the-new-nexus-in-international-relations/",
-      "date": "2004-11-10"
-    },
-    {
-      "title": "Liberty and Power: A Dialogue on Religion and U.S. Foreign Policy",
-      "link": "https://www.pewresearch.org/religion/2004/10/15/liberty-and-power-a-dialogue-on-religion-and-us-foreign-policy/",
-      "date": "2004-10-15"
-    },
-    {
-      "title": "The Veil Controversy: International Perspectives on Religion in Public Life",
-      "link": "https://www.pewresearch.org/religion/2004/04/19/the-veil-controversy-international-perspectives-on-religion-in-public-life/",
-      "date": "2004-04-19"
-    },
-    {
-      "title": "The Pursuit of Perfection: A Conversation on the Ethics of Genetic Engineering",
-      "link": "https://www.pewresearch.org/religion/2004/03/31/the-pursuit-of-perfection-a-conversation-on-the-ethics-of-genetic-engineering/",
-      "date": "2004-03-31"
     },
     {
       "title": "Additional Findings and Analyses",
@@ -7020,19 +6965,9 @@
       "date": "2003-06-03"
     },
     {
-      "title": "Ambassador\u2019s Address His Excellency Martin Palou\u0161, Czech Ambassador to the United States",
-      "link": "https://www.pewresearch.org/religion/2003/04/09/ambassadors-address-his-excellency-martin-palou-czech-ambassador-to-the-united-states/",
+      "title": "Quality and the Bottom Line",
+      "link": "https://www.pewresearch.org/journalism/2003/04/09/quality-and-the-bottom-line/",
       "date": "2003-04-09"
-    },
-    {
-      "title": "Religion Returns to the Public Square: Faith and Policy in America",
-      "link": "https://www.pewresearch.org/religion/2003/02/28/religion-returns-to-the-public-square-faith-and-policy-in-america/",
-      "date": "2003-02-28"
-    },
-    {
-      "title": "Religion and American Foreign Policy: Prophetic, Perilous, Inevitable",
-      "link": "https://www.pewresearch.org/religion/2003/02/05/religion-and-american-foreign-policy-prophetic-perilous-inevitable/",
-      "date": "2003-02-05"
     },
     {
       "title": "Bush Targets Top Global Problem \u2013 AIDS",
@@ -7070,16 +7005,6 @@
       "date": "2002-12-04"
     },
     {
-      "title": "Iraq and Just War: A Symposium",
-      "link": "https://www.pewresearch.org/religion/2002/09/30/iraq-and-just-war-a-symposium/",
-      "date": "2002-09-30"
-    },
-    {
-      "title": "Remembering September 11th: What is the Truth that has been Revealed to Us?",
-      "link": "https://www.pewresearch.org/religion/2002/09/10/remembering-september-11th-what-is-the-truth-that-has-been-revealed-to-us/",
-      "date": "2002-09-10"
-    },
-    {
       "title": "Other Important Findings and Analysis",
       "link": "https://www.pewresearch.org/politics/2002/06/27/other-important-findings-and-analysis-2/",
       "date": "2002-06-27"
@@ -7088,10 +7013,74 @@
       "title": "The Face of Evening News",
       "link": "https://www.pewresearch.org/journalism/2002/05/23/the-face-of-evening-news/",
       "date": "2002-05-23"
+    },
+    {
+      "title": "Unusually High Interest In Bush\u2019s State Of The Union",
+      "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
+      "date": "2002-01-17"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/2002/01/17/other-important-findings-3/",
+      "date": "2002-01-17"
+    },
+    {
+      "title": "Survey Methodology",
+      "link": "https://www.pewresearch.org/global/2001/12/19/survey-methodology/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Survey Methodology",
+      "link": "https://www.pewresearch.org/politics/2001/12/19/survey-methodology-4/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Questionnaire",
+      "link": "https://www.pewresearch.org/global/2001/12/19/questionnaire/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Commentary by Kenneth M. Pollack, Senior Fellow, Council on Foreign Relations",
+      "link": "https://www.pewresearch.org/politics/2001/10/24/commentary-by-kenneth-m-pollack-senior-fellow-council-on-foreign-relations/",
+      "date": "2001-10-24"
+    },
+    {
+      "title": "Other Important Findings and Analyses",
+      "link": "https://www.pewresearch.org/politics/2001/02/22/other-important-findings-and-analyses-13/",
+      "date": "2001-02-22"
+    },
+    {
+      "title": "Continued Public Support for Kosovo, But Worries Grow",
+      "link": "https://www.pewresearch.org/politics/1999/04/21/continued-public-support-for-kosovo-but-worries-grow/",
+      "date": "1999-04-21"
+    },
+    {
+      "title": "Support for NATO Air Strikes with Plenty of Buts",
+      "link": "https://www.pewresearch.org/politics/1999/03/29/support-for-nato-air-strikes-with-plenty-of-buts/",
+      "date": "1999-03-29"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/1998/08/07/other-important-findings-7/",
+      "date": "1998-08-07"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/1998/06/15/other-important-findings-8/",
+      "date": "1998-06-15"
+    },
+    {
+      "title": "America\u2019s Place in the World II",
+      "link": "https://www.pewresearch.org/politics/1997/10/10/americas-place-in-the-world-ii/",
+      "date": "1997-10-10"
     }
   ],
   "cadence": {
     "labels": [
+      "1997",
+      "1998",
+      "1999",
+      "2001",
       "2002",
       "2003",
       "2004",
@@ -7119,31 +7108,35 @@
       "2026"
     ],
     "values": [
-      8,
-      20,
+      1,
+      2,
+      2,
       5,
-      23,
-      60,
-      39,
-      49,
-      51,
-      54,
+      8,
+      18,
+      1,
+      22,
+      56,
+      37,
+      48,
       50,
-      100,
+      53,
+      50,
+      97,
       49,
-      102,
-      79,
+      103,
+      81,
       57,
-      59,
-      51,
-      64,
-      67,
+      58,
+      49,
       62,
-      45,
-      65,
+      64,
+      61,
+      43,
+      64,
       79,
-      115,
-      64
+      113,
+      81
     ]
   }
 }

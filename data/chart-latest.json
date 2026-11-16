@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-15T11:46:13+00:00",
+  "generated_at_utc": "2026-11-16T12:29:38+00:00",
   "series": {
     "gst": {
       "labels": [
@@ -6382,6 +6382,10 @@
     },
     "pew_india_reports": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -6409,31 +6413,35 @@
         "2026"
       ],
       "values": [
-        8,
-        20,
+        1,
+        2,
+        2,
         5,
-        23,
-        60,
-        39,
-        49,
-        51,
-        54,
+        8,
+        18,
+        1,
+        22,
+        56,
+        37,
+        48,
         50,
-        100,
+        53,
+        50,
+        97,
         49,
-        102,
-        79,
+        103,
+        81,
         57,
-        59,
-        51,
-        64,
-        67,
+        58,
+        49,
         62,
-        45,
-        65,
+        64,
+        61,
+        43,
+        64,
         79,
-        115,
-        64
+        113,
+        81
       ],
       "source": "Pew Research Center India public report catalog"
     },
@@ -16443,41 +16451,41 @@
         "2024"
       ],
       "values": [
-        58.7310784171219,
-        59.9117761767402,
-        60.9849114423669,
-        61.5943155728682,
-        62.2192653463647,
-        64.1251434356034,
-        64.6005399516557,
-        65.3729388301882,
-        65.5471860984189,
-        67.0029528827814,
-        67.2534306069462,
-        67.129796017925,
-        67.9372707366396,
-        68.1660565187834,
-        69.0192268925203,
-        69.4231195011222,
-        70.1136379256787,
-        71.0495879304206,
-        71.7490218694018,
-        75.3535663648772,
-        74.6095817518174,
-        74.8835023404131,
-        74.8362619114439,
-        74.8328001637558,
-        75.6353715684783,
-        46.0279846050923,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        58.73,
+        59.91,
+        60.98,
+        61.59,
+        62.22,
+        64.13,
+        64.6,
+        65.37,
+        65.55,
+        67.0,
+        67.25,
+        67.13,
+        67.95,
+        68.17,
+        69.13,
+        69.47,
+        70.06,
+        71.06,
+        72.47,
+        74.06,
+        74.4,
+        74.58,
+        75.66,
+        75.23,
+        76.27,
+        76.39,
+        75.84,
+        75.67,
+        75.95,
+        75.43,
+        73.67,
+        74.71,
+        75.08,
+        76.65,
+        76.16
       ],
       "source": "World Bank API EG.USE.COMM.FO.ZS",
       "unit": "%",
@@ -118762,6 +118770,10 @@
     },
     "dg_pew_reports_per_year": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -118789,37 +118801,41 @@
         "2026"
       ],
       "values": [
-        8.0,
-        20.0,
+        1.0,
+        2.0,
+        2.0,
         5.0,
-        23.0,
-        60.0,
-        39.0,
-        49.0,
-        51.0,
-        54.0,
+        8.0,
+        18.0,
+        1.0,
+        22.0,
+        56.0,
+        37.0,
+        48.0,
         50.0,
-        100.0,
+        53.0,
+        50.0,
+        97.0,
         49.0,
-        102.0,
-        79.0,
+        103.0,
+        81.0,
         57.0,
-        59.0,
-        51.0,
-        64.0,
-        67.0,
+        58.0,
+        49.0,
         62.0,
-        45.0,
-        65.0,
+        64.0,
+        61.0,
+        43.0,
+        64.0,
         79.0,
-        115.0,
-        64.0
+        113.0,
+        81.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports Published per Year",
         "subtitle": "Dated catalogue entries by publication year",
@@ -118837,6 +118853,10 @@
     },
     "dg_pew_reports_cumulative": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -118864,37 +118884,41 @@
         "2026"
       ],
       "values": [
-        8.0,
-        28.0,
-        33.0,
-        56.0,
-        116.0,
-        155.0,
-        204.0,
-        255.0,
-        309.0,
-        359.0,
-        459.0,
-        508.0,
-        610.0,
-        689.0,
-        746.0,
-        805.0,
-        856.0,
-        920.0,
-        987.0,
-        1049.0,
-        1094.0,
-        1159.0,
-        1238.0,
-        1353.0,
-        1417.0
+        1.0,
+        3.0,
+        5.0,
+        10.0,
+        18.0,
+        36.0,
+        37.0,
+        59.0,
+        115.0,
+        152.0,
+        200.0,
+        250.0,
+        303.0,
+        353.0,
+        450.0,
+        499.0,
+        602.0,
+        683.0,
+        740.0,
+        798.0,
+        847.0,
+        909.0,
+        973.0,
+        1034.0,
+        1077.0,
+        1141.0,
+        1220.0,
+        1333.0,
+        1414.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Cumulative Pew India Reports in Catalogue",
         "subtitle": "Dated catalogue entries accumulated over time",
@@ -118918,16 +118942,16 @@
         "Q4"
       ],
       "values": [
-        281.0,
-        369.0,
-        424.0,
-        343.0
+        283.0,
+        361.0,
+        425.0,
+        345.0
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Quarter",
         "subtitle": "Catalogue dates grouped by calendar quarter",
@@ -118954,19 +118978,19 @@
         "Sunday"
       ],
       "values": [
-        223.0,
-        389.0,
-        310.0,
-        398.0,
-        84.0,
-        3.0,
-        10.0
+        220.0,
+        377.0,
+        320.0,
+        401.0,
+        83.0,
+        4.0,
+        9.0
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Weekday",
         "subtitle": "Catalogue dates grouped by weekday",
@@ -118998,24 +119022,24 @@
         "Dec"
       ],
       "values": [
-        75.0,
-        91.0,
-        115.0,
-        93.0,
-        58.0,
-        218.0,
-        177.0,
+        79.0,
+        86.0,
+        118.0,
+        89.0,
+        55.0,
+        217.0,
+        170.0,
         109.0,
-        138.0,
-        103.0,
+        146.0,
+        104.0,
         108.0,
-        132.0
+        133.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Month",
         "subtitle": "Catalogue dates grouped by calendar month",
@@ -119033,20 +119057,22 @@
     },
     "dg_pew_publications_by_decade": {
       "labels": [
+        "1990s",
         "2000s",
         "2010s",
         "2020s"
       ],
       "values": [
-        255.0,
-        665.0,
-        497.0
+        5.0,
+        245.0,
+        659.0,
+        505.0
       ],
       "chartType": "bar",
       "scope": "category",
       "source": "Pew Research Center India report catalogue (data/pew-india-reports.json)",
       "unit": "reports",
-      "note": "Counts the 1417 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
+      "note": "Counts the 1414 catalogue entries with parseable publication dates. The search-result catalogue may not include every Pew India publication.",
       "meta": {
         "title": "Pew India Reports by Publication Decade",
         "subtitle": "Catalogue entries grouped into calendar decades",
@@ -119064,6 +119090,10 @@
     },
     "dg_pew_theme_economy_livelihoods": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119092,6 +119122,10 @@
       ],
       "values": [
         0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         1.0,
         0.0,
         0.0,
@@ -119101,7 +119135,7 @@
         2.0,
         2.0,
         2.0,
-        3.0,
+        4.0,
         5.0,
         6.0,
         4.0,
@@ -119110,7 +119144,7 @@
         5.0,
         3.0,
         3.0,
-        4.0,
+        3.0,
         0.0,
         3.0,
         6.0,
@@ -119139,6 +119173,10 @@
     },
     "dg_pew_theme_religion_society": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119167,30 +119205,34 @@
       ],
       "values": [
         0.0,
-        5.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         3.0,
+        0.0,
         5.0,
-        9.0,
+        7.0,
         4.0,
         7.0,
         8.0,
         7.0,
-        14.0,
+        13.0,
         22.0,
-        5.0,
+        4.0,
         5.0,
         15.0,
         8.0,
-        13.0,
+        12.0,
         8.0,
         8.0,
-        6.0,
+        7.0,
         26.0,
-        10.0,
+        9.0,
         8.0,
         13.0,
         21.0,
-        5.0
+        7.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -119214,6 +119256,10 @@
     },
     "dg_pew_theme_politics_governance": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119242,6 +119288,10 @@
       ],
       "values": [
         0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         1.0,
         0.0,
         2.0,
@@ -119252,20 +119302,20 @@
         2.0,
         2.0,
         1.0,
-        3.0,
-        18.0,
+        2.0,
+        19.0,
         4.0,
         6.0,
         11.0,
         7.0,
         10.0,
-        9.0,
+        8.0,
         4.0,
-        3.0,
+        2.0,
         3.0,
         16.0,
         5.0,
-        6.0
+        7.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -119289,6 +119339,10 @@
     },
     "dg_pew_theme_international_affairs": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119316,31 +119370,35 @@
         "2026"
       ],
       "values": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
         4.0,
-        12.0,
-        3.0,
+        11.0,
+        0.0,
         10.0,
-        13.0,
+        12.0,
         16.0,
         18.0,
         18.0,
         22.0,
         15.0,
         26.0,
-        25.0,
-        29.0,
-        28.0,
-        23.0,
-        31.0,
-        20.0,
         24.0,
+        29.0,
+        27.0,
+        23.0,
+        32.0,
+        20.0,
+        23.0,
         31.0,
         11.0,
         17.0,
         28.0,
         31.0,
-        38.0,
-        27.0
+        37.0,
+        30.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -119364,6 +119422,10 @@
     },
     "dg_pew_theme_technology_media": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119391,6 +119453,10 @@
         "2026"
       ],
       "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         1.0,
         0.0,
         0.0,
@@ -119399,23 +119465,23 @@
         2.0,
         3.0,
         2.0,
-        2.0,
+        3.0,
         2.0,
         1.0,
         3.0,
-        6.0,
+        7.0,
         3.0,
         2.0,
         1.0,
         5.0,
         12.0,
         2.0,
-        1.0,
+        0.0,
         2.0,
         0.0,
         3.0,
         7.0,
-        8.0
+        10.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -119439,6 +119505,10 @@
     },
     "dg_pew_theme_climate_environment": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119471,6 +119541,10 @@
         0.0,
         0.0,
         0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         1.0,
         0.0,
         1.0,
@@ -119490,7 +119564,7 @@
         0.0,
         0.0,
         3.0,
-        2.0
+        1.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -119514,6 +119588,10 @@
     },
     "dg_pew_theme_gender_demographics": {
       "labels": [
+        "1997",
+        "1998",
+        "1999",
+        "2001",
         "2002",
         "2003",
         "2004",
@@ -119542,6 +119620,10 @@
       ],
       "values": [
         0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
         2.0,
         0.0,
         0.0,
@@ -119553,19 +119635,19 @@
         9.0,
         0.0,
         1.0,
-        3.0,
-        7.0,
+        4.0,
+        6.0,
         6.0,
         5.0,
         4.0,
         4.0,
-        4.0,
+        3.0,
         1.0,
         9.0,
         2.0,
         2.0,
-        10.0,
-        3.0
+        9.0,
+        4.0
       ],
       "chartType": "bar",
       "scope": "category",
@@ -174379,7 +174461,8 @@
     },
     "pew_reports_by_period": {
       "labels": [
-        "2002\u20132004",
+        "1997\u20131999",
+        "2000\u20132004",
         "2005\u20132009",
         "2010\u20132014",
         "2015\u20132019",
@@ -174387,18 +174470,19 @@
         "2025\u20132026"
       ],
       "values": [
-        33.0,
-        222.0,
-        355.0,
-        310.0,
-        318.0,
-        179.0
+        5.0,
+        32.0,
+        213.0,
+        352.0,
+        307.0,
+        311.0,
+        194.0
       ],
       "chartType": "doughnut",
       "scope": "category",
       "source": "Pew Research Center India public report catalog",
       "unit": "reports",
-      "note": "Annual values summed into 5-year periods between 2002 and 2026; the first and last periods may be shorter.",
+      "note": "Annual values summed into 5-year periods between 1997 and 2026; the first and last periods may be shorter.",
       "meta": {
         "title": "Pew India Publications by Period",
         "subtitle": "Number of Pew Research Center reports mentioning India, five-year totals",
@@ -174801,115 +174885,134 @@
       "title": "How IDBI Embalmed Nehruvian Socialism, and Why India Had to Move On",
       "link": "https://indianmatrix.substack.com/p/how-idbi-embalmed-nehruvian-socialism",
       "published": "Mon, 02 Nov 2026 12:05:30 GMT",
-      "date": "2026-11-02"
+      "date": "2026-11-02",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/a7998f9e-9f1d-4ddd-897d-f0316c77bee9_1677x938.png"
     },
     {
       "title": "From \u2018Gunda Raj\u2019 to Industrial Engine: How Uttar Pradesh\u2019s Law & Order Turnaround Paved the Way for \u20b912 Lakh Crore+ in Investments",
       "link": "https://indianmatrix.substack.com/p/from-gunda-raj-to-industrial-engine",
       "published": "Mon, 26 Oct 2026 12:41:41 GMT",
-      "date": "2026-10-26"
+      "date": "2026-10-26",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/9173021a-0d06-4a71-a42c-f903267fc74c_1677x938.png"
     },
     {
       "title": "From \u20b9269 a GB to Almost Free",
       "link": "https://indianmatrix.substack.com/p/from-269-a-gb-to-almost-free",
       "published": "Mon, 19 Oct 2026 12:50:39 GMT",
-      "date": "2026-10-19"
+      "date": "2026-10-19",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/aed47fc2-64dc-4073-ae8a-1d54daf9fefe_1677x938.png"
     },
     {
       "title": "The Price of Saying No Tariffs, sovereignty and a restless generation",
       "link": "https://indianmatrix.substack.com/p/the-price-of-saying-no-tariffs-sovereignty",
       "published": "Wed, 14 Oct 2026 12:50:31 GMT",
-      "date": "2026-10-14"
+      "date": "2026-10-14",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/d669431c-fc84-4072-8e7b-2db98c257b51_1677x938.png"
     },
     {
       "title": "Environmental Vandalism of Paper Ballots: Crunching the True Cost of an Illogical Demand",
       "link": "https://indianmatrix.substack.com/p/environmental-vandalism-of-paper",
       "published": "Wed, 07 Oct 2026 13:12:48 GMT",
-      "date": "2026-10-07"
+      "date": "2026-10-07",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/1f1c46a9-a010-43ae-b9da-2b01c949cf0f_1677x938.png"
     },
     {
       "title": "Decoding the Form 6 Controversy: Why the Supreme Court and the ECI Are on the Exact Same Page",
       "link": "https://indianmatrix.substack.com/p/decoding-the-form-6-controversy-why",
       "published": "Mon, 05 Oct 2026 13:53:46 GMT",
-      "date": "2026-10-05"
+      "date": "2026-10-05",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/9e94e2f7-9ad7-42ab-ab6a-d40aad3c0380_1677x938.png"
     },
     {
       "title": "Reform Stalled, Status Quo Protected: Who Gains When Transparency Is Resisted?",
       "link": "https://indianmatrix.substack.com/p/reform-stalled-status-quo-protected",
       "published": "Sat, 03 Oct 2026 12:51:14 GMT",
-      "date": "2026-10-03"
+      "date": "2026-10-03",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/13afaa1b-8937-4151-8923-680ad6eead05_1677x938.png"
     },
     {
       "title": "The night India stopped sending dossiers",
       "link": "https://indianmatrix.substack.com/p/the-night-india-stopped-sending-dossiers",
       "published": "Wed, 30 Sep 2026 15:16:50 GMT",
-      "date": "2026-09-30"
+      "date": "2026-09-30",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/3833edda-83b0-451c-823e-1716e73208a7_1600x900.jpeg"
     },
     {
       "title": "The Copper Gap: Sterlite\u2019s Closure and India\u2019s Tightrope Walk to Copper Security",
       "link": "https://indianmatrix.substack.com/p/the-copper-gap-sterlites-closure",
       "published": "Mon, 21 Sep 2026 13:28:31 GMT",
-      "date": "2026-09-21"
+      "date": "2026-09-21",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!fFEe!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd03f12e5-e0c9-4ec0-a349-6b2a96a2cb7d_1200x675.png"
     },
     {
       "title": "Stopped Before the Strike: How India Broke the Shahzad Bhatti Network Before Independence Day",
       "link": "https://indianmatrix.substack.com/p/stopped-before-the-strike-how-india",
       "published": "Sat, 19 Sep 2026 12:36:14 GMT",
-      "date": "2026-09-19"
+      "date": "2026-09-19",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!jeg-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa1380fc0-106b-4a14-9cd9-12752cc7fe25_745x416.png"
     },
     {
       "title": "How Zudio\u2019s 1000th Store Maps India\u2019s Changing Household Budgets",
       "link": "https://indianmatrix.substack.com/p/how-zudios-1000th-store-maps-indias",
       "published": "Tue, 15 Sep 2026 13:03:00 GMT",
-      "date": "2026-09-15"
+      "date": "2026-09-15",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/4a992ee4-8036-4391-9c9f-a1da392f55b0_447x447.jpeg"
     },
     {
       "title": "The Invisible Friction: Why India\u2019s NGO-to-Startup Ratio is a Red Flag for Growth",
       "link": "https://indianmatrix.substack.com/p/the-invisible-friction-why-indias",
       "published": "Sat, 05 Sep 2026 12:22:51 GMT",
-      "date": "2026-09-05"
+      "date": "2026-09-05",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!2kRo!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5b8c5b82-b745-4cf5-aae2-9bd8eb090af0_1280x772.png"
     },
     {
       "title": "Open More. Build More. Grow More.",
       "link": "https://indianmatrix.substack.com/p/open-more-build-more-grow-more",
       "published": "Fri, 28 Aug 2026 05:33:53 GMT",
-      "date": "2026-08-28"
+      "date": "2026-08-28",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!1r9-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffec28496-a5d2-48cc-845c-fc46a7711880_778x1024.jpeg"
     },
     {
       "title": "How UPI Transformed India: The Second and Third Order Effects Nobody Predicted",
       "link": "https://indianmatrix.substack.com/p/how-upi-transformed-india-the-second",
       "published": "Tue, 25 Aug 2026 15:46:41 GMT",
-      "date": "2026-08-25"
+      "date": "2026-08-25",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!_EnO!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6dbf29d3-f6d9-406f-8783-4efb3747bce2_1687x2048.jpeg"
     },
     {
       "title": "Punjab vs. Haryana: The Great Economic Divergence",
       "link": "https://indianmatrix.substack.com/p/punjab-vs-haryana-the-great-economic",
       "published": "Sun, 23 Aug 2026 08:52:09 GMT",
-      "date": "2026-08-23"
+      "date": "2026-08-23",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/d7336b33-6c8f-410f-8598-34784427cf88_1024x1127.png"
     },
     {
       "title": "How much of India's infrastructure was built after 2014?",
       "link": "https://indianmatrix.substack.com/p/how-much-of-indias-infrastructure",
       "published": "Fri, 07 Aug 2026 12:29:15 GMT",
-      "date": "2026-08-07"
+      "date": "2026-08-07",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!2c50!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F5113b2ce-a415-45ba-8262-5b7837a189cd_900x640.jpeg"
     },
     {
       "title": "The Arithmetic of Hope: How India Stopped Expecting Less",
       "link": "https://indianmatrix.substack.com/p/the-arithmetic-of-hope-how-india",
       "published": "Fri, 31 Jul 2026 12:45:39 GMT",
-      "date": "2026-07-31"
+      "date": "2026-07-31",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!hrv3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F90f98d05-72d7-4c6a-bacd-e7bf47751497_2041x2048.png"
     },
     {
       "title": "The Second Gate: How Iran Learned to Close Two Doors at Once",
       "link": "https://indianmatrix.substack.com/p/the-second-gate-how-iran-learned",
       "published": "Thu, 30 Jul 2026 12:04:46 GMT",
-      "date": "2026-07-30"
+      "date": "2026-07-30",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!wyZM!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa38fe226-b232-41e0-bb13-c8441ca048c1_1022x570.png"
     },
     {
       "title": "What Indira Gandhi\u2019s Bank Nationalisation Diktat Promised - And Failed to Deliver",
       "link": "https://indianmatrix.substack.com/p/what-indira-gandhis-bank-nationalisation",
       "published": "Sat, 18 Jul 2026 12:17:14 GMT",
-      "date": "2026-07-18"
+      "date": "2026-07-18",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/61cae76f-b372-4ca2-9ae7-a54e416ae41e_1974x1094.png"
     },
     {
       "title": "The Aggressor Who Never Left",
@@ -174920,14 +175023,59 @@
   ],
   "pew_reports": [
     {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2026/11/12/single-black-adults-methodology/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "A First Look at Polling Performance in 2026",
+      "link": "https://www.pewresearch.org/short-reads/2026/11/12/a-first-look-at-polling-performance-in-2026/",
+      "date": "2026-11-12"
+    },
+    {
+      "title": "What We Know \u2013 and Don\u2019t Know \u2013 About Flock\u2019s License Plate Cameras",
+      "link": "https://www.pewresearch.org/short-reads/2026/11/09/what-we-know-and-dont-know-about-flocks-license-plate-cameras/",
+      "date": "2026-11-09"
+    },
+    {
+      "title": "How Many People in the U.S. Are Middle Eastern or North African?",
+      "link": "https://www.pewresearch.org/decoded/2026/11/02/how-many-people-in-the-us-are-middle-eastern-or-north-african/",
+      "date": "2026-11-02"
+    },
+    {
+      "title": "Religion Remains Stable in the U.S., With Mixed Signals for Young Adults",
+      "link": "https://www.pewresearch.org/religion/2026/10/28/religion-remains-stable-in-the-us-with-mixed-signals-for-young-adults/",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "Most Americans\u2019 Religious Lives Haven\u2019t Changed Much in Recent Years",
+      "link": "https://www.pewresearch.org/short-reads/2026/10/28/most-americans-religious-lives-havent-changed-much-in-recent-years/",
+      "date": "2026-10-28"
+    },
+    {
       "title": "What We Know About Eligible Voters Who Are Naturalized U.S. Citizens",
       "link": "https://www.pewresearch.org/short-reads/2026/10/27/what-we-know-about-eligible-voters-who-are-naturalized-us-citizens/",
       "date": "2026-10-27"
     },
     {
+      "title": "How Latino Voters Are Experiencing the 2026 Midterm Elections",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2026/10/16/how-latino-voters-are-experiencing-the-2026-midterm-elections/",
+      "date": "2026-10-16"
+    },
+    {
       "title": "How Do Americans Feel About G20 Countries?",
       "link": "https://www.pewresearch.org/global/2026/10/16/how-do-americans-feel-about-g20-countries/",
       "date": "2026-10-16"
+    },
+    {
+      "title": "Many Americans Are Struggling to Afford Basic Necessities",
+      "link": "https://www.pewresearch.org/short-reads/2026/10/14/many-americans-are-struggling-to-afford-basic-necessities/",
+      "date": "2026-10-14"
+    },
+    {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/data-labs/2026/10/07/health-influencers-methodology/",
+      "date": "2026-10-07"
     },
     {
       "title": "Social Media Platform Use Around the World",
@@ -174950,9 +175098,39 @@
       "date": "2026-10-01"
     },
     {
+      "title": "Methodology",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/methodology-silicon-samples/",
+      "date": "2026-09-30"
+    },
+    {
       "title": "How well synthetic polls capture the diversity of public opinion",
       "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-well-synthetic-polls-capture-the-diversity-of-public-opinion/",
       "date": "2026-09-30"
+    },
+    {
+      "title": "How synthetic respondents express certainty and factual knowledge",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-respondents-express-certainty-and-factual-knowledge/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "How synthetic polling results change based on the AI model",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/how-synthetic-polling-results-change-based-on-the-ai-model/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Can AI Stand In for Human Survey-Takers? Not Really",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/can-ai-stand-in-for-human-survey-takers-not-really/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Appendix C: Full list of variables in profile information",
+      "link": "https://www.pewresearch.org/data-labs/2026/09/30/appendix-c-full-list-of-variables-in-profile-information/",
+      "date": "2026-09-30"
+    },
+    {
+      "title": "Tradition and Change Among Latter-day Saints in the U.S.",
+      "link": "https://www.pewresearch.org/religion/2026/09/22/tradition-and-change-among-latter-day-saints-in-the-us/",
+      "date": "2026-09-22"
     },
     {
       "title": "Who has heard or read a lot about AI, and how is awareness changing?",
@@ -174985,6 +175163,26 @@
       "date": "2026-09-17"
     },
     {
+      "title": "3 ways to correct a poll\u2019s political balance: Party affiliation, past vote and voter file information",
+      "link": "https://www.pewresearch.org/methods/2026/09/16/3-ways-to-correct-a-polls-political-balance-party-affiliation-past-vote-and-voter-file-information/",
+      "date": "2026-09-16"
+    },
+    {
+      "title": "Appendix B: Coding methodology",
+      "link": "https://www.pewresearch.org/global/2026/09/15/appendix-b-coding-methodology-coexistence/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "Appendix A: Survey methodology",
+      "link": "https://www.pewresearch.org/global/2026/09/15/appendix-a-survey-methodology-coexistence/",
+      "date": "2026-09-15"
+    },
+    {
+      "title": "6 facts about grandparents in the U.S.",
+      "link": "https://www.pewresearch.org/short-reads/2026/09/09/6-facts-about-grandparents-in-the-us/",
+      "date": "2026-09-09"
+    },
+    {
       "title": "Many across 37 countries view the UN favorably, but opinions have become more negative in some places",
       "link": "https://www.pewresearch.org/short-reads/2026/08/27/many-across-37-countries-view-the-un-favorably-but-opinions-have-become-more-negative-in-some-places/",
       "date": "2026-08-27"
@@ -175008,11 +175206,6 @@
       "title": "What do people in middle-income countries think about cuts to U.S. humanitarian aid?",
       "link": "https://www.pewresearch.org/short-reads/2026/07/21/what-do-people-in-middle-income-countries-think-about-cuts-to-us-humanitarian-aid/",
       "date": "2026-07-21"
-    },
-    {
-      "title": "How global energy production is changing, in 6 charts",
-      "link": "https://www.pewresearch.org/short-reads/2026/07/20/how-global-energy-production-is-changing-in-6-charts/",
-      "date": "2026-07-20"
     },
     {
       "title": "Views of China and Xi Are Improving Globally",
@@ -175225,11 +175418,6 @@
       "date": "2026-02-17"
     },
     {
-      "title": "Which countries have the most \u2013 and fewest \u2013 public holidays?",
-      "link": "https://www.pewresearch.org/short-reads/2026/02/12/which-countries-have-the-most-and-fewest-public-holidays/",
-      "date": "2026-02-12"
-    },
-    {
       "title": "Sortable table: Religious diversity by country, 2010-2020",
       "link": "https://www.pewresearch.org/religion/2026/02/12/sortable-table-religious-diversity-by-country-2010-2020/",
       "date": "2026-02-12"
@@ -175238,11 +175426,6 @@
       "title": "Religious Diversity Around the World",
       "link": "https://www.pewresearch.org/religion/2026/02/12/religious-diversity-around-the-world/",
       "date": "2026-02-12"
-    },
-    {
-      "title": "U.S. stands out globally in how it draws legislative districts",
-      "link": "https://www.pewresearch.org/short-reads/2025/12/19/us-stands-out-globally-in-how-it-draws-legislative-districts/",
-      "date": "2025-12-19"
     },
     {
       "title": "Many religions are heavily concentrated in a few countries",
@@ -175587,11 +175770,6 @@
     {
       "title": "7. \u2018Other religions\u2019 population change",
       "link": "https://www.pewresearch.org/religion/2025/06/09/other-religions-population-change/",
-      "date": "2025-06-09"
-    },
-    {
-      "title": "6. Buddhist population change",
-      "link": "https://www.pewresearch.org/religion/2025/06/09/buddhist-population-change/",
       "date": "2025-06-09"
     },
     {
@@ -176490,11 +176668,6 @@
       "date": "2023-06-21"
     },
     {
-      "title": "4. Themes: The best and most beneficial changes in digital life that are likely by 2035",
-      "link": "https://www.pewresearch.org/internet/2023/06/21/themes-the-best-and-most-beneficial-changes-in-digital-life-that-are-likely-by-2035/",
-      "date": "2023-06-21"
-    },
-    {
       "title": "3. Themes: The most harmful or menacing changes in digital life that are likely by 2035",
       "link": "https://www.pewresearch.org/internet/2023/06/21/themes-the-most-harmful-or-menacing-changes-in-digital-life-that-are-likely-by-2035/",
       "date": "2023-06-21"
@@ -176580,11 +176753,6 @@
       "date": "2022-11-29"
     },
     {
-      "title": "3. Small changes in median scores for government restrictions, social hostilities involving religion in 2020",
-      "link": "https://www.pewresearch.org/religion/2022/11/29/small-changes-in-median-scores-for-government-restrictions-social-hostilities-involving-religion-in-2020/",
-      "date": "2022-11-29"
-    },
-    {
       "title": "1. Number of countries with \u2018very high\u2019 government restrictions falls for third straight year in 2020",
       "link": "https://www.pewresearch.org/religion/2022/11/29/number-of-countries-with-very-high-government-restrictions-falls-for-third-straight-year-in-2020/",
       "date": "2022-11-29"
@@ -176663,11 +176831,6 @@
       "title": "Global population projected to exceed 8 billion in 2022; half live in just seven countries",
       "link": "https://www.pewresearch.org/short-reads/2022/07/21/global-population-projected-to-exceed-8-billion-in-2022-half-live-in-just-seven-countries/",
       "date": "2022-07-21"
-    },
-    {
-      "title": "4. The metaverse will fully emerge as its advocates predict",
-      "link": "https://www.pewresearch.org/internet/2022/06/30/the-metaverse-will-fully-emerge-as-its-advocates-predict/",
-      "date": "2022-06-30"
     },
     {
       "title": "Negative Views of China Tied to Critical Views of Its Policies on Human Rights",
@@ -176855,11 +177018,6 @@
       "date": "2021-08-05"
     },
     {
-      "title": "Are you in the global middle class? Find out with our income calculator",
-      "link": "https://www.pewresearch.org/short-reads/2021/07/21/are-you-in-the-global-middle-class-find-out-with-our-income-calculator/",
-      "date": "2021-07-21"
-    },
-    {
       "title": "For most of India\u2019s Hindus, religious and national identities are closely linked",
       "link": "https://www.pewresearch.org/short-reads/2021/07/20/for-most-of-indias-hindus-religious-and-national-identities-are-closely-linked/",
       "date": "2021-07-20"
@@ -177005,11 +177163,6 @@
       "date": "2021-06-23"
     },
     {
-      "title": "Experts Doubt Ethical AI Design Will Be Broadly Adopted as the Norm Within the Next Decade",
-      "link": "https://www.pewresearch.org/internet/2021/06/16/experts-doubt-ethical-ai-design-will-be-broadly-adopted-as-the-norm-within-the-next-decade/",
-      "date": "2021-06-16"
-    },
-    {
       "title": "The U.S. differs from most other countries in how it sets its minimum wage",
       "link": "https://www.pewresearch.org/short-reads/2021/05/20/the-u-s-differs-from-most-other-countries-in-how-it-sets-its-minimum-wage/",
       "date": "2021-05-20"
@@ -177018,6 +177171,16 @@
       "title": "Methodology",
       "link": "https://www.pewresearch.org/race-and-ethnicity/2021/05/14/2020-census-identity-methodology/",
       "date": "2021-05-14"
+    },
+    {
+      "title": "3. Hispanic identity and immigrant generations",
+      "link": "https://www.pewresearch.org/race-and-ethnicity/2021/05/14/hispanic-identity-and-immigrant-generations/",
+      "date": "2021-05-14"
+    },
+    {
+      "title": "Key facts about Asian origin groups in the U.S.",
+      "link": "https://www.pewresearch.org/short-reads/2021/04/29/key-facts-about-asian-origin-groups-in-the-u-s/",
+      "date": "2021-04-29"
     },
     {
       "title": "Americans\u2019 views of Asia-Pacific nations have not changed since 2018 \u2013 with the exception of China",
@@ -177053,11 +177216,6 @@
       "title": "In Vice President Kamala Harris, we can see how America has changed",
       "link": "https://www.pewresearch.org/short-reads/2021/02/25/in-vice-president-kamala-harris-we-can-see-how-america-has-changed/",
       "date": "2021-02-25"
-    },
-    {
-      "title": "2. Worries about life in 2025",
-      "link": "https://www.pewresearch.org/internet/2021/02/18/worries-about-life-in-2025/",
-      "date": "2021-02-18"
     },
     {
       "title": "10. A brief overview of Black religious history in the U.S.",
@@ -177210,16 +177368,6 @@
       "date": "2020-06-30"
     },
     {
-      "title": "3. Power dynamics play a key role in problems and innovation",
-      "link": "https://www.pewresearch.org/internet/2020/06/30/power-dynamics-play-a-key-role-in-problems-and-innovation/",
-      "date": "2020-06-30"
-    },
-    {
-      "title": "2. Tech is (just) a tool",
-      "link": "https://www.pewresearch.org/internet/2020/06/30/tech-is-just-a-tool/",
-      "date": "2020-06-30"
-    },
-    {
       "title": "1. The innovations these experts predict by 2030",
       "link": "https://www.pewresearch.org/internet/2020/06/30/innovations-these-experts-predict-by-2030/",
       "date": "2020-06-30"
@@ -177330,16 +177478,6 @@
       "date": "2020-02-21"
     },
     {
-      "title": "4. Hopeful themes and suggested solutions",
-      "link": "https://www.pewresearch.org/internet/2020/02/21/hopeful-themes-and-suggested-solutions/",
-      "date": "2020-02-21"
-    },
-    {
-      "title": "3. Concerns about democracy in the digital age",
-      "link": "https://www.pewresearch.org/internet/2020/02/21/concerns-about-democracy-in-the-digital-age/",
-      "date": "2020-02-21"
-    },
-    {
       "title": "1. Themes about the digital disruption of democracy in the next decade",
       "link": "https://www.pewresearch.org/internet/2020/02/21/themes-about-the-digital-disruption-of-democracy-in-the-next-decade/",
       "date": "2020-02-21"
@@ -177363,6 +177501,11 @@
       "title": "Russia and Putin receive low ratings globally",
       "link": "https://www.pewresearch.org/short-reads/2020/02/07/russia-and-putin-receive-low-ratings-globally/",
       "date": "2020-02-07"
+    },
+    {
+      "title": "Among Democrats, Christians lean toward Biden, while \u2018nones\u2019 prefer Sanders",
+      "link": "https://www.pewresearch.org/short-reads/2020/01/31/among-democrats-christians-lean-toward-biden-while-nones-prefer-sanders/",
+      "date": "2020-01-31"
     },
     {
       "title": "Around the world, more see the U.S. positively than China, but little confidence in Trump or Xi",
@@ -177500,11 +177643,6 @@
       "date": "2019-11-13"
     },
     {
-      "title": "5. Leading concerns about the future of digital life",
-      "link": "https://www.pewresearch.org/internet/2019/10/28/5-leading-concerns-about-the-future-of-digital-life/",
-      "date": "2019-10-28"
-    },
-    {
       "title": "Pluralities in most emerging economies believe government should ensure equal internet access",
       "link": "https://www.pewresearch.org/short-reads/2019/08/22/pluralities-in-most-emerging-economies-believe-government-should-ensure-equal-internet-access/",
       "date": "2019-08-22"
@@ -177518,11 +177656,6 @@
       "title": "1. Social activities, information seeking on subjects like health and education top the list of mobile activities",
       "link": "https://www.pewresearch.org/internet/2019/08/22/social-activities-information-seeking-on-subjects-like-health-and-education-top-the-list-of-mobile-activities/",
       "date": "2019-08-22"
-    },
-    {
-      "title": "U.S. Views of China Turn Sharply Negative Amid Trade Tensions",
-      "link": "https://www.pewresearch.org/global/2019/08/13/u-s-views-of-china-turn-sharply-negative-amid-trade-tensions/",
-      "date": "2019-08-13"
     },
     {
       "title": "Methods 101: How is polling done around the world?",
@@ -177825,16 +177958,6 @@
       "date": "2018-07-12"
     },
     {
-      "title": "2. The negatives of digital life",
-      "link": "https://www.pewresearch.org/internet/2018/07/03/the-negatives-of-digital-life/",
-      "date": "2018-07-03"
-    },
-    {
-      "title": "1. The positives of digital life",
-      "link": "https://www.pewresearch.org/internet/2018/07/03/the-positives-of-digital-life/",
-      "date": "2018-07-03"
-    },
-    {
       "title": "5 facts about religion in India",
       "link": "https://www.pewresearch.org/short-reads/2018/06/29/5-facts-about-religion-in-india/",
       "date": "2018-06-29"
@@ -177911,12 +178034,12 @@
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
+      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
       "date": "2018-06-06"
     },
     {
       "title": "Majority of Americans Believe It Is Essential That the U.S. Remain a Global Leader in Space",
-      "link": "https://www.pewresearch.org/internet/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space/",
+      "link": "https://www.pewresearch.org/science/2018/06/06/majority-of-americans-believe-it-is-essential-that-the-u-s-remain-a-global-leader-in-space-2/",
       "date": "2018-06-06"
     },
     {
@@ -177980,6 +178103,11 @@
       "date": "2018-01-11"
     },
     {
+      "title": "Strongman Modi Chimes With Voters but Seen as Soft on Pakistan",
+      "link": "https://www.pewresearch.org/global/2017/12/23/strongman-modi-chimes-with-voters-but-seen-as-soft-on-pakistan/",
+      "date": "2017-12-23"
+    },
+    {
       "title": "How people in India see Pakistan, 70 years after partition",
       "link": "https://www.pewresearch.org/short-reads/2017/12/07/how-people-in-india-see-pakistan-70-years-after-partition/",
       "date": "2017-12-07"
@@ -177988,11 +178116,6 @@
       "title": "Worldwide, People Divided on Whether Life Today Is Better Than in the Past",
       "link": "https://www.pewresearch.org/global/2017/12/05/worldwide-people-divided-on-whether-life-today-is-better-than-in-the-past/",
       "date": "2017-12-05"
-    },
-    {
-      "title": "Europe\u2019s Growing Muslim Population",
-      "link": "https://www.pewresearch.org/religion/2017/11/29/europes-growing-muslim-population/",
-      "date": "2017-11-29"
     },
     {
       "title": "New foreign student enrollment at U.S. colleges and universities doubled since Great Recession",
@@ -178033,11 +178156,6 @@
       "title": "2. Orthodox Christians are highly religious in Ethiopia, much less so in former Soviet Union",
       "link": "https://www.pewresearch.org/religion/2017/11/08/orthodox-christians-are-highly-religious-in-ethiopia-much-less-so-in-former-soviet-union/",
       "date": "2017-11-08"
-    },
-    {
-      "title": "How countries around the world view democracy, military rule and other political systems",
-      "link": "https://www.pewresearch.org/short-reads/2017/10/30/global-views-political-systems/",
-      "date": "2017-10-30"
     },
     {
       "title": "Japanese Divided on Democracy\u2019s Success at Home, but Value Voice of the People",
@@ -178082,11 +178200,6 @@
     {
       "title": "Public Attitudes Toward Human Rights Organizations: The Case of India, Indonesia, Kenya and Mexico",
       "link": "https://www.pewresearch.org/global/2017/10/03/attitudes-toward-human-rights-organizations-india-indonesia-kenya-mexico/",
-      "date": "2017-10-03"
-    },
-    {
-      "title": "Many Countries Favor Specific Religions, Officially or Unofficially",
-      "link": "https://www.pewresearch.org/religion/2017/10/03/many-countries-favor-specific-religions-officially-or-unofficially/",
       "date": "2017-10-03"
     },
     {
@@ -178267,6 +178380,11 @@
     {
       "title": "World\u2019s Muslim population more widespread than you might think",
       "link": "https://www.pewresearch.org/short-reads/2017/01/31/worlds-muslim-population-more-widespread-than-you-might-think/",
+      "date": "2017-01-31"
+    },
+    {
+      "title": "Women may never make up half of the U.S. workforce",
+      "link": "https://www.pewresearch.org/short-reads/2017/01/31/women-may-never-make-up-half-of-the-u-s-workforce/",
       "date": "2017-01-31"
     },
     {
@@ -178580,6 +178698,11 @@
       "date": "2015-11-19"
     },
     {
+      "title": "Appendix C: Detailed Tables",
+      "link": "https://www.pewresearch.org/global/2015/11/18/appendix-c-detailed-tables/",
+      "date": "2015-11-18"
+    },
+    {
       "title": "1. Support for Democratic Principles",
       "link": "https://www.pewresearch.org/global/2015/11/18/1-support-for-democratic-principles/",
       "date": "2015-11-18"
@@ -178597,11 +178720,6 @@
     {
       "title": "Modbama: A Budding Bromance",
       "link": "https://www.pewresearch.org/global/2015/09/28/modbama-a-budding-bromance/",
-      "date": "2015-09-28"
-    },
-    {
-      "title": "Chapter 5: U.S. Foreign-Born Population Trends",
-      "link": "https://www.pewresearch.org/race-and-ethnicity/2015/09/28/chapter-5-u-s-foreign-born-population-trends/",
       "date": "2015-09-28"
     },
     {
@@ -178643,11 +178761,6 @@
       "title": "1. The Modi Phenomenon",
       "link": "https://www.pewresearch.org/global/2015/09/17/1-the-modi-phenomenon/",
       "date": "2015-09-17"
-    },
-    {
-      "title": "Health Care, Education Are Top Priorities in Sub-Saharan Africa",
-      "link": "https://www.pewresearch.org/global/2015/09/16/health-care-education-are-top-priorities-in-sub-saharan-africa/",
-      "date": "2015-09-16"
     },
     {
       "title": "How Asia-Pacific Publics See Each Other and Their National Leaders",
@@ -178705,11 +178818,6 @@
       "date": "2015-07-08"
     },
     {
-      "title": "Despite Poverty\u2019s Plunge, Middle-Class Status Remains Out of Reach for Many",
-      "link": "https://www.pewresearch.org/global/2015/07/08/despite-povertys-plunge-middle-class-status-remains-out-of-reach-for-many/",
-      "date": "2015-07-08"
-    },
-    {
       "title": "Appendix: Methodology and Data Sources",
       "link": "https://www.pewresearch.org/global/2015/07/08/appendix-methodology-and-data-sources/",
       "date": "2015-07-08"
@@ -178717,11 +178825,6 @@
     {
       "title": "About the Report",
       "link": "https://www.pewresearch.org/global/2015/07/08/about-the-report/",
-      "date": "2015-07-08"
-    },
-    {
-      "title": "A Global Middle Class Is More Promise than Reality",
-      "link": "https://www.pewresearch.org/global/2015/07/08/a-global-middle-class-is-more-promise-than-reality/",
       "date": "2015-07-08"
     },
     {
@@ -178772,6 +178875,26 @@
     {
       "title": "How Pew Research Center conducted its survey of multiracial Americans",
       "link": "https://www.pewresearch.org/short-reads/2015/06/11/how-pew-research-conducted-its-survey-of-multiracial-americans/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "Chapter 1: Race and Multiracial Americans in the U.S. Census",
+      "link": "https://www.pewresearch.org/social-trends/2015/06/11/chapter-1-race-and-multiracial-americans-in-the-u-s-census/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "Appendix A: Survey Methodology",
+      "link": "https://www.pewresearch.org/global-migration-and-demography/2015/06/11/appendix-a-survey-methodology-2/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "American Indian and white, but not \u2018multiracial\u2019",
+      "link": "https://www.pewresearch.org/social-trends/2015/06/11/american-indian-and-white-but-not-multiracial/",
+      "date": "2015-06-11"
+    },
+    {
+      "title": "American Indian and white, but not \u2018multiracial\u2019",
+      "link": "https://www.pewresearch.org/short-reads/2015/06/11/american-indian-and-white-but-not-multiracial/",
       "date": "2015-06-11"
     },
     {
@@ -178895,6 +179018,11 @@
       "date": "2015-03-19"
     },
     {
+      "title": "Jobs situation looks brighter as employers seek to fill more positions",
+      "link": "https://www.pewresearch.org/short-reads/2015/03/11/jobs-situation-looks-brighter-as-employers-seek-to-fill-more-positions/",
+      "date": "2015-03-11"
+    },
+    {
       "title": "Asian youth feel happy and helpless",
       "link": "https://www.pewresearch.org/global/2015/03/04/asian-youth-feel-happy-and-helpless/",
       "date": "2015-03-04"
@@ -178965,11 +179093,6 @@
       "date": "2014-12-18"
     },
     {
-      "title": "Elaborations: More Expert Responses",
-      "link": "https://www.pewresearch.org/internet/2014/12/18/elaborations-more-expert-responses-4/",
-      "date": "2014-12-18"
-    },
-    {
       "title": "Appendix",
       "link": "https://www.pewresearch.org/global/2014/12/18/appendix-8/",
       "date": "2014-12-18"
@@ -179013,11 +179136,6 @@
       "title": "Crime and Corruption Top Problems in Emerging and Developing Countries",
       "link": "https://www.pewresearch.org/global/2014/11/06/crime-and-corruption-top-problems-in-emerging-and-developing-countries/",
       "date": "2014-11-06"
-    },
-    {
-      "title": "People in Emerging Markets Catch Up to Advanced Economies in Life Satisfaction",
-      "link": "https://www.pewresearch.org/global/2014/10/30/people-in-emerging-markets-catch-up-to-advanced-economies-in-life-satisfaction/",
-      "date": "2014-10-30"
     },
     {
       "title": "Methods in Detail",
@@ -179135,6 +179253,11 @@
       "date": "2014-07-28"
     },
     {
+      "title": "How statehouse reporting power compares with a state\u2019s population",
+      "link": "https://www.pewresearch.org/short-reads/2014/07/21/how-statehouse-reporting-power-compares-with-a-states-population/",
+      "date": "2014-07-21"
+    },
+    {
       "title": "Methods in Detail",
       "link": "https://www.pewresearch.org/global/2014/07/14/methods-in-detail-9/",
       "date": "2014-07-14"
@@ -179180,6 +179303,11 @@
       "date": "2014-05-30"
     },
     {
+      "title": "Midterm Election Indicators Daunting for Democrats",
+      "link": "https://www.pewresearch.org/politics/2014/05/05/midterm-election-indicators-daunting-for-democrats/",
+      "date": "2014-05-05"
+    },
+    {
       "title": "Politics in India: Still a Man\u2019s Game",
       "link": "https://www.pewresearch.org/global/2014/04/27/politics-in-india-still-a-mans-game/",
       "date": "2014-04-27"
@@ -179193,6 +179321,11 @@
       "title": "Indians See Rape as a Major National Problem",
       "link": "https://www.pewresearch.org/global/2014/04/22/indians-see-rape-as-major-national-problem/",
       "date": "2014-04-22"
+    },
+    {
+      "title": "Turnout High as Indians Vote for Change",
+      "link": "https://www.pewresearch.org/global/2014/04/18/turnout-high-as-indians-vote-for-change/",
+      "date": "2014-04-18"
     },
     {
       "title": "Data Feed: Google\u2019s campaign donations, tax day facts, world military spending",
@@ -179297,6 +179430,11 @@
     {
       "title": "What the Digital News Boom Means for Consumers",
       "link": "https://www.pewresearch.org/journalism/2014/03/26/what-the-digital-news-boom-means-for-consumers/",
+      "date": "2014-03-26"
+    },
+    {
+      "title": "Key Indicators in Media &amp; News",
+      "link": "https://www.pewresearch.org/journalism/2014/03/26/state-of-the-news-media-2014-key-indicators-in-media-and-news/",
       "date": "2014-03-26"
     },
     {
@@ -179412,11 +179550,6 @@
     {
       "title": "References",
       "link": "https://www.pewresearch.org/global/2014/01/30/references-4/",
-      "date": "2014-01-30"
-    },
-    {
-      "title": "Data Feed: Hillary Clinton leads, GDP up 3.2%, uninsured don\u2019t like ACA",
-      "link": "https://www.pewresearch.org/short-reads/2014/01/30/data-feed-hillary-clinton-leads-gdp-up-3-2-uninsured-dont-like-aca/",
       "date": "2014-01-30"
     },
     {
@@ -179565,6 +179698,11 @@
       "date": "2013-09-10"
     },
     {
+      "title": "Chart of the Week: Big drop in birth rate may be leveling off",
+      "link": "https://www.pewresearch.org/short-reads/2013/09/06/chart-of-the-week-big-drop-in-birth-rate-may-be-levelling-off/",
+      "date": "2013-09-06"
+    },
+    {
       "title": "Global Opinion of Russia Mixed",
       "link": "https://www.pewresearch.org/global/2013/09/03/global-opinion-of-russia-mixed/",
       "date": "2013-09-03"
@@ -179638,11 +179776,6 @@
       "title": "Chapter 2. The Fight Against Extremists",
       "link": "https://www.pewresearch.org/global/2013/05/07/chapter-2-the-fight-against-extremists/",
       "date": "2013-05-07"
-    },
-    {
-      "title": "The World\u2019s Muslims: Religion, Politics and Society",
-      "link": "https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-overview/",
-      "date": "2013-04-30"
     },
     {
       "title": "Preface",
@@ -179835,6 +179968,11 @@
       "date": "2012-09-12"
     },
     {
+      "title": "Survey: Indians disappointed with economy, gov\u2019t",
+      "link": "https://www.pewresearch.org/global/2012/09/10/survey-indians-disappointed-with-economy-govt/",
+      "date": "2012-09-10"
+    },
+    {
       "title": "Survey Methods",
       "link": "https://www.pewresearch.org/global/2012/09/10/survey-methods-37/",
       "date": "2012-09-10"
@@ -179908,16 +180046,6 @@
       "title": "Pakistanis more optimistic than US, India about hard work: Survey",
       "link": "https://www.pewresearch.org/global/2012/07/31/pakistanis-more-optimistic-than-us-india-about-hard-work-survey/",
       "date": "2012-07-31"
-    },
-    {
-      "title": "Main Findings: Higher education\u2019s destination by 2020",
-      "link": "https://www.pewresearch.org/internet/2012/07/27/main-findings-higher-educations-destination-by-2020/",
-      "date": "2012-07-27"
-    },
-    {
-      "title": "Main Findings: Influence of Big Data in 2020",
-      "link": "https://www.pewresearch.org/internet/2012/07/20/main-findings-influence-of-big-data-in-2020/",
-      "date": "2012-07-20"
     },
     {
       "title": "People in Emerging Economies More Upbeat than those in U.S. and European Union",
@@ -180085,19 +180213,9 @@
       "date": "2012-06-13"
     },
     {
-      "title": "Main Findings: Getting into the gamification?",
-      "link": "https://www.pewresearch.org/internet/2012/05/18/main-findings-getting-into-the-gamification/",
-      "date": "2012-05-18"
-    },
-    {
       "title": "India\u2019s Broken Promise",
       "link": "https://www.pewresearch.org/global/2012/04/25/indias-broken-promise/",
       "date": "2012-04-25"
-    },
-    {
-      "title": "Main Findings: The Future of Money",
-      "link": "https://www.pewresearch.org/internet/2012/04/17/main-findings-the-future-of-money/",
-      "date": "2012-04-17"
     },
     {
       "title": "U.S. is Top Destination for World\u2019s Migrants",
@@ -180248,11 +180366,6 @@
       "title": "Popular distrust challenges peaceful rise of India and China",
       "link": "https://www.pewresearch.org/global/2011/12/02/popular-distrust-challenges-peaceful-rise-of-india-and-china/",
       "date": "2011-12-02"
-    },
-    {
-      "title": "Major Characteristics of Religious Advocacy Groups",
-      "link": "https://www.pewresearch.org/religion/2011/11/21/lobbying-for-the-faithful-major-characteristics/",
-      "date": "2011-11-21"
     },
     {
       "title": "Evolution, Growth and Turnover",
@@ -180460,6 +180573,11 @@
       "date": "2011-01-06"
     },
     {
+      "title": "Six Telling Findings from the Iowa Caucuses",
+      "link": "https://www.pewresearch.org/politics/2011/01/04/six-telling-findings-from-the-iowa-caucuses/",
+      "date": "2011-01-04"
+    },
+    {
       "title": "Global Publics Embrace Social Networking",
       "link": "https://www.pewresearch.org/global/2010/12/15/global-publics-embrace-social-networking-2/",
       "date": "2010-12-15"
@@ -180516,12 +180634,12 @@
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
       "date": "2010-11-04"
     },
     {
       "title": "Indonesia\u2019s Place Along the Spectrum of Global Religious Restriction",
-      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction-2/",
+      "link": "https://www.pewresearch.org/religion/2010/11/04/indonesias-place-along-the-spectrum-of-global-religious-restriction/",
       "date": "2010-11-04"
     },
     {
@@ -180573,11 +180691,6 @@
       "title": "Chapter 1. Views of Pakistan and Extremism",
       "link": "https://www.pewresearch.org/global/2010/10/20/chapter-1-views-of-pakistan-and-extremism/",
       "date": "2010-10-20"
-    },
-    {
-      "title": "Can Civilization Survive Without God?",
-      "link": "https://www.pewresearch.org/religion/2010/10/12/can-civilization-survive-without-god/",
-      "date": "2010-10-12"
     },
     {
       "title": "Who Knows What About Religion",
@@ -180700,9 +180813,9 @@
       "date": "2010-06-04"
     },
     {
-      "title": "A Conversation With Tariq Ramadan",
-      "link": "https://www.pewresearch.org/religion/2010/04/27/a-conversation-with-tariq-ramadan/",
-      "date": "2010-04-27"
+      "title": "State of the News Media: Local TV",
+      "link": "https://www.pewresearch.org/journalism/2010/03/19/state-of-the-news-media-local-tv/",
+      "date": "2010-03-19"
     },
     {
       "title": "Briefing on U.S. International Religious Freedom Policy",
@@ -180808,11 +180921,6 @@
       "title": "Global Warming Seen as a Major Problem Around the World",
       "link": "https://www.pewresearch.org/science/2009/12/02/global-warming-seen-as-a-major-problem-around-the-world-2/",
       "date": "2009-12-02"
-    },
-    {
-      "title": "The Future of Evangelicals: A Conversation with Pastor Rick Warren",
-      "link": "https://www.pewresearch.org/religion/2009/11/13/the-future-of-evangelicals-a-conversation-with-pastor-rick-warren/",
-      "date": "2009-11-13"
     },
     {
       "title": "A Conversation with Pastor Rick Warren",
@@ -181205,11 +181313,6 @@
       "date": "2008-06-12"
     },
     {
-      "title": "American Evangelicalism: New Leaders, New Faces, New Issues",
-      "link": "https://www.pewresearch.org/religion/2008/05/06/american-evangelicalism-new-leaders-new-faces-new-issues/",
-      "date": "2008-05-06"
-    },
-    {
       "title": "Where Trust is High, Crime and Corruption are Low",
       "link": "https://www.pewresearch.org/global/2008/04/15/where-trust-is-high-crime-and-corruption-are-low/",
       "date": "2008-04-15"
@@ -181276,12 +181379,12 @@
     },
     {
       "title": "Widespread Negativity: Muslims Distrust Westerners More than Vice Versa",
-      "link": "https://www.pewresearch.org/global/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa/",
+      "link": "https://www.pewresearch.org/religion/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa-2/",
       "date": "2007-10-30"
     },
     {
       "title": "Widespread Negativity: Muslims Distrust Westerners More than Vice Versa",
-      "link": "https://www.pewresearch.org/religion/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa-2/",
+      "link": "https://www.pewresearch.org/global/2007/10/30/widespread-negativity-muslims-distrust-westerners-more-than-vice-versa/",
       "date": "2007-10-30"
     },
     {
@@ -181395,19 +181498,9 @@
       "date": "2007-06-13"
     },
     {
-      "title": "Another Trans-Atlantic Divide? Church-State Relations in Europe and the United States",
-      "link": "https://www.pewresearch.org/religion/2007/05/22/another-trans-atlantic-divide-church-state-relations-in-europe-and-the-united-states/",
-      "date": "2007-05-22"
-    },
-    {
       "title": "In Focus: Mormonism in Modern America",
       "link": "https://www.pewresearch.org/religion/2007/05/16/in-focus-mormonism-in-modern-america/",
       "date": "2007-05-16"
-    },
-    {
-      "title": "God\u2019s Will: Iran\u2019s Polity and the Challenges of the Future",
-      "link": "https://www.pewresearch.org/religion/2007/05/15/gods-will-irans-polity-and-the-challenges-of-the-future/",
-      "date": "2007-05-15"
     },
     {
       "title": "Are Americans Ready to Elect a Female President?",
@@ -181428,11 +181521,6 @@
       "title": "New UN Chief Heads an Organization That Faces Both Skepticism and Support",
       "link": "https://www.pewresearch.org/global/2006/12/20/new-un-chief-heads-an-organization-that-faces-both-skepticism-and-support/",
       "date": "2006-12-20"
-    },
-    {
-      "title": "The Christmas Wars: Religion in the American Public Square",
-      "link": "https://www.pewresearch.org/religion/2006/12/12/the-christmas-wars-religion-in-the-american-public-square/",
-      "date": "2006-12-12"
     },
     {
       "title": "Religion in a Globalizing World",
@@ -181530,11 +181618,6 @@
       "date": "2006-09-24"
     },
     {
-      "title": "Brief Biographies",
-      "link": "https://www.pewresearch.org/internet/2006/09/24/brief-biographies/",
-      "date": "2006-09-24"
-    },
-    {
       "title": "Japan\u2019s View of China\u2019s Military Might",
       "link": "https://www.pewresearch.org/short-reads/2006/09/22/japans-view-of-chinas-military-might/",
       "date": "2006-09-22"
@@ -181548,6 +181631,11 @@
       "title": "Methodological Appendix",
       "link": "https://www.pewresearch.org/global/2006/09/21/methodological-appendix-4/",
       "date": "2006-09-21"
+    },
+    {
+      "title": "Charting the Mid-Term Election",
+      "link": "https://www.pewresearch.org/2006/09/06/charting-the-midterm-election/",
+      "date": "2006-09-06"
     },
     {
       "title": "Parental Pressure on Students",
@@ -181581,12 +181669,12 @@
     },
     {
       "title": "G8 Summiteers Inspire Little Confidence Around the Globe",
-      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe/",
+      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe-2/",
       "date": "2006-07-13"
     },
     {
       "title": "G8 Summiteers Inspire Little Confidence Around the Globe",
-      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe-2/",
+      "link": "https://www.pewresearch.org/global/2006/07/13/g8-summiteers-inspire-little-confidence-around-the-globe/",
       "date": "2006-07-13"
     },
     {
@@ -181665,16 +181753,6 @@
       "date": "2006-05-16"
     },
     {
-      "title": "Islam and the West: A Conversation with Bernard Lewis",
-      "link": "https://www.pewresearch.org/religion/2006/04/27/islam-and-the-west-a-conversation-with-bernard-lewis/",
-      "date": "2006-04-27"
-    },
-    {
-      "title": "Moved by the Spirit: Pentecostal Power &amp; Politics after 100 Years",
-      "link": "https://www.pewresearch.org/religion/2006/04/24/moved-by-the-spirit-pentecostal-power-and-politics-after-100-years2/",
-      "date": "2006-04-24"
-    },
-    {
       "title": "The New Face of Global Christianity: The Emergence of \u2019Progressive Pentecostalism\u2019",
       "link": "https://www.pewresearch.org/religion/2006/04/12/the-new-face-of-global-christianity-the-emergence-of-progressive-pentecostalism/",
       "date": "2006-04-12"
@@ -181693,11 +181771,6 @@
       "title": "Islam and the Global War on Terrorism in Latin America",
       "link": "https://www.pewresearch.org/religion/2006/04/06/islam-and-the-global-war-on-terrorism-in-latin-america/",
       "date": "2006-04-06"
-    },
-    {
-      "title": "Religion, Violence and the Middle East: A Conversation with U.S. Senator Joseph R. Biden Jr.",
-      "link": "https://www.pewresearch.org/religion/2006/04/04/religion-violence-and-the-middle-east-a-conversation-with-us-senator-joseph-r-biden-jr/",
-      "date": "2006-04-04"
     },
     {
       "title": "Religion and International Development: A Conversation with Andrew Natsios",
@@ -181815,11 +181888,6 @@
       "date": "2005-06-23"
     },
     {
-      "title": "Myths of the Modern Megachurch",
-      "link": "https://www.pewresearch.org/religion/2005/05/23/myths-of-the-modern-megachurch/",
-      "date": "2005-05-23"
-    },
-    {
       "title": "The Coming Religious Wars? Demographics and Conflict in Islam and Christianity",
       "link": "https://www.pewresearch.org/religion/2005/05/18/the-coming-religious-wars-demographics-and-conflict-in-islam-and-christianity/",
       "date": "2005-05-18"
@@ -181838,26 +181906,6 @@
       "title": "Faith and Conflict: The Global Rise of Christianity",
       "link": "https://www.pewresearch.org/religion/2005/03/02/faith-and-conflict-the-global-rise-of-christianity/",
       "date": "2005-03-02"
-    },
-    {
-      "title": "Religion and Security: The New Nexus in International Relations",
-      "link": "https://www.pewresearch.org/religion/2004/11/10/religion-and-security-the-new-nexus-in-international-relations/",
-      "date": "2004-11-10"
-    },
-    {
-      "title": "Liberty and Power: A Dialogue on Religion and U.S. Foreign Policy",
-      "link": "https://www.pewresearch.org/religion/2004/10/15/liberty-and-power-a-dialogue-on-religion-and-us-foreign-policy/",
-      "date": "2004-10-15"
-    },
-    {
-      "title": "The Veil Controversy: International Perspectives on Religion in Public Life",
-      "link": "https://www.pewresearch.org/religion/2004/04/19/the-veil-controversy-international-perspectives-on-religion-in-public-life/",
-      "date": "2004-04-19"
-    },
-    {
-      "title": "The Pursuit of Perfection: A Conversation on the Ethics of Genetic Engineering",
-      "link": "https://www.pewresearch.org/religion/2004/03/31/the-pursuit-of-perfection-a-conversation-on-the-ethics-of-genetic-engineering/",
-      "date": "2004-03-31"
     },
     {
       "title": "Additional Findings and Analyses",
@@ -181935,19 +181983,9 @@
       "date": "2003-06-03"
     },
     {
-      "title": "Ambassador\u2019s Address His Excellency Martin Palou\u0161, Czech Ambassador to the United States",
-      "link": "https://www.pewresearch.org/religion/2003/04/09/ambassadors-address-his-excellency-martin-palou-czech-ambassador-to-the-united-states/",
+      "title": "Quality and the Bottom Line",
+      "link": "https://www.pewresearch.org/journalism/2003/04/09/quality-and-the-bottom-line/",
       "date": "2003-04-09"
-    },
-    {
-      "title": "Religion Returns to the Public Square: Faith and Policy in America",
-      "link": "https://www.pewresearch.org/religion/2003/02/28/religion-returns-to-the-public-square-faith-and-policy-in-america/",
-      "date": "2003-02-28"
-    },
-    {
-      "title": "Religion and American Foreign Policy: Prophetic, Perilous, Inevitable",
-      "link": "https://www.pewresearch.org/religion/2003/02/05/religion-and-american-foreign-policy-prophetic-perilous-inevitable/",
-      "date": "2003-02-05"
     },
     {
       "title": "Bush Targets Top Global Problem \u2013 AIDS",
@@ -181985,16 +182023,6 @@
       "date": "2002-12-04"
     },
     {
-      "title": "Iraq and Just War: A Symposium",
-      "link": "https://www.pewresearch.org/religion/2002/09/30/iraq-and-just-war-a-symposium/",
-      "date": "2002-09-30"
-    },
-    {
-      "title": "Remembering September 11th: What is the Truth that has been Revealed to Us?",
-      "link": "https://www.pewresearch.org/religion/2002/09/10/remembering-september-11th-what-is-the-truth-that-has-been-revealed-to-us/",
-      "date": "2002-09-10"
-    },
-    {
       "title": "Other Important Findings and Analysis",
       "link": "https://www.pewresearch.org/politics/2002/06/27/other-important-findings-and-analysis-2/",
       "date": "2002-06-27"
@@ -182003,6 +182031,66 @@
       "title": "The Face of Evening News",
       "link": "https://www.pewresearch.org/journalism/2002/05/23/the-face-of-evening-news/",
       "date": "2002-05-23"
+    },
+    {
+      "title": "Unusually High Interest In Bush\u2019s State Of The Union",
+      "link": "https://www.pewresearch.org/politics/2002/01/17/unusually-high-interest-in-bushs-state-of-the-union/",
+      "date": "2002-01-17"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/2002/01/17/other-important-findings-3/",
+      "date": "2002-01-17"
+    },
+    {
+      "title": "Survey Methodology",
+      "link": "https://www.pewresearch.org/global/2001/12/19/survey-methodology/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Survey Methodology",
+      "link": "https://www.pewresearch.org/politics/2001/12/19/survey-methodology-4/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Questionnaire",
+      "link": "https://www.pewresearch.org/global/2001/12/19/questionnaire/",
+      "date": "2001-12-19"
+    },
+    {
+      "title": "Commentary by Kenneth M. Pollack, Senior Fellow, Council on Foreign Relations",
+      "link": "https://www.pewresearch.org/politics/2001/10/24/commentary-by-kenneth-m-pollack-senior-fellow-council-on-foreign-relations/",
+      "date": "2001-10-24"
+    },
+    {
+      "title": "Other Important Findings and Analyses",
+      "link": "https://www.pewresearch.org/politics/2001/02/22/other-important-findings-and-analyses-13/",
+      "date": "2001-02-22"
+    },
+    {
+      "title": "Continued Public Support for Kosovo, But Worries Grow",
+      "link": "https://www.pewresearch.org/politics/1999/04/21/continued-public-support-for-kosovo-but-worries-grow/",
+      "date": "1999-04-21"
+    },
+    {
+      "title": "Support for NATO Air Strikes with Plenty of Buts",
+      "link": "https://www.pewresearch.org/politics/1999/03/29/support-for-nato-air-strikes-with-plenty-of-buts/",
+      "date": "1999-03-29"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/1998/08/07/other-important-findings-7/",
+      "date": "1998-08-07"
+    },
+    {
+      "title": "Other Important Findings",
+      "link": "https://www.pewresearch.org/politics/1998/06/15/other-important-findings-8/",
+      "date": "1998-06-15"
+    },
+    {
+      "title": "America\u2019s Place in the World II",
+      "link": "https://www.pewresearch.org/politics/1997/10/10/americas-place-in-the-world-ii/",
+      "date": "1997-10-10"
     }
   ],
   "polity_policy_articles": [
@@ -182010,121 +182098,141 @@
       "title": "What\u2019s Next for Modi After the Midterms?",
       "link": "https://politypolicy.substack.com/p/whats-next-for-modi-after-the-midterms",
       "published": "Wed, 04 Nov 2026 11:57:46 GMT",
-      "description": "The people have spoken. The mandate is against the incumbent. Endgame Modi?"
+      "description": "The people have spoken. The mandate is against the incumbent. Endgame Modi?",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/ac221d2d-405e-42c8-83b1-1b324d598182_1152x768.jpeg"
     },
     {
       "title": "Delhi Police And Virtue Of A Disproportionate Response",
       "link": "https://politypolicy.substack.com/p/delhi-police-and-virtue-of-a-disproportionate",
       "published": "Mon, 12 Oct 2026 14:09:58 GMT",
-      "description": "Who gets to define the excesses of a police force?"
+      "description": "Who gets to define the excesses of a police force?",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/1c614127-8d4d-4e7d-bac3-61dcc0a7279f_1792x1008.jpeg"
     },
     {
       "title": "Captain Smit Machchhar Saves The Day",
       "link": "https://politypolicy.substack.com/p/captain-smit-machchhar-saves-the",
       "published": "Thu, 01 Oct 2026 08:00:47 GMT",
-      "description": "An Indian Pilot Takes On A Terrorist, At 34,000 Feet"
+      "description": "An Indian Pilot Takes On A Terrorist, At 34,000 Feet",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/42fdead7-3365-42c5-aa8c-3a50d0a7c7be_1792x1008.jpeg"
     },
     {
       "title": "India\u2019s Voters Are Fast Becoming Transactional",
       "link": "https://politypolicy.substack.com/p/indias-voters-are-fast-becoming-transactional",
       "published": "Thu, 17 Sep 2026 10:47:21 GMT",
-      "description": "...and it\u2019s good news"
+      "description": "...and it\u2019s good news",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/00644181-53cb-46f7-b4a9-226aa68006ad_1728x1152.jpeg"
     },
     {
       "title": "Stop Fearing India's $110 Billion China Deficit",
       "link": "https://politypolicy.substack.com/p/stop-fearing-indias-110-billion-china",
       "published": "Mon, 14 Sep 2026 11:19:33 GMT",
-      "description": "New Delhi\u2019s trade imbalance with Beijing will increase before it decreases"
+      "description": "New Delhi\u2019s trade imbalance with Beijing will increase before it decreases",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/86d54965-39ef-4633-aae9-4abda41c7560_1152x768.jpeg"
     },
     {
       "title": "Why You May Not \u2018Feel\u2019 The GDP Growth?",
       "link": "https://politypolicy.substack.com/p/why-you-may-not-feel-the-gdp-growth",
       "published": "Wed, 09 Sep 2026 10:14:09 GMT",
-      "description": "What Lies Beyond the Mathematical Fallacies Manufactured For Television"
+      "description": "What Lies Beyond the Mathematical Fallacies Manufactured For Television",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/c87cc2a0-ab7f-40a0-ab5b-df16e98539cd_1152x768.jpeg"
     },
     {
       "title": "Modi Must Build the Cities States Won't",
       "link": "https://politypolicy.substack.com/p/modi-must-build-the-cities-states",
       "published": "Mon, 07 Sep 2026 12:15:29 GMT",
-      "description": "BJP\u2019s Infrastructure Story Needs A Local Detour"
+      "description": "BJP\u2019s Infrastructure Story Needs A Local Detour",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/8f48dfb4-2797-4777-912a-3d2ccfc11d75_7200x4800.jpeg"
     },
     {
       "title": "It\u2019s Working 7.8 Per Cent Growth In Q1 FY2027",
       "link": "https://politypolicy.substack.com/p/its-working-78-per-cent-growth-in",
       "published": "Tue, 01 Sep 2026 06:06:57 GMT",
-      "description": "Except for a few voices, nobody talks about India\u2019s debt."
+      "description": "Except for a few voices, nobody talks about India\u2019s debt.",
+      "image_url": "https://api.substack.com/feed/podcast/213662049/974ce99d262126e8669cdd9d58fe6f74.mp3"
     },
     {
       "title": "India's Fiscal Nightmare: The Strait of Hormuz",
       "link": "https://politypolicy.substack.com/p/indias-fiscal-nightmare-the-strait",
       "published": "Wed, 15 Jul 2026 09:51:14 GMT",
-      "description": "How the war in the Persian Gulf costs you and the country at large"
+      "description": "How the war in the Persian Gulf costs you and the country at large",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/67062076-731b-4234-8ae9-a79824717b01_1200x630.png"
     },
     {
       "title": "What if International Crude Prices Dictated Petrol Pump Prices?",
       "link": "https://politypolicy.substack.com/p/what-if-international-crude-prices",
       "published": "Fri, 10 Jul 2026 11:44:35 GMT",
-      "description": "Be careful what you wish for."
+      "description": "Be careful what you wish for.",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!lIbY!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2fd58027-c6df-447c-8805-58158a5c1dfc_2400x1260.png"
     },
     {
       "title": "Petrol And Pizza, Crude and Capsicum",
       "link": "https://politypolicy.substack.com/p/petrol-and-pizza-crude-and-capsicum",
       "published": "Thu, 09 Jul 2026 06:09:08 GMT",
-      "description": "The economics and environmentalism around ethanol bashing don\u2019t add up."
+      "description": "The economics and environmentalism around ethanol bashing don\u2019t add up.",
+      "image_url": "https://api.substack.com/feed/podcast/206248195/08313b3123c054367a76829f025bad1d.mp3"
     },
     {
       "title": "Why Is The Prime Minister Travelling To Indonesia and Australia",
       "link": "https://politypolicy.substack.com/p/why-is-the-prime-minister-travelling",
       "published": "Wed, 08 Jul 2026 14:28:03 GMT",
-      "description": "Another chapter unfolds in our pursuit of chip diplomacy"
+      "description": "Another chapter unfolds in our pursuit of chip diplomacy",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/df85aa8f-bb86-4f2f-b7d1-91a3a0e052a4_1248x779.png"
     },
     {
       "title": "The Markets Are Sending Us A Message About Ethanol",
       "link": "https://politypolicy.substack.com/p/the-markets-are-sending-us-a-message",
       "published": "Tue, 07 Jul 2026 07:57:35 GMT",
-      "description": "Beyond the social media rhetoric, what is the invisible hand of the free market hinting at?"
+      "description": "Beyond the social media rhetoric, what is the invisible hand of the free market hinting at?",
+      "image_url": "https://api.substack.com/feed/podcast/205732972/8c005cce5ca47c3df4df38579dacfe50.mp3"
     },
     {
       "title": "Welcome to PolityPolicy.Com",
       "link": "https://politypolicy.substack.com/p/announcement-welcome-to-politypolicycom",
       "published": "Tue, 07 Jul 2026 07:55:15 GMT",
-      "description": "A New Beginning"
+      "description": "A New Beginning",
+      "image_url": "https://substackcdn.com/image/fetch/$s_!od2i!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F134f88e5-61da-49be-aa72-1d7de794bd4d_2400x1260.png"
     },
     {
       "title": "India's Worst Balance Sheet",
       "link": "https://politypolicy.substack.com/p/indias-worst-balance-sheet",
       "published": "Fri, 03 Jul 2026 08:44:47 GMT",
-      "description": "When subsidies are confused for good economics, the fiscal fundamentals crumble"
+      "description": "When subsidies are confused for good economics, the fiscal fundamentals crumble",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/8f30b480-0649-4b40-b834-6ae3c77400bd_1152x702.png"
     },
     {
       "title": "The Monk Who Runs State Finances Like a Ferrari",
       "link": "https://politypolicy.substack.com/p/the-monk-who-runs-state-finances",
       "published": "Wed, 01 Jul 2026 08:52:40 GMT",
-      "description": "Chief Minister Yogi Adityanath's Fiscal Report Card After A Decade In Power"
+      "description": "Chief Minister Yogi Adityanath's Fiscal Report Card After A Decade In Power",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/69187355-d23b-4adf-a432-0b2f5b54a0b1_1152x700.png"
     },
     {
       "title": "The Brutal Reality About 'The Gujarat Model'",
       "link": "https://politypolicy.substack.com/p/the-brutal-reality-about-the-gujarat",
       "published": "Mon, 29 Jun 2026 08:00:18 GMT",
-      "description": "When we compared Gujarat's fiscal with that of every other state in India."
+      "description": "When we compared Gujarat's fiscal with that of every other state in India.",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/9a9beaaa-5c1a-40cf-bc4e-e67fbfb76484_1152x709.png"
     },
     {
       "title": "State Governments Are Borrowing, Not to Build, But to Breathe",
       "link": "https://politypolicy.substack.com/p/state-governments-are-borrowing-not",
       "published": "Fri, 26 Jun 2026 07:39:36 GMT",
-      "description": "Fiscally, many state governments are on a ventilator, making ends meet through borrowings"
+      "description": "Fiscally, many state governments are on a ventilator, making ends meet through borrowings",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/1156bd06-ddb1-4a94-aa66-ff9521f66330_1152x768.jpeg"
     },
     {
       "title": "Why Should Politicians and Bureaucrats Have All the Fun?",
       "link": "https://politypolicy.substack.com/p/why-should-politicians-and-bureaucrats",
       "published": "Thu, 25 Jun 2026 07:35:35 GMT",
-      "description": "Time for a new law for the declaration of real estate and stock market holdings?"
+      "description": "Time for a new law for the declaration of real estate and stock market holdings?",
+      "image_url": "https://api.substack.com/feed/podcast/203518227/d6106c11858a149dbabafb0a2385920a.mp3"
     },
     {
       "title": "Why State Governments Have No Money For Asset Creation?",
       "link": "https://politypolicy.substack.com/p/why-state-governments-cash-transfers",
       "published": "Wed, 24 Jun 2026 13:51:58 GMT",
-      "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets"
+      "description": "Strip away the cash-transfer noise, and four heads quietly run India's state budgets",
+      "image_url": "https://substack-post-media.s3.amazonaws.com/public/images/02273884-9930-4f2b-8e0a-d9b93f806bea_1152x768.jpeg"
     }
   ]
 }
