@@ -597,7 +597,7 @@ function Sparkline({ data, color = '#38bdf8' }) {
   );
 }
 
-export default function PulseDashboard() {
+export default function PulseDashboard({ showFilters = false }) {
   const [selectedPillar, setSelectedPillar] = useState('all');
   const [selectedArticleSlug, setSelectedArticleSlug] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -659,36 +659,31 @@ export default function PulseDashboard() {
         </div>
       </div>
 
-      {/* Pillar Filter Pills */}
-      <div className="pulse-filters" role="tablist" aria-label="Economic Pillars">
-        {PILLARS.map(p => (
-          <button
-            type="button"
-            key={p.key}
-            role="tab"
-            aria-selected={selectedPillar === p.key}
-            className={`pulse-filter-btn ${selectedPillar === p.key ? 'active' : ''}`}
-            onClick={() => setSelectedPillar(p.key)}
-          >
-            {p.label}
-          </button>
-        ))}
-      </div>
+      {/* Pillar Filter Pills - only rendered when showFilters is enabled */}
+      {showFilters && (
+        <div className="pulse-filters" role="tablist" aria-label="Economic Pillars">
+          {PILLARS.map(p => (
+            <button
+              type="button"
+              key={p.key}
+              role="tab"
+              aria-selected={selectedPillar === p.key}
+              className={`pulse-filter-btn ${selectedPillar === p.key ? 'active' : ''}`}
+              onClick={() => setSelectedPillar(p.key)}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Pulse Indicator Cards Grid */}
       <div className="pulse-grid">
         {filteredIndicators.map(ind => (
-          <div
+          <Link
+            to={`/pulse/${ind.articleSlug || 'pmi'}`}
             key={ind.id}
             className="pulse-card"
-            onClick={() => setSelectedArticleSlug(ind.articleSlug || 'pmi')}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                setSelectedArticleSlug(ind.articleSlug || 'pmi');
-              }
-            }}
             title={`Open interactive article & full time-series for ${ind.name}`}
           >
             <div className="pulse-card-top">
@@ -718,7 +713,7 @@ export default function PulseDashboard() {
                 <span className="pulse-card-read-label">Article &amp; Data →</span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

@@ -63,6 +63,14 @@ export default function PulsePage() {
     return pulseArticles.filter(a => a.pillar === selectedPillar);
   }, [selectedPillar]);
 
+  const isEmbedMode = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('embed') === 'true' || window.location.pathname.startsWith('/embed');
+    }
+    return false;
+  }, []);
+
   // Handle opening indicator
   const handleSelectArticle = (newSlug) => {
     navigate(`/pulse/${newSlug}`);
@@ -71,6 +79,17 @@ export default function PulsePage() {
   const handleCloseArticle = () => {
     navigate('/pulse');
   };
+
+  // If in embed mode and article is active, return pure embed view
+  if (isEmbedMode && activeArticle) {
+    return (
+      <PulseArticleView
+        article={activeArticle}
+        allArticles={pulseArticles}
+        isEmbed={true}
+      />
+    );
+  }
 
   return (
     <div className="pulse-page-wrapper">
@@ -164,15 +183,10 @@ export default function PulsePage() {
           const topStat = art.stats?.[0];
 
           return (
-            <div
+            <Link
               key={art.slug}
+              to={`/pulse/${art.slug}`}
               className="pulse-hub-card"
-              onClick={() => handleSelectArticle(art.slug)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') handleSelectArticle(art.slug);
-              }}
               style={{ '--card-accent': art.color }}
             >
               <div className="pulse-hub-card-header">
@@ -199,7 +213,7 @@ export default function PulsePage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

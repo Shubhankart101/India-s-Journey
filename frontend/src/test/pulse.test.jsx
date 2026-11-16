@@ -79,4 +79,47 @@ describe('Pulse High-Frequency Articles and Interactive Charts', () => {
     const articlesCount = screen.getAllByText(/Article Available/i);
     expect(articlesCount).toHaveLength(21);
   });
+
+  it('renders publish in article kit with Substack markdown, caption, and iframe code', () => {
+    const article = pulseArticles.find(a => a.slug === 'cpi');
+    render(
+      <PulseArticleView
+        article={article}
+        allArticles={pulseArticles}
+        onClose={() => {}}
+        onSelectArticle={() => {}}
+      />
+    );
+
+    // Open publish modal
+    const publishBtn = screen.getByRole('button', { name: /Publish in Article/i });
+    expect(publishBtn).toBeInTheDocument();
+    fireEvent.click(publishBtn);
+
+    expect(screen.getByText(/ARTICLE FRIENDLY PUBLISH KIT/i)).toBeInTheDocument();
+    expect(screen.getByText(/Substack \/ Muckrack Markdown Hyperlink/i)).toBeInTheDocument();
+    expect(screen.getByText(/Substack Graphic Caption \(Polity & Policy Style\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Interactive HTML Embed Code \(Iframe\)/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Copy Markdown/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Copy Caption/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Copy HTML Embed/i })).toBeInTheDocument();
+  });
+
+  it('renders clean embed mode without external navigation chrome', () => {
+    const article = pulseArticles.find(a => a.slug === 'pmi');
+    render(
+      <PulseArticleView
+        article={article}
+        allArticles={pulseArticles}
+        isEmbed={true}
+      />
+    );
+
+    // Embed header and brand link
+    expect(screen.getByText("The Economy’s Pulse")).toBeInTheDocument();
+    expect(screen.getByText(/⚡ India's Journey · Economic Pulse/i)).toBeInTheDocument();
+    expect(screen.getByText(/Open Full Interactive Story & Data ↗/i)).toBeInTheDocument();
+    // Modal chrome should NOT be rendered
+    expect(screen.queryByText("Back to Indicators")).not.toBeInTheDocument();
+  });
 });

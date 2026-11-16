@@ -145,15 +145,21 @@ export function SubgroupArticleView({
 
   const names = (group?.subgroups || []).map(item => item.name);
   const verse = pickSubgroupVerse(category.name, subgroup.name, names);
+  const hasMahabharata = indicators.some(item => item.key === 'india_epic_kingdoms_mahabharata');
   const shown = sections.map(section => {
-    const keys = (section.keys || []).filter((key, idx, arr) => {
-      if (key === 'india_epic_kingdoms_ramayana' && arr.includes('india_epic_kingdoms_mahabharata')) {
+    const keys = (section.keys || []).filter((key) => {
+      if (key === 'india_epic_kingdoms_ramayana' && hasMahabharata) {
         return false;
       }
       return true;
     });
+    const cleanedTitle = hasMahabharata && section.title
+      ? section.title
+          .replace(/\s*&\s*Kingdoms and places of the Ramayana/i, '')
+          .replace(/Kingdoms and places of the Ramayana\s*&\s*/i, '')
+      : section.title;
     return {
-      title: section.title,
+      title: cleanedTitle,
       text: section.text,
       quote: section.quote,
       content: section.content || (keys.length ? <div className="subgroup-figures">{keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null),

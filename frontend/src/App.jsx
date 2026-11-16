@@ -24,6 +24,8 @@ export function AppRoutes() {
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="api" element={<Api />} />
+        <Route path="embed/pulse/:slug" element={<PulsePage />} />
+        <Route path="embed/pulse" element={<PulsePage />} />
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="explore" element={<Explore />} />

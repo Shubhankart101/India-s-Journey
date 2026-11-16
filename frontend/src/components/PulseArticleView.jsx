@@ -1,14 +1,32 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import './PulseArticleView.css';
 
-export default function PulseArticleView({ article, allArticles = [], onClose, onSelectArticle }) {
+export default function PulseArticleView({
+  article,
+  allArticles = [],
+  onClose,
+  onSelectArticle,
+  isEmbed = false,
+}) {
   if (!article) return null;
+
+  // Check if embed mode is requested via URL param as well
+  const checkIsEmbed = useMemo(() => {
+    if (isEmbed) return true;
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('embed') === 'true';
+    }
+    return false;
+  }, [isEmbed]);
 
   const [activeView, setActiveView] = useState(
     article.chart?.views?.[0]?.id || Object.keys(article.chart?.series || {})[0] || 'all'
   );
   const [hoverIndex, setHoverIndex] = useState(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [showPublishModal, setShowPublishModal] = useState(false);
+  const [copiedType, setCopiedType] = useState(null);
   const svgRef = useRef(null);
 
   // Reset active view whenever article changes
@@ -21,17 +39,18 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
-        if (isFullscreen) setIsFullscreen(false);
+        if (showPublishModal) setShowPublishModal(false);
+        else if (isFullscreen) setIsFullscreen(false);
         else if (onClose) onClose();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === 'ArrowRight' && !showPublishModal) {
         goToNext();
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === 'ArrowLeft' && !showPublishModal) {
         goToPrev();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [article.slug, isFullscreen, allArticles]);
+  }, [article.slug, isFullscreen, showPublishModal, allArticles]);
 
   const currentIndex = useMemo(() => {
     return allArticles.findIndex(a => a.slug === article.slug);
@@ -182,12 +201,242 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
     ? getYPos(article.chart.baseline.value)
     : null;
 
+  // Article Publishing URLs and snippets
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://indias-journey-m5ag64.azurewebsites.net';
+  const articleUrl = `${baseUrl}/pulse/${article.slug}`;
+  const embedUrl = `${baseUrl}/pulse/${article.slug}?embed=true`;
+
+  const substackMarkdown = `[${article.title} (${article.category}) — India's Journey Pulse](${articleUrl})`;
+  const substackCaption = `Tap to view this interactive graphic on India's Journey: ${articleUrl}`;
+  const iframeSnippet = `<iframe src="${embedUrl}" width="100%" height="560" style="border:none;border-radius:14px;overflow:hidden;background:#0f0d1c;" title="${article.title} - India's Journey" loading="lazy"></iframe>`;
+  const pressCitation = `Source: ${article.source}. High-Frequency Indicator Tracker: "${article.title}". India's Journey (2026). ${articleUrl}`;
+
+  const copyToClipboard = (text, type) => {
+    if (navigator?.clipboard?.writeText) {
+      navigator.clipboard.writeText(text);
+      setCopiedType(type);
+      setTimeout(() => setCopiedType(null), 2500);
+    }
+  };
+
+  const handleDownloadCSV = () => {
+    const seriesKeys = Object.keys(article.chart?.series || {});
+    const headers = ['Date', ...seriesKeys.map(k => `"${article.chart.series[k]?.label || k}"`)];
+    const rows = labels.map((lbl, i) => {
+      const vals = seriesKeys.map(k => article.chart.series[k]?.values?.[i] ?? '');
+      return [`"${lbl}"`, ...vals].join(',');
+    });
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `${article.slug}-pulse-data.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Embed Mode UI (clean standalone iframe view)
+  if (checkIsEmbed) {
+    return (
+      <div className="pulse-embed-container">
+        <header className="pulse-embed-header">
+          <div className="pulse-embed-meta">
+            <span className="pulse-badge-idx">{article.idx}</span>
+            <span className="pulse-kicker-text">{article.kicker}</span>
+          </div>
+          <h1 className="pulse-embed-title" style={{ '--article-accent': article.color }}>
+            {article.title}
+          </h1>
+        </header>
+
+        {/* Chart View Toolbar */}
+        <div className="pulse-chart-toolbar">
+          <div className="pulse-view-tabs" role="tablist">
+            {article.chart?.views?.map(v => (
+              <button
+                type="button"
+                key={v.id}
+                role="tab"
+                aria-selected={activeView === v.id}
+                className={`pulse-view-tab ${activeView === v.id ? 'active' : ''}`}
+                onClick={() => setActiveView(v.id)}
+                style={{
+                  borderColor: activeView === v.id ? article.color : 'transparent',
+                  color: activeView === v.id ? '#ffffff' : '#94a3b8'
+                }}
+              >
+                {v.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="pulse-chart-legend">
+            {paths.map(p => (
+              <div key={p.key} className="pulse-legend-item">
+                <span className="pulse-legend-dot" style={{ background: p.color }} />
+                <span className="pulse-legend-text">{p.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* SVG Chart */}
+        <div className="pulse-svg-wrapper">
+          <svg
+            ref={svgRef}
+            viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+            className="pulse-interactive-svg"
+            preserveAspectRatio="none"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <defs>
+              {paths.map(p => (
+                <linearGradient
+                  key={`embed-grad-${p.key}`}
+                  id={`embed-grad-${article.slug}-${p.key}`}
+                  x1="0" y1="0" x2="0" y2="1"
+                >
+                  <stop offset="0%" stopColor={p.color} stopOpacity="0.25" />
+                  <stop offset="100%" stopColor={p.color} stopOpacity="0.0" />
+                </linearGradient>
+              ))}
+            </defs>
+
+            {yTicks.map((val, idx) => {
+              const y = getYPos(val);
+              return (
+                <line
+                  key={`eytick-${idx}`}
+                  x1={padLeft}
+                  y1={y}
+                  x2={chartWidth - padRight}
+                  y2={y}
+                  stroke="#222034"
+                  strokeDasharray="3 4"
+                />
+              );
+            })}
+
+            {baselineYPos !== null && (
+              <line
+                x1={padLeft}
+                y1={baselineYPos}
+                x2={chartWidth - padRight}
+                y2={baselineYPos}
+                stroke={article.color}
+                strokeWidth="1.5"
+                strokeDasharray="5 4"
+              />
+            )}
+
+            {labels.map((lbl, idx) => {
+              const step = Math.max(1, Math.floor(labels.length / 7));
+              if (idx % step !== 0 && idx !== labels.length - 1) return null;
+              return (
+                <text
+                  key={`exlab-${idx}`}
+                  x={getXPos(idx)}
+                  y={chartHeight - 14}
+                  textAnchor="middle"
+                  className="pulse-axis-label"
+                >
+                  {lbl}
+                </text>
+              );
+            })}
+
+            {paths.map(p => (
+              <path
+                key={`earea-${p.key}`}
+                d={p.areaD}
+                fill={`url(#embed-grad-${article.slug}-${p.key})`}
+              />
+            ))}
+
+            {paths.map(p => (
+              <path
+                key={`eline-${p.key}`}
+                d={p.lineD}
+                fill="none"
+                stroke={p.color}
+                strokeWidth="2.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ))}
+
+            {hoverIndex !== null && hoverIndex < labels.length && (
+              <g className="pulse-hover-group">
+                <line
+                  x1={getXPos(hoverIndex)}
+                  y1={padTop}
+                  x2={getXPos(hoverIndex)}
+                  y2={chartHeight - padBottom}
+                  stroke="#64748b"
+                  strokeWidth="1.5"
+                  strokeDasharray="3 3"
+                />
+                {paths.map(p => {
+                  const pt = p.pts[hoverIndex];
+                  if (!pt) return null;
+                  return (
+                    <circle
+                      key={`edot-${p.key}`}
+                      cx={pt.x}
+                      cy={pt.y}
+                      r="5.5"
+                      fill={p.color}
+                      stroke="#0f172a"
+                      strokeWidth="2"
+                    />
+                  );
+                })}
+              </g>
+            )}
+          </svg>
+        </div>
+
+        {/* 4 Stat Cards */}
+        <section className="pulse-stats-grid">
+          {article.stats?.slice(0, 4).map((st, i) => (
+            <div key={i} className="pulse-stat-card">
+              <span className="pulse-stat-label">{st.label}</span>
+              <div className="pulse-stat-val-row">
+                <span className="pulse-stat-val">{st.value}</span>
+                {st.trend && (
+                  <span className={`pulse-stat-trend ${st.trend}`}>
+                    {st.trend === 'up' ? '▲' : '▼'}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Embed Footer Brand Link */}
+        <footer className="pulse-embed-footer">
+          <span className="pulse-embed-brand-text">⚡ India's Journey · Economic Pulse</span>
+          <a
+            href={articleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pulse-embed-link"
+          >
+            Open Full Interactive Story &amp; Data ↗
+          </a>
+        </footer>
+      </div>
+    );
+  }
+
   return (
     <div className={`pulse-article-modal-backdrop ${isFullscreen ? 'fullscreen' : ''}`} onClick={(e) => {
       if (e.target === e.currentTarget && onClose) onClose();
     }}>
       <div className="pulse-article-container" role="dialog" aria-modal="true" aria-labelledby="pulse-article-title">
-        {/* Top Header Controls */}
+        {/* Top Navigation Bar */}
         <header className="pulse-article-top-nav">
           <button
             type="button"
@@ -206,6 +455,16 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
           </div>
 
           <div className="pulse-nav-actions">
+            <button
+              type="button"
+              className="pulse-publish-tool-btn"
+              onClick={() => setShowPublishModal(true)}
+              title="Article & Publishing Kit (Substack, Muckrack, Embeds)"
+              aria-label="Publish in Article"
+            >
+              <span className="pulse-publish-icon">📰</span>
+              <span>Publish in Article</span>
+            </button>
             <button
               type="button"
               className="pulse-icon-btn"
@@ -363,7 +622,7 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
                   </g>
                 )}
 
-                {/* X Axis Date Labels (sample ~6 to 8 ticks) */}
+                {/* X Axis Date Labels */}
                 {labels.map((lbl, idx) => {
                   const step = Math.max(1, Math.floor(labels.length / 7));
                   if (idx % step !== 0 && idx !== labels.length - 1) return null;
@@ -510,6 +769,36 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
             </div>
           </section>
 
+          {/* Article Friendly Publishing Banner */}
+          <section className="pulse-article-friendly-card">
+            <div className="pulse-af-header">
+              <div className="pulse-af-icon">✍️</div>
+              <div>
+                <h3 className="pulse-af-title">Publish this Indicator in your Article</h3>
+                <p className="pulse-af-desc">
+                  Writing for Substack, Muckrack, Ghost, Medium, or a news publication?
+                  Copy ready-to-paste markdown links, graphic captions, interactive iframe embeds, or cite primary data.
+                </p>
+              </div>
+            </div>
+            <div className="pulse-af-buttons">
+              <button
+                type="button"
+                className="pulse-af-btn primary"
+                onClick={() => setShowPublishModal(true)}
+              >
+                Open Publishing &amp; Embed Tools
+              </button>
+              <button
+                type="button"
+                className="pulse-af-btn"
+                onClick={handleDownloadCSV}
+              >
+                📥 Download Time-Series CSV
+              </button>
+            </div>
+          </section>
+
           {/* Official Source & Navigation Footer */}
           <footer className="pulse-article-footer">
             <div className="pulse-source-box">
@@ -548,6 +837,107 @@ export default function PulseArticleView({ article, allArticles = [], onClose, o
           </footer>
         </div>
       </div>
+
+      {/* Article & Publishing Tools Drawer / Modal */}
+      {showPublishModal && (
+        <div className="pulse-publish-modal-overlay" onClick={() => setShowPublishModal(false)}>
+          <div className="pulse-publish-modal-card" onClick={e => e.stopPropagation()}>
+            <div className="pulse-publish-modal-top">
+              <div>
+                <span className="pulse-publish-modal-tag">ARTICLE FRIENDLY PUBLISH KIT</span>
+                <h2 className="pulse-publish-modal-title">Embed &amp; Cite in Substack / Articles</h2>
+              </div>
+              <button
+                type="button"
+                className="pulse-icon-btn"
+                onClick={() => setShowPublishModal(false)}
+                aria-label="Close publishing modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="pulse-publish-modal-body">
+              {/* Option 1: Substack & Muckrack Markdown */}
+              <div className="pulse-publish-block">
+                <div className="pulse-publish-block-head">
+                  <label className="pulse-publish-label">1. Substack / Muckrack Markdown Hyperlink</label>
+                  <button
+                    type="button"
+                    className="pulse-copy-btn"
+                    onClick={() => copyToClipboard(substackMarkdown, 'substack')}
+                  >
+                    {copiedType === 'substack' ? '✓ Copied Markdown' : 'Copy Markdown'}
+                  </button>
+                </div>
+                <div className="pulse-code-snippet">{substackMarkdown}</div>
+              </div>
+
+              {/* Option 2: Polity & Policy Substack-Style Graphic Caption */}
+              <div className="pulse-publish-block">
+                <div className="pulse-publish-block-head">
+                  <label className="pulse-publish-label">2. Substack Graphic Caption (Polity &amp; Policy Style)</label>
+                  <button
+                    type="button"
+                    className="pulse-copy-btn"
+                    onClick={() => copyToClipboard(substackCaption, 'caption')}
+                  >
+                    {copiedType === 'caption' ? '✓ Copied Caption' : 'Copy Caption'}
+                  </button>
+                </div>
+                <div className="pulse-code-snippet">{substackCaption}</div>
+              </div>
+
+              {/* Option 3: Responsive Iframe Embed Code */}
+              <div className="pulse-publish-block">
+                <div className="pulse-publish-block-head">
+                  <label className="pulse-publish-label">3. Interactive HTML Embed Code (Iframe)</label>
+                  <button
+                    type="button"
+                    className="pulse-copy-btn"
+                    onClick={() => copyToClipboard(iframeSnippet, 'iframe')}
+                  >
+                    {copiedType === 'iframe' ? '✓ Copied Iframe' : 'Copy HTML Embed'}
+                  </button>
+                </div>
+                <div className="pulse-code-snippet">{iframeSnippet}</div>
+              </div>
+
+              {/* Option 4: Press Citation & Attribution */}
+              <div className="pulse-publish-block">
+                <div className="pulse-publish-block-head">
+                  <label className="pulse-publish-label">4. Official Press Citation</label>
+                  <button
+                    type="button"
+                    className="pulse-copy-btn"
+                    onClick={() => copyToClipboard(pressCitation, 'citation')}
+                  >
+                    {copiedType === 'citation' ? '✓ Copied Citation' : 'Copy Citation'}
+                  </button>
+                </div>
+                <div className="pulse-code-snippet">{pressCitation}</div>
+              </div>
+
+              {/* Option 5: Export CSV */}
+              <div className="pulse-publish-block">
+                <div className="pulse-publish-block-head">
+                  <label className="pulse-publish-label">5. Time-Series Data Export</label>
+                  <button
+                    type="button"
+                    className="pulse-copy-btn"
+                    onClick={handleDownloadCSV}
+                  >
+                    📥 Download CSV File
+                  </button>
+                </div>
+                <p className="pulse-publish-help">
+                  Includes all {labels.length} monthly observations and component series in RFC-4180 CSV format.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

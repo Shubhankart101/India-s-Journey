@@ -1,11 +1,10 @@
 import { memo, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useInView } from '../hooks.js';
 import { groupSanskrit } from '../sanskrit.js';
 import { assetUrl } from '../config.js';
 
 const MAP_SLUG = 'india-in-maps';
-const MAP_CHIPS = ['36 states & UTs', '17 Metro Networks', 'Lok Sabha 1952–2024', 'Primary ECI data'];
 
 const slugOf = cat => cat?.slug || String(cat?.name || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -43,7 +42,6 @@ function IndiaOutline() {
 }
 
 const GroupCard = memo(function GroupCard({ category, to, cta }) {
-  const navigate = useNavigate();
   const slug = slugOf(category);
   const featured = slug === MAP_SLUG;
   const sanskrit = groupSanskrit(slug);
@@ -60,40 +58,8 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
         <span className="group-card-kicker">{sanskrit && <span className="sa-kicker" lang="sa" aria-hidden="true">{sanskrit}</span>}{kicker}</span>
         <h3 className="group-card-title">{category.name}</h3>
         <p className="group-card-dek clamp-2">{category.description}</p>
-        <div style={{ display: 'flex', gap: '0.8rem', alignItems: 'center', marginTop: '0.5rem', flexWrap: 'wrap' }}>
-          <span className="group-card-link">{cta} <span aria-hidden="true">→</span></span>
-          {featured && (
-            <span
-              className="btn btn-sm btn-primary"
-              style={{ padding: '0.25rem 0.65rem', fontSize: '0.85rem' }}
-              onClick={e => {
-                e.preventDefault();
-                e.stopPropagation();
-                navigate('/explore/india-in-maps/metro-in-maps');
-              }}
-            >
-              🚇 Metro Atlas (17 Cities) →
-            </span>
-          )}
-        </div>
+        <span className="group-card-link">{cta} <span aria-hidden="true">→</span></span>
       </div>
-      {featured && (
-        <ul className="group-card-chips" aria-label="About India in Maps">
-          {MAP_CHIPS.map(chip => (
-            <li
-              key={chip}
-              style={chip.includes('Metro') ? { borderColor: '#0284c7', background: 'rgba(2, 132, 199, 0.15)', color: '#38bdf8', fontWeight: 'bold', cursor: 'pointer' } : {}}
-              onClick={chip.includes('Metro') ? e => {
-                e.preventDefault();
-                e.stopPropagation();
-                navigate('/explore/india-in-maps/metro-in-maps');
-              } : undefined}
-            >
-              {chip.includes('Metro') ? '🚇 ' + chip : chip}
-            </li>
-          ))}
-        </ul>
-      )}
     </Link>
   );
 });
