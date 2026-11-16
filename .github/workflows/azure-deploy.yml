@@ -28,7 +28,7 @@ jobs:
     env:
       AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
       AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-      IMAGE_TAG: ghcr.io/shubhankart101/indias-journey:latest
+      IMAGE_BASE: ghcr.io/shubhankart101/indias-journey
     steps:
       - name: Check Azure Configuration
         if: env.AZURE_WEBAPP_NAME == '' || env.AZURE_WEBAPP_PUBLISH_PROFILE == ''
@@ -55,7 +55,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_TAG }}
+          tags: |
+            ${{ env.IMAGE_BASE }}:${{ github.sha }}
+            ${{ env.IMAGE_BASE }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -65,4 +67,4 @@ jobs:
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          images: ${{ env.IMAGE_TAG }}
+          images: ${{ env.IMAGE_BASE }}:${{ github.sha }}
