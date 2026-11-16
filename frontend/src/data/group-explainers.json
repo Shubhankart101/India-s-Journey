@@ -3308,7 +3308,7 @@
         "headline": "🚆 Infrastructure & Mobility",
         "dek": "Railways, airports, ports, waterways and freight corridors: how people and goods move across India and how it compares with the world.",
         "paragraphs": [
-          "This chapter brings together 13 catalogued lenses: Rail Network & Passenger Services, Rail Freight & Rolling Stock, Rail Safety & Finance, Domestic vs International Air Traffic, Air Passenger Growth, Airports & UDAN, Air Cargo, Airports Authority Finance & Investment, Ports & Container Traffic, Waterways & Passenger Shipping, Global Transport Comparisons, Road & Rail Freight Logistics, Sea & Air Freight, Modal Split & Revenue.",
+          "This chapter brings together 14 catalogued lenses: Metro Rail Networks & Urban Transit, Rail Network & Passenger Services, Rail Freight & Rolling Stock, Rail Safety & Finance, Domestic vs International Air Traffic, Air Passenger Growth, Airports & UDAN, Air Cargo, Airports Authority Finance & Investment, Ports & Container Traffic, Waterways & Passenger Shipping, Global Transport Comparisons, Road & Rail Freight Logistics, Sea & Air Freight, Modal Split & Revenue.",
           "Read the measures alongside their chart titles, reporting periods, units and source notes; no single series is a complete account of its subject."
         ],
         "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
@@ -3325,7 +3325,7 @@
           "Ministry of Civil Aviation"
         ],
         "indicatorCount": 285,
-        "subgroupCount": 13,
+        "subgroupCount": 14,
         "verse": {
           "text": "चरैवेति चरैवेति",
           "transliteration": "charaiveti charaiveti",
@@ -3333,19 +3333,52 @@
         },
         "subgroups": [
           {
+            "name": "Metro Rail Networks & Urban Transit",
+            "headline": "🚇 Metro Rail Networks & Urban Transit (17 Cities)",
+            "dek": "Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.",
+            "paragraphs": [
+              "Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.",
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+            ],
+            "watch": "Follow each series across its reported periods and check its source note before comparing values.",
+            "sources": [],
+            "indicatorCount": 0,
+            "pattern": "two-lenses",
+            "sections": [],
+            "pullQuote": "Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.",
+            "mapKeys": [],
+            "format": "article",
+            "chartKeys": [],
+            "keyNumbers": [
+              {
+                "label": "Indicator series",
+                "value": 0
+              },
+              {
+                "label": "Named publishers",
+                "value": 0
+              }
+            ],
+            "verse": {
+              "text": "चरैवेति चरैवेति",
+              "transliteration": "charaiveti charaiveti",
+              "meaning": "Keep moving, keep moving."
+            }
+          },
+          {
             "name": "Rail Network & Passenger Services",
             "headline": "Rail Network & Passenger Services",
             "dek": "Route length, electrification and passenger traffic on Indian Railways.",
             "paragraphs": [
               "Route length, electrification and passenger traffic on Indian Railways.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "Indian Railways Year Book"
             ],
             "indicatorCount": 20,
-            "pattern": "two-lenses",
+            "pattern": "pull-quote",
             "sections": [
               {
                 "title": "Route Length Since Independence and Related Measures",
@@ -3439,7 +3472,7 @@
             "dek": "Freight tonnage, wagons, locomotives and coaches.",
             "paragraphs": [
               "Freight tonnage, wagons, locomotives and coaches.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -3447,7 +3480,7 @@
               "Press Information Bureau"
             ],
             "indicatorCount": 20,
-            "pattern": "pull-quote",
+            "pattern": "annotated-captions",
             "sections": [
               {
                 "title": "Freight Originating and Related Measures",
@@ -3541,14 +3574,14 @@
             "dek": "Accidents, safety spending and the operating ratio.",
             "paragraphs": [
               "Accidents, safety spending and the operating ratio.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "Indian Railways Year Book"
             ],
             "indicatorCount": 14,
-            "pattern": "annotated-captions",
+            "pattern": "lede-stat-strip",
             "sections": [
               {
                 "title": "Consequential Train Accidents by Type and Related Measures",
@@ -3624,7 +3657,7 @@
             "dek": "Passengers and flights on domestic and international routes.",
             "paragraphs": [
               "Passengers and flights on domestic and international routes.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -3633,7 +3666,7 @@
               "Ministry of Civil Aviation"
             ],
             "indicatorCount": 22,
-            "pattern": "lede-stat-strip",
+            "pattern": "question-answer",
             "sections": [
               {
                 "title": "Passengers Handled and Related Measures",
@@ -3737,7 +3770,7 @@
             "dek": "Year-on-year growth in air passengers and capacity.",
             "paragraphs": [
               "Year-on-year growth in air passengers and capacity.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -3745,7 +3778,7 @@
               "World Bank"
             ],
             "indicatorCount": 21,
-            "pattern": "question-answer",
+            "pattern": "reading-journey",
             "sections": [
               {
                 "title": "Aircraft Movements Since 2018-19 and Related Measures",
@@ -3847,7 +3880,7 @@
             "dek": "Airport counts and traffic, and the UDAN regional connectivity scheme.",
             "paragraphs": [
               "Airport counts and traffic, and the UDAN regional connectivity scheme.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -3855,7 +3888,7 @@
               "Parliament of India (Sansad)"
             ],
             "indicatorCount": 16,
-            "pattern": "reading-journey",
+            "pattern": "two-lenses",
             "sections": [
               {
                 "title": "Operational Airports and Related Measures",
@@ -3941,7 +3974,7 @@
             "dek": "Air freight tonnage and the cargo network.",
             "paragraphs": [
               "Air freight tonnage and the cargo network.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -3950,7 +3983,7 @@
               "Ministry of Civil Aviation"
             ],
             "indicatorCount": 22,
-            "pattern": "two-lenses",
+            "pattern": "pull-quote",
             "sections": [
               {
                 "title": "Air Freight and Related Measures",
@@ -4054,14 +4087,14 @@
             "dek": "AAI revenue, capital spending and investment.",
             "paragraphs": [
               "AAI revenue, capital spending and investment.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "Airports Authority of India"
             ],
             "indicatorCount": 19,
-            "pattern": "pull-quote",
+            "pattern": "annotated-captions",
             "sections": [
               {
                 "title": "AAI Revenue and Profit and Related Measures",
@@ -4153,14 +4186,14 @@
             "dek": "Major-port cargo and container performance.",
             "paragraphs": [
               "Major-port cargo and container performance.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "Ministry of Ports, Shipping & Waterways"
             ],
             "indicatorCount": 22,
-            "pattern": "annotated-captions",
+            "pattern": "lede-stat-strip",
             "sections": [
               {
                 "title": "Cargo Handled by Major Port and Related Measures",
@@ -4264,7 +4297,7 @@
             "dek": "Inland waterways, coastal shipping and water passenger traffic.",
             "paragraphs": [
               "Inland waterways, coastal shipping and water passenger traffic.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -4273,7 +4306,7 @@
               "Parliament of India (Sansad)"
             ],
             "indicatorCount": 24,
-            "pattern": "lede-stat-strip",
+            "pattern": "question-answer",
             "sections": [
               {
                 "title": "Cargo on National Waterways and Related Measures",
@@ -4381,14 +4414,14 @@
             "dek": "India beside other countries in rail, air and maritime benchmarks.",
             "paragraphs": [
               "India beside other countries in rail, air and maritime benchmarks.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "World Bank"
             ],
             "indicatorCount": 28,
-            "pattern": "question-answer",
+            "pattern": "reading-journey",
             "sections": [
               {
                 "title": "Air Passengers Ranking and Related Measures",
@@ -4510,7 +4543,7 @@
             "dek": "Road and rail freight volumes, costs and logistics performance.",
             "paragraphs": [
               "Road and rail freight volumes, costs and logistics performance.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -4521,7 +4554,7 @@
               "World Bank"
             ],
             "indicatorCount": 29,
-            "pattern": "reading-journey",
+            "pattern": "two-lenses",
             "sections": [
               {
                 "title": "Merchandise Exports & Merchandise Trade Balance: Core Measures",
@@ -4645,7 +4678,7 @@
             "dek": "Sea and air freight, the modal split of cargo and logistics revenue.",
             "paragraphs": [
               "Sea and air freight, the modal split of cargo and logistics revenue.",
-              "This is one of 13 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
+              "This is one of 14 lenses within Infrastructure & Mobility. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -4659,7 +4692,7 @@
               "NHAI"
             ],
             "indicatorCount": 28,
-            "pattern": "two-lenses",
+            "pattern": "pull-quote",
             "sections": [
               {
                 "title": "Cargo Handled at Major Ports and Related Measures",
@@ -4861,19 +4894,13 @@
                 ]
               },
               {
-                "title": "Immunisation Coverage & Child Nutrition Indicators",
-                "text": "The 4 charts here track DPT immunization, Measles immunization, child undernourishment and stunting prevalence. DPT immunization rose from 6% in 1980 to 94% in 2024, while Measles immunization expanded from 1% in 1985 to 97% in 2024 under Universal Immunization Programme (UIP) and Mission Indradhanush.",
+                "title": "Immunisation Coverage, Child Nutrition & Preventable Risk Factors",
+                "text": "The 5 charts here follow DPT Immunization, Measles Immunisation and Prevalence of Undernourishment and 2 related series. DPT Immunization rose from 6% in 1980 to 94% in 2024, a shift of 88 percentage points. Measles Immunisation rose from 1% in 1985 to 97% in 2024, a shift of 96 percentage points. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "wb_dpt_immunization",
                   "wb_measles_immunisation",
                   "wb_undernourishment",
-                  "wb_child_stunting"
-                ]
-              },
-              {
-                "title": "Preventable Lifestyle Risk Factors: Tobacco & Smoking Prevalence",
-                "text": "The series below tracks smoking prevalence among adults in India from World Bank and Global Adult Tobacco Survey (GATS) data, documenting a sustained decline from over 55% in 2000 to under 25% by 2024 driven by nationwide tobacco control mandates and public health awareness.",
-                "keys": [
+                  "wb_child_stunting",
                   "wb_smoking"
                 ]
               }
@@ -5930,7 +5957,7 @@
                 ]
               }
             ],
-            "pullQuote": "Pew India report cadence rose from 8 reports in 2002 to 64 reports in 2026, a change of 700%. Its high point was 115 reports in 2025.",
+            "pullQuote": "Pew India report cadence rose from 1 reports in 1997 to 81 reports in 2026, a change of 8,000%. Its high point was 113 reports in 2025.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -5999,7 +6026,7 @@
             "sections": [
               {
                 "title": "Pew India Reports Published per Year and Related Measures",
-                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year rose from 8 reports in 2002 to 64 reports in 2026, a change of 700%. Its high point was 115 reports in 2025. Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports Published per Year, Cumulative Pew India Reports in Catalogue and Pew India Reports by Publication Quarter and 2 related series. Pew India Reports Published per Year rose from 1 reports in 1997 to 81 reports in 2026, a change of 8,000%. Its high point was 113 reports in 2025. Cumulative Pew India Reports in Catalogue rose from 1 reports in 1997 to 1,414 reports in 2026, a change of 141,300%. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_reports_per_year",
                   "dg_pew_reports_cumulative",
@@ -6010,7 +6037,7 @@
               },
               {
                 "title": "Pew India Reports by Publication Decade and Related Measures",
-                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 255 reports in 2000s to 497 reports in 2020s, a change of 95%. Its high point was 665 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 2002 and 6 title matches in 2026. Its high point was 10 title matches in 2025. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Reports by Publication Decade, Pew India Report Titles Matching Economy and Pew India Report Titles Matching Religion & society and 2 related series. Pew India Reports by Publication Decade rose from 5 reports in 1990s to 505 reports in 2020s, a change of 10,000%. Its high point was 659 reports in 2010s. Pew India Report Titles Matching Economy stood at 0 title matches in 1997 and 6 title matches in 2026. Its high point was 10 title matches in 2025. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_publications_by_decade",
                   "dg_pew_theme_economy_livelihoods",
@@ -6021,7 +6048,7 @@
               },
               {
                 "title": "Pew India Report Titles Matching Technology & media and Related Measures",
-                "text": "The 5 charts here follow Pew India Report Titles Matching Technology & media, Pew India Report Titles Matching Climate and Pew India Report Titles Matching Gender and 2 related series. Pew India Report Titles Matching Technology & media rose from 1 title matches in 2002 to 8 title matches in 2026, a change of 700%. Its high point was 12 title matches in 2019. Pew India Report Titles Matching Climate stood at 0 title matches in 2002 and 2 title matches in 2026. Its high point was 5 title matches in 2015. Bars follow the published order; hover a bar for its exact figure.",
+                "text": "The 5 charts here follow Pew India Report Titles Matching Technology & media, Pew India Report Titles Matching Climate and Pew India Report Titles Matching Gender and 2 related series. Pew India Report Titles Matching Technology & media stood at 0 title matches in 1997 and 10 title matches in 2026. Its high point was 12 title matches in 2019. Pew India Report Titles Matching Climate stood at 0 title matches in 1997 and 1 title matches in 2026. Its high point was 5 title matches in 2015. Bars follow the published order; hover a bar for its exact figure.",
                 "keys": [
                   "dg_pew_theme_technology_media",
                   "dg_pew_theme_climate_environment",
@@ -6041,7 +6068,7 @@
                 ]
               }
             ],
-            "pullQuote": "Cumulative Pew India Reports in Catalogue rose from 8 reports in 2002 to 1,417 reports in 2026, a change of 17,612%.",
+            "pullQuote": "Pew India Reports Published per Year rose from 1 reports in 1997 to 81 reports in 2026, a change of 8,000%. Its high point was 113 reports in 2025.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -6834,18 +6861,12 @@
                 ]
               },
               {
-                "title": "Jammu & Kashmir Security: Casualties, Incidents & Counter-Terrorism",
-                "text": "The 3 charts here track Jammu & Kashmir insurgency deaths, terror incidents, and periodic casualty records from the Ministry of Home Affairs J&K Division and SATP. J&K insurgency deaths declined from 3,288 deaths in 2000 to 85 deaths in 2025 (a 97% decline), with terror incidents down 86% since 2014.",
+                "title": "Jammu & Kashmir and Punjab Militancy: Conflict Trajectories & Incidents",
+                "text": "The 5 charts here follow Jammu & Kashmir insurgency deaths, Jammu & Kashmir terror incidents and Jammu & Kashmir Fatalities by Period and 2 related series. Jammu & Kashmir insurgency deaths fell from 3,288 deaths in 2000 to 85 deaths in 2025, a change of 97%. Its high point was 4,507 deaths in 2001. Jammu & Kashmir terror incidents fell from 222 incidents in 2014 to 32 incidents in 2025, a change of 86%. Its high point was 614 incidents in 2018. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
                   "kashmir_insurgency_fatalities",
                   "kashmir_terror_incidents",
-                  "kashmir_fatalities_by_period"
-                ]
-              },
-              {
-                "title": "Punjab Militancy Historical Record (1981–1995)",
-                "text": "The 2 charts here document historical fatalities and periodic records during the Punjab militancy period between 1981 and 1995 from SATP and MHA archives, reflecting the complete stabilization of the border state over the past three decades.",
-                "keys": [
+                  "kashmir_fatalities_by_period",
                   "khalistan_insurgency_historical",
                   "khalistan_fatalities_by_period"
                 ]
@@ -14056,15 +14077,14 @@
             "pattern": "by-the-numbers",
             "sections": [
               {
-                "title": "Kingdoms of the Mahabharata & Kingdoms and places of the Ramayana: Core Measures",
-                "text": "The two epics are mapped place by place: the kingdoms of the Mahabharata war and the lands of the Ramayana, each with its ruler, its role in the story and a shloka. Switch on the route to follow Rama from Ayodhya to Lanka, or the Pandavas from Hastinapura to the Himalaya. The 2 charts here follow Kingdoms of the Mahabharata and Kingdoms and places of the Ramayana. This view is interactive: use its own controls to change the period, place or layer.",
+                "title": "Kingdoms of the Mahabharata & Places of the Ramayana: Interactive Epic Atlas",
+                "text": "The two epics are mapped place by place: the kingdoms of the Mahabharata war and the lands of the Ramayana, each with its ruler, its role in the story and a shloka. Switch on the route to follow Rama from Ayodhya to Lanka, or the Pandavas from Hastinapura to the Himalaya. This chart follows Kingdoms of the Mahabharata. This view is interactive: use its own controls to change the period, place or layer.",
                 "keys": [
-                  "india_epic_kingdoms_mahabharata",
-                  "india_epic_kingdoms_ramayana"
+                  "india_epic_kingdoms_mahabharata"
                 ]
               },
               {
-                "title": "The Pandavas’ journey and battles: Key Trends & Indicators",
+                "title": "The Pandavas’ journey and battles: Route & Leg Distances",
                 "text": "The 2 charts here follow The Pandavas’ journey and battles. In The Pandavas’ journey and battles, Matsya (Virata Kingdom) leads at 921 km, ahead of Magadha at 907 km; Panchala (Kampilya and Ahichchhatra) is lowest at 67 km. This view is interactive: use its own controls to change the period, place or layer.",
                 "keys": [
                   "india_journey_pandavas",
@@ -14072,7 +14092,7 @@
                 ]
               },
               {
-                "title": "Rama’s route: Key Trends & Indicators",
+                "title": "Rama’s route: Ayodhya to Lanka and Back",
                 "text": "The 2 charts here follow Rama’s route. In Rama’s route, Ayodhya (Kosala) leads at 2,108 km, ahead of Panchavati at 868 km; Janasthana is lowest at 2 km. This view is interactive: use its own controls to change the period, place or layer.",
                 "keys": [
                   "india_journey_rama",
@@ -14395,7 +14415,7 @@
         "headline": "🗺️ India in Maps",
         "dek": "Every state-level indicator drawn on the map. Pick a state to highlight it and see the related charts beside it.",
         "paragraphs": [
-          "This chapter brings together 13 catalogued lenses: Payments & Banking Maps, State Economy & Fiscal Maps, State Services & Welfare Maps, Health, Environment & Transport Maps, Society & Elections Maps, Court Rankings by Jurisdiction, Court Maps · Case types, Court Maps · Case types & Case categories, Court Maps · Case stage, Court Maps · Case stage & Filing year, Economic on the map, Innovation & Technology on the map, Metro in Maps.",
+          "This chapter brings together 13 catalogued lenses: Metro Networks & Transit Atlas, Payments & Banking Maps, State Economy & Fiscal Maps, State Services & Welfare Maps, Health, Environment & Transport Maps, Society & Elections Maps, Court Rankings by Jurisdiction, Court Maps · Case types, Court Maps · Case types & Case categories, Court Maps · Case stage, Court Maps · Case stage & Filing year, Economic on the map, Innovation & Technology on the map.",
           "Read the measures alongside their chart titles, reporting periods, units and source notes; no single series is a complete account of its subject."
         ],
         "watch": "Check the period and unit on each chart, then compare related lenses without assuming their definitions or coverage are identical.",
@@ -14415,18 +14435,16 @@
           "GSTN Portal & Ministry of Finance",
           "Indian Railways Year Book",
           "Ministry of Heavy Industries VAHAN Portal",
-          "Ministry of Housing and Urban Affairs",
-          "Ministry of Housing and Urban Affairs (MoHUA) & Metro Rail Corporations",
+          "Ministry of Housing and Urban Affairs (MoHUA) & DMRC",
           "Ministry of Jal Shakti Har Ghar Jal Open Dashboard",
           "Ministry of Rural Development & MoHUA",
-          "MoHUA & Transit Authorities Operational Statistics",
           "MoHUA PM SVANidhi Portal",
           "MOSPI Periodic Labour Force Survey & Census Estimates",
           "National Health Authority PM-JAY Open Dashboard",
           "NITI Aayog Export Preparedness Index",
           "PMMY MUDRA Portal & Department of Financial Services"
         ],
-        "indicatorCount": 264,
+        "indicatorCount": 262,
         "subgroupCount": 13,
         "verse": {
           "text": "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी",
@@ -14435,60 +14453,42 @@
         },
         "subgroups": [
           {
-            "name": "Metro in Maps",
-            "headline": "Metro in Maps",
-            "dek": "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+            "name": "Metro Networks & Transit Atlas",
+            "headline": "🚇 Indian Metro Networks & Transit Atlas",
+            "dek": "Interactive dual-representation maps (warm PolityPolicy cartographic terrain and clean MetroSafar schematic line diagrams) for all 17 operational Indian metro networks with Dijkstra route planner, fare slabs, and live IST intervals.",
             "paragraphs": [
-              "Interactive transit maps, lines, stations, ridership, and historical chronicles across all 16 metro cities in India.",
+              "Interactive dual-representation maps (warm PolityPolicy cartographic terrain and clean MetroSafar schematic line diagrams) for all 17 operational Indian metro networks with Dijkstra route planner, fare slabs, and live IST intervals.",
               "This is one of 13 lenses within India in Maps. Read it beside the other group topics, and retain the source and period attached to each indicator."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
-              "Ministry of Housing and Urban Affairs",
-              "Ministry of Housing and Urban Affairs (MoHUA) & Metro Rail Corporations",
-              "MoHUA & Transit Authorities Operational Statistics"
+              "Ministry of Housing and Urban Affairs (MoHUA) & DMRC"
             ],
-            "indicatorCount": 3,
+            "indicatorCount": 1,
             "pattern": "two-lenses",
             "sections": [
               {
-                "title": "Metro Rail Network Length by City",
-                "text": "This chart follows Metro Rail Network Length by City. In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km. Hover along the line to read each period's value; the axis shows the unit.",
+                "title": "Indian Metro Rail Networks",
+                "text": "This chart follows Indian Metro Rail Networks. In Indian Metro Rail Networks, Delhi-NCR leads at 393 km, ahead of Bengaluru at 76.9 km; Bhopal-Indore is lowest at 6 km. Hover along the line to read each period's value; the axis shows the unit.",
                 "keys": [
-                  "metro_network_length_by_city_km"
-                ]
-              },
-              {
-                "title": "Daily Metro Ridership by City",
-                "text": "This chart follows Daily Metro Ridership by City. In Daily Metro Ridership by City, Delhi-NCR leads at 6,800,000 passengers/day, ahead of Mumbai at 850,000 passengers/day; Kanpur is lowest at 48,000 passengers/day. Hover along the line to read each period's value; the axis shows the unit.",
-                "keys": [
-                  "metro_daily_ridership_by_city"
-                ]
-              },
-              {
-                "title": "All-India Operational Metro Network Growth",
-                "text": "This chart follows All-India Operational Metro Network Growth. All-India Operational Metro Network Growth rose from 16 km in 2002 to 994 km in 2026, a change of 6,112%. Hover along the line to read each period's value; the axis shows the unit.",
-                "keys": [
-                  "metro_all_india_operational_growth_km"
+                  "indian_metro_rail_networks_17_cities"
                 ]
               }
             ],
-            "pullQuote": "In Metro Rail Network Length by City, Delhi-NCR leads at 393 km, ahead of Mumbai at 80.2 km; Agra is lowest at 6 km.",
+            "pullQuote": "In Indian Metro Rail Networks, Delhi-NCR leads at 393 km, ahead of Bengaluru at 76.9 km; Bhopal-Indore is lowest at 6 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
-              "metro_network_length_by_city_km",
-              "metro_daily_ridership_by_city",
-              "metro_all_india_operational_growth_km"
+              "indian_metro_rail_networks_17_cities"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 3
+                "value": 1
               },
               {
                 "label": "Named publishers",
-                "value": 3
+                "value": 1
               }
             ],
             "verse": {
@@ -14510,7 +14510,7 @@
               "RBI Handbook of Statistics on Indian States 2024-25"
             ],
             "indicatorCount": 23,
-            "pattern": "two-lenses",
+            "pattern": "pull-quote",
             "sections": [
               {
                 "title": "Bank offices by State/UT and Related Measures",
@@ -14659,7 +14659,7 @@
               "PMMY MUDRA Portal & Department of Financial Services"
             ],
             "indicatorCount": 23,
-            "pattern": "pull-quote",
+            "pattern": "annotated-captions",
             "sections": [
               {
                 "title": "GSDP by state and Related Measures",
@@ -14796,7 +14796,7 @@
               "NITI Aayog"
             ],
             "indicatorCount": 22,
-            "pattern": "annotated-captions",
+            "pattern": "lede-stat-strip",
             "sections": [
               {
                 "title": "Power transmission & distribution losses and Related Measures",
@@ -14935,7 +14935,7 @@
               "NITI Aayog"
             ],
             "indicatorCount": 29,
-            "pattern": "lede-stat-strip",
+            "pattern": "question-answer",
             "sections": [
               {
                 "title": "Maternal Mortality Ratio by State and Related Measures",
@@ -15098,7 +15098,7 @@
               "MoSPI"
             ],
             "indicatorCount": 39,
-            "pattern": "question-answer",
+            "pattern": "reading-journey",
             "sections": [
               {
                 "title": "Higher Education GER by State and Related Measures",
@@ -15278,7 +15278,7 @@
               "National Judicial Data Grid"
             ],
             "indicatorCount": 30,
-            "pattern": "reading-journey",
+            "pattern": "two-lenses",
             "sections": [
               {
                 "title": "Top jurisdictions by cases instituted in the last & Share of cases instituted in the last month by: Core Measures",
@@ -15442,7 +15442,7 @@
               "National Judicial Data Grid"
             ],
             "indicatorCount": 23,
-            "pattern": "two-lenses",
+            "pattern": "pull-quote",
             "sections": [
               {
                 "title": "Total cases case-type breakdown pending: Key Trends & Indicators",
@@ -15579,7 +15579,7 @@
               "National Judicial Data Grid"
             ],
             "indicatorCount": 23,
-            "pattern": "pull-quote",
+            "pattern": "annotated-captions",
             "sections": [
               {
                 "title": "Total cases case-type breakdown pending: Key Trends & Indicators",
@@ -15716,7 +15716,7 @@
               "National Judicial Data Grid"
             ],
             "indicatorCount": 23,
-            "pattern": "annotated-captions",
+            "pattern": "lede-stat-strip",
             "sections": [
               {
                 "title": "Total cases cases by listed stage pending: Key Trends & Indicators",
@@ -15853,7 +15853,7 @@
               "National Judicial Data Grid"
             ],
             "indicatorCount": 22,
-            "pattern": "lede-stat-strip",
+            "pattern": "question-answer",
             "sections": [
               {
                 "title": "Total cases cases by listed stage pending: Key Trends & Indicators",
@@ -15987,7 +15987,7 @@
               "NITI Aayog"
             ],
             "indicatorCount": 1,
-            "pattern": "question-answer",
+            "pattern": "reading-journey",
             "sections": [
               {
                 "title": "NITI Export Preparedness Index",
@@ -16034,7 +16034,7 @@
               "NITI Aayog"
             ],
             "indicatorCount": 3,
-            "pattern": "reading-journey",
+            "pattern": "two-lenses",
             "sections": [
               {
                 "title": "India Innovation Index 2021",

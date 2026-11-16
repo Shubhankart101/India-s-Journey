@@ -58,6 +58,14 @@ CUSTOM_SUBGROUP_CLUSTERS = {
         ("Immunisation Coverage, Child Nutrition & Preventable Risk Factors",
          ["wb_dpt_immunization", "wb_measles_immunisation", "wb_undernourishment", "wb_child_stunting", "wb_smoking"]),
     ],
+    "Epics: Mahabharata & Ramayana": [
+        ("Kingdoms of the Mahabharata & Places of the Ramayana: Interactive Epic Atlas",
+         ["india_epic_kingdoms_mahabharata"]),
+        ("The Pandavas’ journey and battles: Route & Leg Distances",
+         ["india_journey_pandavas", "india_journey_pandavas_leg_km"]),
+        ("Rama’s route: Ayodhya to Lanka and Back",
+         ["india_journey_rama", "india_journey_rama_leg_km"]),
+    ],
     "Coal, Oil & Gas": [
         ("Coal, Lignite & Hydrocarbon Production Trajectories",
          ["coal_production", "lignite_production", "crude_petroleum_domestic", "natural_gas_production", "coal_output_by_period"]),
@@ -293,6 +301,8 @@ def cluster_indicators(selected, subgroup_name=""):
                         "members": slice_part,
                     })
                     used_keys.update(item["key"] for item in slice_part)
+        if subgroup_name == "Epics: Mahabharata & Ramayana":
+            used_keys.add("india_epic_kingdoms_ramayana")
         remaining = [item for item in selected if item["key"] not in used_keys]
         if remaining:
             for i in range(0, len(remaining), MAX_CHARTS_PER_SECTION):

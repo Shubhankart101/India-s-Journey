@@ -58,10 +58,13 @@ export function ChartFigure({ indicator }) {
     note = `Top ${top.length} of ${ranked.length} places. Use the map above for every State and UT.`;
   }
   const switchable = !isMap && modes.modes.length > 1;
+  const titleText = (indicator.key === 'india_epic_kingdoms_mahabharata')
+    ? 'Kingdoms of the Mahabharata & Places of the Ramayana (Interactive Epic Atlas)'
+    : stemOf(indicator.title);
   return (
     <figure className="subgroup-figure">
       <div className="subgroup-figure-head">
-        <h3><Link to={`/indicator/${indicator.key}`}>{stemOf(indicator.title)}</Link></h3>
+        <h3><Link to={`/indicator/${indicator.key}`}>{titleText}</Link></h3>
         {switchable
           ? <div className="subgroup-figure-modes" role="group" aria-label={`Chart type for ${indicator.title}`}>
             {modes.modes.map(item => <button type="button" key={item} aria-pressed={item === mode} onClick={() => setMode(item)}>{item === 'doughnut' || item === 'pie' ? 'Share' : item === 'bar' ? 'Bars' : 'Line'}</button>)}
@@ -142,12 +145,20 @@ export function SubgroupArticleView({
 
   const names = (group?.subgroups || []).map(item => item.name);
   const verse = pickSubgroupVerse(category.name, subgroup.name, names);
-  const shown = sections.map(section => ({
-    title: section.title,
-    text: section.text,
-    quote: section.quote,
-    content: section.content || ((section.keys || []).length ? <div className="subgroup-figures">{section.keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null),
-  }));
+  const shown = sections.map(section => {
+    const keys = (section.keys || []).filter((key, idx, arr) => {
+      if (key === 'india_epic_kingdoms_ramayana' && arr.includes('india_epic_kingdoms_mahabharata')) {
+        return false;
+      }
+      return true;
+    });
+    return {
+      title: section.title,
+      text: section.text,
+      quote: section.quote,
+      content: section.content || (keys.length ? <div className="subgroup-figures">{keys.map(key => byKey.get(key)).filter(Boolean).map(item => <ChartFigure key={item.key} indicator={item} />)}</div> : null),
+    };
+  });
   const extra = indicators.length > 0 ? [{ label: 'Charts in this subgroup', value: String(indicators.length) }] : [];
 
   // Rotating live artwork playlist for IVC, Empires, and Metro

@@ -17,7 +17,11 @@
 .atlas-search input { width: 100%; padding: 6px 10px; background: var(--at-panel); border: 1px solid var(--at-line); border-radius: 8px; }
 
 .atlas-main { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px; min-width: 0; }
+.atlas-epic .atlas-main { display: flex; flex-direction: column; gap: 16px; width: 100%; }
 .atlas-stage { position: relative; min-width: 0; aspect-ratio: 1000 / 1115; max-height: 560px; justify-self: center; width: 100%; }
+.atlas-epic .atlas-stage { width: 100%; max-width: 860px; max-height: 680px; aspect-ratio: 1000 / 1115; margin: 0 auto; }
+.atlas-epic .atlas-side { width: 100%; min-width: 0; }
+.atlas-epic .atlas-places { display: flex; flex-wrap: wrap; gap: 6px; }
 .atlas-stage > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .atlas-ls svg path { stroke: var(--map-stroke, rgb(0 0 0 / .45)); stroke-width: 1.2; cursor: pointer; transition: opacity .2s, filter .2s; }
 .atlas-ls svg path.no-value { fill: var(--map-empty); cursor: default; }
