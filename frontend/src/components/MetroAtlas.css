@@ -179,12 +179,27 @@
 /* Grid Layout */
 .metro-workbench-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2.2fr) minmax(320px, 1fr);
   min-height: 640px;
   min-width: 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.metro-workbench-grid.full-map-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.metro-workbench-grid.full-map-layout .metro-map-canvas-container {
+  min-height: 760px;
+  border-right: none;
+}
+
+.metro-workbench-grid.full-map-layout .metro-dossier-panel {
+  border-top: 1px solid var(--line, #1e293b);
+  border-left: none;
 }
 
 @media (max-width: 1080px) {
@@ -325,6 +340,49 @@
 .theme-geographic .metro-mode-toggle-btn.active {
   background: #4a1525;
   color: #ffffff;
+}
+
+/* Full Width Map Expansion Button */
+.metro-expand-map-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  padding: 5px 13px;
+  font-size: 0.76rem;
+  font-weight: 750;
+  color: #cbd5e1;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.theme-schematic .metro-expand-map-btn,
+.theme-geographic .metro-expand-map-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.metro-expand-map-btn:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+.metro-expand-map-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
+.theme-geographic .metro-expand-map-btn.active {
+  background: #4a1525;
+  border-color: #4a1525;
 }
 
 /* Map Controls (+ / - / Reset / DL) */

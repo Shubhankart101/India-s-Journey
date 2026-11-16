@@ -515,6 +515,7 @@ export default function MetroAtlas({ onSelectCity }) {
   const [hoveredStation, setHoveredStation] = useState(null);
   const [selectedStation, setSelectedStation] = useState(null);
   const [workbenchTab, setWorkbenchTab] = useState('geographic'); // 'geographic' | 'schematic' | 'planner' | 'directory' | 'guide'
+  const [isMapExpanded, setIsMapExpanded] = useState(false);
   const [geoLayerFilter, setGeoLayerFilter] = useState('all'); // 'all' | 'under-construction'
   const [isJourneyCardCollapsed, setIsJourneyCardCollapsed] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -757,7 +758,7 @@ export default function MetroAtlas({ onSelectCity }) {
 
       {/* MAP VIEWS: GEOGRAPHIC OR SCHEMATIC */}
       {(workbenchTab === 'geographic' || workbenchTab === 'schematic') && (
-        <div className="metro-workbench-grid">
+        <div className={`metro-workbench-grid ${isMapExpanded ? 'full-map-layout' : ''}`}>
           <div className={`metro-map-canvas-container theme-${workbenchTab === 'schematic' ? 'schematic' : 'geographic'}`}>
             {/* Top Toolbar: Dual Map Mode Switcher for all 17 cities */}
             <div className="metro-map-header-tools">
@@ -779,6 +780,16 @@ export default function MetroAtlas({ onSelectCity }) {
                   🚇 Line Diagram (Metro Safar)
                 </button>
               </div>
+
+              <button
+                type="button"
+                className={`metro-expand-map-btn ${isMapExpanded ? 'active' : ''}`}
+                onClick={() => setIsMapExpanded(prev => !prev)}
+                title={isMapExpanded ? "Restore side panel layout" : "Expand map to full width"}
+                aria-label="Toggle Full Width Map"
+              >
+                {isMapExpanded ? "🗗 Split View" : "⛶ Maximize Map"}
+              </button>
             </div>
 
             {workbenchTab === 'schematic' ? (

@@ -325,10 +325,10 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
             const X = sx(ust.P[0]), Y = sy(ust.P[1]);
             if (X < -20 || Y < -20 || X > W + 20 || Y > H + 20) continue;
             ctx.beginPath();
-            ctx.arc(X, Y, Math.max(3.2, 4.2 * S), 0, 2 * Math.PI);
+            ctx.arc(X, Y, Math.max(2.0, 3.2 * S), 0, 2 * Math.PI);
             ctx.fillStyle = C.bg;
             ctx.fill();
-            ctx.lineWidth = 2.0;
+            ctx.lineWidth = Math.max(1.0, 1.4 * S);
             ctx.strokeStyle = f.c || '#f59e0b';
             ctx.stroke();
           }
@@ -378,7 +378,9 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
     }
 
     // 7. Stations
-    const r = z > 9000000 ? 8.5 : z > 4500000 ? 7 : z > 2200000 ? 5.8 : z > 1100000 ? 4.8 : z > 620000 ? 4 : z > 330000 ? 3.5 : 2.8;
+    // Dynamic station radii scaling to prevent cluttering and black overlapping rings when zoomed out
+    const isZoomedOut = z < 1200000;
+    const r = z > 9000000 ? 7.0 : z > 4500000 ? 5.5 : z > 2200000 ? 4.4 : z > 1100000 ? 3.4 : z > 550000 ? 2.6 : 2.0;
 
     for (const s of PACK.stations || []) {
       const X = sx(s.P[0]), Y = sy(s.P[1]);
@@ -387,15 +389,17 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       const inRoute = routeResult && routeResult.stops.has(s.n);
       const isSel = selectedStation?.n === s.n;
       const isHov = hoverStation?.n === s.n;
-      const radius = isSel ? r * 1.9 : isHov ? r * 1.5 : inRoute ? r * 1.35 : s.ix ? r * 1.3 : r * 1.0;
+      const radius = isSel ? r * 1.8 : isHov ? r * 1.5 : inRoute ? r * 1.3 : s.ix ? (isZoomedOut ? r * 1.15 : r * 1.25) : r * 0.95;
 
-      if (s.ix) {
+      // Draw interchange ring only when zoomed in, or on hover/select/inRoute
+      // Zooms < 1.2M (whole network) avoid rendering massive double black rings that cluster into dark blobs
+      if (s.ix && (!isZoomedOut || isHov || isSel || inRoute)) {
         ctx.beginPath();
-        ctx.arc(X, Y, radius + 2.5, 0, 2 * Math.PI);
+        ctx.arc(X, Y, radius + (isZoomedOut ? 1.0 : 1.8), 0, 2 * Math.PI);
         ctx.fillStyle = C.bg;
         ctx.fill();
-        ctx.lineWidth = 1.9;
-        ctx.strokeStyle = inRoute ? C.ca : C.ix;
+        ctx.lineWidth = isZoomedOut ? 0.9 : 1.4;
+        ctx.strokeStyle = inRoute ? C.ca : '#554a42';
         ctx.stroke();
       }
 
@@ -403,7 +407,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       ctx.arc(X, Y, radius, 0, 2 * Math.PI);
       ctx.fillStyle = inRoute ? C.ca : isSel ? '#f59e0b' : C.bg;
       ctx.fill();
-      ctx.lineWidth = 1.6;
+      ctx.lineWidth = isZoomedOut ? 0.9 : 1.3;
       ctx.strokeStyle = inRoute ? '#ffffff' : s.l && s.l[0] && LMAP[s.l[0]] ? LMAP[s.l[0]].c : C.ink;
       ctx.stroke();
     }
@@ -763,8 +767,8 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       <div className={`polity-journey-card ${cardOpen ? 'open' : 'minimized'}`}>
         <div className="journey-header" onClick={() => setCardOpen(prev => !prev)}>
           <span className="journey-title">
-            <span className="journey-toggle-arrow">{cardOpen ? '▾' : '‹'}</span>
-            PLAN A JOURNEY
+            <span className="journey-toggle-arrow">{cardOpen ? '▾' : '›'}</span>
+            🧭 PLAN A JOURNEY
           </span>
           <button
             type="button"
