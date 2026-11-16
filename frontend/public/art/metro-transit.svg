@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+<style>
+.tw{animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.2}50%{opacity:1}}
+.rot{transform-box:view-box;transform-origin:0 0;animation:rot 16s linear infinite}
+.rot-slow{transform-box:fill-box;transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.75}}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite}
+@keyframes ping{from{transform:scale(.35);opacity:.9}to{transform:scale(1.7);opacity:0}}
+.draw{stroke-dasharray:1000;animation:draw 7s ease-in-out infinite alternate}
+@keyframes draw{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="scale(1.333333 1.5)">
+  <defs>
+    <linearGradient id="sky_metro_transit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#091e3a"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="lower_metro_transit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <!-- Background sky -->
+  <rect width="1200" height="600" fill="url(#sky_metro_transit)"/>
+  <!-- Foreground shapes & bespoke art -->
+  
+        <!-- Subterranean Geological Strata & Underwater Trench -->
+        <g opacity="0.5">
+          <path d="M 0 120 Q 300 140 600 110 T 1200 130 L 1200 600 L 0 600 Z" fill="#0b1727"/>
+          <path d="M 0 170 Q 400 190 750 160 T 1200 180 L 1200 600 L 0 600 Z" fill="#0f293d"/>
+          <path d="M 0 70 Q 150 55 300 70 T 600 70 T 900 70 T 1200 70 L 1200 120 L 0 120 Z" fill="#0284c7" opacity="0.3"/>
+          <path d="M 0 85 Q 200 75 400 85 T 800 85 T 1200 85" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.4" class="draw"/>
+        </g>
+
+        <!-- Giant Circular Concrete Shield Tunnel Portal (33m Subterranean Depth) -->
+        <g transform="translate(600, 260)">
+          <circle cx="0" cy="0" r="210" fill="#0a192f" stroke="#1e3a5f" stroke-width="16"/>
+          <circle cx="0" cy="0" r="198" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="14 10" class="rot-slow"/>
+          <circle cx="0" cy="0" r="182" fill="#071322" stroke="#334155" stroke-width="10"/>
+
+          <ellipse cx="0" cy="25" rx="125" ry="70" fill="#020b14"/>
+          <path d="M -170 -15 Q -80 15 -25 22" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.75"/>
+          <path d="M 170 -15 Q 80 15 25 22" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.75"/>
+          <path d="M -160 30 Q -70 38 -15 38" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+          <path d="M 160 30 Q 70 38 15 38" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+
+          <polygon points="-140,140 140,140 70,50 -70,50" fill="#1e293b"/>
+          <line x1="-105" y1="140" x2="-35" y2="50" stroke="#94a3b8" stroke-width="4"/>
+          <line x1="105" y1="140" x2="35" y2="50" stroke="#94a3b8" stroke-width="4"/>
+          <line x1="0" y1="140" x2="0" y2="50" stroke="#eab308" stroke-width="2.5" stroke-dasharray="10 6"/>
+
+          <!-- High-Speed Aerodynamic Bullet Metro / RRTS Train emerging from Portal -->
+          <path d="M -75 125 Q -80 45 -52 8 Q 0 -22 52 8 Q 80 45 75 125 Z" fill="#0f172a" stroke="#0284c7" stroke-width="3"/>
+          <path d="M -66 115 Q -72 52 -44 18 Q 0 -8 44 18 Q 72 52 66 115 Z" fill="#f8fafc"/>
+          <path d="M -54 70 Q 0 42 54 70 L 58 84 Q 0 58 -58 84 Z" fill="#0284c7"/>
+          <path d="M -55 84 Q 0 58 55 84 L 57 93 Q 0 66 -57 93 Z" fill="#f97316"/>
+          <path d="M -40 28 Q 0 12 40 28 L 35 48 Q 0 35 -35 48 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8"/>
+          <ellipse cx="0" cy="40" rx="18" ry="4" fill="#38bdf8" opacity="0.8"/>
+          <circle cx="-48" cy="102" r="7" fill="#ffffff"/>
+          <circle cx="-48" cy="102" r="4" fill="#38bdf8"/>
+          <circle cx="48" cy="102" r="7" fill="#ffffff"/>
+          <circle cx="48" cy="102" r="4" fill="#38bdf8"/>
+          <polygon points="-48,102 -160,220 160,220 48,102" fill="#38bdf8" opacity="0.12"/>
+
+          <g transform="translate(140, 35)">
+            <rect x="-8" y="-25" width="16" height="42" rx="7" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+            <circle cx="0" cy="-14" r="4" fill="#1e293b"/>
+            <circle cx="0" cy="-2" r="4" fill="#1e293b"/>
+            <circle cx="0" cy="10" r="4" fill="#10b981" class="pulse"/>
+          </g>
+        </g>
+
+        <!-- Transit Route Network & Topological Vectors in Skies -->
+        <g opacity="0.55">
+          <line x1="100" y1="200" x2="350" y2="380" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="100" cy="200" r="7" fill="#082f49" stroke="#06b6d4" stroke-width="2.5"/>
+          <circle cx="350" cy="380" r="9" fill="#082f49" stroke="#ffffff" stroke-width="3"/>
+          <line x1="350" y1="380" x2="480" y2="440" stroke="#06b6d4" stroke-width="3"/>
+
+          <line x1="850" y1="380" x2="1100" y2="200" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="1100" cy="200" r="7" fill="#022c22" stroke="#10b981" stroke-width="2.5"/>
+          <circle cx="850" cy="380" r="9" fill="#022c22" stroke="#ffffff" stroke-width="3"/>
+          <line x1="720" y1="440" x2="850" y2="380" stroke="#10b981" stroke-width="3"/>
+        </g>
+        
+  <!-- Bottom vignette and title -->
+  <rect width="1200" height="600" fill="url(#lower_metro_transit)"/>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Urban Rapid Transit & Subterranean Corridors</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#2dd4bf" opacity=".95">UNDERGROUND SHIELD TUNNELS • HOOGHLY RIVER BORE • REGIONAL RAPID RAIL</text>
+</g>
+</svg>

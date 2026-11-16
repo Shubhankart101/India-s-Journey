@@ -289,8 +289,9 @@ fs.writeFileSync(outFile, `${JSON.stringify(catalog)}\n`);
 try {
   execSync('python scripts/add_indus_valley_group.py', { cwd: root, stdio: 'inherit' });
   execSync('python scripts/add_ancient_empires_and_art.py', { cwd: root, stdio: 'inherit' });
+  execSync('python scripts/add_metro_to_catalog.py', { cwd: root, stdio: 'inherit' });
 } catch (err) {
-  console.warn('Could not enrich ancient groups:', err.message);
+  console.warn('Could not enrich groups:', err.message);
 }
 if (!process.argv[2]) {
   const aliasFile = path.join(root, 'frontend', 'src', 'data', 'legacy-aliases.json');

@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_ancient_empires)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  <!-- Foreground shapes & bespoke art -->
   
-        <!-- Ancient Citadel &amp; Ashoka Pillar Silhouette -->
+        <!-- Ancient Citadel & Ashoka Pillar Silhouette -->
         <g transform="translate(600, 360)">
           <!-- Grand Ashoka Pillar -->
           <rect x="-12" y="-180" width="24" height="260" rx="3" fill="#e2d8be"/>

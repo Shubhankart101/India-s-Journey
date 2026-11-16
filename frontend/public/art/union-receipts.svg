@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_union_receipts)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  <!-- Foreground shapes & bespoke art -->
   
-        <!-- Parliament North Block &amp; Budget Ledger -->
+        <!-- Parliament North Block & Budget Ledger -->
         <g transform="translate(600, 360)">
           <!-- North Block Sandstone Arcade -->
           <rect x="-240" y="-30" width="480" height="90" fill="#312e81" rx="4"/>
@@ -43,7 +43,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_union_receipts)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Union Budget &amp; Receipts</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#a5b4fc" opacity=".95">TAXATION, CAPITAL &amp; FISCAL DEFICIT</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Union Budget & Receipts</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#a5b4fc" opacity=".95">TAXATION, CAPITAL & FISCAL DEFICIT</text>
 </g>
 </svg>

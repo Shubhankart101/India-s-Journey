@@ -287,14 +287,24 @@
   border-radius: 6px;
 }
 
+.results-fare,
 .results-fares {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 11px;
   font-weight: 800;
-  padding: 3px 6px;
+  padding: 4px 8px;
+  background: var(--panel2, #fdf3e8);
+  border-radius: 6px;
+  gap: 8px;
 }
 
+.fare-token {
+  color: var(--ink, #2b2622);
+}
+
+.fare-smartcard,
 .smart-card-fare {
   color: #059669;
 }

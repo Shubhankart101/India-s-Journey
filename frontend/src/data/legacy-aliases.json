@@ -127,6 +127,34 @@
     "indus-valley-civilisation": {
       "group": "Indus Valley Civilisation",
       "subgroup": ""
+    },
+    "metro-atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "metro-in-maps": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "delhi-metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "Metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "indian-metro-networks": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "maps": {
+      "group": "India in Maps",
+      "subgroup": ""
     }
   },
   "subgroups": {
@@ -921,6 +949,42 @@
     "India in Maps|Innovation & Technology on the map": {
       "group": "India in Maps",
       "subgroup": "Innovation & Technology on the map"
+    },
+    "India in Maps|metro-in-maps": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|metro-atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|delhi-metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|indian-metro-networks": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "Infrastructure & Mobility|metro-in-maps": {
+      "group": "Infrastructure & Mobility",
+      "subgroup": "Metro Rail Networks & Urban Transit"
+    },
+    "Infrastructure & Mobility|metro-rail-networks-urban-transit": {
+      "group": "Infrastructure & Mobility",
+      "subgroup": "Metro Rail Networks & Urban Transit"
+    },
+    "India in Maps|Metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|Metro Networks & Transit Atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
     }
   }
 }

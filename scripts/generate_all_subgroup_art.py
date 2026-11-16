@@ -389,6 +389,264 @@ SVG_DEFS = {
           <rect x="-90" y="80" width="180" height="20" rx="3" fill="#facc15"/>
         </g>
         """
+    },
+    "metro-atlas.svg": {
+        "title": "Indian Metro Networks & Transit Atlas",
+        "subtitle": "17 CITIES • 1,042 KM ACTIVE TRANSIT • DIJKSTRA ROUTING",
+        "sky1": "#0a1128", "sky2": "#1e1b4b", "accent": "#38bdf8",
+        "shapes": """
+        <!-- Distant City Skyline Silhouettes with Twinkling Windows -->
+        <g opacity="0.35">
+          <rect x="80" y="160" width="48" height="200" fill="#0f172a"/>
+          <rect x="140" y="120" width="60" height="240" fill="#1e1b4b"/>
+          <line x1="170" y1="70" x2="170" y2="120" stroke="#38bdf8" stroke-width="2"/>
+          <circle cx="170" cy="70" r="3" fill="#ef4444" class="tw"/>
+          <rect x="220" y="190" width="55" height="170" fill="#0f172a"/>
+          <rect x="290" y="140" width="70" height="220" fill="#1e293b"/>
+          <rect x="380" y="210" width="50" height="150" fill="#0f172a"/>
+          <g fill="#fef08a" opacity="0.6" class="tw">
+            <rect x="150" y="140" width="6" height="8" rx="1"/>
+            <rect x="165" y="140" width="6" height="8" rx="1"/>
+            <rect x="180" y="140" width="6" height="8" rx="1"/>
+            <rect x="150" y="160" width="6" height="8" rx="1"/>
+            <rect x="180" y="160" width="6" height="8" rx="1"/>
+            <rect x="150" y="180" width="6" height="8" rx="1"/>
+            <rect x="165" y="180" width="6" height="8" rx="1"/>
+            <rect x="305" y="160" width="8" height="8" rx="1"/>
+            <rect x="325" y="160" width="8" height="8" rx="1"/>
+            <rect x="305" y="185" width="8" height="8" rx="1"/>
+            <rect x="345" y="185" width="8" height="8" rx="1"/>
+          </g>
+          <rect x="820" y="180" width="60" height="180" fill="#0f172a"/>
+          <rect x="900" y="110" width="75" height="250" fill="#1e1b4b"/>
+          <line x1="937" y1="50" x2="937" y2="110" stroke="#a855f7" stroke-width="2"/>
+          <circle cx="937" cy="50" r="3" fill="#ef4444" class="tw"/>
+          <rect x="990" y="170" width="65" height="190" fill="#0f172a"/>
+          <rect x="1070" y="130" width="55" height="230" fill="#1e293b"/>
+          <g fill="#38bdf8" opacity="0.6" class="tw">
+            <rect x="915" y="130" width="8" height="8" rx="1"/>
+            <rect x="935" y="130" width="8" height="8" rx="1"/>
+            <rect x="955" y="130" width="8" height="8" rx="1"/>
+            <rect x="915" y="155" width="8" height="8" rx="1"/>
+            <rect x="955" y="155" width="8" height="8" rx="1"/>
+            <rect x="1005" y="190" width="6" height="6" rx="1"/>
+            <rect x="1025" y="190" width="6" height="6" rx="1"/>
+          </g>
+        </g>
+
+        <!-- Dynamic Glowing Metro Route Schematic Overlay -->
+        <g opacity="0.6">
+          <path d="M 50 180 C 250 160 400 240 650 180 S 1000 220 1150 150" fill="none" stroke="#d946ef" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 8" class="draw"/>
+          <path d="M 300 50 L 300 180 L 450 290 L 450 450" fill="none" stroke="#eab308" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 80 340 L 380 340 L 580 200 L 1120 200" fill="none" stroke="#0284c7" stroke-width="4" stroke-linecap="round"/>
+          <path d="M 150 120 L 500 120 L 750 320 L 1050 320" fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+
+          <g transform="translate(580, 200)">
+            <circle cx="0" cy="0" r="16" fill="none" stroke="#38bdf8" stroke-width="2" class="ping"/>
+            <circle cx="0" cy="0" r="9" fill="#0f172a" stroke="#ffffff" stroke-width="3" class="pulse"/>
+          </g>
+          <g transform="translate(450, 290)">
+            <circle cx="0" cy="0" r="14" fill="none" stroke="#eab308" stroke-width="2" class="ping"/>
+            <circle cx="0" cy="0" r="8" fill="#0f172a" stroke="#ffffff" stroke-width="3" class="pulse"/>
+          </g>
+          <g transform="translate(750, 320)">
+            <circle cx="0" cy="0" r="8" fill="#0f172a" stroke="#ffffff" stroke-width="2.5"/>
+          </g>
+          <g transform="translate(300, 180)">
+            <circle cx="0" cy="0" r="8" fill="#0f172a" stroke="#ffffff" stroke-width="2.5"/>
+          </g>
+        </g>
+
+        <!-- Heavy Concrete Metro Viaduct Piers & Deck -->
+        <g>
+          <g fill="#1e293b" stroke="#334155" stroke-width="1.5">
+            <path d="M 120 280 L 140 280 L 145 440 L 115 440 Z"/>
+            <polygon points="105,270 155,270 145,285 115,285" fill="#334155"/>
+            <path d="M 370 280 L 390 280 L 395 440 L 365 440 Z"/>
+            <polygon points="355,270 405,270 395,285 365,285" fill="#334155"/>
+            <path d="M 620 280 L 640 280 L 645 440 L 615 440 Z"/>
+            <polygon points="605,270 655,270 645,285 615,285" fill="#334155"/>
+            <path d="M 870 280 L 890 280 L 895 440 L 865 440 Z"/>
+            <polygon points="855,270 905,270 895,285 865,285" fill="#334155"/>
+            <path d="M 1070 280 L 1090 280 L 1095 440 L 1065 440 Z"/>
+            <polygon points="1055,270 1105,270 1095,285 1065,285" fill="#334155"/>
+          </g>
+
+          <path d="M -50 268 L 1250 268 L 1250 286 L -50 286 Z" fill="#334155"/>
+          <path d="M -50 264 L 1250 264 L 1250 268 L -50 268 Z" fill="#475569"/>
+          <path d="M -50 256 L 1250 256 L 1250 264 L -50 264 Z" fill="#1e293b"/>
+          <line x1="-50" y1="254" x2="1250" y2="254" stroke="#64748b" stroke-width="3"/>
+          <line x1="-50" y1="250" x2="1250" y2="250" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8 6"/>
+
+          <g stroke="#64748b" stroke-width="2">
+            <line x1="130" y1="170" x2="130" y2="254"/>
+            <line x1="130" y1="180" x2="165" y2="180"/>
+            <line x1="130" y1="195" x2="165" y2="180"/>
+            <line x1="380" y1="170" x2="380" y2="254"/>
+            <line x1="380" y1="180" x2="415" y2="180"/>
+            <line x1="380" y1="195" x2="415" y2="180"/>
+            <line x1="630" y1="170" x2="630" y2="254"/>
+            <line x1="630" y1="180" x2="665" y2="180"/>
+            <line x1="630" y1="195" x2="665" y2="180"/>
+            <line x1="880" y1="170" x2="880" y2="254"/>
+            <line x1="880" y1="180" x2="915" y2="180"/>
+            <line x1="880" y1="195" x2="915" y2="180"/>
+            <line x1="1080" y1="170" x2="1080" y2="254"/>
+            <line x1="1080" y1="180" x2="1115" y2="180"/>
+            <line x1="1080" y1="195" x2="1115" y2="180"/>
+          </g>
+          <path d="M -50 180 L 1250 180" stroke="#38bdf8" stroke-width="1.5" opacity="0.8"/>
+          <path d="M -50 172 Q 130 180 380 172 T 880 172 T 1250 172" fill="none" stroke="#94a3b8" stroke-width="1.2" opacity="0.6"/>
+        </g>
+
+        <!-- Sleek Modern Stainless Steel Metro Train -->
+        <g transform="translate(420, 192)">
+          <polygon points="410,38 720,10 720,68 410,48" fill="#fef08a" opacity="0.18"/>
+          <polygon points="410,40 600,24 600,56 410,46" fill="#ffffff" opacity="0.25"/>
+
+          <!-- Coach 1 (Trailing Coach) -->
+          <rect x="-320" y="10" width="180" height="52" rx="4" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"/>
+          <rect x="-320" y="38" width="180" height="6" fill="#dc2626"/>
+          <rect x="-320" y="45" width="180" height="3" fill="#0284c7"/>
+          <g fill="#fef08a" opacity="0.85">
+            <rect x="-305" y="18" width="30" height="16" rx="2"/>
+            <rect x="-260" y="18" width="30" height="16" rx="2"/>
+            <rect x="-215" y="18" width="30" height="16" rx="2"/>
+            <rect x="-170" y="18" width="22" height="16" rx="2"/>
+          </g>
+          <rect x="-300" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="-290" cy="65" r="5" fill="#475569"/>
+          <circle cx="-270" cy="65" r="5" fill="#475569"/>
+          <rect x="-180" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="-170" cy="65" r="5" fill="#475569"/>
+          <circle cx="-150" cy="65" r="5" fill="#475569"/>
+
+          <!-- Gangway 1 -->
+          <rect x="-140" y="14" width="12" height="46" fill="#1e293b"/>
+          <line x1="-136" y1="14" x2="-136" y2="60" stroke="#475569" stroke-width="2"/>
+          <line x1="-132" y1="14" x2="-132" y2="60" stroke="#475569" stroke-width="2"/>
+
+          <!-- Coach 2 (Middle Coach with Pantograph) -->
+          <rect x="-128" y="10" width="220" height="52" rx="4" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+          <rect x="-128" y="38" width="220" height="6" fill="#dc2626"/>
+          <rect x="-128" y="45" width="220" height="3" fill="#0284c7"/>
+          <g fill="#fef08a" opacity="0.85">
+            <rect x="-115" y="18" width="32" height="16" rx="2"/>
+            <rect x="-70" y="18" width="32" height="16" rx="2"/>
+            <rect x="-25" y="18" width="32" height="16" rx="2"/>
+            <rect x="20" y="18" width="32" height="16" rx="2"/>
+            <rect x="65" y="18" width="20" height="16" rx="2"/>
+          </g>
+          <rect x="-95" y="4" width="45" height="6" rx="2" fill="#64748b"/>
+          <rect x="30" y="4" width="45" height="6" rx="2" fill="#64748b"/>
+          <g stroke="#94a3b8" stroke-width="2" fill="none">
+            <line x1="-30" y1="10" x2="-10" y2="-6"/>
+            <line x1="-10" y1="-6" x2="10" y2="-12"/>
+            <line x1="10" y1="-12" x2="30" y2="-12"/>
+            <circle cx="20" cy="-12" r="3" fill="#38bdf8" class="ping"/>
+          </g>
+          <rect x="-110" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="-100" cy="65" r="5" fill="#475569"/>
+          <circle cx="-80" cy="65" r="5" fill="#475569"/>
+          <rect x="40" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="50" cy="65" r="5" fill="#475569"/>
+          <circle cx="70" cy="65" r="5" fill="#475569"/>
+
+          <!-- Gangway 2 -->
+          <rect x="92" y="14" width="12" height="46" fill="#1e293b"/>
+          <line x1="96" y1="14" x2="96" y2="60" stroke="#475569" stroke-width="2"/>
+          <line x1="100" y1="14" x2="100" y2="60" stroke="#475569" stroke-width="2"/>
+
+          <!-- Coach 3 (Leading Cab Coach with Aerodynamic Nose) -->
+          <path d="M 104 10 L 340 10 Q 380 12 400 28 Q 412 38 410 52 Q 408 62 390 62 L 104 62 Z" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+          <path d="M 104 38 L 350 38 Q 385 39 405 44 L 405 49 Q 385 44 350 44 L 104 44 Z" fill="#dc2626"/>
+          <path d="M 104 45 L 350 45 Q 385 46 405 51 L 405 53 Q 385 48 350 48 L 104 48 Z" fill="#0284c7"/>
+          <g fill="#fef08a" opacity="0.85">
+            <rect x="118" y="18" width="32" height="16" rx="2"/>
+            <rect x="165" y="18" width="32" height="16" rx="2"/>
+            <rect x="210" y="18" width="32" height="16" rx="2"/>
+            <rect x="255" y="18" width="32" height="16" rx="2"/>
+            <rect x="300" y="18" width="24" height="16" rx="2"/>
+          </g>
+          <path d="M 345 15 L 382 17 Q 396 24 398 34 L 355 34 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2"/>
+          <ellipse cx="365" cy="28" rx="8" ry="3" fill="#38bdf8" opacity="0.8"/>
+          <ellipse cx="406" cy="42" rx="4" ry="2.5" fill="#ffffff"/>
+          <circle cx="406" cy="42" r="2" fill="#fef08a"/>
+          <ellipse cx="404" cy="48" rx="4" ry="2.5" fill="#ffffff"/>
+          <circle cx="404" cy="48" r="2" fill="#fef08a"/>
+          <rect x="130" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="140" cy="65" r="5" fill="#475569"/>
+          <circle cx="160" cy="65" r="5" fill="#475569"/>
+          <rect x="300" y="60" width="40" height="8" rx="2" fill="#0f172a"/>
+          <circle cx="310" cy="65" r="5" fill="#475569"/>
+          <circle cx="330" cy="65" r="5" fill="#475569"/>
+        </g>
+        """
+    },
+    "metro-transit.svg": {
+        "title": "Urban Rapid Transit & Subterranean Corridors",
+        "subtitle": "UNDERGROUND SHIELD TUNNELS • HOOGHLY RIVER BORE • REGIONAL RAPID RAIL",
+        "sky1": "#091e3a", "sky2": "#0f766e", "accent": "#2dd4bf",
+        "shapes": """
+        <!-- Subterranean Geological Strata & Underwater Trench -->
+        <g opacity="0.5">
+          <path d="M 0 120 Q 300 140 600 110 T 1200 130 L 1200 600 L 0 600 Z" fill="#0b1727"/>
+          <path d="M 0 170 Q 400 190 750 160 T 1200 180 L 1200 600 L 0 600 Z" fill="#0f293d"/>
+          <path d="M 0 70 Q 150 55 300 70 T 600 70 T 900 70 T 1200 70 L 1200 120 L 0 120 Z" fill="#0284c7" opacity="0.3"/>
+          <path d="M 0 85 Q 200 75 400 85 T 800 85 T 1200 85" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.4" class="draw"/>
+        </g>
+
+        <!-- Giant Circular Concrete Shield Tunnel Portal (33m Subterranean Depth) -->
+        <g transform="translate(600, 260)">
+          <circle cx="0" cy="0" r="210" fill="#0a192f" stroke="#1e3a5f" stroke-width="16"/>
+          <circle cx="0" cy="0" r="198" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="14 10" class="rot-slow"/>
+          <circle cx="0" cy="0" r="182" fill="#071322" stroke="#334155" stroke-width="10"/>
+
+          <ellipse cx="0" cy="25" rx="125" ry="70" fill="#020b14"/>
+          <path d="M -170 -15 Q -80 15 -25 22" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.75"/>
+          <path d="M 170 -15 Q 80 15 25 22" fill="none" stroke="#22d3ee" stroke-width="3" opacity="0.75"/>
+          <path d="M -160 30 Q -70 38 -15 38" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+          <path d="M 160 30 Q 70 38 15 38" fill="none" stroke="#f59e0b" stroke-width="2.5" opacity="0.7"/>
+
+          <polygon points="-140,140 140,140 70,50 -70,50" fill="#1e293b"/>
+          <line x1="-105" y1="140" x2="-35" y2="50" stroke="#94a3b8" stroke-width="4"/>
+          <line x1="105" y1="140" x2="35" y2="50" stroke="#94a3b8" stroke-width="4"/>
+          <line x1="0" y1="140" x2="0" y2="50" stroke="#eab308" stroke-width="2.5" stroke-dasharray="10 6"/>
+
+          <!-- High-Speed Aerodynamic Bullet Metro / RRTS Train emerging from Portal -->
+          <path d="M -75 125 Q -80 45 -52 8 Q 0 -22 52 8 Q 80 45 75 125 Z" fill="#0f172a" stroke="#0284c7" stroke-width="3"/>
+          <path d="M -66 115 Q -72 52 -44 18 Q 0 -8 44 18 Q 72 52 66 115 Z" fill="#f8fafc"/>
+          <path d="M -54 70 Q 0 42 54 70 L 58 84 Q 0 58 -58 84 Z" fill="#0284c7"/>
+          <path d="M -55 84 Q 0 58 55 84 L 57 93 Q 0 66 -57 93 Z" fill="#f97316"/>
+          <path d="M -40 28 Q 0 12 40 28 L 35 48 Q 0 35 -35 48 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.8"/>
+          <ellipse cx="0" cy="40" rx="18" ry="4" fill="#38bdf8" opacity="0.8"/>
+          <circle cx="-48" cy="102" r="7" fill="#ffffff"/>
+          <circle cx="-48" cy="102" r="4" fill="#38bdf8"/>
+          <circle cx="48" cy="102" r="7" fill="#ffffff"/>
+          <circle cx="48" cy="102" r="4" fill="#38bdf8"/>
+          <polygon points="-48,102 -160,220 160,220 48,102" fill="#38bdf8" opacity="0.12"/>
+
+          <g transform="translate(140, 35)">
+            <rect x="-8" y="-25" width="16" height="42" rx="7" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+            <circle cx="0" cy="-14" r="4" fill="#1e293b"/>
+            <circle cx="0" cy="-2" r="4" fill="#1e293b"/>
+            <circle cx="0" cy="10" r="4" fill="#10b981" class="pulse"/>
+          </g>
+        </g>
+
+        <!-- Transit Route Network & Topological Vectors in Skies -->
+        <g opacity="0.55">
+          <line x1="100" y1="200" x2="350" y2="380" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="100" cy="200" r="7" fill="#082f49" stroke="#06b6d4" stroke-width="2.5"/>
+          <circle cx="350" cy="380" r="9" fill="#082f49" stroke="#ffffff" stroke-width="3"/>
+          <line x1="350" y1="380" x2="480" y2="440" stroke="#06b6d4" stroke-width="3"/>
+
+          <line x1="850" y1="380" x2="1100" y2="200" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="1100" cy="200" r="7" fill="#022c22" stroke="#10b981" stroke-width="2.5"/>
+          <circle cx="850" cy="380" r="9" fill="#022c22" stroke="#ffffff" stroke-width="3"/>
+          <line x1="720" y1="440" x2="850" y2="380" stroke="#10b981" stroke-width="3"/>
+        </g>
+        """
     }
 }
 

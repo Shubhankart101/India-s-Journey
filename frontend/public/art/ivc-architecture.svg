@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_ivc_architecture)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  <!-- Foreground shapes & bespoke art -->
   
-        <!-- Granary pillars &amp; covered brick drains -->
+        <!-- Granary pillars & covered brick drains -->
         <g transform="translate(600, 360)">
           <!-- Baked brick granary blocks -->
           <rect x="-180" y="-50" width="70" height="100" fill="#78350f" rx="3"/>
@@ -43,7 +43,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_ivc_architecture)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indus Civil Engineering &amp; Citadels</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">DRAINAGE, GRANARIES &amp; DOCKYARDS</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indus Civil Engineering & Citadels</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">DRAINAGE, GRANARIES & DOCKYARDS</text>
 </g>
 </svg>

@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_borrowing_debt)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  <!-- Foreground shapes & bespoke art -->
   
-        <!-- Sovereign Bond &amp; Reserve Bank Vault -->
+        <!-- Sovereign Bond & Reserve Bank Vault -->
         <g transform="translate(600, 360)">
           <!-- Vault Door -->
           <circle cx="0" cy="0" r="90" fill="#27272a" stroke="#fbbf24" stroke-width="4"/>
@@ -39,7 +39,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_borrowing_debt)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">How India Borrows &amp; Debt</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#fbbf24" opacity=".95">SOVEREIGN BONDS &amp; FISCAL DISCIPLINE</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">How India Borrows & Debt</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#fbbf24" opacity=".95">SOVEREIGN BONDS & FISCAL DISCIPLINE</text>
 </g>
 </svg>

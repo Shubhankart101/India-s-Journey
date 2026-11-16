@@ -27,13 +27,13 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_maurya_empire)"/>
-  <!-- Foreground shapes &amp; bespoke art -->
+  <!-- Foreground shapes & bespoke art -->
   
-        <!-- Sanchi Stupa Gateway (Torana) &amp; Ashoka Edicts -->
+        <!-- Sanchi Stupa Gateway (Torana) & Ashoka Edicts -->
         <g transform="translate(600, 370)">
           <!-- Great Stupa Dome -->
           <path d="M -160 80 A 160 160 0 0 1 160 80 Z" fill="#581c87"/>
-          <!-- Harmika &amp; Chhatravali umbrella spire -->
+          <!-- Harmika & Chhatravali umbrella spire -->
           <rect x="-24" y="-95" width="48" height="20" fill="#a855f7"/>
           <circle cx="0" cy="-125" r="30" fill="#facc15" opacity="0.8"/>
           <circle cx="0" cy="-145" r="22" fill="#facc15" opacity="0.9"/>
@@ -48,6 +48,6 @@
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_maurya_empire)"/>
   <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Mauryan Pan-Indian Empire</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">ASHOKA &amp; DHAMMAVIJAYA • 322–185 BCE</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#facc15" opacity=".95">ASHOKA & DHAMMAVIJAYA • 322–185 BCE</text>
 </g>
 </svg>

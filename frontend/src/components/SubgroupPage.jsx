@@ -132,12 +132,13 @@ export function SubgroupArticleView({
   const byKey = useMemo(() => new Map(indicators.map(item => [item.key, item])), [indicators]);
   const isIvc = category.slug === 'indus-valley-civilisation' || (slugify(category.name).includes('indus') && !slugify(category.name).includes('industry')) || slugify(category.name).includes('harapp');
   const isEmpires = category.slug === 'empires-ancient-india' || category.slug === 'empires-of-ancient-india' || slugify(category.name).includes('empire');
+  const isMetro = (category.slug === 'india-maps' || category.slug === 'india-in-maps' || slugify(category.name).includes('map')) && (subgroup.slug === 'metro-in-maps' || subgroup.slug === 'metro' || slugify(subgroup.name).includes('metro'));
   const generated = article?.sections?.length ? article.sections : [{
     title: 'The evidence', text: subgroup.description || '', keys: indicators.slice(0, 5).map(item => item.key),
   }];
   const sections = customSections
     ? customSections
-    : ((emptySections || (!customSections && (isIvc || isEmpires))) ? [] : (sectionsFilter ? sectionsFilter(generated) : generated));
+    : ((emptySections || (!customSections && (isIvc || isEmpires || isMetro))) ? [] : (sectionsFilter ? sectionsFilter(generated) : generated));
 
   const names = (group?.subgroups || []).map(item => item.name);
   const verse = pickSubgroupVerse(category.name, subgroup.name, names);
@@ -149,12 +150,14 @@ export function SubgroupArticleView({
   }));
   const extra = indicators.length > 0 ? [{ label: 'Charts in this subgroup', value: String(indicators.length) }] : [];
 
-  // Rotating live artwork playlist for IVC and Empires
+  // Rotating live artwork playlist for IVC, Empires, and Metro
   const artPlaylist = isIvc
     ? ['indus-valley.svg', 'ivc-artifacts.svg', 'indus-trade.svg', 'indus-script.svg', 'ivc-excavations.svg']
     : isEmpires
       ? ['ancient-empires.svg', 'mahajanapadas.svg', 'magadha-nanda.svg', 'alexander-campaign.svg', 'maurya-empire.svg', 'indo-greek.svg', 'satavahana-empire.svg', 'kushan-empire.svg', 'gupta-empire.svg', 'harsha-empire.svg', 'southern-dynasties.svg']
-      : (subgroup.art || category.art);
+      : isMetro
+        ? ['metro-atlas.svg', 'metro-transit.svg', 'maps-indian-railways.svg']
+        : (subgroup.art || category.art);
 
   return (
     <>
@@ -166,12 +169,12 @@ export function SubgroupArticleView({
         kicker={`${category.name} · ${subgroup.name}`}
         sections={shown}
         emptySections={false}
-        keyNumbers={isIvc || isEmpires ? keyExtra : keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
+        keyNumbers={isIvc || isEmpires || isMetro ? keyExtra : keyNumbersFor(sections, byKey, [...keyExtra, ...extra])}
         quote={article?.pullQuote}
         quoteAfterSection={-1}
         verse={verse}
         lead={<>{callout}{lead}</>}
-        after={(sectionsFilter || isIvc || isEmpires) ? null : <AllCharts indicators={indicators} />}
+        after={(sectionsFilter || isIvc || isEmpires || isMetro) ? null : <AllCharts indicators={indicators} />}
         sources={article?.sources || []}
         chipSources
         className="generated-subgroup-article"
