@@ -108,7 +108,7 @@ export default function Layout() {
           {' · '}<a href={BACKUP_URL} rel="noopener">Backup site</a> · <a href={BACKUP_MIRROR_URL} rel="noopener">Mirror</a>
           {' · '}<a href="https://github.com/Shubhankart101/India-s-Journey">GitHub</a>
           {' · '}<a href={X_URL} target="_blank" rel="noopener noreferrer" aria-label="Shubhankar Thapliyal on X">X</a>
-          {' · '}<a href={WEB_APP_URL} rel="noopener">Web app (Render)</a>
+          {' · '}<a href={WEB_APP_URL} rel="noopener">Web app (Azure)</a>
         </p>
         <p className="footer-thanks">
           With thanks to <a href="https://politypolicy.com/" target="_blank" rel="noopener noreferrer">Tushar Gupta of PolityPolicy</a>{' '}

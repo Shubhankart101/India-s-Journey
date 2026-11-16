@@ -43,14 +43,13 @@ if not SECRET_KEY:
 ALLOWED_HOSTS = env_list('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,testserver,.azurewebsites.net,.azurecontainerapps.io')
 CSRF_TRUSTED_ORIGINS = env_list('DJANGO_CSRF_TRUSTED_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173,https://*.azurewebsites.net,https://*.azurecontainerapps.io')
 
-# Trust default public hostnames that Azure and Render inject, so no host config is needed there.
+# Trust default public hostnames that Azure App Service and Container Apps inject.
 AZURE_CONTAINER_HOST = ''
 if os.environ.get('CONTAINER_APP_NAME') and os.environ.get('CONTAINER_APP_ENV_DNS_SUFFIX'):
     AZURE_CONTAINER_HOST = f"{os.environ['CONTAINER_APP_NAME'].strip()}.{os.environ['CONTAINER_APP_ENV_DNS_SUFFIX'].strip()}"
 
 PLATFORM_HOSTS = [
     host for host in (
-        os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip(),
         os.environ.get('WEBSITE_HOSTNAME', '').strip(),  # Azure App Service default domain
         AZURE_CONTAINER_HOST,  # Azure Container Apps default domain
     ) if host

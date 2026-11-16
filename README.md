@@ -10,7 +10,7 @@
 [![Release 32](https://img.shields.io/badge/release-32-c2185b?style=flat-square)](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md)
 
 [![Static dashboard](https://img.shields.io/badge/Explore-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://indiasjourney.netlify.app)
-[![Web app](https://img.shields.io/badge/Web%20app-Render-0c6b4f?style=for-the-badge)](https://indias-journey.onrender.com)
+[![Web app](https://img.shields.io/badge/Web%20app-Azure-0078d4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://indias-journey.azurewebsites.net)
 [![GitHub Pages mirror](https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white)](https://shubhankart101.github.io/India-s-Journey/)
 [![Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Shubhankart101/India-s-Journey/actions)
 
@@ -183,8 +183,7 @@ See [docs/TESTING.md](docs/TESTING.md) and [Web app CI](.github/workflows/webapp
 ## Deployment
 
 - **Static dashboard:** Netlify is configured for `docs/`; GitHub Pages provides a mirror. See [`netlify.toml`](netlify.toml) and [the Pages workflow](.github/workflows/deploy-dashboard.yml).
-- **Django + React:** [`render.yaml`](render.yaml) is the Render Blueprint. Select **New > Blueprint** in Render and point it at this repository; it builds the Docker app and has a health check at `/api/health/`.
-- **Microsoft Azure (Terraform):** Low-resource production deployment on Azure Linux App Service (B1 tier, ~₹1,100/month) with automated Terraform Infrastructure-as-Code and budget safeguards. See [`terraform/`](terraform/) and [deployment options](docs/DEPLOYMENT.md).
+- **Microsoft Azure (Terraform & CI/CD):** Production deployment on Azure Linux App Service (B1 tier, ~₹1,100/month) with modularized Terraform Infrastructure-as-Code (`terraform/modules/`), cost safeguards (₹12,500 budget alert), and automated GitHub Actions deployment. See [`terraform/`](terraform/) and [deployment options](docs/DEPLOYMENT.md).
 
 Free-tier container filesystems may be ephemeral; configure persistent storage if application data must survive redeploys. The indicator catalogue is re-imported from source data at startup.
 

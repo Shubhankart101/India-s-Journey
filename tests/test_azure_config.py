@@ -43,16 +43,25 @@ class TestAzureConfiguration(unittest.TestCase):
 
 
     def test_terraform_files_exist_and_fly_removed(self):
-        """Verify that Terraform files exist and legacy Fly.io config is purged."""
+        """Verify that Terraform files and modules exist and legacy Fly.io / Render configs are purged."""
         tf_dir = REPO_ROOT / 'terraform'
         self.assertTrue((tf_dir / 'main.tf').is_file(), "terraform/main.tf must exist")
         self.assertTrue((tf_dir / 'variables.tf').is_file(), "terraform/variables.tf must exist")
         self.assertTrue((tf_dir / 'outputs.tf').is_file(), "terraform/outputs.tf must exist")
         self.assertTrue((tf_dir / 'versions.tf').is_file(), "terraform/versions.tf must exist")
 
-        # Verify fly.toml and fly-deploy workflow are removed
+        # Verify Terraform modules exist
+        modules = ['resource_group', 'service_plan', 'web_app', 'budget']
+        for mod in modules:
+            mod_dir = tf_dir / 'modules' / mod
+            self.assertTrue((mod_dir / 'main.tf').is_file(), f"Module {mod}/main.tf must exist")
+            self.assertTrue((mod_dir / 'variables.tf').is_file(), f"Module {mod}/variables.tf must exist")
+            self.assertTrue((mod_dir / 'outputs.tf').is_file(), f"Module {mod}/outputs.tf must exist")
+
+        # Verify fly.toml, fly-deploy workflow, and render.yaml are completely removed
         self.assertFalse((REPO_ROOT / 'fly.toml').exists(), "fly.toml must not exist")
         self.assertFalse((REPO_ROOT / '.github' / 'workflows' / 'fly-deploy.yml').exists(), "fly-deploy.yml must not exist")
+        self.assertFalse((REPO_ROOT / 'render.yaml').exists(), "render.yaml must not exist")
         self.assertFalse((REPO_ROOT / 'azure-resources.bicep').exists(), "azure-resources.bicep must be replaced by Terraform")
 
 

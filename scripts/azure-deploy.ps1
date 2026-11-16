@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Turnkey Azure Deployment Script for India's Journey (PowerShell).
     Supports Terraform (default) and Azure CLI roll out modes.
@@ -28,10 +28,22 @@ Write-Host " Compute Plan SKU        : Linux $Sku (1 vCPU, 1.75 GB RAM, ~Rs. 1,1
 Write-Host " Monthly Budget Ceiling  : Rs. 12,500 (with automated email alerts)"
 Write-Host "======================================================================"
 
+# 0. Ensure Azure CLI and tools are discoverable on PATH
+$azureCliPaths = @(
+    "C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin",
+    "C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin"
+)
+foreach ($p in $azureCliPaths) {
+    if ((Test-Path $p) -and ($env:PATH -notlike "*$p*")) {
+        $env:PATH = "$p;$env:PATH"
+    }
+}
+
 # 1. Verify Azure CLI login
 try {
-    $account = az account show --output json | ConvertFrom-Json
-    Write-Host "✓ Connected to Azure Subscription: $($account.id)" -ForegroundColor Green
+    $account = az account show --output json 2>$null | ConvertFrom-Json
+    if (-not $account -or -not $account.id) { throw "No active account" }
+    Write-Host "✓ Connected to Azure Subscription: $($account.id) ($($account.name))" -ForegroundColor Green
 } catch {
     Write-Host "⚠️ Not signed in to Azure CLI. Please run: az login" -ForegroundColor Red
     exit 1

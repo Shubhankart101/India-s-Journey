@@ -6,48 +6,35 @@ There are two deployments, plus a backup mirror:
 | --- | --- | --- |
 | **Static dashboard on Netlify** (primary, <https://indiasjourney.netlify.app>) | [`netlify.toml`](../netlify.toml) builds the React static site and publishes `docs/` | Every push to `main` |
 | Backup mirror on GitHub Pages (<https://shubhankart101.github.io/India-s-Journey/>) | [`deploy-dashboard.yml`](../.github/workflows/deploy-dashboard.yml) publishes the same `docs/` | Push to `main`, or after any collector workflow |
-| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Microsoft Azure ([`terraform/`](../terraform/)), Render ([`render.yaml`](../render.yaml)) or any container host | Azure: via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) or Terraform. Render: auto on push |
+| Django + React web app | The root [`Dockerfile`](../Dockerfile), deployed to Microsoft Azure ([`terraform/`](../terraform/)) | Azure: via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) or Terraform |
 
 See [BACKUP.md](BACKUP.md) for how the app and the two static copies point to each other.
 
-## Hosting the web app (optional)
+## Hosting the web app
 
-The app is a single Docker image that listens on `$PORT`, so it runs on any container host. Set `DJANGO_SECRET_KEY`, `DJANGO_ALLOWED_HOSTS=<your-host>` and `DJANGO_CSRF_TRUSTED_ORIGINS=https://<your-host>`, plus the OAuth variables, and register `https://<your-host>/accounts/{google,microsoft}/login/callback/` with each provider (see [AUTHENTICATION.md](AUTHENTICATION.md)). Free tiers change often; check each provider's current limits before relying on them.
+The app is a single Docker image that listens on `$PORT`, so it runs on any container host. Set `DJANGO_SECRET_KEY`, `DJANGO_ALLOWED_HOSTS=<your-host>` and `DJANGO_CSRF_TRUSTED_ORIGINS=https://<your-host>`, plus the OAuth variables, and register `https://<your-host>/accounts/{google,microsoft}/login/callback/` with each provider (see [AUTHENTICATION.md](AUTHENTICATION.md)).
 
-| Option | What you host | Free tier (Oct 2026) | Trade-offs |
+| Option | What you host | Tier | Trade-offs |
 | --- | --- | --- | --- |
 | **Netlify** (`netlify.toml`, live) | Static dashboard in `docs/` | Free static hosting | Static only; the primary public site |
 | **GitHub Pages** (live) | Static dashboard in `docs/` | Free for public repositories | Static only; the backup mirror of Netlify |
-| **Google Cloud Run** | Full app from the `Dockerfile` | Monthly free request/CPU allowance | Scales to zero (cold starts); needs a billing account; `/tmp` storage only |
-| **Render** (`render.yaml`) | Full app from the `Dockerfile` | Free web service: 512 MB RAM, 0.1 CPU, 750 instance-hours/month | Sleeps after 15 minutes idle (~1 minute cold start); no disk on the free plan |
 | **Microsoft Azure** (`terraform/`) | Full app on Linux App Service B1 | Basic B1 tier (~Rs. 1,100/mo) | Persistent `/home` SSD storage, 1 vCPU, 1.75 GB RAM; fits well within Rs. 12,500/mo budget |
 
-On Azure and Render you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$RENDER_EXTERNAL_HOSTNAME`, `$WEBSITE_HOSTNAME` (`.azurewebsites.net`), and `.azurecontainerapps.io` automatically. Set them only for a custom domain.
+On Azure you don't need to set `DJANGO_ALLOWED_HOSTS` or `DJANGO_CSRF_TRUSTED_ORIGINS` for the default domain: `settings.py` adds `$WEBSITE_HOSTNAME` (`.azurewebsites.net`) and `.azurecontainerapps.io` automatically. Set them only for a custom domain.
 
-### Render (live web app)
+### Microsoft Azure (Modular Terraform & CI/CD)
 
-The live Django + React app runs on Render's web service blueprint. One-click setup:
+The Django + React app is deployed to Microsoft Azure Linux App Service (Basic B1 tier: 1 vCPU, 1.75 GB RAM) in `centralindia` (Pune) for approximately **Rs. 1,100 / month**, safely within a **Rs. 12,500 / month** budget.
 
-<a href="https://render.com/deploy?repo=https://github.com/Shubhankart101/India-s-Journey"><img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render"></a>
-
-1. In Render, choose **New → Blueprint** (or click the button above), connect this repository and pick `main`. Render reads [`render.yaml`](../render.yaml) and creates the `indias-journey` web service on the free plan, with a generated `DJANGO_SECRET_KEY`. No card is required.
-2. Wait for the first build (about 5–8 minutes) and open `https://indias-journey.onrender.com` (Render adds a suffix if the name is taken; update `WEB_APP_URL` in `frontend/src/config.js` and the static footers if so).
-3. Later pushes redeploy automatically, but only when `Dockerfile`, `webapp/`, `frontend/` or `data/catalog.json` change, so the frequent static-site and collector commits don't use up the free build minutes.
-4. The free service sleeps after 15 idle minutes; the React client retries gateway errors while it wakes, and the static site on Netlify/GitHub Pages stays up regardless.
-
-To deploy without the blueprint: **New → Web Service**, choose the repo, runtime **Docker**, plan **Free**, health check path `/api/health/`, and add `DJANGO_SECRET_KEY` and `WEB_CONCURRENCY=1`.
-
-### Microsoft Azure (Terraform)
-
-The Django + React app can be deployed to Microsoft Azure Linux App Service (Basic B1 tier: 1 vCPU, 1.75 GB RAM) in `centralindia` (Pune) for approximately **Rs. 1,100 / month**, safely within a **Rs. 12,500 / month** budget.
-
-
+Infrastructure is structured into clean reusable Terraform modules under [`terraform/modules/`](../terraform/modules/):
+- `resource_group`: Centralized Azure Resource Group management
+- `service_plan`: Linux App Service Plan with validated B1/B2 SKU
+- `web_app`: Containerized Linux Web App with persistent `/home/data/` SQLite storage, health check at `/api/health/`, and gthread concurrency
+- `budget`: Consumption budget safeguard enforcing the Rs. 12,500/mo limit with automated email notifications at 80% and 100%
 
 1. Ensure Azure CLI (`az`) and Terraform (>= 1.5.0) are installed, and run `az login`.
-
-2. Navigate to `terraform/` and run `terraform init` and `terraform apply`.
-3. The deployment sets up persistent storage for SQLite at `/home/data/db.sqlite3` (`WEBSITES_ENABLE_APP_SERVICE_STORAGE=true`), an automatic budget ceiling alert at Rs. 12,500/mo, and health check monitoring at `/api/health/`.
-4. Automated continuous deployment runs via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) using your Azure Web App publish profile.
+2. Navigate to `terraform/` and run `terraform init` and `terraform apply` (or run `./scripts/azure-deploy.ps1`).
+3. Automated continuous deployment runs via [`.github/workflows/azure-deploy.yml`](../.github/workflows/azure-deploy.yml) using your Azure Web App publish profile.
 
 
 

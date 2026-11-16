@@ -29,7 +29,7 @@ export const toQuery = params => {
 };
 
 const TRANSIENT = new Set([0, 502, 503, 504]);
-// A sleeping Render or cold-starting container instance answers the first requests with gateway errors while it wakes; retry reads before failing.
+// A cold-starting container instance on Azure App Service answers the first requests with gateway errors while it wakes; retry reads before failing.
 export const RETRY_DELAYS_MS = import.meta.env?.MODE === 'test' ? [0, 0] : [700, 2000];
 
 const wait = (ms, signal) => new Promise((resolve, reject) => {

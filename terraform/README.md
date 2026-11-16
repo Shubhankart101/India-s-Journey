@@ -10,6 +10,15 @@ This directory contains the production-ready Terraform Infrastructure-as-Code fo
 
 ---
 
+## Modular Architecture
+The Terraform setup is organized into modular resource blocks under `terraform/modules/`:
+- **`modules/resource_group`**: Provisions the centralized Azure Resource Group with project and environment tags.
+- **`modules/service_plan`**: Provisions the Linux App Service Plan with validated B1/B2 SKU.
+- **`modules/web_app`**: Provisions the containerized Linux Web App with persistent SQLite volume (`/home/data/db.sqlite3`), health check at `/api/health/`, HTTPS enforcement, and gthread concurrency.
+- **`modules/budget`**: Provisions Azure Cost Management consumption budget safeguarding against exceeding the ₹12,500/month limit with 80% and 100% email notifications.
+
+---
+
 ## Prerequisites
 1. [Terraform CLI](https://developer.hashicorp.com/terraform/downloads) (>= 1.5.0)
 2. [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) (`az login`)

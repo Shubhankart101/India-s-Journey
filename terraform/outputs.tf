@@ -1,21 +1,21 @@
 output "web_app_url" {
   description = "The default HTTPS URL for the deployed web app."
-  value       = "https://${azurerm_linux_web_app.app.default_hostname}"
+  value       = module.web_app.default_url
 }
 
 output "web_app_name" {
   description = "Name of the Azure Web App."
-  value       = azurerm_linux_web_app.app.name
+  value       = module.web_app.name
 }
 
 output "resource_group_name" {
   description = "Azure Resource Group."
-  value       = azurerm_resource_group.rg.name
+  value       = module.resource_group.name
 }
 
 output "service_plan_sku" {
   description = "Compute pricing tier."
-  value       = azurerm_service_plan.plan.sku_name
+  value       = module.service_plan.sku_name
 }
 
 output "estimated_monthly_cost" {
