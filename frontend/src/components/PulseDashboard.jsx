@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import pulseArticles from '../data/pulse-articles.json';
+import PulseArticleView from './PulseArticleView.jsx';
 import './PulseDashboard.css';
 
 // 21 High Frequency Macroeconomic Indicators mapped directly from official sources (RBI, MOSPI, GSTN, NPCI, PPAC, S&P)
@@ -18,6 +20,7 @@ const PULSE_INDICATORS = [
     target: '4.0% ±2%',
     source: 'MOSPI / NSO',
     key: 'cpi',
+    articleSlug: 'cpi',
   },
   {
     id: 'gst-collections',
@@ -33,6 +36,7 @@ const PULSE_INDICATORS = [
     target: '₹1.80L Cr Baseline',
     source: 'Ministry of Finance / GSTN',
     key: 'gst',
+    articleSlug: 'gst',
   },
   {
     id: 'upi-volume',
@@ -48,6 +52,7 @@ const PULSE_INDICATORS = [
     target: '₹20.6 Lakh Cr Value',
     source: 'NPCI',
     key: 'upi',
+    articleSlug: 'upi',
   },
   {
     id: 'mfg-pmi',
@@ -63,6 +68,7 @@ const PULSE_INDICATORS = [
     target: '>50 Expansion',
     source: 'S&P Global',
     key: 'wb_manufacturing_growth',
+    articleSlug: 'pmi',
   },
   {
     id: 'services-pmi',
@@ -78,6 +84,7 @@ const PULSE_INDICATORS = [
     target: '>50 Expansion',
     source: 'S&P Global',
     key: 'wb_services_growth',
+    articleSlug: 'pmi',
   },
   {
     id: 'forex-reserves',
@@ -93,6 +100,7 @@ const PULSE_INDICATORS = [
     target: '11.5 Months Imports',
     source: 'Reserve Bank of India',
     key: 'forex',
+    articleSlug: 'forex',
   },
   {
     id: 'credit-growth',
@@ -108,6 +116,7 @@ const PULSE_INDICATORS = [
     target: '₹172.4 Lakh Cr',
     source: 'RBI WSS',
     key: 'bank_credit',
+    articleSlug: 'bank-credit',
   },
   {
     id: 'power-demand',
@@ -123,6 +132,7 @@ const PULSE_INDICATORS = [
     target: 'Peak: 250 GW Met',
     source: 'Central Electricity Authority',
     key: 'power_consumption',
+    articleSlug: 'power',
   },
   {
     id: 'rail-freight',
@@ -138,6 +148,7 @@ const PULSE_INDICATORS = [
     target: '₹14,500 Cr Earnings',
     source: 'Ministry of Railways',
     key: 'rail_freight',
+    articleSlug: 'rail-freight',
   },
   {
     id: 'auto-sales-pv',
@@ -153,6 +164,7 @@ const PULSE_INDICATORS = [
     target: 'Festive High',
     source: 'SIAM / FADA',
     key: 'iip_motor_vehicles',
+    articleSlug: 'auto-sales',
   },
   {
     id: 'two-wheeler-sales',
@@ -168,6 +180,7 @@ const PULSE_INDICATORS = [
     target: 'Rural Demand Recovery',
     source: 'SIAM',
     key: 'iip_other_transport',
+    articleSlug: 'auto-sales',
   },
   {
     id: 'diesel-consumption',
@@ -183,6 +196,7 @@ const PULSE_INDICATORS = [
     target: 'Commercial Mobility',
     source: 'PPAC / MoPNG',
     key: 'fuel_consumption',
+    articleSlug: 'fuel-demand',
   },
   {
     id: 'petrol-consumption',
@@ -198,6 +212,7 @@ const PULSE_INDICATORS = [
     target: 'Urban Mobility',
     source: 'PPAC / MoPNG',
     key: 'iip_coke_petroleum',
+    articleSlug: 'fuel-demand',
   },
   {
     id: 'wpi-inflation',
@@ -213,6 +228,7 @@ const PULSE_INDICATORS = [
     target: 'Manufacturer Inputs',
     source: 'Office of Economic Adviser',
     key: 'wpi',
+    articleSlug: 'wpi',
   },
   {
     id: 'g-sec-yield',
@@ -228,6 +244,7 @@ const PULSE_INDICATORS = [
     target: 'Sovereign Benchmark',
     source: 'RBI / CCIL',
     key: 'hib_weighted_average_rate',
+    articleSlug: 'bond-yields',
   },
   {
     id: 'inr-usd',
@@ -243,6 +260,7 @@ const PULSE_INDICATORS = [
     target: 'Orderly RBI Float',
     source: 'RBI Reference Rate',
     key: 'rupee',
+    articleSlug: 'rupee',
   },
   {
     id: 'merchandise-exports',
@@ -258,6 +276,7 @@ const PULSE_INDICATORS = [
     target: 'Electronics & Pharma Leading',
     source: 'Ministry of Commerce',
     key: 'merchandise_exports',
+    articleSlug: 'foreign-trade',
   },
   {
     id: 'core-sector',
@@ -273,6 +292,7 @@ const PULSE_INDICATORS = [
     target: '8 Infrastructure Sectors',
     source: 'DPIIT / MoCI',
     key: 'iip',
+    articleSlug: 'core-sector',
   },
   {
     id: 'air-passenger',
@@ -288,6 +308,7 @@ const PULSE_INDICATORS = [
     target: 'Record Passenger Density',
     source: 'DGCA',
     key: 'civil_aviation_passengers',
+    articleSlug: 'pmi',
   },
   {
     id: 'port-cargo',
@@ -303,6 +324,7 @@ const PULSE_INDICATORS = [
     target: '12 Major Central Ports',
     source: 'IPA / Ministry of Ports',
     key: 'port_cargo',
+    articleSlug: 'major-ports',
   },
   {
     id: 'steel-consumption',
@@ -318,6 +340,7 @@ const PULSE_INDICATORS = [
     target: 'Capex Construction Surge',
     source: 'Joint Plant Committee (JPC)',
     key: 'crude_steel_production',
+    articleSlug: 'core-sector',
   },
   {
     id: 'fastag-collections',
@@ -333,6 +356,7 @@ const PULSE_INDICATORS = [
     target: 'National Highway Logistics',
     source: 'NHAI / IHMCL / NPCI',
     key: 'log_road_fastag_collection',
+    articleSlug: 'upi',
   },
   {
     id: 'coal-production',
@@ -348,6 +372,7 @@ const PULSE_INDICATORS = [
     target: 'Thermal Power Security',
     source: 'Ministry of Coal / CIL',
     key: 'coal_production',
+    articleSlug: 'core-sector',
   },
   {
     id: 'cement-production',
@@ -363,6 +388,7 @@ const PULSE_INDICATORS = [
     target: 'Civil Infra & Housing',
     source: 'Office of Economic Adviser',
     key: 'iip_non_metallic_minerals',
+    articleSlug: 'core-sector',
   },
   {
     id: 'commercial-vehicles',
@@ -378,6 +404,7 @@ const PULSE_INDICATORS = [
     target: 'Industrial Logistics Fleet',
     source: 'SIAM / Vahan',
     key: 'iip_compare_vehicles',
+    articleSlug: 'auto-sales',
   },
   {
     id: 'bank-deposits',
@@ -393,6 +420,7 @@ const PULSE_INDICATORS = [
     target: 'Household Savings Pool',
     source: 'RBI WSS',
     key: 'rbi_state_bank_deposits_all_india_trend',
+    articleSlug: 'bank-credit',
   },
   {
     id: 'fpi-flows',
@@ -408,6 +436,7 @@ const PULSE_INDICATORS = [
     target: 'Capital Account Stability',
     source: 'NSDL / SEBI',
     key: 'xp_bx_pef_totl_cd_wd_trend',
+    articleSlug: 'forex',
   },
   {
     id: 'trade-deficit',
@@ -423,6 +452,7 @@ const PULSE_INDICATORS = [
     target: 'CAD Contained <1.5% GDP',
     source: 'Ministry of Commerce',
     key: 'merchandise_trade_balance',
+    articleSlug: 'trade-balance',
   },
   {
     id: 'direct-tax',
@@ -438,6 +468,7 @@ const PULSE_INDICATORS = [
     target: '62% of Budget Target',
     source: 'CBDT / Ministry of Finance',
     key: 'ub_net_tax_revenue',
+    articleSlug: 'fiscal-deficit',
   },
   {
     id: 'cpi-food',
@@ -453,6 +484,7 @@ const PULSE_INDICATORS = [
     target: 'Winter Crop Influx',
     source: 'MOSPI / NSO',
     key: 'iip_food_products',
+    articleSlug: 'cpi',
   },
   {
     id: 'services-exports',
@@ -468,6 +500,7 @@ const PULSE_INDICATORS = [
     target: 'GCC & IT Engineering',
     source: 'RBI / MoCI',
     key: 'wb_services_exports_mix',
+    articleSlug: 'foreign-trade',
   },
   {
     id: 'crude-steel',
@@ -483,6 +516,7 @@ const PULSE_INDICATORS = [
     target: 'World #2 Steel Producer',
     source: 'World Steel / JPC',
     key: 'crude_steel_production',
+    articleSlug: 'core-sector',
   },
   {
     id: 'atf-consumption',
@@ -498,6 +532,7 @@ const PULSE_INDICATORS = [
     target: 'Aviation Fleet Capacity',
     source: 'PPAC / MoPNG',
     key: 'crude_petroleum_domestic',
+    articleSlug: 'fuel-demand',
   },
   {
     id: 'tractor-sales',
@@ -513,6 +548,7 @@ const PULSE_INDICATORS = [
     target: 'Kharif Farm Cashflows',
     source: 'TMA / FADA',
     key: 'wb_agriculture_growth',
+    articleSlug: 'auto-sales',
   },
 ];
 
@@ -563,6 +599,22 @@ function Sparkline({ data, color = '#38bdf8' }) {
 
 export default function PulseDashboard() {
   const [selectedPillar, setSelectedPillar] = useState('all');
+  const [selectedArticleSlug, setSelectedArticleSlug] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get('pulse') || params.get('indicator');
+      if (p) return p;
+      if (window.location.hash.startsWith('#pulse=')) {
+        return window.location.hash.replace('#pulse=', '');
+      }
+    }
+    return null;
+  });
+
+  const activeArticle = useMemo(() => {
+    if (!selectedArticleSlug) return null;
+    return pulseArticles.find(a => a.slug === selectedArticleSlug.toLowerCase()) || null;
+  }, [selectedArticleSlug]);
 
   const filteredIndicators = useMemo(() => {
     if (selectedPillar === 'all') return PULSE_INDICATORS;
@@ -582,8 +634,13 @@ export default function PulseDashboard() {
           </h2>
           <p className="pulse-lead">
             Tracking {PULSE_INDICATORS.length} high-frequency macro signals across industry, credit, inflation, consumption,
-            and external resilience month-by-month before official GDP releases.
+            and external resilience month-by-month before official GDP releases. Click any card below to open its rich interactive editorial article.
           </p>
+          <div className="pulse-header-action-row">
+            <Link to="/pulse" className="pulse-view-all-articles-link">
+              Explore 21 High Frequency Indicator Deep Dives →
+            </Link>
+          </div>
         </div>
 
         <div className="pulse-meta-ticker" aria-label="Macroeconomic Highlights">
@@ -618,18 +675,28 @@ export default function PulseDashboard() {
         ))}
       </div>
 
-      {/* 21 Pulse Indicator Cards Grid */}
+      {/* Pulse Indicator Cards Grid */}
       <div className="pulse-grid">
         {filteredIndicators.map(ind => (
-          <Link
-            to={`/indicator/${ind.key}`}
+          <div
             key={ind.id}
             className="pulse-card"
-            title={`View detailed chart and series for ${ind.name}`}
+            onClick={() => setSelectedArticleSlug(ind.articleSlug || 'pmi')}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setSelectedArticleSlug(ind.articleSlug || 'pmi');
+              }
+            }}
+            title={`Open interactive article & full time-series for ${ind.name}`}
           >
             <div className="pulse-card-top">
               <span className="pulse-card-category">{ind.category}</span>
-              <span className="pulse-card-period">{ind.period}</span>
+              <div className="pulse-card-top-right">
+                <span className="pulse-card-period">{ind.period}</span>
+                <span className="pulse-card-badge-article">Deep Dive</span>
+              </div>
             </div>
 
             <h3 className="pulse-card-name">{ind.name}</h3>
@@ -643,12 +710,15 @@ export default function PulseDashboard() {
                   </span>
                 </div>
               </div>
-              <Sparkline
-                data={ind.series}
-                color={ind.changeType === 'positive' ? '#38bdf8' : '#fb923c'}
-              />
+              <div className="pulse-card-spark-wrap">
+                <Sparkline
+                  data={ind.series}
+                  color={ind.changeType === 'positive' ? '#38bdf8' : '#fb923c'}
+                />
+                <span className="pulse-card-read-label">Article &amp; Data →</span>
+              </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
@@ -657,9 +727,15 @@ export default function PulseDashboard() {
         <span>
           Sources: RBI, MOSPI, Ministry of Finance (GSTN), NPCI, S&amp;P Global, CEA &amp; PPAC.
         </span>
-        <Link to="/explore">
-          Explore all 13 groups &amp; 138+ historical subgroups in the Atlas →
-        </Link>
+        <div className="pulse-footer-links">
+          <Link to="/pulse" className="pulse-footer-hub-link">
+            Dedicated High Frequency Pulse Hub →
+          </Link>
+          <span className="pulse-footer-sep">·</span>
+          <Link to="/explore">
+            Explore all 13 groups &amp; 138+ historical subgroups in the Atlas →
+          </Link>
+        </div>
       </div>
     </section>
   );
