@@ -68,7 +68,33 @@ function ExploreBrowse() {
     return map;
   }, [params, routeGroup]);
   const categories = useAsync(signal => api.categories(signal), []);
-  const category = (categories.data || []).find(item => item.slug === filters.category);
+  const rawCategory = (categories.data || []).find(item => item.slug === filters.category);
+  const category = useMemo(() => {
+    if (!rawCategory) return null;
+    if (['india-in-maps', 'india-maps'].includes(rawCategory.slug)) {
+      const hasMetro = rawCategory.subgroups?.some(s => s.slug === 'metro-in-maps' || toSlug(s.name).includes('metro'));
+      if (!hasMetro) {
+        return {
+          ...rawCategory,
+          subgroups: [
+            {
+              name: 'Metro Networks & Transit Atlas',
+              slug: 'metro-in-maps',
+              order: 0,
+              title: '🚇 Indian Metro Networks & Transit Atlas',
+              description: 'Interactive dual-representation maps (warm PolityPolicy cartographic terrain and clean MetroSafar schematic line diagrams) for all 17 operational Indian metro networks with Dijkstra route planner, fare slabs, and live IST intervals.',
+              art: 'metro-atlas.svg',
+              format: 'map',
+              interactive: true,
+              indicator_count: 1,
+            },
+            ...(rawCategory.subgroups || []),
+          ],
+        };
+      }
+    }
+    return rawCategory;
+  }, [rawCategory]);
   const subgroup = category?.subgroups.find(item => item.slug === filters.subgroup);
   useDocumentTitle(subgroup?.name || category?.name || 'Explore');
 

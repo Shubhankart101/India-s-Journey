@@ -398,6 +398,16 @@ function useSubgroup(categorySlug, subgroupSlug) {
     const itemWords = slugify(item.slug).split('-');
     return subWords.some(w => itemWords.includes(w));
   }))
+  || (normSubSlug.includes('metro') ? {
+    name: 'Metro Networks & Transit Atlas',
+    slug: 'metro-in-maps',
+    title: '🚇 Indian Metro Networks & Transit Atlas',
+    description: 'Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.',
+    art: 'metro-atlas.svg',
+    format: 'map',
+    interactive: true,
+    indicator_count: 1,
+  } : null)
   || (category?.subgroups?.[0] || null);
 
   const list = useAsync(signal => (category && subgroup ? loadSubgroupIndicators(category.slug, subgroup.slug, signal) : Promise.resolve([])), [category?.slug, subgroup?.slug]);

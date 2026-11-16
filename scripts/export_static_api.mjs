@@ -17,6 +17,23 @@ for (const name of [
 const readJson = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const catalog = readJson('data/catalog.json');
 const aliases = readJson('frontend/src/data/legacy-aliases.json');
+aliases.groups = aliases.groups || {};
+aliases.subgroups = aliases.subgroups || {};
+aliases.groups['Metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['metro-in-maps'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['metro-atlas'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['delhi-metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['indian-metro-networks'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.groups['maps'] = { group: 'India in Maps', subgroup: '' };
+aliases.subgroups['India in Maps|Metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|metro-in-maps'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|metro-atlas'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|delhi-metro'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|indian-metro-networks'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+aliases.subgroups['India in Maps|Metro Networks & Transit Atlas'] = { group: 'India in Maps', subgroup: 'Metro Networks & Transit Atlas' };
+fs.writeFileSync(path.join(root, 'frontend', 'src', 'data', 'legacy-aliases.json'), JSON.stringify(aliases, null, 2) + '\n');
 if (!Array.isArray(catalog.categories) || !Array.isArray(catalog.indicators) || !Array.isArray(catalog.articles)) {
   throw new Error('data/catalog.json is missing categories, indicators, or articles');
 }
@@ -69,6 +86,39 @@ const categories = catalog.categories.map(cat => ({
     };
   }),
 }));
+
+for (const cat of categories) {
+  if (cat.name === 'India in Maps' || cat.slug === 'india-in-maps') {
+    if (!cat.subgroups.some(s => s.slug === 'metro-in-maps' || s.name.toLowerCase().includes('metro'))) {
+      cat.subgroups.unshift({
+        name: 'Metro Networks & Transit Atlas',
+        slug: 'metro-in-maps',
+        order: 0,
+        title: '🚇 Indian Metro Networks & Transit Atlas',
+        description: 'Interactive dual-representation maps (warm PolityPolicy cartographic terrain and clean MetroSafar schematic line diagrams) for all 17 operational Indian metro networks with Dijkstra route planner, fare slabs, and live IST intervals.',
+        art: 'metro-atlas.svg',
+        format: 'map',
+        interactive: true,
+        indicator_count: 1,
+      });
+    }
+  }
+  if (cat.name === 'Infrastructure & Mobility' || cat.slug === 'infrastructure-mobility') {
+    if (!cat.subgroups.some(s => s.slug === 'metro-in-maps' || s.name.toLowerCase().includes('metro'))) {
+      cat.subgroups.unshift({
+        name: 'Metro Rail Networks & Urban Transit',
+        slug: 'metro-in-maps',
+        order: 0,
+        title: '🚇 Metro Rail Networks & Urban Transit (17 Cities)',
+        description: 'Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.',
+        art: 'metro-atlas.svg',
+        format: 'map',
+        interactive: true,
+        indicator_count: 1,
+      });
+    }
+  }
+}
 
 fs.mkdirSync(apiDir, { recursive: true });
 const publicApiDir = path.join(root, 'frontend', 'public', 'api');

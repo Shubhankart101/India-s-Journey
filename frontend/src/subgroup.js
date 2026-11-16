@@ -67,7 +67,7 @@ export function articleFor(categoryName, subgroupName) {
   }
   const group = explainers.groups.find(item => item.name === categoryName || slugify(item.name) === normCat || (normCat.includes('empires') && slugify(item.name).includes('empires')));
   const subSlug = slugify(subgroupName);
-  const subgroup = group?.article.subgroups.find(item => item.name === subgroupName || slugify(item.name) === subSlug)
+  const subgroup = group?.article.subgroups.find(item => item.name === subgroupName || slugify(item.name) === subSlug || (subSlug.includes('metro') && slugify(item.name).includes('metro')))
     || group?.article.subgroups[0];
   return { group: group?.article, subgroup };
 }

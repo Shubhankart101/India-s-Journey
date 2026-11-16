@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useInView } from '../hooks.js';
 import { groupSanskrit } from '../sanskrit.js';
 import { assetUrl } from '../config.js';
@@ -43,6 +43,7 @@ function IndiaOutline() {
 }
 
 const GroupCard = memo(function GroupCard({ category, to, cta }) {
+  const navigate = useNavigate();
   const slug = slugOf(category);
   const featured = slug === MAP_SLUG;
   const sanskrit = groupSanskrit(slug);
@@ -68,7 +69,7 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
               onClick={e => {
                 e.preventDefault();
                 e.stopPropagation();
-                window.location.hash = '#/explore/india-in-maps/metro-in-maps';
+                navigate('/explore/india-in-maps/metro-in-maps');
               }}
             >
               🚇 Metro Atlas (17 Cities) →
@@ -85,7 +86,7 @@ const GroupCard = memo(function GroupCard({ category, to, cta }) {
               onClick={chip.includes('Metro') ? e => {
                 e.preventDefault();
                 e.stopPropagation();
-                window.location.hash = '#/explore/india-in-maps/metro-in-maps';
+                navigate('/explore/india-in-maps/metro-in-maps');
               } : undefined}
             >
               {chip.includes('Metro') ? '🚇 ' + chip : chip}
