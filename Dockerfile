@@ -1,6 +1,8 @@
 FROM node:22-slim AS frontend
+WORKDIR /app
+COPY README.md ./
+COPY frontend/package.json frontend/package-lock.json ./frontend/
 WORKDIR /app/frontend
-COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 COPY frontend/ ./
 RUN npm run build
