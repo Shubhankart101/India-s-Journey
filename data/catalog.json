@@ -272,16 +272,6 @@
       "art": "rail-group.svg",
       "subgroups": [
         {
-          "name": "Metro Rail Networks & Urban Transit",
-          "slug": "metro-in-maps",
-          "order": 0,
-          "title": "🚇 Metro Rail Networks & Urban Transit (17 Cities)",
-          "description": "Interactive transit maps, station alignments, network statistics, and route finder across all 17 Indian metro networks.",
-          "art": "metro-atlas.svg",
-          "format": "map",
-          "interactive": true
-        },
-        {
           "name": "Rail Network & Passenger Services",
           "slug": "rail-network-passenger-services",
           "order": 0,
@@ -1169,16 +1159,6 @@
       "icon": "🗺️",
       "art": "india-maps.svg?v=5",
       "subgroups": [
-        {
-          "name": "Metro Networks & Transit Atlas",
-          "slug": "metro-in-maps",
-          "order": 0,
-          "title": "🚇 Indian Metro Networks & Transit Atlas",
-          "description": "Interactive dual-representation maps (warm PolityPolicy cartographic terrain and clean MetroSafar schematic line diagrams) for all 17 operational Indian metro networks with Dijkstra route planner, fare slabs, and live IST intervals.",
-          "art": "metro-atlas.svg",
-          "format": "map",
-          "interactive": true
-        },
         {
           "name": "Payments & Banking Maps",
           "slug": "payments-banking-maps",
@@ -192971,7 +192951,7 @@
         "index_axis": "y",
         "scope": "",
         "scope_label": "",
-        "note": "Top 30 candidates by reported vote total across the currently published Lok Sabha and Assembly by-election constituencies. The ECI portal labels displayed results provisional until Form 20 is published. Full candidate tables are retained in election-results.json.",
+        "note": "Top 30 candidates by reported vote total across the currently published Lok Sabha and Assembly by-election constituencies. The ECI portal labels displayed results provisional until Form 20 is published. Full candidate tables are retained in election-results.json. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>",
         "source": "Election Commission of India live results portal",
         "unit": ""
       }
@@ -193063,7 +193043,7 @@
         "index_axis": "y",
         "scope": "",
         "scope_label": "",
-        "note": "Top 30 candidates by reported vote share across currently published constituencies. ECI displays provisional results until Form 20.",
+        "note": "Top 30 candidates by reported vote share across currently published constituencies. ECI displays provisional results until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>",
         "source": "Election Commission of India live results portal",
         "unit": "% of votes"
       }
@@ -193107,7 +193087,7 @@
         "index_axis": "y",
         "scope": "",
         "scope_label": "",
-        "note": "Reported-vote lead between the top two candidates in each currently published constituency. The ECI portal labels displayed results provisional until Form 20.",
+        "note": "Reported-vote lead between the top two candidates in each currently published constituency. The ECI portal labels displayed results provisional until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>",
         "source": "Calculated from Election Commission of India live constituency candidate totals",
         "unit": "votes"
       }
@@ -193151,7 +193131,7 @@
         "index_axis": "y",
         "scope": "",
         "scope_label": "",
-        "note": "Reported vote share of the leading candidate in each currently published constituency. ECI displays provisional results until Form 20.",
+        "note": "Reported vote share of the leading candidate in each currently published constituency. ECI displays provisional results until Form 20. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>",
         "source": "Election Commission of India live results portal",
         "unit": "% of votes"
       }
@@ -193189,7 +193169,7 @@
         "index_axis": "y",
         "scope": "",
         "scope_label": "",
-        "note": "Count of currently published constituencies in which each party's candidate has the highest reported vote total. This is a provisional snapshot, not an all-election seat tally.",
+        "note": "Count of currently published constituencies in which each party's candidate has the highest reported vote total. This is a provisional snapshot, not an all-election seat tally. Latest collection failed; showing cached data. ECI: <urlopen error _ssl.c:1063: The handshake operation timed out>",
         "source": "Election Commission of India live constituency results",
         "unit": "constituencies"
       }
@@ -257267,69 +257247,6 @@
               28,
               19,
               11
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "key": "indian_metro_rail_networks_17_cities",
-      "title": "Indian Metro Rail Networks: 17 Cities & 1,042 km",
-      "subtitle": "Network length, daily ridership, stations, and operational routes across all 17 Indian metro systems",
-      "category": "India in Maps",
-      "subgroup": "Metro Networks & Transit Atlas",
-      "category_slug": "india-in-maps",
-      "subgroup_slug": "metro-in-maps",
-      "frequency": "annual",
-      "suffix": " km",
-      "color": "#0284c7",
-      "chart_type": "map",
-      "is_live": true,
-      "latest_value": 1042.0,
-      "latest_label": "2026",
-      "series": {
-        "source": "Ministry of Housing and Urban Affairs (MoHUA) & DMRC",
-        "source_url": "https://mohua.gov.in/",
-        "labels": [
-          "Delhi-NCR",
-          "Bengaluru",
-          "Mumbai",
-          "Hyderabad",
-          "Chennai",
-          "Kolkata",
-          "Ahmedabad",
-          "Nagpur",
-          "Pune",
-          "Noida",
-          "Kochi",
-          "Lucknow",
-          "Kanpur",
-          "Jaipur",
-          "Navi Mumbai",
-          "Agra",
-          "Bhopal-Indore"
-        ],
-        "datasets": [
-          {
-            "label": "Operational Route Length (km)",
-            "values": [
-              393.0,
-              76.9,
-              58.5,
-              69.2,
-              54.1,
-              47.9,
-              40.0,
-              38.2,
-              31.2,
-              29.7,
-              28.1,
-              22.8,
-              16.0,
-              12.0,
-              11.1,
-              6.0,
-              6.0
             ]
           }
         ]
