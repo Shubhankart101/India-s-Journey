@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-WEB_APP = "https://indias-journey.azurewebsites.net/"
+WEB_APP = "https://indias-journey-m5ag64.azurewebsites.net/"
 CONTACT_URL = "https://politypolicy.substack.com/about"
 
 

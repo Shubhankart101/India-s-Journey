@@ -64,6 +64,14 @@ class TestAzureConfiguration(unittest.TestCase):
         self.assertFalse((REPO_ROOT / 'render.yaml').exists(), "render.yaml must not exist")
         self.assertFalse((REPO_ROOT / 'azure-resources.bicep').exists(), "azure-resources.bicep must be replaced by Terraform")
 
+    def test_ai_roadmap_exists_and_linked_in_readme(self):
+        """Verify that docs/AI-ROADMAP.md exists and is linked from README.md."""
+        roadmap = REPO_ROOT / 'docs' / 'AI-ROADMAP.md'
+        self.assertTrue(roadmap.is_file(), "docs/AI-ROADMAP.md must exist")
+        readme = (REPO_ROOT / 'README.md').read_text(encoding='utf-8')
+        self.assertIn('docs/AI-ROADMAP.md', readme, "README.md must reference docs/AI-ROADMAP.md")
+        self.assertIn('https://indias-journey-m5ag64.azurewebsites.net', readme, "README.md must reference live azure webapp url")
+
 
 if __name__ == '__main__':
     unittest.main()

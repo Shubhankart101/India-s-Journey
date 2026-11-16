@@ -35,6 +35,7 @@ Start with the [project overview](../README.md), browse the guides below, or ope
 - [Deployment](DEPLOYMENT.md): static and web-app deployment instructions.
 - [Static site and backup](BACKUP.md): Netlify, GitHub Pages and uptime monitoring.
 - [Authentication](AUTHENTICATION.md): Google and Microsoft sign-in setup.
+- [AI Roadmap](AI-ROADMAP.md): 6-phase roadmap for conversational search, policy synthesis, Bhasha voice, and epigraphy AI.
 - [Testing](TESTING.md): Django, Vitest, Playwright and static-site suites.
 - [Contributing](../CONTRIBUTING.md) and [Security](../SECURITY.md).
 

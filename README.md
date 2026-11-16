@@ -10,7 +10,8 @@
 [![Release 32](https://img.shields.io/badge/release-32-c2185b?style=flat-square)](docs/releases/32-9e65ede-india-in-maps-and-display-themes.md)
 
 [![Static dashboard](https://img.shields.io/badge/Explore-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://indiasjourney.netlify.app)
-[![Web app](https://img.shields.io/badge/Web%20app-Azure-0078d4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://indias-journey.azurewebsites.net)
+[![Web app](https://img.shields.io/badge/Web%20app-Azure-0078d4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://indias-journey-m5ag64.azurewebsites.net)
+[![AI Roadmap](https://img.shields.io/badge/AI%20Roadmap-Phased%20Plan-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)](docs/AI-ROADMAP.md)
 [![GitHub Pages mirror](https://img.shields.io/badge/Backup-GitHub%20Pages-2088FF?style=for-the-badge&logo=github&logoColor=white)](https://shubhankart101.github.io/India-s-Journey/)
 [![Actions](https://img.shields.io/badge/CI-GitHub%20Actions-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/Shubhankart101/India-s-Journey/actions)
 
@@ -19,21 +20,25 @@
 <a id="contents"></a>
 ## Contents
 
-[Explore live](#explore-live) | [About](#about) | [Groups](#groups) | [Features](#features) | [Themes](#themes) | [Sources and caveats](#sources-and-caveats) | [Architecture](#architecture) | [Documentation](#documentation) | [Run locally](#run-locally) | [Testing](#testing) | [Deployment](#deployment) | [Release notes](#release-notes) | [Credits and licence](#credits-and-licence)
+[Explore live](#explore-live) | [About](#about) | [Groups](#groups) | [Features](#features) | [Themes](#themes) | [Sources and caveats](#sources-and-caveats) | [Architecture](#architecture) | [Documentation](#documentation) | [AI Roadmap](docs/AI-ROADMAP.md) | [Run locally](#run-locally) | [Testing](#testing) | [Deployment](#deployment) | [Release notes](#release-notes) | [Credits and licence](#credits-and-licence)
 
 <a id="explore-live"></a>
 ## Explore live
 
-<details>
-<summary>Choose a dashboard view</summary>
+<details open>
+<summary>Choose an application or dashboard view</summary>
 
-| View | Open |
-|---|---|
-| Browse indicators | [Explore the catalogue](https://indiasjourney.netlify.app/#/explore) |
-| India in Maps | [Open the map atlas](https://indiasjourney.netlify.app/#/explore?category=india-in-maps) |
-| Lok Sabha elections | [Open election history](https://indiasjourney.netlify.app/#/elections) |
-| Voter-roll guide | [Open the SSR/SIR explainer](https://indiasjourney.netlify.app/#/voter-list-sir-ssr) |
-| Sources | [Browse data sources](https://indiasjourney.netlify.app/#/sources) |
+| View | Open | Description |
+|---|---|---|
+| **Production Web App (Azure)** | [Open Azure App](https://indias-journey-m5ag64.azurewebsites.net) | Full containerized web app with dynamic indicator charts, state atlases and transit maps |
+| **API Health & Metrics** | [Check /api/health/](https://indias-journey-m5ag64.azurewebsites.net/api/health/) | Real-time health probe verifying 3,082 loaded indicators and Gunicorn worker health |
+| **Interactive API Explorer** | [Open API Docs](https://indias-journey-m5ag64.azurewebsites.net/api/docs/) | OpenAPI Swagger interactive API explorer and schemas |
+| **AI Roadmap** | [Read AI Blueprint](docs/AI-ROADMAP.md) | 6-phase roadmap for conversational search, policy synthesis, Bhasha voice, and epigraphy AI |
+| Static Dashboard (Netlify) | [Explore the catalogue](https://indiasjourney.netlify.app/#/explore) | Static browser fallback always available even when backend is offline |
+| India in Maps | [Open the map atlas](https://indias-journey-m5ag64.azurewebsites.net/#/explore?category=india-in-maps) | Interactive state choropleth and geographic maps |
+| Lok Sabha elections | [Open election history](https://indias-journey-m5ag64.azurewebsites.net/#/elections) | 1952–2024 national election results and party seat distributions |
+| Voter-roll guide | [Open the SSR/SIR explainer](https://indias-journey-m5ag64.azurewebsites.net/#/voter-list-sir-ssr) | Electoral roll revision procedures and timelines |
+| Sources & Provenance | [Browse data sources](https://indias-journey-m5ag64.azurewebsites.net/#/sources) | Verifiable source links, cadence, and data methodologies |
 
 </details>
 
@@ -183,7 +188,7 @@ See [docs/TESTING.md](docs/TESTING.md) and [Web app CI](.github/workflows/webapp
 ## Deployment
 
 - **Static dashboard:** Netlify is configured for `docs/`; GitHub Pages provides a mirror. See [`netlify.toml`](netlify.toml) and [the Pages workflow](.github/workflows/deploy-dashboard.yml).
-- **Microsoft Azure (Terraform & CI/CD):** Production deployment on Azure Linux App Service (B1 tier, ~₹1,100/month) with modularized Terraform Infrastructure-as-Code (`terraform/modules/`), cost safeguards (₹12,500 budget alert), and automated GitHub Actions deployment. See [`terraform/`](terraform/) and [deployment options](docs/DEPLOYMENT.md).
+- **Microsoft Azure (Terraform & CI/CD):** Production deployment on Azure Linux App Service (B1 tier, ~₹1,100/month) at [https://indias-journey-m5ag64.azurewebsites.net](https://indias-journey-m5ag64.azurewebsites.net) with modularized Terraform Infrastructure-as-Code (`terraform/modules/`), cost safeguards (₹12,500 budget alert), and automated GitHub Actions deployment. See [`terraform/`](terraform/), [AI Analytics Roadmap](docs/AI-ROADMAP.md), and [deployment options](docs/DEPLOYMENT.md).
 
 Free-tier container filesystems may be ephemeral; configure persistent storage if application data must survive redeploys. The indicator catalogue is re-imported from source data at startup.
 
@@ -204,7 +209,7 @@ Start with the [documentation index](docs/README.md), then open a focused guide:
 |---|---|
 | Data and interpretation | [Sources and limitations](docs/SOURCES-AND-LIMITATIONS.md), [Elections](docs/ELECTIONS.md), [India in Maps](docs/INDIA-IN-MAPS.md), [Tourism and heritage](docs/TOURISM-AND-HERITAGE.md), [Sports](docs/SPORTS.md) |
 | Transport and infrastructure | [Air travel](docs/AIR-TRAVEL-AND-CIVIL-AVIATION.md), [Indian Railways](docs/INDIAN-RAILWAYS.md), [Water transport](docs/WATER-TRANSPORT.md), [Logistics and freight](docs/LOGISTICS-AND-FREIGHT.md) |
-| Build and operate | [Architecture](docs/ARCHITECTURE.md), [API](docs/API.md), [Pipelines](docs/PIPELINES.md), [Testing](docs/TESTING.md), [Deployment](docs/DEPLOYMENT.md), [Static site and backup](docs/BACKUP.md), [Authentication](docs/AUTHENTICATION.md) |
+| Build and operate | [Architecture](docs/ARCHITECTURE.md), [API](docs/API.md), [Pipelines](docs/PIPELINES.md), [Testing](docs/TESTING.md), [Deployment](docs/DEPLOYMENT.md), [Static site and backup](docs/BACKUP.md), [Authentication](docs/AUTHENTICATION.md), [AI Roadmap](docs/AI-ROADMAP.md) |
 
 </details>
 
