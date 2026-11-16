@@ -31,11 +31,11 @@
     <!-- Aura / Light Flare -->
     <circle cx="130" cy="110" r="90" fill="#fef08a" opacity="0.3"/>
 
-    <!-- Cape & Shoulders (Crimson & Dark Suit) -->
+    <!-- Cape &amp; Shoulders (Crimson &amp; Dark Suit) -->
     <path d="M 40,140 Q 120,100 200,150 L 220,340 L 20,340 Z" fill="#b91c1c"/>
     <path d="M 60,130 L 120,110 L 180,130 L 190,240 L 50,240 Z" fill="#1e293b"/>
 
-    <!-- Head & Heroic Profile -->
+    <!-- Head &amp; Heroic Profile -->
     <circle cx="120" cy="70" r="32" fill="#fed7aa"/>
     <!-- Well-groomed hair and beard -->
     <path d="M 95,65 Q 120,35 150,55 Q 155,85 145,100 Q 130,110 110,105 Q 90,100 95,65 Z" fill="#1c1917"/>

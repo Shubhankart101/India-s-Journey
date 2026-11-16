@@ -277,7 +277,7 @@
 }
 
 .pulse-footer-bar a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Enhancements for Interactive Deep Dive Reader */

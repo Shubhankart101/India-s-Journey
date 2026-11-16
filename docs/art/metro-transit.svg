@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_metro_transit)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Subterranean Geological Strata & Underwater Trench -->
+        <!-- Subterranean Geological Strata &amp; Underwater Trench -->
         <g opacity="0.5">
           <path d="M 0 120 Q 300 140 600 110 T 1200 130 L 1200 600 L 0 600 Z" fill="#0b1727"/>
           <path d="M 0 170 Q 400 190 750 160 T 1200 180 L 1200 600 L 0 600 Z" fill="#0f293d"/>
@@ -75,7 +75,7 @@
           </g>
         </g>
 
-        <!-- Transit Route Network & Topological Vectors in Skies -->
+        <!-- Transit Route Network &amp; Topological Vectors in Skies -->
         <g opacity="0.55">
           <line x1="100" y1="200" x2="350" y2="380" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
           <circle cx="100" cy="200" r="7" fill="#082f49" stroke="#06b6d4" stroke-width="2.5"/>
@@ -90,7 +90,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_metro_transit)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Urban Rapid Transit & Subterranean Corridors</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Urban Rapid Transit &amp; Subterranean Corridors</text>
   <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#2dd4bf" opacity=".95">UNDERGROUND SHIELD TUNNELS • HOOGHLY RIVER BORE • REGIONAL RAPID RAIL</text>
 </g>
 </svg>

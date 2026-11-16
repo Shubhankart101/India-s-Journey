@@ -27,7 +27,7 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_metro_atlas)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
         <!-- Distant City Skyline Silhouettes with Twinkling Windows -->
         <g opacity="0.35">
@@ -91,7 +91,7 @@
           </g>
         </g>
 
-        <!-- Heavy Concrete Metro Viaduct Piers & Deck -->
+        <!-- Heavy Concrete Metro Viaduct Piers &amp; Deck -->
         <g>
           <g fill="#1e293b" stroke="#334155" stroke-width="1.5">
             <path d="M 120 280 L 140 280 L 145 440 L 115 440 Z"/>
@@ -218,7 +218,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_metro_atlas)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indian Metro Networks & Transit Atlas</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indian Metro Networks &amp; Transit Atlas</text>
   <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">17 CITIES • 1,042 KM ACTIVE TRANSIT • DIJKSTRA ROUTING</text>
 </g>
 </svg>

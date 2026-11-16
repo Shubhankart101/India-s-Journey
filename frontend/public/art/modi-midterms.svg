@@ -11,14 +11,14 @@
   </defs>
   <rect width="600" height="360" fill="url(#bgGrad)"/>
   
-  <!-- Pop Art Background Splatter & Halftone -->
+  <!-- Pop Art Background Splatter &amp; Halftone -->
   <g opacity="0.25">
     <circle cx="120" cy="80" r="140" fill="#f59e0b"/>
     <circle cx="500" cy="280" r="180" fill="#ef4444"/>
     <path d="M 0,0 L 300,360 L 600,0 Z" fill="#ffffff" opacity="0.1"/>
   </g>
 
-  <!-- Stylized Leader Portrait Silhouettes & Geometric Brushstrokes -->
+  <!-- Stylized Leader Portrait Silhouettes &amp; Geometric Brushstrokes -->
   <g transform="translate(180, 20)">
     <!-- Aura -->
     <path d="M 120,40 Q 200,20 220,120 Q 240,240 180,300 Q 60,320 20,240 Q -10,120 40,50 Z" fill="#ffffff" opacity="0.15"/>
@@ -26,10 +26,10 @@
     <!-- Face Silhouette -->
     <path d="M 70,70 Q 140,40 170,90 Q 200,150 180,240 Q 150,290 90,290 Q 40,270 30,200 Q 20,120 70,70 Z" fill="#fde047"/>
     
-    <!-- White Beard & Hair (Pop Art Stencil) -->
+    <!-- White Beard &amp; Hair (Pop Art Stencil) -->
     <path d="M 40,80 Q 70,30 140,40 Q 190,60 190,120 Q 170,100 150,110 Q 180,180 180,270 Q 140,320 70,310 Q 30,280 40,220 Q 50,190 70,180 Q 30,150 40,80 Z" fill="#ffffff" stroke="#1e293b" stroke-width="4"/>
     
-    <!-- Spectacles & Expression -->
+    <!-- Spectacles &amp; Expression -->
     <rect x="75" y="115" width="38" height="28" rx="6" fill="none" stroke="#0f172a" stroke-width="6"/>
     <rect x="135" y="115" width="38" height="28" rx="6" fill="none" stroke="#0f172a" stroke-width="6"/>
     <line x1="113" y1="126" x2="135" y2="126" stroke="#0f172a" stroke-width="6"/>

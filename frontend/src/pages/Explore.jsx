@@ -272,7 +272,16 @@ function ExploreBrowse() {
                   style={{ '--card-art': `url(${artUrl})` }}
                 >
                   <span className="explore-tile-art" aria-hidden="true">
-                    <img src={artUrl} alt="" loading="lazy" decoding="async" />
+                    <img
+                      src={artUrl}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      onError={e => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = assetUrl('art/india-maps.svg');
+                      }}
+                    />
                   </span>
                   <div className="explore-tile-content">
                     <span className="explore-tile-count">{item.indicator_count}</span>

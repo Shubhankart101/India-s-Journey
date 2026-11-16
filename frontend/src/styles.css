@@ -24,10 +24,18 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5; overflow-x: clip; }
 .app { position: relative; isolation: isolate; min-height: 100vh; }
 .app-default-backdrop { z-index: -1; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited,
+a *,
+a:hover * {
+  color: var(--accent);
+  text-decoration: none !important;
+}
 
-/* Never underline buttons, button-like links, cards, pills, tabs, or interactive controls on hover */
+/* Never underline buttons, button-like links, cards, pills, tabs, or interactive controls */
 button,
 button:hover,
 button:focus,
@@ -54,6 +62,11 @@ a.btn:focus,
 .pulse-card:hover,
 .pulse-card *,
 .pulse-card:hover *,
+.pulse-hub-card,
+.pulse-hub-card:hover,
+.pulse-hub-card:focus,
+.pulse-hub-card *,
+.pulse-hub-card:hover *,
 .pulse-filter-btn,
 .pulse-filter-btn:hover,
 .pulse-filter-btn *,
@@ -289,7 +302,7 @@ select:disabled { opacity: 0.5; }
 .citation-item { display: grid; align-content: start; gap: 5px; min-width: 0; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .citation-item strong { font-size: 0.86rem; }
 .citation-item span { color: var(--muted); font-size: 0.7rem; overflow-wrap: anywhere; }
-.citation-item a { font-size: 0.75rem; overflow-wrap: anywhere; text-decoration: underline; }
+.citation-item a { font-size: 0.75rem; overflow-wrap: anywhere; text-decoration: none; }
 .citation-item .citation-graph-link { font-weight: 700; }
 .reference-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; padding-top: 18px; }
 .reference-columns h3 { font-size: 1.05rem; margin: 10px 0; }
@@ -313,7 +326,7 @@ select:disabled { opacity: 0.5; }
 .backup-links.small { font-size: 0.82rem; }
 .state-error .backup-links { color: var(--muted); }
 .offline-banner { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 8px 16px; background: #3a1d1d; color: #ffd7d5; font-size: 0.88rem; }
-.offline-banner a { color: #fff; text-decoration: underline; }
+.offline-banner a { color: #fff; text-decoration: none; }
 .offline-banner .btn { min-height: 28px; padding: 0 10px; }
 
 /* Compare */

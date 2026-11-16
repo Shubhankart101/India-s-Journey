@@ -27,11 +27,11 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_kushan_empire)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Gandhara Standing Buddha & Kanishka Casket Spire -->
+        <!-- Gandhara Standing Buddha &amp; Kanishka Casket Spire -->
         <g transform="translate(600, 360)">
-          <!-- Halo & Meditating Buddha silhouette -->
+          <!-- Halo &amp; Meditating Buddha silhouette -->
           <circle cx="0" cy="-70" r="95" fill="none" stroke="#fca5a5" stroke-width="3" opacity="0.7"/>
           <circle cx="0" cy="-70" r="88" fill="#7f1d1d" opacity="0.6"/>
           <circle cx="0" cy="-90" r="28" fill="#fecaca"/>
@@ -44,6 +44,6 @@
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_kushan_empire)"/>
   <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Kushan Silk Road Empire</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#f87171" opacity=".95">KANISHKA & GANDHARA • 30–375 CE</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#f87171" opacity=".95">KANISHKA &amp; GANDHARA • 30–375 CE</text>
 </g>
 </svg>

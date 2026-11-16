@@ -27,9 +27,9 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_southern_dynasties)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
-        <!-- Shore Temple of Mamallapuram & Chola Tiger Flag -->
+        <!-- Shore Temple of Mamallapuram &amp; Chola Tiger Flag -->
         <g transform="translate(600, 360)">
           <!-- Shore Temple Vimana Pyramid -->
           <polygon points="-60,-120 0,-160 60,-120" fill="#2dd4bf"/>
@@ -43,6 +43,6 @@
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_southern_dynasties)"/>
   <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Classical Southern Dynasties</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#2dd4bf" opacity=".95">CHOLA, CHERA, PANDYA & PALLAVA • 300 BCE–850 CE</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#2dd4bf" opacity=".95">CHOLA, CHERA, PANDYA &amp; PALLAVA • 300 BCE–850 CE</text>
 </g>
 </svg>

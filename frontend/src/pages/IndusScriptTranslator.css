@@ -47,7 +47,7 @@
 .source-badge a {
   color: var(--accent, #d4a72c);
   font-weight: 600;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .translator-hero h1 {

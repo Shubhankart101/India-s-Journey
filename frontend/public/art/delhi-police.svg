@@ -13,7 +13,7 @@
   </defs>
   <rect width="600" height="360" fill="url(#streetGrad)"/>
 
-  <!-- Yellow & Black Auto/Taxi in Background -->
+  <!-- Yellow &amp; Black Auto/Taxi in Background -->
   <g transform="translate(40, 90)">
     <rect x="0" y="40" width="160" height="90" rx="16" fill="url(#taxiGrad)"/>
     <path d="M 20,40 L 50,0 L 130,0 L 150,40 Z" fill="#0f172a"/>
@@ -32,7 +32,7 @@
     <line x1="120" y1="90" x2="130" y2="140" stroke="#475569" stroke-width="6"/>
   </g>
 
-  <!-- Khaki Police Personnel Silhouettes & Crowd Control Action -->
+  <!-- Khaki Police Personnel Silhouettes &amp; Crowd Control Action -->
   <g transform="translate(260, 40)">
     <!-- Officer 1 -->
     <path d="M 50,70 Q 70,50 90,70 L 90,140 L 110,240 L 80,240 L 70,160 L 60,240 L 30,240 L 50,140 Z" fill="#d97706" stroke="#92400e" stroke-width="2"/>

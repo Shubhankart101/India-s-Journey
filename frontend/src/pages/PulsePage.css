@@ -164,6 +164,17 @@
   }
 }
 
+.pulse-hub-card,
+.pulse-hub-card:hover,
+.pulse-hub-card:focus,
+.pulse-hub-card:active,
+.pulse-hub-card:visited,
+.pulse-hub-card *,
+.pulse-hub-card:hover *,
+.pulse-hub-card:focus * {
+  text-decoration: none !important;
+}
+
 .pulse-hub-card {
   background: #141124;
   border: 1px solid rgba(255, 255, 255, 0.07);
@@ -174,6 +185,8 @@
   justify-content: space-between;
   gap: 1.2rem;
   cursor: pointer;
+  color: #e2e8f0;
+  text-decoration: none !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;

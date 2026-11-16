@@ -27,7 +27,7 @@
   </defs>
   <!-- Background sky -->
   <rect width="1200" height="600" fill="url(#sky_indo_greek)"/>
-  <!-- Foreground shapes & bespoke art -->
+  <!-- Foreground shapes &amp; bespoke art -->
   
         <!-- Heliodorus Garuda Pillar with Greek Coin Medallion -->
         <g transform="translate(600, 360)">
@@ -45,7 +45,7 @@
         
   <!-- Bottom vignette and title -->
   <rect width="1200" height="600" fill="url(#lower_indo_greek)"/>
-  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indo-Greek & Shunga Dynasties</text>
-  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">MILINDA & HELIODORUS PILLAR • 185 BCE–10 CE</text>
+  <text x="600" y="495" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="30" font-weight="800" letter-spacing=".5" fill="#f8fafc">Indo-Greek &amp; Shunga Dynasties</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Arial, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#38bdf8" opacity=".95">MILINDA &amp; HELIODORUS PILLAR • 185 BCE–10 CE</text>
 </g>
 </svg>

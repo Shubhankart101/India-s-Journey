@@ -38,7 +38,7 @@
 .substack-see-all:hover {
   color: #b91c1c;
   transform: translateX(2px);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Substack 3-Column Card Grid */

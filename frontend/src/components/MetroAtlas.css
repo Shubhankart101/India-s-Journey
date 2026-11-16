@@ -827,7 +827,7 @@
   text-align: left;
   cursor: pointer;
   padding: 0;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .mpjc-itinerary-link:hover {
