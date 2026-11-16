@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import IndiaMap, { mapPoints, stateKey } from '../components/IndiaMap.jsx';
 import ThemeSelect, { ContactLinks, GITHUB_URL, LINKEDIN_URL } from '../components/ThemeSelect.jsx';
 import { chartModes } from '../format.js';
-import { getTheme } from '../theme.js';
+import { getTheme, setTheme } from '../theme.js';
 
 const geometry = {
   viewBox: '0 0 100 100',
@@ -62,26 +62,33 @@ describe('India in Maps', () => {
 });
 
 describe('Header controls', () => {
-  it('switches between all ten modes with the pill radio group and arrow keys', async () => {
+  it('shifts between modes with the single mode button and arrow keys', async () => {
+    setTheme('light');
     render(<ThemeSelect />);
-    const group = screen.getByRole('radiogroup', { name: 'Display mode' });
-    const radios = within(group).getAllByRole('radio');
-    expect(radios.map(radio => radio.getAttribute('aria-label'))).toEqual(
-      ['Light', 'Dark', 'Newspaper', 'Pamphlet', 'Military', 'Parliamentary', 'Desi', 'Air Force', 'Navy', 'Police']);
-    expect(radios.find(radio => radio.getAttribute('aria-checked') === 'true')).toHaveAttribute('value', getTheme());
-    for (const name of ['Newspaper', 'Parliamentary', 'Desi', 'Air Force', 'Navy']) {
-      await userEvent.click(screen.getByRole('radio', { name }));
-      expect(screen.getByRole('radio', { name })).toHaveAttribute('aria-checked', 'true');
-    }
-    expect(document.documentElement.dataset.theme).toBe('navy');
+    const btn = screen.getByRole('button', { name: /Display mode/i });
+    expect(btn).toBeInTheDocument();
+    expect(btn).toHaveTextContent('Dark Mode');
+
+    // Click shifts from light to dark
+    await userEvent.click(btn);
+    expect(getTheme()).toBe('dark');
+    expect(document.documentElement.dataset.theme).toBe('dark');
+    expect(btn).toHaveTextContent('Light Mode');
+
+    // Click shifts to newspaper
+    await userEvent.click(btn);
+    expect(getTheme()).toBe('newspaper');
+    expect(document.documentElement.dataset.theme).toBe('newspaper');
+    expect(btn).toHaveTextContent('Newspaper Mode');
+
+    // Keyboard navigation
+    btn.focus();
     await userEvent.keyboard('{ArrowRight}');
-    expect(getTheme()).toBe('police');
-    await userEvent.keyboard('{ArrowRight}');
-    expect(getTheme()).toBe('light');
+    expect(getTheme()).toBe('pamphlet');
     await userEvent.keyboard('{End}');
-    expect(document.documentElement.dataset.theme).toBe('police');
+    expect(getTheme()).toBe('police');
     await userEvent.keyboard('{Home}');
-    expect(screen.getByRole('radio', { name: 'Light' })).toHaveFocus();
+    expect(getTheme()).toBe('light');
   });
 
   it('links to LinkedIn and GitHub in a new tab', () => {

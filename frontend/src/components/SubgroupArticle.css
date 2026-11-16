@@ -59,14 +59,19 @@
 .explore-article-card .explore-tile-name { padding-right: 2.6rem; }
 .explore-tile-dek { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: #e4e4e8; font-size: .78rem; line-height: 1.35; text-shadow: 0 1px 6px rgba(0, 0, 0, .85); }
 
-/* Quick groups horizontal jump nav */
+/* Quick groups jump nav: wraps cleanly as chips with no scrollbar */
 .explore-groups-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  overflow-x: auto;
   padding: 6px 2px 14px;
   margin-bottom: 14px;
-  scrollbar-width: thin;
+  overflow-x: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.explore-groups-nav::-webkit-scrollbar {
+  display: none;
 }
 .explore-group-pill {
   flex: none;
@@ -79,12 +84,15 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none !important;
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
 }
-.explore-group-pill:hover {
+.explore-group-pill:hover,
+.explore-group-pill:focus-visible {
   color: var(--ink);
   border-color: var(--accent, #ff9933);
   transform: translateY(-1px);
+  text-decoration: none !important;
 }
 .explore-group-pill.active {
   background: var(--accent, #ff9933);

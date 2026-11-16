@@ -7,15 +7,20 @@ const stats = { indicators: 691, live_indicators: 691, radial_indicators: 264, c
 const articles = page([{ title: 'Budget explainer', url: 'https://example.com/a', published: '', published_at: '2026-04-01T00:00:00Z', publisher: 'Polity and Policy', kind: 'polity_policy', is_featured: false }]);
 
 describe('Layout and Home', () => {
-  it('renders stats, group tiles with art and latest articles', async () => {
+  it('renders stats and latest articles on home', async () => {
     mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
     renderApp('/');
     expect(await screen.findByText('691')).toBeInTheDocument();
+    const latest = (await screen.findByRole('heading', { name: 'Latest analysis' })).closest('section');
+    expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('renders group tiles with art on explore', async () => {
+    mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
+    renderApp('/explore');
     const tile = await screen.findByRole('link', { name: /subgroups\s*Economic/ });
     expect(tile).toHaveAttribute('href', '/explore?category=economic');
     expect(tile.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/art/parliament.svg'));
-    const latest = (await screen.findByRole('heading', { name: 'Latest analysis' })).closest('section');
-    expect(await within(latest).findByRole('link', { name: 'Budget explainer' })).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   it('separates latest articles by Indian Matrix, PolityPolicy, and other sources', async () => {
@@ -136,24 +141,27 @@ describe('Layout and Home', () => {
     mockApi({
       '/api/stats/': stats,
       '/api/articles/': page([]),
+      '/api/indicators/': page([]),
       '/api/categories/': () => (attempts++ === 0 ? json({ detail: 'Server exploded' }, 500) : categories),
     });
-    renderApp('/');
+    renderApp('/explore');
     await userEvent.click(await screen.findByRole('button', { name: 'Try again' }));
     expect(await screen.findByRole('link', { name: /subgroups\s*Elections/ })).toBeInTheDocument();
   });
 
-  it('shows editorial group cards, typewriter topics and a back-to-top button', async () => {
+  it('shows editorial group cards on explore, typewriter topics and a back-to-top button on home', async () => {
     mockApi({ '/api/stats/': stats, '/api/categories/': categories, '/api/articles/': articles });
     const { container } = renderApp('/');
-    expect(await screen.findByRole('link', { name: /subgroups\s*Economic/ })).toHaveTextContent('Explore');
     expect(container.querySelector('.marquee-band')).toBeNull();
-    expect(container.querySelector('.group-card-kicker')).toBeInTheDocument();
     expect(screen.getByText(/GDP and inflation, UPI payments/)).toHaveClass('sr-only');
     expect(container.querySelector('.hero-orbs')).toHaveAttribute('aria-hidden', 'true');
     expect(container.querySelector('.scroll-progress')).toBeInTheDocument();
     const top = screen.getByRole('button', { name: 'Back to top', hidden: true });
     expect(top).toHaveAttribute('tabindex', '-1');
+
+    renderApp('/explore');
+    expect(await screen.findByRole('link', { name: /subgroups\s*Economic/ })).toHaveTextContent('Explore');
+    expect(document.querySelector('.group-card-kicker')).toBeInTheDocument();
   });
 
   it('renders the 404 page for unknown routes', async () => {

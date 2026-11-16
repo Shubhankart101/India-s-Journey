@@ -251,6 +251,8 @@ function ExploreBrowse() {
           <h2>{category ? `Inside ${category.name}` : 'Browse by group'}</h2>
           <span className="muted">{category ? `${category.subgroups.length} subgroups` : `${(categories.data || []).length} groups`}</span>
         </div>
+        {categories.loading && !categories.data && <Loading label="Loading groups…" />}
+        {categories.error && <ErrorState error={categories.error} onRetry={categories.reload} />}
         {category ? (
           <div className="explore-grid" role="list" aria-label="Subgroups">
             <button type="button" role="listitem" className="explore-tile explore-tile-back" onClick={() => update({ category: '', subgroup: '' })}>

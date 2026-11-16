@@ -1,42 +1,127 @@
-/* Mode pills: all ten modes visible; short labels by default, full labels on very wide screens. */
-.theme-select { display: inline-flex; flex: none; flex-shrink: 0; align-items: center; gap: 1px; padding: 2px; border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--switch-active, #9b1c2c) 7%, var(--surface, #fff)); white-space: nowrap; max-width: 100%; }
-.theme-select[role="radiogroup"] button[role="radio"] { display: inline-grid; place-items: center; min-height: 26px; min-width: 27px; padding: 0 5px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-family: inherit; font-size: .64rem; font-weight: 600; line-height: 1.1; cursor: pointer; outline: none; transition: background .16s, color .16s, box-shadow .16s; }
-.theme-select button[role="radio"]:focus { outline: none; }
-.theme-select button[role="radio"]:focus:not(:focus-visible) { outline: none; box-shadow: none; }
-.theme-select button[role="radio"][aria-checked="true"] { background: #9b1c2c; color: #fff; font-weight: 800; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
-.theme-select button[role="radio"]:hover:not([aria-checked="true"]) { background: var(--fill-hover, rgba(0,0,0,.08)); color: var(--ink); }
-.theme-select button[role="radio"]:focus-visible { outline: 2px solid var(--accent, #9b1c2c); outline-offset: 2px; z-index: 1; }
-.theme-label-full { display: none; }
-.theme-label-short { display: inline; }
-@media (min-width: 1880px) { .theme-label-full { display: inline; } .theme-label-short { display: none; } }
-html[data-theme="dark"] .theme-select { background: #1d1d1f; border-color: #424245; }
-html[data-theme="dark"] .theme-select button[role="radio"] { color: #c4c4ca; }
-html[data-theme="newspaper"] .theme-select { border: 1px solid #342b1e; background: #e8dfcb; border-radius: 3px; }
-html[data-theme="newspaper"] .theme-select button[role="radio"] { border-radius: 1px; color: #342b1e; font-family: "Old Standard TT", Georgia, serif; text-transform: uppercase; }
-html[data-theme="newspaper"] .theme-select button[role="radio"][aria-checked="true"] { color: #f4f0e6; background: #342b1e; }
-html[data-theme="pamphlet"] .theme-select { border: 2px solid #2b1708; background: #ffedc7; box-shadow: 2px 2px 0 #2b1708; }
-html[data-theme="pamphlet"] .theme-select button[role="radio"] { color: #673914; font-family: "Special Elite", Georgia, serif; }
-html[data-theme="pamphlet"] .theme-select button[role="radio"][aria-checked="true"] { background: #a3104d; color: #fff8e7; }
-html[data-theme="military"] .theme-select { border: 1px solid #5b6b2a; background: #1a1e10; border-radius: 4px; overflow: hidden; }
-html[data-theme="military"] .theme-select button[role="radio"] { border: 0; outline: none; border-radius: 2px; color: #bcb48e; font-family: "Stardos Stencil", Impact, sans-serif; text-transform: uppercase; letter-spacing: 0; padding: 0 4px; min-width: 22px; min-height: 24px; height: 24px; font-size: .60rem; line-height: 1; }
-html[data-theme="military"] .theme-select button[role="radio"]:focus { outline: none; }
-html[data-theme="military"] .theme-select button[role="radio"]:focus:not(:focus-visible) { outline: none; box-shadow: none; }
-html[data-theme="military"] .theme-select button[role="radio"][aria-checked="true"] { background: #5b6b2a; color: #f2e7b8; box-shadow: inset 0 -2px 0 #d4a72c; }
-html[data-theme="parliamentary"] .theme-select { border: 1px solid #c9a227; background: #0b2e24; border-radius: 6px; }
-html[data-theme="parliamentary"] .theme-select button[role="radio"] { border-radius: 4px; color: #d9cfae; font-family: "Playfair Display", Georgia, serif; }
-html[data-theme="parliamentary"] .theme-select button[role="radio"][aria-checked="true"] { background: #c9a227; color: #0b2e24; }
-html[data-theme="desi"] .theme-select { border: 2px solid #d81b60; background: #fff8ec; }
-html[data-theme="desi"] .theme-select button[role="radio"] { color: #6b2f55; }
-html[data-theme="desi"] .theme-select button[role="radio"][aria-checked="true"] { background: linear-gradient(90deg, #ff9933, #d81b60); color: #fff; }
-html[data-theme="airforce"] .theme-select { border: 1px solid #7fb3e6; background: #0e2747; }
-html[data-theme="airforce"] .theme-select button[role="radio"] { color: #a9c1dd; text-transform: uppercase; letter-spacing: .04em; }
-html[data-theme="airforce"] .theme-select button[role="radio"][aria-checked="true"] { background: #5aa0e6; color: #06172e; }
-html[data-theme="navy"] .theme-select { border: 1px solid #0a1f44; background: #fff; border-radius: 4px; }
-html[data-theme="navy"] .theme-select button[role="radio"] { border-radius: 2px; color: #3c4d6e; }
-html[data-theme="navy"] .theme-select button[role="radio"][aria-checked="true"] { background: #0a1f44; color: #fff; box-shadow: inset 0 -2px 0 #c9a227; }
-html[data-theme="police"] .theme-select { border: 1px solid #1d3c78; background: #f7efd9; border-radius: 4px; }
-html[data-theme="police"] .theme-select button[role="radio"] { border-radius: 2px; color: #4a4636; }
-html[data-theme="police"] .theme-select button[role="radio"][aria-checked="true"] { background: #1d3c78; color: #f7efd9; box-shadow: inset 0 -2px 0 #c62828; }
+/* Mode pill button: single compact capsule that shifts between light, dark, and edition modes */
+.theme-mode-switch {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+}
+
+.theme-mode-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  background: var(--surface, #ffffff);
+  color: var(--ink, #0f172a);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.15s, box-shadow 0.18s;
+  text-decoration: none !important;
+}
+
+.theme-mode-pill-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent, #ff9933);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  text-decoration: none !important;
+}
+
+.theme-mode-pill-btn:focus-visible {
+  outline: 2px solid var(--accent, #ff9933);
+  outline-offset: 2px;
+}
+
+.theme-mode-pill-btn:active {
+  transform: translateY(0);
+}
+
+.theme-mode-pill-btn .theme-mode-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.theme-mode-pill-btn .theme-mode-text {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none !important;
+}
+
+html[data-theme="dark"] .theme-mode-pill-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .theme-mode-pill-btn:hover {
+  background: #273549;
+  border-color: #38bdf8;
+}
+
+html[data-theme="newspaper"] .theme-mode-pill-btn {
+  background: #e8dfcb;
+  border: 1px solid #342b1e;
+  color: #342b1e;
+  font-family: "Old Standard TT", Georgia, serif;
+}
+
+html[data-theme="pamphlet"] .theme-mode-pill-btn {
+  background: #ffedc7;
+  border: 2px solid #2b1708;
+  color: #673914;
+  font-family: "Special Elite", Georgia, serif;
+  box-shadow: 2px 2px 0 #2b1708;
+}
+
+html[data-theme="military"] .theme-mode-pill-btn {
+  background: #1a1e10;
+  border: 1px solid #5b6b2a;
+  color: #f2e7b8;
+  font-family: "Stardos Stencil", Impact, sans-serif;
+}
+
+html[data-theme="parliamentary"] .theme-mode-pill-btn {
+  background: #0b2e24;
+  border: 1px solid #c9a227;
+  color: #f3ead2;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+html[data-theme="desi"] .theme-mode-pill-btn {
+  background: #fff8ec;
+  border: 2px solid #d81b60;
+  color: #6b2f55;
+}
+
+html[data-theme="airforce"] .theme-mode-pill-btn {
+  background: #0e2747;
+  border: 1px solid #7fb3e6;
+  color: #e8f1fb;
+}
+
+html[data-theme="navy"] .theme-mode-pill-btn {
+  background: #ffffff;
+  border: 1px solid #0a1f44;
+  color: #0a1f44;
+}
+
+html[data-theme="police"] .theme-mode-pill-btn {
+  background: #f7efd9;
+  border: 1px solid #1d3c78;
+  color: #1b2440;
+}
 
 /* Devanagari accents, used in every theme: kickers, hero motto and the nameplate tagline. */
 :root { --deva-sans: "Noto Sans Devanagari", "Nirmala UI", Mangal, sans-serif; --deva-serif: "Noto Serif Devanagari", "Tiro Devanagari Hindi", "Nirmala UI", Mangal, serif; }
@@ -102,15 +187,10 @@ html[data-theme="pamphlet"] :focus-visible { outline-color: #8a1646; }
   :is(:root[data-theme="newspaper"], :root[data-theme="pamphlet"]) .header-cta { display: none; }
 }
 @media (max-width: 1140px) {
-  .theme-select { max-width: 100%; }
-}
-@media (max-width: 1000px) {
-  .theme-select button[role="radio"] { min-width: 22px; padding-inline: 2px; }
+  .theme-mode-switch, .theme-select { max-width: 100%; }
 }
 @media (max-width: 860px) {
-  .theme-select { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; padding: 3px; max-width: 100%; border-radius: 8px; }
-  .theme-select button[role="radio"] { min-height: 24px; min-width: 0; padding-inline: 2px; font-size: .58rem; }
-  .header-inner .theme-select { margin-left: auto; }
+  .header-inner .theme-mode-switch, .header-inner .theme-select { margin-left: auto; }
 }
 @media (max-width: 620px) {
   .vintage-dateline { width: calc(100% - 20px); font-size: .58rem; letter-spacing: .04em; }

@@ -1,6 +1,7 @@
 /* Editorial "Browse by group" cards (home). Shared by docs/ and frontend/. */
 .group-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px 24px; margin: 0; padding: 0; }
-.group-card { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 16px 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel, var(--surface)); color: var(--ink); text-decoration: none; content-visibility: auto; contain-intrinsic-size: auto 330px; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.group-card { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 16px 16px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel, var(--surface)); color: var(--ink); text-decoration: none !important; content-visibility: auto; contain-intrinsic-size: auto 330px; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.group-card:hover, .group-card:focus-visible, .group-card *, .group-card:hover * { text-decoration: none !important; }
 .group-card:hover, .group-card:focus-visible { transform: translateY(-2px); border-color: var(--link, var(--accent)); box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
 .group-card:focus-visible { outline: 2px solid var(--link, var(--accent)); outline-offset: 3px; }
 .group-card-art, .group-card-map { display: block; height: 96px; border-radius: 10px; overflow: hidden; background: var(--soft, rgba(127, 127, 127, .12)); }

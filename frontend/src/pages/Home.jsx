@@ -7,9 +7,8 @@ import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import ArtBackdrop from '../components/ArtBackdrop.jsx';
 import MiniIndices from '../components/MiniIndices.jsx';
 import PulseDashboard from '../components/PulseDashboard.jsx';
-import GroupCards from '../components/GroupCards.jsx';
 import IndependenceClock from '../components/IndependenceClock.jsx';
-import { ANALYSIS_KICKER, GROUPS_KICKER, HOME_KICKER, MOTTO } from '../sanskrit.js';
+import { ANALYSIS_KICKER, HOME_KICKER, MOTTO } from '../sanskrit.js';
 import { CountUp, Typewriter } from '../components/Motion.jsx';
 
 const SLIDE_MS = 7000;
@@ -94,16 +93,6 @@ export default function Home() {
 
       {/* High Frequency Indicators Pulse Dashboard */}
       <PulseDashboard />
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Browse by group<span className="sa-kicker" lang="sa" aria-hidden="true">{GROUPS_KICKER}</span></h2>
-          <Link to="/explore">See all →</Link>
-        </div>
-        {categories.loading && <Loading label="Loading groups…" />}
-        {categories.error && <ErrorState error={categories.error} onRetry={categories.reload} />}
-        {categories.data && <GroupCards categories={categories.data} />}
-      </section>
 
       <section className="section">
         <div className="section-head">
