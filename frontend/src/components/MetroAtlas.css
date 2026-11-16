@@ -176,11 +176,11 @@
   background: #38bdf8;
 }
 
-/* Grid Layout */
+/* Full Width Maximized Grid Layout (No Split View) */
 .metro-workbench-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(320px, 1fr);
-  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  min-height: 780px;
   min-width: 0;
   max-width: 100%;
   width: 100%;
@@ -189,11 +189,13 @@
 }
 
 .metro-workbench-grid.full-map-layout {
-  grid-template-columns: minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
 }
 
 .metro-workbench-grid.full-map-layout .metro-map-canvas-container {
-  min-height: 760px;
+  min-height: 780px;
+  height: 780px;
   border-right: none;
 }
 
@@ -204,11 +206,12 @@
 
 @media (max-width: 1080px) {
   .metro-workbench-grid {
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 }
 
-/* Left Canvas Container */
+/* Full Width Canvas Container */
 .metro-map-canvas-container {
   position: relative;
   background: #040711;
@@ -216,8 +219,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-right: 1px solid var(--line, #1e293b);
-  min-height: 640px;
+  border-right: none;
+  min-height: 780px;
+  height: 780px;
   min-width: 0;
   max-width: 100%;
   width: 100%;
@@ -227,12 +231,12 @@
 
 .metro-map-canvas-container.theme-schematic {
   background: #ffffff;
-  border-right: 1px solid #e2e8f0;
+  border-right: none;
 }
 
 .metro-map-canvas-container.theme-geographic {
   background: #fff8f0;
-  border-right: 1px solid #ebd9c8;
+  border-right: none;
 }
 
 .metro-map-header-tools {
@@ -1004,22 +1008,31 @@
   margin: 0;
 }
 
-/* Right Dossier Panel */
+/* Dossier Panel (Full Width Below Map) */
 .metro-dossier-panel {
-  padding: 24px;
+  padding: 28px 32px;
   background: var(--surface, #090d16);
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 720px;
+  gap: 20px;
+  overflow: visible;
+  max-height: none;
   min-width: 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
   word-break: break-word;
   overflow-wrap: anywhere;
+  border-top: 1px solid var(--line, #1e293b);
+  border-left: none;
+}
+
+.metro-dossier-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .metro-dossier-hindi {
