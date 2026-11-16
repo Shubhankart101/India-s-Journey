@@ -1,3 +1,9 @@
+variable "subscription_id" {
+  type        = string
+  description = "Azure Subscription ID to deploy resources into."
+  default     = "1a264b52-6e39-4f81-a653-fbf2b8e98b10"
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Name of the Azure Resource Group."
@@ -29,8 +35,8 @@ variable "sku_name" {
 
 variable "docker_image" {
   type        = string
-  description = "Full Docker container image tag (e.g. ghcr.io/username/indias-journey:latest or Azure Container Registry)."
-  default     = "ghcr.io/shubhankart101/indias-journey:latest"
+  description = "Full Docker container image tag (e.g. shubhankart101/indias-journey:latest or Azure Container Registry)."
+  default     = "shubhankart101/indias-journey:latest"
 }
 
 variable "django_secret_key" {

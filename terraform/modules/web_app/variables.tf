@@ -20,8 +20,8 @@ variable "service_plan_id" {
 
 variable "docker_image" {
   type        = string
-  description = "Docker image tag."
-  default     = "ghcr.io/shubhankart101/indias-journey:latest"
+  description = "Docker image tag without registry prefix (e.g. username/repo:latest)."
+  default     = "shubhankart101/indias-journey:latest"
 }
 
 variable "docker_registry_url" {
