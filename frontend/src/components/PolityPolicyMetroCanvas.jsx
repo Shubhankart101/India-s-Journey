@@ -388,40 +388,25 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       ctx.stroke();
     }
 
-    // 8. Labels
+    // 8. Station Labels: NEVER visible by default; ONLY visible when scrolling/hovering over a station or selected
     ctx.textBaseline = 'middle';
-    ctx.font = `600 ${Math.max(9, Math.min(13, 11 * S))}px 'Sora',system-ui,sans-serif`;
-
-    if (PACK.base?.places && PACK.base.places.length) {
-      ctx.textAlign = 'center';
-      for (const p of PACK.base.places) {
-        const X = sx(p.P[0]), Y = sy(p.P[1]);
-        if (X < 50 || X > W - 50 || Y < 34 || Y > H - 34) continue;
-        ctx.lineWidth = 3;
-        ctx.strokeStyle = C.bg;
-        ctx.strokeText(p.n, X, Y);
-        ctx.fillStyle = C.dim;
-        ctx.fillText(p.n, X, Y);
-      }
-    }
-
-    // Station Labels: NEVER visible by default; ONLY visible when scrolling/hovering over them or selected
     ctx.textAlign = 'left';
+    ctx.font = `600 ${Math.max(10, Math.min(14, 12 * S))}px 'Sora',system-ui,sans-serif`;
 
     for (const s of PACK.stations || []) {
       const isSel = selectedStation?.n === s.n;
       const isHov = hoverStation?.n === s.n;
 
-      // Station names are not required to be visible unless we scroll over them
+      // Absolutely zero names visible by default; strictly visible on scroll/hover/select
       if (!isHov && !isSel) continue;
 
       const X = sx(s.P[0]), Y = sy(s.P[1]);
-      if (X < 20 || X > W - 140 || Y < 20 || Y > H - 20) continue;
+      if (X < 15 || X > W - 140 || Y < 15 || Y > H - 15) continue;
 
-      const lx = X + r * 1.5 + 5;
+      const lx = X + r * 1.6 + 6;
       const ly = Y;
 
-      ctx.lineWidth = 3.5;
+      ctx.lineWidth = 4;
       ctx.strokeStyle = C.bg;
       ctx.strokeText(s.n, lx, ly);
       ctx.fillStyle = isSel ? '#d97706' : C.ink;
@@ -465,7 +450,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
     const sx = x => (x - view.cx) * view.z + cv.clientWidth / 2;
     const sy = y => (y - view.cy) * view.z + cv.clientHeight / 2;
 
-    let nearest = null, bd = 20;
+    let nearest = null, bd = 24;
     for (const s of PACK.stations || []) {
       const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
       if (d < bd) {
@@ -514,6 +499,31 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
     viewRef.current.z = newZ;
     viewRef.current.cx = pX - (cX - W / 2) / newZ;
     viewRef.current.cy = pY - (cY - H / 2) / newZ;
+
+    const sx = x => (x - viewRef.current.cx) * newZ + W / 2;
+    const sy = y => (y - viewRef.current.cy) * newZ + H / 2;
+    let nearest = null, bd = 24;
+    for (const s of PACK.stations || []) {
+      const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
+      if (d < bd) {
+        bd = d;
+        nearest = s;
+      }
+    }
+    setHoverStation(nearest);
+    if (nearest) {
+      setTooltip({
+        x: cX,
+        y: cY,
+        name: nearest.n,
+        hindi: nearest.hindi,
+        lines: (nearest.l || []).map(id => LMAP[id]?.nm || id).join(' · '),
+        interchange: nearest.ix,
+      });
+    } else {
+      setTooltip(null);
+    }
+
     setRenderTrigger(prev => prev + 1);
   };
 
