@@ -784,7 +784,7 @@ export default function MetroAtlas({ onSelectCity }) {
             {workbenchTab === 'schematic' ? (
               <MetroSafarSvgViewer cityKey={selectedCityId} />
             ) : (
-              <PolityPolicyMetroCanvas cityId={selectedCityId} theme="light" />
+              <PolityPolicyMetroCanvas key={selectedCityId} cityId={selectedCityId} theme="light" />
             )}
           </div>
 

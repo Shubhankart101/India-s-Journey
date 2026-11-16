@@ -1080,6 +1080,20 @@ CITIES = {
     }
 }
 
+# Fix Pendhar station coordinate typo in navi-mumbai (19.076 instead of 20.076)
+for s in CITIES.get("navi-mumbai", {}).get("stations", []):
+    if s["n"] == "Pendhar" and s["ll"][1] > 19.5:
+        s["ll"] = [73.0910, 19.0760]
+
+# Apply enrichments from enrich_all_city_bases if available
+try:
+    from enrich_all_city_bases import BASE_ENRICHMENTS
+    for cid, enrich in BASE_ENRICHMENTS.items():
+        if cid in CITIES:
+            CITIES[cid]["base"] = enrich
+except Exception:
+    pass
+
 # Generate segments automatically from station sequences
 for cid, city in CITIES.items():
     st_dict = {s["n"]: s for s in city["stations"]}

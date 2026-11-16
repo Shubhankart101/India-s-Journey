@@ -2,6 +2,31 @@ import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { getCityPack, kmDist } from '../data/metro/all_city_packs.js';
 import './PolityPolicyMetroCanvas.css';
 
+export function getInitialView(pack, width = 900, height = 700) {
+  if (!pack || !pack.stations || pack.stations.length === 0) {
+    return { cx: 0.7143, cy: 0.4172, z: 280000 };
+  }
+  let x0 = 1, y0 = 1, x1 = 0, y1 = 0;
+  for (const s of pack.stations) {
+    if (s.P[0] < x0) x0 = s.P[0];
+    if (s.P[0] > x1) x1 = s.P[0];
+    if (s.P[1] < y0) y0 = s.P[1];
+    if (s.P[1] > y1) y1 = s.P[1];
+  }
+  const mx = Math.max((x1 - x0) * 0.16, 0.0006);
+  const my = Math.max((y1 - y0) * 0.16, 0.0006);
+  const b = { w: x0 - mx, e: x1 + mx, n: y0 - my, s: y1 + my };
+  const z = Math.min(
+    (width * 0.82) / Math.max(1e-5, b.e - b.w),
+    (height * 0.82) / Math.max(1e-5, b.s - b.n)
+  );
+  return {
+    cx: (b.w + b.e) / 2,
+    cy: (b.n + b.s) / 2,
+    z: Math.max(30000, Math.min(8000000, z)),
+  };
+}
+
 export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 'light' }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
@@ -12,9 +37,9 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
   const SMAP = PACK.smap || {};
   const ADJ = PACK.adj || {};
 
-  // View state
-  const viewRef = useRef({ cx: 0.7143, cy: 0.4172, z: 280000 });
-  const [, setRenderTrigger] = useState(0);
+  // View state initialized directly to the target city's exact geographic frame
+  const viewRef = useRef(getInitialView(PACK));
+  const [renderTrigger, setRenderTrigger] = useState(0);
 
   // Interaction & UI State
   const [cardOpen, setCardOpen] = useState(true);
@@ -29,33 +54,16 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
 
   // Helper to fit bounding box of current city
   const fitCityBounds = useCallback((pack) => {
-    if (!pack || !pack.stations || pack.stations.length === 0) return;
-    let x0 = 1, y0 = 1, x1 = 0, y1 = 0;
-    for (const s of pack.stations) {
-      if (s.P[0] < x0) x0 = s.P[0];
-      if (s.P[0] > x1) x1 = s.P[0];
-      if (s.P[1] < y0) y0 = s.P[1];
-      if (s.P[1] > y1) y1 = s.P[1];
-    }
-    const mx = Math.max((x1 - x0) * 0.14, 0.0004);
-    const my = Math.max((y1 - y0) * 0.14, 0.0004);
-    const b = { w: x0 - mx, e: x1 + mx, n: y0 - my, s: y1 + my };
     const cv = canvasRef.current;
-    if (cv) {
-      const W = cv.clientWidth || 900;
-      const H = cv.clientHeight || 700;
-      const z = Math.min((W * 0.85) / Math.max(1e-5, b.e - b.w), (H * 0.85) / Math.max(1e-5, b.s - b.n));
-      viewRef.current = {
-        cx: (b.w + b.e) / 2,
-        cy: (b.n + b.s) / 2,
-        z: Math.max(40000, Math.min(8000000, z)),
-      };
-      setRenderTrigger(prev => prev + 1);
-    }
+    const W = cv?.clientWidth || 900;
+    const H = cv?.clientHeight || 700;
+    viewRef.current = getInitialView(pack, W, H);
+    setRenderTrigger(prev => prev + 1);
   }, []);
 
   // 1. Initial City Bounds Fit and Station Defaults
   useEffect(() => {
+    fitCityBounds(PACK);
     if (PACK.stations && PACK.stations.length >= 2) {
       const startSt = PACK.stations[0].n;
       const endSt = PACK.stations[Math.min(PACK.stations.length - 1, 4)].n;
@@ -64,7 +72,6 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       setSelectedStation(null);
       setSelectedLines(new Set());
       setRouteResult(null);
-      fitCityBounds(PACK);
     }
   }, [cityId, PACK, fitCityBounds]);
 
@@ -225,55 +232,73 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       if (close) c.closePath();
     };
 
-    // 1. Boundaries (if present)
+    // 1. Boundaries (ODbL municipal & metropolitan limits)
     if (PACK.base?.bd && PACK.base.bd.length) {
       ctx.beginPath();
       for (const b of PACK.base.bd) {
-        if (b.lvl === '4') for (const g of b.P) path1(ctx, g, true);
+        if (b.lvl === '4' || !b.lvl) for (const g of b.P) path1(ctx, g, true);
       }
       ctx.fillStyle = C.land;
       ctx.fill('evenodd');
 
       ctx.beginPath();
       for (const b of PACK.base.bd) {
-        if (b.lvl === '4') for (const g of b.P) path1(ctx, g, true);
+        if (b.lvl === '4' || !b.lvl) for (const g of b.P) path1(ctx, g, true);
       }
-      ctx.lineWidth = 1.15 * S;
+      ctx.lineWidth = 1.2 * S;
       ctx.strokeStyle = C.bd;
       ctx.stroke();
     }
 
-    // 2. Waterways (Rivers, canals, coasts, lakes)
+    // 2. Waterways (Rivers, canals, coasts, lakes, bays)
     if (PACK.base?.water && PACK.base.water.length) {
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
+
+      // Canals and minor water streams
       ctx.beginPath();
-      for (const w of PACK.base.water) if (w.t === 'canal') path1(ctx, w.P, false);
-      ctx.lineWidth = 1.2 * S;
+      for (const w of PACK.base.water) {
+        if (w.t === 'canal' || w.t === 'stream') path1(ctx, w.P, false);
+      }
+      ctx.lineWidth = 1.4 * S;
       ctx.strokeStyle = C.water;
       ctx.globalAlpha = 0.65;
       ctx.stroke();
       ctx.globalAlpha = 1;
 
+      // Major rivers, coastlines, bays, and lakes
       ctx.beginPath();
-      for (const w of PACK.base.water) if (w.t === 'river') path1(ctx, w.P, false);
-      ctx.lineWidth = 3.2 * S;
+      for (const w of PACK.base.water) {
+        if (w.t !== 'canal' && w.t !== 'stream') path1(ctx, w.P, false);
+      }
+      ctx.lineWidth = 3.6 * S;
       ctx.strokeStyle = C.water;
       ctx.stroke();
     }
 
-    // 3. Roads & Expressways
+    // 3. Roads & Arterial Expressways
     if (PACK.base?.roads && PACK.base.roads.length) {
+      // Secondary/arterial roads
       ctx.beginPath();
       for (const r of PACK.base.roads) if (r.c === 2) path1(ctx, r.P, false);
-      ctx.lineWidth = 0.8 * S;
+      ctx.lineWidth = 0.9 * S;
       ctx.strokeStyle = C.road;
       ctx.stroke();
 
+      // Expressways & primary highways
       ctx.beginPath();
-      for (const r of PACK.base.roads) if (r.c === 3) path1(ctx, r.P, false);
-      ctx.lineWidth = 1.4 * S;
+      for (const r of PACK.base.roads) if (r.c === 3 || !r.c) path1(ctx, r.P, false);
+      ctx.lineWidth = 1.6 * S;
       ctx.strokeStyle = C.road;
+      ctx.stroke();
+    }
+
+    // 3b. Railway Corridors (Base Indian Railways Trunk Lines)
+    if (PACK.base?.rail && PACK.base.rail.length) {
+      ctx.beginPath();
+      for (const r of PACK.base.rail) path1(ctx, r.P, false);
+      ctx.lineWidth = 1.1 * S;
+      ctx.strokeStyle = C.rail;
       ctx.stroke();
     }
 
@@ -380,30 +405,29 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
       }
     }
 
-    // Station Labels (Show interchanges or active route stations, or all if zoomed in)
-    const showAllLabels = z > 250000 || (PACK.stations && PACK.stations.length < 35);
+    // Station Labels: NEVER visible by default; ONLY visible when scrolling/hovering over them or selected
     ctx.textAlign = 'left';
 
     for (const s of PACK.stations || []) {
-      const inRoute = routeResult && routeResult.stops.has(s.n);
       const isSel = selectedStation?.n === s.n;
       const isHov = hoverStation?.n === s.n;
 
-      if (!showAllLabels && !s.ix && !inRoute && !isSel && !isHov) continue;
+      // Station names are not required to be visible unless we scroll over them
+      if (!isHov && !isSel) continue;
 
       const X = sx(s.P[0]), Y = sy(s.P[1]);
       if (X < 20 || X > W - 140 || Y < 20 || Y > H - 20) continue;
 
-      const lx = X + r * 1.5 + 4;
+      const lx = X + r * 1.5 + 5;
       const ly = Y;
 
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 3.5;
       ctx.strokeStyle = C.bg;
       ctx.strokeText(s.n, lx, ly);
-      ctx.fillStyle = inRoute ? C.ca : isSel ? '#d97706' : C.ink;
+      ctx.fillStyle = isSel ? '#d97706' : C.ink;
       ctx.fillText(s.n, lx, ly);
     }
-  }, [theme, selectedLines, showFuture, routeResult, selectedStation, hoverStation, PACK, LMAP, SMAP]);
+  }, [theme, selectedLines, showFuture, routeResult, selectedStation, hoverStation, PACK, LMAP, SMAP, renderTrigger]);
 
   // Mouse Interaction handlers
   const dragRef = useRef({ dragging: false, startX: 0, startY: 0, moved: 0 });
@@ -441,7 +465,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
     const sx = x => (x - view.cx) * view.z + cv.clientWidth / 2;
     const sy = y => (y - view.cy) * view.z + cv.clientHeight / 2;
 
-    let nearest = null, bd = 18;
+    let nearest = null, bd = 20;
     for (const s of PACK.stations || []) {
       const d = Math.hypot(sx(s.P[0]) - cX, sy(s.P[1]) - cY);
       if (d < bd) {
@@ -455,6 +479,7 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         x: cX,
         y: cY,
         name: nearest.n,
+        hindi: nearest.hindi,
         lines: (nearest.l || []).map(id => LMAP[id]?.nm || id).join(' · '),
         interchange: nearest.ix,
       });
@@ -549,15 +574,18 @@ export default function PolityPolicyMetroCanvas({ cityId = 'delhi-ncr', theme = 
         onWheel={handleWheel}
       />
 
-      {/* Hover Tooltip */}
+      {/* Hover Tooltip (Appears when scrolling/hovering over any station) */}
       {tooltip && (
         <div
           className="polity-metro-tooltip"
-          style={{ left: `${tooltip.x + 12}px`, top: `${tooltip.y + 12}px` }}
+          style={{ left: `${tooltip.x + 14}px`, top: `${tooltip.y + 14}px` }}
         >
-          <strong>{tooltip.name}</strong>
-          <span className="tooltip-lines">{tooltip.lines}</span>
-          {tooltip.interchange && <span className="tooltip-tag">Interchange</span>}
+          <div className="tooltip-title-row">
+            <strong>{tooltip.name}</strong>
+            {tooltip.hindi && <span className="tooltip-hindi">({tooltip.hindi})</span>}
+          </div>
+          <div className="tooltip-lines">{tooltip.lines}</div>
+          {tooltip.interchange && <span className="tooltip-tag">★ Interchange Junction</span>}
         </div>
       )}
 
