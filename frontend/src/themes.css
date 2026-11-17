@@ -14,10 +14,7 @@
 .header-inner { gap: 14px; min-width: 0; }
 .desktop-nav { gap: clamp(8px, 1.1vw, 16px); min-width: 0; }
 .header-controls-floating { position: fixed; z-index: 30; top: 12px; right: 16px; display: flex; gap: 8px; align-items: center; }
-@media (max-width: 1440px) {
-  .header-cta { display: none; }
-}
-@media (max-width: 1380px) {
+@media (max-width: 1080px) {
   .header-cta { display: none; }
   .desktop-nav { gap: 10px; }
   .site-header { height: auto; min-height: var(--header-h); }
@@ -111,7 +108,7 @@
 
   & .site-header { background: var(--surface-header, var(--bg, #12141a)); border-bottom-color: var(--line); }
   & .site-header.scrolled { background: var(--surface-header-scrolled, var(--surface, #0f1117)); border-bottom-color: var(--line); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45); }
-  & .skip-link, & .badge, & .btn-primary, & .scroll-top { color: var(--on-accent); }
+  & .skip-link, & .badge, & .btn-primary, & .header-cta, & .scroll-top { color: var(--on-accent); }
   & .btn-primary:hover:not(:disabled) { background: var(--accent); filter: brightness(1.12); box-shadow: var(--shadow); }
   & .btn-ghost:hover:not(:disabled) { background: var(--fill); border-color: var(--ink); }
 

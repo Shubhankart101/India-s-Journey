@@ -67,13 +67,13 @@ describe('Header controls', () => {
     render(<ThemeSelect />);
     const btn = screen.getByRole('button', { name: /Display mode/i });
     expect(btn).toBeInTheDocument();
-    expect(btn).toHaveTextContent('Dark Mode');
+    expect(btn).toHaveTextContent('Light Mode');
 
     // Click shifts from light to dark
     await userEvent.click(btn);
     expect(getTheme()).toBe('dark');
     expect(document.documentElement.dataset.theme).toBe('dark');
-    expect(btn).toHaveTextContent('Light Mode');
+    expect(btn).toHaveTextContent('Dark Mode');
 
     // Click shifts to newspaper
     await userEvent.click(btn);

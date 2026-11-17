@@ -92,10 +92,10 @@ export default function ThemeSelect({ className = '' }) {
         title={`Current mode: ${currentTheme.label}. Click to shift to ${THEMES[nextIndex].label} mode.`}
       >
         <span className="theme-mode-icon" aria-hidden="true">
-          {isLight ? <MoonIcon /> : isDark ? <SunIcon /> : THEME_ICONS[theme] || '🎨'}
+          {isLight ? <SunIcon /> : isDark ? <MoonIcon /> : THEME_ICONS[theme] || '🎨'}
         </span>
         <span className="theme-mode-text">
-          {isLight ? 'Dark Mode' : isDark ? 'Light Mode' : `${currentTheme.label} Mode`}
+          {isLight ? 'Light Mode' : isDark ? 'Dark Mode' : `${currentTheme.label} Mode`}
         </span>
       </button>
     </div>
