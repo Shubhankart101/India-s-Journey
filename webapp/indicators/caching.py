@@ -51,7 +51,10 @@ class CachedAPIViewMixin:
 
             if drf_request.method.lower() == 'get':
                 cache_key = make_cache_key(request)
-                cached = cache.get(cache_key)
+                try:
+                    cached = cache.get(cache_key)
+                except Exception:
+                    cached = None
                 if cached is not None:
                     if cached.get('type') == 'http':
                         resp = HttpResponse(
@@ -83,17 +86,20 @@ class CachedAPIViewMixin:
         if drf_request.method.lower() == 'get' and self.response.status_code == 200:
             cache_key = make_cache_key(request)
             ttl = self.get_cache_timeout()
-            if hasattr(response, 'data'):
-                cache.set(cache_key, {'type': 'drf', 'data': response.data, 'status': response.status_code}, ttl)
-            else:
-                cache.set(cache_key, {
-                    'type': 'http',
-                    'content': self.response.content,
-                    'status': self.response.status_code,
-                    'content_type': self.response.get('Content-Type'),
-                    'disposition': self.response.get('Content-Disposition'),
-                }, ttl)
-            self.response['X-Cache'] = 'MISS'
+            try:
+                if hasattr(response, 'data'):
+                    cache.set(cache_key, {'type': 'drf', 'data': response.data, 'status': response.status_code}, ttl)
+                else:
+                    cache.set(cache_key, {
+                        'type': 'http',
+                        'content': self.response.content,
+                        'status': self.response.status_code,
+                        'content_type': self.response.get('Content-Type'),
+                        'disposition': self.response.get('Content-Disposition'),
+                    }, ttl)
+                self.response['X-Cache'] = 'MISS'
+            except Exception:
+                self.response['X-Cache'] = 'BYPASS'
         self.response['Cache-Control'] = self.get_cache_control()
         return self.response
 
@@ -106,7 +112,10 @@ def cache_api_root(view_func):
         if request.method != 'GET':
             return view_func(request, *args, **kwargs)
         cache_key = make_cache_key(request)
-        cached = cache.get(cache_key)
+        try:
+            cached = cache.get(cache_key)
+        except Exception:
+            cached = None
         ttl = get_cache_timeout()
         c_control = get_cache_control()
         if cached is not None:
@@ -116,8 +125,11 @@ def cache_api_root(view_func):
             return resp
         resp = view_func(request, *args, **kwargs)
         if getattr(resp, 'status_code', None) == 200 and hasattr(resp, 'data'):
-            cache.set(cache_key, {'type': 'drf', 'data': resp.data, 'status': resp.status_code}, ttl)
-            resp['X-Cache'] = 'MISS'
+            try:
+                cache.set(cache_key, {'type': 'drf', 'data': resp.data, 'status': resp.status_code}, ttl)
+                resp['X-Cache'] = 'MISS'
+            except Exception:
+                resp['X-Cache'] = 'BYPASS'
         resp['Cache-Control'] = c_control
         return resp
 

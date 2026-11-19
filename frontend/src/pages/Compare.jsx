@@ -143,8 +143,105 @@ export default function Compare() {
             </div>
           </div>
         )}
+        {keys.length >= 2 && <AiComparePanel keys={keys} />}
       </section>
     </>
+  );
+}
+
+function AiComparePanel({ keys }) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!keys || keys.length < 2) {
+      setData(null);
+      return;
+    }
+    let active = true;
+    setLoading(true);
+    api.aiCompareInsights(keys)
+      .then(res => {
+        if (active) {
+          setData(res);
+          setLoading(false);
+        }
+      })
+      .catch(() => {
+        if (active) setLoading(false);
+      });
+    return () => { active = false; };
+  }, [keys]);
+
+  if (!keys || keys.length < 2) return null;
+  if (!data && !loading) return null;
+
+  return (
+    <div className="card ai-compare-card" style={{ marginTop: '24px', padding: '22px', borderLeft: '4px solid var(--accent, #2997ff)', background: 'var(--surface-2, rgba(255,255,255,0.03))' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
+        <span style={{ fontSize: '1.25rem' }}>🧠</span>
+        <h3 style={{ margin: 0, fontSize: '1.15rem' }}>AI Cross-Series Correlation &amp; Decoupling Synthesis</h3>
+        <span className="badge" style={{ fontSize: '0.74rem', background: 'rgba(41, 151, 255, 0.18)', color: 'var(--accent, #2997ff)', marginLeft: 'auto' }}>
+          In-Memory Correlation · Zero-Cost AI
+        </span>
+      </div>
+
+      {loading && <p className="muted small" style={{ margin: 0 }}>Evaluating cross-series correlation matrix and historical decoupling…</p>}
+
+      {data?.takeaways && (
+        <ul style={{ margin: '0 0 16px', paddingLeft: '20px', lineHeight: '1.6', fontSize: '0.94rem' }}>
+          {data.takeaways.map((point, idx) => (
+            <li key={idx} style={{ marginBottom: '6px' }}>{point}</li>
+          ))}
+        </ul>
+      )}
+
+      {data?.correlations && data.correlations.length > 0 && (
+        <div style={{ marginTop: '16px', borderTop: '1px solid var(--line, rgba(255,255,255,0.08))', paddingTop: '14px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '0.88rem', color: 'var(--muted, #86868b)' }}>
+            Pairwise Pearson Correlation (r)
+          </h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+            {data.correlations.map((corr, idx) => {
+              const rVal = corr.r;
+              const badgeColor = rVal === null ? 'var(--muted, #86868b)' : (rVal >= 0.5 ? '#30d158' : (rVal <= -0.5 ? '#ff453a' : '#ffd60a'));
+              return (
+                <div key={idx} style={{ padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                    <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{corr.titles[0]} ↔ {corr.titles[1]}</span>
+                    <span style={{ fontWeight: 'bold', fontSize: '0.86rem', color: badgeColor }}>
+                      {rVal !== null ? `r = ${rVal > 0 ? '+' : ''}${rVal}` : 'N/A'}
+                    </span>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: 'var(--muted, #86868b)' }}>
+                    <span>{corr.strength}</span>
+                    {corr.sample_size > 0 && <span>{corr.sample_size} shared pts</span>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {data?.decouplings && data.decouplings.length > 0 && (
+        <div style={{ marginTop: '16px', borderTop: '1px solid var(--line, rgba(255,255,255,0.08))', paddingTop: '14px' }}>
+          <h4 style={{ margin: '0 0 10px', fontSize: '0.88rem', color: 'var(--muted, #86868b)' }}>
+            Historical Decoupling Shocks
+          </h4>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {data.decouplings.map((dec, idx) => (
+              <div key={idx} style={{ padding: '8px 12px', borderRadius: '6px', background: 'rgba(255, 159, 10, 0.08)', borderLeft: '3px solid #ff9f0a', fontSize: '0.85rem' }}>
+                <div style={{ fontWeight: 600, color: '#ff9f0a', marginBottom: '2px' }}>
+                  {dec.year}: {dec.event}
+                </div>
+                <div style={{ color: 'var(--text, #f5f5f7)' }}>{dec.observation}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

@@ -127,6 +127,34 @@
     "indus-valley-civilisation": {
       "group": "Indus Valley Civilisation",
       "subgroup": ""
+    },
+    "Metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "metro-in-maps": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "metro-atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "delhi-metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "indian-metro-networks": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "maps": {
+      "group": "India in Maps",
+      "subgroup": ""
     }
   },
   "subgroups": {
@@ -678,7 +706,7 @@
       "group": "Elections & Democracy",
       "subgroup": "Cycle Trends & Presidential Funding Mix"
     },
-    "Elections|Lok Sabha 2024 — National": {
+    "Elections|Lok Sabha 2024 \u2014 National": {
       "group": "Elections & Democracy",
       "subgroup": "Lok Sabha 2024: National & Northern States"
     },
@@ -860,25 +888,25 @@
     },
     "Judiciary & Pending Cases|Supreme Court": {
       "group": "Security, Justice & Defence",
-      "subgroup": "Supreme Court · Total cases · Pending & 2018–21"
+      "subgroup": "Supreme Court \u00b7 Total cases \u00b7 Pending & 2018\u201321"
     },
     "Judiciary & Pending Cases|High Courts": {
       "group": "Security, Justice & Defence",
-      "subgroup": "High Courts · Total cases · Pending & 2018–21"
+      "subgroup": "High Courts \u00b7 Total cases \u00b7 Pending & 2018\u201321"
     },
     "Judiciary & Pending Cases|Lower Courts": {
       "group": "Security, Justice & Defence",
-      "subgroup": "Lower Courts · Karnataka, Kerala, Tamil Nadu & Telangana"
+      "subgroup": "Lower Courts \u00b7 Karnataka, Kerala, Tamil Nadu & Telangana"
     },
     "U.S. Elections|U.S. Campaign Funding Composition": {
       "group": "Elections & Democracy",
       "subgroup": "U.S. House Funding Composition"
     },
-    "Elections|Lok Sabha 2024 — States": {
+    "Elections|Lok Sabha 2024 \u2014 States": {
       "group": "Elections & Democracy",
       "subgroup": "Lok Sabha 2024: Heartland, East & North-East"
     },
-    "Elections|State Assembly Results 2022–2026": {
+    "Elections|State Assembly Results 2022\u20132026": {
       "group": "Elections & Democracy",
       "subgroup": "State Assembly Results 2022"
     },
@@ -916,11 +944,47 @@
     },
     "India in Maps|Lower Courts on the map": {
       "group": "India in Maps",
-      "subgroup": "Court Maps · Case types"
+      "subgroup": "Court Maps \u00b7 Case types"
     },
     "India in Maps|Innovation & Technology on the map": {
       "group": "India in Maps",
       "subgroup": "Innovation & Technology on the map"
+    },
+    "India in Maps|Metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|metro-in-maps": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|metro-atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|delhi-metro": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|indian-metro-networks": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "India in Maps|Metro Networks & Transit Atlas": {
+      "group": "India in Maps",
+      "subgroup": "Metro Networks & Transit Atlas"
+    },
+    "Infrastructure & Mobility|metro-in-maps": {
+      "group": "Infrastructure & Mobility",
+      "subgroup": "Metro Rail Networks & Urban Transit"
+    },
+    "Infrastructure & Mobility|metro-rail-networks-urban-transit": {
+      "group": "Infrastructure & Mobility",
+      "subgroup": "Metro Rail Networks & Urban Transit"
     }
   }
 }

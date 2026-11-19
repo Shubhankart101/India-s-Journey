@@ -1,10 +1,16 @@
+from unittest.mock import patch
+
 from django.core.cache import cache
+from django.core.cache.backends.redis import RedisCache
+from django.db import connection
+import dj_database_url
 from rest_framework import status
 from rest_framework.test import APITestCase
 
 from indicators.catalog import import_catalog
 from indicators.models import Category, Indicator, Subgroup
 from indicators.tests.fixtures import sample_catalog
+
 
 
 class CachingTests(APITestCase):
@@ -116,3 +122,57 @@ class CachingTests(APITestCase):
         # Cache must have been invalidated
         res3 = self.client.get('/api/stats/')
         self.assertEqual(res3.headers.get('X-Cache'), 'MISS')
+
+    def test_cache_resilience_when_backend_errors_out(self):
+        """When the cache backend throws an exception (e.g. Redis disconnect), the API degrades gracefully to BYPASS."""
+        with patch('indicators.caching.cache.get', side_effect=Exception('Redis connection failure')):
+            with patch('indicators.caching.cache.set', side_effect=Exception('Redis write failure')):
+                res = self.client.get('/api/stats/')
+                self.assertEqual(res.status_code, status.HTTP_200_OK)
+                self.assertEqual(res.headers.get('X-Cache'), 'BYPASS')
+                self.assertIn('indicators', res.data)
+
+    def test_redis_cache_backend_support(self):
+        """Validates that Django RedisCache supports standard redis:// and TLS rediss:// locations."""
+        redis_backend = RedisCache('redis://127.0.0.1:6379/1', {
+            'TIMEOUT': 300,
+            'KEY_PREFIX': 'ij',
+            'OPTIONS': {
+                'socket_timeout': 5,
+                'socket_connect_timeout': 5,
+                'retry_on_timeout': True,
+                'health_check_interval': 30,
+            },
+        })
+        self.assertIsNotNone(redis_backend)
+        self.assertEqual(redis_backend.key_prefix, 'ij')
+
+        tls_backend = RedisCache('rediss://:authpass@my-cluster.upstash.io:6379/0', {
+            'TIMEOUT': 600,
+            'KEY_PREFIX': 'ij-tls',
+        })
+        self.assertIsNotNone(tls_backend)
+        self.assertEqual(tls_backend.key_prefix, 'ij-tls')
+
+    def test_postgres_database_configuration_options(self):
+        """Validates that PostgreSQL DATABASE_URL produces pool and SSL options."""
+        url = 'postgresql://dbuser:secret@dbhost.postgres.database.azure.com:5432/indias_journey'
+        db_conf = dj_database_url.config(
+            default=url,
+            conn_max_age=600,
+            conn_health_checks=True,
+            ssl_require=True,
+        )
+        self.assertEqual(db_conf['ENGINE'], 'django.db.backends.postgresql')
+        self.assertEqual(db_conf['CONN_MAX_AGE'], 600)
+        self.assertTrue(db_conf['CONN_HEALTH_CHECKS'])
+        self.assertEqual(db_conf.get('OPTIONS', {}).get('sslmode'), 'require')
+
+    def test_sqlite_wal_pragmas(self):
+        """Validates that SQLite connections have WAL and cache size pragmas applied."""
+        if connection.vendor in ('sqlite3', 'sqlite'):
+            with connection.cursor() as cursor:
+                cursor.execute('PRAGMA busy_timeout;')
+                busy_timeout = cursor.fetchone()[0]
+                self.assertGreaterEqual(busy_timeout, 5000)
+

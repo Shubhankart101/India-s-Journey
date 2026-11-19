@@ -1,0 +1,50 @@
+name: Infrastructure & Renewable Energy Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 3 1,15 * *' # Bi-monthly on the 1st and 15th at 03:30 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: energy-infrastructure-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect Energy & Infrastructure indices
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          python scripts/collect_energy_and_infrastructure.py
+
+      - name: Rebuild static API and catalogue
+        run: |
+          node scripts/export_catalog.mjs
+          node scripts/export_static_api.mjs
+
+      - name: Commit infrastructure data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/infrastructure_energy_snapshot.json data/catalog.json docs/api/ frontend/public/api/
+          if git diff --cached --quiet; then
+            echo "No infrastructure data change to commit."
+            exit 0
+          fi
+          git commit -m "Update energy and national infrastructure indices [skip ci]"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

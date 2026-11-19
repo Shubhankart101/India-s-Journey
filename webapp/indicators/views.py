@@ -339,6 +339,124 @@ class HealthView(APIView):
         return response
 
 
+class AiSemanticSearchView(CachedAPIViewMixin, APIView):
+    """Semantic vector search across 3,082 catalog indicators using Azure AI / Gemini / Fallback.
+
+    Parameters:
+    - q: Natural language query (e.g. "Punjab electricity subsidies and groundwater", "UPI growth vs card payments")
+    - limit: Max number of results (default 10, max 50)
+    - category: Optional category name filter
+    """
+    authentication_classes = []
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        summary='Semantic vector search for indicators',
+        parameters=[
+            OpenApiParameter('q', str, description='Natural language search query', required=True),
+            OpenApiParameter('limit', int, description='Maximum number of indicators to return (1-50)', default=10),
+            OpenApiParameter('category', str, description='Filter results by category name', required=False),
+        ],
+        responses={200: OpenApiTypes.OBJECT},
+    )
+    def get(self, request):
+        query = request.query_params.get('q', '').strip()
+        try:
+            limit = max(1, min(int(request.query_params.get('limit', 10)), 50))
+        except (ValueError, TypeError):
+            limit = 10
+        category = request.query_params.get('category', '').strip() or None
+
+        from .ai.service import search_indicators
+        data = search_indicators(query=query, limit=limit, category=category)
+        return Response(data)
+
+
+class AiRecommendView(CachedAPIViewMixin, APIView):
+    """Recommend related indicators using dense vector cosine similarity (100% free / in-memory).
+
+    Parameters:
+    - key: Indicator slug key
+    - limit: Max number of recommendations to return (1-20, default 5)
+    - same_category: Only recommend within the same category (default false)
+    """
+    authentication_classes = []
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        summary='Vector recommendations for an indicator',
+        parameters=[
+            OpenApiParameter('limit', int, description='Number of recommendations (1-20)', default=5),
+            OpenApiParameter('same_category', bool, description='Restrict to same category', default=False),
+        ],
+        responses={200: OpenApiTypes.OBJECT},
+    )
+    def get(self, request, key):
+        try:
+            limit = max(1, min(int(request.query_params.get('limit', 5)), 20))
+        except (ValueError, TypeError):
+            limit = 5
+        same_cat = _truthy(request.query_params.get('same_category', 'false'))
+
+        from .ai.service import recommend_indicators
+        data = recommend_indicators(key=key, limit=limit, same_category_only=same_cat)
+        if not data.get('recommendations'):
+            # If indicator key doesn't exist in catalog
+            get_object_or_404(Indicator, key=key)
+        return Response(data)
+
+
+class AiIndicatorInsightsView(CachedAPIViewMixin, APIView):
+    """Synthesize macroeconomic and policy inflection takeaways for an indicator (zero external cost)."""
+    authentication_classes = []
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        summary='Macroeconomic and inflection takeaways for an indicator',
+        responses={200: OpenApiTypes.OBJECT},
+    )
+    def get(self, request, key):
+        indicator = get_object_or_404(
+            Indicator.objects.select_related('category', 'subgroup'),
+            key=key,
+        )
+        from .ai.service import generate_indicator_insights
+        data = generate_indicator_insights(indicator)
+        return Response(data)
+
+
+class AiCompareInsightsView(CachedAPIViewMixin, APIView):
+    """Compute cross-series Pearson correlation matrix and decoupling shocks for 2 to 4 indicators."""
+    authentication_classes = []
+    permission_classes = [permissions.AllowAny]
+
+    @extend_schema(
+        summary='Cross-series AI correlation and decoupling synthesis',
+        parameters=[
+            OpenApiParameter('keys', str, required=True, description='Comma-separated keys (2 to 4), e.g. `gdp_growth,cpi_inflation`.'),
+        ],
+        responses={200: OpenApiTypes.OBJECT, 400: DetailSerializer},
+    )
+    def get(self, request):
+        keys = [key.strip() for key in request.query_params.get('keys', '').split(',') if key.strip()]
+        keys = list(dict.fromkeys(keys))
+        if len(keys) < 2:
+            return Response({'detail': 'Pass ?keys=a,b with at least two indicator keys to compare.'}, status=status.HTTP_400_BAD_REQUEST)
+        if len(keys) > MAX_COMPARE:
+            return Response({'detail': f'Compare at most {MAX_COMPARE} indicators.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        found = {item.key: item for item in Indicator.objects.select_related('category', 'subgroup').filter(key__in=keys)}
+        missing = [key for key in keys if key not in found]
+        if missing:
+            return Response({'detail': f"Indicator(s) not found: {', '.join(missing)}"}, status=status.HTTP_404_NOT_FOUND)
+
+        indicators = [found[key] for key in keys]
+        from .ai.service import generate_compare_insights
+        data = generate_compare_insights(indicators)
+        return Response(data)
+
+
+
 def spa_index(request, *args, **kwargs):
     index = settings.FRONTEND_DIST / 'index.html'
     if not index.exists():
@@ -399,6 +517,8 @@ def api_root(request):
             'compare': '/api/compare/?keys=a,b',
             'articles': '/api/articles/?kind=&q=',
             'stats': '/api/stats/',
+            'ai_search': '/api/ai/search/?q=&limit=&category=',
+            'ai_compare_insights': '/api/ai/compare-insights/?keys=a,b',
             'auth': ['/api/auth/providers/', '/api/auth/me/', '/api/auth/csrf/', '/api/auth/logout/'],
             'saved': ['/api/saved/', '/api/saved/<key>/'],
         },

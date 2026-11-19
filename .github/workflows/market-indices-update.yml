@@ -1,0 +1,50 @@
+name: Market & Commodity Benchmark Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 2 * * 1-5' # Weekdays at 02:15 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-indices-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect Market and Commodity indices
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          python scripts/collect_market_and_commodity_indices.py
+
+      - name: Rebuild static API and catalogue
+        run: |
+          node scripts/export_catalog.mjs
+          node scripts/export_static_api.mjs
+
+      - name: Commit market indices data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market_indices_snapshot.json data/catalog.json docs/api/ frontend/public/api/
+          if git diff --cached --quiet; then
+            echo "No market index change to commit."
+            exit 0
+          fi
+          git commit -m "Update market and commodity benchmark indices [skip ci]"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

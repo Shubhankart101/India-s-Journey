@@ -327,6 +327,152 @@ async function staticRequest(path, { signal } = {}) {
     });
     return { labels, series, missing };
   }
+  if (url.pathname.includes('/auth/me/')) {
+    return { authenticated: false, user: null };
+  }
+  if (url.pathname.includes('/auth/csrf/')) {
+    return { detail: 'CSRF cookie set' };
+  }
+  if (url.pathname.includes('/auth/providers/')) {
+    return [
+      { id: 'google', name: 'Google', login_url: '/accounts/google/login/' },
+      { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
+    ];
+  }
+  if (url.pathname.includes('/auth/logout/')) {
+    return { authenticated: false, user: null };
+  }
+  if (url.pathname.includes('/saved/')) {
+    return [];
+  }
+  if (url.pathname.includes('/ai/insights/')) {
+    const key = decodeURIComponent(url.pathname.split('/').filter(Boolean).pop() || '');
+    const item = (catalog.indicators || []).find(i => i.key === key);
+    const labels = item?.series?.labels || [];
+    const values = item?.series?.datasets?.[0]?.values || [];
+    const points = [];
+    for (let i = 0; i < Math.min(labels.length, values.length); i++) {
+      if (typeof values[i] === 'number') points.push({ label: String(labels[i]), value: values[i] });
+    }
+    const unit = item?.suffix || '';
+    const takeaways = [];
+    if (points.length >= 2) {
+      const first = points[0];
+      const latest = points[points.length - 1];
+      const delta = latest.value - first.value;
+      const dir = delta >= 0 ? 'increased' : 'decreased';
+      takeaways.push(`Recorded from ${first.label} (${first.value}${unit}) through ${latest.label} (${latest.value}${unit}), net ${dir} by ${Math.abs(delta).toFixed(1)}${unit}.`);
+      const sorted = [...points].sort((a, b) => a.value - b.value);
+      takeaways.push(`Historical peak attained at ${sorted[sorted.length - 1].value}${unit} (${sorted[sorted.length - 1].label}) and trough at ${sorted[0].value}${unit} (${sorted[0].label}).`);
+    } else {
+      takeaways.push(`${item?.title || 'Indicator'} verified from official statistical records.`);
+    }
+    takeaways.push(`Sourced from ${item?.series?.source || 'official authorities'}. Official series published without interpolated projections.`);
+    return {
+      key: key || '',
+      title: item?.title || 'Macroeconomic Synthesis',
+      summary: takeaways[0],
+      takeaways,
+      inflections: [],
+    };
+  }
+  if (url.pathname.includes('/ai/compare-insights/')) {
+    const rawKeys = (query.get('keys') || '').split(',').map(k => k.trim()).filter(Boolean);
+    const found = rawKeys.map(k => (catalog.indicators || []).find(i => i.key === k)).filter(Boolean);
+    if (found.length < 2) {
+      return {
+        keys: rawKeys,
+        count: found.length,
+        summary: 'Add at least one more indicator to compare cross-series correlation and decoupling.',
+        correlations: [],
+        decouplings: [],
+        takeaways: ['Comparison requires at least two indicators on a shared timeline.'],
+      };
+    }
+    const labels = Array.from(new Set(found.flatMap(i => i.labels || [])));
+    if (labels.every(l => /^\d{4}/.test(l))) labels.sort();
+    const indA = found[0];
+    const indB = found[1];
+    const mapA = new Map((indA.labels || []).map((l, i) => [l, indA.datasets?.[0]?.values?.[i]]));
+    const mapB = new Map((indB.labels || []).map((l, i) => [l, indB.datasets?.[0]?.values?.[i]]));
+    const common = labels.filter(l => typeof mapA.get(l) === 'number' && typeof mapB.get(l) === 'number');
+    let r = null;
+    let strength = 'Insufficient shared observation periods';
+    if (common.length >= 3) {
+      const vA = common.map(l => mapA.get(l));
+      const vB = common.map(l => mapB.get(l));
+      const mA = vA.reduce((s, v) => s + v, 0) / common.length;
+      const mB = vB.reduce((s, v) => s + v, 0) / common.length;
+      const dA = vA.map(v => v - mA);
+      const dB = vB.map(v => v - mB);
+      const sA = dA.reduce((s, d) => s + d * d, 0);
+      const sB = dB.reduce((s, d) => s + d * d, 0);
+      const denom = Math.sqrt(sA * sB);
+      if (denom > 1e-9) {
+        const rawR = dA.reduce((s, d, i) => s + d * dB[i], 0) / denom;
+        r = Math.round(Math.max(-1, Math.min(1, rawR)) * 100) / 100;
+        strength = r >= 0.7 ? 'Strong positive co-movement' : (r >= 0.35 ? 'Moderate positive correlation' : (r > -0.35 ? 'Decoupled / weak relationship' : 'Inverse trade-off'));
+      }
+    }
+    return {
+      keys: found.map(i => i.key),
+      count: found.length,
+      summary: `Comparing ${found.length} indicators: ${indA.title} and ${indB.title} (${strength}).`,
+      correlations: [
+        {
+          pair: [indA.key, indB.key],
+          titles: [indA.title, indB.title],
+          r,
+          strength,
+          sample_size: common.length,
+          start_year: common[0] || null,
+          end_year: common[common.length - 1] || null,
+        },
+      ],
+      decouplings: [],
+      takeaways: [
+        `Cross-series synthesis for ${indA.title} and ${indB.title}: ${strength} (r = ${r ?? 'N/A'}).`,
+        'Rebase series to 100 on the workbench toolbar for proportional trajectory comparison.',
+      ],
+    };
+  }
+  if (url.pathname.includes('/ai/recommend/')) {
+    const key = decodeURIComponent(url.pathname.split('/').filter(Boolean).pop() || '');
+    const current = (catalog.indicators || []).find(i => i.key === key);
+    const others = (catalog.indicators || []).filter(i => i.key !== key);
+    const ranked = others.map(item => {
+      let score = 0.50;
+      if (current && item.category === current.category) score += 0.25;
+      if (current && item.subgroup === current.subgroup) score += 0.15;
+      return {
+        key: item.key,
+        title: item.title,
+        category: item.category,
+        subgroup: item.subgroup,
+        similarity: Math.min(0.95, score),
+      };
+    }).sort((a, b) => b.similarity - a.similarity).slice(0, 5);
+    return { key, count: ranked.length, recommendations: ranked };
+  }
+  if (url.pathname.includes('/ai/search/')) {
+    const q = (query.get('q') || '').trim().toLowerCase();
+    const cat = query.get('category');
+    if (!q) return { query: '', provider: 'static-client', count: 0, results: [] };
+    const terms = q.split(/\s+/).filter(Boolean);
+    const matched = (catalog.indicators || []).filter(item => {
+      if (cat && item.category !== cat) return false;
+      const haystack = `${item.key} ${item.title} ${item.subtitle || ''} ${item.category} ${item.subgroup}`.toLowerCase();
+      return terms.some(t => haystack.includes(t));
+    });
+    const results = matched.slice(0, 10).map((item, idx) => ({
+      key: item.key,
+      title: item.title,
+      category: item.category,
+      subgroup: item.subgroup,
+      similarity: Math.max(0.40, 0.90 - idx * 0.05),
+    }));
+    return { query: q, provider: 'static-client', count: results.length, results };
+  }
   if (url.pathname.endsWith('/articles/')) {
     let results = catalog.articles;
     const kind = query.get('kind');
@@ -357,4 +503,18 @@ export const api = {
   downloadUrl: (key, format) => (STATIC_MODE && staticDownloads.has(`${key}:${format}`)
     ? staticDownloads.get(`${key}:${format}`)
     : `/api/indicators/${encodeURIComponent(key)}/download/?format=${format}`),
+  // Account & OAuth methods
+  me: signal => request('/api/auth/me/', { signal }),
+  csrf: () => fetch('/api/auth/csrf/', { credentials: 'same-origin' }).then(r => r.json()).catch(() => ({ detail: 'ok' })),
+  csrfToken: () => decodeURIComponent(cookie('csrftoken')),
+  providers: signal => request('/api/auth/providers/', { signal }),
+  logout: () => request('/api/auth/logout/', { method: 'POST' }),
+  saved: signal => request('/api/saved/', { signal }),
+  saveChart: (key, note = '') => request('/api/saved/', { method: 'POST', body: { indicator: key, note } }),
+  deleteSavedChart: key => request(`/api/saved/${encodeURIComponent(key)}/`, { method: 'DELETE' }),
+  // AI & Intelligent Analytics methods
+  aiSearch: (q, category, signal) => request(`/api/ai/search/${toQuery({ q, category })}`, { signal }),
+  aiRecommend: (key, signal) => request(`/api/ai/recommend/${encodeURIComponent(key)}/`, { signal }),
+  aiInsights: (key, signal) => request(`/api/ai/insights/${encodeURIComponent(key)}/`, { signal }),
+  aiCompareInsights: (keys, signal) => request(`/api/ai/compare-insights/${toQuery({ keys: keys.join(',') })}`, { signal }),
 };

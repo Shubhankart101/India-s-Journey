@@ -25,6 +25,7 @@
     if (page === 'compare.html') return `#/compare${location.search}`;
     if (page === 'sources.html') return '#/sources';
     if (page === 'about.html') return '#/about';
+    if (page === 'login.html' || page === 'auth.html') return '#/login';
     return '#/api';
   };
   Promise.resolve(route()).then(hash => { location.replace(`./${hash}`); });

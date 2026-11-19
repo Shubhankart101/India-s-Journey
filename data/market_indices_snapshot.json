@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "India Market & Commodity Benchmark Snapshot",
+    "publishers": [
+      "BSE India",
+      "National Stock Exchange (NSE)",
+      "Reserve Bank of India (RBI)",
+      "PPAC / MoPNG"
+    ],
+    "updated_at_utc": "2026-11-19T15:43:54.070189+00:00",
+    "indicator_count": 4
+  },
+  "indices": [
+    {
+      "key": "bse_sensex_benchmark",
+      "title": "BSE SENSEX Milestone Index",
+      "unit": "Points",
+      "source": "BSE India",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        27499,
+        26117,
+        26626,
+        34056,
+        36068,
+        41253,
+        47751,
+        58253,
+        60840,
+        72240,
+        79480,
+        84200
+      ]
+    },
+    {
+      "key": "nse_nifty_benchmark",
+      "title": "NSE Nifty 50 Milestone Index",
+      "unit": "Points",
+      "source": "NSE India",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        8282,
+        7946,
+        8185,
+        10530,
+        10862,
+        12168,
+        13981,
+        17354,
+        18105,
+        21731,
+        24150,
+        25800
+      ]
+    },
+    {
+      "key": "usd_inr_exchange_rate",
+      "title": "USD/INR Annual Exchange Rate",
+      "unit": "INR per USD",
+      "source": "Reserve Bank of India",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        61.03,
+        64.15,
+        67.19,
+        65.12,
+        68.39,
+        70.41,
+        74.13,
+        73.92,
+        78.6,
+        82.58,
+        83.45,
+        84.1
+      ]
+    },
+    {
+      "key": "indian_basket_crude_oil",
+      "title": "Indian Basket Crude Oil Price",
+      "unit": "USD/bbl",
+      "source": "PPAC / MoPNG",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        96.6,
+        46.17,
+        47.56,
+        56.43,
+        69.88,
+        60.47,
+        44.82,
+        79.18,
+        93.15,
+        82.56,
+        84.2,
+        80.5
+      ]
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './auth.jsx';
 import { CompareProvider } from './compare.jsx';
 import Layout from './components/Layout.jsx';
 import { Loading } from './components/States.jsx';
 import Home from './pages/Home.jsx';
+import AuthPage from './pages/AuthPage.jsx';
 
 const Explore = lazy(() => import('./pages/Explore.jsx'));
 const SubgroupRoute = lazy(() => import('./components/SubgroupPage.jsx').then(module => ({ default: module.SubgroupRoute })));
@@ -18,6 +20,7 @@ const PulsePage = lazy(() => import('./pages/PulsePage.jsx'));
 const IndusScriptTranslator = lazy(() => import('./pages/IndusScriptTranslator.jsx'));
 const Api = lazy(() => import('./pages/Api.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
+
 
 export function AppRoutes() {
   return (
@@ -50,6 +53,7 @@ export function AppRoutes() {
           <Route path="compare" element={<Compare />} />
           <Route path="articles" element={<Articles />} />
           <Route path="about" element={<About />} />
+          <Route path="login" element={<AuthPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
@@ -59,8 +63,10 @@ export function AppRoutes() {
 
 export default function App() {
   return (
-    <CompareProvider>
-      <AppRoutes />
-    </CompareProvider>
+    <AuthProvider>
+      <CompareProvider>
+        <AppRoutes />
+      </CompareProvider>
+    </AuthProvider>
   );
 }

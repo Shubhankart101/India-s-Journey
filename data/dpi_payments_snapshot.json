@@ -1,0 +1,126 @@
+{
+  "metadata": {
+    "title": "India Digital Public Infrastructure & Payments Snapshot",
+    "publishers": [
+      "National Payments Corporation of India (NPCI)",
+      "Reserve Bank of India (RBI)",
+      "NHAI / IHMCL"
+    ],
+    "updated_at_utc": "2026-11-19T15:42:35.397394+00:00",
+    "indicator_count": 4
+  },
+  "indices": [
+    {
+      "key": "upi_annual_volume_billions",
+      "title": "UPI Annual Transaction Volume",
+      "unit": "Billion txns",
+      "source": "NPCI",
+      "labels": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        0.42,
+        3.75,
+        10.79,
+        22.33,
+        38.74,
+        74.05,
+        117.6,
+        149.2,
+        185.5
+      ]
+    },
+    {
+      "key": "upi_annual_value_lakh_cr",
+      "title": "UPI Annual Transaction Value",
+      "unit": "Lakh Crore INR",
+      "source": "NPCI",
+      "labels": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        0.07,
+        5.86,
+        18.36,
+        41.04,
+        71.59,
+        125.95,
+        182.84,
+        235.0,
+        290.0
+      ]
+    },
+    {
+      "key": "fastag_toll_collection_k_cr",
+      "title": "FASTag Annual Toll Collection",
+      "unit": "Thousand Crore INR",
+      "source": "NHAI / IHMCL",
+      "labels": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        0.73,
+        4.07,
+        11.0,
+        16.92,
+        34.78,
+        50.85,
+        61.4,
+        72.8,
+        84.5
+      ]
+    },
+    {
+      "key": "rbi_digital_payments_index",
+      "title": "RBI Digital Payments Index (Base 2018=100)",
+      "unit": "Index Points",
+      "source": "Reserve Bank of India",
+      "labels": [
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        85.5,
+        100.0,
+        153.5,
+        207.8,
+        270.6,
+        349.3,
+        395.6,
+        445.5,
+        492.0
+      ]
+    }
+  ]
+}

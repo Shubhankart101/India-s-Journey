@@ -126,11 +126,18 @@ import dj_database_url
 
 DATABASE_URL = os.environ.get('DATABASE_URL', '').strip()
 if DATABASE_URL:
+    is_postgres = DATABASE_URL.startswith(('postgres://', 'postgresql://'))
+    ssl_require = (
+        os.environ.get('DB_SSL_REQUIRE', 'true').strip().lower() in {'1', 'true', 'yes'}
+        if is_postgres
+        else False
+    )
     DATABASES = {
         'default': dj_database_url.config(
             default=DATABASE_URL,
-            conn_max_age=600,
+            conn_max_age=int(os.environ.get('DB_CONN_MAX_AGE', 600)),
             conn_health_checks=True,
+            ssl_require=ssl_require,
         )
     }
 else:
@@ -144,7 +151,7 @@ else:
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': sqlite_path,
             'OPTIONS': {
-                'timeout': 20,
+                'timeout': 30,
             },
         }
     }
@@ -177,17 +184,34 @@ STORAGES = {
 
 CATALOG_PATH = Path(os.environ.get('CATALOG_PATH', REPO_ROOT / 'data' / 'catalog.json'))
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'indias-journey-cache',
-        'TIMEOUT': int(os.environ.get('API_CACHE_TIMEOUT', 900)),
-        'OPTIONS': {
-            'MAX_ENTRIES': 2000,
-            'CULL_FREQUENCY': 3,
-        },
+REDIS_URL = os.environ.get('REDIS_URL', '').strip() or os.environ.get('CACHE_URL', '').strip()
+if REDIS_URL:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+            'LOCATION': REDIS_URL,
+            'TIMEOUT': int(os.environ.get('API_CACHE_TIMEOUT', 900)),
+            'KEY_PREFIX': os.environ.get('CACHE_KEY_PREFIX', 'ij'),
+            'OPTIONS': {
+                'socket_timeout': int(os.environ.get('REDIS_SOCKET_TIMEOUT', 5)),
+                'socket_connect_timeout': int(os.environ.get('REDIS_CONNECT_TIMEOUT', 5)),
+                'retry_on_timeout': True,
+                'health_check_interval': 30,
+            },
+        }
     }
-}
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'indias-journey-cache',
+            'TIMEOUT': int(os.environ.get('API_CACHE_TIMEOUT', 900)),
+            'OPTIONS': {
+                'MAX_ENTRIES': 2000,
+                'CULL_FREQUENCY': 3,
+            },
+        }
+    }
 
 API_CACHE_TIMEOUT = int(os.environ.get('API_CACHE_TIMEOUT', 900))
 API_CACHE_CONTROL = os.environ.get('API_CACHE_CONTROL', 'public, max-age=300, stale-while-revalidate=60')
@@ -288,3 +312,12 @@ LOGGING = {
     'handlers': {'console': {'class': 'logging.StreamHandler'}},
     'root': {'handlers': ['console'], 'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')},
 }
+
+# AI & Semantic Search Configuration (Azure OpenAI / Gemini / Fallback)
+AZURE_OPENAI_ENDPOINT = os.environ.get('AZURE_OPENAI_ENDPOINT', '').strip()
+AZURE_OPENAI_API_KEY = os.environ.get('AZURE_OPENAI_API_KEY', '').strip()
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT = os.environ.get('AZURE_OPENAI_EMBEDDING_DEPLOYMENT', 'text-embedding-3-small').strip()
+AZURE_OPENAI_API_VERSION = os.environ.get('AZURE_OPENAI_API_VERSION', '2024-02-01').strip()
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '').strip()
+GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '').strip()
+CATALOG_EMBEDDINGS_PATH = Path(os.environ.get('CATALOG_EMBEDDINGS_PATH', REPO_ROOT / 'data' / 'catalog_embeddings.json'))

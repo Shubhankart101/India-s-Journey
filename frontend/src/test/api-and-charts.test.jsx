@@ -31,8 +31,10 @@ describe('api client', () => {
     await expect(request('/api/saved/', { method: 'POST', body: { key: 'gdp_growth' } })).rejects.toMatchObject({ status: 403, message: 'Authentication credentials were not provided.' });
   });
 
-  it('exposes no account methods until sign-in is added', () => {
-    for (const name of ['login', 'register', 'me', 'logout', 'saved', 'save']) expect(api[name]).toBeUndefined();
+  it('exposes account and OAuth methods for Google and Microsoft authentication', () => {
+    for (const name of ['me', 'csrf', 'csrfToken', 'providers', 'logout', 'saved', 'saveChart', 'deleteSavedChart']) {
+      expect(typeof api[name]).toBe('function');
+    }
   });
 
   it('announces when the API is unreachable', async () => {

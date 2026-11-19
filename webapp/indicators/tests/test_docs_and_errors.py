@@ -35,6 +35,8 @@ class SchemaTests(DocsTestCase):
         self.assertEqual(set(schema['paths']), {
             '/api/', '/api/health/', '/api/categories/', '/api/indicators/', '/api/indicators/{key}/',
             '/api/indicators/{key}/download/', '/api/compare/', '/api/articles/', '/api/stats/',
+            '/api/ai/search/', '/api/ai/recommend/{key}/', '/api/ai/insights/{key}/',
+            '/api/ai/compare-insights/',
             '/api/auth/csrf/', '/api/auth/me/', '/api/auth/providers/', '/api/auth/logout/',
             '/api/saved/', '/api/saved/{key}/',
         })
@@ -119,8 +121,8 @@ class SchemaTests(DocsTestCase):
             url = path
             for token, value in samples.items():
                 url = url.replace(token, value)
-            if path == '/api/compare/':
-                url += '?keys=gdp_growth'
+            if path in {'/api/compare/', '/api/ai/compare-insights/'}:
+                url += '?keys=gdp_growth,seat_share'
             response = self.client.get(url)
             self.assertLess(response.status_code, 400, f'{url} -> {response.status_code}')
 

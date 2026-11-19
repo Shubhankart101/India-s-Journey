@@ -1,0 +1,50 @@
+name: Digital Public Infrastructure & Payments Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 3 2 * *' # Monthly on the 2nd at 03:45 UTC (after monthly NPCI releases)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dpi-payments-data
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out dashboard
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect DPI & Payments indices
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          python scripts/collect_dpi_and_payments.py
+
+      - name: Rebuild static API and catalogue
+        run: |
+          node scripts/export_catalog.mjs
+          node scripts/export_static_api.mjs
+
+      - name: Commit DPI data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/dpi_payments_snapshot.json data/catalog.json docs/api/ frontend/public/api/
+          if git diff --cached --quiet; then
+            echo "No DPI payment data change to commit."
+            exit 0
+          fi
+          git commit -m "Update DPI and digital transaction indices [skip ci]"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

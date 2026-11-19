@@ -53,5 +53,15 @@ describe('static API mode', () => {
       .resolves.toMatchObject({ labels: ['2020', '2021'], series: [{ key: 'gdp_growth', values: [1, 2] }, { key: 'cpi_inflation', values: [3, 4] }], missing: [] });
     await expect(api.articles({ kind: 'pew', q: 'weekly', page_size: 1 }))
       .resolves.toMatchObject({ count: 1, results: [{ title: 'Weekly report', published_at: '2026-11-02T12:05:30Z', is_featured: false }] });
+
+    // Test static AI capabilities
+    await expect(api.aiInsights('gdp_growth'))
+      .resolves.toMatchObject({ key: 'gdp_growth', takeaways: expect.any(Array) });
+    await expect(api.aiRecommend('gdp_growth'))
+      .resolves.toMatchObject({ key: 'gdp_growth', count: 1, recommendations: [{ key: 'cpi_inflation' }] });
+    await expect(api.aiSearch('GDP'))
+      .resolves.toMatchObject({ query: 'gdp', results: [{ key: 'gdp_growth' }] });
+    await expect(api.aiCompareInsights(['gdp_growth', 'cpi_inflation']))
+      .resolves.toMatchObject({ count: 2, takeaways: expect.any(Array) });
   });
 });

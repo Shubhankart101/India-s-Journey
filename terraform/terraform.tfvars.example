@@ -10,3 +10,44 @@ monthly_budget_inr  = 12500
 budget_alert_emails = [
   "admin@example.com"
 ]
+
+# --- Database Options (Default: Zero-cost SQLite WAL) ---
+# To provision a dedicated Azure PostgreSQL Flexible Server (B1ms ~Rs. 800/mo):
+# enable_postgresql       = true
+# postgres_admin_username = "ijadmin"
+# postgres_admin_password = "ChangeMeSecurePassword123!"
+
+# Or connect a free-tier external PostgreSQL database (e.g. Neon, Supabase):
+# external_database_url   = "postgresql://user:password@endpoint.neon.tech/dbname?sslmode=require"
+
+# --- Redis Caching Options (Default: Zero-cost in-memory LocMemCache) ---
+# To provision a dedicated Azure Cache for Redis (Basic C0 ~Rs. 1,200/mo):
+# enable_azure_redis      = true
+
+# Or connect a free-tier serverless Redis (e.g. Upstash Redis ~Rs. 0/mo, 10k cmds/day):
+# external_redis_url      = "rediss://default:password@endpoint.upstash.io:6379"
+
+# --- AI Services (Default: Zero-cost in-memory vector embeddings) ---
+# To provision Azure OpenAI Cognitive Services:
+# enable_azure_openai            = true
+# azure_openai_location          = "eastus"
+
+# Or provide existing Azure OpenAI / OpenAI API credentials:
+# external_azure_openai_endpoint = "https://my-resource.openai.azure.com/"
+# external_azure_openai_api_key  = "your-azure-openai-key"
+
+# --- Google & Microsoft OAuth Sign-In ---
+# google_client_id         = "your-google-client-id.apps.googleusercontent.com"
+# google_client_secret     = "your-google-client-secret"
+# microsoft_client_id      = "your-microsoft-app-id"
+# microsoft_client_secret  = "your-microsoft-app-secret"
+# microsoft_tenant         = "common"
+
+# --- Azure Blob Storage (Default: Local storage snapshots) ---
+# To provision a dedicated Azure Storage Account for pipeline data snapshots (Standard LRS Cool tier ~Rs. 60/mo):
+# enable_azure_storage                     = true
+
+# Or connect an existing Azure Storage Account:
+# external_azure_storage_connection_string = "DefaultEndpointsProtocol=https;AccountName=...;AccountKey=...;EndpointSuffix=core.windows.net"
+
+

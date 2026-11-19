@@ -11,6 +11,8 @@ import ThemeSelect, { ContactLinks, X_URL } from './ThemeSelect.jsx';
 import VintageChrome from './VintageChrome.jsx';
 import Breadcrumbs from './Breadcrumbs.jsx';
 import { MOTTO } from '../sanskrit.js';
+import { useAuth } from '../auth.jsx';
+
 
 const NAV_LABELS = {
   Home: 'गृहम्',
@@ -33,6 +35,7 @@ const NAV = [
 ];
 
 export default function Layout() {
+  const { user } = useAuth();
   const compare = useCompare();
   const location = useLocation();
   const scrolled = useScrolled();
@@ -69,6 +72,15 @@ export default function Layout() {
             ))}
           </nav>
           <Link to="/explore" className="btn btn-primary header-cta">Explore data</Link>
+          <Link
+            to="/login"
+            className="btn btn-ghost header-auth-btn"
+            aria-label={user ? `Signed in as ${user.first_name || user.email}` : 'Sign in with Google or Microsoft'}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', padding: '6px 12px' }}
+          >
+            <span aria-hidden="true">{user ? '👤' : '🔑'}</span>
+            <span>{user ? (user.first_name || 'Account') : 'Sign in'}</span>
+          </Link>
           <ContactLinks />
           <ThemeSelect />
         </div>

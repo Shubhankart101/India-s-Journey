@@ -10,6 +10,7 @@
 | `borrowing.json` | RBI Handbook of Statistics on the Indian Economy | `build_borrowing.py` | Annual | `python scripts/build_borrowing.py` |
 | `catalog.json` | Dashboard definitions and published snapshots | `export_catalog.mjs` | After data builds | `node scripts/export_catalog.mjs` |
 | `chart-latest.json` | World Bank, RBI, MoSPI, UNESCO, NJDG and other official sources | `generate_public_charts.py` | Daily | `python scripts/generate_public_charts.py` |
+| `dpi_payments_snapshot.json` | NPCI, RBI, NHAI / IHMCL | `collect_dpi_and_payments.py` | Monthly | `python scripts/collect_dpi_and_payments.py` |
 | `economic-survey-monthly.json` | Ministry of Finance Economic Survey | `fetch_economic_survey_monthly.py` | Monthly | `python scripts/fetch_economic_survey_monthly.py` |
 | `election-indices.json` | Recent Indian election results | `build_election_indices.py` | On election data refresh | `python scripts/build_election_indices.py` |
 | `election-results.json` | ECI results and U.S. National Archives | `collect_election_results.py` | Every 3 hours on counting days | `python scripts/collect_election_results.py` |
@@ -18,10 +19,12 @@
 | `fiscal-series.json` | Union Budget and RBI fiscal datasets | `build_fiscal_layer.py` | After fiscal inputs | `python scripts/build_fiscal_layer.py` |
 | `historical-elections.json` | ECI statistical reports and detailed-result workbooks | `collect_historical_elections.py` | Monthly | `python scripts/collect_historical_elections.py` |
 | `indian-matrix-latest.json` | Indian Matrix public article feed | `collect_indian_matrix.py` | Daily | `python scripts/collect_indian_matrix.py` |
+| `infrastructure_energy_snapshot.json` | MNRE, CEA, MoRTH / NHAI | `collect_energy_and_infrastructure.py` | Bi-monthly | `python scripts/collect_energy_and_infrastructure.py` |
 | `latest.json` | PolityPolicy homepage status | `check_site_status.py` | Daily | `python scripts/check_site_status.py` |
 | `latest-status.json` | PolityPolicy homepage status | `check_site_status.py` | Daily | `python scripts/check_site_status.py` |
 | `lok-sabha-atlas.json` | ECI-derived constituency history and recent ECI results | `build_lok_sabha_atlas.py` | After election results | `python scripts/build_lok_sabha_atlas.py` |
 | `lwe-insurgency.json` | PIB, ORF and ICFS reports | `build_lwe_insurgency.py` | On report release | `python scripts/build_lwe_insurgency.py` |
+| `market_indices_snapshot.json` | BSE, NSE, RBI, PPAC | `collect_market_and_commodity_indices.py` | Weekdays | `python scripts/collect_market_and_commodity_indices.py` |
 | `ncrb-and-analyses.json` | NCRB and Indian Matrix | `collect_ncrb_and_analyses.py` | Monthly | `python scripts/collect_ncrb_and_analyses.py` |
 | `niti-reports.json` | NITI Aayog reports and transcribed report tables | `build_niti_reports.py` | On report release | `python scripts/build_niti_reports.py` |
 | `pew-india-reports.json` | Pew Research Center India report catalogue | `collect_pew_india_reports.py` | Weekly | `python scripts/collect_pew_india_reports.py` |
@@ -71,6 +74,10 @@ The scheduled [Monthly Data Refresh](../.github/workflows/data-refresh.yml) work
 | [Recent Indian Election Data Update](../.github/workflows/recent-indian-elections-update.yml) | `15 8 * * *` | Picks up newly declared results | `data/recent-indian-elections.json`, `data/election-indices.json` |
 | [Sports Data Update](../.github/workflows/sports-data-update.yml) | `15 4 * * 2` | Rankings and match records change after each international window; a weekly check is enough | `data/sports_sources/*.json`, `data/sports.json` |
 | [Weekly Legal Data Update](../.github/workflows/legal-data-update.yml) | `30 4 * * 3` | NJDG docket totals change daily; a weekly snapshot captures pendency and disposition movement | `data/legal/njdg_snapshot.json`, `data/legal/njdg_history.json`, judiciary chart series |
+| [Infrastructure & Renewable Energy Update](../.github/workflows/infrastructure-energy-update.yml) | `30 3 1,15 * *` | Solar, wind and highway expansion updates bi-monthly | `data/infrastructure_energy_snapshot.json` |
+| [Digital Public Infrastructure & Payments Update](../.github/workflows/dpi-payments-update.yml) | `45 3 2 * *` | Monthly NPCI UPI, FASTag, and RBI-DPI index updates | `data/dpi_payments_snapshot.json` |
+| [Market & Commodity Benchmark Update](../.github/workflows/market-indices-update.yml) | `15 2 * * 1-5` | SENSEX, Nifty, crude oil, and USD/INR exchange rates updated weekdays | `data/market_indices_snapshot.json` |
+| [Azure Storage Dataset Sync](../.github/workflows/azure-data-sync.yml) | `0 5 * * 0` | Syncs all catalog data snapshots and AI vector embeddings to Azure Blob Storage under budget | Azure Blob Container `datasets/` |
 
 Every workflow that changes chart data also runs `node scripts/export_catalog.mjs` and commits `data/catalog.json`. The Django container imports that catalogue when it starts (`manage.py import_catalog`), so the web app shows the same data as the static site after its next deploy.
 

@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "title": "India Energy & Infrastructure Observatory Snapshot",
+    "publishers": [
+      "Ministry of New and Renewable Energy (MNRE)",
+      "Central Electricity Authority (CEA)",
+      "MoRTH/NHAI"
+    ],
+    "updated_at_utc": "2026-11-19T15:42:04.985139+00:00",
+    "indicator_count": 5
+  },
+  "indices": [
+    {
+      "key": "solar_installed_capacity_gw",
+      "title": "Solar Installed Capacity",
+      "unit": "GW",
+      "source": "MNRE",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        2.63,
+        3.74,
+        6.76,
+        12.28,
+        21.65,
+        28.18,
+        34.63,
+        40.09,
+        53.99,
+        66.78,
+        81.81,
+        95.5
+      ]
+    },
+    {
+      "key": "wind_installed_capacity_gw",
+      "title": "Wind Installed Capacity",
+      "unit": "GW",
+      "source": "MNRE",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        21.04,
+        23.44,
+        26.78,
+        32.28,
+        34.05,
+        35.63,
+        37.69,
+        39.25,
+        40.35,
+        42.63,
+        45.88,
+        48.2
+      ]
+    },
+    {
+      "key": "total_renewable_energy_gw",
+      "title": "Total Renewable Energy Capacity (incl. Hydro)",
+      "unit": "GW",
+      "source": "CEA / MNRE",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        76.37,
+        80.53,
+        89.22,
+        102.84,
+        114.43,
+        124.44,
+        134.68,
+        147.12,
+        168.96,
+        182.05,
+        203.45,
+        225.8
+      ]
+    },
+    {
+      "key": "peak_electricity_demand_met_gw",
+      "title": "Peak Electricity Demand Met",
+      "unit": "GW",
+      "source": "CEA Grid-India",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        148.16,
+        153.36,
+        159.54,
+        164.06,
+        177.02,
+        183.8,
+        190.19,
+        203.01,
+        215.89,
+        243.27,
+        250.2,
+        260.5
+      ]
+    },
+    {
+      "key": "nhai_highway_construction_rate",
+      "title": "National Highway Construction Pace",
+      "unit": "km/day",
+      "source": "MoRTH / NHAI",
+      "labels": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "values": [
+        12.0,
+        12.1,
+        16.6,
+        22.6,
+        26.9,
+        28.0,
+        30.0,
+        37.0,
+        28.6,
+        29.3,
+        34.2,
+        36.5
+      ]
+    }
+  ]
+}

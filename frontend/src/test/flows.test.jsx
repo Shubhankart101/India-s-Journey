@@ -60,16 +60,71 @@ describe('Compare', () => {
     await waitFor(() => expect(screen.getByTestId('location')).toHaveTextContent('/compare?keys=gdp_growth'));
     expect(await screen.findByTestId('chart')).toBeInTheDocument();
   });
+
+  it('renders AI correlation and decoupling synthesis when comparing indicators', async () => {
+    mockApi({
+      '/api/compare/': comparePayload,
+      '/api/ai/compare-insights/': {
+        keys: ['gdp_growth', 'exports_usd'],
+        count: 2,
+        summary: 'Comparing 2 indicators: Real GDP growth and Exports exhibit strong correlation.',
+        correlations: [
+          {
+            pair: ['gdp_growth', 'exports_usd'],
+            titles: ['Real GDP growth', 'Exports'],
+            r: 0.82,
+            strength: 'Strong positive co-movement',
+            sample_size: 15,
+            start_year: '2010',
+            end_year: '2024',
+          },
+        ],
+        decouplings: [
+          {
+            year: '2020',
+            label: '2020',
+            event: 'COVID-19 pandemic nationwide lockdown shock',
+            observation: 'Real GDP growth shifted by -5.8% while Exports moved by -1.2%.',
+          },
+        ],
+        takeaways: [
+          'Strong synchrony: Real GDP growth and Exports exhibit tight co-movement (r = +0.82).',
+          'Key structural decoupling observed in 2020 (COVID-19 shock).',
+        ],
+      },
+    });
+    renderApp('/compare?keys=gdp_growth,exports_usd');
+    expect(await screen.findByText('AI Cross-Series Correlation & Decoupling Synthesis')).toBeInTheDocument();
+    expect(screen.getByText('r = +0.82')).toBeInTheDocument();
+    expect(screen.getByText(/Strong synchrony: Real GDP growth and Exports/)).toBeInTheDocument();
+    expect(screen.getByText(/2020: COVID-19 pandemic nationwide lockdown shock/)).toBeInTheDocument();
+  });
 });
 
 describe('Account features', () => {
-  it('keeps sign-in and saved routes unavailable until account support is added', async () => {
-    const { calls } = mockApi();
+  it('renders sign-in page with Google and Microsoft OAuth options', async () => {
+    mockApi({
+      '/api/auth/me/': { authenticated: false, user: null },
+      '/api/auth/providers/': [
+        { id: 'google', name: 'Google', login_url: '/accounts/google/login/' },
+        { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
+      ],
+    });
     renderApp('/login');
-    expect(await screen.findByRole('heading', { name: 'This page wandered off.' })).toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'Sign in' })).not.toBeInTheDocument();
-    expect(screen.queryByRole('link', { name: 'Saved' })).not.toBeInTheDocument();
-    expect(calls.some(call => call.path.startsWith('/api/auth/'))).toBe(false);
+    expect(await screen.findByRole('heading', { name: 'Sign in' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Continue with Google/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Continue with Microsoft/i })).toBeInTheDocument();
+  });
+
+  it('displays user profile and sign out button when authenticated', async () => {
+    mockApi({
+      '/api/auth/me/': { authenticated: true, user: { username: 'asha', first_name: 'Asha', email: 'asha@example.com' } },
+    });
+    renderApp('/login');
+    expect(await screen.findByRole('heading', { name: 'Signed in' })).toBeInTheDocument();
+    expect(screen.getAllByText('Asha').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText('asha@example.com')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Sign out' })).toBeInTheDocument();
   });
 });
 

@@ -3,11 +3,14 @@ from django.db.backends.signals import connection_created
 
 
 def enable_sqlite_wal(sender, connection, **kwargs):
-    if connection.vendor == 'sqlite3' or connection.vendor == 'sqlite':
+    if connection.vendor in ('sqlite3', 'sqlite'):
         with connection.cursor() as cursor:
             cursor.execute('PRAGMA journal_mode = WAL;')
-            cursor.execute('PRAGMA busy_timeout = 5000;')
+            cursor.execute('PRAGMA busy_timeout = 30000;')
             cursor.execute('PRAGMA synchronous = NORMAL;')
+            cursor.execute('PRAGMA cache_size = -64000;')
+            cursor.execute('PRAGMA mmap_size = 268435456;')
+
 
 
 class IndicatorsConfig(AppConfig):

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo, useState } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useCompare } from '../compare.jsx';
@@ -194,6 +194,8 @@ function IndicatorView({ indicator }) {
         </aside>
       </section>
 
+      <AiIndicatorPanel indicatorKey={indicator.key} />
+
       {indicator.is_live && !specialModule && (
         <section className="section">
           <button type="button" className="btn btn-ghost" onClick={() => setShowTable(value => !value)} aria-expanded={showTable}>
@@ -237,5 +239,64 @@ function IndicatorView({ indicator }) {
         </section>
       )}
     </>
+  );
+}
+
+function AiIndicatorPanel({ indicatorKey }) {
+  const [insights, setInsights] = useState(null);
+  const [recommendations, setRecommendations] = useState(null);
+
+  useEffect(() => {
+    let active = true;
+    api.aiInsights(indicatorKey)
+      .then(data => active && setInsights(data))
+      .catch(() => {});
+    api.aiRecommend(indicatorKey)
+      .then(data => active && setRecommendations(data?.recommendations || []))
+      .catch(() => {});
+    return () => { active = false; };
+  }, [indicatorKey]);
+
+  if (!insights && !recommendations?.length) return null;
+
+  return (
+    <section className="section ai-insights-section" style={{ marginTop: '20px' }}>
+      <div className="card" style={{ padding: '22px', borderLeft: '4px solid var(--accent, #2997ff)', background: 'var(--surface-2, rgba(255,255,255,0.03))' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '1.2rem' }}>✨</span>
+          <h3 style={{ margin: 0, fontSize: '1.15rem' }}>AI Macroeconomic Synthesis &amp; Takeaways</h3>
+          <span className="badge" style={{ fontSize: '0.74rem', background: 'rgba(41, 151, 255, 0.18)', color: 'var(--accent, #2997ff)', marginLeft: 'auto' }}>
+            Zero-Token Fast Inference
+          </span>
+        </div>
+        {insights?.takeaways && (
+          <ul style={{ margin: '0 0 14px', paddingLeft: '20px', lineHeight: '1.6', fontSize: '0.94rem' }}>
+            {insights.takeaways.map((point, idx) => (
+              <li key={idx} style={{ marginBottom: '6px' }}>{point}</li>
+            ))}
+          </ul>
+        )}
+        {recommendations && recommendations.length > 0 && (
+          <div style={{ borderTop: '1px solid var(--line, rgba(255,255,255,0.08))', paddingTop: '12px', marginTop: '10px' }}>
+            <h4 style={{ margin: '0 0 8px', fontSize: '0.88rem', color: 'var(--muted, #86868b)' }}>
+              Related Indicators (AI Vector Recommendations)
+            </h4>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {recommendations.slice(0, 4).map(rec => (
+                <Link
+                  key={rec.key}
+                  to={`/indicator/${rec.key}`}
+                  className="pill"
+                  style={{ textDecoration: 'none', fontSize: '0.82rem' }}
+                >
+                  <span>{rec.title}</span>
+                  <small className="muted" style={{ fontSize: '0.74rem' }}>({Math.round((rec.similarity || 0) * 100)}% match)</small>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }

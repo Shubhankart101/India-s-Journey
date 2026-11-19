@@ -27,3 +27,44 @@ output "monthly_budget_ceiling" {
   description = "Configured budget ceiling in INR."
   value       = "Rs. ${var.monthly_budget_inr} / month"
 }
+
+output "database_configured" {
+  description = "Whether a PostgreSQL database (Azure Flexible Server or external) is configured."
+  value       = nonsensitive(local.effective_database_url != "")
+}
+
+output "redis_configured" {
+  description = "Whether Redis cache (Azure Cache for Redis or external) is configured."
+  value       = nonsensitive(local.effective_redis_url != "")
+}
+
+output "ai_endpoint_configured" {
+  description = "Whether an Azure OpenAI or external AI endpoint is configured."
+  value       = nonsensitive(local.effective_openai_endpoint != "")
+}
+
+output "postgresql_server_fqdn" {
+  description = "FQDN of the Azure PostgreSQL server if provisioned."
+  value       = length(module.postgresql) > 0 ? module.postgresql[0].fqdn : null
+}
+
+output "redis_hostname" {
+  description = "Hostname of the Azure Cache for Redis if provisioned."
+  value       = length(module.redis) > 0 ? module.redis[0].hostname : null
+}
+
+output "azure_openai_endpoint" {
+  description = "Endpoint of the Azure OpenAI Cognitive Account if provisioned."
+  value       = length(module.azure_openai) > 0 ? module.azure_openai[0].endpoint : null
+}
+
+output "storage_configured" {
+  description = "Whether Azure Blob Storage is configured for pipeline data snapshots."
+  value       = nonsensitive(local.effective_storage_connection_string != "")
+}
+
+output "storage_account_name" {
+  description = "Name of the Azure Storage Account if provisioned."
+  value       = length(module.storage) > 0 ? module.storage[0].storage_account_name : null
+}
+

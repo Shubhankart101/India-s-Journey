@@ -3,6 +3,8 @@ import { MemoryRouter, useLocation } from 'react-router-dom';
 import { vi } from 'vitest';
 import { AppRoutes } from '../App.jsx';
 import { CompareProvider } from '../compare.jsx';
+import { AuthProvider } from '../auth.jsx';
+
 
 export const json = (body, status = 200) => ({
   ok: status >= 200 && status < 300,
@@ -34,10 +36,12 @@ function LocationProbe() {
 export function renderApp(path = '/') {
   return render(
     <MemoryRouter initialEntries={[path]}>
-      <CompareProvider>
-        <AppRoutes />
-        <LocationProbe />
-      </CompareProvider>
+      <AuthProvider>
+        <CompareProvider>
+          <AppRoutes />
+          <LocationProbe />
+        </CompareProvider>
+      </AuthProvider>
     </MemoryRouter>,
   );
 }
