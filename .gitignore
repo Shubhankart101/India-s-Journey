@@ -38,3 +38,4 @@ frontend/_*
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfvars
