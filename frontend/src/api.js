@@ -328,6 +328,12 @@ async function staticRequest(path, { signal } = {}) {
     return { labels, series, missing };
   }
   if (url.pathname.includes('/auth/me/')) {
+    const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('ij_auth_user') : null;
+    if (stored) {
+      try {
+        return { authenticated: true, user: JSON.parse(stored) };
+      } catch {}
+    }
     return { authenticated: false, user: null };
   }
   if (url.pathname.includes('/auth/csrf/')) {
@@ -340,9 +346,20 @@ async function staticRequest(path, { signal } = {}) {
     ];
   }
   if (url.pathname.includes('/auth/logout/')) {
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.removeItem('ij_auth_user');
+      } catch {}
+    }
     return { authenticated: false, user: null };
   }
   if (url.pathname.includes('/saved/')) {
+    if (typeof localStorage !== 'undefined') {
+      try {
+        const list = JSON.parse(localStorage.getItem('ij_saved_charts') || '[]');
+        return list;
+      } catch {}
+    }
     return [];
   }
   if (url.pathname.includes('/ai/insights/')) {
@@ -510,8 +527,35 @@ export const api = {
   providers: signal => request('/api/auth/providers/', { signal }),
   logout: () => request('/api/auth/logout/', { method: 'POST' }),
   saved: signal => request('/api/saved/', { signal }),
-  saveChart: (key, note = '') => request('/api/saved/', { method: 'POST', body: { indicator: key, note } }),
-  deleteSavedChart: key => request(`/api/saved/${encodeURIComponent(key)}/`, { method: 'DELETE' }),
+  saveChart: (key, note = '') => {
+    if (STATIC_MODE) {
+      if (typeof localStorage !== 'undefined') {
+        try {
+          const list = JSON.parse(localStorage.getItem('ij_saved_charts') || '[]');
+          if (!list.some(item => item.indicator === key)) {
+            list.unshift({ indicator: key, note, created_at: new Date().toISOString() });
+            localStorage.setItem('ij_saved_charts', JSON.stringify(list));
+          }
+          return Promise.resolve({ ok: true, indicator: key });
+        } catch {}
+      }
+      return Promise.resolve({ ok: true });
+    }
+    return request('/api/saved/', { method: 'POST', body: { indicator: key, note } });
+  },
+  deleteSavedChart: key => {
+    if (STATIC_MODE) {
+      if (typeof localStorage !== 'undefined') {
+        try {
+          let list = JSON.parse(localStorage.getItem('ij_saved_charts') || '[]');
+          list = list.filter(item => item.indicator !== key);
+          localStorage.setItem('ij_saved_charts', JSON.stringify(list));
+        } catch {}
+      }
+      return Promise.resolve({ ok: true });
+    }
+    return request(`/api/saved/${encodeURIComponent(key)}/`, { method: 'DELETE' });
+  },
   // AI & Intelligent Analytics methods
   aiSearch: (q, category, signal) => request(`/api/ai/search/${toQuery({ q, category })}`, { signal }),
   aiRecommend: (key, signal) => request(`/api/ai/recommend/${encodeURIComponent(key)}/`, { signal }),

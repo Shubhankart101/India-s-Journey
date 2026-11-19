@@ -17,6 +17,7 @@ import { useAuth } from '../auth.jsx';
 const NAV_LABELS = {
   Home: 'गृहम्',
   Explore: 'अन्वेषणम्',
+  'AI Hub': 'कृत्रिमबुद्धिः',
   Sources: 'स्रोतांसि',
   Compare: 'तुलना',
   About: 'परिचयः',
@@ -27,6 +28,7 @@ const NAV_LABELS = {
 const NAV = [
   { to: '/', label: 'Home', icon: '⌂', end: true },
   { to: '/explore', label: 'Explore', icon: '◎' },
+  { to: '/ai', label: 'AI Hub', icon: '✨' },
   { to: '/sources', label: 'Sources', icon: '❡' },
   { to: '/compare', label: 'Compare', icon: '⇄' },
   { to: '/about', label: 'About', icon: 'ℹ' },

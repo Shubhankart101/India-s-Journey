@@ -116,9 +116,10 @@ describe('Layout and Home', () => {
     const primary = screen.getByRole('navigation', { name: 'Primary' });
     const mobile = screen.getByRole('navigation', { name: 'Mobile' });
     for (const nav of [primary, mobile]) {
-      expect(within(nav).getAllByRole('link')).toHaveLength(7);
+      expect(within(nav).getAllByRole('link')).toHaveLength(8);
     }
     expect(within(primary).getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
+    expect(within(primary).getByRole('link', { name: 'AI Hub' })).toHaveAttribute('href', '/ai');
     expect(screen.queryByRole('link', { name: 'Sign in' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'Saved' })).not.toBeInTheDocument();
   });

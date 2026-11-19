@@ -103,6 +103,7 @@ describe('Compare', () => {
 
 describe('Account features', () => {
   it('renders sign-in page with Google and Microsoft OAuth options', async () => {
+    localStorage.clear();
     mockApi({
       '/api/auth/me/': { authenticated: false, user: null },
       '/api/auth/providers/': [
@@ -110,7 +111,7 @@ describe('Account features', () => {
         { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
       ],
     });
-    renderApp('/login');
+    renderApp('/login', { unauthenticated: true });
     expect(await screen.findByRole('heading', { name: 'Sign in' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Continue with Google/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Continue with Microsoft/i })).toBeInTheDocument();
@@ -125,6 +126,44 @@ describe('Account features', () => {
     expect(screen.getAllByText('Asha').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('asha@example.com')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Sign out' })).toBeInTheDocument();
+  });
+
+  it('enforces route protection and redirects unauthenticated users to /login', async () => {
+    localStorage.clear();
+    mockApi({
+      '/api/auth/me/': { authenticated: false, user: null },
+      '/api/auth/providers/': [
+        { id: 'google', name: 'Google', login_url: '/accounts/google/login/' },
+        { id: 'microsoft', name: 'Microsoft (Outlook)', login_url: '/accounts/microsoft/login/' },
+      ],
+    });
+    renderApp('/explore', { unauthenticated: true });
+    expect(await screen.findByRole('heading', { name: 'Sign in' })).toBeInTheDocument();
+    expect(screen.getByText(/Sign in with your/i)).toBeInTheDocument();
+  });
+
+  it('renders dedicated AI Intelligence Hub with vector search and correlation lab', async () => {
+    mockApi({
+      '/api/auth/me/': { authenticated: true, user: { username: 'asha', first_name: 'Asha', email: 'asha@example.com' } },
+      '/api/ai/compare-insights/': {
+        keys: ['gdp_growth', 'iip_growth'],
+        count: 2,
+        summary: 'Synchronized trajectory.',
+        correlations: [{ pair: ['gdp_growth', 'iip_growth'], titles: ['Real GDP Growth', 'Industrial Production'], r: 0.88, strength: 'Strong co-movement', sample_size: 15 }],
+        decouplings: [{ year: '2020', note: 'Lockdown shock' }],
+        takeaways: ['Co-movement is strong across economic cycles.'],
+      },
+      '/api/ai/insights/gdp_growth/': {
+        key: 'gdp_growth',
+        title: 'Real GDP Growth',
+        summary: 'Macro synthesis summary.',
+        takeaways: ['Annual growth averaged 6.8% over the decade.'],
+      },
+    });
+    renderApp('/ai');
+    expect(await screen.findByRole('heading', { name: /AI Intelligence Hub/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Ask India's Journey AI/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /AI Correlation & Decoupling Laboratory/i })).toBeInTheDocument();
   });
 });
 

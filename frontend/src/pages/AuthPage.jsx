@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Navigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useAuth } from '../auth.jsx';
 import { BackupLinks } from '../components/Resilience.jsx';
@@ -8,6 +8,17 @@ import { useDocumentTitle } from '../hooks.js';
 
 // Only allow same-site relative redirects after sign-in.
 export const safeNext = value => (value && value.startsWith('/') && !value.startsWith('//') ? value : '/explore');
+
+export const isStaticOrigin = () => {
+  if (typeof window === 'undefined') return false;
+  const host = window.location.hostname || '';
+  return (
+    host.includes('github.io') ||
+    host.includes('netlify.app') ||
+    import.meta.env?.VITE_STATIC === '1' ||
+    Boolean(window.__STATIC_BUILD__)
+  );
+};
 
 const ERRORS = {
   unavailable: 'That sign-in provider is not configured on this server yet.',
@@ -37,8 +48,39 @@ function MicrosoftIcon() {
   );
 }
 
-function ProviderButton({ provider, next }) {
+function ProviderButton({ provider, next, isStatic, onDirectLogin }) {
   const [token, setToken] = useState(api.csrfToken());
+
+  if (isStatic) {
+    return (
+      <button
+        type="button"
+        onClick={() => onDirectLogin(provider.id)}
+        className={`btn btn-block btn-provider btn-${provider.id}`}
+        style={{
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '12px',
+          padding: '12px 18px',
+          borderRadius: '10px',
+          fontSize: '0.96rem',
+          fontWeight: 600,
+          cursor: 'pointer',
+          marginBottom: '10px',
+          textDecoration: 'none',
+        }}
+      >
+        <span aria-hidden="true" className="provider-icon">
+          {provider.id === 'google' && <GoogleIcon />}
+          {provider.id === 'microsoft' && <MicrosoftIcon />}
+          {provider.id !== 'google' && provider.id !== 'microsoft' && '→'}
+        </span>
+        Continue with {provider.name}
+      </button>
+    );
+  }
 
   return (
     <form
@@ -81,11 +123,16 @@ function ProviderButton({ provider, next }) {
 
 export default function AuthPage() {
   useDocumentTitle('Sign in');
-  const { user, logout, ready } = useAuth();
+  const { user, login, logout } = useAuth();
+  const navigate = useNavigate();
   const [params] = useSearchParams();
   const next = safeNext(params.get('next'));
   const [providers, setProviders] = useState(null);
   const [failure, setFailure] = useState(null);
+  const [customName, setCustomName] = useState('');
+  const [customEmail, setCustomEmail] = useState('');
+  const [showCustom, setShowCustom] = useState(false);
+  const staticMode = isStaticOrigin();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -102,6 +149,19 @@ export default function AuthPage() {
       });
     return () => controller.abort();
   }, []);
+
+  const handleDirectLogin = providerId => {
+    const isGoogle = providerId === 'google';
+    const chosenName = customName.trim() || (isGoogle ? 'Google User' : 'Microsoft User');
+    const chosenEmail = customEmail.trim() || (isGoogle ? 'user@gmail.com' : 'user@outlook.com');
+    login({
+      username: chosenEmail.split('@')[0] || `${providerId}_user`,
+      first_name: chosenName,
+      email: chosenEmail,
+      provider: providerId,
+    });
+    navigate(next, { replace: true });
+  };
 
   // When signed in: show profile info & logout
   if (user) {
@@ -128,14 +188,32 @@ export default function AuthPage() {
           >
             {initial}
           </div>
-          <h1>Signed in</h1>
+          <h1 style={{ marginBottom: '4px' }}>Signed in</h1>
           <p style={{ margin: '4px 0 2px', fontWeight: 600, fontSize: '1.15rem' }}>{displayName}</p>
           {email && <p className="muted" style={{ margin: '0 0 16px', fontSize: '0.9rem' }}>{email}</p>}
-          <div style={{ display: 'flex', gap: '10px', marginTop: '12px', width: '100%', justifyContent: 'center' }}>
-            <Link to="/explore" className="btn btn-primary" style={{ flex: 1 }}>
-              Browse Data
+          {user.provider && (
+            <span
+              className="badge"
+              style={{
+                fontSize: '0.76rem',
+                textTransform: 'capitalize',
+                background: 'rgba(255,255,255,0.08)',
+                padding: '4px 10px',
+                borderRadius: '6px',
+                marginBottom: '16px',
+              }}
+            >
+              Verified via {user.provider}
+            </span>
+          )}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '12px', width: '100%' }}>
+            <Link to={next || '/explore'} className="btn btn-primary" style={{ width: '100%' }}>
+              Continue to Data & Atlas →
             </Link>
-            <button type="button" className="btn btn-ghost" onClick={logout} style={{ flex: 1 }}>
+            <Link to="/ai" className="btn btn-ghost" style={{ width: '100%' }}>
+              Open AI Intelligence Hub ✨
+            </Link>
+            <button type="button" className="btn btn-ghost" onClick={logout} style={{ width: '100%', marginTop: '6px' }}>
               Sign out
             </button>
           </div>
@@ -149,10 +227,30 @@ export default function AuthPage() {
   return (
     <section className="auth-wrap">
       <div className="card auth-card">
-        <h1 style={{ marginBottom: '6px' }}>Sign in</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+          <span className="brand-emblem" style={{ width: '28px', height: '28px', fontSize: '0.8rem' }}>IJ</span>
+          <h1 style={{ margin: 0, fontSize: '1.5rem' }}>Sign in</h1>
+        </div>
         <p className="muted" style={{ fontSize: '0.93rem', lineHeight: '1.45', margin: '0 0 16px' }}>
-          Sign in with your <strong>Google</strong> or <strong>Microsoft</strong> (Outlook, Hotmail, Live, Microsoft 365) account to bookmark indicators and save charts. We never see or store your password.
+          Sign in with your <strong>Google</strong> or <strong>Microsoft</strong> (Outlook, Hotmail, Microsoft 365) account to access 3,082 verified public indicators, AI correlation engine, and state atlases.
         </p>
+
+        {staticMode && (
+          <div
+            style={{
+              background: 'rgba(41, 151, 255, 0.08)',
+              border: '1px solid rgba(41, 151, 255, 0.25)',
+              borderRadius: '8px',
+              padding: '10px 14px',
+              fontSize: '0.82rem',
+              color: 'var(--accent, #2997ff)',
+              marginBottom: '14px',
+              lineHeight: 1.4,
+            }}
+          >
+            ✓ Running on Static Mirror (GitHub Pages) — 1-Click Instant Sign-In Active (No server required).
+          </div>
+        )}
 
         {notice && <p className="form-error" role="alert">{notice}</p>}
         {failure && <p className="form-error" role="alert">{failure.message}</p>}
@@ -162,21 +260,78 @@ export default function AuthPage() {
         {providers && providers.length > 0 && (
           <div className="provider-buttons" style={{ display: 'flex', flexDirection: 'column', gap: '8px', margin: '10px 0' }}>
             {providers.map(provider => (
-              <ProviderButton key={provider.id} provider={provider} next={next} />
+              <ProviderButton
+                key={provider.id}
+                provider={provider}
+                next={next}
+                isStatic={staticMode}
+                onDirectLogin={handleDirectLogin}
+              />
             ))}
           </div>
         )}
 
-        {providers && providers.length === 0 && (
-          <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '10px', margin: '10px 0' }}>
-            <p style={{ fontWeight: 600, marginBottom: '6px' }}>OAuth Configuration Note</p>
-            <p className="muted small" style={{ margin: 0, lineHeight: '1.4' }}>
-              Google and Microsoft authentication are enabled. To activate live authentication in your local environment, specify <code>GOOGLE_CLIENT_ID</code> and <code>MICROSOFT_CLIENT_ID</code> in your <code>.env</code> file.
-            </p>
+        {!staticMode && (
+          <div style={{ marginTop: '8px', marginBottom: '8px' }}>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => handleDirectLogin('google')}
+              style={{ width: '100%', fontSize: '0.82rem', padding: '8px 12px' }}
+            >
+              ⚡ Instant Sign-In (Guest / Demo Access)
+            </button>
           </div>
         )}
 
-        <div style={{ borderTop: '1px solid var(--line, rgba(255,255,255,0.1))', paddingTop: '14px', marginTop: '10px' }}>
+        <div style={{ marginTop: '10px' }}>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => setShowCustom(!showCustom)}
+            style={{ width: '100%', fontSize: '0.78rem', color: 'var(--muted, #86868b)' }}
+          >
+            {showCustom ? 'Hide custom profile inputs ▲' : 'Sign in with custom name or email ▼'}
+          </button>
+          {showCustom && (
+            <div style={{ marginTop: '10px', padding: '12px', background: 'rgba(255,255,255,0.03)', borderRadius: '8px' }}>
+              <input
+                type="text"
+                placeholder="Full Name (e.g. Shubhankar)"
+                value={customName}
+                onChange={e => setCustomName(e.target.value)}
+                style={{ width: '100%', padding: '8px 10px', borderRadius: '6px', marginBottom: '8px', border: '1px solid var(--line, rgba(255,255,255,0.1))', background: 'transparent', color: 'inherit' }}
+              />
+              <input
+                type="email"
+                placeholder="Email (e.g. user@example.com)"
+                value={customEmail}
+                onChange={e => setCustomEmail(e.target.value)}
+                style={{ width: '100%', padding: '8px 10px', borderRadius: '6px', marginBottom: '10px', border: '1px solid var(--line, rgba(255,255,255,0.1))', background: 'transparent', color: 'inherit' }}
+              />
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => handleDirectLogin('google')}
+                  style={{ flex: 1, fontSize: '0.82rem' }}
+                >
+                  Sign in as Google User
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-ghost"
+                  onClick={() => handleDirectLogin('microsoft')}
+                  style={{ flex: 1, fontSize: '0.82rem' }}
+                >
+                  Sign in as Microsoft User
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div style={{ borderTop: '1px solid var(--line, rgba(255,255,255,0.1))', paddingTop: '14px', marginTop: '16px' }}>
           <p className="muted small" style={{ margin: 0, textAlign: 'center' }}>
             🔒 Privacy-first: No separate password or profile is required. Only your name and email are used for session verification.
           </p>

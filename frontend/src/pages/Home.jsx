@@ -57,6 +57,7 @@ export default function Home() {
         <p className="hero-motto" lang="sa">{MOTTO}</p>
         <div className="hero-actions">
           <Link className="btn btn-primary" to="/explore">Explore the data</Link>
+          <Link className="btn btn-ghost" to="/ai">AI Hub ✨</Link>
           <Link className="btn btn-ghost" to="/about">How it works ›</Link>
         </div>
         <IndependenceClock />

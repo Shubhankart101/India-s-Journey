@@ -15,12 +15,18 @@ export const json = (body, status = 200) => ({
 // routes: { 'GET /api/stats/': body | (url, init) => body | json(body, status) }
 export function mockApi(routes = {}) {
   const calls = [];
+  const defaultUser = { username: 'asha', first_name: 'Asha', email: 'asha@example.com', provider: 'google' };
   const fetchMock = vi.fn(async (input, init = {}) => {
     const url = new URL(String(input), 'http://localhost');
     const method = (init.method || 'GET').toUpperCase();
     calls.push({ method, path: url.pathname, search: url.search, params: url.searchParams, init });
     const handler = routes[`${method} ${url.pathname}`] ?? routes[url.pathname];
-    if (handler === undefined) return json({ detail: 'Not found.' }, 404);
+    if (handler === undefined) {
+      if (url.pathname === '/api/auth/me/') {
+        return json({ authenticated: true, user: defaultUser });
+      }
+      return json({ detail: 'Not found.' }, 404);
+    }
     const result = typeof handler === 'function' ? await handler(url, init) : handler;
     return result && typeof result.json === 'function' && 'status' in result ? result : json(result);
   });
@@ -33,7 +39,13 @@ function LocationProbe() {
   return <output data-testid="location">{`${location.pathname}${location.search}`}</output>;
 }
 
-export function renderApp(path = '/') {
+export function renderApp(path = '/', options = {}) {
+  const defaultUser = { username: 'asha', first_name: 'Asha', email: 'asha@example.com', provider: 'google' };
+  if (!options.unauthenticated && typeof localStorage !== 'undefined') {
+    try {
+      localStorage.setItem('ij_auth_user', JSON.stringify(defaultUser));
+    } catch {}
+  }
   return render(
     <MemoryRouter initialEntries={[path]}>
       <AuthProvider>
