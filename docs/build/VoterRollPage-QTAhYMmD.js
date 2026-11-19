@@ -1,1 +1,0 @@
-import e from"./VoterRollAtlas-CEStmKN8.js";import{R as t}from"./index-BZDy9A0L.js";import{g as n}from"./charts-B6pdgxOd.js";var r=n();function i(){return t(`SIR, SSR and your voter roll`),(0,r.jsx)(e,{})}export{i as default};

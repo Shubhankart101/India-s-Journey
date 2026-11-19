@@ -47,11 +47,12 @@ class IndicatorDetailSerializer(IndicatorSummarySerializer):
     is_saved = serializers.SerializerMethodField()
     category_art = serializers.CharField(source='category.art')
     subgroup_art = serializers.CharField(source='subgroup.art')
+    series = serializers.SerializerMethodField()
 
     class Meta(IndicatorSummarySerializer.Meta):
         fields = IndicatorSummarySerializer.Meta.fields[:-2] + [
             'details', 'labels', 'datasets', 'scope_label', 'note', 'unit', 'error',
-            'category_art', 'subgroup_art', 'is_saved', 'updated_at',
+            'category_art', 'subgroup_art', 'is_saved', 'updated_at', 'series',
         ]
 
     def get_is_saved(self, obj) -> bool:
@@ -59,6 +60,9 @@ class IndicatorDetailSerializer(IndicatorSummarySerializer):
         if not request or not request.user.is_authenticated:
             return False
         return SavedChart.objects.filter(user=request.user, indicator=obj).exists()
+
+    def get_series(self, obj) -> dict:
+        return {'labels': obj.labels, 'datasets': obj.datasets}
 
 
 class ArticleSerializer(serializers.ModelSerializer):

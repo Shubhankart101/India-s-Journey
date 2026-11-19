@@ -187,14 +187,15 @@ export default function AiPage() {
     });
   }, [compareData, rebaseNormalised]);
 
-  // Single-series chart dataset
+  // Single-series chart dataset & labels
   const singleChartDataset = useMemo(() => {
-    if (!synthIndicator?.series?.datasets?.[0]?.values) return [];
-    const ds = synthIndicator.series.datasets[0];
-    const color = synthIndicator.color || '#2997ff';
+    const rawDatasets = synthIndicator?.datasets || synthIndicator?.series?.datasets;
+    if (!rawDatasets?.[0]?.values) return [];
+    const ds = rawDatasets[0];
+    const color = synthIndicator?.color || '#2997ff';
     return [
       {
-        label: synthIndicator.title,
+        label: synthIndicator?.title || 'Indicator',
         data: ds.values,
         borderColor: color,
         backgroundColor: color,
@@ -202,6 +203,10 @@ export default function AiPage() {
         pointRadius: 2,
       },
     ];
+  }, [synthIndicator]);
+
+  const synthLabels = useMemo(() => {
+    return synthIndicator?.labels || synthIndicator?.series?.labels || [];
   }, [synthIndicator]);
 
   const handlePromptClick = query => {
@@ -594,45 +599,53 @@ export default function AiPage() {
             {/* 4 KPI Metric Cards */}
             {synthData.metrics && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '20px' }}>
-                <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🌟 All-Time Peak</span>
-                  <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#30d158' }}>
-                    {formatMagnitude(synthData.metrics.peak.value, synthData.metrics.unit)}
-                  </span>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
-                    Year {synthData.metrics.peak.label}
-                  </span>
-                </div>
+                {synthData.metrics.peak && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🌟 All-Time Peak</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#30d158' }}>
+                      {formatMagnitude(synthData.metrics.peak.value, synthData.metrics.unit)}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Year {synthData.metrics.peak.label}
+                    </span>
+                  </div>
+                )}
 
-                <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🔻 Historical Low / Trough</span>
-                  <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ff453a' }}>
-                    {formatMagnitude(synthData.metrics.trough.value, synthData.metrics.unit)}
-                  </span>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
-                    Year {synthData.metrics.trough.label}
-                  </span>
-                </div>
+                {synthData.metrics.trough && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🔻 Historical Low / Trough</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ff453a' }}>
+                      {formatMagnitude(synthData.metrics.trough.value, synthData.metrics.unit)}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Year {synthData.metrics.trough.label}
+                    </span>
+                  </div>
+                )}
 
-                <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📌 Latest Observation</span>
-                  <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent, #2997ff)' }}>
-                    {formatMagnitude(synthData.metrics.latest.value, synthData.metrics.unit)}
-                  </span>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
-                    Year {synthData.metrics.latest.label}
-                  </span>
-                </div>
+                {synthData.metrics.latest && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📌 Latest Observation</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent, #2997ff)' }}>
+                      {formatMagnitude(synthData.metrics.latest.value, synthData.metrics.unit)}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Year {synthData.metrics.latest.label}
+                    </span>
+                  </div>
+                )}
 
-                <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📈 Net Cumulative Shift</span>
-                  <span style={{ fontSize: '1.25rem', fontWeight: 800, color: synthData.metrics.delta >= 0 ? '#30d158' : '#ff453a' }}>
-                    {synthData.metrics.delta >= 0 ? `+${synthData.metrics.delta}` : synthData.metrics.delta} {synthData.metrics.unit}
-                  </span>
-                  <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
-                    Over Full Historical Horizon
-                  </span>
-                </div>
+                {synthData.metrics.delta !== undefined && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📈 Net Cumulative Shift</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: synthData.metrics.delta >= 0 ? '#30d158' : '#ff453a' }}>
+                      {synthData.metrics.delta >= 0 ? `+${synthData.metrics.delta}` : synthData.metrics.delta} {synthData.metrics.unit}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Over Full Historical Horizon
+                    </span>
+                  </div>
+                )}
               </div>
             )}
 
@@ -640,8 +653,8 @@ export default function AiPage() {
             <div className="detail-chart" style={{ minHeight: '300px', marginBottom: '20px' }}>
               <Suspense fallback={<div className="chart-skeleton" style={{ height: '280px' }} />}>
                 <ChartView
-                  title={synthIndicator.title}
-                  labels={synthIndicator.series.labels}
+                  title={synthIndicator.title || 'Indicator'}
+                  labels={synthLabels}
                   datasets={singleChartDataset}
                   type="line"
                   suffix={synthIndicator.suffix || ''}

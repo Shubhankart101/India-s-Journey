@@ -145,11 +145,28 @@ describe('Account features', () => {
   it('renders dedicated AI Intelligence Hub with vector search and correlation lab', async () => {
     mockApi({
       '/api/auth/me/': { authenticated: true, user: { username: 'asha', first_name: 'Asha', email: 'asha@example.com' } },
+      '/api/indicators/gdp_growth/': {
+        key: 'gdp_growth',
+        title: 'Real GDP Growth',
+        category: 'Economy & Markets',
+        subgroup: 'Growth',
+        suffix: '%',
+        color: '#ff9933',
+        labels: ['2020', '2021', '2022', '2023'],
+        datasets: [{ label: 'Real GDP Growth', values: [-5.8, 9.1, 7.2, 7.6] }],
+      },
+      '/api/compare/': {
+        labels: ['2020', '2021', '2022', '2023'],
+        series: [
+          { key: 'gdp_growth', title: 'Real GDP Growth', suffix: '%', values: [-5.8, 9.1, 7.2, 7.6] },
+          { key: 'capital_formation_gdp', title: 'Gross Capital Formation', suffix: '%', values: [27.3, 31.2, 31.8, 32.1] },
+        ],
+      },
       '/api/ai/compare-insights/': {
-        keys: ['gdp_growth', 'iip_growth'],
+        keys: ['gdp_growth', 'capital_formation_gdp'],
         count: 2,
         summary: 'Synchronized trajectory.',
-        correlations: [{ pair: ['gdp_growth', 'iip_growth'], titles: ['Real GDP Growth', 'Industrial Production'], r: 0.88, strength: 'Strong co-movement', sample_size: 15 }],
+        correlations: [{ pair: ['gdp_growth', 'capital_formation_gdp'], titles: ['Real GDP Growth', 'Gross Capital Formation'], r: 0.88, strength: 'Strong co-movement', sample_size: 15 }],
         decouplings: [{ year: '2020', note: 'Lockdown shock' }],
         takeaways: ['Co-movement is strong across economic cycles.'],
       },
@@ -157,6 +174,13 @@ describe('Account features', () => {
         key: 'gdp_growth',
         title: 'Real GDP Growth',
         summary: 'Macro synthesis summary.',
+        metrics: {
+          peak: { label: '2021', value: 9.1 },
+          trough: { label: '2020', value: -5.8 },
+          latest: { label: '2023', value: 7.6 },
+          delta: 13.4,
+          unit: '%',
+        },
         takeaways: ['Annual growth averaged 6.8% over the decade.'],
       },
     });
@@ -164,6 +188,7 @@ describe('Account features', () => {
     expect(await screen.findByRole('heading', { name: /AI Intelligence Hub/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /Ask India's Journey AI/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /AI Correlation & Decoupling Laboratory/i })).toBeInTheDocument();
+    expect(await screen.findByText(/All-Time Peak/i)).toBeInTheDocument();
   });
 });
 

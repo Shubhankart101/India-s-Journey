@@ -306,6 +306,7 @@ async function staticRequest(path, { signal } = {}) {
       category_art: group?.category.art || '', subgroup_art: group?.subgroups.get(item.subgroup)?.art || '',
       is_saved: false, related,
       previous_key: sameGroup[neighbor - 1]?.key || null, next_key: sameGroup[neighbor + 1]?.key || null,
+      series: { labels: series.labels || [], datasets: series.datasets || [] },
     };
   }
   if (url.pathname.endsWith('/compare/')) {
