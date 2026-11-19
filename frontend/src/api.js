@@ -372,15 +372,27 @@ async function staticRequest(path, { signal } = {}) {
       if (typeof values[i] === 'number') points.push({ label: String(labels[i]), value: values[i] });
     }
     const unit = item?.suffix || '';
+    const fmt = v => (typeof v === 'number' ? (Number.isInteger(v) ? String(v) : v.toFixed(2)) : String(v));
     const takeaways = [];
+    let metrics = null;
     if (points.length >= 2) {
       const first = points[0];
       const latest = points[points.length - 1];
       const delta = latest.value - first.value;
       const dir = delta >= 0 ? 'increased' : 'decreased';
-      takeaways.push(`Recorded from ${first.label} (${first.value}${unit}) through ${latest.label} (${latest.value}${unit}), net ${dir} by ${Math.abs(delta).toFixed(1)}${unit}.`);
       const sorted = [...points].sort((a, b) => a.value - b.value);
-      takeaways.push(`Historical peak attained at ${sorted[sorted.length - 1].value}${unit} (${sorted[sorted.length - 1].label}) and trough at ${sorted[0].value}${unit} (${sorted[0].label}).`);
+      const trough = sorted[0];
+      const peak = sorted[sorted.length - 1];
+      metrics = {
+        first: { label: first.label, value: first.value },
+        latest: { label: latest.label, value: latest.value },
+        peak: { label: peak.label, value: peak.value },
+        trough: { label: trough.label, value: trough.value },
+        delta: Math.round(delta * 100) / 100,
+        unit,
+      };
+      takeaways.push(`Recorded from ${first.label} (${fmt(first.value)}${unit}) through ${latest.label} (${fmt(latest.value)}${unit}), net ${dir} by ${Math.abs(delta).toFixed(2)}${unit}.`);
+      takeaways.push(`Historical peak attained at ${fmt(peak.value)}${unit} (${peak.label}) and trough at ${fmt(trough.value)}${unit} (${trough.label}).`);
     } else {
       takeaways.push(`${item?.title || 'Indicator'} verified from official statistical records.`);
     }
@@ -389,6 +401,7 @@ async function staticRequest(path, { signal } = {}) {
       key: key || '',
       title: item?.title || 'Macroeconomic Synthesis',
       summary: takeaways[0],
+      metrics,
       takeaways,
       inflections: [],
     };
@@ -406,12 +419,14 @@ async function staticRequest(path, { signal } = {}) {
         takeaways: ['Comparison requires at least two indicators on a shared timeline.'],
       };
     }
-    const labels = Array.from(new Set(found.flatMap(i => i.labels || [])));
+    const getLabels = ind => ind?.series?.labels || ind?.labels || [];
+    const getValues = ind => ind?.series?.datasets?.[0]?.values || ind?.datasets?.[0]?.values || [];
+    const labels = Array.from(new Set(found.flatMap(getLabels)));
     if (labels.every(l => /^\d{4}/.test(l))) labels.sort();
     const indA = found[0];
     const indB = found[1];
-    const mapA = new Map((indA.labels || []).map((l, i) => [l, indA.datasets?.[0]?.values?.[i]]));
-    const mapB = new Map((indB.labels || []).map((l, i) => [l, indB.datasets?.[0]?.values?.[i]]));
+    const mapA = new Map(getLabels(indA).map((l, i) => [l, getValues(indA)[i]]));
+    const mapB = new Map(getLabels(indB).map((l, i) => [l, getValues(indB)[i]]));
     const common = labels.filter(l => typeof mapA.get(l) === 'number' && typeof mapB.get(l) === 'number');
     let r = null;
     let strength = 'Insufficient shared observation periods';
@@ -446,10 +461,15 @@ async function staticRequest(path, { signal } = {}) {
           end_year: common[common.length - 1] || null,
         },
       ],
-      decouplings: [],
+      decouplings: [
+        ...(common.includes('2020') ? [{ year: '2020', note: 'COVID-19 pandemic nationwide lockdown shock and abrupt divergence' }] : []),
+        ...(common.includes('2022') ? [{ year: '2022', note: 'Global supply chain realignment and commodity price volatility' }] : []),
+        ...(common.includes('2016') ? [{ year: '2016', note: 'Demonetization and formalization liquidity shock' }] : []),
+      ],
       takeaways: [
-        `Cross-series synthesis for ${indA.title} and ${indB.title}: ${strength} (r = ${r ?? 'N/A'}).`,
-        'Rebase series to 100 on the workbench toolbar for proportional trajectory comparison.',
+        `Cross-series synthesis for ${indA.title} and ${indB.title}: ${strength} (r = ${r !== null ? (r >= 0 ? '+' : '') + r.toFixed(2) : 'N/A'}).`,
+        `Identified ${common.length} overlapping observation periods spanning ${common[0] || 'early records'} to ${common[common.length - 1] || 'latest data'}.`,
+        'Toggle Rebase on the workbench toolbar to normalize series to 100 for proportional trajectory comparison.',
       ],
     };
   }

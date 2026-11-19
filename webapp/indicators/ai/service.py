@@ -84,6 +84,17 @@ def recommend_indicators(
     }
 
 
+def _clean_num(val: Any) -> str:
+    if val is None:
+        return ''
+    if isinstance(val, (int, float)):
+        rounded = round(float(val), 2)
+        if rounded == int(rounded):
+            return str(int(rounded))
+        return f"{rounded:.2f}".rstrip('0').rstrip('.')
+    return str(val)
+
+
 def generate_indicator_insights(indicator: Any) -> Dict[str, Any]:
     """Synthesize macroeconomic and policy inflection insights for an indicator (zero external cost)."""
     labels = getattr(indicator, 'labels', []) or []
@@ -166,27 +177,27 @@ def generate_indicator_insights(indicator: Any) -> Dict[str, Any]:
     # 1. Growth trajectory
     if cagr is not None:
         takeaways.append(
-            f"Expanded at a CAGR of {cagr}% from {first_val:g}{unit} ({first_label}) to {latest_val:g}{unit} ({latest_label})."
+            f"Expanded at a CAGR of {_clean_num(cagr)}% from {_clean_num(first_val)}{unit} ({first_label}) to {_clean_num(latest_val)}{unit} ({latest_label})."
         )
     elif delta_pct is not None:
         direction = 'increased' if delta >= 0 else 'decreased'
         takeaways.append(
-            f"Net movement {direction} by {abs(delta):g}{unit} ({delta_pct:+.1f}%) from {first_label} to {latest_label}."
+            f"Net movement {direction} by {_clean_num(abs(delta))}{unit} ({delta_pct:+.1f}%) from {first_label} to {latest_label}."
         )
     else:
         takeaways.append(
-            f"Recorded from {first_label} ({first_val:g}{unit}) through {latest_label} ({latest_val:g}{unit})."
+            f"Recorded from {first_label} ({_clean_num(first_val)}{unit}) through {latest_label} ({_clean_num(latest_val)}{unit})."
         )
 
     # 2. Peak & Inflection context
     if inflections:
         first_inf = inflections[-1]
         takeaways.append(
-            f"Recorded peak at {peak_val:g}{unit} ({peak_label}) and trough at {trough_val:g}{unit} ({trough_label}); key milestone in {first_inf['year']} ({first_inf['event']})."
+            f"Recorded peak at {_clean_num(peak_val)}{unit} ({peak_label}) and trough at {_clean_num(trough_val)}{unit} ({trough_label}); key milestone in {first_inf['year']} ({first_inf['event']})."
         )
     else:
         takeaways.append(
-            f"Historical range spans from {trough_val:g}{unit} ({trough_label}) to a peak of {peak_val:g}{unit} ({peak_label})."
+            f"Historical range spans from {_clean_num(trough_val)}{unit} ({trough_label}) to a peak of {_clean_num(peak_val)}{unit} ({peak_label})."
         )
 
     # 3. Methodological provenance
@@ -195,8 +206,8 @@ def generate_indicator_insights(indicator: Any) -> Dict[str, Any]:
     )
 
     summary = (
-        f"{title} progressed from {first_val:g}{unit} ({first_label}) to {latest_val:g}{unit} ({latest_label}), "
-        f"attaining a maximum of {peak_val:g}{unit} ({peak_label}). "
+        f"{title} progressed from {_clean_num(first_val)}{unit} ({first_label}) to {_clean_num(latest_val)}{unit} ({latest_label}), "
+        f"attaining a maximum of {_clean_num(peak_val)}{unit} ({peak_label}). "
         f"{'Inflection points correlate with ' + inflections[-1]['event'] + '.' if inflections else ''}"
     ).strip()
 
@@ -313,6 +324,8 @@ def generate_compare_insights(indicators: List[Any]) -> Dict[str, Any]:
                             is_decoupled = True
 
                         if is_decoupled:
+                            fmt_da = f"{delta_a:+.2f}".rstrip('0').rstrip('.') if not delta_a.is_integer() else f"{int(delta_a):+d}"
+                            fmt_db = f"{delta_b:+.2f}".rstrip('0').rstrip('.') if not delta_b.is_integer() else f"{int(delta_b):+d}"
                             all_decouplings.append({
                                 'pair': [key_a, key_b],
                                 'titles': [titles[key_a], titles[key_b]],
@@ -320,8 +333,8 @@ def generate_compare_insights(indicators: List[Any]) -> Dict[str, Any]:
                                 'label': lbl_curr,
                                 'event': event_name or 'Divergent Inflection',
                                 'observation': (
-                                    f"In {lbl_curr}, {titles[key_a]} shifted by {delta_a:+g}{suffixes[key_a]} "
-                                    f"while {titles[key_b]} moved by {delta_b:+g}{suffixes[key_b]}."
+                                    f"In {lbl_curr}, {titles[key_a]} shifted by {fmt_da}{suffixes[key_a]} "
+                                    f"while {titles[key_b]} moved by {fmt_db}{suffixes[key_b]}."
                                 ),
                             })
 
