@@ -5,24 +5,21 @@ const STORAGE_KEY = 'ij_auth_user';
 
 const AuthContext = createContext(null);
 
+export const getStoredUser = () => {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    try {
+      const item = window.localStorage.getItem(STORAGE_KEY);
+      return item ? JSON.parse(item) : null;
+    } catch {
+      return null;
+    }
+  }
+  return null;
+};
+
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      try {
-        const item = window.localStorage.getItem(STORAGE_KEY);
-        return item ? JSON.parse(item) : null;
-      } catch {
-        return null;
-      }
-    }
-    return null;
-  });
-  const [ready, setReady] = useState(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      return Boolean(window.localStorage.getItem(STORAGE_KEY));
-    }
-    return false;
-  });
+  const [user, setUser] = useState(getStoredUser);
+  const [ready, setReady] = useState(() => Boolean(getStoredUser()));
 
   const refresh = useCallback(async () => {
     try {
@@ -34,28 +31,18 @@ export function AuthProvider({ children }) {
             window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data.user));
           } catch {}
         }
-      } else if (data?.user) {
-        setUser(data.user);
       } else {
-        const local = typeof window !== 'undefined' && window.localStorage ? window.localStorage.getItem(STORAGE_KEY) : null;
+        const local = getStoredUser();
         if (local) {
-          try {
-            setUser(JSON.parse(local));
-          } catch {
-            setUser(null);
-          }
+          setUser(local);
         } else {
           setUser(null);
         }
       }
     } catch {
-      const local = typeof window !== 'undefined' && window.localStorage ? window.localStorage.getItem(STORAGE_KEY) : null;
+      const local = getStoredUser();
       if (local) {
-        try {
-          setUser(JSON.parse(local));
-        } catch {
-          setUser(null);
-        }
+        setUser(local);
       } else {
         setUser(null);
       }
@@ -75,6 +62,7 @@ export function AuthProvider({ children }) {
       } catch {}
     }
     setUser(userData);
+    setReady(true);
   }, []);
 
   const logout = useCallback(async () => {
@@ -89,6 +77,7 @@ export function AuthProvider({ children }) {
       // ignore
     }
     setUser(null);
+    setReady(true);
   }, []);
 
   const value = useMemo(() => ({ user, ready, login, logout, refresh }), [user, ready, login, logout, refresh]);

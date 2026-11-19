@@ -125,7 +125,7 @@ describe('Account features', () => {
     expect(await screen.findByRole('heading', { name: 'Signed in' })).toBeInTheDocument();
     expect(screen.getAllByText('Asha').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('asha@example.com')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Sign out' })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Sign out' }).length).toBeGreaterThanOrEqual(1);
   });
 
   it('enforces route protection and redirects unauthenticated users to /login', async () => {

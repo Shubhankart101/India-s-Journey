@@ -525,6 +525,23 @@ export const api = {
   csrf: () => fetch('/api/auth/csrf/', { credentials: 'same-origin' }).then(r => r.json()).catch(() => ({ detail: 'ok' })),
   csrfToken: () => decodeURIComponent(cookie('csrftoken')),
   providers: signal => request('/api/auth/providers/', { signal }),
+  login: ({ provider = 'google', email, name } = {}) => {
+    const isGoogle = provider === 'google';
+    const chosenName = name || (isGoogle ? 'Google User' : 'Microsoft User');
+    const chosenEmail = email || (isGoogle ? 'user@gmail.com' : 'user@outlook.com');
+    const u = {
+      username: chosenEmail.split('@')[0] || `${provider}_user`,
+      first_name: chosenName,
+      email: chosenEmail,
+      provider,
+    };
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem('ij_auth_user', JSON.stringify(u));
+      } catch {}
+    }
+    return Promise.resolve({ authenticated: true, user: u });
+  },
   logout: () => request('/api/auth/logout/', { method: 'POST' }),
   saved: signal => request('/api/saved/', { signal }),
   saveChart: (key, note = '') => {

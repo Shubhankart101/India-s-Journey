@@ -37,7 +37,7 @@ const NAV = [
 ];
 
 export default function Layout() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const compare = useCompare();
   const location = useLocation();
   const scrolled = useScrolled();
@@ -74,15 +74,44 @@ export default function Layout() {
             ))}
           </nav>
           <Link to="/explore" className="btn btn-primary header-cta">Explore data</Link>
-          <Link
-            to="/login"
-            className="btn btn-ghost header-auth-btn"
-            aria-label={user ? `Signed in as ${user.first_name || user.email}` : 'Sign in with Google or Microsoft'}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', padding: '6px 12px' }}
-          >
-            <span aria-hidden="true">{user ? '👤' : '🔑'}</span>
-            <span>{user ? (user.first_name || 'Account') : 'Sign in'}</span>
-          </Link>
+          {user ? (
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <span
+                className="header-auth-badge"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '0.84rem',
+                  padding: '6px 12px',
+                  borderRadius: '6px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                }}
+              >
+                <span aria-hidden="true">👤</span>
+                <span>{user.first_name || 'User'}</span>
+              </span>
+              <button
+                type="button"
+                className="btn btn-ghost header-logout-btn"
+                onClick={logout}
+                style={{ fontSize: '0.78rem', padding: '5px 10px', opacity: 0.85 }}
+                title="Sign out"
+              >
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="btn btn-ghost header-auth-btn"
+              aria-label="Sign in with Google or Microsoft"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.84rem', padding: '6px 12px' }}
+            >
+              <span aria-hidden="true">🔑</span>
+              <span>Sign in</span>
+            </Link>
+          )}
           <ContactLinks />
           <ThemeSelect />
         </div>
