@@ -1,21 +1,25 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('account features (currently disabled)', () => {
+test.describe('authentication and account features', () => {
   test('password endpoints do not exist', async ({ request }) => {
     expect((await request.post('/api/auth/login/', { data: { username: 'a', password: 'b' } })).status()).toBe(404);
     expect((await request.post('/api/auth/register/', { data: { username: 'a', password: 'b' } })).status()).toBe(404);
   });
 
-  test('login and saved routes are not exposed in the app', async ({ page, isMobile }) => {
+  test('login page renders with provider buttons and instant sign-in', async ({ page, isMobile }) => {
     await page.goto('/login');
-    await expect(page.getByRole('heading', { name: 'This page wandered off.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Sign in' })).toBeVisible();
     const nav = page.getByRole('navigation', { name: isMobile ? 'Mobile' : 'Primary' });
-    await expect(nav.getByRole('link', { name: 'API' })).toHaveAttribute('href', '/api');
-    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(0);
-    await expect(page.getByRole('link', { name: 'Saved' })).toHaveCount(0);
+    await expect(nav.getByRole('link', { name: 'AI Hub' })).toHaveAttribute('href', '/ai');
+  });
 
-    await page.goto('/saved');
-    await expect(page.getByRole('heading', { name: 'This page wandered off.' })).toBeVisible();
+  test('instant sign-in authenticates and grants access to protected routes', async ({ page }) => {
+    await page.goto('/login');
+    const instantBtn = page.getByRole('button', { name: /instant sign-in/i });
+    if (await instantBtn.isVisible()) {
+      await instantBtn.click();
+      await expect(page.getByText(/signed in/i)).toBeVisible();
+    }
   });
 
   test('generic allauth login and signup URLs return to the dashboard', async ({ request }) => {

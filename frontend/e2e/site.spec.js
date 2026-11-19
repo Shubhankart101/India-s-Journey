@@ -3,6 +3,15 @@ import { expect, test } from '@playwright/test';
 const BACKUP = 'https://indiasjourney.netlify.app/';
 
 test.describe('site', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      window.localStorage.setItem('ij_auth_user', JSON.stringify({
+        username: 'guest',
+        first_name: 'Guest User',
+        email: 'guest@example.com',
+      }));
+    });
+  });
   test('home loads stats, groups and navigation', async ({ page }) => {
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
