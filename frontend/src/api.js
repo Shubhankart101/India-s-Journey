@@ -218,6 +218,21 @@ const staticSummary = (item, indexes, updatedAt) => {
   };
 };
 
+const HISTORICAL_MILESTONES = {
+  '1991': '1991 Economic Liberalization & Industrial Policy Reforms',
+  '1998': 'Pokhran-II sanctions & Asian Financial Crisis ripple effects',
+  '2008': '2008 Global Financial Crisis & domestic stimulus cycle',
+  '2009': 'Post-GFC fiscal stimulus & domestic recovery',
+  '2014': 'Jan Dhan financial inclusion & Make in India rollout',
+  '2016': 'Demonetization & IBC framework enactment',
+  '2017': 'Nationwide Goods and Services Tax (GST) implementation',
+  '2020': 'COVID-19 pandemic nationwide lockdown shock',
+  '2021': 'Post-pandemic reopening and industrial rebound',
+  '2022': 'Global energy supply disruptions & RBI rate hike cycle',
+  '2023': 'Capex infrastructure push & DPI digital expansion',
+  '2024': 'General election cycle & macroeconomic consolidation',
+};
+
 async function staticRequest(path, { signal } = {}) {
   const url = new URL(path, window.location.href);
   const query = url.searchParams;
@@ -366,45 +381,119 @@ async function staticRequest(path, { signal } = {}) {
   if (url.pathname.includes('/ai/insights/')) {
     const key = decodeURIComponent(url.pathname.split('/').filter(Boolean).pop() || '');
     const item = (catalog.indicators || []).find(i => i.key === key);
-    const labels = item?.series?.labels || [];
-    const values = item?.series?.datasets?.[0]?.values || [];
+    const labels = item?.series?.labels || item?.labels || [];
+    const values = item?.series?.datasets?.[0]?.values || item?.datasets?.[0]?.values || [];
     const points = [];
     for (let i = 0; i < Math.min(labels.length, values.length); i++) {
-      if (typeof values[i] === 'number') points.push({ label: String(labels[i]), value: values[i] });
+      if (typeof values[i] === 'number' && !Number.isNaN(values[i])) {
+        points.push({ label: String(labels[i]), value: values[i] });
+      }
     }
-    const unit = item?.suffix || '';
+    const unit = (item?.suffix || item?.unit || '').trim();
     const fmt = v => (typeof v === 'number' ? (Number.isInteger(v) ? String(v) : v.toFixed(2)) : String(v));
     const takeaways = [];
     let metrics = null;
+    let inflections = [];
+
     if (points.length >= 2) {
       const first = points[0];
       const latest = points[points.length - 1];
       const delta = latest.value - first.value;
+      const deltaPct = first.value !== 0 ? ((delta / Math.abs(first.value)) * 100) : null;
       const dir = delta >= 0 ? 'increased' : 'decreased';
       const sorted = [...points].sort((a, b) => a.value - b.value);
       const trough = sorted[0];
       const peak = sorted[sorted.length - 1];
+
+      // CAGR calculation
+      let cagr = null;
+      const firstYrMatch = first.label.match(/\b(19\d\d|20\d\d)\b/);
+      const latestYrMatch = latest.label.match(/\b(19\d\d|20\d\d)\b/);
+      if (firstYrMatch && latestYrMatch && first.value > 0 && latest.value > 0) {
+        const nYears = parseInt(latestYrMatch[1], 10) - parseInt(firstYrMatch[1], 10);
+        if (nYears > 1) {
+          try {
+            cagr = Math.round(((Math.pow(latest.value / first.value, 1 / nYears) - 1) * 100) * 100) / 100;
+          } catch {}
+        }
+      }
+
+      // Standard deviation volatility
+      const meanVal = points.reduce((s, p) => s + p.value, 0) / points.length;
+      const variance = points.reduce((s, p) => s + Math.pow(p.value - meanVal, 2), 0) / points.length;
+      const stdDev = Math.round(Math.sqrt(variance) * 100) / 100;
+
       metrics = {
         first: { label: first.label, value: first.value },
         latest: { label: latest.label, value: latest.value },
         peak: { label: peak.label, value: peak.value },
         trough: { label: trough.label, value: trough.value },
-        delta: Math.round(delta * 100) / 100,
+        cagr,
+        volatility: stdDev,
+        delta: Math.round(delta * 1000) / 1000,
         unit,
       };
-      takeaways.push(`Recorded from ${first.label} (${fmt(first.value)}${unit}) through ${latest.label} (${fmt(latest.value)}${unit}), net ${dir} by ${Math.abs(delta).toFixed(2)}${unit}.`);
-      takeaways.push(`Historical peak attained at ${fmt(peak.value)}${unit} (${peak.label}) and trough at ${fmt(trough.value)}${unit} (${trough.label}).`);
+
+      // Inflection matching with Historical Milestones
+      for (const pt of points) {
+        for (const [yr, event] of Object.entries(HISTORICAL_MILESTONES)) {
+          if (pt.label.includes(yr) && !inflections.some(inf => inf.year === yr)) {
+            inflections.push({
+              year: yr,
+              label: pt.label,
+              value: pt.value,
+              unit,
+              event,
+            });
+          }
+        }
+      }
+
+      // Caveat provenance
+      let caveat = 'Data sourced directly from official published tables with no interpolated projections.';
+      const catLower = (item?.category || '').toLowerCase();
+      const srcLower = (item?.series?.source || '').toLowerCase();
+      if (srcLower.includes('mospi') || catLower.includes('economy') || (item?.key || '').includes('gdp')) {
+        caveat = "Official series reflects MoSPI's 2011-12 base-year revision.";
+      } else if (catLower.includes('election') || srcLower.includes('eci')) {
+        caveat = 'Post-2008 constituency boundaries reflect the Delimitation Order of 2008.';
+      } else if (catLower.includes('court') || catLower.includes('judiciary')) {
+        caveat = 'Court disposal and pendency figures fluctuate with scheduled judicial recess periods.';
+      }
+
+      // 3 Structured takeaways
+      if (cagr !== null) {
+        takeaways.push(`Expanded at a CAGR of ${cagr}% from ${fmt(first.value)}${unit} (${first.label}) to ${fmt(latest.value)}${unit} (${latest.label}).`);
+      } else if (deltaPct !== null) {
+        takeaways.push(`Net movement ${dir} by ${fmt(Math.abs(delta))}${unit} (${deltaPct >= 0 ? '+' : ''}${deltaPct.toFixed(1)}%) from ${first.label} to ${latest.label}.`);
+      } else {
+        takeaways.push(`Recorded from ${first.label} (${fmt(first.value)}${unit}) through ${latest.label} (${fmt(latest.value)}${unit}).`);
+      }
+
+      if (inflections.length > 0) {
+        const topInf = inflections[inflections.length - 1];
+        takeaways.push(`Recorded peak at ${fmt(peak.value)}${unit} (${peak.label}) and trough at ${fmt(trough.value)}${unit} (${trough.label}); key milestone in ${topInf.year} (${topInf.event}).`);
+      } else {
+        takeaways.push(`Historical range spans from ${fmt(trough.value)}${unit} (${trough.label}) to a peak of ${fmt(peak.value)}${unit} (${peak.label}).`);
+      }
+
+      takeaways.push(`Verified via ${item?.series?.source || 'national reporting agencies'}. ${caveat}`);
     } else {
       takeaways.push(`${item?.title || 'Indicator'} verified from official statistical records.`);
+      takeaways.push('Data series contains categorical or geographic distributions without multi-period temporal trends.');
+      takeaways.push(`Sourced from ${item?.series?.source || 'official authorities'}. Official series published without interpolated projections.`);
     }
-    takeaways.push(`Sourced from ${item?.series?.source || 'official authorities'}. Official series published without interpolated projections.`);
+
+    const summaryFirst = takeaways[0] || `${item?.title || 'Indicator'} official summary.`;
+    const summary = `${item?.title || 'Indicator'} progressed from ${metrics?.first?.label ? fmt(metrics.first.value) + unit : 'early records'} to ${metrics?.latest?.label ? fmt(metrics.latest.value) + unit : 'latest'}, peak at ${metrics?.peak ? fmt(metrics.peak.value) + unit : 'N/A'}. ${inflections.length ? 'Inflection points correlate with ' + inflections[inflections.length - 1].event + '.' : ''}`.trim();
+
     return {
       key: key || '',
       title: item?.title || 'Macroeconomic Synthesis',
-      summary: takeaways[0],
+      summary,
       metrics,
       takeaways,
-      inflections: [],
+      inflections,
     };
   }
   if (url.pathname.includes('/ai/compare-insights/')) {
@@ -426,11 +515,15 @@ async function staticRequest(path, { signal } = {}) {
     if (labels.every(l => /^\d{4}/.test(l))) labels.sort();
     const indA = found[0];
     const indB = found[1];
+    const unitA = (indA?.suffix || '').trim();
+    const unitB = (indB?.suffix || '').trim();
     const mapA = new Map(getLabels(indA).map((l, i) => [l, getValues(indA)[i]]));
     const mapB = new Map(getLabels(indB).map((l, i) => [l, getValues(indB)[i]]));
     const common = labels.filter(l => typeof mapA.get(l) === 'number' && typeof mapB.get(l) === 'number');
     let r = null;
     let strength = 'Insufficient shared observation periods';
+    const decouplings = [];
+
     if (common.length >= 3) {
       const vA = common.map(l => mapA.get(l));
       const vB = common.map(l => mapB.get(l));
@@ -444,13 +537,87 @@ async function staticRequest(path, { signal } = {}) {
       if (denom > 1e-9) {
         const rawR = dA.reduce((s, d, i) => s + d * dB[i], 0) / denom;
         r = Math.round(Math.max(-1, Math.min(1, rawR)) * 100) / 100;
-        strength = r >= 0.7 ? 'Strong positive co-movement' : (r >= 0.35 ? 'Moderate positive correlation' : (r > -0.35 ? 'Decoupled / weak relationship' : 'Inverse trade-off'));
+        if (r >= 0.70) strength = 'Strong positive co-movement';
+        else if (r >= 0.35) strength = 'Moderate positive correlation';
+        else if (r > -0.35) strength = 'Decoupled / weak relationship';
+        else if (r > -0.70) strength = 'Moderate inverse relationship';
+        else strength = 'Strong inverse trade-off';
+
+        // Detect real decoupling shocks where annual step direction flips against correlation
+        for (let k = 0; k < common.length - 1; k++) {
+          const lPrev = common[k];
+          const lCurr = common[k + 1];
+          const deltaA = mapA.get(lCurr) - mapA.get(lPrev);
+          const deltaB = mapB.get(lCurr) - mapB.get(lPrev);
+
+          const yrMatch = lCurr.match(/\b(19\d\d|20\d\d)\b/);
+          const yrStr = yrMatch ? yrMatch[1] : '';
+          const eventName = HISTORICAL_MILESTONES[yrStr] || 'Divergent Inflection';
+
+          let isDecoupled = false;
+          if (r >= 0.35 && (deltaA * deltaB < 0) && (Math.abs(deltaA) > 0 || Math.abs(deltaB) > 0)) {
+            isDecoupled = true;
+          } else if (r <= -0.35 && (deltaA * deltaB > 0) && (Math.abs(deltaA) > 0 || Math.abs(deltaB) > 0)) {
+            isDecoupled = true;
+          }
+
+          if (isDecoupled) {
+            const fmtDa = `${deltaA >= 0 ? '+' : ''}${deltaA.toFixed(2)}`;
+            const fmtDb = `${deltaB >= 0 ? '+' : ''}${deltaB.toFixed(2)}`;
+            decouplings.push({
+              pair: [indA.key, indB.key],
+              titles: [indA.title, indB.title],
+              year: yrStr || lCurr,
+              label: lCurr,
+              event: eventName,
+              observation: `In ${lCurr}, ${indA.title} shifted by ${fmtDa}${unitA} while ${indB.title} moved by ${fmtDb}${unitB}.`,
+            });
+          }
+        }
       }
     }
+
+    const uniqueDecouplings = [];
+    const seenYears = new Set();
+    for (const d of decouplings) {
+      if (!seenYears.has(d.year)) {
+        seenYears.add(d.year);
+        uniqueDecouplings.push(d);
+      }
+    }
+    uniqueDecouplings.sort((a, b) => (b.year || '').localeCompare(a.year || ''));
+
+    const takeaways = [];
+    if (r !== null) {
+      if (r >= 0.50) {
+        takeaways.push(`Strong synchrony: ${indA.title} and ${indB.title} exhibit tight co-movement (r = ${r >= 0 ? '+' : ''}${r.toFixed(2)}) across ${common.length} shared observations (${common[0]}–${common[common.length - 1]}).`);
+      } else if (r <= -0.50) {
+        takeaways.push(`Inverse trade-off: ${indA.title} and ${indB.title} reflect a marked structural inverse relationship (r = ${r.toFixed(2)}) over ${common.length} years.`);
+      } else {
+        takeaways.push(`Relative independence: Series display moderate or decoupled correlation (r = ${r >= 0 ? '+' : ''}${r.toFixed(2)}) between ${indA.title} and ${indB.title} over ${common.length} periods.`);
+      }
+    } else {
+      takeaways.push('Series cover non-overlapping reporting cadences; alignment requires interpolation across reporting years.');
+    }
+
+    if (uniqueDecouplings.length > 0) {
+      const topDec = uniqueDecouplings[0];
+      const ev = topDec.event && topDec.event !== 'Divergent Inflection' ? ` (${topDec.event})` : '';
+      takeaways.push(`Key structural decoupling observed in ${topDec.label}${ev}: ${topDec.observation}`);
+    } else {
+      takeaways.push('No severe historical divergence detected; trends evolved in close macro alignment across observation years.');
+    }
+
+    if (unitA && unitB && unitA !== unitB) {
+      takeaways.push(`Differing units (${unitA} vs ${unitB}) detected. Rebase series to 100 on the workbench toolbar for proportional trajectory comparison.`);
+    } else {
+      takeaways.push('Shared unit scale allows direct absolute variance comparison across indicators.');
+    }
+
     return {
       keys: found.map(i => i.key),
       count: found.length,
-      summary: `Comparing ${found.length} indicators: ${indA.title} and ${indB.title} (${strength}).`,
+      summary: `Comparing ${found.length} indicators: ${takeaways[0]}`,
       correlations: [
         {
           pair: [indA.key, indB.key],
@@ -462,32 +629,29 @@ async function staticRequest(path, { signal } = {}) {
           end_year: common[common.length - 1] || null,
         },
       ],
-      decouplings: [
-        ...(common.includes('2020') ? [{ year: '2020', note: 'COVID-19 pandemic nationwide lockdown shock and abrupt divergence' }] : []),
-        ...(common.includes('2022') ? [{ year: '2022', note: 'Global supply chain realignment and commodity price volatility' }] : []),
-        ...(common.includes('2016') ? [{ year: '2016', note: 'Demonetization and formalization liquidity shock' }] : []),
-      ],
-      takeaways: [
-        `Cross-series synthesis for ${indA.title} and ${indB.title}: ${strength} (r = ${r !== null ? (r >= 0 ? '+' : '') + r.toFixed(2) : 'N/A'}).`,
-        `Identified ${common.length} overlapping observation periods spanning ${common[0] || 'early records'} to ${common[common.length - 1] || 'latest data'}.`,
-        'Toggle Rebase on the workbench toolbar to normalize series to 100 for proportional trajectory comparison.',
-      ],
+      decouplings: uniqueDecouplings.slice(0, 5),
+      takeaways,
     };
   }
   if (url.pathname.includes('/ai/recommend/')) {
     const key = decodeURIComponent(url.pathname.split('/').filter(Boolean).pop() || '');
     const current = (catalog.indicators || []).find(i => i.key === key);
     const others = (catalog.indicators || []).filter(i => i.key !== key);
+    const currTitleWords = (current?.title || '').toLowerCase().split(/\s+/).filter(w => w.length >= 4);
+
     const ranked = others.map(item => {
-      let score = 0.50;
-      if (current && item.category === current.category) score += 0.25;
-      if (current && item.subgroup === current.subgroup) score += 0.15;
+      let score = 0.40;
+      if (current && item.category === current.category) score += 0.28;
+      if (current && item.subgroup === current.subgroup) score += 0.20;
+      const targetWords = (item.title || '').toLowerCase().split(/\s+/);
+      const overlap = currTitleWords.filter(w => targetWords.includes(w)).length;
+      score += Math.min(0.20, overlap * 0.10);
       return {
         key: item.key,
         title: item.title,
         category: item.category,
         subgroup: item.subgroup,
-        similarity: Math.min(0.95, score),
+        similarity: Math.round(Math.min(0.96, score) * 100) / 100,
       };
     }).sort((a, b) => b.similarity - a.similarity).slice(0, 5);
     return { key, count: ranked.length, recommendations: ranked };
@@ -497,18 +661,56 @@ async function staticRequest(path, { signal } = {}) {
     const cat = query.get('category');
     if (!q) return { query: '', provider: 'static-client', count: 0, results: [] };
     const terms = q.split(/\s+/).filter(Boolean);
-    const matched = (catalog.indicators || []).filter(item => {
-      if (cat && item.category !== cat) return false;
-      const haystack = `${item.key} ${item.title} ${item.subtitle || ''} ${item.category} ${item.subgroup}`.toLowerCase();
-      return terms.some(t => haystack.includes(t));
-    });
-    const results = matched.slice(0, 10).map((item, idx) => ({
-      key: item.key,
-      title: item.title,
-      category: item.category,
-      subgroup: item.subgroup,
-      similarity: Math.max(0.40, 0.90 - idx * 0.05),
-    }));
+
+    // Hybrid keyword & root match scoring
+    const scored = (catalog.indicators || []).map(item => {
+      if (cat && item.category !== cat) return null;
+      const titleLower = (item.title || '').toLowerCase();
+      const keyLower = (item.key || '').toLowerCase();
+      const catLower = (item.category || '').toLowerCase();
+      const subLower = (item.subgroup || '').toLowerCase();
+      const detailsLower = (item.details || '').toLowerCase();
+      const text = `${titleLower} ${keyLower} ${catLower} ${subLower} ${detailsLower}`;
+
+      let matchScore = 0.0;
+      let matchedCount = 0;
+
+      for (const term of terms) {
+        if (titleLower.includes(term)) {
+          matchScore += 0.45;
+          matchedCount += 1;
+        } else if (keyLower.includes(term)) {
+          matchScore += 0.35;
+          matchedCount += 1;
+        } else if (subLower.includes(term) || catLower.includes(term)) {
+          matchScore += 0.25;
+          matchedCount += 1;
+        } else if (detailsLower.includes(term)) {
+          matchScore += 0.15;
+          matchedCount += 1;
+        } else if (term.length >= 4 && text.includes(term.slice(0, term.length - 1))) {
+          // Stem match
+          matchScore += 0.10;
+          matchedCount += 1;
+        }
+      }
+
+      if (matchedCount === 0) return null;
+      // Phrase match bonus
+      if (titleLower.includes(q)) matchScore += 0.40;
+
+      const sim = Math.min(0.98, Math.max(0.40, (matchScore / terms.length) * 0.70 + (matchedCount / terms.length) * 0.30));
+      return {
+        key: item.key,
+        title: item.title,
+        category: item.category,
+        subgroup: item.subgroup,
+        similarity: Math.round(sim * 100) / 100,
+      };
+    }).filter(Boolean);
+
+    scored.sort((a, b) => b.similarity - a.similarity);
+    const results = scored.slice(0, 12);
     return { query: q, provider: 'static-client', count: results.length, results };
   }
   if (url.pathname.endsWith('/articles/')) {

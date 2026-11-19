@@ -12,7 +12,7 @@ const PROMPT_SUGGESTIONS = [
   { label: '⚡ Green Energy Transition (Solar vs Coal)', query: 'solar renewable energy capacity coal' },
   { label: '💳 Digital Public Infrastructure & UPI Velocity', query: 'upi payments digital transactions' },
   { label: '📉 2020 COVID-19 GDP Contraction & Rebound', query: 'real gdp growth contraction pandemic 2020' },
-  { label: '⚖️ Judicial Backlog & Court Pendency', query: 'court pendency high court cases disposal' },
+  { label: '⚖️ Judicial Backlog & Court Pendency', query: 'court pendency cases disposal' },
   { label: '🌾 Foodgrain Production vs Monsoon', query: 'agriculture foodgrain production monsoon rainfall' },
   { label: '📊 CPI Inflation vs RBI Repo Rate', query: 'inflation cpi consumer prices repo rate' },
 ];
@@ -28,7 +28,7 @@ export const PRESET_PAIRS = [
     name: 'Real GDP Growth vs CPI Inflation',
     keys: ['gdp_growth', 'cpi'],
     badge: 'Phillips Curve & Shocks',
-    description: 'Growth trajectory vs retail price pressure and monsoon supply shocks.',
+    description: 'Growth trajectory vs retail price pressure and supply shocks.',
   },
   {
     name: 'Exports vs Imports of Goods & Services',
@@ -42,15 +42,54 @@ export const PRESET_PAIRS = [
     badge: 'Energy Transition',
     description: 'Surging renewable capacity alongside thermal baseload power demand.',
   },
+  {
+    name: 'Digital UPI Volume vs Headline Inflation',
+    keys: ['upi', 'cpi'],
+    badge: 'Financial Deepening',
+    description: 'DPI adoption speed through retail price fluctuation regimes.',
+  },
+  {
+    name: 'Central Government Debt vs Real GDP Growth',
+    keys: ['public_debt_gdp', 'gdp_growth'],
+    badge: 'Fiscal Sustainability',
+    description: 'Sovereign borrowing trajectory across business cycles and consolidation phases.',
+  },
+];
+
+export const CORE_INDICATOR_OPTIONS = [
+  { key: 'gdp_growth', label: 'Real GDP Growth (%)', category: 'Economy' },
+  { key: 'capital_formation_gdp', label: 'Gross Capital Formation (% of GDP)', category: 'Economy' },
+  { key: 'cpi', label: 'CPI Headline Inflation (%)', category: 'Prices' },
+  { key: 'public_debt_gdp', label: 'Central Government Debt (% of GDP)', category: 'Fiscal' },
+  { key: 'trade', label: 'Trade Share of GDP (%)', category: 'Trade' },
+  { key: 'exports_gdp', label: 'Merchandise Exports (% of GDP)', category: 'Trade' },
+  { key: 'imports_gdp', label: 'Merchandise Imports (% of GDP)', category: 'Trade' },
+  { key: 'state_renewable_energy_capacity_all_india_trend', label: 'Renewable Power Capacity (MW)', category: 'Energy' },
+  { key: 'coal_production', label: 'Coal Production (MT)', category: 'Energy' },
+  { key: 'upi', label: 'Digital Payments - UPI (Cr Volume)', category: 'Finance' },
+  { key: 'forex', label: 'Foreign Exchange Reserves ($ Bn)', category: 'External' },
 ];
 
 const SYNTH_INDICATORS = [
   { key: 'gdp_growth', label: 'Real GDP Growth' },
   { key: 'capital_formation_gdp', label: 'Gross Capital Formation' },
   { key: 'cpi', label: 'CPI Inflation' },
-  { key: 'public_debt_gdp', label: 'Central Government Debt' },
+  { key: 'public_debt_gdp', label: 'Central Debt' },
   { key: 'trade', label: 'Trade Share of GDP' },
+  { key: 'state_renewable_energy_capacity_all_india_trend', label: 'Renewable Power' },
+  { key: 'coal_production', label: 'Coal Production' },
+  { key: 'upi', label: 'UPI Digital Payments' },
+  { key: 'forex', label: 'Forex Reserves' },
 ];
+
+const ERAS = [
+  { id: 'all', label: 'All Horizons', startYear: 0 },
+  { id: '1991', label: 'Post-1991 Reforms', startYear: 1991 },
+  { id: '2000', label: '2000 – Present', startYear: 2000 },
+  { id: '2015', label: 'Last Decade (2015+)', startYear: 2015 },
+];
+
+const SEARCH_CATEGORIES = ['All', 'Economy', 'Energy', 'Finance', 'Trade', 'Fiscal'];
 
 const PALETTE = ['#2997ff', '#30d158', '#ffd60a', '#ff9f0a', '#bf5af2', '#64d2ff'];
 
@@ -60,6 +99,7 @@ export default function AiPage() {
   const [params, setParams] = useSearchParams();
   const initialQuery = params.get('q') || '';
   const [searchQuery, setSearchQuery] = useState(initialQuery);
+  const [searchCategory, setSearchCategory] = useState('All');
   const [searchResults, setSearchResults] = useState(null);
   const [searching, setSearching] = useState(false);
   const [, startTransition] = useTransition();
@@ -67,6 +107,7 @@ export default function AiPage() {
   // Correlation lab state
   const [selectedPair, setSelectedPair] = useState(PRESET_PAIRS[0].keys);
   const [rebaseNormalised, setRebaseNormalised] = useState(true);
+  const [selectedEra, setSelectedEra] = useState('all');
   const [compareData, setCompareData] = useState(null);
   const [pairInsights, setPairInsights] = useState(null);
   const [pairLoading, setPairLoading] = useState(false);
@@ -81,7 +122,7 @@ export default function AiPage() {
   const [synthData, setSynthData] = useState(null);
   const [synthLoading, setSynthLoading] = useState(false);
 
-  // Run semantic search when query changes
+  // Run semantic search when query or category changes
   useEffect(() => {
     const q = searchQuery.trim();
     if (!q) {
@@ -92,7 +133,8 @@ export default function AiPage() {
     const controller = new AbortController();
     setSearching(true);
     const timer = setTimeout(() => {
-      api.aiSearch(q, undefined, controller.signal)
+      const catParam = searchCategory !== 'All' ? searchCategory : undefined;
+      api.aiSearch(q, catParam, controller.signal)
         .then(res => {
           setSearchResults(res?.results || []);
           setSearching(false);
@@ -109,7 +151,7 @@ export default function AiPage() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [searchQuery]);
+  }, [searchQuery, searchCategory]);
 
   // Load both compare time-series and correlation insights when pair changes
   useEffect(() => {
@@ -166,11 +208,82 @@ export default function AiPage() {
     return () => controller.abort();
   }, [synthKey]);
 
+  // Filter series by selected macroeconomic era
+  const eraFilteredCompare = useMemo(() => {
+    if (!compareData?.labels || !compareData?.series) return compareData;
+    const eraConfig = ERAS.find(e => e.id === selectedEra);
+    const startYear = eraConfig?.startYear || 0;
+    if (startYear === 0) return compareData;
+
+    const indices = [];
+    compareData.labels.forEach((label, idx) => {
+      const yrMatch = String(label).match(/\b(19\d\d|20\d\d)\b/);
+      const yr = yrMatch ? parseInt(yrMatch[1], 10) : 0;
+      if (yr >= startYear) indices.push(idx);
+    });
+
+    if (indices.length === 0) return compareData;
+
+    return {
+      labels: indices.map(i => compareData.labels[i]),
+      series: compareData.series.map(s => ({
+        ...s,
+        values: indices.map(i => s.values?.[i] ?? null),
+      })),
+    };
+  }, [compareData, selectedEra]);
+
+  // Dynamically compute Pearson r for the active era slice
+  const eraCorrelation = useMemo(() => {
+    if (!eraFilteredCompare?.series || eraFilteredCompare.series.length < 2) return null;
+    const labels = eraFilteredCompare.labels || [];
+    const sA = eraFilteredCompare.series[0]?.values || [];
+    const sB = eraFilteredCompare.series[1]?.values || [];
+
+    const common = [];
+    for (let i = 0; i < Math.min(labels.length, sA.length, sB.length); i++) {
+      if (typeof sA[i] === 'number' && typeof sB[i] === 'number' && !Number.isNaN(sA[i]) && !Number.isNaN(sB[i])) {
+        common.push({ label: labels[i], a: sA[i], b: sB[i] });
+      }
+    }
+
+    if (common.length < 3) return null;
+
+    const vA = common.map(c => c.a);
+    const vB = common.map(c => c.b);
+    const mA = vA.reduce((s, v) => s + v, 0) / common.length;
+    const mB = vB.reduce((s, v) => s + v, 0) / common.length;
+    const dA = vA.map(v => v - mA);
+    const dB = vB.map(v => v - mB);
+    const varA = dA.reduce((s, d) => s + d * d, 0);
+    const varB = dB.reduce((s, d) => s + d * d, 0);
+    const denom = Math.sqrt(varA * varB);
+
+    if (denom < 1e-9) return { r: 0.0, sampleSize: common.length, strength: 'Zero variance', start: common[0].label, end: common[common.length - 1].label };
+
+    const rawR = dA.reduce((s, d, i) => s + d * dB[i], 0) / denom;
+    const r = Math.round(Math.max(-1, Math.min(1, rawR)) * 100) / 100;
+    let strength = 'Decoupled / Weak Relationship';
+    if (r >= 0.70) strength = 'Strong Positive Co-Movement';
+    else if (r >= 0.35) strength = 'Moderate Positive Correlation';
+    else if (r <= -0.70) strength = 'Strong Inverse Trade-Off';
+    else if (r <= -0.35) strength = 'Moderate Inverse Relationship';
+
+    return {
+      r,
+      sampleSize: common.length,
+      strength,
+      start: common[0].label,
+      end: common[common.length - 1].label,
+    };
+  }, [eraFilteredCompare]);
+
   // Chart datasets for correlation lab
   const chartDatasets = useMemo(() => {
-    if (!compareData?.series || compareData.series.length === 0) return [];
-    return compareData.series.map((item, index) => {
-      let values = item.values;
+    const dataToUse = eraFilteredCompare || compareData;
+    if (!dataToUse?.series || dataToUse.series.length === 0) return [];
+    return dataToUse.series.map((item, index) => {
+      let values = item.values || [];
       if (rebaseNormalised) {
         const base = values.find(value => typeof value === 'number' && value !== 0);
         values = base ? values.map(value => (typeof value === 'number' ? Math.round(((value / base) * 100) * 10) / 10 : null)) : values;
@@ -178,6 +291,8 @@ export default function AiPage() {
       const color = item.color || PALETTE[index % PALETTE.length];
       return {
         label: item.title,
+        color,
+        values,
         data: values,
         borderColor: color,
         backgroundColor: color,
@@ -185,7 +300,7 @@ export default function AiPage() {
         pointRadius: 2,
       };
     });
-  }, [compareData, rebaseNormalised]);
+  }, [eraFilteredCompare, compareData, rebaseNormalised]);
 
   // Single-series chart dataset & labels
   const singleChartDataset = useMemo(() => {
@@ -196,6 +311,8 @@ export default function AiPage() {
     return [
       {
         label: synthIndicator?.title || 'Indicator',
+        color,
+        values: ds.values,
         data: ds.values,
         borderColor: color,
         backgroundColor: color,
@@ -222,6 +339,12 @@ export default function AiPage() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const loadSynthIndicator = key => {
+    setSynthKey(key);
+    const el = document.getElementById('ai-synthesizer');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const swapPair = () => {
     if (selectedPair && selectedPair.length >= 2) {
       setSelectedPair([selectedPair[1], selectedPair[0]]);
@@ -229,23 +352,45 @@ export default function AiPage() {
   };
 
   // Correlation metrics helpers
-  const primaryCorrelation = pairInsights?.correlations?.[0];
+  const primaryCorrelation = eraCorrelation || pairInsights?.correlations?.[0];
   const rVal = primaryCorrelation?.r ?? null;
   const rColor = rVal === null ? 'var(--muted, #86868b)' : (rVal >= 0.5 ? '#30d158' : (rVal <= -0.5 ? '#ff453a' : '#ffd60a'));
   const rPercentPos = rVal !== null ? Math.round(((rVal + 1) / 2) * 100) : 50;
 
-  // Simulator elasticity estimation
-  const simulatedTargetDelta = useMemo(() => {
+  // Simulator elasticity & value projection estimation
+  const simStats = useMemo(() => {
     if (rVal === null || !compareData?.series || compareData.series.length < 2) return null;
-    const vA = compareData.series[0].values.filter(v => typeof v === 'number');
-    const vB = compareData.series[1].values.filter(v => typeof v === 'number');
+    const sA = compareData.series[0];
+    const sB = compareData.series[1];
+    const vA = (sA.values || []).filter(v => typeof v === 'number');
+    const vB = (sB.values || []).filter(v => typeof v === 'number');
     if (vA.length < 3 || vB.length < 3) return null;
+
     const meanA = vA.reduce((s, v) => s + v, 0) / vA.length;
     const meanB = vB.reduce((s, v) => s + v, 0) / vB.length;
     const stdA = Math.sqrt(vA.reduce((s, v) => s + (v - meanA) ** 2, 0) / vA.length);
     const stdB = Math.sqrt(vB.reduce((s, v) => s + (v - meanB) ** 2, 0) / vB.length);
     const beta = stdA > 1e-6 ? rVal * (stdB / stdA) : rVal;
-    return Math.round(simShockPct * beta * 100) / 100;
+
+    const deltaPctB = Math.round(simShockPct * beta * 100) / 100;
+    const latestA = vA[vA.length - 1];
+    const latestB = vB[vB.length - 1];
+
+    const projectedA = Math.round((latestA * (1 + simShockPct / 100)) * 100) / 100;
+    const projectedB = Math.round((latestB * (1 + deltaPctB / 100)) * 100) / 100;
+
+    return {
+      beta: Math.round(beta * 100) / 100,
+      deltaPctB,
+      stdA: Math.round(stdA * 100) / 100,
+      stdB: Math.round(stdB * 100) / 100,
+      latestA,
+      latestB,
+      projectedA,
+      projectedB,
+      unitA: sA.suffix || '',
+      unitB: sB.suffix || '',
+    };
   }, [rVal, compareData, simShockPct]);
 
   return (
@@ -263,8 +408,8 @@ export default function AiPage() {
         <h1 style={{ fontSize: 'clamp(2.1rem, 4.2vw, 3rem)', margin: '6px 0 10px', fontWeight: 800 }}>
           AI Intelligence Hub <span className="vintage-nav-sublabel" style={{ fontSize: '1.25rem', color: 'var(--muted, #86868b)' }}>कृत्रिमबुद्धिः</span>
         </h1>
-        <p className="lead" style={{ maxWidth: '760px', margin: '0 auto 16px', fontSize: '1.08rem', color: 'var(--muted, #86868b)', lineHeight: '1.5' }}>
-          Explore autonomous dual-series co-movement, structural shock detection, and macroeconomic inflection radars across 3,082 verified public indicators.
+        <p className="lead" style={{ maxWidth: '780px', margin: '0 auto 16px', fontSize: '1.08rem', color: 'var(--muted, #86868b)', lineHeight: '1.5' }}>
+          Real-time macroeconomic co-movement, structural shock detection, elasticity stress simulation, and natural language query across 3,082 verified public indicators.
         </p>
       </header>
 
@@ -274,19 +419,71 @@ export default function AiPage() {
           <span style={{ fontSize: '1.5rem', color: 'var(--accent, #2997ff)' }}>⇄</span>
           <h2 style={{ margin: 0, fontSize: '1.45rem', fontWeight: 700 }}>AI Correlation &amp; Decoupling Laboratory</h2>
           <span className="badge" style={{ marginLeft: 'auto', background: 'rgba(41, 151, 255, 0.15)', color: 'var(--accent, #2997ff)', fontSize: '0.76rem', padding: '4px 10px' }}>
-            Phase 2B Engine
+            Phase 2B Statistical Engine
           </span>
         </div>
         <p className="muted" style={{ margin: '0 0 20px', fontSize: '0.94rem', lineHeight: '1.45' }}>
-          Select an analytical preset or customize any two indicators to render live dual-axis charts, compute in-memory Pearson co-movement ($r$), and isolate structural decoupling shocks.
+          Select an analytical preset or pick any two indicators to render live dual-axis charts, compute in-memory Pearson co-movement ($r$), and isolate structural decoupling shocks.
         </p>
 
-        {/* Preset Cards Grid - Fixes Squished Row & Text Overlap */}
+        {/* Custom Indicator Pair Selector */}
+        <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '16px 18px', borderRadius: '12px', border: '1px solid var(--line, rgba(255,255,255,0.08))', marginBottom: '20px' }}>
+          <span className="muted small" style={{ display: 'block', marginBottom: '10px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            🔬 Active Pair Selector:
+          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 240px', minWidth: '220px' }}>
+              <label htmlFor="series-a-select" className="muted small" style={{ display: 'block', marginBottom: '4px' }}>Series A (Lead):</label>
+              <select
+                id="series-a-select"
+                className="input"
+                value={selectedPair[0]}
+                onChange={e => setSelectedPair([e.target.value, selectedPair[1]])}
+                style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', fontSize: '0.88rem' }}
+              >
+                {CORE_INDICATOR_OPTIONS.map(opt => (
+                  <option key={opt.key} value={opt.key}>
+                    [{opt.category}] {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={swapPair}
+              title="Swap Series A and Series B"
+              style={{ alignSelf: 'flex-end', marginBottom: '2px', padding: '8px 14px', borderRadius: '8px', fontSize: '0.86rem' }}
+            >
+              ⇄ Swap
+            </button>
+
+            <div style={{ flex: '1 1 240px', minWidth: '220px' }}>
+              <label htmlFor="series-b-select" className="muted small" style={{ display: 'block', marginBottom: '4px' }}>Series B (Paired):</label>
+              <select
+                id="series-b-select"
+                className="input"
+                value={selectedPair[1]}
+                onChange={e => setSelectedPair([selectedPair[0], e.target.value])}
+                style={{ width: '100%', padding: '8px 12px', borderRadius: '8px', fontSize: '0.88rem' }}
+              >
+                {CORE_INDICATOR_OPTIONS.map(opt => (
+                  <option key={opt.key} value={opt.key}>
+                    [{opt.category}] {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Macroeconomic Presets Grid */}
         <div style={{ marginBottom: '22px' }}>
           <span className="muted small" style={{ display: 'block', marginBottom: '10px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-            Macroeconomic Presets:
+            Quick Analytical Presets:
           </span>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
             {PRESET_PAIRS.map(preset => {
               const active = selectedPair[0] === preset.keys[0] && selectedPair[1] === preset.keys[1];
               return (
@@ -344,26 +541,34 @@ export default function AiPage() {
                 <span className="badge" style={{ background: 'rgba(48, 209, 88, 0.2)', color: '#30d158', fontSize: '0.82rem', padding: '4px 10px' }}>
                   Series B: {compareData.series[1]?.title}
                 </span>
-                <button
-                  type="button"
-                  className="btn btn-ghost"
-                  onClick={swapPair}
-                  title="Swap lead series"
-                  style={{ fontSize: '0.78rem', padding: '4px 8px' }}
-                >
-                  ⇄ Swap
-                </button>
               </div>
 
-              {/* Rebase Toggle */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              {/* Controls: Rebase & Era Filter */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                {/* Era Filter */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span className="muted small" style={{ marginRight: '4px' }}>Horizon:</span>
+                  {ERAS.map(era => (
+                    <button
+                      key={era.id}
+                      type="button"
+                      className={`btn ${selectedEra === era.id ? 'btn-primary' : 'btn-ghost'}`}
+                      onClick={() => setSelectedEra(era.id)}
+                      style={{ fontSize: '0.76rem', padding: '3px 8px', borderRadius: '6px' }}
+                    >
+                      {era.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Rebase Toggle */}
                 <label className="switch" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '0.86rem' }}>
                   <input
                     type="checkbox"
                     checked={rebaseNormalised}
                     onChange={e => setRebaseNormalised(e.target.checked)}
                   />
-                  <span><strong>Rebase to 100</strong> (Indexed Co-Movement)</span>
+                  <span><strong>Rebase to 100</strong></span>
                 </label>
               </div>
             </div>
@@ -373,7 +578,7 @@ export default function AiPage() {
               <Suspense fallback={<div className="chart-skeleton" style={{ height: '320px' }} />}>
                 <ChartView
                   title={`${compareData.series[0]?.title} vs ${compareData.series[1]?.title}`}
-                  labels={compareData.labels}
+                  labels={eraFilteredCompare?.labels || compareData.labels}
                   datasets={chartDatasets}
                   type="line"
                   suffix={rebaseNormalised ? '' : (compareData.series[0]?.suffix === compareData.series[1]?.suffix ? compareData.series[0]?.suffix : '')}
@@ -394,7 +599,7 @@ export default function AiPage() {
                         {primaryCorrelation.strength}
                       </div>
                       <div className="muted small" style={{ fontSize: '0.82rem' }}>
-                        Sample size: <strong>{primaryCorrelation.sample_size} shared periods</strong> ({primaryCorrelation.start_year || '–'} to {primaryCorrelation.end_year || '–'})
+                        Sample size: <strong>{primaryCorrelation.sampleSize || primaryCorrelation.sample_size} shared periods</strong> ({primaryCorrelation.start || primaryCorrelation.start_year || '–'} to {primaryCorrelation.end || primaryCorrelation.end_year || '–'})
                       </div>
                     </div>
                   </div>
@@ -518,6 +723,7 @@ export default function AiPage() {
         </p>
 
         <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.02))', padding: '18px', borderRadius: '10px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+          {/* Shock Input Slider */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
             <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>
               Simulated Shock on {compareData?.series?.[0]?.title || 'Leading Series'}:
@@ -529,19 +735,81 @@ export default function AiPage() {
 
           <input
             type="range"
-            min="-5.0"
-            max="5.0"
+            min="-10.0"
+            max="10.0"
             step="0.5"
             value={simShockPct}
             onChange={e => setSimShockPct(parseFloat(e.target.value))}
             style={{ width: '100%', cursor: 'pointer', margin: '8px 0 14px' }}
           />
 
+          {/* Quick Preset Shock Buttons */}
+          <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
+            <span className="muted small" style={{ alignSelf: 'center', marginRight: '4px' }}>Quick Shocks:</span>
+            {[-5.0, -2.0, 1.0, 2.0, 5.0].map(val => (
+              <button
+                key={val}
+                type="button"
+                className={`btn ${simShockPct === val ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => setSimShockPct(val)}
+                style={{ fontSize: '0.76rem', padding: '3px 8px', borderRadius: '6px' }}
+              >
+                {val >= 0 ? `+${val.toFixed(1)}%` : `${val.toFixed(1)}%`}
+              </button>
+            ))}
+          </div>
+
+          {/* Detailed Dual-Series Projection Cards */}
+          {simStats && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+              {/* Leading Series Card */}
+              <div style={{ background: 'rgba(41, 151, 255, 0.05)', padding: '14px 16px', borderRadius: '8px', border: '1px solid rgba(41, 151, 255, 0.2)' }}>
+                <span className="muted small" style={{ display: 'block', color: 'var(--accent, #2997ff)', fontWeight: 600 }}>
+                  Series A: {compareData?.series?.[0]?.title}
+                </span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '6px' }}>
+                  <div>
+                    <span className="muted small" style={{ display: 'block' }}>Baseline:</span>
+                    <strong style={{ fontSize: '1.1rem' }}>{simStats.latestA} {simStats.unitA}</strong>
+                  </div>
+                  <span style={{ fontSize: '1.2rem', color: 'var(--muted, #86868b)' }}>→</span>
+                  <div>
+                    <span className="muted small" style={{ display: 'block' }}>Projected:</span>
+                    <strong style={{ fontSize: '1.1rem', color: simShockPct >= 0 ? '#30d158' : '#ff453a' }}>
+                      {simStats.projectedA} {simStats.unitA}
+                    </strong>
+                  </div>
+                </div>
+              </div>
+
+              {/* Paired Series Card */}
+              <div style={{ background: 'rgba(48, 209, 88, 0.05)', padding: '14px 16px', borderRadius: '8px', border: '1px solid rgba(48, 209, 88, 0.2)' }}>
+                <span className="muted small" style={{ display: 'block', color: '#30d158', fontWeight: 600 }}>
+                  Series B: {compareData?.series?.[1]?.title}
+                </span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '6px' }}>
+                  <div>
+                    <span className="muted small" style={{ display: 'block' }}>Baseline:</span>
+                    <strong style={{ fontSize: '1.1rem' }}>{simStats.latestB} {simStats.unitB}</strong>
+                  </div>
+                  <span style={{ fontSize: '1.2rem', color: 'var(--muted, #86868b)' }}>→</span>
+                  <div>
+                    <span className="muted small" style={{ display: 'block' }}>Projected:</span>
+                    <strong style={{ fontSize: '1.1rem', color: simStats.deltaPctB >= 0 ? 'var(--accent, #2997ff)' : '#ff9f0a' }}>
+                      {simStats.projectedB} {simStats.unitB}
+                    </strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Statistical Breakdown Bar */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', paddingTop: '10px', borderTop: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
             <div>
-              <span className="muted small" style={{ display: 'block' }}>Estimated Response on {compareData?.series?.[1]?.title || 'Paired Series'}:</span>
-              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: simulatedTargetDelta !== null && simulatedTargetDelta >= 0 ? 'var(--accent, #2997ff)' : '#ff9f0a' }}>
-                {simulatedTargetDelta !== null ? `${simulatedTargetDelta >= 0 ? '+' : ''}${simulatedTargetDelta.toFixed(2)}% expected co-movement` : 'Calculating…'}
+              <span className="muted small" style={{ display: 'block' }}>Estimated Elastic Response:</span>
+              <span style={{ fontSize: '1.15rem', fontWeight: 800, color: simStats?.deltaPctB !== undefined && simStats.deltaPctB >= 0 ? 'var(--accent, #2997ff)' : '#ff9f0a' }}>
+                {simStats ? `${simStats.deltaPctB >= 0 ? '+' : ''}${simStats.deltaPctB.toFixed(2)}% co-movement (β = ${simStats.beta})` : 'Calculating…'}
               </span>
             </div>
             <button
@@ -557,14 +825,14 @@ export default function AiPage() {
       </section>
 
       {/* Module 3: Macroeconomic Inflection & Anomaly Synthesizer */}
-      <section className="card" style={{ padding: '28px 24px', marginBottom: '36px', border: '1px solid var(--line, rgba(255,255,255,0.08))', borderRadius: '14px' }}>
+      <section id="ai-synthesizer" className="card" style={{ padding: '28px 24px', marginBottom: '36px', border: '1px solid var(--line, rgba(255,255,255,0.08))', borderRadius: '14px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '1.4rem' }}>📈</span>
           <h2 style={{ margin: 0, fontSize: '1.35rem', fontWeight: 700 }}>Macroeconomic Inflection &amp; Anomaly Synthesizer</h2>
           <span className="badge" style={{ marginLeft: 'auto', fontSize: '0.76rem', padding: '4px 10px' }}>Automated Series Context</span>
         </div>
         <p className="muted small" style={{ margin: '0 0 16px', lineHeight: '1.45' }}>
-          Select any foundational indicator to synthesize all-time extremes, structural trajectory, and historical policy lineage.
+          Select any foundational indicator to synthesize all-time extremes, structural trajectory, volatility, and historical policy lineage.
         </p>
 
         {/* Indicator Switcher Pills */}
@@ -596,9 +864,9 @@ export default function AiPage() {
               </span>
             </div>
 
-            {/* 4 KPI Metric Cards */}
+            {/* 6 KPI Metric Cards */}
             {synthData.metrics && (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '10px', marginBottom: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '10px', marginBottom: '20px' }}>
                 {synthData.metrics.peak && (
                   <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
                     <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🌟 All-Time Peak</span>
@@ -642,7 +910,31 @@ export default function AiPage() {
                       {synthData.metrics.delta >= 0 ? `+${synthData.metrics.delta}` : synthData.metrics.delta} {synthData.metrics.unit}
                     </span>
                     <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
-                      Over Full Historical Horizon
+                      Over Full Horizon
+                    </span>
+                  </div>
+                )}
+
+                {synthData.metrics.cagr !== undefined && synthData.metrics.cagr !== null && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📊 Annualized CAGR</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: synthData.metrics.cagr >= 0 ? '#30d158' : '#ff453a' }}>
+                      {synthData.metrics.cagr >= 0 ? `+${synthData.metrics.cagr}%` : `${synthData.metrics.cagr}%`}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Compound Annual Rate
+                    </span>
+                  </div>
+                )}
+
+                {synthData.metrics.volatility !== undefined && synthData.metrics.volatility !== null && (
+                  <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>⚡ Series Volatility (σ)</span>
+                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ffd60a' }}>
+                      {synthData.metrics.volatility} {synthData.metrics.unit}
+                    </span>
+                    <span className="muted small" style={{ fontSize: '0.74rem', display: 'block', marginTop: '2px' }}>
+                      Standard Deviation
                     </span>
                   </div>
                 )}
@@ -662,6 +954,38 @@ export default function AiPage() {
               </Suspense>
             </div>
 
+            {/* Historical Milestone Inflections Timeline */}
+            {synthData.inflections?.length > 0 && (
+              <div style={{ marginBottom: '20px', borderTop: '1px solid var(--line, rgba(255,255,255,0.08))', paddingTop: '16px' }}>
+                <span style={{ fontWeight: 700, fontSize: '0.92rem', display: 'block', marginBottom: '10px' }}>
+                  🏛️ Key Historical Milestone Inflections:
+                </span>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+                  {synthData.inflections.map((inf, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        padding: '10px 14px',
+                        background: 'var(--surface-1, rgba(255,255,255,0.03))',
+                        borderRadius: '8px',
+                        border: '1px solid var(--line, rgba(255,255,255,0.06))',
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                        <strong style={{ color: 'var(--accent, #2997ff)', fontSize: '0.9rem' }}>{inf.year}</strong>
+                        <span className="badge" style={{ fontSize: '0.72rem' }}>
+                          {formatMagnitude(inf.value, inf.unit)}
+                        </span>
+                      </div>
+                      <span className="muted small" style={{ fontSize: '0.78rem', lineHeight: '1.35', display: 'block' }}>
+                        {inf.event}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Executive Takeaways */}
             {synthData.takeaways && (
               <div style={{ borderTop: '1px solid var(--line, rgba(255,255,255,0.08))', paddingTop: '14px', marginTop: '14px' }}>
@@ -676,8 +1000,18 @@ export default function AiPage() {
               </div>
             )}
 
-            <div style={{ marginTop: '18px', display: 'flex', gap: '10px' }}>
-              <Link to={`/indicator/${synthKey}`} className="btn btn-primary" style={{ fontSize: '0.84rem' }}>
+            <div style={{ marginTop: '18px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  loadPairInLab(synthKey, selectedPair[0] === synthKey ? selectedPair[1] : selectedPair[0]);
+                }}
+                style={{ fontSize: '0.84rem' }}
+              >
+                Load into Correlation Lab ⇄
+              </button>
+              <Link to={`/indicator/${synthKey}`} className="btn btn-ghost" style={{ fontSize: '0.84rem' }}>
                 View Indicator Deep-Dive &amp; Raw CSV ›
               </Link>
             </div>
@@ -696,7 +1030,8 @@ export default function AiPage() {
           Type any macroeconomic, political, or development question in natural language to search across all 3,082 indexed public indicators.
         </p>
 
-        <div style={{ position: 'relative', marginBottom: '16px' }}>
+        {/* Search Bar with Clear Button */}
+        <div style={{ position: 'relative', marginBottom: '12px' }}>
           <input
             type="search"
             className="input"
@@ -718,6 +1053,45 @@ export default function AiPage() {
               color: 'inherit',
             }}
           />
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={() => {
+                setSearchQuery('');
+                startTransition(() => setParams({}));
+              }}
+              style={{
+                position: 'absolute',
+                right: '12px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'transparent',
+                border: 'none',
+                color: 'var(--muted, #86868b)',
+                cursor: 'pointer',
+                fontSize: '1.1rem',
+              }}
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+
+        {/* Category Filter Chips */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '14px', flexWrap: 'wrap' }}>
+          <span className="muted small" style={{ marginRight: '4px' }}>Domain:</span>
+          {SEARCH_CATEGORIES.map(cat => (
+            <button
+              key={cat}
+              type="button"
+              className={`btn ${searchCategory === cat ? 'btn-primary' : 'btn-ghost'}`}
+              onClick={() => setSearchCategory(cat)}
+              style={{ fontSize: '0.76rem', padding: '3px 10px', borderRadius: '12px' }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         {/* Suggested Prompts */}
@@ -753,7 +1127,7 @@ export default function AiPage() {
               <span style={{ fontWeight: 700, fontSize: '0.94rem' }}>
                 AI Semantic Matches ({searchResults.length})
               </span>
-              <span className="muted small">Ranked by In-Memory Cosine Similarity</span>
+              <span className="muted small">Ranked by Vector Similarity</span>
             </div>
 
             {searchResults.length === 0 ? (
@@ -778,7 +1152,7 @@ export default function AiPage() {
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span style={{ fontWeight: 600, fontSize: '0.96rem' }}>{result.title}</span>
-                        <span className="badge" style={{ fontSize: '0.72rem' }}>
+                        <span className="badge" style={{ fontSize: '0.72rem', background: result.similarity >= 0.7 ? 'rgba(48,209,88,0.15)' : 'rgba(255,255,255,0.08)', color: result.similarity >= 0.7 ? '#30d158' : 'inherit' }}>
                           {Math.round(result.similarity * 100)}% match
                         </span>
                       </div>
@@ -787,10 +1161,16 @@ export default function AiPage() {
                       </span>
                     </div>
 
-                    <div style={{ display: 'flex', gap: '8px' }}>
-                      <Link to={`/indicator/${result.key}`} className="btn btn-ghost" style={{ fontSize: '0.8rem', padding: '6px 12px' }}>
-                        View Chart →
-                      </Link>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        className="btn btn-ghost"
+                        onClick={() => loadSynthIndicator(result.key)}
+                        style={{ fontSize: '0.8rem', padding: '6px 10px' }}
+                        title="Analyze historical inflections & anomalies"
+                      >
+                        📈 Synthesize
+                      </button>
                       <button
                         type="button"
                         className="btn btn-primary"
@@ -805,6 +1185,9 @@ export default function AiPage() {
                       >
                         Load in AI Lab ⇄
                       </button>
+                      <Link to={`/indicator/${result.key}`} className="btn btn-ghost" style={{ fontSize: '0.8rem', padding: '6px 10px' }}>
+                        Deep Dive ›
+                      </Link>
                     </div>
                   </div>
                 ))}

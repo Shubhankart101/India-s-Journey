@@ -60,16 +60,17 @@ export function buildChartData({ labels, datasets, type, color, colors = CHART_C
   return {
     labels,
     datasets: datasets.map((dataset, index) => {
+      const dataVals = dataset.values ?? dataset.data ?? [];
       if (dataset.trend) {
         return {
-          type: 'line', label: dataset.label, data: dataset.values, borderColor: colors.ink, borderDash: [6, 5], borderWidth: 1.8,
+          type: 'line', label: dataset.label, data: dataVals, borderColor: colors.ink, borderDash: [6, 5], borderWidth: 1.8,
           pointRadius: 0, pointHoverRadius: 0, fill: false, tension: 0, order: -1,
         };
       }
       const lineColor = dataset.color || (index === 0 ? color : null) || PALETTE[(index + 2) % PALETTE.length];
       return {
         label: dataset.label,
-        data: dataset.values,
+        data: dataVals,
         borderColor: lineColor,
         backgroundColor: type === 'bar' ? `${lineColor.slice(0, 7)}cc` : `${lineColor.slice(0, 7)}22`,
         fill: type === 'line' && datasets.length === 1,

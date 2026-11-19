@@ -12,6 +12,7 @@ test.describe('responsive layout', () => {
   });
   test('mobile shows the tab bar, desktop shows the top nav', async ({ page, isMobile }) => {
     await page.goto('/');
+    await expect(page.getByRole('link', { name: "India's Journey" })).toBeVisible();
     const tabs = page.getByRole('navigation', { name: 'Mobile' });
     const primary = page.getByRole('navigation', { name: 'Primary' });
     if (isMobile) {
