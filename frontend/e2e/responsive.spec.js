@@ -1,6 +1,15 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('responsive layout', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      window.localStorage.setItem('ij_auth_user', JSON.stringify({
+        username: 'guest',
+        first_name: 'Guest User',
+        email: 'guest@example.com',
+      }));
+    });
+  });
   test('mobile shows the tab bar, desktop shows the top nav', async ({ page, isMobile }) => {
     await page.goto('/');
     const tabs = page.getByRole('navigation', { name: 'Mobile' });
