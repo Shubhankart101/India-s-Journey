@@ -5,8 +5,10 @@ from pathlib import Path
 
 try:
     from scripts.subgroup_articles import build_subgroup_article
+    from scripts.rich_article_content import get_subgroup_article_paragraphs
 except ImportError:
     from subgroup_articles import build_subgroup_article
+    from rich_article_content import get_subgroup_article_paragraphs
 
 ROOT = Path(__file__).resolve().parents[1]
 PATTERNS = (
@@ -251,15 +253,16 @@ def build_articles(catalog):
         }
         for subgroup_index, subgroup in enumerate(subgroups):
             subgroup_indicators = indicators_by_subgroup[(category["name"], subgroup["name"])]
+            if not subgroup_indicators and "metro" in subgroup["name"].lower():
+                subgroup_indicators = [item for item in catalog.get("indicators", []) if "metro" in item.get("key", "").lower()]
             subgroup_sources = publication_names(subgroup_indicators)
             group_article["subgroups"].append({
                 "name": subgroup["name"],
                 "headline": subgroup.get("title") or subgroup["name"],
                 "dek": subgroup.get("description", ""),
-                "paragraphs": JOURNEY_TEXT.get(subgroup["name"]) or [
-                    subgroup.get("description", ""),
-                    f"This is one of {len(subgroups)} lenses within {category['name']}. Read it beside the other group topics, and retain the source and period attached to each indicator.",
-                ],
+                "paragraphs": get_subgroup_article_paragraphs(
+                    subgroup["name"], category["name"], subgroup.get("description", ""), len(subgroup_indicators)
+                ),
                 "watch": "Follow each series across its reported periods and check its source note before comparing values.",
                 "sources": subgroup_sources,
                 "indicatorCount": len(subgroup_indicators),

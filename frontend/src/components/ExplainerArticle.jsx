@@ -40,14 +40,15 @@ function PatternBody({ article, groupArticle, group }) {
       return <div className="explainer-qa">
         <section><h3>What does this cover?</h3><p>{paragraphs[0] || article.dek}</p></section>
         <section><h3>How should it be read?</h3><p>{paragraphs[1] || 'Read each measure with its reporting period and source note.'}</p></section>
+        {paragraphs.length > 2 && <div className="explainer-paragraphs">{paragraphs.slice(2).map((text, index) => <p key={index}>{text}</p>)}</div>}
         <NumberStrip article={article} />
       </div>;
     case 'reading-journey':
       return <div className="explainer-journey"><ol>{(article.name ? [{ name: article.name, dek: article.dek }] : siblings).map((item, index) => (
         <li key={item.name}><span className="explainer-step">{String(index + 1).padStart(2, '0')}</span><div><h3>{item.name}</h3><p>{item.dek}</p></div></li>
-      ))}</ol><p>{paragraphs[1]}</p></div>;
+      ))}</ol><p>{paragraphs[1]}</p>{paragraphs.length > 2 && <div className="explainer-paragraphs">{paragraphs.slice(2).map((text, index) => <p key={index}>{text}</p>)}</div>}</div>;
     case 'by-the-numbers':
-      return <div className="explainer-numbers"><p>{paragraphs[0] || article.dek}</p><NumberStrip article={article} /><p>{paragraphs[1]}</p></div>;
+      return <div className="explainer-numbers"><p>{paragraphs[0] || article.dek}</p><NumberStrip article={article} /><p>{paragraphs[1]}</p>{paragraphs.length > 2 && <div className="explainer-paragraphs">{paragraphs.slice(2).map((text, index) => <p key={index}>{text}</p>)}</div>}</div>;
     case 'two-lenses': {
       const first = article.name ? { name: article.name, dek: article.dek } : siblings[0];
       const second = article.name
@@ -55,6 +56,7 @@ function PatternBody({ article, groupArticle, group }) {
         : (siblings.find(item => item.name !== first?.name) || siblings[0]);
       return <div className="explainer-split">
         {[first, second].filter(Boolean).map((item, index) => <section key={`${item.name}-${index}`}><span>{index ? 'Wider context' : 'Focused lens'}</span><h3>{item.name}</h3><p>{item.dek}</p></section>)}
+        {paragraphs.length > 2 && <div className="explainer-paragraphs">{paragraphs.slice(2).map((text, index) => <p key={index}>{text}</p>)}</div>}
         <NumberStrip article={article} />
       </div>;
     }
@@ -65,7 +67,7 @@ function PatternBody({ article, groupArticle, group }) {
         <figure key={item.name}><span className="explainer-caption-index">Lens {String(index + 1).padStart(2, '0')}</span><figcaption><strong>{item.name}</strong><span>{item.dek}</span><small>{item.indicatorCount ?? 0} indicator series</small></figcaption></figure>
       ))}</div>;
     default:
-      return <div className="explainer-lede"><div><p>{paragraphs[0] || article.dek}</p><p>{paragraphs[1]}</p></div><NumberStrip article={article} /></div>;
+      return <div className="explainer-lede"><div><p>{paragraphs[0] || article.dek}</p><p>{paragraphs[1]}</p>{paragraphs.length > 2 && <div className="explainer-paragraphs">{paragraphs.slice(2).map((text, index) => <p key={index}>{text}</p>)}</div>}</div><NumberStrip article={article} /></div>;
   }
 }
 

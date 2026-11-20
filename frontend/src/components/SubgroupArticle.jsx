@@ -64,7 +64,14 @@ export default function SubgroupArticle({
               <span className="subgroup-article-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
               <div className="subgroup-article-section-body">
                 <h2 id={id}>{section.title || `Section ${index + 1}`}</h2>
-                {section.text && <p>{section.text}</p>}
+                {section.text && (
+                  typeof section.text === 'string' && section.text.includes('\n\n')
+                    ? section.text.split(/\n\s*\n/).map((para, pIdx) => <p key={pIdx}>{para.trim()}</p>)
+                    : <p>{section.text}</p>
+                )}
+                {Array.isArray(section.paragraphs) && section.paragraphs.map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
+                ))}
                 {section.quote && <blockquote className="subgroup-article-quote">{section.quote}</blockquote>}
                 {section.content}
                 {inlineQuote && index === Math.min(quoteAfterSection, blocks.length - 1) && <blockquote className="subgroup-article-quote subgroup-article-pull">{quote}</blockquote>}

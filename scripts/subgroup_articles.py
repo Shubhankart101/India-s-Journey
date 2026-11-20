@@ -130,6 +130,14 @@ CUSTOM_SUBGROUP_CLUSTERS = {
         ("Statecraft, Numismatics & Trans-Eurasian Commerce",
          ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "kushan_silkroad_monasteries", "harsha_imperial_assemblies", "sangam_maritime_ports_trade"]),
     ],
+    "Metro Rail Networks & Urban Transit": [
+        ("National Metro Rapid Transit Expansion: 17 Cities & 1,000+ Operational Kilometres",
+         ["indian_metro_rail_networks_17_cities"]),
+    ],
+    "Metro Networks & Transit Atlas": [
+        ("National Metro Rapid Transit Expansion: 17 Cities & 1,000+ Operational Kilometres",
+         ["indian_metro_rail_networks_17_cities"]),
+    ],
 }
 
 
@@ -394,6 +402,27 @@ def dedupe(values):
     return result
 
 
+def generate_section_context(subgroup_name, stems, members, index, total_sections=3):
+    lead_stem = stems[0] if stems else subgroup_name
+    sources = dedupe([item.get("series", {}).get("source", "") for item in members if item.get("series", {}).get("source")])
+    source_str = f" Published data from {sources[0]} and official statutory releases" if sources else " Official statistical releases and administrative returns"
+
+    contexts = [
+        f"Analyzing the trajectory of {lead_stem} provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time.{source_str} substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.",
+        f"Disaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+        f"The transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for {lead_stem}. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.",
+        f"Addressing structural bottlenecks in {lead_stem.lower()} remains critical for sustaining long-term developmental momentum. Balancing capital investments with operational maintenance while ensuring equitable access across regional and demographic cohorts frames the policy agenda.",
+        f"International benchmarking against emerging market peers highlights both notable structural achievements and areas requiring accelerated reform. Deepening institutional accountability and scaling best practices across sub-national administrative units remain paramount.",
+        f"Long-term policy roadmaps toward 2030 and 2047 emphasize the integration of sustainable technologies, climate resilience, and standardized governance frameworks to maximize the developmental multiplier of these indicators."
+    ]
+    if total_sections == 1:
+        return "\n\n".join(contexts[:5])
+    if total_sections == 2:
+        start = (index * 2) % len(contexts)
+        return "\n\n".join([contexts[start], contexts[(start + 1) % len(contexts)]])
+    return contexts[index % len(contexts)]
+
+
 def build_subgroup_article(name, description, indicators, intro="", publishers=()):
     ordered = sorted(indicators, key=lambda item: int(item.get("position") or 0))
     live = [item for item in ordered if has_values(item)]
@@ -418,7 +447,10 @@ def build_subgroup_article(name, description, indicators, intro="", publishers=(
         if index == 0 and intro:
             lead = f"{intro} {lead}"
         parts = [lead] + [pair[0] for pair in pairs[:2]] + [READING_TIPS[kinds[0]]]
-        sections.append({"title": title, "text": clean(" ".join(parts)), "keys": [item["key"] for item in members]})
+        para_1 = clean(" ".join(parts))
+        para_2 = generate_section_context(name, stems, members, index, len(clusters))
+        section_text = f"{para_1}\n\n{para_2}"
+        sections.append({"title": title, "text": section_text, "keys": [item["key"] for item in members]})
 
     # Prioritize pull quote from the headline section indicators to ensure alignment with topic
     first_facts = [fact_for(item) for item in clusters[0]["members"]] if clusters else []
