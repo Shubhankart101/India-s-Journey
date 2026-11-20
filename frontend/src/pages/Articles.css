@@ -83,8 +83,11 @@
   width: 100%;
   height: 200px;
   position: relative;
-  background: #18181b;
+  background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .substack-card-img {
@@ -93,6 +96,7 @@
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  background: #18181b;
 }
 
 .substack-card:hover .substack-card-img {

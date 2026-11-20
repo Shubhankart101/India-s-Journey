@@ -5,6 +5,7 @@ import { AMBIENT_ART } from '../art.js';
 import Thanks from '../components/Thanks.jsx';
 import { Empty, ErrorState, Loading } from '../components/States.jsx';
 import { api } from '../api.js';
+import { assetUrl } from '../config.js';
 import { useAsync, useDebounced, useDocumentTitle } from '../hooks.js';
 
 const PUBLISHERS = [
@@ -264,7 +265,7 @@ export default function Sources() {
           <ul className="illustration-list">
             {ILLUSTRATIONS.map(([file, label, href, source]) => (
               <li key={file}>
-                <a href={`${import.meta.env.BASE_URL}art/${file}`}>{label}</a> · <External href={href}>{source}</External>
+                <a href={assetUrl(`art/${file}`)}>{label}</a> · <External href={href}>{source}</External>
               </li>
             ))}
           </ul>

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { assetUrl } from '../config.js';
 import { formatMagnitude } from '../format.js';
 import ScriptureVerse from './ScriptureVerse.jsx';
 import './IndiaMap.css';
 
-export const MAP_URL = import.meta.env.BASE_URL + 'maps/india-states.json';
+export const MAP_URL = assetUrl('maps/india-states.json');
 let geometryPromise = null;
 
 export function loadGeometry(url = MAP_URL) {

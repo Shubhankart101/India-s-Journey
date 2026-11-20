@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { assetUrl } from '../config.js';
 import { loadAtlas, showTip } from './atlasData.js';
 import ScriptureVerse from './ScriptureVerse.jsx';
 import './Atlas.css';
 
-const DATA_URL = import.meta.env.BASE_URL + 'data/epic-kingdoms.json';
+const DATA_URL = assetUrl('data/epic-kingdoms.json');
 
 export default function EpicAtlas({ compact = false, title = 'Epic kingdoms', epic: initialEpic = 'mahabharata' }) {
   const [loaded, setLoaded] = useState(null);

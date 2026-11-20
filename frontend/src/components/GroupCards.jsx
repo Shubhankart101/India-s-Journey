@@ -10,7 +10,7 @@ const slugOf = cat => cat?.slug || String(cat?.name || '').normalize('NFKD').rep
 
 let outlinePromise = null;
 export const loadOutline = () => {
-  outlinePromise = outlinePromise || fetch(import.meta.env.BASE_URL + 'maps/india-states.json').then(response => {
+  outlinePromise = outlinePromise || fetch(assetUrl('maps/india-states.json')).then(response => {
     if (!response.ok) throw new Error(`Map outline unavailable (HTTP ${response.status})`);
     return response.json();
   }).catch(error => {

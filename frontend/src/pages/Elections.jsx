@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { api } from '../api.js';
+import { assetUrl } from '../config.js';
 import { useDocumentTitle } from '../hooks.js';
 import { loadGeometry, stateKey } from '../components/IndiaMap.jsx';
 import IndicatorCard from '../components/IndicatorCard.jsx';
@@ -10,8 +11,8 @@ import RegionArticle from '../components/RegionArticle.jsx';
 import { pickVerse } from '../scripture.js';
 import './Elections.css';
 
-const INDEX_URL = import.meta.env.BASE_URL + 'data/state-elections/index.json';
-const LS_URL = import.meta.env.BASE_URL + 'data/lok-sabha-atlas.json';
+const INDEX_URL = assetUrl('data/state-elections/index.json');
+const LS_URL = assetUrl('data/lok-sabha-atlas.json');
 const cache = new Map();
 const loadJSON = url => {
   if (!cache.has(url)) cache.set(url, fetch(url).then(response => {
@@ -139,7 +140,7 @@ function StateElectionPage({ slug }) {
       if (!entry) throw new Error('State or Union Territory not found.');
       const [atlas, stateData] = await Promise.all([
         loadJSON(LS_URL),
-        index.states[entry[0]] ? loadJSON(`${import.meta.env.BASE_URL}data/state-elections/${index.states[entry[0]].slug}.json`) : Promise.resolve(null),
+        index.states[entry[0]] ? loadJSON(assetUrl(`data/state-elections/${index.states[entry[0]].slug}.json`)) : Promise.resolve(null),
       ]);
       if (active) setData({ index, atlas, name: entry[0], stateData });
     }).catch(reason => { if (active) setError(reason.message); });
