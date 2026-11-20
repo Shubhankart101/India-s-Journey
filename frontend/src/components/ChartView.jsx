@@ -72,6 +72,7 @@ export function buildChartData({ labels, datasets, type, color, colors = CHART_C
         label: dataset.label,
         data: dataVals,
         borderColor: lineColor,
+        borderDash: dataset.borderDash || undefined,
         backgroundColor: type === 'bar' ? `${lineColor.slice(0, 7)}cc` : `${lineColor.slice(0, 7)}22`,
         fill: type === 'line' && datasets.length === 1,
         borderWidth: type === 'bar' ? 0 : 2.4,
