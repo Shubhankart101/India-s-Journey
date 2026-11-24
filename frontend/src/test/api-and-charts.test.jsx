@@ -68,6 +68,14 @@ describe('api client', () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
+  it('rejects immediately when passed an already-aborted signal on cached lookups', async () => {
+    mockApi({ 'GET /api/categories/': [] });
+    await api.categories();
+    const controller = new AbortController();
+    controller.abort();
+    await expect(api.categories(controller.signal)).rejects.toMatchObject({ name: 'AbortError' });
+  });
+
   it('retries transient read failures (a waking server) before giving up', async () => {
     let attempts = 0;
     const seen = [];

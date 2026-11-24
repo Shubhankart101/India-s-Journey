@@ -217,4 +217,41 @@ describe('Articles', () => {
     expect(aboutCalls.length).toBeGreaterThan(0);
     expect(aboutCalls.every(call => call.params.get('page_size') === '20')).toBe(true);
   });
+
+  it('rejects podcast audio or pewresearch URLs as cover images and uses valid SVG fallbacks', async () => {
+    mockApi({
+      '/api/stats/': { indicators: 691, subgroups: 58, last_refresh: '2026-05-01T00:00:00Z' },
+      '/api/articles/': page([
+        {
+          title: 'Podcast audio item',
+          url: 'https://example.com/pod',
+          published_at: '2026-10-01T00:00:00Z',
+          publisher: 'Polity and Policy',
+          kind: 'polity_policy',
+          image_url: 'https://api.substack.com/feed/podcast/123/audio.mp3',
+        },
+        {
+          title: 'How Do Americans Feel About G20 Countries?',
+          url: 'https://www.pewresearch.org/global/2026/10/16/g20/',
+          published_at: '2026-10-16T00:00:00Z',
+          publisher: 'Pew Research Center',
+          kind: 'pew',
+          image_url: 'https://www.pewresearch.org/wp-content/uploads/2026/10/g20.png',
+        },
+        {
+          title: 'India and China at the border',
+          url: 'https://example.com/china',
+          published_at: '2026-10-12T00:00:00Z',
+          publisher: 'Indian Matrix',
+          kind: 'indian_matrix',
+          image_url: null,
+        },
+      ]),
+    });
+    const { container } = renderApp('/articles');
+    expect(await screen.findByText('Podcast audio item')).toBeInTheDocument();
+    const srcs = [...container.querySelectorAll('.substack-card-img')].map(img => img.getAttribute('src'));
+    expect(srcs.some(s => s.includes('.mp3') || s.includes('pewresearch.org') || s.includes('defence-strategic'))).toBe(false);
+    expect(srcs).toEqual(['/art/parliament.svg', '/art/public-opinion.svg', '/art/defence.svg']);
+  });
 });

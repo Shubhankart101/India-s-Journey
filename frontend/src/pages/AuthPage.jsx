@@ -112,7 +112,7 @@ export default function AuthPage() {
               style={{
                 fontSize: '0.76rem',
                 textTransform: 'capitalize',
-                background: 'rgba(255,255,255,0.08)',
+                background: 'var(--fill)',
                 padding: '4px 10px',
                 borderRadius: '6px',
                 marginBottom: '16px',
@@ -195,7 +195,7 @@ export default function AuthPage() {
             {showCustom ? '▲ Hide custom name & email inputs' : '▼ Sign in with custom name or email'}
           </button>
           {showCustom && (
-            <div style={{ marginTop: '10px', padding: '14px', background: 'rgba(255,255,255,0.03)', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.08))' }}>
+            <div style={{ marginTop: '10px', padding: '14px', background: 'var(--fill)', borderRadius: '8px', border: '1px solid var(--line, rgba(255,255,255,0.08))' }}>
               <label style={{ display: 'block', fontSize: '0.78rem', color: 'var(--muted, #86868b)', marginBottom: '4px' }}>
                 Your Name (Optional):
               </label>

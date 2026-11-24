@@ -44,11 +44,13 @@ export default function Layout() {
   const hasPageArtwork = ['/', '/explore', '/about', '/sources'].includes(location.pathname)
     || location.pathname.startsWith('/indicator/')
     || location.pathname.startsWith('/explore/');
+  const searchParams = new URLSearchParams(location.search);
+  const navScope = `${location.pathname}|${searchParams.get('category') || ''}|${searchParams.get('subgroup') || ''}`;
+  useEffect(() => {
+    window.scrollTo?.({ top: 0, left: 0, behavior: 'auto' });
+  }, [navScope]);
   useAutoReveal();
   usePointerSpotlight();
-  useEffect(() => {
-    window.scrollTo?.(0, 0);
-  }, [location.pathname]);
   const compareHref = `/compare?keys=${compare.items.map(item => item.key).join(',')}`;
 
   return (
@@ -85,7 +87,7 @@ export default function Layout() {
                   fontSize: '0.84rem',
                   padding: '6px 12px',
                   borderRadius: '6px',
-                  background: 'rgba(255, 255, 255, 0.05)',
+                  background: 'var(--fill)',
                 }}
               >
                 <span aria-hidden="true">👤</span>

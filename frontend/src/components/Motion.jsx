@@ -75,25 +75,55 @@ export function useAutoReveal() {
         entry.target.classList.add('is-visible');
         io.unobserve(entry.target);
       });
-    // threshold 0: a ratio threshold can never be met by sections many screens tall (e.g. the source list).
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
-    const tag = () => {
+    }, { rootMargin: '140px 0px 200px 0px', threshold: 0 });
+    const revealIfInView = (node) => {
+      if (node.getBoundingClientRect().top < window.innerHeight + 180) {
+        node.classList.add('is-visible');
+        io.unobserve(node);
+        return true;
+      }
+      return false;
+    };
+    let frame = 0;
+    const scan = () => {
+      frame = 0;
       root.querySelectorAll(REVEAL_SELECTOR).forEach((node, index) => {
-        if (node.dataset.reveal) return;
-        node.dataset.reveal = '1';
-        const box = node.getBoundingClientRect();
-        // Anything already on screen shows at once; only below-the-fold content animates in.
-        if (box.top < window.innerHeight) { node.classList.add('is-visible'); return; }
-        node.style.setProperty('--reveal-delay', `${(index % 4) * 70}ms`);
-        node.classList.add('reveal');
-        io.observe(node);
+        if (!node.dataset.reveal) {
+          node.dataset.reveal = '1';
+          // Anything already on screen shows at once; only below-the-fold content animates in.
+          if (revealIfInView(node)) return;
+          node.style.setProperty('--reveal-delay', `${(index % 4) * 35}ms`);
+          node.classList.add('reveal');
+          io.observe(node);
+        } else if (node.classList.contains('reveal') && !node.classList.contains('is-visible')) {
+          revealIfInView(node);
+        }
       });
     };
-    tag();
-    const mo = new MutationObserver(tag);
+    const revealPending = () => {
+      root.querySelectorAll('.reveal:not(.is-visible)').forEach(revealIfInView);
+    };
+    const scheduleScan = () => {
+      if (!frame) frame = requestAnimationFrame(scan);
+    };
+    scan();
+    const mo = new MutationObserver(() => {
+      scan();
+      scheduleScan();
+    });
     mo.observe(root, { childList: true, subtree: true });
-    return () => { mo.disconnect(); io.disconnect(); };
-  }, [location.pathname]);
+    window.addEventListener('scroll', revealPending, { passive: true });
+    window.addEventListener('resize', scheduleScan, { passive: true });
+    root.addEventListener('load', scheduleScan, true);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      mo.disconnect();
+      io.disconnect();
+      window.removeEventListener('scroll', revealPending);
+      window.removeEventListener('resize', scheduleScan);
+      root.removeEventListener('load', scheduleScan, true);
+    };
+  }, [location.pathname, location.search]);
 }
 
 /**

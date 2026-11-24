@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState, useTransition } from 'react';
+import { lazy, Suspense, useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { api } from '../api.js';
 import { useCompare } from '../compare.jsx';
@@ -171,7 +171,26 @@ function SearchableIndicatorPicker({ label, selectedKey, onSelect, placeholder =
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
+  const containerRef = useRef(null);
   const debouncedTerm = useDebounced(searchTerm.trim(), 250);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const handleMouseDown = event => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (!debouncedTerm || debouncedTerm.length < 2) {
@@ -198,7 +217,7 @@ function SearchableIndicatorPicker({ label, selectedKey, onSelect, placeholder =
   const selectedCore = CORE_INDICATOR_OPTIONS.find(o => o.key === selectedKey);
 
   return (
-    <div style={{ position: 'relative', minWidth: '240px', flex: '1 1 240px' }}>
+    <div ref={containerRef} style={{ position: 'relative', minWidth: '240px', flex: '1 1 240px' }}>
       <label className="muted small" style={{ display: 'block', marginBottom: '4px', fontWeight: 600 }}>
         {label}:
       </label>
@@ -208,19 +227,26 @@ function SearchableIndicatorPicker({ label, selectedKey, onSelect, placeholder =
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '9px 14px',
-          background: 'var(--surface-1, rgba(255,255,255,0.04))',
+          background: 'var(--fill)',
           borderRadius: '10px',
-          border: '1px solid var(--line, rgba(255,255,255,0.12))',
+          border: '1px solid var(--line)',
           cursor: 'pointer',
         }}
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen(prev => !prev)}
+        onKeyDown={e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setOpen(prev => !prev);
+          }
+        }}
         role="button"
         tabIndex={0}
+        aria-expanded={open}
       >
         <span style={{ fontSize: '0.88rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           {selectedCore ? `[${selectedCore.category}] ${selectedCore.label}` : selectedKey}
         </span>
-        <span style={{ fontSize: '0.75rem', color: 'var(--muted, #86868b)', marginLeft: '8px' }}>
+        <span style={{ fontSize: '0.75rem', color: 'var(--muted)', marginLeft: '8px' }}>
           {open ? '▲ Close' : '▼ Change'}
         </span>
       </div>
@@ -234,10 +260,11 @@ function SearchableIndicatorPicker({ label, selectedKey, onSelect, placeholder =
             right: 0,
             zIndex: 100,
             marginTop: '6px',
-            background: 'var(--surface-overlay, #1c1c1e)',
+            background: 'var(--bg)',
+            color: 'var(--ink)',
             borderRadius: '12px',
-            border: '1px solid var(--line, rgba(255,255,255,0.18))',
-            boxShadow: '0 16px 36px rgba(0,0,0,0.65)',
+            border: '1px solid var(--line)',
+            boxShadow: '0 16px 36px rgba(0,0,0,0.28)',
             padding: '14px',
             maxHeight: '380px',
             overflowY: 'auto',
@@ -942,16 +969,16 @@ export default function AiPage() {
               </div>
             </div>
             <span className="badge" style={{ background: 'rgba(41, 151, 255, 0.15)', color: 'var(--accent, #2997ff)', fontSize: '0.78rem', padding: '4px 10px' }}>
-              Real-time In-Memory $r$
+              Real-time In-Memory r
             </span>
           </div>
 
           <p className="muted" style={{ margin: '0 0 20px', fontSize: '0.94rem', lineHeight: '1.45' }}>
-            Select an analytical preset or search any two indicators across 3,082 series to compute live Pearson co-movement ($r$), directional concordance, and isolate structural decoupling shocks.
+            Select an analytical preset or search any two indicators across 3,082 series to compute live Pearson co-movement (r), directional concordance, and isolate structural decoupling shocks.
           </p>
 
           {/* Searchable Indicator Selectors */}
-          <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '16px 18px', borderRadius: '12px', border: '1px solid var(--line, rgba(255,255,255,0.08))', marginBottom: '20px' }}>
+          <div style={{ background: 'var(--fill)', padding: '16px 18px', borderRadius: '12px', border: '1px solid var(--line)', marginBottom: '20px' }}>
             <span className="muted small" style={{ display: 'block', marginBottom: '10px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               🔬 Active Pair Workbench:
             </span>
@@ -1003,8 +1030,8 @@ export default function AiPage() {
                       borderRadius: '10px',
                       cursor: 'pointer',
                       transition: 'all 0.15s ease-in-out',
-                      border: active ? '2px solid var(--accent, #2997ff)' : '1px solid var(--line, rgba(255,255,255,0.1))',
-                      background: active ? 'rgba(41, 151, 255, 0.12)' : 'var(--surface-1, rgba(255,255,255,0.03))',
+                      border: active ? '2px solid var(--accent, #2997ff)' : '1px solid var(--line)',
+                      background: active ? 'rgba(41, 151, 255, 0.12)' : 'var(--fill)',
                       color: 'inherit',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
@@ -1014,7 +1041,7 @@ export default function AiPage() {
                     <span style={{ fontWeight: 700, fontSize: '0.92rem', color: active ? 'var(--accent, #2997ff)' : 'inherit' }}>
                       {preset.name}
                     </span>
-                    <span className="badge" style={{ fontSize: '0.68rem', padding: '2px 6px', background: 'rgba(255,255,255,0.08)' }}>
+                    <span className="badge" style={{ fontSize: '0.68rem', padding: '2px 6px', background: 'var(--fill)' }}>
                       {preset.badge}
                     </span>
                     <span className="muted small" style={{ fontSize: '0.78rem', lineHeight: '1.35', opacity: 0.9 }}>
@@ -1029,7 +1056,7 @@ export default function AiPage() {
           {pairLoading && <Loading label="Calculating Pearson co-movement matrix and synchronizing series…" />}
 
           {compareData && compareData.series?.length >= 2 && !pairLoading && (
-            <div style={{ marginTop: '16px', background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', border: '1px solid var(--line, rgba(255,255,255,0.08))' }}>
+            <div style={{ marginTop: '16px', background: 'var(--surface)', padding: '20px', borderRadius: '12px', border: '1px solid var(--line)' }}>
               {/* Workbench Toolbar */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px', marginBottom: '16px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
@@ -1096,7 +1123,7 @@ export default function AiPage() {
 
               {/* Metric Gauge */}
               {primaryCorrelation && (
-                <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '16px 20px', borderRadius: '10px', border: '1px solid var(--line, rgba(255,255,255,0.08))', marginBottom: '20px' }}>
+                <div style={{ background: 'var(--fill)', padding: '16px 20px', borderRadius: '10px', border: '1px solid var(--line)', marginBottom: '20px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', marginBottom: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                       <div style={{ fontSize: '1.9rem', fontWeight: 800, color: rColor, fontFamily: 'monospace' }}>
@@ -1131,7 +1158,7 @@ export default function AiPage() {
                       <span>0.00 (Decoupled / Independent)</span>
                       <span>+1.00 (Strong Co-Movement)</span>
                     </div>
-                    <div style={{ height: '8px', width: '100%', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
+                    <div style={{ height: '8px', width: '100%', background: 'var(--line)', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
                       <div
                         style={{
                           position: 'absolute',
@@ -1475,7 +1502,7 @@ export default function AiPage() {
             </div>
 
             {simStats && (
-              <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '14px 18px', borderRadius: '10px', fontSize: '0.88rem' }}>
+              <div style={{ background: 'var(--fill)', padding: '14px 18px', borderRadius: '10px', fontSize: '0.88rem' }}>
                 <strong>Estimated Elastic Response:</strong> {simStats.deltaPctB >= 0 ? '+' : ''}{simStats.deltaPctB.toFixed(2)}% expected co-movement (β = {simStats.beta}) on {compareData?.series?.[1]?.title}.
                 <span className="muted small" style={{ display: 'block', marginTop: '4px' }}>
                   95% Confidence Band: [{simStats.ciLowerPct >= 0 ? '+' : ''}{simStats.ciLowerPct}%, {simStats.ciUpperPct >= 0 ? '+' : ''}{simStats.ciUpperPct}%]
@@ -1514,6 +1541,12 @@ export default function AiPage() {
                   key={reg.year}
                   className={`regime-card ${isSelected ? 'selected' : ''}`}
                   onClick={() => setSelectedRegimeYear(reg.year)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedRegimeYear(reg.year);
+                    }
+                  }}
                   role="button"
                   tabIndex={0}
                 >
@@ -1527,7 +1560,7 @@ export default function AiPage() {
 
           {/* Active Selected Regime Deep Dive Card */}
           {activeRegime && (
-            <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', border: '1px solid var(--line, rgba(255,255,255,0.12))', borderRadius: '12px', padding: '20px 22px', marginBottom: '28px' }}>
+            <div style={{ background: 'var(--fill)', border: '1px solid var(--line)', borderRadius: '12px', padding: '20px 22px', marginBottom: '28px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '12px' }}>
                 <div>
                   <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--accent, #2997ff)' }}>
@@ -1539,19 +1572,19 @@ export default function AiPage() {
 
               {/* 4 Macro Snapshot Pills */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px', margin: '14px 0' }}>
-                <div style={{ background: 'rgba(255,255,255,0.04)', padding: '8px 12px', borderRadius: '8px' }}>
+                <div style={{ background: 'var(--surface)', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                   <span className="muted small" style={{ display: 'block', fontSize: '0.72rem' }}>Real GDP Growth</span>
                   <strong style={{ fontSize: '1.05rem' }}>{activeRegime.gdp}</strong>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.04)', padding: '8px 12px', borderRadius: '8px' }}>
+                <div style={{ background: 'var(--surface)', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                   <span className="muted small" style={{ display: 'block', fontSize: '0.72rem' }}>Headline CPI</span>
                   <strong style={{ fontSize: '1.05rem', color: '#ff9f0a' }}>{activeRegime.inflation}</strong>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.04)', padding: '8px 12px', borderRadius: '8px' }}>
+                <div style={{ background: 'var(--surface)', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                   <span className="muted small" style={{ display: 'block', fontSize: '0.72rem' }}>Fiscal Deficit</span>
                   <strong style={{ fontSize: '1.05rem' }}>{activeRegime.deficit}</strong>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.04)', padding: '8px 12px', borderRadius: '8px' }}>
+                <div style={{ background: 'var(--surface)', padding: '8px 12px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                   <span className="muted small" style={{ display: 'block', fontSize: '0.72rem' }}>Forex Reserves</span>
                   <strong style={{ fontSize: '1.05rem', color: 'var(--accent, #2997ff)' }}>{activeRegime.forex}</strong>
                 </div>
@@ -1599,7 +1632,7 @@ export default function AiPage() {
             {synthLoading && <Loading label="Synthesizing inflection points, anomalies and regime averages…" />}
 
             {synthIndicator && synthData && !synthLoading && (
-              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+              <div style={{ background: 'var(--fill)', padding: '20px', borderRadius: '12px', border: '1px solid var(--line)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
                   <div>
                     <h4 style={{ margin: '0 0 4px', fontSize: '1.15rem' }}>{synthData.title || synthIndicator.title}</h4>
@@ -1614,7 +1647,7 @@ export default function AiPage() {
                 {synthData.metrics && (
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '10px', marginBottom: '20px' }}>
                     {synthData.metrics.peak && (
-                      <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px' }}>
+                      <div style={{ background: 'var(--surface)', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                         <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🌟 All-Time Peak</span>
                         <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#30d158' }}>
                           {formatMagnitude(synthData.metrics.peak.value, synthData.metrics.unit)}
@@ -1626,7 +1659,7 @@ export default function AiPage() {
                     )}
 
                     {synthData.metrics.trough && (
-                      <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px' }}>
+                      <div style={{ background: 'var(--surface)', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                         <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>🔻 Historical Low</span>
                         <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#ff453a' }}>
                           {formatMagnitude(synthData.metrics.trough.value, synthData.metrics.unit)}
@@ -1638,7 +1671,7 @@ export default function AiPage() {
                     )}
 
                     {synthData.metrics.latest && (
-                      <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px' }}>
+                      <div style={{ background: 'var(--surface)', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                         <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📌 Latest Observation</span>
                         <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent, #2997ff)' }}>
                           {formatMagnitude(synthData.metrics.latest.value, synthData.metrics.unit)}
@@ -1650,7 +1683,7 @@ export default function AiPage() {
                     )}
 
                     {synthData.metrics.delta !== undefined && (
-                      <div style={{ background: 'var(--surface-1, rgba(255,255,255,0.03))', padding: '12px 14px', borderRadius: '8px' }}>
+                      <div style={{ background: 'var(--surface)', padding: '12px 14px', borderRadius: '8px', border: '1px solid var(--line)' }}>
                         <span className="muted small" style={{ fontSize: '0.74rem', display: 'block' }}>📈 Net Shift</span>
                         <span style={{ fontSize: '1.25rem', fontWeight: 800, color: synthData.metrics.delta >= 0 ? '#30d158' : '#ff453a' }}>
                           {synthData.metrics.delta >= 0 ? `+${synthData.metrics.delta}` : synthData.metrics.delta} {synthData.metrics.unit}
@@ -1735,9 +1768,9 @@ export default function AiPage() {
                 padding: '14px 18px',
                 fontSize: '1rem',
                 borderRadius: '12px',
-                border: '1px solid var(--line, rgba(255,255,255,0.15))',
-                background: 'var(--surface-1, rgba(255,255,255,0.03))',
-                color: 'inherit',
+                border: '1px solid var(--line)',
+                background: 'var(--fill)',
+                color: 'var(--ink)',
               }}
             />
           </div>
@@ -1832,9 +1865,9 @@ export default function AiPage() {
                         alignItems: 'center',
                         justifyContent: 'space-between',
                         padding: '12px 16px',
-                        background: 'rgba(255, 255, 255, 0.03)',
+                        background: 'var(--fill)',
                         borderRadius: '10px',
-                        border: '1px solid var(--line, rgba(255,255,255,0.06))',
+                        border: '1px solid var(--line)',
                         flexWrap: 'wrap',
                         gap: '10px',
                       }}
@@ -1842,7 +1875,7 @@ export default function AiPage() {
                       <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                           <span style={{ fontWeight: 600, fontSize: '0.96rem' }}>{result.title}</span>
-                          <span className="badge" style={{ fontSize: '0.72rem', background: result.similarity >= 0.7 ? 'rgba(48,209,88,0.15)' : 'rgba(255,255,255,0.08)', color: result.similarity >= 0.7 ? '#30d158' : 'inherit' }}>
+                          <span className="badge" style={{ fontSize: '0.72rem', background: result.similarity >= 0.7 ? 'rgba(48,209,88,0.15)' : 'var(--surface)', color: result.similarity >= 0.7 ? '#30d158' : 'inherit' }}>
                             {Math.round(result.similarity * 100)}% match
                           </span>
                         </div>

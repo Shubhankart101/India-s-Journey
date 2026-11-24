@@ -1,4 +1,4 @@
-import{r as e,t}from"./vendor-WanRA0GQ.js";import{F as n,J as r,O as i,R as a,U as o,W as s}from"./index-Cj9urkGq.js";import{g as c}from"./charts-B6pdgxOd.js";var l=`<div align="center">
+import{r as e,t}from"./vendor-WanRA0GQ.js";import{F as n,J as r,O as i,R as a,U as o,W as s}from"./index-B6Fjv2Sk.js";import{g as c}from"./charts-B6pdgxOd.js";var l=`<div align="center">
 
 # India's Journey
 

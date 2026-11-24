@@ -41,13 +41,15 @@ export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) 
       .replace(/^India-s-Journey\//i, '');
     const filename = cleanPath.split('/').pop();
     const candidateUrls = Array.from(new Set([
+      assetUrl(`maps/historical/${filename}`),
+      assetUrl(cleanPath),
       svgUrl,
-      `/India-s-Journey/${cleanPath}`,
       `/${cleanPath}`,
-      `./${cleanPath}`,
-      `/India-s-Journey/maps/historical/${filename}`,
+      `/India-s-Journey/${cleanPath}`,
       `/maps/historical/${filename}`,
+      `/India-s-Journey/maps/historical/${filename}`,
       `./maps/historical/${filename}`,
+      `./${cleanPath}`,
     ].filter(Boolean)));
 
     async function tryFetch() {

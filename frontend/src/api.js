@@ -98,9 +98,14 @@ const cached = (path, signal) => {
   }
   const promise = cache.get(path);
   if (!signal) return promise;
+  if (signal.aborted) return Promise.reject(new DOMException('Aborted', 'AbortError'));
   return new Promise((resolve, reject) => {
-    signal.addEventListener('abort', () => reject(new DOMException('Aborted', 'AbortError')), { once: true });
-    promise.then(resolve, reject);
+    const onAbort = () => reject(new DOMException('Aborted', 'AbortError'));
+    signal.addEventListener('abort', onAbort, { once: true });
+    promise.then(
+      value => { signal.removeEventListener('abort', onAbort); resolve(value); },
+      error => { signal.removeEventListener('abort', onAbort); reject(error); },
+    );
   });
 };
 
@@ -207,7 +212,6 @@ const staticSummary = (item, indexes, updatedAt) => {
   const live = hasLiveData(item);
   return {
     key: item.key, title: item.title, subtitle: item.subtitle || '', frequency: item.frequency || '',
-    color: item.color || '#58a6ff', suffix: item.suffix || '', source_url: item.source_url || '',
     color: item.color || '#58a6ff', suffix: item.suffix || '', source_url: item.source_url || '',
     source: series.source || '', category: item.category, category_slug: group?.category.slug || slugify(item.category),
     subgroup: item.subgroup, subgroup_slug: subgroup?.slug || slugify(item.subgroup),
@@ -331,7 +335,7 @@ async function staticRequest(path, { signal } = {}) {
     const records = keys.map(key => catalog.indicators.find(item => item.key === key)).filter(Boolean);
     const missing = keys.filter(key => !catalog.indicators.some(item => item.key === key));
     const labels = [...new Set(records.flatMap(item => normalizedSeries(item).labels || []))];
-    if (labels.every(label => /^\d{4}/.test(label))) labels.sort();
+    if (labels.every(label => /^\d{4}/.test(String(label)))) labels.sort();
     const series = records.map(item => {
       const values = valuesOf(item);
       const lookup = new Map((normalizedSeries(item).labels || []).map((label, index) => [label, values[index] ?? null]));
@@ -512,7 +516,7 @@ async function staticRequest(path, { signal } = {}) {
     const getLabels = ind => ind?.series?.labels || ind?.labels || [];
     const getValues = ind => ind?.series?.datasets?.[0]?.values || ind?.datasets?.[0]?.values || [];
     const labels = Array.from(new Set(found.flatMap(getLabels)));
-    if (labels.every(l => /^\d{4}/.test(l))) labels.sort();
+    if (labels.every(l => /^\d{4}/.test(String(l)))) labels.sort();
     const indA = found[0];
     const indB = found[1];
     const unitA = (indA?.suffix || '').trim();

@@ -144,16 +144,28 @@ function ExploreBrowse() {
   useEffect(() => {
     if (first.data) setPages({ items: first.data.results, next: first.data.next, count: first.data.count, page: 1, key: filterKey });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [first.data]);
+  }, [first.data, filterKey]);
+  const activePages = pages.key === filterKey
+    ? pages
+    : (first.data
+      ? { items: first.data.results, next: first.data.next, count: first.data.count, page: 1, key: filterKey }
+      : { items: [], next: null, count: 0, page: 1, key: filterKey });
 
-  const [shown, sentinel, windowDone] = useBatchedCount(pages.items.length, filterKey);
+  const [shown, sentinel, windowDone] = useBatchedCount(activePages.items.length, filterKey);
 
   const loadMore = async () => {
     setLoadingMore(true);
     setMoreError(null);
     try {
-      const data = await api.indicators({ ...filters, page_size: pageSize, page: pages.page + 1 });
-      setPages(current => ({ ...current, items: [...current.items, ...data.results], next: data.next, count: data.count, page: current.page + 1 }));
+      const data = await api.indicators({ ...filters, page_size: pageSize, page: activePages.page + 1 });
+      setPages(current => ({
+        ...activePages,
+        items: [...(current.key === filterKey ? current.items : activePages.items), ...data.results],
+        next: data.next,
+        count: data.count,
+        page: activePages.page + 1,
+        key: filterKey,
+      }));
     } catch (error) {
       setMoreError(error);
     } finally {
@@ -161,9 +173,9 @@ function ExploreBrowse() {
     }
   };
   useEffect(() => {
-    if (showAll && pages.key === filterKey && pages.next && !loadingMore && !moreError) loadMore();
+    if (showAll && activePages.key === filterKey && activePages.next && !loadingMore && !moreError) loadMore();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showAll, pages.key, pages.next, loadingMore, moreError]);
+  }, [showAll, activePages.key, activePages.next, loadingMore, moreError]);
 
   const heroArt = useMemo(() => {
     if (subgroup) return subgroup.art || category?.art || AMBIENT_ART;
@@ -227,7 +239,7 @@ function ExploreBrowse() {
         <Link
           to="/explore/india-in-maps/metro-in-maps"
           className="explore-group-pill metro-atlas-pill"
-          style={{ borderColor: '#0284c7', color: '#38bdf8', fontWeight: '700' }}
+          style={{ borderColor: 'var(--accent)', color: 'var(--accent)', fontWeight: '700' }}
         >
           🚇 Metro Atlas (17 Cities)
         </Link>
@@ -346,7 +358,7 @@ function ExploreBrowse() {
           )}
         </div>
         <p className="filter-summary muted">
-          {first.loading ? 'Counting…' : `${pages.count.toLocaleString('en-IN')} indicator${pages.count === 1 ? '' : 's'}`}
+          {first.loading ? 'Counting…' : `${activePages.count.toLocaleString('en-IN')} indicator${activePages.count === 1 ? '' : 's'}`}
           {category ? ` in ${subgroup?.name || category.name}` : ' across every group'}
         </p>
       </section>
@@ -356,17 +368,17 @@ function ExploreBrowse() {
         {first.error && <ErrorState error={first.error} onRetry={first.reload} />}
         {!first.loading && !first.error && (
           <>
-            {pages.items.length === 0 ? <Empty>No indicators match. Try a broader search.</Empty> : (
+            {activePages.items.length === 0 ? <Empty>No indicators match. Try a broader search.</Empty> : (
               <div className="card-grid">
-                {pages.items.slice(0, shown).map(indicator => <IndicatorCard key={indicator.key} indicator={indicator} />)}
+                {activePages.items.slice(0, shown).map(indicator => <IndicatorCard key={indicator.key} indicator={indicator} />)}
                 {!windowDone && <div ref={sentinel} className="card-sentinel" aria-hidden="true" />}
               </div>
             )}
             {moreError && <ErrorState error={moreError} />}
-            {pages.next && (
+            {activePages.next && (
               <div className="center">
                 <button type="button" className="btn btn-primary" onClick={loadMore} disabled={loadingMore}>
-                  {loadingMore ? 'Loading…' : `Load more (${pages.count - pages.items.length} left)`}
+                  {loadingMore ? 'Loading…' : `Load more (${activePages.count - activePages.items.length} left)`}
                 </button>
               </div>
             )}

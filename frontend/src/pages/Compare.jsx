@@ -177,7 +177,7 @@ function AiComparePanel({ keys }) {
   if (!data && !loading) return null;
 
   return (
-    <div className="card ai-compare-card" style={{ marginTop: '24px', padding: '22px', borderLeft: '4px solid var(--accent, #2997ff)', background: 'var(--surface-2, rgba(255,255,255,0.03))' }}>
+    <div className="card ai-compare-card" style={{ marginTop: '24px', padding: '22px', borderLeft: '4px solid var(--accent, #2997ff)', background: 'var(--surface)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px', flexWrap: 'wrap' }}>
         <span style={{ fontSize: '1.25rem' }}>🧠</span>
         <h3 style={{ margin: 0, fontSize: '1.15rem' }}>AI Cross-Series Correlation &amp; Decoupling Synthesis</h3>
@@ -206,7 +206,7 @@ function AiComparePanel({ keys }) {
               const rVal = corr.r;
               const badgeColor = rVal === null ? 'var(--muted, #86868b)' : (rVal >= 0.5 ? '#30d158' : (rVal <= -0.5 ? '#ff453a' : '#ffd60a'));
               return (
-                <div key={idx} style={{ padding: '10px 12px', borderRadius: '8px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--line, rgba(255,255,255,0.06))' }}>
+                <div key={idx} style={{ padding: '10px 12px', borderRadius: '8px', background: 'var(--fill)', border: '1px solid var(--line)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                     <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{corr.titles[0]} ↔ {corr.titles[1]}</span>
                     <span style={{ fontWeight: 'bold', fontSize: '0.86rem', color: badgeColor }}>
@@ -235,7 +235,7 @@ function AiComparePanel({ keys }) {
                 <div style={{ fontWeight: 600, color: '#ff9f0a', marginBottom: '2px' }}>
                   {dec.year}: {dec.event}
                 </div>
-                <div style={{ color: 'var(--text, #f5f5f7)' }}>{dec.observation}</div>
+                <div style={{ color: 'var(--ink)' }}>{dec.observation}</div>
               </div>
             ))}
           </div>

@@ -31,7 +31,7 @@ const THEMATIC_ARTICLE_COVERS = {
   disproportionate: assetUrl('art/delhi-police.svg'),
   machchhar: assetUrl('art/captain-machchhar.svg'),
   transactional: assetUrl('art/parliament.svg'),
-  china: assetUrl('art/defence-strategic.svg'),
+  china: assetUrl('art/defence.svg'),
   gdp: assetUrl('art/economy.svg'),
   cities: assetUrl('art/infrastructure.svg'),
 
@@ -57,10 +57,18 @@ const THEMATIC_ARTICLE_COVERS = {
   camera: assetUrl('art/media-press.svg'),
 };
 
+const isUsableImageUrl = url => {
+  if (!url || typeof url !== 'string') return false;
+  const trimmed = url.trim();
+  if (!trimmed || trimmed.includes('pewresearch.org')) return false;
+  if (/\/feed\/podcast\/|\.(mp3|wav|m4a|ogg|aac|mp4|webm|pdf)(\?|$|#)/i.test(trimmed)) return false;
+  return true;
+};
+
 function getArticleCover(article) {
-  if (article.image_url && !article.image_url.includes('pewresearch.org')) return article.image_url;
-  if (article.image && !article.image.includes('pewresearch.org')) return article.image;
-  if (article.cover_image && !article.cover_image.includes('pewresearch.org')) return article.cover_image;
+  if (isUsableImageUrl(article.image_url)) return article.image_url;
+  if (isUsableImageUrl(article.image)) return article.image;
+  if (isUsableImageUrl(article.cover_image)) return article.cover_image;
 
   const title = (article.title || '').toLowerCase();
   for (const [key, url] of Object.entries(THEMATIC_ARTICLE_COVERS)) {
@@ -68,9 +76,8 @@ function getArticleCover(article) {
   }
 
   if (article.kind === 'pew' || /pew\s*research/i.test(article.publisher || '')) {
-    if (title.includes('g20') || title.includes('country') || title.includes('opinion')) return assetUrl('art/public-opinion.svg');
     if (title.includes('election') || title.includes('voter') || title.includes('poll') || title.includes('u.s.')) return assetUrl('art/us-elections.svg');
-    return assetUrl('art/maps-pew-research.svg');
+    return assetUrl('art/public-opinion.svg');
   }
 
   if (article.kind === 'polity_policy') {
@@ -92,8 +99,9 @@ export default function Articles() {
   const [page, setPage] = useState(1);
   const [accumulated, setAccumulated] = useState([]);
 
+  const filterKey = `${kind}::${q}`;
   const articles = useAsync(
-    signal => api.articles({ kind, q, page, page_size: 20 }, signal).then(data => ({ ...data, page })),
+    signal => api.articles({ kind, q, page, page_size: 20 }, signal).then(data => ({ ...data, page, filterKey })),
     [kind, q, page],
   );
 
@@ -103,16 +111,21 @@ export default function Articles() {
   }, [kind, q]);
 
   useEffect(() => {
-    if (articles.data?.results) {
-      if (articles.data.page === 1) {
-        setAccumulated(articles.data.results);
-      } else {
-        setAccumulated(current => [...current, ...articles.data.results]);
-      }
+    if (!articles.data?.results || articles.data.filterKey !== filterKey) return;
+    if (articles.data.page === 1) {
+      setAccumulated(articles.data.results);
+    } else {
+      setAccumulated(current => {
+        const seen = new Set(current.map(item => item.url || item.title));
+        const extra = articles.data.results.filter(item => !seen.has(item.url || item.title));
+        return [...current, ...extra];
+      });
     }
-  }, [articles.data]);
+  }, [articles.data, filterKey]);
 
-  const items = accumulated.length > 0 ? accumulated : (articles.data?.results || []);
+  const items = accumulated.length > 0
+    ? accumulated
+    : (articles.data?.filterKey === filterKey ? articles.data?.results || [] : []);
 
   // Featured order prioritizing the three Substack pieces when browsing without a search query
   const displayItems = useMemo(() => {
@@ -141,7 +154,7 @@ export default function Articles() {
   }, [items, q, kind]);
 
   return (
-    <main className="articles-page">
+    <div className="articles-page">
       {/* Header matching screenshot media_1794752837498_c86f0423.jpg */}
       <header className="substack-header">
         <h1 className="substack-title">From The Substack</h1>
@@ -162,12 +175,12 @@ export default function Articles() {
       )}
 
       <div className="substack-grid" aria-label="Substack Articles Grid">
-        {displayItems.map(article => {
+        {displayItems.map((article, index) => {
           const coverUrl = getArticleCover(article);
           const dateStr = formatSubstackDate(article.published_at || article.published);
           return (
             <a
-              key={article.url}
+              key={article.url || article.title}
               href={article.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -178,10 +191,10 @@ export default function Articles() {
                   src={coverUrl}
                   alt=""
                   className="substack-card-img"
-                  loading="lazy"
+                  loading={index < 6 ? 'eager' : 'lazy'}
                   onError={e => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = article.kind === 'pew' ? assetUrl('art/maps-pew-research.svg') : assetUrl('art/media-press.svg');
+                    e.currentTarget.src = article.kind === 'pew' ? assetUrl('art/public-opinion.svg') : assetUrl('art/media-press.svg');
                   }}
                 />
               </div>
@@ -251,6 +264,6 @@ export default function Articles() {
           </button>
         </div>
       )}
-    </main>
+    </div>
   );
 }

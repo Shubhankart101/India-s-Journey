@@ -17,7 +17,7 @@
 
 .api-intro .lead {
   font-size: 1.15rem;
-  color: var(--text-muted, #71717a);
+  color: var(--muted);
   max-width: 800px;
   line-height: 1.6;
 }
@@ -37,9 +37,9 @@
   font-size: 0.95rem;
   font-weight: 600;
   border-radius: 9999px;
-  border: 1px solid var(--border-color, #27272a);
-  background: var(--bg-card, #18181b);
-  color: var(--text-color, #f4f4f5);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -66,8 +66,8 @@
 }
 
 .api-viewer-card {
-  background: var(--bg-card, #121215);
-  border: 1px solid var(--border-color, #27272a);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -81,8 +81,8 @@
   justify-content: space-between;
   gap: 16px;
   padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid var(--border-color, #27272a);
+  background: var(--fill);
+  border-bottom: 1px solid var(--line);
 }
 
 .api-viewer-title {
@@ -150,9 +150,9 @@
   gap: 4px;
   padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid var(--border-color, #27272a);
-  background: rgba(255, 255, 255, 0.02);
-  color: inherit;
+  border: 1px solid var(--line);
+  background: var(--fill);
+  color: var(--ink);
   text-align: left;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -183,12 +183,12 @@
   font-family: monospace;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-color, #f4f4f5);
+  color: var(--ink);
 }
 
 .api-endpoint-desc {
   font-size: 0.8rem;
-  color: var(--text-muted, #a1a1aa);
+  color: var(--muted);
   margin: 0;
 }
 
@@ -197,7 +197,8 @@
   flex-direction: column;
   gap: 16px;
   background: #09090b;
-  border: 1px solid var(--border-color, #27272a);
+  color: #e4e4e7;
+  border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px;
 }
