@@ -78,15 +78,20 @@ describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
     expect(screen.getByText(/Event 2 of 12/i)).toBeInTheDocument();
   });
 
-  it('guarantees >= 10 shloka-defined events and non-clipping viewboxes across all 10 empires', () => {
+  it('guarantees 12 uniquely shloka-defined events and non-clipping viewboxes across all 10 empires', () => {
     const empires = empiresData.empires || [];
     expect(empires.length).toBe(10);
+    const seenShlokas = new Set();
+    let totalEvents = 0;
     for (const emp of empires) {
-      expect((emp.events || []).length).toBeGreaterThanOrEqual(10);
+      expect((emp.events || []).length).toBe(12);
       const vb = emp.viewbox;
       expect(vb).toBeTruthy();
       for (const ev of emp.events) {
+        totalEvents++;
         expect(ev.shloka?.text?.length).toBeGreaterThan(8);
+        expect(seenShlokas.has(ev.shloka.text)).toBe(false);
+        seenShlokas.add(ev.shloka.text);
         expect(ev.shloka?.translation?.length).toBeGreaterThan(10);
         expect(ev.shloka?.citation || ev.shloka?.source).toBeTruthy();
         if (ev.coords) {
@@ -97,9 +102,18 @@ describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
         }
       }
     }
+    expect(totalEvents).toBe(120);
+    expect(seenShlokas.size).toBe(120);
     const maurya = empires.find(e => e.id === 'maurya-empire');
     const secTitles = buildEmpiresArticleSections(maurya, () => {}, empires).map(s => s.title);
     expect(secTitles.some(t => /Chronological Events & Defining Classical Shlokas/i.test(t))).toBe(true);
+  });
+
+  it('renders comparative Metrics tab inside AncientEmpiresAtlas', () => {
+    render(<AncientEmpiresAtlas initialEmpireId="maurya-empire" />);
+    const metricsTab = screen.getByRole('tab', { name: /Metrics/i });
+    fireEvent.click(metricsTab);
+    expect(screen.getByText(/Peak Territorial Extent Across 10 Imperial Eras/i)).toBeInTheDocument();
   });
 });
 
@@ -144,14 +158,20 @@ describe('Indus Valley Atlas: Period Boundaries & ASI Memoirs', () => {
     expect(screen.queryByText(/^:$/)).not.toBeInTheDocument();
   });
 
-  it('renders IVC quick site jump rail and river/route toggles cleanly', () => {
-    render(<IndusValleyAtlas />);
+  it('renders IVC quick site jump rail, resolved trade routes, basin charts tab and river toggles', () => {
+    const { container } = render(<IndusValleyAtlas />);
     expect(screen.getByText(/Quick Site Jump \(49\):/i)).toBeInTheDocument();
+    expect(container.querySelectorAll('.indus-routes path').length).toBe(3);
+    const showAllBtn = screen.getByRole('button', { name: /\+ Show All 49/i });
+    fireEvent.click(showAllBtn);
+    expect(screen.getByRole('button', { name: /Show Compact ↑/i })).toBeInTheDocument();
     const riversBtn = screen.getByRole('button', { name: /Paleo-Rivers: On/i });
     fireEvent.click(riversBtn);
     expect(screen.getByRole('button', { name: /Paleo-Rivers: Off/i })).toBeInTheDocument();
     const dholaviraJump = screen.getByRole('button', { name: /★ Dholavira/i });
     fireEvent.click(dholaviraJump);
     expect(screen.getByRole('tab', { name: /Excavation Site \(Dholavira\)/i })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('tab', { name: /Basin Charts/i }));
+    expect(screen.getByText(/Top Excavated Urban Footprints/i)).toBeInTheDocument();
   });
 });

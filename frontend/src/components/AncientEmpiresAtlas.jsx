@@ -8,6 +8,47 @@ const PAN_INDIA_VIEWBOX = { x: 600, y: -380, w: 380, h: 330 };
 const ALEX_VIEWBOX = { x: 185, y: -450, w: 635, h: 245 };
 const DARK_THEME_IDS = new Set(['dark', 'military', 'parliamentary', 'airforce']);
 
+const EMPIRE_BENCHMARKS = [
+  { id: 'mahajanapadas', label: '16 Mahajanapadas', area: 1.1, reign: 255, army: 90 },
+  { id: 'magadha-nanda', label: 'Magadha & Nanda', area: 1.8, reign: 222, army: 200 },
+  { id: 'alexander-campaign', label: 'Alexander (Macedon)', area: 5.2, reign: 11, army: 47 },
+  { id: 'maurya-empire', label: 'Mauryan Empire', area: 5.0, reign: 137, army: 600 },
+  { id: 'indo-greek-shunga', label: 'Indo-Greeks & Shungas', area: 1.2, reign: 175, army: 85 },
+  { id: 'satavahana-empire', label: 'Satavahana Empire', area: 2.2, reign: 450, army: 100 },
+  { id: 'kushan-empire', label: 'Kushan Empire', area: 3.0, reign: 345, army: 140 },
+  { id: 'gupta-empire', label: 'Gupta Golden Age', area: 3.5, reign: 231, army: 180 },
+  { id: 'harsha-empire', label: 'Harsha Empire', area: 2.5, reign: 41, army: 100 },
+  { id: 'classical-southern-dynasties', label: 'Southern Dynasties', area: 1.5, reign: 400, army: 120 },
+];
+
+// Deterministic radial de-collision when multiple events fall on the same city coordinate
+function computeDeCollidedEvents(events) {
+  const buckets = new Map();
+  for (let i = 0; i < events.length; i++) {
+    const ev = events[i];
+    if (!ev?.coords) continue;
+    const key = `${Math.round(ev.coords.x)},${Math.round(ev.coords.y)}`;
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(i);
+  }
+  return events.map((ev, i) => {
+    if (!ev?.coords) return { ev, idx: i, dx: 0, dy: 0, colliding: false };
+    const key = `${Math.round(ev.coords.x)},${Math.round(ev.coords.y)}`;
+    const group = buckets.get(key) || [i];
+    if (group.length <= 1) return { ev, idx: i, dx: 0, dy: 0, colliding: false };
+    const pos = group.indexOf(i);
+    const angle = (2 * Math.PI * pos) / group.length - Math.PI / 4;
+    const radius = group.length > 3 ? 6.2 : 4.5;
+    return {
+      ev,
+      idx: i,
+      dx: Math.cos(angle) * radius,
+      dy: Math.sin(angle) * radius,
+      colliding: true,
+    };
+  });
+}
+
 const HISTORICAL_VARIANTS = {
   'classical-southern-dynasties': [
     { svg: 'maps/historical/sangam-age.svg', title: 'Tamilakam — Sangam Age (c. 300 BCE – 300 CE)' },
@@ -184,6 +225,10 @@ export default function AncientEmpiresAtlas({
   const allEvents = useMemo(() => {
     return currentEmpire.events || [];
   }, [currentEmpire]);
+
+  const placedEvents = useMemo(() => {
+    return computeDeCollidedEvents(allEvents);
+  }, [allEvents]);
 
   const currentEvent = useMemo(() => {
     return allEvents[activeEventIdx] || allEvents[0] || null;
@@ -378,7 +423,16 @@ export default function AncientEmpiresAtlas({
           className="empires-map-container"
           ref={mapStageRef}
           onMouseMove={handleMouseMove}
-          onMouseLeave={() => { setHoveredCapital(null); setHoveredBattle(null); setHoveredTerritory(null); setHoveredNeighbor(null); setTooltip(null); }}
+          onMouseLeave={() => {
+            dragRef.current.active = false;
+            setHoveredCapital(null);
+            setHoveredLocation(null);
+            setHoveredBattle(null);
+            setHoveredEvent(null);
+            setHoveredTerritory(null);
+            setHoveredNeighbor(null);
+            setTooltip(null);
+          }}
         >
           {mapViewMode === 'historical' && currentEmpire.historical_map_svg ? (
             <div className="authentic-historical-map-frame">
@@ -432,9 +486,9 @@ export default function AncientEmpiresAtlas({
                     type="button"
                     className={`mls-btn ${mapLayerFilter === 'all' ? 'active' : ''}`}
                     onClick={() => setMapLayerFilter('all')}
-                    title="Display all battles, locations, and milestone pins on map"
+                    title="Display all battles, locations, and shloka event pins on map"
                   >
-                    🌐 All ({allBattles.length + allLocations.length})
+                    🌐 All ({allBattles.length + allLocations.length + allEvents.length})
                   </button>
                   <button
                     type="button"
@@ -499,6 +553,13 @@ export default function AncientEmpiresAtlas({
 
                 {/* Ocean / Background */}
                 <rect x={viewBox.x - 400} y={viewBox.y - 400} width={viewBox.w + 800} height={viewBox.h + 800} fill={isDarkMap ? '#0a0d13' : '#d6e4ee'} />
+
+                {/* Geographic Ocean & Range Watermarks */}
+                <g className="empires-geo-labels" fontFamily="Georgia, serif" fontStyle="italic" pointerEvents="none">
+                  <text x="675" y="-145" fill={isDarkMap ? '#38bdf8' : '#0369a1'} fontSize="6.5" opacity="0.34" letterSpacing="0.18em" textAnchor="middle">ARABIAN SEA</text>
+                  <text x="865" y="-155" fill={isDarkMap ? '#38bdf8' : '#0369a1'} fontSize="6.5" opacity="0.34" letterSpacing="0.18em" textAnchor="middle">BAY OF BENGAL</text>
+                  <text x="815" y="-315" fill={isDarkMap ? '#94a3b8' : '#78716c'} fontSize="5.4" opacity="0.38" letterSpacing="0.2em" textAnchor="middle" transform="rotate(14, 815, -315)">HIMALAYAS</text>
+                </g>
 
                 {/* Basemap Countries */}
                 <g className="empires-basemap">
@@ -671,7 +732,7 @@ export default function AncientEmpiresAtlas({
                           <circle r={locType === 'capital' ? "4.5" : "3.5"} fill={markerColor} stroke={isDarkMap ? "#000" : "#fff"} strokeWidth="1.2" />
                           {locType === 'capital' && <circle r="1.5" fill={isDarkMap ? "#000" : "#fff"} />}
                           <text
-                            y={locType === 'capital' ? "-6" : "-5"}
+                            y={locType === 'capital' ? "-8.5" : "-5.5"}
                             fill={isLocSelected ? (isDarkMap ? "#ffffff" : "#0b0f15") : labelColor}
                             fontSize={locType === 'capital' ? "4.8" : "4.2"}
                             fontWeight={locType === 'capital' ? "800" : "700"}
@@ -691,21 +752,26 @@ export default function AncientEmpiresAtlas({
                   </g>
                 )}
 
-                {/* Events & Shloka Storyboard Layer */}
-                {(mapLayerFilter === 'events' || (mapLayerFilter === 'all' && currentEvent?.coords)) && (
+                {/* Events & Shloka Storyboard Layer (with radial de-collision for same-city events) */}
+                {(mapLayerFilter === 'all' || mapLayerFilter === 'events') && (
                   <g className="events-layer">
-                    {(mapLayerFilter === 'events' ? allEvents : [currentEvent].filter(Boolean)).map((ev, idx) => {
+                    {placedEvents.map(({ ev, idx, dx, dy, colliding }) => {
                       if (!ev?.coords) return null;
-                      const isEvSelected = currentEvent?.title === ev.title;
-                      const actualIdx = mapLayerFilter === 'events' ? idx : activeEventIdx;
+                      const px = ev.coords.x + dx;
+                      const py = ev.coords.y + dy;
+                      const isEvSelected = idx === activeEventIdx;
+                      const isEvHovered = hoveredEvent?.title === ev.title;
+                      const nearCapital = mapLayerFilter === 'all' && allLocations.some(loc => loc.type === 'capital' && Math.hypot(loc.x - px, loc.y - py) < 10);
+                      const showLabel = (mapLayerFilter === 'events' && (showAllLabels || isEvSelected || isEvHovered))
+                        || (mapLayerFilter === 'all' && (isEvHovered || (isEvSelected && !nearCapital)));
                       return (
                         <g
-                          key={`ev-${actualIdx}-${ev.year}`}
+                          key={`ev-${idx}-${ev.year}`}
                           className={`event-pin ${isEvSelected ? 'active' : ''}`}
-                          transform={`translate(${ev.coords.x}, ${ev.coords.y})`}
+                          transform={`translate(${px.toFixed(2)}, ${py.toFixed(2)})`}
                           onClick={() => {
                             if (dragRef.current.moved) return;
-                            setActiveEventIdx(actualIdx);
+                            setActiveEventIdx(idx);
                             setDossierTab('milestones');
                           }}
                           onMouseEnter={() => setHoveredEvent({
@@ -721,25 +787,37 @@ export default function AncientEmpiresAtlas({
                           role="button"
                           aria-label={`Event milestone: ${ev.title} (${ev.year})`}
                         >
+                          {colliding && (
+                            <line
+                              x1={-dx}
+                              y1={-dy}
+                              x2="0"
+                              y2="0"
+                              stroke={isDarkMap ? '#fbbf24' : '#b45309'}
+                              strokeWidth="0.65"
+                              opacity="0.55"
+                            />
+                          )}
                           {isEvSelected && (
-                            <circle r="11" fill="none" stroke="#f59e0b" strokeWidth="1.6" strokeDasharray="3,2" className="pin-pulse" />
+                            <circle r="10" fill="none" stroke={isDarkMap ? '#fbbf24' : '#b45309'} strokeWidth="1.6" strokeDasharray="3,2" className="pin-pulse" />
                           )}
                           <polygon
-                            points="0,-5.5 5.5,0 0,5.5 -5.5,0"
+                            points={isEvSelected ? '0,-5.5 5.5,0 0,5.5 -5.5,0' : '0,-4.2 4.2,0 0,4.2 -4.2,0'}
                             fill={isEvSelected ? '#f59e0b' : '#fbbf24'}
                             stroke={isDarkMap ? '#0b0f15' : '#ffffff'}
-                            strokeWidth="1.2"
+                            strokeWidth="1.1"
+                            opacity={mapLayerFilter === 'events' || isEvSelected ? 1 : 0.85}
                           />
-                          {(showAllLabels || isEvSelected || hoveredEvent?.title === ev.title) && (
+                          {showLabel && (
                             <text
                               y="12.5"
                               fill={isDarkMap ? '#fde68a' : '#78350f'}
-                              fontSize="4.4"
+                              fontSize="4.2"
                               fontWeight="800"
                               fontFamily="sans-serif"
                               textAnchor="middle"
                               stroke={isDarkMap ? '#0b0f15' : '#fffdf8'}
-                              strokeWidth="2"
+                              strokeWidth="2.1"
                               paintOrder="stroke"
                             >
                               {ev.year}: {ev.place || ev.title.split(' ').slice(0, 3).join(' ')}
@@ -802,6 +880,20 @@ export default function AncientEmpiresAtlas({
                     })}
                   </g>
                 )}
+
+                {/* Compass Rose & Scale Bar HUD */}
+                <g className="emp-cartography-hud" transform={`translate(${viewBox.x + viewBox.w - 18}, ${viewBox.y + 18})`} pointerEvents="none" opacity="0.82">
+                  <circle r="7.5" fill={isDarkMap ? 'rgba(15,23,42,0.72)' : 'rgba(255,255,255,0.82)'} stroke={isDarkMap ? '#64748b' : '#94a3b8'} strokeWidth="0.6" />
+                  <polygon points="0,-5.8 1.6,0 0,-1.4 -1.6,0" fill="#d97706" />
+                  <polygon points="0,5.8 1.6,0 0,1.4 -1.6,0" fill={isDarkMap ? '#64748b' : '#94a3b8'} />
+                  <text y="-8.8" textAnchor="middle" fontSize="4.2" fontWeight="800" fill={isDarkMap ? '#f8fafc' : '#1e293b'}>N</text>
+                </g>
+                <g className="emp-scale-bar" transform={`translate(${viewBox.x + 12}, ${viewBox.y + viewBox.h - 10})`} pointerEvents="none" opacity="0.85">
+                  <line x1="0" y1="0" x2="36" y2="0" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+                  <line x1="0" y1="-2.2" x2="0" y2="2.2" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+                  <line x1="36" y1="-2.2" x2="36" y2="2.2" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+                  <text x="18" y="-3.2" textAnchor="middle" fontSize="3.8" fontWeight="700" fill={isDarkMap ? '#cbd5e1' : '#1e293b'} stroke={isDarkMap ? '#0a0d13' : '#d6e4ee'} strokeWidth="1.5" paintOrder="stroke">~400 km</text>
+                </g>
               </svg>
 
               {/* Interactive Floating Tooltip */}
@@ -909,6 +1001,15 @@ export default function AncientEmpiresAtlas({
                 onClick={() => setDossierTab('milestones')}
               >
                 ⏳ Milestones ({currentEmpire.events?.length || 0})
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={dossierTab === 'metrics'}
+                className={`dossier-tab-btn ${dossierTab === 'metrics' ? 'active' : ''}`}
+                onClick={() => setDossierTab('metrics')}
+              >
+                📊 Metrics
               </button>
               <button
                 type="button"
@@ -1180,6 +1281,14 @@ export default function AncientEmpiresAtlas({
               {/* Locations List */}
               <div className="dossier-section">
                 <h4>Imperial Cities, Citadels &amp; Emporia (Click to highlight on map)</h4>
+                {filteredLocations.length === 0 ? (
+                  <div className="locations-empty-box">
+                    <p>No documented locations match the "{locationTypeFilter}" category for {currentEmpire.name}.</p>
+                    <button type="button" className="btn btn-primary btn-small" onClick={() => setLocationTypeFilter('all')}>
+                      Show All {allLocations.length} Sites
+                    </button>
+                  </div>
+                ) : (
                 <div className="locations-list">
                   {filteredLocations.map((loc, idx) => {
                     const isLocSelected = selectedLocation?.name === loc.name;
@@ -1213,7 +1322,49 @@ export default function AncientEmpiresAtlas({
                     );
                   })}
                 </div>
+                )}
               </div>
+            </div>
+          )}
+
+          {/* TAB: Imperial Comparative Metrics */}
+          {dossierTab === 'metrics' && (
+            <div className="dossier-tab-content empires-metrics-panel">
+              <div className="dossier-box">
+                <h4>Peak Territorial Extent Across 10 Imperial Eras (M km²)</h4>
+                <p style={{ margin: '0 0 6px', fontSize: '0.74rem', color: 'var(--muted)' }}>
+                  Click any dynasty row below to focus the interactive atlas and shloka milestones on that era.
+                </p>
+                <div className="emp-bench-list">
+                  {EMPIRE_BENCHMARKS.map(b => {
+                    const pct = Math.max(8, Math.round((b.area / 5.2) * 100));
+                    const isCurrent = b.id === selectedEmpireId;
+                    return (
+                      <button
+                        key={b.id}
+                        type="button"
+                        className={`emp-bench-row ${isCurrent ? 'active' : ''}`}
+                        onClick={() => handleEmpireSelect(b.id)}
+                      >
+                        <div className="emp-bench-head">
+                          <strong>{b.label}</strong>
+                          <span className="emp-bench-vals">{b.area} M km² · {b.reign} yrs · {(b.army / 10).toFixed(0)}k+ inf</span>
+                        </div>
+                        <div className="emp-bench-track">
+                          <div className="emp-bench-fill" style={{ width: `${pct}%` }} />
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              <button
+                type="button"
+                className="btn btn-primary btn-small"
+                onClick={() => document.getElementById('subgroup-quant-heading')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explore All 14 Interactive Charts &amp; Epigraphic Data Below ↓
+              </button>
             </div>
           )}
 

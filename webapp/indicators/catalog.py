@@ -47,6 +47,7 @@ def build_preview(labels, datasets, chart_type, max_points=PREVIEW_POINTS):
             {
                 'label': dataset['label'],
                 'color': dataset.get('color'),
+                **({'colors': dataset.get('colors')} if dataset.get('colors') else {}),
                 'values': [dataset['values'][index] if index < len(dataset['values']) else None for index in indexes],
             }
             for dataset in datasets[:6]
@@ -82,6 +83,7 @@ def _normalise_series(raw_series, title, color):
         datasets.append({
             'label': str(dataset.get('label') or (title if index == 0 else f'Series {index + 1}')),
             'color': dataset.get('color') or (color if index == 0 else None),
+            **({'colors': dataset.get('colors')} if dataset.get('colors') else {}),
             'values': values,
         })
     has_points = bool(labels) and any(value is not None for dataset in datasets for value in dataset['values'])

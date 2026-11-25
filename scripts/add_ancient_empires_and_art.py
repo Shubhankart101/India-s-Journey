@@ -95,6 +95,7 @@ empire_indicators = [
             "datasets": [
                 {
                     "label": "Territorial Span (Million km²)",
+                    "colors": ["#a855f7", "#eab308", "#f59e0b", "#06b6d4", "#ec4899", "#ea580c", "#38bdf8"],
                     "values": [5.0, 3.5, 3.0, 2.5, 2.2, 1.8, 1.2]
                 }
             ]
@@ -102,13 +103,13 @@ empire_indicators = [
     },
     {
         "key": "ancient_empires_military_infantry",
-        "title": "Documented Standing Army Infantry Strength of Classical Empires",
-        "subtitle": "Number of regular infantry troops recorded in classical and epigraphic chronicles",
+        "title": "Documented Standing Army Strength of Classical Empires",
+        "subtitle": "Regular infantry and cavalry forces recorded in classical and epigraphic chronicles",
         "frequency": "military",
         "color": "#ef4444",
         "suffix": " troops",
         "source_url": "https://asi.nic.in",
-        "details": "Infantry size recorded by contemporary Roman, Greek, Chinese, and Indian chroniclers (Pliny, Megasthenes, Curtius, Xuanzang).",
+        "details": "Standing infantry and cavalry forces recorded by contemporary Roman, Greek, Chinese, and Indian chroniclers (Pliny, Megasthenes, Curtius, Xuanzang).",
         "category": "Empires of Ancient India",
         "subgroup": EMP_SUBGROUP_NAME,
         "subgroup_slug": EMP_SUBGROUP_SLUG,
@@ -149,11 +150,12 @@ empire_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Arthashastra & Curtius Rufus History of Alexander",
-            "labels": ["Mauryan Empire (Peak)", "Nanda Empire", "Harsha's Vardhana Army", "King Porus (Hydaspes)", "Seleucus I Treaty Transfer"],
+            "labels": ["Mauryan Empire (Peak)", "Harsha's Vardhana Army", "Nanda Empire", "Seleucus I Treaty Transfer", "King Porus (Hydaspes)"],
             "datasets": [
                 {
                     "label": "War Elephants",
-                    "values": [9000, 4000, 5000, 200, 500]
+                    "colors": ["#a855f7", "#06b6d4", "#f59e0b", "#38bdf8", "#ec4899"],
+                    "values": [9000, 5000, 4000, 500, 200]
                 }
             ]
         }
@@ -175,11 +177,12 @@ empire_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Archaeological Survey of India Epigraphy Branch & CII Volumes",
-            "labels": ["Chola Dynasty (Imperial)", "Gupta & Later Gupta", "Mauryan Edicts (Ashoka)", "Badami Chalukyas", "Pallavas of Kanchi", "Satavahanas", "Harshavardhana"],
+            "labels": ["Chola Dynasty (Imperial)", "Gupta & Later Gupta", "Badami Chalukyas", "Mauryan Edicts (Ashoka)", "Pallavas of Kanchi", "Satavahanas", "Harshavardhana"],
             "datasets": [
                 {
                     "label": "Cataloged Royal Inscriptions",
-                    "values": [12000, 320, 185, 210, 165, 85, 12]
+                    "colors": ["#10b981", "#eab308", "#06b6d4", "#a855f7", "#38bdf8", "#ec4899", "#f59e0b"],
+                    "values": [12000, 320, 210, 185, 165, 85, 12]
                 }
             ]
         }
@@ -205,6 +208,7 @@ empire_indicators = [
             "datasets": [
                 {
                     "label": "Imperial Duration (Years)",
+                    "colors": ["#ec4899", "#10b981", "#f59e0b", "#eab308", "#a855f7", "#38bdf8", "#06b6d4"],
                     "values": [450, 400, 345, 231, 137, 112, 41]
                 }
             ]
@@ -252,11 +256,12 @@ empire_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Osmund Bopearachchi, Monnaies greco-bactriennes et indo-grecques (1991)",
-            "labels": ["Bilingual Indo-Greek Kings (Punjab/Gandhara)", "Greco-Bactrian Kings (North of Hindu Kush)", "Indo-Scythian Kings (Sakas)", "Indo-Parthian Kings (Gondophares)"],
+            "labels": ["Bilingual Indo-Greek Kings (Punjab/Gandhara)", "Indo-Scythian Kings (Sakas)", "Greco-Bactrian Kings (North of Hindu Kush)", "Indo-Parthian Kings (Gondophares)"],
             "datasets": [
                 {
                     "label": "Documented Monetary Sovereigns",
-                    "values": [34, 8, 14, 6]
+                    "colors": ["#06b6d4", "#f59e0b", "#38bdf8", "#8b5cf6"],
+                    "values": [34, 14, 8, 6]
                 }
             ]
         }
@@ -282,6 +287,7 @@ empire_indicators = [
             "datasets": [
                 {
                     "label": "Excavated Monastic Complexes",
+                    "colors": ["#f43f5e", "#f59e0b", "#eab308", "#06b6d4", "#8b5cf6"],
                     "values": [120, 45, 38, 25, 22]
                 }
             ]
@@ -304,11 +310,12 @@ empire_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Xuanzang, Si-Yu-Ki: Buddhist Records of the Western World",
-            "labels": ["Vassal Kings (incl. Bhaskaravarman of Kamarupa)", "Eminent Buddhist Scholars & Monks", "Learned Vedic Brahmins & Jains", "Royal War Elephants in Procession"],
+            "labels": ["Eminent Buddhist Scholars & Monks", "Learned Vedic Brahmins & Jains", "Royal War Elephants in Procession", "Vassal Kings (incl. Bhaskaravarman of Kamarupa)"],
             "datasets": [
                 {
                     "label": "Recorded Numbers",
-                    "values": [20, 3000, 2000, 300]
+                    "colors": ["#8b5cf6", "#f59e0b", "#06b6d4", "#10b981"],
+                    "values": [3000, 2000, 300, 20]
                 }
             ]
         }
@@ -334,6 +341,7 @@ empire_indicators = [
             "datasets": [
                 {
                     "label": "Documented Roman Coin Hoards",
+                    "colors": ["#14b8a6", "#10b981", "#38bdf8", "#f59e0b"],
                     "values": [42, 28, 19, 11]
                 }
             ]
@@ -388,6 +396,64 @@ empire_indicators = [
                 }
             ]
         }
+    },
+    {
+        "key": "ancient_empires_coinage_gold_weights",
+        "title": "Metallic Weight Standards of Sovereign Indian Coinage (340 BCE – 1015 CE)",
+        "subtitle": "Standardized silver karshapana, drachm, Kushan dinara, and Gupta suvarna issues in grams",
+        "frequency": "numismatic",
+        "color": "#f59e0b",
+        "suffix": " g",
+        "source_url": "https://asi.nic.in",
+        "details": "Traces monetary weight standards across fourteen centuries: from 32-ratti (3.4 g) silver karshapanas of Magadha and Maurya, to Attic 4.2 g silver drachms, 8.0 g Kushan gold dinaras, the indigenous 144-grain (9.3 g) Gupta suvarna reform under Skandagupta, and 4.3 g Chola pon/madais.",
+        "category": "Empires of Ancient India",
+        "subgroup": EMP_SUBGROUP_NAME,
+        "subgroup_slug": EMP_SUBGROUP_SLUG,
+        "position": 12,
+        "series": {
+            "chart_type": "line",
+            "source": "P.L. Gupta (Coins of India) & B.N. Mukherjee Numismatic Studies",
+            "labels": ["Nanda–Maurya Karshapana", "Indo-Greek Drachm", "Kushan Gold Dinara", "Early Gupta Dinara", "Skandagupta Suvarna", "Imperial Chola Pon"],
+            "datasets": [
+                {
+                    "label": "Nominal Issue Weight (grams)",
+                    "color": "#f59e0b",
+                    "values": [3.4, 4.2, 7.95, 7.8, 9.3, 4.3]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ancient_empires_monumental_architecture",
+        "title": "Surviving Stone & Rock-Cut Monuments Across Classical Eras",
+        "subtitle": "Major cataloged architectural complexes (stupas, rock caves, and stone temples) preserved by ASI",
+        "frequency": "archeological",
+        "color": "#10b981",
+        "suffix": " monuments",
+        "source_url": "https://asi.nic.in",
+        "details": "Distribution of enduring lithic monuments protected under the Archaeological Survey of India across major historical horizons: Ashokan/Shunga stupa-railings & Barabar caves, Deccan-Kushan viharas/chaityas, Gupta structural brick/stone sanctuaries, and Pallava-Chalukya-Chola Dravida/Vesara complexes.",
+        "category": "Empires of Ancient India",
+        "subgroup": EMP_SUBGROUP_NAME,
+        "subgroup_slug": EMP_SUBGROUP_SLUG,
+        "position": 13,
+        "series": {
+            "chart_type": "bar",
+            "index_axis": "y",
+            "source": "Archaeological Survey of India (ASI) Architectural Circle Survey",
+            "labels": ["Maurya–Shunga (322–73 BCE)", "Satavahana–Kushan (100 BCE–300 CE)", "Gupta–Vakataka (319–550 CE)", "Pallava–Chalukya–Chola (550–1100 CE)"],
+            "datasets": [
+                {
+                    "label": "Stupas & Rock-Cut Sanctuaries",
+                    "color": "#8b5cf6",
+                    "values": [42, 165, 58, 45]
+                },
+                {
+                    "label": "Structural Stone Temples & Pillars",
+                    "color": "#10b981",
+                    "values": [38, 64, 92, 340]
+                }
+            ]
+        }
     }
 ]
 
@@ -419,7 +485,7 @@ empires_explainer = {
             "The History and Culture of the Indian People (R.C. Majumdar, Vols II–III)",
             "A Political History of Ancient India (H.C. Raychaudhuri)"
         ],
-        "indicatorCount": 12,
+        "indicatorCount": 14,
         "subgroupCount": 1,
         "verse": {
             "id": "git-4-7",
@@ -444,7 +510,7 @@ empires_explainer = {
                     "Corpus Inscriptionum Indicarum (CII)",
                     "Epigraphia Indica"
                 ],
-                "indicatorCount": 12,
+                "indicatorCount": 14,
                 "sections": [
                     {
                         "title": "Imperial Territorial Extent & Chronological Hegemony",
@@ -457,14 +523,14 @@ empires_explainer = {
                         "keys": ["ancient_empires_military_infantry", "ancient_empires_war_elephants"]
                     },
                     {
-                        "title": "Epigraphic Records, Script Families & Royal Charters",
-                        "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India. The Imperial Cholas alone left over 12,000 temple wall inscriptions detailing land surveys, revenue rates, and naval conquests, while Ashoka's rock edicts preserved the earliest deciphered writing in Brahmi and Kharosthi.",
-                        "keys": ["ancient_empires_inscriptions_count", "ancient_empires_epigraphic_scripts_share", "ancient_empires_reign_durations"]
+                        "title": "Epigraphic Records, Script Families & Monumental Architecture",
+                        "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India alongside enduring rock-cut chaityas, Ashokan pillars, and stone temple complexes spanning fourteen centuries.",
+                        "keys": ["ancient_empires_inscriptions_count", "ancient_empires_epigraphic_scripts_share", "ancient_empires_reign_durations", "ancient_empires_monumental_architecture"]
                     },
                     {
-                        "title": "Early Polity, Numismatics & Silk Road Monasteries",
-                        "text": "From early monarchical states and Gana-Sangha republics among the 16 Mahajanapadas to the 34 bilingual Indo-Greek sovereigns and excavated Kushan monasteries stretching along Uttarapatha and Central Asia, political pluralism catalyzed cultural synthesis.",
-                        "keys": ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "kushan_silkroad_monasteries"]
+                        "title": "Early Polity, Monetary Weight Standards & Silk Road Monasteries",
+                        "text": "From early monarchical states and Gana-Sangha republics among the 16 Mahajanapadas to bilingual Indo-Greek silver drachms, Kushan–Gupta gold dinara/suvarna metrology, and Uttarapatha monastic networks, political pluralism catalyzed cultural synthesis.",
+                        "keys": ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "ancient_empires_coinage_gold_weights", "kushan_silkroad_monasteries"]
                     },
                     {
                         "title": "Imperial Assemblies & Indian Ocean Maritime Trade",

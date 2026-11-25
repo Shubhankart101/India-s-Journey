@@ -190,6 +190,7 @@ const previewOf = item => {
     datasets: datasets.slice(0, 6).map(dataset => ({
       label: dataset.label,
       color: dataset.color || null,
+      ...(dataset.colors ? { colors: dataset.colors } : {}),
       values: indexes.map(index => dataset.values?.[index] ?? null),
     })),
   };

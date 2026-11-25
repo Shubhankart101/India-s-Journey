@@ -68,16 +68,19 @@ export function buildChartData({ labels, datasets, type, color, colors = CHART_C
         };
       }
       const lineColor = dataset.color || (index === 0 ? color : null) || PALETTE[(index + 2) % PALETTE.length];
+      const barColors = Array.isArray(dataset.colors) && dataset.colors.length
+        ? labels.map((_, idx) => `${String(dataset.colors[idx % dataset.colors.length]).slice(0, 7)}cc`)
+        : null;
       return {
         label: dataset.label,
         data: dataVals,
-        borderColor: lineColor,
+        borderColor: type === 'bar' && barColors ? dataset.colors : lineColor,
         borderDash: dataset.borderDash || undefined,
-        backgroundColor: type === 'bar' ? `${lineColor.slice(0, 7)}cc` : `${lineColor.slice(0, 7)}22`,
+        backgroundColor: type === 'bar' ? (barColors || `${lineColor.slice(0, 7)}cc`) : `${lineColor.slice(0, 7)}22`,
         fill: type === 'line' && datasets.length === 1,
         borderWidth: type === 'bar' ? 0 : 2.4,
         borderRadius: type === 'bar' ? 4 : 0,
-        pointRadius: many || type === 'bar' ? 0 : 2,
+        pointRadius: many || type === 'bar' ? 0 : 3,
         pointHoverRadius: 5,
         tension: 0.3,
         spanGaps: true,
@@ -114,7 +117,7 @@ export function buildOptions({ type, suffix, compact, horizontal, multi, colors 
     plugins: {
       legend: {
         display: !compact && (radial || multi),
-        position: radial ? 'right' : 'bottom',
+        position: 'bottom',
         labels: { color: colors.legend, boxWidth: 10, boxHeight: 10, usePointStyle: true, padding: 12 },
       },
       tooltip,
@@ -132,7 +135,7 @@ export function buildOptions({ type, suffix, compact, horizontal, multi, colors 
   const labelAxis = {
     grid: { display: false },
     border: { display: false },
-    ticks: { display: !compact, color: colors.muted, maxRotation: 0, autoSkip: true, maxTicksLimit: horizontal ? 20 : 8 },
+    ticks: { display: !compact, color: colors.muted, maxRotation: 0, autoSkip: horizontal ? false : 'auto', maxTicksLimit: horizontal ? 20 : 10 },
   };
   options.indexAxis = horizontal ? 'y' : 'x';
   options.scales = horizontal ? { x: valueAxis, y: labelAxis } : { x: labelAxis, y: valueAxis };

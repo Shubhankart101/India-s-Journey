@@ -7,19 +7,68 @@ import { HistoricalMapViewer } from './AncientEmpiresAtlas.jsx';
 import './IndusAtlas.css';
 
 const MAJOR_METROPOLIS_IDS = new Set(['rakhigarhi', 'mohenjo-daro', 'harappa', 'dholavira', 'ganweriwala', 'kalibangan', 'lothal', 'banawali']);
+const FOREIGN_LABEL_IDS = new Set(['ur', 'qal-at-al-bahrain', 'ras-al-jinz', 'susa', 'shortugai']);
 const DARK_THEME_IDS = new Set(['dark', 'military', 'parliamentary', 'airforce']);
 
-// De-collide adjacent metropolis labels in the Haryana–Punjab–Gujarat core
+// De-collide adjacent metropolis & Gulf anchor labels across the Harappan corridor
 const METROPOLIS_LABEL_OFFSETS = {
-  harappa: { dx: 0, dy: -8, anchor: 'middle' },
-  kalibangan: { dx: -14, dy: -6, anchor: 'end' },
-  banawali: { dx: 6, dy: -11, anchor: 'start' },
-  rakhigarhi: { dx: 12, dy: 9, anchor: 'start' },
-  ganweriwala: { dx: -8, dy: 10, anchor: 'end' },
-  'mohenjo-daro': { dx: -8, dy: -8, anchor: 'end' },
-  dholavira: { dx: -10, dy: -6, anchor: 'end' },
-  lothal: { dx: 10, dy: 9, anchor: 'start' },
+  harappa: { dx: 0, dy: -9, anchor: 'middle' },
+  kalibangan: { dx: -11, dy: -8, anchor: 'end', leader: true },
+  banawali: { dx: -9, dy: -11, anchor: 'end', leader: true },
+  rakhigarhi: { dx: 12, dy: 9, anchor: 'start', leader: true },
+  ganweriwala: { dx: -10, dy: 9, anchor: 'end' },
+  'mohenjo-daro': { dx: -10, dy: -7, anchor: 'end' },
+  dholavira: { dx: -12, dy: -10, anchor: 'end', leader: true },
+  lothal: { dx: 11, dy: 9, anchor: 'start' },
+  ur: { dx: 0, dy: -8, anchor: 'middle' },
+  susa: { dx: 10, dy: -4, anchor: 'start' },
+  'qal-at-al-bahrain': { dx: -9, dy: 8, anchor: 'end' },
+  'ras-al-jinz': { dx: 9, dy: 8, anchor: 'start' },
+  shortugai: { dx: 0, dy: -8, anchor: 'middle' },
 };
+
+const BASIN_METRICS_DATA = [
+  { basin: 'Cholistan (Saraswati–Hakra)', early: 139, mature: 174, late: 50 },
+  { basin: 'Haryana, East Punjab & Doab', early: 245, mature: 218, late: 853 },
+  { basin: 'Gujarat (Kutch & Saurashtra)', early: 14, mature: 290, late: 184 },
+  { basin: 'Sindh & Lower Indus', early: 58, mature: 86, late: 12 },
+];
+
+function resolveRouteSvg(route, sites) {
+  if (route.path_d) {
+    return { d: route.path_d, mid: route.label_pos || null, pts: [] };
+  }
+  const wps = route.waypoints || [];
+  if (wps.length < 2) return null;
+  const pts = wps.map(wp => {
+    const key = String(wp.name || '').split('(')[0].trim().toLowerCase();
+    const match = sites.find(s =>
+      s.id === key ||
+      s.name.toLowerCase() === key ||
+      s.name.toLowerCase().startsWith(key)
+    );
+    const x = match ? (match.x !== undefined ? match.x : match.lon * 10) : wp.x;
+    const y = match ? (match.y !== undefined ? match.y : -match.lat * 10) : wp.y;
+    return { x, y, name: wp.name };
+  });
+  let d = `M ${pts[0].x.toFixed(1)} ${pts[0].y.toFixed(1)}`;
+  for (let i = 1; i < pts.length; i++) {
+    const prev = pts[i - 1];
+    const curr = pts[i];
+    const mx = ((prev.x + curr.x) / 2);
+    const my = ((prev.y + curr.y) / 2) + (route.type === 'maritime' ? 6 : -3);
+    d += ` Q ${mx.toFixed(1)} ${my.toFixed(1)} ${curr.x.toFixed(1)} ${curr.y.toFixed(1)}`;
+  }
+  const midPt = pts[Math.floor(pts.length / 2)];
+  return {
+    d,
+    mid: {
+      x: midPt.x,
+      y: route.type === 'maritime' ? midPt.y + 16 : route.type === 'overland' ? midPt.y - 12 : midPt.y + 13,
+    },
+    pts,
+  };
+}
 
 const CATEGORY_COLORS = {
   metropolis: '#d4a72c',
@@ -41,9 +90,10 @@ const TIER_FILTERS = [
 
 const REGION_PRESETS = [
   { id: 'full', label: 'Pan-Indus & Gulf', vb: { x: 410, y: -460, w: 410, h: 285 } },
-  { id: 'heartland', label: 'Indus-Saraswati Heartland', vb: { x: 570, y: -420, w: 180, h: 160 } },
-  { id: 'gujarat', label: 'Gujarat, Saurashtra & Kutch', vb: { x: 670, y: -260, w: 90, h: 80 } },
-  { id: 'meso', label: 'Persian Gulf & Mesopotamia', vb: { x: 420, y: -380, w: 170, h: 140 } },
+  { id: 'heartland', label: 'Indus-Saraswati Heartland', vb: { x: 590, y: -415, w: 195, h: 165 } },
+  { id: 'haryana-punjab', label: 'Haryana–Saraswati Core', vb: { x: 705, y: -350, w: 82, h: 58 } },
+  { id: 'gujarat', label: 'Gujarat & Kutch', vb: { x: 670, y: -260, w: 90, h: 80 } },
+  { id: 'meso', label: 'Gulf & Mesopotamia', vb: { x: 420, y: -380, w: 170, h: 140 } },
 ];
 
 export default function IndusValleyAtlas() {
@@ -52,13 +102,14 @@ export default function IndusValleyAtlas() {
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedSiteId, setSelectedSiteId] = useState('rakhigarhi');
   const [selectedPeriodId, setSelectedPeriodId] = useState('all');
-  const [dossierTab, setDossierTab] = useState('site'); // 'site' | 'periods'
+  const [dossierTab, setDossierTab] = useState('site'); // 'site' | 'periods' | 'metrics'
   const [activeDossierPeriodId, setActiveDossierPeriodId] = useState('mature');
   const [tierFilter, setTierFilter] = useState('all');
   const [countryFilter, setCountryFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showRoutes, setShowRoutes] = useState(true);
   const [showRivers, setShowRivers] = useState(true);
+  const [showAllSitesInRail, setShowAllSitesInRail] = useState(false);
   const [hoveredSiteId, setHoveredSiteId] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const [mapViewMode, setMapViewMode] = useState('interactive');
@@ -389,7 +440,7 @@ export default function IndusValleyAtlas() {
             className="indus-map-container"
             ref={mapStageRef}
             onMouseMove={handleMouseMove}
-            onMouseLeave={() => { setHoveredSiteId(null); setTooltip(null); }}
+            onMouseLeave={() => { dragRef.current.active = false; setHoveredSiteId(null); setTooltip(null); }}
           >
             {mapViewMode === 'historical' ? (
               <div className="authentic-historical-map-frame">
@@ -437,6 +488,12 @@ export default function IndusValleyAtlas() {
               <filter id="siteShadow" x="-20%" y="-20%" width="140%" height="140%">
                 <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.55" />
               </filter>
+              <marker id="ivcMaritimeArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill={isDarkMap ? '#38bdf8' : '#0284c7'} opacity="0.85" />
+              </marker>
+              <marker id="ivcCaravanArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill={isDarkMap ? '#fbbf24' : '#b45309'} opacity="0.85" />
+              </marker>
             </defs>
 
             {/* Geographical Background */}
@@ -447,6 +504,14 @@ export default function IndusValleyAtlas() {
               height={viewBox.h + 400}
               fill={isDarkMap ? '#0d1117' : '#d6e4ee'}
             />
+
+            {/* Geographic Seas, Gulfs & Relief Labels */}
+            <g className="indus-geo-labels" fontFamily="Georgia, serif" fontStyle="italic" pointerEvents="none">
+              <text x="615" y="-205" fill={isDarkMap ? '#38bdf8' : '#0369a1'} fontSize="7" opacity="0.38" letterSpacing="0.2em" textAnchor="middle">ARABIAN SEA</text>
+              <text x="530" y="-256" fill={isDarkMap ? '#38bdf8' : '#0369a1'} fontSize="4.5" opacity="0.48" letterSpacing="0.14em" textAnchor="middle">PERSIAN GULF</text>
+              <text x="665" y="-365" fill={isDarkMap ? '#94a3b8' : '#78716c'} fontSize="5" opacity="0.42" letterSpacing="0.14em" textAnchor="middle">HINDU KUSH</text>
+              <text x="642" y="-248" fill={isDarkMap ? '#7dd3fc' : '#0369a1'} fontSize="4" opacity="0.5" textAnchor="middle">Makran Coast</text>
+            </g>
 
             {/* Country boundary polygons */}
             <g className="indus-basemap-countries">
@@ -472,11 +537,13 @@ export default function IndusValleyAtlas() {
                 {/* Ravi / Sutlej Tributaries */}
                 <path d="M 752 -324 Q 735 -310 715 -296" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="1.2" opacity="0.65" />
                 <path d="M 766 -312 Q 738 -302 710 -291" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="1.2" opacity="0.65" />
+                {/* Euphrates–Tigris Basin */}
+                <path d="M 432 -372 Q 448 -350 461 -326 Q 475 -315 486 -302" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="1.4" opacity="0.65" />
                 {/* Narmada / Tapi */}
                 <path d="M 730 -216 Q 765 -218 795 -220" stroke={isDarkMap ? '#0284c7' : '#0369a1'} strokeWidth="1.2" opacity="0.55" />
                 {/* River Labels */}
-                <text x="698" y="-266" fill={isDarkMap ? '#7dd3fc' : '#0369a1'} fontSize="4.2" fontStyle="italic" fontWeight="600" opacity="0.85">Indus (Sindhu)</text>
-                <text x="724" y="-281" fill={isDarkMap ? '#7dd3fc' : '#0284c7'} fontSize="4" fontStyle="italic" fontWeight="600" opacity="0.85">Saraswati–Hakra</text>
+                <text x="698" y="-266" fill={isDarkMap ? '#7dd3fc' : '#0369a1'} fontSize="4.2" fontStyle="italic" fontWeight="600" opacity="0.88">Indus (Sindhu)</text>
+                <text x="724" y="-281" fill={isDarkMap ? '#7dd3fc' : '#0284c7'} fontSize="4" fontStyle="italic" fontWeight="600" opacity="0.88">Saraswati–Hakra</text>
               </g>
             )}
 
@@ -502,53 +569,73 @@ export default function IndusValleyAtlas() {
               })}
             </g>
 
-            {/* Maritime & Caravan Trade Routes */}
+            {/* Maritime & Caravan Trade Routes (resolved directly onto true site coordinates) */}
             {showRoutes && (
               <g className="indus-routes">
-                {tradeRoutes.map(route => (
-                  <g
-                    key={route.id}
-                    className="indus-route-group"
-                    onMouseEnter={(e) => {
-                      if (!mapStageRef.current) return;
-                      const rect = mapStageRef.current.getBoundingClientRect();
-                      setTooltip({
-                        x: Math.max(10, Math.min(rect.width - 240, e.clientX - rect.left + 15)),
-                        y: Math.max(10, Math.min(rect.height - 150, e.clientY - rect.top - 10)),
-                        route,
-                      });
-                    }}
-                    onMouseLeave={() => setTooltip(null)}
-                    style={{ cursor: 'pointer' }}
-                  >
+                {tradeRoutes.map(route => {
+                  const geom = resolveRouteSvg(route, sites);
+                  if (!geom || !geom.d) return null;
+                  const strokeCol = route.type === 'maritime'
+                    ? (isDarkMap ? '#38bdf8' : '#0284c7')
+                    : route.type === 'riverine'
+                      ? (isDarkMap ? '#34d399' : '#047857')
+                      : (isDarkMap ? '#fbbf24' : '#b45309');
+                  const textCol = route.type === 'maritime'
+                    ? (isDarkMap ? '#7dd3fc' : '#0369a1')
+                    : route.type === 'riverine'
+                      ? (isDarkMap ? '#6ee7b7' : '#065f46')
+                      : (isDarkMap ? '#fde68a' : '#92400e');
+                  const shortTag = route.type === 'maritime'
+                    ? 'Meluhha–Dilmun–Ur Sea Lane'
+                    : route.type === 'overland'
+                      ? 'Lapis Lazuli Caravan'
+                      : 'Saraswati Axis';
+                  return (
+                    <g
+                      key={route.id}
+                      className="indus-route-group"
+                      onMouseEnter={(e) => {
+                        if (!mapStageRef.current) return;
+                        const rect = mapStageRef.current.getBoundingClientRect();
+                        setTooltip({
+                          x: Math.max(10, Math.min(rect.width - 255, e.clientX - rect.left + 15)),
+                          y: Math.max(10, Math.min(rect.height - 155, e.clientY - rect.top - 10)),
+                          route,
+                        });
+                      }}
+                      onMouseLeave={() => setTooltip(null)}
+                      style={{ cursor: 'pointer' }}
+                    >
                       <path
-                        d={route.path_d}
+                        d={geom.d}
                         fill="none"
-                        stroke={route.type === 'maritime' ? (isDarkMap ? '#38bdf8' : '#0284c7') : (isDarkMap ? '#fbbf24' : '#b45309')}
-                        strokeWidth={route.type === 'maritime' ? '1.6' : '1.3'}
+                        stroke={strokeCol}
+                        strokeWidth={route.type === 'maritime' ? '2.1' : '1.6'}
                         strokeDasharray={route.type === 'maritime' ? '5,3' : '3,3'}
-                        opacity={isDarkMap ? '0.78' : '0.88'}
+                        opacity={isDarkMap ? '0.86' : '0.92'}
+                        markerMid={route.type === 'maritime' ? 'url(#ivcMaritimeArrow)' : 'url(#ivcCaravanArrow)'}
                         vectorEffect="non-scaling-stroke"
                       />
-                    {route.label_pos && (
-                      <text
-                        x={route.label_pos.x}
-                        y={route.label_pos.y}
-                        fill={route.type === 'maritime' ? (isDarkMap ? '#7dd3fc' : '#0369a1') : (isDarkMap ? '#fde68a' : '#92400e')}
-                        fontSize="4.6"
-                        fontFamily="sans-serif"
-                        fontWeight="650"
-                        textAnchor="middle"
-                        stroke={isDarkMap ? '#0d1117' : '#f4efe3'}
-                        strokeWidth="1.8"
-                        paintOrder="stroke"
-                        opacity="0.92"
-                      >
-                        {route.name}
-                      </text>
-                    )}
-                  </g>
-                ))}
+                      {geom.mid && (
+                        <text
+                          x={geom.mid.x}
+                          y={geom.mid.y}
+                          fill={textCol}
+                          fontSize="4.4"
+                          fontFamily="sans-serif"
+                          fontWeight="700"
+                          textAnchor="middle"
+                          stroke={isDarkMap ? '#0d1117' : '#f4efe3'}
+                          strokeWidth="2.2"
+                          paintOrder="stroke"
+                          opacity="0.95"
+                        >
+                          {shortTag}
+                        </text>
+                      )}
+                    </g>
+                  );
+                })}
               </g>
             )}
 
@@ -560,11 +647,12 @@ export default function IndusValleyAtlas() {
                 const isSelected = site.id === selectedSiteId;
                 const isHovered = site.id === hoveredSiteId;
                 const isMajor = MAJOR_METROPOLIS_IDS.has(site.id) || site.category === 'metropolis';
+                const isForeignAnchor = FOREIGN_LABEL_IDS.has(site.id);
                 const isForeign = site.category === 'foreign_trade';
                 const color = CATEGORY_COLORS[site.category] || '#94a3b8';
 
-                // Prominently label major metropolises and active site to avoid clutter
-                const shouldShowLabel = isMajor || isSelected || isHovered || filteredSites.length <= 10;
+                // Label major metropolises, key foreign trade anchors, hovered, and active site
+                const shouldShowLabel = isMajor || isForeignAnchor || isSelected || isHovered || filteredSites.length <= 12;
 
                 return (
                   <g
@@ -575,42 +663,34 @@ export default function IndusValleyAtlas() {
                     onMouseLeave={() => setHoveredSiteId(null)}
                     style={{ cursor: 'pointer' }}
                   >
-                    {/* Metropolis glowing halo */}
                     {isMajor && (
-                      <circle
-                        cx={sx}
-                        cy={sy}
-                        r="10"
-                        fill="url(#metropolisGlow)"
-                      />
+                      <circle cx={sx} cy={sy} r="10" fill="url(#metropolisGlow)" />
                     )}
 
-                    {/* Outer pulse ring on selection */}
+                    {/* High-contrast pulse ring in BOTH dark and light themes */}
                     {isSelected && (
                       <circle
                         cx={sx}
                         cy={sy}
-                        r={isMajor ? 8 : 6}
+                        r={isMajor ? 8.5 : 6.5}
                         fill="none"
-                        stroke="#fff"
-                        strokeWidth="1.5"
-                        strokeDasharray="2,2"
+                        stroke={isDarkMap ? '#fef08a' : '#b45309'}
+                        strokeWidth="1.8"
+                        strokeDasharray="2.5,2"
                         className="pin-pulse"
                       />
                     )}
 
-                    {/* Site Base Marker */}
                     <circle
                       cx={sx}
                       cy={sy}
                       r={isMajor ? 5 : isForeign ? 4 : 3}
                       fill={color}
-                      stroke={isSelected ? '#fff' : '#0b0f15'}
-                      strokeWidth={isSelected ? '2' : '1'}
+                      stroke={isSelected ? (isDarkMap ? '#ffffff' : '#0b0f15') : (isDarkMap ? '#0b0f15' : '#ffffff')}
+                      strokeWidth={isSelected ? '2' : '1.1'}
                       filter="url(#siteShadow)"
                     />
 
-                    {/* Inner iconic dot */}
                     <circle
                       cx={sx}
                       cy={sy}
@@ -618,31 +698,50 @@ export default function IndusValleyAtlas() {
                       fill="#0b0f15"
                     />
 
-                    {/* Clean de-collided label */}
                     {shouldShowLabel && (() => {
-                      const off = METROPOLIS_LABEL_OFFSETS[site.id] || { dx: 0, dy: -(isMajor ? 7 : 5), anchor: 'middle' };
+                      const off = METROPOLIS_LABEL_OFFSETS[site.id] || { dx: 0, dy: -(isMajor ? 8 : 6), anchor: 'middle' };
                       const labelFill = isSelected
                         ? (isDarkMap ? '#ffffff' : '#0b0f15')
                         : isMajor
                           ? (isDarkMap ? '#fef08a' : '#78350f')
-                          : (isDarkMap ? '#cbd5e1' : '#1e293b');
+                          : isForeignAnchor
+                            ? (isDarkMap ? '#6ee7b7' : '#065f46')
+                            : (isDarkMap ? '#cbd5e1' : '#1e293b');
                       const labelStroke = isDarkMap ? '#0b0f15' : '#fffdf8';
+                      const shortLabel = site.id === 'qal-at-al-bahrain'
+                        ? 'Dilmun (Bahrain)'
+                        : site.id === 'ras-al-jinz'
+                          ? 'Ras al-Jinz (Magan)'
+                          : site.id === 'ur'
+                            ? 'Ur (Mesopotamia)'
+                            : site.name.split('(')[0].trim();
                       return (
                         <g className="site-label-wrap">
+                          {off.leader && (
+                            <line
+                              x1={sx}
+                              y1={sy}
+                              x2={sx + off.dx * 0.78}
+                              y2={sy + off.dy * 0.72}
+                              stroke={labelFill}
+                              strokeWidth="0.6"
+                              opacity="0.7"
+                            />
+                          )}
                           <text
                             x={sx + off.dx}
                             y={sy + off.dy}
                             fill={labelFill}
-                            fontSize={isMajor ? '5.4' : '4.2'}
-                            fontWeight={isMajor ? '750' : '600'}
+                            fontSize={isMajor ? '5.3' : '4.0'}
+                            fontWeight={isMajor ? '750' : '650'}
                             fontFamily="sans-serif"
                             textAnchor={off.anchor}
                             stroke={labelStroke}
-                            strokeWidth="2.2"
+                            strokeWidth="2.3"
                             paintOrder="stroke"
                             strokeLinejoin="round"
                           >
-                            {site.name}
+                            {shortLabel}
                           </text>
                         </g>
                       );
@@ -651,7 +750,34 @@ export default function IndusValleyAtlas() {
                 );
               })}
             </g>
+
+            {/* Cartographic Compass Rose & Approximate Scale Indicator (Fixed to viewBox corners) */}
+            <g className="map-cartography-hud" transform={`translate(${viewBox.x + viewBox.w - 18}, ${viewBox.y + 18})`} pointerEvents="none" opacity="0.82">
+              <circle r="7.5" fill={isDarkMap ? 'rgba(15,23,42,0.72)' : 'rgba(255,255,255,0.82)'} stroke={isDarkMap ? '#64748b' : '#94a3b8'} strokeWidth="0.6" />
+              <polygon points="0,-5.8 1.6,0 0,-1.4 -1.6,0" fill="#d97706" />
+              <polygon points="0,5.8 1.6,0 0,1.4 -1.6,0" fill={isDarkMap ? '#64748b' : '#94a3b8'} />
+              <text y="-8.8" textAnchor="middle" fontSize="4.2" fontWeight="800" fill={isDarkMap ? '#f8fafc' : '#1e293b'}>N</text>
+            </g>
+            <g className="map-scale-bar" transform={`translate(${viewBox.x + 12}, ${viewBox.y + viewBox.h - 10})`} pointerEvents="none" opacity="0.85">
+              <line x1="0" y1="0" x2="45" y2="0" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+              <line x1="0" y1="-2.2" x2="0" y2="2.2" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+              <line x1="45" y1="-2.2" x2="45" y2="2.2" stroke={isDarkMap ? '#cbd5e1' : '#334155'} strokeWidth="1.2" />
+              <text x="22.5" y="-3.2" textAnchor="middle" fontSize="3.8" fontWeight="700" fill={isDarkMap ? '#cbd5e1' : '#1e293b'} stroke={isDarkMap ? '#0d1117' : '#d6e4ee'} strokeWidth="1.5" paintOrder="stroke">~500 km</text>
+            </g>
           </svg>
+
+          {filteredSites.length === 0 && (
+            <div className="ivc-empty-overlay">
+              <p>No Harappan excavations match the current filter criteria.</p>
+              <button
+                type="button"
+                className="btn btn-primary btn-small"
+                onClick={() => { setSearchQuery(''); setTierFilter('all'); setCountryFilter('all'); setSelectedPeriodId('all'); }}
+              >
+                Reset All Filters
+              </button>
+            </div>
+          )}
 
           {/* Interactive Floating Tooltip */}
           {tooltip && (
@@ -671,8 +797,8 @@ export default function IndusValleyAtlas() {
                 </>
               ) : tooltip.route ? (
                 <>
-                  <div className="ift-tag" style={{ color: tooltip.route.type === 'maritime' ? '#38bdf8' : '#fbbf24' }}>
-                    {tooltip.route.type === 'maritime' ? '⚓ MARITIME SEA LANE' : '🐪 OVERLAND CARAVAN CORRIDOR'}
+                  <div className="ift-tag" style={{ color: tooltip.route.type === 'maritime' ? '#38bdf8' : tooltip.route.type === 'riverine' ? '#10b981' : '#fbbf24' }}>
+                    {tooltip.route.type === 'maritime' ? '⚓ MARITIME SEA LANE' : tooltip.route.type === 'riverine' ? '🌊 RIVERINE CORRIDOR' : '🐪 OVERLAND CARAVAN CORRIDOR'}
                   </div>
                   <strong className="ift-title">{tooltip.route.name}</strong>
                   <p className="ift-loc">{tooltip.route.description || 'Ancient commercial trade corridor linking Harappan cities with Mesopotamia, Dilmun, and the Iranian plateau.'}</p>
@@ -684,8 +810,8 @@ export default function IndusValleyAtlas() {
           {/* Quick Site Directory Rail under Map Legend for instant 1-click access across all filtered sites */}
           <div className="indus-site-rail" aria-label="Quick site selector">
             <span className="isr-label">Quick Site Jump ({filteredSites.length}):</span>
-            <div className="isr-chips">
-              {filteredSites.slice(0, 18).map(s => (
+            <div className={`isr-chips ${showAllSitesInRail ? 'expanded' : ''}`}>
+              {(showAllSitesInRail ? filteredSites : filteredSites.slice(0, 18)).map(s => (
                 <button
                   key={s.id}
                   type="button"
@@ -695,6 +821,15 @@ export default function IndusValleyAtlas() {
                   {MAJOR_METROPOLIS_IDS.has(s.id) ? '★ ' : ''}{s.name}
                 </button>
               ))}
+              {filteredSites.length > 18 && (
+                <button
+                  type="button"
+                  className="isr-chip isr-more-btn"
+                  onClick={() => setShowAllSitesInRail(v => !v)}
+                >
+                  {showAllSitesInRail ? 'Show Compact ↑' : `+ Show All ${filteredSites.length}`}
+                </button>
+              )}
             </div>
           </div>
 
@@ -703,9 +838,10 @@ export default function IndusValleyAtlas() {
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.metropolis }} /> Great Metropolis (8)</span>
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.port }} /> Port &amp; Dockyard</span>
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.craft }} /> Craft / Bead Hub</span>
-            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.foreign_trade }} /> Mesopotamian Outpost</span>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.foreign_trade }} /> Mesopotamian / Gulf</span>
             <span className="iml-item"><span className="iml-line blue" /> Maritime Route</span>
-            <span className="iml-item"><span className="iml-line gold" /> Overland Route</span>
+            <span className="iml-item"><span className="iml-line gold" /> Lapis Caravan</span>
+            <span className="iml-item"><span className="iml-line emerald" /> Saraswati Axis</span>
           </div>
           </>
         )}
@@ -713,7 +849,7 @@ export default function IndusValleyAtlas() {
 
         {/* Polished Detailed Excavation Dossier Sidebar */}
         <aside className="indus-site-dossier" aria-labelledby="dossier-site-title">
-          {/* Dossier Tabs: Site vs Periods & ASI Memoirs (Pinned at top) */}
+          {/* Dossier Tabs: Site vs Periods vs Basin Charts */}
           <div className="dossier-tab-bar" role="tablist" aria-label="Indus Dossier Sections">
             <button
               type="button"
@@ -732,6 +868,15 @@ export default function IndusValleyAtlas() {
               onClick={() => setDossierTab('periods')}
             >
               ⏳ Harappan Periods &amp; ASI Quotes ({periods.length})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={dossierTab === 'metrics'}
+              className={`dossier-tab-btn ${dossierTab === 'metrics' ? 'active' : ''}`}
+              onClick={() => setDossierTab('metrics')}
+            >
+              📊 Basin Charts
             </button>
           </div>
 
@@ -958,6 +1103,67 @@ export default function IndusValleyAtlas() {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* TAB 3: Interactive Urban Area & Basin Settlement Shifts */}
+          {dossierTab === 'metrics' && (
+            <div className="dossier-inner ivc-metrics-panel">
+              <div className="dossier-box">
+                <h4>Top Excavated Urban Footprints (Hectares)</h4>
+                <p className="ivc-metrics-sub">Click any city below to jump to its excavation dossier on the map.</p>
+                <div className="ivc-bars-list">
+                  {sites
+                    .filter(s => s.area_hectares > 0)
+                    .sort((a, b) => (b.area_hectares || 0) - (a.area_hectares || 0))
+                    .slice(0, 8)
+                    .map(s => {
+                      const pct = Math.max(4, Math.min(100, Math.round(((s.area_hectares || 0) / 350) * 100)));
+                      const active = s.id === selectedSiteId;
+                      return (
+                        <button
+                          key={s.id}
+                          type="button"
+                          className={`ivc-bar-row ${active ? 'active' : ''}`}
+                          onClick={() => focusSite(s)}
+                        >
+                          <div className="ivc-bar-meta">
+                            <span>{s.name}</span>
+                            <strong>{s.area_hectares} ha</strong>
+                          </div>
+                          <div className="ivc-bar-track">
+                            <div className="ivc-bar-fill" style={{ width: `${pct}%` }} />
+                          </div>
+                        </button>
+                      );
+                    })}
+                </div>
+              </div>
+
+              <div className="dossier-box">
+                <h4>River Basin Settlement Shifts Across Harappan Eras</h4>
+                <p className="ivc-metrics-sub">Possehl (2002) &amp; Mughal (1997) survey counts across Early, Mature, and Late phases.</p>
+                <div className="ivc-basin-cards">
+                  {BASIN_METRICS_DATA.map(row => (
+                    <div key={row.basin} className="ivc-basin-row">
+                      <strong className="ivc-basin-name">{row.basin}</strong>
+                      <div className="ivc-basin-pills">
+                        <span className="ibp early">Early: {row.early}</span>
+                        <span className="ibp mature">Mature: {row.mature}</span>
+                        <span className="ibp late">Late: {row.late}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="btn btn-primary btn-small"
+                onClick={() => document.getElementById('subgroup-quant-heading')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Explore All 9 Statistical Charts Below ↓
+              </button>
             </div>
           )}
           </div>

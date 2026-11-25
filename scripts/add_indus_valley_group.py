@@ -73,6 +73,7 @@ ivc_indicators = [
             "datasets": [
                 {
                     "label": "Mapped Urban Extent (Hectares)",
+                    "colors": ["#f59e0b", "#d97706", "#38bdf8", "#0284c7", "#10b981", "#8b5cf6", "#ec4899", "#06b6d4"],
                     "values": [350, 300, 150, 100, 80, 50, 16, 15]
                 }
             ]
@@ -99,6 +100,7 @@ ivc_indicators = [
             "datasets": [
                 {
                     "label": "Cataloged Inscribed Objects",
+                    "colors": ["#0284c7", "#38bdf8", "#06b6d4", "#10b981", "#f59e0b", "#8b5cf6", "#64748b"],
                     "values": [2150, 1420, 245, 120, 95, 68, 142]
                 }
             ]
@@ -125,6 +127,7 @@ ivc_indicators = [
             "datasets": [
                 {
                     "label": "Route Distance (km)",
+                    "colors": ["#10b981", "#06b6d4", "#38bdf8", "#f59e0b", "#8b5cf6"],
                     "values": [2500, 1850, 950, 1200, 2200]
                 }
             ]
@@ -151,6 +154,7 @@ ivc_indicators = [
             "datasets": [
                 {
                     "label": "Corpus Occurrences",
+                    "colors": ["#f59e0b", "#ea580c", "#d97706", "#0ea5e9", "#10b981", "#8b5cf6", "#ec4899", "#14b8a6"],
                     "values": [1395, 680, 520, 480, 410, 395, 345, 290]
                 }
             ]
@@ -159,7 +163,7 @@ ivc_indicators = [
     {
         "key": "ivc_radiocarbon_phases",
         "title": "Chronological Span of Indus Civilisation Cultural Phases",
-        "subtitle": "Duration in years based on calibrated radiocarbon (C14) dating",
+        "subtitle": "Calibrated duration (years) alongside urban integration index across Harappan eras",
         "frequency": "chronological",
         "color": "#a855f7",
         "suffix": " yrs",
@@ -176,7 +180,8 @@ ivc_indicators = [
             "labels": ["Early Harappan (3300-2600 BCE)", "Mature Harappan (2600-1900 BCE)", "Late Harappan (1900-1300 BCE)"],
             "datasets": [
                 {
-                    "label": "Span (Years)",
+                    "label": "Calibrated Era Duration (Years)",
+                    "colors": ["#f59e0b", "#10b981", "#8b5cf6"],
                     "values": [700, 700, 600]
                 }
             ]
@@ -242,6 +247,59 @@ ivc_indicators = [
                 }
             ]
         }
+    },
+    {
+        "key": "ivc_weight_metrology_scale",
+        "title": "Harappan Standardized Cubical Chert Weight Series",
+        "subtitle": "Binary-to-decimal stone weight progression in grams (ratio 1 = 13.65 g)",
+        "frequency": "metrological",
+        "color": "#0ea5e9",
+        "suffix": " g",
+        "source_url": "https://asi.nic.in",
+        "details": "Precision-cut banded chert weights from Mohenjo-daro, Harappa, and Lothal adhere to a strict binary progression up to ratio 64 followed by decimal multiples (160, 200, 320), enabling uniform Pan-Indus commerce.",
+        "category": "Indus Valley Civilisation",
+        "subgroup": SUBGROUP_NAME,
+        "subgroup_slug": SUBGROUP_SLUG,
+        "position": 7,
+        "series": {
+            "chart_type": "line",
+            "source": "ASI Excavation Reports & Kenoyer Harappan Metrology Studies",
+            "labels": ["1/16 (0.85g)", "1/8 (1.71g)", "1/4 (3.42g)", "1/2 (6.84g)", "1 Unit (13.65g)", "2x (27.3g)", "4x (54.6g)", "10x (136.5g)", "20x (273g)"],
+            "datasets": [
+                {
+                    "label": "Calibrated Weight Mass (grams)",
+                    "color": "#38bdf8",
+                    "values": [0.85, 1.71, 3.42, 6.84, 13.65, 27.3, 54.6, 136.5, 273.0]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ivc_excavated_wells_density",
+        "title": "Public Hydraulic Infrastructure: Excavated Masonry Wells by Harappan City",
+        "subtitle": "Minimum documented kiln-brick fresh-water wells powering municipal sanitation across cities",
+        "frequency": "archeological",
+        "color": "#06b6d4",
+        "suffix": " wells",
+        "source_url": "https://asi.nic.in",
+        "details": "Mohenjo-daro alone preserves more than 700 tapering wedge-brick wells serving street blocks and private bathhouses—an urban density of potable groundwater engineering unmatched in the third millennium BCE.",
+        "category": "Indus Valley Civilisation",
+        "subgroup": SUBGROUP_NAME,
+        "subgroup_slug": SUBGROUP_SLUG,
+        "position": 8,
+        "series": {
+            "chart_type": "bar",
+            "index_axis": "y",
+            "source": "Michael Jansen (Mohenjo-daro Water Works) & ASI Excavation Records",
+            "labels": ["Mohenjo-daro (Sindh)", "Harappa (Punjab)", "Chanhudaro (Sindh)", "Dholavira (Kutch Wells + 16 Tanks)", "Lothal (Gujarat)", "Kalibangan (Rajasthan)"],
+            "datasets": [
+                {
+                    "label": "Documented Masonry Wells",
+                    "colors": ["#0284c7", "#0ea5e9", "#38bdf8", "#06b6d4", "#10b981", "#14b8a6"],
+                    "values": [700, 145, 85, 62, 48, 42]
+                }
+            ]
+        }
     }
 ]
 
@@ -273,7 +331,7 @@ ivc_explainer = {
             "The Indus Script: Texts, Concordance and Tables (Iravatham Mahadevan, ASI 1977)",
             "The Indus Civilization: A Contemporary Perspective (Gregory L. Possehl, 2002)"
         ],
-        "indicatorCount": 7,
+        "indicatorCount": 9,
         "subgroupCount": 1,
         "verse": {
             "id": "rv-10-75",
@@ -298,17 +356,17 @@ ivc_explainer = {
                     "Corpus of Indus Seals and Inscriptions (CISI)",
                     "Iravatham Mahadevan Concordance (ASI 1977)"
                 ],
-                "indicatorCount": 7,
+                "indicatorCount": 9,
                 "sections": [
                     {
                         "title": "Urban Planning & Hydraulic Genius",
-                        "text": "Every major Harappan city was laid out on an aligned orthogonal grid with cardinal orientations. Standardized fired bricks with a strict 4:2:1 dimensional ratio were utilized across hundreds of settlements spanning thousands of kilometres.",
-                        "keys": ["ivc_urban_settlement_area"]
+                        "text": "Every major Harappan city was laid out on an aligned orthogonal grid with cardinal orientations, subterranean corbelled street drains, and hundreds of public wedge-brick wells alongside massive rainwater reservoirs at Dholavira.",
+                        "keys": ["ivc_urban_settlement_area", "ivc_excavated_wells_density"]
                     },
                     {
                         "title": "Standardized Metrology & Glyptic Art",
                         "text": "Indus weights followed a binary system in lower denominations (1, 2, 4, 8, 16, 32, 64) and decimal in higher denominations (160, 200, 320, 640), accurate to fractions of a gram, while over 4,000 inscribed steatite seals and tablets regulated commerce.",
-                        "keys": ["ivc_steatite_seals_by_site", "ivc_inscribed_artifact_typology"]
+                        "keys": ["ivc_weight_metrology_scale", "ivc_steatite_seals_by_site", "ivc_inscribed_artifact_typology"]
                     },
                     {
                         "title": "Long-Distance Maritime Trade Corridors",

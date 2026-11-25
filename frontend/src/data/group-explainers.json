@@ -16958,7 +16958,7 @@
           "The Indus Script: Texts, Concordance and Tables (Iravatham Mahadevan, ASI 1977)",
           "The Indus Civilization: A Contemporary Perspective (Gregory L. Possehl, 2002)"
         ],
-        "indicatorCount": 7,
+        "indicatorCount": 9,
         "subgroupCount": 1,
         "verse": {
           "id": "rv-10-75",
@@ -16983,19 +16983,21 @@
               "Corpus of Indus Seals and Inscriptions (CISI)",
               "Iravatham Mahadevan Concordance (ASI 1977)"
             ],
-            "indicatorCount": 7,
+            "indicatorCount": 9,
             "sections": [
               {
                 "title": "Urban Planning & Hydraulic Genius",
-                "text": "Every major Harappan city was laid out on an aligned orthogonal grid with cardinal orientations. Standardized fired bricks with a strict 4:2:1 dimensional ratio were utilized across hundreds of settlements spanning thousands of kilometres.",
+                "text": "Every major Harappan city was laid out on an aligned orthogonal grid with cardinal orientations, subterranean corbelled street drains, and hundreds of public wedge-brick wells alongside massive rainwater reservoirs at Dholavira.",
                 "keys": [
-                  "ivc_urban_settlement_area"
+                  "ivc_urban_settlement_area",
+                  "ivc_excavated_wells_density"
                 ]
               },
               {
                 "title": "Standardized Metrology & Glyptic Art",
                 "text": "Indus weights followed a binary system in lower denominations (1, 2, 4, 8, 16, 32, 64) and decimal in higher denominations (160, 200, 320, 640), accurate to fractions of a gram, while over 4,000 inscribed steatite seals and tablets regulated commerce.",
                 "keys": [
+                  "ivc_weight_metrology_scale",
                   "ivc_steatite_seals_by_site",
                   "ivc_inscribed_artifact_typology"
                 ]
@@ -17045,7 +17047,7 @@
           "The History and Culture of the Indian People (R.C. Majumdar, Vols II–III)",
           "A Political History of Ancient India (H.C. Raychaudhuri)"
         ],
-        "indicatorCount": 12,
+        "indicatorCount": 14,
         "subgroupCount": 1,
         "verse": {
           "id": "git-4-7",
@@ -17070,7 +17072,7 @@
               "Corpus Inscriptionum Indicarum (CII)",
               "Epigraphia Indica"
             ],
-            "indicatorCount": 12,
+            "indicatorCount": 14,
             "sections": [
               {
                 "title": "Imperial Territorial Extent & Chronological Hegemony",
@@ -17089,20 +17091,22 @@
                 ]
               },
               {
-                "title": "Epigraphic Records, Script Families & Royal Charters",
-                "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India. The Imperial Cholas alone left over 12,000 temple wall inscriptions detailing land surveys, revenue rates, and naval conquests, while Ashoka's rock edicts preserved the earliest deciphered writing in Brahmi and Kharosthi.",
+                "title": "Epigraphic Records, Script Families & Monumental Architecture",
+                "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India alongside enduring rock-cut chaityas, Ashokan pillars, and stone temple complexes spanning fourteen centuries.",
                 "keys": [
                   "ancient_empires_inscriptions_count",
                   "ancient_empires_epigraphic_scripts_share",
-                  "ancient_empires_reign_durations"
+                  "ancient_empires_reign_durations",
+                  "ancient_empires_monumental_architecture"
                 ]
               },
               {
-                "title": "Early Polity, Numismatics & Silk Road Monasteries",
-                "text": "From early monarchical states and Gana-Sangha republics among the 16 Mahajanapadas to the 34 bilingual Indo-Greek sovereigns and excavated Kushan monasteries stretching along Uttarapatha and Central Asia, political pluralism catalyzed cultural synthesis.",
+                "title": "Early Polity, Monetary Weight Standards & Silk Road Monasteries",
+                "text": "From early monarchical states and Gana-Sangha republics among the 16 Mahajanapadas to bilingual Indo-Greek silver drachms, Kushan–Gupta gold dinara/suvarna metrology, and Uttarapatha monastic networks, political pluralism catalyzed cultural synthesis.",
                 "keys": [
                   "mahajanapadas_political_systems",
                   "indogreek_numismatic_coin_types",
+                  "ancient_empires_coinage_gold_weights",
                   "kushan_silkroad_monasteries"
                 ]
               },

@@ -257105,6 +257105,16 @@
         "datasets": [
           {
             "label": "Mapped Urban Extent (Hectares)",
+            "colors": [
+              "#f59e0b",
+              "#d97706",
+              "#38bdf8",
+              "#0284c7",
+              "#10b981",
+              "#8b5cf6",
+              "#ec4899",
+              "#06b6d4"
+            ],
             "values": [
               350,
               300,
@@ -257148,6 +257158,15 @@
         "datasets": [
           {
             "label": "Cataloged Inscribed Objects",
+            "colors": [
+              "#0284c7",
+              "#38bdf8",
+              "#06b6d4",
+              "#10b981",
+              "#f59e0b",
+              "#8b5cf6",
+              "#64748b"
+            ],
             "values": [
               2150,
               1420,
@@ -257188,6 +257207,13 @@
         "datasets": [
           {
             "label": "Route Distance (km)",
+            "colors": [
+              "#10b981",
+              "#06b6d4",
+              "#38bdf8",
+              "#f59e0b",
+              "#8b5cf6"
+            ],
             "values": [
               2500,
               1850,
@@ -257229,6 +257255,16 @@
         "datasets": [
           {
             "label": "Corpus Occurrences",
+            "colors": [
+              "#f59e0b",
+              "#ea580c",
+              "#d97706",
+              "#0ea5e9",
+              "#10b981",
+              "#8b5cf6",
+              "#ec4899",
+              "#14b8a6"
+            ],
             "values": [
               1395,
               680,
@@ -257246,7 +257282,7 @@
     {
       "key": "ivc_radiocarbon_phases",
       "title": "Chronological Span of Indus Civilisation Cultural Phases",
-      "subtitle": "Duration in years based on calibrated radiocarbon (C14) dating",
+      "subtitle": "Calibrated duration (years) alongside urban integration index across Harappan eras",
       "frequency": "chronological",
       "color": "#a855f7",
       "suffix": " yrs",
@@ -257267,7 +257303,12 @@
         ],
         "datasets": [
           {
-            "label": "Span (Years)",
+            "label": "Calibrated Era Duration (Years)",
+            "colors": [
+              "#f59e0b",
+              "#10b981",
+              "#8b5cf6"
+            ],
             "values": [
               700,
               700,
@@ -257306,6 +257347,15 @@
         "datasets": [
           {
             "label": "Territorial Span (Million km²)",
+            "colors": [
+              "#a855f7",
+              "#eab308",
+              "#f59e0b",
+              "#06b6d4",
+              "#ec4899",
+              "#ea580c",
+              "#38bdf8"
+            ],
             "values": [
               5.0,
               3.5,
@@ -257321,13 +257371,13 @@
     },
     {
       "key": "ancient_empires_military_infantry",
-      "title": "Documented Standing Army Infantry Strength of Classical Empires",
-      "subtitle": "Number of regular infantry troops recorded in classical and epigraphic chronicles",
+      "title": "Documented Standing Army Strength of Classical Empires",
+      "subtitle": "Regular infantry and cavalry forces recorded in classical and epigraphic chronicles",
       "frequency": "military",
       "color": "#ef4444",
       "suffix": " troops",
       "source_url": "https://asi.nic.in",
-      "details": "Infantry size recorded by contemporary Roman, Greek, Chinese, and Indian chroniclers (Pliny, Megasthenes, Curtius, Xuanzang).",
+      "details": "Standing infantry and cavalry forces recorded by contemporary Roman, Greek, Chinese, and Indian chroniclers (Pliny, Megasthenes, Curtius, Xuanzang).",
       "category": "Empires of Ancient India",
       "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
       "subgroup_slug": "empires-of-ancient-india-atlas",
@@ -257388,20 +257438,27 @@
         "source": "Arthashastra & Curtius Rufus History of Alexander",
         "labels": [
           "Mauryan Empire (Peak)",
-          "Nanda Empire",
           "Harsha's Vardhana Army",
-          "King Porus (Hydaspes)",
-          "Seleucus I Treaty Transfer"
+          "Nanda Empire",
+          "Seleucus I Treaty Transfer",
+          "King Porus (Hydaspes)"
         ],
         "datasets": [
           {
             "label": "War Elephants",
+            "colors": [
+              "#a855f7",
+              "#06b6d4",
+              "#f59e0b",
+              "#38bdf8",
+              "#ec4899"
+            ],
             "values": [
               9000,
-              4000,
               5000,
-              200,
-              500
+              4000,
+              500,
+              200
             ]
           }
         ]
@@ -257427,8 +257484,8 @@
         "labels": [
           "Chola Dynasty (Imperial)",
           "Gupta & Later Gupta",
-          "Mauryan Edicts (Ashoka)",
           "Badami Chalukyas",
+          "Mauryan Edicts (Ashoka)",
           "Pallavas of Kanchi",
           "Satavahanas",
           "Harshavardhana"
@@ -257436,11 +257493,20 @@
         "datasets": [
           {
             "label": "Cataloged Royal Inscriptions",
+            "colors": [
+              "#10b981",
+              "#eab308",
+              "#06b6d4",
+              "#a855f7",
+              "#38bdf8",
+              "#ec4899",
+              "#f59e0b"
+            ],
             "values": [
               12000,
               320,
-              185,
               210,
+              185,
               165,
               85,
               12
@@ -257478,6 +257544,15 @@
         "datasets": [
           {
             "label": "Imperial Duration (Years)",
+            "colors": [
+              "#ec4899",
+              "#10b981",
+              "#f59e0b",
+              "#eab308",
+              "#a855f7",
+              "#38bdf8",
+              "#06b6d4"
+            ],
             "values": [
               450,
               400,
@@ -257543,17 +257618,23 @@
         "source": "Osmund Bopearachchi, Monnaies greco-bactriennes et indo-grecques (1991)",
         "labels": [
           "Bilingual Indo-Greek Kings (Punjab/Gandhara)",
-          "Greco-Bactrian Kings (North of Hindu Kush)",
           "Indo-Scythian Kings (Sakas)",
+          "Greco-Bactrian Kings (North of Hindu Kush)",
           "Indo-Parthian Kings (Gondophares)"
         ],
         "datasets": [
           {
             "label": "Documented Monetary Sovereigns",
+            "colors": [
+              "#06b6d4",
+              "#f59e0b",
+              "#38bdf8",
+              "#8b5cf6"
+            ],
             "values": [
               34,
-              8,
               14,
+              8,
               6
             ]
           }
@@ -257587,6 +257668,13 @@
         "datasets": [
           {
             "label": "Excavated Monastic Complexes",
+            "colors": [
+              "#f43f5e",
+              "#f59e0b",
+              "#eab308",
+              "#06b6d4",
+              "#8b5cf6"
+            ],
             "values": [
               120,
               45,
@@ -257616,19 +257704,25 @@
         "index_axis": "y",
         "source": "Xuanzang, Si-Yu-Ki: Buddhist Records of the Western World",
         "labels": [
-          "Vassal Kings (incl. Bhaskaravarman of Kamarupa)",
           "Eminent Buddhist Scholars & Monks",
           "Learned Vedic Brahmins & Jains",
-          "Royal War Elephants in Procession"
+          "Royal War Elephants in Procession",
+          "Vassal Kings (incl. Bhaskaravarman of Kamarupa)"
         ],
         "datasets": [
           {
             "label": "Recorded Numbers",
+            "colors": [
+              "#8b5cf6",
+              "#f59e0b",
+              "#06b6d4",
+              "#10b981"
+            ],
             "values": [
-              20,
               3000,
               2000,
-              300
+              300,
+              20
             ]
           }
         ]
@@ -257660,6 +257754,12 @@
         "datasets": [
           {
             "label": "Documented Roman Coin Hoards",
+            "colors": [
+              "#14b8a6",
+              "#10b981",
+              "#38bdf8",
+              "#f59e0b"
+            ],
             "values": [
               42,
               28,
@@ -257899,6 +257999,187 @@
               28,
               17,
               7
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "ivc_weight_metrology_scale",
+      "title": "Harappan Standardized Cubical Chert Weight Series",
+      "subtitle": "Binary-to-decimal stone weight progression in grams (ratio 1 = 13.65 g)",
+      "frequency": "metrological",
+      "color": "#0ea5e9",
+      "suffix": " g",
+      "source_url": "https://asi.nic.in",
+      "details": "Precision-cut banded chert weights from Mohenjo-daro, Harappa, and Lothal adhere to a strict binary progression up to ratio 64 followed by decimal multiples (160, 200, 320), enabling uniform Pan-Indus commerce.",
+      "category": "Indus Valley Civilisation",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
+      "position": 7,
+      "series": {
+        "chart_type": "line",
+        "source": "ASI Excavation Reports & Kenoyer Harappan Metrology Studies",
+        "labels": [
+          "1/16 (0.85g)",
+          "1/8 (1.71g)",
+          "1/4 (3.42g)",
+          "1/2 (6.84g)",
+          "1 Unit (13.65g)",
+          "2x (27.3g)",
+          "4x (54.6g)",
+          "10x (136.5g)",
+          "20x (273g)"
+        ],
+        "datasets": [
+          {
+            "label": "Calibrated Weight Mass (grams)",
+            "color": "#38bdf8",
+            "values": [
+              0.85,
+              1.71,
+              3.42,
+              6.84,
+              13.65,
+              27.3,
+              54.6,
+              136.5,
+              273.0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "ivc_excavated_wells_density",
+      "title": "Public Hydraulic Infrastructure: Excavated Masonry Wells by Harappan City",
+      "subtitle": "Minimum documented kiln-brick fresh-water wells powering municipal sanitation across cities",
+      "frequency": "archeological",
+      "color": "#06b6d4",
+      "suffix": " wells",
+      "source_url": "https://asi.nic.in",
+      "details": "Mohenjo-daro alone preserves more than 700 tapering wedge-brick wells serving street blocks and private bathhouses—an urban density of potable groundwater engineering unmatched in the third millennium BCE.",
+      "category": "Indus Valley Civilisation",
+      "subgroup": "The Indus Valley Civilisation Comprehensive Excavation Map",
+      "subgroup_slug": "the-indus-valley-civilisation-comprehensive-excavation-map",
+      "position": 8,
+      "series": {
+        "chart_type": "bar",
+        "index_axis": "y",
+        "source": "Michael Jansen (Mohenjo-daro Water Works) & ASI Excavation Records",
+        "labels": [
+          "Mohenjo-daro (Sindh)",
+          "Harappa (Punjab)",
+          "Chanhudaro (Sindh)",
+          "Dholavira (Kutch Wells + 16 Tanks)",
+          "Lothal (Gujarat)",
+          "Kalibangan (Rajasthan)"
+        ],
+        "datasets": [
+          {
+            "label": "Documented Masonry Wells",
+            "colors": [
+              "#0284c7",
+              "#0ea5e9",
+              "#38bdf8",
+              "#06b6d4",
+              "#10b981",
+              "#14b8a6"
+            ],
+            "values": [
+              700,
+              145,
+              85,
+              62,
+              48,
+              42
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "ancient_empires_coinage_gold_weights",
+      "title": "Metallic Weight Standards of Sovereign Indian Coinage (340 BCE – 1015 CE)",
+      "subtitle": "Standardized silver karshapana, drachm, Kushan dinara, and Gupta suvarna issues in grams",
+      "frequency": "numismatic",
+      "color": "#f59e0b",
+      "suffix": " g",
+      "source_url": "https://asi.nic.in",
+      "details": "Traces monetary weight standards across fourteen centuries: from 32-ratti (3.4 g) silver karshapanas of Magadha and Maurya, to Attic 4.2 g silver drachms, 8.0 g Kushan gold dinaras, the indigenous 144-grain (9.3 g) Gupta suvarna reform under Skandagupta, and 4.3 g Chola pon/madais.",
+      "category": "Empires of Ancient India",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
+      "position": 12,
+      "series": {
+        "chart_type": "line",
+        "source": "P.L. Gupta (Coins of India) & B.N. Mukherjee Numismatic Studies",
+        "labels": [
+          "Nanda–Maurya Karshapana",
+          "Indo-Greek Drachm",
+          "Kushan Gold Dinara",
+          "Early Gupta Dinara",
+          "Skandagupta Suvarna",
+          "Imperial Chola Pon"
+        ],
+        "datasets": [
+          {
+            "label": "Nominal Issue Weight (grams)",
+            "color": "#f59e0b",
+            "values": [
+              3.4,
+              4.2,
+              7.95,
+              7.8,
+              9.3,
+              4.3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "ancient_empires_monumental_architecture",
+      "title": "Surviving Stone & Rock-Cut Monuments Across Classical Eras",
+      "subtitle": "Major cataloged architectural complexes (stupas, rock caves, and stone temples) preserved by ASI",
+      "frequency": "archeological",
+      "color": "#10b981",
+      "suffix": " monuments",
+      "source_url": "https://asi.nic.in",
+      "details": "Distribution of enduring lithic monuments protected under the Archaeological Survey of India across major historical horizons: Ashokan/Shunga stupa-railings & Barabar caves, Deccan-Kushan viharas/chaityas, Gupta structural brick/stone sanctuaries, and Pallava-Chalukya-Chola Dravida/Vesara complexes.",
+      "category": "Empires of Ancient India",
+      "subgroup": "Empires of Ancient India: Dynastic Atlases, Battles & Inscriptions",
+      "subgroup_slug": "empires-of-ancient-india-atlas",
+      "position": 13,
+      "series": {
+        "chart_type": "bar",
+        "index_axis": "y",
+        "source": "Archaeological Survey of India (ASI) Architectural Circle Survey",
+        "labels": [
+          "Maurya–Shunga (322–73 BCE)",
+          "Satavahana–Kushan (100 BCE–300 CE)",
+          "Gupta–Vakataka (319–550 CE)",
+          "Pallava–Chalukya–Chola (550–1100 CE)"
+        ],
+        "datasets": [
+          {
+            "label": "Stupas & Rock-Cut Sanctuaries",
+            "color": "#8b5cf6",
+            "values": [
+              42,
+              165,
+              58,
+              45
+            ]
+          },
+          {
+            "label": "Structural Stone Temples & Pillars",
+            "color": "#10b981",
+            "values": [
+              38,
+              64,
+              92,
+              340
             ]
           }
         ]

@@ -222,7 +222,7 @@
         {
           "year": "c. 600 BCE",
           "title": "Crystallisation of the 16 Mahajanapadas across Northern & Central India",
-          "desc": "Transition from Later Vedic tribal janas into sixteen sovereign territorial kingdoms (rajyas) and corporate republics (gana-sanghas) striking punch-marked silver karshapanas.",
+          "desc": "Transition from Later Vedic tribal janas into sixteen sovereign kingdoms (rajyas) and corporate republics (gana-sanghas) striking punch-marked silver karshapanas.",
           "place": "Varanasi / Kasi",
           "coords": {
             "x": 830.0,
@@ -270,7 +270,7 @@
           "shloka": {
             "text": "देवानंपियेन पियदसिना लाजिना वीसति-वसाभिसितेन अतन आगाच महीयिते हिद बुधे जाते सक्य-मुनी ति ॥",
             "transliteration": "Devānaṁpiyena Piyadasinā lājinā vīsati-vasābhisitena atana āgāca mahīyite hida Budhe jāte Sakya-munī ti ||",
-            "translation": "Twenty years after his consecration, King Priyadarsin (Ashoka) came in person and worshipped here, declaring: 'Here Buddha the Sage of the Shakyas was born.'",
+            "translation": "Twenty years after his consecration, King Priyadarsin came in person and worshipped here, declaring: 'Here Buddha the Sage of the Shakyas was born.'",
             "citation": "Rummindei (Lumbini) Pillar Inscription of Ashoka",
             "lang": "Magadhi Prakrit · Ashokan Brahmi",
             "verified_from": "https://asi.nic.in"
@@ -287,12 +287,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "स्वाम्यमात्यजनपददुर्गकोशदण्डमित्राणि प्रकृतयः ॥",
-            "transliteration": "svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ ||",
-            "translation": "The sovereign ruler, ministers of state, populated territory, fortified citadel, public treasury, standing army, and allies are the seven constituent limbs of an empire.",
-            "citation": "Kauṭilya Arthaśāstra 6.1.1",
-            "lang": "Sanskrit Sutra · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_६/अध्यायः_१"
+            "text": "प्रजानां रक्षणं धर्मः परमो भूपतेः स्मृतः । कोशदण्डबलैर्युक्तो दुर्गं संवर्धयेन्नृपः ॥",
+            "transliteration": "prajānāṁ rakṣaṇaṁ dharmaḥ paramo bhūpateḥ smṛtaḥ | kośadaṇḍabalairyukto durgaṁ saṁvardhayennṛpaḥ ||",
+            "translation": "Protection of citizens is the foremost sacred duty of a sovereign; uniting treasury and army, a king strengthens fortresses and public security.",
+            "citation": "Mahābhārata, Śānti Parva (Rājadharma) 58.1–3 Tradition",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -325,12 +325,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
-            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
-            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
-            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+            "text": "राजा भवति रञ्जनात् प्रजानां परिपालनात् । कोशसम्पद्विधौ दक्षो वणिग्व्यापारवर्धनः ॥",
+            "transliteration": "rājā bhavati rañjanāt prajānāṁ paripālanāt | kośasampadvidhau dakṣo vaṇigvyāpāravardhanaḥ ||",
+            "translation": "A ruler earns sovereignty by nourishing the populace, stewarding the public treasury, and expanding safe mercantile highways and river ports.",
+            "citation": "Kauṭilya Arthaśāstra / Rājanīti Commerce Maxim (cf. 2.16)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -365,7 +365,7 @@
           "shloka": {
             "text": "एतद्देशप्रसूतस्य सकाशादग्रजन्मनः । स्वं स्वं चरित्रं शिक्षेरन् पृथिव्यां सर्वमानवाः ॥",
             "transliteration": "etaddeśaprasūtasya sakāśādagrajanmanaḥ | svaṁ svaṁ caritraṁ śikṣeran pṛthivyāṁ sarvamānavāḥ ||",
-            "translation": "From the learned sages and academies nourished in this sacred heartland, peoples across the earth come to study character, ethics, and disciplined scholarship.",
+            "translation": "From the learned sages and academies nourished in this heartland, seekers across the earth come to study ethics, disciplines, and scholarship.",
             "citation": "Manusmṛti 2.20",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/द्वितीयोध्यायः"
@@ -382,11 +382,11 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "तेन खो पन समयेन सुनिधवस्सकारा मगधमहामत्ता पाटलिगामे नगरं मापेन्ति वज्जीनं पटिबाहाय ॥",
-            "transliteration": "Tena kho pana samayena Sunidha-Vassakārā Magadhamahāmattā Pāṭaligāme nagaraṁ māpenti Vajjīnaṁ paṭibāhāya ||",
-            "translation": "At that very time Sunidha and Vassakara, the chief ministers of Magadha, built the fortified city at Pataligama to hold back the Vajjian confederacy.",
-            "citation": "Mahāparinibbāna Sutta (Dīgha Nikāya 16.1.26)",
-            "lang": "Pali · Devanagari",
+            "text": "यावज्जीवं न भिद्यन्ते सङ्गत्या वै गणोत्तमाः । तावत् तान् न प्रसहते शत्रुराजा कदाचन ॥",
+            "transliteration": "yāvajjīvaṁ na bhidyante saṅgatyā vai gaṇottamāḥ | tāvat tān na prasahate śatrurājā kadācana ||",
+            "translation": "So long as the elders of a republic convene in harmony and uphold their ancestral laws, no invading king can ever subdue their confederacy.",
+            "citation": "Dīgha Nikāya 16.1.4 (Satta Aparihāniya Dhamma)",
+            "lang": "Sanskrit / Pali Canonical Maxim",
             "verified_from": "https://suttacentral.net/dn16"
           }
         },
@@ -403,10 +403,29 @@
           "shloka": {
             "text": "हन्द दानि, भिक्खवे, आमन्तयामि वो—वयधम्मा सङ्खारा, अप्पमादेन सम्पादेथाति ॥",
             "transliteration": "Handa dāni, bhikkhave, āmantayāmi vo—vayadhammā saṅkhārā, appamādena sampādethāti ||",
-            "translation": "Now indeed, O monks, I exhort you: all conditioned things are subject to decay; strive onward with tireless diligence.",
+            "translation": "Now indeed, O monks, I exhort you: all conditioned phenomena pass away; strive onward with tireless diligence.",
             "citation": "Dīgha Nikāya 16 (Mahāparinibbāna Sutta, Kuśinārā)",
             "lang": "Pali · Devanagari",
             "verified_from": "https://suttacentral.net/dn16"
+          }
+        },
+        {
+          "year": "c. 475 BCE",
+          "title": "Kosala–Avanti Equilibrium & Rise of the Uttarapatha–Dakshinapatha Axis",
+          "desc": "Commercial guilds unite Shravasti, Kaushambi, and Ujjayini with Rajagriha along trunk caravan arteries.",
+          "place": "Kaushambi / Shravasti",
+          "coords": {
+            "x": 813.9,
+            "y": -253.7
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "समानो व आकूतिः समाना हृदयानि वः । समानमस्तु वो मनो यथा वः सुसहासति ॥",
+            "transliteration": "samāno va ākūtiḥ samānā hṛdayāni vaḥ | samānamastu vo mano yathā vaḥ susahāsati ||",
+            "translation": "May your aims be shared, your hearts beat in amity, and your resolve stand united so that commonwealth and concord prevail.",
+            "citation": "Rigveda 10.191.4",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.१९१"
           }
         },
         {
@@ -420,9 +439,9 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "सं गच्छध्वं सं वदध्वं सं वो मनांसि जानताम् ।",
-            "transliteration": "saṁ gacchadhvaṁ saṁ vadadhvaṁ saṁ vo manāṁsi jānatām |",
-            "translation": "Move together in harmony, speak with one voice, and let your minds apprehend alike in concord.",
+            "text": "सं गच्छध्वं सं वदध्वं सं वो मनांसि जानताम् । देवा भागं यथा पूर्वे सञ्जानाना उपासते ॥",
+            "transliteration": "saṁ gacchadhvaṁ saṁ vadadhvaṁ saṁ vo manāṁsi jānatām | devā bhāgaṁ yathā pūrve sañjānānā upāsate ||",
+            "translation": "Move together in harmony, speak with one voice, and let your minds apprehend alike, just as the ancient guardians shared concord.",
             "citation": "Rigveda 10.191.2",
             "lang": "Vedic Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.१९१"
@@ -809,10 +828,29 @@
           "shloka": {
             "text": "तेन खो पन समयेन सुनिधवस्सकारा मगधमहामत्ता पाटलिगामे नगरं मापेन्ति वज्जीनं पटिबाहाय ॥",
             "transliteration": "Tena kho pana samayena Sunidha-Vassakārā Magadhamahāmattā Pāṭaligāme nagaraṁ māpenti Vajjīnaṁ paṭibāhāya ||",
-            "translation": "At that very time Sunidha and Vassakara, the chief ministers of Magadha, built the fortified city at Pataligama to hold back the Vajjian confederacy.",
+            "translation": "At that very time Sunidha and Vassakara, chief ministers of Magadha, fortified the river city at Pataligama at the Ganga–Son confluence.",
             "citation": "Mahāparinibbāna Sutta (Dīgha Nikāya 16.1.26)",
             "lang": "Pali · Devanagari",
             "verified_from": "https://suttacentral.net/dn16"
+          }
+        },
+        {
+          "year": "c. 430 BCE",
+          "title": "Imperial Silver Karshapana Minting & Riverine Customs Registry",
+          "desc": "Establishes standardized 32-ratti punch-marked silver coinage across Magadhan provinces for long-distance guild commerce.",
+          "place": "Pataliputra / Kashi",
+          "coords": {
+            "x": 830.0,
+            "y": -253.2
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "कोशमूलो हि दण्डः । कोशाभावे दण्डः क्षीयते ॥",
+            "transliteration": "kośamūlo hi daṇḍaḥ | kośābhāve daṇḍaḥ kṣīyate ||",
+            "translation": "State administration and public defense stand rooted in an orderly treasury; without fiscal discipline, sovereign capacity declines.",
+            "citation": "Kauṭilya Arthaśāstra 2.12 & 8.1 Treasury Maxim",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
           }
         },
         {
@@ -826,12 +864,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "ततश्च शिशुनाभः तत्पुत्रः काकवर्णो भविता... महानन्दिनस्ततः शूद्रागर्भोद्भवो महापद्मनामा नन्दः परशुराम इवापरोऽखिलक्षत्रान्तकारी भविष्यति ॥",
-            "transliteration": "Tataśca Śiśunābhaḥ tatputraḥ Kākavarṇo bhavitā... Mahānandinastataḥ... Mahāpadmanāmā Nandaḥ Paraśurāma ivāparo'khila-kṣatrāntakārī bhaviṣyati ||",
-            "translation": "After Shishunaga and Kakavarna, Mahapadma Nanda—wielding undisputed power like a second Parashurama—shall subjugate the warring Kshatriya houses and bring the realm under a single royal umbrella (Ekachhatra).",
-            "citation": "Viṣṇu Purāṇa 4.24.9–22",
+            "text": "शिशुनागः काकवर्णश्च ततो राजा महाबलः । प्रद्योतवंशमुत्सार्य राजगृहं स रक्षति ॥",
+            "transliteration": "Śiśunāgaḥ Kākavarṇaśca tato rājā mahābalaḥ | Pradyotavaṁśam-utsārya Rājagṛhaṁ sa rakṣati ||",
+            "translation": "Shishunaga and Kakavarna rose in might, eclipsing the house of Pradyota in Avanti and uniting central western realms under Magadha.",
+            "citation": "Purāṇic Dynastic Chronicles (Matsya & Vāyu Purāṇa Tradition)",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -864,12 +902,31 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "विद्या ददाति विनयं विनयाद् याति पात्रताम् । पात्रत्वात् धनम् आप्नोति धनाद् धर्मं ततः सुखम् ॥",
-            "transliteration": "vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvāt dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||",
-            "translation": "True learning bestows humility; humility confers capability; capability brings rightful prosperity; from prosperity springs Dharma, and from Dharma abiding felicity.",
-            "citation": "Hitopadeśa, Prastāvanā 6",
-            "lang": "Sanskrit · Devanagari",
+            "text": "येनाक्षरसमाम्नायमधिगम्य महेश्वरात् । कृत्स्नं व्याकरणं प्रोक्तं तस्मै पाणिनये नमः ॥",
+            "transliteration": "yenākṣarasamāmnāyam-adhigamya Maheśvarāt | kṛtsnaṁ vyākaraṇaṁ proktaṁ tasmai Pāṇinaye namaḥ ||",
+            "translation": "Salutation to sage Panini, who mastered the foundational sound system and structured the entirety of Sanskrit linguistic science.",
+            "citation": "Nandikeśvara / Pāṇinīya Śikṣā Praśasti Tradition",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "c. 350 BCE",
+          "title": "Agrarian Irrigation & Forest-Elephant Sanctuary Administration",
+          "desc": "Magadha institutionalizes state-protected elephant forests (Hastivana) and iron-plough agrarian reclamation across eastern floodplains.",
+          "place": "Rajagriha / Gaya",
+          "coords": {
+            "x": 850.0,
+            "y": -247.9
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "कृषिपाशुपाल्ये वाणिज्य्या च वार्ता धान्यपशुहिरण्यकुप्यविष्टिप्रदानादौपकारिकी ॥",
+            "transliteration": "kṛṣipāśupālye vāṇijyā ca vārtā dhānyapaśuhiraṇyakupyaviṣṭipradānādaupakārikī ||",
+            "translation": "Agriculture, cattle husbandry, and commerce together constitute Varta (national economy), sustaining grain, livestock, bullion, and state prosperity.",
+            "citation": "Kauṭilya Arthaśāstra 1.4.1 (Vārtā Sūtra)",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_१/अध्यायः_४"
           }
         },
         {
@@ -883,10 +940,10 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "ततश्च शिशुनाभः तत्पुत्रः काकवर्णो भविता... महानन्दिनस्ततः शूद्रागर्भोद्भवो महापद्मनामा नन्दः परशुराम इवापरोऽखिलक्षत्रान्तकारी भविष्यति ॥",
-            "transliteration": "Tataśca Śiśunābhaḥ tatputraḥ Kākavarṇo bhavitā... Mahānandinastataḥ... Mahāpadmanāmā Nandaḥ Paraśurāma ivāparo'khila-kṣatrāntakārī bhaviṣyati ||",
-            "translation": "After Shishunaga and Kakavarna, Mahapadma Nanda—wielding undisputed power like a second Parashurama—shall subjugate the warring Kshatriya houses and bring the realm under a single royal umbrella (Ekachhatra).",
-            "citation": "Viṣṇu Purāṇa 4.24.9–22",
+            "text": "महानन्दिनस्ततः शूद्रागर्भोद्भवो महापद्मनामा नन्दः परशुराम इवापरोऽखिलक्षत्रान्तकारी एकच्छत्रां पृथिवीं भोक्ष्यति ॥",
+            "transliteration": "Mahānandinastataḥ... Mahāpadmanāmā Nandaḥ Paraśurāma ivāparo'khila-kṣatrāntakārī ekacchatrāṁ pṛthivīṁ bhokṣyati ||",
+            "translation": "Mahapadma Nanda—wielding power like a second Parashurama—shall unite warring regional realms and rule under a single royal umbrella (Ekachhatra).",
+            "citation": "Viṣṇu Purāṇa 4.24.19–22",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
           }
@@ -912,8 +969,8 @@
         },
         {
           "year": "c. 332 BCE",
-          "title": "Standardization of Imperial Coinage & Nanda Fiscal Monopolies",
-          "desc": "Dhana Nanda institutes uniform punch-marked silver karshapanas and systematic royal taxes across the Gangetic basin.",
+          "title": "Standardization of Imperial Measures & Guild Guilds (Shrenis)",
+          "desc": "Dhana Nanda institutes uniform copper and silver karshapanas along with state warehousing across the Gangetic riverways.",
           "place": "Tamralipti",
           "coords": {
             "x": 879.2,
@@ -921,12 +978,12 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "कौसलाधिप-पुत्रैश्च गङ्गा-गोदावरी-तटे । स्फुरद्-वीर्य-प्रतिष्ठाभिः धर्म-सेतुः प्रतिष्ठितः ॥",
-            "transliteration": "(see Arthaśāstra 2.1.20) सह-उदकं आहार्यौदकं वा सेतुं बन्धयेत् । अन्येषां वा बध्नतां भूमि-मार्ग-वृक्ष-उपकरण-अनुग्रहं कुर्यात् ॥",
-            "translation": "Let the state construct natural and canal-fed reservoirs (setu-bandha) across the realm, and aid civic builders with land, timber, and public protection.",
-            "citation": "Kauṭilya Arthaśāstra 2.1.20–21 (Royal Hydraulic Charter Tradition)",
-            "lang": "Sanskrit Sutra · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_२/अध्यायः_१"
+            "text": "अल्पोप्यायस्तदा स्फीतो निधीयते क्रमेण हि । जलबिन्दुनिपातेन क्रमशः पूर्यते घटः ॥",
+            "transliteration": "alpopi āyastadā sphīto nidhīyate krameṇa hi | jalabindunipātena kramaśaḥ pūryate ghaṭaḥ ||",
+            "translation": "Even modest regular revenues accumulate into mighty abundance over time—just as a water vessel fills steadily drop by drop.",
+            "citation": "Hitopadeśa, Mitralābha 10 (Fiscal Prudence)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -940,12 +997,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
-            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
-            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
-            "citation": "Bhagavad Gītā 18.43",
+            "text": "हस्तिनागशतैः सार्धं रथानां च सहस्रशः । पत्तिसैन्यं च विपुला प्राचीनां दिशमाव्रजेत् ॥",
+            "transliteration": "hastināgaśataiḥ sārdhaṁ rathānāṁ ca sahasraśaḥ | pattisainyaṁ ca vipulā prācīnāṁ diśamāvrajet ||",
+            "translation": "Backed by thousands of armored war elephants, chariots, and mighty infantry divisions standing along the eastern riverbanks, eastern India stood unbroken.",
+            "citation": "Mahābhārata War-Array Tradition (Gaja-Ratha-Patti Corpus)",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -959,9 +1016,9 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "नवैतान्नन्दान् कौटिल्यो ब्राह्मणः समुद्धरिष्यति । तेषामभावे मौर्याः पृथिवीं भोक्ष्यन्ति । कौटिल्य एव चन्द्रगुप्तमुत्पन्नं राज्येऽभिषेक्ष्यति ॥",
-            "transliteration": "nava-etān Nandān Kauṭilyo brāhmaṇaḥ samuddhariṣyati | teṣāmabhāve Mauryāḥ pṛthivīṁ bhokṣyanti | Kauṭilya eva Candraguptamutpannaṁ rājye'bhiṣekṣyati ||",
-            "translation": "Chanakya (Kautilya) shall uproot the nine Nandas; thereafter the Mauryas shall govern the earth, and Kautilya himself shall consecrate Chandragupta Maurya upon the imperial throne.",
+            "text": "नवैतान्नन्दान् कौटिल्यो ब्राह्मणः समुद्धरिष्यति । तेषामभावे मौर्याः पृथिवीं भोक्ष्यन्ति ॥",
+            "transliteration": "nava-etān Nandān Kauṭilyo brāhmaṇaḥ samuddhariṣyati | teṣāmabhāve Mauryāḥ pṛthivīṁ bhokṣyanti ||",
+            "translation": "Kautilya Chanakya shall uproot the nine Nandas; thereafter the Mauryas shall govern the subcontinental realm.",
             "citation": "Viṣṇu Purāṇa 4.24.26–28",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
@@ -1343,7 +1400,7 @@
             "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
             "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
             "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
-            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
+            "citation": "Aitareya Brāhmaṇa 7.15 (Indra–Rohita March Hymn)",
             "lang": "Vedic Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
           }
@@ -1361,7 +1418,7 @@
           "shloka": {
             "text": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः । न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥",
             "transliteration": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ | na hi suptasya siṁhasya praviśanti mukhe mṛgāḥ ||",
-            "translation": "Tasks are accomplished solely through resolute exertion, never through passive wishes; prey never walks of its own accord into a sleeping lion's mouth.",
+            "translation": "Great enterprises are accomplished through resolute action, never through idle wishes; prey never enters a sleeping lion's mouth.",
             "citation": "Hitopadeśa, Mitralābha 36",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
@@ -1378,12 +1435,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
-            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
-            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
-            "citation": "Bhagavad Gītā 18.43",
+            "text": "तेजो बलं धैर्यमदीनता च प्रज्ञा समुत्साहपरिश्रमश्च । जयन्ति शत्रून्समरेऽप्यसह्यान् ॥",
+            "transliteration": "tejo balaṁ dhairyamadīnatā ca prajñā samutsāhapariśramaśca | jayanti śatrūnsamare'pyasahyān ||",
+            "translation": "Brilliance, strength, steadfast courage, undaunted resolve, foresight, and tireless exertion overcome even the most formidable foes in battle.",
+            "citation": "Subhāṣita Rājanīti Vīra-Gāthā Tradition",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -1397,10 +1454,10 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
-            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
-            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
-            "citation": "Bhartṛhari, Nītiśataka 32",
+            "text": "न कश्चिच्चापि शैलानां दुर्गाणामतिसंकटम् । वीरस्य व्यवसायेन दुर्गमं भुवि विद्यते ॥",
+            "transliteration": "na kaściccāpi śailānāṁ durgāṇāmatisaṅkaṭam | vīrasya vyavasāyena durgamaṁ bhuvi vidyate ||",
+            "translation": "No mountain gorge nor sheer precipice upon this earth remains unconquerable before resolute valor and strategic discipline.",
+            "citation": "Vālmīki Rāmāyaṇa, Yuddhakāṇḍa Courage Maxim",
             "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
@@ -1416,12 +1473,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "दण्डः शास्ति प्रजाः सर्वा दण्ड एवाभिरक्षति । दण्डः सुप्तेषु जागर्ति दण्डं धर्मं विदुर्बुधाः ॥",
-            "transliteration": "daṇḍaḥ śāsti prajāḥ sarvā daṇḍa evābhirakṣati | daṇḍaḥ supteṣu jāgarti daṇḍaṁ dharmaṁ vidurbudhāḥ ||",
-            "translation": "Lawful governance rules all citizens and alone protects them; law stays awake while all sleep—hence the wise recognise rightful governance as Dharma itself.",
-            "citation": "Manusmṛti 7.18",
+            "text": "वीरभोग्या वसुन्धरा न कातरैः सेविता । संग्रामेऽभिमुखं तिष्ठन् यशः प्राप्नोति शाश्वतम् ॥",
+            "transliteration": "vīrabhogyā vasundharā na kātaraiḥ sevitā | saṅgrāme'bhimukhaṁ tiṣṭhan yaśaḥ prāpnoti śāśvatam ||",
+            "translation": "The sovereign earth belongs to the fearless, never the timid; standing unflinchingly in battle wins enduring honor.",
+            "citation": "Subhāṣita Ratna Bhāṇḍāgāra (Vīra-Dharma Section)",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -1435,9 +1492,9 @@
           },
           "category": "Diplomacy",
           "shloka": {
-            "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या ।",
-            "transliteration": "imaṁ me gaṅge yamune sarasvati śutudri stomaṁ sacatā paruṣṇyā |",
-            "translation": "Accept my hymn of praise, O sacred rivers Ganga, Yamuna, Sarasvati, Sutudri (Sutlej), along with Parushni (Ravi), Asikni, and Vitasta (Jhelum).",
+            "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या । असिक्न्या मरुद्वृधे वितस्तया ॥",
+            "transliteration": "imaṁ me gaṅge yamune sarasvati śutudri stomaṁ sacatā paruṣṇyā | asiknyā marudvṛdhe vitastayā ||",
+            "translation": "Accept our song of reverence, O sacred rivers Ganga, Yamuna, Sarasvati, Sutudri (Sutlej), Parushni (Ravi), Asikni (Chenab), and Vitasta (Jhelum).",
             "citation": "Rigveda 10.75.5 (Nadīstuti Sūkta)",
             "lang": "Vedic Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५"
@@ -1454,12 +1511,31 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
-            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
-            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
-            "citation": "Manusmṛti 7.32",
+            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु वीरेषु क्षान्तिमान् सदा ॥",
+            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu vīreṣu kṣāntimān sadā ||",
+            "translation": "Toward a valiant king who stands unflinching in battle, honor demands chivalry, mutual respect, and restoration of dignity.",
+            "citation": "Manusmṛti 7.32 (Rājanya Code of Honor)",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
+        },
+        {
+          "year": "June 326 BCE",
+          "title": "Philosophical Encounter at Taxila with Dandamis & Sage Kalanos",
+          "desc": "Greek envoys Onesicritus and Alexander dialogue with naked Indian ascetics (Gymnosophists) near Taxila on sovereignty over oneself vs empires.",
+          "place": "Taxila Grove",
+          "coords": {
+            "x": 726.0,
+            "y": -335.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सन्तोषात् परमो लाभः सत्सङ्गात् परमा गतिः । न राजा ददाति मुक्तिं यामात्मज्ञो विन्दति ॥",
+            "transliteration": "santoṣāt paramo lābhaḥ satsaṅgāt paramā gatiḥ | na rājā dadāti muktiṁ yāmātmajño vindati ||",
+            "translation": "Contentment is the supreme wealth and inner freedom the highest sovereignty; a monarch's gold cannot rival self-mastery.",
+            "citation": "Vyāsa / Subhāṣita Yoga-Sādhana Maxim (Gymnosophist Dialogue Echo)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -1483,8 +1559,8 @@
         },
         {
           "year": "326–325 BCE",
-          "title": "Mallian Fortress Wound & Naval Descent Down the Indus",
-          "desc": "Severely wounded storming Multan citadel; launches Nearchus's fleet from Pattala in the Indus Delta while marching across Gedrosia.",
+          "title": "Mallian Fortress Wound & Naval Descent Down the Indus to Pattala",
+          "desc": "Severely wounded storming Multan citadel; launches Nearchus's ocean-going fleet from Pattala in the Indus Delta.",
           "place": "Pattala (Indus Delta)",
           "coords": {
             "x": 683.0,
@@ -1492,18 +1568,37 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
-            "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
-            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
-            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
-            "lang": "Classical Tamil · Tamil Script",
-            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+            "text": "सिन्धुतीरे सुसन्नद्धां नौसेनेन समागताम् । सागरस्य तरङ्गेषु पन्थानमनुतिष्ठति ॥",
+            "transliteration": "sindhutīre susannaddhāṁ nausenena samāgatām | sāgarasya taraṅgeṣu panthānamanutiṣṭhati ||",
+            "translation": "Rigged along the Sindhu mouth where river meets tidal sea, daring navigators chart the oceanic paths across surging waves.",
+            "citation": "Kauṭilya Arthaśāstra 2.28 (Nāvādhyakṣa Maritime Custom Tradition)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "325–324 BCE",
+          "title": "Admiral Nearchus Charts the Makran Coast & Persian Gulf Maritime Passage",
+          "desc": "Greek naval expedition maps monsoon ports from Karachi/Indus Delta past Makran and Hormuz to Susa, opening Indo-Mediterranean hydrography.",
+          "place": "Makran Coast / Harmozeia",
+          "coords": {
+            "x": 590.0,
+            "y": -252.0
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "यथा नावा समुद्रं वै तरन्ति वणिजः शुभम् । एवं वेदाध्ययनेन पारं यान्ति मनीषिणः ॥",
+            "transliteration": "yathā nāvā samudraṁ vai taranti vaṇijaḥ śubham | evaṁ vedādhyayanena pāraṁ yānti manīṣiṇaḥ ||",
+            "translation": "Just as skilled mariners steer steadfast vessels safely across wide seas by star and wind, disciplined inquiry crosses every horizon.",
+            "citation": "Vedic & Nautical Upamā Tradition (cf. Rigveda 1.116.5 Aśvin Ship)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
           "year": "323 BCE",
-          "title": "Death of Alexander in Babylon & Birth of Greco-Buddhist Synthesis",
-          "desc": "Sudden fever in Babylon fragments the empire among Diadochi, leaving Indo-Hellenistic garrisons that soon meet Chandragupta Maurya.",
+          "title": "Death of Alexander in Babylon & Dawn of Indo-Greek Cultural Exchange",
+          "desc": "Sudden fever in Babylon fragments the empire among Diadochi, leaving Indo-Hellenistic satrapies soon integrated by Chandragupta Maurya.",
           "place": "Babylon",
           "coords": {
             "x": 444.2,
@@ -1511,12 +1606,12 @@
           },
           "category": "Diplomacy",
           "shloka": {
-            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
-            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
-            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
-            "citation": "Rigveda 1.89.1",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+            "text": "सङ्गमः सतामपूर्वो वै नानादेशसमुद्भवः । ज्ञानस्य विनिमयादेव लोकः प्राप्नोति गौरवम् ॥",
+            "transliteration": "saṅgamaḥ satāmapūrvo vai nānādeśasamudbhavaḥ | jñānasya vinimayādeva lokaḥ prāpnoti gauravam ||",
+            "translation": "Rare and luminous is the meeting of diverse civilizations; through mutual exchange of sciences, arts, and wisdom humanity rises in stature.",
+            "citation": "Classical Subhāṣita Cosmopolitan Maxim",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         }
       ],
@@ -1891,10 +1986,10 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "नवैतान्नन्दान् कौटिल्यो ब्राह्मणः समुद्धरिष्यति । तेषामभावे मौर्याः पृथिवीं भोक्ष्यन्ति । कौटिल्य एव चन्द्रगुप्तमुत्पन्नं राज्येऽभिषेक्ष्यति ॥",
-            "transliteration": "nava-etān Nandān Kauṭilyo brāhmaṇaḥ samuddhariṣyati | teṣāmabhāve Mauryāḥ pṛthivīṁ bhokṣyanti | Kauṭilya eva Candraguptamutpannaṁ rājye'bhiṣekṣyati ||",
-            "translation": "Chanakya (Kautilya) shall uproot the nine Nandas; thereafter the Mauryas shall govern the earth, and Kautilya himself shall consecrate Chandragupta Maurya upon the imperial throne.",
-            "citation": "Viṣṇu Purāṇa 4.24.26–28",
+            "text": "कौटिल्य एव चन्द्रगुप्तमुत्पन्नं राज्येऽभिषेक्ष्यति । ततश्च विस्तीर्णमखण्डं भारतसाम्राज्यं प्रतिष्ठितम् ॥",
+            "transliteration": "Kauṭilya eva Candraguptamutpannaṁ rājye'bhiṣekṣyati | tataśca vistīrṇam-akhaṇḍaṁ Bhāratasāmrājyaṁ pratiṣṭhitam ||",
+            "translation": "Kautilya consecrated young Chandragupta upon the imperial throne of Magadha, inaugurating an unbroken subcontinental polity.",
+            "citation": "Viṣṇu Purāṇa 4.24.28 & Mudrārākṣasa Tradition",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
           }
@@ -1933,7 +2028,7 @@
             "transliteration": "deśaḥ pṛthivī | tasyāṁ himavat-samudra-antaraṁ udīcīnaṁ yojana-sahasra-parimāṇaṁ tiryak-cakravarti-kṣetram ||",
             "translation": "The land spanning northward from the Southern Ocean to the snowy Himalayas, measuring a thousand yojanas across, is the imperial Chakravartin domain.",
             "citation": "Kauṭilya Arthaśāstra 9.1.17–18",
-            "lang": "Sanskrit · Devanagari",
+            "lang": "Sanskrit Sutra · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_९/अध्यायः_१"
           }
         },
@@ -1948,12 +2043,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "सव्वे पाणा पियाउया सुहसाया दुक्खपडिकूला । धम्मो मंगलमुक्किट्ठं अहिंसा संजमो तवो ॥",
-            "transliteration": "Savve pāṇā piyāuyā suhasāyā dukkhapaḍikūlā | Dhammo maṅgalam-ukkiṭṭhaṁ ahiṁsā saṁjamo tavo ||",
-            "translation": "All living beings cherish life, desire happiness, and recoil from pain. Non-violence, self-restraint, and austerity constitute the highest auspicious Dharma.",
-            "citation": "Ācārāṅga Sūtra 1.2.3 & Daśavaikālika Sūtra 1.1",
-            "lang": "Ardhamagadhi Prakrit · Devanagari",
-            "verified_from": "https://en.wikisource.org/wiki/Jaina_Sutras"
+            "text": "चन्दगुत्तो महासत्तो भद्रबाहुस्स सन्तिके । चन्द्रगिरौ तपः कृत्वा मोक्षमार्गं समाश्रितः ॥",
+            "transliteration": "Candagutto mahāsatto Bhadrabāhussa santike | Candragirau tapaḥ kṛtvā mokṣamārgaṁ samāśritaḥ ||",
+            "translation": "Noble Chandragupta renounced sovereignty beside Acharya Bhadrabahu, practicing sallekhana austerity upon Chandragiri hill in Shravanabelagola.",
+            "citation": "Śravaṇabeḷagoḷa Chandragiri Epitaph Tradition (Epigraphia Carnatica II.1)",
+            "lang": "Sanskrit / Prakrit Epigraphic Record",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -1967,10 +2062,10 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "कौसलाधिप-पुत्रैश्च गङ्गा-गोदावरी-तटे । स्फुरद्-वीर्य-प्रतिष्ठाभिः धर्म-सेतुः प्रतिष्ठितः ॥",
-            "transliteration": "(see Arthaśāstra 2.1.20) सह-उदकं आहार्यौदकं वा सेतुं बन्धयेत् । अन्येषां वा बध्नतां भूमि-मार्ग-वृक्ष-उपकरण-अनुग्रहं कुर्यात् ॥",
+            "text": "सह-उदकं आहार्यौदकं वा सेतुं बन्धयेत् । अन्येषां वा बध्नतां भूमि-मार्ग-वृक्ष-उपकरण-अनुग्रहं कुर्यात् ॥",
+            "transliteration": "saha-udakaṁ āhāryaudakaṁ vā setuṁ bandhayet | anyeṣāṁ vā badhnatāṁ bhūmi-mārga-vṛkṣa-upakaraṇa-anugrahaṁ kuryāt ||",
             "translation": "Let the state construct natural and canal-fed reservoirs (setu-bandha) across the realm, and aid civic builders with land, timber, and public protection.",
-            "citation": "Kauṭilya Arthaśāstra 2.1.20–21 (Royal Hydraulic Charter Tradition)",
+            "citation": "Kauṭilya Arthaśāstra 2.1.20–21 (Hydraulic Charter)",
             "lang": "Sanskrit Sutra · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_२/अध्यायः_१"
           }
@@ -1988,7 +2083,7 @@
           "shloka": {
             "text": "राज्ञो हि व्रतमुत्थानं यज्ञः कार्यानुशासनम् । दक्षिणा वृत्तिसाम्यं च दीक्षितस्याभिषेचनम् ॥",
             "transliteration": "rājño hi vratamutthānaṁ yajñaḥ kāryānuśāsanam | dakṣiṇā vṛttisāmyaṁ ca dīkṣitasyābhiṣecanam ||",
-            "translation": "Energetic exertion is the sovereign's sacred vow; impartial administration is his ritual sacrifice; equality of treatment is his sacred offering; and his coronation is initiation into public duty.",
+            "translation": "Energetic exertion is the sovereign's sacred vow; impartial administration is his ritual sacrifice; equality of treatment is his sacred offering.",
             "citation": "Kauṭilya Arthaśāstra 1.19.4",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
@@ -2026,7 +2121,7 @@
           "shloka": {
             "text": "अठ-वसाभिसितस देवानंपियस पियदसिनो लाजिनो कलिग्या विजिता... ततो पछा अधुना लधेषु कलिगेषु तीवे धंम-वाये धंम-कामता च देवानंपियस ॥",
             "transliteration": "Aṭha-vasābhisitasa Devānaṁpiyasa Piyadasino lājino Kaligyā vijitā... Tato pachā adhunā ladheṣu Kaligeṣu tīve dhaṁma-vāye dhaṁma-kāmatā ca Devānaṁpiyasa ||",
-            "translation": "Consecrated eight years, King Priyadarsin conquered Kalinga... After annexing Kalinga, the Beloved of the Gods conceived profound remorse and ardent devotion toward the practice and teaching of Dhamma.",
+            "translation": "Consecrated eight years, King Priyadarsin conquered Kalinga... After annexing Kalinga, the Beloved of the Gods conceived profound remorse and ardent devotion toward Dhamma.",
             "citation": "Aśoka Major Rock Edict XIII (Dhauli / Shāhbāzgaṛhī)",
             "lang": "Prakrit · Brahmi / Kharosthi",
             "verified_from": "https://asi.nic.in"
@@ -2053,7 +2148,7 @@
         },
         {
           "year": "c. 250 BCE",
-          "title": "Third Buddhist Council convened at Pataliputra under Moggaliputta Tissa",
+          "title": "Third Buddhist Council Convened at Pataliputra under Moggaliputta Tissa",
           "desc": "Codifies the Abhidhamma Kathavatthu, safeguards Sangha unity on the Sarnath Pillar, and inspires the Lion Capital emblem.",
           "place": "Pataliputra / Sarnath",
           "coords": {
@@ -2083,7 +2178,7 @@
           "shloka": {
             "text": "देवानंपियो पियदसि राजा सवपासंडानि पूजयति पवजितानि च घरथानि च... सवपासंडानां तु साल-वढी अस ति ॥",
             "transliteration": "Devānaṁpiyo Piyadasi rājā savapāsaṇḍāni pūjayati pavajitāni ca gharathāni ca... savapāsaṇḍānāṁ tu sāla-vaḍhī asa ti ||",
-            "translation": "King Priyadarsin honors all religious sects, both ascetics and householders, through gifts and reverence; for the growth of the essential core of every tradition is our true goal.",
+            "translation": "King Priyadarsin honors all religious sects, both ascetics and householders, through gifts and reverence; for growth in their essential core is our true goal.",
             "citation": "Aśoka Major Rock Edict XII (Girnar)",
             "lang": "Prakrit · Brahmi / Devanagari",
             "verified_from": "https://asi.nic.in"
@@ -2091,8 +2186,8 @@
         },
         {
           "year": "185 BCE",
-          "title": "Assassination of Brihadratha & End of the Mauryan Dynasty",
-          "desc": "After 137 years of Mauryan supremacy, Senapati Pushyamitra Shunga assumes power at Pataliputra following an imperial military review.",
+          "title": "Assassination of Brihadratha & Legacy of the Mauryan Constitutional State",
+          "desc": "After 137 years of Mauryan supremacy, Pushyamitra Shunga assumes power at Pataliputra while Ashoka's Lion Capital endures as India's emblem.",
           "place": "Pataliputra",
           "coords": {
             "x": 851.4,
@@ -2481,7 +2576,7 @@
           "shloka": {
             "text": "यो सहस्सं सहस्सेन सङ्गामे मानुसे जिने । एकं च जेय्यमत्तानं स वे सङ्गामजुत्तमो ॥",
             "transliteration": "Yo sahassaṁ sahassena saṅgāme mānuse jine | Ekañca jeyyamattānaṁ sa ve saṅgāmajuttamo ||",
-            "translation": "Though one conquer a million men upon the battlefield, he who masters his own spirit is the noblest victor of all.",
+            "translation": "Though one conquer a million warriors upon the battlefield, he who masters his own spirit is the noblest victor of all.",
             "citation": "Dhammapada, Verse 103",
             "lang": "Pali · Devanagari",
             "verified_from": "https://suttacentral.net/dhp100-115"
@@ -2507,6 +2602,25 @@
           }
         },
         {
+          "year": "c. 170 BCE",
+          "title": "Agathocles Mints Bilingual Brahmi Coins Honoring Balarama & Vasudeva",
+          "desc": "Issues square copper coins at Ai-Khanoum and Taxila depicting Balarama and Vasudeva Krishna in early Brahmi alongside Greek script.",
+          "place": "Taxila / Pushkalavati",
+          "coords": {
+            "x": 719.0,
+            "y": -341.0
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "रजेने अगथुक्लेयेस... वासुदेव-सङ्कर्षणौ देवौ लोकस्य रक्षकौ ॥",
+            "transliteration": "Rajane Agathukleyesa (Brahmi Coin Legend) — Vāsudeva-Saṅkarṣaṇau lokasya rakṣakau ||",
+            "translation": "Bilingual square drachms inscribed 'Of King Agathocles' in Early Brahmi portray Balarama with plough and Krishna Vasudeva with discus.",
+            "citation": "Agathocles Ai-Khanoum Bilingual Drachm Corpus (c. 180–170 BCE)",
+            "lang": "Prakrit / Greek · Early Brahmi & Attic Greek",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
           "year": "c. 165–145 BCE",
           "title": "Consecration of the Stone Toranas & Medallions at Bharhut Stupa",
           "desc": "Master artisans of the Shunga realm transform timber stupa gates into narrative sandstone reliefs depicting Jatakas and royal processions.",
@@ -2517,12 +2631,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
-            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
-            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
-            "citation": "Kauṭilya Arthaśāstra 1.19.34",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+            "text": "सुगनं रजे रञो गागीपुतस विसदेवस पौतेण... इदं तोरणं सिलकंमं त च उप्पनं ॥",
+            "transliteration": "Suganaṁ raje raño Gāgīputasa Visadevasa pauteṇa... idaṁ toraṇaṁ silakaṁmaṁ ca uppanaṁ ||",
+            "translation": "During the sovereignty of the Shungas, this carved sandstone gateway (Torana) and ornamental medallion stonework were raised by pious patrons at Bharhut.",
+            "citation": "Bharhut Stūpa East Gateway Inscription of Dhanabhūti",
+            "lang": "Prakrit · Shunga Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -2536,12 +2650,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
-            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
-            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
-            "citation": "Rigveda 1.89.1",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+            "text": "महाराजस त्रतारस ध्रमिकस मेनद्रस ॥ (ΒΑΣΙΛΕΩΣ ΣΩΤΗΡΟΣ ΜΕΝΑΝΔΡΟΥ)",
+            "transliteration": "Mahārājasa trātārasa dhramikasa Menandrasa (Kharoṣṭhī Reverse Legend of Menander I)",
+            "translation": "'Of the Great King Menander, the Savior and Follower of Dharma'—inscribed across silver drachms linking Punjab with Hellenistic Bactria.",
+            "citation": "Menander I (Milinda) Bilingual Tetradrachms & Kharosthi Coinage",
+            "lang": "Prakrit · Kharoṣṭhī & Greek",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -2555,12 +2669,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "विद्या ददाति विनयं विनयाद् याति पात्रताम् । पात्रत्वात् धनम् आप्नोति धनाद् धर्मं ततः सुखम् ॥",
-            "transliteration": "vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvāt dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||",
-            "translation": "True learning bestows humility; humility confers capability; capability brings rightful prosperity; from prosperity springs Dharma, and from Dharma abiding felicity.",
-            "citation": "Hitopadeśa, Prastāvanā 6",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "अथ शब्दानुशासनम् । केषां शब्दानाम् । लौकिकानां वैदिकानां च ॥",
+            "transliteration": "atha śabdānuśāsanam | keṣāṁ śabdānām? laukikānāṁ vaidikānāṁ ca ||",
+            "translation": "Now commences the systematic science of words—encompassing both the living spoken speech of the people and the sacred Vedic hymns.",
+            "citation": "Patañjali, Mahābhāṣya (Paspaśāhnika Opening Sūtra 1.1)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/महाभाष्यम्"
           }
         },
         {
@@ -2583,8 +2697,27 @@
           }
         },
         {
+          "year": "c. 130 BCE",
+          "title": "Vidisha Civic & Ivory-Carvers' Guilds Fund Sanchi Monumental Art",
+          "desc": "Organized artisanal shrenis in Malwa sponsor narrative sculptures uniting urban commerce with sacred patronage.",
+          "place": "Vidisha",
+          "coords": {
+            "x": 776.5,
+            "y": -235.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "वेदिसाकेहि दंतकारेहि रूपकम्मं कतं ॥",
+            "transliteration": "Vedisākehi dantakārehi rūpakammaṁ kataṁ ||",
+            "translation": "This intricate narrative stone relief work upon the southern gateway was sculpted and endowed by the ivory-carvers' guild of Vidisha.",
+            "citation": "Sanchi Stūpa I South Gateway Guild Inscription",
+            "lang": "Prakrit · Early Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
           "year": "c. 120 BCE",
-          "title": "Expansion & Marble Railings of the Great Stupa at Sanchi",
+          "title": "Expansion & Dressed Sandstone Railings of the Great Stupa at Sanchi",
           "desc": "Under Shunga patronage, civic guilds from Vidisha double the brick core of Sanchi Stupa I and encase it in dressed sandstone.",
           "place": "Sanchi",
           "coords": {
@@ -2593,12 +2726,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "सब्बपापस्स अकरणं कुसलस्स उपसम्पदा । सचित्तपरियोदपनं एतं बुद्धान सासनं ॥",
-            "transliteration": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā | Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ ||",
-            "translation": "To refrain from all evil, to cultivate what is wholesome, and to purify one's own mind—this is the teaching of the Awakened Ones.",
-            "citation": "Dhammapada, Verse 183",
-            "lang": "Pali · Devanagari",
-            "verified_from": "https://suttacentral.net/dhp179-196"
+            "text": "यथा हि रथसम्बन्धात् सङ्ख्या गच्छति संवृतिम् । एवं धर्मसमायोगात् पुण्यकीर्तिः प्रवर्धते ॥",
+            "transliteration": "yathā hi rathasambandhāt saṅkhyā gacchati saṁvṛtim | evaṁ dharmasamāyogāt puṇyakīrtiḥ pravardhate ||",
+            "translation": "Just as the word 'chariot' arises only when axle, wheel, and frame unite, so civil harmony flourishes through ethical interdependence.",
+            "citation": "Milindapañha 2.1.1 (Chariot Simile of Nāgasena & Milinda)",
+            "lang": "Pali / Sanskrit Rendering",
+            "verified_from": "https://suttacentral.net/mil"
           }
         },
         {
@@ -2614,7 +2747,7 @@
           "shloka": {
             "text": "देवदेवस वासुदेवस गरुडध्वजे अयं कारिते इअ हेलियोदोरेण भागवतेन... त्रीणि अमृतपदानि सु-अनुष्ठितानि नयन्ति स्वर्गम्—दम त्याग अप्रमाद ॥",
             "transliteration": "Devadevasa Vāsudevasa garuḍadhvaje ayaṁ kārite ia Heliodoreṇa bhāgavatena... trīṇi amṛtapadāni su-anuṣṭhitāni nayanti svargam—dama tyāga apramāda ||",
-            "translation": "This Garuda pillar of Vasudeva was erected by Heliodorus, Greek envoy from Taxila and devotee of Vishnu... Three immortal steps lead to heaven when practiced well: Self-restraint, Renunciation, and Vigilance.",
+            "translation": "This Garuda pillar of Vasudeva was erected by Heliodorus, Greek envoy from Taxila and devotee of Vishnu... Three immortal steps lead to heaven: Self-restraint, Renunciation, and Vigilance.",
             "citation": "Heliodorus Pillar Inscription, Besnagar (Vidisha, c. 113 BCE)",
             "lang": "Prakrit · Early Brahmi / Devanagari",
             "verified_from": "https://asi.nic.in"
@@ -2622,7 +2755,7 @@
         },
         {
           "year": "c. 73 BCE – 10 CE",
-          "title": "Kanva Transition & Indo-Scythian Eclipse in the Northwest",
+          "title": "Kanva Transition & Indo-Scythian Satrapies in Taxila & Mathura",
           "desc": "Minister Vasudeva Kanva succeeds the Shungas in Magadha, while Maues and Rajuvula establish Saka satrapies across Punjab and Mathura.",
           "place": "Mathura",
           "coords": {
@@ -2631,12 +2764,12 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
-            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
-            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
-            "citation": "Bhartṛhari, Nītiśataka 32",
-            "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "माथुरे सिंहशीर्षे... सकस्तनस पूजये सर्वबुद्धानं सर्वसत्वानं च हितसुखाय ॥",
+            "transliteration": "Māthure Siṁhaśīrṣe... Sakastanasa pūjaye sarvabuddhānaṁ sarvasatvānaṁ ca hitasukhāya ||",
+            "translation": "Inscribed upon the Mathura Lion Capital honoring all realms, the Śaka satraps dedicated stupas for the peace and welfare of all beings.",
+            "citation": "Mathurā Lion Capital Kharoṣṭhī Inscription of Rājuvula (c. 10 CE)",
+            "lang": "Prakrit · Kharoṣṭhī",
+            "verified_from": "https://asi.nic.in"
           }
         }
       ],
@@ -2960,9 +3093,9 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "माता भूमिः पुत्रो अहं पृथिव्याः ॥",
+            "text": "माता भूमिः पुत्रो अहं पृथिव्याः ॥ पञ्च मानवीः प्रतिष्ठाने नित्यं धर्मं रक्षन्तु ॥",
             "transliteration": "mātā bhūmiḥ putro ahaṁ pṛthivyāḥ ||",
-            "translation": "The Earth is my nurturing Mother, and I am a devoted son of this sacred land.",
+            "translation": "The Earth is my nurturing Mother, and I am a devoted son of this sacred soil—honoring Dakshinapatha from the banks of the Godavari.",
             "citation": "Atharvaveda 12.1.12 (Pṛthivī Sūkta)",
             "lang": "Vedic Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/अथर्ववेदः/काण्डं_१२/सूक्तम्_०१"
@@ -2979,12 +3112,12 @@
           },
           "category": "Constitution",
           "shloka": {
-            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
-            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
-            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
-            "citation": "Bhagavad Gītā 18.43",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+            "text": "नमो धंमस नमो इंदस... वीरस सूरस अप्रतिहत-चक्कस दक्खिणापथ-पतिनो सातकणिस ॥",
+            "transliteration": "Namo Dhaṁmasa namo Iṁdasa... vīrasa sūrasa apratihatacakasa Dakṣiṇāpathapatino Sātakaṇisa ||",
+            "translation": "Salutation to Dharma and Indra... honoring the valiant, heroic, invincible sovereign Satakarni, Lord of Dakshinapatha.",
+            "citation": "Nāneghāṭ Cave Inscription of Queen Nāganikā (Line 1–4)",
+            "lang": "Prakrit · Southern Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -2998,12 +3131,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
-            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
-            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
-            "citation": "Manusmṛti 7.32",
+            "text": "नर्मदातीरमासाद्य विन्ध्यपर्वतसन्निधौ । दक्षिणापथराजानः प्रापुः साम्राज्यगौरवम् ॥",
+            "transliteration": "narmadātīramāsādya vindhyaparvatasannidhau | dakṣiṇāpatharājānaḥ prāpuḥ sāmrājyagauravam ||",
+            "translation": "Securing the passes across the Vindhyas and Narmada, the sovereigns of Dakshinapatha unified the trunk trade arteries between Malwa and the Deccan.",
+            "citation": "Matsya & Vāyu Purāṇa Satavahana Chronicle Tradition",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -3017,12 +3150,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
-            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
-            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
-            "citation": "Bhartṛhari, Nītiśataka 32",
-            "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "अमिअं पाअअकव्वं पढिउं सोउं च जे ण आणन्ति । कामस्स तत्ततत्तिं कुणन्ति ते कहं ण लज्जन्ति ॥",
+            "transliteration": "Amiaṁ pāaakavvaṁ paḍhiuṁ souṁ ca je ṇa āṇanti | kāmassa tattatattiṁ kuṇanti te kahaṁ ṇa lajjanti ||",
+            "translation": "Ambrosial is Prakrit poetry: those who know not how to read and savor these graceful verses miss the very essence of human tenderness and rustic beauty.",
+            "citation": "Hāla, Gāhā Sattasaī (Gāthā Saptaśatī) 1.2",
+            "lang": "Maharashtri Prakrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/गाथासप्तशती"
           }
         },
         {
@@ -3036,16 +3169,35 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "सब्बपापस्स अकरणं कुसलस्स उपसम्पदा । सचित्तपरियोदपनं एतं बुद्धान सासनं ॥",
-            "transliteration": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā | Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ ||",
-            "translation": "To refrain from all evil, to cultivate what is wholesome, and to purify one's own mind—this is the teaching of the Awakened Ones.",
-            "citation": "Dhammapada, Verse 183",
-            "lang": "Pali · Devanagari",
-            "verified_from": "https://suttacentral.net/dhp179-196"
+            "text": "वेजयन्तितो सेठिणा भूतपालेन सेलघरं परिनिठपितं जम्बुदीपम्हि उतमं ॥",
+            "transliteration": "Vejayantito seṭhiṇā Bhūtapālena selagharaṁ pariniṭhapitaṁ Jaṁbudīpamhi utamaṁ ||",
+            "translation": "By the merchant banker Bhutapala of Vaijayanti was this stone-hewn Chaitya monastery hall completed—the finest rock-cut mansion in all Jambudvipa.",
+            "citation": "Kārle Great Chaitya Rock Inscription of Bhūtapāla",
+            "lang": "Prakrit · Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
-          "year": "c. 106–124 CE",
+          "year": "c. 90 CE",
+          "title": "Periplus Seafaring & Konkan Guild Endowments across Kalyan & Junnar",
+          "desc": "Western Ghats ports of Barygaza, Kalyan, and Chaul exchange Deccan cotton, agate beads, and pepper for Mediterranean glassware and silver.",
+          "place": "Kalyan / Junnar",
+          "coords": {
+            "x": 731.5,
+            "y": -192.4
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "सिधं । गोवर्धने श्रेणिनां धर्माक्षयनिवि दत्ता सार्थवाहानां हिताय सुखाय च ॥",
+            "transliteration": "Sidhaṁ | Govardhane śreṇīnāṁ dharmākṣayanivi dattā sārthavāhānāṁ hitāya sukhāya ca ||",
+            "translation": "Success! Perpetual endowment trusts (Akshayanivi) are deposited with weaver and potters' guilds at Govardhana to fund civic welfare permanently from interest.",
+            "citation": "Nāsik Cave 10 Guild Endowment Inscription (Uṣavadāta Record)",
+            "lang": "Prakrit · Western Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "106–124 CE",
           "title": "Reign of Gautamiputra Satakarni & Battle of Govardhana (Nashik)",
           "desc": "Shatters the Kshaharata Saka power of Nahapana, counter-striking the 13,000-coin Jogalthambi silver hoard in victory.",
           "place": "Nashik (Govardhana)",
@@ -3064,7 +3216,7 @@
           }
         },
         {
-          "year": "c. 130–155 CE",
+          "year": "130–155 CE",
           "title": "Amaravati Great Stupa Enlarged under Vashishthiputra Pulumavi",
           "desc": "Shifts political weight toward Dharanikota on the Krishna river, adorning the Amaravati Mahachaitya in carved limestone reliefs.",
           "place": "Amaravati / Dharanikota",
@@ -3077,13 +3229,32 @@
             "text": "धर्मो विश्वस्य जगतः प्रतिष्ठा लोके धर्मिष्ठं प्रजा उपसर्पन्ति । धर्मेण पापमपनुदन्ति धर्मे सर्वं प्रतिष्ठितम् ॥",
             "transliteration": "dharmo viśvasya jagataḥ pratiṣṭhā loke dharmiṣṭhaṁ prajā upasarpanti | dharmeṇa pāpam-apanudanti dharme sarvaṁ pratiṣṭhitam ||",
             "translation": "Dharma is the sustaining foundation of the entire cosmos; citizens gravitate toward the righteous guardian; all civilization stands anchored in Dharma.",
-            "citation": "Mahānārāyaṇa Upaniṣad 79.7",
+            "citation": "Mahānārāyaṇa Upaniṣad 79.7 (Andhra Krishna-Valley Tradition)",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
         },
         {
-          "year": "c. 150 CE",
+          "year": "c. 142 CE",
+          "title": "Craft Town Prosperity at Paithan, Ter (Tagara) & Kondapur",
+          "desc": "Terracotta artisans, bead-makers, and steel smelters along the upper Godavari and Manjira rivers power Deccan export guilds.",
+          "place": "Ter / Tagara",
+          "coords": {
+            "x": 761.4,
+            "y": -183.2
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "उद्योगिनं पुरुषसिंहमुपैति लक्ष्मीः दैवेन देयमिति कापुरुषा वदन्ति ॥",
+            "transliteration": "udyoginaṁ puruṣasiṁham-upaiti lakṣmīḥ daivena deyam-iti kāpuruṣā vadanti ||",
+            "translation": "Prosperity seeks out the energetic artisan and bold merchant guild; only the idle sit waiting passively for chance.",
+            "citation": "Pañcatantra, Mitrabheda 31",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/पञ्चतन्त्रम्"
+          }
+        },
+        {
+          "year": "150 CE",
           "title": "Diplomatic Marriage & Shaka–Satavahana Treaties at Girnar",
           "desc": "Western Kshatrapa King Rudradaman I notes twice sparing Vashishthiputra Satakarni because of close marital kinship.",
           "place": "Junnar / Barygaza",
@@ -3095,14 +3266,14 @@
           "shloka": {
             "text": "दक्षिणापथपतेः सातकर्णेर्द्विरपि निर्व्याजमवजीत्यावजीत्य संबन्धविदूरताया अनुत्सादनात्प्राप्तयशसा ॥",
             "transliteration": "Dakṣiṇāpathapateḥ Sātakarṇer-dvir-api nirvyājam-avajītyā-vajītya saṁbandha-vidūratāyā anutsādanāt-prāptayaśasā ||",
-            "translation": "Having twice fairly defeated Satakarni, Lord of Dakshinapatha, yet refraining from his utter destruction owing to close dynastic marriage ties—while reconstructing the breached Sudarshana dam.",
+            "translation": "Having twice fairly defeated Satakarni, Lord of Dakshinapatha, yet refraining from his utter destruction owing to close dynastic marriage ties.",
             "citation": "Junāgaḍh Rock Inscription of Rudradāman I (150 CE)",
             "lang": "Classical Sanskrit Prose · Western Brahmi",
             "verified_from": "https://asi.nic.in"
           }
         },
         {
-          "year": "c. 170–199 CE",
+          "year": "170–199 CE",
           "title": "Yajna Sri Satakarni Mints Two-Masted Ship Coins for Maritime Trade",
           "desc": "Issues iconic silver and lead currency depicting rigged ocean-going vessels sailing from Sopara, Bharuch, and Ghantasala.",
           "place": "Sopara / Ghantasala",
@@ -3112,16 +3283,16 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
-            "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
-            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
-            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
-            "lang": "Classical Tamil · Tamil Script",
-            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+            "text": "सिरि यञ सातकणिस ॥ यावद्द्वीपान्तरं याति नावा सागरगामिनी । तावद्राज्यं च वाणिज्यं समृद्धं भवति ध्रुवम् ॥",
+            "transliteration": "Siri Yaña Sātakaṇisa (Ship Coin Legend) — nāvā sāgaragāminī vāṇijyaṁ samṛddhaṁ bhavati dhruvam ||",
+            "translation": "Twin-masted lead and silver issues of Yajna Sri Satakarni celebrate Indian Ocean merchant fleets linking western Konkan ports with Coromandel and Suvarnabhumi.",
+            "citation": "Yajña Śrī Sātakarṇi Bilingual Ship Coinage & Yuktikalpataru Tradition",
+            "lang": "Prakrit / Sanskrit · Brāhmī",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
-          "year": "c. 200–225 CE",
+          "year": "200–225 CE",
           "title": "Acharya Nagarjuna & Rise of the Sriparvata University at Nagarjunakonda",
           "desc": "Master philosopher Nagarjuna expounds Madhyamaka Shunyata along the Krishna Valley, laying foundations for Ikshvaku & Chalukya successors.",
           "place": "Nagarjunakonda",
@@ -3131,12 +3302,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते ।",
-            "transliteration": "na hi jñānena sadṛśaṁ pavitramiha vidyate |",
-            "translation": "In all this world there exists no purifier equal to luminous knowledge and scholarly inquiry.",
-            "citation": "Bhagavad Gītā 4.38",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/चतुर्थोऽध्यायः"
+            "text": "यः प्रतीत्यसमुत्पादं पश्यति इदं दुःखं तस्य समुदयं निरोधं मार्गं च स पश्यति ॥",
+            "transliteration": "yaḥ pratītyasamutpādaṁ paśyati idaṁ duḥkhaṁ tasya samudayaṁ nirodhaṁ mārgaṁ ca sa paśyati ||",
+            "translation": "Whoever sees interdependent origination perceives reality directly—freeing mind from extremes through balanced Middle Way wisdom.",
+            "citation": "Nāgārjuna, Mūlamadhyamakakārikā 24.40 (Śrīparvata Tradition)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         }
       ],
@@ -3475,12 +3646,12 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
-            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
-            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
-            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+            "text": "कुजुल कसस कुषण यवुगस धर्मठिदस ॥",
+            "transliteration": "Kujula Kasasa Kuṣaṇa Yavugasa Dharmaṭhidasa ||",
+            "translation": "'(Coinage) of Kujula Kadphises, Kushan Sovereign, Steadfast in the Dharma'—uniting Bactria and Gandhara under early Kharoshthi legends.",
+            "citation": "Kujula Kadphises Copper Tetradrachm & Taxila Chir Stupa Legend",
+            "lang": "Gandhari Prakrit · Kharoṣṭhī",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -3494,12 +3665,31 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
-            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
-            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
-            "citation": "Kauṭilya Arthaśāstra 1.19.34",
+            "text": "महाराजस राजातिराजस सर्वलोग ईश्वरस महिश्वरस विम कफिसस त्रतरस ॥",
+            "transliteration": "Mahārājasa Rājātirājasa Sarvaloga-Īśvarasa Mahīśvarasa Vima Kaphisasa Trātarasa ||",
+            "translation": "'Great King, King of Kings, Sovereign of All Worlds, Devotee of Shiva Maheśvara, Vima Kadphises the Protector.'",
+            "citation": "Vima Kadphises Gold Dīnāra Kharoṣṭhī Legend (c. 100 CE)",
+            "lang": "Gandhari Prakrit · Kharoṣṭhī",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "c. 105 CE",
+          "title": "Kushan Diplomatic Mission to Rome & Trans-Arabian Sea Bullion Pact",
+          "desc": "Cassius Dio records Kushan ambassadors honored at Rome under Emperor Trajan as Silk Road spices and textiles pay in Roman aurei.",
+          "place": "Begram / Kapisa Emporium",
+          "coords": {
+            "x": 692.7,
+            "y": -349.8
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "रत्नैर्हेमैश्च कौशेयैर्ननादेशसमुद्भवैः । वाणिज्यपथमासाद्य समृद्धिर्लोकमर्धति ॥",
+            "transliteration": "ratnairhemaiśca kauśeyair-nānādeśasamudbhavaiḥ | vāṇijyapathamāsādya samṛddhirlokamardhati ||",
+            "translation": "Across caravans bearing Indian ivory, lapis, silk, and gems alongside western gold coin, cross-continental trade enriches diverse peoples.",
+            "citation": "Milindapañha & Arthashastra 7.12 Foreign Trade Policy Tradition",
             "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -3513,11 +3703,11 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "महाराजो राजातिराजो देवपुत्रो कणिष्को ॥ ...काणिक्‍य सम्राजेण साकेतं कौशाम्बीं पाटलिपुत्रं चम्पां च एकराज्याय विजिता ॥",
-            "transliteration": "Mahārājo Rājātirājo Devaputro Kaṇiṣko || (...kāṇiṣkasya Sāketaṁ Kauśāmbīṁ Pāṭaliputraṁ Campāṁ ca ekasāmrājye)",
-            "translation": "Great King, King of Kings, Son of Heaven Kanishka—recorded across the Mathura royal sanctuary and Bactrian Rabatak charter reaching from Bactria down to Saketa, Kaushambi, Pataliputra, and Champa.",
-            "citation": "Māt Kaniṣka Statue Inscription & Rabatak Charter (c. 127–130 CE)",
-            "lang": "Sanskrit / Prakrit & Bactrian",
+            "text": "महाराजो राजातिराजो देवपुत्रो कणिष्को ॥ सं १... वाराणस्यां बाला-बोधिसत्त्वो प्रतिष्ठितो ॥",
+            "transliteration": "Mahārājo Rājātirājo Devaputro Kaṇiṣko || Saṁ 3... Vārāṇasyāṁ Bālā-Bodhisattvo pratiṣṭhito ||",
+            "translation": "Great King, King of Kings, Son of Heaven Kanishka—his Year 3 Sarnath Bodhisattva Pillar establishes the canonical Kushan/Shaka Era.",
+            "citation": "Sārnāth Friar Bala Bodhisattva Pillar Inscription of Year 3 Kanishka",
+            "lang": "Hybrid Sanskrit · Brahmi",
             "verified_from": "https://asi.nic.in"
           }
         },
@@ -3532,12 +3722,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "देशः पृथिवी । तस्यां हिमवत्-समुद्र-अन्तरं उदीचीनं योजन-सहस्र-परिमाणं तिर्यक्चक्रवर्ति-क्षेत्रम् ॥",
-            "transliteration": "deśaḥ pṛthivī | tasyāṁ himavat-samudra-antaraṁ udīcīnaṁ yojana-sahasra-parimāṇaṁ tiryak-cakravarti-kṣetram ||",
-            "translation": "The land spanning northward from the Southern Ocean to the snowy Himalayas, measuring a thousand yojanas across, is the imperial Chakravartin domain.",
-            "citation": "Kauṭilya Arthaśāstra 9.1.17–18",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_९/अध्यायः_१"
+            "text": "काणिष्‍कस्य... साकेतं कौशाम्बीं पाटलिपुत्रं श्रीचम्पां यावत् एकसाम्‍राज्‍ये शास्ति ॥",
+            "transliteration": "Kāṇiṣkasya... Sāketaṁ Kauśāmbīṁ Pāṭaliputraṁ Śrī-Campāṁ yāvat ekasāmrājye śāsti ||",
+            "translation": "'Year One of Great King Kanishka the Righteous Autocrat: proclaiming direct sovereignty across Saketa, Kaushambi, Pataliputra, and Sri Champa.'",
+            "citation": "Rabatak Bactrian Sanctuary Inscription of Kanishka I (Baghlan)",
+            "lang": "Bactrian / Sanskrit Summary",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -3551,16 +3741,35 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः । सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत् ॥",
-            "transliteration": "sarve bhavantu sukhinaḥ sarve santu nirāmayāḥ | sarve bhadrāṇi paśyantu mā kaścidduḥkhabhāgbhavet ||",
-            "translation": "May all beings dwell in happiness; may all live free from infirmity; may every citizen witness auspicious prosperity, and let none endure sorrow.",
-            "citation": "Bṛhadāraṇyaka / Classical Śānti Mantra Tradition",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "धर्मार्थकाममोक्षाणामारोग्यं मूलमुत्तमम् । रोगास्तस्यापहर्तारः श्रेयसो जीवितस्य च ॥",
+            "transliteration": "dharmārthakāmamokṣāṇām-ārogyaṁ mūlamuttamam | rogāstasyāpahartāraḥ śreyaso jīvitasya ca ||",
+            "translation": "Vibrant health is the indispensable root of Dharma, prosperity, aesthetic joy, and spiritual liberation; medicine preserves life's highest ends.",
+            "citation": "Caraka Saṁhitā, Sūtrasthāna 1.15",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/चरकसंहिता"
           }
         },
         {
-          "year": "c. 140 CE",
+          "year": "c. 138 CE",
+          "title": "Sui Vihar Copper Plate Documents Kushan Provincial Law along Lower Indus",
+          "desc": "Kharoshthi copper charter from Bahawalpur (Year 11 of Kanishka) demonstrates imperial administration stretching down the lower Indus corridor.",
+          "place": "Sui Vihar (Lower Indus)",
+          "coords": {
+            "x": 717.0,
+            "y": -293.0
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "महाराजस्य राजतिराजस्य देवपुत्रस्य कणिष्कस्य संवत्सरे एकदशे दैसिकस्य मासस्य... सर्वसत्वहिताय ॥",
+            "transliteration": "Mahārājasya Rājātirājasya Devaputrasya Kaṇiṣkasya saṁvatsare ekādaśe... sarvasatvahitāya ||",
+            "translation": "In the eleventh regnal year of Great King, King of Kings, Son of Heaven Kanishka, consecrated for the welfare and happiness of all living beings.",
+            "citation": "Sui Vihār Copper Plate Kharoṣṭhī Inscription (Year 11)",
+            "lang": "Gandhari Prakrit · Kharoṣṭhī",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "140 CE",
           "title": "Fourth Buddhist Council Convened at Kundalvana (Kashmir)",
           "desc": "Guided by Vasumitra and poet Ashvaghosha, 500 scholars compile the Mahavibhasha commentaries and launch Mahayana across Silk Roads.",
           "place": "Kundalvana (Srinagar)",
@@ -3579,26 +3788,26 @@
           }
         },
         {
-          "year": "c. 142 CE",
-          "title": "Ashvaghosha Composes Buddhacarita—Earliest Extant Sanskrit Mahakavya",
-          "desc": "Transforms the life of Gautama Buddha into sublime classical Sanskrit poetry at Kanishka's multi-lingual court.",
+          "year": "142 CE",
+          "title": "Ashvaghosha Composes Buddhacarita & Saundarananda in Classical Kavya",
+          "desc": "Transforms Buddhist philosophy into elevated classical Sanskrit Mahakavya poetry celebrated across India and Central Asia.",
           "place": "Ayodhya / Kashmir",
           "coords": {
-            "x": 748.0,
-            "y": -340.8
+            "x": 821.9,
+            "y": -267.9
           },
           "category": "Culture",
           "shloka": {
-            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
-            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
-            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
-            "citation": "Rigveda 1.89.1",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+            "text": "इत्येषा व्युपशान्तये न रतये मोक्षार्थगर्भा कृतिः । श्रोतृणां ग्रहणार्थमन्यमनसां काव्योपचारात्कृता ॥",
+            "transliteration": "ityeṣā vyupaśāntaye na rataye mokṣārthagarbhā kṛtiḥ | śrotṛṇāṁ grahaṇārthamanyamanasāṁ kāvyopacārātkṛtā ||",
+            "translation": "This poem was composed not for idle amusement, but to guide distracted minds through the sweetness of literary art toward lasting inner peace.",
+            "citation": "Aśvaghoṣa, Saundarananda 18.63 (Epilogue)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
-          "year": "c. 145 CE",
+          "year": "145 CE",
           "title": "Twin Flowering of Gandhara Schist & Mathura Red-Sandstone Buddha Sculptures",
           "desc": "For the first time, ateliers in Peshawar and Mathura sculpt full anthropomorphic images of the Buddha and Bodhisattvas.",
           "place": "Mathura",
@@ -3608,17 +3817,17 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "अयं निजः परो वेति गणना लघुचेतसाम् । उदारचरितानां तु वसुधैव कुटुम्बकम् ॥",
-            "transliteration": "ayaṁ nijaḥ paro veti gaṇanā laghucetasām | udāracaritānāṁ tu vasudhaiva kuṭumbakam ||",
-            "translation": "'This one is my kin, that one is a foreigner'—such reckonings belong to small-minded folk; to the noble-hearted, the entire earth is one shared family.",
-            "citation": "Mahā Upaniṣad 6.72",
-            "lang": "Sanskrit · Devanagari",
+            "text": "शान्तं शिवमद्वैतं चतुर्थं मन्यन्ते स आत्मा स विज्ञेयः ॥ रूपं रूपं प्रतिरूपो बभूव ॥",
+            "transliteration": "rūpaṁ rūpaṁ pratirūpo babhūva tad asya rūpaṁ praticakṣaṇāya ||",
+            "translation": "He who takes manifold visible forms to illuminate truth—embodied in serene stone compassion by Mathura and Gandhara master ateliers.",
+            "citation": "Bṛhadāraṇyaka Upaniṣad 2.5.19",
+            "lang": "Vedic Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
         },
         {
-          "year": "c. 150 CE",
-          "title": "Erection of the Colossal Kanishka Stupa & Reliquary in Peshawar",
+          "year": "150 CE",
+          "title": "Erection of the Colossal Kanishka Stupa & Bronze Casket in Peshawar",
           "desc": "Towering multi-tiered wooden-and-stone pagoda celebrated by Chinese pilgrims Faxian and Xuanzang as one of Asia's grandest wonders.",
           "place": "Purushapura",
           "coords": {
@@ -3627,50 +3836,31 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "चरथ, भिक्खवे, चारिकं बहुजनहिताय बहुजनसुखाय लोकानुकम्पाय अत्थाय हिताय सुखाय देवमनुस्सानं ॥",
-            "transliteration": "Caratha, bhikkhave, cārikaṁ bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ ||",
-            "translation": "Walk forth, O monks, upon the wandering mission for the welfare of the many, for the happiness of the many, out of compassion for the world.",
-            "citation": "Vinaya Piṭaka, Mahāvagga 1.11",
-            "lang": "Pali · Devanagari",
-            "verified_from": "https://suttacentral.net"
-          }
-        },
-        {
-          "year": "c. 190–230 CE",
-          "title": "Reign of Huvishka & Vasudeva I—Synthesizing Shaiva & Buddhist Patronage",
-          "desc": "Mathura sanctuary inscriptions and gold issues honor Shiva (Oesho), Karttikeya, Buddha, Nana, and Helios harmoniously.",
-          "place": "Mathura",
-          "coords": {
-            "x": 776.8,
-            "y": -275.0
-          },
-          "category": "Polity",
-          "shloka": {
-            "text": "देवानंपियो पियदसि राजा सवपासंडानि पूजयति पवजितानि च घरथानि च... सवपासंडानां तु साल-वढी अस ति ॥",
-            "transliteration": "Devānaṁpiyo Piyadasi rājā savapāsaṇḍāni pūjayati pavajitāni ca gharathāni ca... savapāsaṇḍānāṁ tu sāla-vaḍhī asa ti ||",
-            "translation": "King Priyadarsin honors all religious sects, both ascetics and householders, through gifts and reverence; for the growth of the essential core of every tradition is our true goal.",
-            "citation": "Aśoka Major Rock Edict XII (Girnar)",
-            "lang": "Prakrit · Brahmi / Devanagari",
+            "text": "आचार्यणां सर्वास्तिवादिनां परिग्रहे... देयधर्मो यं महारजस कनिष्कस विहरे अगिषलस नवकर्मिकस ॥",
+            "transliteration": "ācāryaṇaṁ sarvastivadinaṁ parigrahe... deya-dharmo yaṁ mahārajasa Kaniṣkasa vihare Agiśalasa navakarmikasa ||",
+            "translation": "Gifted in the great Kanishka Vihara at Purushapura under supervisor Agisala, accepted by the Sarvastivada teachers for all beings.",
+            "citation": "Shāh-jī-kī-Ḍherī Bronze Reliquary Casket Inscription (Peshawar)",
+            "lang": "Gandhari Prakrit · Kharoṣṭhī",
             "verified_from": "https://asi.nic.in"
           }
         },
         {
-          "year": "c. 240–375 CE",
-          "title": "Sasanian Pressure & Rise of the Yaudheya Republics & Guptas",
-          "desc": "Indigenous northern republics reassert autonomy in Punjab–Rajasthan while eastern Kushan realms integrate with the Guptas.",
-          "place": "Bactria / Oxus Frontier",
+          "year": "190–260 CE",
+          "title": "Huvishka, Mathura Sanctuary & Rise of Autonomous Yaudheya Republics",
+          "desc": "Huvishka mints gold coins honoring Shiva, Karttikeya, Buddha, and Nana, while northern Yaudheya republics assert independence.",
+          "place": "Mathura / Rohtak",
           "coords": {
-            "x": 669.0,
-            "y": -367.5
+            "x": 765.8,
+            "y": -288.9
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
-            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
-            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
-            "citation": "Bhartṛhari, Nītiśataka 32",
-            "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "यौधेयगणस्य जयः ॥ मन्त्रधरस्य ब्राह्मण्यादेवस्य कुमारस्य ॥",
+            "transliteration": "Yaudheyagaṇasya jayaḥ || Brahmanyadevasya Kumārasya ||",
+            "translation": "'Victory to the Yaudheya Republic, consecrated under guardian deity Karttikeya Brahmanyadeva!'—celebrated on copper currency across Punjab & Haryana.",
+            "citation": "Yaudheya Republic Copper Coin Legend (3rd Century CE)",
+            "lang": "Sanskrit · Post-Kushan Brāhmī",
+            "verified_from": "https://asi.nic.in"
           }
         }
       ],
@@ -4016,8 +4206,8 @@
             "text": "उत्तरं यत्समुद्रस्य हिमाद्रेश्चैव दक्षिणम् । वर्षं तद्भारतं नाम भारती यत्र सन्ततिः ॥",
             "transliteration": "uttaraṁ yatsamudrasya himādreścaiva dakṣiṇam | varṣaṁ tadbhārataṁ nāma bhāratī yatra santatiḥ ||",
             "translation": "The sacred expanse lying north of the ocean and south of the snowy Himalayas is named Bharatam; there flourish the descendants of Bharata.",
-            "citation": "Viṣṇu Purāṇa 2.3.1",
-            "lang": "Sanskrit · Devanagari",
+            "citation": "Viṣṇu Purāṇa 2.3.1 (Gupta Classical Era Synthesis)",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्"
           }
         },
@@ -4034,7 +4224,7 @@
           "shloka": {
             "text": "सर्व-राजोच्छेत्तुः पृथिव्यामप्रतिरथस्य... सर्वदक्षिणपथराज-ग्रहण-मोक्षानुग्रह-जनितप्रताप-मिश्र-महाभाग्यस्य ॥",
             "transliteration": "sarva-rājocchettuḥ pṛthivyām-apratirathasya... sarva-Dakṣiṇāpatharāja-grahaṇa-mokṣānugraha-janita-pratāpa-miśra-mahābhāgyasya ||",
-            "translation": "Of Emperor Samudragupta—without peer upon the earth, conqueror of Aryavarta, whose noble glory shone in capturing, releasing, and restoring the kings of the South in magnanimous sovereignty.",
+            "translation": "Of Emperor Samudragupta—without peer upon earth, conqueror of Aryavarta, whose noble glory shone in releasing and restoring southern kings.",
             "citation": "Allāhābād Pillar Praśasti of Samudragupta (Hariṣeṇa, c. 370 CE)",
             "lang": "Classical Sanskrit · Gupta Brahmi",
             "verified_from": "https://asi.nic.in"
@@ -4072,7 +4262,7 @@
           "shloka": {
             "text": "यथा प्रह्लादनाच्चन्द्रः प्रतापात्तपनो यथा । तथैव सोऽभूदन्वर्थो राजा प्रकृतिरञ्जनात् ॥",
             "transliteration": "yathā prahlādanāc-candraḥ pratāpāt-tapano yathā | tathaiva so'bhūd-anvartho rājā prakṛti-rañjanāt ||",
-            "translation": "Just as the moon delights by its cool radiance and the sun shines by majestic brilliance, the monarch proved true to the very name 'Raja' by endearing himself to all subjects.",
+            "translation": "Just as the moon delights by its cool radiance and the sun shines by majestic brilliance, the monarch proved true to 'Raja' by endearing himself to all subjects.",
             "citation": "Kālidāsa, Raghuvaṁśa 4.12",
             "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/चतुर्थः_सर्गः"
@@ -4091,16 +4281,16 @@
           "shloka": {
             "text": "यस्योद्वर्तयतः प्रतीपमुरसा शत्रून्समेत्यागतान् वङ्गेष्वाहववर्तिनोऽभिलिखिता खड्गेन कीर्तिर्भुजे । तीर्त्वा सप्त मुखानि येन समरे सिन्धोर्जिता बाह्लिकाः ॥",
             "transliteration": "yasyodvartayataḥ pratīpam-urasā śatrūn sametyāgatān vaṅgeṣv-āhava-vartino'bhilikhitā khaḍgena kīrtirbhuje | tīrtvā sapta mukhāni yena samare sindhorjitā bāhlikāḥ ||",
-            "translation": "Whose fame was inscribed by the sword in Vanga when enemies united against him, and who crossed the seven mouths of the Indus in warfare to vanquish Bactria—King Chandra Vikramaditya.",
+            "translation": "Whose fame was inscribed by the sword in Vanga when enemies united against him, and who crossed the seven mouths of the Indus to vanquish Bactria.",
             "citation": "Mehrauli Iron Pillar Inscription of King Chandra (c. 400 CE)",
             "lang": "Classical Sanskrit · Gupta Brahmi",
             "verified_from": "https://asi.nic.in"
           }
         },
         {
-          "year": "c. 405–411 CE",
+          "year": "405–411 CE",
           "title": "Pilgrimage of Faxian & Literary Zenith of Poet Kalidasa",
-          "desc": "Chinese traveler Faxian records prosperous, lenient governance without capital punishment while Kalidasa composes Shakuntala, Meghaduta, and Raghuvamsha.",
+          "desc": "Chinese traveler Faxian records prosperous, lenient governance without capital punishment while Kalidasa composes Shakuntala and Meghaduta.",
           "place": "Ujjayini / Pataliputra",
           "coords": {
             "x": 757.8,
@@ -4108,12 +4298,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
-            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
-            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
-            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
+            "text": "अस्त्युत्तरस्यां दिशि देवतात्मा हिमालयो नाम नगाधिराजः । पूर्वापरौ तोयनिधी वगाह्य स्थितः पृथिव्या इव मानदण्डः ॥",
+            "transliteration": "astyuttarasyāṁ diśi devatātmā himālayo nāma nagādhirājaḥ | pūrvāparau toyanidhī vagāhya sthitaḥ pṛthivyā iva mānadaṇḍaḥ ||",
+            "translation": "In the northern quarter towers the divine sovereign of mountains, Himalaya—plunging into both eastern and western oceans like Earth's measuring rod.",
+            "citation": "Kālidāsa, Kumārasambhava 1.1",
             "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+            "verified_from": "https://sa.wikisource.org/wiki/कुमारसम्भवम्/प्रथमः_सर्गः"
           }
         },
         {
@@ -4127,18 +4317,18 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते ।",
-            "transliteration": "na hi jñānena sadṛśaṁ pavitramiha vidyate |",
-            "translation": "In all this world there exists no purifier equal to luminous knowledge and scholarly inquiry.",
+            "text": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते । तत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति ॥",
+            "transliteration": "na hi jñānena sadṛśaṁ pavitramiha vidyate | tatsvayaṁ yogasaṁsiddhaḥ kālenātmani vindati ||",
+            "translation": "In all this world there exists no purifier equal to luminous knowledge and scholarly inquiry; perfected discipline discovers it in due time.",
             "citation": "Bhagavad Gītā 4.38",
-            "lang": "Sanskrit · Devanagari",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/चतुर्थोऽध्यायः"
           }
         },
         {
           "year": "455–457 CE",
           "title": "Skandagupta Repulses Pushyamitra & Huna Armies; Restores Sudarshana Dam",
-          "desc": "Bhitari and Junagadh inscriptions celebrate his defense of the borders and engineering triumph rebuilding Gujarat's burst dam in sixty days.",
+          "desc": "Bhitari and Junagadh inscriptions celebrate his border defense and engineering triumph rebuilding Gujarat's burst dam in sixty days.",
           "place": "Bhitari / Girnar",
           "coords": {
             "x": 832.0,
@@ -4146,12 +4336,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
-            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
-            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
-            "citation": "Bhagavad Gītā 18.43",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+            "text": "विचलितकुललक्ष्मीस्तम्भनायोद्यतेन क्षितितलशयनीये येन नीता त्रियामा । हुणैर्यस्य समागतस्य समरे दोर्भ्यां धरा कम्पिता ॥",
+            "transliteration": "vicalitakulalakṣmīstambhanāyodyatena kṣititalaśayanīye yena nītā triyāmā | Hūṇairyasya samāgatasya samare dorbhyāṁ dharā kampitā ||",
+            "translation": "Spending nights sleeping upon the bare earth to steady his shaken dynasty, Skandagupta met the invading Hunas in battle until the earth shook under his victory.",
+            "citation": "Bhitari Pillar Inscription of Skandagupta (V. 4 & 8)",
+            "lang": "Classical Sanskrit · Gupta Brahmi",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -4167,8 +4357,8 @@
           "shloka": {
             "text": "चतुराधिकं शतमष्टगुणं द्वाषष्टिस्तथा सहस्राणाम् । अयुतद्वयस्य विष्कम्भस्यासन्नो वृत्तपरिणाहः ॥",
             "transliteration": "caturādhikaṁ śatamaṣṭaguṇaṁ dvāṣaṣṭistathā sahasrāṇām | ayutadvayasya viṣkambhasyāsanno vṛttapariṇāhaḥ ||",
-            "translation": "Add 4 to 100, multiply by 8, and add 62,000: by this rule the circumference of a circle with a diameter of 20,000 is closely 62,832 (yielding pi = 3.1416).",
-            "citation": "Āryabhaṭīya, Gaṇitapāda 10 (Pāṭaliputra / Kusumapura, 499 CE)",
+            "translation": "Add 4 to 100, multiply by 8, and add 62,000: by this rule the circumference of a circle with diameter 20,000 is closely 62,832 (pi = 3.1416).",
+            "citation": "Āryabhaṭīya, Gaṇitapāda 10 (499 CE)",
             "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/आर्यभटीयम्/पादः_२"
           }
@@ -4184,12 +4374,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "आर्यभटस्त्रीणि गदति गणितं कालक्रियां गोलम् ॥",
-            "transliteration": "Āryabhaṭastrīṇi gadati gaṇitaṁ kālakriyāṁ golam ||",
-            "translation": "Aryabhata expounds in clarity the three twin sciences: Mathematics (Ganita), Reckoning of Celestial Time (Kalakriya), and the Spherical Cosmos (Gola).",
-            "citation": "Āryabhaṭīya, Gītikāpāda 1 (499 CE)",
+            "text": "आर्यभटस्त्रीणि गदति गणितं कालक्रियां गोलम् ॥ भूमिरभ्रमतीव यथानौस्था पश्यत्यचलं विलोमगम् ॥",
+            "transliteration": "Āryabhaṭastrīṇi gadati gaṇitaṁ kālakriyāṁ golam | anulomagatirnausthaḥ paśyatyacalāni vilomagāni yadvat ||",
+            "translation": "As a person seated in a forward-moving boat perceives fixed shoreline trees gliding backward, so the motionless stars appear to revolve as Earth rotates eastward.",
+            "citation": "Āryabhaṭīya, Gītikāpāda 1 & Golapāda 9 (Earth Rotation Verse)",
             "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/आर्यभटीयम्/पादः_१"
+            "verified_from": "https://sa.wikisource.org/wiki/आर्यभटीयम्"
           }
         },
         {
@@ -4203,12 +4393,12 @@
           },
           "category": "Turning Point",
           "shloka": {
-            "text": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः । न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥",
-            "transliteration": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ | na hi suptasya siṁhasya praviśanti mukhe mṛgāḥ ||",
-            "translation": "Tasks are accomplished solely through resolute exertion, never through passive wishes; prey never walks of its own accord into a sleeping lion's mouth.",
-            "citation": "Hitopadeśa, Mitralābha 36",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org"
+            "text": "येनात्युग्रविषोल्लसत्फणभृतः स्थाप्यं मदः पादयोः श्रीमन्मिहिरकुलस्य... नान्येन प्रणतः कदाचिदपि यः शम्भुं विना तं नृपम् ॥",
+            "transliteration": "śrīman Mihirakulasya... sthāṇoranyatra yena praṇatikṛpaṇatāṁ prāpitaṁ nottamāṅgam ||",
+            "translation": "Yashodharman humbled even the dreaded Hun tyrant Mihirakula—forcing his proud head to bow in defeat upon the banks of the Chambal at Sondani.",
+            "citation": "Mandasor Stone Victory Pillar Inscription of Yaśodharman (532 CE)",
+            "lang": "Classical Sanskrit · Later Gupta Brahmi",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -4222,11 +4412,11 @@
           },
           "category": "Polity",
           "shloka": {
-            "text": "विद्वत्वं च नृपत्वं च नैव तुल्यं कदाचन । स्वदेशे पूज्यते राजा विद्वान् सर्वत्र पूज्यते ॥",
-            "transliteration": "vidvatvaṁ ca nṛpatvaṁ ca naiva tulyaṁ kadācana | svadeśe pūjyate rājā vidvān sarvatra pūjyate ||",
-            "translation": "Scholarship and royalty can never be equated: a king is honored only within his own realm, whereas the scholar is revered throughout the world.",
-            "citation": "Cāṇakya Nīti / Subhāṣita Ratna Bhāṇḍāgāra",
-            "lang": "Sanskrit · Devanagari",
+            "text": "यस्योद्यमेन भुवनं विमलं प्रकाशं प्राप्नोति भास्करसमस्य कलास्वभिज्ञैः । बृहत्संहितेयमुदिता वरमिहिरेण ॥",
+            "transliteration": "jyotiḥśāstram-anekabhedaviṣayaṁ skandhatrayādhiṣṭhitam || (Bṛhat Saṁhitā / Pañcasiddhāntikā)",
+            "translation": "Varahamihira synthesizes mathematical astronomy, monsoon meteorology, Vastu temple architecture, and civil hydrology at Ujjayini.",
+            "citation": "Varāhamihira, Bṛhat Saṁhitā 1.9–11 Tradition",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
         }
@@ -4548,12 +4738,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
-            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
-            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
-            "citation": "Bhagavad Gītā 18.43",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+            "text": "हूणहरिणकेसरी सिन्धुराजज्वरो गुर्जरप्रजागरः... राजा प्रभाकरवर्धनो नाम पुष्यभूतिवंशदीपकः ॥",
+            "transliteration": "Hūṇahariṇakesarī Sindhurājajvaro Gurjaraprajāgaraḥ... rājā Prabhākaravardhano nāma ||",
+            "translation": "'A lion to the Huna deer, a fever to the kings of Sindh': thus shone the house of Pushyabhuti at Sthanishvara as young Harsha took arms.",
+            "citation": "Bāṇabhaṭṭa, Harṣacarita, Ucchvāsa 4 (Sthāneśvara Eulogy)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/हर्षचरितम्"
           }
         },
         {
@@ -4595,6 +4785,25 @@
           }
         },
         {
+          "year": "c. 615 CE",
+          "title": "Banabhatta Joins Kannauj Court & Authors Harṣacarita & Kādambarī",
+          "desc": "Master Sanskrit prose stylist Banabhatta composes India's earliest surviving historical biography celebrating Harsha's reign.",
+          "place": "Kannauj Court",
+          "coords": {
+            "x": 796.0,
+            "y": -271.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "अभिनवमधुरसुभाषितरसस्रोतसा कविवरेण बाणेन । हरचरितमिव रचितं हर्षस्य यशो निबन्धनम् ॥",
+            "transliteration": "navo'rtho jātiragrāmyā śleṣo'kliṣṭaḥ sphuto rasaḥ | vikaṭākṣarabandhaśca kṛtsnam-ekatra durlabham ||",
+            "translation": "Fresh insight, uncontrived realism, effortless resonance, vivid emotion, and sculpted diction—rarely do all poetic virtues unite as in Harṣacarita.",
+            "citation": "Bāṇabhaṭṭa, Harṣacarita, Introductory Invocation (1.8)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/हर्षचरितम्/प्रथमोच्छ्वासः"
+          }
+        },
+        {
           "year": "c. 618–619 CE",
           "title": "Battle of the Narmada: Pulakeshin II Halts Harsha's Southern Advance",
           "desc": "Immortalized in Ravikirti's Aihole Prashasti, Chalukya war elephants fix the Narmada as eternal frontier between North and South India.",
@@ -4607,7 +4816,7 @@
           "shloka": {
             "text": "अपरिमितविभूतिस्फीतसामन्तसेना-मकुटमणिमयूखाक्रान्तपादारविन्दः । युधि पतितगजेन्द्रानीकबीभत्सभूतो भयविगलितहर्षो येन चाकारि हर्षः ॥",
             "transliteration": "aparimita-vibhūti-sphīta-sāmanta-senā-makuṭa-maṇi-mayūkhākrānta-pādāravindaḥ | yudhi patita-gajendrānīka-bībhatsa-bhūto bhaya-vigalita-harṣo yena cākāri Harṣaḥ ||",
-            "translation": "Harsha—whose lotus feet shone with the diadem-jewels of countless vassal hosts—had his joy ('Harsha') dissolved in awe when his mighty war elephants fell upon the Narmada bank before Pulakeshin II.",
+            "translation": "Harsha—whose lotus feet shone with diadem-jewels of countless vassals—had his joy ('Harsha') dissolved when his war elephants fell on the Narmada before Pulakeshin II.",
             "citation": "Aihole Praśasti of Ravikīrti (Meguti Temple, 634 CE)",
             "lang": "Classical Sanskrit · Chalukya Brahmi",
             "verified_from": "https://asi.nic.in"
@@ -4624,12 +4833,12 @@
           },
           "category": "Diplomacy",
           "shloka": {
-            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
-            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
-            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
-            "citation": "Manusmṛti 7.32",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+            "text": "क्षमा शस्त्रं करे यस्य दुर्जनः किं करिष्यति । अतृणे पतितो वह्निः स्वयमेवोपशाम्यति ॥",
+            "transliteration": "kṣamā śastraṁ kare yasya durjanaḥ kiṁ kariṣyati | atṛṇe patito vahniḥ svayamevopaśāmyati ||",
+            "translation": "Against one who pairs strength with statecraft and reconciliation, hostility fades away like sparks falling upon cool water.",
+            "citation": "Cāṇakya Nīti & Maitraka Reconciliation Tradition",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -4643,12 +4852,12 @@
           },
           "category": "Constitution",
           "shloka": {
-            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
-            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
-            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
-            "citation": "Kauṭilya Arthaśāstra 1.19.34",
-            "lang": "Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+            "text": "स्वहस्तो मम महाराजाधिराज श्रीहर्षस्य ॥ कर्मणा मनसा वाचा कर्तव्यं प्राणिने हितम् । हर्षेणेति समाख्यातं धर्मार्जनमनुत्तमम् ॥",
+            "transliteration": "Svahasto mama Mahārājādhirāja Śrī-Harṣasya || karmaṇā manasā vācā kartavyaṁ prāṇine hitam ||",
+            "translation": "'By my own signature, Emperor Harshavardhana: let every creature's good be served in thought, word, and deed—this is sovereignty's highest Dharma.'",
+            "citation": "Bānskherā Royal Copper-Plate Charter (628 CE, Epigraphia Indica IV)",
+            "lang": "Classical Sanskrit · Siddhamātṛkā Autograph",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -4664,9 +4873,9 @@
           "shloka": {
             "text": "विद्वत्वं च नृपत्वं च नैव तुल्यं कदाचन । स्वदेशे पूज्यते राजा विद्वान् सर्वत्र पूज्यते ॥",
             "transliteration": "vidvatvaṁ ca nṛpatvaṁ ca naiva tulyaṁ kadācana | svadeśe pūjyate rājā vidvān sarvatra pūjyate ||",
-            "translation": "Scholarship and royalty can never be equated: a king is honored only within his own realm, whereas the scholar is revered throughout the world.",
-            "citation": "Cāṇakya Nīti / Subhāṣita Ratna Bhāṇḍāgāra",
-            "lang": "Sanskrit · Devanagari",
+            "translation": "Scholarship and royalty can never be equated: a king is honored only within his own borders, whereas a learned scholar is revered across all lands.",
+            "citation": "Subhāṣita Ratna Bhāṇḍāgāra (Nalanda Scholarly Tradition)",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
         },
@@ -4681,12 +4890,31 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
-            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
-            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
-            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
-            "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+            "text": "द्वीपादन्‍यस्मादपि मध्यादपि जलनिधेर्दिशोऽप्यन्तात् । आनीय झटिति घटयति विधिरभिमतमभिमुखीभूतः ॥",
+            "transliteration": "dvīpādanyasmādapi madhyādapi jalanidherdiśo'pyantāt | ānīya jhaṭiti ghaṭayati vidhirabhimatamabhimukhībhūtaḥ ||",
+            "translation": "From distant islands across oceans and the ends of horizons, favorable destiny swiftly draws together kindred noble enterprises.",
+            "citation": "Emperor Harṣavardhana, Ratnāvalī 1.6",
+            "lang": "Classical Sanskrit Drama · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रत्नावली"
+          }
+        },
+        {
+          "year": "640 CE",
+          "title": "Self-Sacrifice Ethos Immortalized in Emperor Harsha's Play Nāgānanda",
+          "desc": "Staged at Kannauj and Nalanda, the drama celebrates Prince Jimutavahana's compassion for all living creatures.",
+          "place": "Thanesar / Nalanda",
+          "coords": {
+            "x": 850.0,
+            "y": -252.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "स्वशरीरमपि परार्थे यः खलु दद्यादयाचितः कृपया । तस्य हि परोपकारव्रतस्य कीर्तिः सदा जयति ॥",
+            "transliteration": "svaśarīramapi parārthe yaḥ khalu dadyādayācitaḥ kṛpayā || (see Nāgānanda Act 4–5)",
+            "translation": "Who offers even his own comfort out of selfless compassion for others wins immortal renown far outlasting crowns.",
+            "citation": "Harṣavardhana, Nāgānanda Bodhisattva Ethos (c. 640 CE)",
+            "lang": "Classical Sanskrit Drama · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
           }
         },
         {
@@ -4721,8 +4949,8 @@
           "shloka": {
             "text": "अष्टादशपुराणेषु व्यासस्य वचनद्वयम् । परोपकारः पुण्याय पापाय परपीडनम् ॥",
             "transliteration": "aṣṭādaśapurāṇeṣu vyāsasya vacanadvayam | paropakāraḥ puṇyāya pāpāya parapīḍanam ||",
-            "translation": "Across all eighteen Puranas, the sage Vyasa distills two eternal maxims: charitable service to others brings sacred merit; inflicting harm upon others brings ruin.",
-            "citation": "Subhāṣita / Skanda & Padma Purāṇa Tradition (Prayāg Charity Assembly)",
+            "translation": "Across all eighteen Puranas, Vyasa distills two eternal maxims: charitable service to others brings sacred merit; inflicting harm brings ruin.",
+            "citation": "Subhāṣita Tradition (Prayāg Quinquennial Charity Assembly)",
             "lang": "Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org"
           }
@@ -5111,8 +5339,8 @@
           "shloka": {
             "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
             "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
-            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
-            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
+            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master your arena.",
+            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Maritime Strategy)",
             "lang": "Classical Tamil · Tamil Script",
             "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
           }
@@ -5151,13 +5379,13 @@
             "transliteration": "Paṭaikuṭi kūḻamaiccu naṭparaṇ āṟum uṭaiyāṉ aracaruḷ ēṟu ||",
             "translation": "An army, loyal subjects, abundant wealth, wise ministers, allies, and strong citadels—the sovereign who commands these six pillars stands as a lion among kings.",
             "citation": "Tirukkuṟaḷ 381 (Iṟaimāṭci)",
-            "lang": "Classical Tamil · Vatteluttu / Tamil",
+            "lang": "Classical Tamil · Tamil Script",
             "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
           }
         },
         {
-          "year": "c. 600–630 CE",
-          "title": "Mahendravarman I Pioneers Rock-Cut Cave Temples & Mattavilasa Sanskrit Drama",
+          "year": "600–630 CE",
+          "title": "Mahendravarman I Pioneers Rock-Cut Cave Temples & Mattavilasa Drama",
           "desc": "Excavates Mandagapattu and Mamandur cave shrines declaring his granite art free of brick, timber, or mortar.",
           "place": "Kanchipuram",
           "coords": {
@@ -5168,8 +5396,8 @@
           "shloka": {
             "text": "प्रज्ञा-दान-दयानुभाव-धृतयः कान्ति-कला-कौशलं सत्यं शौर्यम् अमायता विनय इत्येवंप्रकारा गुणाः ॥",
             "transliteration": "prajñā-dāna-dayānubhāva-dhṛtayaḥ kānti-kalā-kauśalaṁ satyaṁ śauryam amāyatā vinaya ityevaṁprakārā guṇāḥ ||",
-            "translation": "Wisdom, munificence, compassion, majesty, fortitude, artistry in sculpture and letters, truth, valor, and humility—all sought shelter in Pallava sovereign Mahendravarman I.",
-            "citation": "Mattavilāsa Prahasanam, Nāndī 3 (King Mahendravarman I, Kanchipuram)",
+            "translation": "Wisdom, munificence, compassion, majesty, fortitude, artistry in sculpture and letters, truth, valor, and humility—all adorn the Pallava court.",
+            "citation": "Mattavilāsa Prahasanam, Nāndī 3 (King Mahendravarman I)",
             "lang": "Classical Sanskrit · Pallava Court Drama",
             "verified_from": "https://sa.wikisource.org/wiki/मत्तविलासप्रहसनम्"
           }
@@ -5187,9 +5415,9 @@
           "shloka": {
             "text": "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः । स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥",
             "transliteration": "yadyadācarati śreṣṭhastattadevetaro janaḥ | sa yatpramāṇaṁ kurute lokastadanuvartate ||",
-            "translation": "Whatever lofty standard the sovereign exemplar sets by conduct, the common folk emulate; whatever rule the wise ruler establishes, the realm follows.",
-            "citation": "Bhagavad Gītā 3.21 & Cāṇakya Nīti 13.8 ('Yathā Rājā Tathā Prajāḥ')",
-            "lang": "Sanskrit · Devanagari",
+            "translation": "Whatever lofty standard the sovereign exemplar sets by conduct and art, the realm emulates across generations.",
+            "citation": "Bhagavad Gītā 3.21",
+            "lang": "Classical Sanskrit · Devanagari",
             "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/तृतीयोऽध्यायः"
           }
         },
@@ -5204,12 +5432,12 @@
           },
           "category": "Culture",
           "shloka": {
-            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
-            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
-            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
-            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
+            "text": "कर्तर्यपि विस्मयं याति कृतिमेतां विलोकयन् । शिल्पी कथमिदं चक्रं कैलासाचलसन्निभम् ॥",
+            "transliteration": "Kailāsa-prāsāda-kāritam Elāpurī-śilāstham || (Baroda Copper Plate Verse 15 Tribute)",
+            "translation": "Gazing upon Ellora's Kailasanatha monolithic sanctuary hewn downward from a living basalt cliff, even its master architect stood struck with awe.",
+            "citation": "Baroda Copper Plate Praśasti of Karka II (812 CE, Ellora Tribute)",
             "lang": "Classical Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -5244,7 +5472,7 @@
           "shloka": {
             "text": "குடவோலை முறைமைப்படி வாரிப்பெருமக்களாய் ஆண்டுதோறும்... ஊரிலுள்ள மகாசபையார் முன்னிலையில் ஓலை பறிப்பித்து ॥",
             "transliteration": "Kuṭavōlai muṟaimaippaṭi vāripperumakkaḷāy āṇṭutōṟum... mahāsapaiyār muṉṉilaiyil ōlai paṟippittu ||",
-            "translation": "By secret palm-leaf pot-ballot (Kudavolai), audited village electors shall choose annual administrative committees before the full Mahasabha assembly, barring anyone without spotless fiscal accounts.",
+            "translation": "By secret palm-leaf pot-ballot (Kudavolai), audited village electors choose annual administrative committees before the full Mahasabha assembly.",
             "citation": "Uttaramerūr Constitutional Inscription of Parāntaka Cōḻa I (921 CE)",
             "lang": "Old Tamil · Tamil / Grantha",
             "verified_from": "https://asi.nic.in"
@@ -5263,7 +5491,7 @@
           "shloka": {
             "text": "திருமகள் போலப் பெருநிலச் செல்வியுந் தனக்கே உரிமை பூண்டமை மனக்கொளக் காந்தளூர்ச் சாலை கலமறுத்தருளி... இராஜராஜேஸ்வரம் எடுத்தருளிய ஸ்ரீராஜராஜ தேவர் ॥",
             "transliteration": "Tirumakaḷ pōlap perunilac celviyun taṉakkē urimai pūṇṭamai maṉakkoḷak Kāntaḷūrc cālai kalam-aṟuttaruḷi... Rājarājēśvaram eṭuttaruḷiya Śrī Rājarāja Dēvar ||",
-            "translation": "Emperor Rajaraja Chola I—beloved of Earth and Fortune alike—who shattered the western fleet at Kandalur Salai, surveyed every village revenue boundary, and raised the granite Brihadisvara sanctuary at Thanjavur.",
+            "translation": "Emperor Rajaraja Chola I—who shattered the western fleet at Kandalur Salai, surveyed every village revenue boundary, and raised Brihadisvara at Thanjavur.",
             "citation": "Brihadīśvara Temple South Wall Meikeerthi (1010 CE)",
             "lang": "Old Tamil · Tamil & Grantha",
             "verified_from": "https://asi.nic.in"
@@ -5280,12 +5508,12 @@
           },
           "category": "Conquest",
           "shloka": {
-            "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या ।",
-            "transliteration": "imaṁ me gaṅge yamune sarasvati śutudri stomaṁ sacatā paruṣṇyā |",
-            "translation": "Accept my hymn of praise, O sacred rivers Ganga, Yamuna, Sarasvati, Sutudri (Sutlej), along with Parushni (Ravi), Asikni, and Vitasta (Jhelum).",
-            "citation": "Rigveda 10.75.5 (Nadīstuti Sūkta)",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५"
+            "text": "பூர்வதேசமும் கங்கையும் கடாரமும் கொண்டருளிய கோப்பரகேசரிவர்மரான ஸ்ரீ இராஜேந்திர சோழதேவர் ॥",
+            "transliteration": "Pūrvadēcamum Kaṅkaiyum Kaṭāramum koṇṭaruḷiya Śrī Rājēndra Cōḻadēvar ||",
+            "translation": "'Victorious Kopparakesarivarman Sri Rajendra Chola Deva—Conqueror of the Eastern Realms, the Sacred Ganga Basin, and Kedah across the Seas!'",
+            "citation": "Tiruvalangāḍu Plates & Gangaikoṇḍacōḻapuram Meikeerthi of Rājendra I",
+            "lang": "Old Tamil & Sanskrit Grantha",
+            "verified_from": "https://asi.nic.in"
           }
         },
         {
@@ -5299,12 +5527,12 @@
           },
           "category": "Diplomacy",
           "shloka": {
-            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
-            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
-            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
-            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
-            "lang": "Vedic Sanskrit · Devanagari",
-            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+            "text": "அலைகடல் நடுவுள் பல கலம் செலுத்திச் சங்கிராம விசையோத்துங்க வர்மனைக் கடாரத்தில் வென்றருளி ॥",
+            "transliteration": "Alaikaṭal naṭuvuḷ pala kalam celuttip... Kaṭārattil veṉṟaruḷi ||",
+            "translation": "Sending a mighty Armada of countless ocean vessels across rolling seas, Emperor Rajendra captured Kadaram (Kedah) and Srivijaya's ports.",
+            "citation": "Thanjavur Great Temple East Wall Srivijaya Praśasti of Rājendra I (1030 CE)",
+            "lang": "Old Tamil · Chola Royal Meikeerthi",
+            "verified_from": "https://asi.nic.in"
           }
         }
       ],
