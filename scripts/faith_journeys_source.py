@@ -30,6 +30,7 @@ def gg(ang, needle, citation, join_next=0):
 VERSES = {
     # Vedas and Upanishads
     "rv_10_75_5": ws("ऋग्वेदः_सूक्तं_१०.७५", "इमं मे गङ्गे", "sa", "Rigveda 10.75.5 (Nadistuti)", "Rigveda"),
+    "rv_3_33_1": ws("ऋग्वेदः_सूक्तं_३.३३", "प्र पर्वतानामुशती", "sa", "Rigveda 3.33.1 (Vishvamitra and the Rivers)", "Rigveda", join_next=1),
     "rv_1_164_46": ws("ऋग्वेदः_सूक्तं_१.१६४", "एकं सद्विप्रा", "sa", "Rigveda 1.164.46", "Rigveda"),
     "cu_6_8_7": ws("छान्दोग्योपनिषद्/अध्यायः_६", "तत्त्वमसि", "sa", "Chandogya Upanishad 6.8.7", "Upanishads"),
     "bu_1_3_28": ws("बृहदारण्यक_उपनिषद्_1a", "असतो मा", "sa", "Brihadaranyaka Upanishad 1.3.28", "Upanishads"),
@@ -60,6 +61,13 @@ VERSES = {
     "dn16_vesali": sc("dn16", "dn16:3.2.4", "Digha Nikaya 16 (Mahaparinibbanasutta) 3.2"),
     "dn16_kusinara": sc("dn16", "dn16:3.51.4", "Digha Nikaya 16 (Mahaparinibbanasutta) 3.51"),
     "dn16_pataligama": sc("dn16", "dn16:1.26.1", "Digha Nikaya 16 (Mahaparinibbanasutta) 1.26"),
+    "ud1_1": sc("ud1.1", "ud1.1:1.1", "Udana 1.1 (Bodhisutta at Uruvela)", join_next=1),
+    "sn35_28": sc("sn35.28", "sn35.28:1.1", "Samyutta Nikaya 35.28 (Adittapariyayasutta, Gayasisa)", join_next=2),
+    "ud4_5": sc("ud4.5", "ud4.5:1.1", "Udana 4.5 (Nagasutta at Kosambi)", join_next=1),
+    "mn26": sc("mn26", "mn26:1.2", "Majjhima Nikaya 26 (Ariyapariyesanasutta at Jetavana)"),
+    "an8_12": sc("an8.12", "an8.12:1.1", "Anguttara Nikaya 8.12 (Sihasutta at Vesali)"),
+    "dn16_pava": sc("dn16", "dn16:4.13.5", "Digha Nikaya 16 (Mahaparinibbanasutta) 4.13"),
+    "dn16_cities": sc("dn16", "dn16:5.17.3", "Digha Nikaya 16 (Mahaparinibbanasutta) 5.17", join_next=1),
     "sn4_5": sc("sn4.5", "sn4.5:2.3", "Samyutta Nikaya 4.5 (Pasasutta)"),
     "dhp1": sc("dhp1-20", "dhp1:1", "Dhammapada 1", "dhp1-20", join_next=5),
     "dhp5": sc("dhp1-20", "dhp5:1", "Dhammapada 5", "dhp1-20", join_next=3),
@@ -86,6 +94,11 @@ VERSES = {
     "gg_633": gg(633, "ਜੋ ਨਰੁ ਦੁਖ ਮੈ ਦੁਖੁ ਨਹੀ", "Guru Granth Sahib, Ang 633 (Sorath, Guru Tegh Bahadur)"),
     "gg_1427": gg(1427, "ਭੈ ਕਾਹੂ ਕਉ", "Guru Granth Sahib, Ang 1427 (shalok of Guru Tegh Bahadur)", 1),
     "gg_1105": gg(1105, "ਸੂਰਾ ਸੋ ਪਹਿਚਾਨੀਐ", "Guru Granth Sahib, Ang 1105 (Maru, Bhagat Kabir)"),
+    "gg_13": gg(13, "ਨਾਨਕ ਕਰਤੇ", "Guru Granth Sahib, Ang 13 (Asa, So Purakh)"),
+    "gg_91": gg(91, "ਹਰਿ ਭਗਤਾ", "Guru Granth Sahib, Ang 91 (Sri Raag, Guru Amar Das)"),
+    "gg_722": gg(722, "ਜੈਸੀ ਮੈ ਆਵੈ ਖਸਮ ਕੀ ਬਾਣੀ", "Guru Granth Sahib, Ang 722 (Tilang, Guru Nanak Dev)"),
+    "gg_966": gg(966, "ਧੰਨੁ ਸੁ ਤੇਰੇ ਭਗਤ", "Guru Granth Sahib, Ang 966 (Ramkali, Guru Arjan Dev)"),
+    "gg_1389": gg(1389, "ਕਾਮ ਕ੍ਰੋਧ ਮਦ", "Guru Granth Sahib, Ang 1389 (Guru Arjan Dev)"),
 }
 
 # Verses for epic kingdoms that had none. "generic" ones are labelled 'From the epic (general)' in the UI.

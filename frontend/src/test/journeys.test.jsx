@@ -50,10 +50,26 @@ describe('Journey map', () => {
 
   it('switches routes and keeps the slider in range', async () => {
     const { container } = render(<JourneyMap id="demo" />);
-    await userEvent.click(await screen.findByRole('button', { name: 'Route two' }));
+    await userEvent.click(await screen.findByRole('button', { name: /Route two/ }));
     expect(screen.getByRole('heading', { name: /1\. Sarnath/ })).toBeInTheDocument();
     expect(container.querySelector('.jm-stop.is-approx')).not.toBeNull();
     expect(screen.getByRole('slider', { name: 'Stop' })).toHaveAttribute('max', '1');
+  });
+
+  it('supports zoom controls, follow mode, label toggles, and chronological stop itinerary', async () => {
+    const { container } = render(<JourneyMap id="demo" />);
+    expect(await screen.findByRole('heading', { name: /1\. Lumbini/ })).toBeInTheDocument();
+    const zoomIn = screen.getByRole('button', { name: 'Zoom in map' });
+    const resetBtn = screen.getByRole('button', { name: 'Reset map zoom' });
+    expect(resetBtn).toBeDisabled();
+    await userEvent.click(zoomIn);
+    expect(resetBtn).not.toBeDisabled();
+    await userEvent.click(screen.getByRole('button', { name: 'Toggle all map stop labels' }));
+    expect(container.querySelectorAll('.jm-stop.show-label')).toHaveLength(2);
+    await userEvent.click(screen.getByRole('button', { name: /^2\s*Bodh Gaya\s*\+400 km/i }));
+    expect(screen.getByRole('heading', { name: /2\. Bodh Gaya/ })).toBeInTheDocument();
+    await userEvent.click(resetBtn);
+    expect(resetBtn).toBeDisabled();
   });
 
   it('offsets labels for Rama stops at the same map location', async () => {

@@ -46,10 +46,12 @@ def test_every_stop_has_a_verified_verse_and_source():
 
 def test_routes_are_ordered_with_unique_stop_ids():
     for journey, route in all_routes():
-        ids = [stop["id"] for stop in route["stops"]]
+        stops = route["stops"]
+        assert len(stops) >= 6, f"{journey['id']}/{route['id']} only has {len(stops)} stops"
+        ids = [stop["id"] for stop in stops]
         assert len(ids) == len(set(ids)), f"duplicate stop ids in {journey['id']}/{route['id']}"
-        assert route["stops"][0]["leg_km"] == 0
-        assert all(stop["leg_km"] > 0 for stop in route["stops"][1:]), route["id"]
+        assert stops[0]["leg_km"] == 0
+        assert all(stop["leg_km"] > 0 for stop in stops[1:]), route["id"]
 
 
 def test_epic_atlas_has_no_missing_shlokas_and_routes():
@@ -61,7 +63,7 @@ def test_epic_atlas_has_no_missing_shlokas_and_routes():
             shloka = entry.get("shloka")
             assert shloka and shloka["sa"] and shloka["translation"] and shloka["verified_from"].startswith("http"), entry["id"]
         stops = epic["route"]["stops"]
-        assert len(stops) >= 8, key
+        assert len(stops) >= 15, key
         for stop in stops:
             assert stop["shloka"] and stop["shloka"]["verified_from"].startswith("http"), stop["id"]
     assert total == 58

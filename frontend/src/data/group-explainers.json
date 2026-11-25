@@ -14772,7 +14772,7 @@
           "suttacentral.net",
           "valmikiramayan.net"
         ],
-        "indicatorCount": 19,
+        "indicatorCount": 22,
         "subgroupCount": 6,
         "verse": {
           "text": "असतो मा सद्गमय",
@@ -14785,14 +14785,12 @@
             "headline": "Epics: Mahabharata & Ramayana",
             "dek": "The kingdoms of the two epics on a map, with the routes of Rama and the Pandavas traced stop by stop.",
             "paragraphs": [
-              "The Epics: Mahabharata & Ramayana subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 6 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing epics: mahabharata & ramayana were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across epics: mahabharata & ramayana. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within epics: mahabharata & ramayana. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire epics: mahabharata & ramayana ecosystem."
+              "The Epics: Mahabharata & Ramayana chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 6 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -14804,14 +14802,14 @@
             "sections": [
               {
                 "title": "Kingdoms of the Mahabharata & Places of the Ramayana: Interactive Epic Atlas",
-                "text": "The two epics are mapped place by place: the kingdoms of the Mahabharata war and the lands of the Ramayana, each with its ruler, its role in the story and a shloka. Switch on the route to follow Rama from Ayodhya to Lanka, or the Pandavas from Hastinapura to the Himalaya. This chart follows Kingdoms of the Mahabharata. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of Kingdoms of the Mahabharata provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.",
+                "text": "The two epics are mapped place by place: the kingdoms of the Mahabharata war and the lands of the Ramayana, each with its ruler, its role in the story and a shloka. Switch on the route to follow Rama from Ayodhya to Lanka, or the Pandavas from Hastinapura to the Himalaya. This chart follows Kingdoms of the Mahabharata. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing Kingdoms of the Mahabharata on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_epic_kingdoms_mahabharata"
                 ]
               },
               {
                 "title": "The Pandavas’ journey and battles: Route & Leg Distances",
-                "text": "The 2 charts here follow The Pandavas’ journey and battles. In The Pandavas’ journey and battles, Matsya (Virata Kingdom) leads at 921 km, ahead of Magadha at 907 km; Panchala (Kampilya and Ahichchhatra) is lowest at 67 km. This view is interactive: use its own controls to change the period, place or layer.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "text": "The 2 charts here follow The Pandavas’ journey and battles. In The Pandavas’ journey and battles, Dvaraka and Anarta (Yadava realm) leads at 2,558 km, ahead of Kashi at 1,466 km; Panchala (Kampilya and Ahichchhatra) is lowest at 67 km. This view is interactive: use its own controls to change the period, place or layer.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
                   "india_journey_pandavas",
                   "india_journey_pandavas_leg_km"
@@ -14819,14 +14817,14 @@
               },
               {
                 "title": "Rama’s route: Ayodhya to Lanka and Back",
-                "text": "The 2 charts here follow Rama’s route. In Rama’s route, Ayodhya (Kosala) leads at 2,108 km, ahead of Panchavati at 868 km; Janasthana is lowest at 2 km. This view is interactive: use its own controls to change the period, place or layer.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for Rama’s route. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.",
+                "text": "The 2 charts here follow Rama’s route. In Rama’s route, Ayodhya (Kosala) leads at 2,108 km, ahead of Rameshwaram and the Setu at 1,210 km; Sarayu River Bank is lowest at 1 km. This view is interactive: use its own controls to change the period, place or layer.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
                 "keys": [
                   "india_journey_rama",
                   "india_journey_rama_leg_km"
                 ]
               }
             ],
-            "pullQuote": "In Rama’s route, Ayodhya (Kosala) leads at 2,108 km, ahead of Panchavati at 868 km; Janasthana is lowest at 2 km.",
+            "pullQuote": "In Rama’s route, Ayodhya (Kosala) leads at 2,108 km, ahead of Rameshwaram and the Setu at 1,210 km; Sarayu River Bank is lowest at 1 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -14858,48 +14856,54 @@
             "headline": "Vedic & Upanishadic Journeys",
             "dek": "From the Sapta Sindhu to the Gangetic plain: where the Vedas and Upanishads took shape and travelled.",
             "paragraphs": [
-              "The Vedic & Upanishadic Journeys subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 2 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing vedic & upanishadic journeys were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across vedic & upanishadic journeys. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within vedic & upanishadic journeys. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire vedic & upanishadic journeys ecosystem."
+              "The Vedic & Upanishadic Journeys chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 3 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "sa.wikisource.org"
             ],
-            "indicatorCount": 2,
+            "indicatorCount": 3,
             "pattern": "two-lenses",
             "sections": [
               {
-                "title": "The Vedas and Upanishads",
-                "text": "The Vedic hymns grew up in the land of the seven rivers, the Sapta Sindhu, and the tradition then moved east to the Ganga-Yamuna country, where the Brahmanas and the early Upanishads took shape. The map follows that eastward drift with a verse for each stop. This chart follows The Vedas and Upanishads. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of The Vedas and Upanishads provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५ and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "title": "Vedic & Upanishadic Heartlands: Interactive Journey Map",
+                "text": "The Vedic hymns grew up in the land of the seven rivers, the Sapta Sindhu, and the tradition then moved east to the Ganga-Yamuna country, where the Brahmanas and the early Upanishads took shape. The map follows that eastward drift with a verse for each stop. This chart follows The Vedas and Upanishads. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing The Vedas and Upanishads on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_journey_vedas_upanishads"
                 ]
               },
               {
-                "title": "The Vedas and Upanishads",
-                "text": "This chart follows The Vedas and Upanishads. In The Vedas and Upanishads, Shringeri leads at 1,974 km, ahead of Videha (Mithila) at 716 km; Kuru–Panchala country is lowest at 290 km. Bars follow the published order; hover a bar for its exact figure.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for The Vedas and Upanishads. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.\n\nAddressing structural bottlenecks in the vedas and upanishads remains critical for sustaining long-term developmental momentum. Balancing capital investments with operational maintenance while ensuring equitable access across regional and demographic cohorts frames the policy agenda.",
+                "title": "Vedic Rivers to Upanishadic Courts: Kilometres per Leg",
+                "text": "This chart follows The Vedas and Upanishads. In The Vedas and Upanishads, Shringeri (Karnataka) leads at 1,974 km, ahead of Avanti (Ujjayini) at 1,000 km; Vipas & Shutudri Confluence (Beas–Sutlej) is lowest at 75 km. Bars follow the published order; hover a bar for its exact figure.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
-                  "india_journey_vedas_upanishads_leg_km"
+                  "india_journey_vedas_upanishads_vedic_leg_km"
+                ]
+              },
+              {
+                "title": "Advaita Mathas & Commentarial Seats: Kilometres per Leg",
+                "text": "This chart follows The Vedas and Upanishads. In The Vedas and Upanishads, Sharada Peetha (Dwarka) leads at 1,770 km, ahead of Govardhana Matha (Puri) at 1,351 km; Jyotirmath (Joshimath, Uttarakhand) is lowest at 672 km. Bars follow the published order; hover a bar for its exact figure.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
+                "keys": [
+                  "india_journey_vedas_upanishads_advaita_mathas_leg_km"
                 ]
               }
             ],
-            "pullQuote": "In The Vedas and Upanishads, Shringeri leads at 1,974 km, ahead of Videha (Mithila) at 716 km; Kuru–Panchala country is lowest at 290 km.",
+            "pullQuote": "In The Vedas and Upanishads, Shringeri (Karnataka) leads at 1,974 km, ahead of Avanti (Ujjayini) at 1,000 km; Vipas & Shutudri Confluence (Beas–Sutlej) is lowest at 75 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
               "india_journey_vedas_upanishads",
-              "india_journey_vedas_upanishads_leg_km"
+              "india_journey_vedas_upanishads_vedic_leg_km",
+              "india_journey_vedas_upanishads_advaita_mathas_leg_km"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 2
+                "value": 3
               },
               {
                 "label": "Named publishers",
@@ -14917,14 +14921,12 @@
             "headline": "Buddhist Journeys",
             "dek": "The Buddha’s life from Lumbini to Kushinagar, and how his teaching spread across Asia.",
             "paragraphs": [
-              "The Buddhist Journeys subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 3 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing buddhist journeys were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across buddhist journeys. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within buddhist journeys. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire buddhist journeys ecosystem."
+              "The Buddhist Journeys chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 3 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -14934,28 +14936,28 @@
             "pattern": "pull-quote",
             "sections": [
               {
-                "title": "The Buddha’s journey and the spread of Buddhism",
-                "text": "The Buddha's life is anchored by four places that later pilgrims revered: his birth at Lumbini, his awakening at Bodh Gaya, his first sermon at Sarnath and his death at Kushinagar. A second route follows the teaching outward across Asia. This chart follows The Buddha’s journey and the spread of Buddhism. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of The Buddha’s journey and the spread of Buddhism provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://suttacentral.net/mn123/en/sujato and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.",
+                "title": "The Buddha’s Life & Spread Across Asia: Interactive Journey Map",
+                "text": "The Buddha's life is anchored by four places that later pilgrims revered: his birth at Lumbini, his awakening at Bodh Gaya, his first sermon at Sarnath and his death at Kushinagar. A second route follows the teaching outward across Asia. This chart follows The Buddha’s journey and the spread of Buddhism. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing The Buddha’s journey and the spread of Buddhism on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_journey_buddha"
                 ]
               },
               {
-                "title": "The Buddha’s journey and the spread of Buddhism",
-                "text": "This chart follows The Buddha’s journey and the spread of Buddhism. In The Buddha’s journey and the spread of Buddhism, Shravasti (Jetavana) leads at 433 km, ahead of Bodh Gaya at 374 km; Nalanda is lowest at 12 km. Bars follow the published order; hover a bar for its exact figure.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "title": "Sacred Geography of the Buddha’s Life: Kilometres per Leg",
+                "text": "This chart follows The Buddha’s journey and the spread of Buddhism. In The Buddha’s journey and the spread of Buddhism, Pataligama (Pataliputra crossing) leads at 615 km, ahead of Kosambi (Ghositarama Monastery) at 408 km; Varanasi (Yasa & First Sangha) is lowest at 8 km. Bars follow the published order; hover a bar for its exact figure.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
                   "india_journey_buddha_life_leg_km"
                 ]
               },
               {
-                "title": "The Buddha’s journey and the spread of Buddhism",
-                "text": "This chart follows The Buddha’s journey and the spread of Buddhism. In The Buddha’s journey and the spread of Buddhism, Nara leads at 4,263 km, ahead of Luoyang at 4,047 km; Bamiyan is lowest at 475 km. Bars follow the published order; hover a bar for its exact figure.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for The Buddha’s journey and the spread of Buddhism. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.",
+                "title": "Overland Silk Road & Maritime Spread Across Asia: Kilometres per Leg",
+                "text": "This chart follows The Buddha’s journey and the spread of Buddhism. In The Buddha’s journey and the spread of Buddhism, Lhasa (Tibetan Plateau) leads at 4,212 km, ahead of Borobudur (Central Java) at 3,612 km; Bamiyan (Hindu Kush) is lowest at 475 km. Bars follow the published order; hover a bar for its exact figure.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
                 "keys": [
                   "india_journey_buddha_spread_leg_km"
                 ]
               }
             ],
-            "pullQuote": "In The Buddha’s journey and the spread of Buddhism, Shravasti (Jetavana) leads at 433 km, ahead of Bodh Gaya at 374 km; Nalanda is lowest at 12 km.",
+            "pullQuote": "In The Buddha’s journey and the spread of Buddhism, Pataligama (Pataliputra crossing) leads at 615 km, ahead of Kosambi (Ghositarama Monastery) at 408 km; Varanasi (Yasa & First Sangha) is lowest at 8 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -14984,48 +14986,54 @@
             "headline": "Jain Journeys",
             "dek": "Mahavira’s path from Kundagrama to Pavapuri.",
             "paragraphs": [
-              "The Jain Journeys subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 2 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing jain journeys were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across jain journeys. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within jain journeys. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire jain journeys ecosystem."
+              "The Jain Journeys chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 3 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "sa.wikisource.org"
             ],
-            "indicatorCount": 2,
+            "indicatorCount": 3,
             "pattern": "annotated-captions",
             "sections": [
               {
-                "title": "Mahavira",
-                "text": "Mahavira was born near Vaishali, left home at thirty, wandered for twelve years and taught for three decades before reaching liberation at Pavapuri. The route follows those places with verses from the Jain canon. This chart follows Mahavira. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of Mahavira provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://sa.wikisource.org/wiki/तत्त्वार्थसूत्रम्/प्रथमोऽध्यायः and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "title": "Mahavira’s Wanderings & Historic Jain Centres: Interactive Journey Map",
+                "text": "Mahavira was born near Vaishali, left home at thirty, wandered for twelve years and taught for three decades before reaching liberation at Pavapuri. The route follows those places with verses from the Jain canon. This chart follows Mahavira. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing Mahavira on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_journey_mahavira"
                 ]
               },
               {
-                "title": "Mahavira",
-                "text": "This chart follows Mahavira. In Mahavira, Pavapuri leads at 443 km, ahead of Shravasti at 439 km; Jnatrkhanda grove is lowest at 10 km. Bars follow the published order; hover a bar for its exact figure.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for Mahavira. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.\n\nAddressing structural bottlenecks in mahavira remains critical for sustaining long-term developmental momentum. Balancing capital investments with operational maintenance while ensuring equitable access across regional and demographic cohorts frames the policy agenda.",
+                "title": "Mahavira’s Twelve-Year Wanderings Across Eastern India: Kilometres per Leg",
+                "text": "This chart follows Mahavira. In Mahavira, Jrimbhikagrama (Rijuvalika bank) leads at 512 km, ahead of Varanasi (Legacy of Parshvanatha) at 331 km; Jnatrkhanda grove is lowest at 10 km. Bars follow the published order; hover a bar for its exact figure.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
-                  "india_journey_mahavira_leg_km"
+                  "india_journey_mahavira_wanderings_leg_km"
+                ]
+              },
+              {
+                "title": "Councils, Caves & Temple Cities Across India: Kilometres per Leg",
+                "text": "This chart follows Mahavira. In Mahavira, Shravanabelagola (Karnataka) leads at 1,631 km, ahead of Mathura (Kankali Tila) at 1,152 km; Shatrunjaya (Palitana Hills) is lowest at 40 km. Bars follow the published order; hover a bar for its exact figure.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
+                "keys": [
+                  "india_journey_mahavira_jain_centres_leg_km"
                 ]
               }
             ],
-            "pullQuote": "In Mahavira, Pavapuri leads at 443 km, ahead of Shravasti at 439 km; Jnatrkhanda grove is lowest at 10 km.",
+            "pullQuote": "In Mahavira, Jrimbhikagrama (Rijuvalika bank) leads at 512 km, ahead of Varanasi (Legacy of Parshvanatha) at 331 km; Jnatrkhanda grove is lowest at 10 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
               "india_journey_mahavira",
-              "india_journey_mahavira_leg_km"
+              "india_journey_mahavira_wanderings_leg_km",
+              "india_journey_mahavira_jain_centres_leg_km"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 2
+                "value": 3
               },
               {
                 "label": "Named publishers",
@@ -15043,14 +15051,12 @@
             "headline": "Sikh Journeys",
             "dek": "The ten Gurus and the places that mark their lives, including Guru Nanak’s long journeys.",
             "paragraphs": [
-              "The Sikh Journeys subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 4 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing sikh journeys were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across sikh journeys. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within sikh journeys. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire sikh journeys ecosystem."
+              "The Sikh Journeys chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 4 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
@@ -15060,29 +15066,29 @@
             "pattern": "lede-stat-strip",
             "sections": [
               {
-                "title": "The ten Sikh Gurus’ journeys: Key Trends & Indicators",
-                "text": "From Guru Nanak's birthplace at Talwandi to Guru Gobind Singh at Patna Sahib and Anandpur, each of the ten Gurus is tied to places that still draw pilgrims. Choose a Guru to see their route, and Guru Nanak's udasis for the longest one. The 2 charts here follow The ten Sikh Gurus’ journeys. In The ten Sikh Gurus’ journeys, Mecca leads at 4,248 km, ahead of Kartarpur at 2,860 km; Haridwar is lowest at 126 km. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of The ten Sikh Gurus’ journeys provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://www.sikhitothemax.org/ang?ang=1&source=G and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.",
+                "title": "The Ten Sikh Gurus’ Journeys & Guru Nanak Dev Ji’s Udasis",
+                "text": "From Guru Nanak's birthplace at Talwandi to Guru Gobind Singh at Patna Sahib and Anandpur, each of the ten Gurus is tied to places that still draw pilgrims. Choose a Guru to see their route, and Guru Nanak's udasis for the longest one. The 2 charts here follow The ten Sikh Gurus’ journeys. In The ten Sikh Gurus’ journeys, Mecca (Hijaz) leads at 3,929 km, ahead of Kartarpur (River Ravi) at 2,860 km; Panipat is lowest at 66 km. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing The ten Sikh Gurus’ journeys on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_journey_sikh_gurus",
                   "india_journey_sikh_gurus_nanak_leg_km"
                 ]
               },
               {
-                "title": "The ten Sikh Gurus",
-                "text": "This chart follows The ten Sikh Gurus. In The ten Sikh Gurus, Guru Nanak leads at 15,020 km, ahead of Guru Tegh Bahadur at 2,955 km; Guru Amar Das is lowest at 30 km. Bars follow the published order; hover a bar for its exact figure.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "title": "Total Travel Span Across All Ten Sikh Gurus",
+                "text": "This chart follows The ten Sikh Gurus. In The ten Sikh Gurus, Guru Nanak leads at 16,256 km, ahead of Guru Tegh Bahadur at 3,565 km; Guru Ram Das is lowest at 113 km. Bars follow the published order; hover a bar for its exact figure.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
                   "india_journey_sikh_gurus_km_by_guru"
                 ]
               },
               {
-                "title": "The ten Sikh Gurus",
-                "text": "This chart follows The ten Sikh Gurus. In The ten Sikh Gurus, Guru Nanak leads at 13 places, ahead of Guru Gobind Singh at 7 places; Guru Har Rai is lowest at 2 places. Bars follow the published order; hover a bar for its exact figure.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for The ten Sikh Gurus. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.",
+                "title": "Key Sacred Places Mapped per Sikh Guru",
+                "text": "This chart follows The ten Sikh Gurus. In The ten Sikh Gurus, Guru Nanak leads at 20 places, ahead of Guru Gobind Singh at 14 places; Guru Har Krishan is lowest at 6 places. Bars follow the published order; hover a bar for its exact figure.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
                 "keys": [
                   "india_journey_sikh_gurus_stops_by_guru"
                 ]
               }
             ],
-            "pullQuote": "In The ten Sikh Gurus’ journeys, Mecca leads at 4,248 km, ahead of Kartarpur at 2,860 km; Haridwar is lowest at 126 km.",
+            "pullQuote": "In The ten Sikh Gurus’ journeys, Mecca (Hijaz) leads at 3,929 km, ahead of Kartarpur (River Ravi) at 2,860 km; Panipat is lowest at 66 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
@@ -15112,48 +15118,54 @@
             "headline": "Folk & Story Traditions",
             "dek": "The Panchatantra’s road from India to Persia, the Arab world and Europe.",
             "paragraphs": [
-              "The Folk & Story Traditions subgroup provides a critical analytical lens within Epics, Faiths & Journeys, tracking 2 core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",
-              "Historically, the domains governing folk & story traditions were shaped by post-independence centralized planning frameworks, five-year plan targets, and regulatory mechanisms aimed at building basic national capacity. In the decades preceding the 1991 economic reforms, administrative resource allocation and limited fiscal envelopes frequently restricted the scale, private participation, and modern technological modernization of this sector.",
-              "The liberalization era catalyzed profound legislative, institutional, and regulatory overhauls across folk & story traditions. Delicensing, targeted statutory acts, regulatory governance reforms, and public-private partnership models dismantled historical bottlenecks, encouraging capital mobilization, technology transfer, and performance benchmarking against international standards.",
-              "Empirical data across the documented time horizons reveals substantial quantitative expansion, characterized by steady compound annual growth rates, cyclical inflection points, and structural shifts from early baseline lows to contemporary peaks. Examining the earliest recorded observations against recent prints highlights how modern scale and national capacity have expanded exponentially over multi-decade cycles.",
-              "Sub-national analysis underscores marked spatial and regional variations across Indian States and Union Territories. Coastal, industrial, and demographically advanced states often lead national performance tables through aggressive policy adoption and fiscal capex, whereas inland, hilly, and agrarian regions continue to address logistical frictions, infrastructure gaps, and targeted developmental priorities.",
-              "In recent years, the integration of digital public infrastructure (DPI), automated monitoring dashboards, and real-time administrative telemetry has revolutionized governance within folk & story traditions. Direct data pipelines from statutory agencies, satellite monitoring, and digitized reporting registries have drastically curtailed latency, improved data integrity, and enhanced public accountability across federal hierarchies.",
-              "Despite remarkable historical progress, critical structural challenges remain to be addressed. These include addressing regional disparities, enhancing administrative implementation efficiency, formalizing unorganized segments, strengthening climate resilience, and ensuring fiscal sustainability while expanding service quality and equitable public access.",
-              "Looking toward the decadal horizon and India's long-term vision of 'Viksit Bharat' by 2047, strategic focus centers on elevating total factor productivity, deepening research and development expenditure, expanding green technological adoption, and consolidating India's role as a resilient, self-reliant global leader across the entire folk & story traditions ecosystem."
+              "The Folk & Story Traditions chapter within Epics, Faiths & Journeys brings sacred geography, narrative movement, and primary-text scholarship together across 3 interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+              "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+              "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+              "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+              "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+              "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse."
             ],
             "watch": "Follow each series across its reported periods and check its source note before comparing values.",
             "sources": [
               "sa.wikisource.org"
             ],
-            "indicatorCount": 2,
+            "indicatorCount": 3,
             "pattern": "question-answer",
             "sections": [
               {
-                "title": "The Panchatantra",
-                "text": "The Panchatantra, a Sanskrit book of animal fables, travelled from India to Persia in the sixth century, into Arabic as Kalila wa Dimna, and from there into Europe. The map follows the book's road with a verse for each stage. This chart follows The Panchatantra. This view is interactive: use its own controls to change the period, place or layer.\n\nAnalyzing the trajectory of The Panchatantra provides vital empirical evidence on structural policy effectiveness. Periodic methodology updates, base-year revisions by reporting agencies, and targeted central interventions have influenced these reporting cycles over time. Published data from https://sa.wikisource.org/wiki/पञ्चतन्त्रम्_०१ and official statutory releases substantiate these findings, providing transparent empirical foundations for academic researchers, sector analysts, and public policymakers.\n\nDisaggregating these trends across federal jurisdictions reveals significant state-level divergence in capacity, fiscal prioritization, and demographic transition. High-performing states often establish operational benchmarks that guide subsequent central scheme designs and national standardizations across the subcontinent.",
+                "title": "Panchatantra Global Transmission: Interactive Journey Map",
+                "text": "The Panchatantra, a Sanskrit book of animal fables, travelled from India to Persia in the sixth century, into Arabic as Kalila wa Dimna, and from there into Europe. The map follows the book's road with a verse for each stage. This chart follows The Panchatantra. This view is interactive: use its own controls to change the period, place or layer.\n\nPlacing The Panchatantra on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
                 "keys": [
                   "india_journey_panchatantra"
                 ]
               },
               {
-                "title": "The Panchatantra",
-                "text": "This chart follows The Panchatantra. In The Panchatantra, Hebrew version (place uncertain) leads at 3,733 km, ahead of Gundeshapur (Persia) at 2,458 km; Baghdad (Arabic) is lowest at 662 km. Bars follow the published order; hover a bar for its exact figure.\n\nThe transition toward digitized public registers and automated telemetry has significantly compressed measurement latency for The Panchatantra. Real-time administrative dashboards and digital compliance frameworks now provide higher-frequency visibility into underlying operational momentum.\n\nAddressing structural bottlenecks in the panchatantra remains critical for sustaining long-term developmental momentum. Balancing capital investments with operational maintenance while ensuring equitable access across regional and demographic cohorts frames the policy agenda.",
+                "title": "Westward Transmission (Kashmir → Baghdad → Europe): Kilometres per Leg",
+                "text": "This chart follows The Panchatantra. In The Panchatantra, Toledo (Castilian Calila e Dimna) leads at 2,779 km, ahead of Kashmir (Tantrakhyayika recension) at 2,400 km; Taxila & Gandhara Caravan Crossroads is lowest at 185 km. Bars follow the published order; hover a bar for its exact figure.\n\nComparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
                 "keys": [
-                  "india_journey_panchatantra_leg_km"
+                  "india_journey_panchatantra_transmission_leg_km"
+                ]
+              },
+              {
+                "title": "Eastward & Maritime Fable Transmission (India → Java & Dunhuang): Kilometres per Leg",
+                "text": "This chart follows The Panchatantra. In The Panchatantra, Dunhuang & Inner Asia leads at 5,544 km, ahead of Central & East Java (Tantri Kamandaka) at 3,612 km; Tamralipti (Tamluk maritime port) is lowest at 464 km. Bars follow the published order; hover a bar for its exact figure.\n\nWhere ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
+                "keys": [
+                  "india_journey_panchatantra_eastward_fables_leg_km"
                 ]
               }
             ],
-            "pullQuote": "In The Panchatantra, Hebrew version (place uncertain) leads at 3,733 km, ahead of Gundeshapur (Persia) at 2,458 km; Baghdad (Arabic) is lowest at 662 km.",
+            "pullQuote": "In The Panchatantra, Toledo (Castilian Calila e Dimna) leads at 2,779 km, ahead of Kashmir (Tantrakhyayika recension) at 2,400 km; Taxila & Gandhara Caravan Crossroads is lowest at 185 km.",
             "mapKeys": [],
             "format": "article",
             "chartKeys": [
               "india_journey_panchatantra",
-              "india_journey_panchatantra_leg_km"
+              "india_journey_panchatantra_transmission_leg_km",
+              "india_journey_panchatantra_eastward_fables_leg_km"
             ],
             "keyNumbers": [
               {
                 "label": "Indicator series",
-                "value": 2
+                "value": 3
               },
               {
                 "label": "Named publishers",

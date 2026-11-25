@@ -231471,7 +231471,7 @@
       "color": "#1e88e5",
       "suffix": " places",
       "source_url": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
-      "details": "33 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (31 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+      "details": "34 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (31 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Epics: Mahabharata & Ramayana",
       "position": 2786,
@@ -231509,7 +231509,8 @@
           "Kashmira (Kashmir)",
           "Manipura (Arjuna and Chitrangada's realm)",
           "Bahlika (Vahlika)",
-          "Saurashtra"
+          "Saurashtra",
+          "Yavana and Shaka contingents"
         ],
         "datasets": [
           {
@@ -231548,6 +231549,7 @@
               1,
               1,
               1,
+              1,
               1
             ]
           }
@@ -231556,7 +231558,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "33 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (31 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+        "note": "34 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (31 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
         "source": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
         "unit": ""
       }
@@ -231566,10 +231568,10 @@
       "title": "Kingdoms and places of the Ramayana",
       "subtitle": "Kosala, Kishkindha, Lanka and the ashramas of Rama's journey, pinned on the map",
       "frequency": "Epic geography",
-      "color": "#ff9933",
+      "color": "#1e88e5",
       "suffix": " places",
       "source_url": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
-      "details": "22 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (21 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+      "details": "24 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (21 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Epics: Mahabharata & Ramayana",
       "position": 2787,
@@ -231596,13 +231598,17 @@
           "Agastya Ashrama",
           "Siddhashrama",
           "Sarayu River Bank",
-          "Tamasa River Bank"
+          "Tamasa River Bank",
+          "Riksha allies (Jambavan)",
+          "Vibhishana"
         ],
         "datasets": [
           {
             "label": "Kingdoms and places of the Ramayana",
-            "color": "#ff9933",
+            "color": "#1e88e5",
             "values": [
+              1,
+              1,
               1,
               1,
               1,
@@ -231632,7 +231638,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "22 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (21 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
+        "note": "24 places pinned at approximate modern locations; each carries a Sanskrit verse copied verbatim from an online text of the original epic (21 about the place itself, the rest general verses of the epic, labelled). Click a pin for the ruler, role in the epic, description and shloka, or trace the hero's route with the play button.",
         "source": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
         "unit": ""
       }
@@ -231645,7 +231651,7 @@
       "color": "#1e88e5",
       "suffix": " stops",
       "source_url": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
-      "details": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.. 9 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (1 stops show a general verse of the text, labelled as such).",
+      "details": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.. 16 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (3 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Epics: Mahabharata & Ramayana",
       "position": 2788,
@@ -231658,7 +231664,7 @@
             "label": "The Pandavas\u2019 journey and battles",
             "color": "#1e88e5",
             "values": [
-              9
+              16
             ]
           }
         ],
@@ -231666,7 +231672,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.. 9 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (1 stops show a general verse of the text, labelled as such).",
+        "note": "From Hastinapura through the house of lac, hiding at Ekachakra, Indraprastha, exile and the eighteen-day war at Kurukshetra, to the last walk toward Mount Meru.. 16 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (3 stops show a general verse of the text, labelled as such).",
         "source": "https://sanskritdocuments.org/doc_giitaa/bhagvadnew.html?lang=sa",
         "unit": ""
       }
@@ -231685,14 +231691,21 @@
       "position": 2789,
       "series": {
         "labels": [
-          "Varanavata",
-          "Ekachakra",
+          "Varanavata (Lakshagriha)",
+          "Ekachakra (Hiding in disguise)",
           "Panchala (Kampilya and Ahichchhatra)",
           "Indraprastha",
           "Magadha",
+          "Pragjyotisha",
+          "Manipura (Arjuna and Chitrangada's realm)",
+          "Dvaraka and Anarta (Yadava realm)",
+          "Kashi",
+          "Nishada peoples and realm",
           "Matsya (Virata Kingdom)",
           "Kurukshetra (Dharmakshetra)",
-          "Himalaya and Mount Meru (Mahaprasthana)"
+          "Kuru Kingdom (Hastinapura)",
+          "Saurashtra",
+          "Himalaya & Mount Meru (Mahaprasthana)"
         ],
         "datasets": [
           {
@@ -231704,9 +231717,16 @@
               67,
               270,
               907,
-              921,
+              646,
+              265,
+              2558,
+              1466,
+              549,
+              664,
               268,
-              233
+              144,
+              1054,
+              1264
             ]
           }
         ],
@@ -231727,7 +231747,7 @@
       "color": "#ff9933",
       "suffix": " stops",
       "source_url": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
-      "details": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.. 11 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (0 stops show a general verse of the text, labelled as such).",
+      "details": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.. 19 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (0 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Epics: Mahabharata & Ramayana",
       "position": 2790,
@@ -231740,7 +231760,7 @@
             "label": "Rama\u2019s route: Ayodhya to Lanka and back",
             "color": "#ff9933",
             "values": [
-              11
+              19
             ]
           }
         ],
@@ -231748,7 +231768,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.. 11 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (0 stops show a general verse of the text, labelled as such).",
+        "note": "From Ayodhya across the Ganga and through the Dandaka forest to Panchavati, Kishkindha, the bridge to Lanka and the return.. 19 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (0 stops show a general verse of the text, labelled as such).",
         "source": "https://www.valmikiramayan.net/utf8/baala/sarga5/balasans5.htm",
         "unit": ""
       }
@@ -231767,13 +231787,21 @@
       "position": 2791,
       "series": {
         "labels": [
+          "Sarayu River Bank",
+          "Siddhashrama",
+          "Mithila (Videha)",
+          "Tamasa River Bank",
           "Shringaverapura (Nishada country)",
           "Prayaga (Bharadvaja Ashrama)",
           "Chitrakuta",
           "Dandakaranya",
+          "Agastya Ashrama",
           "Panchavati",
           "Janasthana",
+          "Pampa Lake",
           "Kishkindha",
+          "Rishyamukha Hill",
+          "Mahendra Hill",
           "Rameshwaram and the Setu",
           "Lanka",
           "Ayodhya (Kosala)"
@@ -231783,14 +231811,22 @@
             "label": "Rama\u2019s route: Ayodhya to Lanka and back: kilometres per leg",
             "color": "#ff9933",
             "values": [
-              146,
+              1,
+              280,
+              95,
+              380,
+              127,
               16,
               99,
               699,
-              868,
+              720,
+              148,
               2,
-              591,
-              740,
+              589,
+              4,
+              4,
+              932,
+              1210,
               217,
               2108
             ]
@@ -231808,12 +231844,12 @@
     {
       "key": "india_journey_vedas_upanishads",
       "title": "The Vedas and Upanishads: where the texts took shape",
-      "subtitle": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers",
+      "subtitle": "From the northwestern tributaries and Sapta-Sindhu across the Gangetic courts to the classical commentarial mathas",
       "frequency": "Journey",
       "color": "#b8860b",
       "suffix": " stops",
       "source_url": "https://sa.wikisource.org/wiki/\u090b\u0917\u094d\u0935\u0947\u0926\u0903_\u0938\u0942\u0915\u094d\u0924\u0902_\u0967\u0966.\u096d\u096b",
-      "details": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers. 7 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (4 stops show a general verse of the text, labelled as such).",
+      "details": "From the northwestern tributaries and Sapta-Sindhu across the Gangetic courts to the classical commentarial mathas. 22 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (18 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Vedic & Upanishadic Journeys",
       "position": 2792,
@@ -231826,7 +231862,7 @@
             "label": "The Vedas and Upanishads: where the texts took shape",
             "color": "#b8860b",
             "values": [
-              7
+              22
             ]
           }
         ],
@@ -231834,15 +231870,15 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "From the Land of Seven Rivers to Shringeri, following where tradition places the hymns and teachers. 7 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (4 stops show a general verse of the text, labelled as such).",
+        "note": "From the northwestern tributaries and Sapta-Sindhu across the Gangetic courts to the classical commentarial mathas. 22 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (18 stops show a general verse of the text, labelled as such).",
         "source": "https://sa.wikisource.org/wiki/\u090b\u0917\u094d\u0935\u0947\u0926\u0903_\u0938\u0942\u0915\u094d\u0924\u0902_\u0967\u0966.\u096d\u096b",
         "unit": ""
       }
     },
     {
-      "key": "india_journey_vedas_upanishads_leg_km",
-      "title": "The Vedas and Upanishads: where the texts took shape: kilometres per leg",
-      "subtitle": "Distance from each stop to the next, Vedic heartlands",
+      "key": "india_journey_vedas_upanishads_vedic_leg_km",
+      "title": "The Vedas and Upanishads: where the texts took shape (Vedic & Upanishadic heartlands): kilometres per leg",
+      "subtitle": "Distance from each stop to the next, Vedic & Upanishadic heartlands",
       "frequency": "Per leg",
       "color": "#b8860b",
       "suffix": " km",
@@ -231853,23 +231889,39 @@
       "position": 2793,
       "series": {
         "labels": [
+          "Sapta-Sindhu (Central Punjab Doabs)",
+          "Vipas & Shutudri Confluence (Beas\u2013Sutlej)",
           "Sarasvati valley and Kurukshetra",
-          "Kuru\u2013Panchala country",
+          "Hastinapura & the Upper Doab",
+          "Kampilya (Kuru\u2013Panchala country)",
+          "Naimisharanya (Gomati hermitages)",
+          "Kosala (Sarayu valley)",
+          "Prayaga (Ganga\u2013Yamuna Sangam)",
+          "Kashi (Varanasi)",
           "Videha (Mithila)",
-          "Kashi",
-          "Badarikashrama (Himalaya)",
-          "Shringeri"
+          "Magadha & the Eastern Frontier",
+          "Avanti (Ujjayini)",
+          "Badarikashrama (High Himalaya)",
+          "Shringeri (Karnataka)"
         ],
         "datasets": [
           {
-            "label": "The Vedas and Upanishads: where the texts took shape: kilometres per leg",
+            "label": "The Vedas and Upanishads: where the texts took shape (Vedic & Upanishadic heartlands): kilometres per leg",
             "color": "#b8860b",
             "values": [
-              297,
-              290,
-              716,
+              379,
+              75,
+              223,
+              144,
+              212,
+              123,
+              180,
+              156,
+              116,
               328,
-              694,
+              192,
+              1000,
+              917,
               1974
             ]
           }
@@ -231884,17 +231936,61 @@
       }
     },
     {
+      "key": "india_journey_vedas_upanishads_advaita_mathas_leg_km",
+      "title": "The Vedas and Upanishads: where the texts took shape (Upanishadic mathas & commentarial seats): kilometres per leg",
+      "subtitle": "Distance from each stop to the next, Upanishadic mathas & commentarial seats",
+      "frequency": "Per leg",
+      "color": "#8c6200",
+      "suffix": " km",
+      "source_url": "https://sa.wikisource.org/wiki/\u0924\u0948\u0924\u094d\u0924\u093f\u0930\u0940\u092f\u094b\u092a\u0928\u093f\u0937\u0926\u0924\u094d/\u092c\u094d\u0930\u0939\u094d\u092e\u093e\u0928\u0928\u094d\u0926\u0935\u0932\u094d\u0932\u0940",
+      "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+      "category": "Epics, Faiths & Journeys",
+      "subgroup": "Vedic & Upanishadic Journeys",
+      "position": 2794,
+      "series": {
+        "labels": [
+          "Omkareshwar (Narmada)",
+          "Kashi (Varanasi)",
+          "Jyotirmath (Joshimath, Uttarakhand)",
+          "Govardhana Matha (Puri)",
+          "Sharada Peetha (Dwarka)",
+          "Shringeri Sharada Peetham"
+        ],
+        "datasets": [
+          {
+            "label": "The Vedas and Upanishads: where the texts took shape (Upanishadic mathas & commentarial seats): kilometres per leg",
+            "color": "#8c6200",
+            "values": [
+              1344,
+              776,
+              672,
+              1351,
+              1770,
+              1184
+            ]
+          }
+        ],
+        "chart_type": "bar",
+        "index_axis": "x",
+        "scope": "module",
+        "scope_label": "",
+        "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+        "source": "https://sa.wikisource.org/wiki/\u0924\u0948\u0924\u094d\u0924\u093f\u0930\u0940\u092f\u094b\u092a\u0928\u093f\u0937\u0926\u0924\u094d/\u092c\u094d\u0930\u0939\u094d\u092e\u093e\u0928\u0928\u094d\u0926\u0935\u0932\u094d\u0932\u0940",
+        "unit": ""
+      }
+    },
+    {
       "key": "india_journey_buddha",
       "title": "The Buddha\u2019s journey and the spread of Buddhism",
-      "subtitle": "From Lumbini to Kushinagar, then out across Asia",
+      "subtitle": "Sixteen canonical sites of the Buddha\u2019s life across Bihar and Uttar Pradesh, followed by fifteen hubs of transmission across Asia",
       "frequency": "Journey",
       "color": "#e0a030",
       "suffix": " stops",
       "source_url": "https://suttacentral.net/mn123/en/sujato",
-      "details": "From Lumbini to Kushinagar, then out across Asia. 17 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+      "details": "Sixteen canonical sites of the Buddha\u2019s life across Bihar and Uttar Pradesh, followed by fifteen hubs of transmission across Asia. 31 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (15 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Buddhist Journeys",
-      "position": 2794,
+      "position": 2795,
       "series": {
         "labels": [
           "buddha"
@@ -231904,7 +232000,7 @@
             "label": "The Buddha\u2019s journey and the spread of Buddhism",
             "color": "#e0a030",
             "values": [
-              17
+              31
             ]
           }
         ],
@@ -231912,7 +232008,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "From Lumbini to Kushinagar, then out across Asia. 17 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+        "note": "Sixteen canonical sites of the Buddha\u2019s life across Bihar and Uttar Pradesh, followed by fifteen hubs of transmission across Asia. 31 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (15 stops show a general verse of the text, labelled as such).",
         "source": "https://suttacentral.net/mn123/en/sujato",
         "unit": ""
       }
@@ -231928,17 +232024,24 @@
       "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Buddhist Journeys",
-      "position": 2795,
+      "position": 2796,
       "series": {
         "labels": [
           "Kapilavastu",
-          "Bodh Gaya",
+          "Anupiya (Crossing into homelessness)",
+          "Rajagriha (Bimbisara & Venuvana)",
+          "Bodh Gaya (Uruvela, River Neranjara)",
+          "Gaya Head (Gayashisha)",
           "Sarnath (Isipatana)",
-          "Rajagriha",
-          "Nalanda",
+          "Varanasi (Yasa & First Sangha)",
+          "Nalanda (Pavarika\u2019s Mango Grove)",
+          "Kosambi (Ghositarama Monastery)",
           "Shravasti (Jetavana)",
-          "Vaishali",
-          "Kushinagar"
+          "Sankasya (Sankissa)",
+          "Pataligama (Pataliputra crossing)",
+          "Vaishali (Mahavana & Capala Shrine)",
+          "Pava (Cunda\u2019s Mango Grove)",
+          "Kushinagar (Upavattana Sal Grove)"
         ],
         "datasets": [
           {
@@ -231946,13 +232049,20 @@
             "color": "#e0a030",
             "values": [
               25,
-              374,
-              212,
-              244,
-              12,
-              433,
-              354,
-              149
+              89,
+              279,
+              57,
+              10,
+              210,
+              8,
+              246,
+              408,
+              249,
+              270,
+              615,
+              42,
+              135,
+              15
             ]
           }
         ],
@@ -231976,29 +232086,43 @@
       "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Buddhist Journeys",
-      "position": 2796,
+      "position": 2797,
       "series": {
         "labels": [
-          "Anuradhapura",
+          "Sanchi & Vidisha (Central India)",
+          "Anuradhapura (Sri Lanka)",
+          "Amaravati & Nagarjunakonda (Andhra)",
           "Taxila and Gandhara",
-          "Bamiyan",
-          "Luoyang",
-          "Lhasa",
-          "Bagan",
-          "Nara"
+          "Bamiyan (Hindu Kush)",
+          "Khotan & Kashgar (Tarim Basin)",
+          "Dunhuang (Mogao Caves)",
+          "Luoyang (White Horse Temple)",
+          "Gyeongju (Silla Korea)",
+          "Nara (Japan)",
+          "Lhasa (Tibetan Plateau)",
+          "Vikramashila & Somapura (Pala Bengal\u2013Bihar)",
+          "Bagan (Myanmar)",
+          "Borobudur (Central Java)"
         ],
         "datasets": [
           {
             "label": "The Buddha\u2019s journey and the spread of Buddhism (Spread of Buddhism): kilometres per leg",
             "color": "#c05a1b",
             "values": [
-              1984,
-              2929,
+              785,
+              1706,
+              914,
+              2053,
               475,
-              4047,
-              2085,
-              1015,
-              4263
+              1117,
+              1323,
+              1684,
+              1521,
+              615,
+              4212,
+              613,
+              901,
+              3612
             ]
           }
         ],
@@ -232014,15 +232138,15 @@
     {
       "key": "india_journey_mahavira",
       "title": "Mahavira: a teacher on the road",
-      "subtitle": "The eastern Gangetic plain where the 24th Tirthankara taught",
+      "subtitle": "Fourteen stages of Mahavira\u2019s wanderings across Bihar, Bengal and Kosala, plus ten historic Jain centres across India",
       "frequency": "Journey",
       "color": "#8e44ad",
       "suffix": " stops",
       "source_url": "https://sa.wikisource.org/wiki/\u0924\u0924\u094d\u0924\u094d\u0935\u093e\u0930\u094d\u0925\u0938\u0942\u0924\u094d\u0930\u092e\u094d/\u092a\u094d\u0930\u0925\u092e\u094b\u093d\u0927\u094d\u092f\u093e\u092f\u0903",
-      "details": "The eastern Gangetic plain where the 24th Tirthankara taught. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+      "details": "Fourteen stages of Mahavira\u2019s wanderings across Bihar, Bengal and Kosala, plus ten historic Jain centres across India. 24 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (23 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Jain Journeys",
-      "position": 2797,
+      "position": 2798,
       "series": {
         "labels": [
           "mahavira"
@@ -232032,7 +232156,7 @@
             "label": "Mahavira: a teacher on the road",
             "color": "#8e44ad",
             "values": [
-              8
+              24
             ]
           }
         ],
@@ -232040,14 +232164,14 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "The eastern Gangetic plain where the 24th Tirthankara taught. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (7 stops show a general verse of the text, labelled as such).",
+        "note": "Fourteen stages of Mahavira\u2019s wanderings across Bihar, Bengal and Kosala, plus ten historic Jain centres across India. 24 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (23 stops show a general verse of the text, labelled as such).",
         "source": "https://sa.wikisource.org/wiki/\u0924\u0924\u094d\u0924\u094d\u0935\u093e\u0930\u094d\u0925\u0938\u0942\u0924\u094d\u0930\u092e\u094d/\u092a\u094d\u0930\u0925\u092e\u094b\u093d\u0927\u094d\u092f\u093e\u092f\u0903",
         "unit": ""
       }
     },
     {
-      "key": "india_journey_mahavira_leg_km",
-      "title": "Mahavira: a teacher on the road: kilometres per leg",
+      "key": "india_journey_mahavira_wanderings_leg_km",
+      "title": "Mahavira: a teacher on the road (Mahavira\u2019s wanderings): kilometres per leg",
       "subtitle": "Distance from each stop to the next, Mahavira\u2019s wanderings",
       "frequency": "Per leg",
       "color": "#8e44ad",
@@ -232056,29 +232180,91 @@
       "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Jain Journeys",
-      "position": 2798,
+      "position": 2799,
       "series": {
         "labels": [
           "Jnatrkhanda grove",
+          "Kollaga / Karmaragrama",
+          "Asthikagrama (Early austerities)",
+          "Radha (Western Bengal paths)",
           "Nalanda",
-          "Champa",
-          "Jrimbhikagrama (Rijuvalika bank)",
-          "Rajagriha",
+          "Champa (Capital of Anga)",
+          "Mithila (Videha)",
+          "Varanasi (Legacy of Parshvanatha)",
           "Shravasti",
-          "Pavapuri"
+          "Kaushambi (Vatsa capital)",
+          "Jrimbhikagrama (Rijuvalika bank)",
+          "Rajagriha (Vipulachala Hill)",
+          "Pavapuri (Jal Mandir)"
         ],
         "datasets": [
           {
-            "label": "Mahavira: a teacher on the road: kilometres per leg",
+            "label": "Mahavira: a teacher on the road (Mahavira\u2019s wanderings): kilometres per leg",
             "color": "#8e44ad",
             "values": [
               10,
-              105,
+              11,
+              241,
+              308,
+              324,
               157,
-              170,
+              197,
+              331,
+              263,
+              249,
+              512,
               148,
-              439,
-              443
+              13
+            ]
+          }
+        ],
+        "chart_type": "bar",
+        "index_axis": "x",
+        "scope": "module",
+        "scope_label": "",
+        "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+        "source": "https://sa.wikisource.org/wiki/\u0924\u0924\u094d\u0924\u094d\u0935\u093e\u0930\u094d\u0925\u0938\u0942\u0924\u094d\u0930\u092e\u094d/\u092a\u094d\u0930\u0925\u092e\u094b\u093d\u0927\u094d\u092f\u093e\u092f\u0903",
+        "unit": ""
+      }
+    },
+    {
+      "key": "india_journey_mahavira_jain_centres_leg_km",
+      "title": "Mahavira: a teacher on the road (Spread of Jain centres across India): kilometres per leg",
+      "subtitle": "Distance from each stop to the next, Spread of Jain centres across India",
+      "frequency": "Per leg",
+      "color": "#6c3483",
+      "suffix": " km",
+      "source_url": "https://sa.wikisource.org/wiki/\u0924\u0924\u094d\u0924\u094d\u0935\u093e\u0930\u094d\u0925\u0938\u0942\u0924\u094d\u0930\u092e\u094d/\u092a\u094d\u0930\u0925\u092e\u094b\u093d\u0927\u094d\u092f\u093e\u092f\u0903",
+      "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+      "category": "Epics, Faiths & Journeys",
+      "subgroup": "Jain Journeys",
+      "position": 2800,
+      "series": {
+        "labels": [
+          "Udayagiri & Khandagiri (Odisha)",
+          "Mathura (Kankali Tila)",
+          "Shravanabelagola (Karnataka)",
+          "Vallabhi (Saurashtra Council)",
+          "Shatrunjaya (Palitana Hills)",
+          "Mount Abu (Dilwara Temples)",
+          "Khajuraho Eastern Group (MP)",
+          "Ellora (Indra Sabha Caves 30\u201334)",
+          "Mudabidri (Dakshina Kashi)"
+        ],
+        "datasets": [
+          {
+            "label": "Mahavira: a teacher on the road (Spread of Jain centres across India): kilometres per leg",
+            "color": "#6c3483",
+            "values": [
+              599,
+              1152,
+              1631,
+              1116,
+              40,
+              353,
+              729,
+              723,
+              773
             ]
           }
         ],
@@ -232094,15 +232280,15 @@
     {
       "key": "india_journey_sikh_gurus",
       "title": "The ten Sikh Gurus\u2019 journeys",
-      "subtitle": "From Guru Nanak\u2019s four udasis to Guru Gobind Singh at Nanded",
+      "subtitle": "From Guru Nanak\u2019s four udasis and the Punjab seats of Gurus Angad\u2013Har Krishan to Guru Tegh Bahadur and Guru Gobind Singh at Nanded",
       "frequency": "Journey",
       "color": "#e07b00",
       "suffix": " stops",
       "source_url": "https://www.sikhitothemax.org/ang?ang=1&source=G",
-      "details": "From Guru Nanak\u2019s four udasis to Guru Gobind Singh at Nanded. 43 stops across 10 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (32 stops show a general verse of the text, labelled as such).",
+      "details": "From Guru Nanak\u2019s four udasis and the Punjab seats of Gurus Angad\u2013Har Krishan to Guru Tegh Bahadur and Guru Gobind Singh at Nanded. 95 stops across 10 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (83 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Sikh Journeys",
-      "position": 2799,
+      "position": 2801,
       "series": {
         "labels": [
           "sikh-gurus"
@@ -232112,7 +232298,7 @@
             "label": "The ten Sikh Gurus\u2019 journeys",
             "color": "#e07b00",
             "values": [
-              43
+              95
             ]
           }
         ],
@@ -232120,7 +232306,7 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "From Guru Nanak\u2019s four udasis to Guru Gobind Singh at Nanded. 43 stops across 10 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (32 stops show a general verse of the text, labelled as such).",
+        "note": "From Guru Nanak\u2019s four udasis and the Punjab seats of Gurus Angad\u2013Har Krishan to Guru Tegh Bahadur and Guru Gobind Singh at Nanded. 95 stops across 10 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (83 stops show a general verse of the text, labelled as such).",
         "source": "https://www.sikhitothemax.org/ang?ang=1&source=G",
         "unit": ""
       }
@@ -232136,21 +232322,28 @@
       "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Sikh Journeys",
-      "position": 2800,
+      "position": 2802,
       "series": {
         "labels": [
           "Sultanpur Lodhi",
+          "Saidpur (Eminabad)",
           "Kurukshetra",
+          "Panipat",
+          "Delhi (Majnu ka Tilla)",
           "Haridwar",
+          "Nanakmatta (Uttarakhand)",
           "Varanasi",
           "Gaya",
           "Dhubri (Assam)",
+          "Dhaka (Bangla Bazaar)",
           "Jagannath Puri",
-          "Rameswaram",
-          "Mount Kailash region",
-          "Mecca",
-          "Baghdad",
-          "Kartarpur"
+          "Bidar (Nanak Jhira, Deccan)",
+          "Rameswaram & Sri Lanka",
+          "Mount Kailash region (Tibet / Himalaya)",
+          "Leh (Gurdwara Pathar Sahib, Ladakh)",
+          "Mecca (Hijaz)",
+          "Baghdad (Iraq)",
+          "Kartarpur (River Ravi)"
         ],
         "datasets": [
           {
@@ -232158,15 +232351,22 @@
             "color": "#e07b00",
             "values": [
               145,
-              210,
-              126,
-              702,
+              128,
+              337,
+              66,
+              81,
+              166,
+              194,
+              512,
               210,
               518,
-              812,
-              1363,
+              260,
+              642,
+              899,
+              978,
               2431,
-              4248,
+              505,
+              3929,
               1395,
               2860
             ]
@@ -232192,7 +232392,7 @@
       "details": "Total straight-line distance between the key places associated with each Guru; Guru Nanak\u2019s four udasis dominate.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Sikh Journeys",
-      "position": 2801,
+      "position": 2803,
       "series": {
         "labels": [
           "Guru Nanak",
@@ -232211,16 +232411,16 @@
             "label": "The ten Sikh Gurus: distance covered between key places",
             "color": "#e07b00",
             "values": [
-              15020,
-              109,
-              30,
-              99,
-              81,
-              1253,
-              183,
+              16256,
+              301,
+              1225,
+              113,
+              444,
+              3291,
+              755,
               291,
-              2955,
-              2814
+              3565,
+              2988
             ]
           }
         ],
@@ -232244,7 +232444,7 @@
       "details": "Number of key places mapped for each Guru.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Sikh Journeys",
-      "position": 2802,
+      "position": 2804,
       "series": {
         "labels": [
           "Guru Nanak",
@@ -232263,16 +232463,16 @@
             "label": "The ten Sikh Gurus: key places mapped",
             "color": "#e07b00",
             "values": [
-              13,
-              2,
-              2,
-              3,
-              3,
-              3,
-              2,
-              3,
-              5,
-              7
+              20,
+              7,
+              7,
+              6,
+              8,
+              10,
+              6,
+              6,
+              11,
+              14
             ]
           }
         ],
@@ -232288,15 +232488,15 @@
     {
       "key": "india_journey_panchatantra",
       "title": "The Panchatantra: a book that travelled the world",
-      "subtitle": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine",
+      "subtitle": "From Indian storytellers across Persia, Baghdad, Cairo, Byzantium, Spain and England to La Fontaine\u2019s France \u2014 and eastward across Southeast Asia",
       "frequency": "Journey",
       "color": "#2e8b57",
       "suffix": " stops",
       "source_url": "https://sa.wikisource.org/wiki/\u092a\u091e\u094d\u091a\u0924\u0928\u094d\u0924\u094d\u0930\u092e\u094d_\u0966\u0967",
-      "details": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (6 stops show a general verse of the text, labelled as such).",
+      "details": "From Indian storytellers across Persia, Baghdad, Cairo, Byzantium, Spain and England to La Fontaine\u2019s France \u2014 and eastward across Southeast Asia. 20 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (17 stops show a general verse of the text, labelled as such).",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Folk & Story Traditions",
-      "position": 2803,
+      "position": 2805,
       "series": {
         "labels": [
           "panchatantra"
@@ -232306,7 +232506,7 @@
             "label": "The Panchatantra: a book that travelled the world",
             "color": "#2e8b57",
             "values": [
-              8
+              20
             ]
           }
         ],
@@ -232314,15 +232514,15 @@
         "index_axis": "x",
         "scope": "module",
         "scope_label": "",
-        "note": "Kashmir, Persia, Syria, Baghdad, Europe: how Indian animal fables became Kalila wa-Dimna and La Fontaine. 8 stops across 1 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (6 stops show a general verse of the text, labelled as such).",
+        "note": "From Indian storytellers across Persia, Baghdad, Cairo, Byzantium, Spain and England to La Fontaine\u2019s France \u2014 and eastward across Southeast Asia. 20 stops across 2 route(s); press play or drag the slider to follow the journey, and click a stop for its description and a verse copied from a public text (17 stops show a general verse of the text, labelled as such).",
         "source": "https://sa.wikisource.org/wiki/\u092a\u091e\u094d\u091a\u0924\u0928\u094d\u0924\u094d\u0930\u092e\u094d_\u0966\u0967",
         "unit": ""
       }
     },
     {
-      "key": "india_journey_panchatantra_leg_km",
-      "title": "The Panchatantra: a book that travelled the world: kilometres per leg",
-      "subtitle": "Distance from each stop to the next, Transmission route",
+      "key": "india_journey_panchatantra_transmission_leg_km",
+      "title": "The Panchatantra: a book that travelled the world (Westward route (Arabic & Europe)): kilometres per leg",
+      "subtitle": "Distance from each stop to the next, Westward route (Arabic & Europe)",
       "frequency": "Per leg",
       "color": "#2e8b57",
       "suffix": " km",
@@ -232330,29 +232530,83 @@
       "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
       "category": "Epics, Faiths & Journeys",
       "subgroup": "Folk & Story Traditions",
-      "position": 2804,
+      "position": 2806,
       "series": {
         "labels": [
-          "Gundeshapur (Persia)",
-          "Edessa (Syriac)",
-          "Baghdad (Arabic)",
-          "Hebrew version (place uncertain)",
-          "Capua (Latin)",
-          "Zaragoza (Spanish)",
-          "Paris (La Fontaine)"
+          "Kashmir (Tantrakhyayika recension)",
+          "Taxila & Gandhara Caravan Crossroads",
+          "Gundeshapur (Sasanian Persia)",
+          "Edessa (Old Syriac translation)",
+          "Baghdad (Arabic Kalila wa-Dimna)",
+          "Cairo (Mamluk Illuminated Manuscripts)",
+          "Constantinople (Greek Stephanites kai Ichnelates)",
+          "Toledo (Castilian Calila e Dimna)",
+          "Narbonne / Provence (Hebrew version)",
+          "Capua (Latin Directorium Vitae Humanae)",
+          "Zaragoza (Spanish Printed Edition)",
+          "London (Morall Philosophie of Doni)",
+          "Paris (La Fontaine\u2019s Fables)"
         ],
         "datasets": [
           {
-            "label": "The Panchatantra: a book that travelled the world: kilometres per leg",
+            "label": "The Panchatantra: a book that travelled the world (Westward route (Arabic & Europe)): kilometres per leg",
             "color": "#2e8b57",
             "values": [
-              2458,
+              2400,
+              185,
+              2278,
               1032,
               662,
-              3733,
-              963,
+              1293,
+              1237,
+              2779,
+              691,
+              962,
               1269,
-              840
+              1098,
+              343
+            ]
+          }
+        ],
+        "chart_type": "bar",
+        "index_axis": "x",
+        "scope": "module",
+        "scope_label": "",
+        "note": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+        "source": "https://sa.wikisource.org/wiki/\u092a\u091e\u094d\u091a\u0924\u0928\u094d\u0924\u094d\u0930\u092e\u094d_\u0966\u0967",
+        "unit": ""
+      }
+    },
+    {
+      "key": "india_journey_panchatantra_eastward_fables_leg_km",
+      "title": "The Panchatantra: a book that travelled the world (Eastward & maritime route (Tantri & Java)): kilometres per leg",
+      "subtitle": "Distance from each stop to the next, Eastward & maritime route (Tantri & Java)",
+      "frequency": "Per leg",
+      "color": "#1d6f42",
+      "suffix": " km",
+      "source_url": "https://sa.wikisource.org/wiki/\u092a\u091e\u094d\u091a\u0924\u0928\u094d\u0924\u094d\u0930\u092e\u094d_\u0966\u0967",
+      "details": "Straight-line (great-circle) distance between consecutive stops: a schematic of how far each leg is, not the walked route.",
+      "category": "Epics, Faiths & Journeys",
+      "subgroup": "Folk & Story Traditions",
+      "position": 2807,
+      "series": {
+        "labels": [
+          "Tamralipti (Tamluk maritime port)",
+          "Anuradhapura (Sri Lanka)",
+          "Bagan (Upper Myanmar)",
+          "Central & East Java (Tantri Kamandaka)",
+          "Dunhuang & Inner Asia"
+        ],
+        "datasets": [
+          {
+            "label": "The Panchatantra: a book that travelled the world (Eastward & maritime route (Tantri & Java)): kilometres per leg",
+            "color": "#1d6f42",
+            "values": [
+              464,
+              1747,
+              2106,
+              3612,
+              5544
             ]
           }
         ],
@@ -232376,7 +232630,7 @@
       "details": "Map view of \"Bank offices by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2805,
+      "position": 2808,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -232480,7 +232734,7 @@
       "details": "Map view of \"Credit-deposit ratio by State/UT (by sanction) (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2806,
+      "position": 2809,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -232584,7 +232838,7 @@
       "details": "Map view of \"Credit-deposit ratio by State/UT (by utilisation) (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2807,
+      "position": 2810,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -232688,7 +232942,7 @@
       "details": "Map view of \"Bank deposits by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2808,
+      "position": 2811,
       "series": {
         "labels": [
           "Maharashtra",
@@ -232792,7 +233046,7 @@
       "details": "Map view of \"Bank credit by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2809,
+      "position": 2812,
       "series": {
         "labels": [
           "Maharashtra",
@@ -232896,7 +233150,7 @@
       "details": "Map view of \"Agricultural credit by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2810,
+      "position": 2813,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -233000,7 +233254,7 @@
       "details": "Map view of \"Industrial credit by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2811,
+      "position": 2814,
       "series": {
         "labels": [
           "Maharashtra",
@@ -233104,7 +233358,7 @@
       "details": "Map view of \"Personal loans by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2812,
+      "position": 2815,
       "series": {
         "labels": [
           "Maharashtra",
@@ -233208,7 +233462,7 @@
       "details": "Map view of \"Regional Rural Bank deposits by State/UT (2025)\" from Payments & Digital Banking \u203a Regional Rural Banks. 29 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 29 of 36 States/UTs reported. Not published for: Goa, Sikkim, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Delhi, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2813,
+      "position": 2816,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -233298,7 +233552,7 @@
       "details": "Map view of \"Regional Rural Bank credit by State/UT (2025)\" from Payments & Digital Banking \u203a Regional Rural Banks. 29 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 29 of 36 States/UTs reported. Not published for: Goa, Sikkim, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Delhi, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2814,
+      "position": 2817,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -233388,7 +233642,7 @@
       "details": "Map view of \"Regional Rural Bank credit-deposit ratio (2025)\" from Payments & Digital Banking \u203a Regional Rural Banks. 29 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 29 of 36 States/UTs reported. Not published for: Goa, Sikkim, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Delhi, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2815,
+      "position": 2818,
       "series": {
         "labels": [
           "Telangana",
@@ -233478,7 +233732,7 @@
       "details": "Map view of \"Regional Rural Bank branches by State/UT (2025)\" from Payments & Digital Banking \u203a Regional Rural Banks. 29 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 29 of 36 States/UTs reported. Not published for: Goa, Sikkim, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Delhi, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2816,
+      "position": 2819,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -233568,7 +233822,7 @@
       "details": "Map view of \"NPS (All Citizen) enrolments by State/UT (2024-25)\" from Payments & Digital Banking \u203a Pensions & Social Security. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. 35 of 36 States/UTs reported. Not published for: Delhi.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2817,
+      "position": 2820,
       "series": {
         "labels": [
           "Maharashtra",
@@ -233670,7 +233924,7 @@
       "details": "Map view of \"Women's share of NPS (All Citizen) enrolments (2024-25)\" from Payments & Digital Banking \u203a Pensions & Social Security. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. States/UTs with fewer than 50 enrolments are omitted. 33 of 36 States/UTs reported. Not published for: Delhi, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2818,
+      "position": 2821,
       "series": {
         "labels": [
           "Karnataka",
@@ -233768,7 +234022,7 @@
       "details": "Map view of \"Atal Pension Yojana enrolments by State/UT (2024-25)\" from Payments & Digital Banking \u203a Pensions & Social Security. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. 35 of 36 States/UTs reported. Not published for: Ladakh.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2819,
+      "position": 2822,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -233870,7 +234124,7 @@
       "details": "Map view of \"Women's share of Atal Pension Yojana enrolments (2024-25)\" from Payments & Digital Banking \u203a Pensions & Social Security. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. States/UTs with fewer than 50 enrolments are omitted. 35 of 36 States/UTs reported. Not published for: Ladakh.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2820,
+      "position": 2823,
       "series": {
         "labels": [
           "Sikkim",
@@ -233972,7 +234226,7 @@
       "details": "Map view of \"Bank credit per office by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 156 \u00f7 Table 152 for 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2821,
+      "position": 2824,
       "series": {
         "labels": [
           "Delhi",
@@ -234076,7 +234330,7 @@
       "details": "Map view of \"Bank deposits per office by State/UT (2025)\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 155 \u00f7 Table 152 for 2025. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2822,
+      "position": 2825,
       "series": {
         "labels": [
           "Delhi",
@@ -234180,7 +234434,7 @@
       "details": "Derived map of \"Regional Rural Bank branches as a share of all bank offices\" from Payments & Digital Banking \u203a Regional Rural Banks. 29 of 36 States/UTs have a value; unshaded areas are not reported by the source. Regional Rural Bank branches divided by all scheduled commercial bank offices, times 100. Computed only from series already on this dashboard (Regional Rural Bank branches by State/UT (2025); Bank offices by State/UT (2025)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2823,
+      "position": 2826,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -234270,7 +234524,7 @@
       "details": "Derived map of \"Agricultural credit as a share of bank credit\" from Payments & Digital Banking \u203a State Banking & Credit. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Credit to agriculture (INR thousand crore) divided by total bank credit (INR lakh crore), converted to a percentage. Computed only from series already on this dashboard (Agricultural credit by State/UT (2025); Bank credit by State/UT (2025)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2824,
+      "position": 2827,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -234372,7 +234626,7 @@
       "details": "Derived map of \"Industrial credit as a share of bank credit\" from Payments & Digital Banking \u203a State Banking & Credit. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Credit to industry (INR thousand crore) divided by total bank credit (INR lakh crore), converted to a percentage. Computed only from series already on this dashboard (Industrial credit by State/UT (2025); Bank credit by State/UT (2025)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2825,
+      "position": 2828,
       "series": {
         "labels": [
           "Maharashtra",
@@ -234474,7 +234728,7 @@
       "details": "Derived map of \"Personal loans as a share of bank credit\" from Payments & Digital Banking \u203a State Banking & Credit. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Personal loans (INR thousand crore) divided by total bank credit (INR lakh crore), converted to a percentage. Computed only from series already on this dashboard (Personal loans by State/UT (2025); Bank credit by State/UT (2025)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2826,
+      "position": 2829,
       "series": {
         "labels": [
           "Maharashtra",
@@ -234576,7 +234830,7 @@
       "details": "Derived map of \"Banking depth score\" from Payments & Digital Banking \u203a State Banking & Credit. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each indicator is turned into a 0\u2013100 percentile among the States/UTs that report it (100 = best), and a State/UT's score is the average of at least 3 available percentiles. Higher is better; it ranks States/UTs against each other and is not an official index. Computed only from series already on this dashboard (Bank credit per office by State/UT (2025); Bank deposits per office by State/UT (2025); Credit-deposit ratio by State/UT (by sanction) (2025)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Payments & Banking Maps",
-      "position": 2827,
+      "position": 2830,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -234680,7 +234934,7 @@
       "details": "Map view of \"GSDP by state\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. FY2022-23, same reporting year for every State/UT. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2828,
+      "position": 2831,
       "series": {
         "labels": [
           "Maharashtra",
@@ -234780,7 +235034,7 @@
       "details": "Map view of \"Per-capita NSDP by state\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. FY2022-23, same reporting year for every State/UT. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2829,
+      "position": 2832,
       "series": {
         "labels": [
           "Goa",
@@ -234880,7 +235134,7 @@
       "details": "Map view of \"Per-capita power availability by state\" from State Performance & Regional Health \u203a State Infrastructure & Services. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. FY2024-25, same reporting year for every State/UT. 35 of 36 States/UTs reported. Not published for: Ladakh.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2830,
+      "position": 2833,
       "series": {
         "labels": [
           "Dadra & Nagar Haveli and Daman & Diu",
@@ -234982,7 +235236,7 @@
       "details": "Map view of \"Monthly State GST collections\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2831,
+      "position": 2834,
       "series": {
         "labels": [
           "Maharashtra",
@@ -235030,7 +235284,7 @@
       "details": "Map view of \"PMAY housing completions by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 6 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2832,
+      "position": 2835,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -235074,7 +235328,7 @@
       "details": "Map view of \"Jal Jeevan tap water coverage by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 7 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2833,
+      "position": 2836,
       "series": {
         "labels": [
           "Goa",
@@ -235120,7 +235374,7 @@
       "details": "Map view of \"PM MUDRA loan disbursements by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 6 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2834,
+      "position": 2837,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -235164,7 +235418,7 @@
       "details": "Map view of \"PM Jan Dhan accounts by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Report dated 11/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2835,
+      "position": 2838,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -235268,7 +235522,7 @@
       "details": "Map view of \"Ayushman Bharat cards by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2836,
+      "position": 2839,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -235316,7 +235570,7 @@
       "details": "Map view of \"PM SVANidhi vendor credit by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2837,
+      "position": 2840,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -235364,7 +235618,7 @@
       "details": "Map view of \"Literacy rates across States & UTs\" from State Performance & Regional Health \u203a State Socio-Demographic Milestones. 12 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2838,
+      "position": 2841,
       "series": {
         "labels": [
           "Kerala",
@@ -235420,7 +235674,7 @@
       "details": "Map view of \"Electric Vehicle adoption by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2839,
+      "position": 2842,
       "series": {
         "labels": [
           "Maharashtra",
@@ -235468,7 +235722,7 @@
       "details": "Map view of \"Export Preparedness Index by state\" from State Performance & Regional Health \u203a State Industrial & Manufacturing Hubs. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2840,
+      "position": 2843,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -235516,7 +235770,7 @@
       "details": "Map view of \"Ease of Doing Business by state\" from State Performance & Regional Health \u203a State Industrial & Manufacturing Hubs. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Curated snapshot of the leading States named in the cited publication; it is not an all-State/UT ranking and is not refreshed automatically. All-State/UT rankings from the RBI Handbook of Statistics on Indian States are shown alongside.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2841,
+      "position": 2844,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -235564,7 +235818,7 @@
       "details": "Map view of \"Per-capita NSDP across States & UTs (2023-24)\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 33 of 36 States/UTs reported. Not published for: Gujarat, Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2842,
+      "position": 2845,
       "series": {
         "labels": [
           "Sikkim",
@@ -235662,7 +235916,7 @@
       "details": "Map view of \"GSDP across States & UTs (2023-24)\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 33 of 36 States/UTs reported. Not published for: Gujarat, Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2843,
+      "position": 2846,
       "series": {
         "labels": [
           "Maharashtra",
@@ -235760,7 +236014,7 @@
       "details": "Map view of \"Gross fiscal deficit by State/UT (2022-23 (A))\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2022-23 (A). 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2844,
+      "position": 2847,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -235854,7 +236108,7 @@
       "details": "Map view of \"State own tax revenue across States & UTs (2022-23 (A))\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2022-23 (A). 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2845,
+      "position": 2848,
       "series": {
         "labels": [
           "Maharashtra",
@@ -235948,7 +236202,7 @@
       "details": "Map view of \"Capital expenditure by State/UT (2022-23 (A))\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2022-23 (A). 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2846,
+      "position": 2849,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -236042,7 +236296,7 @@
       "details": "Map view of \"Registered factories across States & UTs (2023-24)\" from State Performance & Regional Health \u203a State Economy & Industry. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 35 of 36 States/UTs reported. Not published for: Uttar Pradesh.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2847,
+      "position": 2850,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -236144,7 +236398,7 @@
       "details": "Map view of \"Factory workers by State/UT (2023-24)\" from State Performance & Regional Health \u203a State Economy & Industry. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2848,
+      "position": 2851,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -236248,7 +236502,7 @@
       "details": "Map view of \"Renewable power capacity across States & UTs (2024)\" from State Performance & Regional Health \u203a State Infrastructure & Services. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2024. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2849,
+      "position": 2852,
       "series": {
         "labels": [
           "Rajasthan",
@@ -236352,7 +236606,7 @@
       "details": "Map view of \"National Highway length across States & UTs (2024)\" from State Performance & Regional Health \u203a State Infrastructure & Services. 32 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2024. 32 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Jammu & Kashmir, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
-      "position": 2850,
+      "position": 2853,
       "series": {
         "labels": [
           "Maharashtra",
@@ -236448,7 +236702,7 @@
       "details": "Map view of \"Power transmission & distribution losses (2022-23)\" from State Performance & Regional Health \u203a State Infrastructure & Services. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2022-23. 34 of 36 States/UTs reported. Not published for: Jammu & Kashmir, Ladakh.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2851,
+      "position": 2854,
       "series": {
         "labels": [
           "Dadra & Nagar Haveli and Daman & Diu",
@@ -236548,7 +236802,7 @@
       "details": "Map view of \"Teledensity by State/UT (2025)\" from State Performance & Regional Health \u203a State Infrastructure & Services. 18 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2025. 18 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Chhattisgarh, Goa, Jharkhand, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Telangana, Tripura, Uttarakhand, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2852,
+      "position": 2855,
       "series": {
         "labels": [
           "Delhi",
@@ -236616,7 +236870,7 @@
       "details": "Map view of \"Merchandise exports by State/UT (2024-25)\" from State Performance & Regional Health \u203a State Economy & Industry. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2024-25. 34 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Dadra & Nagar Haveli and Daman & Diu.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2853,
+      "position": 2856,
       "series": {
         "labels": [
           "Gujarat",
@@ -236716,7 +236970,7 @@
       "details": "Map view of \"Gross fiscal deficit as % of GSDP (2022-23)\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 164 \u00f7 Table 21 for 2022-23. 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2854,
+      "position": 2857,
       "series": {
         "labels": [
           "Puducherry",
@@ -236810,7 +237064,7 @@
       "details": "Map view of \"Own tax revenue as % of GSDP (2022-23)\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 168 \u00f7 Table 21 for 2022-23. 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2855,
+      "position": 2858,
       "series": {
         "labels": [
           "Puducherry",
@@ -236904,7 +237158,7 @@
       "details": "Map view of \"Manufacturing share of GSDP across States & UTs (2023-24)\" from State Performance & Regional Health \u203a State Economy & Industry. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 33 \u00f7 Table 21 for 2023-24. 33 of 36 States/UTs reported. Not published for: Gujarat, Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2856,
+      "position": 2859,
       "series": {
         "labels": [
           "Sikkim",
@@ -237002,7 +237256,7 @@
       "details": "Map view of \"State Share of Reported GSDP\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2857,
+      "position": 2860,
       "series": {
         "labels": [
           "Maharashtra",
@@ -237102,7 +237356,7 @@
       "details": "Map view of \"State Per-Capita Income Index\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from the RBI snapshot for FY2022-23 covering all 28 States and every Union Territory the source reports. 34 of 36 States/UTs reported. Not published for: Dadra & Nagar Haveli and Daman & Diu, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2858,
+      "position": 2861,
       "series": {
         "labels": [
           "Goa",
@@ -237202,7 +237456,7 @@
       "details": "Map view of \"State Power Availability Index\" from State Performance & Regional Health \u203a State Infrastructure & Services. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from the RBI snapshot for FY2024-25 covering all 28 States and every Union Territory the source reports. 35 of 36 States/UTs reported. Not published for: Ladakh.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2859,
+      "position": 2862,
       "series": {
         "labels": [
           "Dadra & Nagar Haveli and Daman & Diu",
@@ -237304,7 +237558,7 @@
       "details": "Map view of \"State GSDP Share: Largest States\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 8 of 36 States/UTs have a value; unshaded areas are not reported by the source. Share of reported GSDP across every State and Union Territory in the cited RBI snapshot. The eight largest shares are shown individually; the remaining States/UTs are combined.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2860,
+      "position": 2863,
       "series": {
         "labels": [
           "Maharashtra",
@@ -237352,7 +237606,7 @@
       "details": "Map view of \"Fiscal deficit by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Gross fiscal deficit divided by GSDP at current prices. RBI Handbook of Statistics on Indian States 2024-25, Tables 164 and 21. Year: 2023-24; 30 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2861,
+      "position": 2864,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -237444,7 +237698,7 @@
       "details": "Map view of \"Revenue deficit (+) / surplus (-) by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Revenue deficit divided by GSDP at current prices. RBI Handbook of Statistics on Indian States 2024-25, Tables 165 and 21. Year: 2023-24; 30 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2862,
+      "position": 2865,
       "series": {
         "labels": [
           "Bihar",
@@ -237536,7 +237790,7 @@
       "details": "Map view of \"Debt (outstanding liabilities) by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Outstanding liabilities at end-March as per cent of GSDP, reported as at the close of the financial year shown. RBI State Finances: A Study of Budgets 2025-26, Statement 20. Year: 2023-24; 31 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2863,
+      "position": 2866,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -237630,7 +237884,7 @@
       "details": "Map view of \"Interest payments by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Revenue receipts derived as revenue expenditure minus revenue deficit. RBI Handbook of Statistics on Indian States 2024-25, Tables 170, 166 and 165. Year: 2023-24; 31 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2864,
+      "position": 2867,
       "series": {
         "labels": [
           "Punjab",
@@ -237724,7 +237978,7 @@
       "details": "Map view of \"Own tax revenue by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Revenue receipts derived as revenue expenditure minus revenue deficit. RBI Handbook of Statistics on Indian States 2024-25, Tables 168, 166 and 165. Year: 2023-24; 31 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2865,
+      "position": 2868,
       "series": {
         "labels": [
           "Delhi",
@@ -237818,7 +238072,7 @@
       "details": "Map view of \"Central transfers by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Central transfers = revenue receipts minus own tax and own non-tax revenue (shared taxes plus grants). RBI Handbook of Statistics on Indian States 2024-25, Tables 166, 165, 168 and 169. Year: 2023-24; 31 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2866,
+      "position": 2869,
       "series": {
         "labels": [
           "Manipur",
@@ -237912,7 +238166,7 @@
       "details": "Map view of \"Committed expenditure (interest + pensions) by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Interest payments plus pension payments; salaries are excluded so this is a floor. RBI Handbook of Statistics on Indian States 2024-25, Tables 170, 171, 166 and 165. Year: 2023-24; 31 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2867,
+      "position": 2870,
       "series": {
         "labels": [
           "Punjab",
@@ -238006,7 +238260,7 @@
       "details": "Map view of \"Capital outlay by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source. Years are financial years; 2023-24 values are Revised Estimates in the RBI Handbook. Capital outlay divided by GSDP at current prices. RBI Handbook of Statistics on Indian States 2024-25, Tables 174 and 21. Year: 2023-24; 30 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2868,
+      "position": 2871,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -238098,7 +238352,7 @@
       "details": "Map view of \"GSDP growth (real) by State (2023-24)\" from State Performance & Regional Health \u203a State Fiscal Explorer. 32 of 36 States/UTs have a value; unshaded areas are not reported by the source. Year-on-year growth of GSDP at constant prices (2011-12 base). RBI Handbook of Statistics on Indian States 2024-25, Table 22. Year: 2023-24; 32 States/UTs with data.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2869,
+      "position": 2872,
       "series": {
         "labels": [
           "Assam",
@@ -238194,7 +238448,7 @@
       "details": "Map view of \"NITI Fiscal Health Index: composite score by state (FY2023)\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 18 of 36 States/UTs have a value; unshaded areas are not reported by the source. Fiscal Health Index 2025, Annual Report for the Financial Year 2023 (NITI Aayog, January 2025). Himalayan and North-Eastern states are not covered. Composite of quality of expenditure, revenue mobilisation, fiscal prudence, debt index and debt sustainability.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2870,
+      "position": 2873,
       "series": {
         "labels": [
           "Odisha",
@@ -238262,7 +238516,7 @@
       "details": "Derived map of \"Workers per factory\" from State Performance & Regional Health \u203a State Economy & Industry. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Factory workers (lakh, converted to persons) divided by registered factories in the Annual Survey of Industries. Computed only from series already on this dashboard (Factory workers by State/UT (2023-24); Registered factories across States & UTs (2023-24)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2871,
+      "position": 2874,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -238364,7 +238618,7 @@
       "details": "Derived map of \"State fiscal health score\" from State Performance & Regional Health \u203a State Financial Health & GSDP. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each indicator is turned into a 0\u2013100 percentile among the States/UTs that report it (100 = best), and a State/UT's score is the average of at least 3 available percentiles. Higher is better; it ranks States/UTs against each other and is not an official index. Computed only from series already on this dashboard (Own tax revenue as % of GSDP (2022-23); Gross fiscal deficit as % of GSDP (2022-23); Public health spending as % of GSDP (2019-20)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "State Services & Welfare Maps",
-      "position": 2872,
+      "position": 2875,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -238458,7 +238712,7 @@
       "details": "Map view of \"Maternal Mortality Ratio by State (SRS) (2021-23)\" from Public Health & Epidemiology \u203a Mortality & Lifespan Milestones. 19 of 36 States/UTs have a value; unshaded areas are not reported by the source. Source: MoSPI Women & Men in India, indicator 21 on the MoSPI API platform (https://esankhyiki.mospi.gov.in/). Latest period reported: 2021-23. Ranked highest to lowest.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2873,
+      "position": 2876,
       "series": {
         "labels": [
           "Odisha",
@@ -238528,7 +238782,7 @@
       "details": "Map view of \"Birth rate by State/UT (2023)\" from Public Health & Epidemiology \u203a State Health Outcomes. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2874,
+      "position": 2877,
       "series": {
         "labels": [
           "Bihar",
@@ -238632,7 +238886,7 @@
       "details": "Map view of \"Death rate by State/UT (2023)\" from Public Health & Epidemiology \u203a State Health Outcomes. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2875,
+      "position": 2878,
       "series": {
         "labels": [
           "Chandigarh",
@@ -238736,7 +238990,7 @@
       "details": "Map view of \"Infant mortality rate across States & UTs (2023)\" from Public Health & Epidemiology \u203a State Health Outcomes. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023. 35 of 36 States/UTs reported. Not published for: Ladakh.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2876,
+      "position": 2879,
       "series": {
         "labels": [
           "Manipur",
@@ -238838,7 +239092,7 @@
       "details": "Map view of \"Maternal mortality ratio by State/UT (2021-23)\" from Public Health & Epidemiology \u203a State Health Outcomes. 19 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2021-23. 19 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Goa, Himachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Delhi, Jammu & Kashmir, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2877,
+      "position": 2880,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -238908,7 +239162,7 @@
       "details": "Map view of \"Total fertility rate by State/UT (2023)\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023. 22 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Goa, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2878,
+      "position": 2881,
       "series": {
         "labels": [
           "Bihar",
@@ -238984,7 +239238,7 @@
       "details": "Map view of \"Life expectancy at birth across States & UTs (2019-23)\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2019-23, Total. 22 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Goa, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2879,
+      "position": 2882,
       "series": {
         "labels": [
           "Kerala",
@@ -239060,7 +239314,7 @@
       "details": "Map view of \"Anaemia among children (6\u201359 months) (NFHS 5 (2019-21))\" from Public Health & Epidemiology \u203a State Health Outcomes. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: NFHS 5 (2019-21). 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2880,
+      "position": 2883,
       "series": {
         "labels": [
           "Kerala",
@@ -239164,7 +239418,7 @@
       "details": "Map view of \"Anaemia among pregnant women (NFHS 5 (2019-21))\" from Public Health & Epidemiology \u203a State Health Outcomes. 32 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: NFHS 5 (2019-21). 32 of 36 States/UTs reported. Not published for: Goa, Andaman & Nicobar Islands, Chandigarh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2881,
+      "position": 2884,
       "series": {
         "labels": [
           "Nagaland",
@@ -239260,7 +239514,7 @@
       "details": "Map view of \"Public expenditure on health by State/UT (2019-20)\" from Public Health & Epidemiology \u203a State Health Infrastructure. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2019-20. 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2882,
+      "position": 2885,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -239354,7 +239608,7 @@
       "details": "Map view of \"Government hospitals by State/UT\" from Public Health & Epidemiology \u203a State Health Infrastructure. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2883,
+      "position": 2886,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -239458,7 +239712,7 @@
       "details": "Map view of \"Government hospital beds by State/UT\" from Public Health & Epidemiology \u203a State Health Infrastructure. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2884,
+      "position": 2887,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -239562,7 +239816,7 @@
       "details": "Map view of \"Life expectancy: men vs women by State/UT: Male\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Male vs Female. 22 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Goa, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2885,
+      "position": 2888,
       "series": {
         "labels": [
           "Kerala",
@@ -239638,7 +239892,7 @@
       "details": "Map view of \"Life expectancy: men vs women by State/UT: Female\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Male vs Female. 22 of 36 States/UTs reported. Not published for: Arunachal Pradesh, Goa, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep, Puducherry.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2886,
+      "position": 2889,
       "series": {
         "labels": [
           "Kerala",
@@ -239714,7 +239968,7 @@
       "details": "Map view of \"Public health spending as % of GSDP (2019-20)\" from Public Health & Epidemiology \u203a State Health Infrastructure. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Computed as Table 18 \u00f7 Table 21 for 2019-20. 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2887,
+      "position": 2890,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -239808,7 +240062,7 @@
       "details": "Map view of \"NITI Health Index: overall score by state and UT\" from Public Health & Epidemiology \u203a State Health Outcomes. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source. Healthy States, Progressive India: Health Index Round IV 2019-20 (NITI Aayog with the Ministry of Health and Family Welfare and the World Bank, Dec 2021), Tables e.1, e.4 and e.6. Larger states, smaller states and UTs are scored within their own category, so cross-category gaps are indicative.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2888,
+      "position": 2891,
       "series": {
         "labels": [
           "Kerala",
@@ -239908,7 +240162,7 @@
       "details": "Derived map of \"Beds per government hospital\" from Public Health & Epidemiology \u203a State Health Infrastructure. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Government hospital beds divided by the number of government hospitals. Computed only from series already on this dashboard (Government hospital beds by State/UT; Government hospitals by State/UT); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2889,
+      "position": 2892,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -240012,7 +240266,7 @@
       "details": "Derived map of \"Female life-expectancy advantage\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Female life expectancy minus male life expectancy. Computed only from series already on this dashboard (Life expectancy: men vs women by State/UT); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2890,
+      "position": 2893,
       "series": {
         "labels": [
           "Kerala",
@@ -240088,7 +240342,7 @@
       "details": "Derived map of \"Health outcomes score\" from Public Health & Epidemiology \u203a State Health Outcomes. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each indicator is turned into a 0\u2013100 percentile among the States/UTs that report it (100 = best), and a State/UT's score is the average of at least 3 available percentiles. Higher is better; it ranks States/UTs against each other and is not an official index. Computed only from series already on this dashboard (Infant mortality rate across States & UTs (2023); Life expectancy at birth across States & UTs (2019-23); Maternal mortality ratio by State/UT (2021-23); Anaemia among children (6\u201359 months) (NFHS 5 (2019-21))); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2891,
+      "position": 2894,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -240164,7 +240418,7 @@
       "details": "Map view of \"Heat Wave Days by State (2024)\" from Environment & Climate \u203a Climate & Weather. 19 of 36 States/UTs have a value; unshaded areas are not reported by the source. Source: MoSPI EnviStats India, indicator 87 on the MoSPI API platform (https://esankhyiki.mospi.gov.in/). Latest period reported: 2024. Ranked highest to lowest.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2892,
+      "position": 2895,
       "series": {
         "labels": [
           "Punjab",
@@ -240234,7 +240488,7 @@
       "details": "Map view of \"Forest Cover by State (2023)\" from Environment & Climate \u203a Forests & Land. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Source: MoSPI EnviStats India, indicator 20 on the MoSPI API platform (https://esankhyiki.mospi.gov.in/). Latest period reported: 2023. Ranked highest to lowest.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2893,
+      "position": 2896,
       "series": {
         "labels": [
           "Madhya Pradesh",
@@ -240336,7 +240590,7 @@
       "details": "Map view of \"Municipal Solid Waste Generated by State (2021-22)\" from Environment & Climate \u203a Pollution & Waste. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Source: MoSPI EnviStats India, indicator 80 on the MoSPI API platform (https://esankhyiki.mospi.gov.in/). Latest period reported: 2021-22. Ranked highest to lowest. Values are shown as published; Uttarakhand's reported figure is unusually high relative to its population.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2894,
+      "position": 2897,
       "series": {
         "labels": [
           "Maharashtra",
@@ -240438,7 +240692,7 @@
       "details": "Map view of \"International Passengers by State (2025-26)\" from Air Travel & Civil Aviation \u203a Domestic vs International. 10 of 36 States/UTs have a value; unshaded areas are not reported by the source. AAI Traffic News, March 2026 report and annexures (April-March 2025-26 against 2024-25), Annexure VI: state-wise traffic (international passengers).",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2895,
+      "position": 2898,
       "series": {
         "labels": [
           "Delhi",
@@ -240490,7 +240744,7 @@
       "details": "Map view of \"Passengers by State (2025-26)\" from Air Travel & Civil Aviation \u203a Airports & UDAN. 10 of 36 States/UTs have a value; unshaded areas are not reported by the source. AAI Traffic News, March 2026 report and annexures (April-March 2025-26 against 2024-25), Annexure VI: state-wise traffic (domestic plus international).",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2896,
+      "position": 2899,
       "series": {
         "labels": [
           "Delhi",
@@ -240542,7 +240796,7 @@
       "details": "Map view of \"Freight by State (2025-26)\" from Air Travel & Civil Aviation \u203a Air Cargo. 10 of 36 States/UTs have a value; unshaded areas are not reported by the source. AAI Traffic News, March 2026 report and annexures (April-March 2025-26 against 2024-25), Annexure VI: state-wise freight.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2897,
+      "position": 2900,
       "series": {
         "labels": [
           "Delhi",
@@ -240594,7 +240848,7 @@
       "details": "Derived map of \"International share of air passengers\" from Air Travel & Civil Aviation \u203a Domestic vs International. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. International passengers divided by total passengers at the State's airports, times 100. Computed only from series already on this dashboard (International Passengers by State (2025-26); Passengers by State (2025-26)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2898,
+      "position": 2901,
       "series": {
         "labels": [
           "Delhi",
@@ -240644,7 +240898,7 @@
       "details": "Map view of \"Route Kilometres by State (2023-24)\" from Indian Railways \u203a Network & Electrification. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ministry of Railways, Indian Railways Year Book 2023-24 (Directorate of Statistics & Economics, Railway Board): 'The Network', state-wise route kilometres, 2023-24. States and territories not listed have no railway line; Year Book 2023-24, pp. 60-62.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2899,
+      "position": 2902,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -240738,7 +240992,7 @@
       "details": "Map view of \"Inland-Waterway Passenger Trends by State (latest reported)\" from Water Transport & Shipping \u203a Water Passenger Traffic. 5 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each State/UT shows its latest reported value (most recent period: 2023). MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; state-government reports for table years 2019-2023; passenger totals in thousands. Bihar/other states with unavailable, zero, or repeated rows are excluded.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2900,
+      "position": 2903,
       "series": {
         "labels": [
           "Assam",
@@ -240780,7 +241034,7 @@
       "details": "Map view of \"State-Reported Inland-Waterway Passengers\" from Water Transport & Shipping \u203a Water Passenger Traffic. 6 of 36 States/UTs have a value; unshaded areas are not reported by the source. MoPSW, Statistics of Inland Water Transport 2022-23, Table 3.2, printed p.62; year 2023, i.e. latest table year; state-government reports. States with unavailable or previous-year-repeated data are omitted.",
       "category": "India in Maps",
       "subgroup": "Health, Environment & Transport Maps",
-      "position": 2901,
+      "position": 2904,
       "series": {
         "labels": [
           "West Bengal",
@@ -240824,7 +241078,7 @@
       "details": "Map view of \"Higher Education GER by State (AISHE) (2021-22)\" from Social \u203a Higher Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Source: Ministry of Education AISHE via MoSPI, indicator 6 on the MoSPI API platform (https://esankhyiki.mospi.gov.in/). Latest period reported: 2021-22. Ranked highest to lowest.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2902,
+      "position": 2905,
       "series": {
         "labels": [
           "Chandigarh",
@@ -240928,7 +241182,7 @@
       "details": "Map view of \"Rural unemployment rate by State/UT (2023-24)\" from Social \u203a Employment & Poverty. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 35 of 36 States/UTs reported. Not published for: Chandigarh.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2903,
+      "position": 2906,
       "series": {
         "labels": [
           "Gujarat",
@@ -241030,7 +241284,7 @@
       "details": "Map view of \"Urban unemployment rate by State/UT (2023-24)\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023-24. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2904,
+      "position": 2907,
       "series": {
         "labels": [
           "Delhi",
@@ -241134,7 +241388,7 @@
       "details": "Map view of \"Multidimensional poverty by State/UT (NFHS-5 (2019-21))\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: NFHS-5 (2019-21), Headcount Ratio (Per cent). 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2905,
+      "position": 2908,
       "series": {
         "labels": [
           "Kerala",
@@ -241238,7 +241492,7 @@
       "details": "Map view of \"Natural growth rate by State/UT (2023)\" from Social \u203a Demographics. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2023, Total. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2906,
+      "position": 2909,
       "series": {
         "labels": [
           "Bihar",
@@ -241342,7 +241596,7 @@
       "details": "Map view of \"Domestic tourist visits by State/UT (2024)\" from Social \u203a Demographics. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2024. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2907,
+      "position": 2910,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -241446,7 +241700,7 @@
       "details": "Map view of \"Social sector expenditure by State/UT (2022-23 (A))\" from Social \u203a Welfare. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: 2022-23 (A). 31 of 36 States/UTs reported. Not published for: Andaman & Nicobar Islands, Chandigarh, Dadra & Nagar Haveli and Daman & Diu, Ladakh, Lakshadweep.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2908,
+      "position": 2911,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -241540,7 +241794,7 @@
       "details": "Map view of \"Multidimensional poverty: NFHS-4 vs NFHS-5: NFHS-4 (2015-16)\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. NFHS-4 (2015-16) vs NFHS-5 (2019-21). 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2909,
+      "position": 2912,
       "series": {
         "labels": [
           "Bihar",
@@ -241644,7 +241898,7 @@
       "details": "Map view of \"Multidimensional poverty: NFHS-4 vs NFHS-5: NFHS-5 (2019-21)\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. NFHS-4 (2015-16) vs NFHS-5 (2019-21). 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2910,
+      "position": 2913,
       "series": {
         "labels": [
           "Bihar",
@@ -241748,7 +242002,7 @@
       "details": "Map view of \"Secondary gross enrolment ratio by State/UT\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: Secondary (Class IX to XII), Total. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2911,
+      "position": 2914,
       "series": {
         "labels": [
           "Chandigarh",
@@ -241852,7 +242106,7 @@
       "details": "Map view of \"Middle-school gross enrolment ratio by State/UT\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Column: Middle (Class VI to Class VIII), Total. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2912,
+      "position": 2915,
       "series": {
         "labels": [
           "Chandigarh",
@@ -241956,7 +242210,7 @@
       "details": "Map view of \"Secondary enrolment: boys vs girls by State/UT: Boys\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Boys vs Girls. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2913,
+      "position": 2916,
       "series": {
         "labels": [
           "Chandigarh",
@@ -242060,7 +242314,7 @@
       "details": "Map view of \"Secondary enrolment: boys vs girls by State/UT: Girls\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Boys vs Girls. 36 of 36 States/UTs reported.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2914,
+      "position": 2917,
       "series": {
         "labels": [
           "Chandigarh",
@@ -242164,7 +242418,7 @@
       "details": "Map view of \"National MPI: share of population multidimensionally poor, 2019-21\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. National Multidimensional Poverty Index: A Progress Review 2023 (NITI Aayog), headcount ratio table based on NFHS-5 (2019-21).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2915,
+      "position": 2918,
       "series": {
         "labels": [
           "Bihar",
@@ -242268,7 +242522,7 @@
       "details": "Map view of \"National MPI: fall in poverty headcount between NFHS-4 and NFHS-5\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. National Multidimensional Poverty Index: A Progress Review 2023 (NITI Aayog). Computed as the NFHS-4 (2015-16) headcount ratio minus the NFHS-5 (2019-21) headcount ratio from the report's table.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2916,
+      "position": 2919,
       "series": {
         "labels": [
           "Bihar",
@@ -242372,7 +242626,7 @@
       "details": "Map view of \"National MPI: people who escaped poverty by state\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. National Multidimensional Poverty Index: A Progress Review 2023 (NITI Aayog); estimates use 2021 population projections by the Ministry of Health and Family Welfare. All-India total reported: 13,54,61,035 people.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2917,
+      "position": 2920,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -242476,7 +242730,7 @@
       "details": "Map view of \"NITI School Education Quality Index: overall score, 2016-17\" from Social \u203a Education. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. School Education Quality Index (NITI Aayog, September 2019), overall-performance figures for large states, small states and UTs, reference year 2016-17. Values are read from chart data labels; the report text quotes slightly different figures for a few states.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2918,
+      "position": 2921,
       "series": {
         "labels": [
           "Kerala",
@@ -242574,7 +242828,7 @@
       "details": "Map view of \"NITI School Education Quality Index: change in score, 2015-16 to 2016-17\" from Social \u203a Education. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source. School Education Quality Index (NITI Aayog, September 2019), base year 2015-16 to reference year 2016-17, computed from the overall scores in the report figures.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2919,
+      "position": 2922,
       "series": {
         "labels": [
           "Haryana",
@@ -242672,7 +242926,7 @@
       "details": "Derived map of \"Fall in multidimensional poverty, NFHS-4 to NFHS-5\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Multidimensional poverty headcount in NFHS-4 minus the headcount in NFHS-5; positive means poverty fell. Computed only from series already on this dashboard (Multidimensional poverty: NFHS-4 vs NFHS-5); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2920,
+      "position": 2923,
       "series": {
         "labels": [
           "Bihar",
@@ -242776,7 +243030,7 @@
       "details": "Derived map of \"Girls' secondary enrolment gap\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Girls' gross enrolment ratio minus boys' for secondary school; positive means girls enrol more. Computed only from series already on this dashboard (Secondary enrolment: boys vs girls by State/UT); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2921,
+      "position": 2924,
       "series": {
         "labels": [
           "Chandigarh",
@@ -242880,7 +243134,7 @@
       "details": "Derived map of \"Multidimensional poverty headcount, NFHS-4 vs NFHS-5\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Both survey rounds on one map. Computed only from series already on this dashboard (Multidimensional poverty: NFHS-4 vs NFHS-5); no new data was fetched. Use the slider to step through 2 periods (NFHS-4 (2015-16) to NFHS-5 (2019-21)).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2922,
+      "position": 2925,
       "series": {
         "labels": [
           "Bihar",
@@ -243026,7 +243280,7 @@
       "details": "Derived map of \"Human development score\" from Social \u203a Employment & Poverty. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each indicator is turned into a 0\u2013100 percentile among the States/UTs that report it (100 = best), and a State/UT's score is the average of at least 4 available percentiles. Higher is better; it ranks States/UTs against each other and is not an official index. Computed only from series already on this dashboard (Multidimensional poverty by State/UT (NFHS-5 (2019-21)); Per-capita NSDP across States & UTs (2023-24); Urban unemployment rate by State/UT (2023-24); Rural unemployment rate by State/UT (2023-24); Secondary gross enrolment ratio by State/UT); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2923,
+      "position": 2926,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -243130,7 +243384,7 @@
       "details": "Derived map of \"Education access score\" from Social \u203a Education. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each indicator is turned into a 0\u2013100 percentile among the States/UTs that report it (100 = best), and a State/UT's score is the average of at least 3 available percentiles. Higher is better; it ranks States/UTs against each other and is not an official index. Computed only from series already on this dashboard (Middle-school gross enrolment ratio by State/UT; Secondary gross enrolment ratio by State/UT; Higher Education GER by State (AISHE) (2021-22)); no new data was fetched.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2924,
+      "position": 2927,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -243234,7 +243488,7 @@
       "details": "Map view of \"2022 State Assembly: Effective Candidates per Seat by State\" from Elections \u203a Recent Effective Candidate Field. 5 of 36 States/UTs have a value; unshaded areas are not reported by the source. For each state/UT in the 2022 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2925,
+      "position": 2928,
       "series": {
         "labels": [
           "Goa",
@@ -243276,7 +243530,7 @@
       "details": "Map view of \"2024 Lok Sabha: Effective Candidates per Seat by State\" from Elections \u203a Recent Effective Candidate Field. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. For each state/UT in the 2024 Lok Sabha results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2926,
+      "position": 2929,
       "series": {
         "labels": [
           "Punjab",
@@ -243380,7 +243634,7 @@
       "details": "Map view of \"2026 State Assembly: Effective Candidates per Seat by State\" from Elections \u203a Recent Effective Candidate Field. 5 of 36 States/UTs have a value; unshaded areas are not reported by the source. For each state/UT in the 2026 State Assembly results, calculates the effective number of candidates in each seat as 1 / sum(candidate vote-share squared), then averages those seat values. NOTA and seats without at least two candidates with reported votes are excluded. This competition measure is distinct from raw candidate counts in the existing election indices. 2026 assembly reporting is ongoing and incomplete.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2927,
+      "position": 2930,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -243422,7 +243676,7 @@
       "details": "Map view of \"Lok Sabha 2024: Seats by State/UT\" from Elections \u203a Lok Sabha 2024 \u2014 National. 12 of 36 States/UTs have a value; unshaded areas are not reported by the source. Constituency counts by State/UT in the 2024 general election results.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2928,
+      "position": 2931,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -243478,7 +243732,7 @@
       "details": "Map view of \"Lok Sabha 2024: NOTA Share by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2929,
+      "position": 2932,
       "series": {
         "labels": [
           "Bihar",
@@ -243582,7 +243836,7 @@
       "details": "Map view of \"Lok Sabha 2024: Close Contests by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2930,
+      "position": 2933,
       "series": {
         "labels": [
           "Chandigarh",
@@ -243686,7 +243940,7 @@
       "details": "Map view of \"Lok Sabha 2024: Median Victory Margin by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2931,
+      "position": 2934,
       "series": {
         "labels": [
           "Tripura",
@@ -243790,7 +244044,7 @@
       "details": "Map view of \"Lok Sabha 2024: Candidates per Seat by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2932,
+      "position": 2935,
       "series": {
         "labels": [
           "Telangana",
@@ -243894,7 +244148,7 @@
       "details": "Map view of \"Lok Sabha 2024: Independent Vote Share by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2933,
+      "position": 2936,
       "series": {
         "labels": [
           "Ladakh",
@@ -243998,7 +244252,7 @@
       "details": "Map view of \"Lok Sabha 2024: Largest Party's Seat Share by State/UT\" from Elections \u203a Election Comparisons Across States. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. All 36 States/UTs with contested seats are shown.",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2934,
+      "position": 2937,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -244102,7 +244356,7 @@
       "details": "Map view of \"Assembly Elections: NOTA Share by State/UT\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2935,
+      "position": 2938,
       "series": {
         "labels": [
           "Bihar",
@@ -244174,7 +244428,7 @@
       "details": "Map view of \"Assembly Elections: Close Contests by State/UT\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2936,
+      "position": 2939,
       "series": {
         "labels": [
           "Manipur",
@@ -244246,7 +244500,7 @@
       "details": "Map view of \"Assembly Elections: Median Victory Margin by State/UT\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2937,
+      "position": 2940,
       "series": {
         "labels": [
           "Assam",
@@ -244318,7 +244572,7 @@
       "details": "Map view of \"Assembly Elections: Candidates per Seat by State/UT\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2938,
+      "position": 2941,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -244390,7 +244644,7 @@
       "details": "Map view of \"Assembly Elections: Largest Party's Seat Share\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2939,
+      "position": 2942,
       "series": {
         "labels": [
           "Punjab",
@@ -244462,7 +244716,7 @@
       "details": "Map view of \"Assembly Elections: Parties Winning Seats\" from Elections \u203a Election Comparisons Across States. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source. Calculated from listed candidate vote totals in ECI-derived constituency results. Each State/UT's most recent Assembly election is used (year in brackets).",
       "category": "India in Maps",
       "subgroup": "Society & Elections Maps",
-      "position": 2940,
+      "position": 2943,
       "series": {
         "labels": [
           "Maharashtra",
@@ -244534,7 +244788,7 @@
       "details": "Map view of \"Top jurisdictions by cases instituted in the last month - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2941,
+      "position": 2944,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -244596,7 +244850,7 @@
       "details": "Map view of \"Share of cases instituted in the last month by leading jurisdictions - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2942,
+      "position": 2945,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -244646,7 +244900,7 @@
       "details": "Map view of \"Top jurisdictions by cases instituted in the last month - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2943,
+      "position": 2946,
       "series": {
         "labels": [
           "Maharashtra",
@@ -244708,7 +244962,7 @@
       "details": "Map view of \"Share of cases instituted in the last month by leading jurisdictions - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2944,
+      "position": 2947,
       "series": {
         "labels": [
           "Maharashtra",
@@ -244758,7 +245012,7 @@
       "details": "Map view of \"Top jurisdictions by cases instituted in the last month - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2945,
+      "position": 2948,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -244820,7 +245074,7 @@
       "details": "Map view of \"Share of cases instituted in the last month by leading jurisdictions - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2946,
+      "position": 2949,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -244870,7 +245124,7 @@
       "details": "Map view of \"Top jurisdictions by cases disposed in the last month - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2947,
+      "position": 2950,
       "series": {
         "labels": [
           "Rajasthan",
@@ -244932,7 +245186,7 @@
       "details": "Map view of \"Share of cases disposed in the last month by leading jurisdictions - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2948,
+      "position": 2951,
       "series": {
         "labels": [
           "Rajasthan",
@@ -244982,7 +245236,7 @@
       "details": "Map view of \"Top jurisdictions by cases disposed in the last month - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2949,
+      "position": 2952,
       "series": {
         "labels": [
           "Karnataka",
@@ -245044,7 +245298,7 @@
       "details": "Map view of \"Share of cases disposed in the last month by leading jurisdictions - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2950,
+      "position": 2953,
       "series": {
         "labels": [
           "Karnataka",
@@ -245094,7 +245348,7 @@
       "details": "Map view of \"Top jurisdictions by cases disposed in the last month - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2951,
+      "position": 2954,
       "series": {
         "labels": [
           "Rajasthan",
@@ -245156,7 +245410,7 @@
       "details": "Map view of \"Share of cases disposed in the last month by leading jurisdictions - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2952,
+      "position": 2955,
       "series": {
         "labels": [
           "Rajasthan",
@@ -245206,7 +245460,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by senior citizens - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2953,
+      "position": 2956,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245268,7 +245522,7 @@
       "details": "Map view of \"Share of cases filed by senior citizens by leading jurisdictions - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2954,
+      "position": 2957,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245318,7 +245572,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by senior citizens - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2955,
+      "position": 2958,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245380,7 +245634,7 @@
       "details": "Map view of \"Share of cases filed by senior citizens by leading jurisdictions - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2956,
+      "position": 2959,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245430,7 +245684,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by senior citizens - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2957,
+      "position": 2960,
       "series": {
         "labels": [
           "Bihar",
@@ -245492,7 +245746,7 @@
       "details": "Map view of \"Share of cases filed by senior citizens by leading jurisdictions - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2958,
+      "position": 2961,
       "series": {
         "labels": [
           "Bihar",
@@ -245542,7 +245796,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by women - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2959,
+      "position": 2962,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245604,7 +245858,7 @@
       "details": "Map view of \"Share of cases filed by women by leading jurisdictions - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2960,
+      "position": 2963,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245654,7 +245908,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by women - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2961,
+      "position": 2964,
       "series": {
         "labels": [
           "Maharashtra",
@@ -245716,7 +245970,7 @@
       "details": "Map view of \"Share of cases filed by women by leading jurisdictions - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2962,
+      "position": 2965,
       "series": {
         "labels": [
           "Maharashtra",
@@ -245766,7 +246020,7 @@
       "details": "Map view of \"Top jurisdictions by cases filed by women - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2963,
+      "position": 2966,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245828,7 +246082,7 @@
       "details": "Map view of \"Share of cases filed by women by leading jurisdictions - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2964,
+      "position": 2967,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245878,7 +246132,7 @@
       "details": "Map view of \"Top jurisdictions by delayed cases - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2965,
+      "position": 2968,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245940,7 +246194,7 @@
       "details": "Map view of \"Share of delayed cases by leading jurisdictions - Total cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2966,
+      "position": 2969,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -245990,7 +246244,7 @@
       "details": "Map view of \"Top jurisdictions by delayed cases - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2967,
+      "position": 2970,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -246052,7 +246306,7 @@
       "details": "Map view of \"Share of delayed cases by leading jurisdictions - Civil cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2968,
+      "position": 2971,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -246102,7 +246356,7 @@
       "details": "Map view of \"Top jurisdictions by delayed cases - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source. Ranks the jurisdiction rows returned by NJDG; it does not adjust for population or court size.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2969,
+      "position": 2972,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -246164,7 +246418,7 @@
       "details": "Map view of \"Share of delayed cases by leading jurisdictions - Criminal cases\" from Judiciary & Pending Cases \u203a Lower Courts. 9 of 36 States/UTs have a value; unshaded areas are not reported by the source. The chart shows counts grouped by jurisdiction, not a population-adjusted rate.",
       "category": "India in Maps",
       "subgroup": "Court Rankings by Jurisdiction",
-      "position": 2970,
+      "position": 2973,
       "series": {
         "labels": [
           "Uttar Pradesh",
@@ -246214,7 +246468,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: total by State/UT\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each State/UT shows the sum of the categories it reports.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2971,
+      "position": 2974,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246318,7 +246572,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: CIV SUITS\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2972,
+      "position": 2975,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246422,7 +246676,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MAGISTRIAL CASES\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2973,
+      "position": 2976,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246526,7 +246780,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: SESSIONS CASES\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2974,
+      "position": 2977,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246630,7 +246884,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MISC CIV CASES\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2975,
+      "position": 2978,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246734,7 +246988,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MISC. CIV APPEAL\" from Judiciary & Pending Cases \u203a Lower Courts. 32 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2976,
+      "position": 2979,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246830,7 +247084,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MACP\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2977,
+      "position": 2980,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -246932,7 +247186,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MISC. EXE.\" from Judiciary & Pending Cases \u203a Lower Courts. 23 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2978,
+      "position": 2981,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247010,7 +247264,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: CIVIL APPEAL\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2979,
+      "position": 2982,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247112,7 +247366,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: EXE PET\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2980,
+      "position": 2983,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247216,7 +247470,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: CRIM APPEAL\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2981,
+      "position": 2984,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247320,7 +247574,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: CRIM REVN\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2982,
+      "position": 2985,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247424,7 +247678,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: LAND REFNC\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2983,
+      "position": 2986,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247522,7 +247776,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MISC. CRIM APLN\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2984,
+      "position": 2987,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247626,7 +247880,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MRG PET\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2985,
+      "position": 2988,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -247724,7 +247978,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: BAIL APLN\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2986,
+      "position": 2989,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -247822,7 +248076,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: JUVENILE CASES\" from Judiciary & Pending Cases \u203a Lower Courts. 26 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2987,
+      "position": 2990,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -247906,7 +248160,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: ARBITN\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2988,
+      "position": 2991,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -248004,7 +248258,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: MISC. CIV APPLN\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2989,
+      "position": 2992,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -248102,7 +248356,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: INDUS MAIN\" from Judiciary & Pending Cases \u203a Lower Courts. 16 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2990,
+      "position": 2993,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -248166,7 +248420,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: ELCTN PET\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2991,
+      "position": 2994,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -248248,7 +248502,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: INDUS MISC\" from Judiciary & Pending Cases \u203a Lower Courts. 10 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2992,
+      "position": 2995,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -248300,7 +248554,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: COMMERCIAL SUIT\" from Judiciary & Pending Cases \u203a Lower Courts. 28 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types",
-      "position": 2993,
+      "position": 2996,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -248388,7 +248642,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: CIVIL REV.\" from Judiciary & Pending Cases \u203a Lower Courts. 21 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2994,
+      "position": 2997,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -248462,7 +248716,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: LABUR MISC\" from Judiciary & Pending Cases \u203a Lower Courts. 10 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2995,
+      "position": 2998,
       "series": {
         "labels": [
           "Assam",
@@ -248514,7 +248768,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: LABUR MAIN\" from Judiciary & Pending Cases \u203a Lower Courts. 15 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2996,
+      "position": 2999,
       "series": {
         "labels": [
           "Assam",
@@ -248576,7 +248830,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: OTHER TRIBNL\" from Judiciary & Pending Cases \u203a Lower Courts. 11 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2997,
+      "position": 3000,
       "series": {
         "labels": [
           "Assam",
@@ -248630,7 +248884,7 @@
       "details": "Map view of \"Total cases case-type breakdown pending: COMMERCIAL APPEAL\" from Judiciary & Pending Cases \u203a Lower Courts. 16 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2998,
+      "position": 3001,
       "series": {
         "labels": [
           "Assam",
@@ -248694,7 +248948,7 @@
       "details": "Map view of \"Total cases case-category breakdown pending: total by State/UT\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each State/UT shows the sum of the categories it reports.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 2999,
+      "position": 3002,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -248798,7 +249052,7 @@
       "details": "Map view of \"Total cases case-category breakdown pending: Original\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3000,
+      "position": 3003,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -248902,7 +249156,7 @@
       "details": "Map view of \"Total cases case-category breakdown pending: Appeal\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3001,
+      "position": 3004,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249006,7 +249260,7 @@
       "details": "Map view of \"Total cases case-category breakdown pending: Application\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3002,
+      "position": 3005,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249110,7 +249364,7 @@
       "details": "Map view of \"Total cases case-category breakdown pending: Execution\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3003,
+      "position": 3006,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249214,7 +249468,7 @@
       "details": "Map view of \"Pending cases older than 5 years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Share of each State/UT's pending cases that are 5 years old or more (buckets from NJDG's age profile).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3004,
+      "position": 3007,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249318,7 +249572,7 @@
       "details": "Map view of \"Pending cases older than 10 years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Share of each State/UT's pending cases that are 10 years old or more (buckets from NJDG's age profile).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3005,
+      "position": 3008,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249422,7 +249676,7 @@
       "details": "Map view of \"Total cases pending by age: total by State/UT\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each State/UT shows the sum of the categories it reports.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3006,
+      "position": 3009,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249526,7 +249780,7 @@
       "details": "Map view of \"Total cases pending by age: 0 to 1 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3007,
+      "position": 3010,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249630,7 +249884,7 @@
       "details": "Map view of \"Total cases pending by age: 1 to 3 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3008,
+      "position": 3011,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249734,7 +249988,7 @@
       "details": "Map view of \"Total cases pending by age: 3 to 5 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3009,
+      "position": 3012,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249838,7 +250092,7 @@
       "details": "Map view of \"Total cases pending by age: 5 to 10 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3010,
+      "position": 3013,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -249942,7 +250196,7 @@
       "details": "Map view of \"Total cases pending by age: 10 to 20 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3011,
+      "position": 3014,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250046,7 +250300,7 @@
       "details": "Map view of \"Total cases pending by age: 20 to 30 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3012,
+      "position": 3015,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250148,7 +250402,7 @@
       "details": "Map view of \"Total cases pending by age: Above 30 Years\" from Judiciary & Pending Cases \u203a Lower Courts. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3013,
+      "position": 3016,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250240,7 +250494,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: total by State/UT\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each State/UT shows the sum of the categories it reports.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3014,
+      "position": 3017,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250344,7 +250598,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Witness Exmn.\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3015,
+      "position": 3018,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250448,7 +250702,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Appln. Hearing\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case types & Case categories",
-      "position": 3016,
+      "position": 3019,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250552,7 +250806,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: NBW\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3017,
+      "position": 3020,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250634,7 +250888,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Accused Appear\" from Judiciary & Pending Cases \u203a Lower Courts. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3018,
+      "position": 3021,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250728,7 +250982,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Steps\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3019,
+      "position": 3022,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250832,7 +251086,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Report\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3020,
+      "position": 3023,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -250934,7 +251188,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Charge/Plea\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3021,
+      "position": 3024,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251032,7 +251286,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Notice/Summons\" from Judiciary & Pending Cases \u203a Lower Courts. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3022,
+      "position": 3025,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251126,7 +251380,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Suppl. Copy\" from Judiciary & Pending Cases \u203a Lower Courts. 19 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3023,
+      "position": 3026,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251196,7 +251450,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: WS\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3024,
+      "position": 3027,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251298,7 +251552,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Compliance\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3025,
+      "position": 3028,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251396,7 +251650,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Process Issue\" from Judiciary & Pending Cases \u203a Lower Courts. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3026,
+      "position": 3029,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251488,7 +251742,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Attachment\" from Judiciary & Pending Cases \u203a Lower Courts. 27 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3027,
+      "position": 3030,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251574,7 +251828,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Alerts\" from Judiciary & Pending Cases \u203a Lower Courts. 17 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3028,
+      "position": 3031,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251640,7 +251894,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Issues\" from Judiciary & Pending Cases \u203a Lower Courts. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3029,
+      "position": 3032,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251740,7 +251994,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Final Arguments\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3030,
+      "position": 3033,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251842,7 +252096,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Orders\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3031,
+      "position": 3034,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -251944,7 +252198,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: AwaitHC order\" from Judiciary & Pending Cases \u203a Lower Courts. 24 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3032,
+      "position": 3035,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252024,7 +252278,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: 313 Cr.PC\" from Judiciary & Pending Cases \u203a Lower Courts. 33 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3033,
+      "position": 3036,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252122,7 +252376,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Judgment\" from Judiciary & Pending Cases \u203a Lower Courts. 34 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3034,
+      "position": 3037,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252222,7 +252476,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Summons/BW\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3035,
+      "position": 3038,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252304,7 +252558,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Pre-trial Stmt.\" from Judiciary & Pending Cases \u203a Lower Courts. 31 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3036,
+      "position": 3039,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252398,7 +252652,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Committal\" from Judiciary & Pending Cases \u203a Lower Courts. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3037,
+      "position": 3040,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252474,7 +252728,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Arg. On Charge\" from Judiciary & Pending Cases \u203a Lower Courts. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3038,
+      "position": 3041,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252566,7 +252820,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Discovery/Insp\" from Judiciary & Pending Cases \u203a Lower Courts. 21 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage",
-      "position": 3039,
+      "position": 3042,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252640,7 +252894,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Adll. WS\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3040,
+      "position": 3043,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252722,7 +252976,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Comm. Report\" from Judiciary & Pending Cases \u203a Lower Courts. 26 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3041,
+      "position": 3044,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252806,7 +253060,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Adm. Appeal\" from Judiciary & Pending Cases \u203a Lower Courts. 30 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3042,
+      "position": 3045,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252898,7 +253152,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Await Record\" from Judiciary & Pending Cases \u203a Lower Courts. 32 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3043,
+      "position": 3046,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -252994,7 +253248,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Adll. Issues\" from Judiciary & Pending Cases \u203a Lower Courts. 18 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3044,
+      "position": 3047,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -253062,7 +253316,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Sec. 89\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3045,
+      "position": 3048,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253164,7 +253418,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Proclamation\" from Judiciary & Pending Cases \u203a Lower Courts. 13 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3046,
+      "position": 3049,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253222,7 +253476,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Appearance\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3047,
+      "position": 3050,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253324,7 +253578,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Procl. S. 8283\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3048,
+      "position": 3051,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253406,7 +253660,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Stayed\" from Judiciary & Pending Cases \u203a Lower Courts. 23 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3049,
+      "position": 3052,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253484,7 +253738,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Evidence\" from Judiciary & Pending Cases \u203a Lower Courts. 24 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3050,
+      "position": 3053,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253564,7 +253818,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Stayed HC\" from Judiciary & Pending Cases \u203a Lower Courts. 26 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3051,
+      "position": 3054,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253648,7 +253902,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: None\" from Judiciary & Pending Cases \u203a Lower Courts. 18 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3052,
+      "position": 3055,
       "series": {
         "labels": [
           "Andhra Pradesh",
@@ -253716,7 +253970,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: ADR Rpt.\" from Judiciary & Pending Cases \u203a Lower Courts. 25 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3053,
+      "position": 3056,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -253798,7 +254052,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Admission\" from Judiciary & Pending Cases \u203a Lower Courts. 20 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3054,
+      "position": 3057,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -253870,7 +254124,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Sentnc. Hearing\" from Judiciary & Pending Cases \u203a Lower Courts. 22 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3055,
+      "position": 3058,
       "series": {
         "labels": [
           "Arunachal Pradesh",
@@ -253946,7 +254200,7 @@
       "details": "Map view of \"Total cases cases by listed stage pending: Dormant\" from Judiciary & Pending Cases \u203a Lower Courts. 13 of 36 States/UTs have a value; unshaded areas are not reported by the source.",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3056,
+      "position": 3059,
       "series": {
         "labels": [
           "Bihar",
@@ -254004,7 +254258,7 @@
       "details": "Map view of \"Total cases by filing year pending (year slider)\" from Judiciary & Pending Cases \u203a Lower Courts. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Each period is the year the pending cases were filed; the latest year (2026) is partial. Use the slider to step through 15 periods (2012 to 2026).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3057,
+      "position": 3060,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -254696,7 +254950,7 @@
       "details": "Map view of \"Cases instituted each year\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. The latest year (2026) covers only the months published so far. Use the slider to step through 9 periods (2018 to 2026).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3058,
+      "position": 3061,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -255126,7 +255380,7 @@
       "details": "Map view of \"Cases disposed each year\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. The latest year (2026) covers only the months published so far. Use the slider to step through 9 periods (2018 to 2026).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3059,
+      "position": 3062,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -255556,7 +255810,7 @@
       "details": "Map view of \"Disposal rate (disposed \u00f7 instituted)\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. The latest year (2026) covers only the months published so far. Use the slider to step through 9 periods (2018 to 2026).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3060,
+      "position": 3063,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -255986,7 +256240,7 @@
       "details": "Map view of \"Net change in case backlog (instituted \u2212 disposed)\" from Judiciary & Pending Cases \u203a Lower Courts. 35 of 36 States/UTs have a value; unshaded areas are not reported by the source. The latest year (2026) covers only the months published so far. Use the slider to step through 9 periods (2018 to 2026).",
       "category": "India in Maps",
       "subgroup": "Court Maps \u00b7 Case stage & Filing year",
-      "position": 3061,
+      "position": 3064,
       "series": {
         "labels": [
           "Andaman & Nicobar Islands",
@@ -256416,7 +256670,7 @@
       "details": "Map view of \"NITI Export Preparedness Index: overall score by state and UT\" from Economic \u203a Trade & External. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Export Preparedness Index 2022 (NITI Aayog with the Institute for Competitiveness), Overall Ranking table, pp. 108-109. Four pillars: policy, business ecosystem, export ecosystem and export performance.",
       "category": "India in Maps",
       "subgroup": "Economic on the map",
-      "position": 3062,
+      "position": 3065,
       "series": {
         "labels": [
           "Tamil Nadu",
@@ -256520,7 +256774,7 @@
       "details": "Map view of \"India Innovation Index 2021: overall score by state and UT\" from Innovation & Technology \u203a Global Innovation Benchmarks. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. India Innovation Index 2021 (NITI Aayog with the Institute for Competitiveness, July 2022), category-wise rankings and Appendix state scores. States are ranked within Major States, North-East and Hill States, and UTs and City States, so scores are not strictly comparable across groups.",
       "category": "India in Maps",
       "subgroup": "Innovation & Technology on the map",
-      "position": 3063,
+      "position": 3066,
       "series": {
         "labels": [
           "Chandigarh",
@@ -256624,7 +256878,7 @@
       "details": "Map view of \"India Innovation Index 2021: enabler score by state and UT\" from Innovation & Technology \u203a Global Innovation Benchmarks. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. India Innovation Index 2021 (NITI Aayog with the Institute for Competitiveness), Appendix state scores, Enablers dimension.",
       "category": "India in Maps",
       "subgroup": "Innovation & Technology on the map",
-      "position": 3064,
+      "position": 3067,
       "series": {
         "labels": [
           "Manipur",
@@ -256728,7 +256982,7 @@
       "details": "Map view of \"India Innovation Index 2021: performer score by state and UT\" from Innovation & Technology \u203a Global Innovation Benchmarks. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. India Innovation Index 2021 (NITI Aayog with the Institute for Competitiveness), Appendix state scores, Performers dimension.",
       "category": "India in Maps",
       "subgroup": "Innovation & Technology on the map",
-      "position": 3065,
+      "position": 3068,
       "series": {
         "labels": [
           "Delhi",

@@ -134,6 +134,9 @@ describe('Epic atlas', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Trace the route' }));
     expect(container.querySelectorAll('.atlas-stop').length).toBeGreaterThan(1);
     expect(container.querySelector('.atlas-detail blockquote[lang="sa"]')).not.toBeNull();
+    await userEvent.click(screen.getByRole('button', { name: 'Next stop →' }));
+    expect(container.querySelector('.atlas-detail h4').textContent).toMatch(/2\. Virata/);
+    expect(container.querySelectorAll('.atlas-route-list button')).toHaveLength(2);
     await userEvent.click(screen.getByRole('button', { name: 'Ramayana' }));
     expect(await screen.findByRole('button', { name: /^Lanka, Sri Lanka/ })).toBeInTheDocument();
     expect(container.querySelector('circle.outside')).toBeInTheDocument();

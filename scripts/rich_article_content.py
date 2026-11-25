@@ -219,6 +219,17 @@ def get_subgroup_article_paragraphs(subgroup_name, category_name, description, i
             "The upcoming decadal horizon is defined by the National Green Hydrogen Mission, establishing semiconductor fabrication facilities under the India Semiconductor Mission (ISM), and achieving Net Zero greenhouse gas emissions by 2070 while safeguarding affordable energy access."
         ]
 
+    # Epics, Faiths & Journeys
+    if "epics" in cat_lower or "faith" in cat_lower or "journey" in cat_lower or "vedic" in sub_lower or "buddhist" in sub_lower or "jain" in sub_lower or "sikh" in sub_lower or "panchatantra" in sub_lower:
+        return [
+            f"The {subgroup_name} chapter within {category_name} brings sacred geography, narrative movement, and primary-text scholarship together across {indicator_count} interactive maps and distance profiles. Every stage pinned on the map pairs an approximate modern identification with a verbatim quotation from Sanskrit, Pali, Gurmukhi, or French historical editions.",
+            "Ancient and medieval South Asian literary traditions were inherently peripatetic: philosophers debated between Gandhara, Kurukshetra, Kashi, and Videha; wandering sramana teachers walked across the Magadhan plains; epic heroes traversed forests, mountain passes, and island straits; and story collections crossed overland Silk Roads and monsoon sea lanes.",
+            "Cartographic plotting reveals how spiritual centres clustered along river arteries—the Sapta-Sindhu tributaries, the Sarasvati-Drishadvati plain, the Ganga-Yamuna doab, the Godavari valley, the Tungabhadra hills, and the Beas-Sutlej corridor of Punjab—before radiating outward across Asia and Europe.",
+            "Alongside straight-line leg-distance profiles that quantify the spatial scale of each route, the interactive atlases distinguish closely documented medieval towns and heritage shrines from ancient janapadas and forest hermitages marked with dashed rings where modern pin locations represent scholarly approximations.",
+            "Comparing multiple routes side by side highlights dramatic contrasts in scale: localized lifetime circuits of twenty to fifty kilometres per leg across Magadha or Majha stand beside the multi-thousand-kilometre Asian transmission of Buddhism, the global journey of the Panchatantra fables, and Guru Nanak's continental udasis.",
+            "Each stop preserves linguistic and textual fidelity by citing its underlying source URL directly—ranging from Rigvedic hymns and Upanishads on Wikisource to SuttaCentral Pali Nikayas, Valmiki Ramayana and Mahabharata editions, and BaniDB Guru Granth Sahib angs—while explicitly labelling any general thematic verse.",
+        ]
+
     # Default fallback generator for any remaining subgroup to ensure 6-8 comprehensive paragraphs
     return [
         f"The {subgroup_name} subgroup provides a critical analytical lens within {category_name}, tracking {indicator_count} core indicator series that capture structural transformations, institutional benchmarks, and policy milestones across India. Grounded in authoritative public data repositories, this lens enables researchers, policymakers, and citizens to examine verified historical trajectories alongside high-frequency developmental metrics.",

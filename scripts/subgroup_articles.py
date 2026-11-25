@@ -66,6 +66,46 @@ CUSTOM_SUBGROUP_CLUSTERS = {
         ("Rama’s route: Ayodhya to Lanka and Back",
          ["india_journey_rama", "india_journey_rama_leg_km"]),
     ],
+    "Vedic & Upanishadic Journeys": [
+        ("Vedic & Upanishadic Heartlands: Interactive Journey Map",
+         ["india_journey_vedas_upanishads"]),
+        ("Vedic Rivers to Upanishadic Courts: Kilometres per Leg",
+         ["india_journey_vedas_upanishads_vedic_leg_km"]),
+        ("Advaita Mathas & Commentarial Seats: Kilometres per Leg",
+         ["india_journey_vedas_upanishads_advaita_mathas_leg_km"]),
+    ],
+    "Buddhist Journeys": [
+        ("The Buddha’s Life & Spread Across Asia: Interactive Journey Map",
+         ["india_journey_buddha"]),
+        ("Sacred Geography of the Buddha’s Life: Kilometres per Leg",
+         ["india_journey_buddha_life_leg_km"]),
+        ("Overland Silk Road & Maritime Spread Across Asia: Kilometres per Leg",
+         ["india_journey_buddha_spread_leg_km"]),
+    ],
+    "Jain Journeys": [
+        ("Mahavira’s Wanderings & Historic Jain Centres: Interactive Journey Map",
+         ["india_journey_mahavira"]),
+        ("Mahavira’s Twelve-Year Wanderings Across Eastern India: Kilometres per Leg",
+         ["india_journey_mahavira_wanderings_leg_km"]),
+        ("Councils, Caves & Temple Cities Across India: Kilometres per Leg",
+         ["india_journey_mahavira_jain_centres_leg_km"]),
+    ],
+    "Sikh Journeys": [
+        ("The Ten Sikh Gurus’ Journeys & Guru Nanak Dev Ji’s Udasis",
+         ["india_journey_sikh_gurus", "india_journey_sikh_gurus_nanak_leg_km"]),
+        ("Total Travel Span Across All Ten Sikh Gurus",
+         ["india_journey_sikh_gurus_km_by_guru"]),
+        ("Key Sacred Places Mapped per Sikh Guru",
+         ["india_journey_sikh_gurus_stops_by_guru"]),
+    ],
+    "Folk & Story Traditions": [
+        ("Panchatantra Global Transmission: Interactive Journey Map",
+         ["india_journey_panchatantra"]),
+        ("Westward Transmission (Kashmir → Baghdad → Europe): Kilometres per Leg",
+         ["india_journey_panchatantra_transmission_leg_km"]),
+        ("Eastward & Maritime Fable Transmission (India → Java & Dunhuang): Kilometres per Leg",
+         ["india_journey_panchatantra_eastward_fables_leg_km"]),
+    ],
     "Coal, Oil & Gas": [
         ("Coal, Lignite & Hydrocarbon Production Trajectories",
          ["coal_production", "lignite_production", "crude_petroleum_domestic", "natural_gas_production", "coal_output_by_period"]),
@@ -405,6 +445,16 @@ def dedupe(values):
 def generate_section_context(subgroup_name, stems, members, index, total_sections=3):
     lead_stem = stems[0] if stems else subgroup_name
     sources = dedupe([item.get("series", {}).get("source", "") for item in members if item.get("series", {}).get("source")])
+    sub_lower = subgroup_name.lower()
+    if any(k in sub_lower for k in ("epic", "vedic", "buddh", "jain", "sikh", "folk", "story", "journey", "mahabharata", "ramayana")):
+        heritage_contexts = [
+            f"Placing {lead_stem} on a geographic frame highlights how rivers, mountain passes, royal capitals and forest hermitages structured South Asian textual traditions. Every pin and cited verse in this section is cross-checked against public primary-language editions.",
+            "Comparing consecutive leg distances alongside chronological stop markers distinguishes tightly clustered regional circuits across Magadha, the Doab or Punjab from trans-continental cultural corridors spanning Central, East and Southeast Asia.",
+            "Where ancient or medieval sources name traditional regions whose exact ancient boundary remains scholarly approximation, dashed markers distinguish interpretive coordinates from documented monuments, inscriptions and heritage shrines.",
+        ]
+        if total_sections == 1:
+            return "\n\n".join(heritage_contexts)
+        return heritage_contexts[index % len(heritage_contexts)]
     source_str = f" Published data from {sources[0]} and official statutory releases" if sources else " Official statistical releases and administrative returns"
 
     contexts = [
