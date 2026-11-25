@@ -1,52 +1,42 @@
-/* Indus Valley Archaeological Atlas: High-Impact GIS & Excavation Dossier */
+/* Indus Valley Archaeological Atlas: Theme-Adaptive GIS & Excavation Dossier */
+.indus-valley-atlas,
 .indus-atlas {
+  --ivc-gold: #b45309;
+  --ivc-blue: #0369a1;
+  --ivc-green: #047857;
+  --ivc-rose: #be123c;
+  --ivc-panel: color-mix(in srgb, var(--surface, #ffffff) 95%, var(--ink, #111827) 3%);
+  --ivc-sub: color-mix(in srgb, var(--surface-2, var(--surface, #f8fafc)) 90%, var(--ink, #111827) 5%);
+  --ivc-pill-bg: color-mix(in srgb, var(--surface, #ffffff) 88%, var(--ink, #111827) 6%);
+
   margin: 1.25rem 0 2rem;
   padding: 1.25rem;
-  background: color-mix(in srgb, var(--surface, #14171d) 90%, #000);
-  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  background: var(--ivc-panel);
+  border: 1px solid var(--line, rgba(0, 0, 0, 0.12));
   border-radius: var(--radius, 16px);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow, 0 10px 36px rgba(0, 0, 0, 0.18));
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
   overflow: hidden;
+  color: var(--ink);
 }
 
-.indus-mode-bar {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
-}
-
-.indus-mode-btn {
-  padding: 6px 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.3);
-  color: #94a3b8;
-  font-size: 0.8rem;
-  font-weight: 650;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.indus-mode-btn:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #f8fafc;
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.indus-mode-btn.active {
-  background: #d4a72c;
-  color: #0b0f15;
-  border-color: #d4a72c;
-  font-weight: 800;
-  box-shadow: 0 2px 10px rgba(212, 167, 44, 0.3);
+:root[data-theme="dark"] .indus-valley-atlas,
+:root[data-theme="military"] .indus-valley-atlas,
+:root[data-theme="parliamentary"] .indus-valley-atlas,
+:root[data-theme="airforce"] .indus-valley-atlas,
+:root[data-theme="dark"] .indus-atlas,
+:root[data-theme="military"] .indus-atlas,
+:root[data-theme="parliamentary"] .indus-atlas,
+:root[data-theme="airforce"] .indus-atlas {
+  --ivc-gold: #fbbf24;
+  --ivc-blue: #38bdf8;
+  --ivc-green: #34d399;
+  --ivc-rose: #fda4af;
 }
 
 .indus-atlas-header {
@@ -55,27 +45,29 @@
   gap: 1rem;
 }
 
+.indus-kicker,
 .indus-atlas-tag {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--saffron, #ff9933);
+  color: var(--ivc-gold);
   margin-bottom: 0.3rem;
 }
 
+.indus-title-group h2,
 .indus-atlas-title-group h2 {
-  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 800;
-  color: var(--ink, #f0f6fc);
-  margin: 0 0 0.5rem;
-  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 0.45rem;
+  line-height: 1.18;
 }
 
 .indus-atlas-lead {
   font-size: 0.94rem;
-  color: var(--muted, #94a3b8);
+  color: var(--muted);
   line-height: 1.6;
   max-width: 85ch;
   margin: 0;
@@ -86,7 +78,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 10px;
-  margin-top: 0.4rem;
 }
 
 .indus-stat-chip {
@@ -94,8 +85,8 @@
   flex-direction: column;
   align-items: center;
   padding: 10px 12px;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--ivc-sub);
+  border: 1px solid var(--line);
   border-radius: 10px;
 }
 
@@ -103,29 +94,29 @@
   font-family: ui-monospace, SFMono-Regular, monospace;
   font-size: 1.45rem;
   font-weight: 850;
-  color: #d4a72c;
+  color: var(--ivc-gold);
   line-height: 1.1;
 }
 
 .isc-label {
   font-size: 0.68rem;
-  color: #94a3b8;
-  font-weight: 600;
+  color: var(--muted);
+  font-weight: 650;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-top: 2px;
   text-align: center;
 }
 
-/* Tier Filter Tabs (Prevents visual clutter) */
+/* Tier Filter Tabs */
 .indus-tier-tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 5px;
+  background: var(--ivc-sub);
+  padding: 6px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
 }
 
 .indus-tier-tab {
@@ -136,23 +127,23 @@
   border-radius: 8px;
   border: 1px solid transparent;
   background: transparent;
-  color: #cbd5e1;
+  color: var(--ink);
   font-size: 0.82rem;
   font-weight: 650;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.indus-tier-tab:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+.indus-tier-tab:hover:not(.active) {
+  background: color-mix(in srgb, var(--ivc-gold) 12%, var(--surface));
+  border-color: color-mix(in srgb, var(--ivc-gold) 35%, transparent);
 }
 
 .indus-tier-tab.active {
   background: #d4a72c;
   color: #0d1117;
   font-weight: 800;
-  box-shadow: 0 2px 8px rgba(212, 167, 44, 0.35);
+  box-shadow: 0 2px 8px rgba(212, 167, 44, 0.3);
 }
 
 /* Secondary Controls Bar */
@@ -160,28 +151,31 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px 12px;
   padding: 10px 14px;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--ivc-sub);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
 }
 
 .indus-search-wrap {
   position: relative;
   flex: 1 1 240px;
+  min-width: 0;
 }
 
 .indus-search-input {
   width: 100%;
+  box-sizing: border-box;
   padding: 7px 30px 7px 12px;
   border-radius: 8px;
-  border: 1px solid var(--line, #334155);
-  background: rgba(0, 0, 0, 0.4);
-  color: #f8fafc;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
   font-size: 0.84rem;
 }
 
+.indus-search-clear,
 .indus-clear-btn {
   position: absolute;
   right: 8px;
@@ -189,7 +183,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #94a3b8;
+  color: var(--muted);
   font-size: 1.1rem;
   cursor: pointer;
 }
@@ -199,57 +193,170 @@
   align-items: center;
   gap: 6px;
   font-size: 0.82rem;
-  color: #94a3b8;
+  color: var(--muted);
 }
 
 .indus-select {
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid var(--line, #334155);
-  background: rgba(0, 0, 0, 0.5);
-  color: #f8fafc;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
   font-size: 0.82rem;
 }
 
+.indus-presets-wrap,
 .indus-region-presets {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 4px;
-}
-
-.preset-label {
-  font-size: 0.76rem;
-  color: #94a3b8;
-  margin-right: 2px;
+  gap: 5px;
 }
 
 .preset-btn {
-  padding: 5px 9px;
+  padding: 5px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: transparent;
-  color: #cbd5e1;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
   font-size: 0.74rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.preset-btn.active, .preset-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  border-color: #d4a72c;
+.preset-btn:hover:not(.active) {
+  border-color: var(--ivc-gold);
+  background: color-mix(in srgb, var(--ivc-gold) 12%, var(--surface));
 }
 
-.indus-toggle-label {
-  display: inline-flex;
-  align-items: center;
+.preset-btn.active {
+  background: color-mix(in srgb, var(--ivc-gold) 20%, var(--surface));
+  color: var(--ivc-gold);
+  border-color: var(--ivc-gold);
+  font-weight: 750;
+}
+
+.indus-toggles-row {
+  display: flex;
   gap: 6px;
-  font-size: 0.8rem;
-  color: #cbd5e1;
-  cursor: pointer;
+  flex-wrap: wrap;
   margin-left: auto;
 }
 
-/* Main Workbench: Full-Width Maximized Non-Split View */
+.toggle-routes-btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toggle-routes-btn.active {
+  background: color-mix(in srgb, var(--ivc-blue) 16%, var(--surface));
+  color: var(--ivc-blue);
+  border-color: var(--ivc-blue);
+}
+
+/* Period Horizons Strip */
+.indus-periods-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 9px 12px;
+  background: var(--ivc-sub);
+  border: 1px solid color-mix(in srgb, var(--ivc-gold) 30%, var(--line));
+  border-radius: 10px;
+}
+
+.ips-label {
+  font-size: 0.75rem;
+  font-weight: 750;
+  color: var(--ivc-gold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ips-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ips-pill:hover:not(.active) {
+  border-color: var(--period-color, var(--ivc-gold));
+}
+
+.ips-pill.active {
+  background: color-mix(in srgb, var(--period-color, #d4a72c) 20%, var(--surface));
+  border-color: var(--period-color, #d4a72c);
+  color: var(--ink);
+  font-weight: 750;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--period-color, #d4a72c) 30%, transparent);
+}
+
+.ips-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ips-span {
+  font-size: 0.68rem;
+  opacity: 0.78;
+  font-weight: 500;
+}
+
+/* View Mode Bar */
+.indus-mode-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+
+.indus-mode-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--ivc-sub);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.indus-mode-btn:hover:not(.active) {
+  background: color-mix(in srgb, var(--ivc-gold) 12%, var(--surface));
+  border-color: var(--ivc-gold);
+}
+
+.indus-mode-btn.active {
+  background: #d4a72c;
+  color: #0b0f15;
+  border-color: #d4a72c;
+  font-weight: 800;
+  box-shadow: 0 2px 10px rgba(212, 167, 44, 0.3);
+}
+
+/* Workbench Split */
 .indus-workbench {
   display: flex;
   flex-direction: column;
@@ -261,78 +368,86 @@
   box-sizing: border-box;
 }
 
-/* Map Canvas Container (Full Width Maximized) */
 .indus-map-canvas,
 .indus-map-container {
   position: relative;
-  background: #090c10;
+  background: var(--surface);
   border-radius: 12px;
-  border: 1px solid #1e293b;
+  border: 1px solid var(--line);
   overflow: hidden;
-  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.8);
+  box-shadow: var(--shadow, inset 0 2px 10px rgba(0, 0, 0, 0.2));
   display: flex;
   flex-direction: column;
   min-width: 0;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
-  height: 720px;
-  min-height: 640px;
+  height: 700px;
+  min-height: 600px;
 }
 
 @media (max-width: 768px) {
   .indus-map-canvas,
   .indus-map-container {
-    height: 520px;
+    height: 540px;
     min-height: 480px;
   }
 }
 
 .indus-map-toolbar {
-  padding: 8px 12px;
+  padding: 8px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(15, 23, 42, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--ivc-sub);
+  border-bottom: 1px solid var(--line);
   z-index: 5;
   flex-shrink: 0;
 }
 
-.showing-sites-count {
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: #fbbf24;
-  letter-spacing: 0.04em;
-}
-
-.indus-zoom-controls {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 10;
+.indus-map-toolbar-meta {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.indus-zoom-controls button {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f8fafc;
-  font-size: 1.1rem;
+.showing-sites-count {
+  font-size: 0.76rem;
+  font-weight: 750;
+  color: var(--ivc-gold);
+  letter-spacing: 0.03em;
+}
+
+.indus-drag-hint {
+  font-size: 0.71rem;
+  color: var(--muted);
+}
+
+.indus-map-toolbar .map-zoom-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.indus-map-toolbar .map-zoom-btns button {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1rem;
   font-weight: 700;
   display: grid;
   place-items: center;
   cursor: pointer;
-  backdrop-filter: blur(6px);
   transition: all 0.15s ease;
 }
 
-.indus-zoom-controls button:hover {
+.indus-map-toolbar .map-zoom-btns button:hover {
   background: #d4a72c;
   color: #0b0f15;
   border-color: #d4a72c;
@@ -344,15 +459,15 @@
   flex: 1;
   min-height: 0;
   display: block;
+  touch-action: none;
 }
 
-/* Map Pins */
 .indus-site-pin {
   transition: transform 0.15s ease;
 }
 
 .indus-site-pin:hover circle {
-  filter: brightness(1.3);
+  filter: brightness(1.2);
 }
 
 .pin-pulse {
@@ -365,16 +480,77 @@
   100% { transform: scale(2); opacity: 0; }
 }
 
+.period-boundary-path {
+  transition: stroke 0.3s ease, fill 0.3s ease, stroke-width 0.3s ease;
+}
+
+.period-boundary-path.active-pulse {
+  animation: boundaryGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes boundaryGlow {
+  0% { opacity: 0.85; stroke-width: 2.2; }
+  100% { opacity: 1; stroke-width: 3.2; }
+}
+
+/* Quick Site Rail */
+.indus-site-rail {
+  padding: 8px 12px;
+  background: var(--ivc-panel);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.isr-label {
+  font-size: 0.7rem;
+  font-weight: 750;
+  color: var(--ivc-gold);
+  white-space: nowrap;
+}
+
+.isr-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.isr-chip {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.isr-chip:hover:not(.active) {
+  border-color: var(--ivc-gold);
+}
+
+.isr-chip.active {
+  background: #d4a72c;
+  color: #0b0f15;
+  border-color: #d4a72c;
+  font-weight: 750;
+}
+
 /* Map Legend */
 .indus-map-legend {
   padding: 8px 12px;
-  background: rgba(10, 14, 20, 0.9);
-  border-top: 1px solid #1e293b;
+  background: var(--ivc-sub);
+  border-top: 1px solid var(--line);
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 18px;
+  gap: 10px 18px;
   font-size: 0.74rem;
-  color: #94a3b8;
+  color: var(--muted);
   flex-shrink: 0;
 }
 
@@ -394,15 +570,13 @@
   width: 16px;
   height: 2px;
 }
-.iml-line.blue { background: #38bdf8; }
-.iml-line.gold { background: #fbbf24; }
+.iml-line.blue { background: #0284c7; }
+.iml-line.gold { background: #d97706; }
 
-/* ----------------------------------------------------
-   POLISHED EXCAVATION DOSSIER SIDEBAR
------------------------------------------------------ */
+/* Dossier Sidebar */
 .indus-site-dossier {
-  background: rgba(15, 23, 42, 0.75);
-  border: 1px solid #1e293b;
+  background: var(--ivc-panel);
+  border: 1px solid var(--line);
   border-radius: 12px;
   overflow: visible;
   height: auto;
@@ -414,6 +588,42 @@
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
+}
+
+.indus-site-dossier .dossier-tab-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--ivc-sub);
+  border-radius: 12px 12px 0 0;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.indus-site-dossier .dossier-tab-btn {
+  flex: 1 1 200px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.indus-site-dossier .dossier-tab-btn:hover:not(.active) {
+  border-color: var(--ivc-gold);
+}
+
+.indus-site-dossier .dossier-tab-btn.active {
+  color: var(--ivc-gold);
+  background: color-mix(in srgb, var(--ivc-gold) 14%, var(--surface));
+  border-color: var(--ivc-gold);
+  font-weight: 750;
 }
 
 .indus-site-dossier .dossier-body-scroll {
@@ -431,7 +641,7 @@
 }
 
 .dossier-hero {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--line);
   padding-bottom: 12px;
 }
 
@@ -439,6 +649,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 6px;
 }
@@ -450,44 +661,70 @@
   padding: 2px 8px;
   border-radius: 4px;
   background: color-mix(in srgb, var(--cat-color, #d4a72c) 16%, transparent);
-  color: var(--cat-color, #d4a72c);
-  border: 1px solid color-mix(in srgb, var(--cat-color, #d4a72c) 35%, transparent);
+  color: var(--cat-color, var(--ivc-gold));
+  border: 1px solid color-mix(in srgb, var(--cat-color, #d4a72c) 40%, transparent);
 }
 
 .dossier-country {
-  font-size: 0.74rem;
-  color: #94a3b8;
+  font-size: 0.76rem;
+  color: var(--muted);
 }
 
 .dossier-title {
   margin: 0;
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: var(--ink);
   line-height: 1.2;
 }
 
 .dossier-hindi {
   font-size: 1.05rem;
   font-weight: 500;
-  color: #d4a72c;
+  color: var(--ivc-gold);
   margin-left: 8px;
 }
 
 .dossier-period {
   margin: 6px 0 0;
-  font-size: 0.82rem;
-  color: #cbd5e1;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.dossier-era-bridge {
+  margin-top: 10px;
+}
+
+.dossier-era-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: color-mix(in srgb, var(--ivc-gold) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--ivc-gold) 45%, var(--line));
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--ivc-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.dossier-era-btn:hover {
+  background: color-mix(in srgb, var(--ivc-gold) 20%, var(--surface));
+  border-color: var(--ivc-gold);
 }
 
 .dossier-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  background: var(--ivc-sub);
+  padding: 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
 }
 
 .dossier-cell {
@@ -498,15 +735,22 @@
 
 .cell-label {
   font-size: 0.68rem;
-  color: #64748b;
+  color: var(--muted);
   text-transform: uppercase;
   font-weight: 650;
 }
 
 .cell-value {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 650;
-  color: #e2e8f0;
+  color: var(--ink);
+}
+
+.dossier-desc-text {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
 }
 
 .dossier-section h4 {
@@ -515,7 +759,7 @@
   font-weight: 750;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #d4a72c;
+  color: var(--ivc-gold);
 }
 
 .dossier-list {
@@ -525,12 +769,12 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
-  font-size: 0.82rem;
-  color: #cbd5e1;
+  font-size: 0.84rem;
+  color: var(--ink);
 }
 
 .dossier-list li strong {
-  color: #38bdf8;
+  color: var(--ivc-blue);
   margin-right: 4px;
 }
 
@@ -541,46 +785,24 @@
 }
 
 .dossier-chip {
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
-  font-size: 0.72rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #e2e8f0;
+  font-size: 0.74rem;
+  background: var(--ivc-sub);
+  border: 1px solid var(--line);
+  color: var(--ink);
 }
 
 .dossier-foreign-alert {
-  padding: 8px 12px;
+  padding: 10px 12px;
   border-radius: 8px;
-  background: color-mix(in srgb, #f43f5e 14%, transparent);
-  border: 1px solid color-mix(in srgb, #f43f5e 35%, transparent);
-  color: #fda4af;
-  font-size: 0.8rem;
+  background: color-mix(in srgb, var(--ivc-rose) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--ivc-rose) 38%, var(--line));
+  color: var(--ink);
+  font-size: 0.82rem;
   line-height: 1.45;
 }
 
-.dossier-script-banner {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(212, 167, 44, 0.15), rgba(56, 189, 248, 0.1));
-  border: 1px solid rgba(212, 167, 44, 0.3);
-}
-
-.dossier-script-banner strong {
-  font-size: 0.84rem;
-  color: #fef08a;
-}
-
-.dossier-script-banner p {
-  margin: 2px 0 6px;
-  font-size: 0.78rem;
-  color: #cbd5e1;
-}
-
-/* Academic Sources Cards */
 .dossier-sources-list {
   display: flex;
   flex-direction: column;
@@ -590,73 +812,107 @@
 .source-citation-card {
   padding: 10px 12px;
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--ivc-sub);
+  border: 1px solid var(--line);
 }
 
 .scc-header {
   display: flex;
   justify-content: space-between;
   font-size: 0.68rem;
-  color: #94a3b8;
+  color: var(--muted);
   margin-bottom: 4px;
 }
 
 .scc-type {
   font-weight: 700;
   text-transform: uppercase;
-  color: #38bdf8;
+  color: var(--ivc-blue);
 }
 
 .scc-title {
   margin: 0 0 3px;
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--ink);
   line-height: 1.35;
 }
 
 .scc-authors {
   margin: 0;
   font-size: 0.76rem;
-  color: #cbd5e1;
+  color: var(--muted);
 }
 
 .scc-pub {
   margin: 2px 0 0;
   font-size: 0.72rem;
-  color: #64748b;
+  color: var(--muted);
   font-style: italic;
 }
 
 .scc-link {
   display: inline-block;
   margin-top: 5px;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 650;
-  color: #d4a72c;
+  color: var(--ivc-gold);
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
-  .indus-site-dossier {
-    height: auto;
-    max-height: none;
-  }
+.ivc-period-subswitcher {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 4px 0 6px;
 }
 
-/* Floating Tooltip */
+.ips-sub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ips-sub-btn.active {
+  background: color-mix(in srgb, var(--period-color, #d4a72c) 18%, var(--surface));
+  border-color: var(--period-color, #d4a72c);
+  font-weight: 750;
+}
+
+.memoir-quote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  background: var(--ivc-panel);
+  border-left: 3px solid var(--ivc-green);
+  border-radius: 0 6px 6px 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* Floating Tooltip (high-contrast legible backdrop) */
 .indus-floating-tooltip {
   position: absolute;
   pointer-events: none;
-  background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(212, 167, 44, 0.5);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  padding: 8px 12px;
+  background: color-mix(in srgb, var(--surface, #0f172a) 96%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ivc-gold) 55%, var(--line));
+  box-shadow: var(--shadow, 0 8px 24px rgba(0, 0, 0, 0.35));
+  padding: 9px 12px;
   border-radius: 8px;
   z-index: 50;
   max-width: 260px;
   backdrop-filter: blur(8px);
+  color: var(--ink);
 }
 
 .ift-tag {
@@ -664,311 +920,23 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   margin-bottom: 2px;
+  color: var(--ivc-gold);
 }
 
 .ift-title {
-  color: #fff;
-  font-size: 0.85rem;
+  color: var(--ink);
+  font-size: 0.86rem;
 }
 
 .ift-hi {
-  color: #fde047;
+  color: var(--ivc-gold);
   font-size: 0.78rem;
 }
 
-.ift-loc {
+.ift-loc,
+.ift-area,
+.ift-period {
   margin: 3px 0 0;
-  font-size: 0.75rem;
-  color: #94a3b8;
-}
-
-.ift-area {
-  margin: 3px 0 0;
-  font-size: 0.72rem;
-  color: #cbd5e1;
-}
-
-.dossier-desc-text {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #cbd5e1;
-  margin: 0;
-}
-
-/* Authentic Historical Map View Frame */
-.authentic-historical-map-frame {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  min-height: 520px;
-  background: #1a1714;
-}
-
-.ahm-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 8px 14px;
-  background: rgba(30, 25, 20, 0.95);
-  border-bottom: 1px solid rgba(168, 124, 47, 0.3);
-}
-
-.ahm-title {
-  font-family: 'Cinzel', serif, Georgia;
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: #facc15;
-}
-
-.ahm-credit {
-  font-size: 0.7rem;
-  color: #a89f91;
-  font-style: italic;
-}
-
-.ahm-svg-inline {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-  padding: 8px;
-  background: #14110e;
-  box-sizing: border-box;
-}
-
-.ahm-svg-inline svg {
-  width: 100%;
-  max-width: 880px;
-  height: auto;
-  max-height: 520px;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.ahm-loading {
-  padding: 40px;
-  text-align: center;
-  color: #a89f91;
-  font-size: 0.88rem;
-  font-style: italic;
-}
-
-/* Harappan Period Horizons Strip */
-.indus-periods-strip {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px 12px;
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid rgba(212, 167, 44, 0.25);
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.ips-label {
-  font-size: 0.75rem;
-  font-weight: 750;
-  color: #fbbf24;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.ips-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 11px;
-  border-radius: 999px;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #cbd5e1;
   font-size: 0.74rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.ips-pill:hover {
-  background: rgba(51, 65, 85, 0.8);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.ips-pill.active {
-  background: color-mix(in srgb, var(--period-color, #fbbf24) 22%, rgba(15, 23, 42, 0.9));
-  border-color: var(--period-color, #fbbf24);
-  color: #fff;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--period-color, #fbbf24) 40%, transparent);
-}
-
-.ips-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.ips-span {
-  font-size: 0.68rem;
-  opacity: 0.75;
-  font-weight: 400;
-}
-
-/* Period Boundary Path in SVG */
-.period-boundary-path {
-  transition: stroke 0.3s ease, fill 0.3s ease, stroke-width 0.3s ease;
-}
-
-.period-boundary-path.active-pulse {
-  animation: boundaryGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes boundaryGlow {
-  0% { opacity: 0.85; stroke-width: 2.2; }
-  100% { opacity: 1; stroke-width: 3.2; }
-}
-
-/* Dossier Tab Bar (Pinned & Sticky) */
-.indus-site-dossier .dossier-tab-bar {
-  display: flex;
-  gap: 8px;
-  padding: 10px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(15, 23, 42, 0.98);
-  border-radius: 12px 12px 0 0;
-  flex-shrink: 0;
-  z-index: 10;
-}
-
-.indus-site-dossier .dossier-tab-btn {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #94a3b8;
-  font-size: 0.75rem;
-  font-weight: 650;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.indus-site-dossier .dossier-tab-btn:hover {
-  color: #f1f5f9;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-.indus-site-dossier .dossier-tab-btn.active {
-  color: #fef08a;
-  background: rgba(212, 167, 44, 0.18);
-  border-color: rgba(212, 167, 44, 0.6);
-  box-shadow: 0 0 10px rgba(212, 167, 44, 0.15);
-}
-
-/* Era Bridge Pill Button in Site Hero */
-.dossier-era-bridge {
-  margin-top: 10px;
-}
-
-.dossier-era-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(212, 167, 44, 0.08));
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-radius: 8px;
-  padding: 8px 12px;
-  color: #fef08a;
-  font-size: 0.74rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: space-between;
-}
-
-.dossier-era-btn:hover {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(212, 167, 44, 0.16));
-  border-color: #f59e0b;
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.2);
-}
-
-.deb-icon {
-  font-size: 0.85rem;
-}
-
-.deb-text {
-  flex: 1;
-  text-align: left;
-}
-
-.deb-arrow {
-  font-size: 0.85rem;
-  transition: transform 0.15s ease;
-}
-
-.dossier-era-btn:hover .deb-arrow {
-  transform: translateX(3px);
-}
-
-/* Period Subswitcher inside dossier */
-.ivc-period-subswitcher {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin: 10px 0 14px;
-}
-
-.ips-sub-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 9px;
-  border-radius: 6px;
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-  font-size: 0.72rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.ips-sub-btn:hover {
-  color: #f1f5f9;
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.ips-sub-btn.active {
-  background: color-mix(in srgb, var(--period-color, #fbbf24) 20%, rgba(15, 23, 42, 0.9));
-  border-color: var(--period-color, #fbbf24);
-  color: #fff;
-}
-
-/* Quoted ASI Excavation Memoir blockquote */
-.memoir-quote {
-  margin: 10px 0;
-  padding: 10px 14px;
-  background: rgba(0, 0, 0, 0.4);
-  border-left: 3px solid #10b981;
-  border-radius: 0 6px 6px 0;
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 0.84rem;
-  line-height: 1.6;
-  color: #e2e8f0;
+  color: var(--muted);
 }

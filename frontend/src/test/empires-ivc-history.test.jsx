@@ -2,8 +2,9 @@ import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import AncientEmpiresAtlas from '../components/AncientEmpiresAtlas.jsx';
 import IndusValleyAtlas from '../components/IndusValleyAtlas.jsx';
-import { buildIvcArticleSections } from '../components/SubgroupPage.jsx';
+import { buildIvcArticleSections, buildEmpiresArticleSections } from '../components/SubgroupPage.jsx';
 import sitesData from '../data/indus-civilisation.json';
+import empiresData from '../data/ancient-empires.json';
 
 describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
   it('renders detailed history chronicle and primary source documentation when history tab is selected', async () => {
@@ -69,8 +70,36 @@ describe('Ancient Empires Atlas: Detailed History & Primary Epigraphs', () => {
     expect(milestonesTab).toBeInTheDocument();
     fireEvent.click(milestonesTab);
 
-    // Verify dynastic milestones and descriptive narrative are present
+    // Verify dynastic milestones, shloka spotlight & step controls
     expect(screen.getByText(/Third Buddhist Council convened at Pataliputra/i)).toBeInTheDocument();
+    const nextBtn = screen.getByRole('button', { name: /Next Event →/i });
+    expect(nextBtn).toBeInTheDocument();
+    fireEvent.click(nextBtn);
+    expect(screen.getByText(/Event 2 of 12/i)).toBeInTheDocument();
+  });
+
+  it('guarantees >= 10 shloka-defined events and non-clipping viewboxes across all 10 empires', () => {
+    const empires = empiresData.empires || [];
+    expect(empires.length).toBe(10);
+    for (const emp of empires) {
+      expect((emp.events || []).length).toBeGreaterThanOrEqual(10);
+      const vb = emp.viewbox;
+      expect(vb).toBeTruthy();
+      for (const ev of emp.events) {
+        expect(ev.shloka?.text?.length).toBeGreaterThan(8);
+        expect(ev.shloka?.translation?.length).toBeGreaterThan(10);
+        expect(ev.shloka?.citation || ev.shloka?.source).toBeTruthy();
+        if (ev.coords) {
+          expect(ev.coords.x).toBeGreaterThanOrEqual(vb.x);
+          expect(ev.coords.x).toBeLessThanOrEqual(vb.x + vb.w);
+          expect(ev.coords.y).toBeGreaterThanOrEqual(vb.y);
+          expect(ev.coords.y).toBeLessThanOrEqual(vb.y + vb.h);
+        }
+      }
+    }
+    const maurya = empires.find(e => e.id === 'maurya-empire');
+    const secTitles = buildEmpiresArticleSections(maurya, () => {}, empires).map(s => s.title);
+    expect(secTitles.some(t => /Chronological Events & Defining Classical Shlokas/i.test(t))).toBe(true);
   });
 });
 
@@ -113,5 +142,16 @@ describe('Indus Valley Atlas: Period Boundaries & ASI Memoirs', () => {
     // Verify stratigraphic phase text is fully populated without empty colons
     expect(screen.getByText(/Hakra Ware & Early Pastoral-Agricultural Settlements/i)).toBeInTheDocument();
     expect(screen.queryByText(/^:$/)).not.toBeInTheDocument();
+  });
+
+  it('renders IVC quick site jump rail and river/route toggles cleanly', () => {
+    render(<IndusValleyAtlas />);
+    expect(screen.getByText(/Quick Site Jump \(49\):/i)).toBeInTheDocument();
+    const riversBtn = screen.getByRole('button', { name: /Paleo-Rivers: On/i });
+    fireEvent.click(riversBtn);
+    expect(screen.getByRole('button', { name: /Paleo-Rivers: Off/i })).toBeInTheDocument();
+    const dholaviraJump = screen.getByRole('button', { name: /★ Dholavira/i });
+    fireEvent.click(dholaviraJump);
+    expect(screen.getByRole('tab', { name: /Excavation Site \(Dholavira\)/i })).toBeInTheDocument();
   });
 });

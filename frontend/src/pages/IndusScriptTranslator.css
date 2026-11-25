@@ -15,8 +15,14 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 32px 0 20px;
-  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  margin-top: 16px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface, #161b22) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.12));
+  box-shadow: var(--shadow, 0 8px 28px rgba(0, 0, 0, 0.16));
 }
 
 .translator-tag-row {
@@ -234,7 +240,7 @@
 
 /* Inscription Display Ribbon */
 .inscription-display-ribbon {
-  background: color-mix(in srgb, var(--bg, #0d1117) 85%, #000);
+  background: var(--surface-2, rgba(255, 255, 255, 0.04));
   border: 2px solid var(--line, rgba(255, 255, 255, 0.15));
   border-radius: 12px;
   padding: 18px;

@@ -1,10 +1,12 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import empiresData from '../data/ancient-empires.json';
 import { assetUrl } from '../config.js';
+import { useTheme } from '../theme.js';
 import './AncientEmpiresAtlas.css';
 
 const PAN_INDIA_VIEWBOX = { x: 600, y: -380, w: 380, h: 330 };
-const ALEX_VIEWBOX = { x: 160, y: -480, w: 600, h: 290 };
+const ALEX_VIEWBOX = { x: 185, y: -450, w: 635, h: 245 };
+const DARK_THEME_IDS = new Set(['dark', 'military', 'parliamentary', 'airforce']);
 
 const HISTORICAL_VARIANTS = {
   'classical-southern-dynasties': [
@@ -30,11 +32,16 @@ const HISTORICAL_VARIANTS = {
 export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) {
   const [svgContent, setSvgContent] = useState('');
   const [error, setError] = useState(false);
+  const [plateZoom, setPlateZoom] = useState(1);
+  const [platePan, setPlatePan] = useState({ x: 0, y: 0 });
+  const plateDragRef = useRef({ active: false, startX: 0, startY: 0, origPan: { x: 0, y: 0 } });
 
   useEffect(() => {
     let active = true;
     setError(false);
     setSvgContent('');
+    setPlateZoom(1);
+    setPlatePan({ x: 0, y: 0 });
 
     const cleanPath = String(svgUrl || '')
       .replace(/^\/+/, '')
@@ -93,10 +100,39 @@ export function HistoricalMapViewer({ svgUrl, title, onFallbackToInteractive }) 
   }
 
   return (
-    <div
-      className="ahm-svg-inline"
-      dangerouslySetInnerHTML={{ __html: svgContent }}
-    />
+    <div className="ahm-viewer-shell">
+      <div className="ahm-viewer-controls">
+        <span className="ahm-zoom-readout">Scale: {Math.round(plateZoom * 100)}% · Drag plate to inspect detail</span>
+        <div className="map-zoom-btns ahm-zoom-group">
+          <button type="button" onClick={() => setPlateZoom(z => Math.min(2.6, +(z * 1.25).toFixed(2)))} title="Zoom In Historical Plate" aria-label="Zoom in historical map">+</button>
+          <button type="button" onClick={() => setPlateZoom(z => Math.max(1, +(z / 1.25).toFixed(2)))} title="Zoom Out Historical Plate" aria-label="Zoom out historical map">−</button>
+          <button type="button" onClick={() => { setPlateZoom(1); setPlatePan({ x: 0, y: 0 }); }} title="Reset Historical Plate" aria-label="Reset historical map">⟲</button>
+        </div>
+      </div>
+      <div
+        className="ahm-svg-inline"
+        onPointerDown={(e) => {
+          if (plateZoom <= 1) return;
+          plateDragRef.current = { active: true, startX: e.clientX, startY: e.clientY, origPan: platePan };
+        }}
+        onPointerMove={(e) => {
+          if (!plateDragRef.current.active) return;
+          setPlatePan({
+            x: plateDragRef.current.origPan.x + (e.clientX - plateDragRef.current.startX),
+            y: plateDragRef.current.origPan.y + (e.clientY - plateDragRef.current.startY),
+          });
+        }}
+        onPointerUp={() => { plateDragRef.current.active = false; }}
+        onPointerLeave={() => { plateDragRef.current.active = false; }}
+        style={{ cursor: plateZoom > 1 ? 'grab' : 'default' }}
+      >
+        <div
+          className="ahm-svg-transform"
+          style={{ transform: `translate(${platePan.x}px, ${platePan.y}px) scale(${plateZoom})`, transformOrigin: 'center center', transition: plateDragRef.current.active ? 'none' : 'transform 0.18s ease' }}
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -105,6 +141,8 @@ export default function AncientEmpiresAtlas({
   selectedEmpireId: controlledEmpireId,
   onSelectEmpire: controlledOnSelectEmpire,
 }) {
+  const themeId = useTheme();
+  const isDarkMap = DARK_THEME_IDS.has(themeId);
   const [mapPaths, setMapPaths] = useState([]);
   const [internalEmpireId, setInternalEmpireId] = useState(initialEmpireId || empiresData.empires[3].id); // default to Maurya
   const selectedEmpireId = controlledEmpireId !== undefined ? controlledEmpireId : internalEmpireId;
@@ -112,19 +150,22 @@ export default function AncientEmpiresAtlas({
   const [selectedBattle, setSelectedBattle] = useState(null);
   const [selectedCapital, setSelectedCapital] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const [activeEventIdx, setActiveEventIdx] = useState(0);
   const [hoveredCapital, setHoveredCapital] = useState(null);
   const [hoveredLocation, setHoveredLocation] = useState(null);
   const [hoveredBattle, setHoveredBattle] = useState(null);
+  const [hoveredEvent, setHoveredEvent] = useState(null);
   const [hoveredTerritory, setHoveredTerritory] = useState(null);
   const [hoveredNeighbor, setHoveredNeighbor] = useState(null);
   const [selectedVariantSvg, setSelectedVariantSvg] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const [mapViewMode, setMapViewMode] = useState('interactive'); // 'interactive' | 'historical'
   const [dossierTab, setDossierTab] = useState('overview'); // 'overview' | 'history' | 'battles' | 'locations' | 'milestones' | 'sources'
-  const [mapLayerFilter, setMapLayerFilter] = useState('all'); // 'all' | 'battles' | 'locations'
+  const [mapLayerFilter, setMapLayerFilter] = useState('all'); // 'all' | 'battles' | 'locations' | 'events'
   const [showAllLabels, setShowAllLabels] = useState(false);
   const [locationTypeFilter, setLocationTypeFilter] = useState('all');
   const mapStageRef = useRef(null);
+  const dragRef = useRef({ active: false, moved: false, startX: 0, startY: 0, startVb: null });
 
   const empires = empiresData.empires || [];
 
@@ -139,6 +180,14 @@ export default function AncientEmpiresAtlas({
   const allBattles = useMemo(() => {
     return currentEmpire.battles || [];
   }, [currentEmpire]);
+
+  const allEvents = useMemo(() => {
+    return currentEmpire.events || [];
+  }, [currentEmpire]);
+
+  const currentEvent = useMemo(() => {
+    return allEvents[activeEventIdx] || allEvents[0] || null;
+  }, [allEvents, activeEventIdx]);
 
   const filteredLocations = useMemo(() => {
     if (locationTypeFilter === 'all') return allLocations;
@@ -157,10 +206,11 @@ export default function AncientEmpiresAtlas({
 
   const [viewBox, setViewBox] = useState(defaultViewBox);
 
-  // Switch viewbox when empire changes
+  // Switch viewbox and reset active event when empire changes
   useEffect(() => {
     setViewBox(defaultViewBox);
-  }, [defaultViewBox]);
+    setActiveEventIdx(0);
+  }, [defaultViewBox, selectedEmpireId]);
 
   // Load vector basemap using assetUrl
   useEffect(() => {
@@ -183,10 +233,12 @@ export default function AncientEmpiresAtlas({
     setSelectedBattle(null);
     setSelectedCapital(null);
     setSelectedLocation(null);
+    setActiveEventIdx(0);
     setSelectedVariantSvg(null);
     setHoveredCapital(null);
     setHoveredLocation(null);
     setHoveredBattle(null);
+    setHoveredEvent(null);
     setHoveredTerritory(null);
     setHoveredNeighbor(null);
     setTooltip(null);
@@ -194,24 +246,61 @@ export default function AncientEmpiresAtlas({
     setLocationTypeFilter('all');
   };
 
+  const focusCoords = (coords) => {
+    if (!coords) return;
+    setViewBox(curr => {
+      const targetW = Math.min(curr.w, Math.max(150, defaultViewBox.w * 0.58));
+      const targetH = Math.min(curr.h, Math.max(120, defaultViewBox.h * 0.58));
+      return {
+        x: coords.x - targetW / 2,
+        y: coords.y - targetH / 2,
+        w: targetW,
+        h: targetH,
+      };
+    });
+  };
+
   const handleZoom = (factor) => {
     setViewBox(curr => {
-      const nw = Math.max(100, Math.min(800, curr.w * factor));
-      const nh = Math.max(70, Math.min(600, curr.h * factor));
+      const nw = Math.max(85, Math.min(800, curr.w * factor));
+      const nh = Math.max(60, Math.min(600, curr.h * factor));
       const nx = curr.x + (curr.w - nw) / 2;
       const ny = curr.y + (curr.h - nh) / 2;
       return { x: nx, y: ny, w: nw, h: nh };
     });
   };
 
+  const handleSvgPointerDown = (e) => {
+    if (e.button !== 0 || e.target.closest('.location-pin, .battle-pin, .event-pin')) return;
+    dragRef.current = { active: true, moved: false, startX: e.clientX, startY: e.clientY, startVb: viewBox };
+  };
+
+  const handleSvgPointerUp = () => {
+    dragRef.current.active = false;
+  };
+
   const handleMouseMove = (e) => {
+    if (dragRef.current.active && mapStageRef.current && dragRef.current.startVb) {
+      const rect = mapStageRef.current.getBoundingClientRect();
+      const dxPx = e.clientX - dragRef.current.startX;
+      const dyPx = e.clientY - dragRef.current.startY;
+      if (Math.hypot(dxPx, dyPx) > 4) dragRef.current.moved = true;
+      const scaleX = dragRef.current.startVb.w / Math.max(1, rect.width);
+      const scaleY = dragRef.current.startVb.h / Math.max(1, rect.height);
+      setViewBox({
+        ...dragRef.current.startVb,
+        x: dragRef.current.startVb.x - dxPx * scaleX,
+        y: dragRef.current.startVb.y - dyPx * scaleY,
+      });
+      return;
+    }
     if (!mapStageRef.current) return;
     const rect = mapStageRef.current.getBoundingClientRect();
-    const activeHover = hoveredLocation || hoveredCapital || hoveredBattle || hoveredTerritory || hoveredNeighbor;
+    const activeHover = hoveredEvent || hoveredLocation || hoveredCapital || hoveredBattle || hoveredTerritory || hoveredNeighbor;
     if (activeHover) {
       setTooltip({
-        x: Math.max(10, Math.min(rect.width - 240, e.clientX - rect.left + 15)),
-        y: Math.max(10, Math.min(rect.height - 150, e.clientY - rect.top - 10)),
+        x: Math.max(10, Math.min(rect.width - 285, e.clientX - rect.left + 15)),
+        y: Math.max(10, Math.min(rect.height - 170, e.clientY - rect.top - 10)),
         data: activeHover,
       });
     } else {
@@ -337,13 +426,13 @@ export default function AncientEmpiresAtlas({
                   </div>
                 )}
 
-                {/* Map Layer Selector Toolbar (All / Battles / Locations) */}
+                {/* Map Layer Selector Toolbar (All / Battles / Locations / Events) */}
                 <div className="map-layer-selector" role="group" aria-label="Map Layer Toggle">
                   <button
                     type="button"
                     className={`mls-btn ${mapLayerFilter === 'all' ? 'active' : ''}`}
                     onClick={() => setMapLayerFilter('all')}
-                    title="Display all battles and historical locations on map"
+                    title="Display all battles, locations, and milestone pins on map"
                   >
                     🌐 All ({allBattles.length + allLocations.length})
                   </button>
@@ -362,6 +451,14 @@ export default function AncientEmpiresAtlas({
                     title="Display only imperial capitals, citadels, ports and academies"
                   >
                     🏛 Locations ({allLocations.length})
+                  </button>
+                  <button
+                    type="button"
+                    className={`mls-btn ${mapLayerFilter === 'events' ? 'active' : ''}`}
+                    onClick={() => { setMapLayerFilter('events'); setDossierTab('milestones'); }}
+                    title="Display chronological events and classical shloka pins"
+                  >
+                    📜 Shloka Events ({allEvents.length})
                   </button>
                   <button
                     type="button"
@@ -386,10 +483,14 @@ export default function AncientEmpiresAtlas({
                 className="empires-svg"
                 viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`}
                 preserveAspectRatio="xMidYMid meet"
+                onPointerDown={handleSvgPointerDown}
+                onPointerUp={handleSvgPointerUp}
+                onPointerLeave={handleSvgPointerUp}
+                style={{ cursor: dragRef.current.active ? 'grabbing' : 'grab' }}
               >
                 <defs>
                   <filter id="empShadow" x="-10%" y="-10%" width="120%" height="120%">
-                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.7" />
+                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.65" />
                   </filter>
                   <filter id="glowRoute" x="-20%" y="-20%" width="140%" height="140%">
                     <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#38bdf8" floodOpacity="0.8" />
@@ -397,7 +498,7 @@ export default function AncientEmpiresAtlas({
                 </defs>
 
                 {/* Ocean / Background */}
-                <rect x={viewBox.x - 400} y={viewBox.y - 400} width={viewBox.w + 800} height={viewBox.h + 800} fill="#0a0d13" />
+                <rect x={viewBox.x - 400} y={viewBox.y - 400} width={viewBox.w + 800} height={viewBox.h + 800} fill={isDarkMap ? '#0a0d13' : '#d6e4ee'} />
 
                 {/* Basemap Countries */}
                 <g className="empires-basemap">
@@ -405,22 +506,34 @@ export default function AncientEmpiresAtlas({
                     <path
                       key={idx}
                       d={p.d}
-                      fill="#151b24"
-                      stroke="#232e3d"
+                      fill={isDarkMap ? '#151b24' : '#f4efe3'}
+                      stroke={isDarkMap ? '#232e3d' : '#c0b297'}
                       strokeWidth="0.75"
                       vectorEffect="non-scaling-stroke"
                     />
                   ))}
                 </g>
 
-                {/* Ancient River Courses (Ganges, Indus, Yamuna, Narmada, Godavari, Kaveri) */}
-                <g className="empires-rivers" stroke="#1d4ed8" strokeWidth="1.2" fill="none" opacity="0.55" strokeLinecap="round" vectorEffect="non-scaling-stroke">
-                  {/* Ganges */}
-                  <path d="M 780 -300 Q 820 -275 850 -255 T 880 -235" />
+                {/* Ancient River Courses (Ganges, Yamuna, Indus, Narmada, Godavari, Krishna, Kaveri) */}
+                <g className="empires-rivers" stroke={isDarkMap ? '#2563eb' : '#0284c7'} strokeWidth="1.2" fill="none" opacity={isDarkMap ? '0.62' : '0.72'} strokeLinecap="round" vectorEffect="non-scaling-stroke">
+                  {/* Ganga */}
+                  <path d="M 780 -300 Q 820 -275 850 -255 T 885 -232" />
+                  {/* Yamuna */}
+                  <path d="M 772 -300 Q 778 -275 814 -253" strokeWidth="1" opacity="0.8" />
                   {/* Indus */}
-                  <path d="M 730 -340 Q 710 -310 685 -280 T 680 -250" />
+                  <path d="M 745 -350 Q 716 -318 688 -276 T 678 -244" />
                   {/* Narmada */}
-                  <path d="M 730 -220 Q 770 -218 805 -215" strokeDasharray="3,2" />
+                  <path d="M 730 -218 Q 770 -220 808 -226" strokeDasharray="3,2" />
+                  {/* Godavari */}
+                  <path d="M 737 -198 Q 775 -190 818 -168" opacity="0.75" />
+                  {/* Kaveri */}
+                  <path d="M 762 -122 Q 782 -114 798 -111" opacity="0.75" />
+                </g>
+                <g className="empires-river-labels" fontSize="3.8" fontStyle="italic" fontWeight="600" fill={isDarkMap ? '#60a5fa' : '#0369a1'} opacity="0.8">
+                  <text x="835" y="-263">Ganga</text>
+                  <text x="698" y="-290">Indus</text>
+                  <text x="765" y="-213">Narmada</text>
+                  <text x="778" y="-176">Godavari</text>
                 </g>
 
                 {/* Imperial Boundary Polygon with Animation */}
@@ -494,13 +607,13 @@ export default function AncientEmpiresAtlas({
                           <text
                             x={nb.pos.x}
                             y={nb.pos.y}
-                            fill="#94a3b8"
-                            fontSize="6"
+                            fill={isDarkMap ? '#94a3b8' : '#475569'}
+                            fontSize="5.4"
                             fontFamily="sans-serif"
                             fontWeight="700"
-                            letterSpacing="0.08em"
+                            letterSpacing="0.06em"
                             textAnchor="middle"
-                            stroke="#0b0f15"
+                            stroke={isDarkMap ? '#0b0f15' : '#fffdf8'}
                             strokeWidth="2"
                             paintOrder="stroke"
                           >
@@ -519,13 +632,14 @@ export default function AncientEmpiresAtlas({
                       const isLocSelected = selectedLocation?.name === loc.name || selectedCapital?.name === loc.name;
                       const locType = loc.type || 'capital';
                       
-                      let markerColor = '#facc15';
-                      if (locType === 'port') markerColor = '#38bdf8';
-                      else if (locType === 'university') markerColor = '#c084fc';
-                      else if (locType === 'citadel') markerColor = '#fb923c';
-                      else if (locType === 'sacred_site') markerColor = '#34d399';
-                      else if (locType === 'republic_assembly') markerColor = '#e879f9';
-                      else if (locType === 'provincial_seat') markerColor = '#94a3b8';
+                      let markerColor = isDarkMap ? '#facc15' : '#ca8a04';
+                      let labelColor = isDarkMap ? '#facc15' : '#78350f';
+                      if (locType === 'port') { markerColor = isDarkMap ? '#38bdf8' : '#0284c7'; labelColor = isDarkMap ? '#7dd3fc' : '#0369a1'; }
+                      else if (locType === 'university') { markerColor = isDarkMap ? '#c084fc' : '#7e22ce'; labelColor = isDarkMap ? '#d8b4fe' : '#6b21a8'; }
+                      else if (locType === 'citadel') { markerColor = isDarkMap ? '#fb923c' : '#c2410c'; labelColor = isDarkMap ? '#fdba74' : '#9a3412'; }
+                      else if (locType === 'sacred_site') { markerColor = isDarkMap ? '#34d399' : '#047857'; labelColor = isDarkMap ? '#6ee7b7' : '#065f46'; }
+                      else if (locType === 'republic_assembly') { markerColor = isDarkMap ? '#e879f9' : '#a21caf'; labelColor = isDarkMap ? '#f0abfc' : '#86198f'; }
+                      else if (locType === 'provincial_seat') { markerColor = isDarkMap ? '#94a3b8' : '#475569'; labelColor = isDarkMap ? '#cbd5e1' : '#334155'; }
 
                       return (
                         <g
@@ -533,6 +647,7 @@ export default function AncientEmpiresAtlas({
                           className={`location-pin loc-type-${locType} ${isLocSelected ? 'active-pin' : ''}`}
                           transform={`translate(${loc.x}, ${loc.y})`}
                           onClick={() => {
+                            if (dragRef.current.moved) return;
                             setSelectedLocation(loc);
                             setSelectedCapital(locType === 'capital' ? loc : null);
                             setSelectedBattle(null);
@@ -553,23 +668,83 @@ export default function AncientEmpiresAtlas({
                           {isLocSelected && (
                             <circle r="9" fill="none" stroke={markerColor} strokeWidth="1.5" strokeDasharray="2,2" className="pin-pulse" />
                           )}
-                          <circle r={locType === 'capital' ? "4.5" : "3.5"} fill={markerColor} stroke="#000" strokeWidth="1.2" />
-                          {locType === 'capital' && <circle r="1.5" fill="#000" />}
+                          <circle r={locType === 'capital' ? "4.5" : "3.5"} fill={markerColor} stroke={isDarkMap ? "#000" : "#fff"} strokeWidth="1.2" />
+                          {locType === 'capital' && <circle r="1.5" fill={isDarkMap ? "#000" : "#fff"} />}
                           <text
                             y={locType === 'capital' ? "-6" : "-5"}
-                            fill={isLocSelected ? "#ffffff" : markerColor}
+                            fill={isLocSelected ? (isDarkMap ? "#ffffff" : "#0b0f15") : labelColor}
                             fontSize={locType === 'capital' ? "4.8" : "4.2"}
                             fontWeight={locType === 'capital' ? "800" : "700"}
                             fontFamily="sans-serif"
                             textAnchor="middle"
-                            stroke="#0b0f15"
-                            strokeWidth="1.8"
+                            stroke={isDarkMap ? "#0b0f15" : "#fffdf8"}
+                            strokeWidth="2"
                             paintOrder="stroke"
                             opacity={(showAllLabels || locType === 'capital' || isLocSelected || hoveredLocation?.title === loc.name) ? 1 : 0}
                             pointerEvents={(showAllLabels || locType === 'capital' || isLocSelected || hoveredLocation?.title === loc.name) ? 'auto' : 'none'}
                           >
                             {locType === 'capital' ? `★ ${loc.name}` : loc.name}
                           </text>
+                        </g>
+                      );
+                    })}
+                  </g>
+                )}
+
+                {/* Events & Shloka Storyboard Layer */}
+                {(mapLayerFilter === 'events' || (mapLayerFilter === 'all' && currentEvent?.coords)) && (
+                  <g className="events-layer">
+                    {(mapLayerFilter === 'events' ? allEvents : [currentEvent].filter(Boolean)).map((ev, idx) => {
+                      if (!ev?.coords) return null;
+                      const isEvSelected = currentEvent?.title === ev.title;
+                      const actualIdx = mapLayerFilter === 'events' ? idx : activeEventIdx;
+                      return (
+                        <g
+                          key={`ev-${actualIdx}-${ev.year}`}
+                          className={`event-pin ${isEvSelected ? 'active' : ''}`}
+                          transform={`translate(${ev.coords.x}, ${ev.coords.y})`}
+                          onClick={() => {
+                            if (dragRef.current.moved) return;
+                            setActiveEventIdx(actualIdx);
+                            setDossierTab('milestones');
+                          }}
+                          onMouseEnter={() => setHoveredEvent({
+                            type: 'event',
+                            title: ev.title,
+                            year: ev.year,
+                            desc: ev.desc,
+                            shlokaText: ev.shloka?.text,
+                          })}
+                          onMouseLeave={() => setHoveredEvent(null)}
+                          style={{ cursor: 'pointer' }}
+                          tabIndex={0}
+                          role="button"
+                          aria-label={`Event milestone: ${ev.title} (${ev.year})`}
+                        >
+                          {isEvSelected && (
+                            <circle r="11" fill="none" stroke="#f59e0b" strokeWidth="1.6" strokeDasharray="3,2" className="pin-pulse" />
+                          )}
+                          <polygon
+                            points="0,-5.5 5.5,0 0,5.5 -5.5,0"
+                            fill={isEvSelected ? '#f59e0b' : '#fbbf24'}
+                            stroke={isDarkMap ? '#0b0f15' : '#ffffff'}
+                            strokeWidth="1.2"
+                          />
+                          {(showAllLabels || isEvSelected || hoveredEvent?.title === ev.title) && (
+                            <text
+                              y="12.5"
+                              fill={isDarkMap ? '#fde68a' : '#78350f'}
+                              fontSize="4.4"
+                              fontWeight="800"
+                              fontFamily="sans-serif"
+                              textAnchor="middle"
+                              stroke={isDarkMap ? '#0b0f15' : '#fffdf8'}
+                              strokeWidth="2"
+                              paintOrder="stroke"
+                            >
+                              {ev.year}: {ev.place || ev.title.split(' ').slice(0, 3).join(' ')}
+                            </text>
+                          )}
                         </g>
                       );
                     })}
@@ -586,7 +761,7 @@ export default function AncientEmpiresAtlas({
                           key={`bt-${idx}`}
                           className={`battle-pin ${isSelected ? 'active' : ''}`}
                           transform={`translate(${bt.coords.x}, ${bt.coords.y})`}
-                          onClick={() => { setSelectedBattle(bt); setSelectedLocation(null); setSelectedCapital(null); setDossierTab('battles'); }}
+                          onClick={() => { if (!dragRef.current.moved) { setSelectedBattle(bt); setSelectedLocation(null); setSelectedCapital(null); setDossierTab('battles'); } }}
                           onMouseEnter={() => setHoveredBattle({ type: 'battle', title: bt.name, year: bt.year, parties: bt.parties, summary: bt.summary, source: bt.source })}
                           onMouseLeave={() => setHoveredBattle(null)}
                           style={{ cursor: 'pointer' }}
@@ -609,13 +784,13 @@ export default function AncientEmpiresAtlas({
                           </text>
                           <text
                             y="12"
-                            fill={isSelected ? "#fca5a5" : "#f87171"}
+                            fill={isDarkMap ? (isSelected ? "#fca5a5" : "#f87171") : (isSelected ? "#991b1b" : "#b91c1c")}
                             fontSize="4.5"
                             fontWeight="750"
                             fontFamily="sans-serif"
                             textAnchor="middle"
-                            stroke="#0b0f15"
-                            strokeWidth="1.8"
+                            stroke={isDarkMap ? "#0b0f15" : "#fffdf8"}
+                            strokeWidth="2"
                             paintOrder="stroke"
                             opacity={(showAllLabels || isSelected || hoveredBattle?.title === bt.name || allBattles.length <= 4) ? 1 : 0}
                             pointerEvents={(showAllLabels || isSelected || hoveredBattle?.title === bt.name || allBattles.length <= 4) ? 'auto' : 'none'}
@@ -634,6 +809,7 @@ export default function AncientEmpiresAtlas({
                 <div className="empires-floating-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
                   <div className="eft-tag">
                     {tooltip.data.type === 'battle' ? '⚔ DECISIVE HISTORIC BATTLE' :
+                     tooltip.data.type === 'event' ? '📜 CHRONOLOGICAL MILESTONE & SHLOKA' :
                      tooltip.data.type === 'capital' ? '★ IMPERIAL CAPITAL' :
                      tooltip.data.type === 'port' ? '⚓ MARITIME PORT' :
                      tooltip.data.type === 'university' ? '📜 UNIVERSITY & MONASTERY' :
@@ -651,6 +827,7 @@ export default function AncientEmpiresAtlas({
                   {tooltip.data.parties && <p className="eft-parties"><strong>Forces:</strong> {tooltip.data.parties}</p>}
                   {tooltip.data.role && <p className="eft-role"><strong>Role:</strong> {tooltip.data.role}</p>}
                   <p className="eft-desc">{tooltip.data.summary || tooltip.data.desc}</p>
+                  {tooltip.data.shlokaText && <p className="eft-shloka" lang="sa">{tooltip.data.shlokaText}</p>}
                 </div>
               )}
 
@@ -662,6 +839,7 @@ export default function AncientEmpiresAtlas({
                 <span><strong style={{ color: '#38bdf8' }}>⚓</strong> Port</span>
                 <span><strong style={{ color: '#c084fc' }}>📜</strong> Academy</span>
                 <span><strong style={{ color: '#34d399' }}>☸</strong> Sacred</span>
+                <span><strong style={{ color: '#f59e0b' }}>◆</strong> Shloka Event</span>
                 <span><strong style={{ color: '#ef4444' }}>⚔</strong> Battle</span>
                 {currentEmpire.campaign_route && <span><strong style={{ color: '#38bdf8' }}>- -</strong> Macedonian Route</span>}
               </div>
@@ -1039,22 +1217,94 @@ export default function AncientEmpiresAtlas({
             </div>
           )}
 
-          {/* TAB 3: Historical Events Timeline */}
+          {/* TAB 3: Historical Events Timeline with Shlokas */}
           {dossierTab === 'milestones' && (
             <div className="dossier-tab-content">
+              {allEvents.length > 0 && currentEvent && (
+                <div className="event-shloka-spotlight">
+                  <div className="ess-nav-bar">
+                    <button
+                      type="button"
+                      className="ess-step-btn"
+                      onClick={() => setActiveEventIdx(i => Math.max(0, i - 1))}
+                      disabled={activeEventIdx === 0}
+                    >
+                      ← Prev Event
+                    </button>
+                    <span className="ess-counter">Event {activeEventIdx + 1} of {allEvents.length} · {currentEvent.year}</span>
+                    <button
+                      type="button"
+                      className="ess-step-btn"
+                      onClick={() => setActiveEventIdx(i => Math.min(allEvents.length - 1, i + 1))}
+                      disabled={activeEventIdx >= allEvents.length - 1}
+                    >
+                      Next Event →
+                    </button>
+                  </div>
+                  <div className="ess-body">
+                    <div className="ess-meta-row">
+                      {currentEvent.category && <span className="ess-cat">{currentEvent.category}</span>}
+                      {currentEvent.place && <span className="ess-place">📍 {currentEvent.place}</span>}
+                      {currentEvent.coords && (
+                        <button
+                          type="button"
+                          className="ess-focus-btn"
+                          onClick={() => focusCoords(currentEvent.coords)}
+                        >
+                          Focus Map →
+                        </button>
+                      )}
+                    </div>
+                    <h4 className="ess-title">{currentEvent.title}</h4>
+                    <p className="ess-desc">{currentEvent.desc}</p>
+                    {currentEvent.shloka && (
+                      <div className="ess-shloka-card">
+                        <span className="ess-shloka-lang">{currentEvent.shloka.lang || 'Classical Verse'}</span>
+                        <blockquote className="ess-shloka-text" lang="sa">{currentEvent.shloka.text}</blockquote>
+                        {currentEvent.shloka.transliteration && (
+                          <p className="ess-shloka-translit"><em>{currentEvent.shloka.transliteration}</em></p>
+                        )}
+                        <p className="ess-shloka-translation">“{currentEvent.shloka.translation}”</p>
+                        <span className="ess-shloka-cite">Source: {currentEvent.shloka.citation || currentEvent.shloka.source}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {currentEmpire.events && (
                 <div className="dossier-section">
-                  <h4>Dynastic Chronology &amp; Major Milestones</h4>
+                  <h4>Dynastic Chronology &amp; Shloka-Defined Events ({allEvents.length})</h4>
                   <ul className="events-timeline">
-                    {currentEmpire.events.map((ev, idx) => (
-                      <li key={idx}>
-                        <span className="ev-year">{ev.year}</span>
-                        <div className="ev-body">
-                          <strong className="ev-title">{ev.title}</strong>
-                          {ev.desc && <p className="ev-desc">{ev.desc}</p>}
-                        </div>
-                      </li>
-                    ))}
+                    {currentEmpire.events.map((ev, idx) => {
+                      const isActive = idx === activeEventIdx;
+                      return (
+                        <li
+                          key={idx}
+                          className={isActive ? 'active-event-row' : ''}
+                          onClick={() => {
+                            setActiveEventIdx(idx);
+                            if (ev.coords) focusCoords(ev.coords);
+                          }}
+                          style={{ cursor: 'pointer' }}
+                        >
+                          <span className="ev-year">{ev.year}</span>
+                          <div className="ev-body">
+                            <div className="ev-head-row">
+                              <strong className="ev-title">{ev.title}</strong>
+                              {ev.place && <span className="ev-place-chip">📍 {ev.place}</span>}
+                            </div>
+                            {ev.desc && <p className="ev-desc">{ev.desc}</p>}
+                            {ev.shloka && (
+                              <div className="ev-inline-shloka">
+                                <span className="ev-shloka-verse" lang="sa">{ev.shloka.text}</span>
+                                <span className="ev-shloka-meaning">— “{ev.shloka.translation}” <em>({ev.shloka.citation || ev.shloka.source})</em></span>
+                              </div>
+                            )}
+                          </div>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}

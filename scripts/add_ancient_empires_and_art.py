@@ -116,12 +116,18 @@ empire_indicators = [
         "series": {
             "chart_type": "bar",
             "index_axis": "y",
-            "source": "Megasthenes Indica & Pliny Naturalis Historia",
-            "labels": ["Mauryan Empire (Chandragupta)", "Nanda Empire of Magadha", "Harsha's Imperial Host", "Alexander's Macedonian Host (Asia)", "Satavahana Forces"],
+            "source": "Megasthenes Indica, Arrian, Curtius & Xuanzang",
+            "labels": ["Mauryan Empire (Chandragupta)", "Nanda Empire of Magadha", "Harsha's Imperial Host", "Satavahana Forces", "Alexander's Macedonian Host (Asia)"],
             "datasets": [
                 {
                     "label": "Standing Infantry",
-                    "values": [600000, 200000, 100000, 40000, 100000]
+                    "color": "#ef4444",
+                    "values": [600000, 200000, 100000, 100000, 40000]
+                },
+                {
+                    "label": "Cavalry Escort Corps",
+                    "color": "#f59e0b",
+                    "values": [30000, 20000, 60000, 2000, 7000]
                 }
             ]
         }
@@ -332,6 +338,56 @@ empire_indicators = [
                 }
             ]
         }
+    },
+    {
+        "key": "ancient_empires_imperial_timeline",
+        "title": "Chronological Trajectory of Sovereign Indian Territorial Span (340 BCE – 1025 CE)",
+        "subtitle": "Approximate peak surface control across imperial epochs in million square kilometres",
+        "frequency": "chronological",
+        "color": "#38bdf8",
+        "suffix": " M km²",
+        "source_url": "https://asi.nic.in",
+        "details": "Chronological line profile tracing cycles of subcontinental imperial unification and regional equilibrium from Mahapadma Nanda through the Mauryas, Kushans, Guptas, Harsha, and Imperial Cholas.",
+        "category": "Empires of Ancient India",
+        "subgroup": EMP_SUBGROUP_NAME,
+        "subgroup_slug": EMP_SUBGROUP_SLUG,
+        "position": 10,
+        "series": {
+            "chart_type": "line",
+            "source": "Schwartzberg Historical Atlas of South Asia",
+            "labels": ["Nanda (340 BCE)", "Maurya (250 BCE)", "Indo-Greek (150 BCE)", "Kushan (140 CE)", "Satavahana (150 CE)", "Gupta (410 CE)", "Harsha (630 CE)", "Imperial Chola (1025 CE)"],
+            "datasets": [
+                {
+                    "label": "Peak Territorial Extent (Million km²)",
+                    "values": [1.8, 5.0, 1.2, 3.0, 2.2, 3.5, 2.5, 1.4]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ancient_empires_epigraphic_scripts_share",
+        "title": "Linguistic & Epigraphic Diversity of Ancient Imperial Charters",
+        "subtitle": "Approximate distribution of cataloged royal inscriptions by primary script family",
+        "frequency": "epigraphic",
+        "color": "#ec4899",
+        "suffix": " %",
+        "source_url": "https://asi.nic.in",
+        "details": "Reflects the multilingual heritage preserved across Archaeological Survey of India epigraphic volumes: massive Chola/Pallava Tamil temple records alongside Classical Sanskrit copper plates, Prakrit cave inscriptions, and Greco-Bactrian/Kharosthi frontier charters.",
+        "category": "Empires of Ancient India",
+        "subgroup": EMP_SUBGROUP_NAME,
+        "subgroup_slug": EMP_SUBGROUP_SLUG,
+        "position": 11,
+        "series": {
+            "chart_type": "doughnut",
+            "source": "ASI Epigraphia Indica & South Indian Inscriptions Corpus",
+            "labels": ["Old Tamil & Grantha Temple Charters", "Classical Sanskrit & Siddham Pillars/Plates", "Prakrit in Early Brahmi Caves & Edicts", "Kharosthi, Bactrian & Bilingual Greek"],
+            "datasets": [
+                {
+                    "label": "Cataloged Corpus Share (%)",
+                    "values": [48, 28, 17, 7]
+                }
+            ]
+        }
     }
 ]
 
@@ -363,7 +419,7 @@ empires_explainer = {
             "The History and Culture of the Indian People (R.C. Majumdar, Vols II–III)",
             "A Political History of Ancient India (H.C. Raychaudhuri)"
         ],
-        "indicatorCount": 10,
+        "indicatorCount": 12,
         "subgroupCount": 1,
         "verse": {
             "id": "git-4-7",
@@ -388,27 +444,32 @@ empires_explainer = {
                     "Corpus Inscriptionum Indicarum (CII)",
                     "Epigraphia Indica"
                 ],
-                "indicatorCount": 10,
+                "indicatorCount": 12,
                 "sections": [
                     {
-                        "title": "Imperial Territorial Extent & Hegemony",
+                        "title": "Imperial Territorial Extent & Chronological Hegemony",
                         "text": "The Mauryan Empire at its peak under Ashoka the Great covered approximately 5 million square kilometres, making it one of the largest states on the planet in the 3rd century BCE, followed by the Gupta Empire (3.5 million km²) and the Kushans (3.0 million km²).",
-                        "keys": ["ancient_empires_territorial_span"]
+                        "keys": ["ancient_empires_territorial_span", "ancient_empires_imperial_timeline"]
                     },
                     {
-                        "title": "Standing Armies & Military Formations",
+                        "title": "Standing Armies & Chaturanga Military Formations",
                         "text": "Classical Indian warfare relied upon the four-fold army (Chaturanga-bala): infantry, cavalry, chariots, and war elephants. Greek historians Pliny and Megasthenes recorded that Chandragupta Maurya maintained a standing host of 600,000 infantry, 30,000 cavalry, and 9,000 war elephants.",
                         "keys": ["ancient_empires_military_infantry", "ancient_empires_war_elephants"]
                     },
                     {
-                        "title": "Epigraphic Records & Royal Charters",
+                        "title": "Epigraphic Records, Script Families & Royal Charters",
                         "text": "Over 25,000 royal inscriptions have been cataloged by the Archaeological Survey of India. The Imperial Cholas alone left over 12,000 temple wall inscriptions detailing land surveys, revenue rates, and naval conquests, while Ashoka's rock edicts preserved the earliest deciphered writing in Brahmi and Kharosthi.",
-                        "keys": ["ancient_empires_inscriptions_count", "ancient_empires_reign_durations"]
+                        "keys": ["ancient_empires_inscriptions_count", "ancient_empires_epigraphic_scripts_share", "ancient_empires_reign_durations"]
                     },
                     {
-                        "title": "Statecraft, Numismatics & Trans-Eurasian Commerce",
-                        "text": "From the punch-marked silver karshapanas of the Mahajanapadas to the refined bilingual silver drachms of Indo-Greek King Menander, the gold dinars of Kanishka, and Roman aurei hoards excavated at southern ports like Muziris and Arikamedu, ancient India formed the pivot of Eurasian trade networks.",
-                        "keys": ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "kushan_silkroad_monasteries", "harsha_imperial_assemblies", "sangam_maritime_ports_trade"]
+                        "title": "Early Polity, Numismatics & Silk Road Monasteries",
+                        "text": "From early monarchical states and Gana-Sangha republics among the 16 Mahajanapadas to the 34 bilingual Indo-Greek sovereigns and excavated Kushan monasteries stretching along Uttarapatha and Central Asia, political pluralism catalyzed cultural synthesis.",
+                        "keys": ["mahajanapadas_political_systems", "indogreek_numismatic_coin_types", "kushan_silkroad_monasteries"]
+                    },
+                    {
+                        "title": "Imperial Assemblies & Indian Ocean Maritime Trade",
+                        "text": "Philosophical assemblies such as Harsha's 20-king gathering at Kannauj and rich hoards of Roman gold coins and amphorae excavated across Chera, Chola, Pandya, and Pallava seaports highlight India's centrality in ancient Afro-Eurasian diplomacy and sea commerce.",
+                        "keys": ["harsha_imperial_assemblies", "sangam_maritime_ports_trade"]
                     }
                 ]
             }

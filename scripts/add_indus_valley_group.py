@@ -69,11 +69,11 @@ ivc_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Archeological Survey of India & Harappa Archaeological Research Project",
-            "labels": ["Rakhigarhi (Haryana)", "Mohenjo-daro (Sindh)", "Harappa (Punjab)", "Dholavira (Gujarat)", "Ganweriwala (Punjab)", "Kalibangan (Rajasthan)", "Lothal (Gujarat)"],
+            "labels": ["Rakhigarhi (Haryana)", "Mohenjo-daro (Sindh)", "Harappa (Punjab)", "Dholavira (Gujarat)", "Ganweriwala (Punjab)", "Kalibangan (Rajasthan)", "Banawali (Haryana)", "Lothal (Gujarat)"],
             "datasets": [
                 {
-                    "label": "Settlement Footprint (Hectares)",
-                    "values": [350, 300, 150, 100, 80, 50, 15]
+                    "label": "Mapped Urban Extent (Hectares)",
+                    "values": [350, 300, 150, 100, 80, 50, 16, 15]
                 }
             ]
         }
@@ -147,11 +147,11 @@ ivc_indicators = [
             "chart_type": "bar",
             "index_axis": "y",
             "source": "Iravatham Mahadevan, The Indus Script: Texts, Concordance and Tables (ASI 1977)",
-            "labels": ["M-342 (Jar / Vessel Sign)", "M-267 (Bearer / Arrow Sign)", "M-59 (Chevrons / Pincer)", "M-176 (Harrow / Combs)", "M-99 (Fish Sign)", "M-391 (Terminal Strokes)"],
+            "labels": ["M-342 (Jar / Vessel Sign)", "M-267 (Bearer / Arrow Sign)", "M-59 (Chevrons / Pincer)", "M-176 (Harrow / Combs)", "M-99 (Fish Sign)", "M-391 (Terminal Strokes)", "M-1 (Standing Human Figure)", "M-48 (Annotated Fish)"],
             "datasets": [
                 {
                     "label": "Corpus Occurrences",
-                    "values": [1395, 680, 520, 480, 410, 395]
+                    "values": [1395, 680, 520, 480, 410, 395, 345, 290]
                 }
             ]
         }
@@ -178,6 +178,67 @@ ivc_indicators = [
                 {
                     "label": "Span (Years)",
                     "values": [700, 700, 600]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ivc_settlement_count_by_basin",
+        "title": "Harappan Settlement Shifts Across River Basins & Chronological Eras",
+        "subtitle": "Surveyed archaeological settlement counts comparing Early, Mature, and Late Harappan horizons",
+        "frequency": "archeological",
+        "color": "#f59e0b",
+        "suffix": " sites",
+        "source_url": "https://asi.nic.in",
+        "details": "Demonstrates demographic expansion along the Ghaggar-Hakra/Saraswati corridor during the Mature era, followed by dramatic eastward migration into Haryana, Punjab, and western Uttar Pradesh during the Late Harappan phase (Possehl 2002; Mughal 1997).",
+        "category": "Indus Valley Civilisation",
+        "subgroup": SUBGROUP_NAME,
+        "subgroup_slug": SUBGROUP_SLUG,
+        "position": 5,
+        "series": {
+            "chart_type": "bar",
+            "source": "Gregory L. Possehl (2002) & M.R. Mughal Cholistan Survey (1997)",
+            "labels": ["Cholistan (Saraswati–Hakra)", "Haryana, East Punjab & Doab", "Gujarat (Kutch & Saurashtra)", "Sindh & Lower Indus"],
+            "datasets": [
+                {
+                    "label": "Early Harappan (3300–2600 BCE)",
+                    "color": "#f59e0b",
+                    "values": [139, 245, 14, 58]
+                },
+                {
+                    "label": "Mature Harappan (2600–1900 BCE)",
+                    "color": "#10b981",
+                    "values": [174, 218, 290, 86]
+                },
+                {
+                    "label": "Late Harappan (1900–1300 BCE)",
+                    "color": "#ef4444",
+                    "values": [50, 853, 184, 12]
+                }
+            ]
+        }
+    },
+    {
+        "key": "ivc_inscribed_artifact_typology",
+        "title": "Share of Indus Script Inscriptions by Excavated Artifact Medium",
+        "subtitle": "Distribution across stamp seals, miniature tablets, pottery graffiti, copper tablets, and clay sealings",
+        "frequency": "epigraphic",
+        "color": "#ec4899",
+        "suffix": " %",
+        "source_url": "https://asi.nic.in",
+        "details": "Breakdown of inscribed Harappan media cataloged across ASI and HARP corpora, highlighting how administrative stamp seals and miniature votive tablets preserve the bulk of the corpus.",
+        "category": "Indus Valley Civilisation",
+        "subgroup": SUBGROUP_NAME,
+        "subgroup_slug": SUBGROUP_SLUG,
+        "position": 6,
+        "series": {
+            "chart_type": "doughnut",
+            "source": "Iravatham Mahadevan ASI Concordance (1977) & Parpola CISI Corpus",
+            "labels": ["Steatite Stamp Seals", "Inscribed Miniature Tablets", "Pottery Graffiti Marks", "Incised Copper Tablets & Tools", "Clay Sealings & Tags"],
+            "datasets": [
+                {
+                    "label": "Corpus Share (%)",
+                    "values": [58, 19, 11, 6, 6]
                 }
             ]
         }
@@ -212,7 +273,7 @@ ivc_explainer = {
             "The Indus Script: Texts, Concordance and Tables (Iravatham Mahadevan, ASI 1977)",
             "The Indus Civilization: A Contemporary Perspective (Gregory L. Possehl, 2002)"
         ],
-        "indicatorCount": 5,
+        "indicatorCount": 7,
         "subgroupCount": 1,
         "verse": {
             "id": "rv-10-75",
@@ -237,7 +298,7 @@ ivc_explainer = {
                     "Corpus of Indus Seals and Inscriptions (CISI)",
                     "Iravatham Mahadevan Concordance (ASI 1977)"
                 ],
-                "indicatorCount": 5,
+                "indicatorCount": 7,
                 "sections": [
                     {
                         "title": "Urban Planning & Hydraulic Genius",
@@ -246,8 +307,8 @@ ivc_explainer = {
                     },
                     {
                         "title": "Standardized Metrology & Glyptic Art",
-                        "text": "Indus weights followed a binary system in lower denominations (1, 2, 4, 8, 16, 32, 64) and decimal in higher denominations (160, 200, 320, 640), accurate to fractions of a gram.",
-                        "keys": ["ivc_steatite_seals_by_site"]
+                        "text": "Indus weights followed a binary system in lower denominations (1, 2, 4, 8, 16, 32, 64) and decimal in higher denominations (160, 200, 320, 640), accurate to fractions of a gram, while over 4,000 inscribed steatite seals and tablets regulated commerce.",
+                        "keys": ["ivc_steatite_seals_by_site", "ivc_inscribed_artifact_typology"]
                     },
                     {
                         "title": "Long-Distance Maritime Trade Corridors",
@@ -260,9 +321,9 @@ ivc_explainer = {
                         "keys": ["ivc_top_script_signs_frequency"]
                     },
                     {
-                        "title": "Settlement Transitions Across Eras",
-                        "text": "From the Kot Diji and Amri early phases to the Mature urban climax and Ochre Coloured Pottery (OCP) / Painted Grey Ware (PGW) transitions, the Harappan legacy formed the deep substrate of Indian history.",
-                        "keys": ["ivc_radiocarbon_phases"]
+                        "title": "Settlement Transitions & Demographic Shift Across Basins",
+                        "text": "From the Kot Diji and Ravi early phases through the Mature urban climax along the Saraswati–Indus plains to the massive eastward movement into Haryana and the Gangetic Doab during the Late Harappan era, Harappan settlements formed the deep substrate of Indian history.",
+                        "keys": ["ivc_radiocarbon_phases", "ivc_settlement_count_by_basin"]
                     }
                 ]
             }

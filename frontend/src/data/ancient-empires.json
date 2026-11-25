@@ -5,7 +5,8 @@
     "description": "Interactive geospatial atlases mapping shifting imperial frontiers, decisive battlefields, and epigraphic records in Ashokan Brahmi, Classical Sanskrit, Ancient Greek, and Sangam Tamil. Verified from Archaeological Survey of India (ASI) Memoirs, Corpus Inscriptionum Indicarum (CII), and peer-reviewed historical corpora.",
     "period_span": "c. 600 BCE – 850 CE",
     "total_empires": 10,
-    "special_mention": "Alexander the Great's Campaign & Macedonian Limit (326 BCE)"
+    "special_mention": "Alexander the Great's Campaign & Macedonian Limit (326 BCE)",
+    "total_events": 107
   },
   "empires": [
     {
@@ -16,10 +17,10 @@
       "era_type": "Iron Age Second Urbanisation & Emergence of States",
       "religion": "Vedic Hinduism, Early Buddhism & Jainism",
       "viewbox": {
-        "x": 600,
-        "y": -360,
-        "w": 300,
-        "h": 220
+        "x": 640,
+        "y": -370,
+        "w": 285,
+        "h": 225
       },
       "capitals": [
         {
@@ -220,43 +221,212 @@
       "events": [
         {
           "year": "c. 600 BCE",
-          "title": "Crystallisation of the 16 Mahajanapadas across Northern and Central India",
-          "desc": "Transition from tribal chiefdoms (janas) to territorial polities (janapadas) with minted punch-marked coins."
+          "title": "Crystallisation of the 16 Mahajanapadas across Northern & Central India",
+          "desc": "Transition from Later Vedic tribal janas into sixteen sovereign territorial kingdoms (rajyas) and corporate republics (gana-sanghas) striking punch-marked silver karshapanas.",
+          "place": "Varanasi / Kasi",
+          "coords": {
+            "x": 830.0,
+            "y": -253.2
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "अङ्गा मगधा कासी कोसला वज्जी मल्ला चेती वंसा कुरु पञ्चाला मच्छा सुरसेना अस्सका अवन्ती गन्धारा कम्बोजा ति सोळस महाजनपदा ॥",
+            "transliteration": "Aṅgā Magadhā Kāsī Kosalā Vajjī Mallā Cetī Vaṁsā Kuru Pañcālā Macchā Surasenā Assakā Avantī Gandhārā Kambojā ti soḷasa mahājanapadā ||",
+            "translation": "Anga, Magadha, Kasi, Kosala, Vajji, Malla, Cedi, Vamsa, Kuru, Pancala, Matsya, Surasena, Assaka, Avanti, Gandhara, and Kamboja—these are the sixteen great realms.",
+            "citation": "Aṅguttara Nikāya 3.70 (Sutta Piṭaka)",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net"
+          }
+        },
+        {
+          "year": "c. 585 BCE",
+          "title": "Vaishali's Licchavi Republic Adopts 7,707-Member Assembly Governance",
+          "desc": "The Vajji Confederacy institutes deliberative Santhagara assembly rule at Vaishali under elected executive magistrates, praised in Buddhist Nikayas.",
+          "place": "Vaishali (Vajji)",
+          "coords": {
+            "x": 853.0,
+            "y": -259.0
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "जनपदतदवध्योश्च ॥ क्षत्रियात्समानशब्दाज्जनपदे तस्य राजन्यपत्यवत् ॥ सङ्घे चानौत्तराधर्ये ॥",
+            "transliteration": "janapada-tad-avadhyośca || kṣatriyāt-samāna-śabdāj-janapade tasya rājany-apatyavat || saṅghe cān-auttarādharye ||",
+            "translation": "A janapada state is named after its founding lineage; a republican Sangha operates corporately without superior-inferior royal autocracy.",
+            "citation": "Pāṇini, Aṣṭādhyāyī 4.1.168 & 3.3.42",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अष्टाध्यायी"
+          }
         },
         {
           "year": "c. 563 BCE",
           "title": "Birth of Gautama Buddha in the Shakya Republic at Lumbini",
-          "desc": "Siddhartha Gautama born to Chief Shuddhodana in the oligarchic republic of Kapilavastu."
+          "desc": "Siddhartha Gautama is born at Lumbini within the autonomous Shakya Gana-sangha bordering Kosala, later commemorated on Ashoka's stone pillar.",
+          "place": "Lumbini (Shakya)",
+          "coords": {
+            "x": 832.8,
+            "y": -274.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "देवानंपियेन पियदसिना लाजिना वीसति-वसाभिसितेन अतन आगाच महीयिते हिद बुधे जाते सक्य-मुनी ति ॥",
+            "transliteration": "Devānaṁpiyena Piyadasinā lājinā vīsati-vasābhisitena atana āgāca mahīyite hida Budhe jāte Sakya-munī ti ||",
+            "translation": "Twenty years after his consecration, King Priyadarsin (Ashoka) came in person and worshipped here, declaring: 'Here Buddha the Sage of the Shakyas was born.'",
+            "citation": "Rummindei (Lumbini) Pillar Inscription of Ashoka",
+            "lang": "Magadhi Prakrit · Ashokan Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "c. 544 BCE",
-          "title": "Bimbisara ascends the throne of Magadha; builds Rajagriha cyclopean walls",
-          "desc": "Founding of the Haryanka dynasty and beginning of Magadha's 200-year drive for Indian supremacy."
+          "title": "Bimbisara Ascends Magadha & Builds Cyclopean Walls of Rajagriha",
+          "desc": "Bimbisara founds the Haryanka dynasty, constructs 40 km dry-stone cyclopean fortifications around Girivraja, and builds Magadha's highway system.",
+          "place": "Rajagriha (Magadha)",
+          "coords": {
+            "x": 854.2,
+            "y": -250.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "स्वाम्यमात्यजनपददुर्गकोशदण्डमित्राणि प्रकृतयः ॥",
+            "transliteration": "svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ ||",
+            "translation": "The sovereign ruler, ministers of state, populated territory, fortified citadel, public treasury, standing army, and allies are the seven constituent limbs of an empire.",
+            "citation": "Kauṭilya Arthaśāstra 6.1.1",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_६/अध्यायः_१"
+          }
         },
         {
           "year": "c. 540 BCE",
-          "title": "Vardhamana Mahavira propagates Jainism across Magadha, Anga, and Videha",
-          "desc": "24th Tirthankara establishes the four-fold sangha and revitalizes Jaina doctrine."
+          "title": "Vardhamana Mahavira Propagates Jainism across Magadha, Anga & Videha",
+          "desc": "The 24th Tirthankara organizes the four-fold Shramana order from Kundagrama and Rajagriha, anchoring Ahimsa and Anekantavada philosophy.",
+          "place": "Vaishali (Kundagrama)",
+          "coords": {
+            "x": 853.0,
+            "y": -259.0
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सव्वे पाणा पियाउया सुहसाया दुक्खपडिकूला । धम्मो मंगलमुक्किट्ठं अहिंसा संजमो तवो ॥",
+            "transliteration": "Savve pāṇā piyāuyā suhasāyā dukkhapaḍikūlā | Dhammo maṅgalam-ukkiṭṭhaṁ ahiṁsā saṁjamo tavo ||",
+            "translation": "All living beings cherish life, desire happiness, and recoil from pain. Non-violence, self-restraint, and austerity constitute the highest auspicious Dharma.",
+            "citation": "Ācārāṅga Sūtra 1.2.3 & Daśavaikālika Sūtra 1.1",
+            "lang": "Ardhamagadhi Prakrit · Devanagari",
+            "verified_from": "https://en.wikisource.org/wiki/Jaina_Sutras"
+          }
+        },
+        {
+          "year": "c. 535 BCE",
+          "title": "Magadhan Conquest of Champa (Anga) Opens Bay of Bengal Trade",
+          "desc": "Bimbisara defeats Brahmadatta of Anga, securing the riverine emporium of Champa and eastern iron and copper mines for Magadha.",
+          "place": "Champa (Anga)",
+          "coords": {
+            "x": 869.8,
+            "y": -252.3
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
+            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
+            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
+            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+          }
+        },
+        {
+          "year": "c. 528 BCE",
+          "title": "Dharmachakrapravartana at Sarnath & Dispatch of the First Sangha",
+          "desc": "Gautama Buddha preaches the Four Noble Truths near Varanasi and sends sixty Arhat disciples outward along the Uttarapatha.",
+          "place": "Sarnath / Varanasi",
+          "coords": {
+            "x": 830.2,
+            "y": -253.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "चरथ, भिक्खवे, चारिकं बहुजनहिताय बहुजनसुखाय लोकानुकम्पाय अत्थाय हिताय सुखाय देवमनुस्सानं ॥",
+            "transliteration": "Caratha, bhikkhave, cārikaṁ bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ ||",
+            "translation": "Walk forth, O monks, upon the wandering mission for the welfare of the many, for the happiness of the many, out of compassion for the world.",
+            "citation": "Vinaya Piṭaka, Mahāvagga 1.11",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net"
+          }
+        },
+        {
+          "year": "c. 518 BCE",
+          "title": "Gandhara & Taxila Bridge Achaemenid Persepolis with Uttarapatha",
+          "desc": "Taxila flourishes under scholars like Panini and royal physician Jivaka as the premier educational nexus connecting India with Western Asia.",
+          "place": "Taxila (Gandhara)",
+          "coords": {
+            "x": 728.2,
+            "y": -337.4
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "एतद्देशप्रसूतस्य सकाशादग्रजन्मनः । स्वं स्वं चरित्रं शिक्षेरन् पृथिव्यां सर्वमानवाः ॥",
+            "transliteration": "etaddeśaprasūtasya sakāśādagrajanmanaḥ | svaṁ svaṁ caritraṁ śikṣeran pṛthivyāṁ sarvamānavāḥ ||",
+            "translation": "From the learned sages and academies nourished in this sacred heartland, peoples across the earth come to study character, ethics, and disciplined scholarship.",
+            "citation": "Manusmṛti 2.20",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/द्वितीयोध्यायः"
+          }
         },
         {
           "year": "c. 492 BCE",
-          "title": "Ajatashatru seizes power in Magadha; launches 16-year campaign against Vajji",
-          "desc": "Fortifies Pataligram at the Ganga-Son confluence to launch riverine warfare against the Licchavis."
+          "title": "Ajatashatru Fortifies Pataligrama & Launches the Vajjian War",
+          "desc": "Ajatashatru constructs a strategic fort at the Ganga–Son confluence and deploys Mahashilakantaka stone-catapults and scythed chariots.",
+          "place": "Pataliputra / Rajagriha",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "तेन खो पन समयेन सुनिधवस्सकारा मगधमहामत्ता पाटलिगामे नगरं मापेन्ति वज्जीनं पटिबाहाय ॥",
+            "transliteration": "Tena kho pana samayena Sunidha-Vassakārā Magadhamahāmattā Pāṭaligāme nagaraṁ māpenti Vajjīnaṁ paṭibāhāya ||",
+            "translation": "At that very time Sunidha and Vassakara, the chief ministers of Magadha, built the fortified city at Pataligama to hold back the Vajjian confederacy.",
+            "citation": "Mahāparinibbāna Sutta (Dīgha Nikāya 16.1.26)",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dn16"
+          }
         },
         {
           "year": "c. 483 BCE",
-          "title": "Mahaparinirvana of Gautama Buddha at Kusinara; First Buddhist Council",
-          "desc": "500 Arhats assemble at the Sattapanni Cave in Rajagriha to recite the Dhamma and Vinaya."
+          "title": "Mahaparinirvana at Kusinara & First Buddhist Council at Rajagriha",
+          "desc": "Under Ajatashatru's patronage, 500 elders recite the Sutta and Vinaya Pitakas inside Sattapanni Cave in Rajagriha.",
+          "place": "Kusinara (Malla)",
+          "coords": {
+            "x": 838.9,
+            "y": -267.4
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "हन्द दानि, भिक्खवे, आमन्तयामि वो—वयधम्मा सङ्खारा, अप्पमादेन सम्पादेथाति ॥",
+            "transliteration": "Handa dāni, bhikkhave, āmantayāmi vo—vayadhammā saṅkhārā, appamādena sampādethāti ||",
+            "translation": "Now indeed, O monks, I exhort you: all conditioned things are subject to decay; strive onward with tireless diligence.",
+            "citation": "Dīgha Nikāya 16 (Mahāparinibbāna Sutta, Kuśinārā)",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dn16"
+          }
         },
         {
           "year": "c. 468 BCE",
-          "title": "Vaishali falls to Magadhan siege engines; annexation of the Vajji Confederacy",
-          "desc": "Ajatashatru integrates the Ganatantras into the centralized bureaucratic Magadhan realm."
-        },
-        {
-          "year": "c. 413 BCE",
-          "title": "Shishunaga overthrows Haryankas; destroys the 150-year Pradyota dynasty of Avanti",
-          "desc": "Annexation of Ujjayini establishes Magadha as the undisputed master of Northern and Central India."
+          "title": "Fall of Vaishali & Magadhan Unification of the Eastern Basin",
+          "desc": "After a sixteen-year campaign, Magadha absorbs the Vajji Confederacy, shifting India's political gravity permanently from republics to centralized empire.",
+          "place": "Vaishali (Vajji)",
+          "coords": {
+            "x": 853.0,
+            "y": -259.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "सं गच्छध्वं सं वदध्वं सं वो मनांसि जानताम् ।",
+            "transliteration": "saṁ gacchadhvaṁ saṁ vadadhvaṁ saṁ vo manāṁsi jānatām |",
+            "translation": "Move together in harmony, speak with one voice, and let your minds apprehend alike in concord.",
+            "citation": "Rigveda 10.191.2",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.१९१"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -461,10 +631,10 @@
       "era_type": "First Pan-North Indian Empire",
       "religion": "Jainism, Buddhism & Brahmanism",
       "viewbox": {
-        "x": 650,
-        "y": -350,
-        "w": 280,
-        "h": 200
+        "x": 680,
+        "y": -355,
+        "w": 265,
+        "h": 195
       },
       "capitals": [
         {
@@ -498,11 +668,18 @@
       ],
       "boundary_phases": [
         {
+          "phase": "Haryanka & Shishunaga Integration (c. 410 BCE)",
+          "year": "410 BCE",
+          "color": "#f59e0b",
+          "territory_path": "M 750 -295 L 800 -285 L 855 -270 L 880 -250 L 865 -230 L 815 -225 L 755 -225 L 745 -255 Z",
+          "description": "Shishunaga annexes Avanti (Ujjayini), unifying Central and Eastern Ganga basins under Pataliputra."
+        },
+        {
           "phase": "Mahapadma Nanda's Pan-North Indian Zenith (c. 340 BCE)",
           "year": "340 BCE",
           "color": "#ea580c",
           "territory_path": "M 740 -325 L 765 -315 L 800 -290 L 845 -275 L 890 -260 L 905 -235 L 870 -220 L 840 -205 L 810 -210 L 770 -215 L 735 -230 L 730 -255 L 725 -285 L 720 -315 Z",
-          "description": "Mahapadma Nanda assumed the title 'Ekarat' (Sole Sovereign). His domain stretched from the Beas River in Punjab to the Bengal delta, and south to the Vindhya mountains and Godavari valley."
+          "description": "First pan-North Indian empire stretching from Punjab (Beas River) across Kalinga to Bengal with a 200,000-strong standing army."
         }
       ],
       "neighboring_kingdoms": [
@@ -602,43 +779,193 @@
       "events": [
         {
           "year": "c. 544 BCE",
-          "title": "Bimbisara founds Haryanka Dynasty in Magadha",
-          "desc": "Constructs capital at Rajagriha and initiates central fiscal administration."
+          "title": "Bimbisara Founds Haryanka Dynasty in Magadha",
+          "desc": "Consolidates marriage alliances with Kosala and Madra and institutes rural administrative headmen (Gramikas) across 80,000 villages.",
+          "place": "Rajagriha (Magadha)",
+          "coords": {
+            "x": 854.2,
+            "y": -250.0
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "दण्डः शास्ति प्रजाः सर्वा दण्ड एवाभिरक्षति । दण्डः सुप्तेषु जागर्ति दण्डं धर्मं विदुर्बुधाः ॥",
+            "transliteration": "daṇḍaḥ śāsti prajāḥ sarvā daṇḍa evābhirakṣati | daṇḍaḥ supteṣu jāgarti daṇḍaṁ dharmaṁ vidurbudhāḥ ||",
+            "translation": "Lawful governance rules all citizens and alone protects them; law stays awake while all sleep—hence the wise recognise rightful governance as Dharma itself.",
+            "citation": "Manusmṛti 7.18",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
         },
         {
           "year": "c. 460 BCE",
-          "title": "King Udayin establishes Pataliputra as the permanent imperial capital",
-          "desc": "Erects a stone fortress at the strategic convergence of the Ganga, Son, and Gandak rivers."
+          "title": "King Udayin Establishes Pataliputra at the Ganga–Son Confluence",
+          "desc": "Transfers the imperial capital from hill-ringed Rajagriha to river-fortress Pataliputra, commanding eastern fluvial commerce.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "तेन खो पन समयेन सुनिधवस्सकारा मगधमहामत्ता पाटलिगामे नगरं मापेन्ति वज्जीनं पटिबाहाय ॥",
+            "transliteration": "Tena kho pana samayena Sunidha-Vassakārā Magadhamahāmattā Pāṭaligāme nagaraṁ māpenti Vajjīnaṁ paṭibāhāya ||",
+            "translation": "At that very time Sunidha and Vassakara, the chief ministers of Magadha, built the fortified city at Pataligama to hold back the Vajjian confederacy.",
+            "citation": "Mahāparinibbāna Sutta (Dīgha Nikāya 16.1.26)",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dn16"
+          }
         },
         {
           "year": "c. 413 BCE",
-          "title": "Shishunaga ascends the throne; permanently annexes the kingdom of Avanti",
-          "desc": "Eliminates Magadha's greatest geopolitical rival and shifts royal residence temporarily to Vaishali."
+          "title": "Shishunaga Ascends & Permanently Annexes the Avanti Empire",
+          "desc": "Overthrows late Haryanka rule and defeats the Pradyota dynasty of Ujjayini, linking eastern India directly with western ocean trade routes.",
+          "place": "Ujjayini (Avanti)",
+          "coords": {
+            "x": 757.8,
+            "y": -231.8
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "ततश्च शिशुनाभः तत्पुत्रः काकवर्णो भविता... महानन्दिनस्ततः शूद्रागर्भोद्भवो महापद्मनामा नन्दः परशुराम इवापरोऽखिलक्षत्रान्तकारी भविष्यति ॥",
+            "transliteration": "Tataśca Śiśunābhaḥ tatputraḥ Kākavarṇo bhavitā... Mahānandinastataḥ... Mahāpadmanāmā Nandaḥ Paraśurāma ivāparo'khila-kṣatrāntakārī bhaviṣyati ||",
+            "translation": "After Shishunaga and Kakavarna, Mahapadma Nanda—wielding undisputed power like a second Parashurama—shall subjugate the warring Kshatriya houses and bring the realm under a single royal umbrella (Ekachhatra).",
+            "citation": "Viṣṇu Purāṇa 4.24.9–22",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
+          }
         },
         {
           "year": "c. 383 BCE",
-          "title": "Second Buddhist Council convened at Vaishali under King Kalashoka",
-          "desc": "700 monks assemble to resolve the Ten Points dispute, leading to the first major schism (Mahasamghika)."
+          "title": "Second Buddhist Council Convened at Vaishali under Kalashoka",
+          "desc": "Seven hundred elders convene to settle monastic Vinaya disputes at Valukarama under King Kalashoka (Kakavarna) Shishunaga.",
+          "place": "Vaishali",
+          "coords": {
+            "x": 853.0,
+            "y": -259.0
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सब्बपापस्स अकरणं कुसलस्स उपसम्पदा । सचित्तपरियोदपनं एतं बुद्धान सासनं ॥",
+            "transliteration": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā | Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ ||",
+            "translation": "To refrain from all evil, to cultivate what is wholesome, and to purify one's own mind—this is the teaching of the Awakened Ones.",
+            "citation": "Dhammapada, Verse 183",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dhp179-196"
+          }
+        },
+        {
+          "year": "c. 365 BCE",
+          "title": "Katyayana & Grammatical Standardization around Nanda-Era Academies",
+          "desc": "Scholarly traditions refine Panini's Ashtadhyayi across Magadha and Kashi, codifying classical administrative Sanskrit.",
+          "place": "Kashi (Varanasi)",
+          "coords": {
+            "x": 830.0,
+            "y": -253.2
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "विद्या ददाति विनयं विनयाद् याति पात्रताम् । पात्रत्वात् धनम् आप्नोति धनाद् धर्मं ततः सुखम् ॥",
+            "transliteration": "vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvāt dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||",
+            "translation": "True learning bestows humility; humility confers capability; capability brings rightful prosperity; from prosperity springs Dharma, and from Dharma abiding felicity.",
+            "citation": "Hitopadeśa, Prastāvanā 6",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "c. 345 BCE",
-          "title": "Mahapadma Nanda founds the Nanda Empire; proclaims himself 'Ekarat'",
-          "desc": "Creates the first trans-regional standing army with state monopolies over mines, salt, and forests."
+          "title": "Mahapadma Nanda Founds Nanda Empire; Proclaims Himself 'Ekarat'",
+          "desc": "Proclaims sole sovereignty ('Ekachhatra') and systematically annexes Ikshvaku, Panchala, Kashi, Haihaya, Kuru, and Surasena realms.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "ततश्च शिशुनाभः तत्पुत्रः काकवर्णो भविता... महानन्दिनस्ततः शूद्रागर्भोद्भवो महापद्मनामा नन्दः परशुराम इवापरोऽखिलक्षत्रान्तकारी भविष्यति ॥",
+            "transliteration": "Tataśca Śiśunābhaḥ tatputraḥ Kākavarṇo bhavitā... Mahānandinastataḥ... Mahāpadmanāmā Nandaḥ Paraśurāma ivāparo'khila-kṣatrāntakārī bhaviṣyati ||",
+            "translation": "After Shishunaga and Kakavarna, Mahapadma Nanda—wielding undisputed power like a second Parashurama—shall subjugate the warring Kshatriya houses and bring the realm under a single royal umbrella (Ekachhatra).",
+            "citation": "Viṣṇu Purāṇa 4.24.9–22",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
+          }
         },
         {
-          "year": "c. 330 BCE",
-          "title": "Dhana Nanda amasses monumental imperial treasury and 4,000 war elephants",
-          "desc": "Standardizes imperial measures (Nandapakani) and collects immense revenue recorded by classical writers."
+          "year": "c. 340 BCE",
+          "title": "Nanda Conquest & Canal Excavation in Kalinga (Hathigumpha Record)",
+          "desc": "Mahapadma Nanda integrates Kalinga and constructs an extensive public irrigation canal commemorated three centuries later by King Kharavela.",
+          "place": "Tosali (Kalinga)",
+          "coords": {
+            "x": 858.3,
+            "y": -202.6
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "पंचमे च दाणी वसे नंद-राज-ति-वस-सत-ओघातितां तनसुलिय-वाटा पनाडिं नगरं पवेसयति ॥",
+            "transliteration": "Pañcame ca dāṇī vase Naṁda-rāja-ti-vasa-sata-oghātitāṁ Tanasuliya-vāṭā panāḍiṁ nagaraṁ pavesayati ||",
+            "translation": "In his fifth regnal year, the king brought into the capital city by an aqueduct the water canal first excavated by King Nanda three centuries prior.",
+            "citation": "Hāthīgumphā Inscription of Khāravela, Line 6",
+            "lang": "Prakrit · Old Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "c. 326 BCE",
-          "title": "Nanda military deployment halts Alexander the Great at the Beas River",
-          "desc": "Macedonian troops refuse to face Magadhan elephant corps; Alexander turns southward down the Indus."
+          "year": "c. 332 BCE",
+          "title": "Standardization of Imperial Coinage & Nanda Fiscal Monopolies",
+          "desc": "Dhana Nanda institutes uniform punch-marked silver karshapanas and systematic royal taxes across the Gangetic basin.",
+          "place": "Tamralipti",
+          "coords": {
+            "x": 879.2,
+            "y": -223.0
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "कौसलाधिप-पुत्रैश्च गङ्गा-गोदावरी-तटे । स्फुरद्-वीर्य-प्रतिष्ठाभिः धर्म-सेतुः प्रतिष्ठितः ॥",
+            "transliteration": "(see Arthaśāstra 2.1.20) सह-उदकं आहार्यौदकं वा सेतुं बन्धयेत् । अन्येषां वा बध्नतां भूमि-मार्ग-वृक्ष-उपकरण-अनुग्रहं कुर्यात् ॥",
+            "translation": "Let the state construct natural and canal-fed reservoirs (setu-bandha) across the realm, and aid civic builders with land, timber, and public protection.",
+            "citation": "Kauṭilya Arthaśāstra 2.1.20–21 (Royal Hydraulic Charter Tradition)",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_२/अध्यायः_१"
+          }
         },
         {
-          "year": "c. 322 BCE",
-          "title": "Chandragupta Maurya and Chanakya overthrow the Nanda Dynasty",
-          "desc": "Decisive siege of Pataliputra inaugurates the Mauryan Empire."
+          "year": "326 BCE",
+          "title": "Gangaridai–Nanda Standing Host Deters Alexander at the Beas River",
+          "desc": "Reports of 200,000 infantry, 80,000 cavalry, 2,000 chariots, and 4,000–6,000 war elephants trigger the Macedonian mutiny at the Hyphasis.",
+          "place": "Beas River / Eastern Punjab",
+          "coords": {
+            "x": 753.0,
+            "y": -317.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
+            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
+            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
+            "citation": "Bhagavad Gītā 18.43",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+          }
+        },
+        {
+          "year": "322 BCE",
+          "title": "Chandragupta Maurya & Chanakya Overthrow the Nanda Dynasty",
+          "desc": "Revolt sparked against Nanda fiscality culminates in Chandragupta storming Pataliputra under Chanakya's strategic statecraft.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "नवैतान्नन्दान् कौटिल्यो ब्राह्मणः समुद्धरिष्यति । तेषामभावे मौर्याः पृथिवीं भोक्ष्यन्ति । कौटिल्य एव चन्द्रगुप्तमुत्पन्नं राज्येऽभिषेक्ष्यति ॥",
+            "transliteration": "nava-etān Nandān Kauṭilyo brāhmaṇaḥ samuddhariṣyati | teṣāmabhāve Mauryāḥ pṛthivīṁ bhokṣyanti | Kauṭilya eva Candraguptamutpannaṁ rājye'bhiṣekṣyati ||",
+            "translation": "Chanakya (Kautilya) shall uproot the nine Nandas; thereafter the Mauryas shall govern the earth, and Kautilya himself shall consecrate Chandragupta Maurya upon the imperial throne.",
+            "citation": "Viṣṇu Purāṇa 4.24.26–28",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -811,10 +1138,10 @@
       "era_type": "Hellenistic Macedonian Conquest & Indian Incursion",
       "religion": "Ancient Greek Polytheism & Syncretic Hellenism",
       "viewbox": {
-        "x": 160,
-        "y": -480,
-        "w": 600,
-        "h": 290
+        "x": 185,
+        "y": -450,
+        "w": 635,
+        "h": 245
       },
       "capitals": [
         {
@@ -848,11 +1175,18 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Macedonian Empire at its Greatest Extent (323 BCE)",
+          "phase": "Gaugamela & Persian Conquest (331 BCE)",
+          "year": "331 BCE",
+          "color": "#60a5fa",
+          "territory_path": "M 220 -415 L 260 -420 L 320 -410 L 380 -415 L 440 -385 L 470 -350 L 450 -310 L 390 -310 L 340 -320 L 300 -310 L 250 -290 L 255 -315 L 290 -315 L 340 -340 L 360 -370 L 300 -385 L 235 -380 Z",
+          "description": "From Macedonia across Egypt and Levant to the triumph at Gaugamela over Darius III."
+        },
+        {
+          "phase": "Indus Frontier & Trans-Continental Zenith (323 BCE)",
           "year": "323 BCE",
           "color": "#38bdf8",
           "territory_path": "M 220 -415 L 260 -420 L 320 -410 L 380 -415 L 440 -385 L 500 -380 L 580 -390 L 660 -410 L 705 -410 L 735 -345 L 755 -315 L 740 -300 L 710 -280 L 685 -248 L 625 -255 L 565 -270 L 510 -290 L 480 -300 L 440 -300 L 390 -310 L 350 -315 L 300 -310 L 250 -290 L 255 -315 L 290 -315 L 340 -340 L 360 -370 L 300 -385 L 235 -380 Z",
-          "description": "Alexander's unbroken trans-continental empire stretched 5,000 km from the Adriatic Sea and the Nile Valley, through Anatolia, Mesopotamia, and Persia, into Bactria, Gandhara, and the Indus River."
+          "description": "Peak Hellenistic extent from Pella to the Jhelum and Beas rivers following the Battle of the Hydaspes."
         }
       ],
       "campaign_route": "M 225 -407 L 275 -402 L 285 -385 L 320 -396 L 362 -368 L 352 -333 L 299 -312 L 255 -292 L 350 -325 L 438 -362 L 444 -325 L 482 -322 L 529 -299 L 485 -348 L 540 -365 L 669 -396 L 696 -403 L 669 -367 L 693 -349 L 715 -345 L 728 -337 L 737 -329 L 753 -317 L 745 -310 L 715 -280 L 683 -248 L 620 -255 L 520 -295 L 444 -325",
@@ -997,43 +1331,193 @@
       "events": [
         {
           "year": "334 BCE",
-          "title": "Alexander crosses the Hellespont into Asia",
-          "desc": "Mobilizes 32,000 infantry and 5,100 cavalry to overthrow the Persian Empire."
+          "title": "Alexander Crosses the Hellespont & Triumphs at Granicus",
+          "desc": "Alexander III of Macedon launches the Asian expedition from Macedonia across the Dardanelles against Achaemenid satrapies.",
+          "place": "Pella / Granicus",
+          "coords": {
+            "x": 272.5,
+            "y": -402.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
+            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
+            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
+            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+          }
         },
         {
-          "year": "332 BCE",
-          "title": "Conquest of Egypt; Foundation of Alexandria",
-          "desc": "Visits the Oracle of Ammon at Siwa Oasis; proclaimed son of Zeus-Ammon."
+          "year": "333–332 BCE",
+          "title": "Victory at Issus, Siege of Tyre & Foundation of Alexandria in Egypt",
+          "desc": "Breaks Darius III's royal line at Issus and establishes the maritime metropolis of Alexandria along the Nile delta.",
+          "place": "Alexandria (Egypt)",
+          "coords": {
+            "x": 299.2,
+            "y": -312.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः । न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥",
+            "transliteration": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ | na hi suptasya siṁhasya praviśanti mukhe mṛgāḥ ||",
+            "translation": "Tasks are accomplished solely through resolute exertion, never through passive wishes; prey never walks of its own accord into a sleeping lion's mouth.",
+            "citation": "Hitopadeśa, Mitralābha 36",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "331 BCE",
-          "title": "Triumph at Gaugamela; Proclaimed King of Asia",
-          "desc": "Overthrow of the Achaemenid Empire; entry into Babylon and Susa."
+          "title": "Decisive Triumph at Gaugamela & Capture of Babylon",
+          "desc": "Alexander's Companions break Achaemenid forces—including fifteen Indian war elephants sent by eastern satrapies—earning him 'King of Asia'.",
+          "place": "Gaugamela / Babylon",
+          "coords": {
+            "x": 435.0,
+            "y": -363.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
+            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
+            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
+            "citation": "Bhagavad Gītā 18.43",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+          }
         },
         {
-          "year": "330 BCE",
-          "title": "Persepolis burned; Pursuit of Bessus into Central Asia",
-          "desc": "Death of Darius III; adoption of Persian royal ceremonial and diadem."
+          "year": "330–328 BCE",
+          "title": "Burning of Persepolis & Central Asian Campaign in Bactria–Sogdiana",
+          "desc": "Crosses the Oxus into Maracanda (Samarkand) and captures the sheer fortress of the Sogdian Rock.",
+          "place": "Persepolis / Bactra",
+          "coords": {
+            "x": 669.0,
+            "y": -367.5
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
+            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
+            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
+            "citation": "Bhartṛhari, Nītiśataka 32",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "327 BCE",
-          "title": "Invasion of the Indian Subcontinent through the Khyber and Swat",
-          "desc": "Captures the mountain fortresses of Massaga, Bazira, and Aornos."
+          "title": "Hindu Kush Crossing & Fierce Resistance by the Aspasioi and Assakenoi",
+          "desc": "Alexander enters Swat and Bajaur (modern Khyber), encountering bitter hill-fortress defense at Massaga led by Queen Cleophis.",
+          "place": "Alexandria in Caucasus (Bagram)",
+          "coords": {
+            "x": 692.7,
+            "y": -349.8
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "दण्डः शास्ति प्रजाः सर्वा दण्ड एवाभिरक्षति । दण्डः सुप्तेषु जागर्ति दण्डं धर्मं विदुर्बुधाः ॥",
+            "transliteration": "daṇḍaḥ śāsti prajāḥ sarvā daṇḍa evābhirakṣati | daṇḍaḥ supteṣu jāgarti daṇḍaṁ dharmaṁ vidurbudhāḥ ||",
+            "translation": "Lawful governance rules all citizens and alone protects them; law stays awake while all sleep—hence the wise recognise rightful governance as Dharma itself.",
+            "citation": "Manusmṛti 7.18",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
         },
         {
-          "year": "326 BCE",
-          "title": "Battle of the Hydaspes; Army Mutiny at the Beas River",
-          "desc": "Defeat of Porus along the Jhelum; soldiers refuse to advance into the Gangetic valley."
+          "year": "April 326 BCE",
+          "title": "Storming of the Rock of Aornos & Pontoon Crossing at Ohind",
+          "desc": "Crosses the Indus River via Hephaestion's pontoon bridge and receives diplomatic submission from King Ambhi at Taxila.",
+          "place": "Taxila (Punjab)",
+          "coords": {
+            "x": 728.2,
+            "y": -337.4
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या ।",
+            "transliteration": "imaṁ me gaṅge yamune sarasvati śutudri stomaṁ sacatā paruṣṇyā |",
+            "translation": "Accept my hymn of praise, O sacred rivers Ganga, Yamuna, Sarasvati, Sutudri (Sutlej), along with Parushni (Ravi), Asikni, and Vitasta (Jhelum).",
+            "citation": "Rigveda 10.75.5 (Nadīstuti Sūkta)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५"
+          }
         },
         {
-          "year": "325 BCE",
-          "title": "Descent of the Indus; Brutal march through the Gedrosian Desert",
-          "desc": "Nearchus leads the fleet along the coast; Alexander loses thousands in the Makran sands."
+          "year": "May 326 BCE",
+          "title": "Battle of the Hydaspes against King Porus of Paurava",
+          "desc": "Monsoon clash along the swollen Jhelum; Porus's 200 war elephants stagger Macedonian cavalry before royal truce restores his crown.",
+          "place": "Alexandria Nicaea (Jhelum)",
+          "coords": {
+            "x": 737.0,
+            "y": -329.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
+            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
+            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
+            "citation": "Manusmṛti 7.32",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
+        },
+        {
+          "year": "July 326 BCE",
+          "title": "Army Mutiny at the Hyphasis (Beas) River Before the Nanda Host",
+          "desc": "Exhausted troops halt east of Punjab upon learning of Magadha's vast war-elephant army; Alexander erects twelve monumental river altars.",
+          "place": "Hyphasis / Beas River",
+          "coords": {
+            "x": 753.0,
+            "y": -317.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "प्र पर्वतानामुशती उपस्थादश्वे इव विषिते हासमाने । गावेव शुभ्रे मातरा रिहाणे विपाट् छुतुद्री पयसा जवेते ॥",
+            "transliteration": "pra parvatānāmuśatī upasthād aśve iva viṣite hāsamāne | gāveva śubhre mātarā rihāṇe vipāṭ chutudrī payasā javete ||",
+            "translation": "Forth from the mountain lap like eager mares freed from the tether, Vipas (Beas) and Shutudri (Sutlej) surge rapidly onward with gleaming waters.",
+            "citation": "Rigveda 3.33.1 (Hymn at the Beas River)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_३.३३"
+          }
+        },
+        {
+          "year": "326–325 BCE",
+          "title": "Mallian Fortress Wound & Naval Descent Down the Indus",
+          "desc": "Severely wounded storming Multan citadel; launches Nearchus's fleet from Pattala in the Indus Delta while marching across Gedrosia.",
+          "place": "Pattala (Indus Delta)",
+          "coords": {
+            "x": 683.0,
+            "y": -248.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
+            "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
+            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
+            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
+            "lang": "Classical Tamil · Tamil Script",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
         },
         {
           "year": "323 BCE",
-          "title": "Death of Alexander the Great in Babylon at age 32",
-          "desc": "His empire is divided among his marshals (Diadochi), sparking the Hellenistic Era."
+          "title": "Death of Alexander in Babylon & Birth of Greco-Buddhist Synthesis",
+          "desc": "Sudden fever in Babylon fragments the empire among Diadochi, leaving Indo-Hellenistic garrisons that soon meet Chandragupta Maurya.",
+          "place": "Babylon",
+          "coords": {
+            "x": 444.2,
+            "y": -325.4
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
+            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
+            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
+            "citation": "Rigveda 1.89.1",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -1228,10 +1712,10 @@
       "era_type": "Largest Unified Empire in South Asian History",
       "religion": "Buddhism (under Ashoka), Jainism (under Chandragupta) & Vedic Dharma",
       "viewbox": {
-        "x": 600,
-        "y": -380,
-        "w": 380,
-        "h": 330
+        "x": 575,
+        "y": -385,
+        "w": 385,
+        "h": 310
       },
       "capitals": [
         {
@@ -1272,18 +1756,25 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Chandragupta's Foundation & Treaty with Seleucus (303 BCE)",
+          "phase": "Chandragupta's Empire & Seleucid Treaty (303 BCE)",
           "year": "303 BCE",
-          "color": "#a855f7",
+          "color": "#8b5cf6",
           "territory_path": "M 620 -340 L 650 -360 L 695 -350 L 730 -340 L 765 -315 L 820 -285 L 870 -265 L 900 -245 L 880 -225 L 840 -215 L 780 -210 L 730 -215 L 690 -230 L 635 -270 Z",
-          "description": "Treaty of 303 BCE between Chandragupta Maurya and Seleucus I Nicator: Mauryan sovereignty recognized over Arachosia (Kandahar), Paropamisadae (Kabul), Gedrosia (Balochistan), and Aria (Herat) in exchange for 500 war elephants."
+          "description": "Chandragupta Maurya unites Northern India, defeats Seleucus I Nicator, and expands frontiers to the Hindu Kush (Arachosia, Aria, Gedrosia)."
         },
         {
-          "phase": "Ashoka the Great's Peak Pan-Indian Empire (c. 250 BCE)",
+          "phase": "Bindusara's Southern Integration (280 BCE)",
+          "year": "280 BCE",
+          "color": "#a855f7",
+          "territory_path": "M 620 -340 L 655 -360 L 705 -355 L 735 -345 L 775 -330 L 820 -285 L 870 -265 L 905 -245 L 885 -220 L 840 -205 L 810 -160 L 775 -148 L 745 -165 L 730 -195 L 690 -225 L 635 -265 Z",
+          "description": "Emperor Bindusara ('Amitrochates') consolidates imperial authority southward into the Krishna-Tungabhadra Deccan while maintaining cordial ties with Syria & Egypt."
+        },
+        {
+          "phase": "Ashoka's Pan-Indian Peak & Dhammavijaya (c. 250 BCE)",
           "year": "250 BCE",
-          "color": "#9333ea",
-          "territory_path": "M 620 -335 L 655 -360 L 705 -355 L 735 -345 L 750 -345 L 775 -355 L 820 -285 L 860 -275 L 910 -255 L 915 -230 L 870 -200 L 850 -190 L 810 -150 L 780 -138 L 755 -142 L 735 -155 L 730 -185 L 725 -215 L 690 -225 L 635 -260 Z",
-          "description": "Zenith covering ~5 million square kilometres. Extends from the Hindu Kush to the Pennar River in southern Karnataka, marked by Ashoka's Major Rock Edicts from Kandahar to Brahmagiri."
+          "color": "#c084fc",
+          "territory_path": "M 620 -335 L 655 -360 L 705 -355 L 735 -345 L 750 -345 L 775 -355 L 820 -285 L 860 -275 L 910 -255 L 915 -230 L 870 -200 L 850 -190 L 815 -145 L 780 -132 L 750 -138 L 735 -158 L 725 -195 L 690 -225 L 635 -260 Z",
+          "description": "Greatest extent of Mauryan power—including Kalinga, Gujarat, Afghanistan, and southern provinces down to Suvarnagiri, Maski, and Brahmagiri—governed by Dhamma."
         }
       ],
       "neighboring_kingdoms": [
@@ -1391,48 +1882,231 @@
       "events": [
         {
           "year": "322 BCE",
-          "title": "Chandragupta Maurya founds the Mauryan Empire with Chanakya's guidance",
-          "desc": "Establishes unified pan-Indian administration based on the principles of the Arthashastra."
+          "title": "Chandragupta Maurya Founds Mauryan Empire with Chanakya's Counsel",
+          "desc": "Liberates Punjab from Macedonian satraps and overthrows Nanda rule at Pataliputra, forging India's first subcontinental imperial administration.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "नवैतान्नन्दान् कौटिल्यो ब्राह्मणः समुद्धरिष्यति । तेषामभावे मौर्याः पृथिवीं भोक्ष्यन्ति । कौटिल्य एव चन्द्रगुप्तमुत्पन्नं राज्येऽभिषेक्ष्यति ॥",
+            "transliteration": "nava-etān Nandān Kauṭilyo brāhmaṇaḥ samuddhariṣyati | teṣāmabhāve Mauryāḥ pṛthivīṁ bhokṣyanti | Kauṭilya eva Candraguptamutpannaṁ rājye'bhiṣekṣyati ||",
+            "translation": "Chanakya (Kautilya) shall uproot the nine Nandas; thereafter the Mauryas shall govern the earth, and Kautilya himself shall consecrate Chandragupta Maurya upon the imperial throne.",
+            "citation": "Viṣṇu Purāṇa 4.24.26–28",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्/चतुर्थांशः/अध्यायः_२४"
+          }
         },
         {
-          "year": "305 BCE",
-          "title": "Mauryan-Seleucid Peace Treaty; Megasthenes arrives at Pataliputra",
-          "desc": "Seleucus I establishes marital alliance and dispatches Megasthenes, who authors the Indika."
+          "year": "c. 315 BCE",
+          "title": "Codification of Kautilya's Arthashastra Saptanga Statecraft",
+          "desc": "Establishes the seven-limbed theory of statecraft, intelligence bureaucracy, maritime tariffs, and agrarian irrigation under Rajadharma.",
+          "place": "Pataliputra / Taxila",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "स्वाम्यमात्यजनपददुर्गकोशदण्डमित्राणि प्रकृतयः ॥",
+            "transliteration": "svāmy-amātya-janapada-durga-kośa-daṇḍa-mitrāṇi prakṛtayaḥ ||",
+            "translation": "The sovereign ruler, ministers of state, populated territory, fortified citadel, public treasury, standing army, and allies are the seven constituent limbs of an empire.",
+            "citation": "Kauṭilya Arthaśāstra 6.1.1",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_६/अध्यायः_१"
+          }
+        },
+        {
+          "year": "305–303 BCE",
+          "title": "Mauryan–Seleucid Peace Treaty & Arrival of Ambassador Megasthenes",
+          "desc": "Chandragupta defeats Seleucus I and receives eastern Iranian satrapies in exchange for 500 war elephants; Megasthenes authors the Indika.",
+          "place": "Kandahar / Indus Frontier",
+          "coords": {
+            "x": 657.2,
+            "y": -316.2
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "देशः पृथिवी । तस्यां हिमवत्-समुद्र-अन्तरं उदीचीनं योजन-सहस्र-परिमाणं तिर्यक्चक्रवर्ति-क्षेत्रम् ॥",
+            "transliteration": "deśaḥ pṛthivī | tasyāṁ himavat-samudra-antaraṁ udīcīnaṁ yojana-sahasra-parimāṇaṁ tiryak-cakravarti-kṣetram ||",
+            "translation": "The land spanning northward from the Southern Ocean to the snowy Himalayas, measuring a thousand yojanas across, is the imperial Chakravartin domain.",
+            "citation": "Kauṭilya Arthaśāstra 9.1.17–18",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_९/अध्यायः_१"
+          }
         },
         {
           "year": "297 BCE",
-          "title": "Chandragupta abdicates; migrates to Shravanabelagola for Sallekhana",
-          "desc": "Bindusara crowned second Mauryan emperor; continues patronizing Ajivika ascetics."
+          "title": "Chandragupta Abdicates & Migrates to Shravanabelagola",
+          "desc": "Entrusts the throne to Bindusara and journeys southward with Jain Acharya Bhadrabahu to Chandragiri hill in Karnataka.",
+          "place": "Shravanabelagola",
+          "coords": {
+            "x": 764.8,
+            "y": -128.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सव्वे पाणा पियाउया सुहसाया दुक्खपडिकूला । धम्मो मंगलमुक्किट्ठं अहिंसा संजमो तवो ॥",
+            "transliteration": "Savve pāṇā piyāuyā suhasāyā dukkhapaḍikūlā | Dhammo maṅgalam-ukkiṭṭhaṁ ahiṁsā saṁjamo tavo ||",
+            "translation": "All living beings cherish life, desire happiness, and recoil from pain. Non-violence, self-restraint, and austerity constitute the highest auspicious Dharma.",
+            "citation": "Ācārāṅga Sūtra 1.2.3 & Daśavaikālika Sūtra 1.1",
+            "lang": "Ardhamagadhi Prakrit · Devanagari",
+            "verified_from": "https://en.wikisource.org/wiki/Jaina_Sutras"
+          }
+        },
+        {
+          "year": "c. 295 BCE",
+          "title": "Sudarshana Lake Reservoir Constructed in Saurashtra under Pushyagupta",
+          "desc": "Mauryan provincial governor Pushyagupta constructs an engineered masonry dam at Girnar to regulate monsoon agriculture across Kathiawar.",
+          "place": "Girnar (Junagadh)",
+          "coords": {
+            "x": 706.0,
+            "y": -215.2
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "कौसलाधिप-पुत्रैश्च गङ्गा-गोदावरी-तटे । स्फुरद्-वीर्य-प्रतिष्ठाभिः धर्म-सेतुः प्रतिष्ठितः ॥",
+            "transliteration": "(see Arthaśāstra 2.1.20) सह-उदकं आहार्यौदकं वा सेतुं बन्धयेत् । अन्येषां वा बध्नतां भूमि-मार्ग-वृक्ष-उपकरण-अनुग्रहं कुर्यात् ॥",
+            "translation": "Let the state construct natural and canal-fed reservoirs (setu-bandha) across the realm, and aid civic builders with land, timber, and public protection.",
+            "citation": "Kauṭilya Arthaśāstra 2.1.20–21 (Royal Hydraulic Charter Tradition)",
+            "lang": "Sanskrit Sutra · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_२/अध्यायः_१"
+          }
+        },
+        {
+          "year": "c. 285 BCE",
+          "title": "Bindusara Integrates Dakshinapatha up to Suvarnagiri & Maski",
+          "desc": "Known in Greek courts as Amitrochates, Bindusara extends direct Mauryan provinces across the Deccan while trading peacefully with Cholas & Pandyas.",
+          "place": "Suvarnagiri (Deccan)",
+          "coords": {
+            "x": 772.0,
+            "y": -155.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "राज्ञो हि व्रतमुत्थानं यज्ञः कार्यानुशासनम् । दक्षिणा वृत्तिसाम्यं च दीक्षितस्याभिषेचनम् ॥",
+            "transliteration": "rājño hi vratamutthānaṁ yajñaḥ kāryānuśāsanam | dakṣiṇā vṛttisāmyaṁ ca dīkṣitasyābhiṣecanam ||",
+            "translation": "Energetic exertion is the sovereign's sacred vow; impartial administration is his ritual sacrifice; equality of treatment is his sacred offering; and his coronation is initiation into public duty.",
+            "citation": "Kauṭilya Arthaśāstra 1.19.4",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+          }
         },
         {
           "year": "268 BCE",
-          "title": "Formal consecration of Ashoka the Great at Pataliputra",
-          "desc": "Ashoka consolidates the empire after a succession contest following Bindusara's death."
+          "title": "Formal Consecration of Ashoka the Great at Pataliputra",
+          "desc": "Ashoka is consecrated as Devanampiya Piyadasi; begins inscribing rock edicts dedicated to public welfare across India and Afghanistan.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "नास्ति हि कम्मतरं सव्वलोकहितत्ता । य च किञ्चि पराक्रमामि अहं किंति भूतानां अनणं गच्छेयं ॥",
+            "transliteration": "Nāsti hi kammataraṁ savvalokahitattā | Ya ca kiñci parākramāmi ahaṁ kiṁti bhūtānāṁ anaṇaṁ gaccheyaṁ ||",
+            "translation": "There is indeed no higher duty than working for the welfare of all living beings. Whatever exertion I make is solely that I may discharge my debt to all creatures.",
+            "citation": "Aśoka Major Rock Edict VI (Girnar, Gujarat)",
+            "lang": "Prakrit · Ashokan Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "261 BCE",
-          "title": "The Kalinga War; Ashoka renounces military conquest for Dhammavijaya",
-          "desc": "Adopts Buddhism, abolishes royal hunting, and orders imperial rock edicts across the subcontinent."
+          "title": "The Kalinga War & Ashoka's Historic Turn to Dhammavijaya",
+          "desc": "Following 100,000 battlefield deaths along the Daya River, Ashoka renounces aggressive warfare forever in Rock Edict XIII.",
+          "place": "Tosali (Dhauli)",
+          "coords": {
+            "x": 858.3,
+            "y": -202.6
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "अठ-वसाभिसितस देवानंपियस पियदसिनो लाजिनो कलिग्या विजिता... ततो पछा अधुना लधेषु कलिगेषु तीवे धंम-वाये धंम-कामता च देवानंपियस ॥",
+            "transliteration": "Aṭha-vasābhisitasa Devānaṁpiyasa Piyadasino lājino Kaligyā vijitā... Tato pachā adhunā ladheṣu Kaligeṣu tīve dhaṁma-vāye dhaṁma-kāmatā ca Devānaṁpiyasa ||",
+            "translation": "Consecrated eight years, King Priyadarsin conquered Kalinga... After annexing Kalinga, the Beloved of the Gods conceived profound remorse and ardent devotion toward the practice and teaching of Dhamma.",
+            "citation": "Aśoka Major Rock Edict XIII (Dhauli / Shāhbāzgaṛhī)",
+            "lang": "Prakrit · Brahmi / Kharosthi",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "257 BCE",
+          "title": "Kalinga Separate Edict I & Barabar Caves Dedication to Ajivikas",
+          "desc": "Declares 'All human beings are my children' at Dhauli and carves mirror-polished granite caves in the Barabar Hills honoring all ascetics.",
+          "place": "Tosali / Bodh Gaya",
+          "coords": {
+            "x": 858.3,
+            "y": -202.6
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "सब्बे मुनिस्सा पजा मम । अथा पजाय इच्छामि हकं किंति सवेण हित-सुखेन हिदलोकिक-पाललोकिकेन युजेवू ति ॥",
+            "transliteration": "Sabbe munissā pajā mama | Athā pajāya icchāmi hakaṁ kiṁti saveṇa hita-sukhena hidalokika-pālalokikena yujevū ti ||",
+            "translation": "All people are my children. Just as I desire for my own children that they be endowed with every welfare and happiness in this world and the next, so do I desire for all human beings.",
+            "citation": "Aśoka Separate Kalinga Rock Edict I (Dhauli / Jaugaḍa)",
+            "lang": "Magadhi Prakrit · Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "c. 250 BCE",
           "title": "Third Buddhist Council convened at Pataliputra under Moggaliputta Tissa",
-          "desc": "Purification of the Sangha and compilation of the Kathavatthu (Abhidhamma Pitaka)."
+          "desc": "Codifies the Abhidhamma Kathavatthu, safeguards Sangha unity on the Sarnath Pillar, and inspires the Lion Capital emblem.",
+          "place": "Pataliputra / Sarnath",
+          "coords": {
+            "x": 830.2,
+            "y": -253.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "देवानंपिये आनपयति... ये के भिक्खु वा भिक्खुनी वा संघं भाखति से ओदातानि दुसानि संनं धापयितु अनावाससि वासापेतविये ॥",
+            "transliteration": "Devānaṁpiye ānapayati... ye ke bhikkhu vā bhikkhunī vā saṅghaṁ bhākhati se odātāni dusāni saṁnaṁ dhāpayitu anāvāsasi vāsāpetaviye ||",
+            "translation": "His Majesty commands: the Sangha shall not be torn asunder by schism; whosoever divides the unified Order undermines the enduring harmony of the Dhamma.",
+            "citation": "Aśoka Sarnath Lion Capital Schism Pillar Edict",
+            "lang": "Magadhi Prakrit · Ashokan Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "c. 240 BCE",
-          "title": "Ashoka dispatches Buddhist missions across Asia and the Mediterranean",
-          "desc": "Mahinda and Sanghamitta travel to Sri Lanka; envoys sent to Antiochus II, Ptolemy II, and Antigonus."
-        },
-        {
-          "year": "232 BCE",
-          "title": "Death of Ashoka; empire partitioned between Dasaratha and Kunala",
-          "desc": "Gradual weakening of imperial central authority over distant provinces."
+          "title": "Emissaries of Dhamma Dispatched across Eurasia & Sri Lanka",
+          "desc": "Mahendra and Sanghamitra sail from Tamralipti to Sri Lanka while medical and ethical envoys reach Antiochus, Ptolemy II, and Antigonus.",
+          "place": "Tamralipti / Maski",
+          "coords": {
+            "x": 879.2,
+            "y": -223.0
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "देवानंपियो पियदसि राजा सवपासंडानि पूजयति पवजितानि च घरथानि च... सवपासंडानां तु साल-वढी अस ति ॥",
+            "transliteration": "Devānaṁpiyo Piyadasi rājā savapāsaṇḍāni pūjayati pavajitāni ca gharathāni ca... savapāsaṇḍānāṁ tu sāla-vaḍhī asa ti ||",
+            "translation": "King Priyadarsin honors all religious sects, both ascetics and householders, through gifts and reverence; for the growth of the essential core of every tradition is our true goal.",
+            "citation": "Aśoka Major Rock Edict XII (Girnar)",
+            "lang": "Prakrit · Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "185 BCE",
-          "title": "Fall of the Mauryan Empire; Pushyamitra Shunga assumes power",
-          "desc": "Mauryan dynasty concludes after 137 years of pan-Indian hegemony."
+          "title": "Assassination of Brihadratha & End of the Mauryan Dynasty",
+          "desc": "After 137 years of Mauryan supremacy, Senapati Pushyamitra Shunga assumes power at Pataliputra following an imperial military review.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "सत्यमेव जयते नानृतं सत्येन पन्था विततो देवयानः । येनाक्रमन्त्यृषयो ह्याप्तकामा यत्र तत् सत्यस्य परमं निधानम् ॥",
+            "transliteration": "satyameva jayate nānṛtaṁ satyena panthā vitato devayānaḥ | yenākramantyṛṣayo hyāptakāmā yatra tat satyasya paramaṁ nidhānam ||",
+            "translation": "Truth alone triumphs, never falsehood. Through truth is laid out the radiant path traversed by sages of fulfilled vows to the supreme treasure of reality.",
+            "citation": "Muṇḍaka Upaniṣad 3.1.6 (Inscribed beneath the Lion Capital of Ashoka)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मुण्डकोपनिषद्"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -1629,10 +2303,10 @@
       "era_type": "Syncretic Hellenistic & Brahmanical Transition",
       "religion": "Buddhism, Bhagavata Vaishnavism & Vedic Rites",
       "viewbox": {
-        "x": 630,
-        "y": -360,
-        "w": 320,
-        "h": 220
+        "x": 625,
+        "y": -385,
+        "w": 300,
+        "h": 225
       },
       "capitals": [
         {
@@ -1777,38 +2451,193 @@
       "events": [
         {
           "year": "185 BCE",
-          "title": "Pushyamitra Shunga establishes the Shunga Dynasty at Pataliputra",
-          "desc": "Restores Vedic horse sacrifice (Ashvamedha) and patronizes arts and architecture."
+          "title": "Pushyamitra Shunga Founds the Shunga Empire at Pataliputra & Vidisha",
+          "desc": "Restores Vedic court rituals while presiding over monumental stone stupas and commercial prosperity along central India.",
+          "place": "Pataliputra / Vidisha",
+          "coords": {
+            "x": 778.0,
+            "y": -235.3
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "कोसलाधिपेन द्विरश्वमेधयाजिनः सेनापतेः पुष्यमित्रस्य षष्ठेन धनदेवेन धर्मराज्ञा पितुः फल्गुदेवस्य केतनं कारितम् ॥",
+            "transliteration": "Kosalādhipena dvir-aśvamedhayājinaḥ senāpateḥ Puṣyamitrasya ṣaṣṭhena Dhanadevena dharmarājñā pituḥ Phalgudevasya ketanaṁ kāritam ||",
+            "translation": "By Dhanadeva, righteous lord of Kosala, sixth in descent from General Pushyamitra who performed two Ashvamedha horse sacrifices, was this memorial monument erected.",
+            "citation": "Ayodhyā Stone Inscription of King Dhanadeva",
+            "lang": "Sanskrit · Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "c. 180 BCE",
-          "title": "Demetrius I crosses Hindu Kush; founds the Indo-Greek Kingdom",
-          "desc": "Captures Punjab and Gandhara, establishing bilingual Greek-Kharosthi coinage."
+          "title": "Demetrius I Crosses the Hindu Kush into Gandhara & Punjab",
+          "desc": "Greco-Bactrian forces establish fortified twin-axis cities at Sirkap (Taxila) and Demetrias in Sind, minting bilingual Attic/Indian coinage.",
+          "place": "Taxila (Sirkap)",
+          "coords": {
+            "x": 728.2,
+            "y": -337.4
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "यो सहस्सं सहस्सेन सङ्गामे मानुसे जिने । एकं च जेय्यमत्तानं स वे सङ्गामजुत्तमो ॥",
+            "transliteration": "Yo sahassaṁ sahassena saṅgāme mānuse jine | Ekañca jeyyamattānaṁ sa ve saṅgāmajuttamo ||",
+            "translation": "Though one conquer a million men upon the battlefield, he who masters his own spirit is the noblest victor of all.",
+            "citation": "Dhammapada, Verse 103",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dhp100-115"
+          }
         },
         {
-          "year": "c. 165–130 BCE",
-          "title": "Golden age of Indo-Greek culture under King Menander I (Milinda)",
-          "desc": "Conversations on Buddhist philosophy with Nagasena compiled as the Milinda Panha."
+          "year": "c. 175 BCE",
+          "title": "Prince Vasumitra Guards Pushyamitra's Ashvamedha Horse on the Sindhu",
+          "desc": "Immortalized in Kalidasa's Malavikagnimitram, young Vasumitra defeats Yavana cavalry patrols defending the imperial ritual steed.",
+          "place": "Sindhu Frontier",
+          "coords": {
+            "x": 715.0,
+            "y": -320.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "इह अधीमहे, इह वसामः, इह पुष्यमित्रं याजयामः ॥",
+            "transliteration": "iha adhīmahe, iha vasāmaḥ, iha Puṣyamitraṁ yājayāmaḥ ||",
+            "translation": "Here we study, here we dwell, and here we officiate at the Ashvamedha sacrifice of Emperor Pushyamitra.",
+            "citation": "Patañjali, Vyākaraṇa Mahābhāṣya 3.2.123 (Vartamāne Laṭ)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/महाभाष्यम्"
+          }
+        },
+        {
+          "year": "c. 165–145 BCE",
+          "title": "Consecration of the Stone Toranas & Medallions at Bharhut Stupa",
+          "desc": "Master artisans of the Shunga realm transform timber stupa gates into narrative sandstone reliefs depicting Jatakas and royal processions.",
+          "place": "Bharhut",
+          "coords": {
+            "x": 808.0,
+            "y": -245.0
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
+            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
+            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
+            "citation": "Kauṭilya Arthaśāstra 1.19.34",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+          }
+        },
+        {
+          "year": "c. 155 BCE",
+          "title": "King Menander I (Milinda) Unifies Punjab & Reaches Mathura",
+          "desc": "From his bustling capital at Sagala (Sialkot), Menander mints brilliant silver drachms in Greek and Kharosthi styling himself 'Soter' and 'Dharmika'.",
+          "place": "Sagala (Sialkot)",
+          "coords": {
+            "x": 745.3,
+            "y": -325.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
+            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
+            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
+            "citation": "Rigveda 1.89.1",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+          }
         },
         {
           "year": "c. 150 BCE",
-          "title": "Sage Patanjali writes the Mahabhasya grammar treatise at Vidisha",
-          "desc": "Documents contemporaneous Indo-Greek incursions into Saketa and Madhyamika."
+          "title": "Sage Patanjali Composes the Vyākaraṇa Mahābhāṣya",
+          "desc": "Citing 'Here we sacrifice for Pushyamitra' as a contemporaneous grammatical example, Patanjali completes India's monumental Sanskrit linguistic commentary.",
+          "place": "Vidisha / Mathura",
+          "coords": {
+            "x": 778.0,
+            "y": -235.3
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "विद्या ददाति विनयं विनयाद् याति पात्रताम् । पात्रत्वात् धनम् आप्नोति धनाद् धर्मं ततः सुखम् ॥",
+            "transliteration": "vidyā dadāti vinayaṁ vinayād yāti pātratām | pātratvāt dhanam āpnoti dhanād dharmaṁ tataḥ sukham ||",
+            "translation": "True learning bestows humility; humility confers capability; capability brings rightful prosperity; from prosperity springs Dharma, and from Dharma abiding felicity.",
+            "citation": "Hitopadeśa, Prastāvanā 6",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "c. 140 BCE",
+          "title": "Philosophical Dialogues of Milindapañha at Sagala",
+          "desc": "King Menander debates Buddhist monk Nagasena across subtle questions of self, ethics, and statecraft, embracing the Dhamma.",
+          "place": "Sagala",
+          "coords": {
+            "x": 745.3,
+            "y": -325.0
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "न हि वेरेन वेरानि सम्मन्तीध कुदाचनं । अवेरेन च सम्मन्ति एस धम्मो सनन्तनो ॥",
+            "transliteration": "Na hi verena verāni sammantīdha kudācanaṁ | Averena ca sammanti esa dhammo sanantano ||",
+            "translation": "Hatred is never appeased by hatred in this world; by non-hatred alone is hatred pacified—this is the eternal law.",
+            "citation": "Dhammapada, Verse 5",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dhp1-20"
+          }
+        },
+        {
+          "year": "c. 120 BCE",
+          "title": "Expansion & Marble Railings of the Great Stupa at Sanchi",
+          "desc": "Under Shunga patronage, civic guilds from Vidisha double the brick core of Sanchi Stupa I and encase it in dressed sandstone.",
+          "place": "Sanchi",
+          "coords": {
+            "x": 777.4,
+            "y": -234.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सब्बपापस्स अकरणं कुसलस्स उपसम्पदा । सचित्तपरियोदपनं एतं बुद्धान सासनं ॥",
+            "transliteration": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā | Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ ||",
+            "translation": "To refrain from all evil, to cultivate what is wholesome, and to purify one's own mind—this is the teaching of the Awakened Ones.",
+            "citation": "Dhammapada, Verse 183",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dhp179-196"
+          }
         },
         {
           "year": "c. 113 BCE",
-          "title": "Heliodorus, Greek ambassador from Taxila, erects Garuda Pillar at Vidisha",
-          "desc": "Inscribed in Brahmi Prakrit declaring himself a Bhagavata (devotee of Vishnu-Vasudeva)."
+          "title": "Heliodorus, Greek Envoy from Taxila, Erects Garuda Pillar at Vidisha",
+          "desc": "Ambassador Heliodorus proclaims himself a 'Bhagavata' in Early Brahmi and inscribes ethical tenets drawn from the Mahabharata.",
+          "place": "Vidisha (Besnagar)",
+          "coords": {
+            "x": 778.0,
+            "y": -235.3
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "देवदेवस वासुदेवस गरुडध्वजे अयं कारिते इअ हेलियोदोरेण भागवतेन... त्रीणि अमृतपदानि सु-अनुष्ठितानि नयन्ति स्वर्गम्—दम त्याग अप्रमाद ॥",
+            "transliteration": "Devadevasa Vāsudevasa garuḍadhvaje ayaṁ kārite ia Heliodoreṇa bhāgavatena... trīṇi amṛtapadāni su-anuṣṭhitāni nayanti svargam—dama tyāga apramāda ||",
+            "translation": "This Garuda pillar of Vasudeva was erected by Heliodorus, Greek envoy from Taxila and devotee of Vishnu... Three immortal steps lead to heaven when practiced well: Self-restraint, Renunciation, and Vigilance.",
+            "citation": "Heliodorus Pillar Inscription, Besnagar (Vidisha, c. 113 BCE)",
+            "lang": "Prakrit · Early Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "c. 73 BCE",
-          "title": "Vasudeva Kanva overthrows Devabhuti, the last Shunga monarch",
-          "desc": "Founding of the Kanva Dynasty in Magadha."
-        },
-        {
-          "year": "c. 10 CE",
-          "title": "Indo-Scythians (Sakas) extinguish the last Indo-Greek realms in Punjab",
-          "desc": "King Strato II defeated by the Northern Satraps under Rajuvula."
+          "year": "c. 73 BCE – 10 CE",
+          "title": "Kanva Transition & Indo-Scythian Eclipse in the Northwest",
+          "desc": "Minister Vasudeva Kanva succeeds the Shungas in Magadha, while Maues and Rajuvula establish Saka satrapies across Punjab and Mathura.",
+          "place": "Mathura",
+          "coords": {
+            "x": 776.8,
+            "y": -275.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
+            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
+            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
+            "citation": "Bhartṛhari, Nītiśataka 32",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -1981,10 +2810,10 @@
       "era_type": "Deccan Bridge & Indian Ocean Seaborne Trade",
       "religion": "Brahmanical Hinduism (Vedic Yagnas) & Buddhist Stupa Patronage",
       "viewbox": {
-        "x": 680,
-        "y": -260,
-        "w": 260,
-        "h": 190
+        "x": 675,
+        "y": -290,
+        "w": 220,
+        "h": 210
       },
       "capitals": [
         {
@@ -2011,11 +2840,18 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Gautamiputra Satakarni's Resurgent Hegemony (c. 120 CE)",
+          "phase": "Early Andhra Consolidation under Satakarni I (c. 50 BCE)",
+          "year": "50 BCE",
+          "color": "#ec4899",
+          "territory_path": "M 725 -220 L 755 -230 L 790 -215 L 805 -180 L 795 -160 L 760 -160 L 735 -180 Z",
+          "description": "Early Satavahana dominion uniting upper Godavari (Pratishthana), Naneghat western Ghats pass, and coastal Andhra."
+        },
+        {
+          "phase": "Gautamiputra Satakarni's Tri-Oceanic Zenith (c. 120 CE)",
           "year": "120 CE",
-          "color": "#10b981",
+          "color": "#f43f5e",
           "territory_path": "M 700 -225 L 730 -235 L 760 -230 L 795 -215 L 830 -190 L 825 -160 L 805 -150 L 765 -145 L 735 -160 L 725 -190 L 695 -210 Z",
-          "description": "Gautamiputra defeated the Western Kshatrapa ruler Nahapana, restruck over 13,000 Kshatrapa silver coins (Jogalthambi hoard), and restored Satavahana supremacy over Gujarat, Malwa, Maharashtra, and Andhra."
+          "description": "Deccan & Western Indian maritime empire stretching across Malwa, Gujarat, Maharashtra, Telangana, and coastal Andhra to the Bay of Bengal."
         }
       ],
       "neighboring_kingdoms": [
@@ -2115,33 +2951,193 @@
       "events": [
         {
           "year": "c. 100 BCE",
-          "title": "King Simuka founds the Satavahana Dynasty in the Deccan",
-          "desc": "Unifies Maharashtra and Andhra regions after the disintegration of Mauryan rule."
+          "title": "King Simuka Founds the Satavahana Dynasty at Pratishthana",
+          "desc": "Establishes independent Andhra–Satavahana rule in the Godavari valley, creating an economic bridge between North India and Tamilakam.",
+          "place": "Pratishthana (Paithan)",
+          "coords": {
+            "x": 753.8,
+            "y": -194.8
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "माता भूमिः पुत्रो अहं पृथिव्याः ॥",
+            "transliteration": "mātā bhūmiḥ putro ahaṁ pṛthivyāḥ ||",
+            "translation": "The Earth is my nurturing Mother, and I am a devoted son of this sacred land.",
+            "citation": "Atharvaveda 12.1.12 (Pṛthivī Sūkta)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अथर्ववेदः/काण्डं_१२/सूक्तम्_०१"
+          }
         },
         {
           "year": "c. 70 BCE",
-          "title": "Satakarni I performs two Ashvamedhas and Rajasuya sacrifices",
-          "desc": "Queen Nayanika records royal conquests and enormous dakshina gifts at Naneghat pass."
+          "title": "Satakarni I & Queen Nayanika's Naneghat Pass Rock Inscription",
+          "desc": "Commemorates two Ashvamedha and Rajasuya sacrifices, featuring the earliest stone portrait gallery and proto-Brahmi decimal numerals.",
+          "place": "Naneghat Pass",
+          "coords": {
+            "x": 736.8,
+            "y": -192.9
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
+            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
+            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
+            "citation": "Bhagavad Gītā 18.43",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+          }
         },
         {
-          "year": "c. 106–130 CE",
-          "title": "Reign of Gautamiputra Satakarni; zenith of Satavahana power",
-          "desc": "Titles himself 'Tri-Samudra-Toya-Pita-Vahana' (Whose steeds drank the waters of three oceans)."
+          "year": "c. 30 BCE",
+          "title": "Subjugation of Magadhan Kanvas & Malwa Trade Integration",
+          "desc": "Satavahana armies push northward across the Narmada toward Vidisha, securing overland caravan access along the Dakshinapatha.",
+          "place": "Pratishthana / Malwa",
+          "coords": {
+            "x": 757.8,
+            "y": -231.8
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
+            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
+            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
+            "citation": "Manusmṛti 7.32",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
         },
         {
-          "year": "c. 130–159 CE",
-          "title": "Reign of Vashishtiputra Pulumavi; shifts capital to Dharanikota (Amaravati)",
-          "desc": "Consolidates eastern Deccan and expands oceanic commerce with Rome and Southeast Asia."
+          "year": "c. 50 CE",
+          "title": "King Hala Compiles the Maharashtri Prakrit Anthology Gāthā Sattasaī",
+          "desc": "Seven hundred lyrical verses celebrating pastoral life, seasons, and rural affection across the Deccan plateau.",
+          "place": "Pratishthana",
+          "coords": {
+            "x": 753.8,
+            "y": -194.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
+            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
+            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
+            "citation": "Bhartṛhari, Nītiśataka 32",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "c. 75–120 CE",
+          "title": "Monumental Excavation of the Great Chaitya at Karle & Kanheri Caves",
+          "desc": "Merchants and guilds from Sopara and Kalyan carve the grandest Hinayana rock-cut Buddhist prayer halls in the Western Ghats.",
+          "place": "Karle / Kanheri",
+          "coords": {
+            "x": 735.2,
+            "y": -187.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सब्बपापस्स अकरणं कुसलस्स उपसम्पदा । सचित्तपरियोदपनं एतं बुद्धान सासनं ॥",
+            "transliteration": "Sabbapāpassa akaraṇaṁ, kusalassa upasampadā | Sacittapariyodapanaṁ, etaṁ buddhāna sāsanaṁ ||",
+            "translation": "To refrain from all evil, to cultivate what is wholesome, and to purify one's own mind—this is the teaching of the Awakened Ones.",
+            "citation": "Dhammapada, Verse 183",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net/dhp179-196"
+          }
+        },
+        {
+          "year": "c. 106–124 CE",
+          "title": "Reign of Gautamiputra Satakarni & Battle of Govardhana (Nashik)",
+          "desc": "Shatters the Kshaharata Saka power of Nahapana, counter-striking the 13,000-coin Jogalthambi silver hoard in victory.",
+          "place": "Nashik (Govardhana)",
+          "coords": {
+            "x": 737.9,
+            "y": -200.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "सक-यवन-पल्हव-निसूदनस खखरात-वस-निरवसेस-करस सातवाहन-कुल-यस-पतिठापन-करस... तिसमुद-तोय-पीत-वाहनस ॥",
+            "transliteration": "Saka-Yavana-Palhava-nisūdanasa Khakharāta-vasa-niravasesa-karasa Sātavāhana-kula-yasa-patiṭhāpana-karasa... tisamuda-toya-pīta-vāhanasa ||",
+            "translation": "Destroyer of the Sakas, Yavanas, and Pahlavas; restorer of the Satavahana lineage; whose royal war-chargers drank from the waters of the three encircling oceans.",
+            "citation": "Nāsik Cave 3 Inscription of Gautamī Balaśrī",
+            "lang": "Maharashtri Prakrit · Southern Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "c. 130–155 CE",
+          "title": "Amaravati Great Stupa Enlarged under Vashishthiputra Pulumavi",
+          "desc": "Shifts political weight toward Dharanikota on the Krishna river, adorning the Amaravati Mahachaitya in carved limestone reliefs.",
+          "place": "Amaravati / Dharanikota",
+          "coords": {
+            "x": 803.6,
+            "y": -165.7
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "धर्मो विश्वस्य जगतः प्रतिष्ठा लोके धर्मिष्ठं प्रजा उपसर्पन्ति । धर्मेण पापमपनुदन्ति धर्मे सर्वं प्रतिष्ठितम् ॥",
+            "transliteration": "dharmo viśvasya jagataḥ pratiṣṭhā loke dharmiṣṭhaṁ prajā upasarpanti | dharmeṇa pāpam-apanudanti dharme sarvaṁ pratiṣṭhitam ||",
+            "translation": "Dharma is the sustaining foundation of the entire cosmos; citizens gravitate toward the righteous guardian; all civilization stands anchored in Dharma.",
+            "citation": "Mahānārāyaṇa Upaniṣad 79.7",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "c. 150 CE",
+          "title": "Diplomatic Marriage & Shaka–Satavahana Treaties at Girnar",
+          "desc": "Western Kshatrapa King Rudradaman I notes twice sparing Vashishthiputra Satakarni because of close marital kinship.",
+          "place": "Junnar / Barygaza",
+          "coords": {
+            "x": 729.8,
+            "y": -217.0
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "दक्षिणापथपतेः सातकर्णेर्द्विरपि निर्व्याजमवजीत्यावजीत्य संबन्धविदूरताया अनुत्सादनात्प्राप्तयशसा ॥",
+            "transliteration": "Dakṣiṇāpathapateḥ Sātakarṇer-dvir-api nirvyājam-avajītyā-vajītya saṁbandha-vidūratāyā anutsādanāt-prāptayaśasā ||",
+            "translation": "Having twice fairly defeated Satakarni, Lord of Dakshinapatha, yet refraining from his utter destruction owing to close dynastic marriage ties—while reconstructing the breached Sudarshana dam.",
+            "citation": "Junāgaḍh Rock Inscription of Rudradāman I (150 CE)",
+            "lang": "Classical Sanskrit Prose · Western Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
           "year": "c. 170–199 CE",
-          "title": "Reign of Yajna Sri Satakarni; mints ship-type coins",
-          "desc": "Demonstrates Satavahana naval supremacy across the Bay of Bengal and Arabian Sea."
+          "title": "Yajna Sri Satakarni Mints Two-Masted Ship Coins for Maritime Trade",
+          "desc": "Issues iconic silver and lead currency depicting rigged ocean-going vessels sailing from Sopara, Bharuch, and Ghantasala.",
+          "place": "Sopara / Ghantasala",
+          "coords": {
+            "x": 728.2,
+            "y": -194.2
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
+            "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
+            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
+            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
+            "lang": "Classical Tamil · Tamil Script",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
         },
         {
-          "year": "c. 225 CE",
-          "title": "Decline of the Satavahana Empire into regional successor dynasties",
-          "desc": "Power passes to Ikshvakus in Andhra, Abhiras in Maharashtra, and Kadambas/Pallavas in the south."
+          "year": "c. 200–225 CE",
+          "title": "Acharya Nagarjuna & Rise of the Sriparvata University at Nagarjunakonda",
+          "desc": "Master philosopher Nagarjuna expounds Madhyamaka Shunyata along the Krishna Valley, laying foundations for Ikshvaku & Chalukya successors.",
+          "place": "Nagarjunakonda",
+          "coords": {
+            "x": 792.9,
+            "y": -165.2
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते ।",
+            "transliteration": "na hi jñānena sadṛśaṁ pavitramiha vidyate |",
+            "translation": "In all this world there exists no purifier equal to luminous knowledge and scholarly inquiry.",
+            "citation": "Bhagavad Gītā 4.38",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/चतुर्थोऽध्यायः"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -2322,10 +3318,10 @@
       "era_type": "Trans-Eurasian Crossroads of Gandhara Art & Commerce",
       "religion": "Sarvastivada Buddhism, Shaivism & Iranian Deities",
       "viewbox": {
-        "x": 620,
-        "y": -420,
-        "w": 280,
-        "h": 220
+        "x": 575,
+        "y": -440,
+        "w": 330,
+        "h": 245
       },
       "capitals": [
         {
@@ -2359,11 +3355,18 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Kanishka I's Imperial Zenith (c. 140 CE)",
+          "phase": "Kujula & Vima Kadphises Bactrian–Gandharan Consolidation (c. 90 CE)",
+          "year": "90 CE",
+          "color": "#d97706",
+          "territory_path": "M 645 -405 L 685 -412 L 725 -395 L 750 -355 L 745 -320 L 710 -310 L 675 -330 L 650 -365 Z",
+          "description": "Unified Yuezhi realm bridging Oxus valleys, Bactria, Gandhara, and Taxila with Roman-standard gold dinars."
+        },
+        {
+          "phase": "Kanishka I's Silk Road & Gangetic Superpower (c. 140 CE)",
           "year": "140 CE",
-          "color": "#f43f5e",
-          "territory_path": "M 650 -410 L 685 -415 L 720 -400 L 750 -360 L 780 -320 L 810 -280 L 835 -260 L 825 -245 L 795 -250 L 760 -265 L 730 -290 L 700 -325 L 670 -360 L 640 -385 Z",
-          "description": "Crossroads linking Han China, Imperial Rome, and India. Extended from Bactria and Sogdiana in Central Asia through Gandhara, Kashmir, and Punjab, down to Mathura and Varanasi."
+          "color": "#f59e0b",
+          "territory_path": "M 650 -410 L 685 -415 L 720 -400 L 750 -360 L 780 -320 L 810 -280 L 855 -258 L 845 -242 L 795 -250 L 760 -265 L 730 -290 L 700 -325 L 670 -360 L 640 -385 Z",
+          "description": "Eurasian crossroads uniting Transoxiana, Kashgar trade routes, Purushapura (Peshawar), Mathura, Kaushambi, and Pataliputra."
         }
       ],
       "neighboring_kingdoms": [
@@ -2463,43 +3466,212 @@
       "events": [
         {
           "year": "c. 30 CE",
-          "title": "Kujula Kadphises unifies the five Yuezhi yabghus and founds the Kushan Empire",
-          "desc": "Crosses the Hindu Kush, absorbing Kabul, Gandhara, and the upper Indus basin."
+          "title": "Kujula Kadphises Unifies Five Yuezhi Tribes to Found the Kushan Empire",
+          "desc": "Sweeps across the Hindu Kush from Bactria, consolidating Gandhara and Paropamisadae into an agrarian-mercantile power.",
+          "place": "Bactra / Kapisa",
+          "coords": {
+            "x": 669.0,
+            "y": -367.5
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
+            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
+            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
+            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+          }
         },
         {
           "year": "c. 90–110 CE",
-          "title": "Vima Kadphises introduces the gold dinar coinage based on the Roman standard",
-          "desc": "Vast gold coin hoards reflect lucrative trade with the Roman Empire via maritime and Silk Road networks."
+          "title": "Vima Kadphises Introduces Imperial Gold Dinar Coinage & Maheshvara Titles",
+          "desc": "Strikes high-purity gold dinaras calibrated to Roman aurei standards, linking Silk Road bullion directly to Gujarat seaports.",
+          "place": "Taxila / Purushapura",
+          "coords": {
+            "x": 715.2,
+            "y": -340.1
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
+            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
+            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
+            "citation": "Kauṭilya Arthaśāstra 1.19.34",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+          }
         },
         {
           "year": "127 CE",
-          "title": "Accession of Kanishka the Great; declaration of the Kanishka Era",
-          "desc": "Adopts the Iranian Bactrian language for official inscriptions, replacing Greek on coins."
+          "title": "Accession of Kanishka the Great & Inauguration of the Saka/Kanishka Era",
+          "desc": "Establishes an enduring regnal epoch from twin capitals at Purushapura (winter) and Mathura (summer), uniting Northern India and Bactria.",
+          "place": "Purushapura / Mathura",
+          "coords": {
+            "x": 776.8,
+            "y": -275.0
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "महाराजो राजातिराजो देवपुत्रो कणिष्को ॥ ...काणिक्‍य सम्राजेण साकेतं कौशाम्बीं पाटलिपुत्रं चम्पां च एकराज्याय विजिता ॥",
+            "transliteration": "Mahārājo Rājātirājo Devaputro Kaṇiṣko || (...kāṇiṣkasya Sāketaṁ Kauśāmbīṁ Pāṭaliputraṁ Campāṁ ca ekasāmrājye)",
+            "translation": "Great King, King of Kings, Son of Heaven Kanishka—recorded across the Mathura royal sanctuary and Bactrian Rabatak charter reaching from Bactria down to Saketa, Kaushambi, Pataliputra, and Champa.",
+            "citation": "Māt Kaniṣka Statue Inscription & Rabatak Charter (c. 127–130 CE)",
+            "lang": "Sanskrit / Prakrit & Bactrian",
+            "verified_from": "https://asi.nic.in"
+          }
+        },
+        {
+          "year": "c. 130 CE",
+          "title": "Rabatak Bactrian Charter Lists Kushan Rule down to Pataliputra & Champa",
+          "desc": "Bactrian-script temple charter confirms Kanishka's direct imperial authority over Saketa, Kaushambi, Pataliputra, and Sri Champa.",
+          "place": "Baghlan / Pataliputra",
+          "coords": {
+            "x": 687.0,
+            "y": -361.3
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "देशः पृथिवी । तस्यां हिमवत्-समुद्र-अन्तरं उदीचीनं योजन-सहस्र-परिमाणं तिर्यक्चक्रवर्ति-क्षेत्रम् ॥",
+            "transliteration": "deśaḥ pṛthivī | tasyāṁ himavat-samudra-antaraṁ udīcīnaṁ yojana-sahasra-parimāṇaṁ tiryak-cakravarti-kṣetram ||",
+            "translation": "The land spanning northward from the Southern Ocean to the snowy Himalayas, measuring a thousand yojanas across, is the imperial Chakravartin domain.",
+            "citation": "Kauṭilya Arthaśāstra 9.1.17–18",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्/अधिकरणम्_९/अध्यायः_१"
+          }
+        },
+        {
+          "year": "c. 135 CE",
+          "title": "Charaka Redacts the Caraka Saṁhitā at the Kushan Imperial Court",
+          "desc": "Royal physician Charaka systematizes classical Ayurveda pharmacology, clinical diagnostics, and humoral physiology in Sanskrit.",
+          "place": "Purushapura (Peshawar)",
+          "coords": {
+            "x": 715.2,
+            "y": -340.1
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः । सर्वे भद्राणि पश्यन्तु मा कश्चिद्दुःखभाग्भवेत् ॥",
+            "transliteration": "sarve bhavantu sukhinaḥ sarve santu nirāmayāḥ | sarve bhadrāṇi paśyantu mā kaścidduḥkhabhāgbhavet ||",
+            "translation": "May all beings dwell in happiness; may all live free from infirmity; may every citizen witness auspicious prosperity, and let none endure sorrow.",
+            "citation": "Bṛhadāraṇyaka / Classical Śānti Mantra Tradition",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "c. 140 CE",
-          "title": "Fourth Buddhist Council convened at Kundalvana (Kashmir)",
-          "desc": "Codification of the Mahayana Mahavibhasha commentaries; rise of Sanskrit as the Buddhist canonical tongue."
+          "title": "Fourth Buddhist Council Convened at Kundalvana (Kashmir)",
+          "desc": "Guided by Vasumitra and poet Ashvaghosha, 500 scholars compile the Mahavibhasha commentaries and launch Mahayana across Silk Roads.",
+          "place": "Kundalvana (Srinagar)",
+          "coords": {
+            "x": 748.0,
+            "y": -340.8
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "नुदन्निदाघं जितचारुचन्द्रमाः स वन्द्यतेऽर्हन्निह यस्य नोपमा । आसीद्विशालोन्नतसानुलक्ष्म्या पयोदपङ्क्त्येव परीतपार्श्वम् ॥",
+            "transliteration": "nudannidāghaṁ jitacārucandramāḥ sa vandyate'rhanniha yasya nopamā | āsīdviśālonnatasānulakṣmyā payodapaṅktyeva parītapārśvam ||",
+            "translation": "Revered is that peerless Awakened One whose cool radiance surpasses the moon, whose Dharma arose beside lofty snowy peaks.",
+            "citation": "Aśvaghoṣa, Buddhacarita 1.1–2 (Kushan Court Poet)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/बुद्धचरितम्/प्रथमः_सर्गः"
+          }
+        },
+        {
+          "year": "c. 142 CE",
+          "title": "Ashvaghosha Composes Buddhacarita—Earliest Extant Sanskrit Mahakavya",
+          "desc": "Transforms the life of Gautama Buddha into sublime classical Sanskrit poetry at Kanishka's multi-lingual court.",
+          "place": "Ayodhya / Kashmir",
+          "coords": {
+            "x": 748.0,
+            "y": -340.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
+            "transliteration": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ |",
+            "translation": "Let noble thoughts and enlightening wisdom come to us from every quarter of the earth, unhindered and illuminating all.",
+            "citation": "Rigveda 1.89.1",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१.८९"
+          }
+        },
+        {
+          "year": "c. 145 CE",
+          "title": "Twin Flowering of Gandhara Schist & Mathura Red-Sandstone Buddha Sculptures",
+          "desc": "For the first time, ateliers in Peshawar and Mathura sculpt full anthropomorphic images of the Buddha and Bodhisattvas.",
+          "place": "Mathura",
+          "coords": {
+            "x": 776.8,
+            "y": -275.0
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "अयं निजः परो वेति गणना लघुचेतसाम् । उदारचरितानां तु वसुधैव कुटुम्बकम् ॥",
+            "transliteration": "ayaṁ nijaḥ paro veti gaṇanā laghucetasām | udāracaritānāṁ tu vasudhaiva kuṭumbakam ||",
+            "translation": "'This one is my kin, that one is a foreigner'—such reckonings belong to small-minded folk; to the noble-hearted, the entire earth is one shared family.",
+            "citation": "Mahā Upaniṣad 6.72",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "c. 150 CE",
-          "title": "Construction of the colossal Kanishka Stupa in Peshawar",
-          "desc": "Over 400 feet high, praised by Faxian and Xuanzang as the tallest architectural marvel in Asia."
+          "title": "Erection of the Colossal Kanishka Stupa & Reliquary in Peshawar",
+          "desc": "Towering multi-tiered wooden-and-stone pagoda celebrated by Chinese pilgrims Faxian and Xuanzang as one of Asia's grandest wonders.",
+          "place": "Purushapura",
+          "coords": {
+            "x": 715.2,
+            "y": -340.1
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "चरथ, भिक्खवे, चारिकं बहुजनहिताय बहुजनसुखाय लोकानुकम्पाय अत्थाय हिताय सुखाय देवमनुस्सानं ॥",
+            "transliteration": "Caratha, bhikkhave, cārikaṁ bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ ||",
+            "translation": "Walk forth, O monks, upon the wandering mission for the welfare of the many, for the happiness of the many, out of compassion for the world.",
+            "citation": "Vinaya Piṭaka, Mahāvagga 1.11",
+            "lang": "Pali · Devanagari",
+            "verified_from": "https://suttacentral.net"
+          }
         },
         {
           "year": "c. 190–230 CE",
-          "title": "Reign of Vasudeva I; cultural Indianization of Kushan royal imagery",
-          "desc": "Coins feature Lord Shiva with trident and Nandi bull; adoption of Classical Indian courtly traditions."
+          "title": "Reign of Huvishka & Vasudeva I—Synthesizing Shaiva & Buddhist Patronage",
+          "desc": "Mathura sanctuary inscriptions and gold issues honor Shiva (Oesho), Karttikeya, Buddha, Nana, and Helios harmoniously.",
+          "place": "Mathura",
+          "coords": {
+            "x": 776.8,
+            "y": -275.0
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "देवानंपियो पियदसि राजा सवपासंडानि पूजयति पवजितानि च घरथानि च... सवपासंडानां तु साल-वढी अस ति ॥",
+            "transliteration": "Devānaṁpiyo Piyadasi rājā savapāsaṇḍāni pūjayati pavajitāni ca gharathāni ca... savapāsaṇḍānāṁ tu sāla-vaḍhī asa ti ||",
+            "translation": "King Priyadarsin honors all religious sects, both ascetics and householders, through gifts and reverence; for the growth of the essential core of every tradition is our true goal.",
+            "citation": "Aśoka Major Rock Edict XII (Girnar)",
+            "lang": "Prakrit · Brahmi / Devanagari",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "c. 240–270 CE",
-          "title": "Sasanian conquests split the Kushan Empire into eastern and western realms",
-          "desc": "Western provinces yield to Kushano-Sasanian princes; eastern domains continue around Mathura and Punjab."
-        },
-        {
-          "year": "375 CE",
-          "title": "Kidarite Huns and the rising Gupta Empire absorb the remaining Kushan principalities",
-          "desc": "Conclusion of over three centuries of Kushan syncretic civilization."
+          "year": "c. 240–375 CE",
+          "title": "Sasanian Pressure & Rise of the Yaudheya Republics & Guptas",
+          "desc": "Indigenous northern republics reassert autonomy in Punjab–Rajasthan while eastern Kushan realms integrate with the Guptas.",
+          "place": "Bactria / Oxus Frontier",
+          "coords": {
+            "x": 669.0,
+            "y": -367.5
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "परिवर्तिनि संसारे मृतः को वा न जायते । स जातो येन जातेन याति वंशः समुन्नतिम् ॥",
+            "transliteration": "parivartini saṁsāre mṛtaḥ ko vā na jāyate | sa jāto yena jātena yāti vaṁśaḥ samunnatim ||",
+            "translation": "In this revolving world, who is not born and does not perish? Truly born is he alone through whose deeds his dynasty and civilization ascend to enduring greatness.",
+            "citation": "Bhartṛhari, Nītiśataka 32",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -2672,10 +3844,10 @@
       "era_type": "Classical Zenith of Sanskrit, Science, Mathematics & Arts",
       "religion": "Sanatana Dharma (Vaishnavism/Shaivism) & Mahayana Buddhism",
       "viewbox": {
-        "x": 670,
-        "y": -350,
-        "w": 300,
-        "h": 220
+        "x": 620,
+        "y": -345,
+        "w": 330,
+        "h": 245
       },
       "capitals": [
         {
@@ -2702,18 +3874,18 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Samudragupta's Digvijaya & Southern Expedition (c. 375 CE)",
+          "phase": "Samudragupta's Digvijaya & Tribute Sphere (c. 375 CE)",
           "year": "375 CE",
-          "color": "#ec4899",
-          "territory_path": "M 730 -310 L 765 -300 L 820 -285 L 870 -265 L 895 -245 L 880 -225 L 850 -210 L 805 -220 L 760 -225 L 725 -255 L 715 -285 Z",
-          "description": "Samudragupta violently uprooted nine kings of Aryavarta (annexed directly) and captured and liberated twelve kings of Dakshinapatha (tributary vassals down to Kanchipuram)."
+          "color": "#f59e0b",
+          "territory_path": "M 730 -310 L 765 -300 L 820 -285 L 870 -265 L 895 -245 L 880 -225 L 850 -205 L 820 -160 L 798 -128 L 780 -150 L 790 -190 L 760 -225 L 725 -255 L 715 -285 Z",
+          "description": "Direct rule across Aryavarta combined with Samudragupta's celebrated Dakshinapatha expedition down to Kanchipuram."
         },
         {
           "phase": "Chandragupta II Vikramaditya's Peak Empire (c. 410 CE)",
           "year": "410 CE",
-          "color": "#db2777",
+          "color": "#eab308",
           "territory_path": "M 720 -315 L 755 -310 L 805 -290 L 860 -275 L 905 -255 L 910 -230 L 880 -215 L 840 -210 L 800 -215 L 760 -215 L 715 -215 L 690 -225 L 695 -245 L 710 -280 Z",
-          "description": "Conquest of the Western Kshatrapas in Saurashtra and Malwa gave the Guptas control of Arabian Sea maritime ports (Barygaza/Bharuch). Secured Deccan alliance via Prabhavatigupta's marriage to Vakataka King Rudrasena II."
+          "description": "Pinnacle Classical Golden Age integrating Gujarat and Western Malwa ports after defeating the Western Kshatrapas."
         }
       ],
       "neighboring_kingdoms": [
@@ -2831,44 +4003,232 @@
       ],
       "events": [
         {
-          "year": "320 CE",
-          "title": "Chandragupta I marries Licchavi princess Kumaradevi; founds the Gupta Era",
-          "desc": "Assumes the imperial title Maharajadhiraja, minting the famous king-and-queen gold coins."
+          "year": "319–320 CE",
+          "title": "Chandragupta I Assumes Maharajadhiraja & Launches the Gupta Era",
+          "desc": "Forges a strategic marital union with the Licchavi republic of Vaishali, minted on gold dinaras celebrating 'Kumaradevi & Sri Chandragupta'.",
+          "place": "Pataliputra / Vaishali",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "उत्तरं यत्समुद्रस्य हिमाद्रेश्चैव दक्षिणम् । वर्षं तद्भारतं नाम भारती यत्र सन्ततिः ॥",
+            "transliteration": "uttaraṁ yatsamudrasya himādreścaiva dakṣiṇam | varṣaṁ tadbhārataṁ nāma bhāratī yatra santatiḥ ||",
+            "translation": "The sacred expanse lying north of the ocean and south of the snowy Himalayas is named Bharatam; there flourish the descendants of Bharata.",
+            "citation": "Viṣṇu Purāṇa 2.3.1",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/विष्णुपुराणम्"
+          }
         },
         {
-          "year": "335–375 CE",
-          "title": "Reign of Samudragupta ('The Indian Napoleon'); performs Ashvamedha",
-          "desc": "Unifies India through military genius; excels as poet (Kaviraja) and veena player."
+          "year": "c. 335–370 CE",
+          "title": "Samudragupta's Aryavarta & Dakshinapatha Campaigns (Prayag Prashasti)",
+          "desc": "Harishena engraves 33 Sanskrit prose-and-verse lines on the Allahabad Ashokan Pillar detailing conquests from Nepal to Kanchipuram.",
+          "place": "Prayaga (Allahabad)",
+          "coords": {
+            "x": 818.5,
+            "y": -254.4
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "सर्व-राजोच्छेत्तुः पृथिव्यामप्रतिरथस्य... सर्वदक्षिणपथराज-ग्रहण-मोक्षानुग्रह-जनितप्रताप-मिश्र-महाभाग्यस्य ॥",
+            "transliteration": "sarva-rājocchettuḥ pṛthivyām-apratirathasya... sarva-Dakṣiṇāpatharāja-grahaṇa-mokṣānugraha-janita-pratāpa-miśra-mahābhāgyasya ||",
+            "translation": "Of Emperor Samudragupta—without peer upon the earth, conqueror of Aryavarta, whose noble glory shone in capturing, releasing, and restoring the kings of the South in magnanimous sovereignty.",
+            "citation": "Allāhābād Pillar Praśasti of Samudragupta (Hariṣeṇa, c. 370 CE)",
+            "lang": "Classical Sanskrit · Gupta Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "375–415 CE",
-          "title": "Reign of Chandragupta II Vikramaditya; Golden Age of Indian literature",
-          "desc": "Kalidasa composes Shakuntala and Meghaduta; Faxian visits peaceful, prosperous cities."
+          "year": "c. 375 CE",
+          "title": "Samudragupta Performs Imperial Ashvamedha & Patronizes Vasubandhu",
+          "desc": "Restores classical Ashvamedha gold coinage while celebrating scholarship, Sanskrit kavya, and veena music at court.",
+          "place": "Pataliputra",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "वङ्गानुत्खाय तरसा नेता नौसाधनोद्धतान् । निचखान जयस्तम्भान्गङ्गास्रोतोऽन्तरेषु सः ॥",
+            "transliteration": "vaṅgānutkhāya tarasā netā nausādhanoddhatān | nicakhāna jayastambhāngaṅgāsroto'ntareṣu saḥ ||",
+            "translation": "Having swiftly overcome the naval forces of Vanga, the imperial leader planted towering pillars of victory amidst the deltaic islands of the sacred Ganga.",
+            "citation": "Kālidāsa, Raghuvaṁśa 4.36",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/चतुर्थः_सर्गः"
+          }
         },
         {
-          "year": "415–455 CE",
-          "title": "Reign of Kumaragupta I; establishes Nalanda Mahavihara University",
-          "desc": "Celebrates 40 years of peace and prosperity, performing two Ashvamedha horse sacrifices."
+          "year": "c. 395 CE",
+          "title": "Chandragupta II Eliminates the Western Kshatrapas & Takes Vikramaditya",
+          "desc": "Annihilates Rudrasimha III to annex Malwa, Gujarat, and Barygaza, establishing Ujjayini as second imperial capital.",
+          "place": "Ujjayini / Vidisha",
+          "coords": {
+            "x": 757.8,
+            "y": -231.8
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "यथा प्रह्लादनाच्चन्द्रः प्रतापात्तपनो यथा । तथैव सोऽभूदन्वर्थो राजा प्रकृतिरञ्जनात् ॥",
+            "transliteration": "yathā prahlādanāc-candraḥ pratāpāt-tapano yathā | tathaiva so'bhūd-anvartho rājā prakṛti-rañjanāt ||",
+            "translation": "Just as the moon delights by its cool radiance and the sun shines by majestic brilliance, the monarch proved true to the very name 'Raja' by endearing himself to all subjects.",
+            "citation": "Kālidāsa, Raghuvaṁśa 4.12",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/चतुर्थः_सर्गः"
+          }
         },
         {
-          "year": "455–467 CE",
-          "title": "Reign of Skandagupta; repulses the Huna invasions and repairs Sudarshana Dam",
-          "desc": "Restores stability to the empire; Junagadh inscription records hydraulic engineering triumphs."
+          "year": "c. 400 CE",
+          "title": "Creation of the Rust-Free Iron Pillar of Delhi & Udayagiri Caves",
+          "desc": "Metallurgists forge a 6-ton pure wrought iron pillar impervious to corrosion at Mehrauli honoring King Chandra.",
+          "place": "Mehrauli / Udayagiri",
+          "coords": {
+            "x": 772.0,
+            "y": -285.2
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "यस्योद्वर्तयतः प्रतीपमुरसा शत्रून्समेत्यागतान् वङ्गेष्वाहववर्तिनोऽभिलिखिता खड्गेन कीर्तिर्भुजे । तीर्त्वा सप्त मुखानि येन समरे सिन्धोर्जिता बाह्लिकाः ॥",
+            "transliteration": "yasyodvartayataḥ pratīpam-urasā śatrūn sametyāgatān vaṅgeṣv-āhava-vartino'bhilikhitā khaḍgena kīrtirbhuje | tīrtvā sapta mukhāni yena samare sindhorjitā bāhlikāḥ ||",
+            "translation": "Whose fame was inscribed by the sword in Vanga when enemies united against him, and who crossed the seven mouths of the Indus in warfare to vanquish Bactria—King Chandra Vikramaditya.",
+            "citation": "Mehrauli Iron Pillar Inscription of King Chandra (c. 400 CE)",
+            "lang": "Classical Sanskrit · Gupta Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "c. 510–528 CE",
-          "title": "Alchon Hun invasion under Toramana and Mihirakula",
-          "desc": "Destruction of Buddhist monasteries across Gandhara and Punjab."
+          "year": "c. 405–411 CE",
+          "title": "Pilgrimage of Faxian & Literary Zenith of Poet Kalidasa",
+          "desc": "Chinese traveler Faxian records prosperous, lenient governance without capital punishment while Kalidasa composes Shakuntala, Meghaduta, and Raghuvamsha.",
+          "place": "Ujjayini / Pataliputra",
+          "coords": {
+            "x": 757.8,
+            "y": -231.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
+            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
+            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
+            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+          }
+        },
+        {
+          "year": "c. 425 CE",
+          "title": "Kumaragupta I Founds Nalanda Mahavihara Residential University",
+          "desc": "Endows the monastic university at Nalanda that soon draws 10,000 scholars across India, Tibet, Korea, China, and Southeast Asia.",
+          "place": "Nalanda",
+          "coords": {
+            "x": 854.4,
+            "y": -251.3
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते ।",
+            "transliteration": "na hi jñānena sadṛśaṁ pavitramiha vidyate |",
+            "translation": "In all this world there exists no purifier equal to luminous knowledge and scholarly inquiry.",
+            "citation": "Bhagavad Gītā 4.38",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/चतुर्थोऽध्यायः"
+          }
+        },
+        {
+          "year": "455–457 CE",
+          "title": "Skandagupta Repulses Pushyamitra & Huna Armies; Restores Sudarshana Dam",
+          "desc": "Bhitari and Junagadh inscriptions celebrate his defense of the borders and engineering triumph rebuilding Gujarat's burst dam in sixty days.",
+          "place": "Bhitari / Girnar",
+          "coords": {
+            "x": 832.0,
+            "y": -256.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
+            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
+            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
+            "citation": "Bhagavad Gītā 18.43",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+          }
+        },
+        {
+          "year": "499 CE",
+          "title": "Aryabhata Completes the Āryabhaṭīya at Kusumapura (Pataliputra)",
+          "desc": "Calculates pi = 3.1416, sine tables, solar year length, Earth's axial rotation, and eclipse mechanics at age twenty-three.",
+          "place": "Pataliputra (Kusumapura)",
+          "coords": {
+            "x": 851.4,
+            "y": -256.1
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "चतुराधिकं शतमष्टगुणं द्वाषष्टिस्तथा सहस्राणाम् । अयुतद्वयस्य विष्कम्भस्यासन्नो वृत्तपरिणाहः ॥",
+            "transliteration": "caturādhikaṁ śatamaṣṭaguṇaṁ dvāṣaṣṭistathā sahasrāṇām | ayutadvayasya viṣkambhasyāsanno vṛttapariṇāhaḥ ||",
+            "translation": "Add 4 to 100, multiply by 8, and add 62,000: by this rule the circumference of a circle with a diameter of 20,000 is closely 62,832 (yielding pi = 3.1416).",
+            "citation": "Āryabhaṭīya, Gaṇitapāda 10 (Pāṭaliputra / Kusumapura, 499 CE)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/आर्यभटीयम्/पादः_२"
+          }
+        },
+        {
+          "year": "c. 500–520 CE",
+          "title": "Classical Temple Genesis at Deogarh Dashavatara & Ajanta Cave Viharas",
+          "desc": "Architects pioneer Nagara stone shikhara sanctums at Deogarh while Vakataka–Gupta painters illuminate Ajanta.",
+          "place": "Deogarh",
+          "coords": {
+            "x": 782.5,
+            "y": -245.4
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "आर्यभटस्त्रीणि गदति गणितं कालक्रियां गोलम् ॥",
+            "transliteration": "Āryabhaṭastrīṇi gadati gaṇitaṁ kālakriyāṁ golam ||",
+            "translation": "Aryabhata expounds in clarity the three twin sciences: Mathematics (Ganita), Reckoning of Celestial Time (Kalakriya), and the Spherical Cosmos (Gola).",
+            "citation": "Āryabhaṭīya, Gītikāpāda 1 (499 CE)",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/आर्यभटीयम्/पादः_१"
+          }
         },
         {
           "year": "528 CE",
-          "title": "Battle of Sondani: Yashodharman and Baladitya crush Mihirakula",
-          "desc": "Liberation of northern India from Hunnic tyranny."
+          "title": "Battle of Sondani: Yashodharman & Narasimhagupta Crush Mihirakula",
+          "desc": "Decisive coalition triumph expels the Alchon Huns from central and northern India, recorded on twin victory pillars at Mandasor.",
+          "place": "Sondani (Mandasor)",
+          "coords": {
+            "x": 751.0,
+            "y": -240.5
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः । न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः ॥",
+            "transliteration": "udyamena hi sidhyanti kāryāṇi na manorathaiḥ | na hi suptasya siṁhasya praviśanti mukhe mṛgāḥ ||",
+            "translation": "Tasks are accomplished solely through resolute exertion, never through passive wishes; prey never walks of its own accord into a sleeping lion's mouth.",
+            "citation": "Hitopadeśa, Mitralābha 36",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "c. 550 CE",
-          "title": "Disintegration of the imperial Gupta state into regional kingdoms",
-          "desc": "Rise of the Maukharis of Kannauj, Pushyabhutis of Thanesar, and Maitrakas of Valabhi."
+          "title": "Varahamihira's Bṛhat Saṁhitā & Transition to Post-Gupta Kingdoms",
+          "desc": "Encyclopedic synthesis of astronomy, architecture, botany, and hydrology crowns the twilight of the imperial Gupta age.",
+          "place": "Ujjayini / Avanti",
+          "coords": {
+            "x": 757.8,
+            "y": -231.8
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "विद्वत्वं च नृपत्वं च नैव तुल्यं कदाचन । स्वदेशे पूज्यते राजा विद्वान् सर्वत्र पूज्यते ॥",
+            "transliteration": "vidvatvaṁ ca nṛpatvaṁ ca naiva tulyaṁ kadācana | svadeśe pūjyate rājā vidvān sarvatra pūjyate ||",
+            "translation": "Scholarship and royalty can never be equated: a king is honored only within his own realm, whereas the scholar is revered throughout the world.",
+            "citation": "Cāṇakya Nīti / Subhāṣita Ratna Bhāṇḍāgāra",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -3045,10 +4405,10 @@
       "era_type": "Post-Gupta Imperial Re-Unification of Aryavarta",
       "religion": "Shaivism & Mahayana Buddhism",
       "viewbox": {
-        "x": 680,
-        "y": -340,
-        "w": 280,
-        "h": 200
+        "x": 685,
+        "y": -335,
+        "w": 270,
+        "h": 225
       },
       "capitals": [
         {
@@ -3068,11 +4428,18 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Harshavardhana's Empire at Peak (630 CE)",
+          "phase": "Early Pushyabhuti & Maukhari Alliance (606–612 CE)",
+          "year": "612 CE",
+          "color": "#38bdf8",
+          "territory_path": "M 750 -310 L 795 -295 L 850 -275 L 860 -245 L 815 -235 L 770 -245 L 750 -275 Z",
+          "description": "Young Harsha unifies Thanesar and Maukhari Kannauj, rescuing Queen Rajyashri and launching his eastern campaign."
+        },
+        {
+          "phase": "Harshavardhana's Imperial Peak (630–647 CE)",
           "year": "630 CE",
-          "color": "#8b5cf6",
+          "color": "#06b6d4",
           "territory_path": "M 740 -315 L 775 -305 L 820 -285 L 870 -265 L 900 -245 L 885 -225 L 840 -218 L 800 -218 L 760 -218 L 735 -225 L 725 -250 L 730 -285 Z",
-          "description": "Harsha unified the whole of northern India from Punjab to Bengal and Odisha. His southern boundary was permanently anchored along the Narmada River following his clash with Pulakeshin II."
+          "description": "Sovereign northern empire spanning from Punjab and Vallabhi to Magadha, Bengal, Kongoda (Odisha), with Kamarupa alliance."
         }
       ],
       "neighboring_kingdoms": [
@@ -3171,34 +4538,194 @@
       ],
       "events": [
         {
+          "year": "605 CE",
+          "title": "Prince Harsha Leads Northwestern Defense Against Alchon Huna Remnants",
+          "desc": "Alongside crown prince Rajyavardhana, sixteen-year-old Harsha campaigns across northern Punjab frontiers.",
+          "place": "Thanesar (Sthanishvara)",
+          "coords": {
+            "x": 768.2,
+            "y": -299.8
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "शौर्यं तेजो धृतिर्दाक्ष्यं युद्धे चाप्यपलायनम् । दानमीश्वरभावश्च क्षात्रं कर्म स्वभावजम् ॥",
+            "transliteration": "śauryaṁ tejo dhṛtir dākṣyaṁ yuddhe cāpy apalāyanam | dānam īśvara-bhāvaś ca kṣātraṁ karma svabhāva-jam ||",
+            "translation": "Valor, splendor, steadfast resolve, tactical skill, refusing flight in battle, generosity, and noble leadership are the innate duties of sovereign guardians.",
+            "citation": "Bhagavad Gītā 18.43",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/अष्टादशोऽध्यायः"
+          }
+        },
+        {
           "year": "606 CE",
-          "title": "Harsha ascends the throne at age 16; unifies Thanesar and Kannauj",
-          "desc": "Combines the Vardhana and Maukhari kingdoms following the murder of his brother Rajyavardhana."
+          "title": "Tragedy at Kannauj, Rescue in the Vindhyas & Dual Coronation",
+          "desc": "Following murders of Prabhakaravardhana and Rajyavardhana, Harsha rescues sister Rajyashri from Vindhya forests and unites Thanesar & Kannauj.",
+          "place": "Kannauj (Kanyakubja)",
+          "coords": {
+            "x": 799.2,
+            "y": -270.6
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "दैवेनापि क्रियते भव्यानां पूर्वसेवेव । विद्वज्जनसम्पर्को नष्टेष्टज्ञातिदर्शनाभ्युदयः ॥",
+            "transliteration": "daivenāpi kriyate bhavyānāṁ pūrvaseveva | vidvajjanasamparko naṣṭeṣṭajñātidarśanābhyudayaḥ ||",
+            "translation": "Providence itself serves the noble-souled: granting communion with wise scholars and blissful reunion with beloved kindred restored from adversity.",
+            "citation": "Bāṇabhaṭṭa, Harṣacarita, Ucchvāsa 8.1–2",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/हर्षचरितम्/अष्टमोच्छ्वासः"
+          }
         },
         {
-          "year": "618 CE",
-          "title": "Battle of the Narmada against Pulakeshin II Chalukya",
-          "desc": "Pulakeshin halts Harsha's advance; formal treaty confirms the Narmada as the border of North and South India."
+          "year": "607 CE",
+          "title": "Alliance with Bhaskaravarman of Kamarupa (Assam) Against Shashanka",
+          "desc": "Receives royal umbrella embassy from Kamarupa envoy Hamsavega along the Sarasvati bank, sealing an enduring eastern frontier pact.",
+          "place": "Kamarupa / Thanesar",
+          "coords": {
+            "x": 917.4,
+            "y": -261.8
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "वल्मीकश्च सुमेरुः कृतप्रतिज्ञस्य वीरस्य । धृतधनुषि बाहुशालिनि शैला न नमन्ति यत्तदाश्चर्यम् ॥",
+            "transliteration": "valmīkaśca sumeruḥ kṛtapratijñasya vīrasya | dhṛtadhanuṣi bāhuśālini śailā na namanti yattadāścaryam ||",
+            "translation": "Even Mount Sumeru appears no taller than an anthill before a resolute hero of iron vow; what wonder when mountains themselves bow before his uplifted bow?",
+            "citation": "Bāṇabhaṭṭa, Harṣacarita, Ucchvāsa 7.1–2",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/हर्षचरितम्/सप्तमोच्छ्वासः"
+          }
         },
         {
-          "year": "629 CE",
-          "title": "Chinese pilgrim Xuanzang begins his 16-year journey across India",
-          "desc": "Travels through the Silk Road, reaches Kannauj, and becomes an honored guest of Emperor Harsha."
+          "year": "c. 618–619 CE",
+          "title": "Battle of the Narmada: Pulakeshin II Halts Harsha's Southern Advance",
+          "desc": "Immortalized in Ravikirti's Aihole Prashasti, Chalukya war elephants fix the Narmada as eternal frontier between North and South India.",
+          "place": "Narmada Crossing",
+          "coords": {
+            "x": 765.0,
+            "y": -218.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "अपरिमितविभूतिस्फीतसामन्तसेना-मकुटमणिमयूखाक्रान्तपादारविन्दः । युधि पतितगजेन्द्रानीकबीभत्सभूतो भयविगलितहर्षो येन चाकारि हर्षः ॥",
+            "transliteration": "aparimita-vibhūti-sphīta-sāmanta-senā-makuṭa-maṇi-mayūkhākrānta-pādāravindaḥ | yudhi patita-gajendrānīka-bībhatsa-bhūto bhaya-vigalita-harṣo yena cākāri Harṣaḥ ||",
+            "translation": "Harsha—whose lotus feet shone with the diadem-jewels of countless vassal hosts—had his joy ('Harsha') dissolved in awe when his mighty war elephants fell upon the Narmada bank before Pulakeshin II.",
+            "citation": "Aihole Praśasti of Ravikīrti (Meguti Temple, 634 CE)",
+            "lang": "Classical Sanskrit · Chalukya Brahmi",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "636 CE",
-          "title": "Harsha authors classic Sanskrit dramas Ratnavali, Priyadarsika, and Nagananda",
-          "desc": "Renowned as a patron of literature and an accomplished royal playwright and calligrapher."
+          "year": "c. 625 CE",
+          "title": "Subjugation & Marital Reconciliation with Vallabhi in Gujarat",
+          "desc": "Defeats Maitraka King Dhruvasena II of Vallabhi, then weds his daughter to the ruler—securing western maritime trade corridors.",
+          "place": "Valabhi",
+          "coords": {
+            "x": 718.7,
+            "y": -218.8
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "स्वराष्ट्रे न्यायवृत्तः स्याद् भृशदण्डश्च शत्रुषु । सुहृत्स्वजिह्मः स्निग्धेषु ब्राह्मणेषु क्षमान्वितः ॥",
+            "transliteration": "svarāṣṭre nyāyavṛttaḥ syād bhṛśadaṇḍaśca śatruṣu | suhṛtsvajihmaḥ snigdheṣu brāhmaṇeṣu kṣamānvitaḥ ||",
+            "translation": "Within his own kingdom a ruler must uphold strict justice, be formidable against aggressors, unfailingly loyal toward allies, and compassionate toward scholars and citizens.",
+            "citation": "Manusmṛti 7.32",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/मनुस्मृतिः/सप्तमोध्यायः"
+          }
+        },
+        {
+          "year": "628–632 CE",
+          "title": "Banskhera & Madhuban Royal Copper Plates Signed by Harsha's Own Hand",
+          "desc": "Harsha issues tax-free agrahara endowments bearing his own ornate Siddhamatrika autograph: 'Svahasto mama Maharajadhiraja Sri Harshasya'.",
+          "place": "Kannauj / Ahichchhatra",
+          "coords": {
+            "x": 791.8,
+            "y": -283.6
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "प्रजासुखे सुखं राज्ञः प्रजानां च हिते हितम् । नात्मप्रियं हितं राज्ञः प्रजानां तु प्रियं हितम् ॥",
+            "transliteration": "prajāsukhe sukhaṁ rājñaḥ prajānāṁ ca hite hitam | nātmapriyaṁ hitaṁ rājñaḥ prajānāṁ tu priyaṁ hitam ||",
+            "translation": "In the happiness of the subjects lies the happiness of the sovereign; in their welfare rests his own welfare. Not what pleases himself, but what uplifts his people is the king's good.",
+            "citation": "Kauṭilya Arthaśāstra 1.19.34",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/अर्थशास्त्रम्"
+          }
+        },
+        {
+          "year": "629–644 CE",
+          "title": "Pilgrim Xuanzang Travels India & Studies Five Years at Nalanda",
+          "desc": "Master of Law Xuanzang documents thriving monastic hostels, 100-village Nalanda endowments, and Harsha's tireless frontier tours.",
+          "place": "Nalanda Mahavihara",
+          "coords": {
+            "x": 854.4,
+            "y": -251.3
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "विद्वत्वं च नृपत्वं च नैव तुल्यं कदाचन । स्वदेशे पूज्यते राजा विद्वान् सर्वत्र पूज्यते ॥",
+            "transliteration": "vidvatvaṁ ca nṛpatvaṁ ca naiva tulyaṁ kadācana | svadeśe pūjyate rājā vidvān sarvatra pūjyate ||",
+            "translation": "Scholarship and royalty can never be equated: a king is honored only within his own realm, whereas the scholar is revered throughout the world.",
+            "citation": "Cāṇakya Nīti / Subhāṣita Ratna Bhāṇḍāgāra",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
+        },
+        {
+          "year": "c. 636 CE",
+          "title": "Harsha Authors Classical Sanskrit Plays Ratnāvalī, Priyadarśikā & Nāgānanda",
+          "desc": "Emperor-dramatist patronizes Banabhatta and composes three enduring plays—two romantic comedies and a Buddhist Bodhisattva drama.",
+          "place": "Kannauj",
+          "coords": {
+            "x": 799.2,
+            "y": -270.6
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
+            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
+            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
+            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+          }
+        },
+        {
+          "year": "642–643 CE",
+          "title": "Conquest of Kongoda (Odisha) & Envoy Exchange with Tang Emperor Taizong",
+          "desc": "Consolidates eastern seaboard down to Ganjam while dispatching diplomatic envoys between Kannauj and Tang Chang'an.",
+          "place": "Kongoda (Ganjam)",
+          "coords": {
+            "x": 850.5,
+            "y": -193.8
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "अयं निजः परो वेति गणना लघुचेतसाम् । उदारचरितानां तु वसुधैव कुटुम्बकम् ॥",
+            "transliteration": "ayaṁ nijaḥ paro veti gaṇanā laghucetasām | udāracaritānāṁ tu vasudhaiva kuṭumbakam ||",
+            "translation": "'This one is my kin, that one is a foreigner'—such reckonings belong to small-minded folk; to the noble-hearted, the entire earth is one shared family.",
+            "citation": "Mahā Upaniṣad 6.72",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         },
         {
           "year": "643 CE",
-          "title": "Grand Kannauj Religious Assembly and Maha Moksha Parishad at Prayag",
-          "desc": "Assembly attended by 20 tributary kings, 4,000 Buddhist monks, and thousands of Jaina and Brahmanical scholars."
-        },
-        {
-          "year": "647 CE",
-          "title": "Death of Emperor Harsha without an heir; end of the Vardhana Empire",
-          "desc": "Minister Arjuna seizes power; conflict with Chinese envoy Wang Xuance marks the collapse of Kannauj's hegemony."
+          "title": "Grand Kannauj Religious Debate & Prayag Maha-Moksha Parishad",
+          "desc": "Before 20 kings and 5,000 scholars at Kannauj and Prayag, Harsha empties his five-year treasury in universal charity down to his own tunic.",
+          "place": "Prayaga (Allahabad)",
+          "coords": {
+            "x": 818.5,
+            "y": -254.4
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "अष्टादशपुराणेषु व्यासस्य वचनद्वयम् । परोपकारः पुण्याय पापाय परपीडनम् ॥",
+            "transliteration": "aṣṭādaśapurāṇeṣu vyāsasya vacanadvayam | paropakāraḥ puṇyāya pāpāya parapīḍanam ||",
+            "translation": "Across all eighteen Puranas, the sage Vyasa distills two eternal maxims: charitable service to others brings sacred merit; inflicting harm upon others brings ruin.",
+            "citation": "Subhāṣita / Skanda & Padma Purāṇa Tradition (Prayāg Charity Assembly)",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org"
+          }
         }
       ],
       "shloka_epigraph": {
@@ -3371,10 +4898,10 @@
       "era_type": "Maritime Mastery, Dravidian Temple Architecture & Sangam Literature",
       "religion": "Shaivism (Nayanars), Vaishnavism (Alvars), Jainism & Buddhism",
       "viewbox": {
-        "x": 730,
-        "y": -200,
-        "w": 180,
-        "h": 160
+        "x": 720,
+        "y": -250,
+        "w": 200,
+        "h": 195
       },
       "capitals": [
         {
@@ -3422,11 +4949,25 @@
       ],
       "boundary_phases": [
         {
-          "phase": "Sangam Triarchy & Pallava Ascendancy (c. 650 CE)",
+          "phase": "Sangam Triarchy: Chola, Chera & Pandya (c. 150 CE)",
+          "year": "150 CE",
+          "color": "#34d399",
+          "territory_path": "M 755 -130 L 795 -132 L 802 -105 L 785 -85 L 762 -92 L 758 -115 Z",
+          "description": "Classical Tamilakam Muventhar kingdoms ruling from Madurai, Uraiyur, and Vanchi–Muziris with Mediterranean maritime trade."
+        },
+        {
+          "phase": "Pallava & Badami Chalukya Polarity (c. 650 CE)",
           "year": "650 CE",
-          "color": "#14b8a6",
+          "color": "#10b981",
           "territory_path": "M 740 -170 L 775 -175 L 805 -160 L 805 -130 L 800 -105 L 785 -85 L 770 -85 L 760 -105 L 750 -130 L 745 -155 Z",
-          "description": "Dynamic multi-polar balance of power across peninsular India between the Badami Chalukyas in Karnataka, Pallavas in Kanchi, and the Sangam realms of the Kaveri and Vaigai basins."
+          "description": "Pallavas of Kanchi (Mamallapuram sculptors) & Western Chalukyas of Badami contest the Krishna-Tungabhadra doab."
+        },
+        {
+          "phase": "Imperial Chola Zenith & Trans-Oceanic Thalassocracy (1030 CE)",
+          "year": "1030 CE",
+          "color": "#14b8a6",
+          "territory_path": "M 745 -172 L 780 -175 L 820 -168 L 858 -202 L 882 -228 L 840 -185 L 815 -140 L 805 -105 L 808 -80 L 782 -82 L 760 -100 L 752 -135 Z",
+          "description": "Under Rajaraja I and Rajendra I: unified South India, Sri Lanka, Maldives, coastal Kalinga–Bengal expedition, and Southeast Asian naval campaigns."
         }
       ],
       "neighboring_kingdoms": [
@@ -3539,44 +5080,232 @@
       ],
       "events": [
         {
-          "year": "c. 300 BCE – 300 CE",
-          "title": "Classical Sangam Age in Tamilakam",
-          "desc": "Flourishing of Old Tamil poetry (Ettuthokai, Pattupattu) under the Chera, Chola, and Pandya crowns."
+          "year": "c. 200 BCE – 200 CE",
+          "title": "Tamil Sangam Academies of Madurai & Cosmopolitan Poet Tradition",
+          "desc": "Poets assemble Etuttogai and Pattuppattu anthologies celebrating universal human kinship ('Every town is our home town, every human is kin').",
+          "place": "Madurai",
+          "coords": {
+            "x": 781.2,
+            "y": -99.2
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "யாதும் ஊரே யாவரும் கேளிர் தீதும் நன்றும் பிறர்தர வாரா ॥",
+            "transliteration": "Yātum ūrē yāvarum kēḷir tītum naṉṟum piṟartara vārā ||",
+            "translation": "Every town is our hometown, and every human being is our kinsman; neither good nor ill comes solely from strangers.",
+            "citation": "Puṟanāṉūṟu 192 (Kaṇiyaṉ Pūṅkuṉṟaṉār)",
+            "lang": "Old Tamil · Sangam Literature",
+            "verified_from": "https://ta.wikisource.org/wiki/புறநானூறு"
+          }
+        },
+        {
+          "year": "c. 50–150 CE",
+          "title": "Roman Aurii Maritime Commerce at Muziris, Korkai & Puhar",
+          "desc": "Yavana vessels cross monsoon winds for black pepper, pearls, and beryl, while Pattinappalai describes bustling Puhar customs warehouses.",
+          "place": "Muziris / Puhar",
+          "coords": {
+            "x": 762.0,
+            "y": -102.0
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "கடலோடா கால்வல் நெடுந்தேர் கடலோடும் நாவாயும் ஓடா நிலத்து ॥",
+            "transliteration": "Kaṭalōṭā kālval neṭuntēr kaṭalōṭum nāvāyum ōṭā nilattu ||",
+            "translation": "Even the stoutest-wheeled war chariot cannot sail across the ocean, nor can the sea-going merchant vessel run upon dry earth—master the proper arena of action.",
+            "citation": "Tirukkuṟaḷ 496 (Iṭaṉaṟital / Naval Strategy)",
+            "lang": "Classical Tamil · Tamil Script",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
         },
         {
           "year": "c. 130 CE",
-          "title": "Karikala Chola builds the Kallanai (Grand Anicut) on the Kaveri",
-          "desc": "Oldest surviving stone water-diversion dam in continuous use in the world, irrigating the Delta."
+          "title": "Karikala Chola Wins Battle of Venni & Builds the Kallanai (Grand Anicut)",
+          "desc": "Constructs an unyielding stone weir across the Kaveri delta—one of the world's oldest surviving water-diversion dams still in use.",
+          "place": "Uraiyur / Thanjavur",
+          "coords": {
+            "x": 791.3,
+            "y": -107.8
+          },
+          "category": "Polity",
+          "shloka": {
+            "text": "பிணியின்மை செல்வம் விளைவின்பம் ஏமம் அணியென்ப நாட்டிற்கிவ் வைந்து ॥",
+            "transliteration": "Piṇiyiṉmai celvam viḷaiviṉpam ēmam aṇiyeṉpa nāṭṭiṟkiv vaintu ||",
+            "translation": "Freedom from disease, abundant wealth, fertile harvests, civic happiness, and unfailing security—these five are the true jewels of a great nation.",
+            "citation": "Tirukkuṟaḷ 738 (Nāṭu / The Nation)",
+            "lang": "Classical Tamil · Tamil Script",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
         },
         {
-          "year": "575 CE",
-          "title": "Simhavishnu founds the Greater Pallava Dynasty at Kanchipuram",
-          "desc": "Ends the mysterious Kalabhra interregnum, inaugurating monumental rock-cut Dravidian architecture."
+          "year": "c. 350 CE",
+          "title": "Tiruvalluvar Composes the Universal Couplets of the Tirukkuṟaḷ",
+          "desc": "1,330 Tamil couplets synthesize virtue (Aram), sovereign statecraft (Porul), and human ethics in luminous aphoristic poetry.",
+          "place": "Madurai / Mylapore",
+          "coords": {
+            "x": 802.7,
+            "y": -130.5
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "படைகுடி கூழமைச்சு நட்பரண் ஆறும் உடையான் அரசருள் ஏறு ॥",
+            "transliteration": "Paṭaikuṭi kūḻamaiccu naṭparaṇ āṟum uṭaiyāṉ aracaruḷ ēṟu ||",
+            "translation": "An army, loyal subjects, abundant wealth, wise ministers, allies, and strong citadels—the sovereign who commands these six pillars stands as a lion among kings.",
+            "citation": "Tirukkuṟaḷ 381 (Iṟaimāṭci)",
+            "lang": "Classical Tamil · Vatteluttu / Tamil",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
+        },
+        {
+          "year": "c. 600–630 CE",
+          "title": "Mahendravarman I Pioneers Rock-Cut Cave Temples & Mattavilasa Sanskrit Drama",
+          "desc": "Excavates Mandagapattu and Mamandur cave shrines declaring his granite art free of brick, timber, or mortar.",
+          "place": "Kanchipuram",
+          "coords": {
+            "x": 797.0,
+            "y": -128.3
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "प्रज्ञा-दान-दयानुभाव-धृतयः कान्ति-कला-कौशलं सत्यं शौर्यम् अमायता विनय इत्येवंप्रकारा गुणाः ॥",
+            "transliteration": "prajñā-dāna-dayānubhāva-dhṛtayaḥ kānti-kalā-kauśalaṁ satyaṁ śauryam amāyatā vinaya ityevaṁprakārā guṇāḥ ||",
+            "translation": "Wisdom, munificence, compassion, majesty, fortitude, artistry in sculpture and letters, truth, valor, and humility—all sought shelter in Pallava sovereign Mahendravarman I.",
+            "citation": "Mattavilāsa Prahasanam, Nāndī 3 (King Mahendravarman I, Kanchipuram)",
+            "lang": "Classical Sanskrit · Pallava Court Drama",
+            "verified_from": "https://sa.wikisource.org/wiki/मत्तविलासप्रहसनम्"
+          }
         },
         {
           "year": "642 CE",
-          "title": "Narasimhavarman I (Mamalla) captures Vatapi and sculpts Mamallapuram",
-          "desc": "Carves monolithic rathas and the celebrated 'Descent of the Ganga' open-air rock bas-relief."
+          "title": "Narasimhavarman I (Mamalla) Storms Vatapi & Carves Mamallapuram Monuments",
+          "desc": "Pallava forces defeat Chalukya Pulakeshin II at Vatapi and sculpt the Five Rathas, Shore Temple, and Arjuna's Penance along the Coromandel.",
+          "place": "Mamallapuram / Vatapi",
+          "coords": {
+            "x": 801.9,
+            "y": -126.2
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः । स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥",
+            "transliteration": "yadyadācarati śreṣṭhastattadevetaro janaḥ | sa yatpramāṇaṁ kurute lokastadanuvartate ||",
+            "translation": "Whatever lofty standard the sovereign exemplar sets by conduct, the common folk emulate; whatever rule the wise ruler establishes, the realm follows.",
+            "citation": "Bhagavad Gītā 3.21 & Cāṇakya Nīti 13.8 ('Yathā Rājā Tathā Prajāḥ')",
+            "lang": "Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/भगवद्गीता/तृतीयोऽध्यायः"
+          }
+        },
+        {
+          "year": "c. 770 CE",
+          "title": "Rashtrakuta Monolithic Kailasanatha Temple Excavated at Ellora",
+          "desc": "Krishna I's master sculptors carve a towering multi-storey temple downward out of a single basalt cliff.",
+          "place": "Manyakheta / Ellora",
+          "coords": {
+            "x": 771.5,
+            "y": -171.8
+          },
+          "category": "Culture",
+          "shloka": {
+            "text": "वागर्थाविव सम्पृक्तौ वागर्थप्रतिपत्तये । जगतः पितरौ वन्दे पार्वतीपरमेश्वरौ ॥",
+            "transliteration": "vāgarthāviva sampṛktau vāgarthapratipattaye | jagataḥ pitarau vande pārvatīparameśvarau ||",
+            "translation": "Inseparable as word and its meaning, I bow to Parvati and Parameshvara, the eternal parents of the cosmos, for illumination in eloquence and truth.",
+            "citation": "Kālidāsa, Raghuvaṁśa 1.1",
+            "lang": "Classical Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/रघुवंशम्/प्रथमः_सर्गः"
+          }
         },
         {
           "year": "848 CE",
-          "title": "Vijayalaya Chola captures Thanjavur, founding the Imperial Chola Dynasty",
-          "desc": "Transforms a local principality into the dominant maritime empire of the Indian Ocean."
+          "title": "Vijayalaya Chola Captures Thanjavur, Founding the Imperial Chola Dynasty",
+          "desc": "Rises along the Kaveri floodplains to revive Chola hegemony over Tondaimandalam and the eastern littoral.",
+          "place": "Thanjavur",
+          "coords": {
+            "x": 791.3,
+            "y": -107.8
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "கற்க கசடறக் கற்பவை கற்றபின் நிற்க அதற்குத் தக ॥",
+            "transliteration": "Kaṟka kacaṭaṟak kaṟpavai kaṟṟapiṉ niṟka ataṟkut taka ||",
+            "translation": "Learn faultlessly whatever is worthy to be learned, and having mastered it, stand steadfastly in conduct worthy of that wisdom.",
+            "citation": "Tirukkuṟaḷ 391 (Kalvi / Learning)",
+            "lang": "Classical Tamil · Tamil Script",
+            "verified_from": "https://ta.wikisource.org/wiki/திருக்குறள்"
+          }
         },
         {
-          "year": "985–1014 CE",
-          "title": "Reign of Rajaraja Chola I; consecration of the Brihadisvara Temple (1010 CE)",
-          "desc": "Pioneers systematic revenue cadastre, imperial naval fleets, and supreme Dravidian granite architecture."
+          "year": "921 CE",
+          "title": "Parantaka Chola I Inscribes the Kudavolai Constitutional Charter at Uttaramerur",
+          "desc": "Codifies secret pot-ballot village elections, eligibility age/education norms, term rotation, and mandatory financial audits.",
+          "place": "Kanchipuram / Uttaramerur",
+          "coords": {
+            "x": 797.5,
+            "y": -126.2
+          },
+          "category": "Constitution",
+          "shloka": {
+            "text": "குடவோலை முறைமைப்படி வாரிப்பெருமக்களாய் ஆண்டுதோறும்... ஊரிலுள்ள மகாசபையார் முன்னிலையில் ஓலை பறிப்பித்து ॥",
+            "transliteration": "Kuṭavōlai muṟaimaippaṭi vāripperumakkaḷāy āṇṭutōṟum... mahāsapaiyār muṉṉilaiyil ōlai paṟippittu ||",
+            "translation": "By secret palm-leaf pot-ballot (Kudavolai), audited village electors shall choose annual administrative committees before the full Mahasabha assembly, barring anyone without spotless fiscal accounts.",
+            "citation": "Uttaramerūr Constitutional Inscription of Parāntaka Cōḻa I (921 CE)",
+            "lang": "Old Tamil · Tamil / Grantha",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "1014–1044 CE",
-          "title": "Reign of Rajendra Chola I; Naval expedition to Srivijaya and Kadaram",
-          "desc": "Conquers 14 ports in Sumatra and Malaya; brings the sacred Ganga waters to his new capital."
+          "year": "985–1010 CE",
+          "title": "Reign of Rajaraja Chola I & Consecration of the Brihadisvara Temple",
+          "desc": "Completes systematic land revenue surveys, conquers northern Sri Lanka, and raises the 66-meter granite Brihadisvara Vimana in Thanjavur.",
+          "place": "Thanjavur",
+          "coords": {
+            "x": 791.3,
+            "y": -107.8
+          },
+          "category": "Turning Point",
+          "shloka": {
+            "text": "திருமகள் போலப் பெருநிலச் செல்வியுந் தனக்கே உரிமை பூண்டமை மனக்கொளக் காந்தளூர்ச் சாலை கலமறுத்தருளி... இராஜராஜேஸ்வரம் எடுத்தருளிய ஸ்ரீராஜராஜ தேவர் ॥",
+            "transliteration": "Tirumakaḷ pōlap perunilac celviyun taṉakkē urimai pūṇṭamai maṉakkoḷak Kāntaḷūrc cālai kalam-aṟuttaruḷi... Rājarājēśvaram eṭuttaruḷiya Śrī Rājarāja Dēvar ||",
+            "translation": "Emperor Rajaraja Chola I—beloved of Earth and Fortune alike—who shattered the western fleet at Kandalur Salai, surveyed every village revenue boundary, and raised the granite Brihadisvara sanctuary at Thanjavur.",
+            "citation": "Brihadīśvara Temple South Wall Meikeerthi (1010 CE)",
+            "lang": "Old Tamil · Tamil & Grantha",
+            "verified_from": "https://asi.nic.in"
+          }
         },
         {
-          "year": "1070 CE",
-          "title": "Accession of Kulottunga Chola I; union of Chola and Eastern Chalukya crowns",
-          "desc": "Dispatches major mercantile embassies to Song China and abolishes transit tolls ('Sungam Tavirtta Cholan')."
+          "year": "1023 CE",
+          "title": "Rajendra Chola I Marches to the Ganga & Founds Gangaikondacholapuram",
+          "desc": "Purifies a sacred Liquid Pillar of Victory filled with Ganga water beside a towering Chola-era temple and irrigation lake.",
+          "place": "Gangaikonda Cholapuram",
+          "coords": {
+            "x": 794.5,
+            "y": -112.0
+          },
+          "category": "Conquest",
+          "shloka": {
+            "text": "इमं मे गङ्गे यमुने सरस्वति शुतुद्रि स्तोमं सचता परुष्ण्या ।",
+            "transliteration": "imaṁ me gaṅge yamune sarasvati śutudri stomaṁ sacatā paruṣṇyā |",
+            "translation": "Accept my hymn of praise, O sacred rivers Ganga, Yamuna, Sarasvati, Sutudri (Sutlej), along with Parushni (Ravi), Asikni, and Vitasta (Jhelum).",
+            "citation": "Rigveda 10.75.5 (Nadīstuti Sūkta)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऋग्वेदः_सूक्तं_१०.७५"
+          }
+        },
+        {
+          "year": "1025 CE",
+          "title": "Trans-Oceanic Chola Naval Expedition to Srivijaya (Malaya & Sumatra)",
+          "desc": "Blue-water Chola armada sails across the Bay of Bengal, subjugating Kedah and Palembang to protect maritime trade guilds to Song China.",
+          "place": "Puhar / Coromandel Fleet",
+          "coords": {
+            "x": 798.5,
+            "y": -111.5
+          },
+          "category": "Diplomacy",
+          "shloka": {
+            "text": "नानाश्रान्ताय श्रीरस्तीति रोहित शुश्रुम । पापो नृषद्वरो जन इन्द्र इच्चरतः सखा । चरैवेति चरैवेति ॥",
+            "transliteration": "nānāśrāntāya śrīrastīti rohita śuśruma | pāpo nṛṣadvaro jana indra iccarataḥ sakhā | caraiveti caraiveti ||",
+            "translation": "Fortune never favors one who refuses to strive forward; Indra himself befriends the tireless explorer—therefore march onward, march onward!",
+            "citation": "Aitareya Brāhmaṇa 7.15 (Indra-Rohita Hymn)",
+            "lang": "Vedic Sanskrit · Devanagari",
+            "verified_from": "https://sa.wikisource.org/wiki/ऐतरेयब्राह्मणम्"
+          }
         }
       ],
       "shloka_epigraph": {

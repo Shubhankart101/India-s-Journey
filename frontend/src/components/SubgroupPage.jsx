@@ -32,8 +32,8 @@ const finite = value => value !== null && value !== undefined && Number.isFinite
 
 function figureHeight(indicator, type, labelCount) {
   if (SPECIAL_TYPES.has(indicator.chart_type)) return SPECIAL_HEIGHT;
-  if (type === 'bar' && indicator.index_axis === 'y') return Math.min(560, 70 + 26 * labelCount);
-  return type === 'doughnut' || type === 'pie' ? 320 : 300;
+  if (type === 'bar' && indicator.index_axis === 'y') return Math.max(250, Math.min(560, 96 + 34 * labelCount));
+  return type === 'doughnut' || type === 'pie' ? 340 : 320;
 }
 
 // One inline, interactive chart; maps become a top-ten bar chart because the full map lives in the selector.
@@ -176,6 +176,64 @@ export function SubgroupArticleView({
         ? ['metro-atlas.svg', 'metro-transit.svg', 'maps-indian-railways.svg']
         : (subgroup.art || category.art);
 
+  const chartsShowcase = (isIvc || isEmpires) && indicators.length > 0 ? (
+    <section className="subgroup-quantitative-showcase" aria-labelledby="subgroup-quant-heading">
+      <div className="sqs-header">
+        <span className="sqs-kicker">QUANTITATIVE ARCHAEOLOGY &amp; STATISTICAL CHARTS</span>
+        <h2 id="subgroup-quant-heading">
+          {isIvc
+            ? 'Excavated Scale, Seal Corpus & Settlement Shifts Across Eras'
+            : 'Imperial Territorial Trajectory, Military Logistics & Epigraphic Corpus'}
+        </h2>
+        <p className="sqs-lead">
+          {isIvc
+            ? 'Interactive statistical charts synthesizing ASI excavation footprints, Mahadevan concordance sign distributions, maritime route distances, and Late Harappan basin shifts.'
+            : 'Interactive datasets comparing territorial spans across 1,500 years of empire, standing military corps, royal inscriptions across Prakrit/Sanskrit/Tamil, and Indo-Roman coin hoards.'}
+        </p>
+      </div>
+      <div className="subgroup-article-sections sqs-sections">
+        {(() => {
+          const seenKeys = new Set();
+          const baseSections = (article?.sections?.length
+            ? article.sections
+            : [{ title: 'Statistical Charts', text: subgroup.description || '', keys: indicators.map(i => i.key) }]
+          ).map(section => {
+            const keys = (section.keys || []).filter(k => {
+              const item = byKey.get(k);
+              if (!item || seenKeys.has(k)) return false;
+              seenKeys.add(k);
+              return true;
+            });
+            return { ...section, keys };
+          }).filter(s => s.keys.length > 0);
+          const remainingKeys = indicators.map(i => i.key).filter(k => !seenKeys.has(k));
+          if (remainingKeys.length > 0) {
+            baseSections.push({
+              title: 'Additional Quantitative Metrics & Indicators',
+              text: `Published datasets and historical series tracked for ${subgroup.name}:`,
+              keys: remainingKeys,
+            });
+          }
+          return baseSections.map((section, idx) => (
+            <section className="subgroup-article-section" key={`quant-${idx}`}>
+              <span className="subgroup-article-index" aria-hidden="true">Q{String(idx + 1).padStart(2, '0')}</span>
+              <div className="subgroup-article-section-body">
+                <h2>{section.title}</h2>
+                {section.text && <p>{section.text}</p>}
+                <div className="subgroup-figures">
+                  {section.keys.map(k => byKey.get(k)).filter(Boolean).map(item => (
+                    <ChartFigure key={item.key} indicator={item} />
+                  ))}
+                </div>
+              </div>
+            </section>
+          ));
+        })()}
+      </div>
+      <AllCharts indicators={indicators} />
+    </section>
+  ) : null;
+
   return (
     <>
       <ArtBackdrop art={artPlaylist} />
@@ -191,7 +249,7 @@ export function SubgroupArticleView({
         quoteAfterSection={-1}
         verse={verse}
         lead={<>{callout}{lead}</>}
-        after={(sectionsFilter || isIvc || isEmpires || isMetro) ? null : <AllCharts indicators={indicators} />}
+        after={(isIvc || isEmpires) ? chartsShowcase : ((sectionsFilter || isMetro) ? null : <AllCharts indicators={indicators} />)}
         sources={article?.sources || []}
         chipSources
         className="generated-subgroup-article"
@@ -601,6 +659,39 @@ export function buildEmpiresArticleSections(currentEmpire, onSelectEmpire, allEm
         </div>
       ),
     },
+    ...(currentEmpire.events?.length ? [{
+      title: `Chronological Events & Defining Classical Shlokas (${currentEmpire.events.length} Landmarks)`,
+      text: `Key historical milestones, constitutional charters, and cultural foundations of ${currentEmpire.name}, each paired with an authentic verse or epigraphic excerpt illuminating the ideals and statecraft of the era:`,
+      content: (
+        <div className="article-events-shloka-grid">
+          {currentEmpire.events.map((ev, idx) => (
+            <article key={idx} className="article-event-shloka-card">
+              <div className="aesc-top">
+                <span className="aesc-year">{ev.year}</span>
+                {ev.category && <span className="aesc-cat">{ev.category}</span>}
+                {ev.place && <span className="aesc-place">📍 {ev.place}</span>}
+              </div>
+              <h4 className="aesc-title">{ev.title}</h4>
+              {ev.desc && <p className="aesc-desc">{ev.desc}</p>}
+              {ev.shloka && (
+                <div className="aesc-shloka-box">
+                  <div className="aesc-shloka-meta">
+                    <span className="aesc-shloka-badge">SHLOKA / CLASSICAL VERSE</span>
+                    {ev.shloka.lang && <span className="aesc-shloka-lang">{ev.shloka.lang}</span>}
+                  </div>
+                  <blockquote className="aesc-shloka-text" lang="sa">{ev.shloka.text}</blockquote>
+                  {ev.shloka.transliteration && (
+                    <p className="aesc-shloka-translit"><em>{ev.shloka.transliteration}</em></p>
+                  )}
+                  <p className="aesc-shloka-translation">“{ev.shloka.translation}”</p>
+                  <p className="aesc-shloka-cite">— {ev.shloka.citation || ev.shloka.source}</p>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      ),
+    }] : []),
   ];
 }
 
@@ -852,18 +943,19 @@ export function SubgroupPage({ categorySlug, subgroupSlug }) {
       customKeyExtra = [
         { label: 'Cataloged Excavations', value: '49 Sites', note: '9 modern nations' },
         { label: 'Script Corpus', value: '400+ Signs', note: 'Mahadevan concordance' },
-        { label: 'Geographical Extent', value: '1.5M km²', note: 'Oxus to Arabian Sea' },
+        { label: 'Interactive Charts', value: `${indicators.length} Metrics`, note: 'Urban scale & script entropy' },
         { label: 'Mature Era Climax', value: '2600–1900 BCE', note: 'Radiocarbon calibrated' },
       ];
     } else if (isEmpires) {
       const allEmpires = empiresData.empires || [];
       const currentEmpire = allEmpires.find(e => e.id === selectedEmpireId) || allEmpires[3] || allEmpires[0];
+      const totalEvents = allEmpires.reduce((sum, emp) => sum + (emp.events?.length || 0), 0);
       customLead = <AncientEmpiresWorkbench selectedEmpireId={selectedEmpireId} onSelectEmpire={setSelectedEmpireId} />;
       customSections = buildEmpiresArticleSections(currentEmpire, setSelectedEmpireId, allEmpires);
       customKeyExtra = [
-        { label: 'Major Dynasties', value: '10 Empires', note: 'Magadha to Imperial Cholas' },
-        { label: 'Historical Span', value: '1,600+ Years', note: '600 BCE – 850 CE' },
-        { label: 'Mahajanapadas', value: '16 States', note: 'Iron Age urbanisation' },
+        { label: 'Major Dynasties', value: `${allEmpires.length} Empires`, note: '600 BCE – 1070 CE' },
+        { label: 'Shloka Events', value: `${totalEvents} Events`, note: 'Classical verses attached' },
+        { label: 'Interactive Charts', value: `${indicators.length} Metrics`, note: 'Armies, territory & epigraphy' },
         { label: 'Primary Epigraphs', value: 'Brahmi & Tamil', note: 'Rock edicts & copper plates' },
       ];
     } else if (isMetro) {

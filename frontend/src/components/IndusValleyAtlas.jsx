@@ -2,11 +2,24 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import sitesData from '../data/indus-civilisation.json';
 import { assetUrl } from '../config.js';
+import { useTheme } from '../theme.js';
 import { HistoricalMapViewer } from './AncientEmpiresAtlas.jsx';
-import IndusScriptDecoder from './IndusScriptDecoder.jsx';
 import './IndusAtlas.css';
 
 const MAJOR_METROPOLIS_IDS = new Set(['rakhigarhi', 'mohenjo-daro', 'harappa', 'dholavira', 'ganweriwala', 'kalibangan', 'lothal', 'banawali']);
+const DARK_THEME_IDS = new Set(['dark', 'military', 'parliamentary', 'airforce']);
+
+// De-collide adjacent metropolis labels in the Haryana–Punjab–Gujarat core
+const METROPOLIS_LABEL_OFFSETS = {
+  harappa: { dx: 0, dy: -8, anchor: 'middle' },
+  kalibangan: { dx: -14, dy: -6, anchor: 'end' },
+  banawali: { dx: 6, dy: -11, anchor: 'start' },
+  rakhigarhi: { dx: 12, dy: 9, anchor: 'start' },
+  ganweriwala: { dx: -8, dy: 10, anchor: 'end' },
+  'mohenjo-daro': { dx: -8, dy: -8, anchor: 'end' },
+  dholavira: { dx: -10, dy: -6, anchor: 'end' },
+  lothal: { dx: 10, dy: 9, anchor: 'start' },
+};
 
 const CATEGORY_COLORS = {
   metropolis: '#d4a72c',
@@ -34,6 +47,8 @@ const REGION_PRESETS = [
 ];
 
 export default function IndusValleyAtlas() {
+  const themeId = useTheme();
+  const isDarkMap = DARK_THEME_IDS.has(themeId);
   const [mapPaths, setMapPaths] = useState([]);
   const [selectedSiteId, setSelectedSiteId] = useState('rakhigarhi');
   const [selectedPeriodId, setSelectedPeriodId] = useState('all');
@@ -43,10 +58,12 @@ export default function IndusValleyAtlas() {
   const [countryFilter, setCountryFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [showRoutes, setShowRoutes] = useState(true);
+  const [showRivers, setShowRivers] = useState(true);
   const [hoveredSiteId, setHoveredSiteId] = useState(null);
   const [tooltip, setTooltip] = useState(null);
   const [mapViewMode, setMapViewMode] = useState('interactive');
   const mapStageRef = useRef(null);
+  const dragRef = useRef({ active: false, moved: false, startX: 0, startY: 0, startVb: null });
 
   // Zoom & Pan state
   const [viewBox, setViewBox] = useState(REGION_PRESETS[0].vb);
@@ -108,6 +125,23 @@ export default function IndusValleyAtlas() {
     setViewBox(preset.vb);
   };
 
+  const focusSite = (site) => {
+    if (!site) return;
+    setSelectedSiteId(site.id);
+    const sx = site.x !== undefined ? site.x : (site.lon * 10);
+    const sy = site.y !== undefined ? site.y : (-site.lat * 10);
+    setViewBox(curr => {
+      const targetW = Math.min(curr.w, 160);
+      const targetH = Math.min(curr.h, 112);
+      return {
+        x: sx - targetW / 2,
+        y: sy - targetH / 2,
+        w: targetW,
+        h: targetH,
+      };
+    });
+  };
+
   const handleZoom = (factor) => {
     setViewBox(curr => {
       const nw = Math.max(40, Math.min(500, curr.w * factor));
@@ -118,19 +152,47 @@ export default function IndusValleyAtlas() {
     });
   };
 
+  const handleSvgPointerDown = (e) => {
+    if (e.button !== 0 || e.target.closest('.indus-site-pin, .indus-route-group')) return;
+    dragRef.current = { active: true, moved: false, startX: e.clientX, startY: e.clientY, startVb: viewBox };
+  };
+
+  const handleSvgPointerMove = (e) => {
+    if (!dragRef.current.active || !mapStageRef.current || !dragRef.current.startVb) return;
+    const rect = mapStageRef.current.getBoundingClientRect();
+    const dxPx = e.clientX - dragRef.current.startX;
+    const dyPx = e.clientY - dragRef.current.startY;
+    if (Math.hypot(dxPx, dyPx) > 4) dragRef.current.moved = true;
+    const scaleX = dragRef.current.startVb.w / Math.max(1, rect.width);
+    const scaleY = dragRef.current.startVb.h / Math.max(1, rect.height);
+    setViewBox({
+      ...dragRef.current.startVb,
+      x: dragRef.current.startVb.x - dxPx * scaleX,
+      y: dragRef.current.startVb.y - dyPx * scaleY,
+    });
+  };
+
+  const handleSvgPointerUp = () => {
+    dragRef.current.active = false;
+  };
+
   const handleMouseMove = (e) => {
+    if (dragRef.current.active) {
+      handleSvgPointerMove(e);
+      return;
+    }
     if (!mapStageRef.current) return;
     const rect = mapStageRef.current.getBoundingClientRect();
     if (hoveredSiteId) {
       const site = sites.find(s => s.id === hoveredSiteId);
       if (site) {
         setTooltip({
-          x: Math.max(10, e.clientX - rect.left + 15),
-          y: Math.max(10, e.clientY - rect.top - 10),
-          site
+          x: Math.max(10, Math.min(rect.width - 265, e.clientX - rect.left + 15)),
+          y: Math.max(10, Math.min(rect.height - 155, e.clientY - rect.top - 10)),
+          site,
         });
       }
-    } else {
+    } else if (!tooltip?.route) {
       setTooltip(null);
     }
   };
@@ -233,15 +295,27 @@ export default function IndusValleyAtlas() {
           ))}
         </div>
 
-        {/* Toggle Trade Routes */}
-        <button
-          type="button"
-          className={`toggle-routes-btn ${showRoutes ? 'active' : ''}`}
-          onClick={() => setShowRoutes(!showRoutes)}
-          title="Toggle Meluhha maritime and overland caravan trade networks"
-        >
-          {showRoutes ? 'Hide Trade Routes' : 'Show Trade Routes'}
-        </button>
+        {/* Toggle Trade Routes & Rivers */}
+        <div className="indus-toggles-row">
+          <button
+            type="button"
+            className={`toggle-routes-btn ${showRoutes ? 'active' : ''}`}
+            onClick={() => setShowRoutes(!showRoutes)}
+            aria-pressed={showRoutes}
+            title="Toggle Meluhha maritime and overland caravan trade networks"
+          >
+            {showRoutes ? '⛵ Trade Routes: On' : '⛵ Trade Routes: Off'}
+          </button>
+          <button
+            type="button"
+            className={`toggle-routes-btn ${showRivers ? 'active' : ''}`}
+            onClick={() => setShowRivers(!showRivers)}
+            aria-pressed={showRivers}
+            title="Toggle Indus, Saraswati/Ghaggar-Hakra, and Oxus paleochannels"
+          >
+            {showRivers ? '🌊 Paleo-Rivers: On' : '🌊 Paleo-Rivers: Off'}
+          </button>
+        </div>
       </div>
 
       {/* Harappan Period / Era Horizons & Territorial Boundary Selector */}
@@ -250,6 +324,7 @@ export default function IndusValleyAtlas() {
         <button
           type="button"
           className={`ips-pill ${selectedPeriodId === 'all' ? 'active' : ''}`}
+          aria-pressed={selectedPeriodId === 'all'}
           onClick={() => setSelectedPeriodId('all')}
         >
           All Eras (3300–1300 BCE)
@@ -259,6 +334,7 @@ export default function IndusValleyAtlas() {
             key={p.id}
             type="button"
             className={`ips-pill ${selectedPeriodId === p.id ? 'active' : ''}`}
+            aria-pressed={selectedPeriodId === p.id}
             style={{ '--period-color': p.color }}
             onClick={() => {
               setSelectedPeriodId(p.id);
@@ -324,14 +400,18 @@ export default function IndusValleyAtlas() {
                 <HistoricalMapViewer
                   svgUrl={assetUrl('maps/historical/indus-civilisation.svg')}
                   title="Cities of the Indus — the Harappan Civilisation"
+                  onFallbackToInteractive={() => setMapViewMode('interactive')}
                 />
               </div>
             ) : (
               <>
                 <div className="indus-map-toolbar">
-                  <span className="showing-sites-count">
-                    Showing {filteredSites.length} of {sites.length} Excavations
-                  </span>
+                  <div className="indus-map-toolbar-meta">
+                    <span className="showing-sites-count">
+                      Showing {filteredSites.length} of {sites.length} Excavations
+                    </span>
+                    <span className="indus-drag-hint">Drag map to pan · Click pin to inspect</span>
+                  </div>
                   <div className="map-zoom-btns">
                     <button type="button" onClick={() => handleZoom(0.8)} title="Zoom In" aria-label="Zoom in">+</button>
                     <button type="button" onClick={() => handleZoom(1.25)} title="Zoom Out" aria-label="Zoom out">−</button>
@@ -343,6 +423,10 @@ export default function IndusValleyAtlas() {
             className="indus-svg"
             viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`}
             preserveAspectRatio="xMidYMid meet"
+            onPointerDown={handleSvgPointerDown}
+            onPointerUp={handleSvgPointerUp}
+            onPointerLeave={handleSvgPointerUp}
+            style={{ cursor: dragRef.current.active ? 'grabbing' : 'grab' }}
           >
             <defs>
               <radialGradient id="metropolisGlow" cx="50%" cy="50%" r="50%">
@@ -351,12 +435,18 @@ export default function IndusValleyAtlas() {
                 <stop offset="100%" stopColor="#d4a72c" stopOpacity="0" />
               </radialGradient>
               <filter id="siteShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.6" />
+                <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" floodColor="#000" floodOpacity="0.55" />
               </filter>
             </defs>
 
             {/* Geographical Background */}
-            <rect x={viewBox.x - 200} y={viewBox.y - 200} width={viewBox.w + 400} height={viewBox.h + 400} fill="#0d1117" />
+            <rect
+              x={viewBox.x - 200}
+              y={viewBox.y - 200}
+              width={viewBox.w + 400}
+              height={viewBox.h + 400}
+              fill={isDarkMap ? '#0d1117' : '#d6e4ee'}
+            />
 
             {/* Country boundary polygons */}
             <g className="indus-basemap-countries">
@@ -364,21 +454,31 @@ export default function IndusValleyAtlas() {
                 <path
                   key={idx}
                   d={p.d}
-                  fill="#181f2a"
-                  stroke="#263345"
+                  fill={isDarkMap ? '#181f2a' : '#f4efe3'}
+                  stroke={isDarkMap ? '#2c3c52' : '#c0b297'}
                   strokeWidth="0.75"
                   vectorEffect="non-scaling-stroke"
                 />
               ))}
             </g>
 
-            {/* Ancient River Courses (Indus, Saraswati / Ghaggar-Hakra, Ravi, Chenab, Sutlej, Narmada) */}
-            <g className="indus-rivers" stroke="#1d4ed8" strokeWidth="1.2" fill="none" opacity="0.65" strokeLinecap="round" vectorEffect="non-scaling-stroke">
-              {/* Saraswati / Ghaggar-Hakra Dry Riverbed */}
-              <path d="M 765 -300 Q 740 -295 715 -285 T 685 -260" stroke="#38bdf8" strokeWidth="1.5" strokeDasharray="3,2" />
-              {/* Indus Trunk */}
-              <path d="M 730 -340 Q 710 -310 685 -280 T 680 -250" stroke="#0284c7" strokeWidth="2" />
-            </g>
+            {/* Ancient River Courses & Paleochannels */}
+            {showRivers && (
+              <g className="indus-rivers" fill="none" strokeLinecap="round" vectorEffect="non-scaling-stroke">
+                {/* Saraswati / Ghaggar-Hakra Paleochannel */}
+                <path d="M 772 -306 Q 748 -297 720 -286 Q 705 -274 690 -248" stroke={isDarkMap ? '#38bdf8' : '#0284c7'} strokeWidth="1.6" strokeDasharray="3,2" opacity="0.8" />
+                {/* Indus Main Trunk */}
+                <path d="M 755 -352 Q 726 -335 712 -304 Q 695 -272 678 -244" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="2.1" opacity="0.85" />
+                {/* Ravi / Sutlej Tributaries */}
+                <path d="M 752 -324 Q 735 -310 715 -296" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="1.2" opacity="0.65" />
+                <path d="M 766 -312 Q 738 -302 710 -291" stroke={isDarkMap ? '#0ea5e9' : '#0369a1'} strokeWidth="1.2" opacity="0.65" />
+                {/* Narmada / Tapi */}
+                <path d="M 730 -216 Q 765 -218 795 -220" stroke={isDarkMap ? '#0284c7' : '#0369a1'} strokeWidth="1.2" opacity="0.55" />
+                {/* River Labels */}
+                <text x="698" y="-266" fill={isDarkMap ? '#7dd3fc' : '#0369a1'} fontSize="4.2" fontStyle="italic" fontWeight="600" opacity="0.85">Indus (Sindhu)</text>
+                <text x="724" y="-281" fill={isDarkMap ? '#7dd3fc' : '#0284c7'} fontSize="4" fontStyle="italic" fontWeight="600" opacity="0.85">Saraswati–Hakra</text>
+              </g>
+            )}
 
             {/* Harappan Period Territorial Boundaries */}
             <g className="indus-period-boundaries">
@@ -421,25 +521,28 @@ export default function IndusValleyAtlas() {
                     onMouseLeave={() => setTooltip(null)}
                     style={{ cursor: 'pointer' }}
                   >
-                    <path
-                      d={route.path_d}
-                      fill="none"
-                      stroke={route.type === 'maritime' ? '#38bdf8' : '#fbbf24'}
-                      strokeWidth={route.type === 'maritime' ? '1.5' : '1.2'}
-                      strokeDasharray={route.type === 'maritime' ? '5,3' : '3,3'}
-                      opacity="0.7"
-                      vectorEffect="non-scaling-stroke"
-                    />
+                      <path
+                        d={route.path_d}
+                        fill="none"
+                        stroke={route.type === 'maritime' ? (isDarkMap ? '#38bdf8' : '#0284c7') : (isDarkMap ? '#fbbf24' : '#b45309')}
+                        strokeWidth={route.type === 'maritime' ? '1.6' : '1.3'}
+                        strokeDasharray={route.type === 'maritime' ? '5,3' : '3,3'}
+                        opacity={isDarkMap ? '0.78' : '0.88'}
+                        vectorEffect="non-scaling-stroke"
+                      />
                     {route.label_pos && (
                       <text
                         x={route.label_pos.x}
                         y={route.label_pos.y}
-                        fill={route.type === 'maritime' ? '#7dd3fc' : '#fde68a'}
-                        fontSize="5"
+                        fill={route.type === 'maritime' ? (isDarkMap ? '#7dd3fc' : '#0369a1') : (isDarkMap ? '#fde68a' : '#92400e')}
+                        fontSize="4.6"
                         fontFamily="sans-serif"
-                        fontWeight="600"
+                        fontWeight="650"
                         textAnchor="middle"
-                        opacity="0.85"
+                        stroke={isDarkMap ? '#0d1117' : '#f4efe3'}
+                        strokeWidth="1.8"
+                        paintOrder="stroke"
+                        opacity="0.92"
                       >
                         {route.name}
                       </text>
@@ -467,7 +570,7 @@ export default function IndusValleyAtlas() {
                   <g
                     key={site.id}
                     className={`indus-site-pin ${isSelected ? 'selected' : ''} ${isHovered ? 'hovered' : ''}`}
-                    onClick={() => setSelectedSiteId(site.id)}
+                    onClick={() => { if (!dragRef.current.moved) setSelectedSiteId(site.id); }}
                     onMouseEnter={() => setHoveredSiteId(site.id)}
                     onMouseLeave={() => setHoveredSiteId(null)}
                     style={{ cursor: 'pointer' }}
@@ -515,26 +618,35 @@ export default function IndusValleyAtlas() {
                       fill="#0b0f15"
                     />
 
-                    {/* Clean uncluttered label */}
-                    {shouldShowLabel && (
-                      <g className="site-label-wrap">
-                        <text
-                          x={sx}
-                          y={sy - (isMajor ? 7 : 5)}
-                          fill={isSelected ? '#fff' : isMajor ? '#fef08a' : '#cbd5e1'}
-                          fontSize={isMajor ? '6' : '4.5'}
-                          fontWeight={isMajor ? '750' : '600'}
-                          fontFamily="sans-serif"
-                          textAnchor="middle"
-                          stroke="#0b0f15"
-                          strokeWidth="2.2"
-                          paintOrder="stroke"
-                          strokeLinejoin="round"
-                        >
-                          {site.name}
-                        </text>
-                      </g>
-                    )}
+                    {/* Clean de-collided label */}
+                    {shouldShowLabel && (() => {
+                      const off = METROPOLIS_LABEL_OFFSETS[site.id] || { dx: 0, dy: -(isMajor ? 7 : 5), anchor: 'middle' };
+                      const labelFill = isSelected
+                        ? (isDarkMap ? '#ffffff' : '#0b0f15')
+                        : isMajor
+                          ? (isDarkMap ? '#fef08a' : '#78350f')
+                          : (isDarkMap ? '#cbd5e1' : '#1e293b');
+                      const labelStroke = isDarkMap ? '#0b0f15' : '#fffdf8';
+                      return (
+                        <g className="site-label-wrap">
+                          <text
+                            x={sx + off.dx}
+                            y={sy + off.dy}
+                            fill={labelFill}
+                            fontSize={isMajor ? '5.4' : '4.2'}
+                            fontWeight={isMajor ? '750' : '600'}
+                            fontFamily="sans-serif"
+                            textAnchor={off.anchor}
+                            stroke={labelStroke}
+                            strokeWidth="2.2"
+                            paintOrder="stroke"
+                            strokeLinejoin="round"
+                          >
+                            {site.name}
+                          </text>
+                        </g>
+                      );
+                    })()}
                   </g>
                 );
               })}
@@ -569,10 +681,27 @@ export default function IndusValleyAtlas() {
             </div>
           )}
 
+          {/* Quick Site Directory Rail under Map Legend for instant 1-click access across all filtered sites */}
+          <div className="indus-site-rail" aria-label="Quick site selector">
+            <span className="isr-label">Quick Site Jump ({filteredSites.length}):</span>
+            <div className="isr-chips">
+              {filteredSites.slice(0, 18).map(s => (
+                <button
+                  key={s.id}
+                  type="button"
+                  className={`isr-chip ${s.id === selectedSiteId ? 'active' : ''}`}
+                  onClick={() => { focusSite(s); setDossierTab('site'); }}
+                >
+                  {MAJOR_METROPOLIS_IDS.has(s.id) ? '★ ' : ''}{s.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Quick Legend at bottom of map */}
           <div className="indus-map-legend">
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.metropolis }} /> Great Metropolis (8)</span>
-            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.port }} /> Port & Dockyard</span>
+            <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.port }} /> Port &amp; Dockyard</span>
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.craft }} /> Craft / Bead Hub</span>
             <span className="iml-item"><span className="iml-dot" style={{ background: CATEGORY_COLORS.foreign_trade }} /> Mesopotamian Outpost</span>
             <span className="iml-item"><span className="iml-line blue" /> Maritime Route</span>

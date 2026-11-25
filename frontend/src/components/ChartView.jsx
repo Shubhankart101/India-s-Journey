@@ -142,7 +142,7 @@ export function buildOptions({ type, suffix, compact, horizontal, multi, colors 
 
 export default function ChartView({ labels = [], datasets = [], type = 'line', indexAxis = 'x', suffix = '', color = '#58a6ff', compact = false, title = 'Chart' }) {
   const horizontal = type === 'bar' && indexAxis === 'y';
-  const colors = CHART_COLORS[useTheme()];
+  const colors = CHART_COLORS[useTheme()] || CHART_COLORS.dark;
   const data = useMemo(() => buildChartData({ labels, datasets, type, color, colors }), [labels, datasets, type, color, colors]);
   const options = useMemo(() => buildOptions({ type, suffix, compact, horizontal, multi: datasets.length > 1, colors }), [type, suffix, compact, horizontal, datasets.length, colors]);
   if (FISCAL_TYPES.has(type)) return <Suspense fallback={<SpecialChartFallback />}><FiscalView type={type} compact={compact} /></Suspense>;
