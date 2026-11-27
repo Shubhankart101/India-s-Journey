@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T11:14:59+00:00",
+  "generated_at_utc": "2026-11-27T11:08:22+00:00",
   "categories": [
     {
       "name": "Economy & Markets",
@@ -27672,42 +27672,42 @@
             "label": "PM Jan Dhan accounts by state",
             "color": "#79c0ff",
             "values": [
-              10.729911,
-              7.0858806,
-              5.7958455,
-              4.8016835,
-              3.9035667,
-              3.8995331,
-              2.619127,
-              2.4444649,
-              2.2364435,
-              2.086665,
-              2.0250551,
-              1.9725582,
-              1.897166,
-              1.7471626,
-              1.3611889,
-              1.1391724,
-              1.0199288,
-              0.7849451,
-              0.7202466,
-              0.4195958,
-              0.254233,
-              0.2004846,
-              0.1183421,
-              0.1100784,
-              0.0937886,
-              0.0471885,
-              0.0457929,
-              0.0410792,
-              0.0347137,
-              0.0302258,
-              0.0249827,
-              0.024369,
-              0.0112405,
-              0.0066709,
-              0.0022697,
-              0.0011072
+              10.7436271,
+              7.0913024,
+              5.8023325,
+              4.8065156,
+              3.9055288,
+              3.8992998,
+              2.6129682,
+              2.4461001,
+              2.2387431,
+              2.0880909,
+              2.026484,
+              1.9744166,
+              1.8978919,
+              1.7473363,
+              1.3626009,
+              1.1401058,
+              1.0205038,
+              0.7858359,
+              0.7206103,
+              0.4200539,
+              0.2562151,
+              0.200256,
+              0.118496,
+              0.1100895,
+              0.0938429,
+              0.0471748,
+              0.0458469,
+              0.04108,
+              0.0347214,
+              0.0303271,
+              0.0249904,
+              0.0244006,
+              0.0112477,
+              0.0066755,
+              0.0022754,
+              0.0011076
             ]
           }
         ],
@@ -27715,7 +27715,7 @@
         "index_axis": "y",
         "scope": "state",
         "scope_label": "",
-        "note": "Report dated 11/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
+        "note": "Report dated 18/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
         "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
         "unit": ""
       }
@@ -28082,12 +28082,12 @@
             "label": "Jan Dhan Accounts by Region",
             "color": "#ff9933",
             "values": [
+              17.45,
               17.43,
-              17.41,
               9.88,
-              8.14,
+              8.15,
               3.79,
-              3.09
+              3.08
             ]
           }
         ],
@@ -209514,7 +209514,7 @@
               22914995,
               21344664.86,
               82960719.72,
-              267579429.54,
+              267579679.54,
               65368520.25,
               14792456.47,
               3877611.74,
@@ -209648,7 +209648,7 @@
               20055287.09,
               21069398.65,
               79798649.08,
-              229899045.13,
+              229902960.5,
               56684893.36,
               13462921.28,
               3657970.04,
@@ -209782,7 +209782,7 @@
               10265551.72,
               14709962,
               10769422.54,
-              125103236.8,
+              125099571.43,
               14402197.3,
               5312786.62,
               256121.4,
@@ -209916,7 +209916,7 @@
               3788907.55,
               228564.98,
               17222796.13,
-              40560247.03,
+              40557247.03,
               2604493.28,
               1174128.68,
               377580.38,
@@ -213300,7 +213300,7 @@
               2200558746.96,
               2228957388.96,
               2397807939.48,
-              2578602535.2599998
+              2578602785.2599998
             ]
           }
         ],
@@ -213340,7 +213340,7 @@
               11.455190337474018,
               1.2905196027705124,
               7.5753153181085775,
-              7.539994876287204
+              7.5400053024767155
             ]
           }
         ],
@@ -213382,7 +213382,7 @@
               2050402223.99,
               2199331713.83,
               2269973431.55,
-              2365919001.98
+              2365922917.35
             ]
           }
         ],
@@ -213422,7 +213422,7 @@
               5.238904069147843,
               7.263428028779106,
               3.211962855615913,
-              4.226726581750584
+              4.226899067029288
             ]
           }
         ],
@@ -213464,7 +213464,7 @@
               509710666.66,
               471118036.52,
               576360151.87,
-              771116072.99
+              771112407.62
             ]
           }
         ],
@@ -213504,7 +213504,7 @@
               58.68654186178988,
               -7.571477833274987,
               22.33879987431393,
-              33.79066378688995
+              33.79002783556886
             ]
           }
         ],
@@ -213546,7 +213546,7 @@
               121252536.74,
               195874572.73,
               342281012.4,
-              465519327.32
+              465516327.32
             ]
           }
         ],
@@ -213586,7 +213586,7 @@
               3.065979924962714,
               61.54265963936978,
               74.74499503915268,
-              36.00501063610855
+              36.004134163300726
             ]
           }
         ],
@@ -214338,7 +214338,7 @@
             "label": "2026 House Campaign Receipts by State",
             "color": "#bc8cff",
             "values": [
-              267579429.54,
+              267579679.54,
               249361749.2,
               216222893.45,
               180754506.37,
@@ -214648,7 +214648,7 @@
             "label": "2026 House Campaign Disbursements by State",
             "color": "#bc8cff",
             "values": [
-              229899045.13,
+              229902960.5,
               212894582.72,
               197120497.44,
               171868127.97,
@@ -214958,7 +214958,7 @@
             "label": "2026 House Campaign Cash on Hand by State",
             "color": "#bc8cff",
             "values": [
-              125103236.8,
+              125099571.43,
               83924567.81,
               46350571.11,
               40537772.3,
@@ -215270,7 +215270,7 @@
             "values": [
               76233970.09,
               50998590.18,
-              40560247.03,
+              40557247.03,
               36306202.35,
               27335815.94,
               21963070,
@@ -217258,7 +217258,7 @@
             "color": "#58a6ff",
             "values": [
               1409551981.73,
-              1135585758.21,
+              1135586008.21,
               26001945.47,
               9158232.6,
               394751.12,
@@ -217299,7 +217299,7 @@
             "color": "#58a6ff",
             "values": [
               1372121764.7,
-              731115710.95,
+              731115960.95,
               477561345.4
             ]
           }
@@ -217341,7 +217341,7 @@
             "label": "2026 House: Where the Money Came From",
             "color": "#58a6ff",
             "values": [
-              1494242589.97,
+              1494242839.97,
               430247284.66,
               335987727.22,
               235273140.53,
@@ -235415,7 +235415,7 @@
       "color": "#79c0ff",
       "suffix": " Crore accounts",
       "source_url": "https://pmjdy.gov.in/",
-      "details": "Map view of \"PM Jan Dhan accounts by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Report dated 11/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
+      "details": "Map view of \"PM Jan Dhan accounts by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Report dated 18/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
       "category": "India in Maps",
       "subgroup": "State Economy & Fiscal Maps",
       "position": 2838,
@@ -235463,42 +235463,42 @@
             "label": "PM Jan Dhan accounts by state \u2014 map",
             "color": "#79c0ff",
             "values": [
-              10.729911,
-              7.0858806,
-              5.7958455,
-              4.8016835,
-              3.9035667,
-              3.8995331,
-              2.619127,
-              2.4444649,
-              2.2364435,
-              2.086665,
-              2.0250551,
-              1.9725582,
-              1.897166,
-              1.7471626,
-              1.3611889,
-              1.1391724,
-              1.0199288,
-              0.7849451,
-              0.7202466,
-              0.4195958,
-              0.254233,
-              0.2004846,
-              0.1183421,
-              0.1100784,
-              0.0937886,
-              0.0471885,
-              0.0457929,
-              0.0410792,
-              0.0347137,
-              0.0302258,
-              0.0249827,
-              0.024369,
-              0.0112405,
-              0.0066709,
-              0.0022697,
-              0.0011072
+              10.7436271,
+              7.0913024,
+              5.8023325,
+              4.8065156,
+              3.9055288,
+              3.8992998,
+              2.6129682,
+              2.4461001,
+              2.2387431,
+              2.0880909,
+              2.026484,
+              1.9744166,
+              1.8978919,
+              1.7473363,
+              1.3626009,
+              1.1401058,
+              1.0205038,
+              0.7858359,
+              0.7206103,
+              0.4200539,
+              0.2562151,
+              0.200256,
+              0.118496,
+              0.1100895,
+              0.0938429,
+              0.0471748,
+              0.0458469,
+              0.04108,
+              0.0347214,
+              0.0303271,
+              0.0249904,
+              0.0244006,
+              0.0112477,
+              0.0066755,
+              0.0022754,
+              0.0011076
             ]
           }
         ],
@@ -235506,7 +235506,7 @@
         "index_axis": "x",
         "scope": "state",
         "scope_label": "States/UTs mapped",
-        "note": "Map view of \"PM Jan Dhan accounts by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Report dated 11/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
+        "note": "Map view of \"PM Jan Dhan accounts by state\" from State Performance & Regional Health \u203a State Welfare & Scheme Coverage. 36 of 36 States/UTs have a value; unshaded areas are not reported by the source. Report dated 18/11/2026. 36 of 36 States/UTs reported. Values are total beneficiary accounts in crore.",
         "source": "Department of Financial Services, PMJDY statewise account opening report (https://pmjdy.gov.in/statewise-statistics)",
         "unit": ""
       }
